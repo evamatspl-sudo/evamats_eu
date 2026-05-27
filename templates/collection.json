@@ -265,8 +265,6 @@
             "contentIndex": "1",
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
-            "reviewPhotosType": "small",
             "writeReview": true,
             "fixedReviewsHeight": true
           }

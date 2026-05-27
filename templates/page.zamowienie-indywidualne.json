@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -18,7 +27,7 @@
       "type": "apps",
       "blocks": {
         "4a8da33e-f807-4d63-a52e-435fc6e6a442": {
-          "type": "shopify:\/\/apps\/tt-breadcrumbs-seo-schema\/blocks\/breadcrumbSection\/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
+          "type": "shopify://apps/tt-breadcrumbs-seo-schema/blocks/breadcrumbSection/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
           "settings": {}
         }
       },
@@ -33,7 +42,7 @@
     "custom_liquid_Rzri8g": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"globo-formbuilder\" data-id=\"MTExNg==\"><\/div>",
+        "custom_liquid": "<div class=\"globo-formbuilder\" data-id=\"MTExNg==\"></div>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 52
@@ -43,12 +52,11 @@
       "type": "apps",
       "blocks": {
         "google_reviews_masonry_widget_block_DtENYq": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/masonry-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/masonry-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
             "themeId": "light",
             "reviewPhotosType": "small",
-            "showRating": true,
             "writeReview": true
           }
         }

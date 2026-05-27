@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_slider_hnWky3": {
@@ -7,7 +16,7 @@
           "type": "Slide",
           "disabled": true,
           "settings": {
-            "link": "shopify:\/\/pages\/dywaniki-samochodowe-eva",
+            "link": "shopify://pages/dywaniki-samochodowe-eva",
             "title": "",
             "description": "",
             "button_label": "",
@@ -29,7 +38,7 @@
           "type": "Slide",
           "disabled": true,
           "settings": {
-            "link": "shopify:\/\/pages\/dywaniki-samochodowe-eva",
+            "link": "shopify://pages/dywaniki-samochodowe-eva",
             "title": "",
             "description": "",
             "button_label": "",
@@ -43,8 +52,8 @@
             "link": "",
             "title": "",
             "description": "",
-            "image": "shopify:\/\/shop_images\/engbannersdesksummer.webp",
-            "image_mob": "shopify:\/\/shop_images\/engbannerssummer.webp",
+            "image": "shopify://shop_images/engbannersdesksummer.webp",
+            "image_mob": "shopify://shop_images/engbannerssummer.webp",
             "button_label": "",
             "button_label_2": ""
           }
@@ -56,8 +65,8 @@
             "link": "",
             "title": "",
             "description": "",
-            "image": "shopify:\/\/shop_images\/2.webp",
-            "image_mob": "shopify:\/\/shop_images\/1.webp",
+            "image": "shopify://shop_images/2.webp",
+            "image_mob": "shopify://shop_images/1.webp",
             "button_label": "",
             "button_label_2": ""
           }
@@ -68,8 +77,8 @@
             "link": "",
             "title": "",
             "description": "",
-            "image": "shopify:\/\/shop_images\/2_6d0dab7a-d79c-41a1-b897-2c069680f28c.webp",
-            "image_mob": "shopify:\/\/shop_images\/2_90e876e1-d205-43ee-b17c-7b6069072d06.webp",
+            "image": "shopify://shop_images/2_6d0dab7a-d79c-41a1-b897-2c069680f28c.webp",
+            "image_mob": "shopify://shop_images/2_90e876e1-d205-43ee-b17c-7b6069072d06.webp",
             "button_label": "",
             "button_label_2": ""
           }
@@ -77,13 +86,13 @@
         "slide_kcaBYh": {
           "type": "Slide",
           "settings": {
-            "link": "shopify:\/\/pages\/car-brands",
+            "link": "shopify://pages/car-brands",
             "title": "",
             "description": "",
-            "image": "shopify:\/\/shop_images\/mobile_10_1_1.png",
-            "image_mob": "shopify:\/\/shop_images\/42_1.png",
-            "video": "shopify:\/\/files\/videos\/video evamats 16.9_1.mp4",
-            "video_mob": "shopify:\/\/files\/videos\/video evamats 1.1_1.mp4",
+            "image": "shopify://shop_images/mobile_10_1_1.png",
+            "image_mob": "shopify://shop_images/42_1.png",
+            "video": "shopify://files/videos/video evamats 16.9_1.mp4",
+            "video_mob": "shopify://files/videos/video evamats 1.1_1.mp4",
             "button_label": "",
             "button_label_2": ""
           }
@@ -91,11 +100,11 @@
         "slide_TBKJeV": {
           "type": "Slide",
           "settings": {
-            "link": "shopify:\/\/pages\/car-brands",
+            "link": "shopify://pages/car-brands",
             "title": "",
             "description": "",
-            "image": "shopify:\/\/shop_images\/engbanner.webp",
-            "image_mob": "shopify:\/\/shop_images\/eng_mobile_10_1_1.webp",
+            "image": "shopify://shop_images/engbanner.webp",
+            "image_mob": "shopify://shop_images/eng_mobile_10_1_1.webp",
             "button_label": "",
             "button_label_2": ""
           }
@@ -103,10 +112,10 @@
         "slide_DGcWGM": {
           "type": "Slide",
           "settings": {
-            "link": "shopify:\/\/pages\/car-brands",
-            "title": "<h2>ORGANIZER XL|M<\/h2>",
-            "description": "<p>Solutions for everyday<\/p>",
-            "image": "shopify:\/\/shop_images\/Rectangle_2_5.webp",
+            "link": "shopify://pages/car-brands",
+            "title": "<h2>ORGANIZER XL|M</h2>",
+            "description": "<p>Solutions for everyday</p>",
+            "image": "shopify://shop_images/Rectangle_2_5.webp",
             "button_label": "SHOP NOW",
             "button_label_2": "Get a price"
           }
@@ -137,28 +146,28 @@
         "icon_GTyLEH": {
           "type": "icon",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Group_276.webp",
+            "logo": "shopify://shop_images/Group_276.webp",
             "text": "Innovative 3D car mats with edges"
           }
         },
         "icon_DQLg6H": {
           "type": "icon",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Frame_239.webp",
+            "logo": "shopify://shop_images/Frame_239.webp",
             "text": "Individual fitting and hand stitching"
           }
         },
         "icon_JTyhJE": {
           "type": "icon",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/Frame_239_1.webp",
+            "logo": "shopify://shop_images/Frame_239_1.webp",
             "text": "195 color combinations"
           }
         },
         "icon_NBzAVh": {
           "type": "icon",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/europe-flag-icon.svg",
+            "logo": "shopify://shop_images/europe-flag-icon.svg",
             "text": "Proudly made in EU"
           }
         }
@@ -179,8 +188,8 @@
         "h2 {font-size: 3.9rem; font-weight: 600; line-height: 46px; text-transform: uppercase; font-family: Montserrat; font-style: normal; text-align: center; color: rgb(var(--color-foreground));}"
       ],
       "settings": {
-        "hd": "<h2>\n<span>EVAMATS<\/span> - the best car mats<\/h2>",
-        "des": "<p>Every automotive enthusiast knows that their vehicle should be cared for down to the smallest detail. It's not just about its external appearance, but also the aesthetics of the interior. EVAMATS is a manufacturer of car mats that will transform your vehicle and give it extraordinary character. EVA car mats are not only elegance and style, but also comfort and professionalism. Who are we? <br\/><br\/>EVAMATS is a manufacturer of high-quality car mats. EVA products combine the advantages of both traditional mats available on the market. Therefore, you will find high-quality car mats with us. What's more, EVAMATS is a Polish manufacturer! You can be sure that these are quality products.<\/p>"
+        "hd": "<h2>\n<span>EVAMATS</span> - the best car mats</h2>",
+        "des": "<p>Every automotive enthusiast knows that their vehicle should be cared for down to the smallest detail. It's not just about its external appearance, but also the aesthetics of the interior. EVAMATS is a manufacturer of car mats that will transform your vehicle and give it extraordinary character. EVA car mats are not only elegance and style, but also comfort and professionalism. Who are we? <br/><br/>EVAMATS is a manufacturer of high-quality car mats. EVA products combine the advantages of both traditional mats available on the market. Therefore, you will find high-quality car mats with us. What's more, EVAMATS is a Polish manufacturer! You can be sure that these are quality products.</p>"
       }
     },
     "custom_liquid_z3AkHK": {
@@ -189,7 +198,7 @@
         ".custom_liquid {background: #f5f5f5;}"
       ],
       "settings": {
-        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}<\/button>",
+        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}</button>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 40
@@ -240,96 +249,96 @@
         "460dc6cd-7bd1-4999-a698-bf8ac5713b3b": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_187.webp",
-            "product-link": "shopify:\/\/collections\/mercedes-benz",
+            "table-img": "shopify://shop_images/Group_187.webp",
+            "product-link": "shopify://collections/mercedes-benz",
             "color-code": "Mercedes-Benz"
           }
         },
         "56d1786f-461c-452f-9e17-ee77577c5cd2": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Frame_291.webp",
-            "product-link": "shopify:\/\/collections\/bmw",
+            "table-img": "shopify://shop_images/Frame_291.webp",
+            "product-link": "shopify://collections/bmw",
             "color-code": "BMW"
           }
         },
         "5436c390-44b5-4e0c-ba61-dc5b4d4e5019": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_199.webp",
-            "product-link": "shopify:\/\/collections\/skoda",
+            "table-img": "shopify://shop_images/Group_199.webp",
+            "product-link": "shopify://collections/skoda",
             "color-code": "Škoda"
           }
         },
         "4058aaf1-89fd-4a90-9df8-821a30aef249": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_95.webp",
-            "product-link": "shopify:\/\/collections\/lexus",
+            "table-img": "shopify://shop_images/Group_95.webp",
+            "product-link": "shopify://collections/lexus",
             "color-code": "Lexus"
           }
         },
         "c62f31ba-c12e-4eaf-808c-333deaa2458d": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_226.webp",
-            "product-link": "shopify:\/\/collections\/nissan",
+            "table-img": "shopify://shop_images/Group_226.webp",
+            "product-link": "shopify://collections/nissan",
             "color-code": "Nissan"
           }
         },
         "896c664a-a387-4033-a183-7391cd447e3d": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_201.webp",
-            "product-link": "shopify:\/\/collections\/toyota",
+            "table-img": "shopify://shop_images/Group_201.webp",
+            "product-link": "shopify://collections/toyota",
             "color-code": "Toyota"
           }
         },
         "b9fb9632-2688-4a75-8507-2bc37481d1e7": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Frame_224.webp",
-            "product-link": "shopify:\/\/collections\/audi",
+            "table-img": "shopify://shop_images/Frame_224.webp",
+            "product-link": "shopify://collections/audi",
             "color-code": "Audi"
           }
         },
         "53e7843a-a0f5-4bda-adba-a8180f43e27f": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Frame_225.webp",
-            "product-link": "shopify:\/\/collections\/ford",
+            "table-img": "shopify://shop_images/Frame_225.webp",
+            "product-link": "shopify://collections/ford",
             "color-code": "Ford"
           }
         },
         "d950882d-197d-4087-b42c-54192caf6b69": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_77.webp",
-            "product-link": "shopify:\/\/collections\/citroen",
+            "table-img": "shopify://shop_images/Group_77.webp",
+            "product-link": "shopify://collections/citroen",
             "color-code": "Citroën"
           }
         },
         "2daddfc2-2f53-468c-b23c-14bdc48d17e8": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Group_191.webp",
-            "product-link": "shopify:\/\/collections\/renault",
+            "table-img": "shopify://shop_images/Group_191.webp",
+            "product-link": "shopify://collections/renault",
             "color-code": "Renault"
           }
         },
         "44387e75-0210-4cfb-80fe-04f29726c296": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Frame_223.webp",
-            "product-link": "shopify:\/\/collections\/volkswagen",
+            "table-img": "shopify://shop_images/Frame_223.webp",
+            "product-link": "shopify://collections/volkswagen",
             "color-code": "Volkswagen"
           }
         },
         "9f707e47-7f53-4cad-b6e1-ddc30b75f18f": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/Frame_286.webp",
-            "product-link": "shopify:\/\/collections\/volvo",
+            "table-img": "shopify://shop_images/Frame_286.webp",
+            "product-link": "shopify://collections/volvo",
             "color-code": "Volvo"
           }
         }
@@ -421,11 +430,11 @@
         "84fc1c2f-aa33-492f-8780-a422dc77807a"
       ],
       "custom_css": [
-        "section {\/* background-color: #000101; *\/}"
+        "section {/* background-color: #000101; */}"
       ],
       "settings": {
         "btn_text": "All brands",
-        "btn_url": "shopify:\/\/pages\/car-brands"
+        "btn_url": "shopify://pages/car-brands"
       }
     },
     "video_section_r8hqBa": {
@@ -434,14 +443,14 @@
         "video_cPd3yM": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/IMG_5702.MOV",
+            "video": "shopify://files/videos/IMG_5702.MOV",
             "title": "EVAMATS without Edges"
           }
         },
         "video_UbzChm": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/IMG_5703.MOV",
+            "video": "shopify://files/videos/IMG_5703.MOV",
             "title": "EVAMATS with Edges"
           }
         }
@@ -460,31 +469,31 @@
         "item_Di6f7V": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_5.mp4"
+            "video": "shopify://files/videos/Untitled_5.mp4"
           }
         },
         "item_HFBMNB": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_6.mp4"
+            "video": "shopify://files/videos/Untitled_6.mp4"
           }
         },
         "item_4grRdB": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_3.mp4"
+            "video": "shopify://files/videos/Untitled_3.mp4"
           }
         },
         "item_cDd3c3": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_4.mp4"
+            "video": "shopify://files/videos/Untitled_4.mp4"
           }
         },
         "item_PF4fmU": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_1.mp4"
+            "video": "shopify://files/videos/Untitled_1.mp4"
           }
         }
       },
@@ -505,7 +514,7 @@
         "heading_GngWeL": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Why choose EVAMATS car mats?<\/p>",
+            "heading": "<p>Why choose EVAMATS car mats?</p>",
             "heading_size": "h1"
           }
         }
@@ -528,8 +537,8 @@
         "item_yeeemp": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/may_sd_1tiny.webp",
-            "image_after": "shopify:\/\/shop_images\/3D_evamats.webp",
+            "image_before": "shopify://shop_images/may_sd_1tiny.webp",
+            "image_after": "shopify://shop_images/3D_evamats.webp",
             "title": "Other EVA mats manufacturers vs EVAMATS 3D with Edges",
             "label_before": "Not EVAMATS",
             "label_after": "EVAMATS 3D with Edges"
@@ -538,8 +547,8 @@
         "item_TiTPYb": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/IMG_1394.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
+            "image_before": "shopify://shop_images/IMG_1394.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
             "title": "Rubber vs EVAMATS 3D with Edges",
             "label_before": "Rubber",
             "label_after": "EVAMATS 3D with Edges"
@@ -548,8 +557,8 @@
         "item_GWeUKj": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/IMG_1371.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1_1.webp",
+            "image_before": "shopify://shop_images/IMG_1371.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1_1.webp",
             "title": "Velour vs EVAMATS 3D with Edges",
             "label_before": "Velour",
             "label_after": "EVAMATS 3D with Edges"
@@ -599,7 +608,7 @@
     "custom_liquid_U9hD9X": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}<\/button>",
+        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}</button>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 100
@@ -611,14 +620,14 @@
         "heading_X4dyYY": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Inspire Yourself!<\/p>",
+            "heading": "<p>Inspire Yourself!</p>",
             "heading_size": "h1"
           }
         },
         "heading_reTRVQ": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Check OUT our Realizations Gallery<\/p>",
+            "heading": "<p>Check OUT our Realizations Gallery</p>",
             "heading_size": "h1"
           }
         }
@@ -643,7 +652,7 @@
         "column_qpchcc": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4436-min_1_66165036-e967-41a2-986d-1d943a1062e8.png",
+            "image": "shopify://shop_images/IMG_4436-min_1_66165036-e967-41a2-986d-1d943a1062e8.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -653,7 +662,7 @@
         "column_NaPd8Y": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_6171_1_ab49a21f-68e5-4396-9582-e23608de9a99.png",
+            "image": "shopify://shop_images/IMG_6171_1_ab49a21f-68e5-4396-9582-e23608de9a99.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -663,7 +672,7 @@
         "column_kzdVNC": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DSC07330_1.png",
+            "image": "shopify://shop_images/DSC07330_1.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -673,7 +682,7 @@
         "column_cg3FGW": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4431_1.png",
+            "image": "shopify://shop_images/IMG_4431_1.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -683,7 +692,7 @@
         "column_qYFkYR": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_8491_1.png",
+            "image": "shopify://shop_images/IMG_8491_1.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -693,7 +702,7 @@
         "column_FpM66L": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4664_1.png",
+            "image": "shopify://shop_images/IMG_4664_1.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -718,7 +727,7 @@
         "column_alignment": "center",
         "background_style": "none",
         "button_label": "Gallery",
-        "button_link": "shopify:\/\/pages\/gallery",
+        "button_link": "shopify://pages/gallery",
         "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
@@ -730,7 +739,7 @@
       "type": "apps",
       "blocks": {
         "google_reviews_masonry_widget_block_jxxtpt": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/masonry-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/masonry-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "disabled": true,
           "settings": {
             "contentIndex": "1",
@@ -745,7 +754,6 @@
             "transparent": 1,
             "solidShadow": false,
             "reviewPhotosType": "small",
-            "showRating": true,
             "writeReview": true,
             "numberOfRowsMobile": 3,
             "numberOfRowsDesktop": 2
@@ -762,9 +770,9 @@
     "image_section_kqrBXC": {
       "type": "image-section",
       "settings": {
-        "bg_img": "shopify:\/\/shop_images\/Frame_255_eng.webp",
-        "bg_image_mob": "shopify:\/\/shop_images\/Frame_288_eng.webp",
-        "auto": "shopify:\/\/shop_images\/Frame_687.webp",
+        "bg_img": "shopify://shop_images/Frame_255_eng.webp",
+        "bg_image_mob": "shopify://shop_images/Frame_288_eng.webp",
+        "auto": "shopify://shop_images/Frame_687.webp",
         "title": "How are your mats made?",
         "padding_top": 36,
         "padding_bottom": 36
@@ -774,7 +782,7 @@
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}<\/button>",
+        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}</button>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
@@ -784,10 +792,10 @@
       "type": "home-8",
       "settings": {
         "hd": "\"Do you own a rare car?\"",
-        "des": "<p>Can't find floor mats for YOUR unique car?<br\/><br\/>We have contacts throughout Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the kind of perfection that a watchmaker puts together a watch.<br\/><br\/>Fill out this form and we will realize customized floor mats for your car.<\/p>",
+        "des": "<p>Can't find floor mats for YOUR unique car?<br/><br/>We have contacts throughout Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the kind of perfection that a watchmaker puts together a watch.<br/><br/>Fill out this form and we will realize customized floor mats for your car.</p>",
         "btn_text": "Custom order",
-        "btn_url": "shopify:\/\/products\/customized-order-for-your-vehicle-advance-payment-100",
-        "img": "shopify:\/\/shop_images\/Frame_34-removebg-preview_1_1.webp"
+        "btn_url": "shopify://products/customized-order-for-your-vehicle-advance-payment-100",
+        "img": "shopify://shop_images/Frame_34-removebg-preview_1_1.webp"
       }
     },
     "image_collage_MWHXTy": {
@@ -796,15 +804,15 @@
         "image_TBPbfX": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_8536.webp",
-            "url": "https:\/\/wincars.pl"
+            "image": "shopify://shop_images/IMG_8536.webp",
+            "url": "https://wincars.pl"
           }
         },
         "image_JXzC9Y": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DET2_1.webp",
-            "url": "https:\/\/www.instagram.com\/mn1_detailing?igsh=MXd3MGZrNGI0Z2diZA=="
+            "image": "shopify://shop_images/DET2_1.webp",
+            "url": "https://www.instagram.com/mn1_detailing?igsh=MXd3MGZrNGI0Z2diZA=="
           }
         }
       },
@@ -832,28 +840,28 @@
           "type": "text",
           "settings": {
             "hd": "Floor Coverage and Fit",
-            "des": "<p><strong>-Will the mats fit for sure?<\/strong><br\/>Yes, our EVA mats are specifically designed for each car brand, model, and version, covering the entire floor surface and protecting areas not covered by rubber and velour mats.<\/p><p><strong>-What is a tunnel mat?<\/strong><br\/>EVA mats cover up to 98% of the floor, including the central tunnel, ensuring maximum protection.<\/p><p><strong>-Is the heel pad installed on the driver’s mat?<\/strong><br\/>No, the heel pad is provided separately so that it can be adjusted to your individual preferences.<\/p>"
+            "des": "<p><strong>-Will the mats fit for sure?</strong><br/>Yes, our EVA mats are specifically designed for each car brand, model, and version, covering the entire floor surface and protecting areas not covered by rubber and velour mats.</p><p><strong>-What is a tunnel mat?</strong><br/>EVA mats cover up to 98% of the floor, including the central tunnel, ensuring maximum protection.</p><p><strong>-Is the heel pad installed on the driver’s mat?</strong><br/>No, the heel pad is provided separately so that it can be adjusted to your individual preferences.</p>"
           }
         },
         "text_f4MJE7": {
           "type": "text",
           "settings": {
             "hd": "Material Features and Durability",
-            "des": "<p><strong>    -What is EVA material?<\/strong><br\/>It is a 10 mm thick foam that traps dirt and water on the surface of the mat, preventing them from seeping underneath.<\/p><p><strong>   -What is the difference between a 3D set and a 3D set with edges?<\/strong><br\/>A 3D set with edges provides additional protection for the side floor upholstery, ensuring a better fit.  <\/p><p><strong> -How long do the mats last?<\/strong><br\/> Thanks to the durable EVA material, the mats last from 5 to 7 years without signs of wear.<\/p>"
+            "des": "<p><strong>    -What is EVA material?</strong><br/>It is a 10 mm thick foam that traps dirt and water on the surface of the mat, preventing them from seeping underneath.</p><p><strong>   -What is the difference between a 3D set and a 3D set with edges?</strong><br/>A 3D set with edges provides additional protection for the side floor upholstery, ensuring a better fit.  </p><p><strong> -How long do the mats last?</strong><br/> Thanks to the durable EVA material, the mats last from 5 to 7 years without signs of wear.</p>"
           }
         },
         "text_dkbcKW": {
           "type": "text",
           "settings": {
             "hd": "Usage and Maintenance",
-            "des": "<p><strong>-How to clean EVA mats?<\/strong><br\/>Dirt does not stick to the surface of the mat. Simply shake them out or, in case of heavy dirt, wash them with a pressure washer.<\/p><p><br\/><strong>-Are EVA mats suitable for summer and winter?<\/strong><br\/>Yes, they are waterproof, odorless, temperature-resistant, and perfect for year-round use.<\/p>"
+            "des": "<p><strong>-How to clean EVA mats?</strong><br/>Dirt does not stick to the surface of the mat. Simply shake them out or, in case of heavy dirt, wash them with a pressure washer.</p><p><br/><strong>-Are EVA mats suitable for summer and winter?</strong><br/>Yes, they are waterproof, odorless, temperature-resistant, and perfect for year-round use.</p>"
           }
         },
         "text_ie3jjY": {
           "type": "text",
           "settings": {
             "hd": "Order and Delivery",
-            "des": "<p><strong>-What is the delivery time?<\/strong><br\/>We usually fulfill orders within 2 weeks. For special vehicles, such as motorboats or tractors, the time may extend to 4–6 weeks.<br\/><\/p><p><strong>-What is the delivery method?<\/strong><br\/>We ship the mats via courier directly to the customer's specified address. We do not send mats to parcel lockers due to the product's size. We ensure that the mats are delivered in the same form in which they were made, without folding or bending, as this could affect their fit.<\/p>"
+            "des": "<p><strong>-What is the delivery time?</strong><br/>We usually fulfill orders within 2 weeks. For special vehicles, such as motorboats or tractors, the time may extend to 4–6 weeks.<br/></p><p><strong>-What is the delivery method?</strong><br/>We ship the mats via courier directly to the customer's specified address. We do not send mats to parcel lockers due to the product's size. We ensure that the mats are delivered in the same form in which they were made, without folding or bending, as this could affect their fit.</p>"
           }
         }
       },

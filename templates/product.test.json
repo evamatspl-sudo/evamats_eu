@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -96,7 +105,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
+        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 56
@@ -124,11 +133,10 @@
       "type": "apps",
       "blocks": {
         "d1ceee4b-4505-4d93-a432-68f731c49bf3": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
             "writeReview": true,
             "fixedReviewsHeight": false
           }
@@ -166,7 +174,7 @@
       "type": "home-5",
       "settings": {
         "btn_text": "All posts",
-        "btn_url": "shopify:\/\/pages\/realizacja"
+        "btn_url": "shopify://pages/realizacja"
       }
     },
     "0801e0f0-d696-4558-b05e-3648c986e943": {
@@ -175,31 +183,31 @@
       "custom_css": [],
       "settings": {
         "hd": "Maty do łodzi!",
-        "des": "<p>Produkujemy maty na indywidualne zamówienia. Na przykład na łodzie, samoloty i inne rodzaje transportu według spersonalizowanych wymiarów. Napisz do nas, a spełnimy wszystkie Twoje życzenia!<\/p>",
+        "des": "<p>Produkujemy maty na indywidualne zamówienia. Na przykład na łodzie, samoloty i inne rodzaje transportu według spersonalizowanych wymiarów. Napisz do nas, a spełnimy wszystkie Twoje życzenia!</p>",
         "btn_text": "ZAMÓW MATĘ",
-        "btn_url": "shopify:\/\/pages\/zamowienie-indywidualne"
+        "btn_url": "shopify://pages/zamowienie-indywidualne"
       }
     },
     "1f13addc-5ac5-4bf9-a9f1-de28ec681035": {
       "type": "advantages-home-2",
       "disabled": true,
       "settings": {
-        "img1": "shopify:\/\/shop_images\/1.png",
-        "des1": "<p>Trwałe, nie tracą swojego wyglądu z upływem czasu<\/p>",
-        "img2": "shopify:\/\/shop_images\/High_Temperature_Meteorology_Symbol.I16_1.png",
-        "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C<\/p>",
-        "img3": "shopify:\/\/shop_images\/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
-        "des3": "<p>Odporność na działanie detergentów<\/p>"
+        "img1": "shopify://shop_images/1.png",
+        "des1": "<p>Trwałe, nie tracą swojego wyglądu z upływem czasu</p>",
+        "img2": "shopify://shop_images/High_Temperature_Meteorology_Symbol.I16_1.png",
+        "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C</p>",
+        "img3": "shopify://shop_images/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
+        "des3": "<p>Odporność na działanie detergentów</p>"
       }
     },
     "ca715e5f-0884-4a81-ac3b-f6012a690383": {
       "type": "home-8",
       "settings": {
         "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br\/><br\/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br\/><br\/>Fill out this form and we will realize individually tailored floor mats for your car.<\/p>",
+        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form and we will realize individually tailored floor mats for your car.</p>",
         "btn_text": "CUSTOM ORDER",
-        "btn_url": "shopify:\/\/products\/custom-order",
-        "img": "shopify:\/\/shop_images\/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
+        "btn_url": "shopify://products/custom-order",
+        "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
     },
     "12ac53a2-bdfa-4d96-9f33-6ebe49699bd1": {
@@ -255,7 +263,7 @@
           "settings": {
             "heading": "Co to jest materiał EVA?",
             "icon": "none",
-            "row_content": "<p>EVA to etylen-octan winylu, lekki i elastyczny materiał o właściwościach wodoodpornych.<br\/>Dzięki temu, że materiał jest hipoalergiczny, maty nie wydzielają żadnych zapachów, nawet w wysokich temperaturach.<\/p>",
+            "row_content": "<p>EVA to etylen-octan winylu, lekki i elastyczny materiał o właściwościach wodoodpornych.<br/>Dzięki temu, że materiał jest hipoalergiczny, maty nie wydzielają żadnych zapachów, nawet w wysokich temperaturach.</p>",
             "page": ""
           }
         },
@@ -264,7 +272,7 @@
           "settings": {
             "heading": "Jak prawidłowo zamontować maty z materiału EVA?",
             "icon": "none",
-            "row_content": "<p>Każdy zestaw ma określony rodzaj zapięcia, mamy ponad 30 rodzajów. Zapięcia montujemy w odpowiednich miejscach i dodatkowo wszywamy również rzepy po bokach, aby dywaniki się nie wierciły i trzymały na swoim miejscu.<\/p>",
+            "row_content": "<p>Każdy zestaw ma określony rodzaj zapięcia, mamy ponad 30 rodzajów. Zapięcia montujemy w odpowiednich miejscach i dodatkowo wszywamy również rzepy po bokach, aby dywaniki się nie wierciły i trzymały na swoim miejscu.</p>",
             "page": ""
           }
         },
@@ -273,7 +281,7 @@
           "settings": {
             "heading": "Jeśli potrzebuję wyjątkowego dywanu?",
             "icon": "none",
-            "row_content": "<p>Istnieje możliwość wykonania osobnej maty na butlę gazową jeśli wystaje w bagażniku lub zakrycia większej podłogi we wskazanych miejscach za pośrednictwem klienta.<\/p>",
+            "row_content": "<p>Istnieje możliwość wykonania osobnej maty na butlę gazową jeśli wystaje w bagażniku lub zakrycia większej podłogi we wskazanych miejscach za pośrednictwem klienta.</p>",
             "page": ""
           }
         },
@@ -282,7 +290,7 @@
           "settings": {
             "heading": "Czy można prać maty wykonane z materiału EVA?",
             "icon": "none",
-            "row_content": "<p>Tak, dywaniki można prać miękką gąbką i detergentem. Nie zaleca się jednak stosowania agresywnych chemicznych środków czyszczących.<\/p>",
+            "row_content": "<p>Tak, dywaniki można prać miękką gąbką i detergentem. Nie zaleca się jednak stosowania agresywnych chemicznych środków czyszczących.</p>",
             "page": ""
           }
         },
@@ -291,7 +299,7 @@
           "settings": {
             "heading": "Czy dywany mają gwarancję?",
             "icon": "none",
-            "row_content": "<p>Udzielamy gwarancji na rok od otrzymania mat, co daje możliwość wymiany zestawu na nowy w ciągu roku w przypadku odkształcenia maty lub wykrycia jakichkolwiek otarć. Ale dzięki dobrej jakości materiału maty wytrzymują od 5-7 lat.<\/p>",
+            "row_content": "<p>Udzielamy gwarancji na rok od otrzymania mat, co daje możliwość wymiany zestawu na nowy w ciągu roku w przypadku odkształcenia maty lub wykrycia jakichkolwiek otarć. Ale dzięki dobrej jakości materiału maty wytrzymują od 5-7 lat.</p>",
             "page": ""
           }
         }

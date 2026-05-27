@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "02fe151c-258f-4dde-b6d7-c431c9eb9137": {
@@ -104,10 +113,10 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
+        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
-        "trunk_message": "<p>Note – trunk mat:<\/p><p>Up to 140x240 cm – from one part ✅<\/p><p>Up to 150x250 cm – from two parts ✅<\/p><p>Above 280 cm in length – we do not make ❌<\/p><p>ℹ️ In case of doubt, please contact the sales department.<\/p>",
-        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:<\/strong><\/p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br\/><br\/>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br\/><br\/><\/p>",
+        "trunk_message": "<p>Note – trunk mat:</p><p>Up to 140x240 cm – from one part ✅</p><p>Up to 150x250 cm – from two parts ✅</p><p>Above 280 cm in length – we do not make ❌</p><p>ℹ️ In case of doubt, please contact the sales department.</p>",
+        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br/><br/>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br/><br/></p>",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -153,7 +162,7 @@
       "type": "apps",
       "blocks": {
         "google_reviews_masonry_widget_block_MaDYmh": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/masonry-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/masonry-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "disabled": true,
           "settings": {
             "contentIndex": "1",
@@ -168,7 +177,6 @@
             "transparent": 1,
             "solidShadow": false,
             "reviewPhotosType": "small",
-            "showRating": true,
             "writeReview": true,
             "numberOfRowsMobile": 3,
             "numberOfRowsDesktop": 2
@@ -207,17 +215,17 @@
       "type": "home-5",
       "settings": {
         "btn_text": "All posts",
-        "btn_url": "shopify:\/\/pages\/realizacja"
+        "btn_url": "shopify://pages/realizacja"
       }
     },
     "ca715e5f-0884-4a81-ac3b-f6012a690383": {
       "type": "home-8",
       "settings": {
         "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br\/><br\/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br\/><br\/>Fill out this form and we will realize individually tailored floor mats for your car.<\/p>",
+        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form and we will realize individually tailored floor mats for your car.</p>",
         "btn_text": "CUSTOM ORDER",
-        "btn_url": "shopify:\/\/products\/custom-order",
-        "img": "shopify:\/\/shop_images\/Group_242.webp"
+        "btn_url": "shopify://products/custom-order",
+        "img": "shopify://shop_images/Group_242.webp"
       }
     },
     "080cd113-d353-46cb-aa5d-cfdeee68c912": {

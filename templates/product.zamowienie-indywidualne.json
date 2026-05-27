@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "403d1777-4b8b-435d-b37c-4d607ef742b6": {
@@ -110,7 +119,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
+        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
@@ -124,7 +133,7 @@
         ".ga-products-box .ga-product_title,.ga-products-box .ga-product_price {color: rgb(var(--color-foreground)) !important;}"
       ],
       "settings": {
-        "custom_liquid": "<div class=\"globo_widget_11484\"><\/div>",
+        "custom_liquid": "<div class=\"globo_widget_11484\"></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -182,13 +191,11 @@
       "type": "apps",
       "blocks": {
         "b46240b6-e17c-4822-852c-cf3f54c4f9d6": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
-            "reviewPhotosType": "small",
             "writeReview": true,
             "fixedReviewsHeight": false
           }
@@ -222,7 +229,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Zamów indywidualnie",
-            "button_link_1": "shopify:\/\/pages\/dywaniki-samochodowe-eva",
+            "button_link_1": "shopify://pages/dywaniki-samochodowe-eva",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -255,10 +262,10 @@
       "type": "home-8",
       "disabled": true,
       "settings": {
-        "hd": "<h1>Do jakiego <span>transportu? <\/span>\n<\/h1>",
-        "des": "<p>Produkujemy stylowe maty EVA do każdego rodzaju transportu: samochodów, łodzi, samolotów itp. Oferujemy rozwiązania dostosowane do dokładnych wymiarów Twojego pojazdu. Różne wzory i najwyższa jakość w przystępnej cenie.<\/p>",
+        "hd": "<h1>Do jakiego <span>transportu? </span>\n</h1>",
+        "des": "<p>Produkujemy stylowe maty EVA do każdego rodzaju transportu: samochodów, łodzi, samolotów itp. Oferujemy rozwiązania dostosowane do dokładnych wymiarów Twojego pojazdu. Różne wzory i najwyższa jakość w przystępnej cenie.</p>",
         "btn_text": "ZAMÓW MATĘ",
-        "btn_url": "shopify:\/\/pages\/zamowienie-indywidualne"
+        "btn_url": "shopify://pages/zamowienie-indywidualne"
       }
     },
     "c605d8f3-dc8c-4614-8c41-de8a728399a1": {
@@ -269,7 +276,7 @@
           "settings": {
             "heading": "Co to jest materiał EVA?",
             "icon": "none",
-            "row_content": "<p>EVA to etylen-octan winylu, lekki i elastyczny materiał o właściwościach wodoodpornych.<br\/>Dzięki temu, że materiał jest hipoalergiczny, maty nie wydzielają żadnych zapachów, nawet w wysokich temperaturach.<\/p>",
+            "row_content": "<p>EVA to etylen-octan winylu, lekki i elastyczny materiał o właściwościach wodoodpornych.<br/>Dzięki temu, że materiał jest hipoalergiczny, maty nie wydzielają żadnych zapachów, nawet w wysokich temperaturach.</p>",
             "page": ""
           }
         },
@@ -278,7 +285,7 @@
           "settings": {
             "heading": "Jak prawidłowo zamontować maty z materiału EVA?",
             "icon": "none",
-            "row_content": "<p>Każdy zestaw ma określony rodzaj zapięcia, mamy ponad 30 rodzajów. Zapięcia montujemy w odpowiednich miejscach i dodatkowo wszywamy również rzepy po bokach, aby dywaniki się nie wierciły i trzymały na swoim miejscu.<\/p>",
+            "row_content": "<p>Każdy zestaw ma określony rodzaj zapięcia, mamy ponad 30 rodzajów. Zapięcia montujemy w odpowiednich miejscach i dodatkowo wszywamy również rzepy po bokach, aby dywaniki się nie wierciły i trzymały na swoim miejscu.</p>",
             "page": ""
           }
         },
@@ -287,7 +294,7 @@
           "settings": {
             "heading": "Jeśli potrzebuję wyjątkowego dywanu?",
             "icon": "none",
-            "row_content": "<p>Istnieje możliwość wykonania osobnej maty na butlę gazową jeśli wystaje w bagażniku lub zakrycia większej podłogi we wskazanych miejscach za pośrednictwem klienta.<\/p>",
+            "row_content": "<p>Istnieje możliwość wykonania osobnej maty na butlę gazową jeśli wystaje w bagażniku lub zakrycia większej podłogi we wskazanych miejscach za pośrednictwem klienta.</p>",
             "page": ""
           }
         },
@@ -296,7 +303,7 @@
           "settings": {
             "heading": "Czy można prać maty wykonane z materiału EVA?",
             "icon": "none",
-            "row_content": "<p>Tak, dywaniki można prać miękką gąbką i detergentem. Nie zaleca się jednak stosowania agresywnych chemicznych środków czyszczących.<\/p>",
+            "row_content": "<p>Tak, dywaniki można prać miękką gąbką i detergentem. Nie zaleca się jednak stosowania agresywnych chemicznych środków czyszczących.</p>",
             "page": ""
           }
         },
@@ -305,7 +312,7 @@
           "settings": {
             "heading": "Czy dywany mają gwarancję?",
             "icon": "none",
-            "row_content": "<p>Udzielamy gwarancji na rok od otrzymania mat, co daje możliwość wymiany zestawu na nowy w ciągu roku w przypadku odkształcenia maty lub wykrycia jakichkolwiek otarć. Ale dzięki dobrej jakości materiału maty wytrzymują od 5-7 lat.<\/p>",
+            "row_content": "<p>Udzielamy gwarancji na rok od otrzymania mat, co daje możliwość wymiany zestawu na nowy w ciągu roku w przypadku odkształcenia maty lub wykrycia jakichkolwiek otarć. Ale dzięki dobrej jakości materiału maty wytrzymują od 5-7 lat.</p>",
             "page": ""
           }
         }

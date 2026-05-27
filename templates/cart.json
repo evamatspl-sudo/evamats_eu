@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "cart-items": {
@@ -33,7 +42,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "image_1": "shopify:\/\/shop_images\/cart_eng_version.webp",
+        "image_1": "shopify://shop_images/cart_eng_version.webp",
         "url": ""
       }
     },
@@ -71,19 +80,17 @@
       "type": "apps",
       "blocks": {
         "2544cb25-368d-4c99-8b9e-600d7f46dbaf": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
-            "reviewPhotosType": "small",
             "writeReview": true,
             "fixedReviewsHeight": false
           }
         },
         "bcd6c5ab-c811-4cd4-8ed6-3b5edd87d2e4": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/list-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/list-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "disabled": true,
           "settings": {
             "contentIndex": "1",

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -22,7 +31,7 @@
         "custom_header_style": false,
         "button_text": "",
         "button_link": "",
-        "description": "<p>Are you looking for versatile solutions for your home that combine functionality with durability? <br\/>Discover our collection of EVA mats, perfect for your home!<\/p><p><strong><br\/><br\/>Pet Mats:<\/strong><br\/>Your furry friends deserve a special place for their meals! Our EVA pet mats are the perfect solution, providing a hygienic and easy-to-clean feeding area. Made from high-quality materials, they protect the floor from dirt while maintaining an elegant look.<\/p><p><strong><br\/>Door Mats:<\/strong><br\/>Combat dirt and moisture with our EVA door mats! Made from durable materials, they effectively trap dirt and moisture at the entrance, ensuring cleanliness indoors. Their non-slip construction provides stability even on rainy days.<\/p><p><strong><br\/>Dish Drying Mats:<\/strong><br\/>Our EVA dish drying mats are an excellent solution for your kitchen! Equipped with special compartments, they efficiently trap water, preventing puddles and keeping dishes dry and clean. Their durable construction ensures long-lasting performance in everyday use.<\/p><p><br\/>Choose our EVA home mats and enjoy the perfect combination of style and practicality in your home! Available in a variety of colors and patterns, they will perfectly complement your interior. <\/p><p><br\/>Discover our collection today and make your daily tasks easier and more comfortable!<\/p>",
+        "description": "<p>Are you looking for versatile solutions for your home that combine functionality with durability? <br/>Discover our collection of EVA mats, perfect for your home!</p><p><strong><br/><br/>Pet Mats:</strong><br/>Your furry friends deserve a special place for their meals! Our EVA pet mats are the perfect solution, providing a hygienic and easy-to-clean feeding area. Made from high-quality materials, they protect the floor from dirt while maintaining an elegant look.</p><p><strong><br/>Door Mats:</strong><br/>Combat dirt and moisture with our EVA door mats! Made from durable materials, they effectively trap dirt and moisture at the entrance, ensuring cleanliness indoors. Their non-slip construction provides stability even on rainy days.</p><p><strong><br/>Dish Drying Mats:</strong><br/>Our EVA dish drying mats are an excellent solution for your kitchen! Equipped with special compartments, they efficiently trap water, preventing puddles and keeping dishes dry and clean. Their durable construction ensures long-lasting performance in everyday use.</p><p><br/>Choose our EVA home mats and enjoy the perfect combination of style and practicality in your home! Available in a variety of colors and patterns, they will perfectly complement your interior. </p><p><br/>Discover our collection today and make your daily tasks easier and more comfortable!</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "mats-for-home",
@@ -82,13 +91,11 @@
       "type": "apps",
       "blocks": {
         "google_reviews_carousel_widget_block_YpHmKh": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
-            "reviewPhotosType": "small",
             "writeReview": true,
             "fixedReviewsHeight": true
           }
