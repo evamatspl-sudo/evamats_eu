@@ -1,0 +1,154 @@
+<style>
+    .satisfied {
+        margin-bottom: 20px;
+        padding: 10px 0;
+        color: #000;
+    }
+    .satisfied__items {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .satisfied__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .satisfied__content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .satisfied__subtitle {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    .satisfied__title {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .satisfied__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        border: 1px solid #000;
+    }
+    .satisfied__item-counter {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .satisfied__item-title {
+        font-size: 10px;
+        text-align: center;
+    }
+    .satisfied .satisfied__divider {
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: #000;
+        margin: 10px 0;
+    }
+    @media (max-width: 768px) {
+        .satisfied__content {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .satisfied__items {
+            gap: 10px 0;
+            flex-wrap: wrap;
+        }
+        .satisfied__item {
+            padding: 8px;
+            border: none;
+        }
+        .satisfied__title {
+            font-size: 16px;
+        }
+        .satisfied__item-counter {
+            font-size: 16px;
+        }
+        .satisfied__item-title {
+            font-size: 9px;
+        }
+    }
+</style>
+
+<div class="satisfied" style="background-color: {{ section.settings.background }}">
+    <div class="page-width">
+        <div class="satisfied__content">
+            <div class="satisfied__info">
+                <div class="satisfied__subtitle">{{ section.settings.subtitle }}</div>
+                <div class="satisfied__title">{{ section.settings.title }}</div>
+                <div class="satisfied__divider"></div>
+            </div>
+            <div class="satisfied__items">
+                {% for block in section.blocks %}
+                <div class="satisfied__item">
+                    {% if block.settings.use_mats_counter %}
+                        <div class="satisfied__item-counter">{{ shop.metafields.custom.orders_counter }}</div>
+                    {% else %}
+                        <div class="satisfied__item-counter">{{ block.settings.counter }}</div>
+                    {% endif %}
+                    <div class="satisfied__item-title">{{ block.settings.title }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Satisfied Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
+        },
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "use_mats_counter",
+                    "label": "Use mats counter",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "counter",
+                    "label": "Counter",
+                    "default": "100"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Text"
+                }
+            ]
+        }
+    ],    
+    "presets": [
+        {
+        "name": "Satisfied Section",
+        "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

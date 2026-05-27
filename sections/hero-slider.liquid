@@ -1,0 +1,150 @@
+  
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign time = section.settings.time 
+%}
+
+
+<section class="hero-slider swiper page-width hero-slider--{{ section.id }}" data-time="{{ section.settings.time }}"> 
+  <div class="hero-slider__wrapper swiper-wrapper">
+   {% for block in section.blocks %}
+        {% assign bs = block.settings %}
+        {% assign slide = 'slide-' | append: forloop.index %} 
+        <div class="hero-slider__slide swiper-slide swiper-slide">
+            <div class="hero-slider__image">
+                {% if bs.image != blank or bs.video != blank %}
+                  <div  class=" hero-slider__img-box relative">
+                    {%- if bs.video != blank -%}
+                      <video src="{{  bs.video.sources[1].url }}" loop  muted playsinline class="hero-slider__video hero-slider__video_desktop"></video>
+                      <video src="{{  bs.video_mob.sources[1].url }}" loop  muted playsinline class="hero-slider__video hero-slider__video_mobile"></video>
+                    {%- elsif bs.image != blank -%}
+                      <picture>
+                        {% if bs.image_mob %}                                  
+                          <source media="(max-width:767px )" srcset="{{ bs.image_mob | img_url: '1000x' }}">
+                        {% else %}
+                          <source media="(max-width:767px )" srcset="{{ bs.image | img_url: '1000x' }}">
+                        {% endif %}
+                          <source media="(max-width:1023px )" srcset="{{ bs.image | img_url: '1200x' }}">
+                          <source media="(max-width:1440px )" srcset="{{ bs.image | img_url: '1800x' }}">
+                        {% if forloop.index == 1 %}
+                          <img src="{{ bs.image | img_url: '2400x' }}" alt="" fetchpriority="high">
+                        {% else %} 
+                          <img src="{{ bs.image | img_url: '2400x' }}" alt="" loading="lazy">
+                        {% endif %}
+                      </picture>
+                    {%- endif -%}
+                  </div>
+                {% endif %}
+            </div>
+            {% if block.settings.button_label == blank and block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="hero-slider__content">
+            {% else %}
+              <div class="hero-slider__content">
+            {% endif %}
+            
+                    <div class="page-width">
+                        <div class="hero-slider__content-block {% if block.settings.title != blank or block.settings.description != blank or block.settings.button_label != blank%} hero-slider__content-block--padding{% endif %}">
+                            <div class="hero-slider__heading">{{ block.settings.title }}</div>
+                            <div class="hero-slider__text">{{ block.settings.description }}</div>
+                            {%- if block.settings.button_label != blank -%}
+                                <div class="banner__buttons">
+                                    <a href="{{ block.settings.link }}" class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
+                                    {%- if block.settings.button_label_2 != blank -%}
+                                      <div class="button openPopup {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}" data-popup="popupOverlayApplicationForm">{{ block.settings.button_label_2 | escape }}</div>
+                                    {%- endif -%}
+                                </div>
+                            {%- endif -%}
+
+                            {% comment %} {% if bs.video %}
+                              
+                              <button class="hero-slider__video_full">{% render 'icon-zoom' %}</button>
+                            {% endif %} {% endcomment %}
+                        </div>
+                    </div>
+            {% if block.settings.button_label == blank and block.settings.link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+        </div>
+   {% endfor %} 
+    </div>
+  <div class="swiper-pagination swiper-pagination--{{ section.id }}"></div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Hero slider",
+  "class": "hero-sliderr-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "time",
+      "label": "Autoplay time"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Slide link"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Image mobile"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video_mob",
+          "label": "Video mobile"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "Button label"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label 2",
+          "label": "Button label popup"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero slider"
+    }
+  ]
+}
+{% endschema %}

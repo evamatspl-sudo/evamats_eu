@@ -1,0 +1,114 @@
+  <script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
+  {{ 'brand-buttons-for-blog.css' | asset_url | stylesheet_tag }}
+  {{ 'component-search-brand.css' | asset_url | stylesheet_tag }}
+  {% style %}
+    .hide {
+      display: none !important;
+    }
+
+  {% endstyle %}
+  <div class="btns-for-blog collection-colorTable {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
+        {% if section.settings.color-table-header != blank %}
+          <h3 class="collection-colorTable_header">{{ section.settings.color-table-header }}</h3>
+        {% endif %}
+        <div class="collection-colorTable_block">
+           {% if section.settings.catalog-header != blank %}
+              <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings.catalog-header }}</h4>
+           {% endif %}
+<!--             <div data-section-id="{{ section.id }}" class="search-container">
+              <input id="search_input" class="search" type="text" oninput="filterLinks()" placeholder="SEARCH">
+            </div> -->
+            <div class="colorTable_block__blocks-collection">
+              {% assign sorted_blocks = section.blocks | sort_natural: 'settings.color-code' %}
+              {%- for block in sorted_blocks -%}
+                
+                {%liquid
+                  assign link = ''
+                  if block.settings.page_link != blank
+                    assign link = block.settings.page_link.url
+                  else
+                    assign link = block.settings.blog.url
+                  endif
+                %}
+                  <a  class="collection-color_block" href="{{ link }}">
+                    <div class="collection-color_block__wrapper">
+                        <span class="collection-color_block__material">{{ block.settings.color-code }}</span>
+                    </div>
+                  </a>
+              {% endfor %}
+ 
+            </div>
+            <div data-section-id="{{ section.id }}" class="search-container">
+              <input id="search_input" class="search search-style" type="text" oninput="filterLinks()" placeholder="{{ 'general.search.search' | t }}">
+            </div>
+
+        </div>
+    </div>
+      
+      <script>
+        document.querySelectorAll('.collection-color_block').forEach(function(block) {
+          block.addEventListener('click', function() {
+              document.querySelectorAll('.collection-color_block').forEach(function(el) {
+                  el.classList.remove('active');
+              });
+              this.classList.toggle('active');
+          });
+      });
+      
+      </script>
+
+{% schema %}
+{
+"name": "Brand Buttons for Blog",
+"max_blocks": 50,
+"settings": [
+   {
+     "type": "text",
+     "id": "collection-color-table-header",
+     "label": "Heading"
+   },
+   {
+     "type": "text",
+     "id": "collection-catalog-header",
+     "label": "Heading Catalog"
+   },
+   {
+     "type": "checkbox",
+     "id": "collection-margin-bottom",
+     "label": "Bottom indent",
+     "default": false
+   }
+],
+"blocks" : [
+    {
+    "type": "section",
+    "name": "Brand Auto",
+    "settings": [
+        
+      {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+      },
+      {
+        "type": "page",
+        "id": "page_link",
+        "label": "Page link",
+        "info": "You can link to a page instead of a blog"
+      },
+      {
+        "type": "text",
+        "id": "color-code",
+          "label": "Name"
+      }
+    ]
+  }
+],
+  "presets": [
+  {
+    "name":  "Brand Buttons for Blog"
+  }
+]
+}
+
+{% endschema %}

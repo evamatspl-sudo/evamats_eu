@@ -1,0 +1,133 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "96f4cd12-6f19-4e5f-956c-08b6d6edde3d": {
+      "type": "sidebar",
+      "blocks": {
+        "d9f797f2-6f7a-459c-87b1-174f1bd6d5b5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-bentayga",
+            "color-code": "Bentayga"
+          }
+        },
+        "77d188d5-2d33-413c-af95-4daf762384d1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/bentley-continental-gt",
+            "color-code": "Continental GT"
+          }
+        },
+        "b7bf2575-c177-474b-bd38-6e03a9fc855b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-continental-gtc",
+            "color-code": "Continental GTC"
+          }
+        },
+        "de506ee6-2e65-4ca4-a256-52987e01c592": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-flying-spur",
+            "color-code": "Flying Spur"
+          }
+        }
+      },
+      "block_order": [
+        "d9f797f2-6f7a-459c-87b1-174f1bd6d5b5",
+        "77d188d5-2d33-413c-af95-4daf762384d1",
+        "b7bf2575-c177-474b-bd38-6e03a9fc855b",
+        "de506ee6-2e65-4ca4-a256-52987e01c592"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "6fe41107-fb62-4e42-a275-b94f81694ea3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-bentayga",
+            "color-code": "Bentayga"
+          }
+        },
+        "d8e25d57-772d-49a5-b2cb-cc0f7dd775ab": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/bentley-continental-gt",
+            "color-code": "Continental GT"
+          }
+        },
+        "499826ae-68a9-4808-83b9-1374b99d1074": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-continental-gtc",
+            "color-code": "Continental GTC"
+          }
+        },
+        "310b51f0-6509-4cdf-a121-caca9242ba21": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-bentley-flying-spur",
+            "color-code": "Flying Spur"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "6fe41107-fb62-4e42-a275-b94f81694ea3",
+        "d8e25d57-772d-49a5-b2cb-cc0f7dd775ab",
+        "499826ae-68a9-4808-83b9-1374b99d1074",
+        "310b51f0-6509-4cdf-a121-caca9242ba21"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "96f4cd12-6f19-4e5f-956c-08b6d6edde3d",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "c36cfd0c-8a3d-4759-b1c1-0f1550174a0f": {
+      "type": "sidebar",
+      "blocks": {
+        "6a3aa5f8-2ea2-4d12-85cf-11654181184e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mazda-2",
+            "color-code": "2"
+          }
+        },
+        "363fda48-dd61-48e1-9447-2571dff599c2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-2-demio",
+            "color-code": "2 \/ Demio"
+          }
+        },
+        "7fd341a1-d14e-412d-943d-84753c560a29": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-3",
+            "color-code": "3"
+          }
+        },
+        "section_jfFeVd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-323",
+            "color-code": "323"
+          }
+        },
+        "f4a0690f-a948-436c-90c9-2e0f2992929b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-323f",
+            "color-code": "323F"
+          }
+        },
+        "3ce2a01e-8e84-41d1-8e7f-6a7ba9341f43": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-5",
+            "color-code": "5"
+          }
+        },
+        "84dafa20-2ce0-43d3-ad79-dcb0e56b6134": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-6",
+            "color-code": "6"
+          }
+        },
+        "1594da75-73c1-49db-92a6-bc668fef0a91": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-626",
+            "color-code": "626"
+          }
+        },
+        "section_kCpx3G": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-bt-50",
+            "color-code": "BT-50"
+          }
+        },
+        "647dcba7-ea45-4b29-a133-9e3f79479afe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-3",
+            "color-code": "CX-3"
+          }
+        },
+        "aa490153-10cc-46c3-80fe-48c08cf1fc9b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-30",
+            "color-code": "CX-30"
+          }
+        },
+        "cd62c060-f448-4817-a5a1-f3eedbe54436": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-5",
+            "color-code": "CX-5"
+          }
+        },
+        "b55c23d1-93da-4fc2-b8fd-20c505c71c95": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-60",
+            "color-code": "CX-60"
+          }
+        },
+        "676f84c2-6061-4028-a4cd-876892f7d920": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-7",
+            "color-code": "CX-7"
+          }
+        },
+        "40cd124b-dd72-495a-9679-c7e73711851e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-9",
+            "color-code": "CX-9"
+          }
+        },
+        "29fcca92-ace1-4a1f-a91a-6c3383e84530": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-mx-5",
+            "color-code": "MX-5"
+          }
+        },
+        "581f3c5e-345b-48d3-82df-2b169bd39abf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-mx-30",
+            "color-code": "MX-30"
+          }
+        },
+        "section_ngpDNA": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-premacy",
+            "color-code": "Premacy"
+          }
+        },
+        "d4e44fec-7972-44f2-9f32-1fb318c4143a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-rx-7",
+            "color-code": "RX-7"
+          }
+        },
+        "5ae7e5c8-5149-4365-9e84-dad48c814171": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-rx-8",
+            "color-code": "RX-8"
+          }
+        }
+      },
+      "block_order": [
+        "6a3aa5f8-2ea2-4d12-85cf-11654181184e",
+        "363fda48-dd61-48e1-9447-2571dff599c2",
+        "7fd341a1-d14e-412d-943d-84753c560a29",
+        "section_jfFeVd",
+        "f4a0690f-a948-436c-90c9-2e0f2992929b",
+        "3ce2a01e-8e84-41d1-8e7f-6a7ba9341f43",
+        "84dafa20-2ce0-43d3-ad79-dcb0e56b6134",
+        "1594da75-73c1-49db-92a6-bc668fef0a91",
+        "section_kCpx3G",
+        "647dcba7-ea45-4b29-a133-9e3f79479afe",
+        "aa490153-10cc-46c3-80fe-48c08cf1fc9b",
+        "cd62c060-f448-4817-a5a1-f3eedbe54436",
+        "b55c23d1-93da-4fc2-b8fd-20c505c71c95",
+        "676f84c2-6061-4028-a4cd-876892f7d920",
+        "40cd124b-dd72-495a-9679-c7e73711851e",
+        "29fcca92-ace1-4a1f-a91a-6c3383e84530",
+        "581f3c5e-345b-48d3-82df-2b169bd39abf",
+        "section_ngpDNA",
+        "d4e44fec-7972-44f2-9f32-1fb318c4143a",
+        "5ae7e5c8-5149-4365-9e84-dad48c814171"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "d301861e-d348-4bdd-84da-8f99c1f02629": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mazda-2",
+            "color-code": "2"
+          }
+        },
+        "172681b7-3587-4226-91fa-0ef493a12676": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-2-demio",
+            "color-code": "2 \/ Demio"
+          }
+        },
+        "045731f1-11bf-41b4-9a66-5ac374a812c8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-3",
+            "color-code": "3"
+          }
+        },
+        "section_EYYp7K": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-323",
+            "color-code": "323"
+          }
+        },
+        "6b8a352b-f8d6-4abd-bef8-6a632ed95a50": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-323f",
+            "color-code": "323F"
+          }
+        },
+        "73f89b7d-711f-46b2-8238-deaa07c73dda": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-5",
+            "color-code": "5"
+          }
+        },
+        "3fa3dd18-3ab2-47ac-a14d-a6e0832896c8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-6",
+            "color-code": "6"
+          }
+        },
+        "202b2d77-70b9-4779-a1fe-7429e9e4f381": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-626",
+            "color-code": "626"
+          }
+        },
+        "section_T3mzLm": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-bt-50",
+            "color-code": "BT-50"
+          }
+        },
+        "894c1f61-65c7-45b8-b86b-b5d5a56e8dd9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-3",
+            "color-code": "CX-3"
+          }
+        },
+        "d40453b7-8767-483b-944d-5fcd3754458b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-30",
+            "color-code": "CX-30"
+          }
+        },
+        "019f4d3c-fe9e-48b6-b8e9-d7dd8cbfda32": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-5",
+            "color-code": "CX-5"
+          }
+        },
+        "edfe1fac-7d56-4582-a9fc-641a05c0ad54": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-60",
+            "color-code": "CX-60"
+          }
+        },
+        "20048891-9343-4dbd-bdaf-562120f6d35c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-7",
+            "color-code": "CX-7"
+          }
+        },
+        "9fabe35f-e7f9-405b-aa3b-1df516dbcc2b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-cx-9",
+            "color-code": "CX-9"
+          }
+        },
+        "1dfacaea-93f7-467d-a159-3aeece226e68": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-mx-5",
+            "color-code": "MX-5"
+          }
+        },
+        "644e9a44-905a-489c-94e6-de7e71d5838b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-mx-30",
+            "color-code": "MX-30"
+          }
+        },
+        "section_YGjrw9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-premacy",
+            "color-code": "Premacy"
+          }
+        },
+        "870a71af-393c-4f42-ad35-9fff162018d0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-rx-7",
+            "color-code": "RX-7"
+          }
+        },
+        "40ec90c7-c0c6-4d1d-b9be-1f8f732f22f0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mazda-rx-8",
+            "color-code": "RX-8"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "d301861e-d348-4bdd-84da-8f99c1f02629",
+        "172681b7-3587-4226-91fa-0ef493a12676",
+        "045731f1-11bf-41b4-9a66-5ac374a812c8",
+        "section_EYYp7K",
+        "6b8a352b-f8d6-4abd-bef8-6a632ed95a50",
+        "73f89b7d-711f-46b2-8238-deaa07c73dda",
+        "3fa3dd18-3ab2-47ac-a14d-a6e0832896c8",
+        "202b2d77-70b9-4779-a1fe-7429e9e4f381",
+        "section_T3mzLm",
+        "894c1f61-65c7-45b8-b86b-b5d5a56e8dd9",
+        "d40453b7-8767-483b-944d-5fcd3754458b",
+        "019f4d3c-fe9e-48b6-b8e9-d7dd8cbfda32",
+        "edfe1fac-7d56-4582-a9fc-641a05c0ad54",
+        "20048891-9343-4dbd-bdaf-562120f6d35c",
+        "9fabe35f-e7f9-405b-aa3b-1df516dbcc2b",
+        "1dfacaea-93f7-467d-a159-3aeece226e68",
+        "644e9a44-905a-489c-94e6-de7e71d5838b",
+        "section_YGjrw9",
+        "870a71af-393c-4f42-ad35-9fff162018d0",
+        "40ec90c7-c0c6-4d1d-b9be-1f8f732f22f0"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "c36cfd0c-8a3d-4759-b1c1-0f1550174a0f",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

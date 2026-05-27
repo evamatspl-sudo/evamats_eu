@@ -1,0 +1,106 @@
+
+<div class="third-main">
+  {{ section.settings.hd }}
+                
+  <div class="card-text-4 third-paragraph">
+      {{ section.settings.des }}
+  </div>
+
+</div>
+
+<style>
+  .seven-main .seventh-right p {
+    font-size: 1.5rem;
+}
+  .card-text-4 {
+    overflow: hidden;
+    max-height: 50px; /* Adjust to your desired initial height */
+    transition: max-height 0.5s ease;
+    line-height: 1.5; /* Adjust line height as needed */
+  }
+
+  .btn-read-more-4 {
+    color: rgb(var(--color-foreground));
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+.third-main .third-paragraph p{
+  text-align: left;
+}
+  @media screen and (max-width: 767px) {
+      .card-text-4 {
+        max-height: 90px; 
+  }
+}
+  .third-main .third-paragraph p{
+    font-size: 1.5rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-text-4').forEach(function(element) {
+        var text = element.textContent;
+        var charCount = text.length;
+        var maxChars = 200; // Adjust to your desired maximum characters
+
+        if (charCount > maxChars) {
+            var small = text.substring(0, maxChars);
+            var button = document.createElement('button');
+            button.className = 'btn-read-more-4';
+            button.textContent = '{{'general.config.read_more' | t}}';
+            element.after(button);
+
+            button.addEventListener('click', function() {
+                element.classList.toggle('expanded');
+                if (element.classList.contains('expanded')) {
+                    element.style.maxHeight = element.scrollHeight + 'px';
+                    button.textContent = '{{'general.config.read_less' | t}}';
+                } else {
+                    element.style.maxHeight = '50px'; // Adjust to your desired initial height
+                    button.textContent = '{{'general.config.read_more' | t}}';
+                }
+            });
+        }
+    });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "home4",
+  "settings": [
+    {
+      "type":"html",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":" <h1><span>Najpopularniejsze</span> marki samochodów</h1>"
+    },
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>pRozumiemy, jak ważne jest, aby poczuć to widmo emocji. I tym właśnie zajmujemy się w naszej firmie – pomagając Wam kształtować przyszłość Waszych dzieci. Rozumiemy, jak ważne jest, aby poczuć to widmo emocji. I tym właśnie zajmujemy się w naszej firmie – pomagając Wam kształtować przyszłość Waszych dzieci.</p>"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home4",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

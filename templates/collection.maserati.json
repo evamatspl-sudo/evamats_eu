@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "285cf778-a90f-48fe-9426-9344484ab8c4": {
+      "type": "sidebar",
+      "blocks": {
+        "557623cd-dabc-4b68-af0e-ca6c93b8718f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-granturismo",
+            "color-code": "GranTurismo"
+          }
+        },
+        "f0db6324-15db-4cf6-90ff-aa4543486b0c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/maserati-ghibli",
+            "color-code": "Ghibli"
+          }
+        },
+        "15f5640f-dbc2-4adb-825d-50673ce2d2ee": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-grecale",
+            "color-code": "Grecale"
+          }
+        },
+        "ba3e22bc-ca55-4aee-9168-fefcf48660b2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-levante",
+            "color-code": "Levante"
+          }
+        },
+        "71fa5f5f-b7a1-4969-b804-9c5e01019aa7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-quattroporte",
+            "color-code": "Quattroporte"
+          }
+        }
+      },
+      "block_order": [
+        "557623cd-dabc-4b68-af0e-ca6c93b8718f",
+        "f0db6324-15db-4cf6-90ff-aa4543486b0c",
+        "15f5640f-dbc2-4adb-825d-50673ce2d2ee",
+        "ba3e22bc-ca55-4aee-9168-fefcf48660b2",
+        "71fa5f5f-b7a1-4969-b804-9c5e01019aa7"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "27453289-a0d2-4209-b7e4-6fd3ce967793": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-granturismo",
+            "color-code": "GranTurismo"
+          }
+        },
+        "5d7be46c-884c-4419-8719-e47f28c14798": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/maserati-ghibli",
+            "color-code": "Ghibli"
+          }
+        },
+        "a62caf3e-be0c-4bcc-a176-cb5863105f01": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-grecale",
+            "color-code": "Grecale"
+          }
+        },
+        "001f6787-6087-4175-8bad-dbd1832e9b53": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-levante",
+            "color-code": "Levante"
+          }
+        },
+        "fae1a5fe-400f-40ba-9bb8-bac367361bf5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maserati-quattroporte",
+            "color-code": "Quattroporte"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "27453289-a0d2-4209-b7e4-6fd3ce967793",
+        "5d7be46c-884c-4419-8719-e47f28c14798",
+        "a62caf3e-be0c-4bcc-a176-cb5863105f01",
+        "001f6787-6087-4175-8bad-dbd1832e9b53",
+        "fae1a5fe-400f-40ba-9bb8-bac367361bf5"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "285cf778-a90f-48fe-9426-9344484ab8c4",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

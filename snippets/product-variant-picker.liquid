@@ -1,0 +1,254 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{% assign isHeelPad = false %}
+{% for item in product.collections %}
+  {% if item.handle == 'podpietki' %}
+    {% assign isHeelPad = true %}
+  {% endif %}
+{% endfor %}
+{%- unless product.has_only_default_variant -%}
+  {%- if block.settings.picker_type == 'button' -%}
+    {% if product.template_suffix contains 'config' %}
+      <div class="product__dropdown_wr  {% unless product.metafields.custom.body_type == 'corners' %}disabled{% endunless %} {% if product.metafields.custom.body_type == 'corners' %}open{% endif %}" {% unless isHeelPad %}data-dropdown="mats_set_type"{% endunless %}>
+        <div class="product__dropdown_title">{% if product.metafields.custom.body_type == 'corners' %}{{ 'general.config.select_size' | t }}:{% else %}{{ 'general.config.select_mats_type_and_set' | t }}: {% endif %}  <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}{% render 'icon-edit' %}</div>
+        <div class="product__dropdown_inner">
+    {% endif %}
+          <variant-radios
+            id="variant-radios-{{ section.id }}"
+            class="no-js-hidden "
+            data-section="{{ section.id }}"
+            data-url="{{ product.url }}"
+            {% if update_url == false %}
+              data-update-url="false"
+            {% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {%- for option in product.options_with_values -%}
+  
+              {% assign optionMatsType = 'general.config.mats_type' | t %}
+              {% assign optionMatsSet = 'general.config.mats_set' | t %}
+              {% assign optionMatsSize = 'general.config.mats_size' | t %}
+              {% assign isMatsType = false %}
+              {% assign isMatsSet = false %}
+              {% assign isMatsSize = false %}
+              {% assign fieldsetClass = '' %}
+  
+              {% if option.name contains optionMatsType or option.name == 'Mats type' %}
+                {% assign isMatsType = true %}
+                {% assign fieldsetClass = 'mats_type' %}
+              {% endif %}
+              {% if option.name contains optionMatsSet or option.name == 'Mats set' %}
+                {% assign isMatsSet = true %}
+                {% assign fieldsetClass = 'mats_set' %}
+              {% endif %}
+              {% if option.name contains optionMatsSize or option.name == 'Size' %}
+                {% assign isMatsSize = true %}
+                {% assign fieldsetClass = 'mats_size' %}
+              {% endif %}
+              <fieldset class="js product-form__input lip__field" {% if  option.name == "Title"%} style="display: none"{% endif %} data-name="{{ fieldsetClass }}">
+                <legend class="form__label lip__title">
+                  <span class="form__label_text">{{ option.name }}</span> 
+                    <div class="lip__title_value"></div>
+                    <div class="lip__title_value"></div>
+                    {% if isMatsSet %}
+                      {%- assign mats_set_variant = product.selected_or_first_available_variant -%}
+                      <div class="option__price_wr">
+                        <div class="option__price_compare hidden"></div>
+                        <div class="option__price_regular">{{ mats_set_variant.price | money_without_trailing_zeros }}</div>
+                      </div>
+                    {% endif %}
+                </legend>
+                {% render 'product-variant-options', product: product, option: option, block: block %}
+              </fieldset>
+              {% if isMatsSet  %}
+                {% assign dataPopup = 'popupOverlayTrunkMessage' %}
+                {% assign metaBodyType = product.metafields.custom.body_type %}
+                {% if metaBodyType == '5os' or metaBodyType == '7os' %}
+                  {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
+                {% endif %}
+                <div class="label_trunk openPopup hidden" data-popup="{{ dataPopup }}">{% render 'icon-attention' %} {{ 'general.config.label_trunk' | t }}</div>
+                {% unless product.type == 'Individual' %}
+                {% endunless %}
+              {% endif %} 
+              {% if block.settings.show_discounts %}
+                {% if option.name == 'Zestaw' %}
+                  <div class="table_options__wr">
+                    <div class="table_options__title">Uzyskaj rabat na swoje zamówienie</div>
+                    <table width="100%">
+                      <thead>
+                        <tr>
+                          <td>Rabat</td>
+                          <td>Od</td>
+                          <td>Kod</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>-5%</td>
+                          <td>500 zł</td>
+                          <td>NEWYEAR5%</td>
+                        </tr>
+                        <tr>
+                          <td>-15%</td>
+                          <td>1200 zł</td>
+                          <td>NEWYEAR15%</td>
+                        </tr>
+                        <tr>
+                          <td>-20%</td>
+                          <td>2400 zł</td>
+                          <td>NEWYEAR20%</td>
+                        </tr>
+                        <tr>
+                          <td>-25%</td>
+                          <td>3600 zł</td>
+                          <td>NEWYEAR25%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                {% endif %}           
+              {% endif %}
+            {%- endfor -%}
+  
+            {% if product.metafields.custom.outlet_options %}
+              {% assign optionName = '' %}
+              {% for item in product.metafields.custom.outlet_options.value %}
+                {% case forloop.index %}
+                  {% when 1 %}
+                    {% assign optionName = 'Kolor materialu' %}
+                  {% when 2 %}
+                    {% assign optionName = 'Trim Color' %}
+                  {% when 3 %}
+                    {% assign optionName = 'Ksztalt komórek' %}
+                  {% else %}
+                    
+                {% endcase %}
+              <fieldset class="js product-form__input" >
+                <legend class="form__label lip__title">
+                  <span class="form__label_text">{{ optionName }}</span> 
+                </legend>
+                <input
+                  type="radio"
+                  id="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}"
+                  name="properties[{{ optionName }}]"
+                  data-title="{{ item }}"
+                  value="{{ item | escape }}"
+                  form="{{ product_form_id }}"
+                  
+                    checked
+                >
+                <label for="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}">
+                  {{ item -}}
+                  <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+                </label>
+              </fieldset>
+              
+            {% endfor %}
+            {% endif %}
+            <script type="application/json">
+              {{ product.variants | json }}
+            </script>
+          </variant-radios>
+    {% if product.template_suffix contains 'config' %}
+          <button class="product__dropdown_button button">{{'general.config.continue' | t}}</button>
+        </div>
+      </div>
+    {% endif %}
+  {%- else -%}
+    <variant-selects
+      id="variant-selects-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options', product: product, option: option, block: block %}
+            </select>
+            {% render 'icon-caret' %}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {%- endif -%}
+{%- endunless -%}
+
+<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+    <label class="form__label" for="Variants-{{ section.id }}">
+      {{- 'products.product.product_variants' | t -}}
+    </label>
+    <div class="select">
+      <select
+        name="id"
+        id="Variants-{{ section.id }}"
+        class="select__select"
+        form="{{ product_form_id }}"
+      >
+        {%- for variant in product.variants -%}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+            {% endif %}
+            {% if variant.available == false %}
+              disabled
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {%- liquid
+              echo variant.title
+              echo variant.price | money | strip_html | prepend: ' - '
+              if variant.available == false
+                echo 'products.product.sold_out' | t | prepend: ' - '
+              endif
+              if variant.quantity_rule.increment > 1
+                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+              endif
+              if variant.quantity_rule.min > 1
+                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+              endif
+              if variant.quantity_rule.max != null
+                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+              endif
+              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+              # theme-check-disable
+              assign cart_quantity = cart | item_count_for_variant: variant.id
+              # theme-check-enable
+              if cart_quantity > 0
+                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+              endif
+            -%}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+  </div>
+</noscript>

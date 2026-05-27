@@ -1,0 +1,64 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "6aaeb45e-acdd-44f4-9a5c-3e71077873c3": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "6965d6e4-8bbe-498b-90bb-cf4439521adc": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About us",
+            "menu": "about-us"
+          }
+        },
+        "2e7efd78-a00e-44e8-a6c6-056b4923ad0f": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "footer"
+          }
+        },
+        "5105da44-6739-4d06-87ba-89d3f01ee03e": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact us!",
+            "subtext": "<p>EVAMATS Sp. z o.o.<br\/><br\/>TIN: 5862378667<br\/><br\/><a href=\"mailto:info@evamats.store\" title=\"mailto:info@evamats.store\">info@evamats.store<\/a><\/p><p><a href=\"tel:+48 732 082 512\" title=\"tel:+48 732 082 512\">+48 732 082 512<br\/><\/a><br\/>st. Strzelca 42,<br\/>80-299 Gdańsk, Poland<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6aaeb45e-acdd-44f4-9a5c-3e71077873c3",
+        "6965d6e4-8bbe-498b-90bb-cf4439521adc",
+        "2e7efd78-a00e-44e8-a6c6-056b4923ad0f",
+        "5105da44-6739-4d06-87ba-89d3f01ee03e"
+      ],
+      "custom_css": [
+        "input,.field:after {border-radius: 10px;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Zapisz się na nasze emaile",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 48,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,651 @@
+{
+  "general": {
+    "config": {
+      "mats_type": "Mats type",
+      "mats_set": "Mats set",
+      "mats_size": "Size",
+      "without_edges": "3D EVAMATS without Edges",
+      "with_edges": "3D EVAMATS with Edges",
+      "only_driver_mat": "Only driver mat",
+      "front": "Front",
+      "rear": "Rear",
+      "trunk": "Trunk",
+      "front_rear": "Front and Rear",
+      "front_rear_trunk": "Front + rear + trunk",
+      "year_production": "Year of production",
+      "number_seats": "Number of seats",
+      "number_doors": "Number of doors",
+      "drivetrain": "Drivetrain",
+      "drivetrainElements": "Rear-Wheel Drive,Front-Wheel Drive,All-Wheel Drive,No clue",
+      "engine": "Engine",
+      "engineElements": "Petrol,Diesel,HEV,MHEV,PHEV,Electric,Hybrid",
+      "gearbox": "Gearbox",
+      "gearboxElements": "Manual,Automatic",
+      "bodyType": "Body type",
+      "bodyTypeElements": "Sedan,Hatchback,SUV,Coupe,Station Wagon,Convertible,Roadster,Bus,TIR,VAN,Camper,Tractor,Pickup,Minivan,Other",
+      "cell_shape": "Cell shape",
+      "diamonds": "Diamonds",
+      "honeycomb": "Honeycomb",
+      "drops_with_surcharge": "Drops (+€25)",
+      "mat_pattern_drops": "Droplet cell pattern (+€25)",
+      "drops_property_value": "Drops",
+      "material_color": "Material color",
+      "trim_color": "Trim color",
+      "comment": "ILLUSTRATION rug for color selection",
+      "preview_badge": "Preview",
+      "heel": "Heel pads",
+      "order_notes": "Order notes",
+      "order_notes_title": "Notes (Describe the dimensions, floor shape or attach a photo of the vehicle's interior - this will help us make a perfect fit.)",
+      "error_message": "Please select an option",
+      "warning_message": "You must accept the privacy policy and terms and conditions.",
+      "please_select": "Please select",
+      "estimated_delivery": "Estimated time to receive order",
+      "color_and_cells_like_rug": "Color and cells like in a rug",
+      "error_email": "Email is invalid",
+      "error_phone": "Phone is invalid",
+      "error_checkbox": "You must accept the privacy policy and terms and conditions.",
+      "vehicle": "Vehicle",
+      "vehicle_text": "Vehicle (Enter vehicle type, e.g. motorboat, ultralight aircraft, quad bike, forklift…)",
+      "brand": "Brand",
+      "model": "Model",
+      "search": "Search",
+      "reset": "Reset",
+      "buy_now": "Buy now",
+      "gallery_mats_type": "Select mats type",
+      "gallery_body_type": "Select body type",
+      "gallery_error_message": "No images found in the gallery.",
+      "gallery_divider_text": "We have even more for you to discover",
+      "continue": "Continue",
+      "custom_order_title": "Order mats for an unusual vehicle",
+      "custom_order_subtitle": "Boat, plane, quad? Order custom-made rugs here",
+      "super_offer": "Super offer",
+      "read_more": "What are heel pads?",
+      "read_less": "Read less",
+      "select_shape_and_colors": "Select shape and colors",
+      "select_year": "Select year",
+      "select_year_and_body_type": "Select year and body type",
+      "select_year_brand_model_body_type": "Select year, brand, model and body type",
+      "year_label": "Year",
+      "body_types_available_badge": "All listed body types available",
+      "select_brand_model_and_body_type": "Select brand, model and body type",
+      "select_heels": "Heel pads (optional)",
+      "select_size": "Select size",
+      "select_mats_type_and_set": "Select mats type and set",
+      "body_type": "Body type",
+      "label_delivery": "Buy for €100+ – free delivery!",
+      "label_trunk": "Attention - Trunk mat",
+      "choose_your_mats": "Choose your mats in 15 seconds",
+      "filter_years": "Filter years",
+      "enter_year": "Enter the year of production",
+      "get_a_price": "Get a price",
+      "home": "Home",
+      "right_hand_message_short": "🚗 Right-hand drive vehicle?",
+      "right_hand_message_long": "🚗 Right-hand drive vehicle? Read this before ordering! Our car mats are made for left-hand drive cars by default. If your vehicle has the steering wheel on the right (e.g. UK, Japan, Australia), please contact us first – we’ll check if a custom set is possible for your model.",
+      "outlet": "Outlet",
+      "select_vehicle": "Select vehicle",
+      "change_vehicle": "Change vehicle",
+      "sold_out": "Sold out",
+      "additional_options": "Additional options:",
+      "color": "Color",
+      "mount": "Mount"
+    },
+    "colors": {
+      "black": "Black",
+      "brown": "Brown",
+      "gray": "Dark Gray",
+      "light_gray": "Light Gray",
+      "grey": "Dark Grey",
+      "light_grey": "Light Grey",
+      "dark_blue": "Dark Blue",
+      "blue": "Blue",
+      "green": "Dark Green",
+      "red": "Red",
+      "maroon": "Maroon",
+      "light_beige": "Light Beige",
+      "beige": "Beige",
+      "purple": "Purple",
+      "lime": "Lime",
+      "yellow": "Yellow",
+      "orange": "Orange",
+      "ivory": "Ivory",
+      "pink": "Pink",
+      "white": "White"
+    },
+    "password_page": {
+      "login_form_heading": "Enter store using password:",
+      "login_password_button": "Enter using password",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_error": "Wrong password!",
+      "login_form_submit": "Enter",
+      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"link underlined-link\">Log in here<\/a>",
+      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest"
+      },
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Continue shopping",
+    "pagination": {
+      "label": "Pagination",
+      "page": "Page {{ number }}",
+      "next": "Next page",
+      "previous": "Previous page"
+    },
+    "search": {
+      "search": "Search",
+      "reset": "Clear search term"
+    },
+    "cart": {
+      "view": "View cart ({{ count }})",
+      "view_empty_cart": "View cart",
+      "item_added": "Item added to your cart",
+      "opportunity": "Don't miss this opportunity!",
+      "to_checkout": "Complete purchase"
+    },
+    "share": {
+      "close": "Close share",
+      "copy_to_clipboard": "Copy link",
+      "share_url": "Link",
+      "success_message": "Link copied to clipboard"
+    },
+    "slider": {
+      "of": "of",
+      "next_slide": "Slide right",
+      "previous_slide": "Slide left",
+      "name": "Slider"
+    }
+  },
+  "newsletter": {
+    "label": "Email",
+    "success": "Thanks for subscribing",
+    "button_label": "Subscribe"
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "skip_to_product_info": "Skip to product information",
+    "close": "Close",
+    "unit_price_separator": "per",
+    "vendor": "Vendor:",
+    "error": "Error",
+    "refresh_page": "Choosing a selection results in a full page refresh.",
+    "link_messages": {
+      "new_window": "Opens in a new window.",
+      "external": "Opens external website."
+    },
+    "loading": "Loading...",
+    "total_reviews": "total reviews",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
+    "collapsible_content_title": "Collapsible content",
+    "complementary_products": "Complementary products"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "read_more_title": "Read more: {{ title }}",
+      "comments": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      },
+      "moderated": "Please note, comments need to be approved before they are published.",
+      "comment_form_title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "back_to_blog": "Back to blog",
+      "share": "Share this article",
+      "success": "Your comment was posted successfully! Thank you!",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+    }
+  },
+  "onboarding": {
+    "product_title": "Example product title",
+    "collection_title": "Your collection's name"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "choose_color_and_mats_set": "Choose color and mats set",
+      "check_set": "Check the set",
+      "choose_options": "Choose options",
+      "choose_product_options": "Choose options for {{ product_name }}",
+      "description": "Description",
+      "inventory_in_stock": "In stock",
+      "inventory_in_stock_show_count": "{{ quantity }} in stock",
+      "inventory_low_stock": "Low stock",
+      "inventory_low_stock_show_count": "Low stock: {{ quantity }} left",
+      "inventory_out_of_stock": "Out of stock",
+      "inventory_out_of_stock_continue_selling": "In stock",
+      "sku": "SKU",
+      "on_sale": "Sale",
+      "on_sale_2": "On sale",
+      "product_variants": "Product variants",
+      "media": {
+        "gallery_viewer": "Gallery Viewer",
+        "load_image": "Load image {{ index }} in gallery view",
+        "load_model": "Load 3D Model {{ index }} in gallery view",
+        "load_video": "Play video {{ index }} in gallery view",
+        "image_available": "Image {{ index }} is now available in gallery view",
+        "open_media": "Open media {{ index }} in modal",
+        "play_model": "Play 3D Viewer",
+        "play_video": "Play video"
+      },
+      "quantity": {
+        "label": "Quantity",
+        "input_label": "Quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}",
+        "decrease": "Decrease quantity for {{ product }}",
+        "minimum_of": "Minimum of {{ quantity }}",
+        "maximum_of": "Maximum of {{ quantity }}",
+        "multiples_of": "Increments of {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> in cart"
+      },
+      "pickup_availability": {
+        "view_store_info": "View store information",
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "unavailable": "Couldn't load pickup availability",
+        "refresh": "Refresh"
+      },
+      "price": {
+        "from_price_html": "From {{ price }}",
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "unit_price": "Unit price"
+      },
+      "share": "Share this product",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "vendor": "Vendor",
+      "value_unavailable": "{{ option_value }} - Unavailable",
+      "variant_sold_out_or_unavailable": "Variant sold out or unavailable",
+      "video_exit_message": "{{ title }} opens full screen video in same window.",
+      "view_full_details": "View full details",
+      "xr_button": "View in your space",
+      "xr_button_label": "View in your space, loads item in augmented reality window",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout."
+    },
+    "modal": {
+      "label": "Media gallery"
+    },
+    "facets": {
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Remove all",
+      "from": "From",
+      "filter_and_sort": "Filter and sort",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filter",
+      "filters_selected": {
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
+      },
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filters selected)",
+      "show_more": "Show more",
+      "show_less": "Show less",
+      "max_price": "The highest price is {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} of {{ count }} product",
+        "other": "{{ product_count }} of {{ count }} products"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "reset": "Reset",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort by:",
+      "to": "To",
+      "clear_filter": "Remove filter"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
+      "page": "Page",
+      "products": "Products",
+      "results_pages_with_count": {
+        "one": "{{ count }} page",
+        "other": "{{ count }} pages"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} suggestion",
+        "other": "{{ count }} suggestions"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "results_with_count": {
+        "one": "{{ count }} result",
+        "other": "{{ count }} results"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} result found for “{{ terms }}”",
+        "other": "{{ count }} results found for “{{ terms }}”"
+      },
+      "title": "Search results",
+      "search_for": "Search for “{{ terms }}”",
+      "suggestions": "Suggestions",
+      "pages": "Pages"
+    },
+    "cart": {
+      "cart": "Cart"
+    },
+    "contact": {
+      "form": {
+        "title": "Contact form",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Comment",
+        "send": "Send",
+        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:"
+      }
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "application_form": {
+      "next_button": "Next",
+      "name_and_surname": "Name and surname",
+      "brand": "Brand",
+      "privacy_text_html": "I agree to the <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy <\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">terms of service <\/a>."
+    },
+    "announcements": {
+      "previous_announcement": "Previous announcement",
+      "next_announcement": "Next announcement",
+      "carousel": "Carousel",
+      "announcement": "Announcement",
+      "announcement_bar": "Announcement bar"
+    },
+    "header": {
+      "announcement": "Announcement",
+      "menu": "Menu",
+      "cart_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    },
+    "home_8": {
+      "read_more": "Read more",
+      "read_less": "Read less"
+    },
+    "main_page": {
+      "read_more": "Read more",
+      "read_less": "Read less"
+    },
+    "brand_buttons": {
+      "back": "All",
+      "collection_title_prefix": "Car mats EVA for ",
+      "all_brands_path": "\/pages\/car-brands"
+    },
+    "cart": {
+      "title": "Your cart",
+      "caption": "Cart items",
+      "remove_title": "Remove {{ title }}",
+      "subtotal": "Subtotal",
+      "new_subtotal": "New subtotal",
+      "note": "Order special instructions",
+      "checkout": "Check out",
+      "empty": "Your cart is empty",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "reservation_html": "Due to high demand and production overload, we have reserved a place for you to fulfill your order faster. The reservation is valid for the next <span class=\"cart__time\"><span id=\"countdown-timer\"><\/span> minutes.<\/span>",
+      "reservation_button": "Extend your reservation",
+      "progress_free_shipping": "You qualify for free shipping!",
+      "progress_text_order_value": "Your car deserves more! Add mats for {{value}} and get free shipping!",
+      "progress_text_discount": "Your car deserves more! Add mats for {{ value }} and get {{ nextDiscount }} discount!",
+      "progress_max_discount": "Maximum discount reached!",
+      "cart_upsell_variant_error": "Choose a product variant or refresh the page.",
+      "upsell_eva_note": "Color and cells match your mats",
+      "headings": {
+        "product": "Product",
+        "price": "Price",
+        "total": "Total",
+        "quantity": "Quantity",
+        "image": "Product image"
+      },
+      "update": "Update",
+      "login": {
+        "title": "Have an account?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in<\/a> to check out faster."
+      },
+      "upsell_add_to_cart": "Add"
+    },
+    "footer": {
+      "payment": "Payment methods"
+    },
+    "featured_blog": {
+      "view_all": "View all",
+      "onboarding_title": "Blog post",
+      "onboarding_content": "Give your customers a summary of your blog post"
+    },
+    "featured_collection": {
+      "view_all": "View all",
+      "view_all_label": "View all products in the {{ collection_name }} collection"
+    },
+    "collection_list": {
+      "view_all": "View all"
+    },
+    "collection_template": {
+      "empty": "We are in the process of developing our website, we have already completed more than 5000 projects, also for your vehicle we have measurements.",
+      "title": "Collection",
+      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"https:\/\/evamats-en.myshopify.com\/products\/custom-order\">Place your order here<\/a>"
+    },
+    "video": {
+      "load_video": "Load video: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Load slide",
+      "previous_slideshow": "Previous slide",
+      "next_slideshow": "Next slide",
+      "pause_slideshow": "Pause slideshow",
+      "play_slideshow": "Play slideshow",
+      "carousel": "Carousel",
+      "slide": "Slide"
+    },
+    "page": {
+      "title": "Page title"
+    }
+  },
+  "localization": {
+    "country_label": "Country\/region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "update_country": "Update country\/region"
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "return": "Return to Account details"
+    },
+    "account_fallback": "Account",
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "add_new": "Add a new address",
+      "edit_address": "Edit address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country\/region",
+      "province": "Province",
+      "zip": "Postal\/ZIP code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "log_in": "Log in",
+    "log_out": "Log out",
+    "login_page": {
+      "cancel": "Cancel",
+      "create_account": "Create account",
+      "email": "Email",
+      "forgot_password": "Forgot your password?",
+      "guest_continue": "Continue",
+      "guest_title": "Continue as a guest",
+      "password": "Password",
+      "title": "Login",
+      "sign_in": "Sign in",
+      "submit": "Submit"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "total_refunded": "Refunded",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "track_shipment": "Track shipment",
+      "tracking_url": "Tracking link",
+      "tracking_company": "Carrier",
+      "tracking_number": "Tracking number",
+      "subtotal": "Subtotal",
+      "total_duties": "Duties"
+    },
+    "orders": {
+      "title": "Order history",
+      "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "register": {
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create"
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Reset password"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "how_to_use_gift_card": "Use the gift card code online or QR code in-store",
+      "title": "Here's your {{ value }} gift card balance for {{ shop }}!",
+      "subtext": "Your gift card",
+      "gift_card_code": "Gift card code",
+      "shop_link": "Visit online store",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "copy_code": "Copy gift card code",
+      "expiration_date": "Expires {{ expires_on }}",
+      "copy_code_success": "Code copied successfully",
+      "expired": "Expired"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "I want to send this as a gift",
+      "email_label": "Recipient email",
+      "email_label_optional_for_no_js_behavior": "Recipient email (optional)",
+      "email": "Email",
+      "name_label": "Recipient name (optional)",
+      "name": "Name",
+      "message_label": "Message (optional)",
+      "message": "Message",
+      "max_characters": "{{ max_chars }} characters max",
+      "send_on": "YYYY-MM-DD",
+      "send_on_label": "Send on (optional)"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "marketing": {
+        "disclaimer": {
+          "terms_of_service": "Regulations"
+        },
+        "sms": {
+          "disclaimer": {
+            "terms_of_service": "Regulations"
+          }
+        }
+      },
+      "shop_policies": {
+        "terms_of_service": "Regulations",
+        "refund_policy": "Returns and refounds Policy"
+      },
+      "contact": {
+        "optional_address2_label": "TAX ID"
+      }
+    }
+  },
+  "customer_accounts": {
+    "shop_policies": {
+      "terms_of_service": "Regulations",
+      "refund_policy": "Returns and refounds Policy"
+    }
+  }
+}

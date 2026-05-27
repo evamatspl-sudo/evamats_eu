@@ -1,0 +1,20 @@
+.DS_Store
+.shopify/
+node_modules/
+*.log
+.env
+.env.*
+
+# Local dev / editor (not part of the theme)
+.cursor/
+.cursor-screenshots/
+.cursor-footer-*.png
+cli.txt
+config.yml
+*.code-workspace
+
+# Temporary theme pull compare folders
+_*_pull_check*/
+
+# Personal git notes (not for repo)
+GIT-WORKFLOW.md

@@ -1,0 +1,8 @@
+{%- layout none -%}{%- if collection.all_products_count > 0 -%}{%- assign limit = 60 -%}{%- assign count = 0 -%}{%- paginate collection.products by 60 -%}
+[{%- for product in collection.products -%}
+  {% if product.type == 'mws_apo_generated' %}{% continue %}{% endif %}
+        {%- unless count == 0 -%},{%- endunless -%}
+        {{-product | json-}}        {%- assign count = count | plus: 1 -%}
+        {%- if count >= 60 -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}]
+{%- endpaginate -%}{%- else -%}[]{%- endif -%}

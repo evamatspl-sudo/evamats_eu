@@ -1,0 +1,142 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "6fe1060a-e045-4c3b-801d-c542d21d2d15": {
+      "type": "sidebar",
+      "blocks": {
+        "534aefc6-117d-4101-ad0e-c87f51f6060d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/cupra-ateca",
+            "color-code": "Ateca"
+          }
+        },
+        "cd259d71-2d2a-418f-a809-387e14fe9fb0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-born",
+            "color-code": "Born"
+          }
+        },
+        "ed551d89-cd2b-45ea-a8f5-66df00d4dd5a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-formentor",
+            "color-code": "Formentor"
+          }
+        },
+        "40d2bcbe-c16b-4dac-b787-faab7e3c10b4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-leon",
+            "color-code": "Leon"
+          }
+        }
+      },
+      "block_order": [
+        "534aefc6-117d-4101-ad0e-c87f51f6060d",
+        "cd259d71-2d2a-418f-a809-387e14fe9fb0",
+        "ed551d89-cd2b-45ea-a8f5-66df00d4dd5a",
+        "40d2bcbe-c16b-4dac-b787-faab7e3c10b4"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "240cbeac-725e-46eb-9ed1-5fc980857895": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/cupra-ateca",
+            "color-code": "Ateca"
+          }
+        },
+        "476a00d6-bb09-42a0-a5ed-0ee07317c30d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-born",
+            "color-code": "Born"
+          }
+        },
+        "5744b2c4-bae8-4335-93c1-039a25ff6a8a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-formentor",
+            "color-code": "Formentor"
+          }
+        },
+        "2f1c428b-4493-4e12-a167-241d494dd9da": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cupra-leon",
+            "color-code": "Leon"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "240cbeac-725e-46eb-9ed1-5fc980857895",
+        "476a00d6-bb09-42a0-a5ed-0ee07317c30d",
+        "5744b2c4-bae8-4335-93c1-039a25ff6a8a",
+        "2f1c428b-4493-4e12-a167-241d494dd9da"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "fec3146f-b402-408e-ae8b-ae9add3defb9": {
+      "type": "home-5",
+      "disabled": true,
+      "settings": {
+        "btn_text": "Indywidualne zamówienie",
+        "btn_url": "shopify:\/\/products\/custom-order"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "6fe1060a-e045-4c3b-801d-c542d21d2d15",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid",
+    "fec3146f-b402-408e-ae8b-ae9add3defb9"
+  ]
+}

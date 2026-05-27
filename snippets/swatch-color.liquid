@@ -1,0 +1,62 @@
+{% assign color_normalized = color | strip | downcase %}
+
+{% assign black = "general.colors.black" | t | downcase %}
+{% assign brown = "general.colors.brown" | t | downcase %}
+{% assign gray = "general.colors.gray" | t | downcase %}
+{% assign light_gray = "general.colors.light_gray" | t | downcase %}
+{% assign grey = "general.colors.grey" | t | downcase %}
+{% assign light_grey = "general.colors.light_grey" | t | downcase %}
+{% assign dark_blue = "general.colors.dark_blue" | t | downcase %}
+{% assign blue = "general.colors.blue" | t | downcase %}
+{% assign green = "general.colors.green" | t | downcase %}
+{% assign red = "general.colors.red" | t | downcase %}
+{% assign maroon = "general.colors.maroon" | t | downcase %}
+{% assign light_beige = "general.colors.light_beige" | t | downcase %}
+{% assign beige = "general.colors.beige" | t | downcase %}
+{% assign purple = "general.colors.purple" | t | downcase %}
+{% assign lime = "general.colors.lime" | t | downcase %}
+{% assign yellow = "general.colors.yellow" | t | downcase %}
+{% assign orange = "general.colors.orange" | t | downcase %}
+{% assign ivory = "general.colors.ivory" | t | downcase %}
+{% assign pink = "general.colors.pink" | t | downcase %}
+{% assign white = "general.colors.white" | t | downcase %}
+
+{% if color_normalized == black or color_normalized == 'black' %}
+  #000000
+{% elsif color_normalized == brown or color_normalized == 'brown' %}
+  #a52a2a
+{% elsif color_normalized == gray or color_normalized == grey or color_normalized == 'dark gray' or color_normalized == 'dark grey' %}
+  #a9a9a9
+{% elsif color_normalized == light_gray or color_normalized == light_grey or color_normalized == 'light gray' or color_normalized == 'light grey' %}
+  #d3d3d3
+{% elsif color_normalized == dark_blue or color_normalized == 'dark blue' or color_normalized == 'navy' %}
+  #000080
+{% elsif color_normalized == blue or color_normalized == 'blue' %}
+  #0000ff
+{% elsif color_normalized == green or color_normalized == 'dark green' or color_normalized == 'green' %}
+  #006400
+{% elsif color_normalized == red or color_normalized == 'red' %}
+  #ff0000
+{% elsif color_normalized == maroon or color_normalized == 'maroon' %}
+  #7b1113
+{% elsif color_normalized == light_beige or color_normalized == 'light beige' %}
+  #d8c8a8
+{% elsif color_normalized == beige or color_normalized == 'beige' %}
+  #ac9362
+{% elsif color_normalized == purple or color_normalized == 'purple' %}
+  #800080
+{% elsif color_normalized == lime or color_normalized == 'lime' %}
+  #bfff00
+{% elsif color_normalized == yellow or color_normalized == 'yellow' %}
+  #ffd700
+{% elsif color_normalized == orange or color_normalized == 'orange' %}
+  #ff8c00
+{% elsif color_normalized == ivory or color_normalized == 'ivory' %}
+  #fffff0
+{% elsif color_normalized == pink or color_normalized == 'pink' %}
+  #ff69b4
+{% elsif color_normalized == white or color_normalized == 'white' %}
+  #ffffff
+{% else %}
+  #000000
+{% endif %}

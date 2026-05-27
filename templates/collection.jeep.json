@@ -1,0 +1,261 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "29502ffc-4e3b-4c62-83c3-4098609a8485": {
+      "type": "sidebar",
+      "blocks": {
+        "a8c29ded-9ce0-4582-a3bb-0973312777ca": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-avenger",
+            "color-code": "Avenger"
+          }
+        },
+        "b6f89d7b-ca41-4ba4-a4d4-bb6e88490a86": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-cherokee",
+            "color-code": "Cherokee"
+          }
+        },
+        "c5a1ba4d-d568-43da-ad69-7c1c66a1fda6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-grand-cherokee",
+            "color-code": "Grand Cherokee"
+          }
+        },
+        "6e16407f-03d5-47de-8a20-d6f420f0950e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-commander",
+            "color-code": "Commander"
+          }
+        },
+        "ea176429-d3c0-41c7-99e4-fe2e2b3ea116": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-compass",
+            "color-code": "Compass"
+          }
+        },
+        "a8a02e83-fb7e-4bc6-abb4-6b5a12b99bda": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-gladiator",
+            "color-code": "Gladiator"
+          }
+        },
+        "55fb8cc8-f35e-4429-bfc5-876efbc64270": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-liberty",
+            "color-code": "Liberty"
+          }
+        },
+        "68fb0472-8f42-4600-8b5d-5c31142cbbdf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-patriot",
+            "color-code": "Patriot"
+          }
+        },
+        "9918a688-73f4-4070-a093-2ebd198eebd3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-renegade",
+            "color-code": "Renegade"
+          }
+        },
+        "eb157b71-cf0e-455b-b950-6fa1ed63f18e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-renegade-4xe",
+            "color-code": "Renegade 4Xe"
+          }
+        },
+        "73055278-923f-4049-8665-171cd5562ecb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-wrangler",
+            "color-code": "Wrangler"
+          }
+        },
+        "7058c209-c3a1-486c-9528-1dfd85d3973c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-wrangler-rubicon",
+            "color-code": "Wrangler Rubicon"
+          }
+        }
+      },
+      "block_order": [
+        "a8c29ded-9ce0-4582-a3bb-0973312777ca",
+        "b6f89d7b-ca41-4ba4-a4d4-bb6e88490a86",
+        "c5a1ba4d-d568-43da-ad69-7c1c66a1fda6",
+        "6e16407f-03d5-47de-8a20-d6f420f0950e",
+        "ea176429-d3c0-41c7-99e4-fe2e2b3ea116",
+        "a8a02e83-fb7e-4bc6-abb4-6b5a12b99bda",
+        "55fb8cc8-f35e-4429-bfc5-876efbc64270",
+        "68fb0472-8f42-4600-8b5d-5c31142cbbdf",
+        "9918a688-73f4-4070-a093-2ebd198eebd3",
+        "eb157b71-cf0e-455b-b950-6fa1ed63f18e",
+        "73055278-923f-4049-8665-171cd5562ecb",
+        "7058c209-c3a1-486c-9528-1dfd85d3973c"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "b6d06630-23f2-4084-8997-574332181c72": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-avenger",
+            "color-code": "Avenger"
+          }
+        },
+        "ea2f4d9f-626a-4315-b664-2dc6ec172e34": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-cherokee",
+            "color-code": "Cherokee"
+          }
+        },
+        "a60a4bdc-b110-4140-b69d-4c331072153d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-grand-cherokee",
+            "color-code": "Grand Cherokee"
+          }
+        },
+        "43816c35-b7f9-4c45-a144-430d92d9a9ad": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-commander",
+            "color-code": "Commander"
+          }
+        },
+        "58019a8f-73e8-4a13-ac6b-2b503ae13fcb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-compass",
+            "color-code": "Compass"
+          }
+        },
+        "62672362-e70c-472a-8126-c01ff09f3e21": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-gladiator",
+            "color-code": "Gladiator"
+          }
+        },
+        "0630d751-417e-4da1-8fb2-3ef0bde79326": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-liberty",
+            "color-code": "Liberty"
+          }
+        },
+        "dadb7e4b-7c8b-44d1-83f5-462cc74db218": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-patriot",
+            "color-code": "Patriot"
+          }
+        },
+        "ddbbe62e-2852-400c-9b96-12e32790401d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-renegade",
+            "color-code": "Renegade"
+          }
+        },
+        "6752721c-a6bd-4514-8ab3-0091f0c991d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-renegade-4xe",
+            "color-code": "Renegade 4Xe"
+          }
+        },
+        "c8346e73-d4ec-4c7b-83b4-ea00c763cf57": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-wrangler",
+            "color-code": "Wrangler"
+          }
+        },
+        "5b111b48-db00-4a1f-8b36-c8213e0c8b76": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep-wrangler-rubicon",
+            "color-code": "Wrangler Rubicon"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "b6d06630-23f2-4084-8997-574332181c72",
+        "ea2f4d9f-626a-4315-b664-2dc6ec172e34",
+        "a60a4bdc-b110-4140-b69d-4c331072153d",
+        "43816c35-b7f9-4c45-a144-430d92d9a9ad",
+        "58019a8f-73e8-4a13-ac6b-2b503ae13fcb",
+        "62672362-e70c-472a-8126-c01ff09f3e21",
+        "0630d751-417e-4da1-8fb2-3ef0bde79326",
+        "dadb7e4b-7c8b-44d1-83f5-462cc74db218",
+        "ddbbe62e-2852-400c-9b96-12e32790401d",
+        "6752721c-a6bd-4514-8ab3-0091f0c991d2",
+        "c8346e73-d4ec-4c7b-83b4-ea00c763cf57",
+        "5b111b48-db00-4a1f-8b36-c8213e0c8b76"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "29502ffc-4e3b-4c62-83c3-4098609a8485",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

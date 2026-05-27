@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h1 {text-align: center;}"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "5b12f67c-9877-4248-80c3-e344481aee67": {
+      "type": "two-text-with-image",
+      "custom_css": [
+        "h2{color: black;}"
+      ],
+      "settings": {
+        "hd": "Welcome to the world of EVAMATS!",
+        "des1": "<p>Hi, I'm Maks, and I create top-quality car floor mats designed with your comfort — and you — in mind!<br\/>Our company was born out of a passion for automotive excellence and a desire to give you the best possible driving experience.<\/p><p><strong>EVAMATS<\/strong> is not just about car mats. It's about innovative solutions that combine style, durability, and eco-friendly materials.<br\/>Our material is environmentally friendly, meaning you’re taking care of both your car and the planet.<\/p><p>Each of our sets is handcrafted from start to finish — like no other — ensuring exceptional quality and a perfect fit for every vehicle and every need.<\/p>",
+        "img": "shopify:\/\/shop_images\/photo_2025-05-14_14.04.33.jpg",
+        "des2": "<p><strong>EVAMATS material<\/strong> is an innovative, high-quality product that delivers durability, comfort, and great aesthetics.<br\/>Our mats are waterproof, maintain their shape, resistant to wear, and easy to clean.<br\/>We offer a product that outperforms standard rubber and velour mats in every way.<\/p><p><strong>Investing in our mats means investing for years to come!<\/strong><br\/>Over 50,000 satisfied drivers have already trusted us — and now it's your turn to discover why EVAMATS is the choice for those who value quality and comfort.<\/p><p>If you have any questions or need assistance, our team is here to help you.<\/p><p><strong>Experience a new level of comfort and enjoy your journeys in style with EVAMATS!<\/strong><\/p>"
+      }
+    },
+    "c66a3019-d7f6-42b5-a4b9-57d60e305c82": {
+      "type": "home-5",
+      "settings": {
+        "btn_text": "Get in touch!",
+        "btn_url": "shopify:\/\/pages\/contact"
+      }
+    },
+    "5ab367d2-5b6e-4a45-b02d-360524e6b303": {
+      "type": "soc-icons-section",
+      "settings": {
+        "des1": "<p>Facebook<\/p>",
+        "img1": "shopify:\/\/shop_images\/fb.png",
+        "button_link1": "https:\/\/www.facebook.com\/evamats.store",
+        "des2": "<p>Instagram<\/p>",
+        "img2": "shopify:\/\/shop_images\/Instagram.png",
+        "button_link2": "https:\/\/www.instagram.com\/theofficialevamats\/",
+        "des3": "<p>TikTok<\/p>",
+        "img3": "shopify:\/\/shop_images\/TikTok.png",
+        "button_link3": "https:\/\/www.tiktok.com\/@evamats.store",
+        "des4": "<p>YouTube<\/p>",
+        "img4": "shopify:\/\/shop_images\/YT.png",
+        "button_link4": "https:\/\/www.youtube.com\/@evamats_store"
+      }
+    },
+    "bc11ef06-4794-4eff-87db-f13564af3f81": {
+      "type": "multicolumn",
+      "blocks": {
+        "1f8877b4-dd0b-4f7d-9660-9b3ea437d2e6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_4436-min_1_66165036-e967-41a2-986d-1d943a1062e8.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "c668bfcf-fcfc-4aab-8396-4c123ab67ab0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_6171_1_ab49a21f-68e5-4396-9582-e23608de9a99.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "d91e53f2-d108-409c-a043-b639bba9b39b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07330_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "469ae5a8-7297-4824-83b4-e810eb89d7a4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_4431_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "d292f224-7165-4df6-8ec7-2edc6104dc94": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8491_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "e3d0f164-fbc3-4d90-a9f1-fa56a22cb2f6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_4664_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1f8877b4-dd0b-4f7d-9660-9b3ea437d2e6",
+        "c668bfcf-fcfc-4aab-8396-4c123ab67ab0",
+        "d91e53f2-d108-409c-a043-b639bba9b39b",
+        "469ae5a8-7297-4824-83b4-e810eb89d7a4",
+        "d292f224-7165-4df6-8ec7-2edc6104dc94",
+        "e3d0f164-fbc3-4d90-a9f1-fa56a22cb2f6"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5b12f67c-9877-4248-80c3-e344481aee67",
+    "c66a3019-d7f6-42b5-a4b9-57d60e305c82",
+    "5ab367d2-5b6e-4a45-b02d-360524e6b303",
+    "bc11ef06-4794-4eff-87db-f13564af3f81"
+  ]
+}

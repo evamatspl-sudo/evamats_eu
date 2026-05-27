@@ -1,0 +1,61 @@
+<section>
+            <div class="fifth-main">
+              {% for block in section.blocks %}
+                <div class="fifth-rating">
+                    <div class="dynamic-text">
+                        <span class="dynamic-text-after">D</span>
+                        <div class="name-stars">
+                            <span class="name-dani">{{ block.settings.hd }}</span>
+                            <span class="stars"><img src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq_1.png?v=1681027755"
+                                    alt=""><img src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq_1.png?v=1681027755" alt=""><img
+                                    src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq_1.png?v=1681027755" alt=""><img
+                                    src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq_1.png?v=1681027755" alt=""><img
+                                    src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq_1.png?v=1681027755" alt=""><span
+                                    class="days-text">{{ block.settings.rt_txt }}</span></span>
+                        </div>
+                    </div>
+                    <span class="show">{{ block.settings.des }}</span>
+                </div>
+              {% endfor %}
+            </div>
+        </section>
+
+
+{% schema %}
+{
+  "name": "home6",
+  "settings": [],
+   "blocks":[
+    {
+      "type":"text",
+      "name":"Rating Box",
+      "settings":[
+       {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"Danielle Lhoutellier"
+    },
+        {
+      "type":"text",
+      "label":"Rating Text",
+      "id":"rt_txt",
+      "default":"4 days ago"
+    },
+        {
+      "type":"text",
+      "label":"Description",
+      "id":"des",
+      "default":"Great show, keep it up"
+    }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"home6",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}

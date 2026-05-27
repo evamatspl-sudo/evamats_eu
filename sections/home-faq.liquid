@@ -1,0 +1,104 @@
+ <div id="faqs" class="product-faqs container-fluid">
+      <div class="page-width">
+        <div class="faqs-all-question">
+            <div class="faqs-heading">
+                <h2>{{ section.settings.hd }}</h2>
+            </div>
+          {% for block in section.blocks %}
+            <div class="faq-question">
+                <div class="accordion">
+                    <h6>
+                        {{ block.settings.hd }}
+                    </h6>
+                    <span></span>
+                </div>
+                <div class="panel">
+                    {{ block.settings.des }}
+                </div>
+            </div>
+          {% endfor %}
+            
+        </div>
+      </div>
+    </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks %}
+    {
+      "@type": "Question",
+      "name": {{ block.settings.hd | strip_newlines | escape | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ block.settings.des | strip_newlines | escape | json }}
+      }
+    }{%- unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+    
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+  
+{% schema %}
+{
+  "name": "home-faq",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"Często zadawane pytania"
+    }
+  ],
+   "blocks":[
+    {
+      "type":"text",
+      "name":"FAQ",
+      "settings":[
+       {
+      "type":"text",
+      "label":"Question",
+      "id":"hd",
+      "default":"What types of freight services do you offer?"
+    },
+        {
+      "type":"richtext",
+      "label":"Answer",
+      "id":"des",
+      "default":"<p>At StyleCo Blinds, we understand your home is supposed to be a sanctuary for you. We specialize in designing blinds, drapery and shutters that are both beautiful and functional. We believe in sustainable design so we only use natural materials and recycled material where possible; which reduces our carbon footprint while creating a unique style that.</p>"
+    }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"home-faq",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

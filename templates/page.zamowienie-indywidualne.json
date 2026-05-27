@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-individual",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "application_form_LaNfkY": {
+      "type": "application-form",
+      "settings": {
+        "alternative_zestaw": true
+      }
+    },
+    "1699972664c4d32d4d": {
+      "type": "apps",
+      "blocks": {
+        "4a8da33e-f807-4d63-a52e-435fc6e6a442": {
+          "type": "shopify:\/\/apps\/tt-breadcrumbs-seo-schema\/blocks\/breadcrumbSection\/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "4a8da33e-f807-4d63-a52e-435fc6e6a442"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_liquid_Rzri8g": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"globo-formbuilder\" data-id=\"MTExNg==\"><\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "16855505417134cd28": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_masonry_widget_block_DtENYq": {
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/masonry-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "light",
+            "reviewPhotosType": "small",
+            "showRating": true,
+            "writeReview": true
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_masonry_widget_block_DtENYq"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "beb5116a-ded2-442f-aeda-89783bb1424e": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {font-weight: 600;}"
+      ],
+      "settings": {
+        "title": "BESTSELLERY",
+        "heading_size": "h1",
+        "custom_header_style": false,
+        "button_text": "ORDER",
+        "button_link": "",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bestsellerss",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "application_form_LaNfkY",
+    "1699972664c4d32d4d",
+    "custom_liquid_Rzri8g",
+    "16855505417134cd28",
+    "beb5116a-ded2-442f-aeda-89783bb1424e"
+  ]
+}

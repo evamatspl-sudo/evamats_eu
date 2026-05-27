@@ -1,0 +1,789 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "75491b78-f1e2-4318-b228-68c5ed9d5a72": {
+      "type": "sidebar",
+      "blocks": {
+        "1015aa0a-2ea7-4546-bf3b-cd578423d970": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-190",
+            "color-code": "190"
+          }
+        },
+        "dfb4cb61-fdaf-46dc-9466-3aeb1b94faa0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-a-klasa",
+            "color-code": "A class"
+          }
+        },
+        "f6e14fa8-8683-4ca2-be87-cf135bbc27f1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-b-klasa",
+            "color-code": "B class"
+          }
+        },
+        "e16ee2b8-d64f-485e-a08c-1ea29a52ce1f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-amg-gt",
+            "color-code": "AMG GT"
+          }
+        },
+        "b876ec78-980f-4882-9366-d18230a40811": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-c-klasa",
+            "color-code": "C class"
+          }
+        },
+        "6e8345f0-b3f0-418f-9feb-40ab2f2aeb2b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-c124",
+            "color-code": "C124"
+          }
+        },
+        "d570a7cd-9411-41ee-8ea0-26d0ed84c6fb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-citan",
+            "color-code": "Citan"
+          }
+        },
+        "675c34e3-2c1d-43c8-8019-793b2bd480c5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cl",
+            "color-code": "CL"
+          }
+        },
+        "ed1625da-8d03-4376-b954-4784f779bb73": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cla",
+            "color-code": "CLA"
+          }
+        },
+        "122c12a2-1422-44eb-bd6d-260d64202bb8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-clk",
+            "color-code": "CLK"
+          }
+        },
+        "a814988c-0cc4-4bcf-a26e-b17f07efba54": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cls",
+            "color-code": "CLS"
+          }
+        },
+        "c4b9c8f5-4cda-4f96-90ce-587f41efca1e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-e-klasa",
+            "color-code": "E class"
+          }
+        },
+        "2fd51f09-6209-4550-a607-7cb1ca094dd9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqa",
+            "color-code": "EQA"
+          }
+        },
+        "0428be8e-1988-4b30-a6a3-5e79a1d4bee5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqb",
+            "color-code": "EQB"
+          }
+        },
+        "72dfa1db-3188-4af7-a881-0d01bc977a7f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqc",
+            "color-code": "EQC"
+          }
+        },
+        "c82958d7-b9e6-46f7-979d-827c6f901b94": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqe",
+            "color-code": "EQE"
+          }
+        },
+        "section_mgmXPQ": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mercedes-benz-eqt",
+            "color-code": "EQT"
+          }
+        },
+        "f1ac31a6-a374-4e3c-87c6-c58538cc6dbc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqs",
+            "color-code": "EQS"
+          }
+        },
+        "84db2ea3-a9b5-42dd-8a84-f70da94b06c5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mercedes-benz-eqv",
+            "color-code": "EQV"
+          }
+        },
+        "581ecc72-41a8-41b4-ae19-8c365b9bac85": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-g-klasa",
+            "color-code": "G class"
+          }
+        },
+        "720e0140-52cf-40f8-9e52-67ac5217cc4e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gl",
+            "color-code": "GL"
+          }
+        },
+        "3e0ae05b-c0d5-43c9-adda-4ee00ae39ec3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gla",
+            "color-code": "GLA"
+          }
+        },
+        "118aafb4-99db-428b-8c03-9ffd90860822": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glb",
+            "color-code": "GLB"
+          }
+        },
+        "1ba0722c-00bb-45c6-b3d0-fceb245efef0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glc",
+            "color-code": "GLC"
+          }
+        },
+        "ccc60e5c-4863-49b8-a3d3-62924722554d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glc-coupe",
+            "color-code": "GLC Coupe"
+          }
+        },
+        "e295fd69-57c9-4b51-9de1-96e49e4b0a5c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gle",
+            "color-code": "GLE"
+          }
+        },
+        "5ee27855-15d3-4b9f-aa51-20de87305ce0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gle-coupe",
+            "color-code": "GLE Coupe"
+          }
+        },
+        "8a07130b-45dc-4a30-9f95-f08b606bb002": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glk",
+            "color-code": "GLK"
+          }
+        },
+        "5ae8e68d-61b7-4822-a8ae-fc7c1dec1c98": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gls",
+            "color-code": "GLS"
+          }
+        },
+        "300d35f8-5e68-44e8-8392-c02ddc080ff4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-ml",
+            "color-code": "ML"
+          }
+        },
+        "72507d56-a4b0-4eb9-85c8-4df11d5687b8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-r-klasa",
+            "color-code": "R class"
+          }
+        },
+        "7a120857-8a6d-4f85-be60-41d2fc8f6402": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s-klasa",
+            "color-code": "S class"
+          }
+        },
+        "2dc1d346-20c3-4dfd-b288-d1f7f39010b1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s124",
+            "color-code": "S124"
+          }
+        },
+        "8ea313ff-7644-4c75-a36b-6b9e14aa0d0b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s63-amg",
+            "color-code": "S63 AMG"
+          }
+        },
+        "d70a644e-e003-4f73-8d83-c8a2865cb98d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-sl",
+            "color-code": "SL"
+          }
+        },
+        "37facf22-4128-4911-8eda-82f96840bef5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-slk",
+            "color-code": "SLK"
+          }
+        },
+        "0177dee1-171e-4b46-96dc-ef15d3480339": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-sprinter",
+            "color-code": "Sprinter"
+          }
+        },
+        "eebd5fd8-cff1-4204-a082-0afb09324014": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-t-klasa",
+            "color-code": "T class"
+          }
+        },
+        "3e55bd10-4fa4-4435-9106-95acfccdf557": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-v-klasa",
+            "color-code": "V class"
+          }
+        },
+        "157cbda0-057b-4f21-b767-e2bc240579f0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-vaneo",
+            "color-code": "Vaneo"
+          }
+        },
+        "3ac4021f-4ac6-4890-8011-488b0e5892e0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-viano",
+            "color-code": "Viano"
+          }
+        },
+        "163e4e84-8783-48c1-9a3c-0fa75284eedb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-vito",
+            "color-code": "Vito"
+          }
+        },
+        "b2471d3f-bd44-428e-9ac3-5588c035c1cb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-w123-1",
+            "color-code": "W123"
+          }
+        },
+        "eea0817b-1d8e-4c8a-a1b6-ef7b7e0e36e1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-w123",
+            "color-code": "W124"
+          }
+        },
+        "c1e3c8c5-074a-4c81-a9fd-b47d8d349180": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-x",
+            "color-code": "X"
+          }
+        }
+      },
+      "block_order": [
+        "1015aa0a-2ea7-4546-bf3b-cd578423d970",
+        "dfb4cb61-fdaf-46dc-9466-3aeb1b94faa0",
+        "f6e14fa8-8683-4ca2-be87-cf135bbc27f1",
+        "e16ee2b8-d64f-485e-a08c-1ea29a52ce1f",
+        "b876ec78-980f-4882-9366-d18230a40811",
+        "6e8345f0-b3f0-418f-9feb-40ab2f2aeb2b",
+        "d570a7cd-9411-41ee-8ea0-26d0ed84c6fb",
+        "675c34e3-2c1d-43c8-8019-793b2bd480c5",
+        "ed1625da-8d03-4376-b954-4784f779bb73",
+        "122c12a2-1422-44eb-bd6d-260d64202bb8",
+        "a814988c-0cc4-4bcf-a26e-b17f07efba54",
+        "c4b9c8f5-4cda-4f96-90ce-587f41efca1e",
+        "2fd51f09-6209-4550-a607-7cb1ca094dd9",
+        "0428be8e-1988-4b30-a6a3-5e79a1d4bee5",
+        "72dfa1db-3188-4af7-a881-0d01bc977a7f",
+        "c82958d7-b9e6-46f7-979d-827c6f901b94",
+        "section_mgmXPQ",
+        "f1ac31a6-a374-4e3c-87c6-c58538cc6dbc",
+        "84db2ea3-a9b5-42dd-8a84-f70da94b06c5",
+        "581ecc72-41a8-41b4-ae19-8c365b9bac85",
+        "720e0140-52cf-40f8-9e52-67ac5217cc4e",
+        "3e0ae05b-c0d5-43c9-adda-4ee00ae39ec3",
+        "118aafb4-99db-428b-8c03-9ffd90860822",
+        "1ba0722c-00bb-45c6-b3d0-fceb245efef0",
+        "ccc60e5c-4863-49b8-a3d3-62924722554d",
+        "e295fd69-57c9-4b51-9de1-96e49e4b0a5c",
+        "5ee27855-15d3-4b9f-aa51-20de87305ce0",
+        "8a07130b-45dc-4a30-9f95-f08b606bb002",
+        "5ae8e68d-61b7-4822-a8ae-fc7c1dec1c98",
+        "300d35f8-5e68-44e8-8392-c02ddc080ff4",
+        "72507d56-a4b0-4eb9-85c8-4df11d5687b8",
+        "7a120857-8a6d-4f85-be60-41d2fc8f6402",
+        "2dc1d346-20c3-4dfd-b288-d1f7f39010b1",
+        "8ea313ff-7644-4c75-a36b-6b9e14aa0d0b",
+        "d70a644e-e003-4f73-8d83-c8a2865cb98d",
+        "37facf22-4128-4911-8eda-82f96840bef5",
+        "0177dee1-171e-4b46-96dc-ef15d3480339",
+        "eebd5fd8-cff1-4204-a082-0afb09324014",
+        "3e55bd10-4fa4-4435-9106-95acfccdf557",
+        "157cbda0-057b-4f21-b767-e2bc240579f0",
+        "3ac4021f-4ac6-4890-8011-488b0e5892e0",
+        "163e4e84-8783-48c1-9a3c-0fa75284eedb",
+        "b2471d3f-bd44-428e-9ac3-5588c035c1cb",
+        "eea0817b-1d8e-4c8a-a1b6-ef7b7e0e36e1",
+        "c1e3c8c5-074a-4c81-a9fd-b47d8d349180"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "938b5775-1f0b-427a-9c71-f1593f58908d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-190",
+            "color-code": "190"
+          }
+        },
+        "ff396b16-76cf-4ef5-ab3f-2fec89797792": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-a-klasa",
+            "color-code": "A class"
+          }
+        },
+        "cf191636-3b90-4337-8eb9-1aeebc02d1fe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-amg-gt",
+            "color-code": "AMG GT"
+          }
+        },
+        "82b70abe-e48c-4daa-b6c7-724a1ab14a6e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-b-klasa",
+            "color-code": "B class"
+          }
+        },
+        "70c79080-f21e-460a-97f1-85c8d0188894": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-c-klasa",
+            "color-code": "C class"
+          }
+        },
+        "1e45917b-bea2-4e71-a41a-9b125ca3cf2c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-c124",
+            "color-code": "C124"
+          }
+        },
+        "7601e45a-aa07-400c-8275-58e01efc5cb6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-citan",
+            "color-code": "Citan"
+          }
+        },
+        "0fd8023d-6bd4-491f-83b0-14216eae4718": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cl",
+            "color-code": "CL"
+          }
+        },
+        "6fee3069-2f57-4e20-b7d6-4640ed8d9955": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cla",
+            "color-code": "CLA"
+          }
+        },
+        "105140ab-64c8-4eb1-ac46-cfe2801d8f67": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-clk",
+            "color-code": "CLK"
+          }
+        },
+        "70fed28e-c32e-4ee5-96e4-a4452f041470": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-cls",
+            "color-code": "CLS"
+          }
+        },
+        "686246b8-404d-4b8b-b3ad-138e33cf3dc1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-e-klasa",
+            "color-code": "E class"
+          }
+        },
+        "15abbbec-5fba-4f78-896c-75d53cfb9604": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqa",
+            "color-code": "EQA"
+          }
+        },
+        "68e8b145-5885-412f-867b-335d4ff25ce3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqb",
+            "color-code": "EQB"
+          }
+        },
+        "10a6d7e7-5c0c-4485-9e35-1aae92e3064d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqc",
+            "color-code": "EQC"
+          }
+        },
+        "ca0b9d6b-5967-4abb-9395-54df7aa50439": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqe",
+            "color-code": "EQE"
+          }
+        },
+        "section_eeWpFF": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mercedes-benz-eqt",
+            "color-code": "EQT"
+          }
+        },
+        "3ce10c15-fe9a-4195-a070-a7a7ed95c671": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-eqs",
+            "color-code": "EQS"
+          }
+        },
+        "2a38e180-6832-4cd7-9d58-f7235f4258fa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mercedes-benz-eqv",
+            "color-code": "EQV"
+          }
+        },
+        "a5076518-51aa-4822-a2a6-9705ad37c7a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-g-klasa",
+            "color-code": "G class"
+          }
+        },
+        "c4b23181-5455-4563-bf5a-bdd649aa6788": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gl",
+            "color-code": "GL"
+          }
+        },
+        "46151b81-b7d9-4dd3-8628-7262ed6b6acc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gla",
+            "color-code": "GLA"
+          }
+        },
+        "e87b6eb6-52d5-403a-9d46-3d43d8319f51": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glb",
+            "color-code": "GLB"
+          }
+        },
+        "a788c712-6cf8-4d83-a5f4-34585e58f7a6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glc",
+            "color-code": "GLC"
+          }
+        },
+        "7ca91b78-eb70-4058-9c81-84722120c2ee": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glc-coupe",
+            "color-code": "GLC Coupe"
+          }
+        },
+        "f06302e3-ac61-485d-b271-e87f88161ca9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gle",
+            "color-code": "GLE"
+          }
+        },
+        "7ce35d47-8c36-45a2-82d3-b321f7975487": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gle-coupe",
+            "color-code": "GLE Coupe"
+          }
+        },
+        "bbfaefae-1841-4cb2-bc0d-75876a18e084": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-glk",
+            "color-code": "GLK"
+          }
+        },
+        "cf2d4aca-993e-44d6-816a-41f518948b6a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-gls",
+            "color-code": "GLS"
+          }
+        },
+        "9127d6d9-bf5b-4d58-8bae-7abd50d0d8b0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-ml",
+            "color-code": "ML"
+          }
+        },
+        "a4ecf008-86a9-4e2d-99f1-7a4c597019f6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-r-klasa",
+            "color-code": "R class"
+          }
+        },
+        "fce99a7b-3c6c-4d62-ac9b-80f63941bda3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s-klasa",
+            "color-code": "S class"
+          }
+        },
+        "6f401adb-036d-4a03-83bb-6d961058d7a3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s124",
+            "color-code": "S124"
+          }
+        },
+        "d804b4a3-7a0b-4e41-9a6f-52e34fcf8967": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-s63-amg",
+            "color-code": "S63 AMG"
+          }
+        },
+        "fda1fb0d-ab67-4254-a49f-2dec239b8f98": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-sl",
+            "color-code": "SL"
+          }
+        },
+        "bd8c67b2-b7e8-40fd-a457-3bb26bc77102": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-slk",
+            "color-code": "SLK"
+          }
+        },
+        "f94f8f95-e562-454d-aa49-8cd2afb5f6d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-sprinter",
+            "color-code": "Sprinter"
+          }
+        },
+        "6856f6de-9b10-4fe0-bd26-0ed3c208f637": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-t-klasa",
+            "color-code": "T class"
+          }
+        },
+        "8d0257f7-1257-4709-96b0-5c81d764aa66": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-v-klasa",
+            "color-code": "V class"
+          }
+        },
+        "4dbcd289-c938-464f-9e3c-22a17f123a9a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-vaneo",
+            "color-code": "Vaneo"
+          }
+        },
+        "b2586516-a187-4ccf-928d-18a516f3a7cc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-viano",
+            "color-code": "Viano"
+          }
+        },
+        "b99c15e0-53c2-4768-aa6b-93594214efa2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-vito",
+            "color-code": "Vito"
+          }
+        },
+        "69338da2-ac57-40a0-91cf-8622021e673e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-w123-1",
+            "color-code": "W123"
+          }
+        },
+        "0eca988a-8f2f-4047-a23c-4bbf71eb471a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-w123",
+            "color-code": "W124"
+          }
+        },
+        "cd07607e-c336-41e2-a898-e4303c8a80f2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz-x",
+            "color-code": "X"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "938b5775-1f0b-427a-9c71-f1593f58908d",
+        "ff396b16-76cf-4ef5-ab3f-2fec89797792",
+        "cf191636-3b90-4337-8eb9-1aeebc02d1fe",
+        "82b70abe-e48c-4daa-b6c7-724a1ab14a6e",
+        "70c79080-f21e-460a-97f1-85c8d0188894",
+        "1e45917b-bea2-4e71-a41a-9b125ca3cf2c",
+        "7601e45a-aa07-400c-8275-58e01efc5cb6",
+        "0fd8023d-6bd4-491f-83b0-14216eae4718",
+        "6fee3069-2f57-4e20-b7d6-4640ed8d9955",
+        "105140ab-64c8-4eb1-ac46-cfe2801d8f67",
+        "70fed28e-c32e-4ee5-96e4-a4452f041470",
+        "686246b8-404d-4b8b-b3ad-138e33cf3dc1",
+        "15abbbec-5fba-4f78-896c-75d53cfb9604",
+        "68e8b145-5885-412f-867b-335d4ff25ce3",
+        "10a6d7e7-5c0c-4485-9e35-1aae92e3064d",
+        "ca0b9d6b-5967-4abb-9395-54df7aa50439",
+        "section_eeWpFF",
+        "3ce10c15-fe9a-4195-a070-a7a7ed95c671",
+        "2a38e180-6832-4cd7-9d58-f7235f4258fa",
+        "a5076518-51aa-4822-a2a6-9705ad37c7a1",
+        "c4b23181-5455-4563-bf5a-bdd649aa6788",
+        "46151b81-b7d9-4dd3-8628-7262ed6b6acc",
+        "e87b6eb6-52d5-403a-9d46-3d43d8319f51",
+        "a788c712-6cf8-4d83-a5f4-34585e58f7a6",
+        "7ca91b78-eb70-4058-9c81-84722120c2ee",
+        "f06302e3-ac61-485d-b271-e87f88161ca9",
+        "7ce35d47-8c36-45a2-82d3-b321f7975487",
+        "bbfaefae-1841-4cb2-bc0d-75876a18e084",
+        "cf2d4aca-993e-44d6-816a-41f518948b6a",
+        "9127d6d9-bf5b-4d58-8bae-7abd50d0d8b0",
+        "a4ecf008-86a9-4e2d-99f1-7a4c597019f6",
+        "fce99a7b-3c6c-4d62-ac9b-80f63941bda3",
+        "6f401adb-036d-4a03-83bb-6d961058d7a3",
+        "d804b4a3-7a0b-4e41-9a6f-52e34fcf8967",
+        "fda1fb0d-ab67-4254-a49f-2dec239b8f98",
+        "bd8c67b2-b7e8-40fd-a457-3bb26bc77102",
+        "f94f8f95-e562-454d-aa49-8cd2afb5f6d2",
+        "6856f6de-9b10-4fe0-bd26-0ed3c208f637",
+        "8d0257f7-1257-4709-96b0-5c81d764aa66",
+        "4dbcd289-c938-464f-9e3c-22a17f123a9a",
+        "b2586516-a187-4ccf-928d-18a516f3a7cc",
+        "b99c15e0-53c2-4768-aa6b-93594214efa2",
+        "69338da2-ac57-40a0-91cf-8622021e673e",
+        "0eca988a-8f2f-4047-a23c-4bbf71eb471a",
+        "cd07607e-c336-41e2-a898-e4303c8a80f2"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "75491b78-f1e2-4318-b228-68c5ed9d5a72",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,58 @@
+{{ 'section-video-reviews.css' | asset_url | stylesheet_tag }}
+<div class="videos">
+    <div class="page-width">
+        <div class="videos__content">
+            {% if section.settings.title %}
+                <h2 class="title h1 section__title">{{section.settings.title}}</h2>
+            {% endif %}
+
+            <div class="videos__container">
+                {% for block in section.blocks %}
+                    <div class="videos__item">  
+                        <div class="videos__item_title">{{ block.settings.title }}</div>
+                        <video src="{{  block.settings.video.sources[1].url }}" controls loop muted playsinline></video>
+                        {% comment %} {{ block.settings.video | video_tag: controls:true,muted:true, image_size: '600x' }} {% endcomment %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Videos",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Videos"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "video",
+                "name": "Video",
+                "settings": [
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "Video"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "Title"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Videos"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,119 @@
+<section>
+  <h2 class="title">{{ section.settings.hd }}</h2>
+ <div class="second-main">
+      <div class="row column-reverse">
+          <div class="col-lg-6 top" style="width: 33%">
+              <div class="second-left white">
+                  {{ section.settings.des1 }}
+              </div>
+          </div>
+
+         <div class="col-lg-6" style="width: 33%">
+              <div class="second-right">
+                  <div class="second-main-image">
+                      <img src="{{ section.settings.img|img_url:'master' }}" alt="">
+                  </div>
+              </div>
+          </div>
+
+        <div class="col-lg-6 top" style="width: 33%">
+              <div class="second-left white">
+                  {{ section.settings.des2 }}
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<style>
+.white {
+color: rgb(var(--color-foreground));
+}
+.top{
+margin-bottom: auto;
+} 
+.title{
+font-weight: 600;
+font-size: 24px;
+line-height: 115%;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+}
+.second-main .row {
+display: flex;
+flex-wrap: wrap;
+}
+.second-main .row img {
+display: block;
+width: 100%;
+}
+@media screen and (min-width: 990px){
+.second-main .row {
+max-width: var(--page-width);
+padding: 0 5rem;
+
+}
+.second-main{
+display: flex;
+justify-content: center;
+}
+.second-left{
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+}
+}
+strong {
+font-weight: 600;
+color: rgb(var(--color-foreground));
+}
+
+@media (max-width: 991px) {
+.second-main .row .col-lg-6 {
+width: 100% !important;
+}
+}
+</style>
+
+{% schema %}
+{
+"name": "Two texts with an image",
+"settings": [
+{
+"type":"text",
+"label":"Main Heading",
+"id":"hd",
+"default":"Witam Cię w świecie EVAMATS!"
+},
+{
+"type":"richtext",
+"label":"Description",
+"id":"des1",
+"default":" <p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how  important it is, to feel this specter of emotions. And this is exactly what we are doing in our company  – helping you to form your kids` future.</p>"
+},
+{
+"type":"image_picker",
+"label":"Main Image",
+"id":"img"
+},
+{
+"type":"richtext",
+"label":"Description",
+"id":"des2",
+"default":" <p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how  important it is, to feel this specter of emotions. And this is exactly what we are doing in our company  – helping you to form your kids` future.</p>"
+}
+],
+"presets":[
+{
+"name":"Two texts with an image",
+"category":"custom"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,501 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "9d4cc07c-c61f-4316-bf7c-699c430586d2": {
+      "type": "sidebar",
+      "blocks": {
+        "3afce4f9-215a-42e3-9359-66a503cedc2b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-almera",
+            "color-code": "Almera"
+          }
+        },
+        "section_pBQipw": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-ariya",
+            "color-code": "Ariya"
+          }
+        },
+        "f70e8618-17b4-4811-a4ef-f3a853c55da9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-altima",
+            "color-code": "Altima"
+          }
+        },
+        "2f8a9fd4-f35c-46e7-afd9-dc05bc26ea81": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-armada",
+            "color-code": "Armada"
+          }
+        },
+        "fbe949f3-3c91-417f-8e00-c305df13ca84": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-juke",
+            "color-code": "Juke"
+          }
+        },
+        "e18a1fb9-bc7e-4f0c-b849-09885bbfe22a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-leaf",
+            "color-code": "Leaf"
+          }
+        },
+        "03312082-aef3-4444-8740-10ddbeb57b5c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-micra",
+            "color-code": "Micra"
+          }
+        },
+        "70ed26f0-83d3-4fe2-bc06-9915f8fc8a78": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-murano",
+            "color-code": "Murano"
+          }
+        },
+        "2ecdddc5-057d-41e4-8fb8-686fb4c45fd8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-navara",
+            "color-code": "Navara"
+          }
+        },
+        "9b17a804-c5c3-4cea-bb89-e7a5ac07a30e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-note",
+            "color-code": "Note"
+          }
+        },
+        "7a0a9974-be39-42ea-b893-a8e01d4e14d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-pathfinder",
+            "color-code": "Pathfinder"
+          }
+        },
+        "7d882b84-36a3-4354-a747-f221f00e15bc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-patrol",
+            "color-code": "Patrol"
+          }
+        },
+        "23cc1a71-7a07-4fcf-8bc2-ac03f72f5a22": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-primastar",
+            "color-code": "Primastar"
+          }
+        },
+        "424c4f59-face-44e6-80a6-cdbfbf0fb9d4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-primera",
+            "color-code": "Primera"
+          }
+        },
+        "a729bdc7-4db1-40cf-9ee7-ffac7afc72b8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-pulsar",
+            "color-code": "Pulsar"
+          }
+        },
+        "b1caadc6-25ef-494f-bb85-ebdbfd334b69": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-qashqai",
+            "color-code": "Qashqai"
+          }
+        },
+        "049297c9-247d-4630-a956-5ee239df1186": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-qashqai-2",
+            "color-code": "Qashqai +2"
+          }
+        },
+        "26cb7f7a-11e4-49a8-9781-a95e88fe12f1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-quest",
+            "color-code": "Quest"
+          }
+        },
+        "598e3c72-f406-4f21-8c7f-b9e605fd836e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-tiida",
+            "color-code": "Tiida"
+          }
+        },
+        "section_8LLNmP": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-townstar",
+            "color-code": "Townstar"
+          }
+        },
+        "section_YQeNki": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-townstar-ev",
+            "color-code": "Townstar EV"
+          }
+        },
+        "dca0a493-84a6-4c6b-b571-3fa5e1837967": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-x-trail",
+            "color-code": "X-Trail"
+          }
+        },
+        "fc38675a-dc28-40a3-9968-c267bda283d3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-350z",
+            "color-code": "350Z"
+          }
+        },
+        "9621acf6-364e-428e-9e9b-50c5ddf30df3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-370z",
+            "color-code": "370Z"
+          }
+        },
+        "9fb35c86-b241-43e9-b24a-f33a13ce7624": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-gt-r",
+            "color-code": "GT-R"
+          }
+        },
+        "3a9ac067-6570-407d-b278-e85bda5e6a11": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-nv200",
+            "color-code": "NV200"
+          }
+        },
+        "a95f8253-d72d-441f-a726-e8626873564e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-nv300",
+            "color-code": "NV300"
+          }
+        }
+      },
+      "block_order": [
+        "3afce4f9-215a-42e3-9359-66a503cedc2b",
+        "section_pBQipw",
+        "f70e8618-17b4-4811-a4ef-f3a853c55da9",
+        "2f8a9fd4-f35c-46e7-afd9-dc05bc26ea81",
+        "fbe949f3-3c91-417f-8e00-c305df13ca84",
+        "e18a1fb9-bc7e-4f0c-b849-09885bbfe22a",
+        "03312082-aef3-4444-8740-10ddbeb57b5c",
+        "70ed26f0-83d3-4fe2-bc06-9915f8fc8a78",
+        "2ecdddc5-057d-41e4-8fb8-686fb4c45fd8",
+        "9b17a804-c5c3-4cea-bb89-e7a5ac07a30e",
+        "7a0a9974-be39-42ea-b893-a8e01d4e14d2",
+        "7d882b84-36a3-4354-a747-f221f00e15bc",
+        "23cc1a71-7a07-4fcf-8bc2-ac03f72f5a22",
+        "424c4f59-face-44e6-80a6-cdbfbf0fb9d4",
+        "a729bdc7-4db1-40cf-9ee7-ffac7afc72b8",
+        "b1caadc6-25ef-494f-bb85-ebdbfd334b69",
+        "049297c9-247d-4630-a956-5ee239df1186",
+        "26cb7f7a-11e4-49a8-9781-a95e88fe12f1",
+        "598e3c72-f406-4f21-8c7f-b9e605fd836e",
+        "section_8LLNmP",
+        "section_YQeNki",
+        "dca0a493-84a6-4c6b-b571-3fa5e1837967",
+        "fc38675a-dc28-40a3-9968-c267bda283d3",
+        "9621acf6-364e-428e-9e9b-50c5ddf30df3",
+        "9fb35c86-b241-43e9-b24a-f33a13ce7624",
+        "3a9ac067-6570-407d-b278-e85bda5e6a11",
+        "a95f8253-d72d-441f-a726-e8626873564e"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "42d5a7f3-bd1f-4a11-a617-252219c5655d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-350z",
+            "color-code": "350Z"
+          }
+        },
+        "a637ba7c-0798-4779-80b0-e99e6665c92a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-370z",
+            "color-code": "370Z"
+          }
+        },
+        "section_Rxx6MJ": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-ariya",
+            "color-code": "Ariya"
+          }
+        },
+        "f6586a7f-fc79-46ae-9536-f4f08c54a1d8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-almera",
+            "color-code": "Almera"
+          }
+        },
+        "d4007703-1a4f-4b7e-a97a-6868f153c83f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-altima",
+            "color-code": "Altima"
+          }
+        },
+        "efb88dea-3993-4b82-85bc-968fddc0e038": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-armada",
+            "color-code": "Armada"
+          }
+        },
+        "0b99cc0e-c5ad-44b3-a8e1-804de8bcde0f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-gt-r",
+            "color-code": "GT-R"
+          }
+        },
+        "03062f13-fc15-4b38-bc7c-a3207853649b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-juke",
+            "color-code": "Juke"
+          }
+        },
+        "0e19d336-6447-488c-a5a7-804c2cef356d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-leaf",
+            "color-code": "Leaf"
+          }
+        },
+        "6dc10b47-30e4-4bc2-af04-694e074eda89": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-micra",
+            "color-code": "Micra"
+          }
+        },
+        "a38c0f6d-9f0f-4bcc-babf-19a6b95bb102": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-murano",
+            "color-code": "Murano"
+          }
+        },
+        "c9c978a6-1814-416e-b82e-630fa32002d7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-navara",
+            "color-code": "Navara"
+          }
+        },
+        "fb20fdf5-4e8a-41f9-8294-42e6ebf9057e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-nv200",
+            "color-code": "NV200"
+          }
+        },
+        "3094bbea-66bc-471a-9f55-ab769a65b541": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-nv300",
+            "color-code": "NV300"
+          }
+        },
+        "f20be7f8-34e4-4433-a8f4-4bafd115e692": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-note",
+            "color-code": "Note"
+          }
+        },
+        "8b2b64c0-8a9c-4c9f-ba10-0e1a7299c539": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-pathfinder",
+            "color-code": "Pathfinder"
+          }
+        },
+        "1147bbc8-059d-4c25-a426-38df9ca2f464": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-patrol",
+            "color-code": "Patrol"
+          }
+        },
+        "b66ca77b-e4dc-466f-a9a2-93df18fc643d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-primastar",
+            "color-code": "Primastar"
+          }
+        },
+        "e493423d-1b67-4596-ab17-7eaed3e46e3f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-primera",
+            "color-code": "Primera"
+          }
+        },
+        "c72b5797-a895-40d4-b131-d6a49aa45c34": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-pulsar",
+            "color-code": "Pulsar"
+          }
+        },
+        "a9900dab-028b-4f1a-814e-6fadd2aab4b2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-qashqai",
+            "color-code": "Qashqai"
+          }
+        },
+        "5404a205-a117-4455-9a08-32dd74ed8b1d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-qashqai-2",
+            "color-code": "Qashqai +2"
+          }
+        },
+        "7f502171-6ba7-44f1-b530-545eeab86df4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-quest",
+            "color-code": "Quest"
+          }
+        },
+        "63e06d71-d11e-4eee-9fdd-f3068b11fbe2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-tiida",
+            "color-code": "Tiida"
+          }
+        },
+        "section_ENTEbt": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-townstar",
+            "color-code": "Townstar"
+          }
+        },
+        "section_kgLzfE": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-nissan-townstar-ev",
+            "color-code": "Townstar EV"
+          }
+        },
+        "6828169c-7ee9-4cd4-8e45-591f260e7726": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan-x-trail",
+            "color-code": "X-Trail"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "42d5a7f3-bd1f-4a11-a617-252219c5655d",
+        "a637ba7c-0798-4779-80b0-e99e6665c92a",
+        "section_Rxx6MJ",
+        "f6586a7f-fc79-46ae-9536-f4f08c54a1d8",
+        "d4007703-1a4f-4b7e-a97a-6868f153c83f",
+        "efb88dea-3993-4b82-85bc-968fddc0e038",
+        "0b99cc0e-c5ad-44b3-a8e1-804de8bcde0f",
+        "03062f13-fc15-4b38-bc7c-a3207853649b",
+        "0e19d336-6447-488c-a5a7-804c2cef356d",
+        "6dc10b47-30e4-4bc2-af04-694e074eda89",
+        "a38c0f6d-9f0f-4bcc-babf-19a6b95bb102",
+        "c9c978a6-1814-416e-b82e-630fa32002d7",
+        "fb20fdf5-4e8a-41f9-8294-42e6ebf9057e",
+        "3094bbea-66bc-471a-9f55-ab769a65b541",
+        "f20be7f8-34e4-4433-a8f4-4bafd115e692",
+        "8b2b64c0-8a9c-4c9f-ba10-0e1a7299c539",
+        "1147bbc8-059d-4c25-a426-38df9ca2f464",
+        "b66ca77b-e4dc-466f-a9a2-93df18fc643d",
+        "e493423d-1b67-4596-ab17-7eaed3e46e3f",
+        "c72b5797-a895-40d4-b131-d6a49aa45c34",
+        "a9900dab-028b-4f1a-814e-6fadd2aab4b2",
+        "5404a205-a117-4455-9a08-32dd74ed8b1d",
+        "7f502171-6ba7-44f1-b530-545eeab86df4",
+        "63e06d71-d11e-4eee-9fdd-f3068b11fbe2",
+        "section_ENTEbt",
+        "section_kgLzfE",
+        "6828169c-7ee9-4cd4-8e45-591f260e7726"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "9d4cc07c-c61f-4316-bf7c-699c430586d2",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

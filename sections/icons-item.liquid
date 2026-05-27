@@ -1,0 +1,53 @@
+<div class="section-spacing">
+    <div class="page-width">
+      <div class="section-stack">
+        <div class="icons-items__grid">
+          {%- for block in section.blocks -%}
+                <div class="icons-items__item block--{{ forloop.index }}">
+                    <div class="icons-items__item-size">
+                        {{- block.settings.logo | image_url: width: block.settings.logo.width | image_tag: sizes: sizes, widths: '150, 200, 350', loading: 'lazy'-}}
+                    </div>
+                  <div class="h6">{{ block.settings.text }}</div>
+                </div>
+                {% unless forloop.last %} 
+                  <div class="icons-items__separator"> </div>
+                {% endunless %}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Icons items",
+  "class": "shopify-section--logo-list",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Icon",
+          "info": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icons items"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+<div class="product_tabs">
+    <div class="page-width">
+        <div class="product_tabs__content">
+            <div class="product_tabs__items">
+                {% for block in section.blocks %}
+                    <div class="product_tabs__item {% if forloop.first %}active{% endif %}" data-id="{{ block.settings.id }}">
+                        {{ block.settings.title }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="product_tabs__containers">
+                {% for block in section.blocks %}
+                    <div class="product_tabs__containers_item {% if forloop.first %}active{% endif %}" data-id="{{ block.settings.id }}">
+                        {{ block.settings.html }}    
+                    </div>                    
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Product tabs",
+        "settings": [
+        
+        ],
+        "blocks": [
+            {
+                "type": "tab",
+                "name": "Tab",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "id",
+                        "label": "Id"
+                    },
+                    {
+                        "type": "html",
+                        "id": "html",
+                        "label": "Html"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product tabs"
+            }
+        ]        
+    }
+{% endschema %}

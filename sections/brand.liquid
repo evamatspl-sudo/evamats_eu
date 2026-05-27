@@ -1,0 +1,81 @@
+  {{ 'brand-style.css' | asset_url | stylesheet_tag }}
+  
+  <div class="colorTable {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
+        {% if section.settings.color-table-header != blank %}
+          <h3 class="colorTable_header">{{ section.settings.color-table-header }}</h3>
+        {% endif %}
+        <div class="colorTable_block">
+           {% if section.settings.catalog-header != blank %}
+              <h4 class="SectionHeader__SubHeading Heading u-h4">{{ section.settings.catalog-header }}</h4>
+           {% endif %}
+            <div class="colorTable_block__blocks">
+              {%- for block in section.blocks -%}
+                <a href="{{block.settings.product-link}}" class="color_block">
+                    <div class="color_block__wrapper">
+                      <img style="width: 100%; height: 100%; object-fit: scale-down; max-width: 170px; max-height: 170px;" src="{{ block.settings.table-img | img_url: '240x'}}" alt="remowe" loading='lazy'>
+                          
+                    </div>
+
+                </a>
+              {% endfor %}
+ 
+            </div>
+        </div>
+    </div>
+
+
+  
+{% schema %}
+  
+{
+"name": "Brand Car",
+"max_blocks": 50,
+"settings": [
+   {
+     "type": "text",
+     "id": "color-table-header",
+     "label": "Heading"
+   },
+   {
+     "type": "text",
+     "id": "catalog-header",
+     "label": "Heading Catalog"
+   },
+   {
+     "type": "checkbox",
+     "id": "margin-bottom",
+     "label": "Bottom indent",
+     "default": false
+   }
+],
+"blocks" : [
+    {
+    "type": "section",
+    "name": "Brand Auto",
+    "settings": [
+         {
+           "type": "image_picker",
+           "id": "table-img",
+           "label": "Image"
+         },
+      {
+           "type": "url",
+           "id": "product-link",
+           "label": "Marki Link"
+         },
+         {
+           "type": "text",
+           "id": "color-code",
+           "label": "Name"
+         }
+    ]
+  }
+],
+  "presets": [
+  {
+    "name":  "Brand Car"
+  }
+]
+}
+
+{% endschema %}

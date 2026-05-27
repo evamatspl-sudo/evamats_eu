@@ -1,0 +1,711 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "cdebed11-f201-4f9f-bc88-a20d3ed3faff": {
+      "type": "home-5",
+      "disabled": true,
+      "settings": {
+        "btn_text": "All brands",
+        "btn_url": "shopify:\/\/pages\/dywaniki-samochodowe-eva"
+      }
+    },
+    "a5313f69-e3ce-42d2-81f4-8144e972dc4d": {
+      "type": "sidebar",
+      "blocks": {
+        "e5a46ac8-a617-4753-87c9-68c55b1ec519": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi",
+            "color-code": "All"
+          }
+        },
+        "325a4705-7d58-455d-b6f4-b21cc81fb5a6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-100",
+            "color-code": "100"
+          }
+        },
+        "e206b757-c19a-477b-9ff9-fbc25595c68d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-80",
+            "color-code": "80"
+          }
+        },
+        "e305fe78-d379-4b33-98d4-d1fd062e2c27": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a1",
+            "color-code": "A1"
+          }
+        },
+        "12aa95a0-23b3-4ca6-86de-e2a2a842e695": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a2",
+            "color-code": "A2"
+          }
+        },
+        "63f33708-1165-4081-b961-f25fbeed523c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a3",
+            "color-code": "A3"
+          }
+        },
+        "8e590cd0-4aac-430e-a357-643a8b3b7c78": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a4",
+            "color-code": "A4"
+          }
+        },
+        "6eeae7d6-f0cd-4a09-8249-620367e76bb4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a5",
+            "color-code": "A5"
+          }
+        },
+        "a3db9218-d598-4b1f-9cd6-0ab2d391575f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a6",
+            "color-code": "A6"
+          }
+        },
+        "dd9cf339-9ac9-4d4d-9976-97bbdff5fc10": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a7",
+            "color-code": "A7"
+          }
+        },
+        "381a4ca2-6f36-4c96-a662-e3fd562037c5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a8",
+            "color-code": "A8"
+          }
+        },
+        "49fa92c8-972c-4ec6-8c62-20925f4b2d44": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-e-tron",
+            "color-code": "E-Tron"
+          }
+        },
+        "9daee144-eb32-4446-b934-93baa48306f4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q2",
+            "color-code": "Q2"
+          }
+        },
+        "b8cd4781-c679-47a5-a57d-76e4265aefb8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q3",
+            "color-code": "Q3"
+          }
+        },
+        "7cc9c92e-8f40-4228-a113-b8ab5d90ebd7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q4-e-tron-1",
+            "color-code": "Q4 E-Tron"
+          }
+        },
+        "32929188-9e4a-4838-be7c-d7b1894c206c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q5",
+            "color-code": "Q5"
+          }
+        },
+        "87ffdfe6-ad00-4fe1-9454-895f673bd5db": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q6",
+            "color-code": "Q7"
+          }
+        },
+        "ba91bef3-bb73-4212-9e11-55cdcd9e78c3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q8",
+            "color-code": "Q8"
+          }
+        },
+        "9309e7f5-b2d1-4288-a43d-65b7c5bdcb62": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs3",
+            "color-code": "RS3"
+          }
+        },
+        "f8113ba4-dcc5-46ce-bda7-1ef58c1decb9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs4",
+            "color-code": "RS4"
+          }
+        },
+        "ca900ca7-6529-4860-ac48-f46a9c1a0330": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs5",
+            "color-code": "RS5"
+          }
+        },
+        "30b04251-3a5c-4711-98e2-875e9c7d3cc1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs6",
+            "color-code": "RS6"
+          }
+        },
+        "cfda6b06-1228-4750-a040-693c5a4ccdb5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-e-tron",
+            "color-code": "RS e-tron"
+          }
+        },
+        "a91ea758-78c9-4a5b-a3fb-42432bb27a63": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs7",
+            "color-code": "RS7"
+          }
+        },
+        "aca02b05-3405-44fd-9eeb-61b3f44e192c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-q3",
+            "color-code": "RS Q3"
+          }
+        },
+        "16b51bf5-5d5f-4122-bc26-b1b8a3b8f287": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-q8",
+            "color-code": "RS Q8"
+          }
+        },
+        "23304297-7e92-43fc-aed4-ae1749f8f0da": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s1",
+            "color-code": "S1"
+          }
+        },
+        "e1e3de2e-0a42-429f-8544-0bd06d5b80ef": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s3",
+            "color-code": "S3"
+          }
+        },
+        "cc6a6acc-0394-453a-81ca-adc28abee2fe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s4",
+            "color-code": "S4"
+          }
+        },
+        "a84910e2-513d-4233-a18c-2c4c4049da74": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s5",
+            "color-code": "S5"
+          }
+        },
+        "c3d2fb9f-4d99-450a-9db0-d91096a38a03": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s6",
+            "color-code": "S6"
+          }
+        },
+        "f1bb1c7e-a5b1-4376-a651-81585ead0299": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s7",
+            "color-code": "S7"
+          }
+        },
+        "ef1af1e4-04d5-4052-88e7-e13fceda7cfe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s8",
+            "color-code": "S8"
+          }
+        },
+        "8b2cec42-5447-43be-811c-a2fabc150a24": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq2",
+            "color-code": "SQ2"
+          }
+        },
+        "c0932dd8-d2a2-4bab-88cd-33c73938fc34": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq5",
+            "color-code": "SQ5"
+          }
+        },
+        "b0242d10-edca-4ce2-be0a-db8b4feebd92": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq7",
+            "color-code": "SQ7"
+          }
+        },
+        "215e3046-144f-47ee-9b8f-ba24cbb24a0c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq8",
+            "color-code": "SQ8"
+          }
+        },
+        "789debd5-0765-4ead-9898-f9bce973bf83": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tt",
+            "color-code": "TT"
+          }
+        },
+        "00bd13a2-8ab0-4307-9010-eeb13ca62a6c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tt-rs",
+            "color-code": "TT RS"
+          }
+        },
+        "0f172ffb-bbe4-454c-9ca5-ed7264fa8df0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tts",
+            "color-code": "TTS"
+          }
+        }
+      },
+      "block_order": [
+        "e5a46ac8-a617-4753-87c9-68c55b1ec519",
+        "325a4705-7d58-455d-b6f4-b21cc81fb5a6",
+        "e206b757-c19a-477b-9ff9-fbc25595c68d",
+        "e305fe78-d379-4b33-98d4-d1fd062e2c27",
+        "12aa95a0-23b3-4ca6-86de-e2a2a842e695",
+        "63f33708-1165-4081-b961-f25fbeed523c",
+        "8e590cd0-4aac-430e-a357-643a8b3b7c78",
+        "6eeae7d6-f0cd-4a09-8249-620367e76bb4",
+        "a3db9218-d598-4b1f-9cd6-0ab2d391575f",
+        "dd9cf339-9ac9-4d4d-9976-97bbdff5fc10",
+        "381a4ca2-6f36-4c96-a662-e3fd562037c5",
+        "49fa92c8-972c-4ec6-8c62-20925f4b2d44",
+        "9daee144-eb32-4446-b934-93baa48306f4",
+        "b8cd4781-c679-47a5-a57d-76e4265aefb8",
+        "7cc9c92e-8f40-4228-a113-b8ab5d90ebd7",
+        "32929188-9e4a-4838-be7c-d7b1894c206c",
+        "87ffdfe6-ad00-4fe1-9454-895f673bd5db",
+        "ba91bef3-bb73-4212-9e11-55cdcd9e78c3",
+        "9309e7f5-b2d1-4288-a43d-65b7c5bdcb62",
+        "f8113ba4-dcc5-46ce-bda7-1ef58c1decb9",
+        "ca900ca7-6529-4860-ac48-f46a9c1a0330",
+        "30b04251-3a5c-4711-98e2-875e9c7d3cc1",
+        "cfda6b06-1228-4750-a040-693c5a4ccdb5",
+        "a91ea758-78c9-4a5b-a3fb-42432bb27a63",
+        "aca02b05-3405-44fd-9eeb-61b3f44e192c",
+        "16b51bf5-5d5f-4122-bc26-b1b8a3b8f287",
+        "23304297-7e92-43fc-aed4-ae1749f8f0da",
+        "e1e3de2e-0a42-429f-8544-0bd06d5b80ef",
+        "cc6a6acc-0394-453a-81ca-adc28abee2fe",
+        "a84910e2-513d-4233-a18c-2c4c4049da74",
+        "c3d2fb9f-4d99-450a-9db0-d91096a38a03",
+        "f1bb1c7e-a5b1-4376-a651-81585ead0299",
+        "ef1af1e4-04d5-4052-88e7-e13fceda7cfe",
+        "8b2cec42-5447-43be-811c-a2fabc150a24",
+        "c0932dd8-d2a2-4bab-88cd-33c73938fc34",
+        "b0242d10-edca-4ce2-be0a-db8b4feebd92",
+        "215e3046-144f-47ee-9b8f-ba24cbb24a0c",
+        "789debd5-0765-4ead-9898-f9bce973bf83",
+        "00bd13a2-8ab0-4307-9010-eeb13ca62a6c",
+        "0f172ffb-bbe4-454c-9ca5-ed7264fa8df0"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "29604e9a-382a-4661-9e10-559f4ba6bfb4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-100",
+            "color-code": "100"
+          }
+        },
+        "d6ee1504-4714-475f-a291-61684cf147ff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-80",
+            "color-code": "80"
+          }
+        },
+        "2c2678d5-c0c9-48a8-94ca-1fcfaa11591f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a1",
+            "color-code": "A1"
+          }
+        },
+        "8b8c303e-430b-4c0b-8caf-bc185ef46fb1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a2",
+            "color-code": "A2"
+          }
+        },
+        "3b48cbf0-5c83-40d3-9bc8-391acd8f3968": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a3",
+            "color-code": "A3"
+          }
+        },
+        "8790b7c8-7e8c-4fc3-a25c-2a403b50dd8f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a4",
+            "color-code": "A4"
+          }
+        },
+        "76a4f289-1691-4d36-856b-d8112236087b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a5",
+            "color-code": "A5"
+          }
+        },
+        "84d8bc09-f4f2-4343-8672-480c8ece6180": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a6",
+            "color-code": "A6"
+          }
+        },
+        "5b349bab-9e60-4269-be70-8a9c674279a5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a7",
+            "color-code": "A7"
+          }
+        },
+        "76778b29-f285-40fa-87bf-4854f9515edb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-a8",
+            "color-code": "A8"
+          }
+        },
+        "cc69a0fb-9d2a-47b1-a45c-7fe94c7f5a64": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-e-tron",
+            "color-code": "E-TRON"
+          }
+        },
+        "d4ae3934-5f7c-4e19-badb-c316db52cb1a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q2",
+            "color-code": "Q2"
+          }
+        },
+        "c82a0226-30f2-4df3-a39f-2a3c04e195e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q3",
+            "color-code": "Q3"
+          }
+        },
+        "ad84dfd7-821a-4799-997f-5c10391d3b5f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q4-e-tron-1",
+            "color-code": "Q4 E-Tron"
+          }
+        },
+        "1298d63d-bfaf-4398-a0b5-8fff4a6facfc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q5",
+            "color-code": "Q5"
+          }
+        },
+        "167f4752-683a-4f15-94d1-257352a62b00": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q6",
+            "color-code": "Q7"
+          }
+        },
+        "152bcf64-16db-4ab1-89ee-0f611b551516": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-q8",
+            "color-code": "Q8"
+          }
+        },
+        "edf826bf-d99e-48aa-ae06-e363b8018b36": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs3",
+            "color-code": "RS3"
+          }
+        },
+        "84c4820b-7a5c-4d3d-ad52-7b2d4c5eee72": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs4",
+            "color-code": "RS4"
+          }
+        },
+        "ca2949cf-1ca1-4ab0-8f6a-2edd3150381a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs5",
+            "color-code": "RS5"
+          }
+        },
+        "a0646d3c-6d81-46b7-baf1-c41021c7bcf5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs6",
+            "color-code": "RS6"
+          }
+        },
+        "8c175a08-7fa8-4ea3-ade8-284ce8122370": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs7",
+            "color-code": "RS7"
+          }
+        },
+        "93bda0b5-a356-46ae-8407-087420214dc0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-e-tron",
+            "color-code": "RS e-tron"
+          }
+        },
+        "5f67f39e-255b-458c-b8bf-9ab980c6cb92": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-q3",
+            "color-code": "RS Q3"
+          }
+        },
+        "387661ca-f806-47f8-b688-add342650d25": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-rs-q8",
+            "color-code": "RS Q8"
+          }
+        },
+        "815029b4-eea4-41f2-900f-45014c554688": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s1",
+            "color-code": "S1"
+          }
+        },
+        "dd34a1aa-c9b4-4aae-817c-69ff1d143164": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s3",
+            "color-code": "S3"
+          }
+        },
+        "86247725-7454-4b5d-b5c0-da468421e3a0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s4",
+            "color-code": "S4"
+          }
+        },
+        "706914e2-3cf3-4dbd-959e-e98f6e74db4b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s5",
+            "color-code": "S5"
+          }
+        },
+        "82c9e468-bd61-4464-b58d-cc76c638f0a3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s6",
+            "color-code": "S6"
+          }
+        },
+        "6eca5531-325e-4d29-a98f-a4647d1e741c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s7",
+            "color-code": "S7"
+          }
+        },
+        "c93e0bf0-8d6b-483a-b743-5d25f51b7a75": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-s8",
+            "color-code": "S8"
+          }
+        },
+        "e8dca420-f116-414c-9eba-4bce8a1c420e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq2",
+            "color-code": "SQ2"
+          }
+        },
+        "d6c70748-79b9-4003-9be2-b47b3ce9ac8e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq5",
+            "color-code": "SQ5"
+          }
+        },
+        "f5ce520c-cd65-47a2-9a32-0e25c67b1d65": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq7",
+            "color-code": "SQ7"
+          }
+        },
+        "75f6dffb-b5e9-49d4-8b39-f5a4a03009a2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-sq8",
+            "color-code": "SQ8"
+          }
+        },
+        "5aa40870-5e5b-49a6-8ca6-069d3dac0737": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tt",
+            "color-code": "TT"
+          }
+        },
+        "efb526fa-d7bb-425b-874e-3c17054b1096": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tt-rs",
+            "color-code": "TT RS"
+          }
+        },
+        "52e8a1c3-5546-4e7a-ba6c-fde350145fa3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi-tts",
+            "color-code": "TTS"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "29604e9a-382a-4661-9e10-559f4ba6bfb4",
+        "d6ee1504-4714-475f-a291-61684cf147ff",
+        "2c2678d5-c0c9-48a8-94ca-1fcfaa11591f",
+        "8b8c303e-430b-4c0b-8caf-bc185ef46fb1",
+        "3b48cbf0-5c83-40d3-9bc8-391acd8f3968",
+        "8790b7c8-7e8c-4fc3-a25c-2a403b50dd8f",
+        "76a4f289-1691-4d36-856b-d8112236087b",
+        "84d8bc09-f4f2-4343-8672-480c8ece6180",
+        "5b349bab-9e60-4269-be70-8a9c674279a5",
+        "76778b29-f285-40fa-87bf-4854f9515edb",
+        "cc69a0fb-9d2a-47b1-a45c-7fe94c7f5a64",
+        "d4ae3934-5f7c-4e19-badb-c316db52cb1a",
+        "c82a0226-30f2-4df3-a39f-2a3c04e195e5",
+        "ad84dfd7-821a-4799-997f-5c10391d3b5f",
+        "1298d63d-bfaf-4398-a0b5-8fff4a6facfc",
+        "167f4752-683a-4f15-94d1-257352a62b00",
+        "152bcf64-16db-4ab1-89ee-0f611b551516",
+        "edf826bf-d99e-48aa-ae06-e363b8018b36",
+        "84c4820b-7a5c-4d3d-ad52-7b2d4c5eee72",
+        "ca2949cf-1ca1-4ab0-8f6a-2edd3150381a",
+        "a0646d3c-6d81-46b7-baf1-c41021c7bcf5",
+        "8c175a08-7fa8-4ea3-ade8-284ce8122370",
+        "93bda0b5-a356-46ae-8407-087420214dc0",
+        "5f67f39e-255b-458c-b8bf-9ab980c6cb92",
+        "387661ca-f806-47f8-b688-add342650d25",
+        "815029b4-eea4-41f2-900f-45014c554688",
+        "dd34a1aa-c9b4-4aae-817c-69ff1d143164",
+        "86247725-7454-4b5d-b5c0-da468421e3a0",
+        "706914e2-3cf3-4dbd-959e-e98f6e74db4b",
+        "82c9e468-bd61-4464-b58d-cc76c638f0a3",
+        "6eca5531-325e-4d29-a98f-a4647d1e741c",
+        "c93e0bf0-8d6b-483a-b743-5d25f51b7a75",
+        "e8dca420-f116-414c-9eba-4bce8a1c420e",
+        "d6c70748-79b9-4003-9be2-b47b3ce9ac8e",
+        "f5ce520c-cd65-47a2-9a32-0e25c67b1d65",
+        "75f6dffb-b5e9-49d4-8b39-f5a4a03009a2",
+        "5aa40870-5e5b-49a6-8ca6-069d3dac0737",
+        "efb526fa-d7bb-425b-874e-3c17054b1096",
+        "52e8a1c3-5546-4e7a-ba6c-fde350145fa3"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "cdebed11-f201-4f9f-bc88-a20d3ed3faff",
+    "a5313f69-e3ce-42d2-81f4-8144e972dc4d",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "962a7100-3f65-4002-8ca1-5943c4fcdf3f": {
+      "type": "sidebar",
+      "blocks": {
+        "22b7c47d-e6d0-4374-b8ba-1223190f1dd3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-amarok",
+            "color-code": "Amarok"
+          }
+        },
+        "7939595d-784e-49e7-9231-c07ae3cb4d63": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-arteon",
+            "color-code": "Arteon"
+          }
+        },
+        "8c53187d-1ee0-4804-a9ed-16ca82e30f72": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-atlas",
+            "color-code": "Atlas"
+          }
+        },
+        "e9d03c8b-e2fb-4e26-bb08-243544c28690": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-beetle",
+            "color-code": "Beetle"
+          }
+        },
+        "fa69a6e4-6106-449e-b853-04842da1c224": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-new-beetle",
+            "color-code": "New Beetle"
+          }
+        },
+        "d6100365-86c3-4901-bbaf-8cad49fd734d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-bora",
+            "color-code": "Bora"
+          }
+        },
+        "d4a071fd-e8cc-436d-9189-3df1b54f7aad": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-caddy",
+            "color-code": "Caddy"
+          }
+        },
+        "70ae6b0e-6287-4c01-b6b7-096b8cbd9f79": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-corrado",
+            "color-code": "Corrado"
+          }
+        },
+        "f8fca9cf-c179-48ff-ac91-a28d47828828": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-crafter",
+            "color-code": "Crafter"
+          }
+        },
+        "227c58b4-39ac-4391-a30b-3eb022c8ec58": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-cross-optimum",
+            "color-code": "Cross Optimum"
+          }
+        },
+        "8aa47d62-09d3-45e8-9760-b0953cc1d103": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-crosspolo",
+            "color-code": "CrossPolo"
+          }
+        },
+        "6e0f016e-22d4-4798-ba3c-f9ae726146f1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-eos",
+            "color-code": "EOS"
+          }
+        },
+        "8749ace5-3a76-4930-8e4f-a575376315dc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf",
+            "color-code": "Golf"
+          }
+        },
+        "aad64760-1ff9-4bf9-acd7-199fdc3c58f3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf-plus",
+            "color-code": "Golf Plus"
+          }
+        },
+        "808eeadf-189d-4fd6-81a5-652ac7346961": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf-sportsvan",
+            "color-code": "Golf Sportsvan"
+          }
+        },
+        "219ef8b3-1c65-4fd2-9f68-26ea68d7ccf1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-id-3",
+            "color-code": "ID.3"
+          }
+        },
+        "6c072f44-7da5-4200-beba-f7bc2e1eec71": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-id-4",
+            "color-code": "ID.4"
+          }
+        },
+        "bcbb1e28-9131-4563-b676-365146e296cf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-jetta",
+            "color-code": "Jetta"
+          }
+        },
+        "9e370a9b-e405-42a8-b2a7-b984186f7c49": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-lupo",
+            "color-code": "Lupo"
+          }
+        },
+        "bcc873e0-3d84-4d6d-abd1-9ae9b432c593": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-multivan",
+            "color-code": "Multivan"
+          }
+        },
+        "a29c41bd-558c-4919-ad52-884919f86d11": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-passat",
+            "color-code": "Passat"
+          }
+        },
+        "de5a496e-2b0b-463c-bc85-71c84c6856ba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-passat-cc",
+            "color-code": "Passat CC"
+          }
+        },
+        "25bb074a-a53d-47a5-89ed-271d38bd09a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-phaeton",
+            "color-code": "Phaeton"
+          }
+        },
+        "fa1cc027-a453-4ea7-9a3b-44f473222014": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-polo-classic",
+            "color-code": "Polo Classic"
+          }
+        },
+        "04f84abe-60d5-403b-b3de-2905e8081342": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-scirocco",
+            "color-code": "Scirocco"
+          }
+        },
+        "a8b88867-6fc1-4c53-ae50-cbf83a134c50": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-sharan",
+            "color-code": "Sharan"
+          }
+        },
+        "b3fd8891-7ab4-41f2-ad64-98f71f262a99": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-t-cross",
+            "color-code": "T-Cross"
+          }
+        },
+        "fe830bd5-98df-4de1-ba08-c037e1dfd578": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-t-roc",
+            "color-code": "T-Roc"
+          }
+        },
+        "733c1a90-171c-475c-ab84-6370f1e85d9f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-taigo",
+            "color-code": "Taigo"
+          }
+        },
+        "4b70336e-27fe-4039-98f0-f04d1f302fc9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-tiguan",
+            "color-code": "Tiguan"
+          }
+        },
+        "42c36cf3-db3f-4d69-8d11-7470971ec731": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-tiguan-allspace",
+            "color-code": "Tiguan Allspace"
+          }
+        },
+        "09a1a4d0-5926-432d-b34c-fb787b1373c6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touareg",
+            "color-code": "Touareg"
+          }
+        },
+        "d4a64b0d-98c8-4bbb-b367-920b10672faa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touran",
+            "color-code": "Touran"
+          }
+        },
+        "59f172cc-b254-4f04-b719-d9895b408d34": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touran-cross",
+            "color-code": "Touran Cross"
+          }
+        },
+        "08cff411-10c6-4400-8b5c-b5dea73c22b9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-transporter",
+            "color-code": "Transporter"
+          }
+        },
+        "b2fbaad8-42de-4894-9488-a3da696bcc8a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-up",
+            "color-code": "UP"
+          }
+        },
+        "9152c3a2-2790-4cbe-8892-53d49474ea77": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-vento",
+            "color-code": "Vento"
+          }
+        }
+      },
+      "block_order": [
+        "22b7c47d-e6d0-4374-b8ba-1223190f1dd3",
+        "7939595d-784e-49e7-9231-c07ae3cb4d63",
+        "8c53187d-1ee0-4804-a9ed-16ca82e30f72",
+        "e9d03c8b-e2fb-4e26-bb08-243544c28690",
+        "fa69a6e4-6106-449e-b853-04842da1c224",
+        "d6100365-86c3-4901-bbaf-8cad49fd734d",
+        "d4a071fd-e8cc-436d-9189-3df1b54f7aad",
+        "70ae6b0e-6287-4c01-b6b7-096b8cbd9f79",
+        "f8fca9cf-c179-48ff-ac91-a28d47828828",
+        "227c58b4-39ac-4391-a30b-3eb022c8ec58",
+        "8aa47d62-09d3-45e8-9760-b0953cc1d103",
+        "6e0f016e-22d4-4798-ba3c-f9ae726146f1",
+        "8749ace5-3a76-4930-8e4f-a575376315dc",
+        "aad64760-1ff9-4bf9-acd7-199fdc3c58f3",
+        "808eeadf-189d-4fd6-81a5-652ac7346961",
+        "219ef8b3-1c65-4fd2-9f68-26ea68d7ccf1",
+        "6c072f44-7da5-4200-beba-f7bc2e1eec71",
+        "bcbb1e28-9131-4563-b676-365146e296cf",
+        "9e370a9b-e405-42a8-b2a7-b984186f7c49",
+        "bcc873e0-3d84-4d6d-abd1-9ae9b432c593",
+        "a29c41bd-558c-4919-ad52-884919f86d11",
+        "de5a496e-2b0b-463c-bc85-71c84c6856ba",
+        "25bb074a-a53d-47a5-89ed-271d38bd09a1",
+        "fa1cc027-a453-4ea7-9a3b-44f473222014",
+        "04f84abe-60d5-403b-b3de-2905e8081342",
+        "a8b88867-6fc1-4c53-ae50-cbf83a134c50",
+        "b3fd8891-7ab4-41f2-ad64-98f71f262a99",
+        "fe830bd5-98df-4de1-ba08-c037e1dfd578",
+        "733c1a90-171c-475c-ab84-6370f1e85d9f",
+        "4b70336e-27fe-4039-98f0-f04d1f302fc9",
+        "42c36cf3-db3f-4d69-8d11-7470971ec731",
+        "09a1a4d0-5926-432d-b34c-fb787b1373c6",
+        "d4a64b0d-98c8-4bbb-b367-920b10672faa",
+        "59f172cc-b254-4f04-b719-d9895b408d34",
+        "08cff411-10c6-4400-8b5c-b5dea73c22b9",
+        "b2fbaad8-42de-4894-9488-a3da696bcc8a",
+        "9152c3a2-2790-4cbe-8892-53d49474ea77"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "1fb10e6b-cf0a-479b-bf5a-575134f33d1c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-amarok",
+            "color-code": "Amarok"
+          }
+        },
+        "b261ce3a-d9e9-44ae-8b82-cea1d0488b3b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-arteon",
+            "color-code": "Arteon"
+          }
+        },
+        "aa7a82b1-ba21-4ee6-9dfc-fec846eb54d1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-atlas",
+            "color-code": "Atlas"
+          }
+        },
+        "395ce3ad-b883-402a-b9a8-b36fde6a0c78": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-beetle",
+            "color-code": "Beetle"
+          }
+        },
+        "4a85e1b4-fab6-46de-a90e-6da3fbe461ec": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-new-beetle",
+            "color-code": "New Beetle"
+          }
+        },
+        "1c5c821a-edd2-41ee-a8f6-5e81828cb433": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-bora",
+            "color-code": "Bora"
+          }
+        },
+        "974c175f-5b8b-43bc-b40e-3d6a0c3f2af3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-caddy",
+            "color-code": "Caddy"
+          }
+        },
+        "140bcda1-cca2-4aad-a3c0-0ab4a3a92589": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-corrado",
+            "color-code": "Corrado"
+          }
+        },
+        "86efdbe0-be83-4483-9c05-82036cb5905e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-crafter",
+            "color-code": "Crafter"
+          }
+        },
+        "a5f9c60e-b92c-4599-bbe9-8a6391f28c97": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-cross-optimum",
+            "color-code": "Cross Optimum"
+          }
+        },
+        "96a8b96f-58f8-41a6-b978-9aa994236aab": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-crosspolo",
+            "color-code": "CrossPolo"
+          }
+        },
+        "885f9a92-1fa1-4728-9033-7cb858fae492": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-eos",
+            "color-code": "EOS"
+          }
+        },
+        "527e6eef-1f31-46c7-9b1f-43d01f1d29e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf",
+            "color-code": "Golf"
+          }
+        },
+        "4b53b5e0-66c1-4c45-b852-36b7d3be5023": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf-plus",
+            "color-code": "Golf Plus"
+          }
+        },
+        "d9e02333-59c2-4b1e-a167-8db64fb759d8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-golf-sportsvan",
+            "color-code": "Golf Sportsvan"
+          }
+        },
+        "bfe24815-e912-438a-9cfb-7c9c9eeeb3ea": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-id-3",
+            "color-code": "ID.3"
+          }
+        },
+        "50ac76f1-c302-41a2-8029-a4b1698ee9dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-id-4",
+            "color-code": "ID.4"
+          }
+        },
+        "2cded6b0-43bb-45ef-a985-818f48a890f4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-jetta",
+            "color-code": "Jetta"
+          }
+        },
+        "22e629d0-9d25-4361-8af4-e3a9f15ccec2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-lupo",
+            "color-code": "Lupo"
+          }
+        },
+        "048643c7-c8f6-4289-bb3a-0353afba52fa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-multivan",
+            "color-code": "Multivan"
+          }
+        },
+        "2b91f158-bf7b-473f-8132-5ded23d0cedb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-passat",
+            "color-code": "Passat"
+          }
+        },
+        "a217c5a3-353b-4486-a2ed-8837bc75e3ca": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-passat-cc",
+            "color-code": "Passat CC"
+          }
+        },
+        "bb81b859-c200-4e98-833e-4e373758d2ac": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-phaeton",
+            "color-code": "Phaeton"
+          }
+        },
+        "bc599b8e-3632-447b-a973-c24679b6554b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-polo",
+            "color-code": "Polo"
+          }
+        },
+        "7f5638d6-2706-4a3f-9227-f234c6e5db93": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-polo-classic",
+            "color-code": "Polo Classic"
+          }
+        },
+        "bee0496e-a9ba-48d3-a6b8-a0f415f19b01": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-scirocco",
+            "color-code": "Scirocco"
+          }
+        },
+        "315d78d5-5391-4f1f-98d4-3f230f7a67ba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-sharan",
+            "color-code": "Sharan"
+          }
+        },
+        "d95f4a15-41f9-4fce-90f3-5e3248d373fa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-t-cross",
+            "color-code": "T-Cross"
+          }
+        },
+        "cbd364d5-768c-4980-9e70-c21b659f2798": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-t-roc",
+            "color-code": "T-Roc"
+          }
+        },
+        "2618e30d-2cc5-4707-b5bc-c464e8256587": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-taigo",
+            "color-code": "Taigo"
+          }
+        },
+        "2226755d-1f3c-49c8-bc63-b736efe873ad": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-tiguan",
+            "color-code": "Tiguan"
+          }
+        },
+        "8d39fbba-2197-4e5e-bee1-356103b8e154": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-tiguan-allspace",
+            "color-code": "Tiguan Allspace"
+          }
+        },
+        "1192ef03-60d0-4b91-8e40-9bc54cd117d0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touareg",
+            "color-code": "Touareg"
+          }
+        },
+        "bff5107b-b0cd-4139-b826-ab15e2cdff3b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touran",
+            "color-code": "Touran"
+          }
+        },
+        "914562fb-fcf1-41dd-875e-d5e126c5b3d8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-touran-cross",
+            "color-code": "Touran Cross"
+          }
+        },
+        "1946c3cb-e39d-4fdd-b0fe-f2168697d7be": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-transporter",
+            "color-code": "Transporter"
+          }
+        },
+        "f4aa6078-7f3c-4f35-883c-f63f788ffb21": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-up",
+            "color-code": "UP"
+          }
+        },
+        "5b2fda53-7191-4637-83fd-4879eaebd97a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen-vento",
+            "color-code": "Vento"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "1fb10e6b-cf0a-479b-bf5a-575134f33d1c",
+        "b261ce3a-d9e9-44ae-8b82-cea1d0488b3b",
+        "aa7a82b1-ba21-4ee6-9dfc-fec846eb54d1",
+        "395ce3ad-b883-402a-b9a8-b36fde6a0c78",
+        "4a85e1b4-fab6-46de-a90e-6da3fbe461ec",
+        "1c5c821a-edd2-41ee-a8f6-5e81828cb433",
+        "974c175f-5b8b-43bc-b40e-3d6a0c3f2af3",
+        "140bcda1-cca2-4aad-a3c0-0ab4a3a92589",
+        "86efdbe0-be83-4483-9c05-82036cb5905e",
+        "a5f9c60e-b92c-4599-bbe9-8a6391f28c97",
+        "96a8b96f-58f8-41a6-b978-9aa994236aab",
+        "885f9a92-1fa1-4728-9033-7cb858fae492",
+        "527e6eef-1f31-46c7-9b1f-43d01f1d29e5",
+        "4b53b5e0-66c1-4c45-b852-36b7d3be5023",
+        "d9e02333-59c2-4b1e-a167-8db64fb759d8",
+        "bfe24815-e912-438a-9cfb-7c9c9eeeb3ea",
+        "50ac76f1-c302-41a2-8029-a4b1698ee9dd",
+        "2cded6b0-43bb-45ef-a985-818f48a890f4",
+        "22e629d0-9d25-4361-8af4-e3a9f15ccec2",
+        "048643c7-c8f6-4289-bb3a-0353afba52fa",
+        "2b91f158-bf7b-473f-8132-5ded23d0cedb",
+        "a217c5a3-353b-4486-a2ed-8837bc75e3ca",
+        "bb81b859-c200-4e98-833e-4e373758d2ac",
+        "bc599b8e-3632-447b-a973-c24679b6554b",
+        "7f5638d6-2706-4a3f-9227-f234c6e5db93",
+        "bee0496e-a9ba-48d3-a6b8-a0f415f19b01",
+        "315d78d5-5391-4f1f-98d4-3f230f7a67ba",
+        "d95f4a15-41f9-4fce-90f3-5e3248d373fa",
+        "cbd364d5-768c-4980-9e70-c21b659f2798",
+        "2618e30d-2cc5-4707-b5bc-c464e8256587",
+        "2226755d-1f3c-49c8-bc63-b736efe873ad",
+        "8d39fbba-2197-4e5e-bee1-356103b8e154",
+        "1192ef03-60d0-4b91-8e40-9bc54cd117d0",
+        "bff5107b-b0cd-4139-b826-ab15e2cdff3b",
+        "914562fb-fcf1-41dd-875e-d5e126c5b3d8",
+        "1946c3cb-e39d-4fdd-b0fe-f2168697d7be",
+        "f4aa6078-7f3c-4f35-883c-f63f788ffb21",
+        "5b2fda53-7191-4637-83fd-4879eaebd97a"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "962a7100-3f65-4002-8ca1-5943c4fcdf3f",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

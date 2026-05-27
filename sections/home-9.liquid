@@ -1,0 +1,56 @@
+<section>
+            <div class="eight-main">
+                <div class="eighth-content">
+                    <h1>{{ section.settings.hd }}</h1>
+                   {{ section.settings.des }}
+                    <a href="{{ section.settings.btn_url }}">
+                            <button class="button">{{ section.settings.btn_text }}</button>
+                            </a>
+                </div>  
+            </div>
+        </section>
+
+
+
+{% schema %}
+{
+  "name": "home9",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"Self-made divans are manufactured in Europe"
+    },
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future.</p>"
+    },
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"SHOP NOW"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home9",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

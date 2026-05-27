@@ -1,0 +1,245 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "d0b4d93f-ccb8-422f-98ee-ac60affe0b92": {
+      "type": "sidebar",
+      "blocks": {
+        "980a9d4e-1979-4a3d-948c-ae5ebde04212": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tge",
+            "color-code": "TGE"
+          }
+        },
+        "221150ac-e32f-489e-ac92-fba558992bfc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-f2000",
+            "color-code": "F2000"
+          }
+        },
+        "40718eb0-34f4-4bb3-922e-0e41cb508824": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-f90",
+            "color-code": "F90"
+          }
+        },
+        "b05fb853-791b-4070-a314-08b33b344cc9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-g90",
+            "color-code": "G90"
+          }
+        },
+        "f3a1ff53-3220-44ef-a12b-1d33dfa7a231": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-l2000",
+            "color-code": "L2000"
+          }
+        },
+        "af09b07d-5707-41a6-afbc-2f280e7ffa79": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-lions-city",
+            "color-code": "Lions City"
+          }
+        },
+        "2546a748-eb8d-4f1a-b1fb-ea60cd50bafb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-lions-intercity",
+            "color-code": "Lions Intercity"
+          }
+        },
+        "b5bc5ec2-766f-4c64-a0e4-cdeecfc6534b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tga",
+            "color-code": "TGA"
+          }
+        },
+        "251679db-760d-4535-9ffc-ec485cbceda0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgl",
+            "color-code": "TGL"
+          }
+        },
+        "723847b8-45f7-44f5-acbb-3b098e76ee82": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgs",
+            "color-code": "TGS"
+          }
+        },
+        "ddc7ad1f-5cac-4952-9497-8dabde548496": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgx",
+            "color-code": "TGX"
+          }
+        }
+      },
+      "block_order": [
+        "980a9d4e-1979-4a3d-948c-ae5ebde04212",
+        "221150ac-e32f-489e-ac92-fba558992bfc",
+        "40718eb0-34f4-4bb3-922e-0e41cb508824",
+        "b05fb853-791b-4070-a314-08b33b344cc9",
+        "f3a1ff53-3220-44ef-a12b-1d33dfa7a231",
+        "af09b07d-5707-41a6-afbc-2f280e7ffa79",
+        "2546a748-eb8d-4f1a-b1fb-ea60cd50bafb",
+        "b5bc5ec2-766f-4c64-a0e4-cdeecfc6534b",
+        "251679db-760d-4535-9ffc-ec485cbceda0",
+        "723847b8-45f7-44f5-acbb-3b098e76ee82",
+        "ddc7ad1f-5cac-4952-9497-8dabde548496"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "75646d81-c42e-49c4-8aa6-7f57bd4aa25e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tge",
+            "color-code": "TGE"
+          }
+        },
+        "c3b6785c-2aa5-4b26-b5e6-c92fce802481": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-f2000",
+            "color-code": "F2000"
+          }
+        },
+        "24eb185b-2ec9-48c3-8d23-04be1a4539af": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-f90",
+            "color-code": "F90"
+          }
+        },
+        "f60340ea-bd96-4e05-b194-d83a2e98ad0b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-g90",
+            "color-code": "G90"
+          }
+        },
+        "9213b31a-d539-42f3-9f93-4abca5109589": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-l2000",
+            "color-code": "L2000"
+          }
+        },
+        "3d69871c-f677-4b13-ae10-f1ba1c834bcc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-lions-city",
+            "color-code": "Lions City"
+          }
+        },
+        "58ba0af6-5171-402f-a096-53c80659abb6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-lions-intercity",
+            "color-code": "Lions Intercity"
+          }
+        },
+        "71628411-82c2-420a-a1a4-7bee6b805084": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tga",
+            "color-code": "TGA"
+          }
+        },
+        "296f3eec-e57f-43db-b52d-5ec7b3b94578": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgl",
+            "color-code": "TGL"
+          }
+        },
+        "b384addb-877d-4dc8-be92-517143dbf503": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgs",
+            "color-code": "TGS"
+          }
+        },
+        "5c3a67eb-d9cb-449e-8578-4de1ee3ea474": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-man-tgx",
+            "color-code": "TGX"
+          }
+        }
+      },
+      "block_order": [
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6",
+        "75646d81-c42e-49c4-8aa6-7f57bd4aa25e",
+        "c3b6785c-2aa5-4b26-b5e6-c92fce802481",
+        "24eb185b-2ec9-48c3-8d23-04be1a4539af",
+        "f60340ea-bd96-4e05-b194-d83a2e98ad0b",
+        "9213b31a-d539-42f3-9f93-4abca5109589",
+        "3d69871c-f677-4b13-ae10-f1ba1c834bcc",
+        "58ba0af6-5171-402f-a096-53c80659abb6",
+        "71628411-82c2-420a-a1a4-7bee6b805084",
+        "296f3eec-e57f-43db-b52d-5ec7b3b94578",
+        "b384addb-877d-4dc8-be92-517143dbf503",
+        "5c3a67eb-d9cb-449e-8578-4de1ee3ea474"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "d0b4d93f-ccb8-422f-98ee-ac60affe0b92",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

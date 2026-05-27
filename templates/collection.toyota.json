@@ -1,0 +1,741 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "fcab3eae-ae6a-4465-8ad7-2b80bec7dc40": {
+      "type": "sidebar",
+      "blocks": {
+        "1c20f19a-debb-497d-96eb-21125eb2f9bb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-4-runner",
+            "color-code": "4 Runner"
+          }
+        },
+        "258ef994-4de9-42fa-94cc-d4fe2d0421b2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-auris",
+            "color-code": "Auris"
+          }
+        },
+        "a028c901-c773-46ff-9e8b-166bffcacf5e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avalon",
+            "color-code": "Avalon"
+          }
+        },
+        "3503e255-07c3-473a-8886-efa0932cdd3c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avensis",
+            "color-code": "Avensis"
+          }
+        },
+        "0004e50b-b0e3-4021-87e1-3c10ac6a6a28": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avensis-verso",
+            "color-code": "Avensis Verso"
+          }
+        },
+        "a97ffb38-fee3-4c02-b0f7-c95037079aff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-aygo",
+            "color-code": "Aygo"
+          }
+        },
+        "16ddd01b-137f-459a-9d0c-dd40e6c8fb3a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-aygo-x",
+            "color-code": "Aygo X"
+          }
+        },
+        "fce9b055-61b0-4b83-9f09-a1b811c5d900": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-c-hr",
+            "color-code": "C-HR"
+          }
+        },
+        "2306c63a-0302-47a5-af46-26952d8bef57": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-camry",
+            "color-code": "Camry"
+          }
+        },
+        "ceae6e2a-1b22-45d5-abb6-4109daaa8f66": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-carina-e",
+            "color-code": "Carina E"
+          }
+        },
+        "9b44d26e-8048-4745-96b5-40ad19bd2bc4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-celica",
+            "color-code": "Celica"
+          }
+        },
+        "95a5f620-caf8-4188-9d46-bab9a5812a64": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla",
+            "color-code": "Corolla"
+          }
+        },
+        "71f3ceab-aa97-4d36-8514-8dc17c97eee2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla-cross",
+            "color-code": "Corolla Cross"
+          }
+        },
+        "fbbb18c9-bc19-4fc7-b780-7ec1540e7db4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla-verso",
+            "color-code": "Corolla Verso"
+          }
+        },
+        "3d7dc658-ba78-4552-9c9f-82146a01cd7b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-fj-cruiser",
+            "color-code": "FJ Cruiser"
+          }
+        },
+        "f416c36d-c92e-4890-b041-43fab08f0cb5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-gr-yaris",
+            "color-code": "GR Yaris"
+          }
+        },
+        "ccd7e8ec-7079-4108-b62e-f1e5bcc3bac3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-gt86",
+            "color-code": "GT86"
+          }
+        },
+        "a04bd294-efc2-464d-8544-a03774bd37ea": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-highlander",
+            "color-code": "Highlander"
+          }
+        },
+        "4a574e12-0e05-4f45-a161-4d19a938483b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-hilux",
+            "color-code": "Hilux"
+          }
+        },
+        "4767574f-4b2f-4f78-b0d5-8717ba80d2e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-iq",
+            "color-code": "IQ"
+          }
+        },
+        "4d86739c-8df8-44d1-a65b-8658693ad452": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser",
+            "color-code": "Land Cruiser"
+          }
+        },
+        "15547ca5-6dfc-429e-ba57-d886cb6a9be0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser-hard-top",
+            "color-code": "Land Cruiser Hard Top"
+          }
+        },
+        "0553c286-f6ae-441e-a324-0b64565fd21f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser-prado",
+            "color-code": "Land Cruiser Prado"
+          }
+        },
+        "0a9357b2-8ea3-411c-83eb-5b230b6a8465": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-mr2",
+            "color-code": "MR2"
+          }
+        },
+        "72a109e7-5b33-4827-9325-8e792763a5d7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-paseo",
+            "color-code": "Paseo"
+          }
+        },
+        "226b740d-33fd-47e7-b9b3-e0311e7f3b02": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius",
+            "color-code": "Prius"
+          }
+        },
+        "1e0fdd40-53cd-4c29-b71c-46f6eb1a423e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius-plus",
+            "color-code": "Prius Plus"
+          }
+        },
+        "baf202bb-efe4-4c7e-a60d-1d9335c349eb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius-v",
+            "color-code": "Prius V"
+          }
+        },
+        "5f53a515-e3a0-4c08-941c-f48580666d5e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-proace-city-verso",
+            "color-code": "ProAce City Verso"
+          }
+        },
+        "857cc854-f920-4557-94c5-1be89c25d438": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-proace-verso",
+            "color-code": "ProAce Verso"
+          }
+        },
+        "5aee1954-478b-4d10-bde3-6aa663f80eba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-rav-4",
+            "color-code": "RAV 4"
+          }
+        },
+        "12364160-29d3-4bd8-8ee5-befd9dea9d74": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-scion-gt86",
+            "color-code": "Scion GT86"
+          }
+        },
+        "4ebc0191-7796-4ae2-acb5-a2419f240f91": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-sequoia",
+            "color-code": "Sequoia"
+          }
+        },
+        "b73bad43-d8e8-454d-b277-78bf344e5992": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-sienna",
+            "color-code": "Sienna"
+          }
+        },
+        "984b3e2a-fc9e-4f94-9d37-02f32aa4dd07": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-supra",
+            "color-code": "Supra"
+          }
+        },
+        "0209f506-b59e-42a9-8819-41c192eae738": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-tacoma",
+            "color-code": "Tacoma"
+          }
+        },
+        "d3af81a5-6e00-48d5-bf00-c8047a60d7eb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-tundra",
+            "color-code": "Tundra"
+          }
+        },
+        "d8e7a533-5652-4db1-96ac-2750a6a9b8e2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-venza",
+            "color-code": "Venza"
+          }
+        },
+        "83bb9417-7ee4-4947-bb6e-ede97551539d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-verso",
+            "color-code": "Verso"
+          }
+        },
+        "19743b2e-a543-49f8-bb5b-be3f8f5be1bc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris",
+            "color-code": "Yaris"
+          }
+        },
+        "a8071b76-8a4d-4a55-8e26-575d38b3e648": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris-cross",
+            "color-code": "Yaris Cross"
+          }
+        },
+        "4e45c32f-e08e-4398-8c6a-faaf02faca3b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris-verso",
+            "color-code": "Yaris Verso"
+          }
+        }
+      },
+      "block_order": [
+        "1c20f19a-debb-497d-96eb-21125eb2f9bb",
+        "258ef994-4de9-42fa-94cc-d4fe2d0421b2",
+        "a028c901-c773-46ff-9e8b-166bffcacf5e",
+        "3503e255-07c3-473a-8886-efa0932cdd3c",
+        "0004e50b-b0e3-4021-87e1-3c10ac6a6a28",
+        "a97ffb38-fee3-4c02-b0f7-c95037079aff",
+        "16ddd01b-137f-459a-9d0c-dd40e6c8fb3a",
+        "fce9b055-61b0-4b83-9f09-a1b811c5d900",
+        "2306c63a-0302-47a5-af46-26952d8bef57",
+        "ceae6e2a-1b22-45d5-abb6-4109daaa8f66",
+        "9b44d26e-8048-4745-96b5-40ad19bd2bc4",
+        "95a5f620-caf8-4188-9d46-bab9a5812a64",
+        "71f3ceab-aa97-4d36-8514-8dc17c97eee2",
+        "fbbb18c9-bc19-4fc7-b780-7ec1540e7db4",
+        "3d7dc658-ba78-4552-9c9f-82146a01cd7b",
+        "f416c36d-c92e-4890-b041-43fab08f0cb5",
+        "ccd7e8ec-7079-4108-b62e-f1e5bcc3bac3",
+        "a04bd294-efc2-464d-8544-a03774bd37ea",
+        "4a574e12-0e05-4f45-a161-4d19a938483b",
+        "4767574f-4b2f-4f78-b0d5-8717ba80d2e5",
+        "4d86739c-8df8-44d1-a65b-8658693ad452",
+        "15547ca5-6dfc-429e-ba57-d886cb6a9be0",
+        "0553c286-f6ae-441e-a324-0b64565fd21f",
+        "0a9357b2-8ea3-411c-83eb-5b230b6a8465",
+        "72a109e7-5b33-4827-9325-8e792763a5d7",
+        "226b740d-33fd-47e7-b9b3-e0311e7f3b02",
+        "1e0fdd40-53cd-4c29-b71c-46f6eb1a423e",
+        "baf202bb-efe4-4c7e-a60d-1d9335c349eb",
+        "5f53a515-e3a0-4c08-941c-f48580666d5e",
+        "857cc854-f920-4557-94c5-1be89c25d438",
+        "5aee1954-478b-4d10-bde3-6aa663f80eba",
+        "12364160-29d3-4bd8-8ee5-befd9dea9d74",
+        "4ebc0191-7796-4ae2-acb5-a2419f240f91",
+        "b73bad43-d8e8-454d-b277-78bf344e5992",
+        "984b3e2a-fc9e-4f94-9d37-02f32aa4dd07",
+        "0209f506-b59e-42a9-8819-41c192eae738",
+        "d3af81a5-6e00-48d5-bf00-c8047a60d7eb",
+        "d8e7a533-5652-4db1-96ac-2750a6a9b8e2",
+        "83bb9417-7ee4-4947-bb6e-ede97551539d",
+        "19743b2e-a543-49f8-bb5b-be3f8f5be1bc",
+        "a8071b76-8a4d-4a55-8e26-575d38b3e648",
+        "4e45c32f-e08e-4398-8c6a-faaf02faca3b"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "4ab1f26b-c125-423b-91d7-d34d8ea1d0ac": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-4-runner",
+            "color-code": "4 Runner"
+          }
+        },
+        "a67fc701-ccde-476c-8e9e-a0753ed9c050": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-auris",
+            "color-code": "Auris"
+          }
+        },
+        "ebfa8cf2-9c0d-4de0-8498-ab50aa3108ae": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avalon",
+            "color-code": "Avalon"
+          }
+        },
+        "1e0f35da-4929-4365-8dd1-a97c679f5013": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avensis",
+            "color-code": "Avensis"
+          }
+        },
+        "8147d209-c8fd-4835-b2db-d9a2c060eb5b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-avensis-verso",
+            "color-code": "Avensis Verso"
+          }
+        },
+        "5f5f8dd6-82b9-486d-91d5-209497d40d8c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-aygo",
+            "color-code": "Aygo"
+          }
+        },
+        "6f70488d-be5e-4fe1-abf5-52121c8338d0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-aygo-x",
+            "color-code": "Aygo X"
+          }
+        },
+        "42dbd86f-21be-4e57-a5a9-a41ab31c18df": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-c-hr",
+            "color-code": "C-HR"
+          }
+        },
+        "80728ee9-cd38-42c4-ae80-3018f06edf90": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-camry",
+            "color-code": "Camry"
+          }
+        },
+        "85cac9a9-efb4-4ce0-96dd-f1370819785a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-carina-e",
+            "color-code": "Carina E"
+          }
+        },
+        "c43ff31b-6e3a-4b69-b236-1e46a84937c9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-celica",
+            "color-code": "Celica"
+          }
+        },
+        "00483750-8e9e-477c-839e-05750e35e365": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla",
+            "color-code": "Corolla"
+          }
+        },
+        "91c4f3d5-b12a-4e20-b544-3a336424ae8b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla-cross",
+            "color-code": "Corolla Cross"
+          }
+        },
+        "489ef9ff-2729-401f-96dc-727d251e7ca4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-corolla-verso",
+            "color-code": "Corolla Verso"
+          }
+        },
+        "9b5cf50d-d25b-42e9-8408-1f37b3c4e9de": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-fj-cruiser",
+            "color-code": "FJ Cruiser"
+          }
+        },
+        "8bf38250-5707-425f-b7b1-04f85468c13a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-gr-yaris",
+            "color-code": "GR Yaris"
+          }
+        },
+        "36d97cc7-7a0c-4e89-a844-1f610fd7407a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-gt86",
+            "color-code": "GT86"
+          }
+        },
+        "7a0430a7-d93f-43ad-b65c-caa3fdff9185": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-highlander",
+            "color-code": "Highlander"
+          }
+        },
+        "384d7652-a092-4e2c-aa49-a491f79dcccf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-hilux",
+            "color-code": "Hilux"
+          }
+        },
+        "cec0be6e-15a4-4731-99c8-239c98237688": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-iq",
+            "color-code": "IQ"
+          }
+        },
+        "bee389f4-7b9e-49ae-9379-64be6639edd0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser",
+            "color-code": "Land Cruiser"
+          }
+        },
+        "77906b69-6703-4de9-b1f8-3e52a374b9d3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser-hard-top",
+            "color-code": "Land Cruiser Hard Top"
+          }
+        },
+        "939352b0-6a77-4931-b9cd-b3972d197c19": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-land-cruiser-prado",
+            "color-code": "Land Cruiser Prado"
+          }
+        },
+        "3ec4f6f5-5c38-4253-befc-405b7af303f9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-mr2",
+            "color-code": "MR2"
+          }
+        },
+        "ae511e52-3c6e-45ba-b715-d28b40505479": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-paseo",
+            "color-code": "Paseo"
+          }
+        },
+        "314902b5-bba0-4479-8ceb-1fe45d3d8e12": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius",
+            "color-code": "Prius"
+          }
+        },
+        "5c837218-86bc-405a-97dc-e2fc9fbc52ca": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius-plus",
+            "color-code": "Prius Plus"
+          }
+        },
+        "b9489550-3c59-4668-b00b-0322494b955b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-prius-v",
+            "color-code": "Prius V"
+          }
+        },
+        "97f1e872-1d47-454a-bb5e-2ba30a7614b9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-proace-city-verso",
+            "color-code": "ProAce City Verso"
+          }
+        },
+        "5e1af0e7-2ee1-4786-b347-1c8b13433544": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-proace-verso",
+            "color-code": "ProAce Verso"
+          }
+        },
+        "6861b012-efc2-40a7-b10d-93a1501c70e2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-rav-4",
+            "color-code": "RAV 4"
+          }
+        },
+        "9d527273-e07d-440c-a31f-83dcb6cbf5dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-scion-gt86",
+            "color-code": "Scion GT86"
+          }
+        },
+        "0abe7ff8-cc06-421d-b49e-65840f6555d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-sequoia",
+            "color-code": "Sequoia"
+          }
+        },
+        "19b029b5-a2a1-4cec-b8f6-43d0002a0eaa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-sienna",
+            "color-code": "Sienna"
+          }
+        },
+        "d07343a0-7c01-4437-8d70-869052b3543f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-supra",
+            "color-code": "Supra"
+          }
+        },
+        "e0892ce0-e7a8-4c7b-b900-7f8d007ca49f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-tacoma",
+            "color-code": "Tacoma"
+          }
+        },
+        "a7a959ff-0dc9-4f9f-857c-4e05e1abd847": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-tundra",
+            "color-code": "Tundra"
+          }
+        },
+        "978fd1ef-506c-47a6-9557-0700e0889e3c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-venza",
+            "color-code": "Venza"
+          }
+        },
+        "30d95bee-64c4-4637-864f-3a7adc2d7955": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-verso",
+            "color-code": "Verso"
+          }
+        },
+        "a7db788b-4194-4ddd-8818-192f112aba39": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris",
+            "color-code": "Yaris"
+          }
+        },
+        "b2fd4c77-ea04-4762-920b-a6b8c6d79c8f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris-cross",
+            "color-code": "Yaris Cross"
+          }
+        },
+        "8d62be6d-7096-424a-908a-754777d9c4b1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota-yaris-verso",
+            "color-code": "Yaris Verso"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "4ab1f26b-c125-423b-91d7-d34d8ea1d0ac",
+        "a67fc701-ccde-476c-8e9e-a0753ed9c050",
+        "ebfa8cf2-9c0d-4de0-8498-ab50aa3108ae",
+        "1e0f35da-4929-4365-8dd1-a97c679f5013",
+        "8147d209-c8fd-4835-b2db-d9a2c060eb5b",
+        "5f5f8dd6-82b9-486d-91d5-209497d40d8c",
+        "6f70488d-be5e-4fe1-abf5-52121c8338d0",
+        "42dbd86f-21be-4e57-a5a9-a41ab31c18df",
+        "80728ee9-cd38-42c4-ae80-3018f06edf90",
+        "85cac9a9-efb4-4ce0-96dd-f1370819785a",
+        "c43ff31b-6e3a-4b69-b236-1e46a84937c9",
+        "00483750-8e9e-477c-839e-05750e35e365",
+        "91c4f3d5-b12a-4e20-b544-3a336424ae8b",
+        "489ef9ff-2729-401f-96dc-727d251e7ca4",
+        "9b5cf50d-d25b-42e9-8408-1f37b3c4e9de",
+        "8bf38250-5707-425f-b7b1-04f85468c13a",
+        "36d97cc7-7a0c-4e89-a844-1f610fd7407a",
+        "7a0430a7-d93f-43ad-b65c-caa3fdff9185",
+        "384d7652-a092-4e2c-aa49-a491f79dcccf",
+        "cec0be6e-15a4-4731-99c8-239c98237688",
+        "bee389f4-7b9e-49ae-9379-64be6639edd0",
+        "77906b69-6703-4de9-b1f8-3e52a374b9d3",
+        "939352b0-6a77-4931-b9cd-b3972d197c19",
+        "3ec4f6f5-5c38-4253-befc-405b7af303f9",
+        "ae511e52-3c6e-45ba-b715-d28b40505479",
+        "314902b5-bba0-4479-8ceb-1fe45d3d8e12",
+        "5c837218-86bc-405a-97dc-e2fc9fbc52ca",
+        "b9489550-3c59-4668-b00b-0322494b955b",
+        "97f1e872-1d47-454a-bb5e-2ba30a7614b9",
+        "5e1af0e7-2ee1-4786-b347-1c8b13433544",
+        "6861b012-efc2-40a7-b10d-93a1501c70e2",
+        "9d527273-e07d-440c-a31f-83dcb6cbf5dd",
+        "0abe7ff8-cc06-421d-b49e-65840f6555d2",
+        "19b029b5-a2a1-4cec-b8f6-43d0002a0eaa",
+        "d07343a0-7c01-4437-8d70-869052b3543f",
+        "e0892ce0-e7a8-4c7b-b900-7f8d007ca49f",
+        "a7a959ff-0dc9-4f9f-857c-4e05e1abd847",
+        "978fd1ef-506c-47a6-9557-0700e0889e3c",
+        "30d95bee-64c4-4637-864f-3a7adc2d7955",
+        "a7db788b-4194-4ddd-8818-192f112aba39",
+        "b2fd4c77-ea04-4762-920b-a6b8c6d79c8f",
+        "8d62be6d-7096-424a-908a-754777d9c4b1"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "fcab3eae-ae6a-4465-8ad7-2b80bec7dc40",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "73b4c0a2-8b3a-46a5-8e56-9ea79930f370": {
+      "type": "mobile-button",
+      "settings": {
+        "btn_text": "All models",
+        "btn_url": "shopify:\/\/collections\/subaru"
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru",
+            "color-code": "All"
+          }
+        },
+        "de3ab9bb-a930-4cc5-a072-c30f0d2cb8fa": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-brz",
+            "color-code": "BRZ"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "de3ab9bb-a930-4cc5-a072-c30f0d2cb8fa"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "73b4c0a2-8b3a-46a5-8e56-9ea79930f370",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

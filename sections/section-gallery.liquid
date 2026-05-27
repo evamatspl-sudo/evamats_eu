@@ -1,0 +1,227 @@
+<link
+    rel="stylesheet"
+    href="{{  'fancybox.css' | asset_url }}"
+  />
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .gallery {
+        padding-top: 40px;
+    }
+
+    .gallery__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .gallery__container img {
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .gallery__tabs {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 16px;
+        color: #000;
+    }
+
+    .gallery__tabs_item {
+        color: #000;
+    }
+
+    .gallery__tabs_edges  {
+        cursor: initial;
+    }
+
+    .gallery__tabs_edges .gallery__tabs_item.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    .gallery__image_wr {
+        width: calc((100% - 12px) / 4);
+        cursor: pointer;
+    }
+    /* Общий контейнер кастомного селекта */
+    .gallery__tabs_types.eva__tabs.custom-select,
+    .gallery__tabs_edges.custom-select {
+        position: relative;
+        display: block;
+        width: 250px; /* можно изменить под нужную ширину */
+        cursor: pointer;
+        margin: 0 auto 20px auto;
+    }
+
+    /* Заголовок селекта */
+    .custom-select .select-header {
+        padding: 10px;
+        border: 2px solid #ccc;
+        transition: .2s ease-in-out;
+        user-select: none;
+        border-radius: 8px;
+        color: rgb(var(--color-foreground));
+        text-align: center;
+        padding-right: 30px;
+        color: #000;
+    }
+
+
+    /* Контейнер с опциями */
+    .custom-select .select-options {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        background-color: rgb(var(--color-foreground));
+        border: 1px solid #ccc;
+        z-index: 100;
+        display: none;
+        max-height: 300px; /* ограничиваем высоту, чтобы был скролл */
+        overflow-y: auto;
+        border-radius: 8px;
+    }
+
+    /* Отображаем контейнер с опциями, когда селект открыт */
+    .custom-select.open .select-options {
+        display: block;
+    }
+
+    /* Стилизация опций селекта */
+    .custom-select .select-options .eva__tabs_item.gallery__tabs_item {
+        padding: 10px;
+    }
+
+    .select-options .eva__tabs_item {
+        border: 0;
+        border-radius: 0;
+    }
+
+    /* Убираем нижнюю границу у последней опции */
+    .custom-select .select-options .eva__tabs_item.gallery__tabs_item:last-child {
+        border-bottom: none;
+    }
+
+    /* Hover и активное состояние опции */
+    .custom-select .select-options .eva__tabs_item.gallery__tabs_item:hover,
+    .custom-select .select-options .eva__tabs_item.gallery__tabs_item.active {
+        background-color: var(--color-1);
+        color: rgb(var(--color-foreground));
+        opacity: 0.8;
+    }
+
+    /* Если опция отключена (например, для типов без edges) */
+    .custom-select .select-options .eva__tabs_item.gallery__tabs_item.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    }
+
+    .select-header_wr {
+        position: relative;
+    }
+
+    .select-header_wr svg {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .2s ease-in-out;
+    }
+
+    .select-header_wr path {
+        fill: #000;
+    }
+
+    .custom-select.open .select-header_wr svg {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .gallery__reset {
+        cursor: pointer;
+        color: var(--color-1);
+        font-weight: 700;
+    }
+
+    .eva__tabs {
+        align-items: center;
+        cursor: pointer;    
+    }
+
+    .gallery__title {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .gallery__tabs_edges_title {
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    @media (max-width: 767px) {
+        .gallery__image_wr {
+            width: calc((100% - 8px) / 3);
+        }
+    }
+</style>
+
+{% assign gallery_main = shop.metaobjects['gallery']['gallery-main'] %}
+{% assign types = "2os_edges,2os_noedges,5os_edges,5os_noedges,7os_edges,7os_noedges,minivan,bus,pickup_edges,pickup_noedges,tir,van_big,van_small_edges,van_small_noedges,tractors,excavators" | split: ',' %}
+
+<div class="gallery">
+    <div class="page-width">
+        <div class="gallery__tabs">
+            <div class="gallery__tabs_types eva__tabs custom-select">
+                <!-- Заголовок селекта -->
+                <div class="select-header_wr">
+                    <div class="select-header" data-text="{{ 'general.config.gallery_body_type' | t }}">{{ 'general.config.gallery_body_type' | t }}</div>
+                    {% render 'icon-caret' %}
+                </div>
+                
+                <!-- Контейнер с опциями -->
+                <div class="select-options">
+                  {% assign elements = 'general.config.bodyTypeElements' | t | remove: ",Other"  | split: ',' %}
+                  {% for item in elements %}
+                    <div class="eva__tabs_item gallery__tabs_item" data-type="{{ item }}">{{ item }}</div>
+                  {% endfor %}
+                </div>
+            </div>
+              
+            <div class="gallery__tabs_edges_title">{{ 'general.config.gallery_mats_type' | t }}</div>
+            <div class="gallery__tabs_edges eva__tabs">
+                <div class="eva__tabs_item gallery__tabs_item" data-type="withoutEdges">{{ 'general.config.without_edges' | t }}</div>
+                <div class="eva__tabs_item gallery__tabs_item" data-type="withEdges">{{ 'general.config.with_edges' | t }}</div>
+                <div class="gallery__reset">{{ 'general.config.reset' | t }}</div>
+            </div>
+    
+            
+        </div>
+        {% if gallery_main  %}
+            <div class="gallery__container">
+              {% for type in types %}
+                    {% for image in gallery_main[type].value %} 
+                        
+                        <div class="gallery__image_wr">
+                            <a href="{{ image | img_url: 'master' }}" data-fancybox="gallery">
+                                <img src="{{ image | img_url: '600x' }}" alt="Gallery Image" data-type="{{ type }}" class="gallery__image" loading='lazy'>
+                            </a>
+                            
+                        </div>
+                    {% endfor %}  
+              {% endfor %}
+            </div>
+          {% else %}
+            <p></p>
+          {% endif %}
+    
+          <div class="gallery__message hidden">{{ 'general.config.gallery_error_message' | t }}</div>
+          <div class="gallery__divider_text hidden">{{ 'general.config.gallery_divider_text' | t }}</div>
+    </div>
+</div>
+
+
+<script src="{{ 'fancybox.js' | asset_url }}" defer></script>
+<script src="{{ 'gallery.js' | asset_url }}" defer></script>

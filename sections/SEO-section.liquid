@@ -1,0 +1,94 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<section style="opacity: 0; height: 1px;">
+  <div class="sec-seo">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="second">
+          <h2>{{ section.settings.hd }}</h2>
+          <div class="card-text-seo"> {{ section.settings.des }} </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  strong {
+    font-weight: 600;
+  }
+
+  .card-text-seo {
+    overflow: hidden;
+    max-height: 150px; /* Adjust to your desired initial height */
+    transition: max-height 0.5s ease;
+    line-height: 1.5; /* Adjust line height as needed */
+  }
+
+  .btn-read-more-seo {
+    color: #FF0000;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-text-seo').forEach(function(element) {
+        var text = element.textContent;
+        var charCount = text.length;
+        var maxChars = 200; // Adjust to your desired maximum characters
+
+        if (charCount > maxChars) {
+            var small = text.substring(0, maxChars);
+            var button = document.createElement('button');
+            button.className = 'btn-read-more-seo';
+            button.textContent = 'Read more';
+            element.after(button);
+
+            button.addEventListener('click', function() {
+                element.classList.toggle('expanded');
+                if (element.classList.contains('expanded')) {
+                    element.style.maxHeight = element.scrollHeight + 'px';
+                    button.textContent = 'Read less';
+                } else {
+                    element.style.maxHeight = '150px'; // Adjust to your desired initial height
+                    button.textContent = 'Read more';
+                }
+            });
+        }
+    });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "home",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Main Heading",
+      "id": "hd"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "des",
+      "default": "<p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how  important it is, to feel this specter of emotions. And this is exactly what we are doing in our company  – helping you to form your kids` future.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "home",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

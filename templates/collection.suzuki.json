@@ -1,0 +1,373 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "e8f3c4a9-232d-4f77-a841-c43ae0245f12": {
+      "type": "sidebar",
+      "blocks": {
+        "ed771d92-bb2c-4b3b-ad7a-9c2053644f7e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-across",
+            "color-code": "Across"
+          }
+        },
+        "section_dTygrF": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-alto",
+            "color-code": "Alto"
+          }
+        },
+        "ba98abdd-27fe-4830-9495-4c4215d24ed5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-baleno",
+            "color-code": "Baleno"
+          }
+        },
+        "7dc613e1-dcaf-4dd1-855a-31713cbd08a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-celerio",
+            "color-code": "Celerio"
+          }
+        },
+        "466dca3d-d1d6-4ec5-9f62-cf02d0284932": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-ciaz",
+            "color-code": "Ciaz"
+          }
+        },
+        "579a2710-3144-4767-8f33-088a24d6a1ec": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-dzire",
+            "color-code": "DZire"
+          }
+        },
+        "3ecc2571-b3ac-4afa-84ba-1f4ea0de167c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-fronx",
+            "color-code": "Fronx"
+          }
+        },
+        "67d971dd-5bb3-4a64-89c7-d9a70cdf1d7a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-grand-vitara",
+            "color-code": "Grand Vitara"
+          }
+        },
+        "4dce37af-f647-4e68-9d3b-06318166e2ba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-ignis",
+            "color-code": "Ignis"
+          }
+        },
+        "24bd15ef-843e-4da2-8b21-6e4372829178": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-jimny",
+            "color-code": "Jimny"
+          }
+        },
+        "8d363a28-0bc9-447c-b389-8b0005fd268c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-liana",
+            "color-code": "Liana"
+          }
+        },
+        "8f2ed146-a764-4290-96ef-313722256e20": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-reno",
+            "color-code": "Reno"
+          }
+        },
+        "4126310f-2373-43a3-9b7b-70cb3b5f79a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-splash",
+            "color-code": "Splash"
+          }
+        },
+        "1dad17d2-710d-4db9-948b-2036f6be5260": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swace",
+            "color-code": "Swace"
+          }
+        },
+        "6152ddf8-edbf-41d1-8f9a-3b9dc3f97acb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swift",
+            "color-code": "Swift"
+          }
+        },
+        "6a321690-01a8-4496-adc3-bd628c6063c0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4",
+            "color-code": "SX4"
+          }
+        },
+        "d724ddee-8613-4d3e-95f0-9d8f9b443e05": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4-s-cross",
+            "color-code": "SX4 S-cross"
+          }
+        },
+        "82aebbe1-1e10-4638-9d77-2acce79291c7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-vitara",
+            "color-code": "Vitara"
+          }
+        },
+        "873d8ed1-8ca9-4d0c-a34a-9977de18ce06": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-xl7",
+            "color-code": "XL7"
+          }
+        }
+      },
+      "block_order": [
+        "ed771d92-bb2c-4b3b-ad7a-9c2053644f7e",
+        "section_dTygrF",
+        "ba98abdd-27fe-4830-9495-4c4215d24ed5",
+        "7dc613e1-dcaf-4dd1-855a-31713cbd08a1",
+        "466dca3d-d1d6-4ec5-9f62-cf02d0284932",
+        "579a2710-3144-4767-8f33-088a24d6a1ec",
+        "3ecc2571-b3ac-4afa-84ba-1f4ea0de167c",
+        "67d971dd-5bb3-4a64-89c7-d9a70cdf1d7a",
+        "4dce37af-f647-4e68-9d3b-06318166e2ba",
+        "24bd15ef-843e-4da2-8b21-6e4372829178",
+        "8d363a28-0bc9-447c-b389-8b0005fd268c",
+        "8f2ed146-a764-4290-96ef-313722256e20",
+        "4126310f-2373-43a3-9b7b-70cb3b5f79a1",
+        "1dad17d2-710d-4db9-948b-2036f6be5260",
+        "6152ddf8-edbf-41d1-8f9a-3b9dc3f97acb",
+        "6a321690-01a8-4496-adc3-bd628c6063c0",
+        "d724ddee-8613-4d3e-95f0-9d8f9b443e05",
+        "82aebbe1-1e10-4638-9d77-2acce79291c7",
+        "873d8ed1-8ca9-4d0c-a34a-9977de18ce06"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "287e8adf-1764-46c4-8f80-26a7b1e1e574": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-across",
+            "color-code": "Across"
+          }
+        },
+        "section_d9NyJD": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-alto",
+            "color-code": "Alto"
+          }
+        },
+        "27fe61e4-9799-42fb-ab50-799cb0ad8e9f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-baleno",
+            "color-code": "Baleno"
+          }
+        },
+        "ea9cb36c-c5f0-4474-984e-22c150dd4018": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-celerio",
+            "color-code": "Celerio"
+          }
+        },
+        "19d03aab-e720-4a01-9e9e-5fb207c69c24": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-ciaz",
+            "color-code": "Ciaz"
+          }
+        },
+        "da1928db-19d3-4f47-8a05-ba7f1645bcda": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-dzire",
+            "color-code": "DZire"
+          }
+        },
+        "93b59677-70aa-48f2-bb5f-df554ca1ec84": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-fronx",
+            "color-code": "Fronx"
+          }
+        },
+        "2be710d3-d742-4823-bc4a-05b922453179": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-grand-vitara",
+            "color-code": "Grand Vitara"
+          }
+        },
+        "2cd4ef43-c530-47ea-a3a0-11d47802d09b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-ignis",
+            "color-code": "Ignis"
+          }
+        },
+        "b7b51924-fa5b-495f-9db5-16fdbc7d30c1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-jimny",
+            "color-code": "Jimny"
+          }
+        },
+        "5b27215a-0013-4e6c-b0c3-8db9f1d91062": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-liana",
+            "color-code": "Liana"
+          }
+        },
+        "5206a88b-402a-4da6-9bfc-a0e4973c56e0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-reno",
+            "color-code": "Reno"
+          }
+        },
+        "87f8afa1-8083-44aa-b9aa-6d0dcb013aaa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-splash",
+            "color-code": "Splash"
+          }
+        },
+        "bf8adad0-40b4-4382-b987-8794b548a39e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swace",
+            "color-code": "Swace"
+          }
+        },
+        "217051b2-01c0-4bf0-bc4a-fc05938f1d0d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swift",
+            "color-code": "Swift"
+          }
+        },
+        "63e45f93-f2b3-403a-babe-6c035972d2f2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4",
+            "color-code": "SX4"
+          }
+        },
+        "7c7653e4-ae62-4ddc-b999-1ace9f0694c4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4-s-cross",
+            "color-code": "SX4 S-cross"
+          }
+        },
+        "d78b8aa2-4a43-46c1-a658-5a79c19d185c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-vitara",
+            "color-code": "Vitara"
+          }
+        },
+        "c5fb47d0-1613-4139-b03a-420ae5808183": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki-xl7",
+            "color-code": "XL7"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "287e8adf-1764-46c4-8f80-26a7b1e1e574",
+        "section_d9NyJD",
+        "27fe61e4-9799-42fb-ab50-799cb0ad8e9f",
+        "ea9cb36c-c5f0-4474-984e-22c150dd4018",
+        "19d03aab-e720-4a01-9e9e-5fb207c69c24",
+        "da1928db-19d3-4f47-8a05-ba7f1645bcda",
+        "93b59677-70aa-48f2-bb5f-df554ca1ec84",
+        "2be710d3-d742-4823-bc4a-05b922453179",
+        "2cd4ef43-c530-47ea-a3a0-11d47802d09b",
+        "b7b51924-fa5b-495f-9db5-16fdbc7d30c1",
+        "5b27215a-0013-4e6c-b0c3-8db9f1d91062",
+        "5206a88b-402a-4da6-9bfc-a0e4973c56e0",
+        "87f8afa1-8083-44aa-b9aa-6d0dcb013aaa",
+        "bf8adad0-40b4-4382-b987-8794b548a39e",
+        "217051b2-01c0-4bf0-bc4a-fc05938f1d0d",
+        "63e45f93-f2b3-403a-babe-6c035972d2f2",
+        "7c7653e4-ae62-4ddc-b999-1ace9f0694c4",
+        "d78b8aa2-4a43-46c1-a658-5a79c19d185c",
+        "c5fb47d0-1613-4139-b03a-420ae5808183"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "e8f3c4a9-232d-4f77-a841-c43ae0245f12",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

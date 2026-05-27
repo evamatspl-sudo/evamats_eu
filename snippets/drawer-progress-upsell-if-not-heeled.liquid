@@ -1,0 +1,15 @@
+{% comment %}
+  Renders cart upsell slide unless product is a heel pad (podpiętka).
+  Params: item, section_id, random_pick (optional)
+{% endcomment %}
+{% assign _tl = item.title | downcase %}
+{% assign _skip_heeled = false %}
+{% if _tl contains 'heel pad' or _tl contains 'heelpad' or _tl contains 'podpiętka' or _tl contains 'podpietka' or _tl contains 'fersenpolster' %}
+  {% assign _skip_heeled = true %}
+{% endif %}
+{% if item.tags contains 'heel-pad' or item.tags contains 'heel_pad' or item.tags contains 'heelpad' %}
+  {% assign _skip_heeled = true %}
+{% endif %}
+{% unless _skip_heeled %}
+  {% render 'drawer-progress-upsell-slide', item: item, section_id: section_id, random_pick: random_pick %}
+{% endunless %}

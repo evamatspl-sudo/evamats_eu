@@ -1,0 +1,34 @@
+{%- comment -%}
+  Maps product option value to general.colors.* for current locale; falls back to raw value.
+  Normalizes spaces/hyphens so "Dark Blue" -> dark_blue (matches theme keys / swatch-color).
+{%- endcomment -%}
+{% assign strip_val = value | strip %}
+{% assign c = strip_val | downcase | replace: ' ', '_' | replace: '-', '_' %}
+{% if c == 'dark_gray' or c == 'dark_grey' %}
+  {% assign c = 'gray' %}
+{% elsif c == 'dunkelgrau' or c == 'dunkel_grau' %}
+  {% assign c = 'gray' %}
+{% elsif c == 'hellgrau' or c == 'hell_grau' %}
+  {% assign c = 'light_gray' %}
+{% elsif c == 'hellbeige' or c == 'hell_beige' %}
+  {% assign c = 'light_beige' %}
+{% elsif c == 'navy' %}
+  {% assign c = 'dark_blue' %}
+{% elsif c == 'dark_green' %}
+  {% assign c = 'green' %}
+{% endif %}
+{% assign out = strip_val %}
+{% assign color_matched = false %}
+{% assign color_keys = 'black,brown,gray,light_gray,grey,light_grey,dark_blue,blue,green,red,maroon,light_beige,beige,purple,lime,yellow,orange,ivory,pink,white' | split: ',' %}
+{% for key in color_keys %}
+  {% unless color_matched %}
+    {% assign t = 'general.colors.' | append: key %}
+    {% assign trans = t | t %}
+    {% assign tlow = trans | downcase | replace: ' ', '_' | replace: '-', '_' %}
+    {% if c == key or c == tlow %}
+      {% assign out = trans %}
+      {% assign color_matched = true %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+{{- out -}}

@@ -1,0 +1,37 @@
+<div class="filter-container_section">
+    <div class="page-width">
+        <div class="filter-container_section__title">{{ 'general.config.choose_your_mats' | t }}</div>
+        <div class="filter-container filter-container-json" data-json="{{ 'all_brands.json' | asset_url }}">
+            <div class="custom-select-wrapper">
+                <div class="custom-select brand-custom-select">
+                    <input type="text" class="select-selected brand-input" placeholder="{{ 'general.config.brand' | t }}"  autocomplete="off">
+                    {% render 'arrow-down' %}
+                    <div class="select-items select-hide brand-select-options" ></div>
+                </div>
+            </div>
+            <div class="custom-select-divider"></div>
+            <div class="custom-select-wrapper">
+                <div class="custom-select model-custom-select">
+                    <input type="text" class="select-selected disabled model-input" placeholder="{{ 'general.config.model' | t }}" disabled autocomplete="off">
+                    {% render 'arrow-down' %}
+                    <div class="select-items select-hide model-select-options"></div>
+                </div>
+            </div>
+            <div class="custom-select-divider"></div>
+            
+
+            <!-- Years Filter -->
+            <div class="custom-select-wrapper">
+                <div class="custom-select years-custom-select">
+                    <input type="text" class="select-selected disabled years-input" placeholder="{{ 'general.config.year_production' | t }}" autocomplete="off">
+                    {% render 'arrow-down' %}
+                    <div class="select-items select-hide years-select-options" >
+                    </div>
+                </div>
+            </div>
+
+            <button class="search-button button search-button-json" disabled>{{ 'general.config.search' | t }}</button>
+            <span class="clear-filters">{{ 'general.config.reset' | t }}</span>
+        </div>
+    </div>
+</div>

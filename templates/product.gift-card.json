@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "02fe151c-258f-4dde-b6d7-c431c9eb9137": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "{% render \"preloader\" %}",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% render \"preloader\" %}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_sale_image": false,
+            "sale_background": "",
+            "sale_width": 100
+          }
+        },
+        "rating_9NGqaN": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_badge": true,
+            "info_text": "",
+            "info_text_individual": "",
+            "info_html": "",
+            "info_html_individual": "",
+            "individual_welcome_html": "<p><strong>How does an individual order work?<\/strong><\/p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours and add-ons.<\/li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).<\/li>\n<li>Confirm details: our consultant will call you to confirm and send the order to production.<\/li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.<\/li>\n<\/ol>",
+            "auto_open_individual_welcome_popup": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_discounts": false
+          }
+        },
+        "uwagi_pPPRKt": {
+          "type": "uwagi",
+          "settings": {}
+        },
+        "863c8a99-ffa8-4d62-8858-43e31c9a6139": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% render \"estimated-delivery\" %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0",
+        "vendor",
+        "title",
+        "rating_9NGqaN",
+        "price",
+        "variant_picker",
+        "uwagi_pPPRKt",
+        "863c8a99-ffa8-4d62-8858-43e31c9a6139",
+        "buy_buttons",
+        "description"
+      ],
+      "custom_css": [
+        ".product__tax {display: none;}",
+        ".price {font-size: 2.2rem; font-weight: 600;}",
+        ".price-item--sale,.price-item--last,.price__regular .price-item--regular {font-size: 2.2rem; font-weight: 600; background: #fff; border: 1px solid #000; color: #000; padding: 4px 8px; border-radius: 50px;}",
+        ".product__text {font-size: 1.4rem; color: red;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "check-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
+        "enable_video_looping": false,
+        "trunk_message": "<p>Note – trunk mat:<\/p><p>Up to 140x240 cm – from one part ✅<\/p><p>Up to 150x250 cm – from two parts ✅<\/p><p>Above 280 cm in length – we do not make ❌<\/p><p>ℹ️ In case of doubt, please contact the sales department.<\/p>",
+        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:<\/strong><\/p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br><br>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br><br><\/p>",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "product_tabs_gift_card": {
+      "type": "product_tabs",
+      "blocks": {
+        "tab_description": {
+          "type": "tab",
+          "settings": {
+            "title": "Description",
+            "id": "description",
+            "html": "<p><strong>EVAMATS gift card<\/strong> is an elegant way to let someone choose exactly what they need. 🎁 Instead of guessing technical details about their car, you give the driver the freedom to configure the perfect floor mats for their vehicle. Every detail—from model to trim colour—matters, so a gift card means satisfaction and a perfect fit. ✨<\/p>\n<p>With EVAMATS you give the joy of personalising their car interior, combining looks with premium function. 🚗🎨<\/p>\n<ul>\n<li>\n<strong>📧 EVAMATS e-voucher:<\/strong> A modern gift we send straight to your email—perfect to print yourself or forward digitally.<\/li>\n<li>\n<strong>📦 Physical gift card:<\/strong> A classic gift card we ship to your address, ready to give in person.<\/li>\n<\/ul>\n\n<h3><strong>⏳ Card validity<\/strong><\/h3>\n<p>Every EVAMATS gift card—whether e-voucher or physical—is valid for <strong>12 months (1 year) from the date of purchase<\/strong>. Plenty of time for the recipient to pick the perfect moment to design their dream mats. 🗓️<\/p>\n\n<h3><strong>What can the card cover? 💰<\/strong><\/h3>\n<p><em>Amounts below are examples; always match the denomination you choose at purchase.<\/em><\/p>\n<ul>\n<li>\n<strong>€82.5<\/strong> – Front set without edges, with EVA heel pad. Function and style in one! 🏎️<\/li>\n<li>\n<strong>€145<\/strong> – Front and rear without edges, comfort and style throughout. 🌟 (Front set with edges is also available at this level.)<\/li>\n<li>\n<strong>€218<\/strong> – Front and rear without edges, plus extras for full protection. 💼 (Front with edges available at this level too.)<\/li>\n<li>\n<strong>€230<\/strong> – Full set without edges including boot, ideal for a 5-seat car. (Front and rear with edges available at the same tier.)<\/li>\n<li>\n<strong>€290<\/strong> – Full 3D edged set for a 5-seat car with accessories for maximum protection and style. ✨<\/li>\n<\/ul>"
+          }
+        },
+        "tab_redeem": {
+          "type": "tab",
+          "settings": {
+            "title": "How to redeem",
+            "id": "tech",
+            "html": "<h3><strong>Option 1: EVAMATS e-voucher<\/strong><\/h3>\n<ol>\n<li>\n<strong>Delivery:<\/strong> After your order is paid, we email you a PDF e-voucher.<\/li>\n<li>\n<strong>Gifting:<\/strong> Print it or send it digitally to the recipient. 📲<\/li>\n<li>\n<strong>Redemption:<\/strong> They configure products on the site and enter the unique code at checkout in the <strong>“Discount code”<\/strong> field.<\/li>\n<\/ol>\n<p><em>* The code is single-use and tied to one purchase.<\/em><\/p>\n\n<h3><strong>Option 2: Physical gift card<\/strong><\/h3>\n<ol>\n<li>\n<strong>Delivery:<\/strong> We ship the card by courier. Each card is pre-loaded with an active code.<\/li>\n<li>\n<strong>Ready to give:<\/strong> Packaged and ready—no activation needed. 🎀<\/li>\n<li>\n<strong>Redemption:<\/strong> Same as online—enter the code in the <strong>“Discount code”<\/strong> field to reduce the cart total.<\/li>\n<\/ol>\n<p><em>* The code is single-use.<\/em><\/p>"
+          }
+        },
+        "tab_delivery": {
+          "type": "tab",
+          "settings": {
+            "title": "Delivery & returns",
+            "id": "delivery",
+            "html": "<h2><strong>Delivery 🚚<\/strong><\/h2>\n<p><strong>EVAMATS e-voucher:<\/strong><\/p>\n<p>We send your e-voucher as soon as payment is confirmed. The digital format means you get it quickly—no waiting on shipping. ⚡<\/p>\n<p><strong>Physical gift card:<\/strong><\/p>\n<p>We prepare and dispatch physical cards within 24 hours (business days) after payment. Your parcel arrives ready to gift. 📨<\/p>\n\n<h2><strong>Validity 📅<\/strong><\/h2>\n<p>EVAMATS gift cards (e-vouchers and physical cards alike) are valid for <strong>12 months from the date of purchase<\/strong>. After this period, the unique code expires and cannot be redeemed. We recommend the recipient use it within the validity window to enjoy the full value.<\/p>\n\n<h2><strong>Returns &amp; conditions 🔄<\/strong><\/h2>\n<p>For both e-vouchers and physical cards, you may return within <strong>14 days<\/strong> of purchase, provided the unique code has not been used. Cards cannot be exchanged for cash and the value must be used in a single order.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_description",
+        "tab_redeem",
+        "tab_delivery"
+      ],
+      "name": "Product tabs",
+      "settings": {}
+    },
+    "080cd113-d353-46cb-aa5d-cfdeee68c912": {
+      "type": "scroll-to-top-button",
+      "settings": {
+        "back-to-top-button-enabled": true,
+        "smooth-scroll-enabled": true,
+        "btn_text": "Back to top",
+        "html": "",
+        "button-color": "#848282",
+        "text-color": "#ffffff",
+        "back-to-top-button-position": "bottom-right"
+      }
+    }
+  },
+  "order": [
+    "02fe151c-258f-4dde-b6d7-c431c9eb9137",
+    "main",
+    "product_tabs_gift_card",
+    "080cd113-d353-46cb-aa5d-cfdeee68c912"
+  ]
+}

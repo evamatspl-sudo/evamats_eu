@@ -1,0 +1,277 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "321de2c9-eb7e-427a-8570-76112afd1abf": {
+      "type": "sidebar",
+      "blocks": {
+        "00ce56ee-6117-4a79-9d48-e2f74e8c13ba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ct",
+            "color-code": "CT"
+          }
+        },
+        "db8a49f8-8a9b-463c-a50e-500eccc4bf66": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-es",
+            "color-code": "ES"
+          }
+        },
+        "94fe98bf-f295-44db-9273-98398af1f6c4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-gs",
+            "color-code": "GS"
+          }
+        },
+        "981051c1-1bf3-4189-b265-3c597f973d15": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-gx",
+            "color-code": "GX"
+          }
+        },
+        "6761c652-97b0-45b7-bef5-19fd5ed1e727": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-is",
+            "color-code": "IS"
+          }
+        },
+        "043887d6-6208-48d2-aa60-88114cf247ff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-lc",
+            "color-code": "LC"
+          }
+        },
+        "72c96dca-0feb-4c7f-9271-31102aba438e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ls",
+            "color-code": "LS"
+          }
+        },
+        "4e7367de-68d8-4ac6-8604-5d554c230d5c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-lx",
+            "color-code": "LX"
+          }
+        },
+        "3cbbeb95-92bc-4515-a52f-ea66b79e3275": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-nx",
+            "color-code": "NX"
+          }
+        },
+        "f7f3f37a-8663-4703-a91a-a38c53ad997d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-rc",
+            "color-code": "RC"
+          }
+        },
+        "937f5774-19cf-4bb8-a01d-755d65f088cc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-rx",
+            "color-code": "RX"
+          }
+        },
+        "1837b87a-7316-47b4-bdaf-7945b382a1d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-sc",
+            "color-code": "SC"
+          }
+        },
+        "f99d5927-56f1-4560-8b4b-b19abda92244": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ux",
+            "color-code": "UX"
+          }
+        }
+      },
+      "block_order": [
+        "00ce56ee-6117-4a79-9d48-e2f74e8c13ba",
+        "db8a49f8-8a9b-463c-a50e-500eccc4bf66",
+        "94fe98bf-f295-44db-9273-98398af1f6c4",
+        "981051c1-1bf3-4189-b265-3c597f973d15",
+        "6761c652-97b0-45b7-bef5-19fd5ed1e727",
+        "043887d6-6208-48d2-aa60-88114cf247ff",
+        "72c96dca-0feb-4c7f-9271-31102aba438e",
+        "4e7367de-68d8-4ac6-8604-5d554c230d5c",
+        "3cbbeb95-92bc-4515-a52f-ea66b79e3275",
+        "f7f3f37a-8663-4703-a91a-a38c53ad997d",
+        "937f5774-19cf-4bb8-a01d-755d65f088cc",
+        "1837b87a-7316-47b4-bdaf-7945b382a1d6",
+        "f99d5927-56f1-4560-8b4b-b19abda92244"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "258ab631-99ae-4ec1-b1bc-543638528a2a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ct",
+            "color-code": "CT"
+          }
+        },
+        "63381bde-b7e2-4b80-9601-aa9ee9cde7a0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-es",
+            "color-code": "ES"
+          }
+        },
+        "14bdafc8-1253-4ddb-9614-07b543f7077b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-gs",
+            "color-code": "GS"
+          }
+        },
+        "fd90d359-f0be-49b9-bf34-f31b22636092": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-gx",
+            "color-code": "GX"
+          }
+        },
+        "d3af3739-fd54-47b2-a5c7-3d7b7fa3acdb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-is",
+            "color-code": "IS"
+          }
+        },
+        "dbd113c0-be4a-4a4a-8771-5f75214224d9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-lc",
+            "color-code": "LC"
+          }
+        },
+        "5a7ddbb0-217b-4c5a-a17f-c4bbe09449db": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ls",
+            "color-code": "LS"
+          }
+        },
+        "e1fea619-e948-44fe-ae3b-d4c23651fef2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-lx",
+            "color-code": "LX"
+          }
+        },
+        "34eeaec1-64ad-4f3c-9391-b66362814455": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-nx",
+            "color-code": "NX"
+          }
+        },
+        "aa684a51-436a-417b-b631-22e9251b4cd5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-rc",
+            "color-code": "RC"
+          }
+        },
+        "61a6566a-6527-4842-96d3-ff6a19d78041": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-rx",
+            "color-code": "RX"
+          }
+        },
+        "5708237d-0398-4fdc-98a1-681ee4435399": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-sc",
+            "color-code": "SC"
+          }
+        },
+        "be0a4e0f-10d0-4c7d-b445-2ebf61c1f1fe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus-ux",
+            "color-code": "UX"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "258ab631-99ae-4ec1-b1bc-543638528a2a",
+        "63381bde-b7e2-4b80-9601-aa9ee9cde7a0",
+        "14bdafc8-1253-4ddb-9614-07b543f7077b",
+        "fd90d359-f0be-49b9-bf34-f31b22636092",
+        "d3af3739-fd54-47b2-a5c7-3d7b7fa3acdb",
+        "dbd113c0-be4a-4a4a-8771-5f75214224d9",
+        "5a7ddbb0-217b-4c5a-a17f-c4bbe09449db",
+        "e1fea619-e948-44fe-ae3b-d4c23651fef2",
+        "34eeaec1-64ad-4f3c-9391-b66362814455",
+        "aa684a51-436a-417b-b631-22e9251b4cd5",
+        "61a6566a-6527-4842-96d3-ff6a19d78041",
+        "5708237d-0398-4fdc-98a1-681ee4435399",
+        "be0a4e0f-10d0-4c7d-b445-2ebf61c1f1fe"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "321de2c9-eb7e-427a-8570-76112afd1abf",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

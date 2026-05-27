@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "865ca8c9-c834-4485-aeb1-1eb1efa3f855": {
+      "type": "mobile-button",
+      "settings": {
+        "btn_text": "All models",
+        "btn_url": "shopify:\/\/collections\/isuzu"
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/isuzu",
+            "color-code": "All"
+          }
+        },
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/isuzu-d-max",
+            "color-code": "D-MAX"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "865ca8c9-c834-4485-aeb1-1eb1efa3f855",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

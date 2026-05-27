@@ -1,0 +1,127 @@
+
+{% style %}
+    .text-with-image--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 990px) {
+        .text-with-image--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="text-with-image text-with-image--{{ section.id }}">
+    <div class="page-width">
+        {% if section.settings.header != blank %}
+            <div class="text-with-image__header">
+                {{ section.settings.header }}
+            </div>
+        {% endif %}
+        <div class="text-with-image__wrapper">
+            <div class="text-with-image__content">
+                {% if section.settings.richtext != blank %}
+                    <div class="text-with-image__richtext">
+                        {{ section.settings.richtext }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="text-with-image__image">
+                {% if section.settings.image != blank %}
+                    {{
+                        section.settings.image
+                        | image_url: width: 1500
+                        | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        class: 'lazy',
+                        sizes: '100vw',
+                        widths: '375, 550, 750, 1100, 1500',
+                        loading: 'lazy',
+                        alt: section.settings.image.alt
+                    }}
+                {% else %}
+                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Text with image",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "richtext",
+            "id": "header",
+            "label": "Header"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Richtext"
+        },
+        {
+            "type": "header",
+            "content": "Padding mobile"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Padding desktop"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        }
+    ],
+    "presets": [
+      {
+        "name": "Text with image"
+      }
+    ]
+  }
+{% endschema %}

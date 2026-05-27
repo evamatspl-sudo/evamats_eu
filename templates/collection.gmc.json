@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "0087371f-379e-41a5-a0b0-18439126dd48": {
+      "type": "sidebar",
+      "blocks": {
+        "cb073d98-46db-4c97-98ed-f1ff95c703aa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/gmc-acadia",
+            "color-code": "Acadia"
+          }
+        }
+      },
+      "block_order": [
+        "cb073d98-46db-4c97-98ed-f1ff95c703aa"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "b8d99ac0-973d-4485-9573-31aac785f82d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/gmc-acadia",
+            "color-code": "Acadia"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "b8d99ac0-973d-4485-9573-31aac785f82d"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "0087371f-379e-41a5-a0b0-18439126dd48",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

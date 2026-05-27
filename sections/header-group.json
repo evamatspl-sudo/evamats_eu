@@ -1,0 +1,68 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_WaC6Ua": {
+          "type": "announcement",
+          "settings": {
+            "text": "Najlepsza oferta z okazji Dnia Niepodległości Do 15% taniej",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_WaC6Ua"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".h5 {color: rgb(var(--color-foreground));}"
+      ],
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".list-menu--inline {gap: 0.5rem;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "header-tel": "",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "always",
+        "show_line_separator": false,
+        "mobile_logo_position": "center",
+        "custom_collection": "evamatsaccessoriesby_order",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "16999732871a006b0b": {
+      "type": "apps",
+      "blocks": {
+        "9f12b480-5fee-45c4-9f9e-28d84383a56a": {
+          "type": "shopify:\/\/apps\/tt-breadcrumbs-seo-schema\/blocks\/breadcrumbSection\/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "9f12b480-5fee-45c4-9f9e-28d84383a56a"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "16999732871a006b0b"
+  ]
+}

@@ -1,0 +1,79 @@
+<section>
+            <div class="first-main">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="first-column">
+                            <img src="{{ section.settings.img1|img_url:'master' }}" alt="">
+                            {{ section.settings.des1 }}
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="first-column">
+                            <img src="{{ section.settings.img2|img_url:'master' }}" alt="">
+                            {{ section.settings.des2 }}
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="first-column">
+                            <img src="{{ section.settings.img3|img_url:'master' }}" alt="">
+                            {{ section.settings.des3 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% schema %}
+{
+  "name": "home2",
+  "settings": [
+    {
+      "type":"image_picker",
+      "label":"Image",
+      "id":"img1"
+    },
+    {
+      "type":"richtext",
+      "label":"Image Text",
+      "id":"des1",
+      "default":"<p>Don't lose <br> appearance over time</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Image",
+      "id":"img2"
+    },
+    {
+      "type":"richtext",
+      "label":"Image Text",
+      "id":"des2",
+      "default":"<p>Resistant to <br> temperature changes</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Image",
+      "id":"img3"
+    },
+    {
+      "type":"richtext",
+      "label":"Image Text",
+      "id":"des3",
+      "default":" <p>Resistant to <br> chemicals</p>"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home2",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

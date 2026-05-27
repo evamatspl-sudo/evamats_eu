@@ -1,0 +1,152 @@
+{% comment %} <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> {% endcomment %}
+
+<section>
+  <div class="second-main">
+    <div class="row">
+      <div class="col-lg-6" style="width: 50%">
+        <div class="second-left">
+          <h2>{{ section.settings.hd }}</h2>
+          <div class="card-text"> {{ section.settings.des }} </div>
+          <a href="{{ section.settings.btn_url }}">
+            <button class="button">{{ section.settings.btn_text }}</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 bottom" style="width: 50%">
+        <div class="second-right">
+          <div class="second-main-image">
+            <img src="{{ section.settings.img | img_url: '800x' }}" alt="" loading='lazy'>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .second-main .row .col-lg-6 .second-left h2 {
+    font-size: 3.9rem;
+    line-height: 46px;
+}
+.bottom{
+  margin-bottom: auto;
+}
+  @media screen and (max-width: 990px) {
+    .second-main .row .col-lg-6 .second-right {
+      position: relative;
+      margin-top: 50px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .second-main .row {
+      max-width: var(--page-width);
+      padding: 0 5rem;
+    }
+
+    .second-main {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  .card-text {
+    overflow: hidden;
+    max-height: 150px; /* Adjust to your desired initial height */
+    transition: max-height 0.5s ease;
+    line-height: 1.5; /* Adjust line height as needed */
+  }
+
+  .btn-read-more {
+    color: #FF0000;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 0;
+  }
+   @media screen and (max-width: 767px) {
+      .card-text {
+        max-height: 145px; 
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-text').forEach(function(element) {
+        var text = element.textContent;
+        var charCount = text.length;
+        var maxChars = 200; // Adjust to your desired maximum characters
+
+        if (charCount > maxChars) {
+            var small = text.substring(0, maxChars);
+            var button = document.createElement('button');
+            button.className = 'btn-read-more';
+            button.textContent = 'Read more';
+            element.after(button);
+
+            button.addEventListener('click', function() {
+                element.classList.toggle('expanded');
+                if (element.classList.contains('expanded')) {
+                    element.style.maxHeight = element.scrollHeight + 'px';
+                    button.textContent = 'Read less';
+                } else {
+                    element.style.maxHeight = '150px'; // Adjust to your desired initial height
+                    button.textContent = 'Read more';
+                }
+            });
+        }
+    });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "home3-2",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Main Heading",
+      "id": "hd",
+      "default": "<h1>3D vs KLASYCZNE</h1>"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "des",
+      "default": "<p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how  important it is, to feel this specter of emotions. And this is exactly what we are doing in our company  – helping you to form your kids` future.</p>"
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "btn_text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "label": "Button Url",
+      "id": "btn_url"
+    },
+    {
+      "type": "image_picker",
+      "label": "Main Image",
+      "id": "img"
+    }
+  ],
+  "presets": [
+    {
+      "name": "home3-2",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

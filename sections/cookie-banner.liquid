@@ -1,0 +1,63 @@
+<style>
+    .cookie-banner {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: rgb(var(--color-foreground));
+        padding: 20px;
+        text-align: center;
+        z-index: 99999;
+    }
+
+    .cookie-banner p {
+        max-width: 1000px;
+        margin: 0 auto 20px auto
+    }
+</style>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner" class="cookie-banner">
+    <p>{{ section.settings.text }}</p>
+    <button id="acceptCookies" class="button">{{section.settings.button_text}}</button>
+</div>
+
+
+
+<script>
+
+    // Display the banner if cookie not set
+window.onload = function() {
+    if (!document.cookie.split('; ').includes('cookiesAccepted=true')) {
+        document.getElementById('cookieBanner').style.display = 'block';
+    }
+};
+
+// Accept button functionality
+document.getElementById('acceptCookies').onclick = function() {
+    document.getElementById('cookieBanner').style.display = 'none';
+    // Set cookie with a 7-day expiration
+    document.cookie = "cookiesAccepted=true; max-age=" + 7 * 24 * 60 * 60 + "; path=/";
+};
+
+</script>
+
+{% schema %}
+    {
+        "name": "Cookie banner",
+        "settings": [
+            {
+                "type": "textarea",
+                "id": "text",
+                "label": "Text"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button text",
+                "default": "Akceptuję"
+            }
+        ]
+    }
+{% endschema %}

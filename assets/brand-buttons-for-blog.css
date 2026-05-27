@@ -1,0 +1,265 @@
+/*  COLOR TABLE */
+
+ .collection-colorTable {
+    max-width: 1100px;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+ .collection-margin-bottom {
+     margin-bottom: 60px;
+}
+ .collection-colorTable_header {
+     font-size: 20px;
+     text-align: center;
+     text-transform: uppercase;
+     margin: 60px 0 45px 0;
+     position: relative;
+     padding-bottom: 5px;
+     font-family: Montserrat, sans-serif;
+     letter-spacing: 0.2em;
+     text-transform: uppercase;
+     font-weight: 500;
+     color: #1F1C1C;
+}
+ .collection-colorTable_header::after {
+     content: "";
+     height: 2px;
+     width: 40px;
+     background: var(--button-background);
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     -webkit-transform: translateX(-50%);
+     transform: translateX(-50%);
+}
+ .collection-colorTable_block__header {
+     font-size: 16px;
+     text-transform: uppercase;
+     position: relative;
+     padding: 25px 15px 5px;
+     margin-bottom: 15px;
+     font-weight: 600;
+}
+ .collection-colorTable_block__header::after {
+     content: "";
+     height: 2px;
+     width: 40px;
+     background: var(--button-background);
+     position: absolute;
+     bottom: 0;
+     left: 14px;
+}
+
+.collection-color_block__wrapper{
+  position: relative;
+}
+
+
+
+ @media only screen and (max-width: 1200px) {
+     .collection-colorTable_block__header::after {
+         left: 16px;
+    }
+}
+ @media only screen and (max-width: 480px) {
+     .collection-colorTable_block__header::after {
+         left: 28px;
+    }
+}
+ @media only screen and (max-width: 1200px) {
+     .collection-colorTable_block__header {
+         padding: 0 15px 5px 15px;
+         margin-top: 15px;
+    }
+}
+ @media only screen and (max-width: 480px) {
+     .collection-colorTable_block__header {
+         padding: 0 28px 5px;
+    }
+}
+ .colorTable_block__blocks-collection {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: row;
+     -ms-flex-pack: row;
+     justify-content: row;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+   justify-content: center;
+   padding-top: 30px;
+}
+ .collection-color_block {
+   text-decoration: none;
+   margin: 0px 10px 10px 0px;
+    border-radius: 40px;
+    text-align: center;
+    min-width: 80px;
+    height: 30px;
+    border: 1px solid rgb(var(--color-foreground));
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+      
+.collection-color_block:hover{
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+.collection-color_block__material:hover{
+  color: #000;
+}
+      
+.collection-color_block:hover .collection-color_block__material{
+  color: #000 !important;
+}
+      
+ @media only screen and (max-width: 1200px) {
+     .collection-color_block__wrapper {
+         max-width: 185px;
+    }
+}
+ .collection-color_block__img {
+     width: 150px;
+     height: 150px;
+     border: 1px solid black;
+     border-radius: 10px;
+     -webkit-transition: all 0.4s;
+     transition: all 0.4s;
+}
+ .collection-color_block__img:hover {
+     border: 1px solid var(--button-background);
+}
+ @media only screen and (max-width: 1200px) {
+     .collection-color_block__img {
+         width: 180px;
+    }
+}
+ .collection-color_block__material {
+     display: block;
+     font-weight: 500;
+     font-size: 14px;
+     color: rgb(var(--color-foreground));
+     line-height: 20px;
+}
+
+ @media only screen and (max-width: 1600px) {
+     .collection-colorTable {
+         max-width: 1100px;
+    }
+}
+ @media only screen and (max-width: 1400px) {
+     .collection-colorTable {
+         max-width: 1100px;
+    }
+}
+ @media only screen and (max-width: 1200px) {
+     .collection-colorTable {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px 100px;
+       }
+}
+
+ @media only screen and (max-width: 1180px) {
+      .collection-colorTable {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px 80px;
+       }
+}
+@media only screen and (max-width: 1139px) {
+      .collection-colorTable {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px 50px;
+       }
+}
+
+
+@media screen and (max-width: 767px) {
+    .colorTable_block__blocks-collection {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 683px) {
+     .collection-color_block {
+         width: 130px;
+     }
+     .collection-color_block__img {
+         width: 130px;
+         height: 130px;
+     }
+     .collection-color_block__wrapper {
+         max-width: 130px;
+    }
+     .collection-color_block__material {
+       bottom: 35px;
+       left: 11px;
+    }
+}
+@media only screen and (max-width: 640px) {
+     .collection-colorTable {
+       padding: 0px 24px;
+     }
+   
+}
+ @media only screen and (max-width: 533px) {
+     .collection-color_block {
+         width: 150px;
+     }
+     .collection-color_block__img {
+         width: 150px;
+         height: 150px;
+     }
+     .collection-color_block__wrapper {
+         max-width: 150px;
+     }
+}
+@media only screen and (max-width: 415px) {
+     .collection-colorTable {
+        padding: 0 24px;
+     }
+       .collection-color_block {
+         width: 130px;
+     }
+     .collection-color_block__img {
+         width: 130px;
+         height: 130px;
+     }
+     .collection-color_block__wrapper {
+         max-width: 130px;
+    }
+     .collection-color_block__color{
+        font-size: 14px;
+        bottom: 24px;
+        height: 20px;
+        left: 17px;
+        padding-right: 10px;
+    }
+}
+@media only screen and (max-width: 348px) {
+    .collection-color_block {
+         width: 100px;
+    }
+     .collection-color_block__img {
+         width: 100px;
+         height: 100px;
+    }
+     .collection-color_block__wrapper {
+        max-width: 100px;
+    }
+     .collection-color_block__material{
+       bottom: 13px;
+       left: 7px;
+       font-size: 14px;
+    }
+     .collection-color_block__color{
+      left: 13px;
+    }
+}

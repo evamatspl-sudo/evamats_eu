@@ -1,0 +1,226 @@
+
+{% style %}
+
+.compare-cards__blocks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px
+}
+@media (max-width:767.98px){
+    .compare-cards__blocks{
+        grid-template-columns:1fr
+    }
+}
+.compare-cards__block{
+    border-radius:20px;
+    background:#fff;
+    border:1px solid #000;
+    padding:50px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between
+}
+@media (max-width:991.98px){
+    .compare-cards__block{
+        padding:40px 20px
+    }
+}
+.compare-cards__header *{
+    color:rgb(var(--color-foreground));
+    font-size:32px;
+    font-style:normal;
+    font-weight:600;
+    line-height:normal;
+    max-width:308px;
+    margin-bottom:32px
+}
+.compare-cards__header * strong{
+    color:#ea022c
+}
+.compare-cards__unordered-list ul{
+    list-style-type:none;
+    padding-left:48px;
+    padding-top:32px;
+    margin-bottom:32px;
+    border-top:1px solid rgb(var(--color-foreground))
+}
+.compare-cards__unordered-list ul li{
+    position:relative;
+    color:rgb(var(--color-foreground));
+    font-size:16px;
+    font-style:normal;
+    font-weight:500
+}
+.compare-cards__unordered-list ul li:not(:last-child){
+    margin-bottom:12px
+}
+.compare-cards__unordered-list ul li::before{
+    content:"";
+    display:block;
+    width:24px;
+    height:24px;
+    position:absolute;
+    top:2px;
+    left:-48px;
+    background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Ccircle cx="12" cy="12" r="7" fill="black" /%3E%3Ccircle cx="12" cy="12" r="11.5" stroke="black" /%3E%3C/svg%3E') center center no-repeat;
+    background-size:cover
+}
+.compare-cards__image img{
+    max-width:100%
+}
+.compare-cards .compare-cards__block--2{
+    border:1px solid #ea022c
+}
+.compare-cards .compare-cards__block--2 .compare-cards__unordered-list ul li::before{
+    background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Ccircle cx="12" cy="12" r="7" fill="%23EA022C" /%3E%3Ccircle cx="12" cy="12" r="11.5" stroke="%23EA022C" /%3E%3C/svg%3E') center center no-repeat
+}
+    .compare-cards--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 990px) {
+        .compare-cards--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="compare-cards compare-cards--{{ section.id }}">
+    <div class="page-width">
+        <div class="compare-cards__wrapper">
+            <div class="compare-cards__blocks">
+            {% for block in section.blocks %}
+                <div class="compare-cards__block compare-cards__block--{{ forloop.index }}">
+                    {% liquid 
+                        assign header = block.settings.header
+                        assign image = block.settings.image
+                        assign unordered_list = block.settings.unordered_list
+                    %}
+                    <div>
+                        {% if header != blank %}
+                            <div class="compare-cards__header">
+                                {{ header }}
+                            </div>
+                        {% endif %}
+                        {% if unordered_list != blank %}
+                            <div class="compare-cards__unordered-list">
+                                {{ unordered_list }}
+                            </div>  
+                        {% endif %}
+                    </div>
+                    <div class="compare-cards__image-wrapper">
+                                <div class="compare-cards__image">
+                                    {% if image != blank %}
+                                            <picture>
+                                                {{
+                                                image
+                                                | image_url: width: 1500
+                                                | image_tag:
+                                                    width: imageWidth,
+                                                    height: imageHeight,
+                                                    class: 'lazy',
+                                                    sizes: '100vw',
+                                                    widths: '375, 550, 750, 1100, 1500',
+                                                    loading: 'lazy',
+                                                    alt: image.alt
+                                                }}
+                                            </picture> 
+                                    {% else %}
+                                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                                    {% endif %}
+                                </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% schema %}
+  {
+    "name": "Compare cards",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Padding mobile"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Padding desktop"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Block",
+            "type": "block",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "header",
+                    "label": "Title",
+                    "default": "<h2>Wady gumowych dywaników</h2>"
+                },
+                {
+                    "type": "richtext",
+                    "id": "unordered_list",
+                    "label": "Unordered List"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+        
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Compare cards"
+      }
+    ]
+  }
+{% endschema %}

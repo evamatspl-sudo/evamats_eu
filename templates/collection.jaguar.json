@@ -1,0 +1,229 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "2f674434-0450-4428-ae85-f0f9f0ce27ff": {
+      "type": "sidebar",
+      "blocks": {
+        "ab287edd-a5b8-428f-b2c7-bce0470944c3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jaguar-e-pace",
+            "color-code": "E-Pace"
+          }
+        },
+        "9c8d81b8-59e8-4915-a837-05d3899b9c22": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-f-pace",
+            "color-code": "F-pace"
+          }
+        },
+        "section_xrk9H3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-i-pace",
+            "color-code": "I-Pace"
+          }
+        },
+        "11929115-a36c-4b05-92e8-38453b1529cf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-dojaguar-s-type",
+            "color-code": "S-type"
+          }
+        },
+        "7b1c3fa9-8ee2-4551-9413-b6d0f8f7b90a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-dojaguar-x-type",
+            "color-code": "X-Type"
+          }
+        },
+        "8ff63a07-4166-42d7-9a1a-fa20f11b568e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xe",
+            "color-code": "XE"
+          }
+        },
+        "290dd5fa-729f-454c-b881-e88f1a05f5e3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xf",
+            "color-code": "XF"
+          }
+        },
+        "f5c9304b-df8f-4859-992b-8817ad39451d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xj",
+            "color-code": "XJ"
+          }
+        },
+        "067c2bd6-d45f-41d3-9890-637045cd9984": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xjr",
+            "color-code": "XJR"
+          }
+        },
+        "3334aed0-8eb2-4b88-9719-1ecb408c680d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xk",
+            "color-code": "XK"
+          }
+        }
+      },
+      "block_order": [
+        "ab287edd-a5b8-428f-b2c7-bce0470944c3",
+        "9c8d81b8-59e8-4915-a837-05d3899b9c22",
+        "section_xrk9H3",
+        "11929115-a36c-4b05-92e8-38453b1529cf",
+        "7b1c3fa9-8ee2-4551-9413-b6d0f8f7b90a",
+        "8ff63a07-4166-42d7-9a1a-fa20f11b568e",
+        "290dd5fa-729f-454c-b881-e88f1a05f5e3",
+        "f5c9304b-df8f-4859-992b-8817ad39451d",
+        "067c2bd6-d45f-41d3-9890-637045cd9984",
+        "3334aed0-8eb2-4b88-9719-1ecb408c680d"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "d813eb7d-7ed8-41d2-aa25-29feea7159ec": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jaguar-e-pace",
+            "color-code": "E-Pace"
+          }
+        },
+        "2804cb42-750b-408d-8e94-77145220e120": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-f-pace",
+            "color-code": "F-Pace"
+          }
+        },
+        "section_3fHyQq": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-i-pace",
+            "color-code": "I-Pace"
+          }
+        },
+        "34037f82-c5d3-4550-a1a6-18cef533b67e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-dojaguar-s-type",
+            "color-code": "S-type"
+          }
+        },
+        "c1912834-1769-4d2b-8a72-6edfed03dcd8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-dojaguar-x-type",
+            "color-code": "X-Type"
+          }
+        },
+        "d0ff7f6d-b0a6-4cae-be64-5eb32f030b44": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xe",
+            "color-code": "XE"
+          }
+        },
+        "f304c98b-bd6c-40e6-a12f-7bc521554e81": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xf",
+            "color-code": "XF"
+          }
+        },
+        "036230af-6d97-4df5-bd94-76eaf76ae391": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xj",
+            "color-code": "XJ"
+          }
+        },
+        "245dcf67-1858-438e-9625-563e9b3eafac": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xjr",
+            "color-code": "XJR"
+          }
+        },
+        "95da6693-a2d3-40df-b9be-82ad45faca0f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jaguar-xk",
+            "color-code": "XK"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "d813eb7d-7ed8-41d2-aa25-29feea7159ec",
+        "2804cb42-750b-408d-8e94-77145220e120",
+        "section_3fHyQq",
+        "34037f82-c5d3-4550-a1a6-18cef533b67e",
+        "c1912834-1769-4d2b-8a72-6edfed03dcd8",
+        "d0ff7f6d-b0a6-4cae-be64-5eb32f030b44",
+        "f304c98b-bd6c-40e6-a12f-7bc521554e81",
+        "036230af-6d97-4df5-bd94-76eaf76ae391",
+        "245dcf67-1858-438e-9625-563e9b3eafac",
+        "95da6693-a2d3-40df-b9be-82ad45faca0f"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "2f674434-0450-4428-ae85-f0f9f0ce27ff",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "d09a73b4-7d4a-45e2-a9b5-cabffa6fdc3e": {
+      "type": "mobile-button",
+      "settings": {
+        "btn_text": "All models",
+        "btn_url": "shopify:\/\/collections\/mitsubishi"
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mitsubishi",
+            "color-code": "All"
+          }
+        },
+        "f69b1c31-d518-41f7-9cfd-81b0b8b93fba": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mitsubishi-asx",
+            "color-code": "ASX"
+          }
+        }
+      },
+      "block_order": [
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6",
+        "f69b1c31-d518-41f7-9cfd-81b0b8b93fba"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "d09a73b4-7d4a-45e2-a9b5-cabffa6fdc3e",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

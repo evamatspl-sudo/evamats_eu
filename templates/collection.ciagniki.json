@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "87611618-ace4-4810-a382-6b357640528c": {
+      "type": "sidebar",
+      "blocks": {
+        "f7fa34c7-df11-4952-a435-7245bd49cb1d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-claas",
+            "color-code": "CLAAS"
+          }
+        },
+        "234cf457-2722-4570-a573-b6b438405e41": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-fendt",
+            "color-code": "FENDT"
+          }
+        },
+        "ef6fe2e3-d19d-415b-ba68-648c57123d08": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-jcb",
+            "color-code": "JCB"
+          }
+        },
+        "section_zX3MEF": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-john-deere",
+            "color-code": "JOHN DEERE"
+          }
+        },
+        "section_nyAzGV": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-new-holland",
+            "color-code": "NEW HOLLAND"
+          }
+        },
+        "section_pPtd4c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-massey-ferguson",
+            "color-code": "MASSEY FERGUSON"
+          }
+        }
+      },
+      "block_order": [
+        "f7fa34c7-df11-4952-a435-7245bd49cb1d",
+        "234cf457-2722-4570-a573-b6b438405e41",
+        "ef6fe2e3-d19d-415b-ba68-648c57123d08",
+        "section_zX3MEF",
+        "section_nyAzGV",
+        "section_pPtd4c"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "c27e6c34-3f16-40ae-afdf-b1974ac12ab5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-claas",
+            "color-code": "CLAAS"
+          }
+        },
+        "726ddacf-63fd-4391-892c-8d62219c481a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-fendt",
+            "color-code": "FENDT"
+          }
+        },
+        "38ec43f9-4036-418d-b856-e736126de0dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ciagniki-jcb",
+            "color-code": "JCB"
+          }
+        },
+        "section_tV4YbY": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-john-deere",
+            "color-code": "JOHN DEERE"
+          }
+        },
+        "section_36CxAq": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-new-holland",
+            "color-code": "NEW HOLLAND"
+          }
+        },
+        "section_Mhamh7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-massey-ferguson",
+            "color-code": "MASSEY FERGUSON"
+          }
+        }
+      },
+      "block_order": [
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6",
+        "c27e6c34-3f16-40ae-afdf-b1974ac12ab5",
+        "726ddacf-63fd-4391-892c-8d62219c481a",
+        "38ec43f9-4036-418d-b856-e736126de0dd",
+        "section_tV4YbY",
+        "section_36CxAq",
+        "section_Mhamh7"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "87611618-ace4-4810-a382-6b357640528c",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

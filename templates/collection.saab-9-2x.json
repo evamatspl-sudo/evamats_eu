@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "6720e2c2-7de9-4a30-9fca-fffbda803e71": {
+      "type": "mobile-button",
+      "settings": {
+        "btn_text": "All models",
+        "btn_url": "shopify:\/\/collections\/saab"
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/saab",
+            "color-code": "All"
+          }
+        },
+        "6f04f15f-c3af-4157-8745-266fae2ea4f4": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/saab-9-2x",
+            "color-code": "9-2X"
+          }
+        }
+      },
+      "block_order": [
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6",
+        "6f04f15f-c3af-4157-8745-266fae2ea4f4"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "6720e2c2-7de9-4a30-9fca-fffbda803e71",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

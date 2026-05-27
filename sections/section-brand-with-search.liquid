@@ -1,0 +1,46 @@
+{{ 'component-search-brand.css' | asset_url | stylesheet_tag }}
+
+<div class="search-container">
+  <input class="search search-style" type="text" id="myInput" onkeyup="myFunction()" placeholder="{{ 'general.search.search' | t }}">
+</div>
+
+<div class="brand-container">
+<ul id="myUL" class="wrapper">
+    {% paginate shop.metaobjects['car_brands'].values by 1000 %}
+        {% for entry in shop.metaobjects['car_brands'].values %}
+            {% assign title = entry.title %}
+            {% assign url = entry.collection.value.url %}
+            {% assign image = entry.image %}
+            <li class="colorTable_block__blocks" data-forloop="{{forloop.index }}">
+                <a href="{{url}}" class="color_block">
+                      <div class="color_block__wrapper">
+                          <img class="img-brand" src="{{ image | img_url: '400x' }}" alt="brand" loading='lazy'>
+                          <span class="color_block__material">{{title}}</span>
+                      </div>
+                  </a>  
+            </li>
+        {% endfor %}
+    {% endpaginate %}
+</ul>
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+  

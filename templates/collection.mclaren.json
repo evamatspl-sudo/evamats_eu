@@ -1,0 +1,213 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "4040c0e1-bff3-413a-a9e4-aa392b2fbf21": {
+      "type": "sidebar",
+      "blocks": {
+        "d13032fd-ea82-4250-b870-a9c622fcb9d1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-540c",
+            "color-code": "540C"
+          }
+        },
+        "b9288c9d-9c21-481a-ae2d-d05a40332c3a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mclaren-570s",
+            "color-code": "570S"
+          }
+        },
+        "3d13c0fe-2675-4ae8-ac41-924cad2b3094": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-570gt",
+            "color-code": "570GT"
+          }
+        },
+        "b1cf144b-de9f-4268-92c7-3f38781cbf14": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-650s",
+            "color-code": "650S"
+          }
+        },
+        "6638aad0-e85b-4f95-b6e7-5932f5f421b8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-675lt",
+            "color-code": "675LT"
+          }
+        },
+        "e21e85a4-c7cd-4221-9475-1cfec409cc36": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-720s",
+            "color-code": "720S"
+          }
+        },
+        "d629e019-6c86-4d59-bfc3-fc7d9c3691f1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-750s",
+            "color-code": "750S"
+          }
+        },
+        "3469d5f4-d5e9-41eb-a152-c2e91acf602e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-765lt",
+            "color-code": "765LT"
+          }
+        },
+        "84b36a97-0a02-46b8-aa09-9b82f0da60ee": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-gt",
+            "color-code": "McLaren GT"
+          }
+        }
+      },
+      "block_order": [
+        "d13032fd-ea82-4250-b870-a9c622fcb9d1",
+        "b9288c9d-9c21-481a-ae2d-d05a40332c3a",
+        "3d13c0fe-2675-4ae8-ac41-924cad2b3094",
+        "b1cf144b-de9f-4268-92c7-3f38781cbf14",
+        "6638aad0-e85b-4f95-b6e7-5932f5f421b8",
+        "e21e85a4-c7cd-4221-9475-1cfec409cc36",
+        "d629e019-6c86-4d59-bfc3-fc7d9c3691f1",
+        "3469d5f4-d5e9-41eb-a152-c2e91acf602e",
+        "84b36a97-0a02-46b8-aa09-9b82f0da60ee"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "846382d2-3808-46e1-b226-dd80b87f60f8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-540c",
+            "color-code": "540C"
+          }
+        },
+        "833f7981-b003-4333-8b47-3c3c23de95c8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mclaren-570s",
+            "color-code": "570S"
+          }
+        },
+        "cfafe19e-a1f1-4e20-ba5c-499a9eda99cf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-570gt",
+            "color-code": "570GT"
+          }
+        },
+        "9eec0640-6965-494a-867c-b66a71ffdda4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-650s",
+            "color-code": "650S"
+          }
+        },
+        "8f1c6fbd-5ac6-41ef-875f-99b3de1f94b8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-675lt",
+            "color-code": "675LT"
+          }
+        },
+        "a223978b-ac18-4263-968f-9fbd903f6982": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-720s",
+            "color-code": "720S"
+          }
+        },
+        "d6460ab1-6f30-41e9-9266-d023d53fe001": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-750s",
+            "color-code": "750S"
+          }
+        },
+        "deee692e-06f4-4291-8811-b81d04eb7f59": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-765lt",
+            "color-code": "765LT"
+          }
+        },
+        "54f6293a-4016-4e14-805e-837e80f25b22": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mclaren-gt",
+            "color-code": "McLaren GT"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "846382d2-3808-46e1-b226-dd80b87f60f8",
+        "833f7981-b003-4333-8b47-3c3c23de95c8",
+        "cfafe19e-a1f1-4e20-ba5c-499a9eda99cf",
+        "9eec0640-6965-494a-867c-b66a71ffdda4",
+        "8f1c6fbd-5ac6-41ef-875f-99b3de1f94b8",
+        "a223978b-ac18-4263-968f-9fbd903f6982",
+        "d6460ab1-6f30-41e9-9266-d023d53fe001",
+        "deee692e-06f4-4291-8811-b81d04eb7f59",
+        "54f6293a-4016-4e14-805e-837e80f25b22"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "4040c0e1-bff3-413a-a9e4-aa392b2fbf21",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

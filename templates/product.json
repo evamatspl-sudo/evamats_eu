@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "02fe151c-258f-4dde-b6d7-c431c9eb9137": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "{% render \"preloader\" %}",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% render \"preloader\" %}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_sale_image": false,
+            "sale_background": "",
+            "sale_width": 100
+          }
+        },
+        "rating_9NGqaN": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_badge": true,
+            "info_text": "",
+            "info_html": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_discounts": false
+          }
+        },
+        "uwagi_pPPRKt": {
+          "type": "uwagi",
+          "settings": {}
+        },
+        "863c8a99-ffa8-4d62-8858-43e31c9a6139": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% render \"estimated-delivery\" %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0",
+        "vendor",
+        "title",
+        "rating_9NGqaN",
+        "price",
+        "variant_picker",
+        "uwagi_pPPRKt",
+        "863c8a99-ffa8-4d62-8858-43e31c9a6139",
+        "buy_buttons",
+        "description"
+      ],
+      "custom_css": [
+        ".product__tax {display: none;}",
+        ".price {font-size: 2.2rem; font-weight: 600;}",
+        ".price-item--sale,.price-item--last,.price__regular .price-item--regular {font-size: 2.2rem; font-weight: 600; background: #fff; border: 1px solid #000; color: #000; padding: 4px 8px; border-radius: 50px;}",
+        ".product__text {font-size: 1.4rem; color: red;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "check-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
+        "enable_video_looping": false,
+        "trunk_message": "<p>Note – trunk mat:<\/p><p>Up to 140x240 cm – from one part ✅<\/p><p>Up to 150x250 cm – from two parts ✅<\/p><p>Above 280 cm in length – we do not make ❌<\/p><p>ℹ️ In case of doubt, please contact the sales department.<\/p>",
+        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:<\/strong><\/p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br\/><br\/>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br\/><br\/><\/p>",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Możesz także polubić",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "related_products_custom_zCA874": {
+      "type": "related-products-custom",
+      "name": "Related products custom",
+      "settings": {
+        "custom_collection": "akcesoria",
+        "heading": "You may also like",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "174619073172eda5d5": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_masonry_widget_block_MaDYmh": {
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/masonry-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "disabled": true,
+          "settings": {
+            "contentIndex": "1",
+            "customContentIndex": 31,
+            "font": "default",
+            "themeId": "light",
+            "ratingType": "stars",
+            "emojiType": "0",
+            "cardColor": "#f3f6f9",
+            "starsColor": "#fbb000",
+            "textColor": "#404040",
+            "transparent": 1,
+            "solidShadow": false,
+            "reviewPhotosType": "small",
+            "showRating": true,
+            "writeReview": true,
+            "numberOfRowsMobile": 3,
+            "numberOfRowsDesktop": 2
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_masonry_widget_block_MaDYmh"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "ec4f7a30-20ed-4eae-9767-925bbd2034ad": {
+      "type": "featured-blog",
+      "custom_css": [
+        "h2 {color: #ff1d3a; font-weight: 600;}"
+      ],
+      "settings": {
+        "show_related_posts": true,
+        "heading": "Our realizations",
+        "heading_size": "h1",
+        "blog": "nasze-realizacje",
+        "post_limit": 3,
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "2959ec46-bbb7-4260-b81d-7024c179ac2a": {
+      "type": "home-5",
+      "settings": {
+        "btn_text": "All posts",
+        "btn_url": "shopify:\/\/pages\/realizacja"
+      }
+    },
+    "ca715e5f-0884-4a81-ac3b-f6012a690383": {
+      "type": "home-8",
+      "settings": {
+        "hd": "“Do you own a rare car?“",
+        "des": "<p>Can't find floor mats for your unique car? <br\/><br\/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br\/><br\/>Fill out this form and we will realize individually tailored floor mats for your car.<\/p>",
+        "btn_text": "CUSTOM ORDER",
+        "btn_url": "shopify:\/\/products\/custom-order",
+        "img": "shopify:\/\/shop_images\/Group_242.webp"
+      }
+    },
+    "080cd113-d353-46cb-aa5d-cfdeee68c912": {
+      "type": "scroll-to-top-button",
+      "settings": {
+        "back-to-top-button-enabled": true,
+        "smooth-scroll-enabled": true,
+        "btn_text": "Zobacz matę",
+        "html": "",
+        "button-color": "#848282",
+        "text-color": "#ffffff",
+        "back-to-top-button-position": "bottom-right"
+      }
+    },
+    "application_form_kK67Dy": {
+      "type": "application-form",
+      "disabled": true,
+      "settings": {
+        "alternative_zestaw": false
+      }
+    }
+  },
+  "order": [
+    "02fe151c-258f-4dde-b6d7-c431c9eb9137",
+    "main",
+    "related-products",
+    "related_products_custom_zCA874",
+    "174619073172eda5d5",
+    "ec4f7a30-20ed-4eae-9767-925bbd2034ad",
+    "2959ec46-bbb7-4260-b81d-7024c179ac2a",
+    "ca715e5f-0884-4a81-ac3b-f6012a690383",
+    "080cd113-d353-46cb-aa5d-cfdeee68c912",
+    "application_form_kK67Dy"
+  ]
+}

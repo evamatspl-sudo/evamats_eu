@@ -1,0 +1,133 @@
+{% comment %} <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> {% endcomment %}
+<section>
+            <div class="seven-main">
+              <div class="seven-main__container">
+                <div class="seventh-right">
+                  <div class="seven-main-title"> {{ section.settings.hd }}</div>
+                     <div class="card-text-2"> {{ section.settings.des }} </div>
+                      <a class="button" href="{{ section.settings.btn_url }}">
+                              {{ section.settings.btn_text }}
+                              </a>
+  
+                  </div>
+                  <div class="seventh-left">
+                      <img src="{{ section.settings.img|img_url:'800x' }}" alt="" loading='lazy'>
+                      <div class="mat-img">
+  <!--                         <img src="https://cdn.shopify.com/s/files/1/0749/9707/2182/files/Group_29.png?v=1681474653"> -->
+                      </div>
+                  </div>
+              </div>
+               
+            </div>
+        </section>
+
+<style>
+  .seven-main .seventh-right p {
+    font-size: 1.5rem;
+}
+  .card-text-2 {
+    overflow: hidden;
+    max-height: 145px; /* Adjust to your desired initial height */
+    transition: max-height 0.5s ease;
+    line-height: 1.5; /* Adjust line height as needed */
+  }
+
+  .btn-read-more-2 {
+    color: rgb(var(--color-foreground));
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  @media screen and (max-width: 767px) {
+      .card-text-2 {
+        max-height: 150px; 
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var i18nHome8 = {
+      readMore: {{ 'sections.home_8.read_more' | t | json }},
+      readLess: {{ 'sections.home_8.read_less' | t | json }}
+    };
+    document.querySelectorAll('.card-text-2').forEach(function(element) {
+        var text = element.textContent;
+        var charCount = text.length;
+        var maxChars = 200; // Adjust to your desired maximum characters
+
+        if (charCount > maxChars) {
+            var small = text.substring(0, maxChars);
+            var button = document.createElement('button');
+            button.className = 'btn-read-more-2';
+            button.textContent = i18nHome8.readMore;
+            element.after(button);
+
+            button.addEventListener('click', function() {
+                element.classList.toggle('expanded');
+                if (element.classList.contains('expanded')) {
+                    element.style.maxHeight = element.scrollHeight + 'px';
+                    button.textContent = i18nHome8.readLess;
+                } else {
+                    element.style.maxHeight = '145px'; // Adjust to your desired initial height
+                    button.textContent = i18nHome8.readMore;
+                }
+            });
+        }
+    });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "home8",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"<h1>For which <span> transport? </span></h1>"
+    },
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>Our mats are also suitable for use in trays and other vehicles. They provide maximum protection against dangerous liquids and spills, help keep your vehicle clean and tidy. Mats are made of strong and flexible material, which ensures their easy installation and fixation in the right place.</p>"
+    },
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"SHOP NOW"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    },
+    {
+      "type":"image_picker",
+      "label":"Main Image",
+      "id":"img"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home8",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

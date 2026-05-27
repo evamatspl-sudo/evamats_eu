@@ -1,0 +1,407 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "compare_section_WDwBNU": {
+      "type": "compare-section",
+      "blocks": {
+        "block_VXnbCG": {
+          "type": "block",
+          "settings": {
+            "header": "<h2>Velour Car mats<\/h2>",
+            "image": "shopify:\/\/shop_images\/IMG_1621_1.png"
+          }
+        },
+        "block_K3qkTg": {
+          "type": "block",
+          "settings": {
+            "header": "<h2><strong>evamats<\/strong> car mats<\/h2>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "block_VXnbCG",
+        "block_K3qkTg"
+      ],
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/Group_271.png",
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "padding_top": 43,
+        "padding_bottom": 52
+      }
+    },
+    "video_azQNFQ": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "video_url": "https:\/\/youtu.be\/CMkryGczI1I",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_AiqcVi": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".video_compare {position: relative; text-align: center;}",
+        "@media only screen {.video_compare {}}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"video_compare\">\n<iframe\nwidth=\"50%\" height=\"450\"\nsrc=\"https:\/\/www.youtube.com\/embed\/ZqkazBsFL44?si=ykobXf4aOykZnGeg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen><\/iframe>\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_text_YPVYyd": {
+      "type": "collapsible-text",
+      "settings": {
+        "richtext": "<p>Are you looking for high-quality car mats? Are you considering purchasing the velour version? Or perhaps you will opt for professional car mats made of durable EVA material? Check out their benefits and advantages over velour. In our online and offline store, you will find unique car mats that not only accentuate the exceptional style of each vehicle but also ensure driving safety, user comfort, and ease of cleaning. Below, we will outline the basic features of car mats made of velour and compare traditional mats with our unique EVA products.<\/p>",
+        "collapsible_richtext": "<p>Velour as a Material for Car mats<br\/>Velour is a material that has been used for manufacturing car mats for many years. It is suitable for both cars with richer equipment and vehicles with traditional interiors. Drivers opt for velour mats especially because they are very easy to keep clean and they also look nice. To ensure that car mats made of velour last as long as possible, it is important to remember to care for them properly. Velour should not be exposed to sunlight as it can fade. Soft-bristled brushes should be used for cleaning. Traditional velour tolerates mild detergents well, but strong chemicals can cause it to discolor or deteriorate.<\/p>",
+        "button_text_more": "Read more",
+        "button_text_less": "Read less",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 50,
+        "padding_bottom": 57
+      }
+    },
+    "image_with_collapsible_text_XCLeBp": {
+      "type": "image-with-collapsible-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_234.png",
+        "header": "<h2>What things <strong>should you pay attention to <\/strong>before choosing the right car mats?<\/h2>",
+        "richtext": "<p>What is the difference between traditional velour and EVA products?<br\/>First and foremost, the products available in our store are handmade. Therefore, they are perfectly tailored to fit the dimensions of the floor in your vehicle. We prioritize the quality of our mats, so we strive to ensure they are made with the highest precision. We use materials of very good quality for their production. Thanks to our mats, the standard of your car will never be the same again! Our goal is to improve not only comfort but also to keep the car clean.<\/p>",
+        "collapsible_richtext": "<h3>What are the advantages of EVA mats compared to traditional velour products?<\/h3><p>EVA mats are lightweight and easy to remove from the vehicle. They are also very light, so nobody should have the slightest problem with removing them. Another characteristic is that EVA mats are odorless. However, let's focus on the fact that the products available in our store, EVA mats, are innovative and surpass traditional velour in quality. Firstly, regular velour mats do not precisely cover the vehicle's floor. On the other hand, EVA products are handmade, after careful examination of the full dimensions of the floor surface in the specific brand of vehicle, which ensures their precise fitting and coverage of the floor up to 99 percent. Moreover, EVA products do not absorb water, and any type of dirt is stored in them stably and does not spread throughout the interior of the vehicle. The situation is different with traditional velour mats—they absorb water and dirt, so entering the vehicle with muddy or wet shoes can cause dirt not only on the mat but also inside the vehicle.<\/p>",
+        "button_text_more": "Read more",
+        "button_text_less": "Read less",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "compare_cards_M6itiE": {
+      "type": "compare-cards",
+      "blocks": {
+        "block_gAgXYW": {
+          "type": "block",
+          "settings": {
+            "header": "<h2>Disadvantages of velour mats <\/h2>",
+            "unordered_list": "<ul><li>They absorb water and contaminants deep within the fabric structure<\/li><li>Difficult to clean<\/li><li>Quickly lose their original appearance<\/li><li>The area under the right foot wears out very quickly<\/li><li>Cover only 60-70% of the available floor surface<\/li><li>Not resistant to chemicals<\/li><li>Offer basic customization<\/li><\/ul>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_1_1.png"
+          }
+        },
+        "block_YfT8nF": {
+          "type": "block",
+          "settings": {
+            "header": "<p><strong>Advantages <\/strong>of EVA mats<\/p>",
+            "unordered_list": "<ul><li>Perfectly fitted<\/li><li>Ultra lightweight and easy to clean<\/li><li>Odorless ECO material, non-toxic<\/li><li>Waterproof<\/li><li>195 color combinations<\/li><li>Technological cells trap various types of contaminants<\/li><\/ul>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_2_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "block_gAgXYW",
+        "block_YfT8nF"
+      ],
+      "settings": {
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "text_with_image_zBPL3c": {
+      "type": "text-with-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_91_1.png",
+        "header": "<p><strong>WHAT ARE THE DIFFERENCES<\/strong> IN CLEANING EVA PRODUCTS AND VELOUR MATS?<\/p>",
+        "richtext": "<p>Car mats made of velour are difficult to clean. Soft-bristled brushes should be used for their maintenance, and attention should be paid to the type of detergents used. EVA mats are easy to clean. Thanks to a special formula, they tolerate the use of even strong detergents. They also do not require specialized maintenance. Importantly, they can serve you for many years without losing their original appearance even after years of use. Traditional velour products, on the other hand, may undergo deformation and fading, altering their appearance. By choosing EVA products, you can match the interior of your car to your personality. We offer many different color variants of these car mats. With our products, you can be sure that car mats can add charm and elegance to any vehicle brand. The high quality of our products is confirmed by many positive reviews from satisfied customers.<\/p><p>In summary, EVA mats are characterized by much higher durability compared to their velour counterparts. They fit perfectly to the floor and are available in a diverse range of colors. EVA mats provide an excellent alternative to products made from other materials. Easy cleaning, precise fitting, and high durability ensure enjoyable usage. So, if you're looking for high-quality car mats, check out the EVAMATS brand offer. We also invite you to contact our store. We'll be happy to answer any questions and help you choose the best version of EVA mats.<\/p>",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "richtext_section_K7WAxg": {
+      "type": "richtext-section",
+      "settings": {
+        "header": "<p>Why should you <strong>purchase mats from our store?<\/strong><\/p>",
+        "richtext": "<p>By purchasing EVA mats in our store, you not only have a guarantee of excellent product quality but also fantastic prices. These are Polish articles, handcrafted. Therefore, we are confident that you will be satisfied when choosing EVA mats!<\/p>",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 58,
+        "padding_bottom": 57
+      }
+    },
+    "image_collage_x9c9fK": {
+      "type": "image-collage",
+      "blocks": {
+        "image_XJcn3n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_92_1.png"
+          }
+        },
+        "image_rQw3A3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_93.png"
+          }
+        },
+        "image_B9BrA4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_94.png"
+          }
+        },
+        "image_Lg49WV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_95.png"
+          }
+        },
+        "image_eztgda": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_96.png"
+          }
+        },
+        "image_cDLJnw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_97.png"
+          }
+        },
+        "image_qtHaMc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_98.png"
+          }
+        },
+        "image_BaMe8Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_99.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_XJcn3n",
+        "image_rQw3A3",
+        "image_B9BrA4",
+        "image_Lg49WV",
+        "image_eztgda",
+        "image_cDLJnw",
+        "image_qtHaMc",
+        "image_BaMe8Q"
+      ],
+      "settings": {
+        "header": "REALIZATIONS OF EVA MATS",
+        "button_text": "SHOP NOW",
+        "button_link": "https:\/\/evamats.pl\/pages\/dywaniki-samochodowe-eva",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "1705771170e85f6114": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_carousel_widget_block_Nf7AWT": {
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "light",
+            "autoscroll": true,
+            "showRating": true,
+            "showReviewPhotos": true,
+            "writeReview": true,
+            "fixedReviewsHeight": true
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_carousel_widget_block_Nf7AWT"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "featured_collection_xbpPMc": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Zobacz inne realizacje",
+        "heading_size": "h0",
+        "custom_header_style": true,
+        "button_text": "Zobacz więcej",
+        "button_link": "https:\/\/evamats.pl\/pages\/dywaniki-samochodowe-eva",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "bestsellerss",
+        "products_to_show": 14,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 20
+      }
+    },
+    "featured_collection_video_GjKn3e": {
+      "type": "featured-collection-video",
+      "custom_css": [
+        "h2 {text-align: center;}"
+      ],
+      "settings": {
+        "title": "SEE OTHER REALISATIONS",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bestsellerss",
+        "video-title": "Zobacz realizacje:",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "home_faq_xEmBQm": {
+      "type": "home-faq",
+      "blocks": {
+        "text_DzQCYQ": {
+          "type": "text",
+          "settings": {
+            "hd": "ARE YOU SURE THE FLOOR MATS WILL FIT?",
+            "des": "<p>Of course. We make mats individually for each car model, taking into account the make, model, generation, year, gearbox type, and equipment data. Mats undergo manual processing, which means they are hand-cut, sewn, and manually profiled. Our designs are based solely on physically taken measurements from physical cars, so there is no question of any imperfections. The mats cover the entire floor, taking into account fine details and covering areas that rubber or velour mats can only dream of.<\/p>"
+          }
+        },
+        "text_mX9qEM": {
+          "type": "text",
+          "settings": {
+            "hd": "WHAT DO YOU CLEAN IT WITH?",
+            "des": "<p>Thanks to its technology, the dirt that accumulates on the mat does not absorb and does not want to stick to it, so you just need to shake the mats and everything smoothly comes off them, or in case of heavy mud contamination, you can confidently wash the mats with a pressure washer and be on your way.<\/p>"
+          }
+        },
+        "text_VPPPMN": {
+          "type": "text",
+          "settings": {
+            "hd": "FLOOR MAT OVER THE TUNNEL? WHAT IS IT?",
+            "des": "<p>Evamats mats cover up to 98% of the floor, so we take care of every detail, so the rear tunnel is also covered, ensuring that the floor is always clean.<\/p>"
+          }
+        },
+        "text_XjTUky": {
+          "type": "text",
+          "settings": {
+            "hd": "HOW LONG WILL THEY LAST?",
+            "des": "<p>EVA material is known for its durability and resistance to wear and tear. It is also used in gyms (as mats under machines) and in shoes (soles). Compared to alternatives, EVA mats handle wear exceptionally well, allowing them to be used for 5-7 years without any signs of wear.<\/p>"
+          }
+        },
+        "text_e6APUk": {
+          "type": "text",
+          "settings": {
+            "hd": "CLASSICAL AND 3D, WHAT'S THE DIFFERENCE?",
+            "des": "<p>In both sets, we strive to cover the floor in the car as much as possible. Only in the 3D set do we also cover the side upholstery near the floor, and there are more 3D elements (floor profiles) that we consider and use in the production of such mats, making them fit perfectly.<\/p>"
+          }
+        },
+        "text_exrU7q": {
+          "type": "text",
+          "settings": {
+            "hd": "WHAT IS EVA MATERIAL?",
+            "des": "<p>It is a foam with a thickness of 10mm and cell depth of 7mm, which allows it to easily retain dirt and water in one place without the possibility of them getting under the mat until we shake it off.<\/p>"
+          }
+        },
+        "text_TqKDiD": {
+          "type": "text",
+          "settings": {
+            "hd": "ARE EVA MATS FOR SUMMER OR WINTER?",
+            "des": "<p>EVA mats are all-season. Practical to use both in winter (they are waterproof, easy to clean, and cover up to 98% of the floor) and in summer (they are odorless, pleasant to the touch, and resistant to deformation under temperature influence).<\/p>"
+          }
+        },
+        "text_mqJ6Qk": {
+          "type": "text",
+          "settings": {
+            "hd": "WHAT IS THE LEAD TIME?",
+            "des": "<p>From the moment the order is placed, it takes approximately 2 weeks, as the mats are made to order for the customer. In the case of a very unique vehicle (such as a boat, helicopter, excavator, or tractor), the lead time may extend to 4-6 weeks.<\/p>"
+          }
+        },
+        "text_dUePyr": {
+          "type": "text",
+          "settings": {
+            "hd": "WHAT IS THE DELIVERY METHOD?",
+            "des": "<p>We send the mats directly to the customer's specified address via courier. Due to the dimensions of the product, we do not ship mats to parcel lockers. We aim to ensure that the mats are delivered in the same condition as they were made and to avoid folding or bending them, which could affect their fit.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_DzQCYQ",
+        "text_mX9qEM",
+        "text_VPPPMN",
+        "text_XjTUky",
+        "text_e6APUk",
+        "text_exrU7q",
+        "text_TqKDiD",
+        "text_mqJ6Qk",
+        "text_dUePyr"
+      ],
+      "settings": {
+        "hd": "EVAMATS CAR MATS - FAQ"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "compare_section_WDwBNU",
+    "video_azQNFQ",
+    "custom_liquid_AiqcVi",
+    "collapsible_text_YPVYyd",
+    "image_with_collapsible_text_XCLeBp",
+    "compare_cards_M6itiE",
+    "text_with_image_zBPL3c",
+    "richtext_section_K7WAxg",
+    "image_collage_x9c9fK",
+    "1705771170e85f6114",
+    "featured_collection_xbpPMc",
+    "featured_collection_video_GjKn3e",
+    "home_faq_xEmBQm"
+  ]
+}

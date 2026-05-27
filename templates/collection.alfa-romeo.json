@@ -1,0 +1,213 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "84dc904c-ba65-4fbf-b2b4-25b79d61eb64": {
+      "type": "sidebar",
+      "blocks": {
+        "144148f1-285d-41ca-8c9a-6c625380465c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-147",
+            "color-code": "147"
+          }
+        },
+        "fddd0dfd-835b-40d7-9d6c-38f699d4e3e6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-159",
+            "color-code": "159"
+          }
+        },
+        "450e6a93-b639-406d-b776-7613c7809b99": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-brera",
+            "color-code": "Brera"
+          }
+        },
+        "d93c0801-47cb-450f-ab43-eaad6b101b30": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-giulia",
+            "color-code": "Giulia"
+          }
+        },
+        "4f8b333d-7c6e-42d0-8f27-eb757d49bd0c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-gullieta",
+            "color-code": "Giulietta"
+          }
+        },
+        "d58c813c-18e2-4eb8-9241-bd12558a2720": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-mito",
+            "color-code": "MiTo"
+          }
+        },
+        "99e174bc-f2b2-4744-917e-8a0b037f3f28": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-spider",
+            "color-code": "Spider"
+          }
+        },
+        "cbbc3f85-f659-45eb-8a16-73dafed3e23b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-stelvio",
+            "color-code": "Stelvio"
+          }
+        },
+        "d6d20640-f2a2-4a49-997e-aa2915de42d7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-tonale",
+            "color-code": "Tonale"
+          }
+        }
+      },
+      "block_order": [
+        "144148f1-285d-41ca-8c9a-6c625380465c",
+        "fddd0dfd-835b-40d7-9d6c-38f699d4e3e6",
+        "450e6a93-b639-406d-b776-7613c7809b99",
+        "d93c0801-47cb-450f-ab43-eaad6b101b30",
+        "4f8b333d-7c6e-42d0-8f27-eb757d49bd0c",
+        "d58c813c-18e2-4eb8-9241-bd12558a2720",
+        "99e174bc-f2b2-4744-917e-8a0b037f3f28",
+        "cbbc3f85-f659-45eb-8a16-73dafed3e23b",
+        "d6d20640-f2a2-4a49-997e-aa2915de42d7"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "d2f793f1-83dc-4b2e-80e7-3a47a6c7eeaa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-147",
+            "color-code": "147"
+          }
+        },
+        "e5f0457b-26c3-47bf-a5b2-dbe254b66306": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-159",
+            "color-code": "159"
+          }
+        },
+        "cda67019-778c-49c2-9416-205ef3e795e8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-brera",
+            "color-code": "Brera"
+          }
+        },
+        "2df9f93c-8487-40c8-83dd-61d98d036bdc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-giulia",
+            "color-code": "Giulia"
+          }
+        },
+        "0a790487-db33-44c5-be03-85b9871deaf5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-gullieta",
+            "color-code": "Giulietta"
+          }
+        },
+        "df8178a3-7813-4ab7-9fbc-8836b103e625": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-mito",
+            "color-code": "MiTo"
+          }
+        },
+        "5554212f-91c6-4f2e-a691-ec3dfe6e6cb1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-spider",
+            "color-code": "Spider"
+          }
+        },
+        "0e3744e7-8ba3-48f7-8b08-b0a078621719": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-stelvio",
+            "color-code": "Stelvio"
+          }
+        },
+        "056b55f9-171c-4780-9768-50371af3e998": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo-tonale",
+            "color-code": "Tonale"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "d2f793f1-83dc-4b2e-80e7-3a47a6c7eeaa",
+        "e5f0457b-26c3-47bf-a5b2-dbe254b66306",
+        "cda67019-778c-49c2-9416-205ef3e795e8",
+        "2df9f93c-8487-40c8-83dd-61d98d036bdc",
+        "0a790487-db33-44c5-be03-85b9871deaf5",
+        "df8178a3-7813-4ab7-9fbc-8836b103e625",
+        "5554212f-91c6-4f2e-a691-ec3dfe6e6cb1",
+        "0e3744e7-8ba3-48f7-8b08-b0a078621719",
+        "056b55f9-171c-4780-9768-50371af3e998"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "84dc904c-ba65-4fbf-b2b4-25b79d61eb64",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

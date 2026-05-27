@@ -1,0 +1,166 @@
+<section class="mobile">
+{% if section.settings.back-to-top-button-enabled %}
+<button id="back-to-top-button" type="button" class="{{ section.settings.back-to-top-button-position }}" title="{{ section.settings.btn_text | escape }}">
+  {% if section.settings.html != blank %}
+    {{ section.settings.html }}
+  {% else %}
+    <svg class="back-to-top-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330" fill="currentColor" aria-hidden="true">
+      <path d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+    </svg>
+  {% endif %}
+</button>
+{% endif %}
+</section>
+
+<style>
+  @media screen and (min-width: 767px){
+  .mobile{
+    display: none;
+  }
+}
+  
+{% if section.settings.smooth-scroll-enabled %}
+html {
+scroll-behavior: smooth;
+}
+{% endif %}
+
+#back-to-top-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 145px;
+  left: 15px;
+  z-index: 2;
+  font-size: 14px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  outline: none;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000101;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+#back-to-top-button svg,
+#back-to-top-button .back-to-top-button__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+#back-to-top-button:hover {
+  background-color: #f5f5f5;
+  color: #000101;
+}
+</style>
+
+<script>  
+    
+var backToTopFunction = function() {
+		var backToTopButton = document.getElementById("back-to-top-button");
+    if (!backToTopButton) return;
+        backToTopButton.addEventListener("click", backToTop);
+  
+		window.onscroll = function() {
+			scrollFunction()
+		};
+
+		function scrollFunction() {
+			if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				backToTopButton.style.display = "flex";
+			} else {
+				backToTopButton.style.display = "none";
+			}
+		}
+
+		function backToTop() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	}
+
+//  reload JS on section update 
+document.addEventListener("shopify:section:load", function(event) {
+	backToTopFunction();
+});
+
+// load JS on page load
+backToTopFunction();
+
+</script>
+
+{% schema %}
+{
+    "name": "Scroll To Top Button",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "back-to-top-button-enabled",
+            "default": true,
+            "label": "Enable the back-to-top button"
+        },
+        {
+            "type":  "checkbox",
+            "id": "smooth-scroll-enabled",
+            "default": true,
+            "label": "Enable smooth scrolling for browsers that support it"
+        },
+      {
+            "type":"text",
+            "label":"Button Text",
+            "id":"btn_text",
+            "default":"Do góry"
+        },
+        {
+          "type": "html",
+          "id": "html",
+          "label": "Html"
+        },
+        {
+            "type": "color",
+            "id": "button-color",
+            "default": "#ffffff",
+            "label": "Button Color"
+            },
+        {
+            "type": "color",
+            "id": "text-color",
+            "default": "#000101",
+            "label": "Text / icon color"
+            },
+    {
+    "type": "select",
+    "id": "back-to-top-button-position",
+    "label": "Back-to-Top Button Position",
+    "options": [
+        {
+            "value": "bottom-left",
+            "label": "Bottom Left"
+    },
+    {
+            "value": "bottom-center",
+            "label": "Bottom Center"
+    },
+    {
+            "value": "bottom-right",
+            "label": "Bottom Right"
+    }
+    ],
+    "default": "bottom-center"
+    }
+],
+  "presets":[
+    {
+      "name":"Scroll to Top Button",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}

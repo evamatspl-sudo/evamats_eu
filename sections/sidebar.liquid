@@ -1,0 +1,106 @@
+{{ 'sidebar.css' | asset_url | stylesheet_tag }}
+
+ <div class="brand-bnts-mob sidebar-colorTable {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
+        {% if section.settings.color-table-header != blank %}
+          <h3 class="sidebar-colorTable_header">{{ section.settings.color-table-header }}</h3>
+        {% endif %}
+        <span class="sidebar-btn" onclick="openNav()">
+          <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/car_3.png?v=1686569461" style="width: 35px; margin-right: 10px;" />Find Your Model</span>
+<!-- ☰ -->
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="sidebar-colorTable_block">
+           {% if section.settings.catalog-header != blank %}
+              <h4 class="sidebar-SectionHeader__SubHeading Heading u-h4">{{ section.settings.catalog-header }}</h4>
+           {% endif %}
+            <div class="colorTable_block__blocks-sidebar sidebav-blog">
+              {%- for block in section.blocks -%}
+                <a  class="sidebar-color_block" href="{{block.settings.product-link}}">
+                    <div class="sidebar-color_block__wrapper">
+                        <span class="sidebar-color_block__material">{{ block.settings.color-code }}</span>
+                    </div>
+
+                </a>
+              {% endfor %}
+ 
+            </div>
+        </div>
+</div>
+    </div>
+    
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "370px";
+
+    var facetsContainerDrawer = document.querySelector('.facets-container-drawer');
+    facetsContainerDrawer.style.zIndex = '2';
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+   setTimeout(function() {
+    var facetsContainerDrawer = document.querySelector('.facets-container-drawer');
+    facetsContainerDrawer.style.zIndex = '4';
+}, 400);
+}
+</script>
+
+
+
+
+{% schema %}
+{
+"name": "Sidebar",
+"max_blocks": 50,
+"settings": [
+   {
+     "type": "text",
+     "id": "collection-color-table-header",
+     "label": "Heading"
+   },
+   {
+     "type": "text",
+     "id": "collection-catalog-header",
+     "label": "Heading Catalog"
+   },
+  {
+     "type": "text",
+     "id": "txt-buttons",
+     "label": "Text button",
+     "default":"Wybierz model"
+   },
+   {
+     "type": "checkbox",
+     "id": "collection-margin-bottom",
+     "label": "Bottom indent",
+     "default": false
+   }
+],
+"blocks" : [
+    {
+    "type": "section",
+    "name": "Brand Auto",
+    "settings": [
+        
+      {
+           "type": "url",
+           "id": "product-link",
+           "label": "Marki Link"
+         },
+         {
+           "type": "text",
+           "id": "color-code",
+           "label": "Name"
+         }
+    ]
+  }
+],
+  "presets": [
+  {
+    "name":  "Sidebar"
+  }
+]
+}
+
+{% endschema %}

@@ -1,0 +1,103 @@
+{{ 'comparison.css' | asset_url | stylesheet_tag }}
+
+<div class="comparison">
+    <div class="page-width">
+        <div class="comparison__content">
+            <div class="section_title">{{section.settings.title}}</div>
+
+            {% comment %} <div class="eva__tabs">
+                {% for block in section.blocks %}
+                    <div class="eva__tabs_item {% if forloop.index == 1 %}active{% endif %}" data-tab="{{ forloop.index }}">{{ block.settings.title }}</div>
+                {% endfor %}
+            </div> {% endcomment %}
+            <div class="comparison__wrapper">
+
+                <div class="comparison__container">
+                    {% for block in section.blocks %}
+                        <div class="comparison__block_wrapper">
+                            <div class="comparison__block_title">
+                                {{ block.settings.title }}
+                            </div>
+                            <div class="comparison__block {% if forloop.index == 1 %}active{% endif %}" id="tab-{{ forloop.index }}">
+                                <div class="comparison__before">
+                                    <div class="comparison_label">{{ block.settings.label_before }}</div>
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="{{ block.settings.image_before | img_url: '600x' }}">
+                                        <img src="{{ block.settings.image_before | img_url: '1000x' }}" alt="" loading='lazy'>
+                                    </picture>
+                                    
+                                </div>
+                                <div class="comparison__after">
+                                    <div class="comparison_label">{{ block.settings.label_after }}</div>
+                                    <picture>
+                                        <source media="(max-width: 767px)" srcset="{{ block.settings.image_after | img_url: '600x' }}">
+                                        <img src="{{ block.settings.image_after | img_url: '1000x' }}" alt="" class="comparison__after" loading='lazy'>
+                                    </picture>
+                                </div>
+                                
+                                <label>
+                                    <input type="range" min="0" max="100" value="50" class="comparison__range">
+                                </label>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="comparison__scrollbar">
+                <div class="comparison__scrollbar-thumb">{% render 'icon-hand' %}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Image Comparison",
+        "settings": [
+           {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+           }
+        ],    
+        "blocks": [
+            {
+                "type": "item",
+                "name": "Item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image_before",
+                        "label": "Image Before",
+                        "info": "Recommended size: 2000x1250. Recommended format: .webp"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_after",
+                        "label": "Image After",
+                        "info": "Recommended size: 2000x1250. Recommended format: .webp"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "label_before",
+                        "label": "Label before"
+                    },
+                    {
+                        "type": "text",
+                        "id": "label_after",
+                        "label": "Label after"
+                    }
+                ]
+            }
+        ],         
+        "presets": [
+            {
+                "name": "Image Comparison"
+            }
+        ]
+    }
+{% endschema %}

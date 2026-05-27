@@ -1,0 +1,557 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 12
+      }
+    },
+    "c70eed43-d9ff-4a55-abe8-2980499a5710": {
+      "type": "brand",
+      "blocks": {
+        "d46f1642-48d0-45a1-852c-01b4305ffc6d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/audi",
+            "color-code": "Audi"
+          }
+        },
+        "696a1117-2ca2-4aa2-91f5-e99bb176e38c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/bmw",
+            "color-code": "BMW"
+          }
+        },
+        "f3e7908b-7730-4bf5-a828-34ed625f9a33": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/chrysler",
+            "color-code": "Chrysler"
+          }
+        },
+        "ae2ccd3e-9144-4bc2-85a7-a25ca170d746": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dodge",
+            "color-code": "Dodge"
+          }
+        },
+        "fd87827a-3fc2-439e-a831-0200a5c58041": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ford",
+            "color-code": "Ford"
+          }
+        },
+        "6336049c-370e-414a-93f5-5e1223eb18bf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai",
+            "color-code": "Hyundai"
+          }
+        },
+        "adb5d246-a59b-44fb-a53a-22bc79795ac2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mercedes-benz",
+            "color-code": "Mercedes-Benz"
+          }
+        },
+        "6a8577df-aa32-40c5-9260-93813c311943": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/opel",
+            "color-code": "Opel"
+          }
+        },
+        "85fc7b53-eece-4ac9-a545-111994ecc93e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/tesla",
+            "color-code": "Tesla"
+          }
+        },
+        "3a8379f4-fd3b-46fb-9dac-b1340fbe12e1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/toyota",
+            "color-code": "Toyota"
+          }
+        },
+        "ab2b6579-4b73-47d6-88a6-d6a170eaa7b0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volkswagen",
+            "color-code": "Volkswagen"
+          }
+        },
+        "7ef2c612-c6d2-4d20-915e-0dc761df4b6d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/volvo",
+            "color-code": "Volvo"
+          }
+        },
+        "5f76dff8-bd9f-40e9-a440-4f44d42e09be": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/bentley",
+            "color-code": "Bentley"
+          }
+        },
+        "6cbe47d9-7155-4219-8afa-32b6b8526bd1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen",
+            "color-code": "Citroën"
+          }
+        },
+        "da346f7a-0f3f-4536-b575-21ca60d82b85": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/renault",
+            "color-code": "Renault"
+          }
+        },
+        "6f289063-a6e8-43c0-a4b0-5c2a1a26ee02": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jaguar",
+            "color-code": "Jaguar"
+          }
+        },
+        "af344b77-e118-4a0d-947c-ebc9aa83a6cf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru",
+            "color-code": "Subaru"
+          }
+        },
+        "bf96dfd5-412d-4a10-9ea2-7aef2d1b72e2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/suzuki",
+            "color-code": "Suzuki"
+          }
+        },
+        "e2435dfa-f837-4898-aec7-197fe3a08ee3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/seres-3",
+            "color-code": "Seres 3"
+          }
+        },
+        "7c1bddc8-8015-4701-aed3-8558c6e8a458": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hummer",
+            "color-code": "Hummer"
+          }
+        },
+        "523e91b7-1a54-4257-b54a-f05f6b703502": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mini",
+            "color-code": "Mini"
+          }
+        },
+        "1d45c015-9d3d-4f12-92ac-44b4c523587f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/isuzu",
+            "color-code": "Isuzu"
+          }
+        },
+        "31f585c0-29f2-4c1b-9c68-d1e7777467dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/gmc",
+            "color-code": "GMC"
+          }
+        },
+        "f3b08b3e-e70e-4c6d-99ac-1d1425b6dcd0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/acura",
+            "color-code": "Acura"
+          }
+        },
+        "7b762bc2-cd01-4e40-9591-119bbba00f1f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/iveco",
+            "color-code": "Iveco"
+          }
+        },
+        "26167a92-5301-4906-8fcc-32ae4693b241": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/rolls-royce",
+            "color-code": "Rolls Royce"
+          }
+        },
+        "0cc8209f-e69d-4c67-910d-8849ed9091ac": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/alfa-romeo",
+            "color-code": "Alfa Romeo"
+          }
+        },
+        "251fe2df-f63f-48d1-9f4c-d20092d9935a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/fso-polonez",
+            "color-code": "FSO Polonez"
+          }
+        },
+        "1bb60f2b-96ee-490a-9f15-a9c88b503e3c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/maybach",
+            "color-code": "Mercedes-Benz Maybach"
+          }
+        },
+        "ce2240db-c9f8-424a-b090-4ce516730fe7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/abarth",
+            "color-code": "Abarth"
+          }
+        },
+        "c9a6a8f2-8c8f-4771-8180-047a6b84e4b6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/smart",
+            "color-code": "Smart"
+          }
+        },
+        "a5cc5658-c8e9-40d4-97e7-eb29ad7483e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/cadillac",
+            "color-code": "Cadillac"
+          }
+        },
+        "1f2093c9-d0b2-498e-b333-7c74a6d2d183": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/seat",
+            "color-code": "Seat"
+          }
+        },
+        "439e0958-117e-4d79-8b33-3ea3883fe524": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda",
+            "color-code": "Škoda"
+          }
+        },
+        "9ee7f7c8-e83b-4efe-a9e4-fcc3c080bde0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lincoln",
+            "color-code": "Lincoln"
+          }
+        },
+        "c59bde30-f8cd-42e9-81ee-5846887eddc5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/chevrolet",
+            "color-code": "Chevrolet"
+          }
+        },
+        "b44b00bd-2adb-4f7a-8d10-330c67d00d74": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/saab",
+            "color-code": "SaaB"
+          }
+        },
+        "cd4a3ca0-5ac2-41a0-85ef-e1dafa27a113": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mazda",
+            "color-code": "Mazda"
+          }
+        },
+        "05315b1d-782d-470a-b3e1-9e4bd1777d75": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/rover",
+            "color-code": "Rover"
+          }
+        },
+        "d56e07e4-2ce0-4778-9b5f-71061af0cff4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/land-rover-defender",
+            "color-code": "Land Rover"
+          }
+        },
+        "78573b41-7fa0-4aea-aa6a-92265d134c84": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/nissan",
+            "color-code": "Nissan"
+          }
+        },
+        "8bde5737-e5a7-482f-b12c-4e9fd222af67": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ds",
+            "color-code": "DS"
+          }
+        },
+        "677c65e8-501e-4dab-ab9a-c45a4ac9a888": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lamborghini",
+            "color-code": "Lamborghini"
+          }
+        },
+        "b40ed1f2-f031-4515-8a86-b1817a89599e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lexus",
+            "color-code": "Lexus"
+          }
+        },
+        "5a0d9632-8b06-4840-b9c6-9105c76cd20b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/maserati",
+            "color-code": "Maserati"
+          }
+        },
+        "66866057-697d-467c-bd6c-31c208397812": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/porsche",
+            "color-code": "Porsche"
+          }
+        },
+        "5fb0faef-3049-47ea-99d8-529077a857b0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mitsubishi",
+            "color-code": "Mitsubishi"
+          }
+        },
+        "d0d792b3-c09a-4f13-a51a-925a3c31b85d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/lancia",
+            "color-code": "Lancia"
+          }
+        },
+        "49b03e37-04cc-4352-a639-9af5e19977d2": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep",
+            "color-code": "Jeep"
+          }
+        },
+        "8d90a963-cf56-422b-8c29-72a0e60e9600": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dacia",
+            "color-code": "Dacia"
+          }
+        }
+      },
+      "block_order": [
+        "d46f1642-48d0-45a1-852c-01b4305ffc6d",
+        "696a1117-2ca2-4aa2-91f5-e99bb176e38c",
+        "f3e7908b-7730-4bf5-a828-34ed625f9a33",
+        "ae2ccd3e-9144-4bc2-85a7-a25ca170d746",
+        "fd87827a-3fc2-439e-a831-0200a5c58041",
+        "6336049c-370e-414a-93f5-5e1223eb18bf",
+        "adb5d246-a59b-44fb-a53a-22bc79795ac2",
+        "6a8577df-aa32-40c5-9260-93813c311943",
+        "85fc7b53-eece-4ac9-a545-111994ecc93e",
+        "3a8379f4-fd3b-46fb-9dac-b1340fbe12e1",
+        "ab2b6579-4b73-47d6-88a6-d6a170eaa7b0",
+        "7ef2c612-c6d2-4d20-915e-0dc761df4b6d",
+        "5f76dff8-bd9f-40e9-a440-4f44d42e09be",
+        "6cbe47d9-7155-4219-8afa-32b6b8526bd1",
+        "da346f7a-0f3f-4536-b575-21ca60d82b85",
+        "6f289063-a6e8-43c0-a4b0-5c2a1a26ee02",
+        "af344b77-e118-4a0d-947c-ebc9aa83a6cf",
+        "bf96dfd5-412d-4a10-9ea2-7aef2d1b72e2",
+        "e2435dfa-f837-4898-aec7-197fe3a08ee3",
+        "7c1bddc8-8015-4701-aed3-8558c6e8a458",
+        "523e91b7-1a54-4257-b54a-f05f6b703502",
+        "1d45c015-9d3d-4f12-92ac-44b4c523587f",
+        "31f585c0-29f2-4c1b-9c68-d1e7777467dd",
+        "f3b08b3e-e70e-4c6d-99ac-1d1425b6dcd0",
+        "7b762bc2-cd01-4e40-9591-119bbba00f1f",
+        "26167a92-5301-4906-8fcc-32ae4693b241",
+        "0cc8209f-e69d-4c67-910d-8849ed9091ac",
+        "251fe2df-f63f-48d1-9f4c-d20092d9935a",
+        "1bb60f2b-96ee-490a-9f15-a9c88b503e3c",
+        "ce2240db-c9f8-424a-b090-4ce516730fe7",
+        "c9a6a8f2-8c8f-4771-8180-047a6b84e4b6",
+        "a5cc5658-c8e9-40d4-97e7-eb29ad7483e5",
+        "1f2093c9-d0b2-498e-b333-7c74a6d2d183",
+        "439e0958-117e-4d79-8b33-3ea3883fe524",
+        "9ee7f7c8-e83b-4efe-a9e4-fcc3c080bde0",
+        "c59bde30-f8cd-42e9-81ee-5846887eddc5",
+        "b44b00bd-2adb-4f7a-8d10-330c67d00d74",
+        "cd4a3ca0-5ac2-41a0-85ef-e1dafa27a113",
+        "05315b1d-782d-470a-b3e1-9e4bd1777d75",
+        "d56e07e4-2ce0-4778-9b5f-71061af0cff4",
+        "78573b41-7fa0-4aea-aa6a-92265d134c84",
+        "8bde5737-e5a7-482f-b12c-4e9fd222af67",
+        "677c65e8-501e-4dab-ab9a-c45a4ac9a888",
+        "b40ed1f2-f031-4515-8a86-b1817a89599e",
+        "5a0d9632-8b06-4840-b9c6-9105c76cd20b",
+        "66866057-697d-467c-bd6c-31c208397812",
+        "5fb0faef-3049-47ea-99d8-529077a857b0",
+        "d0d792b3-c09a-4f13-a51a-925a3c31b85d",
+        "49b03e37-04cc-4352-a639-9af5e19977d2",
+        "8d90a963-cf56-422b-8c29-72a0e60e9600"
+      ],
+      "disabled": true,
+      "settings": {
+        "color-table-header": "",
+        "catalog-header": "",
+        "margin-bottom": false
+      }
+    },
+    "e0e1d136-f230-438b-95b0-0b6003e36508": {
+      "type": "brand",
+      "blocks": {
+        "b00c09f9-5195-42cf-a6c8-476c096b7867": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ferrari",
+            "color-code": "Ferrari"
+          }
+        },
+        "c496246c-86ad-4d91-aa97-3d60829af764": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/aston-martin",
+            "color-code": "Aston Martin"
+          }
+        },
+        "b29f4e52-c573-45b5-8207-1137cbe5e2ec": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ssangyong",
+            "color-code": "SsangYong"
+          }
+        },
+        "b54c7913-798b-4708-80ba-ae382d06585f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/infiniti",
+            "color-code": "Infiniti"
+          }
+        },
+        "63ecf8ef-f3db-400e-a361-2e3bc7ea7947": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/kia-carnival",
+            "color-code": "Kia"
+          }
+        },
+        "bfc63db1-f89e-4bbd-a585-5437b57d32a8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/jeep",
+            "color-code": "Jeep"
+          }
+        },
+        "559017f3-8b09-4964-9cdb-40e40cb9c238": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda",
+            "color-code": "Honda"
+          }
+        },
+        "8f55700d-be6e-4163-961e-b7b94ecad33a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/fiat",
+            "color-code": "FIAT"
+          }
+        },
+        "50a4743c-1f59-4aac-b4e9-365ae37c400d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/peugeot",
+            "color-code": "Peugeot"
+          }
+        },
+        "34278f63-4043-449d-bdc6-56181a3766da": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/cupra",
+            "color-code": "Cupra"
+          }
+        },
+        "ff7a61d5-0855-4b12-aa62-ae89d2995522": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/mclaren",
+            "color-code": "McLaren"
+          }
+        },
+        "acf6484e-822e-4f48-916b-f5d7ce2d5af0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dacia",
+            "color-code": "Dacia"
+          }
+        }
+      },
+      "block_order": [
+        "b00c09f9-5195-42cf-a6c8-476c096b7867",
+        "c496246c-86ad-4d91-aa97-3d60829af764",
+        "b29f4e52-c573-45b5-8207-1137cbe5e2ec",
+        "b54c7913-798b-4708-80ba-ae382d06585f",
+        "63ecf8ef-f3db-400e-a361-2e3bc7ea7947",
+        "bfc63db1-f89e-4bbd-a585-5437b57d32a8",
+        "559017f3-8b09-4964-9cdb-40e40cb9c238",
+        "8f55700d-be6e-4163-961e-b7b94ecad33a",
+        "50a4743c-1f59-4aac-b4e9-365ae37c400d",
+        "34278f63-4043-449d-bdc6-56181a3766da",
+        "ff7a61d5-0855-4b12-aa62-ae89d2995522",
+        "acf6484e-822e-4f48-916b-f5d7ce2d5af0"
+      ],
+      "disabled": true,
+      "settings": {
+        "color-table-header": "",
+        "catalog-header": "",
+        "margin-bottom": false
+      }
+    },
+    "4bb231cd-c059-4f1d-93eb-9022a4173c1b": {
+      "type": "section-brand-with-search",
+      "settings": {}
+    },
+    "3d2fcef6-7d6b-4dfc-800b-488616981c09": {
+      "type": "home-8",
+      "settings": {
+        "hd": "“Do you own a rare car?“",
+        "des": "<p>Can't find floor mats for your unique car? <br\/><br\/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br\/><br\/>Fill out this form and we will realize individually tailored floor mats for your car.<\/p>",
+        "btn_text": "CUSTOM ORDER",
+        "btn_url": "shopify:\/\/products\/custom-order",
+        "img": "shopify:\/\/shop_images\/Group_242.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c70eed43-d9ff-4a55-abe8-2980499a5710",
+    "e0e1d136-f230-438b-95b0-0b6003e36508",
+    "4bb231cd-c059-4f1d-93eb-9022a4173c1b",
+    "3d2fcef6-7d6b-4dfc-800b-488616981c09"
+  ]
+}

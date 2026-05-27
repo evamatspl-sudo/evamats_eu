@@ -1,0 +1,181 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb": {
+      "type": "sidebar",
+      "blocks": {
+        "section_9HcP4a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cat",
+            "color-code": "CAT"
+          }
+        },
+        "section_iWEak6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-doosan",
+            "color-code": "Doosan"
+          }
+        },
+        "section_rDxK8f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jsb",
+            "color-code": "JCB"
+          }
+        },
+        "section_p6BKfY": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-kubota",
+            "color-code": "Kubota"
+          }
+        },
+        "section_Hty4Kc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-liebherr",
+            "color-code": "Liebherr"
+          }
+        },
+        "section_Q86bdj": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-new-holland",
+            "color-code": "New Holland"
+          }
+        },
+        "section_4mxcpa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-volvo",
+            "color-code": "Volvo"
+          }
+        }
+      },
+      "block_order": [
+        "section_9HcP4a",
+        "section_iWEak6",
+        "section_rDxK8f",
+        "section_p6BKfY",
+        "section_Hty4Kc",
+        "section_Q86bdj",
+        "section_4mxcpa"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "section_cYNaHW": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cat",
+            "color-code": "CAT"
+          }
+        },
+        "section_7BPGTE": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-doosan",
+            "color-code": "Doosan"
+          }
+        },
+        "section_WQGHxW": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-jsb",
+            "color-code": "JCB"
+          }
+        },
+        "section_bVJB9x": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ciagniki-kubota",
+            "color-code": "Kubota"
+          }
+        },
+        "section_nwNGLE": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-liebherr",
+            "color-code": "Liebherr"
+          }
+        },
+        "section_PaCYUX": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-new-holland",
+            "color-code": "New Holland"
+          }
+        },
+        "section_cAfre3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-volvo",
+            "color-code": "Volvo"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "section_cYNaHW",
+        "section_7BPGTE",
+        "section_WQGHxW",
+        "section_bVJB9x",
+        "section_nwNGLE",
+        "section_PaCYUX",
+        "section_cAfre3"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

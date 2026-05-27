@@ -1,0 +1,133 @@
+.video_reviews video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9/16;
+}
+
+.video_reviews__container {
+    padding: 0 0 20px 0;
+}
+
+.video_reviews__container .swiper-button-next, 
+.video_reviews__container .swiper-button-prev{
+    display: block;
+}
+
+.video_reviews__container_slider .video_reviews__item {
+    width: 30%;
+}
+
+.video_reviews__container_wr {
+    position: relative;
+    padding: 0 60px;
+}
+
+.video_reviews__item video,
+.video_reviews__item img {
+    width: 100%;
+}
+
+.video_reviews__container_full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video_reviews__container_full.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.video_reviews__container_full video {
+    height: 100%;
+    object-fit: contain;
+}
+
+.video_reviews__container_full .close {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+}
+
+.videos {
+    margin-top: 5rem;
+}
+
+.videos__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 100px;
+}
+
+.videos__container video {
+    width: 100%;
+    display: block;
+}
+
+.videos__item_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+}
+
+@media (min-width: 1024px) {
+
+    .video_reviews .swiper-button-prev {
+        display: flex;
+        align-items: center;
+        width: 37%;
+        justify-content: flex-start;
+        height: 100%;
+        top: 0;
+        left: 2px;
+    }
+    .video_reviews .swiper-button-next {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 37%;
+        height: 100%;
+        top: 0;
+        right: 2px;
+    }
+
+    
+}
+
+@media (max-width: 1023px) {
+   
+    .videos__container {
+        padding: 0;
+    }   
+}
+
+@media (max-width: 767px) {
+    .video_reviews__container_slider .video_reviews__item {
+        width: 40%;
+    }   
+    .video_reviews__container_wr {
+        padding: 0;
+    } 
+    .videos__item_title {
+        font-size: 16px;
+        height: 58px;
+    }    
+    .videos {
+        margin-top: 3rem;
+    }    
+}

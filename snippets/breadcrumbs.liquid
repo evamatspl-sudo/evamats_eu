@@ -1,0 +1,37 @@
+<div class="breadcrumbs" >
+    <div class="page-width">
+        <div class="breadcrumbs__list">
+            <a href="/" class="breadcrumbs__item">{{ 'general.config.home' | t }}</a>
+            <div class="breadcrumbs__divider">-</div>
+            {% if collection %}
+                <a class="breadcrumbs__item" href="{{ collection.url }}">{{ collection.title }}</a>
+            {% endif %}
+            {% comment %} <div class="breadcrumbs__divider">-</div> {% endcomment %}
+            {% if product %}
+                {% for tag in product.tags %}
+                    {% for productCollection in product.collections %}
+                        {% if productCollection.title contains tag %}
+                            <a class="breadcrumbs__item" href="{{ productCollection.url }}">{{ productCollection.title }}</a>
+                            <div class="breadcrumbs__divider">-</div>
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                <div class="breadcrumbs__item" >{{ product.title }}</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+    .breadcrumbs {
+        opacity: 0;
+    }
+
+    .breadcrumbs__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        display: none;
+    }
+</style>

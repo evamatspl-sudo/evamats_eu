@@ -1,0 +1,156 @@
+  {% comment %} <script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+    {{ 'brand-buttons.css' | asset_url | stylesheet_tag }}
+    
+  {% comment %} <div class="brand-bnts-desktop collection-colorTable {% if section.settings['collection-margin-bottom'] %} margin-bottom {% endif %}">
+        {% if section.settings['collection-color-table-header'] != blank %}
+          <h3 class="collection-colorTable_header">{{ section.settings['collection-color-table-header'] }}</h3>
+        {% endif %}
+        <div class="collection-colorTable_block">
+           {% if section.settings['collection-catalog-header'] != blank %}
+              <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings['collection-catalog-header'] }}</h4>
+           {% endif %}
+            <div class="colorTable_block__blocks-collection">
+              {% assign sorted_blocks = section.blocks | sort_natural: 'settings.color-code' %}
+              {%- for block in sorted_blocks -%}
+                <a class="collection-color_block" href="{{ block.settings['product-link'] }}">
+                    <div class="collection-color_block__wrapper">
+                        <span class="collection-color_block__material">{{ block.settings['color-code'] }}</span>
+                    </div>
+
+                </a>
+              {% endfor %}
+ 
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+  <div class="brand-bnts-desktop collection-colorTable {% if section.settings['collection-margin-bottom'] %} margin-bottom {% endif %}">
+    {% if section.settings['collection-color-table-header'] != blank %}
+      <h3 class="collection-colorTable_header">{{ section.settings['collection-color-table-header'] }}</h3>
+    {% endif %}
+    <div class="collection-colorTable_block">
+        {% if section.settings['collection-catalog-header'] != blank %}
+          <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings['collection-catalog-header'] }}</h4>
+        {% endif %}
+        <div class="colorTable_block__blocks-collection">
+          {% assign title_prefix = 'sections.brand_buttons.collection_title_prefix' | t %}
+          {% assign brand_collection_obj = collection.metafields.custom.brand_collection.value %}
+          {% if brand_collection_obj != blank %}
+            {% assign main_collection = brand_collection_obj.main_collection.value %}
+            {% assign subcollections = brand_collection_obj.subcollections.value %}
+            {% assign is_main_collection = false %}
+
+            {% if main_collection != blank and main_collection.handle == collection.handle %}
+              {% assign is_main_collection = true %}
+            {% endif %}
+
+            {% if is_main_collection %}
+              <a class="collection-color_block" href="{{ 'sections.brand_buttons.all_brands_path' | t }}">
+                <div class="collection-color_block__wrapper">
+                  <span class="collection-color_block__material">{{ 'sections.brand_buttons.back' | t }}</span>
+                </div>
+              </a>
+              {% assign sorted_subcollections = subcollections | sort_natural: 'title' %}
+              {% for subcollection in sorted_subcollections %}
+                {% if subcollection != blank %}
+                  {% assign brand_title = brand_collection_obj.title | strip %}
+                  {% assign subcollection_label = subcollection.title | remove: title_prefix %}
+                  {% if brand_title != blank %}
+                    {% assign subcollection_label = subcollection_label | remove: brand_title %}
+                  {% endif %}
+                  {% assign subcollection_label = subcollection_label | strip %}
+                  <a class="collection-color_block" href="{{ subcollection.url }}">
+                    <div class="collection-color_block__wrapper">
+                      <span class="collection-color_block__material">{% if subcollection_label != blank %}{{ subcollection_label }}{% else %}{{ subcollection.title | remove: 'Automobilové koberce pro' | remove: 'Automobilové koberce EVA pro' | remove: 'Car mats EVA for' | remove: 'Automatten EVA für' }}{% endif %}</span>
+                    </div>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            {% elsif main_collection != blank %}
+              <a class="collection-color_block" href="{{ main_collection.url }}">
+                <div class="collection-color_block__wrapper">
+                  <span class="collection-color_block__material">{{ 'sections.brand_buttons.back' | t }}</span>
+                </div>
+              </a>
+            {% endif %}
+          {% endif %}
+        </div>
+    </div>
+</div>
+
+  
+<script>
+  document.querySelectorAll('.collection-color_block').forEach(function(block) {
+    block.addEventListener('click', function() {
+        document.querySelectorAll('.collection-color_block').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        this.classList.toggle('active');
+    });
+  });
+   
+</script>
+
+  
+      
+      {% comment %} <script>
+        document.querySelectorAll('.collection-color_block').forEach(function(block) {
+          block.addEventListener('click', function() {
+              document.querySelectorAll('.collection-color_block').forEach(function(el) {
+                  el.classList.remove('active');
+              });
+              this.classList.toggle('active');
+          });
+      });
+      
+        </script> {% endcomment %}
+        
+{% schema %}
+{
+  "name": "t:sections.brand-buttons.name",
+  "max_blocks": 50,
+  "settings": [
+   {
+     "type": "text",
+     "id": "collection-color-table-header",
+     "label": "t:sections.brand-buttons.settings.collection-color-table-header.label"
+   },
+   {
+     "type": "text",
+     "id": "collection-catalog-header",
+     "label": "t:sections.brand-buttons.settings.collection-catalog-header.label"
+   },
+   {
+     "type": "checkbox",
+     "id": "collection-margin-bottom",
+     "label": "t:sections.brand-buttons.settings.collection-margin-bottom.label",
+     "default": false
+   }
+],
+"blocks" : [
+    {
+    "type": "section",
+    "name": "t:sections.brand-buttons.blocks.section.name",
+    "settings": [
+        
+      {
+           "type": "url",
+           "id": "product-link",
+           "label": "t:sections.brand-buttons.blocks.section.settings.product-link.label"
+         },
+         {
+           "type": "text",
+           "id": "color-code",
+           "label": "t:sections.brand-buttons.blocks.section.settings.color-code.label"
+         }
+    ]
+  }
+],
+  "presets": [
+  {
+    "name": "t:sections.brand-buttons.presets.name"
+  }
+]
+}
+
+{% endschema %}

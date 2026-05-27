@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "7920d104-86e8-4a1e-b8a0-d36e48b58ee7": {
+      "type": "sidebar",
+      "blocks": {
+        "b7a690f0-26f5-4635-a67a-34b06243e4d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-espero",
+            "color-code": "Espero"
+          }
+        },
+        "section_UmYrmW": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/daewoo-fso-polonez",
+            "color-code": "FSO Polonez"
+          }
+        },
+        "2864aa0e-8221-4553-8980-bb5134875797": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/daewoo-matiz",
+            "color-code": "Matiz"
+          }
+        },
+        "ac87f71f-2e88-4e5e-854b-9e70c6ae0c45": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-tico",
+            "color-code": "Tico"
+          }
+        },
+        "f08870e6-46d7-4935-8052-f3288f95195c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-lanos",
+            "color-code": "Lanos"
+          }
+        }
+      },
+      "block_order": [
+        "b7a690f0-26f5-4635-a67a-34b06243e4d6",
+        "section_UmYrmW",
+        "2864aa0e-8221-4553-8980-bb5134875797",
+        "ac87f71f-2e88-4e5e-854b-9e70c6ae0c45",
+        "f08870e6-46d7-4935-8052-f3288f95195c"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "49fe74b8-d7ba-40ba-aea7-81ef07d03074": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-espero",
+            "color-code": "Espero"
+          }
+        },
+        "section_49gUpR": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/daewoo-fso-polonez",
+            "color-code": "FSO Polonez"
+          }
+        },
+        "babb93fa-2c4a-4970-b9b2-79445e460edd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/daewoo-matiz",
+            "color-code": "Matiz"
+          }
+        },
+        "f121def9-5e32-4aab-a0b0-dc50294b086c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-tico",
+            "color-code": "Tico"
+          }
+        },
+        "25230dde-db04-47af-ae68-406e3fd25c87": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-daewoo-lanos",
+            "color-code": "Lanos"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "49fe74b8-d7ba-40ba-aea7-81ef07d03074",
+        "section_49gUpR",
+        "babb93fa-2c4a-4970-b9b2-79445e460edd",
+        "f121def9-5e32-4aab-a0b0-dc50294b086c",
+        "25230dde-db04-47af-ae68-406e3fd25c87"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "7920d104-86e8-4a1e-b8a0-d36e48b58ee7",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

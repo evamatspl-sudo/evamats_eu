@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "section-gallery",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

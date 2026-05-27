@@ -1,0 +1,89 @@
+#popupOverlayApplicationForm .popup {
+    max-width: 1200px;
+    border: 1px solid #000;
+}
+
+#popupOverlayApplicationForm .product__config_image--desktop {
+    position: sticky;
+    top: 50px;
+    margin-top: 0;
+}
+
+.application_form__content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.application_form__config {
+    width: 45%;
+    flex-shrink: 0;
+}
+
+/* .application_form__config .default_option:nth-of-type(6n+1):hover img,
+.application_form__config .lip__item:nth-child(6n+1):hover img {
+    transform: scale(2.1) translateX(12px);
+}
+.application_form__config .default_option:nth-of-type(6n):hover img,
+.application_form__config .lip__item:nth-child(6n):hover img {
+    transform: scale(2.1) translateX(-12px);
+} */
+
+.application_form__config .default_option:nth-of-type(6n) .label__tooltip,
+.application_form__config .lip__item:nth-child(6n) .label__tooltip {
+    left: -36px;
+}
+
+.application_form__next_button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.application_form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.application_form__form .form_return {
+    margin-bottom: 10px;
+    transform: rotate(-180deg);
+    width: fit-content;
+    cursor: pointer;
+}
+
+.application_form__form .form_return svg {
+    width: 24px;
+}
+
+.application_form__config > * + * {
+    margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+    .application_form__content {
+        flex-direction: column;
+    }
+
+    .application_form__config {
+        width: 100%;
+    }
+
+    #popupOverlayApplicationForm .popup {
+        padding: 8px;
+    }
+
+    body .popup_overlay#popupOverlayApplicationForm {
+        padding: 0 6px;
+    }
+
+    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.open {
+        padding: 0 10px;
+    }
+    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.done {
+        padding: 0 10px;
+    }
+    #popupOverlayApplicationForm .product__dropdown_title {
+        padding: 10px;
+      }
+}

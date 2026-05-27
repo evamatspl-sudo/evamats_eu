@@ -1,0 +1,209 @@
+<section>
+            <div class="social-main">
+                <div class="social-block">
+                    <a href="{{ section.settings.button_link1 }}" class="social-icon" target="_blank">
+                      <div class="social-icon-container">
+                            <img src="{{ section.settings.img1|img_url:'master' }}" alt="">
+                            {{ section.settings.des1 }}
+                            </div>
+                    </a>
+                  
+                    <a href="{{ section.settings.button_link2 }}" class="social-icon" target="_blank">
+                      <div class="social-icon-container">
+                            <img src="{{ section.settings.img2|img_url:'master' }}" alt="">
+                            {{ section.settings.des2 }}
+                            </div>
+                    </a>
+                  
+                    <a href="{{ section.settings.button_link3 }}" class="social-icon" target="_blank">
+                      <div class="social-icon-container">
+                            <img src="{{ section.settings.img3|img_url:'master' }}" alt="">
+                            {{ section.settings.des3 }}
+                            </div>
+                    </a>
+                  
+                    <a href="{{ section.settings.button_link4 }}" class="social-icon" target="_blank">
+                      <div class="social-icon-container">
+                            <img src="{{ section.settings.img4|img_url:'master' }}" alt="">
+                            {{ section.settings.des4 }}
+                       </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+<style>
+  
+.social-main {
+    margin: 30px auto 50px;
+    box-shadow: unset;
+    filter: invert(1);
+}
+  .social-main .social-block{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  .social-main .social-block .social-icon{
+    text-decoration: none;
+  }
+  .social-main .social-block .social-icon .social-icon-container{
+    flex: 0 0 25%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .social-main .social-block .social-icon .social-icon-container img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+  
+  .social-main .social-block .social-icon .social-icon-container p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: .3s;
+    margin: 0;
+  }
+  .social-main .social-block .social-icon .social-icon-container p:hover{
+    color: #FF002E;
+  }
+  
+   @media screen and (max-width: 490px){
+    .social-main .social-block .social-icon{
+      width: 150px;
+    } 
+    .social-main .social-block {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+ }
+   .social-main .social-block .social-icon .social-icon-container{
+     flex: 0 0 33%;
+   }
+ } 
+                      
+   @media screen and (min-width: 491px) and (max-width: 605px){
+     .social-main .social-block .social-icon {
+    text-decoration: none;
+    flex: 0 0 35%;
+    justify-content: flex-start;
+    display: flex;
+    padding-left: 5%;
+}
+   }
+  
+  @media screen and (max-width: 992px){
+    .social-main .social-block {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+ }
+   .social-main .social-block .social-icon .social-icon-container{
+     width: max-content;
+     display: flex;
+     align-items: center;
+     flex: 0 0 33%;
+   }
+ }
+
+  
+ @media screen and (min-width: 990px){
+.social-main .social-block {
+    max-width: var(--page-width);
+    padding: 0.8rem 5rem;
+  
+}
+  .social-main{
+    display: flex;
+    justify-content: center;
+  }
+  }
+  </style>
+{% schema %}
+{
+  "name": "Social media",
+  "settings": [
+    {
+      "type":"richtext",
+      "label":"Social network name #1",
+      "id":"des1",
+      "default":"<p>Facebook</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Social network icon #1",
+      "id":"img1"
+    },
+    {
+  "type": "url",
+  "id": "button_link1",
+  "label": "Social media links #1"
+  },
+    {
+      "type":"richtext",
+      "label":"Social network name #2",
+      "id":"des2",
+      "default":"<p>Instagram</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Social network icon #2",
+      "id":"img2"
+    },
+    {
+  "type": "url",
+  "id": "button_link2",
+  "label": "Social media links #2"
+  },
+    {
+      "type":"richtext",
+      "label":"Social network name #3",
+      "id":"des3",
+      "default":"<p>TikTok</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Social network icon #3",
+      "id":"img3"
+    },
+    {
+  "type": "url",
+  "id": "button_link3",
+  "label": "Social media links #3"
+  },
+    {
+      "type":"richtext",
+      "label":"Social network name #4",
+      "id":"des4",
+      "default":"<p>YouTube</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Social network icon #4",
+      "id":"img4"
+    },
+    {
+  "type": "url",
+  "id": "button_link4",
+  "label": "Social media links #4"
+  } 
+  ],
+  "presets":[
+    {
+      "name":"Social media",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

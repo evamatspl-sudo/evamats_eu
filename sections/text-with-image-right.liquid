@@ -1,0 +1,69 @@
+<section>
+            <div class="second-main">
+                <div class="row column-reverse">
+                    <div class="col-lg-6" style="width: 50%">
+                        <div class="second-left">
+                            {{ section.settings.des }}
+                        </div>
+                    </div>
+
+                   <div class="col-lg-6" style="width: 50%">
+                        <div class="second-right">
+                            <div class="second-main-image">
+                                <img src="{{ section.settings.img|img_url:'master' }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+ <style>
+    .second-left{
+      color: rgb(var(--color-foreground));
+    }
+   @media screen and (max-width: 992px){
+    .second-main .column-reverse{
+    display: flex;
+    flex-direction: column-reverse;
+        }
+     }
+   
+   strong {
+    font-weight: 600;
+    color: rgb(var(--color-foreground));
+}
+  </style> 
+
+  
+{% schema %}
+{
+  "name": "Text with image right",
+  "settings": [
+    
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":" <p>We understand how important it is, to feel this specter of emotions. And this is exactly what we are doing in our company – helping you to form your kids` future. We understand how  important it is, to feel this specter of emotions. And this is exactly what we are doing in our company  – helping you to form your kids` future.</p>"
+    },
+    {
+      "type":"image_picker",
+      "label":"Main Image",
+      "id":"img"
+    }
+  ],
+  "presets":[
+    {
+      "name":"Text with image right",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

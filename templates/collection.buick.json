@@ -1,0 +1,389 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "b4466bf1-9d7c-4aa4-9dad-e0dc7b7db1a4": {
+      "type": "sidebar",
+      "blocks": {
+        "eb43574d-c4c9-4539-ab6c-3c3118b3d9ae": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-excelle",
+            "color-code": "Excelle"
+          }
+        },
+        "a86f215b-84fb-4598-9f9a-d2bd4f7b1316": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-excelle-gt",
+            "color-code": "Excelle GT"
+          }
+        },
+        "6e39ce86-015a-412d-8f0e-8e63871fab2d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-verano-pro",
+            "color-code": "Verano Pro"
+          }
+        },
+        "6bdfb1b0-224c-45ad-b250-df99b6494902": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-regal",
+            "color-code": "Regal"
+          }
+        },
+        "c97e4f37-307d-43ff-a48f-32f2cb0cba4f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-lacrosse",
+            "color-code": "LaCrosse"
+          }
+        },
+        "6e840fa3-76f8-44cc-a16a-4873867d6bc5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-encore",
+            "color-code": "Encore"
+          }
+        },
+        "6166d5cb-982a-48a8-98e5-7275e97cb99c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-encore-gx",
+            "color-code": "Encore GX"
+          }
+        },
+        "ae806626-b043-4add-93ee-fa9f8f0db4e2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envista",
+            "color-code": "Envista"
+          }
+        },
+        "ed7a3fc1-63a3-4096-b669-8427622928e4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision-s",
+            "color-code": "Envision S"
+          }
+        },
+        "e5700d6f-a51f-4674-9184-b5fb959f2b55": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision-plus",
+            "color-code": "Envision Plus"
+          }
+        },
+        "67646484-4e06-40fb-91dc-5ca998f1184b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-enclave",
+            "color-code": "Enclave"
+          }
+        },
+        "ff95dd86-05a5-4d92-8455-360246c9fd6a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-velite-6",
+            "color-code": "Velite 6"
+          }
+        },
+        "88324d0d-ca48-4de5-bd02-272391ee6e19": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-velite-7",
+            "color-code": "Velite 7"
+          }
+        },
+        "74ef1e97-b004-43f7-b8c3-3413624cc77e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-electra-e4",
+            "color-code": "Electra E4"
+          }
+        },
+        "73ab8276-4ce5-4832-99c3-39d68e071c8e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-electra-e5",
+            "color-code": "Electra E5"
+          }
+        },
+        "dd701530-59cf-41a6-a8ce-65c121aeb567": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl6",
+            "color-code": "GL6"
+          }
+        },
+        "b1563c27-5836-4503-b698-9899323c5f8b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-legacy",
+            "color-code": "GL8 Legacy"
+          }
+        },
+        "e89849dd-8dc5-4629-ab01-aa1510eebd5b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-es",
+            "color-code": "GL8 ES"
+          }
+        },
+        "c8b58256-8ef3-4cee-9ac7-1de69378614d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-century",
+            "color-code": "GL8 Century"
+          }
+        },
+        "section_LMekwX": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision",
+            "color-code": "Envision"
+          }
+        }
+      },
+      "block_order": [
+        "eb43574d-c4c9-4539-ab6c-3c3118b3d9ae",
+        "a86f215b-84fb-4598-9f9a-d2bd4f7b1316",
+        "6e39ce86-015a-412d-8f0e-8e63871fab2d",
+        "6bdfb1b0-224c-45ad-b250-df99b6494902",
+        "c97e4f37-307d-43ff-a48f-32f2cb0cba4f",
+        "6e840fa3-76f8-44cc-a16a-4873867d6bc5",
+        "6166d5cb-982a-48a8-98e5-7275e97cb99c",
+        "ae806626-b043-4add-93ee-fa9f8f0db4e2",
+        "ed7a3fc1-63a3-4096-b669-8427622928e4",
+        "e5700d6f-a51f-4674-9184-b5fb959f2b55",
+        "67646484-4e06-40fb-91dc-5ca998f1184b",
+        "ff95dd86-05a5-4d92-8455-360246c9fd6a",
+        "88324d0d-ca48-4de5-bd02-272391ee6e19",
+        "74ef1e97-b004-43f7-b8c3-3413624cc77e",
+        "73ab8276-4ce5-4832-99c3-39d68e071c8e",
+        "dd701530-59cf-41a6-a8ce-65c121aeb567",
+        "b1563c27-5836-4503-b698-9899323c5f8b",
+        "e89849dd-8dc5-4629-ab01-aa1510eebd5b",
+        "c8b58256-8ef3-4cee-9ac7-1de69378614d",
+        "section_LMekwX"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "4dc32edf-a18a-4855-813e-67393cbcb919": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-excelle",
+            "color-code": "Excelle"
+          }
+        },
+        "f8770254-e609-4056-b35e-b1bcf661c713": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-excelle-gt",
+            "color-code": "Excelle GT"
+          }
+        },
+        "a480bb5d-e3ca-4ac9-a712-1f78460f3701": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-verano-pro",
+            "color-code": "Verano Pro"
+          }
+        },
+        "9ce9c30b-603a-457f-b88a-a988be108ca7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-regal",
+            "color-code": "Regal"
+          }
+        },
+        "13a47a7c-bbb3-4765-b37d-01b321c9789b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-lacrosse",
+            "color-code": "LaCrosse"
+          }
+        },
+        "b999a93e-f8c6-4ab9-a1d6-edf414645ee1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-encore",
+            "color-code": "Encore"
+          }
+        },
+        "d024a43a-ee81-46f1-8e2b-405745c1c029": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-encore-gx",
+            "color-code": "Encore GX"
+          }
+        },
+        "96d2d167-e197-4fb5-a5e6-33d0a29d1669": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envista",
+            "color-code": "Envista"
+          }
+        },
+        "section_bPqBG9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision",
+            "color-code": "Envision"
+          }
+        },
+        "94d89bd8-13a6-4cf5-8a42-0f5104aa8fb7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision-s",
+            "color-code": "Envision S"
+          }
+        },
+        "8adf6a81-69e2-4bc1-8159-743c5d524419": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-envision-plus",
+            "color-code": "Envision Plus"
+          }
+        },
+        "2939419f-993c-419a-b59b-0fcdb99ada2a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-enclave",
+            "color-code": "Enclave"
+          }
+        },
+        "51a62f36-1587-42a3-95ac-8fd610769575": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-velite-6",
+            "color-code": "Velite 6"
+          }
+        },
+        "780c4a93-65cb-42f3-b1cf-dd5071937e64": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-velite-7",
+            "color-code": "Velite 7"
+          }
+        },
+        "74ebb225-bd0b-42f5-96cb-7d296edce23c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-electra-e4",
+            "color-code": "Electra E4"
+          }
+        },
+        "52ba0a69-e5e3-4ae4-9442-f8e52bd89f00": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-electra-e5",
+            "color-code": "Electra E5"
+          }
+        },
+        "b632c58e-269b-4135-85c1-e990913e9197": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl6",
+            "color-code": "GL6"
+          }
+        },
+        "ca2f5887-c05d-4a96-bd18-67c8300433ed": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-legacy",
+            "color-code": "GL8 Legacy"
+          }
+        },
+        "d38a6806-d9aa-48fd-87da-e34b9cfd9da2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-es",
+            "color-code": "GL8 ES"
+          }
+        },
+        "cad7ae72-884d-49bb-a3b1-b6ca5bcfd1a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-buick-gl8-century",
+            "color-code": "GL8 Century"
+          }
+        }
+      },
+      "block_order": [
+        "92e6626b-d759-4753-bbd0-85fc3728f9d6",
+        "4dc32edf-a18a-4855-813e-67393cbcb919",
+        "f8770254-e609-4056-b35e-b1bcf661c713",
+        "a480bb5d-e3ca-4ac9-a712-1f78460f3701",
+        "9ce9c30b-603a-457f-b88a-a988be108ca7",
+        "13a47a7c-bbb3-4765-b37d-01b321c9789b",
+        "b999a93e-f8c6-4ab9-a1d6-edf414645ee1",
+        "d024a43a-ee81-46f1-8e2b-405745c1c029",
+        "96d2d167-e197-4fb5-a5e6-33d0a29d1669",
+        "section_bPqBG9",
+        "94d89bd8-13a6-4cf5-8a42-0f5104aa8fb7",
+        "8adf6a81-69e2-4bc1-8159-743c5d524419",
+        "2939419f-993c-419a-b59b-0fcdb99ada2a",
+        "51a62f36-1587-42a3-95ac-8fd610769575",
+        "780c4a93-65cb-42f3-b1cf-dd5071937e64",
+        "74ebb225-bd0b-42f5-96cb-7d296edce23c",
+        "52ba0a69-e5e3-4ae4-9442-f8e52bd89f00",
+        "b632c58e-269b-4135-85c1-e990913e9197",
+        "ca2f5887-c05d-4a96-bd18-67c8300433ed",
+        "d38a6806-d9aa-48fd-87da-e34b9cfd9da2",
+        "cad7ae72-884d-49bb-a3b1-b6ca5bcfd1a1"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "b4466bf1-9d7c-4aa4-9dad-e0dc7b7db1a4",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,164 @@
+
+{% style %}
+    .image-collage--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 990px) {
+        .image-collage--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="image-collage image-collage--{{ section.id }}">
+    <div class="page-width">
+        {% if section.settings.header != blank %}
+            <h2 class="image-collage__header title h1">
+                {{ section.settings.header }}
+            </h2>
+        {% endif %}
+        <div class="image-collage__wrapper {% if section.settings.centered %}centered{% endif %} {%if section.settings.small %}small{% endif %}">
+            {% for block in section.blocks %}
+                {% assign image = block.settings.image %} 
+                <div class="image-collage__image">
+                    {%if block.settings.url != blank %}
+                        <a href="{{ block.settings.url }}" target='_blank'></a>
+                    {% endif %}
+                    {% if image != blank %}
+                        {{
+                            image
+                            | image_url: width: 1500
+                            | image_tag:
+                            width: imageWidth,
+                            height: imageHeight,
+                            class: 'lazy',
+                            sizes: '100vw',
+                            widths: '375, 550, 750, 1100, 1500',
+                            loading: 'lazy',
+                            alt: alt
+                        }}
+                    {% else %}
+                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                </div>
+            {% endfor %} 
+        </div>
+        {% if section.settings.button_text != blank %}
+            <div class="image-collage__button-wrapper">
+                <a class="button" href="{{ section.settings.button_link }}">
+                   {{ section.settings.button_text }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image collage",
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "ZAMÓW"
+        },
+        {
+            "type": "text",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "checkbox",
+            "id": "centered",
+            "label": "Centered",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "small",
+            "label": "Small",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Padding mobile"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Padding desktop"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Image",
+            "type": "image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Url"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Image collage"
+      }
+    ]
+  }
+{% endschema %}

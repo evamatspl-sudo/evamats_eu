@@ -1,0 +1,325 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "3306669f-97d1-404f-ac95-8bd9d4536b52": {
+      "type": "sidebar",
+      "blocks": {
+        "9674cae8-9e7b-422e-8801-2da916dfaa5a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-accord",
+            "color-code": "Accord"
+          }
+        },
+        "374b83e1-7d47-44eb-b045-fe52b517aebb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-city",
+            "color-code": "City"
+          }
+        },
+        "0a87625c-e25a-43b7-b83f-5f56ff7ba759": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-civic",
+            "color-code": "Civic"
+          }
+        },
+        "1bfd34ee-86f3-4fe8-90cf-a623d7686c04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-v",
+            "color-code": "CR-V"
+          }
+        },
+        "25259270-fcb3-4bc7-a2ee-65e0677b0367": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-x",
+            "color-code": "CR-X"
+          }
+        },
+        "03e5cb5a-780c-4a8e-bac2-3ee556af60f1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-z",
+            "color-code": "CR-Z"
+          }
+        },
+        "2853ae64-94ba-42f4-92aa-0e2d00924a12": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-element",
+            "color-code": "Element"
+          }
+        },
+        "9adf189e-bd24-4767-b7ee-7a68a940555a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-fr-v",
+            "color-code": "FR-V"
+          }
+        },
+        "2912fb50-d8ee-483e-92a0-aec1be2cbc52": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-hr-v",
+            "color-code": "HR-V"
+          }
+        },
+        "51219f43-24b3-4b5b-ba7d-58bbbbd5cabf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-insight",
+            "color-code": "Insight"
+          }
+        },
+        "639a2b6f-58ac-4e57-8756-fdba4e3a6bf1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-jazz",
+            "color-code": "Jazz"
+          }
+        },
+        "214fdaf0-814e-41db-9e20-cf944dca3507": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-jazz-crosstar",
+            "color-code": "Jazz Crosstar"
+          }
+        },
+        "e573dfdd-3bcf-4c0d-9f9b-65c277314d7b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-nsx",
+            "color-code": "NSX"
+          }
+        },
+        "e7ff8060-2f4f-4550-8b11-5b489a6c3531": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-odyssey",
+            "color-code": "Odyssey"
+          }
+        },
+        "310f98fc-51c0-46a6-893b-67d3cd7c89a5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-pilot",
+            "color-code": "Pilot"
+          }
+        },
+        "section_Nd4yiy": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-ridgeline",
+            "color-code": "Ridgeline"
+          }
+        }
+      },
+      "block_order": [
+        "9674cae8-9e7b-422e-8801-2da916dfaa5a",
+        "374b83e1-7d47-44eb-b045-fe52b517aebb",
+        "0a87625c-e25a-43b7-b83f-5f56ff7ba759",
+        "1bfd34ee-86f3-4fe8-90cf-a623d7686c04",
+        "25259270-fcb3-4bc7-a2ee-65e0677b0367",
+        "03e5cb5a-780c-4a8e-bac2-3ee556af60f1",
+        "2853ae64-94ba-42f4-92aa-0e2d00924a12",
+        "9adf189e-bd24-4767-b7ee-7a68a940555a",
+        "2912fb50-d8ee-483e-92a0-aec1be2cbc52",
+        "51219f43-24b3-4b5b-ba7d-58bbbbd5cabf",
+        "639a2b6f-58ac-4e57-8756-fdba4e3a6bf1",
+        "214fdaf0-814e-41db-9e20-cf944dca3507",
+        "e573dfdd-3bcf-4c0d-9f9b-65c277314d7b",
+        "e7ff8060-2f4f-4550-8b11-5b489a6c3531",
+        "310f98fc-51c0-46a6-893b-67d3cd7c89a5",
+        "section_Nd4yiy"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "370d48d0-69da-4589-87e8-94ad43a8f776": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-accord",
+            "color-code": "Accord"
+          }
+        },
+        "54440af8-cb3b-4e70-9414-eaea7bec5480": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-city",
+            "color-code": "City"
+          }
+        },
+        "b16d240b-21f5-4bab-b25e-10e247bddb6d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-civic",
+            "color-code": "Civic"
+          }
+        },
+        "72f6fb77-a66b-413f-a795-f05b1303be9e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-v",
+            "color-code": "CR-V"
+          }
+        },
+        "648e83f5-98a6-41e7-a193-52bbadc1d9d6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-x",
+            "color-code": "CR-X"
+          }
+        },
+        "6207ae97-f117-43a1-b70b-131b9630332b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-cr-z",
+            "color-code": "CR-Z"
+          }
+        },
+        "f08ca760-2ef0-40eb-8d1a-d3d976990c92": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-element",
+            "color-code": "Element"
+          }
+        },
+        "338c224f-96c0-4566-8f26-f3c7908da85f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-fr-v",
+            "color-code": "FR-V"
+          }
+        },
+        "6ad228ef-96a8-4b60-9e85-334710125621": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-hr-v",
+            "color-code": "HR-V"
+          }
+        },
+        "93fc9cac-e495-4655-81c0-7e60f775bcee": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-insight",
+            "color-code": "Insight"
+          }
+        },
+        "9e2bd2a3-6da6-4640-ad70-1e022d4cdf8c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-jazz",
+            "color-code": "Jazz"
+          }
+        },
+        "b74dcbb1-0209-4e9d-ae56-309ab974a38f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-jazz-crosstar",
+            "color-code": "Jazz Crosstar"
+          }
+        },
+        "d24a4ee7-a510-425f-b341-95f2407db05f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-nsx",
+            "color-code": "NSX"
+          }
+        },
+        "2eaced68-c55f-4e0f-b432-e3254656608f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-odyssey",
+            "color-code": "Odyssey"
+          }
+        },
+        "788b03d9-ccb4-4999-8587-4a745031db00": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-pilot",
+            "color-code": "Pilot"
+          }
+        },
+        "section_qPwpAa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/honda-ridgeline",
+            "color-code": "Ridgeline"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "370d48d0-69da-4589-87e8-94ad43a8f776",
+        "54440af8-cb3b-4e70-9414-eaea7bec5480",
+        "b16d240b-21f5-4bab-b25e-10e247bddb6d",
+        "72f6fb77-a66b-413f-a795-f05b1303be9e",
+        "648e83f5-98a6-41e7-a193-52bbadc1d9d6",
+        "6207ae97-f117-43a1-b70b-131b9630332b",
+        "f08ca760-2ef0-40eb-8d1a-d3d976990c92",
+        "338c224f-96c0-4566-8f26-f3c7908da85f",
+        "6ad228ef-96a8-4b60-9e85-334710125621",
+        "93fc9cac-e495-4655-81c0-7e60f775bcee",
+        "9e2bd2a3-6da6-4640-ad70-1e022d4cdf8c",
+        "b74dcbb1-0209-4e9d-ae56-309ab974a38f",
+        "d24a4ee7-a510-425f-b341-95f2407db05f",
+        "2eaced68-c55f-4e0f-b432-e3254656608f",
+        "788b03d9-ccb4-4999-8587-4a745031db00",
+        "section_qPwpAa"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "3306669f-97d1-404f-ac95-8bd9d4536b52",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

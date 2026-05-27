@@ -1,0 +1,149 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "c669d86e-f164-4455-929f-e6fd21f14337": {
+      "type": "sidebar",
+      "blocks": {
+        "section_jMzW4k": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-3",
+            "color-code": "3"
+          }
+        },
+        "a4aa64cc-0e8c-42ef-badc-f66687aa7e49": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ds-4",
+            "color-code": "4"
+          }
+        },
+        "105a616a-cb65-490b-b6d4-34d312575f87": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-5",
+            "color-code": "5"
+          }
+        },
+        "d94e726c-cf8a-4850-ab53-20e68b5c5a80": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-7",
+            "color-code": "7"
+          }
+        },
+        "cbc5dd5c-db23-43da-83c5-e0f83e5d28e8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-9",
+            "color-code": "9"
+          }
+        }
+      },
+      "block_order": [
+        "section_jMzW4k",
+        "a4aa64cc-0e8c-42ef-badc-f66687aa7e49",
+        "105a616a-cb65-490b-b6d4-34d312575f87",
+        "d94e726c-cf8a-4850-ab53-20e68b5c5a80",
+        "cbc5dd5c-db23-43da-83c5-e0f83e5d28e8"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "section_6pUA7P": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-3",
+            "color-code": "3"
+          }
+        },
+        "a491df15-90dc-4661-8192-45a2beea6055": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/ds-4",
+            "color-code": "4"
+          }
+        },
+        "b072dca8-27a9-4ac9-9b00-4efc621fb9bf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-5",
+            "color-code": "5"
+          }
+        },
+        "cc41cffb-3f01-4ec9-8c79-52c4df8dc536": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-7",
+            "color-code": "7"
+          }
+        },
+        "8a2828f3-fae8-4a62-a1a2-59c691677e46": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ds-9",
+            "color-code": "9"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "section_6pUA7P",
+        "a491df15-90dc-4661-8192-45a2beea6055",
+        "b072dca8-27a9-4ac9-9b00-4efc621fb9bf",
+        "cc41cffb-3f01-4ec9-8c79-52c4df8dc536",
+        "8a2828f3-fae8-4a62-a1a2-59c691677e46"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "c669d86e-f164-4455-929f-e6fd21f14337",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "2290565b-f1c4-41af-8f67-7c5e1b318bd8": {
+      "type": "sidebar",
+      "blocks": {
+        "df71e672-c065-400b-9ef7-940637e92649": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/opel-adam",
+            "color-code": "Adam"
+          }
+        },
+        "e8a1950d-a303-47d9-88f0-60ea963c8b86": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-agila",
+            "color-code": "Agila"
+          }
+        },
+        "b0364ec1-bc2b-447d-bfc4-be4e9452656e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-ampera",
+            "color-code": "Ampera"
+          }
+        },
+        "a375707f-b370-4d09-9116-80707304562c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-antara",
+            "color-code": "Antara"
+          }
+        },
+        "60f80a41-19e2-494f-b728-fce668bca8a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-f",
+            "color-code": "Astra F"
+          }
+        },
+        "6b52d05e-8d4e-41f7-a67a-8c589c2c1066": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-g",
+            "color-code": "Astra G"
+          }
+        },
+        "7a5f8f27-953c-43ed-a156-13c137be291d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-h",
+            "color-code": "Astra H"
+          }
+        },
+        "1f0cf53f-12d6-488d-b841-8924950a596e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-j",
+            "color-code": "Astra J"
+          }
+        },
+        "e539989d-d317-4f53-9b75-bbb8535d46d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-k",
+            "color-code": "Astra K"
+          }
+        },
+        "b8d0422a-b11f-4ef6-a502-8f0c2a60fe5e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-l",
+            "color-code": "Astra L"
+          }
+        },
+        "ee00b931-3056-44e1-b6f9-f2e5626d42e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-cascada",
+            "color-code": "Cascada"
+          }
+        },
+        "21aa0f3b-9b47-4152-a45d-86e22e33fe3e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo",
+            "color-code": "Combo"
+          }
+        },
+        "section_X93ThP": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-c",
+            "color-code": "Combo C"
+          }
+        },
+        "section_7AN36A": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-d",
+            "color-code": "Combo D"
+          }
+        },
+        "f55c4017-4a3c-42f9-8ff9-cf6ae4a3d738": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-e",
+            "color-code": "Combo E"
+          }
+        },
+        "7dfcadbf-ea07-4121-b843-2a9e370b02dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-b",
+            "color-code": "Corsa B"
+          }
+        },
+        "70f2766b-a601-4a11-9ae6-c7e638b6f1e6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-c",
+            "color-code": "Corsa C"
+          }
+        },
+        "ac5b1737-4284-4f50-9d21-e938b809a448": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-d",
+            "color-code": "Corsa D"
+          }
+        },
+        "11a6c71b-71fe-4b0e-abce-c55b735012d9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-e",
+            "color-code": "Corsa E"
+          }
+        },
+        "f92b41fd-ed78-4b2b-8ee1-2b930723ffb2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-f",
+            "color-code": "Corsa F"
+          }
+        },
+        "b2d19853-a768-4d5f-9cb1-e2bc2c645743": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-e-f",
+            "color-code": "Corsa-e F"
+          }
+        },
+        "e8427992-01b9-4228-ab9a-2cbc18d0e517": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-crossland-x",
+            "color-code": "Crossland X"
+          }
+        },
+        "40293c88-4750-4cbf-a3dc-d86802e0470c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-frontera",
+            "color-code": "Frontera"
+          }
+        },
+        "1834e2d0-f1ff-4fea-94e8-8fcad8e63cd2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-grandland-x",
+            "color-code": "Grandland X"
+          }
+        },
+        "d6e312fe-bde5-4eab-bef2-8ce88f5e1ee2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-insignia",
+            "color-code": "Insignia"
+          }
+        },
+        "ad2fb64e-a5f6-469e-9ad2-fac304553efc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-meriva",
+            "color-code": "Meriva"
+          }
+        },
+        "e0a8c83d-4c0c-4f83-9f2f-1a5471332f32": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-mokka",
+            "color-code": "Mokka"
+          }
+        },
+        "8d9643e7-e58e-489a-a002-d756f946aa26": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-movano",
+            "color-code": "Movano"
+          }
+        },
+        "541472ad-5060-420f-8b3d-5babac138632": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-signum",
+            "color-code": "Signum"
+          }
+        },
+        "aa9c9612-8b97-401c-abfb-e5be0892d5d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-tigra-twin-top",
+            "color-code": "Tigra Twin Top"
+          }
+        },
+        "168d2c6f-cb4e-4d69-a569-89c67d42ed50": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-vectra-c",
+            "color-code": "Vectra C"
+          }
+        },
+        "94d64859-2a6d-4541-ad2e-4cb5104083d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-vivaro",
+            "color-code": "Vivaro"
+          }
+        },
+        "85a10309-5baa-4e84-a5e4-f4497c09d721": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-a",
+            "color-code": "Zafira A"
+          }
+        },
+        "e4a6bc86-63c5-4ac2-8c98-cf16352fc550": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-b",
+            "color-code": "Zafira B"
+          }
+        },
+        "e450f974-cf13-4bc3-a69d-d8a242302671": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-c",
+            "color-code": "Zafira C"
+          }
+        },
+        "9e69977c-ca9e-445e-a78d-a4a59521ff89": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-life",
+            "color-code": "Zafira Life"
+          }
+        }
+      },
+      "block_order": [
+        "df71e672-c065-400b-9ef7-940637e92649",
+        "e8a1950d-a303-47d9-88f0-60ea963c8b86",
+        "b0364ec1-bc2b-447d-bfc4-be4e9452656e",
+        "a375707f-b370-4d09-9116-80707304562c",
+        "60f80a41-19e2-494f-b728-fce668bca8a1",
+        "6b52d05e-8d4e-41f7-a67a-8c589c2c1066",
+        "7a5f8f27-953c-43ed-a156-13c137be291d",
+        "1f0cf53f-12d6-488d-b841-8924950a596e",
+        "e539989d-d317-4f53-9b75-bbb8535d46d2",
+        "b8d0422a-b11f-4ef6-a502-8f0c2a60fe5e",
+        "ee00b931-3056-44e1-b6f9-f2e5626d42e5",
+        "21aa0f3b-9b47-4152-a45d-86e22e33fe3e",
+        "section_X93ThP",
+        "section_7AN36A",
+        "f55c4017-4a3c-42f9-8ff9-cf6ae4a3d738",
+        "7dfcadbf-ea07-4121-b843-2a9e370b02dd",
+        "70f2766b-a601-4a11-9ae6-c7e638b6f1e6",
+        "ac5b1737-4284-4f50-9d21-e938b809a448",
+        "11a6c71b-71fe-4b0e-abce-c55b735012d9",
+        "f92b41fd-ed78-4b2b-8ee1-2b930723ffb2",
+        "b2d19853-a768-4d5f-9cb1-e2bc2c645743",
+        "e8427992-01b9-4228-ab9a-2cbc18d0e517",
+        "40293c88-4750-4cbf-a3dc-d86802e0470c",
+        "1834e2d0-f1ff-4fea-94e8-8fcad8e63cd2",
+        "d6e312fe-bde5-4eab-bef2-8ce88f5e1ee2",
+        "ad2fb64e-a5f6-469e-9ad2-fac304553efc",
+        "e0a8c83d-4c0c-4f83-9f2f-1a5471332f32",
+        "8d9643e7-e58e-489a-a002-d756f946aa26",
+        "541472ad-5060-420f-8b3d-5babac138632",
+        "aa9c9612-8b97-401c-abfb-e5be0892d5d2",
+        "168d2c6f-cb4e-4d69-a569-89c67d42ed50",
+        "94d64859-2a6d-4541-ad2e-4cb5104083d2",
+        "85a10309-5baa-4e84-a5e4-f4497c09d721",
+        "e4a6bc86-63c5-4ac2-8c98-cf16352fc550",
+        "e450f974-cf13-4bc3-a69d-d8a242302671",
+        "9e69977c-ca9e-445e-a78d-a4a59521ff89"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "13ac0438-ccf9-419a-a87d-8b8baa34b99c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/opel-adam",
+            "color-code": "Adam"
+          }
+        },
+        "eff50765-0b7d-4d45-b8ce-e3e6162cb47e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-agila",
+            "color-code": "Agila"
+          }
+        },
+        "caf04209-3b3a-44ed-a8d6-b2570db56fd2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-ampera",
+            "color-code": "Ampera"
+          }
+        },
+        "769b4f43-4d3f-4baf-9e1c-70dadc133ab8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-antara",
+            "color-code": "Antara"
+          }
+        },
+        "999207fe-5184-4ae0-a74b-b42942f5cd1c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-f",
+            "color-code": "Astra F"
+          }
+        },
+        "50ecc3bf-414c-4e67-b1bf-eb69609b1007": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-g",
+            "color-code": "Astra G"
+          }
+        },
+        "21566119-c6f6-4ea2-8396-7f13780fe21e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-h",
+            "color-code": "Astra H"
+          }
+        },
+        "cbcdada0-d2d5-47cf-9403-ff122c7059b9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-j",
+            "color-code": "Astra J"
+          }
+        },
+        "20180aa0-42bd-4658-9e2e-f93870b34ac7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-k",
+            "color-code": "Astra K"
+          }
+        },
+        "971c152f-261e-4bf0-93c4-49b6dc3c2aac": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-astra-l",
+            "color-code": "Astra L"
+          }
+        },
+        "42054508-c3ac-4472-b6b9-7bf19a9ee84a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-cascada",
+            "color-code": "Cascada"
+          }
+        },
+        "7431e75e-4024-46aa-b4c2-3b25dcbc620a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo",
+            "color-code": "Combo"
+          }
+        },
+        "section_AWMUQz": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-c",
+            "color-code": "Combo C"
+          }
+        },
+        "section_RxBb9z": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-d",
+            "color-code": "Combo D"
+          }
+        },
+        "4d89cc7c-3164-4af2-845a-ef7cc737825c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-combo-e",
+            "color-code": "Combo E"
+          }
+        },
+        "2632edce-b155-45f6-ae1b-5a375de495b4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-b",
+            "color-code": "Corsa B"
+          }
+        },
+        "80d700e8-596f-4eeb-9137-3cd71e0e5021": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-c",
+            "color-code": "Corsa C"
+          }
+        },
+        "4ac29919-6f7e-4a7a-a6d4-0e3ede419deb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-d",
+            "color-code": "Corsa D"
+          }
+        },
+        "8509c463-9b7f-426e-b3e5-2b355c2bae21": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-e",
+            "color-code": "Corsa E"
+          }
+        },
+        "8a536550-6679-4431-b956-16b13fa4c495": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-f",
+            "color-code": "Corsa F"
+          }
+        },
+        "892c215b-465b-4660-8e1d-10388e534b7a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-corsa-e-f",
+            "color-code": "Corsa-e F"
+          }
+        },
+        "51da3c3f-6d07-4d51-a10a-698085c2c039": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-crossland-x",
+            "color-code": "Crossland X"
+          }
+        },
+        "77a504a2-30e3-426c-a15c-1c0ac066569c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-frontera",
+            "color-code": "Frontera"
+          }
+        },
+        "0cc077d5-bc58-445e-9f4a-3a1a061727da": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-grandland-x",
+            "color-code": "Grandland X"
+          }
+        },
+        "04e27129-3372-4914-9808-9dc98a3a3a67": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-insignia",
+            "color-code": "Insignia"
+          }
+        },
+        "4d9366ad-7488-4431-9556-511e02254317": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-meriva",
+            "color-code": "Meriva"
+          }
+        },
+        "6bc597bf-28b3-4a4e-a510-63d17423a523": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-mokka",
+            "color-code": "Mokka"
+          }
+        },
+        "faa5ad9e-9ced-472b-a2b1-4416311d3ac3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-movano",
+            "color-code": "Movano"
+          }
+        },
+        "eacfc1aa-369b-461b-a476-7f88485fb88c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-signum",
+            "color-code": "Signum"
+          }
+        },
+        "fc21eecc-6943-4aed-b994-7029200aaaf7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-tigra-twin-top",
+            "color-code": "Tigra Twin Top"
+          }
+        },
+        "108b2d18-e02f-4cf5-a658-10306ad000c0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-vectra-c",
+            "color-code": "Vectra C"
+          }
+        },
+        "77d9def8-52ac-4175-b08f-80d859347c9f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-vivaro",
+            "color-code": "Vivaro"
+          }
+        },
+        "c99b7290-d2a4-4477-ad30-c92fe76dc413": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-a",
+            "color-code": "Zafira A"
+          }
+        },
+        "3c3eba38-9672-4af9-91c1-becdc16e3421": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-b",
+            "color-code": "Zafira B"
+          }
+        },
+        "f5793618-5b05-47e3-8d2b-f5c89e85a71d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-c",
+            "color-code": "Zafira C"
+          }
+        },
+        "6d506e79-c55c-4cd9-aed3-49558c09690d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-opel-zafira-life",
+            "color-code": "Zafira Life"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "13ac0438-ccf9-419a-a87d-8b8baa34b99c",
+        "eff50765-0b7d-4d45-b8ce-e3e6162cb47e",
+        "caf04209-3b3a-44ed-a8d6-b2570db56fd2",
+        "769b4f43-4d3f-4baf-9e1c-70dadc133ab8",
+        "999207fe-5184-4ae0-a74b-b42942f5cd1c",
+        "50ecc3bf-414c-4e67-b1bf-eb69609b1007",
+        "21566119-c6f6-4ea2-8396-7f13780fe21e",
+        "cbcdada0-d2d5-47cf-9403-ff122c7059b9",
+        "20180aa0-42bd-4658-9e2e-f93870b34ac7",
+        "971c152f-261e-4bf0-93c4-49b6dc3c2aac",
+        "42054508-c3ac-4472-b6b9-7bf19a9ee84a",
+        "7431e75e-4024-46aa-b4c2-3b25dcbc620a",
+        "section_AWMUQz",
+        "section_RxBb9z",
+        "4d89cc7c-3164-4af2-845a-ef7cc737825c",
+        "2632edce-b155-45f6-ae1b-5a375de495b4",
+        "80d700e8-596f-4eeb-9137-3cd71e0e5021",
+        "4ac29919-6f7e-4a7a-a6d4-0e3ede419deb",
+        "8509c463-9b7f-426e-b3e5-2b355c2bae21",
+        "8a536550-6679-4431-b956-16b13fa4c495",
+        "892c215b-465b-4660-8e1d-10388e534b7a",
+        "51da3c3f-6d07-4d51-a10a-698085c2c039",
+        "77a504a2-30e3-426c-a15c-1c0ac066569c",
+        "0cc077d5-bc58-445e-9f4a-3a1a061727da",
+        "04e27129-3372-4914-9808-9dc98a3a3a67",
+        "4d9366ad-7488-4431-9556-511e02254317",
+        "6bc597bf-28b3-4a4e-a510-63d17423a523",
+        "faa5ad9e-9ced-472b-a2b1-4416311d3ac3",
+        "eacfc1aa-369b-461b-a476-7f88485fb88c",
+        "fc21eecc-6943-4aed-b994-7029200aaaf7",
+        "108b2d18-e02f-4cf5-a658-10306ad000c0",
+        "77d9def8-52ac-4175-b08f-80d859347c9f",
+        "c99b7290-d2a4-4477-ad30-c92fe76dc413",
+        "3c3eba38-9672-4af9-91c1-becdc16e3421",
+        "f5793618-5b05-47e3-8d2b-f5c89e85a71d",
+        "6d506e79-c55c-4cd9-aed3-49558c09690d"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "2290565b-f1c4-41af-8f67-7c5e1b318bd8",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

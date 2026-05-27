@@ -1,0 +1,48 @@
+<section>
+            <div class="fourth-main">
+               
+                <div class="brands-button">
+                    <a class="button" href="{{ section.settings.btn_url }}">
+                            {{ section.settings.btn_text }}
+                            </a>
+                </div>
+            </div>
+        </section>
+
+{% schema %}
+{
+  "name": "home5",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"VIEW All BRANDS"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"text",
+      "name":"Logo",
+      "settings":[
+        {
+      "type":"image_picker",
+      "label":"Logo Image",
+      "id":"img"
+    }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"home5",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}

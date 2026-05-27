@@ -1,0 +1,324 @@
+
+{% style %}
+
+.compare-section__blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -ms-flex-wrap:nowrap;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    position:relative;
+    max-width:1040px;
+    margin:0 auto;
+    gap:170px
+}
+@media (max-width:1199.98px){
+    .compare-section__blocks{
+        display: flex;
+        gap:0
+    }
+}
+@media (max-width:767.98px){
+    .compare-section__blocks{
+        flex-direction:column;
+        gap:250px
+    }
+}
+.compare-section .compare-section__block-1 .compare-section__image{
+    max-width:406px
+}
+@media (max-width:1199.98px){
+    .compare-section .compare-section__block-1 .compare-section__image{
+        max-width:356px
+    }
+}
+@media (max-width:991.98px){
+    .compare-section .compare-section__block-1 .compare-section__image{
+        max-width:306px
+    }
+}
+@media (max-width:767.98px){
+    .compare-section .compare-section__block-1 .compare-section__image{
+        max-width:100%
+    }
+}
+.compare-section .compare-section__block-1 .compare-section__header{
+    margin-left:-20px
+}
+@media (max-width:991.98px){
+    .compare-section .compare-section__block-1 .compare-section__header{
+        margin-left:0
+    }
+}
+.compare-section .compare-section__block-2 .compare-section__image{
+    max-width:426px
+}
+@media (max-width:1199.98px){
+    .compare-section .compare-section__block-2 .compare-section__image{
+        max-width:376px
+    }
+}
+@media (max-width:991.98px){
+    .compare-section .compare-section__block-2 .compare-section__image{
+        max-width:326px
+    }
+}
+@media (max-width:767.98px){
+    .compare-section .compare-section__block-2 .compare-section__image{
+        max-width:100%
+    }
+}
+.compare-section .compare-section__block-2 .compare-section__image-wrapper{
+    justify-content:flex-end
+}
+@media (max-width:767.98px){
+    .compare-section .compare-section__block-2 .compare-section__image-wrapper{
+        justify-content:center
+    }
+}
+.compare-section .compare-section__block-2 .compare-section__header{
+    margin-right:-10px
+}
+.compare-section__header *{
+    text-align:center;
+    font-size:40px;
+    font-style:normal;
+    font-weight:700;
+    line-height:1.1;
+    text-transform:uppercase;
+    margin-bottom:40px;
+}
+.compare-section__header * strong{
+    color:#ff002e
+}
+@media (max-width:991.98px){
+    .compare-section__header *{
+        max-width:300px;
+        white-space:normal
+    }
+}
+@media (max-width:767.98px){
+    .compare-section__header *{
+        max-width:100%
+    }
+}
+.compare-section__image-wrapper{
+    text-align:center;
+    display:flex
+}
+@media (max-width:767.98px){
+    .compare-section__image-wrapper{
+        gap:50px;
+        justify-content:center
+    }
+}
+.compare-section__image img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    object-fit:contain
+}
+.compare-section .compare-section__logo{
+    position:absolute;
+    left:50%;
+    top:58%;
+    transform:translate(-50%,-50%);
+    width:287px
+}
+@media (max-width:991.98px){
+    .compare-section .compare-section__logo{
+        width:207px;
+        top:66%
+    }
+}
+@media (max-width:767.98px){
+    .compare-section .compare-section__logo{
+        top:50%
+    }
+}
+.compare-section .compare-section__logo .compare-section__logo-image{
+    position:relative
+}
+.compare-section .compare-section__logo .compare-section__logo-image img{
+    max-width:100%
+}
+.compare-section .compare-section__logo .compare-section__logo-image::after{
+    content:"";
+    width:300px;
+    position:absolute;
+    transform:rotate(122deg);
+    top:102px;
+    left:7px;
+    z-index:-1;
+    height:10px;
+    display:block;
+    background:linear-gradient(90deg,rgba(255,0,46,0) 3.73%,#ff002e 49.58%,rgba(255,0,46,0) 97.28%)
+}
+@media (max-width:991.98px){
+    .compare-section .compare-section__logo .compare-section__logo-image::after{
+        top:72px;
+        left:-34px
+    }
+}
+    .compare-section--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 990px) {
+        .compare-section--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="compare-section compare-section--{{ section.id }}">
+    <div class="page-width">
+        <div class="compare-section__wrapper">
+            <div class="compare-section__blocks">
+                <div class="compare-section__logo">
+                    <div class="compare-section__logo-image">
+                        {% if section.settings.logo != blank %}
+                            {{
+                                section.settings.logo
+                                | image_url: width: 1500
+                                | image_tag:
+                                    width: imageWidth,
+                                    height: imageHeight,
+                                    class: 'lazy',
+                                    sizes: '100vw',
+                                    widths: '375, 550, 750, 1100, 1500',
+                                    loading: 'lazy',
+                                    alt: image.alt
+                            }}
+                            {% else %}
+                                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif %}
+                    </div>
+                </div>
+                    {% for block in section.blocks %}
+                        <div class="compare-section__block compare-section__block-{{ forloop.index }}">
+                            {% liquid 
+                                assign header = block.settings.header
+                                assign image = block.settings.image
+                            %}
+                            {% if header != blank %}
+                                <div class="compare-section__header">
+                                    {{ header }}
+                                </div>
+                            {% endif %}
+                            <div class="compare-section__image-wrapper">
+                                <div class="compare-section__image">
+                                    {% if image != blank %}
+                                            <picture>
+                                                {{
+                                                image
+                                                | image_url: width: 1500
+                                                | image_tag:
+                                                    width: imageWidth,
+                                                    height: imageHeight,
+                                                    class: 'lazy',
+                                                    sizes: '100vw',
+                                                    widths: '375, 550, 750, 1100, 1500',
+                                                    loading: 'lazy',
+                                                    alt: image.alt
+                                                }}
+                                            </picture> 
+                                    {% else %}
+                                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% schema %}
+  {
+    "name": "Compare section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "header",
+            "content": "Padding mobile"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Padding desktop"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Block",
+            "type": "block",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "header",
+                    "label": "Title",
+                    "default": "<h2>Dywaniki gumowe</h2>"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+        
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Compare section"
+      }
+    ]
+  }
+{% endschema %}

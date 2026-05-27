@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb": {
+      "type": "sidebar",
+      "blocks": {
+        "55368743-efc9-405a-8ce5-a91d093e3427": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/smart-fortwo",
+            "color-code": "Fortwo"
+          }
+        },
+        "dfcd5b44-20d4-4ead-ac66-3dceb1ac9318": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-smart-forfour",
+            "color-code": "ForFour"
+          }
+        }
+      },
+      "block_order": [
+        "55368743-efc9-405a-8ce5-a91d093e3427",
+        "dfcd5b44-20d4-4ead-ac66-3dceb1ac9318"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "e655233b-67d6-4398-b10d-81b80f83aca6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/smart-fortwo",
+            "color-code": "Fortwo"
+          }
+        },
+        "e049f237-47ac-4a50-bb16-fd3e1af353fa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-smart-forfour",
+            "color-code": "ForFour"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "e655233b-67d6-4398-b10d-81b80f83aca6",
+        "e049f237-47ac-4a50-bb16-fd3e1af353fa"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

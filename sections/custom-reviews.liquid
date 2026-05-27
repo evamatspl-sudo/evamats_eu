@@ -1,0 +1,277 @@
+{{ 'fancybox.css' | asset_url | stylesheet_tag }}
+{{ 'custom_reviews.css' | asset_url | stylesheet_tag }}
+
+{% capture full_star %}
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 1.66699L12.4721 7.56966L18.7502 8.26332L13.8751 12.4303L15.1942 18.7367L10 15.5133L4.80583 18.7367L6.12492 12.4303L1.24984 8.26332L7.52792 7.56966L10 1.66699Z" fill="#FFB800"/>
+    </svg>
+{% endcapture %}
+{% capture half_star %}
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 1.66699L12.4721 7.56966L18.7502 8.26332L13.8751 12.4303L15.1942 18.7367L10 15.5133V1.66699Z" fill="#E0E0E0"/>
+        <path d="M10 1.66699L7.52792 7.56966L1.24984 8.26332L6.12492 12.4303L4.80583 18.7367L10 15.5133V1.66699Z" fill="#FFB800"/>
+    </svg>
+{% endcapture %}
+{% capture empty_star %}
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 1.66699L12.4721 7.56966L18.7502 8.26332L13.8751 12.4303L15.1942 18.7367L10 15.5133L4.80583 18.7367L6.12492 12.4303L1.24984 8.26332L7.52792 7.56966L10 1.66699Z" fill="#E0E0E0"/> 
+    </svg>
+{% endcapture %}
+<div class="custom_reviews">
+    <div class="page-width">
+        <div class="custom_reviews__content">
+            <div class="custom_reviews__title title h1">{{ section.settings.title }}</div>
+
+            <div class="custom_reviews__block">
+                <div class="custom_reviews__block_left">
+                    <img src="{{ section.settings.block_image | img_url: '200x' }}" alt="" loading="lazy" class="custom_reviews__block_image">
+
+                    <div class="custom_reviews__block_info">
+                        <div class="custom_reviews__block_info_title">{{ section.settings.block_title }}</div>
+                        <div class="custom_reviews__block_info_rating">
+                            <div class="custom_reviews__block_info_rating_number">
+                                {{ section.settings.rating }}
+                            </div>
+                            {% assign full_stars = section.settings.rating | floor %}
+                            {% assign half_stars = section.settings.rating | modulo: 1 %}
+
+                            {% if half_stars >= 0.5 %}
+                            {% assign half_star_count = 1 %}
+                            {% else %}
+                            {% assign half_star_count = 0 %}
+                            {% endif %}
+
+                            {% assign empty_stars = 5 | minus: full_stars | minus: half_star_count %}
+
+                            {% for i in (1..full_stars) %}
+                               {{ full_star }}
+                            {% endfor %}
+
+                            {% if half_stars >= 0.5 %}
+                                {{ half_star }}
+                            {% endif %}
+
+                            {% for i in (1..empty_stars) %}
+                                {{ empty_star }}
+                            {% endfor %}
+                        </div>
+                        <div class="custom_reviews__block_info_count">{{ section.settings.reviews_count }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom_reviews__list">
+                {% for block in section.blocks %}
+                    {% assign forloopIndex = forloop.index %}
+                    <div class="custom_reviews__list_item">
+                        <div class="custom_reviews__list_item_inner">
+                            <div class="custom_reviews__list_item_header">
+                            <img src="{{ block.settings.user_image | img_url: '100x' }}" alt="" loading="lazy" class="custom_reviews__list_item_image">
+                            <div class="custom_reviews__list_item_info">
+                                <div class="custom_reviews__list_item_name">{{ block.settings.name }}</div>
+                                <div class="custom_reviews__list_item_date">{{ block.settings.date }}</div>
+                                <div class="custom_reviews__list_item_rating">
+                                    {% assign full_stars = block.settings.rating | floor %}
+                                    {% assign half_stars = block.settings.rating | modulo: 1 %}
+
+                                    {% if half_stars >= 0.5 %}
+                                    {% assign half_star_count = 1 %}
+                                    {% else %}
+                                    {% assign half_star_count = 0 %}
+                                    {% endif %}
+
+                                    {% assign empty_stars = 5 | minus: full_stars | minus: half_star_count %}
+
+                                    {% for i in (1..full_stars) %}
+                                    {{ full_star }}
+                                    {% endfor %}
+
+                                    {% if half_stars >= 0.5 %}
+                                        {{ half_star }}
+                                    {% endif %}
+
+                                    {% for i in (1..empty_stars) %}
+                                        {{ empty_star }}
+                                    {% endfor %}
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585.86 585.7" width="16px" height="16px"><g><path d="M292.91,0c35.61,0,89.68,76.34,89.68,76.34S474.9,60.5,500.05,85.53C525.23,110.87,509.42,203,509.42,203s76.44,54.17,76.44,89.65c0,35.8-76.44,89.65-76.44,89.65s15.81,92.49-9.37,117.52c-25.15,25.34-117.46,9.5-117.46,9.5s-54.07,76.34-89.68,76.34-89.67-76.34-89.67-76.34S111,525.2,85.78,499.86c-25.15-25-9.38-117.52-9.38-117.52S0,328.49,0,292.69C0,257.21,76.4,203,76.4,203S60.63,110.87,85.78,85.53c25.18-25,117.46-9.19,117.46-9.19S257.34,0,292.91,0Z" fill="#518ef8"></path><path d="M289.15,296.22l91-91.34a17.36,17.36,0,0,1,24.55,0l24.54,24.66a17.48,17.48,0,0,1,0,24.65L307.88,375.81a7.18,7.18,0,0,1-1.13,1.33l-24.56,24.65a17.38,17.38,0,0,1-24.66,0L233,377.14a6.78,6.78,0,0,1-1.12-1.33l-63.52-63.7a17.29,17.29,0,0,1,0-24.49L192.89,263a17.37,17.37,0,0,1,24.56,0l48.1,48.16h0l.1.16,4.23,4.3,0-.16,49.17,48.81Z" fill="#fff"></path></g></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom_reviews__list_item_text">{{ block.settings.text }}</div>
+                        
+                        {% assign images = "" %}
+
+                        {% for i in (1..6) %}
+                            {% assign setting_key = "image" | append: i %}
+                            {% assign current_image = block.settings[setting_key] %}
+                            {% if current_image != blank %}
+                                {% capture images %}{{ images }}{{ current_image | img_url: 'master' }}|{{ current_image | img_url: '200x' }};{% endcapture %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% assign images = images | split: ";" %}
+
+                        <div class="custom_reviews__list_item_images">
+                        {% for image in images %}
+                            {% if image != blank %}
+                            {% assign parts = image | split: "|" %}
+                            <a href="{{ parts[0] }}" 
+                                data-fancybox="gallery-{{forloopIndex}}" 
+                                class="custom_reviews__list_item_images_link">
+                                <img src="{{ parts[1] }}" 
+                                    alt="" 
+                                    loading="lazy" 
+                                    class="custom_reviews__list_item_images_image">
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ 'fancybox.js' | asset_url }}" ></script>
+<script src="{{ 'masonry.pkgd.min.js' | asset_url }}" ></script>   
+<script defer>
+    Fancybox.bind("[data-fancybox]", {
+      animated: false
+    });
+    //  masonry
+    (function () {
+    if (document.querySelector('.custom_reviews__list')) {
+        var grid = document.querySelector('.custom_reviews__list');
+
+        var msnry = new Masonry( grid, {
+            itemSelector: '.custom_reviews__list_item',
+            columnWidth: '.custom_reviews__list_item',
+            percentPosition: true
+        });
+ 
+        {% comment %} imagesLoaded( grid ).on( 'progress', function() {
+        // layout Masonry after each image loads
+        
+        }); {% endcomment %}
+        msnry.layout();
+    }
+    })();
+    //  masonry
+</script>
+
+{% schema %}
+    {
+        "name": "Custom Reviews",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Title"
+            },
+            {
+                "type": "range",
+                "id": "rating",
+                "min": 4,
+                "max": 5,
+                "step": 0.1,
+                "label": "Rating",
+                "default": 4.7
+            },
+            {
+                "type": "text",
+                "id": "block_title",
+                "label": "Block Title",
+                "default": "EVAMATS Dywaniki samochodowe"
+            },
+            {
+                "type": "image_picker",
+                "id": "block_image",
+                "label": "Block Image"
+            },
+            {
+                "type": "text",
+                "id": "reviews_count",
+                "label": "Reviews Count",
+                "default": "2395 reviews on Google"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "item",
+                "name": "Item",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Name",
+                        "default": "Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "date",
+                        "label": "Date",
+                        "default": "2 days ago"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "user_image",
+                        "label": "User image"
+                    },
+                    {
+                        "type": "range",
+                        "id": "rating",
+                        "min": 4,
+                        "max": 5,
+                        "step": 0.1,
+                        "label": "Rating",
+                        "default": 5
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image1",
+                        "label": "Image 1"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image2",
+                        "label": "Image 2"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image3",
+                        "label": "Image 3"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image4",
+                        "label": "Image 4"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image5",
+                        "label": "Image 5"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image6",
+                        "label": "Image 6"
+                    }
+                ]
+            },
+        ],
+        "presets": [
+            {
+                "name": "Custom Reviews",
+                "category": "Custom"
+            }
+        ]        
+    }
+{% endschema %}

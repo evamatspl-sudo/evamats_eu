@@ -1,0 +1,57 @@
+<section>
+            <div class="nine-main">
+                <div class="nine-content">
+                    <h1>{{ section.settings.hd }}</h1>
+                    <div class="nine-flex">
+                      {{ section.settings.des }}
+                      <a href="{{ section.settings.btn_url }}">
+                            <button class="button">{{ section.settings.btn_text }}</button>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+{% schema %}
+{
+  "name": "home10",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"Individual order"
+    },
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>If you are looking for mats for your car that will fit exactly to its size and design, then you have found the right place. Our professionals will help you create perfectly suitable floor mats for your car. Do not hesitate, leave your data and we will do everything possible to make your car more comfortable and stylish!</p>"
+    },
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"SHOP NOW"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home10",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

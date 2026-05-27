@@ -1,0 +1,69 @@
+{% comment %}
+  Upsell slide for cart progress (manual list or collection random pool).
+{% endcomment %}
+<div
+  class="drawer__progress_products_item product__upsell_item {% if item.tags contains 'sold_out' %}sold_out{% endif %} swiper-slide"
+  {% if random_pick %}data-upsell-random{% endif %}
+  data-id="{{ item.selected_or_first_available_variant.id }}"
+>
+  {% if item.tags contains 'sold_out' %}
+    <div class="product__upsell_item_sold_out_message">{{ 'products.product.sold_out' | t }}</div>
+  {% endif %}
+
+  <div class="product__upsell_item_top">
+    <div class="img_wr">
+      <img src="{{ item.featured_image | image_url: width: 300 }}" alt="" class="product__upsell_image" loading="lazy" width="150" height="150">
+    </div>
+    <div class="product__upsell_item_heading">
+      <a href="{{ item.url }}" class="product__upsell_item_title" target="_blank">{{ item.title }}</a>
+      {% if item.title contains 'Podpiętka z materiału EVA' or item.title contains 'EVA material heel pad' %}
+        <div class="product__upsell_item_note">{{ 'sections.cart.upsell_eva_note' | t }}</div>
+      {% endif %}
+      <div class="product__upsell_price">{{ item.price | money }}</div>
+    </div>
+  </div>
+
+  {% if item.variants.size > 1 %}
+    <div class="product__upsell_item_variants">
+      {% assign activeIndex = 0 %}
+      {% for itemVariant in item.variants %}
+        {% if itemVariant.available %}
+          {% assign activeIndex = forloop.index %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% for itemVariant in item.variants %}
+        <div
+          class="product__upsell_item_variant {% unless itemVariant.available %}disabled{% endunless %}{% if forloop.index == activeIndex %} active{% endif %}"
+          data-id="{{ itemVariant.id }}"
+        >
+          {{ itemVariant.title }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div id="product-form__buttons--add " class=" product-form__buttons ">
+    <button
+      id="ProductSubmitButton-{{ section_id }}"
+      type="submit"
+      name="add"
+      class="product-form__submit button button--primary"
+      {% if item.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+        disabled
+      {% endif %}
+    >
+      <div style="position: absolute; display: block; width: 100%;height: 100%;"></div>
+      <span>
+        {%- if item.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- else -%}
+          {{ 'sections.cart.upsell_add_to_cart' | t }}
+        {%- endif -%}
+      </span>
+      <div class="loading-overlay__spinner hidden">
+        <span class="loader"></span>
+      </div>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17006502811585db2c": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "custom_css": [],
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/cart_eng_version.webp",
+        "url": ""
+      }
+    },
+    "21c99148-881b-43f6-b502-5781eb36f88b": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "People often buy this product",
+        "heading_size": "h2",
+        "custom_header_style": false,
+        "button_text": "",
+        "button_link": "",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "akcesoria-samochodowa",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1699267887e6f6e589": {
+      "type": "apps",
+      "blocks": {
+        "2544cb25-368d-4c99-8b9e-600d7f46dbaf": {
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "light",
+            "autoscroll": true,
+            "showRating": true,
+            "reviewPhotosType": "small",
+            "writeReview": true,
+            "fixedReviewsHeight": false
+          }
+        },
+        "bcd6c5ab-c811-4cd4-8ed6-3b5edd87d2e4": {
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/list-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "disabled": true,
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "dark",
+            "showReviewPhotos": true,
+            "writeReview": true
+          }
+        }
+      },
+      "block_order": [
+        "2544cb25-368d-4c99-8b9e-600d7f46dbaf",
+        "bcd6c5ab-c811-4cd4-8ed6-3b5edd87d2e4"
+      ],
+      "custom_css": [
+        ".reputon-google-reviews-widget {padding-top: 40px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "17006502811585db2c",
+    "cart-footer",
+    "21c99148-881b-43f6-b502-5781eb36f88b",
+    "1699267887e6f6e589"
+  ]
+}

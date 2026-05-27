@@ -1,0 +1,627 @@
+{
+  "general": {
+    "config": {
+      "mats_size": "Größe",
+      "without_edges": "3D EVAMATS ohne Kanten",
+      "with_edges": "3D EVAMATS mit Kanten",
+      "only_driver_mat": "Nur Fahrermatte",
+      "front": "Vorderseite",
+      "rear": "Rückseite",
+      "trunk": "Kofferraum",
+      "front_rear": "Vorder- und Rückseite",
+      "front_rear_trunk": "Vorderseite + Rückseite + Kofferraum",
+      "year_production": "Jahr der Herstellung",
+      "number_seats": "Anzahl der Sitze",
+      "number_doors": "Anzahl der Türen",
+      "drivetrain": "Antriebsstrang",
+      "drivetrainElements": "Hinterradantrieb,Vorderradantrieb,Allradantrieb,kein Hinweis",
+      "engine": "Motor",
+      "engineElements": "Benzin,Diesel,HEV,MHEV,PHEV,Elektro,Hybrid",
+      "gearbox": "Getriebe",
+      "gearboxElements": "Manuell,Automatisch",
+      "bodyType": "Körperbau",
+      "bodyTypeElements": "Limousine,Fließheck,SUV,Coupé,Kombi,Cabrio,Roadster,Bus,TIR,VAN,Camper,Traktor,Pickup,Minivan,Andere",
+      "cell_shape": "Form der Zelle",
+      "diamonds": "Diamanten",
+      "honeycomb": "Honigwabe",
+      "drops_with_surcharge": "Tropfen (+100 €)",
+      "mat_pattern_drops": "Tropfenmuster (+100 €)",
+      "drops_property_value": "Tropfen",
+      "material_color": "Farbe des Materials",
+      "trim_color": "Farbe der Zierleisten",
+      "comment": "ILLUSTRATION Teppich für die Farbauswahl",
+      "heel": "vergessen Sie nicht den zusätzlichen Schutz - wählen Sie die Art des Fersenpolsters",
+      "order_notes": "Hinweise zur Bestellung",
+      "error_message": "Bitte wählen Sie eine Option",
+      "warning_message": "Sie müssen die Datenschutzbestimmungen und die Allgemeinen Geschäftsbedingungen akzeptieren.",
+      "please_select": "Bitte auswählen",
+      "estimated_delivery": "Voraussichtliche Lieferzeit",
+      "color_and_cells_like_rug": "Farbe und Zellen wie bei einem Teppich",
+      "error_email": "E-Mail ist ungültig",
+      "error_phone": "Telefon ist ungültig",
+      "error_checkbox": "Sie müssen die Datenschutzbestimmungen und die Allgemeinen Geschäftsbedingungen akzeptieren.",
+      "vehicle": "Fahrzeug",
+      "brand": "Marke",
+      "model": "Modell",
+      "search": "Suche",
+      "custom_order_subtitle": "Boot, Flugzeug, Quad? Bestellen Sie hier maßgefertigte Fußmatten!",
+      "custom_order_title": "Bestellen Sie Fußmatten für ein außergewöhnliches Fahrzeug",
+      "order_notes_title": "Anmerkungen (Beschreiben Sie die Maße, die Bodenform oder fügen Sie ein Foto des Fahrzeuginnenraums bei – das hilft uns, eine perfekte Passform zu gewährleisten.)",
+      "super_offer": "Top-Angebot",
+      "mats_type": "Mattentyp",
+      "mats_set": "Matten-Set",
+      "read_more": "Mehr lesen",
+      "read_less": "Weniger lesen",
+      "continue": "Weiter",
+      "vehicle_text": "Fahrzeug (Gib den Fahrzeugtyp ein, z. B. Motorboot, Ultraleichtflugzeug, Quad, Gabelstapler…)",
+      "choose_your_mats": "Wählen Sie Ihre Matten in 15 Sekunden",
+      "select_year": "Jahr auswählen",
+      "select_year_and_body_type": "Jahr und Karosserietyp wählen",
+      "select_year_brand_model_body_type": "Jahr, Marke, Modell und Karosserietyp wählen",
+      "year_label": "Jahr",
+      "body_types_available_badge": "Alle aufgeführten Karosserietypen verfügbar",
+      "select_mats_type_and_set": "Matten-Typ und Set auswählen",
+      "gallery_mats_type": "Matten-Typ auswählen",
+      "label_delivery": "Kaufe für 100 €+ – kostenlose Lieferung!",
+      "label_trunk": "Achtung – Kofferraummatte",
+      "select_shape_and_colors": "Form und Farben auswählen",
+      "select_heels": "Fersenpolster (optional)",
+      "reset": "Zurücksetzen",
+      "buy_now": "Jetzt kaufen",
+      "gallery_body_type": "Körperform auswählen",
+      "gallery_error_message": "Keine Bilder in der Galerie gefunden.",
+      "gallery_divider_text": "Wir haben noch mehr für Sie zu entdecken",
+      "select_brand_model_and_body_type": "Wählen Sie Marke, Modell und Karosserietyp",
+      "select_size": "Größe auswählen",
+      "body_type": "Körpertyp",
+      "filter_years": "Jahre filtern",
+      "get_a_price": "Einen Preis erhalten",
+      "home": "Startseite",
+      "enter_year": "Geben Sie das Produktionsjahr ein",
+      "right_hand_message_short": "🚗 Rechtslenkerfahrzeug?",
+      "outlet": "Verkaufsstelle",
+      "right_hand_message_long": "🚗 Rechtslenkerfahrzeug? Lesen Sie dies vor der Bestellung! Unsere Autofußmatten sind standardmäßig für Linkslenkerfahrzeuge gefertigt. Wenn Ihr Fahrzeug das Lenkrad auf der rechten Seite hat (z.B. Großbritannien, Japan, Australien), kontaktieren Sie uns bitte zuerst – wir prüfen, ob ein maßgeschneidertes Set für Ihr Modell möglich ist.",
+      "select_vehicle": "Fahrzeug auswählen",
+      "additional_options": "Zusatzoptionen:",
+      "color": "Farbe",
+      "mount": "Montage"
+    },
+    "password_page": {
+      "login_form_heading": "Shop mit Passwort betreten:",
+      "login_password_button": "Mit Passwort betreten",
+      "login_form_password_label": "Passwort",
+      "login_form_password_placeholder": "Dein Passwort",
+      "login_form_error": "Falsches Passwort!",
+      "login_form_submit": "Eingeben",
+      "admin_link_html": "Bist du der Shop-Inhaber? <a href=\"\/admin\" class=\"link underlined-link\">Hier einloggen<\/a>",
+      "powered_by_shopify_html": "Dieser Shop wird unterstützt von {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Auf Facebook teilen",
+        "share_on_twitter": "Auf Twitter twittern",
+        "share_on_pinterest": "Auf Pinterest pinnen"
+      },
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Weiter shoppen",
+    "pagination": {
+      "label": "Seitennummerierung",
+      "page": "Seite {{ number }}",
+      "next": "Nächste Seite",
+      "previous": "Vorherige Seite"
+    },
+    "search": {
+      "search": "Suchen",
+      "reset": "Suchbegriff zurücksetzen"
+    },
+    "cart": {
+      "view": "Meinen Warenkorb ({{ count }}) anzeigen",
+      "item_added": "Artikel wurde in den Warenkorb gelegt",
+      "view_empty_cart": "Meinen Warenkorb anzeigen",
+      "opportunity": "Verpassen Sie diese Gelegenheit nicht!",
+      "to_checkout": "Kauf abschließen"
+    },
+    "share": {
+      "copy_to_clipboard": "Link kopieren",
+      "share_url": "Link",
+      "success_message": "Link in die Zwischenablage kopiert",
+      "close": "Teilen schließen"
+    },
+    "slider": {
+      "of": "von",
+      "next_slide": "Nach rechts schieben",
+      "previous_slide": "Nach links schieben",
+      "name": "Slider"
+    },
+    "colors": {
+      "black": "Schwarz",
+      "brown": "Braun",
+      "gray": "Dunkelgrau",
+      "light_gray": "Hellgrau",
+      "grey": "Dunkelgrau",
+      "light_grey": "Hellgrau",
+      "dark_blue": "Dunkelblau",
+      "blue": "Blau",
+      "green": "Dunkelgrün",
+      "red": "Rot",
+      "maroon": "Kastanienbraun",
+      "light_beige": "Hell beige",
+      "beige": "Beige",
+      "purple": "Lila",
+      "lime": "Kalk",
+      "yellow": "Gelb",
+      "orange": "Orange",
+      "ivory": "Elfenbein",
+      "pink": "Rosa",
+      "white": "Weiß"
+    }
+  },
+  "newsletter": {
+    "label": "E-Mail",
+    "success": "Danke für deine Anmeldung",
+    "button_label": "Abonnieren"
+  },
+  "accessibility": {
+    "skip_to_text": "Direkt zum Inhalt",
+    "close": "Schließen",
+    "unit_price_separator": "pro",
+    "vendor": "Anbieter:",
+    "error": "Fehler",
+    "refresh_page": "Wenn du dich für eine Auswahl entscheidest, wird die Seite komplett aktualisiert.",
+    "link_messages": {
+      "new_window": "Wird in einem neuen Fenster geöffnet.",
+      "external": "Öffnet externe Webseite."
+    },
+    "loading": "Wird geladen ...",
+    "skip_to_product_info": "Zu Produktinformationen springen",
+    "total_reviews": "Bewertungen insgesamt",
+    "star_reviews_info": "{{ rating_value }} von {{ rating_max }} Sternen",
+    "collapsible_content_title": "Einklappbarer Inhalt",
+    "complementary_products": "Ergänzende Produkte"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "read_more_title": "Weiterlesen: {{ title }}",
+      "comments": {
+        "one": "{{ count }} Kommentar",
+        "other": "{{ count }} Kommentare"
+      },
+      "moderated": "Bitte beachte, dass Kommentare vor der Veröffentlichung freigegeben werden müssen.",
+      "comment_form_title": "Hinterlasse einen Kommentar",
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Kommentar",
+      "post": "Kommentar posten",
+      "back_to_blog": "Zurück zum Blog",
+      "share": "Diesen Artikel teilen",
+      "success": "Dein Kommentar wurde erfolgreich gepostet! Vielen Dank!",
+      "success_moderated": "Dein Kommentar wurde erfolgreich gepostet. Da unser Blog moderiert wird, werden wir ihn erst kurze Zeit später veröffentlichen."
+    }
+  },
+  "onboarding": {
+    "product_title": "Beispiel für Produkttitel",
+    "collection_title": "Name deiner Kategorie"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "description": "Beschreibung",
+      "on_sale": "Sale",
+      "product_variants": "Produktvarianten",
+      "quantity": {
+        "label": "Anzahl",
+        "input_label": "Anzahl von {{ product }}",
+        "increase": "Erhöhe die Menge für {{ product }}",
+        "decrease": "Verringere die Menge für {{ product }}",
+        "minimum_of": "Mindestens {{ quantity }}",
+        "maximum_of": "Maximal {{ quantity }}",
+        "multiples_of": "In {{ quantity }}er Schritten",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> im Warenkorb"
+      },
+      "price": {
+        "from_price_html": "Von {{ price }}",
+        "regular_price": "Normaler Preis",
+        "sale_price": "Verkaufspreis",
+        "unit_price": "Grundpreis"
+      },
+      "share": "Dieses Produkt teilen",
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "vendor": "Anbieter",
+      "video_exit_message": "{{ title }} öffnet das Video auf derselben Seite im Vollbildmodus.",
+      "xr_button": "In deinem Bereich ansehen",
+      "xr_button_label": "\"Ansicht in deinem Raum\" lädt den Artikel in ein Augmented-Reality-Fenster",
+      "pickup_availability": {
+        "view_store_info": "Shop-Informationen anzeigen",
+        "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
+        "pick_up_available": "Abholung verfügbar",
+        "pick_up_available_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}<\/span> verfügbar",
+        "pick_up_unavailable_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}<\/span> derzeit nicht verfügbar",
+        "unavailable": "Verfügbarkeit für Abholungen konnte nicht geladen werden",
+        "refresh": "Aktualisieren"
+      },
+      "media": {
+        "open_media": "Medien {{ index }} in Modal öffnen",
+        "play_model": "3D-Viewer abspielen",
+        "play_video": "Video abspielen",
+        "gallery_viewer": "Galerie-Viewer",
+        "load_image": "Bild {{ index }} in Galerieansicht laden",
+        "load_model": "3D-Modell {{ index }} in Galerieansicht laden",
+        "load_video": "Video {{ index }} in Galerieansicht abspielen",
+        "image_available": "Bild {{ index }} ist nun in der Galerieansicht verfügbar"
+      },
+      "view_full_details": "Vollständige Details anzeigen",
+      "include_taxes": "inkl. MwSt.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Versand<\/a> wird beim Checkout berechnet",
+      "choose_options": "Optionen auswählen",
+      "choose_product_options": "Optionen für {{ product_name }} auswählen",
+      "value_unavailable": "{{ option_value }} – nicht verfügbar",
+      "variant_sold_out_or_unavailable": "Variante ausverkauft oder nicht verfügbar",
+      "inventory_in_stock": "Auf Lager",
+      "inventory_in_stock_show_count": "{{ quantity }} auf Lager",
+      "inventory_low_stock": "Niedriger Lagerbestand",
+      "inventory_low_stock_show_count": "Niedriger Lagerbestand: {{ quantity }} verbleibend",
+      "inventory_out_of_stock": "Nicht vorrätig",
+      "inventory_out_of_stock_continue_selling": "Auf Lager",
+      "sku": "SKU",
+      "choose_color_and_mats_set": "Farbe und Matten-Set wählen",
+      "check_set": "Überprüfen Sie das Set"
+    },
+    "modal": {
+      "label": "Medien-Galerie"
+    },
+    "facets": {
+      "apply": "Anwenden",
+      "clear": "Löschen",
+      "clear_all": "Alle entfernen",
+      "from": "Von",
+      "filter_and_sort": "Filtern und sortieren",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filter",
+      "filters_selected": {
+        "one": "{{ count }} ausgewählt",
+        "other": "{{ count }} ausgewählt"
+      },
+      "max_price": "Der höchste Preis ist {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} von {{ count }} Produkt",
+        "other": "{{ product_count }} von {{ count }} Produkten"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} Produkt",
+        "other": "{{ count }} Produkte"
+      },
+      "reset": "Zurücksetzen",
+      "sort_button": "Sortieren",
+      "sort_by_label": "Sortieren nach:",
+      "to": "Bis",
+      "clear_filter": "Filter entfernen",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} Filter ausgewählt)",
+      "show_more": "Mehr anzeigen",
+      "show_less": "Weniger anzeigen"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfe die Schreibweise oder versuche es mit einer anderen Suchanfrage.",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis",
+        "other": "{{ count }} Ergebnisse"
+      },
+      "title": "Suchergebnisse",
+      "page": "Seite",
+      "products": "Produkte",
+      "search_for": "Nach \"{{ terms }}\" suchen",
+      "results_with_count_and_term": {
+        "one": "{{ count }} Ergebnis für \"{{ terms }}\" gefunden",
+        "other": "{{ count }} Ergebnisse für \"{{ terms }}\" gefunden"
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }} Seite",
+        "other": "{{ count }} Seiten"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} Vorschlag",
+        "other": "{{ count }} Vorschläge"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} Produkt",
+        "other": "{{ count }} Produkte"
+      },
+      "suggestions": "Vorschläge",
+      "pages": "Seiten"
+    },
+    "cart": {
+      "cart": "Warenkorb"
+    },
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "E-Mail",
+        "phone": "Telefonnummer",
+        "comment": "Kommentar",
+        "send": "Senden",
+        "post_success": "Danke, dass du uns kontaktiert hast. Wir werden uns so schnell wie möglich bei dir melden.",
+        "error_heading": "Bitte passe Folgendes an:",
+        "title": "Kontaktformular"
+      }
+    },
+    "404": {
+      "title": "Seite nicht gefunden",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Ankündigung",
+      "menu": "Menü",
+      "cart_count": {
+        "one": "{{ count }} Artikel",
+        "other": "{{ count }} Artikel"
+      }
+    },
+    "home_8": {
+      "read_more": "Mehr lesen",
+      "read_less": "Weniger lesen"
+    },
+    "main_page": {
+      "read_more": "Mehr lesen",
+      "read_less": "Weniger lesen"
+    },
+    "brand_buttons": {
+      "back": "Alle",
+      "collection_title_prefix": "Automatten EVA für ",
+      "all_brands_path": "\/pages\/car-brands"
+    },
+    "cart": {
+      "title": "Dein Warenkorb",
+      "caption": "Artikel im Warenkorb",
+      "remove_title": "{{ title }} entfernen",
+      "subtotal": "Zwischensumme",
+      "new_subtotal": "Neue Zwischensumme",
+      "note": "Spezielle Bestellanweisungen",
+      "checkout": "Auschecken",
+      "empty": "Dein Warenkorb ist leer",
+      "cart_error": "Beim Aktualisieren deines Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      "cart_quantity_error_html": "Du kannst deinem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
+      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand<\/a> werden beim Checkout berechnet",
+      "taxes_included_but_shipping_at_checkout": "Inklusive Steuern, Versand wird beim Checkout berechnet",
+      "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand <\/a> wird beim Checkout berechnet",
+      "taxes_and_shipping_at_checkout": "Steuern und Versand werden beim Checkout berechnet",
+      "headings": {
+        "product": "Produkt",
+        "price": "Preis",
+        "total": "Gesamtsumme",
+        "quantity": "Anzahl",
+        "image": "Produktbild"
+      },
+      "update": "Aktualisieren",
+      "login": {
+        "title": "Hast du ein Konto?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logge dich ein<\/a>, damit es beim Checkout schneller geht."
+      },
+      "upsell_add_to_cart": "Hinzufügen",
+      "reservation_html": "Aufgrund der hohen Nachfrage und der Produktionsüberlastung haben wir einen Platz für Sie reserviert, um Ihre Bestellung schneller zu erfüllen. Die Reservierung ist gültig für die nächsten <span class=\"cart__time\"><span id=\"countdown-timer\"><\/span> Minuten.<\/span>",
+      "reservation_button": "Extend your reservation",
+      "progress_free_shipping": "Sie haben Anspruch auf kostenlosen Versand!",
+      "progress_text_order_value": "Ihr Auto verdient mehr! Fügen Sie Matten für {{value}} hinzu und erhalten Sie kostenlosen Versand!",
+      "progress_text_discount": "Ihr Auto verdient mehr! Fügen Sie Matten für {{ value }} hinzu und erhalten Sie {{ nextDiscount }} Rabatt!",
+      "progress_max_discount": "Maximaler Rabatt erreicht!",
+      "cart_upsell_variant_error": "Bitte eine Produktvariante wählen oder die Seite aktualisieren.",
+      "upsell_eva_note": "Farbe und Zellen wie bei Ihren Matten"
+    },
+    "footer": {
+      "payment": "Zahlungsmethoden"
+    },
+    "featured_blog": {
+      "view_all": "Alle anzeigen",
+      "onboarding_title": "Blog-Beitrag",
+      "onboarding_content": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag"
+    },
+    "featured_collection": {
+      "view_all": "Alle anzeigen",
+      "view_all_label": "Alle Produkte in der Kategorie {{ collection_name }} anzeigen"
+    },
+    "collection_list": {
+      "view_all": "Alle anzeigen"
+    },
+    "collection_template": {
+      "title": "Kategorie",
+      "empty": "Keine Produkte gefunden",
+      "use_fewer_filters_html": "Verwende weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entferne alle<\/a>"
+    },
+    "video": {
+      "load_video": "Video laden: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Folie laden",
+      "previous_slideshow": "Vorherige Folie",
+      "next_slideshow": "Nächste Folie",
+      "pause_slideshow": "Slideshow pausieren",
+      "play_slideshow": "Slideshow abspielen",
+      "carousel": "Karussell",
+      "slide": "Folie"
+    },
+    "page": {
+      "title": "Seitentitel"
+    },
+    "application_form": {
+      "next_button": "Weiter",
+      "name_and_surname": "Vor- und Nachname",
+      "brand": "Feuer",
+      "privacy_text_html": "Ich stimme <a href=\"\/policies\/privacy-policy\" title=\"Datenschutzrichtlinie\">Datenschutzrichtlinie<\/a> und <a href=\"\/policies\/terms-of-service\" title=\"Nutzungsbedingungen\">Nutzungsbedingungen<\/a> zu.<br><br><br>"
+    },
+    "announcements": {
+      "previous_announcement": "Vorherige Ankündigung",
+      "next_announcement": "Nächste Ankündigung",
+      "carousel": "Karussell",
+      "announcement": "Bekanntmachung",
+      "announcement_bar": "Ankündigungsleiste"
+    }
+  },
+  "localization": {
+    "country_label": "Land\/Region",
+    "language_label": "Sprache",
+    "update_language": "Sprache aktualisieren",
+    "update_country": "Land\/Region aktualisieren"
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "details": "Kontodetails",
+      "view_addresses": "Adressen anzeigen",
+      "return": "Zurück zu Kontodetails"
+    },
+    "account_fallback": "Konto",
+    "activate_account": {
+      "title": "Konto aktivieren",
+      "subtext": "Erstelle ein Passwort, um dein Konto zu aktiveren.",
+      "password": "Passwort",
+      "password_confirm": "Passwort bestätigen",
+      "submit": "Konto aktivieren",
+      "cancel": "Einladung ablehnen"
+    },
+    "addresses": {
+      "title": "Adressen",
+      "default": "Standard",
+      "add_new": "Neue Adresse hinzufügen",
+      "edit_address": "Adresse bearbeiten",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "company": "Unternehmen",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Ort",
+      "country": "Land\/Region",
+      "province": "Bundesland\/Provinz",
+      "zip": "PLZ",
+      "phone": "Telefonnummer",
+      "set_default": "Als Standard-Adresse festlegen",
+      "add": "Adresse hinzufügen",
+      "update": "Adresse aktualisieren",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "delete_confirm": "Bist du sicher, dass du diese Adresse löschen möchtest?"
+    },
+    "log_in": "Einloggen",
+    "log_out": "Abmelden",
+    "login_page": {
+      "cancel": "Abbrechen",
+      "create_account": "Konto erstellen",
+      "email": "E-Mail",
+      "forgot_password": "Hast du dein Passwort vergessen?",
+      "guest_continue": "Fortfahren",
+      "guest_title": "Als Gast fortsetzen",
+      "password": "Passwort",
+      "title": "Login",
+      "sign_in": "Anmelden",
+      "submit": "Senden"
+    },
+    "orders": {
+      "title": "Bestellhistorie",
+      "order_number": "Bestellung",
+      "order_number_link": "Bestellnummer {{ number }}",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Fulfillmentstatus",
+      "total": "Gesamtsumme",
+      "none": "Du hast noch keine Bestellungen aufgegeben."
+    },
+    "recover_password": {
+      "title": "Setze dein Passwort zurück",
+      "subtext": "Wir werden dir eine E-Mail zum Zurücksetzen deines Passworts schicken",
+      "success": "Wir haben dir eine E-Mail mit einem Link zum Aktualisieren deines Passworts geschickt."
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Erstellen"
+    },
+    "reset_password": {
+      "title": "Passwort für Konto zurücksetzen",
+      "subtext": "Neues Passwort eingeben",
+      "password": "Passwort",
+      "password_confirm": "Passwort bestätigen",
+      "submit": "Passwort zurücksetzen"
+    },
+    "order": {
+      "title": "Bestellung {{ name }}",
+      "date_html": "Aufgegeben am {{ date }}",
+      "cancelled_html": "Bestellung storniert am {{ date }}",
+      "cancelled_reason": "Grund: {{ reason }}",
+      "billing_address": "Rechnungsadresse",
+      "payment_status": "Zahlungsstatus",
+      "shipping_address": "Lieferadresse",
+      "fulfillment_status": "Fulfillmentstatus",
+      "discount": "Rabatt",
+      "shipping": "Versand",
+      "tax": "Steuer",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Preis",
+      "quantity": "Menge",
+      "total": "Gesamtsumme",
+      "fulfilled_at_html": "Ausgeführt am {{ date }}",
+      "track_shipment": "Sendung nachverfolgen",
+      "tracking_url": "Tracking-Link",
+      "tracking_company": "Versanddienstleister",
+      "tracking_number": "Trackingnummer",
+      "subtotal": "Zwischensumme",
+      "total_duties": "Zollgebühren",
+      "total_refunded": "Zurückerstattet"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Hier ist dein Geschenkgutschein im Wert von {{ value }} für {{ shop }}!",
+      "subtext": "Dein Geschenkgutschein",
+      "gift_card_code": "Gutscheincode",
+      "shop_link": "Weiter shoppen",
+      "remaining_html": "{{ balance }} verbleibend",
+      "add_to_apple_wallet": "Zu Apple Wallet hinzufügen",
+      "qr_image_alt": "QR-Code – Scannen, um Geschenkgutschein einzulösen",
+      "copy_code": "Code kopieren",
+      "expired": "Abgelaufen",
+      "copy_code_success": "Code erfolgreich kopiert",
+      "print_gift_card": "Drucken",
+      "how_to_use_gift_card": "Verwenden Sie den Geschenkkartencode online oder den QR-Code im Geschäft",
+      "expiration_date": "Läuft ab {{ expires_on }}"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Ich möchte das als Geschenk verschicken",
+      "email_label": "Empfänger E-Mail",
+      "email_label_optional_for_no_js_behavior": "Empfänger-E-Mail (optional)",
+      "email": "Email",
+      "name_label": "Empfängername (optional)",
+      "name": "Name",
+      "message_label": "Nachricht (optional)",
+      "message": "Nachricht",
+      "max_characters": "{{ max_chars }} max. Zeichen",
+      "send_on": "JJJJ-MM-TT",
+      "send_on_label": "Senden an (optional)"
+    }
+  },
+  "shopify": {
+    "pagination": {
+      "next": "Weiter"
+    }
+  }
+}

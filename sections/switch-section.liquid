@@ -1,0 +1,173 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+{{ 'switch-section.css' | asset_url | stylesheet_tag }}
+
+<div class="evamats-container">
+    <div class="evamats-title">
+        <h2>{{ section.settings.title }}</h2>
+       <div class="card-text-switch"> {{ section.settings.des }} </div>
+    </div>
+    <div class="evamats-backround">
+        <div class="evamats-content" id="image-block">
+            <div class="evamats-3d active" id="image1">
+                <div class="evamats-row">
+                    <img src="{{ section.settings.image1|image_url: width: 470 }}" alt="" loading='lazy'>
+                    <img class="mob-img" src="{{ section.settings.image2|image_url: width: 470 }}" alt="" loading='lazy'>
+                </div>
+                <div class="evamats-row">
+                    <img src="{{ section.settings.image3|image_url: width: 470 }}" alt="" loading='lazy'>
+                    <img class="mob-img" src="{{ section.settings.image4|image_url: width: 470 }}" alt="" loading='lazy'>
+                </div>
+            </div>
+
+            <div class="evamats-kl" id="image2">
+                <div class="evamats-row">
+                    <img class="mob-img" src="{{ section.settings.image5|image_url: width: 470 }}" alt="" loading='lazy'>
+                    <img src="{{ section.settings.image6|image_url: width: 470 }}" alt="" loading='lazy'>
+                </div>
+                <div class="evamats-row">
+                    <img class="mob-img" src="{{ section.settings.image7|image_url: width: 470 }}" alt="" loading='lazy'>
+                    <img src="{{ section.settings.image8|image_url: width: 470 }}" alt="" loading='lazy'>
+                </div>
+            </div>
+        </div>
+
+        <div id="switch-container">
+            <span class="label-left">{{ section.settings.label_left }}</span>
+            <label class="switch">
+                <input type="checkbox" id="switch" name="switch">
+                <span class="slider round"></span>
+            </label>
+            <span class="label-right">{{ section.settings.label_right }}</span>
+        </div>
+    </div>
+</div>
+
+          <script>
+        
+        document.getElementById("switch").addEventListener("change", function() {
+    var image1 = document.getElementById("image1");
+    var image2 = document.getElementById("image2");
+
+    if (this.checked) {
+        image1.classList.toggle("active");
+        image2.classList.toggle("active");
+    } else {
+        image1.classList.toggle("active");
+        image2.classList.toggle("active");
+    }
+        });
+
+    </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-text-switch').forEach(function(element) {
+        var text = element.textContent;
+        var charCount = text.length;
+        var maxChars = 200; // Adjust to your desired maximum characters
+
+        if (charCount > maxChars) {
+            var small = text.substring(0, maxChars);
+            var button = document.createElement('button');
+            button.className = 'btn-read-more-switch';
+            button.textContent = 'Read more';
+            element.after(button);
+
+            button.addEventListener('click', function() {
+                element.classList.toggle('expanded');
+                if (element.classList.contains('expanded')) {
+                    element.style.maxHeight = element.scrollHeight + 'px';
+                    button.textContent = 'Read less';
+                } else {
+                    element.style.maxHeight = '20px'; // Adjust to your desired initial height
+                    button.textContent = 'Read more';
+                }
+            });
+        }
+    });
+});
+
+</script>
+
+{% schema %}
+  {
+    "name": "Switch section",
+    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+      {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>pRozumiemy, jak ważne jest, aby poczuć to widmo emocji. I tym właśnie zajmujemy się w naszej firmie – pomagając Wam kształtować przyszłość Waszych dzieci. Rozumiemy, jak ważne jest, aby poczuć to widmo emocji. I tym właśnie zajmujemy się w naszej firmie – pomagając Wam kształtować przyszłość Waszych dzieci.</p>"
+    },
+    {
+      "type": "text",
+      "id": "label_left",
+      "label": "Left Label"
+    },
+    {
+      "type": "text",
+      "id": "label_right",
+      "label": "Right Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1 (Top Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2 (Top Right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3 (Bottom Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "Image 4 (Bottom Right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image5",
+      "label": "Image 1 (Top Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image6",
+      "label": "Image 2 (Top Right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image7",
+      "label": "Image 3 (Bottom Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image8",
+      "label": "Image 4 (Bottom Right)"
+    }
+  ],
+    "presets":[
+    {
+      "name":"Switch section",
+      "category":"custom"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

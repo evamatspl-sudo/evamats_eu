@@ -1,0 +1,61 @@
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign base_price_cents = variant.price | default: 0
+  assign locale_code = request.locale.iso_code | default: shop.locale
+  assign currency_code = cart.currency.iso_code | default: shop.currency
+
+  assign body_type_raw = product.metafields.custom.body_type
+  assign body_type_values = ''
+  if body_type_raw != blank
+    if body_type_raw.first
+      assign body_type_values = body_type_raw | join: ','
+    else
+      assign body_type_values = body_type_raw | append: ''
+    endif
+  endif
+-%}
+
+<div
+  class="price price--large price--show-badge evamats-price"
+  data-evamats-discount
+  data-product-id="gid://shopify/Product/{{ product.id }}"
+  data-variant-id="gid://shopify/ProductVariant/{{ variant.id }}"
+  data-variant-title="{{ variant.title | escape }}"
+  data-base-price-cents="{{ base_price_cents }}"
+  data-body-type="{{ body_type_values | escape }}"
+  data-currency="{{ currency_code }}"
+  data-locale="{{ locale_code }}"
+  data-proxy-url="/apps/evamats-discounts/preview"
+  data-savings-template="Oszczędzasz -{percent}%"
+>
+  <div class="price__container">
+    <div class="price__regular" style="display:block;">
+      <span class="visually-hidden visually-hidden--inline">
+        {{ 'products.product.price.regular_price' | t }}
+      </span>
+      <span
+        class="price-item price-item--regular dmixer-original-price"
+        data-evamats-compare
+        style="text-decoration:none;"
+      >
+        {{ base_price_cents | money_without_trailing_zeros }}
+      </span>
+      <div class="dmixer-price-wrapper" style="display: inline-flex;">
+        <div class="dmixer-price" style="display: inline-flex; flex-direction: row; gap: 8px;">
+          <span
+            class="price-item price-item--regular dmixer-discounted-price"
+            data-evamats-sale
+            data-discounted-price=""
+            style="display:none;"
+          >
+            {{ base_price_cents | money_without_trailing_zeros }}
+          </span>
+          <span class="dmixer-sale-badge" data-evamats-savings style="display: none;"></span>
+        </div>
+      </div>
+    </div>
+    <div class="price__sale" style="display:none;"></div>
+  </div>
+</div>
+
+<script src="{{ 'evamats-discount-preview.js' | asset_url }}" defer></script>

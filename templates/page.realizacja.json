@@ -1,0 +1,766 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Talk about your brand<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jako specjaliści w dziedzinie produkcji najwyższej jakości dywaników samochodowych, doskonale zdajemy sobie sprawę, że droga na skróty prowadzi donikąd. Zamiast drogi na skróty, wybieramy ścieżkę pełnego profesjonalizmu, tworząc akcesoria dedykowane dla konkretnych modeli.<\/p><p>Zrealizowaliśmy masę zamówień dla użytkowników modeli samochodów, które rokrocznie plasują się na szczycie rankingów sprzedaży. Należy tu wskazać choćby na różne modele Volkswagena, Skody, Toyoty, Renault, Fiata czy Forda. Odpowiadamy także na potrzeby użytkowników aut premium, takich jak choćby Audi, BMW, Mercedes-Benz, Range Rover czy Porsche. <\/p><p>Dywaniki EVA - dla każdego modelu samochodu!<\/p><p>Jako miłośnicy motoryzacji nie możemy przeoczyć faktu, że na polskich ulicach pojawia się coraz więcej egzotyków. Naszemu doświadczeniu i umiejętnością zaufali także właściciele aut, które jak żadne inne skupiają na sobie spojrzenia przechodniów. Wykonaliśmy już dywaniki m.in. do supersportowego Mercedesa AMG GT, Hummera H2, czyli kultowego pogromcy bezdroży z USA i wielu innych ekskluzywnych maszyn.<\/p><p>Nie zapominamy o właścicielach pojazdów niestandardowych, którym daleko do fabrycznej specyfikacji. Wykonałeś w swoim busie zabudowę kempingową, a teraz szukasz estetycznych dywaników, które dodadzą wnętrzu charakteru, a przy tym będą łatwe w utrzymaniu i wytrzymałe? Jesteśmy tu po to, żeby Ci pomóc! Nasze dywaniki szyjemy na wymiar. A może pokryłeś swoje auto lakierem lub folią w kolorze spoza fabrycznej palety i wykonałeś unikatowe obicie tapicerskie we wnętrzu? Możesz na nas liczyć! Każdemu Klientowi dajemy możliwość wyboru koloru maty i obszycia, przy czym należy podkreślić, że oba te elementy mogą być utrzymane w tej samej lub kontrastującej tonacji. Przekłada się to na więcej niż 195 różnych kombinacji. Każdy bez najmniejszego problemu znajdzie u nas idealne dywaniki, które zgrają się z kolorem nadwozia, wnętrza lub pojedynczych detali, jak choćby ozdobnych dekorów na konsoli centralnej. <\/p><p>Poniżej prezentujemy kilka zdjęć z finalnym efektem naszej pracy w różnych modelach i typach pojazdów.<\/p>"
+          }
+        },
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-0",
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-1",
+        "template--18380198641970__ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b-1681291571a3cb1a20-2"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "1766ec0f-6ec5-4bce-ac00-b7ae7ce5a827": {
+      "type": "brand-buttons-for-blog",
+      "blocks": {
+        "f539164e-7a3d-4fb5-8a77-dfdfd4e9818a": {
+          "type": "section",
+          "disabled": true,
+          "settings": {
+            "blog": "",
+            "page_link": "poznaj-realizacje-marki-evamats",
+            "color-code": "Wszystko"
+          }
+        },
+        "bcba458a-202d-4428-8886-f301cb85083c": {
+          "type": "section",
+          "settings": {
+            "blog": "audi",
+            "page_link": "",
+            "color-code": "Audi"
+          }
+        },
+        "700f4cb0-b29a-4c35-9f08-a40de2f5692d": {
+          "type": "section",
+          "settings": {
+            "blog": "bmw",
+            "page_link": "",
+            "color-code": "BMW"
+          }
+        },
+        "c362156b-c840-402c-a42b-ffa95ea3a5f4": {
+          "type": "section",
+          "settings": {
+            "blog": "citroen",
+            "page_link": "",
+            "color-code": "Citroen"
+          }
+        },
+        "86da6d2d-1ee6-492e-96c4-8daf8602be3e": {
+          "type": "section",
+          "settings": {
+            "blog": "chevrolet",
+            "page_link": "",
+            "color-code": "Chevrolet"
+          }
+        },
+        "905aabca-8064-45d6-aa2a-847bc74917e8": {
+          "type": "section",
+          "settings": {
+            "blog": "chrysler",
+            "page_link": "",
+            "color-code": "Chrysler"
+          }
+        },
+        "c6e42959-f362-456b-a532-24305150e125": {
+          "type": "section",
+          "settings": {
+            "blog": "dacia",
+            "page_link": "",
+            "color-code": "Dacia"
+          }
+        },
+        "13164730-bf7b-4a2b-85a5-40f10e3a6c79": {
+          "type": "section",
+          "settings": {
+            "blog": "dodge",
+            "page_link": "",
+            "color-code": "Dodge"
+          }
+        },
+        "db17f202-a13c-4d21-a536-b4b7c92f0eb8": {
+          "type": "section",
+          "settings": {
+            "blog": "fiat",
+            "page_link": "",
+            "color-code": "Fiat"
+          }
+        },
+        "f50a6aab-10ad-4c13-92c8-4be6a36104f0": {
+          "type": "section",
+          "settings": {
+            "blog": "ford",
+            "page_link": "",
+            "color-code": "Ford"
+          }
+        },
+        "f25f7362-7bc8-42e1-b515-8572a4da1db5": {
+          "type": "section",
+          "settings": {
+            "blog": "honda",
+            "page_link": "",
+            "color-code": "Honda"
+          }
+        },
+        "190a304c-c84e-49b4-979f-ac6c68ac1239": {
+          "type": "section",
+          "settings": {
+            "blog": "hyundai",
+            "page_link": "",
+            "color-code": "Hyundai"
+          }
+        },
+        "0788b659-371d-48be-85ca-3b1bbc3f4816": {
+          "type": "section",
+          "settings": {
+            "blog": "lexus",
+            "page_link": "",
+            "color-code": "Lexus"
+          }
+        },
+        "c2bfe751-5859-4865-a964-906a77a8ba4c": {
+          "type": "section",
+          "settings": {
+            "blog": "mazda",
+            "page_link": "",
+            "color-code": "Mazda"
+          }
+        },
+        "eadffda4-4f72-48df-94b9-81d554d9182a": {
+          "type": "section",
+          "settings": {
+            "blog": "mercedes-benz",
+            "page_link": "",
+            "color-code": "Mercedes-Benz"
+          }
+        },
+        "323cd123-8a88-42c2-bb18-a7cb6a89b52c": {
+          "type": "section",
+          "settings": {
+            "blog": "nissan",
+            "page_link": "",
+            "color-code": "Nissan"
+          }
+        },
+        "bbb10890-0eba-455b-b5bd-23901d5daedd": {
+          "type": "section",
+          "settings": {
+            "blog": "opel",
+            "page_link": "",
+            "color-code": "Opel"
+          }
+        },
+        "bcff8a84-1337-464a-956d-664639f9ec95": {
+          "type": "section",
+          "settings": {
+            "blog": "peugeot",
+            "page_link": "",
+            "color-code": "Peugeot"
+          }
+        },
+        "2c800ee3-7a99-4087-8a72-b4701dd261ab": {
+          "type": "section",
+          "settings": {
+            "blog": "jeep",
+            "page_link": "",
+            "color-code": "Jeep"
+          }
+        },
+        "b1663cda-a131-4ff1-b01b-23512ced3481": {
+          "type": "section",
+          "settings": {
+            "blog": "porsche",
+            "page_link": "",
+            "color-code": "Porsche"
+          }
+        },
+        "a066f8e7-7038-464c-903a-1aa9f3d4ebe7": {
+          "type": "section",
+          "settings": {
+            "blog": "range-rover",
+            "page_link": "",
+            "color-code": "Range Rover"
+          }
+        },
+        "ffc45943-e246-459f-8f8c-04761d8300fb": {
+          "type": "section",
+          "settings": {
+            "blog": "renault",
+            "page_link": "",
+            "color-code": "Renault"
+          }
+        },
+        "d7a05eba-a6a2-469e-b5da-1365573848c9": {
+          "type": "section",
+          "settings": {
+            "blog": "saab",
+            "page_link": "",
+            "color-code": "Saab"
+          }
+        },
+        "b4f1e567-05d4-4e81-8e72-07545700e301": {
+          "type": "section",
+          "settings": {
+            "blog": "seat",
+            "page_link": "",
+            "color-code": "Seat"
+          }
+        },
+        "a1e54816-f5ff-4efa-8a7b-fe3868c22384": {
+          "type": "section",
+          "settings": {
+            "blog": "seres",
+            "page_link": "",
+            "color-code": "Seres"
+          }
+        },
+        "fe44fa78-3814-405e-92b9-cff66228e5da": {
+          "type": "section",
+          "settings": {
+            "blog": "skoda",
+            "page_link": "",
+            "color-code": "Skoda"
+          }
+        },
+        "2c786fdc-2337-4e56-bf3d-5aab881ea91b": {
+          "type": "section",
+          "settings": {
+            "blog": "skywell",
+            "page_link": "",
+            "color-code": "Skywell"
+          }
+        },
+        "86d9df8c-a20d-42dd-95d3-211b68422ab7": {
+          "type": "section",
+          "settings": {
+            "blog": "subaru",
+            "page_link": "",
+            "color-code": "Subaru"
+          }
+        },
+        "2abbc098-bebc-4020-a558-cc197840c02b": {
+          "type": "section",
+          "settings": {
+            "blog": "suzuki",
+            "page_link": "",
+            "color-code": "Suzuki"
+          }
+        },
+        "688b5f82-7939-4e6d-922b-bfacaaa02c0d": {
+          "type": "section",
+          "settings": {
+            "blog": "tesla",
+            "page_link": "",
+            "color-code": "Tesla"
+          }
+        },
+        "3a795d40-f81a-4b40-a943-eddfa28a8ed1": {
+          "type": "section",
+          "settings": {
+            "blog": "toyota",
+            "page_link": "",
+            "color-code": "Toyota"
+          }
+        },
+        "799a4c9f-31fa-4615-9ebf-8df458187296": {
+          "type": "section",
+          "settings": {
+            "blog": "kia",
+            "page_link": "",
+            "color-code": "Kia"
+          }
+        },
+        "5fe4626e-7655-4191-b4d0-da1a58117c78": {
+          "type": "section",
+          "settings": {
+            "blog": "volvo",
+            "page_link": "",
+            "color-code": "Volvo"
+          }
+        },
+        "476028cf-15e0-4fae-a81e-8586a1a53e23": {
+          "type": "section",
+          "settings": {
+            "blog": "volkswagen",
+            "page_link": "",
+            "color-code": "Volkswagen"
+          }
+        },
+        "f3912c57-db51-4f91-b26e-dae169994b01": {
+          "type": "section",
+          "settings": {
+            "blog": "minivan",
+            "page_link": "",
+            "color-code": "Minivan"
+          }
+        },
+        "bbc7fbde-2d9c-4942-8b11-9a92ed5f2498": {
+          "type": "section",
+          "settings": {
+            "blog": "bus",
+            "page_link": "",
+            "color-code": "Bus"
+          }
+        },
+        "96e81757-81b2-43a3-ac5f-e4ca6dac47ca": {
+          "type": "section",
+          "settings": {
+            "blog": "camper",
+            "page_link": "",
+            "color-code": "Camper"
+          }
+        },
+        "b28d61d4-fb70-4037-8657-c639baef499d": {
+          "type": "section",
+          "settings": {
+            "blog": "pick-up",
+            "page_link": "",
+            "color-code": "Pick-up"
+          }
+        },
+        "475d2459-c7a1-433d-bc71-0c59a2e297d3": {
+          "type": "section",
+          "settings": {
+            "blog": "inne",
+            "page_link": "",
+            "color-code": "Inne"
+          }
+        }
+      },
+      "block_order": [
+        "f539164e-7a3d-4fb5-8a77-dfdfd4e9818a",
+        "bcba458a-202d-4428-8886-f301cb85083c",
+        "700f4cb0-b29a-4c35-9f08-a40de2f5692d",
+        "c362156b-c840-402c-a42b-ffa95ea3a5f4",
+        "86da6d2d-1ee6-492e-96c4-8daf8602be3e",
+        "905aabca-8064-45d6-aa2a-847bc74917e8",
+        "c6e42959-f362-456b-a532-24305150e125",
+        "13164730-bf7b-4a2b-85a5-40f10e3a6c79",
+        "db17f202-a13c-4d21-a536-b4b7c92f0eb8",
+        "f50a6aab-10ad-4c13-92c8-4be6a36104f0",
+        "f25f7362-7bc8-42e1-b515-8572a4da1db5",
+        "190a304c-c84e-49b4-979f-ac6c68ac1239",
+        "0788b659-371d-48be-85ca-3b1bbc3f4816",
+        "c2bfe751-5859-4865-a964-906a77a8ba4c",
+        "eadffda4-4f72-48df-94b9-81d554d9182a",
+        "323cd123-8a88-42c2-bb18-a7cb6a89b52c",
+        "bbb10890-0eba-455b-b5bd-23901d5daedd",
+        "bcff8a84-1337-464a-956d-664639f9ec95",
+        "2c800ee3-7a99-4087-8a72-b4701dd261ab",
+        "b1663cda-a131-4ff1-b01b-23512ced3481",
+        "a066f8e7-7038-464c-903a-1aa9f3d4ebe7",
+        "ffc45943-e246-459f-8f8c-04761d8300fb",
+        "d7a05eba-a6a2-469e-b5da-1365573848c9",
+        "b4f1e567-05d4-4e81-8e72-07545700e301",
+        "a1e54816-f5ff-4efa-8a7b-fe3868c22384",
+        "fe44fa78-3814-405e-92b9-cff66228e5da",
+        "2c786fdc-2337-4e56-bf3d-5aab881ea91b",
+        "86d9df8c-a20d-42dd-95d3-211b68422ab7",
+        "2abbc098-bebc-4020-a558-cc197840c02b",
+        "688b5f82-7939-4e6d-922b-bfacaaa02c0d",
+        "3a795d40-f81a-4b40-a943-eddfa28a8ed1",
+        "799a4c9f-31fa-4615-9ebf-8df458187296",
+        "5fe4626e-7655-4191-b4d0-da1a58117c78",
+        "476028cf-15e0-4fae-a81e-8586a1a53e23",
+        "f3912c57-db51-4f91-b26e-dae169994b01",
+        "bbc7fbde-2d9c-4942-8b11-9a92ed5f2498",
+        "96e81757-81b2-43a3-ac5f-e4ca6dac47ca",
+        "b28d61d4-fb70-4037-8657-c639baef499d",
+        "475d2459-c7a1-433d-bc71-0c59a2e297d3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "de2470af-1710-42ea-83a7-532315a40c96": {
+      "type": "sidebar",
+      "blocks": {
+        "a5983334-62c4-4eb1-8eb3-7b4522bcf656": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/audi",
+            "color-code": "Audi"
+          }
+        },
+        "81c911da-3041-4ea4-a89f-0ef521782cd2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/bmw",
+            "color-code": "BMW"
+          }
+        },
+        "be49dbd0-3bab-4171-ab6b-409d9e3bfea3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/citroen",
+            "color-code": "Citroen"
+          }
+        },
+        "b55e32ab-624c-4682-9b81-221833139425": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/chevrolet",
+            "color-code": "Chevrolet"
+          }
+        },
+        "daaf1427-cb98-4d8a-b000-585fe5b2c1a3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/chrysler",
+            "color-code": "Chrysler"
+          }
+        },
+        "1642d81f-42d2-4aa3-ba9e-208c10f3b18c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/dacia",
+            "color-code": "Dacia"
+          }
+        },
+        "964b3837-4748-4590-82cc-133e6a2cc7c0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/dodge",
+            "color-code": "Dodge"
+          }
+        },
+        "ef43f967-a95b-4c2f-a354-2bfcdfb1ca7e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/fiat",
+            "color-code": "Fiat"
+          }
+        },
+        "bfcb6caf-545f-425f-9703-31ef76cc97d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/ford",
+            "color-code": "Ford"
+          }
+        },
+        "c397e74a-4dee-4033-9b38-72267d8e1a69": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/honda",
+            "color-code": "Honda"
+          }
+        },
+        "7a2dd0e2-4a00-48c4-b446-d52221d93051": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/hyundai",
+            "color-code": "Hyundai"
+          }
+        },
+        "370d6a5b-d88c-4e36-b859-24bcefd52f05": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/lexus",
+            "color-code": "Lexus"
+          }
+        },
+        "ea742fbe-cef0-428b-9cac-40ed908869da": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/mazda",
+            "color-code": "Mazda"
+          }
+        },
+        "cd4efa12-c1d9-45a6-8418-84893348d708": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/mercedes-benz",
+            "color-code": "Mercedes-Benz"
+          }
+        },
+        "c3bb217b-4044-4eac-9cb5-8b7031e9e40e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/nissan",
+            "color-code": "Nissan"
+          }
+        },
+        "f3529633-a22e-4003-b9cf-c992353488cb": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/opel",
+            "color-code": "Opel"
+          }
+        },
+        "b0b3c42f-af2c-4c90-bedc-d7515894d586": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/peugeot",
+            "color-code": "Peugeot"
+          }
+        },
+        "216c09bb-97ba-40b0-9763-cb182dcfc58b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/jeep",
+            "color-code": "Jeep"
+          }
+        },
+        "43363b17-ecc5-4e6c-ba54-d9b3b47b8636": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/porsche",
+            "color-code": "Porsche"
+          }
+        },
+        "721a915f-1524-4f75-a128-2a4bbfe3d5a6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/range-rover",
+            "color-code": "Range Rover"
+          }
+        },
+        "ac490f3e-fe3e-4643-821a-9f8686e2a991": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/renault",
+            "color-code": "Renault"
+          }
+        },
+        "bbe42590-f50b-4332-8ce4-90f3d359adfa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/saab",
+            "color-code": "Saab"
+          }
+        },
+        "f8061f67-17dc-4d67-bbd2-e7cc9961c93c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/seat",
+            "color-code": "Seat"
+          }
+        },
+        "ca037d8c-c938-4374-9214-f1d868257cca": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/seres",
+            "color-code": "Seres"
+          }
+        },
+        "5aaa69b5-d8ea-4aa1-be46-3cb3c43578aa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/skoda",
+            "color-code": "Skoda"
+          }
+        },
+        "f63a1fd1-7bf0-4bb7-ba73-b0d7b5e26c26": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/skywell",
+            "color-code": "Skywell"
+          }
+        },
+        "7fb85429-6106-440e-82a7-2b9f92cb9332": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/subaru",
+            "color-code": "Subaru"
+          }
+        },
+        "41978bbb-9a75-4001-a19b-b952a4d9a630": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/suzuki",
+            "color-code": "Suzuki"
+          }
+        },
+        "bdac81f3-b61b-4ce4-85cb-728346403a31": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/tesla",
+            "color-code": "Tesla"
+          }
+        },
+        "9628688e-fc67-43be-b8b6-f29404a477a4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/toyota",
+            "color-code": "Toyota"
+          }
+        },
+        "eafb52e8-2104-4d70-9634-d794b22f365d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/kia",
+            "color-code": "Kia"
+          }
+        },
+        "ebd446a4-e804-4023-9b27-bd39931b2747": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/volvo",
+            "color-code": "Volvo"
+          }
+        },
+        "2d1aae21-43cb-4f47-88ca-7b88b05abb45": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/volkswagen",
+            "color-code": "Volkswagen"
+          }
+        },
+        "8f82722f-2d91-480a-ac05-4a79d71f5c40": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/minivan",
+            "color-code": "Minivan"
+          }
+        },
+        "49a753ac-b424-41d1-82dc-6237e90eb3bf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/bus",
+            "color-code": "Bus"
+          }
+        },
+        "de16b1aa-12a5-4a9c-b5fb-16d01bb6837f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/camper",
+            "color-code": "Camper"
+          }
+        },
+        "5942ec86-d0b4-4990-94ed-ecbeb48eb66f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/pick-up",
+            "color-code": "Pick-up"
+          }
+        },
+        "592cf331-1ca5-4665-a47d-a21a70dc6c2d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/blogs\/inne",
+            "color-code": "Inne"
+          }
+        }
+      },
+      "block_order": [
+        "a5983334-62c4-4eb1-8eb3-7b4522bcf656",
+        "81c911da-3041-4ea4-a89f-0ef521782cd2",
+        "be49dbd0-3bab-4171-ab6b-409d9e3bfea3",
+        "b55e32ab-624c-4682-9b81-221833139425",
+        "daaf1427-cb98-4d8a-b000-585fe5b2c1a3",
+        "1642d81f-42d2-4aa3-ba9e-208c10f3b18c",
+        "964b3837-4748-4590-82cc-133e6a2cc7c0",
+        "ef43f967-a95b-4c2f-a354-2bfcdfb1ca7e",
+        "bfcb6caf-545f-425f-9703-31ef76cc97d2",
+        "c397e74a-4dee-4033-9b38-72267d8e1a69",
+        "7a2dd0e2-4a00-48c4-b446-d52221d93051",
+        "370d6a5b-d88c-4e36-b859-24bcefd52f05",
+        "ea742fbe-cef0-428b-9cac-40ed908869da",
+        "cd4efa12-c1d9-45a6-8418-84893348d708",
+        "c3bb217b-4044-4eac-9cb5-8b7031e9e40e",
+        "f3529633-a22e-4003-b9cf-c992353488cb",
+        "b0b3c42f-af2c-4c90-bedc-d7515894d586",
+        "216c09bb-97ba-40b0-9763-cb182dcfc58b",
+        "43363b17-ecc5-4e6c-ba54-d9b3b47b8636",
+        "721a915f-1524-4f75-a128-2a4bbfe3d5a6",
+        "ac490f3e-fe3e-4643-821a-9f8686e2a991",
+        "bbe42590-f50b-4332-8ce4-90f3d359adfa",
+        "f8061f67-17dc-4d67-bbd2-e7cc9961c93c",
+        "ca037d8c-c938-4374-9214-f1d868257cca",
+        "5aaa69b5-d8ea-4aa1-be46-3cb3c43578aa",
+        "f63a1fd1-7bf0-4bb7-ba73-b0d7b5e26c26",
+        "7fb85429-6106-440e-82a7-2b9f92cb9332",
+        "41978bbb-9a75-4001-a19b-b952a4d9a630",
+        "bdac81f3-b61b-4ce4-85cb-728346403a31",
+        "9628688e-fc67-43be-b8b6-f29404a477a4",
+        "eafb52e8-2104-4d70-9634-d794b22f365d",
+        "ebd446a4-e804-4023-9b27-bd39931b2747",
+        "2d1aae21-43cb-4f47-88ca-7b88b05abb45",
+        "8f82722f-2d91-480a-ac05-4a79d71f5c40",
+        "49a753ac-b424-41d1-82dc-6237e90eb3bf",
+        "de16b1aa-12a5-4a9c-b5fb-16d01bb6837f",
+        "5942ec86-d0b4-4990-94ed-ecbeb48eb66f",
+        "592cf331-1ca5-4665-a47d-a21a70dc6c2d"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All brands",
+        "collection-margin-bottom": false
+      }
+    },
+    "4064945f-e451-4fec-8228-cda205ee7c4b": {
+      "type": "all-blog-post",
+      "custom_css": [
+        "@media screen and (max-width: 748px) {.blog__posts {display: flex; flex-wrap: wrap; } .article {scroll-snap-align: start; flex: 0 0 45%; } .h2 {font-size: calc(var(--font-heading-scale) * 1.5rem); } p {line-height: 22px; font-size: 1.5rem; } .card__information {padding: 0; } .blog__posts {justify-content: center; gap: 2%; } .grid--peek.slider .grid__item:first-of-type {margin-left: 0; }}"
+      ],
+      "settings": {
+        "posts_to_show": "audi,bmw,citroen,chevrolet,chrysler,dacia,dodge,fiat,ford,honda,hyunday,lexus,mazda,mercedes-benz,nissan,opel,peugeot,jeep,porsche,range-rover,renault,saab,seat,seres,skoda,skywell,subaru,suzuki,tesla,toyota,kia,volvo,volkswagen,minivan,bus,camper,pick-up,inne",
+        "heading": "ALL REALIZATIONS",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ab2d5e67-3566-44f6-92fa-bf2ba0e9f81b",
+    "1766ec0f-6ec5-4bce-ac00-b7ae7ce5a827",
+    "de2470af-1710-42ea-83a7-532315a40c96",
+    "4064945f-e451-4fec-8228-cda205ee7c4b"
+  ]
+}

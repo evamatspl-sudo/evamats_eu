@@ -1,0 +1,77 @@
+<section>
+            <div class="main-banner">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="second-left">
+                            {{ section.settings.hd }}
+                            {{ section.settings.des }}
+                            <a href="{{ section.settings.btn_url }}">
+                            <button class="button">{{ section.settings.btn_text }}</button>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="second-right">
+                            <div class="second-main-image">
+<!--                                 <img src="{{ section.settings.img|img_url:'master' }}" alt=""> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<style>
+.main-banner{
+  height: 100vh;
+}
+  </style>
+{% schema %}
+{
+  "name": "home1",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Main Heading",
+      "id":"hd",
+      "default":"<h1><span>premium </span>maty samochodowe</h1>"
+    },
+    {
+      "type":"richtext",
+      "label":"Description",
+      "id":"des",
+      "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+    },
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"SHOP NOW"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    },
+    {
+      "type":"image_picker",
+      "label":"Main Image",
+      "id":"img"
+    }
+  ],
+  "presets":[
+    {
+      "name":"home1",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

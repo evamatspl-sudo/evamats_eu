@@ -1,0 +1,549 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "c4033c08-b35a-4b4e-8bbd-236ec881abb1": {
+      "type": "sidebar",
+      "blocks": {
+        "section_U7KpyB": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-avalanche",
+            "color-code": "Avalanche"
+          }
+        },
+        "266d6db4-0057-4bc7-a649-69f19d0e3c82": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/chevrolet-aveo",
+            "color-code": "Aveo"
+          }
+        },
+        "7e0c42cb-05df-4c08-8011-cfe5102ef1af": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-aveo-kalos",
+            "color-code": "Aveo \/ Kalos"
+          }
+        },
+        "section_DyaUAV": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-blazer",
+            "color-code": "Blazer"
+          }
+        },
+        "79063703-33f3-4413-b8bf-55d8a9f3bfb0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-bolt",
+            "color-code": "Bolt"
+          }
+        },
+        "352f5f05-2e43-4bb1-abd1-c1c831ab5544": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-camaro",
+            "color-code": "Camaro"
+          }
+        },
+        "4fe7a925-a541-4574-a810-30a35b29f923": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-captiva",
+            "color-code": "Captiva"
+          }
+        },
+        "5b8c0190-6498-4cc6-948b-d3794fdc00e0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-cobalt",
+            "color-code": "Cobalt"
+          }
+        },
+        "cb60b4c8-183a-4543-80a5-e670ce97a542": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-corvette",
+            "color-code": "Corvette"
+          }
+        },
+        "a154e544-3291-482d-ae94-f1520d1e8b19": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-cruze",
+            "color-code": "Cruze"
+          }
+        },
+        "section_f7dGQY": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chverolet-epica",
+            "color-code": "Epica"
+          }
+        },
+        "section_MyqUDw": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-equinox",
+            "color-code": "Equinox"
+          }
+        },
+        "340c85dd-e7d4-4ef6-acf5-ae5a380bf1c0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-evanda",
+            "color-code": "Evanda"
+          }
+        },
+        "a6aec829-1217-4c76-aab3-9d724d19a359": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-express",
+            "color-code": "Express"
+          }
+        },
+        "section_PWrbRE": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-groove",
+            "color-code": "Groove"
+          }
+        },
+        "section_rRXBak": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-impala",
+            "color-code": "Impala"
+          }
+        },
+        "0d246062-b793-484c-bc09-4d90fe78890b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-lacetti",
+            "color-code": "Lacetti"
+          }
+        },
+        "e888357b-8fa8-4881-98ea-93d82ef0f2e5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-malibu",
+            "color-code": "Malibu"
+          }
+        },
+        "section_QzKTLg": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-menlo",
+            "color-code": "Menlo"
+          }
+        },
+        "ded58609-0749-4395-9555-68465365e498": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-nubira",
+            "color-code": "Nubira"
+          }
+        },
+        "476dcc4d-58ce-4a05-a468-80023870356f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-orlando",
+            "color-code": "Orlando"
+          }
+        },
+        "55d3d043-8a8e-4b6f-9316-ece35c6baaa3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-rezzo-tacuma",
+            "color-code": "Rezzo \/ Tacuma"
+          }
+        },
+        "349d3a91-f1ad-46b6-ac6a-84d38ca5e41a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-spark",
+            "color-code": "Spark"
+          }
+        },
+        "section_nbMRPa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-seeker",
+            "color-code": "Seeker"
+          }
+        },
+        "section_ndPWkD": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-silverado",
+            "color-code": "Silverado"
+          }
+        },
+        "26bb9a5e-f59b-41a3-abd4-6cd5a81dc420": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-suburban",
+            "color-code": "Suburban"
+          }
+        },
+        "80ba1005-1d25-4ce9-90a6-ed5c49db0499": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-tahoe",
+            "color-code": "Tahoe"
+          }
+        },
+        "section_NG7b7t": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-trailblazer",
+            "color-code": "TrailBlazer"
+          }
+        },
+        "section_WeVpba": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-traverse",
+            "color-code": "Traverse"
+          }
+        },
+        "section_wbWz8E": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-trax",
+            "color-code": "Trax"
+          }
+        }
+      },
+      "block_order": [
+        "section_U7KpyB",
+        "266d6db4-0057-4bc7-a649-69f19d0e3c82",
+        "7e0c42cb-05df-4c08-8011-cfe5102ef1af",
+        "section_DyaUAV",
+        "79063703-33f3-4413-b8bf-55d8a9f3bfb0",
+        "352f5f05-2e43-4bb1-abd1-c1c831ab5544",
+        "4fe7a925-a541-4574-a810-30a35b29f923",
+        "5b8c0190-6498-4cc6-948b-d3794fdc00e0",
+        "cb60b4c8-183a-4543-80a5-e670ce97a542",
+        "a154e544-3291-482d-ae94-f1520d1e8b19",
+        "section_f7dGQY",
+        "section_MyqUDw",
+        "340c85dd-e7d4-4ef6-acf5-ae5a380bf1c0",
+        "a6aec829-1217-4c76-aab3-9d724d19a359",
+        "section_PWrbRE",
+        "section_rRXBak",
+        "0d246062-b793-484c-bc09-4d90fe78890b",
+        "e888357b-8fa8-4881-98ea-93d82ef0f2e5",
+        "section_QzKTLg",
+        "ded58609-0749-4395-9555-68465365e498",
+        "476dcc4d-58ce-4a05-a468-80023870356f",
+        "55d3d043-8a8e-4b6f-9316-ece35c6baaa3",
+        "349d3a91-f1ad-46b6-ac6a-84d38ca5e41a",
+        "section_nbMRPa",
+        "section_ndPWkD",
+        "26bb9a5e-f59b-41a3-abd4-6cd5a81dc420",
+        "80ba1005-1d25-4ce9-90a6-ed5c49db0499",
+        "section_NG7b7t",
+        "section_WeVpba",
+        "section_wbWz8E"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "section_8JLh96": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-avalanche",
+            "color-code": "Avalanche"
+          }
+        },
+        "4ba264f5-da11-4950-888c-a082a4740339": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/chevrolet-aveo",
+            "color-code": "Aveo"
+          }
+        },
+        "3677fce9-2805-48d2-b37d-783677c4bcef": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-aveo-kalos",
+            "color-code": "Aveo \/ Kalos"
+          }
+        },
+        "7c662846-67a5-40a5-911a-9933a165bf8d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-bolt",
+            "color-code": "Bolt"
+          }
+        },
+        "section_RFnPQi": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-blazer",
+            "color-code": "Blazer"
+          }
+        },
+        "be4bd492-472e-4d30-92ef-effcf720c4ff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-camaro",
+            "color-code": "Camaro"
+          }
+        },
+        "0a9cc9b1-b015-41c7-8754-6546472cd757": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-captiva",
+            "color-code": "Captiva"
+          }
+        },
+        "0f36f2c0-6e50-4fba-92b5-50d18fac1d11": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-cobalt",
+            "color-code": "Cobalt"
+          }
+        },
+        "95d3decc-df6e-46df-b94e-44b412373d3f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-corvette",
+            "color-code": "Corvette"
+          }
+        },
+        "a336d815-2f22-4757-a5f6-9ef9aed40e85": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-cruze",
+            "color-code": "Cruze"
+          }
+        },
+        "section_HBCLLN": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chverolet-epica",
+            "color-code": "Epica"
+          }
+        },
+        "section_RUdYTt": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-equinox",
+            "color-code": "Equinox"
+          }
+        },
+        "05a9bc13-5da3-420e-86ec-d770aee253c7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-evanda",
+            "color-code": "Evanda"
+          }
+        },
+        "6d41ded8-4d2e-4687-9fdb-145a599628bd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-express",
+            "color-code": "Express"
+          }
+        },
+        "section_yJikC6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-groove",
+            "color-code": "Groove"
+          }
+        },
+        "section_nGUqVT": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-impala",
+            "color-code": "Impala"
+          }
+        },
+        "922c4f53-0570-4f07-9a54-1bc39cb79037": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-lacetti",
+            "color-code": "Lacetti"
+          }
+        },
+        "7e4a0632-ceb7-452b-bd0b-ed3ada7b2a00": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-malibu",
+            "color-code": "Malibu"
+          }
+        },
+        "section_3bj3g6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-menlo",
+            "color-code": "Menlo"
+          }
+        },
+        "8b9153f3-86e7-4b42-a4f6-98b4ddec4e53": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-nubira",
+            "color-code": "Nubira"
+          }
+        },
+        "1a905ccc-35ee-4516-8045-4d451f991961": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-orlando",
+            "color-code": "Orlando"
+          }
+        },
+        "1a8789df-374a-463c-9e89-6653a59895a5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-rezzo-tacuma",
+            "color-code": "Rezzo \/ Tacuma"
+          }
+        },
+        "7b627cc9-acc7-40b6-bb5d-0edd4895ea03": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-spark",
+            "color-code": "Spark"
+          }
+        },
+        "section_m8ftgg": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-seeker",
+            "color-code": "Seeker"
+          }
+        },
+        "section_CWLt3a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-silverado",
+            "color-code": "Silverado"
+          }
+        },
+        "e202424f-67c1-4c29-ba67-1943790aca5d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-suburban",
+            "color-code": "Suburban"
+          }
+        },
+        "0737b83d-f231-4c7c-92ad-44f220047982": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-tahoe",
+            "color-code": "Tahoe"
+          }
+        },
+        "section_aYxrtg": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-trailblazer",
+            "color-code": "TrailBlazer"
+          }
+        },
+        "section_nJm7iC": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-traverse",
+            "color-code": "Traverse"
+          }
+        },
+        "section_peURLL": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-chevrolet-trax",
+            "color-code": "Trax"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "section_8JLh96",
+        "4ba264f5-da11-4950-888c-a082a4740339",
+        "3677fce9-2805-48d2-b37d-783677c4bcef",
+        "7c662846-67a5-40a5-911a-9933a165bf8d",
+        "section_RFnPQi",
+        "be4bd492-472e-4d30-92ef-effcf720c4ff",
+        "0a9cc9b1-b015-41c7-8754-6546472cd757",
+        "0f36f2c0-6e50-4fba-92b5-50d18fac1d11",
+        "95d3decc-df6e-46df-b94e-44b412373d3f",
+        "a336d815-2f22-4757-a5f6-9ef9aed40e85",
+        "section_HBCLLN",
+        "section_RUdYTt",
+        "05a9bc13-5da3-420e-86ec-d770aee253c7",
+        "6d41ded8-4d2e-4687-9fdb-145a599628bd",
+        "section_yJikC6",
+        "section_nGUqVT",
+        "922c4f53-0570-4f07-9a54-1bc39cb79037",
+        "7e4a0632-ceb7-452b-bd0b-ed3ada7b2a00",
+        "section_3bj3g6",
+        "8b9153f3-86e7-4b42-a4f6-98b4ddec4e53",
+        "1a905ccc-35ee-4516-8045-4d451f991961",
+        "1a8789df-374a-463c-9e89-6653a59895a5",
+        "7b627cc9-acc7-40b6-bb5d-0edd4895ea03",
+        "section_m8ftgg",
+        "section_CWLt3a",
+        "e202424f-67c1-4c29-ba67-1943790aca5d",
+        "0737b83d-f231-4c7c-92ad-44f220047982",
+        "section_aYxrtg",
+        "section_nJm7iC",
+        "section_peURLL"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "c4033c08-b35a-4b4e-8bbd-236ec881abb1",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

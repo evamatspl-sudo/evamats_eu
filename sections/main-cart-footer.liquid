@@ -1,0 +1,264 @@
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="page-width{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}">
+  <div>
+    <div class="cart__footer cart-container">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+
+      <div class="cart__blocks">
+        {% if section.settings.image_1 %}
+          <a href="{{ section.settings.url }}" class="cart__blocks_banner">
+            <picture>
+              <source media="(max-width: 767px)" srcset="{{ section.settings.image_1 | img_url: '800x' }}">
+              <img src="{{ section.settings.image_1 | img_url: '1400x' }}" alt="" loading='lazy'>
+            </picture>
+            {% if section.settings.image_2 %}
+              <picture>
+                <source media="(max-width: 767px)" srcset="{{ section.settings.image_2 | img_url: '800x' }}">
+                <img src="{{ section.settings.image_2 | img_url: '1400x' }}" alt="" loading='lazy'>
+              </picture>
+            {% endif %}
+          </a>
+        {% endif %}
+        <div class="cart__blocks_inner">
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'subtotal' -%}
+                <div class="js-contents" {{ block.shopify_attributes }}>
+                  <div class="totals">
+                    <div class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</div>
+                    <p class="totals__subtotal-value">
+                      <span class="bcpo-cart-original-total">{{ cart.total_price | money_with_currency }}</span>
+                    </p>
+                  </div>
+                  {% comment %}
+                    discount-popup
+                  {% endcomment %}
+                  {% comment %} <div id="discount-popup" class="discount-popup">
+                    <div class="discount-popup__box">
+                      <div class="discount-popup__box--content">
+                        {%- assign discountPopupTitle = settings.discount_popup_title | default: "Przedpłata za zamówienie" -%}
+                        {%- assign discountPopupSubtitle = settings.discount_popup_subtitles | default: "Płacąc część zamówienia, resztę płacisz przy odbiorze u kuriera" -%}
+                        {%- assign discountPopupDescription = settings.discount_popup_description | default: "Wybierz, jaką część płatności chcesz dokonać, kontynuacje uregulujesz odbierając dywaniki u kuriera." -%}
+                        {%- assign discountPopupPriceEentry = settings.discount_popup_priceentry | default: "Lub wprowadź kwotę ręcznie." -%}
+                        <h2>{{ discountPopupTitle }}</h2>
+                        <p>{{ discountPopupSubtitle }}</p>
+                        <div class="discount-popup__btn">
+                          <button class="button-discount" id="applyDiscountButton25">25%</button>
+                          <button class="button-discount" id="applyDiscountButton50">50%</button>
+                          <button class="button-discount" id="applyDiscountButton70">70%</button>
+                        </div>
+                        <h3>{{ discountPopupDescription }}</h3>
+                        <div class="discount-popup__navig">
+                          <div class="discount-popup__navig--input">
+                            <p>{{ discountPopupPriceEentry }}</p>
+                            {%- assign discountPopupPlaceholder = settings.discount_popup_placeholder | default: "Min. kwota płatności 100 zł" -%}
+                            <input
+                              id="discount-popup__navig--input"
+                              name="discount-popup__navig--input"
+                              placeholder="{{ discountPopupPlaceholder }}" />
+                            <div id="discount-popup__navig--input__error" style="color: red;"></div>
+                          </div>
+                          {%- assign discountPopupConfirmButton = settings.discount_popup_confirmbtn | default: "Zapłać" -%}
+                          {%- assign discountPopupCancelButton = settings.discount_popup_cancelbtn | default: "Z powrotem" -%}
+                          <button id="discount-popup__navig--return" class="discount-popup__navig--return">{{ discountPopupCancelButton }}</button>
+                          <button id="discount-popup__navig--apply" class="discount-popup__navig--apply">{{ discountPopupConfirmButton }}</button>
+                        </div>
+                        <button id="discout-popup__close" class="discout-popup__close">X</button>
+                      </div>
+                    </div>
+                  </div> {% endcomment %}
+                  <div>
+
+                    <section>
+                      <form id="discount-form">
+                        <div style="display: none;">
+                          <label for="total_price">Cena całkowita:</label>
+                          <input id="total_price" name="total_price" />
+                          <p class="js-error" style="color: red"></p>
+                        </div>
+                        <div style="display: none;">
+                          <label for="part_payment">Płatność częściowa:</label>
+                          <input id="part_payment" name="part_payment" />
+                          <button type="submit">Prześlij formularz</button>
+                          <p class="js-error" style="color: red"></p>
+                        </div>
+                      </form>
+                      <div style="display: none;" class="js-discount-output">
+                        <h4>Kod rabatowy:</h4>
+                        <p class="js-discount-value"></p>
+                        <div class="js-loading" style="display: none">Ładowanie...</div>
+                      </div>
+                      <div id="discount-mail__message" style="display: none;">
+                        Opłatę należy uiścić na poczcie:
+                        <span style="font-weight: bold;">{{ cart.total_price | money_without_currency }}</span>
+                      </div>
+                    </section>
+                  </div>
+                  {% comment %}
+                    discount-popup-end
+                  {% endcomment %}
+                  <div id="discountMessage">
+                    {%- if cart.cart_level_discount_applications.size > 0 -%}
+                      <ul
+                        class="discounts list-unstyled"
+                        role="list"
+                        aria-label="{{ 'customer.order.discount' | t }}">
+                        {%- for discount in cart.cart_level_discount_applications -%}
+                          <li class="discounts__discount discounts__discount--position">
+                            {%- render 'icon-discount' -%}
+                            {{ discount.title }}
+                            (-{{ discount.total_allocated_amount | money }})
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </div>
+
+                  <small class="tax-note caption-large rte">
+                    {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                      {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- elsif cart.taxes_included -%}
+                      {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                    {%- elsif shop.shipping_policy.body != blank -%}
+                      {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                    {%- else -%}
+                      {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                    {%- endif -%}
+                  </small>
+                </div>
+              {%- else -%}
+                <div class="cart__ctas" {{ block.shopify_attributes }}>
+                  <noscript>
+                    <button
+                      type="submit"
+                      class="cart__update-button button button--secondary"
+                      form="cart">
+                      {{ 'sections.cart.update' | t }}
+                    </button>
+                  </noscript>
+
+                  <label class="checkbox-container">{{'sections.application_form.privacy_text_html' | t}}
+                    <input type="checkbox" id="newsletter-checkbox" required>
+                    <span class="checkmark"></span>
+                  </label>
+                  <span class="message_text hidden">{{ 'general.config.warning_message' | t }}</span>
+                  <div id="message" style="color:var(--color-1)"></div>
+
+                  <button
+                    type="submit"
+                    id="checkout"
+                    class="cart__checkout-button button"
+                    name="checkout"
+                    {% if cart == empty %}
+                    disabled
+                    {% endif %}
+                    form="cart"
+                    disabled>
+                    {{ 'sections.cart.checkout' | t }}
+                  </button>
+                </div>
+                {% comment %}
+                  discount-checkout__open
+                {% endcomment %}
+                {% comment %} <div id="discount-checkout__open" class="discount-checkout__open">
+                  <button>Opłata za pobraniem</button>
+                </div> {% endcomment %}
+
+                {%- if additional_checkout_buttons -%}
+                  <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                    {{ content_for_additional_checkout_buttons }}
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          {% endfor %}
+          <div id="cart-errors"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sticky_container">
+  <button class="sticky_add_to_cart button">{% render 'icon-cart' %}</button>
+</div>
+{% comment %} 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return msie > 0 || trident > 0;
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function (event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script> {% endcomment %}
+
+{% schema %}
+  {
+    "name": "t:sections.main-cart-footer.name",
+    "class": "cart__footer-wrapper",
+    "blocks": [
+      {
+        "type": "subtotal",
+        "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+        "limit": 1
+      }, {
+        "type": "buttons",
+        "name": "t:sections.main-cart-footer.blocks.buttons.name",
+        "limit": 1
+      }, {
+        "type": "@app"
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+      }
+    ]
+  }
+{% endschema %}
+
+<!-- bcpo done -->
+<script id="docapp-discount-speedup">
+  (() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=evamats-en.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+</script>

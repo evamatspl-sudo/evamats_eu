@@ -1,0 +1,277 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "fd5633fc-4cf9-4267-90a7-4bb37bd175fa": {
+      "type": "sidebar",
+      "blocks": {
+        "3c2fa5f4-791b-4da3-a413-35c5de1089a4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-citigo",
+            "color-code": "Citigo"
+          }
+        },
+        "075e1f05-7456-43d1-bd57-8fcee13a38a3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-enyaq",
+            "color-code": "Enyaq"
+          }
+        },
+        "d71aa7b5-b5d6-4725-9b78-f6d8b9c1abd8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-enyaq-coupe",
+            "color-code": "Enyaq Coupe"
+          }
+        },
+        "ceb5d57f-87f2-4540-abef-91562f8ba36e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-fabia",
+            "color-code": "Fabia"
+          }
+        },
+        "6c851102-8207-4f48-9093-326e6e164ba2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-kamiq",
+            "color-code": "Kamiq"
+          }
+        },
+        "f6512911-48c7-4a1e-8217-0c22c52f3024": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-karoq",
+            "color-code": "Karoq"
+          }
+        },
+        "060a520a-76dd-48cf-9460-53750bc25bc4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-kodiaq",
+            "color-code": "Kodiaq"
+          }
+        },
+        "6fbd7259-5c83-4dc8-aaf3-ae21b864376e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-octavia",
+            "color-code": "Octavia"
+          }
+        },
+        "b67ab1d6-2ed1-4dfd-97de-ca80ecb345a1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-rapid",
+            "color-code": "Rapid"
+          }
+        },
+        "26cf3e33-3f9c-40cd-ac7b-5ec03a3c384d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-roomster",
+            "color-code": "Roomster"
+          }
+        },
+        "1f08b012-ed53-4575-9821-b1beb6420e29": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-scala",
+            "color-code": "Scala"
+          }
+        },
+        "437102cf-c691-46eb-b204-a74b87056c3f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-superb",
+            "color-code": "Superb"
+          }
+        },
+        "938f7420-f82d-426e-ba74-d137c9ea2404": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-yeti",
+            "color-code": "Yeti"
+          }
+        }
+      },
+      "block_order": [
+        "3c2fa5f4-791b-4da3-a413-35c5de1089a4",
+        "075e1f05-7456-43d1-bd57-8fcee13a38a3",
+        "d71aa7b5-b5d6-4725-9b78-f6d8b9c1abd8",
+        "ceb5d57f-87f2-4540-abef-91562f8ba36e",
+        "6c851102-8207-4f48-9093-326e6e164ba2",
+        "f6512911-48c7-4a1e-8217-0c22c52f3024",
+        "060a520a-76dd-48cf-9460-53750bc25bc4",
+        "6fbd7259-5c83-4dc8-aaf3-ae21b864376e",
+        "b67ab1d6-2ed1-4dfd-97de-ca80ecb345a1",
+        "26cf3e33-3f9c-40cd-ac7b-5ec03a3c384d",
+        "1f08b012-ed53-4575-9821-b1beb6420e29",
+        "437102cf-c691-46eb-b204-a74b87056c3f",
+        "938f7420-f82d-426e-ba74-d137c9ea2404"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "fc560929-f51b-4e9b-a3cb-9c8ce4b12938": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-citigo",
+            "color-code": "Citigo"
+          }
+        },
+        "3100b99c-01c1-465c-8c13-c6b3048fa03a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-enyaq",
+            "color-code": "Enyaq"
+          }
+        },
+        "8f9c1c87-b93a-46b4-91ee-ab16bd80bd48": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-enyaq-coupe",
+            "color-code": "Enyaq Coupe"
+          }
+        },
+        "edb92602-dd10-448f-a4ef-7d7b1dc80daf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-fabia",
+            "color-code": "Fabia"
+          }
+        },
+        "c0456d6d-64a9-4be9-b52f-897be415c6fe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-kamiq",
+            "color-code": "Kamiq"
+          }
+        },
+        "77cfb3d3-3198-4c87-bd92-4aa6a28c7303": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-karoq",
+            "color-code": "Karoq"
+          }
+        },
+        "da842e72-fa3f-4800-aec0-807f384a0729": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-kodiaq",
+            "color-code": "Kodiaq"
+          }
+        },
+        "5b4ca999-9056-4c75-a9be-5e54b2a648df": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-octavia",
+            "color-code": "Octavia"
+          }
+        },
+        "48c8b3c0-d173-43c3-bceb-1b1872435f20": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-rapid",
+            "color-code": "Rapid"
+          }
+        },
+        "7b02f64a-0273-4157-bd9f-e3efaa308981": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-roomster",
+            "color-code": "Roomster"
+          }
+        },
+        "6affd317-98f2-4229-b557-2d6fd414327c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-scala",
+            "color-code": "Scala"
+          }
+        },
+        "dc052235-9a71-456c-9880-7409c421e736": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-superb",
+            "color-code": "Superb"
+          }
+        },
+        "2ca4608c-cafd-42cb-a392-305c4e7a5297": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/skoda-yeti",
+            "color-code": "Yeti"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c",
+        "fc560929-f51b-4e9b-a3cb-9c8ce4b12938",
+        "3100b99c-01c1-465c-8c13-c6b3048fa03a",
+        "8f9c1c87-b93a-46b4-91ee-ab16bd80bd48",
+        "edb92602-dd10-448f-a4ef-7d7b1dc80daf",
+        "c0456d6d-64a9-4be9-b52f-897be415c6fe",
+        "77cfb3d3-3198-4c87-bd92-4aa6a28c7303",
+        "da842e72-fa3f-4800-aec0-807f384a0729",
+        "5b4ca999-9056-4c75-a9be-5e54b2a648df",
+        "48c8b3c0-d173-43c3-bceb-1b1872435f20",
+        "7b02f64a-0273-4157-bd9f-e3efaa308981",
+        "6affd317-98f2-4229-b557-2d6fd414327c",
+        "dc052235-9a71-456c-9880-7409c421e736",
+        "2ca4608c-cafd-42cb-a392-305c4e7a5297"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "fd5633fc-4cf9-4267-90a7-4bb37bd175fa",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid"
+  ]
+}

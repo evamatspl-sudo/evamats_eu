@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43": {
+      "type": "mobile-button",
+      "settings": {
+        "btn_text": "All Brands",
+        "btn_url": "shopify://pages/car-brands"
+      }
+    },
+    "f573ba8e-312f-4893-91de-d3ed521114fa": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "37f49a36-c9f0-4209-a441-c60995efa21c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify://pages/car-brands",
+            "color-code": "All"
+          }
+        }
+      },
+      "block_order": [
+        "37f49a36-c9f0-4209-a441-c60995efa21c"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "4d52a956-5672-414d-9ffe-0d909c3db8b0": {
+      "type": "brand",
+      "blocks": {
+        "248737c9-16ea-4f31-a32c-28998fd203bf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify://collections/mercedes-benz",
+            "color-code": "Mercedes-Benz"
+          }
+        },
+        "51d5e4e5-5087-49f6-994f-8a7e9dfc2d6f": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Frame_222.png",
+            "product-link": "shopify://collections/bmw",
+            "color-code": "BMW"
+          }
+        },
+        "bf123c21-82c7-42fc-87dc-10229f4dc8dc": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_199_c150169e-8e75-4055-bdbe-b53c9dac4dcd.png",
+            "product-link": "shopify://collections/skoda",
+            "color-code": "Škoda"
+          }
+        },
+        "014ead92-35ba-4277-820a-1c88ad762b3d": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_95_66a5ee57-7660-4acd-a14e-86c3ca090d9e.png",
+            "product-link": "shopify://collections/lexus",
+            "color-code": "Lexus"
+          }
+        },
+        "197f101c-f86f-4cfd-a909-5be18a37a848": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_103_ecf2f5d4-ed40-46a0-9627-98a53d4ad81d.png",
+            "product-link": "shopify://collections/nissan",
+            "color-code": "Nissan"
+          }
+        },
+        "55113758-6092-4d41-a6b0-74555c395074": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_201_c366e4ab-fc6f-4013-9445-ba8676de871b.png",
+            "product-link": "shopify://collections/toyota",
+            "color-code": "Toyota"
+          }
+        },
+        "e634399c-2375-4b3f-93ae-ca44efb21b06": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Frame_224.png",
+            "product-link": "shopify://collections/audi",
+            "color-code": "Audi"
+          }
+        },
+        "da64c2cb-7cf8-44fe-9bc1-4810911c4885": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Frame_225.png",
+            "product-link": "shopify://collections/ford",
+            "color-code": "Ford"
+          }
+        },
+        "c8ec0725-c9ff-4b69-b7c9-e7dc4cb7e164": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_77.png",
+            "product-link": "shopify://collections/citroen",
+            "color-code": "Citroën"
+          }
+        },
+        "3ddb92c5-2b33-4c87-b64c-bc6cb9b66159": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Group_191_f1d4b343-1280-455a-a79b-7eab8c532bb1.png",
+            "product-link": "shopify://collections/renault",
+            "color-code": "Renault"
+          }
+        },
+        "f81f2f1c-141b-4ac6-9bbc-ab597f9226d6": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Frame_223.png",
+            "product-link": "shopify://collections/volkswagen",
+            "color-code": "Volkswagen"
+          }
+        },
+        "f5e7fa20-4475-41a3-b4bf-5e963e5cfc88": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/Frame_221.png",
+            "product-link": "shopify://collections/volvo",
+            "color-code": "Volvo"
+          }
+        }
+      },
+      "block_order": [
+        "248737c9-16ea-4f31-a32c-28998fd203bf",
+        "51d5e4e5-5087-49f6-994f-8a7e9dfc2d6f",
+        "bf123c21-82c7-42fc-87dc-10229f4dc8dc",
+        "014ead92-35ba-4277-820a-1c88ad762b3d",
+        "197f101c-f86f-4cfd-a909-5be18a37a848",
+        "55113758-6092-4d41-a6b0-74555c395074",
+        "e634399c-2375-4b3f-93ae-ca44efb21b06",
+        "da64c2cb-7cf8-44fe-9bc1-4810911c4885",
+        "c8ec0725-c9ff-4b69-b7c9-e7dc4cb7e164",
+        "3ddb92c5-2b33-4c87-b64c-bc6cb9b66159",
+        "f81f2f1c-141b-4ac6-9bbc-ab597f9226d6",
+        "f5e7fa20-4475-41a3-b4bf-5e963e5cfc88"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 {color: #fff; font-size: 3.2rem; letter-spacing: 2px;}"
+      ],
+      "settings": {
+        "color-table-header": "Najpopularniejsze marki",
+        "catalog-header": "",
+        "margin-bottom": false
+      }
+    },
+    "9f7a6f95-0ca2-45b2-acf7-8ef03ee8e4d0": {
+      "type": "home-5",
+      "disabled": true,
+      "settings": {
+        "btn_text": "WSZYSTKIE MARKI",
+        "btn_url": "shopify://pages/dywaniki-samochodowe-eva"
+      }
+    },
+    "a97e9c5e-4380-4363-864d-0f4bfc1c87e3": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Bestsellery",
+        "heading_size": "h1",
+        "custom_header_style": false,
+        "button_text": "ZAMÓW",
+        "button_link": "",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bestsellerss",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "98f316f3-e1dc-4e02-a656-d60441148ba0": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Akcesoria",
+        "heading_size": "h1",
+        "custom_header_style": false,
+        "button_text": "ZAMÓW",
+        "button_link": "",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "akcesoria",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17001239790dcf8d9f": {
+      "type": "apps",
+      "blocks": {
+        "d6550e17-f320-45e4-b373-f7a6bf75ebfb": {
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "disabled": true,
+          "settings": {
+            "contentIndex": "1",
+            "themeId": "light",
+            "autoscroll": true,
+            "showRating": true,
+            "reviewPhotosType": "small",
+            "writeReview": true,
+            "fixedReviewsHeight": true
+          }
+        }
+      },
+      "block_order": [
+        "d6550e17-f320-45e4-b373-f7a6bf75ebfb"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43",
+    "f573ba8e-312f-4893-91de-d3ed521114fa",
+    "product-grid",
+    "4d52a956-5672-414d-9ffe-0d909c3db8b0",
+    "9f7a6f95-0ca2-45b2-acf7-8ef03ee8e4d0",
+    "a97e9c5e-4380-4363-864d-0f4bfc1c87e3",
+    "98f316f3-e1dc-4e02-a656-d60441148ba0",
+    "17001239790dcf8d9f"
+  ]
+}

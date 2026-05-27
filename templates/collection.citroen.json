@@ -1,0 +1,501 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "90da9584-a340-4176-8ed2-25cc9da5dd45": {
+      "type": "sidebar",
+      "blocks": {
+        "01583d6c-a239-4401-8272-f7299fc067ad": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ax",
+            "color-code": "AX"
+          }
+        },
+        "ed0a744c-1706-470f-a008-76cfd3742b34": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-berlingo",
+            "color-code": "Berlingo"
+          }
+        },
+        "5947b576-ff0a-490d-a9c8-1bdd17689ffa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c-crosser",
+            "color-code": "C Crosser"
+          }
+        },
+        "a66f2adc-6d16-4bf0-bf07-e8ca3bd56a39": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c-elysee",
+            "color-code": "C Elysee"
+          }
+        },
+        "01d11dbb-1bdd-4330-8243-8ed839911558": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c1",
+            "color-code": "C1"
+          }
+        },
+        "4835f6d1-a98a-4f85-b056-11b8144a6c98": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c2",
+            "color-code": "C2"
+          }
+        },
+        "1f0141da-ba0b-40e6-9fa2-d63f143f421b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3",
+            "color-code": "C3"
+          }
+        },
+        "8eb9b947-0049-4826-acd4-75de9dd30944": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3-aircross",
+            "color-code": "C3 Aircross"
+          }
+        },
+        "ee1460a9-90f2-405e-b57e-16cc6b3c10bf": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3-picasso",
+            "color-code": "C3 Picasso"
+          }
+        },
+        "b2eef90b-4dcd-43f4-93a9-64bed55184ce": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4",
+            "color-code": "C4"
+          }
+        },
+        "58f0c792-235a-48a7-b022-ac2de0351499": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-cactus",
+            "color-code": "C4 Cactus"
+          }
+        },
+        "a5924522-91d8-45f9-812a-2f469500e49d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-picasso",
+            "color-code": "C4 Picasso"
+          }
+        },
+        "d1ecf1ef-f2d7-4d44-a898-ffb579bba262": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-grand-picasso",
+            "color-code": "C4 Grand Picasso"
+          }
+        },
+        "056af152-bc8b-44b6-9d2c-1c9f79b04084": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5",
+            "color-code": "C5"
+          }
+        },
+        "5f7879aa-5144-4fb1-b41b-dc8954181f70": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5-aircross",
+            "color-code": "C5 Aircross"
+          }
+        },
+        "a80b9663-dd8b-4e62-842e-7068cabf8974": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5x",
+            "color-code": "C5X"
+          }
+        },
+        "d53eb615-988a-4cad-85bc-c31b1f301af4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c8",
+            "color-code": "C8"
+          }
+        },
+        "ffc768c3-f432-4fd7-9e94-47803f288943": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds3",
+            "color-code": "DS3"
+          }
+        },
+        "e1e659db-1804-45a5-81f5-43865af8a090": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds4",
+            "color-code": "DS4"
+          }
+        },
+        "0b8b02c2-0ac1-4ece-8007-4ff177474639": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds5",
+            "color-code": "DS5"
+          }
+        },
+        "80f0ab82-e85c-45f6-9022-be43bc77fcdc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-jumper",
+            "color-code": "Jumper"
+          }
+        },
+        "472c54dd-2176-45d4-9b42-9ae9dcb77d68": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-jumpy",
+            "color-code": "Jumpy"
+          }
+        },
+        "section_JBRcm6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-nemo",
+            "color-code": "Nemo"
+          }
+        },
+        "88031671-296b-446d-909e-1431654f0568": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-spacetourer",
+            "color-code": "SpaceTourer"
+          }
+        },
+        "4554b329-9457-40dc-bbc3-c7a33faccbc5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xm",
+            "color-code": "XM"
+          }
+        },
+        "6b3e5ba5-f57b-4c73-940c-5184b0505ef4": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xsara",
+            "color-code": "Xsara"
+          }
+        },
+        "b1dfb9dc-6c29-4542-81fe-7254641d1527": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xsara-picasso",
+            "color-code": "Xsara Picasso"
+          }
+        }
+      },
+      "block_order": [
+        "01583d6c-a239-4401-8272-f7299fc067ad",
+        "ed0a744c-1706-470f-a008-76cfd3742b34",
+        "5947b576-ff0a-490d-a9c8-1bdd17689ffa",
+        "a66f2adc-6d16-4bf0-bf07-e8ca3bd56a39",
+        "01d11dbb-1bdd-4330-8243-8ed839911558",
+        "4835f6d1-a98a-4f85-b056-11b8144a6c98",
+        "1f0141da-ba0b-40e6-9fa2-d63f143f421b",
+        "8eb9b947-0049-4826-acd4-75de9dd30944",
+        "ee1460a9-90f2-405e-b57e-16cc6b3c10bf",
+        "b2eef90b-4dcd-43f4-93a9-64bed55184ce",
+        "58f0c792-235a-48a7-b022-ac2de0351499",
+        "a5924522-91d8-45f9-812a-2f469500e49d",
+        "d1ecf1ef-f2d7-4d44-a898-ffb579bba262",
+        "056af152-bc8b-44b6-9d2c-1c9f79b04084",
+        "5f7879aa-5144-4fb1-b41b-dc8954181f70",
+        "a80b9663-dd8b-4e62-842e-7068cabf8974",
+        "d53eb615-988a-4cad-85bc-c31b1f301af4",
+        "ffc768c3-f432-4fd7-9e94-47803f288943",
+        "e1e659db-1804-45a5-81f5-43865af8a090",
+        "0b8b02c2-0ac1-4ece-8007-4ff177474639",
+        "80f0ab82-e85c-45f6-9022-be43bc77fcdc",
+        "472c54dd-2176-45d4-9b42-9ae9dcb77d68",
+        "section_JBRcm6",
+        "88031671-296b-446d-909e-1431654f0568",
+        "4554b329-9457-40dc-bbc3-c7a33faccbc5",
+        "6b3e5ba5-f57b-4c73-940c-5184b0505ef4",
+        "b1dfb9dc-6c29-4542-81fe-7254641d1527"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "70068244-16d4-4bea-ba25-4a733ef42298": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ax",
+            "color-code": "AX"
+          }
+        },
+        "52317179-ac82-4b7a-9494-a253ab43f218": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-berlingo",
+            "color-code": "Berlingo"
+          }
+        },
+        "7792074c-6996-468b-aa8e-cdd35dc10a5c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c-crosser",
+            "color-code": "C Crosser"
+          }
+        },
+        "c2965fac-e22f-4852-b7a1-f3e7dc5c3ea3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c-elysee",
+            "color-code": "C Elysee"
+          }
+        },
+        "e4ac2ae0-fd2c-4fcc-8b81-8b0c2ae78a36": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c1",
+            "color-code": "C1"
+          }
+        },
+        "851a168b-ebfa-4930-b3b8-8a4d3ea90320": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c2",
+            "color-code": "C2"
+          }
+        },
+        "23a81d86-df49-48b7-b830-2c94b888b9e9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3",
+            "color-code": "C3"
+          }
+        },
+        "8f58a448-ce8d-4d6b-8d38-b2f5e80d9a49": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3-aircross",
+            "color-code": "C3 Aircross"
+          }
+        },
+        "0a65db0b-05f3-4c54-a9fe-0ba33bda7057": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c3-picasso",
+            "color-code": "C3 Picasso"
+          }
+        },
+        "15f33431-12a4-49bd-b2ad-e5e62c7e9d19": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4",
+            "color-code": "C4"
+          }
+        },
+        "c8b2c006-8c45-42e9-bf5f-27c7b27fbe7c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-cactus",
+            "color-code": "C4 Cactus"
+          }
+        },
+        "5b79b0d1-e9fe-4da4-a547-2622ba46f6ea": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-picasso",
+            "color-code": "C4 Picasso"
+          }
+        },
+        "10390057-8b01-4b92-8846-bd9549875be1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c4-grand-picasso",
+            "color-code": "C4 Grand Picasso"
+          }
+        },
+        "bcc1550b-c4ad-4ba2-8d32-d828ef41bbf3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5",
+            "color-code": "C5"
+          }
+        },
+        "b148cd30-ba7a-4ba7-90db-4197cd14486c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5-aircross",
+            "color-code": "C5 Aircross"
+          }
+        },
+        "86d0164f-5043-45b0-b980-702bc2c6099a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c5x",
+            "color-code": "C5X"
+          }
+        },
+        "8ad4e0a0-bfbb-49a5-b70e-1289bb17cb30": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-c8",
+            "color-code": "C8"
+          }
+        },
+        "f07eddc3-cb77-4dc5-b759-88de2e3482ed": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds3",
+            "color-code": "DS3"
+          }
+        },
+        "7f6d5669-af42-414c-9d8b-3815041877e7": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds4",
+            "color-code": "DS4"
+          }
+        },
+        "3350c004-bcba-48d2-8329-237f213ca472": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-ds5",
+            "color-code": "DS5"
+          }
+        },
+        "f95dc89f-c202-4421-b8e7-cedd0b439fae": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-jumper",
+            "color-code": "Jumper"
+          }
+        },
+        "f66e95a9-094c-42a4-aba1-0a5484ef07ff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-jumpy",
+            "color-code": "Jumpy"
+          }
+        },
+        "section_d4YbNA": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-nemo",
+            "color-code": "Nemo"
+          }
+        },
+        "198c4c1c-a5f0-48df-b9ed-80a0f895ccea": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-spacetourer",
+            "color-code": "SpaceTourer"
+          }
+        },
+        "3609d384-a2e9-4445-b4fd-aa5f8fa19c26": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xm",
+            "color-code": "XM"
+          }
+        },
+        "228e1960-105d-417d-a9d6-30c5e549bdc3": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xsara",
+            "color-code": "Xsara"
+          }
+        },
+        "d35f16d5-c71e-4af8-af7e-a9817fd0d759": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/citroen-xsara-picasso",
+            "color-code": "Xsara Picasso"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "70068244-16d4-4bea-ba25-4a733ef42298",
+        "52317179-ac82-4b7a-9494-a253ab43f218",
+        "7792074c-6996-468b-aa8e-cdd35dc10a5c",
+        "c2965fac-e22f-4852-b7a1-f3e7dc5c3ea3",
+        "e4ac2ae0-fd2c-4fcc-8b81-8b0c2ae78a36",
+        "851a168b-ebfa-4930-b3b8-8a4d3ea90320",
+        "23a81d86-df49-48b7-b830-2c94b888b9e9",
+        "8f58a448-ce8d-4d6b-8d38-b2f5e80d9a49",
+        "0a65db0b-05f3-4c54-a9fe-0ba33bda7057",
+        "15f33431-12a4-49bd-b2ad-e5e62c7e9d19",
+        "c8b2c006-8c45-42e9-bf5f-27c7b27fbe7c",
+        "5b79b0d1-e9fe-4da4-a547-2622ba46f6ea",
+        "10390057-8b01-4b92-8846-bd9549875be1",
+        "bcc1550b-c4ad-4ba2-8d32-d828ef41bbf3",
+        "b148cd30-ba7a-4ba7-90db-4197cd14486c",
+        "86d0164f-5043-45b0-b980-702bc2c6099a",
+        "8ad4e0a0-bfbb-49a5-b70e-1289bb17cb30",
+        "f07eddc3-cb77-4dc5-b759-88de2e3482ed",
+        "7f6d5669-af42-414c-9d8b-3815041877e7",
+        "3350c004-bcba-48d2-8329-237f213ca472",
+        "f95dc89f-c202-4421-b8e7-cedd0b439fae",
+        "f66e95a9-094c-42a4-aba1-0a5484ef07ff",
+        "section_d4YbNA",
+        "198c4c1c-a5f0-48df-b9ed-80a0f895ccea",
+        "3609d384-a2e9-4445-b4fd-aa5f8fa19c26",
+        "228e1960-105d-417d-a9d6-30c5e549bdc3",
+        "d35f16d5-c71e-4af8-af7e-a9817fd0d759"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 20,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "90da9584-a340-4176-8ed2-25cc9da5dd45",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

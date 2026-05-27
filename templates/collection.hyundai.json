@@ -1,0 +1,677 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "ce7ca757-3326-4050-8159-ec640860d543": {
+      "type": "sidebar",
+      "blocks": {
+        "64058821-0d1d-426b-8bf6-95bf6f367cee": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-accent",
+            "color-code": "Accent"
+          }
+        },
+        "5b315c42-b833-4443-9027-ca9bd8ba409e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-aslan",
+            "color-code": "Aslan"
+          }
+        },
+        "c754040f-5dee-4fbc-aea7-08ffd8b8d966": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-avante",
+            "color-code": "Avante"
+          }
+        },
+        "5c84d4d8-b484-48ee-a3ec-289cd3b1f0ae": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-azera",
+            "color-code": "Azera"
+          }
+        },
+        "6a95566b-5481-46fe-9295-2bed8deeb1ec": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-bayon",
+            "color-code": "Bayon"
+          }
+        },
+        "fd7c655a-13fa-4234-9e07-823f40a985f8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-casper",
+            "color-code": "Casper"
+          }
+        },
+        "c7e2a540-5a89-4892-84cc-b1c81869bc69": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-celesta",
+            "color-code": "Celesta"
+          }
+        },
+        "87c0c5c9-3ec1-47b3-b29c-342f6c323003": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-coupe",
+            "color-code": "Coupe"
+          }
+        },
+        "1d3af308-9fe0-4f2e-b565-503071768ecd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-creto",
+            "color-code": "Creta"
+          }
+        },
+        "b6730b71-5d4f-4b49-a758-5ea4a660c6a5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-custo",
+            "color-code": "Custo"
+          }
+        },
+        "7c8bb73b-9f31-45e7-b263-9e8db0a385dd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-elantra",
+            "color-code": "Elantra"
+          }
+        },
+        "c4acf4d6-9984-4f00-ae1e-c158fff81ea0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-galloper",
+            "color-code": "Galloper"
+          }
+        },
+        "9e11835f-c65d-489d-b414-a0773b912821": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-genesis",
+            "color-code": "Genesis"
+          }
+        },
+        "9b968f5f-a8f6-47ab-b5cf-231515540a95": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-getz",
+            "color-code": "Getz"
+          }
+        },
+        "d1e24dcd-2ad9-4ce7-8410-b32d9daded92": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-grand-santa-fe",
+            "color-code": "Grand Santa Fe"
+          }
+        },
+        "f7dc2c3d-03c2-4192-9ab1-edcb55a0e562": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-h1",
+            "color-code": "H1"
+          }
+        },
+        "1f22ceaa-fbb8-4e01-9e13-8ea3407a8007": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i10",
+            "color-code": "I10"
+          }
+        },
+        "ff3bf9c7-24eb-4aba-9d8b-622802891b25": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i10n",
+            "color-code": "I10N"
+          }
+        },
+        "1b3b1a13-3af2-454b-932e-a12f96469e1e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i20",
+            "color-code": "I20"
+          }
+        },
+        "33d2821f-e0e7-4e5a-bb9f-04fb183ef40e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i20n",
+            "color-code": "I20N"
+          }
+        },
+        "f89392a0-7873-4a3a-82e1-afe1deb88025": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i30",
+            "color-code": "I30"
+          }
+        },
+        "3fa438df-0dd6-4261-8a47-5613386dac87": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i30n",
+            "color-code": "I30N"
+          }
+        },
+        "9c652765-7de6-40e1-b46a-bda8a22bbb83": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i40",
+            "color-code": "I40"
+          }
+        },
+        "93cc0452-04c9-4369-84ce-a007394f9cb9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ioniq",
+            "color-code": "Ioniq"
+          }
+        },
+        "f78abdcf-fcf0-4b2f-9f32-738483756e0a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ioniq-5",
+            "color-code": "Ioniq 5"
+          }
+        },
+        "2805347a-3a0d-4f74-bc4d-c0885f7f9707": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ix20",
+            "color-code": "IX20"
+          }
+        },
+        "a2ba1af2-565d-4375-84bc-310dc66f86be": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ix35",
+            "color-code": "IX35"
+          }
+        },
+        "3f286b00-232f-4d5c-a1b2-10db27326ebe": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-mufasa",
+            "color-code": "Mufasa"
+          }
+        },
+        "e96fbfe3-d1d1-4cc8-bace-2287d694e694": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-kona",
+            "color-code": "Kona"
+          }
+        },
+        "3e30a4ba-e965-403a-81ab-8e9c4f61a08e": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-palisade",
+            "color-code": "Palisade"
+          }
+        },
+        "683f6aa5-1383-4151-8f04-f333bbd4af54": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-santa-cruz",
+            "color-code": "Santa Cruz"
+          }
+        },
+        "b1bfa57f-1b44-43ec-89f5-65781ed1c4d2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-santa-fe",
+            "color-code": "Santa Fe"
+          }
+        },
+        "c1d51e12-51d2-4a5e-8f9b-1e8a2bc3f918": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-sonata",
+            "color-code": "Sonata"
+          }
+        },
+        "2f6a33cc-ac7d-4445-8123-f8af42304c0d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-terracan",
+            "color-code": "Terracan"
+          }
+        },
+        "5949f789-f5d6-4a3b-b902-01a7927b83e9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-tucson",
+            "color-code": "Tucson"
+          }
+        },
+        "73916169-71c9-4027-8d82-c9e5e822bbb5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-veloster",
+            "color-code": "Veloster"
+          }
+        },
+        "7a083241-0966-4a73-9f4e-2cce267d28f8": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-veloster-turbo",
+            "color-code": "Veloster Turbo"
+          }
+        },
+        "41c104e7-ce06-469b-9e92-ae46b9ab3026": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-venue",
+            "color-code": "Venue"
+          }
+        }
+      },
+      "block_order": [
+        "64058821-0d1d-426b-8bf6-95bf6f367cee",
+        "5b315c42-b833-4443-9027-ca9bd8ba409e",
+        "c754040f-5dee-4fbc-aea7-08ffd8b8d966",
+        "5c84d4d8-b484-48ee-a3ec-289cd3b1f0ae",
+        "6a95566b-5481-46fe-9295-2bed8deeb1ec",
+        "fd7c655a-13fa-4234-9e07-823f40a985f8",
+        "c7e2a540-5a89-4892-84cc-b1c81869bc69",
+        "87c0c5c9-3ec1-47b3-b29c-342f6c323003",
+        "1d3af308-9fe0-4f2e-b565-503071768ecd",
+        "b6730b71-5d4f-4b49-a758-5ea4a660c6a5",
+        "7c8bb73b-9f31-45e7-b263-9e8db0a385dd",
+        "c4acf4d6-9984-4f00-ae1e-c158fff81ea0",
+        "9e11835f-c65d-489d-b414-a0773b912821",
+        "9b968f5f-a8f6-47ab-b5cf-231515540a95",
+        "d1e24dcd-2ad9-4ce7-8410-b32d9daded92",
+        "f7dc2c3d-03c2-4192-9ab1-edcb55a0e562",
+        "1f22ceaa-fbb8-4e01-9e13-8ea3407a8007",
+        "ff3bf9c7-24eb-4aba-9d8b-622802891b25",
+        "1b3b1a13-3af2-454b-932e-a12f96469e1e",
+        "33d2821f-e0e7-4e5a-bb9f-04fb183ef40e",
+        "f89392a0-7873-4a3a-82e1-afe1deb88025",
+        "3fa438df-0dd6-4261-8a47-5613386dac87",
+        "9c652765-7de6-40e1-b46a-bda8a22bbb83",
+        "93cc0452-04c9-4369-84ce-a007394f9cb9",
+        "f78abdcf-fcf0-4b2f-9f32-738483756e0a",
+        "2805347a-3a0d-4f74-bc4d-c0885f7f9707",
+        "a2ba1af2-565d-4375-84bc-310dc66f86be",
+        "3f286b00-232f-4d5c-a1b2-10db27326ebe",
+        "e96fbfe3-d1d1-4cc8-bace-2287d694e694",
+        "3e30a4ba-e965-403a-81ab-8e9c4f61a08e",
+        "683f6aa5-1383-4151-8f04-f333bbd4af54",
+        "b1bfa57f-1b44-43ec-89f5-65781ed1c4d2",
+        "c1d51e12-51d2-4a5e-8f9b-1e8a2bc3f918",
+        "2f6a33cc-ac7d-4445-8123-f8af42304c0d",
+        "5949f789-f5d6-4a3b-b902-01a7927b83e9",
+        "73916169-71c9-4027-8d82-c9e5e822bbb5",
+        "7a083241-0966-4a73-9f4e-2cce267d28f8",
+        "41c104e7-ce06-469b-9e92-ae46b9ab3026"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "75885fac-b501-46d0-91e6-4b7dcf86aa2b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-accent",
+            "color-code": "Accent"
+          }
+        },
+        "be640a27-6efc-42da-8123-710a5f3dd431": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-aslan",
+            "color-code": "Aslan"
+          }
+        },
+        "f6b2389b-783d-44b9-a31a-33363b6f4909": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-avante",
+            "color-code": "Avante"
+          }
+        },
+        "a199d881-7faa-4a70-ae29-6cb4c7222b59": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-azera",
+            "color-code": "Azera"
+          }
+        },
+        "250c0e7b-d5fd-442e-86e4-fbafd289cefc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-bayon",
+            "color-code": "Bayon"
+          }
+        },
+        "bcc76cf5-645a-47ce-a9f9-bcc0af4e46f6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-casper",
+            "color-code": "Casper"
+          }
+        },
+        "ac0ef461-bf84-4479-966d-4851762e411d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-celesta",
+            "color-code": "Celesta"
+          }
+        },
+        "d359a944-a5d5-4a7f-bc0b-c2085a2ef344": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-coupe",
+            "color-code": "Coupe"
+          }
+        },
+        "a019ec14-67bb-4b4d-88c0-95e1efef95d0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-creto",
+            "color-code": "Creta"
+          }
+        },
+        "470ae225-c788-461d-a961-44a40fa349bc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-custo",
+            "color-code": "Custo"
+          }
+        },
+        "077b640a-c4e0-4fce-8725-732ea7a5842b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-elantra",
+            "color-code": "Elantra"
+          }
+        },
+        "2115ee81-e027-4851-869e-ebdb170577b6": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-galloper",
+            "color-code": "Galloper"
+          }
+        },
+        "9507629b-dd37-4b3b-84d6-2e96a44ae239": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-genesis",
+            "color-code": "Genesis"
+          }
+        },
+        "ff2965b3-05d8-4d36-8e35-f9c043ada4bd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-getz",
+            "color-code": "Getz"
+          }
+        },
+        "0270a782-f5f7-4296-a9cc-7c1f5780e13a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-grand-santa-fe",
+            "color-code": "Grand Santa Fe"
+          }
+        },
+        "a8f2180c-8f56-4017-a2da-7521d4e1e85c": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-h1",
+            "color-code": "H-1"
+          }
+        },
+        "02d21dbe-cde3-43fd-9f64-aa14c04aac71": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i10",
+            "color-code": "I10"
+          }
+        },
+        "5c900111-199b-4e60-9188-21b65d18bd62": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i10n",
+            "color-code": "I10N"
+          }
+        },
+        "f5b26d47-3d46-4caf-b5d6-7993c1276ba5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i20",
+            "color-code": "I20"
+          }
+        },
+        "d63ec830-a9ef-46d8-8d3b-78393a2703aa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i20n",
+            "color-code": "I20N"
+          }
+        },
+        "25a0e224-43bf-4d91-a3e3-264b3ce05be2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i30",
+            "color-code": "I30"
+          }
+        },
+        "1aea3912-fbc0-4773-a2ad-81e268fd9e93": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i30n",
+            "color-code": "I30N"
+          }
+        },
+        "87f40bb4-d792-486c-aa06-3479c8fa56aa": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-i40",
+            "color-code": "I40"
+          }
+        },
+        "c11ef7e5-77a3-4068-84d9-cce125c3d67b": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ioniq",
+            "color-code": "Ioniq"
+          }
+        },
+        "882798b9-083b-4692-9ec3-dea0885fdfff": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ioniq-5",
+            "color-code": "Ioniq 5"
+          }
+        },
+        "f1b552f0-09de-4301-be9b-94f78f3463af": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ix20",
+            "color-code": "IX20"
+          }
+        },
+        "688d2ab9-03fc-4090-a5b0-299a3aa506d0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-ix35",
+            "color-code": "IX35"
+          }
+        },
+        "dbfdd104-aef6-495f-86a9-2d86e8829aea": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-mufasa",
+            "color-code": "Mufasa"
+          }
+        },
+        "a05f00f9-0f2c-43e8-b360-dd19c5937796": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-kona",
+            "color-code": "Kona"
+          }
+        },
+        "1b34df43-9729-41f6-968d-218cc04f9f39": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-palisade",
+            "color-code": "Palisade"
+          }
+        },
+        "5f1f565a-bcdd-4e0b-89a0-4d9d35eb7684": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-santa-cruz",
+            "color-code": "Santa Cruz"
+          }
+        },
+        "a0a24574-b277-457f-b4c1-2c6c8989e273": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-santa-fe",
+            "color-code": "Santa Fe"
+          }
+        },
+        "dfe706d3-1a16-4e1d-b4dc-6c5bff1098fc": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-sonata",
+            "color-code": "Sonata"
+          }
+        },
+        "ea33047b-d1a1-4ae6-87ec-ec0701188708": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-terracan",
+            "color-code": "Terracan"
+          }
+        },
+        "32deff5b-a82b-45db-b7b2-f9a3e5c20c47": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-tucson",
+            "color-code": "Tucson"
+          }
+        },
+        "057e7411-c190-46d7-86b9-57e8dbdd6938": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-veloster",
+            "color-code": "Veloster"
+          }
+        },
+        "0bd67e0e-25ba-409f-85c2-4ae3a1da8716": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hyundai-veloster-turbo",
+            "color-code": "Veloster Turbo"
+          }
+        },
+        "7ffd52af-a793-4355-97a6-d9d99fad82c2": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/hyundai-venue",
+            "color-code": "Venue"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "75885fac-b501-46d0-91e6-4b7dcf86aa2b",
+        "be640a27-6efc-42da-8123-710a5f3dd431",
+        "f6b2389b-783d-44b9-a31a-33363b6f4909",
+        "a199d881-7faa-4a70-ae29-6cb4c7222b59",
+        "250c0e7b-d5fd-442e-86e4-fbafd289cefc",
+        "bcc76cf5-645a-47ce-a9f9-bcc0af4e46f6",
+        "ac0ef461-bf84-4479-966d-4851762e411d",
+        "d359a944-a5d5-4a7f-bc0b-c2085a2ef344",
+        "a019ec14-67bb-4b4d-88c0-95e1efef95d0",
+        "470ae225-c788-461d-a961-44a40fa349bc",
+        "077b640a-c4e0-4fce-8725-732ea7a5842b",
+        "2115ee81-e027-4851-869e-ebdb170577b6",
+        "9507629b-dd37-4b3b-84d6-2e96a44ae239",
+        "ff2965b3-05d8-4d36-8e35-f9c043ada4bd",
+        "0270a782-f5f7-4296-a9cc-7c1f5780e13a",
+        "a8f2180c-8f56-4017-a2da-7521d4e1e85c",
+        "02d21dbe-cde3-43fd-9f64-aa14c04aac71",
+        "5c900111-199b-4e60-9188-21b65d18bd62",
+        "f5b26d47-3d46-4caf-b5d6-7993c1276ba5",
+        "d63ec830-a9ef-46d8-8d3b-78393a2703aa",
+        "25a0e224-43bf-4d91-a3e3-264b3ce05be2",
+        "1aea3912-fbc0-4773-a2ad-81e268fd9e93",
+        "87f40bb4-d792-486c-aa06-3479c8fa56aa",
+        "c11ef7e5-77a3-4068-84d9-cce125c3d67b",
+        "882798b9-083b-4692-9ec3-dea0885fdfff",
+        "f1b552f0-09de-4301-be9b-94f78f3463af",
+        "688d2ab9-03fc-4090-a5b0-299a3aa506d0",
+        "dbfdd104-aef6-495f-86a9-2d86e8829aea",
+        "a05f00f9-0f2c-43e8-b360-dd19c5937796",
+        "1b34df43-9729-41f6-968d-218cc04f9f39",
+        "5f1f565a-bcdd-4e0b-89a0-4d9d35eb7684",
+        "a0a24574-b277-457f-b4c1-2c6c8989e273",
+        "dfe706d3-1a16-4e1d-b4dc-6c5bff1098fc",
+        "ea33047b-d1a1-4ae6-87ec-ec0701188708",
+        "32deff5b-a82b-45db-b7b2-f9a3e5c20c47",
+        "057e7411-c190-46d7-86b9-57e8dbdd6938",
+        "0bd67e0e-25ba-409f-85c2-4ae3a1da8716",
+        "7ffd52af-a793-4355-97a6-d9d99fad82c2"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "ce7ca757-3326-4050-8159-ec640860d543",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}

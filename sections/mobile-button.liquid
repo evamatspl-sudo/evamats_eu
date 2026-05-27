@@ -1,0 +1,64 @@
+        <section>
+            <div class="mobile-container">
+                    <a href="{{ section.settings.btn_url }}">
+                            <button class="mobile-btn">{{ section.settings.btn_text }}</button>
+                            </a>
+            </div>
+        </section>
+        
+<style>
+  .mobile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-btn{
+   text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+   max-width: max-content;
+   height: 50px;
+    padding: 10px; 
+    transition: .3s;
+    border: none;
+    background: linear-gradient(93.45deg, var(--color-1) -4.53%, #CB0428 104.95%);
+    border-radius: 10px;
+    }
+  @media only screen and (min-width: 992px)   {
+        .mobile-container{
+          display: none;
+        }
+      }
+</style>
+  
+{% schema %}
+{
+  "name": "Mobile Button",
+  "settings": [
+    {
+      "type":"text",
+      "label":"Button Text",
+      "id":"btn_text",
+      "default":"All models"
+    },
+    {
+      "type":"url",
+      "label":"Button Url",
+      "id":"btn_url"
+    }
+  ],
+  "presets":[
+    {
+      "name":"Mobile Button",
+      "category":"custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

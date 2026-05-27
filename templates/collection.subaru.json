@@ -1,0 +1,261 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "19eb288d-f5bf-45ae-8af6-b2658b036ea4": {
+      "type": "sidebar",
+      "blocks": {
+        "4bc9ffb2-df1b-4975-b49c-2b11d0898628": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-ascent",
+            "color-code": "Ascent"
+          }
+        },
+        "9140b703-3b4e-4b9c-829e-380dea801a29": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-brz",
+            "color-code": "BRZ"
+          }
+        },
+        "e4b48210-d7bd-487e-a896-b88db56e54e1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-forester",
+            "color-code": "Forester"
+          }
+        },
+        "d2f71acf-7ecd-4f1b-8b4a-12283b712d3f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-impreza",
+            "color-code": "Impreza"
+          }
+        },
+        "6c741111-c4f6-4a8a-8fe9-826859f46788": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-legacy",
+            "color-code": "Legacy"
+          }
+        },
+        "c8aabb3c-b174-4aae-9ad1-9bda6cd18b05": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-levorg",
+            "color-code": "Levorg"
+          }
+        },
+        "9667bd1e-5cc8-4e6a-8ccb-28bfbe376d7d": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-outback",
+            "color-code": "Outback"
+          }
+        },
+        "fd7f35f8-9053-4368-862c-fc3d766f1d49": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-solterra",
+            "color-code": "Solterra"
+          }
+        },
+        "b9256351-3dbd-4799-80d1-e79f1879025f": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-trezia",
+            "color-code": "Trezia"
+          }
+        },
+        "7b5f2f8b-ede0-4708-beab-5beff88f4ded": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-tribeca-b9",
+            "color-code": "Tribeca B9"
+          }
+        },
+        "8b350c70-17b5-44a7-8d8e-33f8b94031b0": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-wrx",
+            "color-code": "WRX"
+          }
+        },
+        "4e839e08-a298-4bce-9274-ec4e41526dc5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-xv",
+            "color-code": "XV"
+          }
+        }
+      },
+      "block_order": [
+        "4bc9ffb2-df1b-4975-b49c-2b11d0898628",
+        "9140b703-3b4e-4b9c-829e-380dea801a29",
+        "e4b48210-d7bd-487e-a896-b88db56e54e1",
+        "d2f71acf-7ecd-4f1b-8b4a-12283b712d3f",
+        "6c741111-c4f6-4a8a-8fe9-826859f46788",
+        "c8aabb3c-b174-4aae-9ad1-9bda6cd18b05",
+        "9667bd1e-5cc8-4e6a-8ccb-28bfbe376d7d",
+        "fd7f35f8-9053-4368-862c-fc3d766f1d49",
+        "b9256351-3dbd-4799-80d1-e79f1879025f",
+        "7b5f2f8b-ede0-4708-beab-5beff88f4ded",
+        "8b350c70-17b5-44a7-8d8e-33f8b94031b0",
+        "4e839e08-a298-4bce-9274-ec4e41526dc5"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "txt-buttons": "All models",
+        "collection-margin-bottom": false
+      }
+    },
+    "9b281caf-6a64-4c48-bf02-d41f1b676502": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/pages\/car-brands",
+            "color-code": "All"
+          }
+        },
+        "8a86a65a-6ce8-4992-9037-4a88fd9fccb5": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-ascent",
+            "color-code": "Ascent"
+          }
+        },
+        "c692e0d1-2c85-4862-be4d-3995b0793b5a": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-brz",
+            "color-code": "BRZ"
+          }
+        },
+        "272414d3-562c-439e-9121-67f495979084": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-forester",
+            "color-code": "Forester"
+          }
+        },
+        "7a962522-e476-44a7-a097-032a20683754": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-impreza",
+            "color-code": "Impreza"
+          }
+        },
+        "bbbdb328-a3cf-4c46-8aa5-a77387e2de69": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-legacy",
+            "color-code": "Legacy"
+          }
+        },
+        "34ad4bb4-5201-41b4-b0f5-a12a615451ce": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-levorg",
+            "color-code": "Levorg"
+          }
+        },
+        "f371b52e-1bd3-4357-a27c-ee09708ba949": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-outback",
+            "color-code": "Outback"
+          }
+        },
+        "c9532d13-1045-494f-880d-15dd6a5bf564": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/subaru-solterra",
+            "color-code": "Solterra"
+          }
+        },
+        "4d50603e-ec2f-4138-8ca6-f46150868322": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-trezia",
+            "color-code": "Trezia"
+          }
+        },
+        "c5762926-d2e7-4c87-aece-fbbc0de2ca11": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-tribeca-b9",
+            "color-code": "Tribeca B9"
+          }
+        },
+        "0c729953-12c8-4333-ab46-c862bfb534fd": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-wrx",
+            "color-code": "WRX"
+          }
+        },
+        "230a3530-93e8-4161-b183-a9d994cb9ff9": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-subaru-xv",
+            "color-code": "XV"
+          }
+        }
+      },
+      "block_order": [
+        "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
+        "8a86a65a-6ce8-4992-9037-4a88fd9fccb5",
+        "c692e0d1-2c85-4862-be4d-3995b0793b5a",
+        "272414d3-562c-439e-9121-67f495979084",
+        "7a962522-e476-44a7-a097-032a20683754",
+        "bbbdb328-a3cf-4c46-8aa5-a77387e2de69",
+        "34ad4bb4-5201-41b4-b0f5-a12a615451ce",
+        "f371b52e-1bd3-4357-a27c-ee09708ba949",
+        "c9532d13-1045-494f-880d-15dd6a5bf564",
+        "4d50603e-ec2f-4138-8ca6-f46150868322",
+        "c5762926-d2e7-4c87-aece-fbbc0de2ca11",
+        "0c729953-12c8-4333-ab46-c862bfb534fd",
+        "230a3530-93e8-4161-b183-a9d994cb9ff9"
+      ],
+      "settings": {
+        "collection-color-table-header": "",
+        "collection-catalog-header": "",
+        "collection-margin-bottom": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "19eb288d-f5bf-45ae-8af6-b2658b036ea4",
+    "9b281caf-6a64-4c48-bf02-d41f1b676502",
+    "product-grid"
+  ]
+}
