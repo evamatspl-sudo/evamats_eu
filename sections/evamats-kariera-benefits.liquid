@@ -1,0 +1,323 @@
+<section
+  id="EvamatsKarieraBenefits-{{ section.id }}"
+  class="evamats-kariera-benefits"
+  style="--ekb-pt: {{ section.settings.padding_top }}px; --ekb-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="evamats-kariera-benefits__inner page-width">
+    <div class="evamats-kariera-benefits__intro">
+      {%- if section.settings.overline != blank -%}
+        <p class="evamats-kariera-benefits__overline">{{ section.settings.overline | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="evamats-kariera-benefits__heading section_title">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="evamats-kariera-benefits__grid">
+      <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--work">
+        {%- if section.settings.work_title != blank -%}
+          <h3 class="evamats-kariera-benefits__panel-title">{{ section.settings.work_title | escape }}</h3>
+        {%- endif -%}
+
+        <ul class="evamats-kariera-benefits__list" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'item' and block.settings.panel == 'work' -%}
+              <li class="evamats-kariera-benefits__row" {{ block.shopify_attributes }}>
+                <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                  {% render 'evamats-benefit-icon', icon: block.settings.icon_preset, uid: block.id %}
+                </span>
+                <span class="evamats-kariera-benefits__row-text">{{ block.settings.text | escape }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.work_image != blank -%}
+          <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--work">
+            {{
+              section.settings.work_image
+              | image_url: width: 900
+              | image_tag:
+                loading: 'lazy',
+                class: 'evamats-kariera-benefits__panel-img',
+                widths: '277, 443, 600, 900',
+                sizes: '(min-width: 750px) 443px, 277px'
+            }}
+          </div>
+        {%- endif -%}
+      </article>
+
+      <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--culture">
+        {%- if section.settings.culture_title != blank -%}
+          <h3 class="evamats-kariera-benefits__panel-title">{{ section.settings.culture_title | escape }}</h3>
+        {%- endif -%}
+
+        <div class="evamats-kariera-benefits__culture-foot">
+          {%- if settings.logo != blank -%}
+            <div class="evamats-kariera-benefits__culture-logo">
+              {{
+                settings.logo
+                | image_url: width: 206
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'evamats-kariera-benefits__culture-logo-img',
+                  widths: '88, 103, 206',
+                  sizes: '(min-width: 750px) 103px, 88px'
+              }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.culture_tagline != blank -%}
+            <p class="evamats-kariera-benefits__culture-tagline">{{ section.settings.culture_tagline | escape }}</p>
+          {%- endif -%}
+        </div>
+      </article>
+
+      <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--growth">
+        {%- if section.settings.growth_image != blank -%}
+          <div class="evamats-kariera-benefits__panel-bg" aria-hidden="true">
+            {{
+              section.settings.growth_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                class: 'evamats-kariera-benefits__panel-bg-img',
+                widths: '375, 550, 750, 1000, 1200',
+                sizes: '(min-width: 750px) 505px, 339px'
+            }}
+          </div>
+        {%- endif -%}
+
+        <div class="evamats-kariera-benefits__panel-growth-inner">
+          {%- if section.settings.growth_title != blank -%}
+            <h3 class="evamats-kariera-benefits__panel-title">{{ section.settings.growth_title | escape }}</h3>
+          {%- endif -%}
+
+          <ul class="evamats-kariera-benefits__list" role="list">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'item' and block.settings.panel == 'growth' -%}
+                <li class="evamats-kariera-benefits__row" {{ block.shopify_attributes }}>
+                  <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                    {% render 'evamats-benefit-icon', icon: block.settings.icon_preset, uid: block.id %}
+                  </span>
+                  <span class="evamats-kariera-benefits__row-text">{{ block.settings.text | escape }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </article>
+
+      <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--pay">
+        <div class="evamats-kariera-benefits__panel-pay-inner">
+          <div class="evamats-kariera-benefits__panel-pay-copy">
+            {%- if section.settings.pay_title != blank -%}
+              <h3 class="evamats-kariera-benefits__panel-title">{{ section.settings.pay_title | escape }}</h3>
+            {%- endif -%}
+
+            <ul class="evamats-kariera-benefits__list" role="list">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'item' and block.settings.panel == 'pay' -%}
+                  <li class="evamats-kariera-benefits__row" {{ block.shopify_attributes }}>
+                    <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                      {% render 'evamats-benefit-icon', icon: block.settings.icon_preset, uid: block.id %}
+                    </span>
+                    <span class="evamats-kariera-benefits__row-text">{{ block.settings.text | escape }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          {%- if section.settings.pay_image != blank -%}
+            <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--pay" aria-hidden="true">
+              {{
+                section.settings.pay_image
+                | image_url: width: 800
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'evamats-kariera-benefits__panel-img evamats-kariera-benefits__panel-img--pay',
+                  widths: '218, 382, 600, 800',
+                  sizes: '(min-width: 750px) 382px, 218px'
+              }}
+            </div>
+          {%- endif -%}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVAMATS kariera benefits",
+  "tag": "section",
+  "class": "section-evamats-kariera-benefits",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline",
+      "default": "Benefity"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Co zyskujesz, dołączając do EVAMATS?"
+    },
+    {
+      "type": "header",
+      "content": "Panel: Praca"
+    },
+    {
+      "type": "text",
+      "id": "work_title",
+      "label": "Title",
+      "default": "Praca, która ma sens i tempo"
+    },
+    {
+      "type": "image_picker",
+      "id": "work_image",
+      "label": "Photo (team)"
+    },
+    {
+      "type": "header",
+      "content": "Panel: Kultura"
+    },
+    {
+      "type": "text",
+      "id": "culture_title",
+      "label": "Title",
+      "default": "Tworzymy firmę, w której chce się pracować i rozwijać"
+    },
+    {
+      "type": "text",
+      "id": "culture_tagline",
+      "label": "Tagline (logo from theme settings)",
+      "default": "Nie szukamy wszystkich — szukamy zaangażowanych"
+    },
+    {
+      "type": "header",
+      "content": "Panel: Rozwój"
+    },
+    {
+      "type": "text",
+      "id": "growth_title",
+      "label": "Title",
+      "default": "Rozwój, który naprawdę przyspiesza"
+    },
+    {
+      "type": "image_picker",
+      "id": "growth_image",
+      "label": "Background photo"
+    },
+    {
+      "type": "header",
+      "content": "Panel: Wynagrodzenie"
+    },
+    {
+      "type": "text",
+      "id": "pay_title",
+      "label": "Title",
+      "default": "Wynagrodzenie i dodatkowe korzyści"
+    },
+    {
+      "type": "image_picker",
+      "id": "pay_image",
+      "label": "Decoration (3D graphic)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "List item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "panel",
+          "label": "Panel",
+          "options": [
+            { "value": "work", "label": "Praca" },
+            { "value": "growth", "label": "Rozwój" },
+            { "value": "pay", "label": "Wynagrodzenie" }
+          ],
+          "default": "work"
+        },
+        {
+          "type": "select",
+          "id": "icon_preset",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "List item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS kariera benefits",
+      "category": "V2",
+      "blocks": [
+        { "type": "item", "settings": { "panel": "work", "icon_preset": "1", "text": "Stabilne zatrudnienie i jasne zasady" } },
+        { "type": "item", "settings": { "panel": "work", "icon_preset": "2", "text": "Elastyczne podejście do pracy" } },
+        { "type": "item", "settings": { "panel": "work", "icon_preset": "3", "text": "Możliwość pracy zdalnej (wybrane role)" } },
+        { "type": "item", "settings": { "panel": "work", "icon_preset": "4", "text": "Zorganizowany system zamiast chaosu" } },
+        { "type": "item", "settings": { "panel": "growth", "icon_preset": "5", "text": "Jasna ścieżka awansu" } },
+        { "type": "item", "settings": { "panel": "growth", "icon_preset": "6", "text": "Realny wpływ na decyzje" } },
+        { "type": "item", "settings": { "panel": "growth", "icon_preset": "7", "text": "Wsparcie liderów i zespołu" } },
+        { "type": "item", "settings": { "panel": "growth", "icon_preset": "8", "text": "Rozwój kompetencji w praktyce" } },
+        { "type": "item", "settings": { "panel": "growth", "icon_preset": "9", "text": "Możliwość wdrażania własnych pomysłów" } },
+        { "type": "item", "settings": { "panel": "pay", "icon_preset": "10", "text": "Premie zależne od wyników" } },
+        { "type": "item", "settings": { "panel": "pay", "icon_preset": "11", "text": "Zniżki na produkty EVAMATS" } },
+        { "type": "item", "settings": { "panel": "pay", "icon_preset": "12", "text": "Dodatkowe benefity (np. Multisport)" } },
+        { "type": "item", "settings": { "panel": "pay", "icon_preset": "13", "text": "Karty podarunkowe i bonusy" } },
+        { "type": "item", "settings": { "panel": "pay", "icon_preset": "14", "text": "Parking dla pracowników" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

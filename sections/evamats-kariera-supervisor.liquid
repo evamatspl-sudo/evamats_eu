@@ -1,0 +1,158 @@
+{%- liquid
+  assign supervisor_image = section.settings.image
+  assign supervisor_image_mobile = section.settings.image_mobile
+  if supervisor_image_mobile == blank
+    assign supervisor_image_mobile = supervisor_image
+  endif
+-%}
+
+<section
+  id="EvamatsKarieraSupervisor-{{ section.id }}"
+  class="evamats-kariera-supervisor"
+  style="--eks-pt: {{ section.settings.padding_top }}px; --eks-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="evamats-kariera-supervisor__inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="evamats-kariera-supervisor__heading evamats-kariera-supervisor__heading--mobile">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    <div class="evamats-kariera-supervisor__layout">
+      <div class="evamats-kariera-supervisor__media" aria-hidden="true">
+        {%- if supervisor_image != blank -%}
+          <picture>
+            {%- if section.settings.image_mobile != blank -%}
+              <source media="(max-width: 749px)" srcset="{{ supervisor_image_mobile | image_url: width: 500 }}">
+            {%- endif -%}
+            {{
+              supervisor_image
+              | image_url: width: 700
+              | image_tag:
+                loading: 'lazy',
+                class: 'evamats-kariera-supervisor__photo',
+                widths: '229, 325, 458, 650, 700',
+                sizes: '(min-width: 750px) 325px, 229px'
+            }}
+          </picture>
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'evamats-kariera-supervisor__photo evamats-kariera-supervisor__photo--placeholder' }}
+        {%- endif -%}
+      </div>
+
+      <div class="evamats-kariera-supervisor__content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="evamats-kariera-supervisor__heading evamats-kariera-supervisor__heading--desktop section_title">
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <p class="evamats-kariera-supervisor__text">{{ section.settings.text | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.name != blank or section.settings.role != blank -%}
+          <div class="evamats-kariera-supervisor__person">
+            {%- if section.settings.name != blank -%}
+              <p class="evamats-kariera-supervisor__name">{{ section.settings.name | escape }}</p>
+            {%- endif -%}
+            {%- if section.settings.role != blank -%}
+              <p class="evamats-kariera-supervisor__role">{{ section.settings.role | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <a class="button button_4 evamats-kariera-supervisor__cta" href="{{ section.settings.button_link }}">
+            <span>{{ section.settings.button_label | escape }}</span>
+            <span class="button__arrow">{% render 'evamats-button-arrow-icon' %}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVAMATS kariera boss",
+  "tag": "section",
+  "class": "section-evamats-kariera-supervisor",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Poznaj swojego przyszłego przełożonego"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "W naszym dziale liczy się zaangażowanie i chęć rozwoju. Szukamy osób, które chcą pracować w dynamicznym środowisku i mieć realny wpływ na wyniki"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "Kacper Kowalewski"
+    },
+    {
+      "type": "text",
+      "id": "role",
+      "label": "Role",
+      "default": "Kierownik Działu Sprzedaży"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "O firmie"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Photo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Photo (mobile)",
+      "info": "Optional. Uses desktop photo if empty."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS kariera boss",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

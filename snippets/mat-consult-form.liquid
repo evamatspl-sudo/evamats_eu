@@ -1,0 +1,553 @@
+{%- comment -%}
+  Global consult form. Required: form_section, form_id, wrapper_id.
+  Optional: hidden_form_value, form_layout ('default' | 'partners').
+  From another section:
+  {% render 'mat-consult-form', form_section: section, form_id: '...', wrapper_id: '...', hidden_form_value: '...', form_layout: 'partners' %}
+{%- endcomment -%}
+{%- liquid
+  assign fs = form_section
+  assign sid = fs.id
+  assign form_layout = form_layout | default: fs.settings.form_layout | default: 'default'
+  assign show_business_sphere = false
+  if form_layout == 'partners' or fs.settings.show_business_sphere
+    assign show_business_sphere = true
+  endif
+
+  assign terms_url = fs.settings.terms_url | default: routes.policy_terms_url
+  if terms_url == blank
+    assign terms_url = '/policies/terms-of-service'
+  endif
+  assign privacy_url = fs.settings.privacy_url | default: routes.policy_privacy_policy_url
+  if privacy_url == blank
+    assign privacy_url = '/policies/privacy-policy'
+  endif
+
+  assign consent_gate_msg = fs.settings.consent_error_message | default: 'Musisz zaakceptować politykę prywatności i regulamin.'
+-%}
+
+<div
+  id="{{ wrapper_id | escape }}"
+  class="mat-consult-form{% if form_layout == 'partners' %} mat-consult-form--partners{% endif %}"
+  data-mat-consult-form
+>
+  {%- if fs.settings.heading != blank -%}
+    <h2 class="mat-consult__title">{{ fs.settings.heading | escape }}</h2>
+  {%- endif -%}
+  {%- if fs.settings.subheading != blank -%}
+    <p class="mat-consult__sub">{{ fs.settings.subheading | escape }}</p>
+  {%- endif -%}
+
+  {%- form 'contact', id: form_id, class: 'mat-consult__form isolate' -%}
+    <input type="hidden" name="contact[Formularz]" value="{{ hidden_form_value | escape }}">
+    {%- if form.posted_successfully? -%}
+      <p class="mat-consult__status mat-consult__status--ok" tabindex="-1" autofocus>
+        {{ fs.settings.success_message | default: 'Dziękujemy! Skontaktujemy się wkrótce.' | escape }}
+      </p>
+    {%- elsif form.errors -%}
+      <p class="mat-consult__status mat-consult__status--err" role="alert" tabindex="-1" autofocus>
+        {{ fs.settings.error_message | default: 'Sprawdź pola i spróbuj ponownie.' | escape }}
+      </p>
+      {%- if form.errors contains 'email' -%}
+        <p class="mat-consult__status mat-consult__status--err">{{ form.errors.messages.email }}</p>
+      {%- endif -%}
+    {%- endif -%}
+
+    <div class="mat-consult__fields">
+      {%- if form_layout == 'partners' -%}
+        <div class="mat-consult__fields-duo mat-consult__fields-duo--names">
+          <div class="mat-consult__field">
+            <label class="visually-hidden" for="MatFirstName-{{ sid }}">{{ fs.settings.label_first_name | escape }}</label>
+            <input
+              type="text"
+              id="MatFirstName-{{ sid }}"
+              class="field__input"
+              name="contact[Imię]"
+              autocomplete="given-name"
+              placeholder="{{ fs.settings.placeholder_first_name | default: fs.settings.label_first_name | escape }}"
+              required
+            >
+          </div>
+          <div class="mat-consult__field">
+            <label class="visually-hidden" for="MatLastName-{{ sid }}">{{ fs.settings.label_last_name | escape }}</label>
+            <input
+              type="text"
+              id="MatLastName-{{ sid }}"
+              class="field__input"
+              name="contact[Nazwisko]"
+              autocomplete="family-name"
+              placeholder="{{ fs.settings.placeholder_last_name | default: fs.settings.label_last_name | escape }}"
+              required
+            >
+          </div>
+        </div>
+      {%- else -%}
+        <div class="mat-consult__field">
+          <label class="visually-hidden" for="MatName-{{ sid }}">{{ fs.settings.label_name | escape }}</label>
+          <input
+            type="text"
+            id="MatName-{{ sid }}"
+            class="field__input"
+            name="contact[Imię i nazwisko]"
+            autocomplete="name"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            placeholder="{{ fs.settings.placeholder_name | default: fs.settings.label_name | escape }}"
+            required
+          >
+        </div>
+      {%- endif -%}
+
+      {%- if show_business_sphere -%}
+        <div class="mat-consult__field mat-consult__field--select">
+          <label class="visually-hidden" for="MatSphere-{{ sid }}">{{ fs.settings.label_business_sphere | escape }}</label>
+          <div class="mat-consult__select-wrap">
+            <select
+              id="MatSphere-{{ sid }}"
+              class="field__input select__select mat-consult__select"
+              name="contact[Sfera biznesu]"
+              required
+            >
+              <option value="" disabled selected hidden>
+                {{ fs.settings.placeholder_business_sphere | default: fs.settings.label_business_sphere | escape }}
+              </option>
+              {%- if fs.settings.business_sphere_options != blank -%}
+                {%- assign sphere_options = fs.settings.business_sphere_options | newline_to_br | split: '<br />' -%}
+                {%- for option in sphere_options -%}
+                  {%- assign option_trimmed = option | strip -%}
+                  {%- if option_trimmed != blank -%}
+                    <option value="{{ option_trimmed | escape }}">{{ option_trimmed | escape }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </select>
+            <span class="mat-consult__select-icon" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if form_layout == 'partners' -%}
+        <div class="mat-consult__fields-duo">
+          <div class="mat-consult__field">
+            <span class="visually-hidden" id="MatPhone-desc-{{ sid }}">{{ fs.settings.label_phone | escape }}</span>
+            <div class="field field--prefixed" role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
+              <span class="field--prefixed__prefix" aria-hidden="true">{{ fs.settings.phone_prefix | escape }}</span>
+              <input
+                type="tel"
+                id="MatPhone-{{ sid }}"
+                class="field__input"
+                name="contact[Telefon]"
+                autocomplete="tel"
+                inputmode="tel"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                placeholder="{{ fs.settings.placeholder_phone | escape }}"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="mat-consult__field">
+            <label class="visually-hidden" for="MatEmail-{{ sid }}">{{ fs.settings.label_email | escape }}</label>
+            <input
+              type="email"
+              id="MatEmail-{{ sid }}"
+              class="field__input"
+              name="contact[email]"
+              autocomplete="email"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              placeholder="{% if fs.settings.placeholder_email != blank %}{{ fs.settings.placeholder_email | escape }}{% else %}{{ fs.settings.label_email | escape }}{% endif %}"
+              required
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+              {% endif %}
+            >
+          </div>
+        </div>
+      {%- else -%}
+        <div class="mat-consult__field">
+          <span class="visually-hidden" id="MatPhone-desc-{{ sid }}">{{ fs.settings.label_phone | escape }}</span>
+          <div class="field field--prefixed" role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
+            <span class="field--prefixed__prefix" aria-hidden="true">{{ fs.settings.phone_prefix | escape }}</span>
+            <input
+              type="tel"
+              id="MatPhone-{{ sid }}"
+              class="field__input"
+              name="contact[Telefon]"
+              autocomplete="tel"
+              inputmode="tel"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              placeholder="{{ fs.settings.placeholder_phone | escape }}"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="mat-consult__field">
+          <label class="visually-hidden" for="MatEmail-{{ sid }}">{{ fs.settings.label_email | escape }} *</label>
+          <input
+            type="email"
+            id="MatEmail-{{ sid }}"
+            class="field__input"
+            name="contact[email]"
+            autocomplete="email"
+            spellcheck="false"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            placeholder="{% if fs.settings.placeholder_email != blank %}{{ fs.settings.placeholder_email | escape }}{% else %}{{ fs.settings.label_email | escape }}*{% endif %}"
+            required
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+            {% endif %}
+          >
+        </div>
+      {%- endif -%}
+
+      <div class="mat-consult__field mat-consult__field--message">
+        <label class="visually-hidden" for="MatBody-{{ sid }}">{{ fs.settings.label_message | escape }}</label>
+        <textarea
+          id="MatBody-{{ sid }}"
+          class="field__input text-area mat-consult__message-input"
+          name="contact[Komentarz]"
+          rows="{% if form_layout == 'partners' %}1{% else %}3{% endif %}"
+          placeholder="{{ fs.settings.placeholder_message | default: fs.settings.label_message | escape }}"
+        >
+          {{- form.body -}}
+        </textarea>
+      </div>
+    </div>
+
+    <div
+      class="mat-consult__footer"
+      data-consent-gate
+      data-consent-gate-msg="{{ consent_gate_msg | escape }}"
+    >
+      <div class="contact__button">
+        <button type="submit" class="button" data-consent-gate-submit>
+          {{ fs.settings.submit_label | escape }}
+        </button>
+      </div>
+
+      <label class="checkbox-container mat-consult__consent">
+        <p>
+          {%- if fs.settings.consent_intro != blank -%}
+            {{ fs.settings.consent_intro | escape }}
+          {%- else -%}
+            Zgadzam się z
+          {%- endif -%}
+          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'regulaminem' | escape }}</a>
+          {%- if fs.settings.consent_mid != blank -%}
+            {{ fs.settings.consent_mid | escape }}
+          {%- else -%}
+            oraz
+          {%- endif -%}
+          <a href="{{ privacy_url }}">{{ fs.settings.privacy_label | default: 'Polityką prywatności' | escape }}</a>{{ fs.settings.consent_end | default: '.' | escape }}
+        </p>
+        <input type="checkbox" id="MatConsent-{{ sid }}" data-consent-gate-checkbox>
+        <span class="checkmark"></span>
+      </label>
+      <div class="mat-consult__message" data-consent-gate-output></div>
+    </div>
+  {%- endform -%}
+</div>
+
+{% stylesheet %}
+  .mat-consult-form {
+    --mat-text: var(--color-text);
+    --mat-muted: var(--color-text-secondary);
+    --mat-accent: #ff2741;
+    width: 100%;
+    max-width: 424px;
+    margin: 0 auto;
+    color: var(--mat-text);
+  }
+
+  .mat-consult-form .checkbox-container {
+    margin-top: 20px;
+  }
+
+  .mat-consult-form .mat-consult__form {
+    width: 100%;
+    max-width: 424px;
+  }
+
+  .mat-consult-form .mat-consult__title {
+    margin: 0 0 36px;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--mat-text);
+  }
+
+  .mat-consult-form .mat-consult__sub {
+    margin: 0 0 32px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--mat-muted);
+  }
+
+  .mat-consult-form .mat-consult__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mat-consult-form .mat-consult__status {
+    margin: 0 0 16px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .mat-consult-form .mat-consult__status--ok {
+    color: #7dffb1;
+  }
+
+  .mat-consult-form .mat-consult__status--err {
+    color: #ff8a8a;
+  }
+
+  .mat-consult-form .mat-consult__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 424px;
+    margin: 0 auto;
+  }
+
+  .mat-consult-form .mat-consult__consent {
+    margin-top: 24px;
+  }
+
+  .mat-consult-form .contact__button {
+    margin-top: 20px;
+  }
+
+  .mat-consult-form .contact__button .button {
+    width: 100%;
+  }
+
+  .mat-consult-form .checkbox-container p {
+    color: var(--mat-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+  }
+
+  .mat-consult-form .checkbox-container p a {
+    color: var(--mat-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .mat-consult-form .mat-consult__select-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .mat-consult-form .mat-consult__select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    min-height: var(--eva-input-min-h, 52px);
+    height: var(--eva-input-min-h, 52px);
+    padding: 0 44px 0 var(--eva-input-pad-x, 20px);
+    border: 1px solid var(--eva-input-border, var(--color-border));
+    border-radius: var(--eva-input-radius, 12px);
+    background-color: var(--eva-input-bg, #ffffff);
+    color: var(--eva-input-text, var(--color-text));
+    font: inherit;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .mat-consult-form .mat-consult__select:invalid {
+    color: var(--eva-input-placeholder, #939393);
+  }
+
+  .mat-consult-form .mat-consult__select option {
+    color: var(--eva-input-text, var(--color-text));
+    background-color: var(--eva-input-bg, #ffffff);
+  }
+
+  .mat-consult-form .mat-consult__select:hover {
+    border-color: var(--eva-input-border-hover, #0061dc);
+  }
+
+  .mat-consult-form .mat-consult__select:focus,
+  .mat-consult-form .mat-consult__select:focus-visible {
+    outline: none;
+    border-color: var(--eva-input-focus, #0061dc);
+    box-shadow: 0 0 0 1px var(--eva-input-focus, #0061dc);
+  }
+
+  .mat-consult-form .mat-consult__select-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .mat-consult-form--partners {
+    max-width: 676px;
+  }
+
+  .mat-consult-form--partners .mat-consult__form {
+    max-width: 676px;
+  }
+
+  .mat-consult-form--partners .mat-consult__title {
+    margin: 0 0 36px;
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .mat-consult-form--partners .mat-consult__sub {
+    margin: 0 0 36px;
+  }
+
+  .mat-consult-form--partners .mat-consult__fields-duo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .mat-consult-form--partners .mat-consult__fields-duo .mat-consult__field {
+    min-width: 0;
+  }
+
+  .mat-consult-form--partners .mat-consult__footer {
+    margin-top: 36px;
+  }
+
+  .mat-consult-form--partners .contact__button {
+    margin-top: 0;
+  }
+
+  .mat-consult-form--partners .mat-consult__consent {
+    margin-top: 26px;
+  }
+
+  .mat-consult-form--partners .contact__button .button {
+    min-height: 60px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: none;
+  }
+
+  .mat-consult-form--partners .field__input {
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+  }
+
+  .mat-consult-form--partners .mat-consult__message-input {
+    min-height: 52px;
+    height: auto;
+    resize: vertical;
+  }
+
+  .mat-consult-form--partners .checkbox-container .checkmark {
+    background-color: #010202;
+    border-color: #3c3c3c;
+  }
+
+  .mat-consult-form--partners .checkbox-container:hover input ~ .checkmark {
+    background-color: #141414;
+  }
+
+  @media screen and (max-width: 749px) {
+    .mat-consult-form .mat-consult__sub {
+      margin-bottom: 24px;
+    }
+
+    .mat-consult-form .mat-consult__title {
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .mat-consult-form--partners {
+      max-width: none;
+    }
+
+    .mat-consult-form--partners .mat-consult__form {
+      max-width: none;
+    }
+
+    .mat-consult-form--partners .mat-consult__title {
+      margin: 0 0 26px;
+      font-size: 22px;
+    }
+
+    .mat-consult-form--partners .mat-consult__sub {
+      margin: 0 0 26px;
+      font-size: 15px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+    }
+
+    .mat-consult-form--partners .mat-consult__fields-duo {
+      grid-template-columns: 1fr;
+    }
+
+    .mat-consult-form--partners .mat-consult__footer {
+      margin-top: 26px;
+      max-width: none;
+    }
+
+    .mat-consult-form--partners .contact__button .button {
+      min-height: 50px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .mat-consult-form--partners input.field__input,
+    .mat-consult-form--partners .mat-consult__select,
+    .mat-consult-form--partners .field--prefixed {
+      min-height: 46px;
+      height: 46px;
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    .mat-consult-form--partners .mat-consult__select {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .mat-consult-form--partners .mat-consult__message-input {
+      min-height: 46px;
+      height: auto;
+    }
+
+    .mat-consult-form--partners .checkbox-container p {
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+  }
+{% endstylesheet %}

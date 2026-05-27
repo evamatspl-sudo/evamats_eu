@@ -1,0 +1,377 @@
+{%- assign vacancy = article.metafields.custom.vacancy.value -%}
+
+{%- capture apply_button_href -%}
+  {%- if vacancy != blank and vacancy.button_url.value != blank -%}
+    {%- render 'evamats-resolve-url', url: vacancy.button_url.value -%}
+  {%- elsif vacancy != blank and vacancy.url.value != blank -%}
+    {%- render 'evamats-resolve-url', url: vacancy.url.value -%}
+  {%- elsif section.settings.apply_link != blank -%}
+    {{ section.settings.apply_link }}
+  {%- else -%}
+    mailto:{{ section.settings.apply_email | default: 'hr.team@evamats.pl' }}
+  {%- endif -%}
+{%- endcapture -%}
+{%- assign apply_button_href = apply_button_href | strip -%}
+
+{%- assign apply_button_opens_new_tab = false -%}
+{%- unless apply_button_href contains 'mailto:' -%}
+  {%- if apply_button_href contains '://' -%}
+    {%- assign apply_link_host = apply_button_href | split: '://' | last | split: '/' | first | downcase | remove: 'www.' -%}
+    {%- assign current_site_host = request.host | downcase | remove: 'www.' -%}
+    {%- assign shop_primary_host = shop.primary_domain.host | downcase | remove: 'www.' -%}
+    {%- unless apply_link_host == current_site_host or apply_link_host == shop_primary_host -%}
+      {%- assign apply_button_opens_new_tab = true -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endunless -%}
+
+<section
+  id="EvamatsArticleKarieraHero-{{ section.id }}"
+  class="evamats-article-kariera-hero"
+  style="--akh-aside-top: calc(var(--header-height, 0px) + 24px);"
+>
+  <div class="evamats-article-kariera-hero__inner page-width">
+
+    {%- if section.settings.show_back_link -%}
+      <a class="evamats-article-kariera-hero__back" href="{{ blog.url }}">
+        {{ section.settings.back_link_label | escape }}
+      </a>
+    {%- endif -%}
+
+    <div class="evamats-article-kariera-hero__row">
+      <div class="evamats-article-kariera-hero__main">
+        <h1 class="evamats-article-kariera-hero__title section_title">
+          {%- if vacancy != blank and vacancy.title.value != blank -%}
+            {{ vacancy.title.value | escape }}
+          {%- else -%}
+            {{ article.title | escape }}
+          {%- endif -%}
+        </h1>
+
+        {%- if vacancy != blank and article.content != blank -%}
+          <div class="evamats-article-kariera-hero__lead">{{ article.content | strip_html | escape | newline_to_br }}</div>
+        {%- elsif article.excerpt != blank -%}
+          <div class="evamats-article-kariera-hero__lead">{{ article.excerpt | strip_html | escape | newline_to_br }}</div>
+        {%- endif -%}
+
+        {%- if vacancy != blank -%}
+          {% render 'evamats-vacancy-tags',
+            vacancy: vacancy,
+            label_contract: section.settings.label_contract | default: section.settings.label_level | default: 'Umowa',
+            label_languages: section.settings.label_languages | default: 'Język',
+            label_work_mode: section.settings.label_work_mode | default: 'Tryb pracy',
+            label_location: section.settings.label_location | default: 'Lokalizacja',
+            label_salary: section.settings.label_salary | default: 'Wynagrodzenie',
+            icon_suffix: article.id | append: '-' | append: section.id
+          %}
+        {%- endif -%}
+
+        <div class="button-row-v2">
+          <a
+            class="button button_3"
+            href="{{ apply_button_href }}"
+            {% if apply_button_opens_new_tab %}
+              target="_blank"
+              rel="noopener noreferrer"
+            {% endif %}
+          >
+            {{ section.settings.apply_label | escape }}
+          </a>
+        </div>
+      </div>
+
+      {%- if section.settings.show_sidebar_card and vacancy != blank -%}
+          <aside
+            class="evamats-article-kariera-hero__aside"
+            data-kariera-sticky-aside
+            aria-label="{{ section.settings.sidebar_aria_label | escape }}"
+          >
+            <div class="evamats-article-kariera-hero__aside-card">
+              {%- comment -%}
+                Metaobject fields: salary_in_pln (e.g. 6500–8500), text_after_salary_in_pln (e.g. PLN brutto).
+                Values are read via evamats-vacancy-field-value — metaobject may expose .value or plain string.
+              {%- endcomment -%}
+              {%- capture sidebar_salary_amount -%}
+                {%- render 'evamats-vacancy-field-value', field: vacancy.salary_in_pln, fallback: vacancy.salary_brutto -%}
+              {%- endcapture -%}
+              {%- capture sidebar_salary_suffix -%}
+                {%- render 'evamats-vacancy-field-value', field: vacancy.text_after_salary_in_pln -%}
+              {%- endcapture -%}
+
+              {%- if sidebar_salary_amount != blank -%}
+                <p class="evamats-article-kariera-hero__salary">
+                  <span class="evamats-article-kariera-hero__salary-value">{{ sidebar_salary_amount | strip | escape }}</span>
+                  {%- if sidebar_salary_suffix != blank -%}
+                    <span class="evamats-article-kariera-hero__salary-suffix"> {{ sidebar_salary_suffix | strip | escape }}</span>
+                  {%- endif -%}
+                </p>
+              {%- endif -%}
+
+              {% render 'evamats-vacancy-sidebar-summary',
+                vacancy: vacancy,
+                icon_suffix: article.id | append: '-' | append: section.id
+              %}
+
+              <div class="button-row-v2">
+                <a
+                  class="button button_3"
+                  href="{{ apply_button_href }}"
+                  {% if apply_button_opens_new_tab %}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  {% endif %}
+                >
+                  {{ section.settings.apply_label | escape }}
+                </a>
+              </div>
+            </div>
+          </aside>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    var mq = window.matchMedia('(min-width: 990px)');
+    var END_GAP = 40;
+    var roots = document.querySelectorAll(
+      '.evamats-article-kariera-hero__aside[data-kariera-sticky-aside]'
+    );
+    if (!roots.length) return;
+
+    function topOffset() {
+      var headerH =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+        ) || 0;
+      return headerH + 24;
+    }
+
+    function clearCard(card) {
+      card.classList.remove('is-sticky-fixed');
+      card.style.top = '';
+      card.style.left = '';
+      card.style.width = '';
+    }
+
+    function resetAside(aside, card) {
+      clearCard(card);
+    }
+
+    function readAnchorTop(aside) {
+      return aside.getBoundingClientRect().top + window.scrollY;
+    }
+
+    function updateAside(aside) {
+      var card = aside.querySelector('.evamats-article-kariera-hero__aside-card');
+      if (!card) return;
+
+      if (!mq.matches) {
+        resetAside(aside, card);
+        return;
+      }
+
+      var stop = document.querySelector('.evamats-kariera-benefits');
+      if (!stop) {
+        resetAside(aside, card);
+        return;
+      }
+
+      var headerTop = topOffset();
+      var scrollY = window.scrollY;
+      var cardH = card.offsetHeight;
+      var asideRect = aside.getBoundingClientRect();
+      var stopRect = stop.getBoundingClientRect();
+
+      if (!card.classList.contains('is-sticky-fixed')) {
+        aside.dataset.anchorTop = String(readAnchorTop(aside));
+      }
+
+      var anchorTop = parseFloat(aside.dataset.anchorTop);
+      if (!Number.isFinite(anchorTop)) {
+        clearCard(card);
+        return;
+      }
+
+      var fixStart = anchorTop - headerTop;
+      var stopViewportTop = stopRect.top - END_GAP - cardH;
+
+      if (scrollY < fixStart) {
+        clearCard(card);
+        aside.dataset.anchorTop = String(readAnchorTop(aside));
+        return;
+      }
+
+      var fixedTop = Math.min(headerTop, stopViewportTop);
+
+      card.classList.add('is-sticky-fixed');
+      card.style.top = fixedTop + 'px';
+      card.style.left = asideRect.left + 'px';
+      card.style.width = asideRect.width + 'px';
+    }
+
+    function remeasureAll() {
+      roots.forEach(function (aside) {
+        var card = aside.querySelector('.evamats-article-kariera-hero__aside-card');
+        if (!card) return;
+        clearCard(card);
+        updateAside(aside);
+      });
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        roots.forEach(updateAside);
+      });
+    }
+
+    roots.forEach(function (aside) {
+      updateAside(aside);
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', remeasureAll);
+    window.addEventListener('load', remeasureAll);
+    mq.addEventListener('change', remeasureAll);
+
+    if (typeof ResizeObserver !== 'undefined') {
+      var ro = new ResizeObserver(remeasureAll);
+      roots.forEach(function (aside) {
+        ro.observe(aside);
+      });
+      var stop = document.querySelector('.evamats-kariera-benefits');
+      if (stop) ro.observe(stop);
+    }
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "EVAMATS kariera hero",
+  "tag": "section",
+  "class": "section-evamats-article-kariera-hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_back_link",
+      "label": "Show back link to blog",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "back_link_label",
+      "label": "Back link label",
+      "default": "← Wszystkie oferty"
+    },
+    {
+      "type": "header",
+      "content": "Apply button"
+    },
+    {
+      "type": "text",
+      "id": "apply_label",
+      "label": "Apply button label",
+      "default": "Aplikuj"
+    },
+    {
+      "type": "url",
+      "id": "apply_link",
+      "label": "Apply URL",
+      "info": "If empty, uses mailto with the email below."
+    },
+    {
+      "type": "text",
+      "id": "apply_email",
+      "label": "Apply mailto email",
+      "default": "hr.team@evamats.pl"
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sidebar_card",
+      "label": "Show right summary card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sidebar_aria_label",
+      "label": "Sidebar aria label",
+      "default": "Podsumowanie oferty"
+    },
+    {
+      "type": "paragraph",
+      "content": "Vacancy metaobject button_url: external (https://…), domain (www.site.pl/…), or internal path (/contact). External links open in a new tab."
+    },
+    {
+      "type": "header",
+      "content": "Vacancy tag labels"
+    },
+    {
+      "type": "text",
+      "id": "label_contract",
+      "label": "Label: contract",
+      "default": "Umowa"
+    },
+    {
+      "type": "text",
+      "id": "label_languages",
+      "label": "Label: languages",
+      "default": "Język"
+    },
+    {
+      "type": "text",
+      "id": "label_work_mode",
+      "label": "Label: work mode",
+      "default": "Tryb pracy"
+    },
+    {
+      "type": "text",
+      "id": "label_location",
+      "label": "Label: location",
+      "default": "Lokalizacja"
+    },
+    {
+      "type": "text",
+      "id": "label_salary",
+      "label": "Label: salary",
+      "default": "Wynagrodzenie"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS kariera hero",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

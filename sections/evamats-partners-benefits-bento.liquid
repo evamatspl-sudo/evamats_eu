@@ -1,0 +1,1224 @@
+﻿<section
+  id="EvamatsKarieraBenefits-{{ section.id }}"
+  class="evamats-kariera-benefits"
+>
+  <div class="evamats-kariera-benefits__inner page-width">
+    {%- if section.settings.overline != blank or section.settings.heading != blank -%}
+      <div class="evamats-kariera-benefits__intro">
+        {%- if section.settings.overline != blank -%}
+          <p class="evamats-kariera-benefits__overline">{{ section.settings.overline | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="evamats-kariera-benefits__heading section_title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="evamats-kariera-benefits__grid">
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'panel_left' -%}
+          {%- assign ekb_ct = block.settings.content_type | default: 'list' -%}
+          <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--a{% if ekb_ct == 'text' %} evamats-kariera-benefits__panel--text-only{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h3 class="evamats-kariera-benefits__panel-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if ekb_ct == 'list' -%}
+              {%- assign ekb_has_items = false -%}
+              {%- for ekb_i in (1..5) -%}
+                {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                {%- if block.settings[ekb_tk] != blank -%}{%- assign ekb_has_items = true -%}{%- endif -%}
+              {%- endfor -%}
+              {%- if ekb_has_items -%}
+                <ul class="evamats-kariera-benefits__list" role="list">
+                  {%- for ekb_i in (1..5) -%}
+                    {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                    {%- assign ekb_ik = 'item_' | append: ekb_i | append: '_icon' -%}
+                    {%- assign ekb_tv = block.settings[ekb_tk] -%}
+                    {%- assign ekb_iv = block.settings[ekb_ik] -%}
+                    {%- if ekb_tv != blank -%}
+                      <li class="evamats-kariera-benefits__row">
+                        {%- if ekb_iv != blank -%}
+                          {%- assign ekb_uid = block.id | append: '-a-' | append: ekb_i -%}
+                          <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                            {% render 'evamats-benefit-icon', icon: ekb_iv, uid: ekb_uid %}
+                          </span>
+                        {%- endif -%}
+                        <span class="evamats-kariera-benefits__row-text">{{ ekb_tv | escape }}</span>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            {%- else -%}
+              {%- if block.settings.description != blank -%}
+                <p class="evamats-kariera-benefits__description">{{ block.settings.description | escape }}</p>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if block.settings.image != blank -%}
+              <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--a">
+                {{
+                  block.settings.image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'evamats-kariera-benefits__panel-img'
+                }}
+                {%- if block.settings.badge_label != blank or block.settings.badge_value != blank -%}
+                  <div class="evamats-kariera-benefits__margin-badge">
+                    {%- if block.settings.badge_value != blank -%}
+                      <span class="evamats-kariera-benefits__margin-badge-value">{{ block.settings.badge_value | escape }}</span>
+                    {%- endif -%}
+                    {%- if block.settings.badge_label != blank -%}
+                      <span class="evamats-kariera-benefits__margin-badge-label">{{ block.settings.badge_label | escape }}</span>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </article>
+
+        {%- elsif block.type == 'panel_center' -%}
+          {%- assign ekb_ct = block.settings.content_type | default: 'logo' -%}
+          <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--b{% if ekb_ct == 'logo' %} evamats-kariera-benefits__panel--logo{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h3 class="evamats-kariera-benefits__panel-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if ekb_ct == 'logo' -%}
+              <div class="evamats-kariera-benefits__culture-foot">
+                {%- if settings.logo != blank -%}
+                  <div class="evamats-kariera-benefits__culture-logo">
+                    {{
+                      settings.logo
+                      | image_url: width: 206
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'evamats-kariera-benefits__culture-logo-img',
+                        widths: '88, 103, 206',
+                        sizes: '(min-width: 750px) 103px, 88px'
+                    }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.tagline != blank -%}
+                  <p class="evamats-kariera-benefits__culture-tagline">{{ block.settings.tagline | escape }}</p>
+                {%- endif -%}
+              </div>
+
+            {%- elsif ekb_ct == 'text' -%}
+              {%- if block.settings.description != blank -%}
+                <p class="evamats-kariera-benefits__description evamats-kariera-benefits__description--b">{{ block.settings.description | escape }}</p>
+              {%- endif -%}
+              <div class="evamats-kariera-benefits__panel-b-foot">
+                {% render 'evamats-trust-badge',
+                  badge_text: block.settings.badge_text,
+                  badge_faces_image: block.settings.badge_faces_image
+                %}
+              </div>
+              {%- if block.settings.image != blank -%}
+                <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--b" aria-hidden="true">
+                  {{
+                    block.settings.image
+                    | image_url: width: 600
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'evamats-kariera-benefits__panel-img evamats-kariera-benefits__panel-img--b'
+                  }}
+                </div>
+              {%- endif -%}
+
+            {%- elsif ekb_ct == 'list' -%}
+              {%- assign ekb_has_items = false -%}
+              {%- for ekb_i in (1..5) -%}
+                {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                {%- if block.settings[ekb_tk] != blank -%}{%- assign ekb_has_items = true -%}{%- endif -%}
+              {%- endfor -%}
+              {%- if ekb_has_items -%}
+                <ul class="evamats-kariera-benefits__list" role="list">
+                  {%- for ekb_i in (1..5) -%}
+                    {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                    {%- assign ekb_ik = 'item_' | append: ekb_i | append: '_icon' -%}
+                    {%- assign ekb_tv = block.settings[ekb_tk] -%}
+                    {%- assign ekb_iv = block.settings[ekb_ik] -%}
+                    {%- if ekb_tv != blank -%}
+                      <li class="evamats-kariera-benefits__row">
+                        {%- if ekb_iv != blank -%}
+                          {%- assign ekb_uid = block.id | append: '-b-' | append: ekb_i -%}
+                          <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                            {% render 'evamats-benefit-icon', icon: ekb_iv, uid: ekb_uid %}
+                          </span>
+                        {%- endif -%}
+                        <span class="evamats-kariera-benefits__row-text">{{ ekb_tv | escape }}</span>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            {%- endif -%}
+          </article>
+
+        {%- elsif block.type == 'panel_right' -%}
+          {%- assign ekb_ct = block.settings.content_type | default: 'list' -%}
+          <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--c{% if ekb_ct == 'list' %} evamats-kariera-benefits__panel--has-list{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.bg_image != blank -%}
+              <div class="evamats-kariera-benefits__panel-bg" aria-hidden="true">
+                {{
+                  block.settings.bg_image
+                  | image_url: width: 1200
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'evamats-kariera-benefits__panel-bg-img'
+                }}
+              </div>
+            {%- endif -%}
+
+            <div class="evamats-kariera-benefits__panel-c-inner{% if block.settings.bg_image != blank and block.settings.show_bg_overlay %} has-overlay{% endif %}">
+              {%- if block.settings.title != blank -%}
+                <h3 class="evamats-kariera-benefits__panel-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+
+              {%- if ekb_ct == 'list' -%}
+                {%- assign ekb_has_items = false -%}
+                {%- for ekb_i in (1..5) -%}
+                  {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                  {%- if block.settings[ekb_tk] != blank -%}{%- assign ekb_has_items = true -%}{%- endif -%}
+                {%- endfor -%}
+                {%- if ekb_has_items -%}
+                  <ul class="evamats-kariera-benefits__list" role="list">
+                    {%- for ekb_i in (1..5) -%}
+                      {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                      {%- assign ekb_ik = 'item_' | append: ekb_i | append: '_icon' -%}
+                      {%- assign ekb_tv = block.settings[ekb_tk] -%}
+                      {%- assign ekb_iv = block.settings[ekb_ik] -%}
+                      {%- if ekb_tv != blank -%}
+                        <li class="evamats-kariera-benefits__row">
+                          {%- if ekb_iv != blank -%}
+                            {%- assign ekb_uid = block.id | append: '-c-' | append: ekb_i -%}
+                            <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                              {% render 'evamats-benefit-icon', icon: ekb_iv, uid: ekb_uid %}
+                            </span>
+                          {%- endif -%}
+                          <span class="evamats-kariera-benefits__row-text">{{ ekb_tv | escape }}</span>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              {%- else -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="evamats-kariera-benefits__description evamats-kariera-benefits__description--c">{{ block.settings.description | escape }}</p>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          </article>
+
+        {%- elsif block.type == 'panel_bottom' -%}
+          {%- assign ekb_ct = block.settings.content_type | default: 'list' -%}
+          <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--d{% if ekb_ct == 'list' %} evamats-kariera-benefits__panel--has-list{% endif %}" {{ block.shopify_attributes }}>
+            <div class="evamats-kariera-benefits__panel-d-inner">
+              <div class="evamats-kariera-benefits__panel-d-copy">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="evamats-kariera-benefits__panel-title">{{ block.settings.title | escape }}</h3>
+                {%- endif -%}
+
+                {%- if ekb_ct == 'list' -%}
+                  {%- assign ekb_has_items = false -%}
+                  {%- for ekb_i in (1..5) -%}
+                    {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                    {%- if block.settings[ekb_tk] != blank -%}{%- assign ekb_has_items = true -%}{%- endif -%}
+                  {%- endfor -%}
+                  {%- if ekb_has_items -%}
+                    <ul class="evamats-kariera-benefits__list" role="list">
+                      {%- for ekb_i in (1..5) -%}
+                        {%- assign ekb_tk = 'item_' | append: ekb_i | append: '_text' -%}
+                        {%- assign ekb_ik = 'item_' | append: ekb_i | append: '_icon' -%}
+                        {%- assign ekb_tv = block.settings[ekb_tk] -%}
+                        {%- assign ekb_iv = block.settings[ekb_ik] -%}
+                        {%- if ekb_tv != blank -%}
+                          <li class="evamats-kariera-benefits__row">
+                            {%- if ekb_iv != blank -%}
+                              {%- assign ekb_uid = block.id | append: '-d-' | append: ekb_i -%}
+                              <span class="evamats-kariera-benefits__row-icon" aria-hidden="true">
+                                {% render 'evamats-benefit-icon', icon: ekb_iv, uid: ekb_uid %}
+                              </span>
+                            {%- endif -%}
+                            <span class="evamats-kariera-benefits__row-text">{{ ekb_tv | escape }}</span>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                {%- else -%}
+                  {%- if block.settings.description != blank -%}
+                    <p class="evamats-kariera-benefits__description evamats-kariera-benefits__description--foot">{{ block.settings.description | escape }}</p>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.image != blank -%}
+                <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--d">
+                  {{
+                    block.settings.image
+                    | image_url: width: 800
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'evamats-kariera-benefits__panel-img evamats-kariera-benefits__panel-img--d'
+                  }}
+                </div>
+              {%- endif -%}
+            </div>
+          </article>
+
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Partners benefits bento",
+  "tag": "section",
+  "class": "section-evamats-kariera-benefits",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "panel_left",
+      "name": "Panel A — left (tall)",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Content type",
+          "options": [
+            { "value": "list", "label": "Icon list" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "list"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description (mode: text)"
+        },
+        {
+          "type": "header",
+          "content": "Item 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_1_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "header",
+          "content": "Item 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_2_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "header",
+          "content": "Item 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_3_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "3"
+        },
+        {
+          "type": "header",
+          "content": "Item 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_4_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "4"
+        },
+        {
+          "type": "header",
+          "content": "Item 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_5_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo / image"
+        },
+        {
+          "type": "text",
+          "id": "badge_value",
+          "label": "Badge — value (e.g. 35%)"
+        },
+        {
+          "type": "text",
+          "id": "badge_label",
+          "label": "Badge — label (e.g. Avg. margin:)"
+        }
+      ]
+    },
+    {
+      "type": "panel_center",
+      "name": "Panel B — center",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Content type",
+          "options": [
+            { "value": "logo", "label": "Logo + tagline (career)" },
+            { "value": "text", "label": "Text + badge + image (optional)" },
+            { "value": "list", "label": "Icon list" }
+          ],
+          "default": "logo"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline (mode: logo)"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description (mode: text)"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text (mode: text)"
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_faces_image",
+          "label": "Badge faces image (mode: text)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product photo (mode: text)"
+        },
+        {
+          "type": "header",
+          "content": "Item 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_1_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "header",
+          "content": "Item 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_2_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "header",
+          "content": "Item 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_3_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "3"
+        },
+        {
+          "type": "header",
+          "content": "Item 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_4_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "4"
+        },
+        {
+          "type": "header",
+          "content": "Item 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_5_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "5"
+        }
+      ]
+    },
+    {
+      "type": "panel_right",
+      "name": "Panel C — right",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Content type",
+          "options": [
+            { "value": "list", "label": "Icon list" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "list"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description (mode: text)"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bg_overlay",
+          "label": "Background gradient overlay",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Item 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_1_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "header",
+          "content": "Item 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_2_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "6"
+        },
+        {
+          "type": "header",
+          "content": "Item 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_3_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "7"
+        },
+        {
+          "type": "header",
+          "content": "Item 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_4_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "8"
+        },
+        {
+          "type": "header",
+          "content": "Item 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_5_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "9"
+        }
+      ]
+    },
+    {
+      "type": "panel_bottom",
+      "name": "Panel D — bottom (wide)",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Content type",
+          "options": [
+            { "value": "list", "label": "Icon list" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "list"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description (mode: text)"
+        },
+        {
+          "type": "header",
+          "content": "Item 1"
+        },
+        {
+          "type": "text",
+          "id": "item_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_1_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "10"
+        },
+        {
+          "type": "header",
+          "content": "Item 2"
+        },
+        {
+          "type": "text",
+          "id": "item_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_2_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "11"
+        },
+        {
+          "type": "header",
+          "content": "Item 3"
+        },
+        {
+          "type": "text",
+          "id": "item_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_3_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "12"
+        },
+        {
+          "type": "header",
+          "content": "Item 4"
+        },
+        {
+          "type": "text",
+          "id": "item_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_4_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "13"
+        },
+        {
+          "type": "header",
+          "content": "Item 5"
+        },
+        {
+          "type": "text",
+          "id": "item_5_text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "item_5_icon",
+          "label": "Icon",
+          "options": [
+            { "value": "1", "label": "Shield" },
+            { "value": "2", "label": "Clock" },
+            { "value": "3", "label": "Checklist" },
+            { "value": "4", "label": "Network" },
+            { "value": "5", "label": "Career path" },
+            { "value": "6", "label": "Growth chart" },
+            { "value": "7", "label": "Team support" },
+            { "value": "8", "label": "Skills" },
+            { "value": "9", "label": "Ideas" },
+            { "value": "10", "label": "Bonus" },
+            { "value": "11", "label": "Discount" },
+            { "value": "12", "label": "Multisport" },
+            { "value": "13", "label": "Gift card" },
+            { "value": "14", "label": "Parking" }
+          ],
+          "default": "14"
+        },
+        {
+          "type": "header",
+          "content": "Decorative image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (right side)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits — Kariera",
+      "category": "V2",
+      "settings": {
+        "overline": "Benefity",
+        "heading": "Co zyskujesz, dołączając do EVAMATS?"
+      },
+      "blocks": [
+        {
+          "type": "panel_left",
+          "settings": {
+            "title": "Praca, która ma sens i tempo",
+            "content_type": "list",
+            "item_1_text": "Stabilne zatrudnienie i jasne zasady",
+            "item_1_icon": "1",
+            "item_2_text": "Elastyczne podejście do pracy",
+            "item_2_icon": "2",
+            "item_3_text": "Możliwość pracy zdalnej (wybrane role)",
+            "item_3_icon": "3",
+            "item_4_text": "Zorganizowany system zamiast chaosu",
+            "item_4_icon": "4"
+          }
+        },
+        {
+          "type": "panel_center",
+          "settings": {
+            "title": "Tworzymy firmę, w której chce się pracować i rozwijać",
+            "content_type": "logo",
+            "tagline": "Nie szukamy wszystkich — szukamy zaangażowanych"
+          }
+        },
+        {
+          "type": "panel_right",
+          "settings": {
+            "title": "Rozwój, który naprawdę przyspiesza",
+            "content_type": "list",
+            "item_1_text": "Jasna ścieżka awansu",
+            "item_1_icon": "5",
+            "item_2_text": "Realny wpływ na decyzje",
+            "item_2_icon": "6",
+            "item_3_text": "Wsparcie liderów i zespołu",
+            "item_3_icon": "7",
+            "item_4_text": "Rozwój kompetencji w praktyce",
+            "item_4_icon": "8",
+            "item_5_text": "Możliwość wdrażania własnych pomysłów",
+            "item_5_icon": "9"
+          }
+        },
+        {
+          "type": "panel_bottom",
+          "settings": {
+            "title": "Wynagrodzenie i dodatkowe korzyści",
+            "content_type": "list",
+            "item_1_text": "Premie zależne od wyników",
+            "item_1_icon": "10",
+            "item_2_text": "Zniżki na produkty EVAMATS",
+            "item_2_icon": "11",
+            "item_3_text": "Dodatkowe benefity (np. Multisport)",
+            "item_3_icon": "12",
+            "item_4_text": "Karty podarunkowe i bonusy",
+            "item_4_icon": "13",
+            "item_5_text": "Parking dla pracowników",
+            "item_5_icon": "14"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Benefits — Partnerzy",
+      "category": "V2",
+      "settings": {
+        "heading": "Co zyskujesz, współpracując z EVAMATS?"
+      },
+      "blocks": [
+        {
+          "type": "panel_left",
+          "settings": {
+            "title": "Produkt premium z wysoką marżą",
+            "content_type": "text",
+            "description": "Zarabiasz na każdym zamówieniu — bez własnej produkcji"
+          }
+        },
+        {
+          "type": "panel_center",
+          "settings": {
+            "title": "Setki wariantów personalizacji",
+            "content_type": "text",
+            "description": "Więcej opcji = wyższa wartość zamówienia",
+            "badge_text": "700+ wariantów",
+            "badge_faces_image": "shopify://shop_images/Group_1948755196.webp"
+          }
+        },
+        {
+          "type": "panel_right",
+          "settings": {
+            "title": "Szybka realizacja zamówień (3–5 dni)",
+            "content_type": "text",
+            "description": "Produkcja i logistyka po naszej stronie",
+            "show_bg_overlay": true
+          }
+        },
+        {
+          "type": "panel_bottom",
+          "settings": {
+            "title": "Model gotowy do skalowania",
+            "content_type": "text",
+            "description": "Możesz rozwijać sprzedaż bez zwiększania kosztów"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

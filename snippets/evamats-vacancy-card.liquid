@@ -1,0 +1,65 @@
+{%- comment -%}
+  @param article {article}
+  @param vacancy {object} metaobject entry from article.metafields.custom.vacancy
+  @param section {section}
+  @param label_contract {string}
+  @param label_languages {string}
+  @param label_work_mode {string}
+  @param label_location {string}
+  @param label_salary {string}
+  @param card_index {number}
+  @param articles_per_page {number}
+{%- endcomment -%}
+
+{%- liquid
+  capture v_category
+    render 'evamats-vacancy-category-from-article', vacancy: vacancy, article: article
+  endcapture
+  assign v_category = v_category | strip
+
+  capture v_title
+    render 'evamats-vacancy-field-value', field: vacancy.title
+  endcapture
+  assign v_title = v_title | strip
+  if v_title == blank
+    assign v_title = article.title
+  endif
+
+  capture v_sort_raw
+    render 'evamats-vacancy-field-value', field: vacancy.order
+  endcapture
+  assign v_sort = v_sort_raw | strip | default: 9999 | plus: 0
+
+  assign icon_suffix = article.id | append: '-' | append: section.id
+  assign is_hidden = false
+  if card_index >= articles_per_page
+    assign is_hidden = true
+  endif
+-%}
+
+<article
+  class="evamats-vacancies-list__card{% if is_hidden %} evamats-vacancies-list__card--hidden{% endif %}"
+  data-category="{{ v_category | escape }}"
+  data-sort-order="{{ v_sort }}"
+  data-evamats-vacancy-card
+>
+  <div class="evamats-vacancies-list__card-main">
+    <h3 class="evamats-vacancies-list__card-title">
+      <a href="{{ article.url }}">{{ v_title | escape }}</a>
+    </h3>
+
+    {% render 'evamats-vacancy-tags',
+      vacancy: vacancy,
+      label_contract: label_contract,
+      label_languages: label_languages,
+      label_work_mode: label_work_mode,
+      label_location: label_location,
+      label_salary: label_salary,
+      icon_suffix: icon_suffix
+    %}
+  </div>
+
+  <a class="evamats-vacancies-list__cta" href="{{ article.url }}">
+    {{ section.settings.card_cta_label | escape }}
+  </a>
+</article>

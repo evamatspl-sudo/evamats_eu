@@ -1,0 +1,194 @@
+{%- liquid
+  assign bg_image = section.settings.background_image
+  assign bg_image_mobile = section.settings.background_image_mobile
+  if bg_image_mobile == blank
+    assign bg_image_mobile = bg_image
+  endif
+
+  assign email = section.settings.email | default: 'hr.team@evamats.pl'
+  assign button_link = section.settings.button_link
+  if button_link == blank
+    assign button_link = 'mailto:' | append: email
+  endif
+
+  assign show_socials = false
+  if section.settings.facebook_url != blank or section.settings.instagram_url != blank or section.settings.tiktok_url != blank or section.settings.youtube_url != blank
+    assign show_socials = true
+  endif
+-%}
+
+<section
+  id="EvamatsCareersContact-{{ section.id }}"
+  class="evamats-careers-contact"
+  style="--ecc-pt: {{ section.settings.padding_top }}px; --ecc-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="evamats-careers-contact__stage">
+    <div class="evamats-careers-contact__media" aria-hidden="true">
+      {%- if bg_image != blank -%}
+        <picture>
+          {%- if section.settings.background_image_mobile != blank -%}
+            <source media="(max-width: 749px)" srcset="{{ bg_image_mobile | image_url: width: 800 }}">
+          {%- endif -%}
+          {{
+            bg_image
+            | image_url: width: 2400
+            | image_tag:
+              loading: 'lazy',
+              class: 'evamats-careers-contact__image',
+              widths: '375, 550, 750, 1100, 1500, 1920, 2400',
+              sizes: '100vw'
+          }}
+        </picture>
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'evamats-careers-contact__image evamats-careers-contact__image--placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="evamats-careers-contact__panel-wrap page-width">
+      <div class="evamats-careers-contact__panel">
+        <div class="evamats-careers-contact__body">
+          {%- if settings.logo != blank -%}
+            <div class="evamats-careers-contact__logo">
+              {{
+                settings.logo
+                | image_url: width: 248
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'evamats-careers-contact__logo-img',
+                  widths: '91, 124, 182, 248',
+                  sizes: '124px'
+              }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.heading != blank -%}
+            <h2 class="evamats-careers-contact__heading section_title">{{ section.settings.heading | escape }}</h2>
+          {%- endif -%}
+
+          {%- if email != blank -%}
+            <a class="evamats-careers-contact__email" href="mailto:{{ email | escape }}">{{ email | escape }}</a>
+          {%- endif -%}
+
+          {%- if section.settings.button_label != blank -%}
+            <a class="evamats-careers-contact__button" href="{{ button_link }}">
+              {{ section.settings.button_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- if show_socials -%}
+          <div class="evamats-careers-contact__footer">
+            {%- if section.settings.social_heading != blank -%}
+              <p class="evamats-careers-contact__social-heading">{{ section.settings.social_heading | escape }}</p>
+            {%- endif -%}
+
+            {% render 'evamats-social-links', section: section, class_prefix: 'evamats-careers-contact' %}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVAMATS — Careers contact",
+  "tag": "section",
+  "class": "section-evamats-careers-contact",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image (mobile)",
+      "info": "Optional. Uses desktop image if empty."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nie widzisz oferty dla siebie? Masz pytania?"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "hr.team@evamats.pl"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Napisz do nas"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "info": "Leave empty to use mailto with the email above."
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Social heading",
+      "default": "Dowiedz się więcej o karierze w naszych mediach:"
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS — Careers contact",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

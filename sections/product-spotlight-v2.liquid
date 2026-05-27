@@ -1,0 +1,522 @@
+{%- liquid
+  assign slide_count = 0
+  assign point_count = 0
+  for block in section.blocks
+    if block.type == 'slide'
+      assign slide_count = slide_count | plus: 1
+    endif
+    if block.type == 'point'
+      assign point_count = point_count | plus: 1
+    endif
+  endfor
+
+  assign media_is_video = false
+  if section.settings.media_type == 'video' and section.settings.video_desktop != blank
+    assign media_is_video = true
+  endif
+
+  assign video_desktop_src = ''
+  assign video_mobile_src = ''
+  if media_is_video
+    assign video_desktop_src = section.settings.video_desktop.sources[1].url
+    if section.settings.video_mobile != blank
+      assign video_mobile_src = section.settings.video_mobile.sources[1].url
+    else
+      assign video_mobile_src = video_desktop_src
+    endif
+  endif
+-%}
+
+<div
+  id="ProductSpotlight-{{ section.id }}"
+  class="product-spotlight-v2"
+  data-slide-count="{{ slide_count }}"
+  data-ps-media-mode="{% if media_is_video %}video{% else %}carousel{% endif %}"
+>
+  <div class="product-spotlight-v2__inner page-width">
+    <div class="product-spotlight-v2__grid">
+      <div class="product-spotlight-v2__content">
+        {%- if section.settings.overline != blank -%}
+          <p class="product-spotlight-v2__overline">{{ section.settings.overline | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="product-spotlight-v2__heading section_title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if point_count > 0 -%}
+          <ul class="product-spotlight-v2__points">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'point' -%}
+              <li class="product-spotlight-v2__point" {{ block.shopify_attributes }}>
+                <span class="product-spotlight-v2__point-icon" aria-hidden="true">
+                  {%- if block.settings.icon != blank -%}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 120
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'product-spotlight-v2__point-icon-img',
+                        widths: '40, 60, 80, 120',
+                        sizes: '60px'
+                    }}
+                  {%- else -%}
+                    <svg class="product-spotlight-v2__point-icon-default" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="20" cy="20" r="19" fill="none" stroke="var(--color-accent-red)" stroke-width="2" />
+                      <g transform="translate(12, 14)">
+                        <path d="M1.41406 5.78681L5.82919 10.4141L14.4141 1.41406" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
+                      </g>
+                    </svg>
+                  {%- endif -%}
+                </span>
+                <span class="product-spotlight-v2__point-text">{{ block.settings.text | escape }}</span>
+              </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+          <a class="product-spotlight-v2__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label | escape }}</a>
+        {%- elsif section.settings.cta_label != blank -%}
+          <span class="product-spotlight-v2__cta product-spotlight-v2__cta--disabled">{{ section.settings.cta_label | escape }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="product-spotlight-v2__media">
+        <div class="product-spotlight-v2__slider-row{% if media_is_video %} product-spotlight-v2__slider-row--video{% endif %}">
+          {%- unless media_is_video -%}
+          <button type="button" class="product-spotlight-v2__nav product-spotlight-v2__nav--prev swiper-button-prev" aria-label="Poprzedni slajd">
+            <svg class="product-spotlight-v2__chev" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5.51152 0C5.69388 4.8e-05 5.87208 0.0544787 6.02334 0.156333C6.17459 0.258187 6.29204 0.402837 6.36066 0.571789C6.42928 0.740742 6.44595 0.92632 6.40855 1.1048C6.37114 1.28328 6.28136 1.44655 6.15068 1.57373L3.13213 4.59229H21.0859C21.2074 4.59057 21.328 4.61301 21.4407 4.6583C21.5534 4.7036 21.656 4.77085 21.7425 4.85614C21.829 4.94143 21.8977 5.04306 21.9446 5.15513C21.9915 5.2672 22.0156 5.38747 22.0156 5.50895C22.0156 5.63043 21.9915 5.7507 21.9446 5.86277C21.8977 5.97484 21.829 6.07647 21.7425 6.16177C21.656 6.24706 21.5534 6.3143 21.4407 6.3596C21.328 6.4049 21.2074 6.42734 21.0859 6.42562H3.13213L6.15068 9.44417C6.23866 9.52864 6.3089 9.62981 6.35728 9.74176C6.40567 9.85371 6.43123 9.97419 6.43248 10.0961C6.43372 10.2181 6.41061 10.3391 6.36451 10.452C6.31841 10.5649 6.25025 10.6675 6.16401 10.7537C6.07777 10.84 5.97519 10.9081 5.86228 10.9542C5.74936 11.0003 5.62839 11.0234 5.50643 11.0222C5.38448 11.0209 5.264 10.9954 5.15205 10.947C5.0401 10.8986 4.93892 10.8284 4.85446 10.7404L0.271126 6.15706C0.0992813 5.98515 0.00274658 5.75203 0.00274658 5.50895C0.00274658 5.26588 0.0992813 5.03275 0.271126 4.86084L4.85446 0.277507C4.93988 0.189695 5.04204 0.119895 5.1549 0.0722318C5.26775 0.0245681 5.38902 7.11681e-06 5.51152 0Z" fill="currentColor" />
+            </svg>
+          </button>
+          {%- endunless -%}
+
+          {%- if media_is_video -%}
+            <div class="product-spotlight-v2__video-wrap" data-ps-video-root>
+              <video
+                class="product-spotlight-v2__video product-spotlight-v2__video--desktop"
+                data-ps-video="desktop"
+                data-src="{{ video_desktop_src }}"
+                muted
+                playsinline
+                loop
+                controls
+                autoplay
+                preload="none"
+                {% if section.settings.video_desktop.preview_image != blank %}
+                  poster="{{ section.settings.video_desktop.preview_image | image_url: width: 1200 }}"
+                {% endif %}
+                aria-hidden="true"
+              ></video>
+              <video
+                class="product-spotlight-v2__video product-spotlight-v2__video--mobile"
+                data-ps-video="mobile"
+                data-src="{{ video_mobile_src }}"
+                muted
+                playsinline
+                loop
+                controls
+                autoplay
+                preload="none"
+                {%- assign video_mobile_poster = section.settings.video_mobile.preview_image | default: section.settings.video_desktop.preview_image -%}
+                {%- if video_mobile_poster != blank -%}
+                  poster="{{ video_mobile_poster | image_url: width: 800 }}"
+                {%- endif -%}
+                aria-hidden="true"
+              ></video>
+            </div>
+          {%- else -%}
+          <div class="swiper product-spotlight-v2__swiper" data-ps-swiper>
+            <div class="swiper-wrapper">
+              {%- if slide_count > 0 -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'slide' -%}
+                    <div class="swiper-slide product-spotlight-v2__slide" {{ block.shopify_attributes }}>
+                      {%- if block.settings.image != blank -%}
+                        {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'product-spotlight-v2__slide-img', sizes: '(min-width: 990px) 50vw, 90vw', widths: '400, 600, 800, 1000, 1200' }}
+                      {%- else -%}
+                        {{ 'lifestyle-1' | placeholder_svg_tag: 'product-spotlight-v2__slide-img product-spotlight-v2__placeholder' }}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                <div class="swiper-slide product-spotlight-v2__slide">
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'product-spotlight-v2__slide-img product-spotlight-v2__placeholder' }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+          {%- endif -%}
+
+          {%- unless media_is_video -%}
+          <button type="button" class="product-spotlight-v2__nav product-spotlight-v2__nav--next swiper-button-next" aria-label="Następny slajd">
+            <svg class="product-spotlight-v2__chev" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16.4885 0C16.3061 4.8e-05 16.1279 0.0544787 15.9767 0.156333C15.8254 0.258187 15.708 0.402837 15.6393 0.571789C15.5707 0.740742 15.554 0.92632 15.5915 1.1048C15.6289 1.28328 15.7186 1.44655 15.8493 1.57373L18.8679 4.59229H0.914097C0.792628 4.59057 0.672029 4.61301 0.559308 4.6583C0.446587 4.7036 0.343993 4.77085 0.257487 4.85614C0.170982 4.94143 0.10229 5.04306 0.0554047 5.15513C0.00851927 5.2672 -0.015625 5.38747 -0.015625 5.50895C-0.015625 5.63043 0.00851927 5.7507 0.0554047 5.86277C0.10229 5.97484 0.170982 6.07647 0.257487 6.16177C0.343993 6.24706 0.446587 6.3143 0.559308 6.3596C0.672029 6.4049 0.792628 6.42734 0.914097 6.42562H18.8679L15.8493 9.44417C15.7613 9.52864 15.6911 9.62981 15.6427 9.74176C15.5943 9.85371 15.5688 9.97419 15.5675 10.0961C15.5663 10.2181 15.5894 10.3391 15.6355 10.452C15.6816 10.5649 15.7498 10.6675 15.836 10.7537C15.9222 10.84 16.0248 10.9081 16.1377 10.9542C16.2506 11.0003 16.3716 11.0234 16.4936 11.0222C16.6155 11.0209 16.736 10.9954 16.848 10.947C16.9599 10.8986 17.0611 10.8284 17.1455 10.7404L21.7289 6.15706C21.9007 5.98515 21.9973 5.75203 21.9973 5.50895C21.9973 5.26588 21.9007 5.03275 21.7289 4.86084L17.1455 0.277507C17.0601 0.189695 16.958 0.119895 16.8451 0.0722318C16.7323 0.0245681 16.611 7.11681e-06 16.4885 0Z" fill="currentColor" />
+            </svg>
+          </button>
+          {%- endunless -%}
+        </div>
+
+        {%- if slide_count > 1 and media_is_video == false -%}
+          <div class="product-spotlight-v2__pagination swiper-pagination" data-ps-pagination></div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    function destroySpotlight(root) {
+      if (!root) return;
+      if (root._psSwiper) {
+        try {
+          root._psSwiper.destroy(true, true);
+        } catch (e) {}
+        root._psSwiper = null;
+      }
+      if (root._psVideoIO) {
+        try {
+          root._psVideoIO.disconnect();
+        } catch (e) {}
+        root._psVideoIO = null;
+      }
+      if (root._psVideoMq) {
+        var mqDestroy = root._psVideoMq;
+        if (mqDestroy.removeEventListener) {
+          mqDestroy.removeEventListener('change', root._psVideoMqHandler);
+        } else if (mqDestroy.removeListener) {
+          mqDestroy.removeListener(root._psVideoMqHandler);
+        }
+        root._psVideoMq = null;
+        root._psVideoMqHandler = null;
+      }
+      root.querySelectorAll('[data-ps-video]').forEach(function (video) {
+        video.pause();
+        video.removeAttribute('src');
+        try {
+          video.load();
+        } catch (e) {}
+      });
+      delete root.dataset.psVideoInit;
+      delete root.dataset.psSwiperInit;
+    }
+
+    function initSpotlightVideo(root) {
+      if (!root || root.dataset.psVideoInit === '1') return;
+      var videoRoot = root.querySelector('[data-ps-video-root]');
+      if (!videoRoot) return;
+      var desktopEl = videoRoot.querySelector('[data-ps-video="desktop"]');
+      var mobileEl = videoRoot.querySelector('[data-ps-video="mobile"]');
+      if (!desktopEl && !mobileEl) return;
+
+      root.dataset.psVideoInit = '1';
+      var isInView = false;
+
+      if (typeof window.evamatsBindVideoFullscreen === 'function') {
+        window.evamatsBindVideoFullscreen(root);
+      }
+
+      function activeVideo() {
+        var isDesktop = window.matchMedia('(min-width: 990px)').matches;
+        if (isDesktop) return desktopEl || mobileEl;
+        return mobileEl || desktopEl;
+      }
+
+      function pauseAll() {
+        [desktopEl, mobileEl].forEach(function (video) {
+          if (video && !video.paused) video.pause();
+        });
+      }
+
+      function playVideo(video) {
+        if (!video) return;
+        var tryPlay = function () {
+          if (!isInView && !(typeof Shopify !== 'undefined' && Shopify.designMode)) return;
+          var playPromise = video.play();
+          if (playPromise && playPromise.catch) {
+            playPromise.catch(function () {});
+          }
+        };
+        if (!video.src) {
+          var src = video.getAttribute('data-src');
+          if (!src) return;
+          video.src = src;
+          if (video.readyState >= 2) {
+            tryPlay();
+          } else {
+            video.addEventListener('loadeddata', tryPlay, { once: true });
+            video.addEventListener('canplay', tryPlay, { once: true });
+          }
+          return;
+        }
+        if (video.paused) tryPlay();
+      }
+
+      function playActive() {
+        var active = activeVideo();
+        if (!active) return;
+        pauseAll();
+        playVideo(active);
+      }
+
+      if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+        isInView = true;
+        playActive();
+        return;
+      }
+
+      root._psVideoIO = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            isInView = entry.isIntersecting;
+            if (isInView) {
+              playActive();
+            } else {
+              pauseAll();
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px 80px 0px' }
+      );
+      root._psVideoIO.observe(root);
+
+      var mq = window.matchMedia('(min-width: 990px)');
+      root._psVideoMq = mq;
+      root._psVideoMqHandler = function () {
+        if (!isInView) return;
+        playActive();
+      };
+      if (mq.addEventListener) {
+        mq.addEventListener('change', root._psVideoMqHandler);
+      } else if (mq.addListener) {
+        mq.addListener(root._psVideoMqHandler);
+      }
+    }
+
+    function initProductSpotlight(root) {
+      if (!root) return;
+
+      var mediaMode = root.dataset.psMediaMode || 'carousel';
+      if (mediaMode === 'video') {
+        if (root.dataset.psVideoInit === '1') return;
+        initSpotlightVideo(root);
+        return;
+      }
+
+      if (root.dataset.psSwiperInit === '1') return;
+
+      var swiperEl = root.querySelector('[data-ps-swiper]');
+      if (!swiperEl) return;
+
+      var slides = swiperEl.querySelectorAll('.swiper-slide');
+      var count = slides.length;
+      if (!count) return;
+
+      var prevEl = root.querySelector('.product-spotlight-v2__nav--prev');
+      var nextEl = root.querySelector('.product-spotlight-v2__nav--next');
+      var paginationEl = root.querySelector('[data-ps-pagination]');
+
+      function run() {
+        if (typeof window.Swiper === 'undefined') return;
+        if (root.dataset.psSwiperInit === '1') return;
+        root.dataset.psSwiperInit = '1';
+
+        var opts = {
+          slidesPerView: 1,
+          speed: 400,
+          watchOverflow: true,
+          navigation: {
+            prevEl: prevEl,
+            nextEl: nextEl,
+          },
+        };
+
+        if (paginationEl && count > 1) {
+          opts.pagination = {
+            el: paginationEl,
+            clickable: true,
+          };
+        }
+
+        root._psSwiper = new window.Swiper(swiperEl, opts);
+      }
+
+      function whenSwiperReady(cb) {
+        if (typeof window.Swiper !== 'undefined') {
+          cb();
+          return;
+        }
+        if (typeof window.ensureSwiperLoaded === 'function') {
+          window.ensureSwiperLoaded(cb);
+          return;
+        }
+        var done = false;
+        var poll = null;
+        function finish() {
+          if (done) return;
+          if (typeof window.Swiper === 'undefined') return;
+          done = true;
+          document.removeEventListener('swiper-loaded', onLoaded);
+          if (poll) clearInterval(poll);
+          cb();
+        }
+        function onLoaded() {
+          finish();
+        }
+        document.addEventListener('swiper-loaded', onLoaded);
+        poll = setInterval(finish, 50);
+        setTimeout(function () {
+          if (poll) clearInterval(poll);
+          document.removeEventListener('swiper-loaded', onLoaded);
+        }, 8000);
+      }
+
+      whenSwiperReady(run);
+    }
+
+    function initAll() {
+      document.querySelectorAll('.product-spotlight-v2').forEach(initProductSpotlight);
+    }
+
+    function scheduleInit() {
+      function go() {
+        initAll();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function onDom() {
+          document.removeEventListener('DOMContentLoaded', onDom);
+          setTimeout(go, 0);
+        });
+      } else {
+        setTimeout(go, 0);
+      }
+    }
+
+    scheduleInit();
+    document.addEventListener('swiper-loaded', initAll);
+
+    document.addEventListener('shopify:section:load', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var el = target.classList.contains('product-spotlight-v2') ? target : target.querySelector('.product-spotlight-v2');
+      if (el) {
+        destroySpotlight(el);
+        setTimeout(function () {
+          initProductSpotlight(el);
+        }, 0);
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var el = target.classList.contains('product-spotlight-v2') ? target : target.querySelector('.product-spotlight-v2');
+      if (el) destroySpotlight(el);
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product spotlight v2",
+  "tag": "section",
+  "class": "section_v2",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "To nie detal. To element systemu." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Coraz więcej kierowców przestaje traktować dywaniki jako dodatek." },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Zobacz produkt" },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media",
+      "options": [
+        { "value": "carousel", "label": "Image carousel" },
+        { "value": "video", "label": "Video (MP4)" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video — desktop",
+      "info": "Replaces the image carousel. Loads when scrolled into view."
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video — mobile",
+      "info": "Optional. If empty, desktop video is used on mobile."
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Carousel mode only. Ignored when Media is Video."
+        }
+      ]
+    },
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (optional)",
+          "info": "Square PNG or SVG, ~60×60 px. If empty, the default checkmark is shown."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Tak jak chronisz lakier, tak możesz chronić podłogę."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product spotlight v2",
+      "category": "V2",
+      "blocks": [
+        { "type": "slide", "settings": {} },
+        { "type": "point", "settings": { "text": "Tak jak chronisz lakier, tak możesz chronić podłogę." } },
+        { "type": "point", "settings": { "text": "Bo czyste wnętrze to nie przypadek. To decyzja." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

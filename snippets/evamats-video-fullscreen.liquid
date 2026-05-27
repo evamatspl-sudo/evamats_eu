@@ -1,0 +1,404 @@
+{%- comment -%}
+  Native fullscreen: preserve aspect ratio (object-fit: contain).
+  Call evamatsBindVideoFullscreen(container) after videos are in DOM.
+{%- endcomment -%}
+<script>
+  (function () {
+    if (window.evamatsBindVideoFullscreen) return;
+
+    function applyContain(video) {
+      video.style.objectFit = 'contain';
+      video.style.objectPosition = 'center';
+    }
+
+    function clearContain(video) {
+      video.style.removeProperty('object-fit');
+      video.style.removeProperty('object-position');
+    }
+
+    function isVideoFullscreen(video) {
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      return fsEl === video || video.webkitDisplayingFullscreen;
+    }
+
+    function onDocumentFullscreen() {
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      if (fsEl && fsEl.tagName === 'VIDEO') applyContain(fsEl);
+    }
+
+    document.addEventListener('fullscreenchange', onDocumentFullscreen);
+    document.addEventListener('webkitfullscreenchange', onDocumentFullscreen);
+
+    window.evamatsEnforceVideoMuted = function (video) {
+      if (!video) return;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      try {
+        video.volume = 0;
+      } catch (e) {}
+    };
+
+    window.evamatsBindVideoMuted = function (container) {
+      if (!container || !container.querySelectorAll) return;
+      container.querySelectorAll('video').forEach(function (video) {
+        if (video.dataset.evamatsMutedBound === '1') return;
+        video.dataset.evamatsMutedBound = '1';
+        window.evamatsEnforceVideoMuted(video);
+        if (!video.hasAttribute('controls')) {
+          video.addEventListener('volumechange', function () {
+            if (!video.muted || video.volume > 0) {
+              window.evamatsEnforceVideoMuted(video);
+            }
+          });
+        }
+      });
+    };
+
+    window.evamatsGetVideoStartOffset = function (video) {
+      if (!video) return 0;
+      var raw = video.getAttribute('data-start-offset');
+      var n = parseFloat(raw, 10);
+      return n > 0 && isFinite(n) ? n : 0;
+    };
+
+    window.evamatsSeekVideoToStartOffset = function (video) {
+      if (!video) return;
+      var start = window.evamatsGetVideoStartOffset(video);
+      if (!start) return;
+      if (video.duration && video.duration > start && video.currentTime < start) {
+        try {
+          video.currentTime = start;
+        } catch (e) {}
+      }
+    };
+
+    window.evamatsBindVideoStartOffset = function (video) {
+      if (!video || video.dataset.evamatsStartBound === '1') return;
+      var start = window.evamatsGetVideoStartOffset(video);
+      if (!start) return;
+      video.dataset.evamatsStartBound = '1';
+      video.addEventListener('loadedmetadata', function () {
+        window.evamatsSeekVideoToStartOffset(video);
+      });
+      video.addEventListener('timeupdate', function () {
+        if (!video.loop) return;
+        if (!video.duration || video.duration <= start) return;
+        if (video.currentTime < start) {
+          try {
+            video.currentTime = start;
+          } catch (e) {}
+        }
+      });
+    };
+
+    window.evamatsBindVideoStartOffsetContainer = function (container) {
+      if (!container || !container.querySelectorAll) return;
+      container.querySelectorAll('video[data-start-offset]').forEach(function (video) {
+        window.evamatsBindVideoStartOffset(video);
+      });
+    };
+
+    window.evamatsBindVideoFullscreen = function (container) {
+      if (!container || !container.querySelectorAll) return;
+      container.querySelectorAll('video').forEach(function (video) {
+        if (video.dataset.evamatsFsBound === '1') return;
+        video.dataset.evamatsFsBound = '1';
+
+        function onFsChange() {
+          if (isVideoFullscreen(video)) applyContain(video);
+          else clearContain(video);
+        }
+
+        video.addEventListener('fullscreenchange', onFsChange);
+        video.addEventListener('webkitfullscreenchange', onFsChange);
+        video.addEventListener('webkitbeginfullscreen', function () {
+          applyContain(video);
+        });
+        video.addEventListener('webkitendfullscreen', function () {
+          clearContain(video);
+        });
+      });
+    };
+
+    window.evamatsDestroyLazyScrollVideo = function (root, config) {
+      if (!root) return;
+      config = config || {};
+      var prefix = config.statePrefix || 'evScrollVideo';
+      var videoAttr = config.videoAttr || 'data-ev-scroll-video';
+      var initKey = config.initDatasetKey || 'evScrollVideoInit';
+      var ioKey = '_' + prefix + 'IO';
+      var mqKey = '_' + prefix + 'Mq';
+      var mqHandlerKey = '_' + prefix + 'MqHandler';
+      var timersKey = '_' + prefix + 'RecheckTimers';
+      var roKey = '_' + prefix + 'Ro';
+      var loadKey = '_' + prefix + 'OnLoad';
+      var scrollKey = '_' + prefix + 'OnScroll';
+
+      if (root[scrollKey]) {
+        try {
+          window.removeEventListener('scroll', root[scrollKey]);
+        } catch (e) {}
+        root[scrollKey] = null;
+      }
+      if (root[loadKey]) {
+        try {
+          window.removeEventListener('load', root[loadKey]);
+        } catch (e) {}
+        root[loadKey] = null;
+      }
+      if (root[ioKey]) {
+        try {
+          root[ioKey].disconnect();
+        } catch (e) {}
+        root[ioKey] = null;
+      }
+      if (root[mqKey]) {
+        var mq = root[mqKey];
+        if (mq.removeEventListener) {
+          mq.removeEventListener('change', root[mqHandlerKey]);
+        } else if (mq.removeListener) {
+          mq.removeListener(root[mqHandlerKey]);
+        }
+        root[mqKey] = null;
+        root[mqHandlerKey] = null;
+      }
+      if (root[timersKey]) {
+        root[timersKey].forEach(function (id) {
+          try {
+            clearTimeout(id);
+          } catch (e) {}
+        });
+        root[timersKey] = null;
+      }
+      if (root[roKey]) {
+        try {
+          root[roKey].disconnect();
+        } catch (e) {}
+        root[roKey] = null;
+      }
+      root.querySelectorAll('[' + videoAttr + ']').forEach(function (video) {
+        video.pause();
+        video.removeAttribute('src');
+        try {
+          video.load();
+        } catch (e) {}
+      });
+      delete root.dataset[initKey];
+    };
+
+    window.evamatsInitLazyScrollVideo = function (config) {
+      var root = config && config.root;
+      var initKey = (config && config.initDatasetKey) || 'evScrollVideoInit';
+      if (!root || root.dataset[initKey] === '1') return false;
+
+      var videoAttr = (config && config.videoAttr) || 'data-ev-scroll-video';
+      var desktopEl = root.querySelector('[' + videoAttr + '="desktop"]');
+      var mobileEl = root.querySelector('[' + videoAttr + '="mobile"]');
+      if (!desktopEl && !mobileEl) return false;
+
+      var section = (config && config.section) || root.closest('section') || root;
+      var visibilityEl = (config && config.visibilityTarget) || section;
+      var mqQuery = (config && config.mq) || '(min-width: 750px)';
+      var prefix = (config && config.statePrefix) || 'evScrollVideo';
+      var loadKey = '_' + prefix + 'OnLoad';
+      var scrollKey = '_' + prefix + 'OnScroll';
+      var ioKey = '_' + prefix + 'IO';
+      var mqKey = '_' + prefix + 'Mq';
+      var mqHandlerKey = '_' + prefix + 'MqHandler';
+      var timersKey = '_' + prefix + 'RecheckTimers';
+      var roKey = '_' + prefix + 'Ro';
+      var rootMargin = (config && config.rootMargin) || '80px 0px 80px 0px';
+
+      root.dataset[initKey] = '1';
+      var isInView = false;
+
+      function activeVideo() {
+        var isDesktop = window.matchMedia(mqQuery).matches;
+        if (isDesktop) return desktopEl || mobileEl;
+        return mobileEl || desktopEl;
+      }
+
+      function pauseAll() {
+        [desktopEl, mobileEl].forEach(function (video) {
+          if (video && !video.paused) video.pause();
+        });
+      }
+
+      function unloadVideo(video) {
+        if (!video) return;
+        video.pause();
+        if (video.getAttribute('src') || video.src) {
+          video.removeAttribute('src');
+          try {
+            video.load();
+          } catch (e) {}
+        }
+      }
+
+      function playVideo(video) {
+        if (!video) return;
+        if (typeof window.evamatsEnforceVideoMuted === 'function') {
+          window.evamatsEnforceVideoMuted(video);
+        }
+        var tryPlay = function () {
+          if (!isTargetVisible() && !(typeof Shopify !== 'undefined' && Shopify.designMode)) return;
+          isInView = true;
+          if (typeof window.evamatsEnforceVideoMuted === 'function') {
+            window.evamatsEnforceVideoMuted(video);
+          }
+          function startPlayback() {
+            var playPromise = video.play();
+            if (playPromise && playPromise.catch) {
+              playPromise.catch(function () {
+                if (!isInView) return;
+                setTimeout(function () {
+                  if (isInView && video.paused) startPlayback();
+                }, 200);
+              });
+            }
+          }
+          if (typeof window.evamatsSeekVideoToStartOffset === 'function') {
+            window.evamatsSeekVideoToStartOffset(video);
+          }
+          var start =
+            typeof window.evamatsGetVideoStartOffset === 'function'
+              ? window.evamatsGetVideoStartOffset(video)
+              : 0;
+          if (start && video.duration > start && video.currentTime < start) {
+            video.addEventListener('seeked', startPlayback, { once: true });
+            try {
+              video.currentTime = start;
+            } catch (e) {
+              startPlayback();
+            }
+            return;
+          }
+          startPlayback();
+        };
+        if (!video.src) {
+          var src = video.getAttribute('data-src');
+          if (!src) return;
+          if (typeof window.evamatsEnforceVideoMuted === 'function') {
+            window.evamatsEnforceVideoMuted(video);
+          }
+          video.src = src;
+          if (video.readyState >= 2) {
+            tryPlay();
+          } else {
+            video.addEventListener('loadeddata', tryPlay, { once: true });
+            video.addEventListener('canplay', tryPlay, { once: true });
+          }
+          return;
+        }
+        if (video.paused) tryPlay();
+      }
+
+      function playActive() {
+        var active = activeVideo();
+        if (!active) return;
+        [desktopEl, mobileEl].forEach(function (video) {
+          if (video && video !== active) unloadVideo(video);
+        });
+        playVideo(active);
+      }
+
+      function isTargetVisible() {
+        var rect = visibilityEl.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        var vw = window.innerWidth || document.documentElement.clientWidth;
+        if (rect.height <= 0 || rect.width <= 0) return false;
+        if (rect.bottom <= 0 || rect.top >= vh || rect.right <= 0 || rect.left >= vw) return false;
+        return true;
+      }
+
+      function syncViewPlay() {
+        var nowVisible = isTargetVisible();
+        if (nowVisible) {
+          isInView = true;
+          playActive();
+        } else if (isInView) {
+          isInView = false;
+          pauseAll();
+        }
+      }
+
+      if (typeof window.evamatsBindVideoFullscreen === 'function') {
+        window.evamatsBindVideoFullscreen(root);
+      }
+      if (typeof window.evamatsBindVideoMuted === 'function') {
+        window.evamatsBindVideoMuted(root);
+      }
+      if (typeof window.evamatsBindVideoStartOffsetContainer === 'function') {
+        window.evamatsBindVideoStartOffsetContainer(root);
+      }
+
+      if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+        isInView = true;
+        playActive();
+        return true;
+      }
+
+      root[ioKey] = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.target !== visibilityEl) return;
+            if (entry.isIntersecting) {
+              isInView = true;
+              playActive();
+            } else {
+              isInView = false;
+              pauseAll();
+            }
+          });
+        },
+        { threshold: 0, rootMargin: rootMargin }
+      );
+      root[ioKey].observe(visibilityEl);
+
+      syncViewPlay();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(syncViewPlay);
+      });
+      root[timersKey] = [0, 50, 150, 400, 1000].map(function (delay) {
+        return setTimeout(syncViewPlay, delay);
+      });
+
+      if (typeof window.ResizeObserver === 'function') {
+        root[roKey] = new window.ResizeObserver(function () {
+          syncViewPlay();
+        });
+        root[roKey].observe(visibilityEl);
+      }
+
+      var scrollScheduled = false;
+      root[scrollKey] = function () {
+        if (scrollScheduled) return;
+        scrollScheduled = true;
+        requestAnimationFrame(function () {
+          scrollScheduled = false;
+          syncViewPlay();
+        });
+      };
+      window.addEventListener('scroll', root[scrollKey], { passive: true });
+
+      root[loadKey] = function () {
+        syncViewPlay();
+      };
+      window.addEventListener('load', root[loadKey]);
+
+      var mq = window.matchMedia(mqQuery);
+      root[mqKey] = mq;
+      root[mqHandlerKey] = function () {
+        syncViewPlay();
+      };
+      if (mq.addEventListener) {
+        mq.addEventListener('change', root[mqHandlerKey]);
+      } else if (mq.addListener) {
+        mq.addListener(root[mqHandlerKey]);
+      }
+
+      return true;
+    };
+  })();
+</script>

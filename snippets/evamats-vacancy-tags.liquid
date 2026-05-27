@@ -1,0 +1,74 @@
+{%- comment -%}
+  Tag row for vacancy metaobject (same markup/classes as list cards).
+
+  @param vacancy {object}
+  @param label_contract {string}
+  @param label_languages {string}
+  @param label_work_mode {string}
+  @param label_location {string}
+  @param label_salary {string}
+  @param icon_suffix {string}
+{%- endcomment -%}
+
+{%- liquid
+  capture v_contract
+    render 'evamats-vacancy-field-value', field: vacancy.contract, fallback: vacancy.level
+  endcapture
+  assign v_contract = v_contract | strip
+
+  capture v_languages
+    render 'evamats-vacancy-field-value', field: vacancy.languages
+  endcapture
+  assign v_languages = v_languages | strip
+
+  capture v_work_mode
+    render 'evamats-vacancy-field-value', field: vacancy.work_mode
+  endcapture
+  assign v_work_mode = v_work_mode | strip
+
+  capture v_location
+    render 'evamats-vacancy-field-value', field: vacancy.location
+  endcapture
+  assign v_location = v_location | strip
+
+  capture v_salary
+    render 'evamats-vacancy-field-value', field: vacancy.salary_text, fallback: vacancy.salary
+  endcapture
+  assign v_salary = v_salary | strip
+-%}
+
+<ul class="evamats-vacancies-list__tags" role="list">
+  {%- if v_contract != blank -%}
+    <li class="evamats-vacancies-list__tag">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'level', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">{{ label_contract }}: {{ v_contract | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_languages != blank -%}
+    <li class="evamats-vacancies-list__tag">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'languages', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">{{ label_languages }}: {{ v_languages | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_work_mode != blank -%}
+    <li class="evamats-vacancies-list__tag">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'work_mode', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">{{ label_work_mode }}: {{ v_work_mode | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_location != blank -%}
+    <li class="evamats-vacancies-list__tag">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'location', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">{{ label_location }}: {{ v_location | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_salary != blank -%}
+    <li class="evamats-vacancies-list__tag evamats-vacancies-list__tag--salary">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'salary', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">
+        <span class="evamats-vacancies-list__tag-label">{{ label_salary }}:</span>
+        {{ v_salary | escape }}
+      </span>
+    </li>
+  {%- endif -%}
+</ul>

@@ -1,0 +1,291 @@
+{%- liquid
+  assign img_desk = section.settings.image_visual_desktop
+  assign img_mob = section.settings.image_visual_mobile
+  if img_desk == blank and img_mob != blank
+    assign img_desk = img_mob
+  endif
+  if img_mob == blank and img_desk != blank
+    assign img_mob = img_desk
+  endif
+  assign show_visual = false
+  if img_desk != blank or img_mob != blank
+    assign show_visual = true
+  endif
+  assign apo_img_alt = section.settings.image_alt | strip | escape
+-%}
+
+<section
+  id="AdvPromoOffer-{{ section.id }}"
+  class="adv-promo-offer-v2"
+>
+  <div class="adv-promo-offer-v2__inner page-width">
+    <div class="adv-promo-offer-v2__layout{% unless show_visual %} adv-promo-offer-v2__layout--no-visual{% endunless %}">
+      {%- if show_visual -%}
+        <div class="adv-promo-offer-v2__visual">
+          {%- if img_desk != blank and img_mob != blank and img_desk == img_mob -%}
+            <div class="adv-promo-offer-v2__visual-slot adv-promo-offer-v2__visual-slot--single">
+              {{
+                img_desk
+                | image_url: width: 1600
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'adv-promo-offer-v2__hero-img',
+                  sizes: '(min-width: 990px) 50vw, 100vw',
+                  widths: '375, 550, 750, 900, 1200, 1600',
+                  alt: apo_img_alt
+              }}
+            </div>
+          {%- else -%}
+            {%- if img_desk != blank -%}
+              <div class="adv-promo-offer-v2__visual-slot adv-promo-offer-v2__visual-slot--desktop">
+                {{
+                  img_desk
+                  | image_url: width: 1600
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'adv-promo-offer-v2__hero-img',
+                    sizes: '(min-width: 990px) 50vw, 0',
+                    widths: '600, 900, 1200, 1600',
+                    alt: apo_img_alt
+                }}
+              </div>
+            {%- endif -%}
+            {%- if img_mob != blank -%}
+              <div class="adv-promo-offer-v2__visual-slot adv-promo-offer-v2__visual-slot--mobile">
+                {{
+                  img_mob
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'adv-promo-offer-v2__hero-img',
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 900',
+                    alt: apo_img_alt
+                }}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="adv-promo-offer-v2__copy">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="adv-promo-offer-v2__heading section_title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="adv-promo-offer-v2__sub">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+
+        <div class="adv-promo-offer-v2__card">
+          <div class="adv-promo-offer-v2__card-inner">
+            <div class="adv-promo-offer-v2__card-top">
+              <div class="adv-promo-offer-v2__card-top-left">
+                {%- if section.settings.offer_label != blank -%}
+                  <p class="adv-promo-offer-v2__offer-label">{{ section.settings.offer_label | escape }}</p>
+                {%- endif -%}
+                <div class="adv-promo-offer-v2__discount-row">
+                  {%- if section.settings.badge_text != blank -%}
+                    <span class="adv-promo-offer-v2__pill">{{ section.settings.badge_text | escape }}</span>
+                  {%- endif -%}
+                  {%- if section.settings.discount_suffix != blank -%}
+                    <span class="adv-promo-offer-v2__suffix">{{ section.settings.discount_suffix | escape }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+              <p class="adv-promo-offer-v2__timer" data-apo-timer aria-live="polite">00 : 00 : 00</p>
+            </div>
+
+            {%- if section.settings.button_label != blank -%}
+              <a
+                class="adv-promo-offer-v2__cta"
+                href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
+              >
+                {{- section.settings.button_label | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function secondsUntilNextMidnight() {
+      var now = new Date();
+      var end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0, 0);
+      return Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000));
+    }
+
+    function bindTimer(root) {
+      if (!root || root.dataset.apoTimerInit === '1') return;
+      var el = root.querySelector('[data-apo-timer]');
+      if (!el) return;
+      root.dataset.apoTimerInit = '1';
+
+      function tick() {
+        var sec = secondsUntilNextMidnight();
+        var h = Math.floor(sec / 3600);
+        sec -= h * 3600;
+        var m = Math.floor(sec / 60);
+        var s = sec - m * 60;
+        el.textContent = pad(h) + ' : ' + pad(m) + ' : ' + pad(s);
+      }
+
+      tick();
+      var id = window.setInterval(tick, 1000);
+      root._apoTimerId = id;
+    }
+
+    function unbindTimer(root) {
+      if (!root) return;
+      if (root._apoTimerId) {
+        window.clearInterval(root._apoTimerId);
+        root._apoTimerId = null;
+      }
+      delete root.dataset.apoTimerInit;
+    }
+
+    function initAll() {
+      document.querySelectorAll('.adv-promo-offer-v2').forEach(bindTimer);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function onDom() {
+        document.removeEventListener('DOMContentLoaded', onDom);
+        initAll();
+      });
+    } else {
+      initAll();
+    }
+
+    document.addEventListener('shopify:section:load', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var el = target.classList.contains('adv-promo-offer-v2')
+        ? target
+        : target.querySelector('.adv-promo-offer-v2');
+      if (el) {
+        unbindTimer(el);
+        setTimeout(function () {
+          bindTimer(el);
+        }, 0);
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var el = target.classList.contains('adv-promo-offer-v2')
+        ? target
+        : target.querySelector('.adv-promo-offer-v2');
+      if (el) unbindTimer(el);
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "ADV promo offer v2",
+  "tag": "section",
+  "class": "section_v2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Raz zmieniasz — i już nie wracasz do starego standardu."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Nie zmieniasz auta. Zmienia się standard. Sprawdź, jak wyglądają dywaniki EVA dopasowane do Twojego modelu."
+    },
+    {
+      "type": "text",
+      "id": "offer_label",
+      "label": "Offer label",
+      "default": "Oferta ograniczona"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Discount badge",
+      "default": "Do 30%"
+    },
+    {
+      "type": "text",
+      "id": "discount_suffix",
+      "label": "Text after badge",
+      "default": "taniej"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_visual_desktop",
+      "label": "Visual (desktop)",
+      "info": "Wide hero. If mobile is empty, this image is used on mobile too."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_visual_mobile",
+      "label": "Visual (mobile)",
+      "info": "Optional. If empty, desktop image is used on mobile."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Visual image alt text",
+      "default": "Promocja dywaników EVA"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Zobacz dostępne modele"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "paragraph",
+      "content": "Odliczanie do północy (czas lokalny przeglądarki). O 00:00:00 widać zera, potem od razu liczy do kolejnej północy."
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "ADV promo offer v2",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

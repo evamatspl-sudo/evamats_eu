@@ -1,0 +1,435 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-v2",
+      "settings": {
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "current_label": "",
+        "show_page_content": false
+      }
+    },
+    "partners_spotlight": {
+      "type": "partners-spotlight-v2",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Produkt z realnym popytem"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Szybka produkcja"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Gotowy model współpracy"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "overline": "",
+        "heading": "Zostań partnerem EVAMATS i zarabiaj na sprzedaży dywaników premium",
+        "heading_gradient": true,
+        "subtitle_primary": "Produkujemy na zamówienie, Ty sprzedajesz.",
+        "subtitle_secondary": "Bez magazynu, bez ryzyka.",
+        "image_before": "shopify://shop_images/IMG_1394.webp",
+        "image_after": "shopify://shop_images/IMG_7298_1.webp",
+        "label_before_accent": "Dywaniki EVAMATS",
+        "label_before_main": "vs. Inni wykonawcy",
+        "cta_label": "Wyślij zapytanie o współpracę",
+        "cta_url": "#partners_form",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "evamats_product_benefits_nELbaV": {
+      "type": "evamats-product-benefits",
+      "blocks": {
+        "item_9G7KaT": {
+          "type": "item",
+          "settings": {
+            "title": "Dopasowanie do konkretnego auta",
+            "text_muted": "(nie uniwersalne)",
+            "text_highlight": ""
+          }
+        },
+        "item_QiLc4D": {
+          "type": "item",
+          "settings": {
+            "title": "Widoczny efekt już po pierwszym użyciu",
+            "text_muted": "",
+            "text_highlight": ""
+          }
+        },
+        "item_nLjPDh": {
+          "type": "item",
+          "settings": {
+            "title": "Segment premium = wyższy koszyk",
+            "text_muted": "",
+            "text_highlight": ""
+          }
+        },
+        "item_meMWxW": {
+          "type": "item",
+          "settings": {
+            "title": "Niski poziom reklamacji",
+            "text_muted": "",
+            "text_highlight": "(~2%)"
+          }
+        }
+      },
+      "block_order": [
+        "item_9G7KaT",
+        "item_QiLc4D",
+        "item_nLjPDh",
+        "item_meMWxW"
+      ],
+      "name": "Product benefits",
+      "settings": {
+        "heading": "Produkt, który klient naprawdę chce kupić",
+        "description": "<p>Dywaniki EVAMATS rozwiązują realny problem kierowców — brud, zużycie i brak dopasowania.<br/>To produkt, który klient rozumie od razu i kupuje bez długiego zastanowienia.</p>"
+      }
+    },
+    "partners_audience_v2_TeeHEY": {
+      "type": "partners-audience-v2",
+      "blocks": {
+        "card_JHmEMF": {
+          "type": "card",
+          "settings": {
+            "title": "Sklepy motoryzacyjne",
+            "text": "Dodaj produkt premium do swojej oferty"
+          }
+        },
+        "card_mYgMJG": {
+          "type": "card",
+          "settings": {
+            "title": "Dealerzy samochodowi",
+            "text": "Zwiększ wartość auta przy sprzedaży"
+          }
+        },
+        "card_Fg4TCb": {
+          "type": "card",
+          "settings": {
+            "title": "E-commerce / sklepy online",
+            "text": "Lekki produkt, łatwy w sprzedaży i wysyłce"
+          }
+        },
+        "card_9jXjdU": {
+          "type": "card",
+          "settings": {
+            "title": "Studia detailingu i myjnie",
+            "text": "Podnieś standard usług i efekt końcowy"
+          }
+        }
+      },
+      "block_order": [
+        "card_JHmEMF",
+        "card_mYgMJG",
+        "card_Fg4TCb",
+        "card_9jXjdU"
+      ],
+      "name": "Partners audience",
+      "settings": {
+        "heading": "Dla kogo jest ta współpraca?",
+        "cta_url": "#partners_form",
+        "card_cta_label": "Wyślij zapytanie",
+        "mobile_cta_label": "Wyślij zapytanie",
+        "promo_title": "Chcesz rozpocząć własny biznes?",
+        "promo_text": "Zacznij sprzedaż bez własnej produkcji"
+      }
+    },
+    "evamats_kariera_benefits_M8KGea": {
+      "type": "evamats-partners-benefits-bento",
+      "blocks": {
+        "panel_a": {
+          "type": "panel_left",
+          "settings": {
+            "title": "Produkt premium z wysoką marżą",
+            "content_type": "text",
+            "description": "Zarabiasz na każdym zamówieniu — bez własnej produkcji",
+            "item_1_text": "",
+            "item_1_icon": "1",
+            "item_2_text": "",
+            "item_2_icon": "2",
+            "item_3_text": "",
+            "item_3_icon": "3",
+            "item_4_text": "",
+            "item_4_icon": "4",
+            "item_5_text": "",
+            "item_5_icon": "5",
+            "badge_value": "~45%",
+            "badge_label": "Średnia marża:"
+          }
+        },
+        "panel_b": {
+          "type": "panel_center",
+          "settings": {
+            "title": "Setki wariantów personalizacji",
+            "content_type": "text",
+            "tagline": "",
+            "description": "Więcej opcji = wyższa wartość zamówienia",
+            "badge_text": "700+ wariantów",
+            "item_1_text": "",
+            "item_1_icon": "1",
+            "item_2_text": "",
+            "item_2_icon": "2",
+            "item_3_text": "",
+            "item_3_icon": "3",
+            "item_4_text": "",
+            "item_4_icon": "4",
+            "item_5_text": "",
+            "item_5_icon": "5"
+          }
+        },
+        "panel_c": {
+          "type": "panel_right",
+          "settings": {
+            "title": "Szybka realizacja zamówień (3–5 dni)",
+            "content_type": "text",
+            "description": "Produkcja i logistyka po naszej stronie",
+            "show_bg_overlay": false,
+            "item_1_text": "",
+            "item_1_icon": "5",
+            "item_2_text": "",
+            "item_2_icon": "6",
+            "item_3_text": "",
+            "item_3_icon": "7",
+            "item_4_text": "",
+            "item_4_icon": "8",
+            "item_5_text": "",
+            "item_5_icon": "9"
+          }
+        },
+        "panel_d": {
+          "type": "panel_bottom",
+          "settings": {
+            "title": "Model gotowy do skalowania",
+            "content_type": "list",
+            "description": "Możesz rozwijać sprzedaż bez zwiększania kosztów",
+            "item_1_text": "Brak magazynu i inwestycji na start",
+            "item_1_icon": "6",
+            "item_2_text": "Nie zamrażasz pieniędzy w towarze",
+            "item_2_icon": "1",
+            "item_3_text": "Wsparcie sprzedaży i gotowe materiały",
+            "item_3_icon": "5",
+            "item_4_text": "Zdjęcia, opisy i know-how od pierwszego dnia",
+            "item_4_icon": "2",
+            "item_5_text": "Możesz rozwijać sprzedaż bez zwiększania kosztów",
+            "item_5_icon": "8"
+          }
+        }
+      },
+      "block_order": [
+        "panel_a",
+        "panel_b",
+        "panel_c",
+        "panel_d"
+      ],
+      "name": "EVAMATS benefits bento",
+      "settings": {
+        "overline": "",
+        "heading": "Co zyskujesz, współpracując z EVAMATS?",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "evamats_proven_scale_v2": {
+      "type": "evamats-proven-scale-v2",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "7 082",
+            "show_plus": true,
+            "label": "Klientów poleca nas dalej"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "1567",
+            "show_plus": true,
+            "label": "Dostępnych modeli auta"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": true,
+            "value": "56 732",
+            "show_plus": true,
+            "label": "Zrealizowane komplety"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "27",
+            "show_plus": true,
+            "label": "Dostawa do ponad 27 krajów"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "heading": "Sprawdzony produkt, gotowy do skalowania",
+        "intro": "Produkt jest sprawdzony na rynku i gotowy do rozwoju w modelu B2B."
+      }
+    },
+    "o_nas_story_slider_qQxL9h": {
+      "type": "o-nas-story-slider",
+      "blocks": {
+        "slide_bEtXM4": {
+          "type": "slide",
+          "settings": {
+            "heading": "Produkcja po naszej stronie",
+            "body": "<p>Każdy zestaw powstaje na zamówienie w Polsce, z kontrolą jakości na każdym etapie.  Ty skupiasz się na sprzedaży — my zajmujemy się resztą.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_bEtXM4"
+      ],
+      "name": "About — story slider",
+      "settings": {
+        "logo_max_width": 100,
+        "logo_max_width_mobile": 100,
+        "bg_media_type": "banner",
+        "stage_min_height": 560,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "evamats_partners_cooperation_v2_JPXLNV": {
+      "type": "evamats-partners-cooperation-v2",
+      "blocks": {
+        "card_WWTqET": {
+          "type": "card",
+          "settings": {
+            "card_variant": "dropshipping",
+            "label": "Model bez inwestycji (dropshipping / afiliacja)",
+            "subtitle": "Sprzedajesz — my produkujemy i wysyłamy",
+            "title": "Zarób nawet 2000 zł tygodniowo przy 10 zamówieniach",
+            "feature_1_text": "Do 25% prowizji od sprzedaży",
+            "feature_2_text": "Brak magazynu i kosztów startowych",
+            "feature_3_text": "Gotowe materiały marketingowe",
+            "feature_4_text": "Obsługa zamówień po naszej stronie"
+          }
+        },
+        "card_bT7CxJ": {
+          "type": "card",
+          "settings": {
+            "card_variant": "partner",
+            "label": "Model partnerski (zakup hurtowy)",
+            "subtitle": "Kupujesz taniej — sprzedajesz z własną marżą",
+            "title": "Im większa skala — tym wyższy zysk",
+            "feature_1_text": "Indywidualne ceny hurtowe",
+            "feature_2_text": "Wyższa marża przy większych wolumenach",
+            "feature_3_text": "Stała współpraca i dostępność",
+            "feature_4_text": "Możliwość budowy własnej Marki"
+          }
+        },
+        "card_3YpgDU": {
+          "type": "card",
+          "settings": {
+            "card_variant": "support",
+            "label": "Dla każdego partnera",
+            "subtitle": "Zawsze masz kogoś, kto pomoże Ci działać",
+            "title": "Niezależnie od modelu — zapewniamy pełne wsparcie:",
+            "feature_1_text": "Gotowe materiały sprzedażowe",
+            "feature_2_text": "Stały dostęp do produktu",
+            "feature_3_text": "Szybką realizację",
+            "feature_4_text": "Wsparcie opiekuna"
+          }
+        }
+      },
+      "block_order": [
+        "card_WWTqET",
+        "card_bT7CxJ",
+        "card_3YpgDU"
+      ],
+      "name": "Partners coop models",
+      "settings": {
+        "heading": "Jak wygląda współpraca z EVAMATS?"
+      }
+    },
+    "evamats_partners_consult_form_v2_gTXEFE": {
+      "type": "evamats-partners-consult-form-v2",
+      "name": "Partners consult form",
+      "settings": {
+        "hidden_form_tag": "Partnerzy — zapytanie (strona WWW)",
+        "heading": "Rozpocznij współpracę",
+        "subheading": "Otrzymasz ofertę dopasowaną do Twojego biznesu w ciągu 2 dni",
+        "label_first_name": "Imię",
+        "placeholder_first_name": "Imię",
+        "label_last_name": "Nazwisko",
+        "placeholder_last_name": "Nazwisko",
+        "label_business_sphere": "Sfera biznesu",
+        "placeholder_business_sphere": "Sfera biznesu",
+        "business_sphere_options": "It\nSales\nGovernment",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "Email",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Komentarz (opcjonalnie)",
+        "placeholder_message": "Komentarz (opcjonalnie)",
+        "submit_label": "Otrzymaj ofertę współpracy",
+        "consent_intro": "Zgadzam się z",
+        "terms_label": "regulaminem",
+        "terms_url": "",
+        "consent_mid": " oraz",
+        "privacy_label": "Polityką prywatności",
+        "privacy_url": "",
+        "consent_end": ".",
+        "consent_error_message": "Musisz zaakceptować politykę prywatności i regulamin.",
+        "success_message": "Dziękujemy! Skontaktujemy się wkrótce.",
+        "error_message": "Sprawdź pola i spróbuj ponownie.",
+        "alt_divider_text": "lub",
+        "alt_title": "Stawiasz na dropshipping i afiliację?",
+        "alt_text": "Dołącz do programu partnerskiego EVAMATS i zarabiaj nawet 2000 zł tygodniowo — my produkujemy i wysyłamy, Ty tylko sprzedajesz.",
+        "alt_button_label": "ZAREJESTRUJ SIĘ W PROGRAMIE AFILIACYJNYM",
+        "alt_button_url": "https://af.uppromote.com/evamats-poland/register"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "partners_spotlight",
+    "evamats_product_benefits_nELbaV",
+    "partners_audience_v2_TeeHEY",
+    "evamats_kariera_benefits_M8KGea",
+    "evamats_proven_scale_v2",
+    "o_nas_story_slider_qQxL9h",
+    "evamats_partners_cooperation_v2_JPXLNV",
+    "evamats_partners_consult_form_v2_gTXEFE"
+  ]
+}

@@ -1,0 +1,23 @@
+{%- comment -%}
+  Reads a vacancy field from a metaobject entry or legacy JSON metafield.
+
+  @param field {object|string}
+  @param fallback {object|string} optional second field (e.g. button_url with url fallback)
+{%- endcomment -%}
+{%- liquid
+  assign resolved = ''
+
+  if field.value != blank
+    assign resolved = field.value
+  elsif field != blank and field.value == blank
+    assign resolved = field
+  endif
+
+  if resolved == blank and fallback != blank
+    if fallback.value != blank
+      assign resolved = fallback.value
+    else
+      assign resolved = fallback
+    endif
+  endif
+-%}{{- resolved -}}

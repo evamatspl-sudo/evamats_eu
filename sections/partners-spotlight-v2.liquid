@@ -1,0 +1,370 @@
+{{ 'comparison.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign point_count = 0
+  for block in section.blocks
+    if block.type == 'point'
+      assign point_count = point_count | plus: 1
+    endif
+  endfor
+
+  assign partners_cta_url = section.settings.cta_url
+  if partners_cta_url == blank
+    assign partners_cta_url = '#'
+  endif
+-%}
+
+{%- if section.settings.cta_label != blank -%}
+  {%- capture partners_cta_html -%}
+    {%- if section.settings.cta_url != blank -%}
+      <a class="button button_3 partners-spotlight-v2__cta" href="{{ partners_cta_url }}">{{ section.settings.cta_label | escape }}</a>
+    {%- else -%}
+      <span class="button button_3 partners-spotlight-v2__cta disabled" aria-disabled="true">{{ section.settings.cta_label | escape }}</span>
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+<div
+  id="PartnersSpotlight-{{ section.id }}"
+  class="partners-spotlight-v2"
+  style="--ps-margin-top: {{ section.settings.margin_top }}px; --ps-margin-bottom: {{ section.settings.margin_bottom }}px;"
+>
+  <div class="partners-spotlight-v2__inner page-width">
+    <div class="partners-spotlight-v2__grid">
+      <div class="partners-spotlight-v2__content">
+        {%- if section.settings.overline != blank -%}
+          <p class="partners-spotlight-v2__overline">{{ section.settings.overline | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="partners-spotlight-v2__heading section_title{% if section.settings.heading_gradient %} partners-spotlight-v2__heading--gradient{% endif %}">
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.subtitle_primary != blank or section.settings.subtitle_secondary != blank -%}
+          <p class="partners-spotlight-v2__subtitle">
+            {%- if section.settings.subtitle_primary != blank -%}
+              <span class="partners-spotlight-v2__subtitle-primary">{{ section.settings.subtitle_primary | escape }} </span>
+            {%- endif -%}
+            {%- if section.settings.subtitle_secondary != blank -%}
+              <span class="partners-spotlight-v2__subtitle-secondary"> {{ section.settings.subtitle_secondary | escape }}</span>
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+
+        {%- if point_count > 0 -%}
+          <ul class="partners-spotlight-v2__points">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'point' -%}
+                <li class="partners-spotlight-v2__point" {{ block.shopify_attributes }}>
+                  <span class="partners-spotlight-v2__point-icon" aria-hidden="true">
+                    {%- if block.settings.icon != blank -%}
+                      {{
+                        block.settings.icon
+                        | image_url: width: 120
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'partners-spotlight-v2__point-icon-img',
+                          widths: '40, 60, 80, 120',
+                          sizes: '60px'
+                      }}
+                    {%- endif -%}
+                  </span>
+                  {%- if block.settings.text != blank -%}
+                    <span class="partners-spotlight-v2__point-text">{{ block.settings.text | escape }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if partners_cta_html != blank -%}
+          <div class="partners-spotlight-v2__cta-wrap partners-spotlight-v2__cta-wrap--desktop">
+            {{ partners_cta_html }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="partners-spotlight-v2__media">
+        {% render 'partners-comparison-inline', section: section %}
+        {%- if partners_cta_html != blank -%}
+          <div class="partners-spotlight-v2__cta-wrap partners-spotlight-v2__cta-wrap--mobile">
+            {{ partners_cta_html }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    function initPartnersComparison(root) {
+      if (!root || root.dataset.partnersComparisonInit === '1') return;
+      var block = root.querySelector('.comparison__block');
+      if (!block) return;
+
+      root.dataset.partnersComparisonInit = '1';
+
+      var divisor = block.querySelector('.comparison__before');
+      var slider = block.querySelector('.comparison__range');
+      if (!divisor || !slider) return;
+
+      var isInteracted = false;
+      var progress = 0.5;
+      var direction = 1;
+      var animationFrame = null;
+      var lastTime = performance.now();
+      var speed = 0.0004;
+
+      var easeInOut = function (t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      };
+
+      var isElementInViewport = function (el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      };
+
+      var beforeImg = divisor.querySelector('.comparison__before-media img');
+
+      var syncBeforeImageWidth = function () {
+        if (!beforeImg) return;
+        beforeImg.style.width = block.offsetWidth + 'px';
+      };
+
+      var moveDivisor = function () {
+        divisor.style.width = slider.value + '%';
+        syncBeforeImageWidth();
+      };
+
+      var animateSlider = function (timestamp) {
+        if (isInteracted || !isElementInViewport(block)) {
+          if (animationFrame) cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+          return;
+        }
+        var deltaTime = timestamp - lastTime;
+        lastTime = timestamp;
+        progress += speed * deltaTime * direction;
+        if (progress >= 1) {
+          progress = 1;
+          direction = -1;
+        } else if (progress <= 0) {
+          progress = 0;
+          direction = 1;
+        }
+        slider.value = 10 + easeInOut(progress) * 80;
+        moveDivisor();
+        animationFrame = requestAnimationFrame(animateSlider);
+      };
+
+      slider.addEventListener('input', function () {
+        isInteracted = true;
+        moveDivisor();
+        if (animationFrame) cancelAnimationFrame(animationFrame);
+      });
+
+      var resume = function () {
+        isInteracted = false;
+        lastTime = performance.now();
+        animateSlider(lastTime);
+      };
+
+      slider.addEventListener('mouseup', resume);
+      slider.addEventListener('touchend', resume);
+      slider.addEventListener('touchstart', function () {
+        isInteracted = true;
+        if (animationFrame) cancelAnimationFrame(animationFrame);
+      });
+
+      window.addEventListener(
+        'scroll',
+        function () {
+          if (!isInteracted && isElementInViewport(block) && !animationFrame) {
+            lastTime = performance.now();
+            animateSlider(lastTime);
+          }
+        },
+        { passive: true }
+      );
+
+      var onResize = function () {
+        syncBeforeImageWidth();
+        moveDivisor();
+      };
+
+      window.addEventListener('resize', onResize);
+      moveDivisor();
+      animateSlider(lastTime);
+    }
+
+    function boot() {
+      document.querySelectorAll('.partners-spotlight-v2 [data-partners-comparison]').forEach(initPartnersComparison);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot);
+    } else {
+      boot();
+    }
+
+    document.addEventListener('shopify:section:load', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var section = target.classList.contains('partners-spotlight-v2')
+        ? target
+        : target.querySelector('.partners-spotlight-v2');
+      if (!section) return;
+      var comparison = section.querySelector('[data-partners-comparison]');
+      if (comparison) {
+        delete comparison.dataset.partnersComparisonInit;
+        initPartnersComparison(comparison);
+      }
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Partners spotlight v2",
+  "tag": "section",
+  "class": "section_v2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline",
+      "default": "WZMACNIACZ"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Zostań partnerem EVAMATS i zarabiaj na sprzedaży dywaników premium"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_gradient",
+      "label": "Heading gradient (white → red)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle_primary",
+      "label": "Subtitle — primary",
+      "default": "Produkujemy na zamówienie, Ty sprzedajesz."
+    },
+    {
+      "type": "text",
+      "id": "subtitle_secondary",
+      "label": "Subtitle — secondary (muted)",
+      "default": "Bez magazynu, bez ryzyka."
+    },
+    {
+      "type": "header",
+      "content": "Before / after"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_before",
+      "label": "Image before",
+      "info": "Recommended size: 2000×1250, .webp"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_after",
+      "label": "Image after",
+      "info": "Recommended size: 2000×1250, .webp"
+    },
+    {
+      "type": "text",
+      "id": "label_before_accent",
+      "label": "Label — accent (red)",
+      "default": "Dywaniki EVAMATS"
+    },
+    {
+      "type": "text",
+      "id": "label_before_main",
+      "label": "Label — main (dark on badge)",
+      "default": "vs. Inni wykonawcy"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Wyślij zapytanie o współpracę"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA link"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Square PNG/SVG, ~60×60 px."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Produkt z realnym popytem"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partners spotlight v2",
+      "category": "V2",
+      "settings": {
+        "overline": "WZMACNIACZ",
+        "heading": "Zostań partnerem EVAMATS i zarabiaj na sprzedaży dywaników premium",
+        "heading_gradient": true,
+        "subtitle_primary": "Produkujemy na zamówienie, Ty sprzedajesz.",
+        "subtitle_secondary": "Bez magazynu, bez ryzyka.",
+        "label_before_accent": "Dywaniki EVAMATS",
+        "label_before_main": "vs. Inni wykonawcy",
+        "cta_label": "Wyślij zapytanie o współpracę"
+      },
+      "blocks": [
+        { "type": "point", "settings": { "text": "Produkt z realnym popytem" } },
+        { "type": "point", "settings": { "text": "Szybka produkcja" } },
+        { "type": "point", "settings": { "text": "Gotowy model współpracy" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

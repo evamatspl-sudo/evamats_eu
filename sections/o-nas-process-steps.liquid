@@ -1,0 +1,215 @@
+{%- liquid
+  assign step_count = 0
+  for block in section.blocks
+    if block.type == 'step'
+      assign step_count = step_count | plus: 1
+    endif
+  endfor
+
+  assign onp_layout = section.settings.layout | default: 'horizontal'
+-%}
+
+<section
+  id="ONasProcess-{{ section.id }}"
+  class="o-nas-process{% if onp_layout == 'stack' %} o-nas-process--stack{% endif %}"
+>
+  <div class="o-nas-process__wrap page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="o-nas-process__heading section_title">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="o-nas-process__sub">{{ section.settings.subheading | escape }}</p>
+    {%- endif -%}
+
+    {%- if step_count > 0 -%}
+      <div class="o-nas-process__track" role="list">
+        {%- assign step_index = 0 -%}
+        {%- assign onp_before_last = step_count  -%}
+        {%- assign onp_prefix = section.settings.step_prefix | strip -%}
+        {%- if onp_prefix == blank -%}
+          {%- assign onp_prefix = 'Krok' -%}
+        {%- endif -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'step' -%}
+            {%- assign step_index = step_index | plus: 1 -%}
+            <div
+              class="o-nas-process__card  o-nas-process__card--has-after{% if step_index == onp_before_last %} o-nas-process__card--after-end{% endif %}"
+              role="listitem"
+              {{ block.shopify_attributes }}
+            >
+              <div class="o-nas-process__card-main">
+                <div class="o-nas-process__icon" aria-hidden="true">
+                  {%- if block.settings.icon != blank -%}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 72
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'o-nas-process__icon-img',
+                        widths: '30, 48, 72',
+                        sizes: '30px'
+                    }}
+                  {%- endif -%}
+              </div>
+              <div class="o-nas-process__stack">
+                {%- if onp_layout == 'stack' -%}
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="o-nas-process__title">
+                      <span class="o-nas-process__title-step">{{ onp_prefix | escape }} {{ step_index }}:</span>
+                      <span class="o-nas-process__title-text">{{ block.settings.title | escape }}</span>
+                    </h3>
+                  {%- else -%}
+                    <p class="o-nas-process__title o-nas-process__title--step-only">
+                      <span class="o-nas-process__title-step">{{ onp_prefix | escape }} {{ step_index }}</span>
+                    </p>
+                  {%- endif -%}
+                {%- else -%}
+                  <p class="o-nas-process__badge">{{ onp_prefix | escape }} {{ step_index }}</p>
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="o-nas-process__title">{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="o-nas-process__text rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "About — process steps",
+  "tag": "section",
+  "class": "section-o-nas-process-steps",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal (row)"
+        },
+        {
+          "value": "stack",
+          "label": "Vertical (stacked)"
+        }
+      ],
+      "default": "horizontal",
+      "info": "Vertical: steps one under another, icon left, heading left-aligned."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Jak to robimy?"
+    },
+    {
+      "type": "text",
+      "id": "step_prefix",
+      "label": "Step badge prefix",
+      "default": "Krok",
+      "info": "Shown before the step number (e.g. “Krok 1”). Leave empty to default to “Krok”."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading (optional)",
+      "info": "Leave empty for no line under the heading."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "White glyph on transparent background, ~30×30 px."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Projekt i cięcie"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description (optional)",
+          "info": "Optional. Leave empty for title-only steps."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — process steps",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Dopasowanie do modelu auta",
+            "text": ""
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Ręczne wykonanie",
+            "text": ""
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Kontrola jakości",
+            "text": ""
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Wysyłka",
+            "text": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

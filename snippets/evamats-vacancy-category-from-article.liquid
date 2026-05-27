@@ -1,0 +1,25 @@
+{%- comment -%}
+  Resolves vacancy filter category from metaobject field or article tags.
+
+  @param vacancy {object}
+  @param article {article}
+{%- endcomment -%}
+{%- liquid
+  assign category_id = ''
+  assign category_ids = 'sales,customer_service,finance,other' | split: ','
+
+  capture category_from_meta
+    render 'evamats-vacancy-field-value', field: vacancy.category
+  endcapture
+  assign category_id = category_from_meta | strip | handleize
+
+  if category_id == blank
+    for tag in article.tags
+      assign tag_id = tag | handleize
+      if category_ids contains tag_id
+        assign category_id = tag_id
+        break
+      endif
+    endfor
+  endif
+-%}{{- category_id -}}

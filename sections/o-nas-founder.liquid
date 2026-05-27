@@ -1,0 +1,414 @@
+{%- liquid
+  assign slide_count = 0
+  for block in section.blocks
+    if block.type == 'slide'
+      assign slide_count = slide_count | plus: 1
+    endif
+  endfor
+
+  assign media_is_video = false
+  if section.settings.media_type == 'video' and section.settings.video_desktop != blank
+    assign media_is_video = true
+  endif
+
+  assign video_desktop_src = ''
+  assign video_mobile_src = ''
+  if media_is_video
+    assign video_desktop_src = section.settings.video_desktop.sources[1].url
+    if section.settings.video_mobile != blank
+      assign video_mobile_src = section.settings.video_mobile.sources[1].url
+    else
+      assign video_mobile_src = video_desktop_src
+    endif
+  endif
+-%}
+
+<section
+  id="ONasFounder-{{ section.id }}"
+  class="o-nas-founder"
+>
+  <div class="o-nas-founder__wrap page-width">
+    <div class="o-nas-founder__shell">
+    <div class="o-nas-founder__title-wrap">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="o-nas-founder__heading section_title">{{ section.settings.heading | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if media_is_video -%}
+      <div class="o-nas-founder__media-bleed">
+        <div class="o-nas-founder__video-wrap" data-of-video-root>
+          <video
+            class="o-nas-founder__video o-nas-founder__video--desktop"
+            data-of-video="desktop"
+            data-src="{{ video_desktop_src }}"
+            data-start-offset="0"
+            muted
+            defaultmuted
+            playsinline
+            loop
+            preload="none"
+            disablepictureinpicture
+            {% if section.settings.video_desktop.preview_image != blank %}
+              poster="{{ section.settings.video_desktop.preview_image | image_url: width: 1200 }}"
+            {% endif %}
+            aria-hidden="true"
+          ></video>
+          <video
+            class="o-nas-founder__video o-nas-founder__video--mobile"
+            data-of-video="mobile"
+            data-src="{{ video_mobile_src }}"
+            data-start-offset="0"
+            muted
+            defaultmuted
+            playsinline
+            loop
+            preload="none"
+            disablepictureinpicture
+            {%- assign video_mobile_poster = section.settings.video_mobile.preview_image | default: section.settings.video_desktop.preview_image -%}
+            {%- if video_mobile_poster != blank -%}
+              poster="{{ video_mobile_poster | image_url: width: 800 }}"
+            {%- endif -%}
+            aria-hidden="true"
+          ></video>
+        </div>
+      </div>
+    {%- elsif slide_count > 0 -%}
+      <div class="o-nas-founder__media-bleed">
+        <div class="o-nas-founder__slider" data-of-root>
+          <div class="swiper o-nas-founder__swiper" data-of-swiper>
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'slide' -%}
+                  <div class="swiper-slide o-nas-founder__slide-wrap" {{ block.shopify_attributes }}>
+                    <div class="o-nas-founder__slide">
+                      <div class="o-nas-founder__slide-bg">
+                        {%- if block.settings.bg_image != blank -%}
+                          {{
+                            block.settings.bg_image
+                            | image_url: width: 1600
+                            | image_tag:
+                              loading: 'lazy',
+                              class: 'o-nas-founder__slide-bg-img',
+                              sizes: '(min-width: 1024px) 50vw, 100vw',
+                              widths: '375, 550, 750, 1000, 1200, 1600'
+                          }}
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'o-nas-founder__slide-bg-img o-nas-founder__slide-bg-img--ph' }}
+                        {%- endif -%}
+                      </div>
+                      {%- if block.settings.overlay_image != blank -%}
+                        <div class="o-nas-founder__slide-overlay">
+                          {{
+                            block.settings.overlay_image
+                            | image_url: width: 900
+                            | image_tag:
+                              loading: 'lazy',
+                              class: 'o-nas-founder__slide-overlay-img',
+                              sizes: '(min-width: 1024px) 28vw, 55vw',
+                              widths: '200, 360, 540, 720, 900'
+                          }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+          {%- if slide_count > 1 -%}
+            <div class="o-nas-founder__pagination swiper-pagination" data-of-pagination></div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="o-nas-founder__body-wrap">
+      {%- if section.settings.body != blank -%}
+        <div class="o-nas-founder__body rte">{{ section.settings.body }}</div>
+      {%- endif -%} 
+    </div>
+
+    {%- if section.settings.trust_label != blank or section.settings.badge_faces_image != blank -%}
+      <div class="o-nas-founder__badge-wrap">
+        {% render 'evamats-trust-badge',
+          badge_text: section.settings.trust_label,
+          badge_faces_image: section.settings.badge_faces_image
+        %}
+      </div>
+    {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    function destroyFounder(root) {
+      if (!root) return;
+      if (root._ofSwiper) {
+        try {
+          root._ofSwiper.destroy(true, true);
+        } catch (e) {}
+        root._ofSwiper = null;
+      }
+      delete root.dataset.ofSwiperInit;
+    }
+
+    var founderVideoConfig = {
+      videoAttr: 'data-of-video',
+      mq: '(min-width: 1024px)',
+      statePrefix: 'ofVideo',
+      initDatasetKey: 'ofVideoInit',
+    };
+
+    function destroyFounderVideo(root) {
+      if (typeof window.evamatsDestroyLazyScrollVideo === 'function') {
+        window.evamatsDestroyLazyScrollVideo(root, founderVideoConfig);
+      }
+    }
+
+    function initFounderVideo(root) {
+      if (!root || typeof window.evamatsInitLazyScrollVideo !== 'function') return;
+      window.evamatsInitLazyScrollVideo(
+        Object.assign(
+          {
+            root: root,
+            section: root.closest('section.o-nas-founder') || root,
+            visibilityTarget: root,
+          },
+          founderVideoConfig
+        )
+      );
+    }
+
+    function initFounder(root) {
+      if (!root || root.dataset.ofSwiperInit === '1') return;
+      var swiperEl = root.querySelector('[data-of-swiper]');
+      if (!swiperEl) return;
+      var slides = swiperEl.querySelectorAll('.swiper-slide');
+      var count = slides.length;
+      if (!count) return;
+
+      var paginationEl = root.querySelector('[data-of-pagination]');
+
+      function run() {
+        if (typeof window.Swiper === 'undefined') return;
+        if (root.dataset.ofSwiperInit === '1') return;
+        root.dataset.ofSwiperInit = '1';
+
+        var opts = {
+          speed: 450,
+          watchOverflow: true,
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+              centeredSlides: false,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 1,
+              centeredSlides: false,
+              spaceBetween: 0,
+            },
+          },
+        };
+
+        if (count > 1) {
+          opts.loop = true;
+        }
+
+        if (paginationEl && count > 1) {
+          opts.pagination = { el: paginationEl, clickable: true };
+        }
+
+        root._ofSwiper = new window.Swiper(swiperEl, opts);
+      }
+
+      function whenSwiperReady(cb) {
+        if (typeof window.Swiper !== 'undefined') {
+          cb();
+          return;
+        }
+        if (typeof window.ensureSwiperLoaded === 'function') {
+          window.ensureSwiperLoaded(cb);
+          return;
+        }
+        var done = false;
+        var poll = null;
+        function finish() {
+          if (done) return;
+          if (typeof window.Swiper === 'undefined') return;
+          done = true;
+          document.removeEventListener('swiper-loaded', onLoaded);
+          if (poll) clearInterval(poll);
+          cb();
+        }
+        function onLoaded() {
+          finish();
+        }
+        document.addEventListener('swiper-loaded', onLoaded);
+        poll = setInterval(finish, 50);
+        setTimeout(function () {
+          if (poll) clearInterval(poll);
+          document.removeEventListener('swiper-loaded', onLoaded);
+        }, 8000);
+      }
+
+      whenSwiperReady(run);
+    }
+
+    function initAll() {
+      document.querySelectorAll('[data-of-root]').forEach(initFounder);
+      document.querySelectorAll('[data-of-video-root]').forEach(initFounderVideo);
+    }
+
+    function scheduleInit() {
+      function go() {
+        initAll();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function onDom() {
+          document.removeEventListener('DOMContentLoaded', onDom);
+          setTimeout(go, 0);
+        });
+      } else {
+        setTimeout(go, 0);
+      }
+    }
+
+    scheduleInit();
+    document.addEventListener('swiper-loaded', initAll);
+
+    document.addEventListener('shopify:section:load', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var sliderRoot = target.querySelector('[data-of-root]');
+      if (sliderRoot) {
+        destroyFounder(sliderRoot);
+        setTimeout(function () {
+          initFounder(sliderRoot);
+        }, 0);
+      }
+      var videoRoot = target.querySelector('[data-of-video-root]');
+      if (videoRoot) {
+        destroyFounderVideo(videoRoot);
+        setTimeout(function () {
+          initFounderVideo(videoRoot);
+        }, 0);
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (ev) {
+      var target = ev.target;
+      if (!target || !target.querySelector) return;
+      var sliderRoot = target.querySelector('[data-of-root]');
+      if (sliderRoot) destroyFounder(sliderRoot);
+      var videoRoot = target.querySelector('[data-of-video-root]');
+      if (videoRoot) destroyFounderVideo(videoRoot);
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "O nas — Maks (carousel)",
+  "tag": "section",
+  "class": "section-o-nas-founder",
+  "settings": [
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media",
+      "options": [
+        { "value": "carousel", "label": "Carousel (slides)" },
+        { "value": "video", "label": "Video (MP4)" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video — desktop",
+      "info": "Used when Media is Video. Loads only when scrolled into view."
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video — mobile",
+      "info": "Optional. If empty, desktop video is used on mobile."
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Jestem Maks i produkuję doskonałe dywaniki samochodowe, stworzone z myślą o Twoim komforcie i o tobie!"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>EVAMATS to nie tylko dywaniki samochodowe. To innowacyjne rozwiązania, które połączą styl, trwałość i ekologiczne materiały. Nasz materiał jest ekologiczny, co oznacza, że dbasz nie tylko o swoje auto, ale również o środowisko.</p><p>Każdy nasz komplet jest produkowany ręcznie od A do Z, jak żadne inne do tej pory, co wpływa na jakość i solidne dopasowanie do każdego auta oraz potrzeb.</p>"
+    },
+    {
+      "type": "text",
+      "id": "trust_label",
+      "label": "Trust pill label",
+      "default": "50k+ kierowców"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_faces_image",
+      "label": "Faces image (single strip)",
+      "info": "Same as ADV clean hero: one image with overlapping faces. If empty, 5 placeholders show when the pill is visible."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background image"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlay_image",
+          "label": "Overlay (e.g. cutout portrait)",
+          "info": "PNG with transparency recommended."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "O nas — Maks (carousel)",
+      "category": "V2",
+      "blocks": [{ "type": "slide", "settings": {} }]
+    }
+  ]
+}
+{% endschema %}

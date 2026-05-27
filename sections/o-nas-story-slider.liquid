@@ -1,0 +1,721 @@
+{%- liquid
+  assign slide_count = 0
+  for block in section.blocks
+    if block.type == 'slide'
+      assign slide_count = slide_count | plus: 1
+    endif
+  endfor
+
+  assign bg_media_type = section.settings.bg_media_type | default: 'carousel'
+
+  assign bg_is_video = false
+  if bg_media_type == 'video' and section.settings.bg_video_desktop != blank
+    assign bg_is_video = true
+  endif
+
+  assign bg_is_banner = false
+  if bg_media_type == 'banner'
+    assign bg_is_banner = true
+  endif
+
+  assign bg_mode = 'carousel'
+  if bg_is_video
+    assign bg_mode = 'video'
+  elsif bg_is_banner
+    assign bg_mode = 'banner'
+  endif
+
+  assign banner_image_desktop = section.settings.bg_image_desktop
+  assign banner_image_mobile = section.settings.bg_image_mobile
+  if banner_image_mobile == blank
+    assign banner_image_mobile = banner_image_desktop
+  endif
+
+  assign bg_video_desktop_src = ''
+  assign bg_video_mobile_src = ''
+  if bg_is_video
+    assign bg_video_desktop_src = section.settings.bg_video_desktop.sources[1].url
+    if section.settings.bg_video_mobile != blank
+      assign bg_video_mobile_src = section.settings.bg_video_mobile.sources[1].url
+    else
+      assign bg_video_mobile_src = bg_video_desktop_src
+    endif
+  endif
+
+  assign logo_max_w = section.settings.logo_max_width | plus: 0
+  if logo_max_w < 80
+    assign logo_max_w = 220
+  endif
+  assign logo_max_w_mobile = section.settings.logo_max_width_mobile | plus: 0
+  if logo_max_w_mobile < 80
+    assign logo_max_w_mobile = logo_max_w
+  endif
+  assign logo_src_w = logo_max_w
+  if logo_max_w_mobile > logo_src_w
+    assign logo_src_w = logo_max_w_mobile
+  endif
+  assign logo_src_w = logo_src_w | times: 2
+  if logo_src_w < 240
+    assign logo_src_w = 240
+  endif
+  if logo_src_w > 640
+    assign logo_src_w = 640
+  endif
+
+  assign logo_sizes = '(max-width: 749px) ' | append: logo_max_w_mobile | append: 'px, ' | append: logo_max_w | append: 'px'
+-%}
+
+<section
+  id="ONasStory-{{ section.id }}"
+  class="o-nas-story{% if bg_is_banner %} o-nas-story--banner{% endif %}"
+  data-ons-story-root
+  data-ons-bg-mode="{{ bg_mode }}"
+  style="--ons-stage-min: {{ section.settings.stage_min_height }}px; --ons-logo-w: {{ logo_max_w }}px; --ons-logo-w-m: {{ logo_max_w_mobile }}px; --ons-pt: {{ section.settings.padding_top }}px; --ons-pb: {{ section.settings.padding_bottom }}px;"
+>
+  {%- if slide_count > 0 -%}
+    <div class="o-nas-story__bg-bleed" aria-hidden="true">
+      {%- if bg_is_video -%}
+        <div class="o-nas-story__bg-video-wrap" data-ons-video-root>
+          <video
+            class="o-nas-story__bg-video o-nas-story__bg-video--desktop"
+            data-ons-video="desktop"
+            data-src="{{ bg_video_desktop_src }}"
+            data-start-offset="8"
+            muted
+            defaultmuted
+            playsinline
+            loop
+            preload="none"
+            disablepictureinpicture
+            {% if section.settings.bg_video_desktop.preview_image != blank %}
+              poster="{{ section.settings.bg_video_desktop.preview_image | image_url: width: 2400 }}"
+            {% endif %}
+          ></video>
+          <video
+            class="o-nas-story__bg-video o-nas-story__bg-video--mobile"
+            data-ons-video="mobile"
+            data-src="{{ bg_video_mobile_src }}"
+            data-start-offset="8"
+            muted
+            defaultmuted
+            playsinline
+            loop
+            preload="none"
+            disablepictureinpicture
+            {%- assign bg_video_mobile_poster = section.settings.bg_video_mobile.preview_image | default: section.settings.bg_video_desktop.preview_image -%}
+            {%- if bg_video_mobile_poster != blank -%}
+              poster="{{ bg_video_mobile_poster | image_url: width: 1200 }}"
+            {%- endif -%}
+          ></video>
+        </div>
+      {%- elsif bg_is_banner -%}
+        <div class="o-nas-story__bg-banner" data-ons-bg-banner>
+          <div class="o-nas-story__bg-fill">
+            {%- if banner_image_desktop != blank -%}
+              <picture>
+                {%- if section.settings.bg_image_mobile != blank -%}
+                  <source media="(max-width: 749px)" srcset="{{ section.settings.bg_image_mobile | image_url: width: 1200 }}">
+                {%- endif -%}
+                {{
+                  banner_image_desktop
+                  | image_url: width: 2400
+                  | image_tag:
+                    loading: 'eager',
+                    class: 'o-nas-story__bg-img',
+                    sizes: '100vw',
+                    widths: '400, 600, 800, 1200, 1600, 2000, 2400'
+                }}
+              </picture>
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'o-nas-story__bg-img o-nas-story__bg-img--ph' }}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- else -%}
+        <div class="swiper o-nas-story__bg-swiper" data-ons-bg-swiper>
+          <div class="swiper-wrapper">
+            {%- assign ons_i = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'slide' -%}
+                {%- liquid
+                  if ons_i == 0
+                    assign ons_ld = 'eager'
+                  else
+                    assign ons_ld = 'lazy'
+                  endif
+                -%}
+                <div class="swiper-slide o-nas-story__bg-slide">
+                  <div class="o-nas-story__bg-fill">
+                    {%- if block.settings.image != blank -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 2400
+                        | image_tag:
+                          loading: ons_ld,
+                          class: 'o-nas-story__bg-img',
+                          sizes: '100vw',
+                          widths: '400, 600, 800, 1200, 1600, 2000, 2400'
+                      }}
+                    {%- else -%}
+                      {{ 'lifestyle-2' | placeholder_svg_tag: 'o-nas-story__bg-img o-nas-story__bg-img--ph' }}
+                    {%- endif -%}
+                  </div>
+                </div>
+                {%- assign ons_i = ons_i | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="o-nas-story__stage page-width">
+      <div class="o-nas-story__stage-inner">
+        <div class="o-nas-story__column">
+          <div class="o-nas-story__brand">
+            {%- liquid
+              assign story_logo = settings.logo
+              if section.settings.logo != blank
+                assign story_logo = section.settings.logo
+              endif
+            -%}
+            {%- if story_logo != blank -%}
+              {{
+                story_logo
+                | image_url: width: logo_src_w
+                | image_tag:
+                  loading: 'eager',
+                  class: 'o-nas-story__logo-img',
+                  width: logo_max_w,
+                  widths: '80, 100, 120, 160, 200, 240, 280, 320, 400',
+                  sizes: logo_sizes
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'o-nas-story__logo-img o-nas-story__logo-img--ph' }}
+            {%- endif -%}
+          </div>
+
+          <div class="swiper o-nas-story__card-swiper" data-ons-card-swiper>
+            <div class="swiper-wrapper">
+              {%- assign ons_j = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'slide' -%}
+                  <div class="swiper-slide" {{ block.shopify_attributes }}>
+                    <div class="o-nas-story__card">
+                      {%- if block.settings.heading != blank -%}
+                        <h2 class="o-nas-story__heading">{{ block.settings.heading | escape }}</h2>
+                      {%- endif -%}
+                      {%- if block.settings.body != blank -%}
+                        <div class="o-nas-story__body rte">{{ block.settings.body }}</div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                  {%- assign ons_j = ons_j | plus: 1 -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {%- if slide_count > 1 -%}
+            <div class="eva-slider-controls">
+              <div class="eva-slider-controls__pagination swiper-pagination" data-ons-pagination></div>
+              <div class="eva-slider-controls__arrows">
+                <button
+                  type="button"
+                  class="eva-slider-nav eva-slider-nav--prev swiper-button-prev"
+                  aria-label="Previous slide"
+                >
+                  <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.58631 0.000114521L0.245925 5.3405C-0.0817878 5.66821 -0.0817876 6.19954 0.245925 6.52725L5.58631 11.8676L6.77306 10.6809L2.86521 6.77304H11.119L11.119 5.09472L2.86521 5.09472L6.77306 1.18687L5.58631 0.000114521Z" fill="#fff"/>
+                      </svg>
+                      
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="eva-slider-nav eva-slider-nav--next swiper-button-next"
+                  aria-label="Next slide"
+                >
+                  <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.53088 0.000114521L10.8713 5.3405C11.199 5.66821 11.199 6.19954 10.8713 6.52725L5.53088 11.8676L4.34412 10.6809L8.25197 6.77304H-0.00183256L-0.00183269 5.09472L8.25197 5.09472L4.34412 1.18687L5.53088 0.000114521Z" fill="white"/>
+                      </svg>
+                      
+                  </span>
+                </button>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="o-nas-story__wrap page-width">
+      <p class="o-nas-story__empty">Add one or more “Slide” blocks in the theme editor.</p>
+    </div>
+  {%- endif -%}
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% javascript %}
+  (function () {
+    function destroyStory(section) {
+      if (!section) return;
+      if (section._onsResizeTimer) {
+        try {
+          clearTimeout(section._onsResizeTimer);
+        } catch (e) {}
+        section._onsResizeTimer = null;
+      }
+      if (section._onsRo) {
+        try {
+          section._onsRo.disconnect();
+        } catch (e) {}
+        section._onsRo = null;
+      }
+      if (section._onsOnWinResize) {
+        try {
+          window.removeEventListener('resize', section._onsOnWinResize);
+        } catch (e) {}
+        section._onsOnWinResize = null;
+      }
+      if (section._onsCard) {
+        try {
+          section._onsCard.destroy(true, true);
+        } catch (e) {}
+        section._onsCard = null;
+      }
+      if (section._onsBg) {
+        try {
+          section._onsBg.destroy(true, true);
+        } catch (e) {}
+        section._onsBg = null;
+      }
+      var videoRoot = section.querySelector('[data-ons-video-root]');
+      if (videoRoot) {
+        destroyStoryVideo(videoRoot);
+      }
+      delete section.dataset.onsSwiperInit;
+    }
+
+    var storyVideoConfig = {
+      videoAttr: 'data-ons-video',
+      mq: '(min-width: 750px)',
+      statePrefix: 'onsVideo',
+      initDatasetKey: 'onsVideoInit',
+    };
+
+    function destroyStoryVideo(root) {
+      if (typeof window.evamatsDestroyLazyScrollVideo === 'function') {
+        window.evamatsDestroyLazyScrollVideo(root, storyVideoConfig);
+      }
+    }
+
+    function initStoryVideo(section) {
+      var root = section && section.querySelector('[data-ons-video-root]');
+      if (!root || typeof window.evamatsInitLazyScrollVideo !== 'function') return;
+      window.evamatsInitLazyScrollVideo(
+        Object.assign(
+          {
+            root: root,
+            section: section,
+            visibilityTarget: root,
+          },
+          storyVideoConfig
+        )
+      );
+    }
+
+    function initStory(section) {
+      if (!section || section.dataset.onsSwiperInit === '1') return;
+      if (section.dataset.onsBgMode === 'video') {
+        initStoryVideo(section);
+      }
+      var bgMode = section.dataset.onsBgMode || 'carousel';
+      var bgEl = section.querySelector('[data-ons-bg-swiper]');
+      var cardEl = section.querySelector('[data-ons-card-swiper]');
+      if (!cardEl) return;
+      if (bgMode === 'carousel' && !bgEl) return;
+      var slides = cardEl.querySelectorAll('.swiper-slide');
+      var count = slides.length;
+      if (!count) return;
+
+      var paginationEl = section.querySelector('[data-ons-pagination]');
+      var prevEl = section.querySelector('.eva-slider-nav--prev');
+      var nextEl = section.querySelector('.eva-slider-nav--next');
+
+      function run() {
+        if (typeof window.Swiper === 'undefined') return;
+        if (section.dataset.onsSwiperInit === '1') return;
+        section.dataset.onsSwiperInit = '1';
+
+        var baseOpts = {
+          speed: 520,
+          watchOverflow: true,
+          slidesPerView: 1,
+          spaceBetween: 0,
+          allowTouchMove: true,
+        };
+
+        if (count > 1) {
+          baseOpts.loop = true;
+        }
+
+        var bgOpts = Object.assign({}, baseOpts, {
+          observer: true,
+          observeParents: true,
+          effect: 'fade',
+          fadeEffect: { crossFade: true },
+        });
+
+        var cardOpts = Object.assign({}, baseOpts, {
+          effect: 'fade',
+          fadeEffect: { crossFade: true },
+          autoHeight: true,
+        });
+
+        if (paginationEl && count > 1) {
+          cardOpts.pagination = { el: paginationEl, clickable: true };
+        }
+        if (prevEl && nextEl && count > 1) {
+          cardOpts.navigation = { prevEl: prevEl, nextEl: nextEl };
+        }
+
+        var bgSwiper = null;
+        if (bgMode === 'carousel' && bgEl) {
+          bgSwiper = new window.Swiper(bgEl, bgOpts);
+        }
+        var cardSwiper = new window.Swiper(cardEl, cardOpts);
+
+        function refreshCardHeight() {
+          if (section._onsRefreshingHeight) return;
+          section._onsRefreshingHeight = true;
+          try {
+            var beforeHeight = cardEl.offsetHeight;
+            if (typeof cardSwiper.updateAutoHeight === 'function') {
+              cardSwiper.updateAutoHeight(0);
+            }
+            cardSwiper.update();
+            if (Math.abs(cardEl.offsetHeight - beforeHeight) < 1) return;
+          } catch (eH) {}
+          finally {
+            section._onsRefreshingHeight = false;
+          }
+        }
+
+        cardSwiper.on('slideChange', refreshCardHeight);
+
+        var logoImg = section.querySelector('.o-nas-story__logo-img');
+        if (logoImg) {
+          if (logoImg.complete) {
+            refreshCardHeight();
+          } else {
+            logoImg.addEventListener('load', refreshCardHeight, { once: true });
+          }
+        }
+
+        function refreshStorySwipers() {
+          if (bgSwiper) {
+            try {
+              bgSwiper.update();
+            } catch (e1) {}
+          }
+          refreshCardHeight();
+        }
+
+        function scheduleStoryRefresh() {
+          if (section._onsResizeTimer) {
+            try {
+              clearTimeout(section._onsResizeTimer);
+            } catch (e) {}
+          }
+          section._onsResizeTimer = setTimeout(function () {
+            section._onsResizeTimer = null;
+            refreshStorySwipers();
+          }, 80);
+        }
+
+        [0, 120, 400].forEach(function (delay) {
+          setTimeout(refreshStorySwipers, delay);
+        });
+
+        section._onsOnWinResize = scheduleStoryRefresh;
+        window.addEventListener('resize', section._onsOnWinResize);
+
+        var syncLock = false;
+        function indexOf(sw) {
+          if (sw.params.loop && typeof sw.realIndex === 'number') return sw.realIndex;
+          return sw.activeIndex;
+        }
+        function syncPair(from, to) {
+          from.on('slideChange', function () {
+            if (syncLock) return;
+            var i = indexOf(from);
+            var j = indexOf(to);
+            if (i === j) return;
+            var animSpeed = typeof from.params.speed === 'number' ? from.params.speed : 520;
+            syncLock = true;
+            try {
+              if (to.params.loop && typeof to.slideToLoop === 'function') {
+                to.slideToLoop(i, animSpeed, false);
+              } else {
+                to.slideTo(i, animSpeed, false);
+              }
+            } catch (err) {}
+            window.requestAnimationFrame(function () {
+              syncLock = false;
+            });
+          });
+        }
+        if (bgSwiper) {
+          syncPair(cardSwiper, bgSwiper);
+          syncPair(bgSwiper, cardSwiper);
+          section._onsBg = bgSwiper;
+        } else {
+          section._onsBg = null;
+        }
+
+        section._onsCard = cardSwiper;
+      }
+
+      function whenSwiperReady(cb) {
+        if (typeof window.Swiper !== 'undefined') {
+          cb();
+          return;
+        }
+        if (typeof window.ensureSwiperLoaded === 'function') {
+          window.ensureSwiperLoaded(cb);
+          return;
+        }
+        var done = false;
+        var poll = null;
+        function finish() {
+          if (done) return;
+          if (typeof window.Swiper === 'undefined') return;
+          done = true;
+          document.removeEventListener('swiper-loaded', onLoaded);
+          if (poll) clearInterval(poll);
+          cb();
+        }
+        function onLoaded() {
+          finish();
+        }
+        document.addEventListener('swiper-loaded', onLoaded);
+        poll = setInterval(finish, 50);
+        setTimeout(function () {
+          if (poll) clearInterval(poll);
+          document.removeEventListener('swiper-loaded', onLoaded);
+        }, 8000);
+      }
+
+      whenSwiperReady(run);
+    }
+
+    function initAllStory() {
+      document.querySelectorAll('[data-ons-story-root].o-nas-story').forEach(function (section) {
+        if (section.dataset.onsBgMode === 'video') {
+          initStoryVideo(section);
+        }
+        initStory(section);
+      });
+    }
+
+    function scheduleInit() {
+      function go() {
+        initAllStory();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function onDom() {
+          document.removeEventListener('DOMContentLoaded', onDom);
+          setTimeout(go, 0);
+        });
+      } else {
+        setTimeout(go, 0);
+      }
+    }
+
+    scheduleInit();
+    document.addEventListener('swiper-loaded', initAllStory);
+
+    function findStorySection(el) {
+      if (!el || !el.closest) return null;
+      if (el.matches && el.matches('section.o-nas-story[data-ons-story-root]')) return el;
+      return el.querySelector('section.o-nas-story[data-ons-story-root]');
+    }
+
+    document.addEventListener('shopify:section:load', function (ev) {
+      var sec = findStorySection(ev.target);
+      if (sec) {
+        destroyStory(sec);
+        setTimeout(function () {
+          initStory(sec);
+        }, 0);
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (ev) {
+      var sec = findStorySection(ev.target);
+      if (sec) destroyStory(sec);
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "About — story slider",
+  "tag": "section",
+  "class": "section-o-nas-story-slider",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo override",
+      "info": "Optional. Replaces the theme store logo above slide text. Leave empty to use the default store logo."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Logo max width — desktop",
+      "min": 80,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width_mobile",
+      "label": "Logo max width — mobile",
+      "min": 80,
+      "max": 320,
+      "step": 4,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "select",
+      "id": "bg_media_type",
+      "label": "Background",
+      "options": [
+        { "value": "carousel", "label": "Image per slide" },
+        { "value": "banner", "label": "Static image" },
+        { "value": "video", "label": "Video (fixed)" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_desktop",
+      "label": "Background image — desktop",
+      "info": "Static full-width background (banner mode). Slide background images are ignored."
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background image — mobile",
+      "info": "Optional. Uses desktop image when empty."
+    },
+    {
+      "type": "video",
+      "id": "bg_video_desktop",
+      "label": "Background video — desktop",
+      "info": "Fixed background; does not change when slides change. Loads when scrolled into view."
+    },
+    {
+      "type": "video",
+      "id": "bg_video_mobile",
+      "label": "Background video — mobile",
+      "info": "Optional. If empty, desktop video is used on mobile."
+    },
+    {
+      "type": "range",
+      "id": "stage_min_height",
+      "min": 380,
+      "max": 720,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum stage height",
+      "info": "Full-bleed background + card area.",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Full-width background image",
+          "info": "Synced with this slide’s text (carousel mode only). Ignored for static image or video background."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Jak powstają nasze dywaniki?"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Text",
+          "default": "<p>Każdy dywanik EVA przechodzi pełny cykl produkcyjny na nowoczesnym sprzęcie: od precyzyjnego cyfrowego cięcia po staranne wykończenie krawędzi.</p><p>Korzystamy z automatycznych maszyn, które zapewniają idealną geometrię oraz gładki, jednolity wzór powierzchni bez wad.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — story slider",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Jak powstają nasze dywaniki?",
+            "body": "<p>Każdy dywanik EVA przechodzi pełny cykl produkcyjny na nowoczesnym sprzęcie: od precyzyjnego cyfrowego cięcia po staranne wykończenie krawędzi.</p><p>Korzystamy z automatycznych maszyn, które zapewniają idealną geometrię oraz gładki, jednolity wzór powierzchni bez wad.</p>"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Jakość w detalach",
+            "body": "<p>Kontrolujemy każdy etap: materiał, cięcie, wykończenie i pakowanie — tak, aby zestaw był gotowy do lat codziennego użytku.</p>"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Dopasowanie do auta",
+            "body": "<p>Projektujemy wzory pod konkretne modele, żeby dywanik leżał stabilnie i estetycznie wypełniał przestrzeń podłogi.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,327 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-v2",
+      "settings": {
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "current_label": "",
+        "show_page_content": false
+      }
+    },
+    "banner_v2": {
+      "type": "media-banner-v2",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Group_1948755201.webp",
+        "image_mobile": "shopify://shop_images/Mask_group.webp",
+        "height_desktop": 900,
+        "height_mode": "auto",
+        "height_mobile": 420,
+        "overlay_opacity": 0,
+        "content_bottom_offset": 64,
+        "show_breadcrumbs": false,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "current_label": "",
+        "heading": "W aucie wszystko widać. Najbardziej — to, czego nie kontrolujesz.",
+        "text": "<p>Czystość w środku to nie przypadek. To system.</p>",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "content_mosaic_v2": {
+      "type": "content-mosaic-v2",
+      "settings": {
+        "heading": "Rynek się zmienił.",
+        "heading_accent": "Kierowcy też.",
+        "text": "<p>Dziś dbamy o detale. Powłoki, zabezpieczenia, detailing. Ale podłoga nadal często zostaje przypadkiem. A to jeden z najbardziej eksploatowanych elementów w aucie.</p>",
+        "badge_text": "To już standard",
+        "desktop_image_1": "shopify://shop_images/Rectangle_4876.webp",
+        "desktop_image_2": "shopify://shop_images/Rectangle_4877.webp",
+        "desktop_image_3": "shopify://shop_images/Rectangle_4879.webp",
+        "desktop_image_4": "shopify://shop_images/Rectangle_4878.webp",
+        "background_color": "#ffffff",
+        "image_radius": 12,
+        "grid_gap": 4
+      }
+    },
+    "problem_points_v2": {
+      "type": "problem-points-v2",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "icon": "moisture",
+            "text": "Wilgoć przesiąka pod spód i niszczy podłogę"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "icon": "dirt",
+            "text": "Wcierają brud głębiej w materiał"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "icon": "odor",
+            "text": "Z czasem zaczynają wydzielać zapach"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ],
+      "settings": {
+        "title": "Dlaczego większość kierowców nigdy nie ma naprawdę czystego wnętrza?",
+        "subtitle": "<p>Nie dlatego, że nie sprzątają. 👉 Tylko dlatego, że używają złego rozwiązania.</p>",
+        "image_1": "shopify://shop_images/image_144.webp",
+        "image_2": "shopify://shop_images/image_145.webp",
+        "bottom_text": "<p>Dlatego nawet po czyszczeniu auto nigdy nie jest naprawdę świeże.</p>"
+      }
+    },
+    "tilted_collage_v2": {
+      "type": "tilted-collage-v2",
+      "settings": {
+        "heading_main": "Brud nie znika.",
+        "heading_accent": "On się kumuluje.",
+        "text": "<p>I nawet jeśli tego nie widzisz od razu - wnętrze stopniowo traci świeżość.</p>",
+        "daily_text": "Codziennie.",
+        "image_left": "shopify://shop_images/image_177_1.webp",
+        "image_center": "shopify://shop_images/image_176.webp",
+        "image_right": "shopify://shop_images/image_175.webp",
+        "hide_pins": false,
+        "caption_left": "",
+        "caption_center": "",
+        "caption_right": "",
+        "hide_daily_line": false,
+        "daily_line_below_collage": false,
+        "daily_text_style": "gradient",
+        "daily_text_main": "",
+        "daily_text_accent": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "product_spotlight_v2": {
+      "type": "product-spotlight-v2",
+      "blocks": {
+        "ps_slide_1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+          }
+        },
+        "slide_fwaByB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+          }
+        },
+        "slide_z3BNmq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+          }
+        },
+        "ps_point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Tak jak chronisz lakier, tak możesz chronić podłogę."
+          }
+        },
+        "ps_point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Bo czyste wnętrze to nie przypadek. To decyzja."
+          }
+        }
+      },
+      "block_order": [
+        "ps_slide_1",
+        "slide_fwaByB",
+        "slide_z3BNmq",
+        "ps_point_1",
+        "ps_point_2"
+      ],
+      "settings": {
+        "overline": "To nie detal. To element systemu.",
+        "heading": "Coraz więcej kierowców przestaje traktować dywaniki jako dodatek.",
+        "cta_label": "Zobacz produkt",
+        "cta_url": "shopify://pages/dywaniki-samochodowe-eva",
+        "media_type": "carousel",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "eva_structure_v2": {
+      "type": "eva-structure-v2",
+      "blocks": {
+        "es_card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
+            "caption": "Zatrzymuje brud w komórkach"
+          }
+        },
+        "es_card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_1.webp",
+            "caption": "Nie pozwala mu się rozprzestrzeniać"
+          }
+        },
+        "es_card_3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_1948755126.webp",
+            "caption": "Nie chłonie wilgoci"
+          }
+        }
+      },
+      "block_order": [
+        "es_card_1",
+        "es_card_2",
+        "es_card_3"
+      ],
+      "settings": {
+        "heading_desktop": "Jak działa struktura EVA — i dlaczego to robi różnicę",
+        "heading_mobile": "Dlaczego EVA to materiał, który zmienia komfort jazdy?",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "adv_clean_hero_v2_YwVwpJ": {
+      "type": "adv-clean-hero-v2",
+      "blocks": {
+        "feature_hkdfhn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1632526600.webp",
+            "text": "Struktura, która zatrzymuje brud"
+          }
+        },
+        "feature_WhHyjw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1632526599.webp",
+            "text": "Powierzchnia, która nie chłonie wilgoci"
+          }
+        },
+        "feature_kJaCYX": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1632526598.webp",
+            "text": "Dopasowanie, które nie przesuwa się pod nogami"
+          }
+        }
+      },
+      "block_order": [
+        "feature_hkdfhn",
+        "feature_WhHyjw",
+        "feature_kJaCYX"
+      ],
+      "name": "ADV clean hero v2",
+      "settings": {
+        "heading": "Nowy sposób na utrzymanie czystości w aucie — bez codziennego sprzątania",
+        "badge_text": "50k+ kierowców",
+        "badge_faces_image": "shopify://shop_images/Group_1632523139.webp",
+        "tagline": "Prosto. Skutecznie. Bez kompromisów.",
+        "cta_label": "Zobacz produkt",
+        "cta_url": "shopify://pages/dywaniki-samochodowe-eva",
+        "image_desktop": "shopify://shop_images/freepik_0001_2_1.webp",
+        "image_text_gap": 140,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "adv_value_grid_v2_XbDwLP": {
+      "type": "adv-value-grid-v2",
+      "blocks": {
+        "item_Y3KTWd": {
+          "type": "item",
+          "settings": {
+            "icon": "hand",
+            "label": "Brud zostaje na powierzchni"
+          }
+        },
+        "item_caxdEB": {
+          "type": "item",
+          "settings": {
+            "icon": "water",
+            "label": "Woda nie wnika w materiał"
+          }
+        },
+        "item_gY3JQt": {
+          "type": "item",
+          "settings": {
+            "icon": "brush",
+            "label": "Czyszczenie zajmuje kilkanaście sekund"
+          }
+        },
+        "item_BKaqQe": {
+          "type": "item",
+          "settings": {
+            "icon": "diamond",
+            "label": "Wnętrze wygląda świeżo przez lata"
+          }
+        }
+      },
+      "block_order": [
+        "item_Y3KTWd",
+        "item_caxdEB",
+        "item_gY3JQt",
+        "item_BKaqQe"
+      ],
+      "name": "ADV value grid v2",
+      "settings": {
+        "heading": "Co zmienia się po przejściu na ten typ dywaników",
+        "footer_line": "To różnica, którą widzisz codziennie.",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "adv_promo_offer_v2_HHFGrU": {
+      "type": "adv-promo-offer-v2",
+      "name": "ADV promo offer v2",
+      "settings": {
+        "heading": "Raz zmieniasz — i już nie wracasz do starego standardu.",
+        "subheading": "Nie zmieniasz auta. Zmienia się standard. Sprawdź, jak wyglądają dywaniki EVA dopasowane do Twojego modelu.",
+        "offer_label": "Oferta ograniczona",
+        "badge_text": "Do 30%",
+        "discount_suffix": "taniej",
+        "image_visual_desktop": "shopify://shop_images/Group_1948755225.webp",
+        "image_alt": "Promocja dywaników EVA",
+        "button_label": "Zobacz dostępne modele",
+        "button_link": "shopify://pages/dywaniki-samochodowe-eva",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner_v2",
+    "content_mosaic_v2",
+    "problem_points_v2",
+    "tilted_collage_v2",
+    "product_spotlight_v2",
+    "eva_structure_v2",
+    "adv_clean_hero_v2_YwVwpJ",
+    "adv_value_grid_v2_XbDwLP",
+    "adv_promo_offer_v2_HHFGrU"
+  ]
+}

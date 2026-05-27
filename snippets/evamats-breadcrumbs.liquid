@@ -1,0 +1,24 @@
+{%- comment -%}
+  Breadcrumbs — Figma 1710:63132 (desktop), 1710:58082 (mobile).
+
+  @param parent_label {string} optional
+  @param parent_url {string}
+  @param current_label {string} required
+  @param class {string} optional extra classes
+{%- endcomment -%}
+
+{%- if current_label != blank -%}
+  <nav class="evamats-breadcrumbs{% if class != blank %} {{ class }}{% endif %}" aria-label="Breadcrumb">
+    <ol class="evamats-breadcrumbs__list">
+      {%- if parent_label != blank -%}
+        <li class="evamats-breadcrumbs__item">
+          <a class="evamats-breadcrumbs__link" href="{{ parent_url }}">{{ parent_label | escape }}</a>
+        </li>
+        <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
+      {%- endif -%}
+      <li class="evamats-breadcrumbs__item">
+        <span class="evamats-breadcrumbs__current" aria-current="page">{{ current_label | escape }}</span>
+      </li>
+    </ol>
+  </nav>
+{%- endif -%}

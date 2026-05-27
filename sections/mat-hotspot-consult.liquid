@@ -1,0 +1,327 @@
+{%- liquid
+  assign mat_form_id = 'MatConsultForm-' | append: section.id
+  assign mat_form_wrapper_id = 'mat-consult-form-' | append: section.id
+-%}
+
+<section
+  id="mat-consult-{{ section.id }}"
+  class="mat-consult"
+  data-section-id="{{ section.id }}"
+>
+  <div class="page-width mat-consult__page">
+    <div class="mat-consult__grid">
+      <div class="mat-consult__visual-col">
+        <div class="mat-consult__mat">
+          {%- if section.settings.mat_image != blank -%}
+            {%- liquid
+              assign mat_alt = section.settings.mat_image_alt | default: section.settings.mat_image.alt | default: ''
+            -%}
+            {{
+              section.settings.mat_image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                class: 'mat-consult__mat-img',
+                sizes: '(min-width: 990px) 50vw, 100vw',
+                widths: '375, 550, 750, 1100, 1600',
+                alt: mat_alt
+            }}
+          {%- else -%}
+            <div class="mat-consult__mat-placeholder" aria-hidden="true"></div>
+          {%- endif -%}
+
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'hotspot' -%}
+              <button
+                type="button"
+                class="mat-consult__hotspot"
+                style="--mx: {{ block.settings.position_x }}%; --my: {{ block.settings.position_y }}%;"
+                {{ block.shopify_attributes }}
+                aria-label="{{ block.settings.tooltip_heading | default: 'Informacja' | escape }}"
+                tabindex="0"
+              >
+                <span class="mat-consult__pin" aria-hidden="true">
+                  <svg class="mat-consult__pin-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="mat-consult__pin-outer" cx="24" cy="24" r="24" fill="#FF2741" opacity="0.5" />
+                    <circle class="mat-consult__pin-mid" cx="24" cy="24" r="13" fill="#FF2741" />
+                    <circle class="mat-consult__pin-core" cx="24" cy="24" r="5" fill="white" />
+                  </svg>
+                </span>
+                {%- if block.settings.tooltip_heading != blank or block.settings.tooltip_text != blank -%}
+                  {%- liquid
+                    assign px = block.settings.position_x | plus: 0
+                    assign py = block.settings.position_y | plus: 0
+                    assign tip_row = 'mid'
+                    if py <= 33
+                      assign tip_row = 'top'
+                    elsif py >= 67
+                      assign tip_row = 'bot'
+                    endif
+                    assign tip_col = 'center'
+                    if px <= 33
+                      assign tip_col = 'left'
+                    elsif px >= 67
+                      assign tip_col = 'right'
+                    endif
+                  -%}
+                  <span
+                    class="mat-consult__tooltip mat-consult__tooltip--r-{{ tip_row }} mat-consult__tooltip--c-{{ tip_col }}"
+                    role="tooltip"
+                  >
+                    {%- if block.settings.tooltip_heading != blank -%}
+                      <span class="mat-consult__tooltip-title">{{ block.settings.tooltip_heading | escape }}</span>
+                    {%- endif -%}
+                    {%- if block.settings.tooltip_text != blank -%}
+                      <span class="mat-consult__tooltip-body">{{ block.settings.tooltip_text | escape }}</span>
+                    {%- endif -%}
+                  </span>
+                {%- endif -%}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="mat-consult__form-col">
+        {% render 'mat-consult-form',
+          form_section: section,
+          form_id: mat_form_id,
+          wrapper_id: mat_form_wrapper_id,
+          hidden_form_value: 'Mat — konsultacja (hotspot)'
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mat hotspot consultation",
+  "tag": "section",
+  "class": "section-mat-hotspot-consult",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content (Polish storefront copy)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Uzyskaj bezpłatną konsultację!"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie."
+    },
+    {
+      "type": "image_picker",
+      "id": "mat_image",
+      "label": "Mat image (hotspots layer on top)"
+    },
+    {
+      "type": "text",
+      "id": "mat_image_alt",
+      "label": "Mat image alt text",
+      "default": "Dywanik EVA"
+    },
+    {
+      "type": "header",
+      "content": "Form labels (Polish)"
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name field label",
+      "default": "Imię i nazwisko"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_name",
+      "label": "Name placeholder",
+      "default": "Jan Kowalski"
+    },
+    {
+      "type": "text",
+      "id": "label_phone",
+      "label": "Phone field label",
+      "default": "Telefon"
+    },
+    {
+      "type": "text",
+      "id": "phone_prefix",
+      "label": "Phone prefix (display only)",
+      "default": "+48"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_phone",
+      "label": "Phone placeholder",
+      "default": "000-000-000"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email field label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder",
+      "default": "jan@example.com"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message field label",
+      "default": "Komentarz (opcjonalnie)"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_message",
+      "label": "Message placeholder",
+      "default": "Twoja wiadomość…"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Zostaw zapytanie"
+    },
+    {
+      "type": "header",
+      "content": "Consent checkbox"
+    },
+    {
+      "type": "text",
+      "id": "consent_intro",
+      "label": "Consent line — start (before terms link)",
+      "default": "Zgadzam się z "
+    },
+    {
+      "type": "text",
+      "id": "terms_label",
+      "label": "Terms link label",
+      "default": "regulaminem"
+    },
+    {
+      "type": "url",
+      "id": "terms_url",
+      "label": "Terms page URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_mid",
+      "label": "Consent line — middle (between links)",
+      "default": " oraz "
+    },
+    {
+      "type": "text",
+      "id": "privacy_label",
+      "label": "Privacy link label",
+      "default": "Polityką prywatności"
+    },
+    {
+      "type": "url",
+      "id": "privacy_url",
+      "label": "Privacy policy URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_end",
+      "label": "Consent line — end (after privacy link)",
+      "default": "."
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Dziękujemy! Skontaktujemy się wkrótce."
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Generic error message",
+      "default": "Sprawdź pola i spróbuj ponownie."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspot",
+      "name": "Hotspot / tooltip",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "range",
+          "id": "position_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal position",
+          "default": 50,
+          "info": "From left edge of the mat image."
+        },
+        {
+          "type": "range",
+          "id": "position_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position",
+          "default": 50,
+          "info": "From top edge of the mat image."
+        },
+        {
+          "type": "text",
+          "id": "tooltip_heading",
+          "label": "Tooltip title",
+          "default": "Struktura"
+        },
+        {
+          "type": "textarea",
+          "id": "tooltip_text",
+          "label": "Tooltip text",
+          "default": "Dywaniki EVAMATS są dostępne w dwóch unikalnych strukturach – plastry miodu lub romby."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mat hotspot consultation",
+      "blocks": [
+        {
+          "type": "hotspot",
+          "settings": { "position_x": 18, "position_y": 22 }
+        },
+        {
+          "type": "hotspot",
+          "settings": { "position_x": 72, "position_y": 35 }
+        },
+        {
+          "type": "hotspot",
+          "settings": { "position_x": 45, "position_y": 58 }
+        },
+        {
+          "type": "hotspot",
+          "settings": { "position_x": 88, "position_y": 78 }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}

@@ -1,0 +1,283 @@
+{%- liquid
+  assign mat_form_id = 'PartnersConsultForm-' | append: section.id
+  assign mat_form_wrapper_id = 'partners-consult-form-' | append: section.id
+-%}
+
+<section
+  id="PartnersConsultForm-{{ section.id }}"
+  class="evamats-partners-consult-form-v2 has_anchor"
+>
+  <div id="partners_form" class="anchor"></div>
+  <div  class="evamats-partners-consult-form-v2__inner page-width">
+    {% render 'mat-consult-form',
+      form_section: section,
+      form_id: mat_form_id,
+      wrapper_id: mat_form_wrapper_id,
+      hidden_form_value: section.settings.hidden_form_tag | default: 'Partnerzy — zapytanie (strona WWW)',
+      form_layout: 'partners'
+    %}
+
+    {%- if section.settings.alt_button_url != blank or section.settings.alt_button_label != blank -%}
+      <div class="epcf-alt-cta">
+        <div class="epcf-alt-cta__divider" aria-hidden="true">
+          <span class="epcf-alt-cta__divider-line"></span>
+          <span class="epcf-alt-cta__divider-text">{{ section.settings.alt_divider_text | default: 'lub' | escape }}</span>
+          <span class="epcf-alt-cta__divider-line"></span>
+        </div>
+        {%- if section.settings.alt_title != blank -%}
+          <p class="epcf-alt-cta__title">{{ section.settings.alt_title | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.alt_text != blank -%}
+          <p class="epcf-alt-cta__text">{{ section.settings.alt_text | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.alt_button_label != blank -%}
+          <a
+            class="epcf-alt-cta__btn button button_3"
+            href="{{ section.settings.alt_button_url | default: '#' }}"
+          >
+            {{ section.settings.alt_button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Partners consult form",
+  "tag": "section",
+  "class": "section-evamats-partners-consult-form-v2",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hidden tag (admin email)"
+    },
+    {
+      "type": "text",
+      "id": "hidden_form_tag",
+      "label": "Form source label (contact[Formularz])",
+      "default": "Partnerzy — zapytanie (strona WWW)"
+    },
+    {
+      "type": "header",
+      "content": "Content (Polish storefront copy)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rozpocznij współpracę"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Zostaw kontakt — wrócimy z ofertą dopasowaną do Twojego biznesu."
+    },
+    {
+      "type": "header",
+      "content": "Form labels (Polish)"
+    },
+    {
+      "type": "text",
+      "id": "label_first_name",
+      "label": "First name label",
+      "default": "Imię"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_first_name",
+      "label": "First name placeholder",
+      "default": "Imię"
+    },
+    {
+      "type": "text",
+      "id": "label_last_name",
+      "label": "Last name label",
+      "default": "Nazwisko"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_last_name",
+      "label": "Last name placeholder",
+      "default": "Nazwisko"
+    },
+    {
+      "type": "text",
+      "id": "label_business_sphere",
+      "label": "Business sphere label",
+      "default": "Sfera biznesu"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_business_sphere",
+      "label": "Business sphere placeholder",
+      "default": "Sfera biznesu"
+    },
+    {
+      "type": "textarea",
+      "id": "business_sphere_options",
+      "label": "Business sphere options",
+      "info": "One option per line (dropdown values)."
+    },
+    {
+      "type": "text",
+      "id": "label_phone",
+      "label": "Phone field label",
+      "default": "Telefon"
+    },
+    {
+      "type": "text",
+      "id": "phone_prefix",
+      "label": "Phone prefix (display only)",
+      "default": "+48"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_phone",
+      "label": "Phone placeholder",
+      "default": "000-000-000"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email field label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder",
+      "default": "jan@example.com"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message field label",
+      "default": "Komentarz (opcjonalnie)"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_message",
+      "label": "Message placeholder",
+      "default": "Komentarz (opcjonalnie)"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Wyślij zapytanie"
+    },
+    {
+      "type": "header",
+      "content": "Consent checkbox"
+    },
+    {
+      "type": "text",
+      "id": "consent_intro",
+      "label": "Consent line — start (before terms link)",
+      "default": "Zgadzam się z "
+    },
+    {
+      "type": "text",
+      "id": "terms_label",
+      "label": "Terms link label",
+      "default": "regulaminem"
+    },
+    {
+      "type": "url",
+      "id": "terms_url",
+      "label": "Terms page URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_mid",
+      "label": "Consent line — middle (between links)",
+      "default": " oraz "
+    },
+    {
+      "type": "text",
+      "id": "privacy_label",
+      "label": "Privacy link label",
+      "default": "Polityką prywatności"
+    },
+    {
+      "type": "url",
+      "id": "privacy_url",
+      "label": "Privacy policy URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_end",
+      "label": "Consent line — end (after privacy link)",
+      "default": "."
+    },
+    {
+      "type": "text",
+      "id": "consent_error_message",
+      "label": "Consent error message",
+      "default": "Musisz zaakceptować politykę prywatności i regulamin."
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Dziękujemy! Skontaktujemy się wkrótce."
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Generic error message",
+      "default": "Sprawdź pola i spróbuj ponownie."
+    },
+    {
+      "type": "header",
+      "content": "Alternative CTA (below form)"
+    },
+    {
+      "type": "text",
+      "id": "alt_divider_text",
+      "label": "Divider text",
+      "default": "lub"
+    },
+    {
+      "type": "text",
+      "id": "alt_title",
+      "label": "Alt CTA title",
+      "default": "Gotowy na pełne partnerstwo?"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt CTA description",
+      "default": "Zarejestruj się w panelu partnera i zacznij sprzedawać już dziś."
+    },
+    {
+      "type": "text",
+      "id": "alt_button_label",
+      "label": "Alt button label",
+      "default": "Zarejestruj się jako partner"
+    },
+    {
+      "type": "url",
+      "id": "alt_button_url",
+      "label": "Alt button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partners consult form"
+    }
+  ]
+}
+{% endschema %}

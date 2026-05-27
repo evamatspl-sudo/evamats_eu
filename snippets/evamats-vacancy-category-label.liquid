@@ -1,0 +1,34 @@
+{%- comment -%}
+  Returns display label for vacancy.category id.
+  Optional section blocks type "category_label" override defaults.
+
+  @param category_id {string}
+  @param section {section}
+{%- endcomment -%}
+
+{%- liquid
+  assign category_id = category_id | strip
+  assign label = ''
+
+  for block in section.blocks
+    if block.type == 'category_label' and block.settings.category_id == category_id and block.settings.label != blank
+      assign label = block.settings.label
+    endif
+  endfor
+
+  if label == blank
+    case category_id
+      when 'sales'
+        assign label = 'Sprzedaż'
+      when 'customer_service'
+        assign label = 'Obsługa klienta'
+      when 'finance'
+        assign label = 'Finanse'
+      when 'other'
+        assign label = 'Inne'
+      else
+        assign label = category_id | replace: '_', ' '
+    endcase
+  endif
+-%}
+{{- label | escape -}}

@@ -1,0 +1,132 @@
+{%- comment -%}
+  Trust badge: stacked faces + label.
+  @param badge_text {String}
+  @param badge_faces_image {Image}
+  @param class {String} optional extra classes on root
+{%- endcomment -%}
+{%- if badge_text != blank -%}
+  <div class="evamats-trust-badge{% if class != blank %} {{ class }}{% endif %}">
+    <span
+      class="evamats-trust-badge__faces{% if badge_faces_image == blank %} evamats-trust-badge__faces--stack{% endif %}"
+      aria-hidden="true"
+    >
+      {%- if badge_faces_image != blank -%}
+        {{
+          badge_faces_image
+          | image_url: width: 360
+          | image_tag:
+            loading: 'lazy',
+            class: 'evamats-trust-badge__faces-img',
+            widths: '120, 180, 240, 360',
+            sizes: '(min-width: 750px) 200px, 120px'
+        }}
+      {%- else -%}
+        {%- for i in (1..5) -%}
+          <span class="evamats-trust-badge__avatar evamats-trust-badge__avatar--placeholder"></span>
+        {%- endfor -%}
+      {%- endif -%}
+    </span>
+    <span class="evamats-trust-badge__text">{{ badge_text | escape }}</span>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .evamats-trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 10px 16px 10px 12px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+  }
+
+  .evamats-trust-badge__faces {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 8px;
+  }
+
+  .evamats-trust-badge__faces--stack {
+    flex-direction: row-reverse;
+  }
+
+  .evamats-trust-badge__faces-img {
+    display: block;
+    height: 36px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .evamats-trust-badge__avatar {
+    width: 36px;
+    height: 36px;
+    margin-right: -10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+  }
+
+  .evamats-trust-badge__avatar--placeholder {
+    background: #e9e9e9;
+  }
+
+  .evamats-trust-badge__text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.36px;
+    color: var(--color-text-primary, #1b1d22);
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .evamats-trust-badge {
+      gap: 8px;
+      min-height: 45px;
+      max-width: 251px;
+      padding: 9px 14px 9px 10px;
+    }
+
+    .evamats-trust-badge__faces {
+      padding-right: 6px;
+    }
+
+    .evamats-trust-badge__faces-img {
+      height: 26px;
+      max-width: 118px;
+    }
+
+    .evamats-trust-badge__avatar {
+      width: 26px;
+      height: 26px;
+      margin-right: -8px;
+      border-width: 1.5px;
+    }
+
+    .evamats-trust-badge__text {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.28px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .evamats-trust-badge__faces-img {
+      height: 40px;
+      max-width: 240px;
+    }
+
+    .evamats-trust-badge__avatar {
+      width: 40px;
+      height: 40px;
+    }
+  }
+{% endstylesheet %}

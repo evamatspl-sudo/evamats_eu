@@ -1,0 +1,96 @@
+{%- liquid
+  assign image_1 = section.settings.image_1
+  assign image_2 = section.settings.image_2
+-%}
+
+<section class="problem-points-v2">
+  <div class="problem-points-v2__inner">
+    <h2 class="problem-points-v2__title section_title">{{ section.settings.title }}</h2>
+    <div class="problem-points-v2__subtitle body-m">{{ section.settings.subtitle }}</div>
+
+    <div class="problem-points-v2__images">
+      <div class="problem-points-v2__image-wrap">
+        {%- if image_1 != blank -%}
+          {{ image_1 | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'problem-points-v2__image' }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'problem-points-v2__image problem-points-v2__placeholder' }}
+        {%- endif -%}
+      </div>
+      <div class="problem-points-v2__image-wrap">
+        {%- if image_2 != blank -%}
+          {{ image_2 | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'problem-points-v2__image' }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'problem-points-v2__image problem-points-v2__placeholder' }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="problem-points-v2__points">
+      {%- for block in section.blocks -%}
+        <div class="problem-points-v2__point" {{ block.shopify_attributes }}>
+          <div class="problem-points-v2__icon-wrap">
+            {%- case block.settings.icon -%}
+              {%- when 'moisture' -%}
+                {% render 'icon-moisture' %}
+              {%- when 'dirt' -%}
+                {% render 'icon-dirt' %}
+              {%- when 'odor' -%}
+                {% render 'icon-odor' %}
+            {%- endcase -%}
+          </div>
+          <div class="problem-points-v2__point-text label-m">{{ block.settings.text }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="problem-points-v2__bottom-text label-l">{{ section.settings.bottom_text }}</div>
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Problem Points v2",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Dlaczego większość kierowców nigdy nie ma naprawdę czystego wnętrza?" },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "default": "<p>Nie dlatego, że nie sprzątają. 👉 Tylko dlatego, że używają złego rozwiązania.</p>" },
+    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+    { "type": "image_picker", "id": "image_2", "label": "Image 2" },
+    { "type": "richtext", "id": "bottom_text", "label": "Bottom text", "default": "<p>Dlatego nawet po czyszczeniu auto nigdy nie jest naprawdę świeże.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "moisture", "label": "Moisture" },
+            { "value": "dirt", "label": "Dirt" },
+            { "value": "odor", "label": "Odor" }
+          ],
+          "default": "moisture"
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Zatrzymują wilgoć w środku" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Problem Points v2",
+      "category": "V2",
+      "blocks": [
+        { "type": "point", "settings": { "icon": "moisture", "text": "Zatrzymują wilgoć w środku" } },
+        { "type": "point", "settings": { "icon": "dirt", "text": "Wcierają brud głębiej w materiał" } },
+        { "type": "point", "settings": { "icon": "odor", "text": "Z czasem zaczynają wydzielać zapach" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

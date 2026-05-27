@@ -1,0 +1,52 @@
+{%- comment -%}
+  Single before/after comparison for partners-spotlight-v2.
+  Reuses comparison.css classes; init in section JS.
+{%- endcomment -%}
+
+{%- if section.settings.image_before != blank and section.settings.image_after != blank -%}
+  <div class="partners-spotlight-v2__comparison comparison" data-partners-comparison>
+    <div class="partners-spotlight-v2__comparison-inner">
+      <div class="comparison__block partners-spotlight-v2__comparison-block active" id="partners-comparison-{{ section.id }}">
+        <div class="comparison__before">
+          <div class="comparison_label comparison_label--shape-3">
+            {%- if section.settings.label_before_main != blank or section.settings.label_before_accent != blank -%}
+              <span class="comparison_label__inner">
+                
+                {%- if section.settings.label_before_accent != blank -%}
+                  <span class="comparison_label__text comparison_label__text--accent">{{ section.settings.label_before_accent | escape }} </span>
+                {%- endif -%}
+                {%- if section.settings.label_before_main != blank -%}
+                  <span class="comparison_label__text comparison_label__text--main"> {{ section.settings.label_before_main | escape }}</span>
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+          </div>
+          <div class="comparison__before-media">
+            {{
+              section.settings.image_before
+              | image_url: width: 2000
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800, 1000, 1400, 2000',
+                sizes: '(min-width: 990px) 50vw, 100vw'
+            }}
+          </div>
+        </div>
+        <div class="comparison__after">
+          {{
+            section.settings.image_after
+            | image_url: width: 2000
+            | image_tag:
+              loading: 'lazy',
+              class: 'comparison__after',
+              widths: '400, 600, 800, 1000, 1400, 2000',
+              sizes: '(min-width: 990px) 50vw, 100vw'
+          }}
+        </div>
+        <label>
+          <input type="range" min="0" max="100" value="50" class="comparison__range" aria-label="{{ 'products.product.media.load_image' | t | default: 'Compare' | escape }}">
+        </label>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

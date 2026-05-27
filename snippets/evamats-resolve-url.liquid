@@ -1,0 +1,30 @@
+{%- comment -%}
+  Resolves vacancy apply URLs (internal paths or absolute, including third-party domains).
+  @param url {string} — required. Output via capture.
+
+  https://… — unchanged
+  www.site.pl/path — https://www.site.pl/path (external allowed)
+  /contact — shop.url + path (same store)
+{%- endcomment -%}
+
+{%- liquid
+  assign raw = url | strip
+  assign resolved_url = raw
+
+  if raw != blank
+    if raw contains '://'
+      assign resolved_url = raw
+    elsif raw contains '//'
+      assign resolved_url = 'https:' | append: raw
+    elsif raw contains '.'
+      assign resolved_url = 'https://' | append: raw
+    else
+      assign path = raw
+      assign path_first = path | slice: 0
+      if path_first != '/'
+        assign path = '/' | append: path
+      endif
+      assign resolved_url = shop.url | append: path
+    endif
+  endif
+-%}{{- resolved_url -}}

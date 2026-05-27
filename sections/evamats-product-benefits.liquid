@@ -1,0 +1,151 @@
+{%- liquid
+  assign item_count = 0
+  for block in section.blocks
+    if block.type == 'item'
+      assign item_count = item_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section
+  id="EvamatsProductBenefits-{{ section.id }}"
+  class="evamats-product-benefits"
+>
+  <div class="evamats-product-benefits__inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="evamats-product-benefits__heading section_title">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <div class="evamats-product-benefits__description rte">{{ section.settings.description }}</div>
+    {%- endif -%}
+
+    {%- if item_count > 0 -%}
+      <ul class="evamats-product-benefits__grid" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'item' -%}
+            <li class="evamats-product-benefits__item" {{ block.shopify_attributes }}>
+              <div class="evamats-product-benefits__icon" aria-hidden="true">
+                {%- if block.settings.icon != blank -%}
+                  {{
+                    block.settings.icon
+                    | image_url: width: 192
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'evamats-product-benefits__icon-img',
+                      widths: '72, 96, 144, 192',
+                      sizes: '(min-width: 750px) 96px, 72px'
+                  }}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.title != blank or block.settings.text_muted != blank or block.settings.text_highlight != blank -%}
+                <p class="evamats-product-benefits__label">
+                  {%- if block.settings.title != blank -%}
+                    <span class="evamats-product-benefits__label-main">{{ block.settings.title | escape }} </span>
+                  {%- endif -%}
+                  {%- if block.settings.text_muted != blank -%}
+                    <span class="evamats-product-benefits__label-muted"> {{ block.settings.text_muted | escape }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.text_highlight != blank -%}
+                    <span class="evamats-product-benefits__label-highlight"> {{ block.settings.text_highlight | escape }}</span>
+                  {%- endif -%}
+                </p>
+              {%- endif -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Product benefits",
+  "tag": "section",
+  "class": "section-evamats-product-benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Produkt, który klient naprawdę chce kupić"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Dywaniki EVAMATS rozwiązują realny problem kierowców — brud, zużycie i brak dopasowania.<br>To produkt, który klient rozumie od razu i kupuje bez długiego zastanowienia.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Composite icon with glow, ~96×96 px (desktop)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label — main (white)",
+          "default": "Benefit title"
+        },
+        {
+          "type": "text",
+          "id": "text_muted",
+          "label": "Label — muted (optional)",
+          "info": "e.g. “(nie uniwersalne)” — 50% white."
+        },
+        {
+          "type": "text",
+          "id": "text_highlight",
+          "label": "Label — highlight (optional)",
+          "info": "e.g. “(~2%)” — accent green #12ffa9."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product benefits",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "title": "Dopasowanie do konkretnego auta",
+            "text_muted": " (nie uniwersalne)"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Widoczny efekt już po pierwszym użyciu"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Segment premium = wyższy koszyk"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Niski poziom reklamacji ",
+            "text_highlight": "(~2%)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,158 @@
+{%- liquid
+  assign d_image_1 = section.settings.desktop_image_1
+  assign d_image_2 = section.settings.desktop_image_2
+  assign d_image_3 = section.settings.desktop_image_3
+  assign d_image_4 = section.settings.desktop_image_4
+-%}
+
+<div
+  id="ContentMosaicV2-{{ section.id }}"
+  class="content-mosaic-v2"
+  style="
+    --mosaic-bg: {{ section.settings.background_color }};
+    --mosaic-radius: {{ section.settings.image_radius }}px;
+    --mosaic-gap: {{ section.settings.grid_gap }}px;
+  "
+>
+  <div class="content-mosaic-v2__inner page-width">
+    <div class="content-mosaic-v2__text-row">
+      <h2 class="content-mosaic-v2__heading section_title">
+        <span class="content-mosaic-v2__heading-main">{{ section.settings.heading }}</span>
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="content-mosaic-v2__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+        {%- endif -%}
+      </h2>
+      <div class="content-mosaic-v2__text body-m">{{ section.settings.text }}</div>
+    </div>
+
+    <div class="content-mosaic-v2__grid">
+      <div class="content-mosaic-v2__cell">{{ d_image_1 | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'content-mosaic-v2__img' }}</div>
+      <div class="content-mosaic-v2__cell">{{ d_image_2 | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'content-mosaic-v2__img' }}</div>
+      <div class="content-mosaic-v2__cell">{{ d_image_3 | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'content-mosaic-v2__img' }}</div>
+      <div class="content-mosaic-v2__cell">{{ d_image_4 | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'content-mosaic-v2__img' }}</div>
+
+      {%- if section.settings.badge_text != blank -%}
+        <div class="content-mosaic-v2__badge-wrap">
+          <div class="content-mosaic-v2__badge">
+            <svg
+              class="content-mosaic-v2__badge-bg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="192"
+              height="31"
+              viewBox="0 0 192 31"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M12.3195 11.9047C17.1075 4.48335 25.3354 0 34.1673 0H157.833C166.665 0 174.892 4.48335 179.68 11.9047L192 31H0L12.3195 11.9047Z"
+                fill="white"
+              />
+            </svg>
+            <span class="content-mosaic-v2__badge-text label-m">{{ section.settings.badge_text | escape }}</span>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Content Mosaic v2",
+  "class": "section_v2",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Dziś dbamy o detale."
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent",
+      "default": "Kierowcy też."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Dziś dbamy o detale. Powłoki, zabezpieczenia, detailing. Ale podłoga nadal często zostaje przypadkiem. A to jeden z najbardziej eksploatowanych elementów w aucie.</p>"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "To już standard"
+    },
+    {
+      "type": "header",
+      "content": "Desktop images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_1",
+      "label": "Desktop image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_2",
+      "label": "Desktop image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_3",
+      "label": "Desktop image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_4",
+      "label": "Desktop image 4"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Mosaic v2",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

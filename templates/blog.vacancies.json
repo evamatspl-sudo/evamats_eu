@@ -1,0 +1,215 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "evamats_hero_cta": {
+      "type": "evamats-hero-cta",
+      "settings": {
+        "eyebrow": "Oferty pracy",
+        "heading": "Dołącz do zespołu EVAMATS",
+        "description": "<p>Tworzymy miejsce, w którym liczą się ludzie, współpraca i realny wpływ na rozwój firmy.</p>",
+        "button_label": "Zobacz oferty",
+        "button_link": "",
+        "button_scroll_to_list": true,
+        "button_scroll_selector": ".evamats-vacancies-list",
+        "image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_35_43_PM.webp",
+        "image_mobile": "shopify://shop_images/ChatGPT_Image_May_18_2026_06_57_20_PM_1.webp",
+        "padding_top": 72,
+        "padding_bottom": 40
+      }
+    },
+    "main": {
+      "type": "main-blog_v2",
+      "settings": {}
+    },
+    "product_spotlight_v2_PDpgWz": {
+      "type": "product-spotlight-v2",
+      "blocks": {
+        "slide_CxNmkf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4917.webp"
+          }
+        },
+        "slide_zFARMk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4917.webp"
+          }
+        },
+        "slide_PWgkr8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4917.webp"
+          }
+        },
+        "slide_hqcw4i": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4917.webp"
+          }
+        },
+        "point_wCtjU4": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755215.svg",
+            "text": "Różne działy, jedno miejsce — zawsze wiesz, do kogo się zwrócić"
+          }
+        },
+        "point_CdPqMi": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755215_1.svg",
+            "text": "Ponad 100 osób, które naprawdę ze sobą rozmawiają"
+          }
+        },
+        "point_UJHhCQ": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755215_2.svg",
+            "text": "Rośniemy 20–30% rocznie — i szukamy ludzi, którzy chcą rosnąć razem z nami"
+          }
+        }
+      },
+      "block_order": [
+        "slide_CxNmkf",
+        "slide_zFARMk",
+        "slide_PWgkr8",
+        "slide_hqcw4i",
+        "point_wCtjU4",
+        "point_CdPqMi",
+        "point_UJHhCQ"
+      ],
+      "name": "Product spotlight v2",
+      "settings": {
+        "overline": "",
+        "heading": "Poznaj ludzi, którzy tworzą EVAMATS",
+        "cta_label": "",
+        "cta_url": "",
+        "media_type": "video",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "evamats_icon_grid_6njrWP": {
+      "type": "evamats-icon-grid",
+      "blocks": {
+        "item_fndQ6K": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755214.svg",
+            "heading": "Jasne oczekiwania",
+            "text": "Wiesz, czego oczekujemy i na czym polega Twoja rola."
+          }
+        },
+        "item_tqGGig": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755215_db76c990-06f8-4e96-a6e6-10b731d957c6.svg",
+            "heading": "Wsparcie lidera",
+            "text": "Masz do kogo przyjść z pytaniem i możesz liczyć na feedback."
+          }
+        },
+        "item_Jp8waE": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755216.svg",
+            "heading": "Rozwój w praktyce",
+            "text": "Uczysz się na realnych zadaniach, a nie tylko z teorii."
+          }
+        },
+        "item_kmzjFM": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755214-1.svg",
+            "heading": "Wpływ na pracę",
+            "text": "Twoje pomysły mogą realnie zmieniać sposób działania zespołu."
+          }
+        },
+        "item_gtYpV8": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755215-1.svg",
+            "heading": "Stabilne środowisko",
+            "text": "Pracujemy na realnym produkcie i rozwijamy firmę długofalowo."
+          }
+        },
+        "item_aRmdzB": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755216-1.svg",
+            "heading": "Ludzka atmosfera",
+            "text": "Łączymy odpowiedzialność za wynik z normalną komunikacją i wzajemnym szacunkiem."
+          }
+        }
+      },
+      "block_order": [
+        "item_fndQ6K",
+        "item_tqGGig",
+        "item_Jp8waE",
+        "item_kmzjFM",
+        "item_gtYpV8",
+        "item_aRmdzB"
+      ],
+      "name": "EVAMATS — Icon grid",
+      "settings": {
+        "heading": "",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "evamats_vacancies_list_rY8DMT": {
+      "type": "evamats-vacancies-list",
+      "name": "EVAMATS — Vacancies list",
+      "settings": {
+        "heading": "Oferty pracy",
+        "filters_aria_label": "Filtr kategorii",
+        "filter_all_label": "Wszystko",
+        "label_contract": "Umowa",
+        "label_languages": "Język",
+        "label_work_mode": "Tryb pracy",
+        "label_location": "Lokalizacja",
+        "label_salary": "Wynagrodzenie",
+        "card_cta_label": "Sprawdź szczegóły",
+        "load_more_label": "Pokaż więcej",
+        "empty_message": "Brak ofert w tej kategorii.",
+        "articles_per_page": 2,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "evamats_careers_contact": {
+      "type": "evamats-careers-contact",
+      "settings": {
+        "background_image": "shopify://shop_images/ag1_waifu2x_photo_scale.webp",
+        "background_image_mobile": "shopify://shop_images/goga2.webp",
+        "heading": "Nie widzisz oferty dla siebie? Masz pytania?",
+        "email": "hr.team@evamats.pl",
+        "button_label": "Napisz do nas",
+        "button_link": "",
+        "social_heading": "Dowiedz się więcej o karierze w naszych mediach:",
+        "facebook_url": "https://www.facebook.com/hr.evamats",
+        "instagram_url": "https://www.instagram.com/evamats_hr",
+        "tiktok_url": "https://www.tiktok.com/@evamatshr",
+        "youtube_url": "https://www.youtube.com/@evamatspl",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "evamats_hero_cta",
+    "main",
+    "product_spotlight_v2_PDpgWz",
+    "evamats_icon_grid_6njrWP",
+    "evamats_vacancies_list_rY8DMT",
+    "evamats_careers_contact"
+  ]
+}

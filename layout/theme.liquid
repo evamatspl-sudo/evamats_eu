@@ -16,7 +16,33 @@
     {% else %}
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
-    
+
+    {%- liquid
+      assign evamats_v2_template = template.name
+      if template.suffix != blank
+        assign evamats_v2_template = evamats_v2_template | append: '.' | append: template.suffix
+      endif
+      assign evamats_v2_page_templates = 'page.adv-v2,page.o-nas,page.partners,blog.vacancies,article.kariera' | split: ','
+      assign evamats_is_v2_page = false
+      if evamats_v2_page_templates contains evamats_v2_template
+        assign evamats_is_v2_page = true
+      endif
+    -%}
+
+    {%- if evamats_is_v2_page -%}
+      <link
+        rel="preload"
+        href="{{ 'NTSomic-Regular.woff2' | asset_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin>
+      <link
+        rel="preload"
+        href="{{ 'NTSomic-Medium.woff2' | asset_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin>
+    {%- endif -%}
 
     {%- if settings.favicon != blank -%}
       <link
@@ -372,6 +398,10 @@
       
     {% endstyle %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {%- if evamats_is_v2_page -%}
+      {{ 'base_v2.css' | asset_url | stylesheet_tag }}
+      {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -400,7 +430,7 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
   </head>
 
-  <body class="gradient template_{{ template.name }} {% if product.template_suffix %}suffix_{{product.template_suffix}}{% endif %}">
+  <body class="gradient template_{{ template.name }} {% if page %} template_{{ page.template_suffix }}{% endif %} {% if product.template_suffix %}suffix_{{ product.template_suffix }}{% endif %}{% if evamats_is_v2_page %} evamats-v2{% endif %}">
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
@@ -532,6 +562,9 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
         "image": "https://evamats.pl/cdn/shop/files/2_60_png.png?v=1679240339&width=500"
       }
     </script>
+    {%- if evamats_is_v2_page -%}
+      {% render 'evamats-video-fullscreen' %}
+    {%- endif -%}
     <script src="{{'swiper-bundle.min.js' | asset_url}}" defer></script>
     {% if template.name contains 'index' %}
       <script defer>

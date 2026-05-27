@@ -1,146 +1,588 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "custom_css": [
-        "h1 {text-align: center;}"
-      ],
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
+      "type": "main-page-v2",
+      "settings": {}
     },
-    "5b12f67c-9877-4248-80c3-e344481aee67": {
-      "type": "two-text-with-image",
-      "custom_css": [
-        "h2{color: black;}"
-      ],
-      "settings": {
-        "hd": "Welcome to the world of EVAMATS!",
-        "des1": "<p>Hi, I'm Maks, and I create top-quality car floor mats designed with your comfort — and you — in mind!<br\/>Our company was born out of a passion for automotive excellence and a desire to give you the best possible driving experience.<\/p><p><strong>EVAMATS<\/strong> is not just about car mats. It's about innovative solutions that combine style, durability, and eco-friendly materials.<br\/>Our material is environmentally friendly, meaning you’re taking care of both your car and the planet.<\/p><p>Each of our sets is handcrafted from start to finish — like no other — ensuring exceptional quality and a perfect fit for every vehicle and every need.<\/p>",
-        "img": "shopify:\/\/shop_images\/photo_2025-05-14_14.04.33.jpg",
-        "des2": "<p><strong>EVAMATS material<\/strong> is an innovative, high-quality product that delivers durability, comfort, and great aesthetics.<br\/>Our mats are waterproof, maintain their shape, resistant to wear, and easy to clean.<br\/>We offer a product that outperforms standard rubber and velour mats in every way.<\/p><p><strong>Investing in our mats means investing for years to come!<\/strong><br\/>Over 50,000 satisfied drivers have already trusted us — and now it's your turn to discover why EVAMATS is the choice for those who value quality and comfort.<\/p><p>If you have any questions or need assistance, our team is here to help you.<\/p><p><strong>Experience a new level of comfort and enjoy your journeys in style with EVAMATS!<\/strong><\/p>"
-      }
-    },
-    "c66a3019-d7f6-42b5-a4b9-57d60e305c82": {
-      "type": "home-5",
-      "settings": {
-        "btn_text": "Get in touch!",
-        "btn_url": "shopify:\/\/pages\/contact"
-      }
-    },
-    "5ab367d2-5b6e-4a45-b02d-360524e6b303": {
-      "type": "soc-icons-section",
-      "settings": {
-        "des1": "<p>Facebook<\/p>",
-        "img1": "shopify:\/\/shop_images\/fb.png",
-        "button_link1": "https:\/\/www.facebook.com\/evamats.store",
-        "des2": "<p>Instagram<\/p>",
-        "img2": "shopify:\/\/shop_images\/Instagram.png",
-        "button_link2": "https:\/\/www.instagram.com\/theofficialevamats\/",
-        "des3": "<p>TikTok<\/p>",
-        "img3": "shopify:\/\/shop_images\/TikTok.png",
-        "button_link3": "https:\/\/www.tiktok.com\/@evamats.store",
-        "des4": "<p>YouTube<\/p>",
-        "img4": "shopify:\/\/shop_images\/YT.png",
-        "button_link4": "https:\/\/www.youtube.com\/@evamats_store"
-      }
-    },
-    "bc11ef06-4794-4eff-87db-f13564af3f81": {
-      "type": "multicolumn",
+    "o_nas_intro": {
+      "type": "o-nas-intro",
       "blocks": {
-        "1f8877b4-dd0b-4f7d-9660-9b3ea437d2e6": {
-          "type": "column",
+        "onas_photo_1": {
+          "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4436-min_1_66165036-e967-41a2-986d-1d943a1062e8.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/Rectangle_4876_f421e3b4-f046-48bf-9c92-ece0ae2438d1.webp"
           }
         },
-        "c668bfcf-fcfc-4aab-8396-4c123ab67ab0": {
-          "type": "column",
+        "onas_photo_2": {
+          "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_6171_1_ab49a21f-68e5-4396-9582-e23608de9a99.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/Rectangle_4877_d8486b73-e7cf-438c-82ca-340542e2914c.webp"
           }
         },
-        "d91e53f2-d108-409c-a043-b639bba9b39b": {
-          "type": "column",
+        "onas_photo_3": {
+          "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DSC07330_1.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/Rectangle_4878_e4c88e95-1035-4878-9361-e2f167174468.webp"
           }
         },
-        "469ae5a8-7297-4824-83b4-e810eb89d7a4": {
-          "type": "column",
+        "onas_photo_4": {
+          "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4431_1.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "d292f224-7165-4df6-8ec7-2edc6104dc94": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_8491_1.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "e3d0f164-fbc3-4d90-a9f1-fa56a22cb2f6": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_4664_1.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/Rectangle_4879_5e9c695c-1085-4211-9512-95e54c4f0d85.webp"
           }
         }
       },
       "block_order": [
-        "1f8877b4-dd0b-4f7d-9660-9b3ea437d2e6",
-        "c668bfcf-fcfc-4aab-8396-4c123ab67ab0",
-        "d91e53f2-d108-409c-a043-b639bba9b39b",
-        "469ae5a8-7297-4824-83b4-e810eb89d7a4",
-        "d292f224-7165-4df6-8ec7-2edc6104dc94",
-        "e3d0f164-fbc3-4d90-a9f1-fa56a22cb2f6"
+        "onas_photo_1",
+        "onas_photo_2",
+        "onas_photo_3",
+        "onas_photo_4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "eyebrow": "O nas",
+        "heading": "Twój komfort ma znaczenie",
+        "body": "<p>EVAMATS to nie tylko dywaniki samochodowe. To innowacyjne rozwiązania, które połączą styl, trwałość i ekologiczne materiały. Nasz materiał jest ekologiczny, co oznacza, że dbasz nie tylko o swoje auto, ale również o środowisko.</p>",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "o_nas_founder": {
+      "type": "o-nas-founder",
+      "blocks": {
+        "founder_slide_1": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/Group_1948755132.jpg"
+          }
+        },
+        "slide_yQg7Eh": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/Group_1948755132.jpg"
+          }
+        },
+        "slide_biEzjV": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/Group_1948755132.jpg"
+          }
+        },
+        "slide_eL6kDf": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/Group_1948755132.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "founder_slide_1",
+        "slide_yQg7Eh",
+        "slide_biEzjV",
+        "slide_eL6kDf"
+      ],
+      "settings": {
+        "media_type": "video",
+        "heading": "EVAMATS powstał od podstaw — od ręcznej pracy i pełnego zaangażowania w każdy detal, po dopracowany system, który dziś wyznacza standard jakości.",
+        "body": "<p>To doświadczenie nauczyło nas jednego: produkt ma znaczenie tylko wtedy, gdy działa w codziennym użytkowaniu.</p><p>Dlatego tworzymy dywaniki samochodowe, które są realnie dopasowane do auta i potrzeb kierowcy — z uwzględnieniem różnic konstrukcyjnych, warunków użytkowania i trwałości na lata. Każdy element ma swoją funkcję, a każdy etap produkcji podlega kontroli, bo końcowy efekt nie jest przypadkiem.</p><p>Nie chodzi o sam produkt.<br/> Chodzi o to, jak zmienia codzienne doświadczenie jazdy — więcej porządku, więcej wygody, mniej kompromisów.</p><p>Bo dla nas komfort kierowcy to nie dodatek.<br/> <strong>To standard.</strong></p>",
+        "trust_label": "50k+ kierowców",
+        "badge_faces_image": "shopify://shop_images/Group_1632523139.webp",
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
+    },
+    "o_nas_story": {
+      "type": "o-nas-story-slider",
+      "blocks": {
+        "ons_s1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4908.webp",
+            "heading": "Pomiary i szablony",
+            "body": "<p>Precyzja zaczyna się od podstaw<br/>Każdy model analizujemy indywidualnie — uwzględniając realne różnice konstrukcyjne.<br/><br/>Szablony tworzymy na bazie rzeczywistych pomiarów, aby zapewnić idealne dopasowanie do konkretnego auta.</p>"
+          }
+        },
+        "slide_thzice": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageApr28_2026_06_16_30PM.webp",
+            "heading": "Cięcie CNC",
+            "body": "<p>Dokładność na poziomie technologii<br/>Korzystamy z precyzyjnych maszyn CNC, które zapewniają perfekcyjne odwzorowanie kształtu.<br/><br/>Każde cięcie jest powtarzalne i dokładne — bez odchyleń i kompromisów.</p>"
+          }
+        },
+        "slide_Pg7tBp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4908.webp",
+            "heading": "Szycie i formowanie 3D",
+            "body": "<p>Funkcja spotyka formę<br/>Obszycia i ranty nadają trwałość oraz estetykę.<br/><br/>Formowanie 3D sprawia, że dywanik idealnie przylega do podłogi i chroni wnętrze auta.<br/></p>"
+          }
+        },
+        "slide_AkUN7b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4908.webp",
+            "heading": "Kontrola jakości",
+            "body": "<p>Każdy detal ma znaczenie<br/>Każdy komplet przechodzi dokładną weryfikację.<br/><br/>Sprawdzamy dopasowanie, jakość wykonania i wykończenie — zanim trafi do klienta.</p>"
+          }
+        },
+        "slide_yNFpU9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4908.webp",
+            "heading": "Pakowanie i wysyłka",
+            "body": "<p>Gotowe do codziennego użytkowania<br/>Bezpieczne pakowanie i sprawna logistyka.<br/><br/>Produkt dociera w idealnym stanie — gotowy, by od razu spełniać swoją funkcję.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ons_s1",
+        "slide_thzice",
+        "slide_Pg7tBp",
+        "slide_AkUN7b",
+        "slide_yNFpU9"
+      ],
+      "settings": {
+        "bg_media_type": "video",
+        "stage_min_height": 560,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "o_nas_process_steps_WW3kWe": {
+      "type": "o-nas-process-steps",
+      "blocks": {
+        "step_N3YkAY": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755095_dcf30b8a-2dc5-4b81-84a9-454772dadfab.svg",
+            "title": "Dopasowanie do modelu auta",
+            "text": ""
+          }
+        },
+        "step_Q9Datx": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755098.svg",
+            "title": "Ręczne wykonanie",
+            "text": ""
+          }
+        },
+        "step_GgbMdB": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755096.svg",
+            "title": "Kontrola jakości",
+            "text": ""
+          }
+        },
+        "step_edyCTx": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Group_1948755097.svg",
+            "title": "Wysyłka",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_N3YkAY",
+        "step_Q9Datx",
+        "step_GgbMdB",
+        "step_edyCTx"
+      ],
+      "name": "About — process steps",
+      "settings": {
+        "heading": "Jak to robimy?",
+        "step_prefix": "Krok",
+        "subheading": "",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "eva_structure_v2_KFAbMd": {
+      "type": "eva-structure-v2",
+      "blocks": {
+        "card_p9k89y": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
+            "caption": "Zatrzymuje brud w komórkach"
+          }
+        },
+        "card_cEmVGd": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_1.webp",
+            "caption": "Nie pozwala mu się rozprzestrzeniać"
+          }
+        },
+        "card_MWcMz8": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_1948755126.webp",
+            "caption": "Nie chłonie wilgoci"
+          }
+        }
+      },
+      "block_order": [
+        "card_p9k89y",
+        "card_cEmVGd",
+        "card_MWcMz8"
+      ],
+      "settings": {
+        "heading_desktop": "Jak działa struktura EVA — i dlaczego to robi różnicę",
+        "heading_mobile": "Dlaczego EVA to materiał, który zmienia komfort jazdy?",
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "tilted_collage_v2_AnAAwT": {
+      "type": "tilted-collage-v2",
+      "settings": {
+        "heading_main": "Ten sam materiał stosowany jest w:",
+        "heading_accent": "",
+        "text": "",
+        "daily_text": "Jeśli EVA sprawdza się tam, gdzie liczy się wytrzymałość i komfort – sprawdzi się również w Twoim aucie.",
+        "image_left": "shopify://shop_images/image_177.webp",
+        "image_center": "shopify://shop_images/image_176_287c4361-208d-4f0a-9fc5-16ee3f47ccec.webp",
+        "image_right": "shopify://shop_images/image_175_234ea1c9-b118-4b8b-a029-65d27ecc0eeb.webp",
+        "hide_pins": true,
+        "caption_left": "<p>Woda? Żaden problem. <br/>EVA nie chłonie wilgoci.</p>",
+        "caption_center": "<p>Ekstremalne warunki?<br/>EVA stworzona, by wytrzymać więcej.</p>",
+        "caption_right": "<p>Testowana pod presją. <br/>EVA nie zawodzi.</p>",
+        "hide_daily_line": false,
+        "daily_line_below_collage": true,
+        "daily_text_style": "split",
+        "daily_text_main": "Jeśli EVA sprawdza się tam, gdzie liczy się wytrzymałość i komfort –",
+        "daily_text_accent": "sprawdzi się również w Twoim aucie.",
+        "button_label": "Zobacz produkt",
+        "button_link": "shopify://pages/dywaniki-samochodowe-eva"
+      }
+    },
+    "roman_value_icons_v2_jXAfQK": {
+      "type": "roman-value-icons-v2",
+      "blocks": {
+        "item_BUiwir": {
+          "type": "item",
+          "settings": {
+            "icon": "1",
+            "title": "Nie chłonie wody",
+            "subtitle": "brak wilgoci i zapachu"
+          }
+        },
+        "item_igkQWr": {
+          "type": "item",
+          "settings": {
+            "icon": "2",
+            "title": "Odporność na ścieranie",
+            "subtitle": "wygląda dobrze przez lata"
+          }
+        },
+        "item_zehV7D": {
+          "type": "item",
+          "settings": {
+            "icon": "3",
+            "title": "Łatwe czyszczenie",
+            "subtitle": "wystarczy spłukać wodą"
+          }
+        },
+        "item_TBLLXa": {
+          "type": "item",
+          "settings": {
+            "icon": "4",
+            "title": "Struktura antypoślizgowa",
+            "subtitle": "brud zostaje na miejscu"
+          }
+        },
+        "item_Y3bwpU": {
+          "type": "item",
+          "settings": {
+            "icon": "5",
+            "title": "Lekki i elastyczny",
+            "subtitle": "idealnie dopasowuje się do auta"
+          }
+        }
+      },
+      "block_order": [
+        "item_BUiwir",
+        "item_igkQWr",
+        "item_zehV7D",
+        "item_TBLLXa",
+        "item_Y3bwpU"
+      ],
+      "name": "Roman — value icons",
+      "settings": {
+        "heading": "Co to oznacza dla Ciebie?",
+        "side_image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_20_38_PM.webp",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "before_after_ag884r": {
+      "type": "before-after",
+      "blocks": {
+        "item_YQU3KM": {
+          "type": "item",
+          "settings": {
+            "image_before": "shopify://shop_images/skoda.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
+            "title": "Gumowe vs EVAMATS 3D z Rantami",
+            "label_before": "Gumowe",
+            "label_after": "EVAMATS 3D z Rantami"
+          }
+        },
+        "item_rxcDyb": {
+          "type": "item",
+          "settings": {
+            "image_before": "shopify://shop_images/IMG_1371.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
+            "title": "Welurowe vs EVAMATS 3D z Rantami",
+            "label_before": "Welurowe",
+            "label_after": "EVAMATS 3D z Rantami"
+          }
+        },
+        "item_kCeEQh": {
+          "type": "item",
+          "settings": {
+            "image_before": "shopify://shop_images/may_sd_1tiny.webp",
+            "image_after": "shopify://shop_images/3D_evamats.webp",
+            "title": "Dywaniki EVA vs EVAMATS 3D z Rantami",
+            "label_before": "Dywaniki EVAMATS vs. Inni wykonawcy",
+            "label_after": "EVAMATS 3D z Rantami"
+          }
+        }
+      },
+      "block_order": [
+        "item_YQU3KM",
+        "item_rxcDyb",
+        "item_kCeEQh"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "home_faq_rt7qWr": {
+      "type": "home-faq",
+      "blocks": {
+        "text_9TMJph": {
+          "type": "text",
+          "settings": {
+            "hd": "<p>Dopasowanie i pokrycie podłogi</p>",
+            "des": "<p><strong>- Czy dywaniki na pewno będą pasować?</strong><br/><br/>Tak, nasze dywaniki EVA są projektowane specjalnie dla każdej marki, modelu i wersji samochodu, pokrywając całą powierzchnię podłogi i zabezpieczając także miejsca, których nie zakrywają gumowe i welurowe dywaniki.<br/><br/><strong>- Co to jest dywanik na tunel?</strong><br/><br/>Dywaniki EVA zakrywają do 98% podłogi, w tym tunel środkowy, co zapewnia maksymalną ochronę.<br/><br/><strong>- Czy podpietka jest zamontowana do dywanika kierowcy?</strong><br/><br/>Nie, podpietka jest dostarczana osobno, aby można ją było dostosować do własnych preferencji.</p>"
+          }
+        },
+        "text_ngHreL": {
+          "type": "text",
+          "settings": {
+            "hd": "<p>Cechy i trwałość materiału</p>",
+            "des": "<p><strong>- Co to jest materiał EVA?</strong><br/><br/>To pianka o grubości 10 mm, zatrzymująca brud i wodę na powierzchni dywanika, zapobiegając ich przedostawaniu się pod spód.<br/><br/><strong>- Czym różni się komplet 3D od 3D z rantami?</strong><br/><br/>Komplet 3D z rantami dodatkowo chroni boczną tapicerkę podłogi, zapewniając lepsze przyleganie.<br/><br/><strong>- Jak długo wytrzymują dywaniki?</strong><br/><br/>Dzięki trwałemu materiałowi EVA dywaniki służą od 5 do 7 lat bez oznak zużycia</p>"
+          }
+        },
+        "text_YQtmcm": {
+          "type": "text",
+          "settings": {
+            "hd": "<p>Użytkowanie i konserwacja</p>",
+            "des": "<p><strong>- Jak czyścić dywaniki EVA?</strong><br/><br/>Zanieczyszczenia nie przywierają do powierzchni dywanika. Wystarczy je wytrzepać lub, w przypadku mocnych zabrudzeń, umyć wodą pod ciśnieniem.<br/><br/><strong>- Czy dywaniki EVA nadają się na lato i zimę?</strong><br/><br/>Tak, są wodoodporne, bezzapachowe, odporne na temperaturę i idealne do całorocznego użytku.<br/></p>"
+          }
+        },
+        "text_MajL7K": {
+          "type": "text",
+          "settings": {
+            "hd": "<p>Zamówienie i dostawa</p>",
+            "des": "<p><strong>- Jaki jest czas realizacji?</strong><br/><br/>Standardowy czas realizacji zamówienia wynosi obecnie 14 dni roboczych ze względu na  indywidualną, ręczną produkcję każdego kompletu. Dla specjalnych pojazdów, takich jak motorówki czy traktory, czas może wydłużyć się do 4-6 tygodni.<br/><br/><strong>- Jaki jest sposób dostawy?</strong><br/><br/>Dywaniki wysytamy kurierem bezposrednio pod wskazany adres klienta. Dywaników nie wysytamy do paczkomatu ze wzgledów gabarytów produktu. Zalezy nam na tym aby dywaniki byty dostarczone w takiej formie w jakiej zostaty wykonane oraz nie poddac ich sktadaniu ani zatamywaniu co moze wptywac na dalsze losy dopasowania.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_9TMJph",
+        "text_ngHreL",
+        "text_YQtmcm",
+        "text_MajL7K"
+      ],
+      "settings": {
+        "hd": "Dywaniki samochodowe EVAMATS – FAQ"
+      }
+    },
+    "mat_hotspot_consult_3LbEG6": {
+      "type": "mat-hotspot-consult",
+      "blocks": {
+        "hotspot_zz8cKa": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 24,
+            "position_y": 12,
+            "tooltip_heading": "Struktura",
+            "tooltip_text": "Struktura zatrzymująca brud i wodę"
+          }
+        },
+        "hotspot_jBQdqp": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 72,
+            "position_y": 35,
+            "tooltip_heading": "Dopasowanie",
+            "tooltip_text": "Precyzyjne dopasowanie do modelu auta"
+          }
+        },
+        "hotspot_UxnTND": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 38,
+            "position_y": 53,
+            "tooltip_heading": "Materiał",
+            "tooltip_text": "Wytrzymały materiał EVA odporny na zużycie"
+          }
+        },
+        "hotspot_dzR7jF": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 88,
+            "position_y": 78,
+            "tooltip_heading": "Rant",
+            "tooltip_text": "Podwyższony rant chroni wnętrze auta"
+          }
+        },
+        "hotspot_rhxiWg": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 21,
+            "position_y": 83,
+            "tooltip_heading": "Czyszczenie",
+            "tooltip_text": "Łatwe czyszczenie w kilka sekund"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_zz8cKa",
+        "hotspot_jBQdqp",
+        "hotspot_UxnTND",
+        "hotspot_dzR7jF",
+        "hotspot_rhxiWg"
+      ],
+      "name": "Mat hotspot consultation",
+      "settings": {
+        "heading": "Uzyskaj bezpłatną konsultację!",
+        "subheading": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "Dywanik EVA",
+        "label_name": "Imię i nazwisko",
+        "placeholder_name": "Jan Kowalski",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "Email",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Komentarz (opcjonalnie)",
+        "placeholder_message": "Twoja wiadomość…",
+        "submit_label": "Zostaw zapytanie",
+        "consent_intro": "Zgadzam się z",
+        "terms_label": "regulaminem",
+        "terms_url": "",
+        "consent_mid": "oraz",
+        "privacy_label": "Polityką prywatności",
+        "privacy_url": "",
+        "consent_end": ".",
+        "success_message": "Dziękujemy! Skontaktujemy się wkrótce.",
+        "error_message": "Sprawdź pola i spróbuj ponownie."
+      }
+    },
+    "video_reviews_PyTRRR": {
+      "type": "video_reviews",
+      "blocks": {
+        "item_TCh7pj": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_G3Tfya": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_w8czAC": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_iETBMp": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_7UwC4f": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_BqArC6": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_7K8cq7": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_BkzpYg": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_RdVKKF": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_r7PNCR": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_wzeQnY": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_8bcXx7": {
+          "type": "item",
+          "settings": {}
+        },
+        "item_B3rJjM": {
+          "type": "item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_TCh7pj",
+        "item_G3Tfya",
+        "item_w8czAC",
+        "item_iETBMp",
+        "item_7UwC4f",
+        "item_BqArC6",
+        "item_7K8cq7",
+        "item_BkzpYg",
+        "item_RdVKKF",
+        "item_r7PNCR",
+        "item_wzeQnY",
+        "item_8bcXx7",
+        "item_B3rJjM"
+      ],
+      "settings": {
+        "title": "Właściciele samochodów o dywanikach"
       }
     }
   },
   "order": [
     "main",
-    "5b12f67c-9877-4248-80c3-e344481aee67",
-    "c66a3019-d7f6-42b5-a4b9-57d60e305c82",
-    "5ab367d2-5b6e-4a45-b02d-360524e6b303",
-    "bc11ef06-4794-4eff-87db-f13564af3f81"
+    "o_nas_intro",
+    "o_nas_founder",
+    "o_nas_story",
+    "o_nas_process_steps_WW3kWe",
+    "eva_structure_v2_KFAbMd",
+    "tilted_collage_v2_AnAAwT",
+    "roman_value_icons_v2_jXAfQK",
+    "before_after_ag884r",
+    "home_faq_rt7qWr",
+    "mat_hotspot_consult_3LbEG6",
+    "video_reviews_PyTRRR"
   ]
 }

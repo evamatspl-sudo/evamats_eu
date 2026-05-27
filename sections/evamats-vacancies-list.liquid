@@ -1,0 +1,404 @@
+{%- liquid
+  assign articles_per_page = section.settings.articles_per_page | default: 2
+  assign label_contract = section.settings.label_contract | default: section.settings.label_level | default: 'Umowa'
+  assign label_languages = section.settings.label_languages | default: 'Język'
+  assign label_work_mode = section.settings.label_work_mode | default: 'Tryb pracy'
+  assign label_location = section.settings.label_location | default: 'Lokalizacja'
+  assign label_salary = section.settings.label_salary | default: 'Wynagrodzenie'
+
+  assign active_categories = ''
+  assign vacancy_article_count = 0
+  assign category_delim = '||'
+
+  for article in blog.articles
+    assign vacancy = article.metafields.custom.vacancy.value
+
+    if vacancy != blank
+      assign vacancy_article_count = vacancy_article_count | plus: 1
+
+      capture cat
+        render 'evamats-vacancy-category-from-article', vacancy: vacancy, article: article
+      endcapture
+      assign cat = cat | strip
+
+      if cat != blank
+        assign cat_key = cat | append: category_delim
+
+        unless active_categories contains cat_key
+          assign active_categories = active_categories | append: cat_key
+        endunless
+      endif
+    endif
+  endfor
+
+  assign category_order = 'sales,customer_service,finance,other' | split: ','
+  assign filter_all_label = section.settings.filter_all_label | default: 'Wszystko'
+-%}
+
+<section
+  id="EvamatsVacanciesList-{{ section.id }}"
+  class="evamats-vacancies-list"
+  data-evamats-vacancies-list
+  style="--evl-pt: {{ section.settings.padding_top }}px; --evl-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div id="vacancies-list" class="evamats-vacancies-list__inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="evamats-vacancies-list__heading section_title">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if vacancy_article_count > 0 -%}
+      <div class="evamats-vacancies-list__filters" role="tablist" aria-label="{{ section.settings.filters_aria_label | escape }}">
+        <button
+          type="button"
+          class="evamats-vacancies-list__filter is-active"
+          role="tab"
+          aria-selected="true"
+          data-category="all"
+        >
+          {{ filter_all_label | escape }}
+        </button>
+
+        {%- for cat_id in category_order -%}
+          {%- assign cat_key = cat_id | append: category_delim -%}
+          {%- if active_categories contains cat_key -%}
+            <button
+              type="button"
+              class="evamats-vacancies-list__filter"
+              role="tab"
+              aria-selected="false"
+              data-category="{{ cat_id | escape }}"
+            >
+              {%- render 'evamats-vacancy-category-label', category_id: cat_id, section: section -%}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- assign active_category_list = active_categories | split: category_delim -%}
+        {%- for cat_id in active_category_list -%}
+          {%- if cat_id != blank -%}
+            {%- assign cat_in_order = false -%}
+            {%- for ordered_id in category_order -%}
+              {%- if ordered_id == cat_id -%}
+                {%- assign cat_in_order = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- unless cat_in_order -%}
+              <button
+                type="button"
+                class="evamats-vacancies-list__filter"
+                role="tab"
+                aria-selected="false"
+                data-category="{{ cat_id | escape }}"
+              >
+                {%- render 'evamats-vacancy-category-label', category_id: cat_id, section: section -%}
+              </button>
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div
+      class="evamats-vacancies-list__cards"
+      data-evamats-vacancies-cards
+      data-per-step="{{ articles_per_page }}"
+    >
+      {%- assign card_index = 0 -%}
+      {%- assign rendered_ids = '|' -%}
+
+      {%- for sort_n in (1..99) -%}
+        {%- for article in blog.articles -%}
+          {%- assign vacancy = article.metafields.custom.vacancy.value -%}
+
+          {%- if vacancy != blank -%}
+            {%- liquid
+              assign id_token = '|' | append: article.id | append: '|'
+
+              capture v_sort_raw
+                render 'evamats-vacancy-field-value', field: vacancy.order
+              endcapture
+              assign v_sort = v_sort_raw | strip | default: 9999 | plus: 0
+            -%}
+
+            {%- unless rendered_ids contains id_token -%}
+              {%- if v_sort == sort_n -%}
+                {%- render 'evamats-vacancy-card',
+                  article: article,
+                  vacancy: vacancy,
+                  section: section,
+                  label_contract: label_contract,
+                  label_languages: label_languages,
+                  label_work_mode: label_work_mode,
+                  label_location: label_location,
+                  label_salary: label_salary,
+                  card_index: card_index,
+                  articles_per_page: articles_per_page
+                -%}
+                {%- assign rendered_ids = rendered_ids | append: article.id | append: '|' -%}
+                {%- assign card_index = card_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+
+      {%- for article in blog.articles -%}
+        {%- assign vacancy = article.metafields.custom.vacancy.value -%}
+
+        {%- if vacancy != blank -%}
+          {%- liquid
+            assign id_token = '|' | append: article.id | append: '|'
+
+            capture v_sort_raw
+              render 'evamats-vacancy-field-value', field: vacancy.order
+            endcapture
+            assign v_sort = v_sort_raw | strip | default: 9999 | plus: 0
+          -%}
+
+          {%- unless rendered_ids contains id_token -%}
+            {%- if v_sort_raw == blank -%}
+              {%- render 'evamats-vacancy-card',
+                article: article,
+                vacancy: vacancy,
+                section: section,
+                label_contract: label_contract,
+                label_languages: label_languages,
+                label_work_mode: label_work_mode,
+                label_location: label_location,
+                label_salary: label_salary,
+                card_index: card_index,
+                articles_per_page: articles_per_page
+              -%}
+              {%- assign rendered_ids = rendered_ids | append: article.id | append: '|' -%}
+              {%- assign card_index = card_index | plus: 1 -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <p class="evamats-vacancies-list__empty" data-evamats-vacancies-empty hidden>
+      {{ section.settings.empty_message | escape }}
+    </p>
+
+    <button
+      type="button"
+      class="evamats-vacancies-list__more"
+      data-evamats-vacancies-more
+      hidden
+    >
+      {{ section.settings.load_more_label | escape }}
+    </button>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('EvamatsVacanciesList-{{ section.id }}');
+    if (!root) return;
+
+    var cardsWrap = root.querySelector('[data-evamats-vacancies-cards]');
+    var moreBtn = root.querySelector('[data-evamats-vacancies-more]');
+    var emptyEl = root.querySelector('[data-evamats-vacancies-empty]');
+    var filterBtns = root.querySelectorAll('.evamats-vacancies-list__filter');
+    var step = cardsWrap ? parseInt(cardsWrap.getAttribute('data-per-step'), 10) : {{ articles_per_page }};
+    if (!step || step < 1) step = {{ articles_per_page }};
+    var perPage = step;
+    var activeCategory = 'all';
+
+    function allCards() {
+      return Array.prototype.slice.call(root.querySelectorAll('[data-evamats-vacancy-card]'));
+    }
+
+    function filteredCards() {
+      return allCards().filter(function (card) {
+        if (activeCategory === 'all') return true;
+        return card.getAttribute('data-category') === activeCategory;
+      });
+    }
+
+    function updateView() {
+      var list = filteredCards();
+      var visibleLimit = perPage;
+      var shown = 0;
+
+      allCards().forEach(function (card) {
+        card.hidden = true;
+        card.classList.add('evamats-vacancies-list__card--hidden');
+      });
+
+      list.forEach(function (card, index) {
+        if (index < visibleLimit) {
+          card.hidden = false;
+          card.classList.remove('evamats-vacancies-list__card--hidden');
+          shown++;
+        }
+      });
+
+      if (emptyEl) {
+        emptyEl.hidden = list.length > 0;
+      }
+
+      if (moreBtn) {
+        moreBtn.hidden = list.length <= visibleLimit;
+        moreBtn.dataset.remaining = String(Math.max(0, list.length - visibleLimit));
+      }
+    }
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activeCategory = btn.getAttribute('data-category') || 'all';
+        filterBtns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        perPage = step;
+        updateView();
+      });
+    });
+
+    if (moreBtn) {
+      moreBtn.addEventListener('click', function () {
+        perPage += step;
+        updateView();
+      });
+    }
+
+    updateView();
+  })();
+</script>
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVAMATS — Vacancies list",
+  "tag": "section",
+  "class": "section-evamats-vacancies-list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Wszystkie wakaty"
+    },
+    {
+      "type": "text",
+      "id": "filters_aria_label",
+      "label": "Filters aria label",
+      "default": "Filtr kategorii"
+    },
+    {
+      "type": "text",
+      "id": "filter_all_label",
+      "label": "Filter: All",
+      "default": "Wszystko"
+    },
+    {
+      "type": "text",
+      "id": "label_contract",
+      "label": "Label: contract",
+      "default": "Umowa"
+    },
+    {
+      "type": "text",
+      "id": "label_languages",
+      "label": "Label: languages",
+      "default": "Język"
+    },
+    {
+      "type": "text",
+      "id": "label_work_mode",
+      "label": "Label: work mode",
+      "default": "Tryb pracy"
+    },
+    {
+      "type": "text",
+      "id": "label_location",
+      "label": "Label: location",
+      "default": "Lokalizacja"
+    },
+    {
+      "type": "text",
+      "id": "label_salary",
+      "label": "Label: salary",
+      "default": "Wynagrodzenie"
+    },
+    {
+      "type": "text",
+      "id": "card_cta_label",
+      "label": "Card CTA label",
+      "default": "Sprawdź szczegóły"
+    },
+    {
+      "type": "text",
+      "id": "load_more_label",
+      "label": "Load more label",
+      "default": "Pokaż więcej"
+    },
+    {
+      "type": "text",
+      "id": "empty_message",
+      "label": "Empty filter message",
+      "default": "Brak ofert w tej kategorii."
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "Visible count / load step",
+      "info": "How many vacancies show initially and per click on \"Pokaż więcej\".",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_label",
+      "name": "Category label (override)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_id",
+          "label": "Category id",
+          "info": "Must match vacancy metaobject category field or article tag (e.g. sales)."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Display label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS — Vacancies list",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

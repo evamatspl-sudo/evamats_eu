@@ -1,0 +1,51 @@
+.evamats-breadcrumbs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.evamats-breadcrumbs__link {
+  font-family: var(--font-heading-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(27, 29, 34, 0.5);
+  text-decoration: none;
+}
+
+.evamats-breadcrumbs__link:hover {
+  color: rgba(27, 29, 34, 0.85);
+}
+
+.evamats-breadcrumbs__item--sep {
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(27, 29, 34, 0.35);
+}
+
+.evamats-breadcrumbs__current {
+  font-family: var(--font-heading-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1b1d22;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-breadcrumbs__link,
+  .evamats-breadcrumbs__current {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+}

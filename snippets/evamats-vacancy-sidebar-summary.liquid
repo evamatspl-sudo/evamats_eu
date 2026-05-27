@@ -1,0 +1,67 @@
+{%- comment -%}
+  Sidebar summary rows: icon + value only (no labels). Figma kariera vacancy detail.
+
+  @param vacancy {object}
+  @param icon_suffix {string}
+{%- endcomment -%}
+
+{%- liquid
+  capture v_contract
+    render 'evamats-vacancy-field-value', field: vacancy.contract, fallback: vacancy.level
+  endcapture
+  assign v_contract = v_contract | strip
+
+  capture v_languages
+    render 'evamats-vacancy-field-value', field: vacancy.languages
+  endcapture
+  assign v_languages = v_languages | strip
+
+  capture v_work_mode
+    render 'evamats-vacancy-field-value', field: vacancy.work_mode
+  endcapture
+  assign v_work_mode = v_work_mode | strip
+
+  capture v_location
+    render 'evamats-vacancy-field-value', field: vacancy.location
+  endcapture
+  assign v_location = v_location | strip
+-%}
+
+<ul class="evamats-article-kariera-hero__summary-list" role="list">
+  {%- if v_contract != blank -%}
+    <li class="evamats-article-kariera-hero__summary-item">
+      <span class="evamats-article-kariera-hero__summary-icon" aria-hidden="true">
+        {%- assign suf = icon_suffix | append: '-sc' -%}
+        {% render 'evamats-vacancy-tag-icon', icon: 'level', suffix: suf %}
+      </span>
+      <span class="evamats-article-kariera-hero__summary-text">{{ v_contract | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_languages != blank -%}
+    <li class="evamats-article-kariera-hero__summary-item">
+      <span class="evamats-article-kariera-hero__summary-icon" aria-hidden="true">
+        {%- assign suf = icon_suffix | append: '-sg' -%}
+        {% render 'evamats-vacancy-tag-icon', icon: 'languages', suffix: suf %}
+      </span>
+      <span class="evamats-article-kariera-hero__summary-text">{{ v_languages | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_work_mode != blank -%}
+    <li class="evamats-article-kariera-hero__summary-item">
+      <span class="evamats-article-kariera-hero__summary-icon" aria-hidden="true">
+        {%- assign suf = icon_suffix | append: '-sw' -%}
+        {% render 'evamats-vacancy-tag-icon', icon: 'work_mode', suffix: suf %}
+      </span>
+      <span class="evamats-article-kariera-hero__summary-text">{{ v_work_mode | escape }}</span>
+    </li>
+  {%- endif -%}
+  {%- if v_location != blank -%}
+    <li class="evamats-article-kariera-hero__summary-item">
+      <span class="evamats-article-kariera-hero__summary-icon" aria-hidden="true">
+        {%- assign suf = icon_suffix | append: '-sp' -%}
+        {% render 'evamats-vacancy-tag-icon', icon: 'location', suffix: suf %}
+      </span>
+      <span class="evamats-article-kariera-hero__summary-text">{{ v_location | escape }}</span>
+    </li>
+  {%- endif -%}
+</ul>

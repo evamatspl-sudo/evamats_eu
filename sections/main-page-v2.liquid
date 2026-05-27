@@ -1,0 +1,98 @@
+{%- liquid
+  assign parent_label = section.settings.parent_label | strip
+  if parent_label == blank
+    assign parent_label = shop.name
+  endif
+
+  assign parent_url = section.settings.parent_url | strip
+  if parent_url == blank
+    assign parent_url = routes.root_url
+  endif
+
+  assign current_label = section.settings.current_label | strip
+  if current_label == blank and page != blank
+    assign current_label = page.title
+  endif
+-%}
+
+{%- liquid
+  assign show_breadcrumbs_block = false
+  if section.settings.show_breadcrumbs and current_label != blank
+    assign show_breadcrumbs_block = true
+  endif
+
+  assign show_content_block = false
+  if section.settings.show_page_content and page.content != blank
+    assign show_content_block = true
+  endif
+-%}
+
+{%- if show_breadcrumbs_block or show_content_block -%}
+  <section
+    id="MainPageV2-{{ section.id }}"
+    class="main-page-v2"
+  >
+    <div class="main-page-v2__inner page-width">
+      {%- if show_breadcrumbs_block -%}
+        {% render 'evamats-breadcrumbs',
+          parent_label: parent_label,
+          parent_url: parent_url,
+          current_label: current_label
+        %}
+      {%- endif -%}
+
+      {%- if show_content_block -%}
+        <div class="main-page-v2__content rte">{{ page.content }}</div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "V2 page header",
+  "tag": "section",
+  "class": "section-main-page-v2",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "parent_label",
+      "label": "Breadcrumb — parent",
+      "default": "Evamats",
+      "info": "Leave empty to use shop name."
+    },
+    {
+      "type": "url",
+      "id": "parent_url",
+      "label": "Breadcrumb — parent link",
+      "info": "Leave empty for homepage."
+    },
+    {
+      "type": "text",
+      "id": "current_label",
+      "label": "Breadcrumb — current page",
+      "info": "Leave empty to use page title."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_page_content",
+      "label": "Show page content (richtext)",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "V2 page header",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

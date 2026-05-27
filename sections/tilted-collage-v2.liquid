@@ -1,0 +1,185 @@
+{%- liquid
+  assign image_left = section.settings.image_left
+  assign image_center = section.settings.image_center
+  assign image_right = section.settings.image_right
+  assign tc_daily_style = section.settings.daily_text_style | default: 'gradient'
+  assign tc_daily_below = section.settings.daily_line_below_collage
+-%}
+
+<section class="tilted-collage-v2">
+  <div class="tilted-collage-v2__inner page-width">
+    <h2 class="tilted-collage-v2__heading section_title">
+      <span>{{ section.settings.heading_main | escape }}</span>
+      <span class="tilted-collage-v2__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+    </h2>
+
+    <div class="tilted-collage-v2__text body-m">{{ section.settings.text }}</div>
+
+    <div class="tilted-collage-v2__stage">
+
+      <article class="tilted-collage-v2__card tilted-collage-v2__card--left">
+        <div class="tilted-collage-v2__card-rot tilted-collage-v2__card-rot--left">
+          <div class="tilted-collage-v2__card-surface">
+            {%- if image_left != blank -%}
+              {{ image_left | image_url: width: 900 | image_tag: loading: 'lazy', class: 'tilted-collage-v2__image' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'tilted-collage-v2__image tilted-collage-v2__placeholder' }}
+            {%- endif -%}
+            {%- if section.settings.caption_left != blank -%}
+              <div class="tilted-collage-v2__card-caption">
+                <div class="tilted-collage-v2__card-caption-text">{{ section.settings.caption_left }}</div>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- unless section.settings.hide_pins -%}
+            <span class="tilted-collage-v2__pin tilted-collage-v2__pin--x" aria-hidden="true">
+              <svg width="11" height="11" class="tilted-collage-v2__pin-icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.924671 1.66916L3.20797 -0.000131399L5.71191 3.42482L9.13686 0.920888L10.8062 3.20419L7.3812 5.70812L9.88513 9.13308L7.60183 10.8024L5.09789 7.37741L1.67294 9.88135L0.00365013 7.59805L3.4286 5.09411L0.924671 1.66916Z" fill="#8090A4"/>
+              </svg>
+            </span>
+          {%- endunless -%}
+        </div>
+      </article>
+
+      <article class="tilted-collage-v2__card tilted-collage-v2__card--right">
+        <div class="tilted-collage-v2__card-rot tilted-collage-v2__card-rot--right">
+          <div class="tilted-collage-v2__card-surface">
+            {%- if image_right != blank -%}
+              {{ image_right | image_url: width: 900 | image_tag: loading: 'lazy', class: 'tilted-collage-v2__image' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'tilted-collage-v2__image tilted-collage-v2__placeholder' }}
+            {%- endif -%}
+            {%- if section.settings.caption_right != blank -%}
+              <div class="tilted-collage-v2__card-caption">
+                <div class="tilted-collage-v2__card-caption-text">{{ section.settings.caption_right }}</div>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- unless section.settings.hide_pins -%}
+            <span class="tilted-collage-v2__pin tilted-collage-v2__pin--x tilted-collage-v2__pin--tr" aria-hidden="true">
+              <svg width="11" height="11" class="tilted-collage-v2__pin-icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.924671 1.66916L3.20797 -0.000131399L5.71191 3.42482L9.13686 0.920888L10.8062 3.20419L7.3812 5.70812L9.88513 9.13308L7.60183 10.8024L5.09789 7.37741L1.67294 9.88135L0.00365013 7.59805L3.4286 5.09411L0.924671 1.66916Z" fill="#8090A4"/>
+              </svg>
+            </span>
+          {%- endunless -%}
+        </div>
+      </article>
+
+      <article class="tilted-collage-v2__card tilted-collage-v2__card--center">
+        <div class="tilted-collage-v2__card-rot tilted-collage-v2__card-rot--center">
+          <div class="tilted-collage-v2__card-surface">
+            {%- if image_center != blank -%}
+              {{ image_center | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'tilted-collage-v2__image' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'tilted-collage-v2__image tilted-collage-v2__placeholder' }}
+            {%- endif -%}
+            {%- if section.settings.caption_center != blank -%}
+              <div class="tilted-collage-v2__card-caption">
+                <div class="tilted-collage-v2__card-caption-text">{{ section.settings.caption_center }}</div>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- unless section.settings.hide_pins -%}
+            <span class="tilted-collage-v2__pin tilted-collage-v2__pin--check" aria-hidden="true">
+              <svg width="17" height="12" class="tilted-collage-v2__pin-icon" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.41018 5.16619L5.6013 9.99726L14.6026 1.41377" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+              </svg>
+            </span>
+          {%- endunless -%}
+        </div>
+      </article>
+    </div>
+    {%- unless section.settings.hide_daily_line -%}
+      {%- if tc_daily_style == 'split' -%}
+        {%- if section.settings.daily_text_main != blank or section.settings.daily_text_accent != blank -%}
+          <div class="tilted-collage-v2__daily-wrap{% if tc_daily_below %} tilted-collage-v2__daily-wrap--below{% endif %}">
+            <p class="tilted-collage-v2__daily tilted-collage-v2__daily--split label-m">
+              {%- if section.settings.daily_text_main != blank -%}
+                <span class="tilted-collage-v2__daily-main">{{ section.settings.daily_text_main | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.daily_text_main != blank and section.settings.daily_text_accent != blank %} {% endif -%}
+              {%- if section.settings.daily_text_accent != blank -%}
+                <span class="tilted-collage-v2__daily-split-accent">{{ section.settings.daily_text_accent | escape }}</span>
+              {%- endif -%}
+            </p>
+          </div>
+        {%- endif -%}
+      {%- elsif section.settings.daily_text != blank -%}
+        <div class="tilted-collage-v2__daily-wrap{% if tc_daily_below %} tilted-collage-v2__daily-wrap--below{% endif %}">
+          {%- if tc_daily_style == 'solid' -%}
+            <p class="tilted-collage-v2__daily tilted-collage-v2__daily--solid label-m">{{ section.settings.daily_text | escape }}</p>
+          {%- else -%}
+            <p class="tilted-collage-v2__daily tilted-collage-v2__daily--gradient label-m">
+              <span class="tilted-collage-v2__daily-main">{{ section.settings.daily_text | remove: '.' | escape }}</span><span class="tilted-collage-v2__daily-accent">.</span>
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endunless -%}
+
+    {%- if section.settings.button_label != blank -%}
+      {%- liquid
+        assign tc_btn_url = section.settings.button_link
+        if tc_btn_url == blank
+          assign tc_btn_url = '#'
+        endif
+      -%}
+      <div class="button-row-v2 tilted-collage-v2__cta-wrap">
+        <a class="button button_2" href="{{ tc_btn_url }}">{{ section.settings.button_label | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% schema %}
+{
+  "name": "Tilted Collage v2",
+  "tag": "section",
+  "class": "section_v2",
+  "settings": [
+    { "type": "text", "id": "heading_main", "label": "Heading main", "default": "Brud nie znika." },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent", "default": "On się kumuluje." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>I nawet jeśli tego nie widzisz od razu - wnętrze stopniowo traci świeżość.</p>" },
+    { "type": "text", "id": "daily_text", "label": "Daily text", "default": "Codziennie." },
+    { "type": "image_picker", "id": "image_left", "label": "Left image" },
+    { "type": "image_picker", "id": "image_center", "label": "Center image" },
+    { "type": "image_picker", "id": "image_right", "label": "Right image" },
+    { "type": "checkbox", "id": "hide_pins", "label": "Hide corner pins", "default": false },
+    { "type": "richtext", "id": "caption_left", "label": "Left card caption (optional)" },
+    { "type": "richtext", "id": "caption_center", "label": "Center card caption (optional)" },
+    { "type": "richtext", "id": "caption_right", "label": "Right card caption (optional)" },
+    { "type": "checkbox", "id": "hide_daily_line", "label": "Hide line under collage", "default": false },
+    {
+      "type": "checkbox",
+      "id": "daily_line_below_collage",
+      "label": "Daily line below images",
+      "default": false,
+      "info": "Uses margin-top 70px and full width instead of overlapping the collage."
+    },
+    {
+      "type": "select",
+      "id": "daily_text_style",
+      "label": "Line under collage",
+      "options": [
+        { "value": "gradient", "label": "Gradient (uses Daily text)" },
+        { "value": "solid", "label": "Solid white (uses Daily text)" },
+        { "value": "split", "label": "Two colors like heading" }
+      ],
+      "default": "gradient",
+      "info": "For “Two colors”, fill Daily line main and Daily line accent below."
+    },
+    { "type": "text", "id": "daily_text_main", "label": "Daily line main (two-color mode)" },
+    { "type": "text", "id": "daily_text_accent", "label": "Daily line accent (two-color mode)" },
+    { "type": "text", "id": "button_label", "label": "Button label (optional)" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "presets": [
+    {
+      "name": "Tilted Collage v2",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

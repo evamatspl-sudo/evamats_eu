@@ -1,0 +1,115 @@
+<div
+  id="EvaStructure-{{ section.id }}"
+  class="eva-structure-v2"
+>
+  <div class="eva-structure-v2__inner page-width">
+    {%- if section.settings.heading_desktop != blank or section.settings.heading_mobile != blank -%}
+      <h2 class="eva-structure-v2__title">
+        {%- if section.settings.heading_desktop != blank -%}
+          <span class="eva-structure-v2__title-part eva-structure-v2__title-part--desktop section_title">{{ section.settings.heading_desktop | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading_mobile != blank -%}
+          <span class="eva-structure-v2__title-part eva-structure-v2__title-part--mobile">{{ section.settings.heading_mobile | escape }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    <div class="eva-structure-v2__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          <article class="eva-structure-v2__card" {{ block.shopify_attributes }}>
+            <div class="eva-structure-v2__media">
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1200
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'eva-structure-v2__img',
+                    sizes: '(min-width: 990px) 34vw, 100vw',
+                    widths: '400, 600, 800, 1000, 1200'
+                }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'eva-structure-v2__img eva-structure-v2__placeholder' }}
+              {%- endif -%}
+            </div>
+            {%- if block.settings.caption != blank -%}
+              <p class="eva-structure-v2__caption">{{ block.settings.caption | escape }}</p>
+            {%- endif -%}
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVA structure v2",
+  "tag": "section",
+  "class": "section_v2",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_desktop",
+      "label": "Heading (desktop)",
+      "default": "Jak działa struktura EVA — i dlaczego to robi różnicę"
+    },
+    {
+      "type": "text",
+      "id": "heading_mobile",
+      "label": "Heading (mobile)",
+      "default": "Dlaczego EVA to materiał, który zmienia komfort jazdy?"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Zatrzymuje brud w komórkach"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVA structure v2",
+      "category": "V2",
+      "blocks": [
+        { "type": "card", "settings": { "caption": "Zatrzymuje brud w komórkach" } },
+        { "type": "card", "settings": { "caption": "Nie pozwala mu się rozprzestrzeniać" } },
+        { "type": "card", "settings": { "caption": "Nie chłonie wilgoci" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
