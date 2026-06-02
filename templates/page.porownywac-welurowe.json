@@ -51,7 +51,6 @@
     },
     "hero_before_after_6Jpync": {
       "type": "hero-before-after",
-      "disabled": true,
       "name": "Hero Before/After",
       "settings": {
         "layout": "full",
@@ -71,6 +70,58 @@
         "padding_bottom": 0,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
+      }
+    },
+    "benefits_comparison_HEGYmW": {
+      "type": "benefits-comparison",
+      "blocks": {
+        "item_DY8nxE": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-1.webp",
+            "title": "<p>Odporność</p><p>na wodę</p>",
+            "text": "<p>Zarówno dywaniki gumowe, jak i EVA nie wchłaniają wilgoci. Chronią wnętrze auta przed wodą, śniegiem i błotem.</p>"
+          }
+        },
+        "item_7pHDep": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-2.webp",
+            "title": "<p>Ochrona <br/>przed zabrudzeniami</p>",
+            "text": "<p>Oba typy skutecznie zabezpieczają podłogę przed brudem i płynami. Różnica polega na pokryciu powierzchni.</p>"
+          }
+        },
+        "item_y78bxy": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-3.webp",
+            "title": "<p>Lepsze <br/>dopasowanie EVA</p>",
+            "text": "<p>Dywaniki EVA są wykonywane na wymiar i pokrywają nawet do 99% podłogi. Gumowe zapewniają ok. 70–90% ochrony.</p>"
+          }
+        },
+        "item_fc6iip": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-4.webp",
+            "title": "<p>Komfort <br/>i bezpieczeństwo</p>",
+            "text": "<p>EVA są lekkie, bezzapachowe i nietoksyczne. Dodatkowo zatrzymują brud w strukturze komórkowej, co zapobiega jego przemieszczaniu się.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_DY8nxE",
+        "item_7pHDep",
+        "item_y78bxy",
+        "item_fc6iip"
+      ],
+      "name": "Benefits Comparison",
+      "settings": {
+        "background": "#f6f6f6",
+        "text_color": "#1b1d22",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 36
       }
     },
     "feature_comparison_cGAWVU": {
@@ -514,6 +565,7 @@
     "main",
     "compare_section_WDwBNU",
     "hero_before_after_6Jpync",
+    "benefits_comparison_HEGYmW",
     "feature_comparison_cGAWVU",
     "video_azQNFQ",
     "custom_liquid_AiqcVi",
