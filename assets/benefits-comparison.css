@@ -1,0 +1,127 @@
+.benefits-comparison {
+    padding-top: var(--padding_top);
+    padding-bottom: var(--padding_bottom);
+    background: var(--background);
+    font-family: var(--font-ntc-somic-family);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.benefits-comparison__container {
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+.benefits-comparison__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.benefits-comparison__item,
+.benefits-comparison__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.benefits-comparison__icon,
+.benefits-comparison__placeholder {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.benefits-comparison__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.benefits-comparison__placeholder svg {
+    display: block;
+}
+
+.benefits-comparison__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.benefits-comparison__title {
+    font-size: 2.6rem;
+    line-height: 1.1;
+    font-weight: var(--font-body-weight-bold);
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.benefits-comparison__title p {
+    margin: 0;
+}
+
+.benefits-comparison__text {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.benefits-comparison__text p {
+    margin: 0;
+}
+
+@media screen and (max-width: 990px) {
+    .benefits-comparison__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 32px;
+    }
+
+    .benefits-comparison__title {
+        font-size: 30px;
+    }
+
+    .benefits-comparison__text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .benefits-comparison {
+        padding-top: var(--padding_top_mobile);
+        padding-bottom: var(--padding_bottom_mobile);
+    }
+
+    .benefits-comparison__item {
+        flex-direction: row;
+    }
+
+    .benefits-comparison__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .benefits-comparison__icon,
+    .benefits-comparison__placeholder {
+        width: 72px;
+        height: 72px;
+    }
+
+    .benefits-comparison__title {
+        font-size: 1.8rem;
+    }
+
+    .benefits-comparison__text {
+        font-size: 1.4rem;
+    }
+
+    .benefits-comparison__content {
+        gap: 14px;
+    }
+}

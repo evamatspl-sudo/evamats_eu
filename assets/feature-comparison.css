@@ -1,7 +1,7 @@
 .feature-comparison {
     padding-top: var(--padding_top);
     padding-bottom: var(--padding_bottom);
-    background: #FFFFFF;
+    background: var(--background);
     font-family: var(--font-ntc-somic-family);
     padding-left: 15px;
     padding-right: 15px;
@@ -24,7 +24,7 @@
     line-height: 1;
     font-weight: var(--font-body-weight-bold);
     letter-spacing: -0.02em;
-    color: #1B1D22;
+    color: var(--text-color);
 }
 
 .feature-comparison__grid,
@@ -44,7 +44,7 @@
     line-height: 1;
     font-weight: var(--font-body-weight-bold);
     letter-spacing: -0.02em;
-    color: #1B1D22;
+    color: var(--text-color);
 }
 
 .feature-comparison__row {
@@ -53,7 +53,7 @@
 }
 
 .feature-comparison__row--highlight {
-    background: #f6f6f6;
+    background: var(--highlight-background);
     margin-top: 16px;
 }
 
@@ -61,7 +61,7 @@
     font-size: 1.8rem;
     font-weight: var(--font-body-weight-bold);
     line-height: 1;
-    color: #000000;
+    color: var(--text-color);
 }
 
 .feature-comparison__item {
@@ -73,7 +73,7 @@
 .feature-comparison__text {
     font-size: 1.6rem;
     line-height: 1;
-    color: #1B1D22;
+    color: var(--text-color);
 }
 
 .feature-comparison__icon {

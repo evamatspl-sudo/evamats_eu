@@ -5,6 +5,10 @@
     assign left_title = section.settings.left_title
     assign right_title = section.settings.right_title
 
+    assign text_color = section.settings.text_color
+    assign background = section.settings.background
+    assign highlight_background =  section.settings.highlight_background
+
     assign padding_top = section.settings.padding_top | append: 'px'
     assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
     assign padding_bottom = section.settings.padding_bottom | append: 'px'
@@ -12,6 +16,9 @@
 %}
 
 <section class="feature-comparison" style="
+        --text-color: {{ text_color }};
+        --background: {{ background }};
+        --highlight-background: {{ highlight_background }};
         --padding_top: {{ padding_top }};
         --padding_top_mobile: {{ padding_top_mobile }};
         --padding_bottom: {{ padding_bottom  }};
@@ -143,6 +150,24 @@
   "name": "Feature comparison",
   "settings": [
     {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlight background",
+      "default": "#f6f6f6"
+    },
+    {
       "type": "richtext",
       "id": "heading",
       "label": "Heading",
@@ -205,6 +230,7 @@
       "default": 10
     }
   ],
+  "max_blocks": 4,
   "blocks": [
     {
       "type": "item",
