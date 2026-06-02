@@ -1,3 +1,24 @@
+@font-face {
+    font-family: NTSomic;
+    src: url('NTSomic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: NTSomic;
+    src: url('NTSomic-Medium.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --font-ntc-somic-family: NTSomic, sans-serif;
+    --font-body-weight: 400;
+    --font-body-weight-bold: 600;
+}
+
 .fourth-main,.seven-main,.third-main{
     padding:2% 18%
 }
