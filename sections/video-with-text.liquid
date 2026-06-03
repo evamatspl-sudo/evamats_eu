@@ -1,0 +1,194 @@
+{{ 'section-video-with-text.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign text_color = section.settings.text_color
+    assign subtitle_color = section.settings.subtitle_color
+    assign background = section.settings.background
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+
+%}
+
+<section class="video-with-text" style="
+        --text-color: {{ text_color }};
+        --subtitle-color: {{ subtitle_color }};
+        --background: {{ background }};
+        --highlight-background: {{ highlight_background }};
+        --padding_top: {{ padding_top }};
+        --padding_top_mobile: {{ padding_top_mobile }};
+        --padding_bottom: {{ padding_bottom  }};
+        --padding_bottom_mobile: {{ padding_bottom_mobile }};">
+
+    <div class="video-with-text__page-width">
+
+        <div class="video-with-text__content">
+          <div class="video-with-text__inner">
+            {% if section.settings.subtitle != blank %}
+                <div class="video-with-text__subtitle">
+                    {{ section.settings.subtitle }}
+                </div>
+            {% endif %}
+
+            {% if section.settings.heading != blank %}
+                <h2 class="video-with-text__heading">
+                    {{ section.settings.heading }}
+                </h2>
+            {% endif %}
+
+            {% if section.settings.text != blank %}
+                <div class="video-with-text__text">
+                    {{ section.settings.text }}
+                </div>
+            {% endif %}
+          </div>
+        </div>
+
+      <div class="video-with-text__media">
+
+        {% if section.settings.video != blank %}
+
+          {{
+          section.settings.video
+          | video_tag:
+          image_size: '900x',
+          autoplay: false,
+          loop: false,
+          muted: false,
+          controls: true,
+          playsinline: true,
+          class: 'video-with-text__video'
+          }}
+
+          {% elsif section.settings.video_url != blank %}
+
+          <video
+                  class="video-with-text__video"
+                  controls
+                  playsinline
+          >
+            <source src="{{ section.settings.video_url }}" type="video/mp4">
+          </video>
+
+          {% elsif section.settings.video_embed != blank %}
+
+          <div class="video-with-text__iframe">
+            {{ section.settings.video_embed }}
+          </div>
+
+        {% endif %}
+
+      </div>
+
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video With Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#EF022D"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "MATERIAŁ EVAMATS"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Szukacie wysokiej jakości dywaników samochodowych?"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Zastanawiacie się nad zakupem welurowej wersji?</p>"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "MP4/WebM video URL"
+    },
+    {
+      "type": "html",
+      "id": "video_embed",
+      "label": "YouTube/Vimeo iframe"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video With Text"
+    }
+  ]
+}
+{% endschema %}

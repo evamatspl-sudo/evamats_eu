@@ -1,0 +1,227 @@
+{{ 'content-gallery-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'content-gallery-slider.js' | asset_url }}" defer></script>
+
+{% liquid
+    assign button_label = section.settings.button_label
+    assign button_link = section.settings.button_link
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+%}
+
+<div class="content-gallery-slider" style="
+        --padding_top: {{ padding_top }};
+        --padding_top_mobile: {{ padding_top_mobile }};
+        --padding_bottom: {{ padding_bottom  }};
+        --padding_bottom_mobile: {{ padding_bottom_mobile }};">
+
+    <div class="content-gallery-slider__container">
+
+        <div class="content-gallery-slider__top">
+            {% if section.settings.heading != blank %}
+                <h2 class="content-gallery-slider__heading">
+                    {{ section.settings.heading }}
+                </h2>
+            {% endif %}
+
+            <div class="content-gallery-slider__left">
+
+                {% assign icon_blocks = section.blocks | where: 'type', 'icon' %}
+
+                {% if icon_blocks.size > 0 %}
+                    <div class="content-gallery-slider__icons">
+                        {% for block in icon_blocks %}
+                            <div
+                                    class="content-gallery-slider__icon"
+                                    {{ block.shopify_attributes }}
+                            >
+                                {% if block.settings.icon != blank %}
+                                    {{
+                                    block.settings.icon
+                                    | image_url: width: 60
+                                    | image_tag:
+                                    loading: 'lazy',
+                                    class: 'content-gallery-slider__icon-image'
+                                    }}
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if section.settings.text != blank %}
+                    <div class="content-gallery-slider__text rte">
+                        {{ section.settings.text }}
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="content-gallery-slider__slider-wrapper">
+
+            <div class="content-gallery-slider__swiper swiper" data-content-gallery-slider>
+                <div class="swiper-wrapper">
+
+                    {% for block in section.blocks %}
+                        {% if block.type == 'slide' %}
+                            <div
+                                    class="swiper-slide"
+                                    {{ block.shopify_attributes }}
+                            >
+                                <div class="content-gallery-slider__card">
+
+                                    {% if block.settings.image != blank %}
+                                        {{
+                                        block.settings.image
+                                        | image_url: width: 1400
+                                        | image_tag:
+                                        loading: 'lazy',
+                                        class: 'content-gallery-slider__image'
+                                        }}
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="content-gallery-slider__navigation">
+                <div class="content-gallery-slider__arrow content-gallery-slider__arrow--prev">
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10054 4.39663e-05L0.356982 7.7436C-0.118202 8.21879 -0.118201 8.98921 0.356983 9.46439L8.10054 17.208L9.82133 15.4872L4.15495 9.82078L16.123 9.82078L16.123 7.38722L4.15495 7.38722L9.82133 1.72084L8.10054 4.39663e-05Z" fill="white"/>
+                    </svg>
+                </div>
+
+                <div class="content-gallery-slider__arrow content-gallery-slider__arrow--next">
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.02055 4.39663e-05L15.7641 7.7436C16.2393 8.21879 16.2393 8.98921 15.7641 9.46439L8.02055 17.208L6.29976 15.4872L11.9661 9.82078L-0.00187547 9.82078L-0.00187568 7.38722L11.9661 7.38722L6.29976 1.72084L8.02055 4.39663e-05Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        {% if button_label != blank %}
+            <div class="content-gallery-slider__button-wrapper">
+                <a href="{{ button_link }}" class="button content-gallery-slider__button">
+                    {{ button_label }}
+
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.447252 0L11.3983 0C12.0703 0 12.6151 0.544772 12.6151 1.21678V12.1678H10.1815V4.15436L1.71885 12.617L-0.0019415 10.8962L8.46073 2.43357L0.447252 2.43357V0Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Content Gallery Slider",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Gallery Slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,79 +1,7 @@
+{{ 'section-compare-cards.css' | asset_url | stylesheet_tag }}
+
 
 {% style %}
-
-.compare-cards__blocks{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px
-}
-@media (max-width:767.98px){
-    .compare-cards__blocks{
-        grid-template-columns:1fr
-    }
-}
-.compare-cards__block{
-    border-radius:20px;
-    background:#fff;
-    border:1px solid #000;
-    padding:50px 40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between
-}
-@media (max-width:991.98px){
-    .compare-cards__block{
-        padding:40px 20px
-    }
-}
-.compare-cards__header *{
-    color:rgb(var(--color-foreground));
-    font-size:32px;
-    font-style:normal;
-    font-weight:600;
-    line-height:normal;
-    max-width:308px;
-    margin-bottom:32px
-}
-.compare-cards__header * strong{
-    color:#ea022c
-}
-.compare-cards__unordered-list ul{
-    list-style-type:none;
-    padding-left:48px;
-    padding-top:32px;
-    margin-bottom:32px;
-    border-top:1px solid rgb(var(--color-foreground))
-}
-.compare-cards__unordered-list ul li{
-    position:relative;
-    color:rgb(var(--color-foreground));
-    font-size:16px;
-    font-style:normal;
-    font-weight:500
-}
-.compare-cards__unordered-list ul li:not(:last-child){
-    margin-bottom:12px
-}
-.compare-cards__unordered-list ul li::before{
-    content:"";
-    display:block;
-    width:24px;
-    height:24px;
-    position:absolute;
-    top:2px;
-    left:-48px;
-    background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Ccircle cx="12" cy="12" r="7" fill="black" /%3E%3Ccircle cx="12" cy="12" r="11.5" stroke="black" /%3E%3C/svg%3E') center center no-repeat;
-    background-size:cover
-}
-.compare-cards__image img{
-    max-width:100%
-}
-.compare-cards .compare-cards__block--2{
-    border:1px solid #ea022c
-}
-.compare-cards .compare-cards__block--2 .compare-cards__unordered-list ul li::before{
-    background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Ccircle cx="12" cy="12" r="7" fill="%23EA022C" /%3E%3Ccircle cx="12" cy="12" r="11.5" stroke="%23EA022C" /%3E%3C/svg%3E') center center no-repeat
-}
     .compare-cards--{{ section.id }}{
         padding-top: {{ section.settings.padding_top_mobile }}px;
         padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
@@ -87,8 +15,38 @@
     }
 {% endstyle %}
 
-<div class="compare-cards compare-cards--{{ section.id }}">
-    <div class="page-width">
+<div class="compare-cards compare-cards--{{ section.id }}" style="
+    {% if section.settings.background != blank %}
+            background-color: {{ section.settings.background }};
+    {% endif %}
+
+        ">
+
+    {% if section.settings.image_top_right != blank %}
+        <div class="compare-cards__decor compare-cards__decor--top-right">
+            {{
+            section.settings.image_top_right
+            | image_url: width: 600
+            | image_tag:
+            loading: 'lazy',
+            class: 'compare-cards__decor-image'
+            }}
+        </div>
+    {% endif %}
+
+    {% if section.settings.image_bottom_left != blank %}
+        <div class="compare-cards__decor compare-cards__decor--bottom-left">
+            {{
+            section.settings.image_bottom_left
+            | image_url: width: 600
+            | image_tag:
+            loading: 'lazy',
+            class: 'compare-cards__decor-image'
+            }}
+        </div>
+    {% endif %}
+
+    <div class="compare-cards__page-width">
         <div class="compare-cards__wrapper">
             <div class="compare-cards__blocks">
             {% for block in section.blocks %}
@@ -97,8 +55,35 @@
                         assign header = block.settings.header
                         assign image = block.settings.image
                         assign unordered_list = block.settings.unordered_list
+
+                        assign button_label = block.settings.button_label
+                        assign button_link = block.settings.button_link
+                        assign button_visibility = block.settings.button_visibility
                     %}
-                    <div>
+                    <div class="compare-cards__image-wrapper">
+                        <div class="compare-cards__image">
+                            {% if image != blank %}
+                                <picture>
+                                    {{
+                                    image
+                                    | image_url: width: 1500
+                                    | image_tag:
+                                    width: imageWidth,
+                                    height: imageHeight,
+                                    class: 'lazy',
+                                    sizes: '100vw',
+                                    widths: '375, 550, 750, 1100, 1500',
+                                    loading: 'lazy',
+                                    alt: image.alt
+                                    }}
+                                </picture>
+                            {% else %}
+                                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="compare-cards__content">
                         {% if header != blank %}
                             <div class="compare-cards__header">
                                 {{ header }}
@@ -109,28 +94,23 @@
                                 {{ unordered_list }}
                             </div>  
                         {% endif %}
-                    </div>
-                    <div class="compare-cards__image-wrapper">
-                                <div class="compare-cards__image">
-                                    {% if image != blank %}
-                                            <picture>
-                                                {{
-                                                image
-                                                | image_url: width: 1500
-                                                | image_tag:
-                                                    width: imageWidth,
-                                                    height: imageHeight,
-                                                    class: 'lazy',
-                                                    sizes: '100vw',
-                                                    widths: '375, 550, 750, 1100, 1500',
-                                                    loading: 'lazy',
-                                                    alt: image.alt
-                                                }}
-                                            </picture> 
-                                    {% else %}
-                                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+
+                        {% if button_label != blank %}
+                            <div
+                                    class="
+                                    compare-cards__button-wrapper
+                                    {% if button_visibility == 'desktop' %}
+                                        compare-cards__button-wrapper--desktop
+                                    {% elsif button_visibility == 'mobile' %}
+                                        compare-cards__button-wrapper--mobile
                                     {% endif %}
-                                </div>
+                                "
+                            >
+                                <a href="{{ button_link }}" class="button compare-cards__button">
+                                    {{ button_label }}
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
@@ -143,6 +123,22 @@
   {
     "name": "Compare cards",
     "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#1B1D22"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_top_right",
+        "label": "Top right image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_bottom_left",
+        "label": "Bottom left image"
+      },
         {
             "type": "header",
             "content": "Padding mobile"
@@ -196,6 +192,7 @@
         {
             "name": "Block",
             "type": "block",
+          "limit": 2,
             "settings": [
                 {
                     "type": "richtext",
@@ -212,8 +209,37 @@
                     "type": "image_picker",
                     "id": "image",
                     "label": "Image"
-        
-                }
+                },
+              {
+                "type": "select",
+                "id": "button_visibility",
+                "label": "Show button on",
+                "default": "all",
+                "options": [
+                  {
+                    "value": "all",
+                    "label": "Desktop and mobile"
+                  },
+                  {
+                    "value": "desktop",
+                    "label": "Desktop only"
+                  },
+                  {
+                    "value": "mobile",
+                    "label": "Mobile only"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "id": "button_label",
+                "label": "Button label"
+              },
+              {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button link"
+              }
             ]
         }
     ],
