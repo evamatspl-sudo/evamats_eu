@@ -249,8 +249,21 @@
 }
 
 @media screen and (max-width: 749px) {
-    .content-gallery-slider__navigation {
-        display: none;
+    .content-gallery-slider__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .content-gallery-slider__arrow--prev {
+        left: 5px;
+    }
+
+    .content-gallery-slider__arrow--next {
+        right: 5px;
+    }
+
+    .content-gallery-slider__arrow svg {
+        width: 11px;
     }
 
     .content-gallery-slider__slider-wrapper, .content-gallery-slider__top,
