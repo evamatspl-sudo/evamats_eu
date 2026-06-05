@@ -1,0 +1,267 @@
+{{ 'section-hero-before-after.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign layout  = section.settings.layout
+    assign text_color = section.settings.text_color
+    assign text_color_mobile = section.settings.text_color_mobile
+    assign highlight_text_color = section.settings.highlight_text_color
+
+    assign badge_text = section.settings.center_text
+    assign badge_text_color = section.settings.badge_text_color
+    assign badge_background = section.settings.badge_background
+    assign divider_background = section.settings.divider_background
+    assign highlight_background =  section.settings.highlight_background
+
+    assign before_heading = section.settings.left_title
+    assign before_image = section.settings.left_image
+    assign after_image = section.settings.right_image
+    assign after_heading = section.settings.right_title
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+
+%}
+
+<section class="hero-before-after" style="
+        --text-color:{{ text_color }};
+        --text-color-mobile: {{ text_color_mobile }};
+        --highlight-text-color: {{ highlight_text_color }};
+        --badge-text-color: {{ badge_text_color }};
+        --badge-background: {{ badge_background }};
+        --divider-background: {{ divider_background }};
+        --highlight-background: {{ highlight_background }};
+        --padding_top: {{ padding_top }};
+        --padding_top_mobile: {{ padding_top_mobile }};
+        --padding_bottom: {{ padding_bottom  }};
+        --padding_bottom_mobile: {{ padding_bottom_mobile }};"
+    >
+
+    <div class="hero-before-after__wrapper {{ layout }}">
+
+        <div class="hero-before-after__side">
+          <div class="hero-before-after__image-wrap">
+            {% if before_image != blank %}
+                <img
+                        src="{{ before_image | image_url: width: 1800 }}"
+                        alt="{{ before_heading | default: before_image.alt }}"
+                        class="hero-before-after__image"
+                        loading="lazy">
+
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'hero-before-after__image-placeholder' }}
+            {% endif %}
+          </div>
+
+            {% if before_heading != blank %}
+                <div class="hero-before-after__label">
+                    {{ before_heading }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if badge_text != blank %}
+            <div class="hero-before-after__divider">
+                <div class="hero-before-after__badge">
+                    {{ badge_text }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="hero-before-after__side">
+          <div class="hero-before-after__image-wrap">
+            {% if after_image != blank %}
+                  <img
+                            src="{{ after_image | image_url: width: 1800 }}"
+                            alt="{{ after_heading | default: after_image.alt }}"
+                            class="hero-before-after__image"
+                            loading="lazy">
+
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'hero-before-after__image-placeholder' }}
+            {% endif %}
+          </div>
+
+            {% if after_heading != blank %}
+                <div class="hero-before-after__label">
+                    {{ after_heading }}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="hero-before-after__label-mobile-wrap">
+      <div class="hero-before-after__label-mobile-item">
+        {% if before_heading != blank %}
+          <div class="hero-before-after__label">
+            {{ before_heading }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="hero-before-after__label-mobile-item">
+        {% if after_heading != blank %}
+          <div class="hero-before-after__label">
+            {{ after_heading }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Before/After",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "page-width",
+          "label": "Container"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color_mobile",
+      "label": "Text color (mobile)",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "color",
+      "id": "divider_background",
+      "label": "Divider color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Highlight text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlight background",
+      "default": "#FF2741"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Color",
+      "default": "#EF022D"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "center_text",
+      "label": "Description",
+      "default": "VS."
+    },
+    {
+      "type": "header",
+      "content": "Before"
+    },
+    {
+      "type": "richtext",
+      "id": "left_title",
+      "label": "Heading",
+      "default": "<p>Heading</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "After"
+    },
+    {
+      "type": "richtext",
+      "id": "right_title",
+      "label": "Heading",
+      "default": "<p>Heading</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Before/After"
+    }
+  ]
+}
+{% endschema %}

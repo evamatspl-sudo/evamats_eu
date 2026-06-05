@@ -1,0 +1,180 @@
+{{ 'benefits-comparison.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign background = section.settings.background
+    assign text_color = section.settings.text_color
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+%}
+
+<section class="benefits-comparison" style="
+        --background: {{ background }};
+        --text-color: {{ text_color }};
+        --padding_top: {{ padding_top }};
+        --padding_top_mobile: {{ padding_top_mobile }};
+        --padding_bottom: {{ padding_bottom  }};
+        --padding_bottom_mobile: {{ padding_bottom_mobile }};">
+
+    <div class="benefits-comparison__container">
+        <div class="benefits-comparison__grid">
+            {% for block in section.blocks %}
+
+                {% liquid
+
+                    assign title = block.settings.title
+                    assign icon = block.settings.icon
+                    assign icon_alt = block.settings.title | default: icon.alt
+                    assign text = block.settings.text
+                %}
+
+                <div class="benefits-comparison__item" {{ block.shopify_attributes }}>
+
+                    {% if icon != blank %}
+                        <div class="benefits-comparison__icon">
+                            {{
+                            icon
+                            | image_url: width: 120
+                            | image_tag:
+                            loading: 'lazy',
+                            widths: '60, 90, 120',
+                            alt: icon_alt
+                            }}
+                        </div>
+                    {% else %}
+                      <div class="benefits-comparison__placeholder">
+                        {{ 'image' | placeholder_svg_tag: 'benefits-comparison__icon-placeholder' }}
+                      </div>
+                    {% endif %}
+
+                    <div class="benefits-comparison__content">
+                      {% if title != blank %}
+                          <h3 class="benefits-comparison__title">
+                              {{ title }}
+                          </h3>
+                      {% endif %}
+
+                      {% if text != blank %}
+                          <div class="benefits-comparison__text">
+                              {{ text }}
+                          </div>
+                      {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits Comparison",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<h3>Title</h3>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Description text</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Comparison",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

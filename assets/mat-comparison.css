@@ -1,0 +1,200 @@
+.mat-comparison {
+    padding-top: var(--padding_top);
+    padding-bottom: var(--padding_bottom);
+    font-family: var(--font-ntc-somic-family);
+    background-color: var(--background);
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.mat-comparison__page-width {
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+.mat-comparison__media-inner {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0 16px 16px 16px;
+}
+
+.mat-comparison .comparison {
+    padding: 0;
+}
+
+.mat-comparison .comparison__before,
+.mat-comparison .comparison__after {
+    height: 656px;
+}
+
+.mat-comparison__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mat-comparison__before,
+.mat-comparison__after {
+    position: absolute;
+    inset: 0;
+}
+
+.mat-comparison__after {
+    width: 70%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.mat-comparison__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mat-comparison__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    border-radius: 0;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: var(--font-body-weight-bold);
+    letter-spacing: -0.02em;
+    background-image: url("https://cdn.shopify.com/s/files/1/0790/9218/7414/files/bg-for-slider-label.png?v=1780500398");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 148px;
+    width: 148px;
+    height: 51px;
+}
+
+.mat-comparison__content-width {
+    max-width: 630px;
+}
+
+.mat-comparison__subheading {
+    color: var(--subheading-color);
+    font-size: 2rem;
+    font-weight: var(--font-body-weight-bold);
+    letter-spacing: -0.02em;
+    margin:0 0 16px;
+}
+
+.mat-comparison__heading {
+    font-family: var(--font-ntc-somic-family);
+    font-size: 4.2rem;
+    line-height: 1.1;
+    margin:0 0 42px;
+    font-weight: var(--font-body-weight-bold);
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.mat-comparison__heading p {
+    margin: 0;
+}
+
+.mat-comparison__items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.mat-comparison__items ul li {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding: 0 0 0 82px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.mat-comparison__items ul li:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #FF2741;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12' fill='none'%3E%3Cpath d='M1.41406 5.78657L5.82919 10.4138L14.4141 1.41382' stroke='%231B1D22' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 13px;
+    background-color: #FFFFFF;
+}
+
+@media (max-width: 1230px) {
+    .mat-comparison .comparison__block_wrapper {
+        max-width: 100%
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .mat-comparison {
+        padding-top: var(--padding_top_mobile);
+        padding-bottom: var(--padding_bottom_mobile);
+    }
+
+    .mat-comparison__wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .mat-comparison__label {
+        font-size: 1.4rem;
+        background-size: 118px;
+        width: 118px;
+        height: 40px;
+    }
+
+    .mat-comparison__media-inner {
+        width: 250px;
+    }
+
+    .mat-comparison .comparison__before,
+    .mat-comparison .comparison__after {
+        height: 332px;
+    }
+
+    .mat-comparison__content-width {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .mat-comparison__subheading {
+        font-size: 1.8rem;
+    }
+
+    .mat-comparison__heading {
+        font-size: 2.6rem;
+    }
+
+    .mat-comparison__items ul li:before {
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
+    }
+
+    .mat-comparison__items ul li {
+        padding: 0 0 0 62px;
+        min-height: 40px;
+        font-size: 1.6rem;
+    }
+
+}

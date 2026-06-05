@@ -12,6 +12,7 @@ node_modules/
 cli.txt
 config.yml
 *.code-workspace
+/.idea
 
 # Temporary theme pull compare folders
 _*_pull_check*/

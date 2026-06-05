@@ -40,12 +40,312 @@
         "block_VXnbCG",
         "block_K3qkTg"
       ],
+      "disabled": true,
       "settings": {
         "logo": "shopify://shop_images/Group_271.png",
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "padding_top": 43,
         "padding_bottom": 52
+      }
+    },
+    "hero_before_after_6Jpync": {
+      "type": "hero-before-after",
+      "name": "Hero Before/After",
+      "settings": {
+        "layout": "full",
+        "text_color": "#ffffff",
+        "text_color_mobile": "#1b1d22",
+        "divider_background": "#ffffff",
+        "highlight_text_color": "#ffffff",
+        "highlight_background": "#ff2741",
+        "badge_text_color": "#ef022d",
+        "badge_background": "#ffffff",
+        "center_text": "VS.",
+        "left_title": "<p>Dywaniki welurowe</p>",
+        "left_image": "shopify://shop_images/velour-img.webp",
+        "right_title": "<p>Dywaniki <strong>evamats</strong></p>",
+        "right_image": "shopify://shop_images/hero-evamats-after.webp",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "video_with_text_EbL7W9": {
+      "type": "video-with-text",
+      "name": "Video With Text",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1B1D22",
+        "subtitle_color": "#EF022D",
+        "subtitle": "Materiał EVAMATS",
+        "heading": "Szukacie wysokiej jakości dywaników samochodowych?",
+        "text": "<p>Zastanawiacie się nad zakupem welurowej wersji? A może zdecydujecie się na profesjonalne dywaniki samochodowe z wytrzymałego i wytrzymałego materiału EVA? Sprawdźcie, jakie są jego zalety oraz jaka jest jego przewaga nad welurem.<br/><br/>W naszym sklepie internetowym oraz stacjonarnym znajdą Państwo unikatowe dywaniki samochodowe, które nie tylko podkreślą wyjątkowy styl każdego pojazdu, ale także gwarantują bezpieczeństwo jazdy, wygodę użytkowania i łatwość w czyszczeniu. Poniżej przybliżymy podstawowe cechy, jakie posiadają dywaniki samochodowe wykonane z weluru, a także porównamy tradycyjne dywaniki z naszymi niepowtarzalnymi produktami EVA</p>",
+        "video_url": "",
+        "video_embed": "<iframe width=\"50%\" height=\"450\" src=\"https://www.youtube.com/embed/ZqkazBsFL44?si=ykobXf4aOykZnGeg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"></iframe>",
+        "padding_top": 80,
+        "padding_bottom": 100,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 30
+      }
+    },
+    "benefits_comparison_HEGYmW": {
+      "type": "benefits-comparison",
+      "blocks": {
+        "item_DY8nxE": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-1.webp",
+            "title": "<p>Odporność</p><p>na wodę</p>",
+            "text": "<p>Zarówno dywaniki gumowe, jak i EVA nie wchłaniają wilgoci. Chronią wnętrze auta przed wodą, śniegiem i błotem.</p>"
+          }
+        },
+        "item_7pHDep": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-2.webp",
+            "title": "<p>Ochrona <br/>przed zabrudzeniami</p>",
+            "text": "<p>Oba typy skutecznie zabezpieczają podłogę przed brudem i płynami. Różnica polega na pokryciu powierzchni.</p>"
+          }
+        },
+        "item_y78bxy": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-3.webp",
+            "title": "<p>Lepsze <br/>dopasowanie EVA</p>",
+            "text": "<p>Dywaniki EVA są wykonywane na wymiar i pokrywają nawet do 99% podłogi. Gumowe zapewniają ok. 70–90% ochrony.</p>"
+          }
+        },
+        "item_fc6iip": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-4.webp",
+            "title": "<p>Komfort <br/>i bezpieczeństwo</p>",
+            "text": "<p>EVA są lekkie, bezzapachowe i nietoksyczne. Dodatkowo zatrzymują brud w strukturze komórkowej, co zapobiega jego przemieszczaniu się.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_DY8nxE",
+        "item_7pHDep",
+        "item_y78bxy",
+        "item_fc6iip"
+      ],
+      "name": "Benefits Comparison",
+      "settings": {
+        "background": "#f6f6f6",
+        "text_color": "#1b1d22",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "mat_comparison_Vt8DWM": {
+      "type": "mat-comparison",
+      "blocks": {
+        "item_tBJhkf": {
+          "type": "item",
+          "settings": {
+            "image_before": "shopify://shop_images/hero-evamats-after.webp",
+            "image_after": "shopify://shop_images/velour-img.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_tBJhkf"
+      ],
+      "name": "Mat Comparison",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "subheading_color": "#ef022d",
+        "left_label": "Welurowe",
+        "subheading": "JAKA JEST RÓŻNICA?",
+        "heading": "<p>Na co zwrócić uwagę <br/>przy wyborze dywaników?</p>",
+        "description": "<ul><li>Przede wszystkim, produkty dostępne w naszym sklepie wykonujemy ręcznie.</li><li>Są więc one idealnie dopasowane do wymiarów podłogi w Państwa pojeździe. Stawiamy przede wszystkim na jakość naszych dywaników, dlatego też staramy się, by były one wykonane z najwyższą precyzją.</li><li>Do ich produkcji stosujemy więc materiały bardzo dobrej jakości. Dzięki naszym dywanikom standard Państwa samochodu nie będzie już nigdy taki sam! </li><li>Naszym celem jest poprawa nie tylko wygody, ale także utrzymania auta w czystości. </li></ul>",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "compare_cards_M6itiE": {
+      "type": "compare-cards",
+      "blocks": {
+        "block_gAgXYW": {
+          "type": "block",
+          "settings": {
+            "header": "<p><strong>Wady</strong> welurowych dywaników</p>",
+            "unordered_list": "<ul><li>Wchłaniają wodę i zanieczyszczenia głęboko wewnątrz struktury tkaniny</li><li>Сiężkie w czyszczeniu</li><li>Szybko tracą pierwotny wygląd</li><li>Miejsce pod prawą nogą zostaje bardzo szybko przetarte</li><li>Pokrywają 60-70% dostępnej powierzchni podłogi</li><li>Nie są odporne na substancje chemiczne</li><li>Oferują podstawową personalizację</li></ul>",
+            "image": "shopify://shop_images/IMG_8796_1_1.png",
+            "button_visibility": "mobile",
+            "button_label": "Zobacz produkt",
+            "button_link": "#"
+          }
+        },
+        "block_YfT8nF": {
+          "type": "block",
+          "settings": {
+            "header": "<p><strong>Zalety</strong> EVA Dywaników</p>",
+            "unordered_list": "<ul><li>Idealnie dopasowane</li><li>Ultra lekkie i łatwe w czyszczeniu</li><li>Bezzapachowy ECO materiał, nietoksyczny</li><li>Wodoodporne</li><li>195 połączeń kolorystycznych</li><li>Technologiczne komórki utrzymują różnego rodzaju zanieczyszczenia</li></ul>",
+            "image": "shopify://shop_images/IMG_8796_2_1.png",
+            "button_visibility": "all",
+            "button_label": "Zobacz produkt",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "block_gAgXYW",
+        "block_YfT8nF"
+      ],
+      "settings": {
+        "background": "#1b1d22",
+        "image_top_right": "shopify://shop_images/compare-cards-top-image.webp",
+        "image_bottom_left": "shopify://shop_images/compare-cards-bottom-image.webp",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "feature_comparison_cGAWVU": {
+      "type": "feature-comparison",
+      "blocks": {
+        "item_B4DzkP": {
+          "type": "item",
+          "settings": {
+            "title": "Czyszczenie",
+            "left_text": "Bardziej czasochłonne",
+            "right_text": "Szybkie i proste"
+          }
+        },
+        "item_8GcpfL": {
+          "type": "item",
+          "settings": {
+            "title": "Odporność na brud",
+            "left_text": "Chłonie wilgoć i zanieczyszczenia",
+            "right_text": "Nie wchłaniają"
+          }
+        },
+        "item_HdnHYV": {
+          "type": "item",
+          "settings": {
+            "title": "Trwałość",
+            "left_text": "Szybciej się zużywa",
+            "right_text": "Długo zachowują wygląd"
+          }
+        },
+        "item_deETxA": {
+          "type": "item",
+          "settings": {
+            "title": "Użytkowanie",
+            "left_text": "Bardziej dekoracyjne",
+            "right_text": "Praktyczne i lekkie"
+          }
+        }
+      },
+      "block_order": [
+        "item_B4DzkP",
+        "item_8GcpfL",
+        "item_HdnHYV",
+        "item_deETxA"
+      ],
+      "name": "Feature comparison",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "highlight_background": "#f6f6f6",
+        "heading": "<h2>Jakie są różnice w czyszczeniu dywaników EVA i welurowych?</h2>",
+        "left_title": "Welur",
+        "right_title": "EVA",
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 10
+      }
+    },
+    "content_gallery_slider_VjTdgA": {
+      "type": "content-gallery-slider",
+      "blocks": {
+        "icon_fbft33": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-1.png"
+          }
+        },
+        "icon_eRmMYH": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-2.png"
+          }
+        },
+        "icon_kP9Qyh": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-3.png"
+          }
+        },
+        "slide_6cJXDB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2881.webp"
+          }
+        },
+        "slide_UNEPXX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2899.webp"
+          }
+        },
+        "slide_rqa3AK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2888.webp"
+          }
+        },
+        "slide_ymjCMQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2866.webp"
+          }
+        },
+        "slide_aJqic9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2900.webp"
+          }
+        },
+        "slide_XmAGt8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2886_483e5603-3188-4488-9bec-f1a32e27f654.webp"
+          }
+        }
+      },
+      "block_order": [
+        "icon_fbft33",
+        "icon_eRmMYH",
+        "icon_kP9Qyh",
+        "slide_6cJXDB",
+        "slide_UNEPXX",
+        "slide_rqa3AK",
+        "slide_ymjCMQ",
+        "slide_aJqic9",
+        "slide_XmAGt8"
+      ],
+      "name": "Content Gallery Slider",
+      "settings": {
+        "heading": "<p>Наша цель это <strong>максимальный</strong> </p><p><strong>комфорт</strong> вашей поездки</p>",
+        "text": "<p>Точные лекала, износостойкие материалы и продуманные детали делают использование максимально удобным каждый день.</p>",
+        "button_label": "Skonfiguruj dywaniki",
+        "button_link": "#",
+        "padding_top": 80,
+        "padding_bottom": 120,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 40
       }
     },
     "video_azQNFQ": {
@@ -64,6 +364,7 @@
     },
     "custom_liquid_AiqcVi": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".video_compare {position: relative; text-align: center;}",
         "@media only screen {.video_compare {}}"
@@ -77,6 +378,7 @@
     },
     "collapsible_text_YPVYyd": {
       "type": "collapsible-text",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Are you looking for high-quality car mats? Are you considering purchasing the velour version? Or perhaps you will opt for professional car mats made of durable EVA material? Check out their benefits and advantages over velour. In our online and offline store, you will find unique car mats that not only accentuate the exceptional style of each vehicle but also ensure driving safety, user comfort, and ease of cleaning. Below, we will outline the basic features of car mats made of velour and compare traditional mats with our unique EVA products.</p>",
         "collapsible_richtext": "<p>Velour as a Material for Car mats<br/>Velour is a material that has been used for manufacturing car mats for many years. It is suitable for both cars with richer equipment and vehicles with traditional interiors. Drivers opt for velour mats especially because they are very easy to keep clean and they also look nice. To ensure that car mats made of velour last as long as possible, it is important to remember to care for them properly. Velour should not be exposed to sunlight as it can fade. Soft-bristled brushes should be used for cleaning. Traditional velour tolerates mild detergents well, but strong chemicals can cause it to discolor or deteriorate.</p>",
@@ -90,6 +392,7 @@
     },
     "image_with_collapsible_text_XCLeBp": {
       "type": "image-with-collapsible-text",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Frame_234.png",
         "header": "<h2>What things <strong>should you pay attention to </strong>before choosing the right car mats?</h2>",
@@ -103,39 +406,9 @@
         "padding_bottom": 80
       }
     },
-    "compare_cards_M6itiE": {
-      "type": "compare-cards",
-      "blocks": {
-        "block_gAgXYW": {
-          "type": "block",
-          "settings": {
-            "header": "<h2>Disadvantages of velour mats </h2>",
-            "unordered_list": "<ul><li>They absorb water and contaminants deep within the fabric structure</li><li>Difficult to clean</li><li>Quickly lose their original appearance</li><li>The area under the right foot wears out very quickly</li><li>Cover only 60-70% of the available floor surface</li><li>Not resistant to chemicals</li><li>Offer basic customization</li></ul>",
-            "image": "shopify://shop_images/IMG_8796_1_1.png"
-          }
-        },
-        "block_YfT8nF": {
-          "type": "block",
-          "settings": {
-            "header": "<p><strong>Advantages </strong>of EVA mats</p>",
-            "unordered_list": "<ul><li>Perfectly fitted</li><li>Ultra lightweight and easy to clean</li><li>Odorless ECO material, non-toxic</li><li>Waterproof</li><li>195 color combinations</li><li>Technological cells trap various types of contaminants</li></ul>",
-            "image": "shopify://shop_images/IMG_8796_2_1.png"
-          }
-        }
-      },
-      "block_order": [
-        "block_gAgXYW",
-        "block_YfT8nF"
-      ],
-      "settings": {
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "text_with_image_zBPL3c": {
       "type": "text-with-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Rectangle_91_1.png",
         "header": "<p><strong>WHAT ARE THE DIFFERENCES</strong> IN CLEANING EVA PRODUCTS AND VELOUR MATS?</p>",
@@ -148,6 +421,7 @@
     },
     "richtext_section_K7WAxg": {
       "type": "richtext-section",
+      "disabled": true,
       "settings": {
         "header": "<p>Why should you <strong>purchase mats from our store?</strong></p>",
         "richtext": "<p>By purchasing EVA mats in our store, you not only have a guarantee of excellent product quality but also fantastic prices. These are Polish articles, handcrafted. Therefore, we are confident that you will be satisfied when choosing EVA mats!</p>",
@@ -163,49 +437,57 @@
         "image_XJcn3n": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_92_1.png"
+            "image": "shopify://shop_images/Rectangle_92_1.png",
+            "url": ""
           }
         },
         "image_rQw3A3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_93.png"
+            "image": "shopify://shop_images/Rectangle_93.png",
+            "url": ""
           }
         },
         "image_B9BrA4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_94.png"
+            "image": "shopify://shop_images/Rectangle_94.png",
+            "url": ""
           }
         },
         "image_Lg49WV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_95.png"
+            "image": "shopify://shop_images/Rectangle_95.png",
+            "url": ""
           }
         },
         "image_eztgda": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_96.png"
+            "image": "shopify://shop_images/Rectangle_96.png",
+            "url": ""
           }
         },
         "image_cDLJnw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_97.png"
+            "image": "shopify://shop_images/Rectangle_97.png",
+            "url": ""
           }
         },
         "image_qtHaMc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_98.png"
+            "image": "shopify://shop_images/Rectangle_98.png",
+            "url": ""
           }
         },
         "image_BaMe8Q": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_99.png"
+            "image": "shopify://shop_images/Rectangle_99.png",
+            "url": ""
           }
         }
       },
@@ -219,10 +501,13 @@
         "image_qtHaMc",
         "image_BaMe8Q"
       ],
+      "disabled": true,
       "settings": {
         "header": "REALIZATIONS OF EVA MATS",
         "button_text": "SHOP NOW",
         "button_link": "https://evamats.pl/pages/dywaniki-samochodowe-eva",
+        "centered": false,
+        "small": false,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -236,8 +521,25 @@
           "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
+            "variant": "carousel",
+            "headerType_rotator": "top",
+            "headerType_carousel": "top",
+            "customContentIndex": 31,
+            "font": "default",
             "themeId": "light",
+            "ratingType": "stars",
+            "emojiType": "0",
+            "cardColor": "#f3f6f9",
+            "starsColor": "#fbb000",
+            "textColor": "#404040",
+            "transparent": 1,
+            "solidShadow": false,
+            "hasShadow": false,
             "autoscroll": true,
+            "fluidScrolling": false,
+            "delay": 5,
+            "reviewPhotosType_carousel": "small",
+            "reviewPhotosType_rotator": "small",
             "writeReview": true,
             "fixedReviewsHeight": true
           }
@@ -246,6 +548,7 @@
       "block_order": [
         "google_reviews_carousel_widget_block_Nf7AWT"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -283,6 +586,7 @@
     },
     "featured_collection_video_GjKn3e": {
       "type": "featured-collection-video",
+      "disabled": true,
       "custom_css": [
         "h2 {text-align: center;}"
       ],
@@ -390,6 +694,7 @@
         "text_mqJ6Qk",
         "text_dUePyr"
       ],
+      "disabled": true,
       "settings": {
         "hd": "EVAMATS CAR MATS - FAQ"
       }
@@ -398,11 +703,17 @@
   "order": [
     "main",
     "compare_section_WDwBNU",
+    "hero_before_after_6Jpync",
+    "video_with_text_EbL7W9",
+    "benefits_comparison_HEGYmW",
+    "mat_comparison_Vt8DWM",
+    "compare_cards_M6itiE",
+    "feature_comparison_cGAWVU",
+    "content_gallery_slider_VjTdgA",
     "video_azQNFQ",
     "custom_liquid_AiqcVi",
     "collapsible_text_YPVYyd",
     "image_with_collapsible_text_XCLeBp",
-    "compare_cards_M6itiE",
     "text_with_image_zBPL3c",
     "richtext_section_K7WAxg",
     "image_collage_x9c9fK",

@@ -1,0 +1,148 @@
+.hero-before-after {
+    font-family: var(--font-ntc-somic-family);
+    width: 100%;
+    overflow: hidden;
+    padding-top: var(--padding_top);
+    padding-bottom: var(--padding_bottom);
+}
+
+.hero-before-after__wrapper {
+    position: relative;
+    display: flex;
+}
+
+.hero-before-after__label-mobile-wrap {
+    display: none;
+}
+
+.hero-before-after__side {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    padding-bottom: 45%;
+}
+
+.hero-before-after__label-mobile-item {
+    width: 50%;
+}
+
+.hero-before-after__image,
+.hero-before-after__image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-before-after__divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--divider-background);
+    z-index: 5;
+}
+
+.hero-before-after__badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--badge-background);
+    color: var(--badge-text-color);
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    font-weight: var(--font-body-weight-bold);
+}
+
+.hero-before-after__label {
+    position: absolute;
+    bottom: 0;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    padding: 36px 10px;
+    color: var(--text-color);
+    font-size: 3.2rem;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.02em;
+    font-weight: var(--font-body-weight-bold);
+    background: linear-gradient(180deg, rgba(12, 11, 12, 0) 0%, #0C0B0C 100%);
+}
+
+.hero-before-after__label p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+}
+
+.hero-before-after__label strong,
+.hero-before-after__label b {
+    display: inline-block;
+    color: var(--highlight-text-color);
+    background-color: var(--highlight-background);
+    padding: 0 11px 2px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+    .hero-before-after {
+        padding-top: var(--padding_top_mobile);
+        padding-bottom: var(--padding_bottom_mobile);
+    }
+
+    .hero-before-after__divider {
+        width: 1px;
+    }
+
+    .hero-before-after__badge {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hero-before-after__label {
+        font-size: 1.8rem;
+        position: relative;
+        background: transparent;
+        padding: 15px 25px;
+        color: var(--text-color-mobile);
+    }
+
+    .hero-before-after__side {
+        padding-bottom: 0;
+    }
+
+    .hero-before-after__image-wrap {
+        position: relative;
+        width: 100%;
+        padding-bottom: 126.4%;
+    }
+
+    .hero-before-after__label strong,
+    .hero-before-after__label b {
+        padding: 3px 11px 3px;
+    }
+
+    .hero-before-after__side .hero-before-after__label {
+        display: none;
+    }
+
+    .hero-before-after__label-mobile-wrap {
+        display: flex;
+    }
+}

@@ -1,0 +1,295 @@
+{{ 'feature-comparison.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign heading = section.settings.heading
+    assign left_title = section.settings.left_title
+    assign right_title = section.settings.right_title
+
+    assign text_color = section.settings.text_color
+    assign background = section.settings.background
+    assign highlight_background =  section.settings.highlight_background
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+%}
+
+<section class="feature-comparison" style="
+        --text-color: {{ text_color }};
+        --background: {{ background }};
+        --highlight-background: {{ highlight_background }};
+        --padding_top: {{ padding_top }};
+        --padding_top_mobile: {{ padding_top_mobile }};
+        --padding_bottom: {{ padding_bottom  }};
+        --padding_bottom_mobile: {{ padding_bottom_mobile }};">
+
+    <div class="feature-comparison__container">
+        {% if heading != blank %}
+            <div class="feature-comparison__title">
+                {{ heading }}
+            </div>
+        {% endif %}
+
+        <!-- DESKTOP -->
+        <div class="feature-comparison__desktop desktop-only">
+            <div class="feature-comparison__grid feature-comparison__grid--head">
+                <div class="feature-comparison__empty"><span class="visually-hidden"></span></div>
+
+                {% for block in section.blocks %}
+                    <div class="feature-comparison__head">
+                        {{ block.settings.title }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="feature-comparison__row">
+                <div class="feature-comparison__label">
+                    {% if left_title != blank %}
+                        {{ left_title }}
+                    {% endif %}
+                </div>
+
+                {% for block in section.blocks %}
+                    {% assign left_text = block.settings.left_text %}
+
+                    <div class="feature-comparison__item">
+                        <span class="feature-comparison__icon feature-comparison__icon--negative">
+                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M7.22222 5.77778L5.77778 7.22222L3.61111 5.05555L1.44444 7.22222L0 5.77778L2.16667 3.61111L0 1.44444L1.44444 0L3.61111 2.16667L5.77778 0L7.22222 1.44445L5.05556 3.61111L7.22222 5.77778Z" fill="#8090A4"/>
+                          </svg>
+                        </span>
+
+                        <span class="feature-comparison__text">{{ left_text }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="feature-comparison__row feature-comparison__row--highlight">
+                <div class="feature-comparison__label">
+                    {% if right_title != blank %}
+                        {{ right_title }}
+                    {% endif %}
+                </div>
+
+                {% for block in section.blocks %}
+                    {% assign right_text = block.settings.right_text %}
+
+                    <div class="feature-comparison__item">
+                        <span class="feature-comparison__icon feature-comparison__icon--positive">
+                          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.4314 0.997287L4.20991 8.56722L0 4.1556L1.04525 3.15831L4.2092 6.47461L10.3862 0L11.4314 0.997287Z" fill="white"/>
+                          </svg>
+                        </span>
+
+                        <span class="feature-comparison__text">{{ right_text }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- MOBILE -->
+        <div class="feature-comparison__mobile mobile-only">
+            {% for block in section.blocks %}
+                {% liquid
+                    assign mobile_title = block.settings.title
+                    assign mobile_left_text = block.settings.left_text
+                    assign mobile_right_text = block.settings.right_text
+                %}
+
+                <div class="feature-comparison__mobile-item">
+                    <h3 class="feature-comparison__mobile-title">
+                        {{ mobile_title }}
+                    </h3>
+
+                    <div class="feature-comparison__mobile-grid">
+                        <div class="feature-comparison__mobile-col">
+                            <div class="feature-comparison__mobile-label">
+                                {% if left_title != blank %}
+                                    {{ left_title }}
+                                {% endif %}
+                            </div>
+
+                            <div class="feature-comparison__mobile-content">
+                                <span class="feature-comparison__icon feature-comparison__icon--negative">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M7.22222 5.77778L5.77778 7.22222L3.61111 5.05555L1.44444 7.22222L0 5.77778L2.16667 3.61111L0 1.44444L1.44444 0L3.61111 2.16667L5.77778 0L7.22222 1.44445L5.05556 3.61111L7.22222 5.77778Z" fill="#8090A4"/>
+                                      </svg>
+                                </span>
+
+                                <span class="feature-comparison__text">{{ mobile_left_text }}</span>
+                            </div>
+                        </div>
+
+                        <div class="feature-comparison__mobile-col">
+                            <div class="feature-comparison__mobile-label">
+                                {% if right_title != blank %}
+                                    {{ right_title }}
+                                {% endif %}
+                            </div>
+
+                            <div class="feature-comparison__mobile-content">
+                                <span class="feature-comparison__icon feature-comparison__icon--positive">
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.4314 0.997287L4.20991 8.56722L0 4.1556L1.04525 3.15831L4.2092 6.47461L10.3862 0L11.4314 0.997287Z" fill="white"/>
+                                    </svg>
+                                </span>
+
+                                <span class="feature-comparison__text">{{ mobile_right_text }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature comparison",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlight background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>Heading</h2>"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left title",
+      "default": "Welur"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right title",
+      "default": "EVA"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Comparison item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Czyszczenie"
+        },
+        {
+          "type": "text",
+          "id": "left_text",
+          "label": "Left text",
+          "default": "Bardziej czasochłonne"
+        },
+        {
+          "type": "text",
+          "id": "right_text",
+          "label": "Right text",
+          "default": "Szybkie i proste"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature comparison",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Odporność na brud",
+            "left_text": "Chłonie wilgoć i zanieczyszczenia",
+            "right_text": "Nie wchłaniają"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Trwałość",
+            "left_text": "Szybciej się zużywa",
+            "right_text": "Długo zachowują wygląd"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Użytkowanie",
+            "left_text": "Bardziej dekoracyjne",
+            "right_text": "Praktyczne i lekkie"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
