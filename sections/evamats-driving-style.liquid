@@ -1,0 +1,254 @@
+{{ 'section-evamats-driving-style.css' | asset_url | stylesheet_tag }}
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-driving-style' %}
+
+<section id="EvamatsDrivingStyle-{{ section.id }}" class="evamats-driving-style">
+  <div class="evamats-driving-style__inner page-width">
+    <div class="evamats-driving-style__layout">
+      <div class="evamats-driving-style__media--desktop">
+        {% render 'evamats-driving-style-media',
+          image: section.settings.image_left,
+          alt: section.settings.image_left_label,
+          modifier: 'evamats-driving-style__media--left'
+        %}
+      </div>
+
+      <div class="evamats-driving-style__content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="evamats-driving-style__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        <div class="evamats-driving-style__mobile-gallery">
+          {% render 'evamats-driving-style-media',
+            image: section.settings.image_right,
+            alt: section.settings.image_right_label
+          %}
+          {% render 'evamats-driving-style-media',
+            image: section.settings.image_left,
+            alt: section.settings.image_left_label,
+            modifier: 'evamats-driving-style__media--left'
+          %}
+        </div>
+
+        <div class="evamats-driving-style__compare">
+          <div class="evamats-driving-style__option">
+            <span class="evamats-driving-style__icon" aria-hidden="true">
+              {%- if section.settings.icon_without_edges != blank -%}
+                {{
+                  section.settings.icon_without_edges
+                  | image_url: width: 120
+                  | image_tag: class: 'evamats-driving-style__icon-img', loading: 'lazy', alt: ''
+                }}
+              {%- else -%}
+                {{ 'evamats-driving-style-icon-without-edges.svg' | inline_asset_content }}
+              {%- endif -%}
+            </span>
+            {%- if section.settings.without_edges_title != blank -%}
+              <p class="evamats-driving-style__option-title evamats-driving-style__option-title--without">
+                {{ section.settings.without_edges_title | escape }}
+              </p>
+            {%- endif -%}
+            {%- if section.settings.without_edges_text != blank -%}
+              <p class="evamats-driving-style__option-text">{{ section.settings.without_edges_text | escape }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="evamats-driving-style__option">
+            <span class="evamats-driving-style__icon" aria-hidden="true">
+              {%- if section.settings.icon_with_edges != blank -%}
+                {{
+                  section.settings.icon_with_edges
+                  | image_url: width: 120
+                  | image_tag: class: 'evamats-driving-style__icon-img', loading: 'lazy', alt: ''
+                }}
+              {%- else -%}
+                {{ 'evamats-driving-style-icon-with-edges-circle.svg' | inline_asset_content }}
+                <span class="evamats-driving-style__icon-mark">
+                  {{ 'evamats-driving-style-icon-with-edges-shield.svg' | inline_asset_content }}
+                </span>
+              {%- endif -%}
+            </span>
+            {%- if section.settings.with_edges_title != blank -%}
+              <p class="evamats-driving-style__option-title evamats-driving-style__option-title--with">
+                {{ section.settings.with_edges_title | escape }}
+              </p>
+            {%- endif -%}
+            {%- if section.settings.with_edges_text != blank -%}
+              <p class="evamats-driving-style__option-text">{{ section.settings.with_edges_text | escape }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if section.settings.button_label != blank -%}
+          <div class="evamats-driving-style__cta-wrap">
+            <a
+              class="evamats-driving-style__cta"
+              href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
+            >
+              <span class="evamats-driving-style__cta-label">{{ section.settings.button_label | escape }}</span>
+              <span class="evamats-driving-style__cta-arrow" aria-hidden="true">
+                {{ 'evamats-driving-style-cta-arrow.svg' | inline_asset_content }}
+              </span>
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="evamats-driving-style__media--desktop">
+        {% render 'evamats-driving-style-media',
+          image: section.settings.image_right,
+          alt: section.settings.image_right_label
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Driving style",
+  "tag": "section",
+  "class": "section-evamats-driving-style",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Match the mats to your driving style"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image — left (tunnel mat)"
+    },
+    {
+      "type": "text",
+      "id": "image_left_label",
+      "label": "Left image alt text",
+      "default": "Tunnel mat"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Image — right (fitted mat)"
+    },
+    {
+      "type": "text",
+      "id": "image_right_label",
+      "label": "Right image alt text",
+      "default": "Perfectly fitted"
+    },
+    {
+      "type": "header",
+      "content": "Comparison"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_without_edges",
+      "label": "Icon — without edges",
+      "info": "Optional. Uses theme default when empty."
+    },
+    {
+      "type": "text",
+      "id": "without_edges_title",
+      "label": "Without edges — title",
+      "default": "Without edges"
+    },
+    {
+      "type": "textarea",
+      "id": "without_edges_text",
+      "label": "Without edges — description",
+      "default": "Lightness and minimalism. A clean look for your car interior"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_with_edges",
+      "label": "Icon — with edges",
+      "info": "Optional. Uses theme default when empty."
+    },
+    {
+      "type": "text",
+      "id": "with_edges_title",
+      "label": "With edges — title",
+      "default": "With edges"
+    },
+    {
+      "type": "textarea",
+      "id": "with_edges_text",
+      "label": "With edges — description",
+      "default": "Full everyday protection. Ready for any weather"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Configure mats"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Driving style"
+    }
+  ]
+}
+{% endschema %}

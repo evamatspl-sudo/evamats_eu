@@ -31,9 +31,14 @@
  .colorTable {
 /*     max-width: 1050px; */
     padding: 0;
+    padding-top: 105px;
     margin: 0 auto;
     display: block;
     position: relative;
+
+    @media (max-width: 767px) {
+      padding-top: 40px;
+    }
 }
  .margin-bottom {
      margin-bottom: 60px;
@@ -115,42 +120,6 @@
    transition: .3s;
 }
 
-
- @media only screen and (max-width: 1600px) {
-     .colorTable {
-         max-width: 1050px;
-    }
-}
-@media only screen and (min-width: 1600px) {
-     .colorTable {
-         max-width: 1050px;
-    }
-}
- @media only screen and (max-width: 1400px) {
-     .colorTable {
-         max-width: 1050px;
-    }
-}
- @media only screen and (max-width: 1200px) {
-     .colorTable {
-        width: 100%;
-        max-width: 1050px;
-       padding: 0px 50px;
-       }
-}
-
- @media only screen and (max-width: 1180px) {
-      .colorTable {
-        width: 100%;
-        max-width: 1050px;
-       }
-}
-@media only screen and (max-width: 1139px) {
-      .colorTable {
-        width: 100%;
-        max-width: 1050px;
-       }
-}
 @media (max-width: 767px) {
   .img-brand {
     width: 100%;

@@ -1,0 +1,660 @@
+
+/* Transparent header over homepage hero */
+.template_index:has(.evamats-home-hero) .section-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.template_index:has(.evamats-home-hero) .header-wrapper {
+  background: transparent;
+  background-color: transparent;
+}
+
+.template_index:has(.evamats-home-hero) .header-wrapper.gradient {
+  background: transparent;
+}
+
+.template_index:has(.evamats-home-hero) .header__inline-menu > .list-menu--inline > li > .header__menu-item,
+.template_index:has(.evamats-home-hero) .header__inline-menu > .list-menu--inline > li > .header__menu-item span,
+.template_index:has(.evamats-home-hero) .header__inline-menu > .list-menu--inline > li > header-menu > details > summary.header__menu-item,
+.template_index:has(.evamats-home-hero) .header__inline-menu > .list-menu--inline > li > header-menu > details > summary.header__menu-item span,
+.template_index:has(.evamats-home-hero) .header__icon,
+.template_index:has(.evamats-home-hero) .header-tel p,
+.template_index:has(.evamats-home-hero) .header-tel a {
+  color: #fff;
+}
+
+.template_index:has(.evamats-home-hero) .header__submenu .header__menu-item,
+.template_index:has(.evamats-home-hero) .header__submenu .header__menu-item span {
+  color: rgb(var(--color-foreground));
+}
+
+.template_index:has(.evamats-home-hero) .header__icon--menu path,
+.template_index:has(.evamats-home-hero) .header__icon--menu line {
+  stroke: #fff;
+}
+
+.template_index:has(.evamats-home-hero) sticky-header:not([data-sticky-type='none']) .header-wrapper {
+  background: transparent;
+}
+
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header-wrapper {
+  background-color: rgb(var(--color-background));
+}
+
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header__inline-menu > .list-menu--inline > li > .header__menu-item,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header__inline-menu > .list-menu--inline > li > .header__menu-item span,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header__inline-menu > .list-menu--inline > li > header-menu > details > summary.header__menu-item,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header__inline-menu > .list-menu--inline > li > header-menu > details > summary.header__menu-item span,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header__icon,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header-tel p,
+.template_index:has(.evamats-home-hero) .scrolled-past-header .header-tel a {
+  color: rgb(var(--color-foreground));
+}
+
+.evamats-home-hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  color: #fff;
+}
+
+.evamats-home-hero__bg,
+.evamats-home-hero__overlay,
+.evamats-home-hero__foreground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.evamats-home-hero__bg {
+  z-index: 0;
+}
+
+.evamats-home-hero__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.evamats-home-hero__overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(19, 17, 18, 0.6) 32.69%, rgba(19, 17, 18, 0) 100%),
+    linear-gradient(180deg, rgba(19, 17, 18, 0.5) 0%, rgba(19, 17, 18, 0.15) 45%, rgba(12, 11, 12, 0.85) 100%);
+}
+
+.evamats-home-hero__foreground {
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.evamats-home-hero__foreground-image {
+  width: min(52vw, 780px);
+  height: auto;
+  max-height: 92%;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.evamats-home-hero__inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0 auto;
+  /* padding: 267px 40px 120px 200px; */
+  padding-bottom: 62px;
+  padding-top: 267px;
+}
+
+.evamats-home-hero__heading {
+  margin: 0 0 61px;
+  max-width: 990px;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.evamats-home-hero__subheading {
+  margin: 0 0 54px;
+  max-width: 720px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.evamats-home-hero__filter {
+  max-width: 842px;
+  margin-bottom: 40px;
+}
+
+.evamats-home-hero .filter-field {
+  width: 100%;
+}
+
+.evamats-home-hero .filter-field__body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px 0 20px;
+  box-sizing: border-box;
+}
+
+.evamats-home-hero .filter-field__media {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.evamats-home-hero .filter-field--has-media .filter-field__media--brand {
+  display: flex;
+  width: 30px;
+}
+
+.evamats-home-hero .filter-field--has-generation-media .filter-field__media--generation {
+  display: flex;
+  width: 66px;
+}
+
+.evamats-home-hero .model-custom-select.selected .filter-field__media--align {
+  display: block;
+  flex: 0 0 30px;
+  width: 30px;
+}
+
+.evamats-home-hero .filter-field__thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.evamats-home-hero .filter-field__thumb--brand {
+  width: 30px;
+  height: 30px;
+}
+
+.evamats-home-hero .filter-field__thumb--generation {
+  width: 66px;
+  height: 48px;
+}
+
+.evamats-home-hero .filter-field__thumb[hidden] {
+  display: none;
+}
+
+.evamats-home-hero .filter-field__content {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.evamats-home-hero .filter-field__label {
+  display: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: #1b1d22;
+  opacity: 0.5;
+}
+
+.evamats-home-hero .filter-field.selected .filter-field__label {
+  display: block;
+}
+
+.evamats-home-hero .filter-option--generation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.evamats-home-hero .filter-option__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evamats-home-hero .filter-option__thumb {
+  flex-shrink: 0;
+  width: 66px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.evamats-home-hero .filter-container {
+  align-items: stretch;
+  gap: 0;
+  padding: 6px 6px 6px 0;
+  border: none;
+  border-radius: 26px;
+  box-shadow: 0 13.54px 18.06px -4.51px rgba(16, 24, 40, 0.04);
+}
+
+.evamats-home-hero .custom-select-wrapper {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.evamats-home-hero .custom-select {
+  height: 100%;
+}
+
+.evamats-home-hero .select-selected,
+.evamats-home-hero .selectSelected {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: #1b1d22;
+  border-radius: 0;
+}
+
+.evamats-home-hero .filter-field:not(.selected) .filter-field__content {
+  flex-direction: row;
+  align-items: center;
+}
+
+.evamats-home-hero .filter-field:not(.selected) .select-selected {
+  font-size: 16px;
+}
+
+.evamats-home-hero .custom-select:not(.selected) .select-selected::placeholder,
+.evamats-home-hero .custom-select:not(.selected) .selectSelected::placeholder {
+  color: #1b1d22;
+  opacity: 0.5;
+}
+
+.evamats-home-hero .custom-select-divider {
+  height: auto;
+  align-self: stretch;
+  width: 1px;
+  background: #f0f0f0;
+}
+
+.evamats-home-hero .custom-select svg {
+  position: static;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  transform: none;
+  display: none;
+}
+
+.evamats-home-hero .active.custom-select svg {
+  transform: rotate(-180deg);
+}
+
+.evamats-home-hero .search-button {
+  flex: 0 0 98px;
+  width: 98px;
+  min-width: 98px;
+  height: 66px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: #ef022d !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='white'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 30px !important;
+}
+
+.evamats-home-hero .search-button__label {
+  display: none;
+}
+
+.evamats-home-hero .clear-filters {
+  display: none;
+}
+
+.evamats-home-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.evamats-home-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 41px;
+  padding: 8px 16px 8px 11px;
+  border-radius: 500px;
+  background: #282b2f;
+  color: #fff;
+  text-decoration: none;
+}
+
+.evamats-home-hero__badge-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.evamats-home-hero__badge-star {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.evamats-home-hero__badge-count {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.evamats-home-hero__badge-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.evamats-home-hero__badge-icon--trust {
+  width: 23px;
+  height: 22px;
+}
+
+.evamats-home-hero__bg--mobile,
+.evamats-home-hero__foreground--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-home-hero {
+    min-height: 681px;
+  }
+
+  .evamats-home-hero__bg--desktop,
+  .evamats-home-hero__foreground--desktop {
+    display: none;
+  }
+
+  .evamats-home-hero__bg--mobile {
+    display: block;
+  }
+
+  .evamats-home-hero__foreground--mobile {
+    display: flex;
+  }
+
+  .evamats-home-hero__overlay {
+    background:
+      linear-gradient(180deg, rgba(19, 17, 18, 0.3) 0%, rgba(19, 17, 18, 0) 18%),
+      linear-gradient(180deg, rgba(19, 17, 18, 0) 35%, rgba(12, 11, 12, 0.92) 72%);
+  }
+
+  .evamats-home-hero__foreground {
+    align-items: center;
+    justify-content: center;
+    padding-top: 84px;
+  }
+
+  .evamats-home-hero__foreground-image {
+    width: min(72vw, 320px);
+    max-height: 52%;
+    object-position: center bottom;
+  }
+
+  .evamats-home-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* padding: 192px 18px 32px; */
+    text-align: center;
+  }
+
+  .evamats-home-hero__heading {
+    margin-bottom: 16px;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-home-hero__subheading {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .evamats-home-hero__filter {
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .evamats-home-hero .filter-container {
+    flex-direction: column;
+    gap: 0;
+    min-height: 0;
+    padding: 0;
+    border-radius: 16px;
+    box-shadow: 5px 5px 30px rgba(27, 29, 34, 0.1);
+    background: #fff;
+  }
+
+  .evamats-home-hero .filter-container .custom-select-wrapper {
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 0;
+  }
+
+  .evamats-home-hero .filter-container .custom-select-wrapper:first-of-type {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .evamats-home-hero .filter-container .custom-select-wrapper:nth-of-type(3),
+  .evamats-home-hero .filter-container .custom-select-wrapper:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .evamats-home-hero .custom-select-divider {
+    display: none;
+  }
+
+  .evamats-home-hero .custom-select {
+    position: relative;
+  }
+
+  .evamats-home-hero .filter-field {
+    min-height: 0;
+  }
+
+  /* Figma mobile: label + value слева, лого/силуэт справа от текста, chevron у края */
+  .evamats-home-hero .filter-field__body {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    min-height: 69px;
+    padding: 16px 40px 16px 16px;
+    box-sizing: border-box;
+  }
+
+  .evamats-home-hero .filter-field__content {
+    order: 1;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .evamats-home-hero .filter-field:not(.selected) .filter-field__content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .evamats-home-hero .filter-field__media {
+    order: 2;
+    display: none;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .evamats-home-hero .filter-field--has-media .filter-field__media--brand {
+    display: flex;
+    width: 21px;
+  }
+
+  .evamats-home-hero .filter-field--has-generation-media .filter-field__media--generation {
+    display: flex;
+    width: 51px;
+  }
+
+  .evamats-home-hero .model-custom-select.selected .filter-field__media--align,
+  .evamats-home-hero .model-custom-select .filter-field__media--align {
+    display: none;
+  }
+
+  .evamats-home-hero .filter-field__label {
+    display: none;
+    width: 100%;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    text-align: left;
+    opacity: 0.5;
+  }
+
+  .evamats-home-hero .filter-field.selected .filter-field__label {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .evamats-home-hero .filter-field__thumb--brand {
+    width: 21px;
+    height: 21px;
+  }
+
+  .evamats-home-hero .filter-field__thumb--generation {
+    width: 51px;
+    height: 37px;
+  }
+
+  .evamats-home-hero .filter-container .select-selected,
+  .evamats-home-hero .filter-container .selectSelected {
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .evamats-home-hero .filter-field:not(.selected) .select-selected,
+  .evamats-home-hero .filter-field:not(.selected) .selectSelected {
+    font-weight: 400;
+  }
+
+  .evamats-home-hero .custom-select svg {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    left: auto;
+    z-index: 2;
+    display: block;
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+
+  .evamats-home-hero .active.custom-select svg {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+
+  .evamats-home-hero .search-button__label {
+    display: inline;
+  }
+
+  .evamats-home-hero .search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    order: 10;
+    flex: none;
+    width: calc(100% - 8px);
+    min-width: 0;
+    height: 52px;
+    margin: 0 4px 4px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    color: #fff;
+    gap: 10px;
+    background-image: none !important;
+    background: #ef022d !important;
+  }
+
+  .evamats-home-hero .search-button::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='white'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .evamats-home-hero__badges {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .evamats-home-hero__badge {
+    gap: 10px;
+    min-height: 36px;
+    padding: 6px 12px 6px 10px;
+  }
+
+  .evamats-home-hero__badge-rating {
+    font-size: 16px;
+  }
+
+  .evamats-home-hero__badge-count {
+    font-size: 12px;
+  }
+}

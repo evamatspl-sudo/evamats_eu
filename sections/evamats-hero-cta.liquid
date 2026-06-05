@@ -6,6 +6,7 @@
   endif
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-hero-cta__intro' %}
 <section
   id="EvamatsHeroCta-{{ section.id }}"
   class="evamats-hero-cta"
@@ -148,24 +149,52 @@
       "info": "Optional. Uses desktop image when empty."
     },
     {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "Top padding",
+      "label": "Padding top (intro)",
       "default": 72
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "Bottom padding (intro)",
+      "label": "Padding bottom (intro)",
       "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (intro)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (intro)",
+      "default": 44
     }
   ],
   "presets": [

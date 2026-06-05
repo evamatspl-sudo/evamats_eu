@@ -1,0 +1,270 @@
+{{ 'section-evamats-banner-slider.css' | asset_url | stylesheet_tag }}
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-banner-slider' %}
+
+{%- liquid
+  assign slide_count = 0
+  for block in section.blocks
+    if block.type == 'slide'
+      assign slide_count = slide_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section
+  id="EvamatsBannerSlider-{{ section.id }}"
+  class="evamats-banner-slider"
+  data-ebs-root
+>
+  <div class="page-width">
+    {%- if slide_count > 0 -%}
+      <div class="evamats-banner-slider__slider-bleed">
+        <div class="evamats-banner-slider__track">
+          <div class="evamats-banner-slider__stage">
+            {%- if slide_count > 1 -%}
+              <button
+                type="button"
+                class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--prev swiper-button-prev evamats-banner-slider__nav"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
+                  <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10054 4.39663e-05L0.356982 7.7436C-0.118202 8.21879 -0.118201 8.98921 0.356983 9.46439L8.10054 17.208L9.82133 15.4872L4.15495 9.82078L16.123 9.82078L16.123 7.38722L4.15495 7.38722L9.82133 1.72084L8.10054 4.39663e-05Z" fill="white"/>
+                  </svg>
+                </span>
+              </button>
+            {%- endif -%}
+
+            <div class="evamats-banner-slider__swiper swiper" data-ebs-swiper>
+              <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'slide' -%}
+                  {%- liquid
+                    assign slide_image_desktop = block.settings.image_desktop
+                    assign slide_image_mobile = block.settings.image_mobile
+                    if slide_image_mobile == blank
+                      assign slide_image_mobile = slide_image_desktop
+                    endif
+                    assign slide_link = block.settings.link
+                  -%}
+                  <div class="swiper-slide evamats-banner-slider__slide" {{ block.shopify_attributes }}>
+                    {%- if slide_link != blank -%}
+                      <a class="evamats-banner-slider__slide-link" href="{{ slide_link }}">
+                    {%- endif -%}
+                    {%- if slide_image_desktop != blank -%}
+                      <picture>
+                        {%- if block.settings.image_mobile != blank -%}
+                          <source media="(max-width: 749px)" srcset="{{ slide_image_mobile | image_url: width: 900 }}">
+                        {%- elsif slide_image_desktop != blank -%}
+                          <source media="(max-width: 749px)" srcset="{{ slide_image_desktop | image_url: width: 900 }}">
+                        {%- endif -%}
+                        {{
+                          slide_image_desktop
+                          | image_url: width: 3040
+                          | image_tag:
+                            class: 'evamats-banner-slider__media',
+                            loading: 'lazy',
+                            widths: '375, 750, 1100, 1500, 1520, 2000, 3040',
+                            sizes: '(min-width: 750px) 1520px, 100vw'
+                        }}
+                      </picture>
+                    {%- endif -%}
+                    {%- if slide_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+              </div>
+            </div>
+
+            {%- if slide_count > 1 -%}
+              <button
+                type="button"
+                class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--next swiper-button-next evamats-banner-slider__nav"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
+                  <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.02446 4.39663e-05L15.768 7.7436C16.2432 8.21879 16.2432 8.98921 15.768 9.46439L8.02446 17.208L6.30367 15.4872L11.97 9.82078L0.00203078 9.82078L0.00203057 7.38722L11.97 7.38722L6.30367 1.72084L8.02446 4.39663e-05Z" fill="white"/>
+                  </svg>
+                </span>
+              </button>
+            {%- endif -%}
+          </div>
+
+          {%- if slide_count > 1 -%}
+            <div class="evamats-banner-slider__pagination swiper-pagination" data-ebs-pagination></div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    function whenSwiperReady(cb) {
+      if (typeof window.Swiper !== 'undefined') {
+        cb();
+        return;
+      }
+      if (typeof window.ensureSwiperLoaded === 'function') {
+        window.ensureSwiperLoaded(cb);
+        return;
+      }
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries += 1;
+        if (typeof window.Swiper !== 'undefined') {
+          clearInterval(timer);
+          cb();
+        } else if (tries > 80) {
+          clearInterval(timer);
+        }
+      }, 50);
+    }
+
+    function initBannerSlider(root) {
+      if (!root || root.dataset.ebsInit === '1') return;
+
+      var swiperEl = root.querySelector('[data-ebs-swiper]');
+      if (!swiperEl) return;
+
+      var slides = swiperEl.querySelectorAll('.swiper-slide');
+      if (!slides.length) return;
+
+      var prevEl = root.querySelector('.eva-slider-nav--prev');
+      var nextEl = root.querySelector('.eva-slider-nav--next');
+      var paginationEl = root.querySelector('[data-ebs-pagination]');
+
+      whenSwiperReady(function () {
+        if (root.dataset.ebsInit === '1') return;
+        root.dataset.ebsInit = '1';
+
+        var opts = {
+          slidesPerView: 1,
+          speed: 480,
+          watchOverflow: true,
+          loop: slides.length > 1,
+        };
+
+        if (slides.length > 1) {
+          opts.navigation = {
+            prevEl: prevEl,
+            nextEl: nextEl,
+          };
+          if (paginationEl) {
+            opts.pagination = {
+              el: paginationEl,
+              clickable: true,
+            };
+          }
+        }
+
+        root._ebsSwiper = new window.Swiper(swiperEl, opts);
+      });
+    }
+
+    function boot() {
+      document.querySelectorAll('[data-ebs-root]').forEach(initBannerSlider);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot);
+    } else {
+      boot();
+    }
+
+    document.addEventListener('shopify:section:load', function (event) {
+      var root = event.target.querySelector('[data-ebs-root]');
+      if (root) initBannerSlider(root);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Banner slider",
+  "tag": "section",
+  "class": "section-evamats-banner-slider",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image (desktop)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner slider"
+    }
+  ]
+}
+{% endschema %}

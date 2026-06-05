@@ -1,0 +1,127 @@
+/* Reusable Swiper round prev/next (video reviews, banner slider, o-nas story, etc.) */
+
+.eva-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.eva-slider-controls__pagination {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.eva-slider-controls__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  opacity: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.eva-slider-controls__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background: var(--color-accent-red, #ff2741);
+  transform: scale(1.05);
+}
+
+.eva-slider-controls__arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.eva-slider-nav {
+  position: static;
+  width: 58px;
+  height: 58px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  top: auto;
+  left: auto;
+  right: auto;
+  background: var(--color-accent-red, #ff2741);
+  transition:
+    transform 0.22s cubic-bezier(0.34, 1.45, 0.64, 1),
+    opacity 0.2s ease,
+    box-shadow 0.22s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.eva-slider-nav--absolute {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.eva-slider-nav--absolute.eva-slider-nav--prev {
+  left: -95px;
+}
+
+.eva-slider-nav--absolute.eva-slider-nav--next {
+  right: -95px;
+}
+
+.swiper-button-disabled.eva-slider-nav {
+  background: #fff;
+}
+
+.swiper-button-disabled.eva-slider-nav path {
+  fill: #8090a4;
+}
+
+.eva-slider-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.24s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+.eva-slider-nav__icon svg {
+  display: block;
+  width: 17px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.eva-slider-nav.swiper-button-disabled {
+  opacity: 0.38;
+  cursor: default;
+  box-shadow: none;
+}
+
+.eva-slider-nav.swiper-button-disabled .eva-slider-nav__icon {
+  transform: none;
+}
+
+.eva-slider-nav::after {
+  display: none !important;
+  content: none !important;
+}
+
+@media screen and (max-width: 1700px) {
+  .eva-slider-nav--absolute.eva-slider-nav--prev {
+    left: 0;
+  }
+
+  .eva-slider-nav--absolute.eva-slider-nav--next {
+    right: 0;
+  }
+}

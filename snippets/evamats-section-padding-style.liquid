@@ -1,0 +1,23 @@
+{%- comment -%}
+  Theme-editor section spacing (desktop + mobile). Requires settings:
+  padding_top, padding_bottom, padding_top_mobile, padding_bottom_mobile
+
+  Params:
+  - section (required)
+  - target: CSS selector for the padded root, e.g. ".evamats-our-offer"
+{%- endcomment -%}
+{%- if target != blank -%}
+  {% style %}
+    #shopify-section-{{ section.id }} {{ target }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} {{ target }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+    }
+  {% endstyle %}
+{%- endif -%}

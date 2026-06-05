@@ -1,0 +1,186 @@
+/* Figma 1710:33482 desktop / 1710:32593 mobile — Rare fit CTA */
+
+.evamats-rare-fit-cta__inner {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.evamats-rare-fit-cta__banner {
+  position: relative;
+  height: 573px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #1b1d22;
+}
+
+.evamats-rare-fit-cta__media {
+  position: absolute;
+  inset: 0;
+}
+
+.evamats-rare-fit-cta__media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evamats-rare-fit-cta__fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.evamats-rare-fit-cta__fade--left {
+  background: linear-gradient(
+    90deg,
+    rgba(27, 29, 34, 0.8) 0%,
+    rgba(27, 29, 34, 0.45) 12%,
+    rgba(27, 29, 34, 0) 28%
+  );
+}
+
+.evamats-rare-fit-cta__fade--right {
+  background: linear-gradient(
+    270deg,
+    rgba(27, 29, 34, 0.35) 0%,
+    rgba(27, 29, 34, 0) 22%
+  );
+}
+
+.evamats-rare-fit-cta__panel {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: 555px;
+  max-width: calc(100% - 100px);
+  padding: 51px 49px;
+  background: rgba(255, 255, 250, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 22px;
+  text-align: center;
+}
+
+.evamats-rare-fit-cta__logo {
+  flex-shrink: 0;
+  width: 142px;
+  max-width: 100%;
+}
+
+.evamats-rare-fit-cta__logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.evamats-rare-fit-cta__heading {
+  margin: 0;
+  max-width: 457px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.evamats-rare-fit-cta__text {
+  margin: 0;
+  max-width: 445px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.evamats-rare-fit-cta__cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 445px;
+  min-height: 60px;
+  padding: 22px 24px;
+  background: var(--color-accent-red, #ff2741);
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+.evamats-rare-fit-cta__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-rare-fit-cta__banner {
+    height: auto;
+    aspect-ratio: 339 / 468;
+    border-radius: 20px;
+  }
+
+  .evamats-rare-fit-cta__fade--left {
+    background: linear-gradient(
+      180deg,
+      rgba(27, 29, 34, 0) 0%,
+      rgba(27, 29, 34, 0) 28%,
+      rgba(30, 33, 39, 0.55) 52%,
+      rgba(30, 33, 39, 0.92) 72%,
+      #1e2127 100%
+    );
+  }
+
+  .evamats-rare-fit-cta__fade--right {
+    display: none;
+  }
+
+  .evamats-rare-fit-cta__panel {
+    top: auto;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: auto;
+    max-width: none;
+    gap: 22px;
+    padding: 20px 16px;
+    background: rgba(255, 255, 250, 0.96);
+    border-radius: 16px;
+  }
+
+  .evamats-rare-fit-cta__logo {
+    width: 109px;
+  }
+
+  .evamats-rare-fit-cta__heading {
+    max-width: none;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-rare-fit-cta__text {
+    max-width: none;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-rare-fit-cta__cta {
+    max-width: none;
+    min-height: 50px;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    white-space: normal;
+  }
+}

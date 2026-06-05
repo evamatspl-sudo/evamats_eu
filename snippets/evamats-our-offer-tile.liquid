@@ -1,0 +1,58 @@
+{%- liquid
+  assign tile_image = block.settings.image
+  assign tile_title = block.settings.title
+  assign tile_link = block.settings.link
+  assign tile_tag = 'div'
+  if tile_link != blank
+    assign tile_tag = 'a'
+  endif
+-%}
+
+<{{ tile_tag }}
+  class="evamats-our-offer__tile evamats-our-offer__tile--{{ variant }}"
+  {% if tile_link != blank %}href="{{ tile_link }}"{% endif %}
+  {{ block.shopify_attributes }}
+>
+  {%- if variant == 'compact' -%}
+    {%- if tile_image != blank -%}
+      <span class="evamats-our-offer__tile-media">
+        {{
+          tile_image
+          | image_url: width: 400
+          | image_tag:
+            class: 'evamats-our-offer__tile-image',
+            loading: 'lazy',
+            widths: '63, 82, 103, 200, 400',
+            sizes: '(min-width: 750px) 103px, 63px'
+        }}
+      </span>
+    {%- endif -%}
+    {%- if tile_title != blank -%}
+      <span class="evamats-our-offer__tile-title">{{ tile_title | escape }}</span>
+      <span class="evamats-our-offer__tile-arrow evamats-our-offer__tile-arrow--light" aria-hidden="true">
+        {% render 'evamats-button-arrow-icon' %}
+      </span>
+    {%- endif -%}
+  {%- else -%}
+    {%- if tile_image != blank -%}
+      {{
+        tile_image
+        | image_url: width: 1200
+        | image_tag:
+          class: 'evamats-our-offer__tile-image',
+          loading: 'lazy',
+          widths: '165, 339, 497, 750, 1000, 1200',
+          sizes: '(min-width: 750px) 497px, 100vw'
+      }}
+    {%- endif -%}
+    <span class="evamats-our-offer__tile-gradient" aria-hidden="true"></span>
+    {%- if tile_title != blank -%}
+      <span class="evamats-our-offer__tile-foot">
+        <span class="evamats-our-offer__tile-title">{{ tile_title | escape }}</span>
+        <span class="evamats-our-offer__tile-arrow" aria-hidden="true">
+          {% render 'evamats-button-arrow-icon' %}
+        </span>
+      </span>
+    {%- endif -%}
+  {%- endif -%}
+</{{ tile_tag }}>

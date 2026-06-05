@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "config": {
@@ -13,6 +22,7 @@
       "front_rear": "Front and Rear",
       "front_rear_trunk": "Front + rear + trunk",
       "year_production": "Year of production",
+      "generation": "Generation",
       "number_seats": "Number of seats",
       "number_doors": "Number of doors",
       "drivetrain": "Drivetrain",

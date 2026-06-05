@@ -7,6 +7,7 @@
   endfor
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-partners-coop-v2' %}
 <section
   id="EvamatsPartnersCoop-{{ section.id }}"
   class="evamats-partners-coop-v2"
@@ -191,6 +192,54 @@
       "type": "image_picker",
       "id": "bg_image_bottom_left",
       "label": "Background image (bottom left)"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "blocks": [

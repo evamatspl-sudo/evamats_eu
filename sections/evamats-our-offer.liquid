@@ -1,0 +1,261 @@
+{{ 'section-evamats-our-offer.css' | asset_url | stylesheet_tag }}
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-our-offer' %}
+
+{%- liquid
+  assign tall_block = nil
+  assign stack_count = 0
+  assign compact_count = 0
+-%}
+
+{%- for block in section.blocks -%}
+  {%- if block.type == 'featured_tall' and tall_block == nil -%}
+    {%- assign tall_block = block -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<section id="EvamatsOurOffer-{{ section.id }}" class="evamats-our-offer">
+  <div class="evamats-our-offer__inner page-width">
+    {%- if section.settings.overline != blank or section.settings.heading_line_1 != blank or section.settings.description != blank -%}
+      <div class="evamats-our-offer__header">
+        <div class="evamats-our-offer__header-title">
+          {%- if section.settings.overline != blank -%}
+            <p class="evamats-our-offer__overline">{{ section.settings.overline | escape }}</p>
+          {%- endif -%}
+          {%- if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank -%}
+            <h2 class="evamats-our-offer__heading section_title">
+              {%- if section.settings.heading_line_1 != blank -%}
+                <span class="evamats-our-offer__heading-line">{{ section.settings.heading_line_1 | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.heading_line_2 != blank -%}
+                <span class="evamats-our-offer__heading-line">{{ section.settings.heading_line_2 | escape }}</span>
+              {%- endif -%}
+            </h2>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.description != blank -%}
+          <div class="evamats-our-offer__description body-m">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="evamats-our-offer__mosaic">
+        {%- if tall_block != nil -%}
+          <div class="evamats-our-offer__col evamats-our-offer__col--tall">
+            {%- render 'evamats-our-offer-tile', block: tall_block, variant: 'tall' -%}
+          </div>
+        {%- endif -%}
+
+        <div class="evamats-our-offer__col evamats-our-offer__col--stack">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'featured_stack' -%}
+              {%- assign stack_count = stack_count | plus: 1 -%}
+              {%- render 'evamats-our-offer-tile', block: block, variant: 'stack' -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="evamats-our-offer__col evamats-our-offer__col--list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'compact' -%}
+              {%- assign compact_count = compact_count | plus: 1 -%}
+              {%- render 'evamats-our-offer-tile', block: block, variant: 'compact' -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our offer",
+  "tag": "section",
+  "class": "section-evamats-our-offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline",
+      "default": "OUR OFFER"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading — line 1",
+      "default": "Quality, fit"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading — line 2",
+      "default": "and convenience of choice"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description (desktop)",
+      "default": "<p>We offer a wide selection of EVA products tailored to different car models.</p><p>Everything is designed so you can quickly find the ideal solution — without unnecessary steps.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_tall",
+      "name": "Featured — tall",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "featured_stack",
+      "name": "Featured — medium",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "compact",
+      "name": "Compact row",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our offer",
+      "blocks": [
+        {
+          "type": "featured_tall",
+          "settings": {
+            "title": "Car mats"
+          }
+        },
+        {
+          "type": "featured_stack",
+          "settings": {
+            "title": "EVA for home"
+          }
+        },
+        {
+          "type": "featured_stack",
+          "settings": {
+            "title": "For pets"
+          }
+        },
+        {
+          "type": "compact",
+          "settings": {
+            "title": "Organizers"
+          }
+        },
+        {
+          "type": "compact",
+          "settings": {
+            "title": "Heel pads / Footrests"
+          }
+        },
+        {
+          "type": "compact",
+          "settings": {
+            "title": "Accessories"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

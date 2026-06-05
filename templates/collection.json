@@ -180,7 +180,9 @@
         "h3 {color: #fff; font-size: 3.2rem; letter-spacing: 2px;}"
       ],
       "settings": {
-        "color-table-header": "Najpopularniejsze marki",
+        "heading_before": "Najpopularniejsze marki",
+        "heading_accent": "",
+        "heading_after": "",
         "catalog-header": "",
         "margin-bottom": false
       }

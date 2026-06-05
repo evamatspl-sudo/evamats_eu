@@ -1,0 +1,20 @@
+{%- liquid
+  assign eds_image = image
+  assign eds_alt = alt | default: ''
+  assign eds_modifier = modifier | default: ''
+-%}
+
+<figure class="evamats-driving-style__media{% if eds_modifier != blank %} {{ eds_modifier }}{% endif %}">
+  {%- if eds_image != blank -%}
+    {{
+      eds_image
+      | image_url: width: 812
+      | image_tag:
+        class: 'evamats-driving-style__media-img',
+        loading: 'lazy',
+        widths: '375, 550, 812',
+        sizes: '(min-width: 750px) 406px, 50vw',
+        alt: eds_alt
+    }}
+  {%- endif -%}
+</figure>

@@ -1,18 +1,4 @@
-@font-face {
-  font-family: NTSomic;
-  src: url('NTSomic-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: NTSomic;
-  src: url('NTSomic-Medium.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
 
 .evamats-v2 {
   --font-body-family: NTSomic, sans-serif;
@@ -1140,10 +1126,6 @@
 .evamats-article-kariera-hero {
     background: transparent;
     color: var(--color-text);
-    --akh-pt: 80px;
-    --akh-pb: 80px;
-    padding-top: var(--akh-pt);
-    padding-bottom: var(--akh-pb);
   }
 
   .evamats-article-kariera-hero__inner {
@@ -1359,11 +1341,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-article-kariera-hero {
-      padding-top: 32px;
-      padding-bottom: 32px;
-    }
-
     .evamats-article-kariera-hero__inner {
       max-width: 339px;
     }
@@ -1447,8 +1424,6 @@
 /* --- evamats-careers-contact.liquid --- */
 .evamats-careers-contact {
     color: var(--color-text);
-    padding-top: var(--ecc-pt, 0);
-    padding-bottom: var(--ecc-pb, 0);
   }
 
   .evamats-careers-contact__stage {
@@ -1695,13 +1670,6 @@
     color: var(--color-text);
   }
 
-  .evamats-hero-cta__intro {
-    --ehc-pt: 72px;
-    --ehc-pb: 40px;
-    padding-top: var(--ehc-pt);
-    padding-bottom: var(--ehc-pb);
-  }
-
   .evamats-hero-cta__inner {
     max-width: 1520px;
     margin: 0 auto;
@@ -1795,11 +1763,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-hero-cta__intro {
-      --ehc-pt: 38px;
-      --ehc-pb: 44px;
-    }
-
     .evamats-hero-cta__eyebrow {
       margin-bottom: 8px;
       font-size: 15px;
@@ -1827,10 +1790,6 @@
 .evamats-icon-grid {
     background: transparent;
     color: var(--color-text);
-    --eig-pt: 80px;
-    --eig-pb: 80px;
-    padding-top: var(--eig-pt);
-    padding-bottom: var(--eig-pb);
   }
 
   .evamats-icon-grid__inner {
@@ -1966,11 +1925,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-icon-grid {
-      --eig-pt: 30px;
-      --eig-pb: 30px;
-    }
-
     .evamats-icon-grid__heading {
       margin-bottom: 32px;
       font-size: 26px;
@@ -2059,8 +2013,6 @@
 .evamats-kariera-benefits {
     background: transparent;
     color: var(--color-text);
-    padding-top: var(--ekb-pt, 80px);
-    padding-bottom: var(--ekb-pb, 80px);
   }
 
   .evamats-kariera-benefits__inner {
@@ -2519,8 +2471,6 @@
     background: transparent;
     color: var(--color-text);
     min-height: 517px;
-    padding-top: var(--eks-pt, 0);
-    padding-bottom: var(--eks-pb, 0);
     overflow: hidden;
   }
 
@@ -2614,8 +2564,6 @@
   @media screen and (max-width: 749px) {
     .evamats-kariera-supervisor {
       min-height: 470px;
-      padding-top: 30px;
-      padding-bottom: 37px;
     }
 
     .evamats-kariera-supervisor__heading--desktop {
@@ -2681,10 +2629,6 @@
 .evamats-kariera-benefits {
     background: transparent;
     color: var(--color-text);
-    --ekb-pt: 80px;
-    --ekb-pb: 80px;
-    padding-top: var(--ekb-pt);
-    padding-bottom: var(--ekb-pb);
   }
 
   .evamats-kariera-benefits__inner {
@@ -3229,11 +3173,6 @@
 
   /* Mobile — Figma 1948:10005 (339px card width) */
   @media screen and (max-width: 749px) {
-    .evamats-kariera-benefits {
-      --ekb-pt: 30px;
-      --ekb-pb: 30px;
-    }
-
     .evamats-kariera-benefits__intro {
       display: block;
       margin-bottom: 30px;
@@ -3556,10 +3495,6 @@
 .evamats-partners-consult-form-v2 {
     background: transparent;
     color: var(--color-text);
-    --epcf-pt: 78px;
-    --epcf-pb: 88px;
-    padding-top: var(--epcf-pt);
-    padding-bottom: var(--epcf-pb);
   }
 
   .evamats-partners-consult-form-v2__inner {
@@ -3647,11 +3582,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-partners-consult-form-v2 {
-      --epcf-pt: 30px;
-      --epcf-pb: 30px;
-    }
-
     .evamats-partners-consult-form-v2__inner {
       max-width: none;
     }
@@ -3677,10 +3607,6 @@
     overflow: hidden;
     background: transparent;
     color: var(--color-text);
-    --epc-pt: 80px;
-    --epc-pb: 80px;
-    padding-top: var(--epc-pt);
-    padding-bottom: var(--epc-pb);
   }
 
   .evamats-partners-coop-v2__bg {
@@ -3860,11 +3786,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-partners-coop-v2 {
-      --epc-pt: 30px;
-      --epc-pb: 30px;
-    }
-
     .evamats-partners-coop-v2__bg-piece {
       width: 290.524px;
       height: 204px;
@@ -3935,12 +3856,8 @@
 
 /* --- evamats-product-benefits.liquid --- */
 .evamats-product-benefits {
-    --epb-pt: 80px;
-    --epb-pb: 80px;
     background: transparent;
     color: var(--color-text);
-    padding-top: var(--epb-pt);
-    padding-bottom: var(--epb-pb);
   }
 
   .evamats-product-benefits__inner {
@@ -4034,11 +3951,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-product-benefits {
-      --epb-pt: 48px;
-      --epb-pb: 48px;
-    }
-
     .evamats-product-benefits__heading {
       margin-bottom: 24px;
       letter-spacing: -0.52px;
@@ -4080,10 +3992,6 @@
 .evamats-proven-scale-v2 {
     background: transparent;
     color: var(--color-text);
-    --eps-pt: 80px;
-    --eps-pb: 80px;
-    padding-top: var(--eps-pt);
-    padding-bottom: var(--eps-pb);
   }
 
   .evamats-proven-scale-v2__inner {
@@ -4212,11 +4120,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-proven-scale-v2 {
-      --eps-pt: 30px;
-      --eps-pb: 30px;
-    }
-
     .evamats-proven-scale-v2__heading {
       margin: 0 0 16px;
       font-size: 26px;
@@ -4297,8 +4200,6 @@
 .evamats-vacancies-list {
     background: transparent;
     color: var(--color-text);
-    padding-top: var(--evl-pt, 48px);
-    padding-bottom: var(--evl-pb, 48px);
   }
 
   .evamats-vacancies-list__inner {
@@ -4522,11 +4423,6 @@
   }
 
   @media screen and (max-width: 749px) {
-    .evamats-vacancies-list {
-      padding-top: var(--evl-pt, 32px);
-      padding-bottom: var(--evl-pb, 32px);
-    }
-
     .evamats-vacancies-list__heading {
       margin-bottom: 30px;
       font-size: 26px;

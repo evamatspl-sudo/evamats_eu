@@ -6,10 +6,10 @@
   endif
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-kariera-supervisor' %}
 <section
   id="EvamatsKarieraSupervisor-{{ section.id }}"
   class="evamats-kariera-supervisor"
-  style="--eks-pt: {{ section.settings.padding_top }}px; --eks-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="evamats-kariera-supervisor__inner page-width">
     {%- if section.settings.heading != blank -%}
@@ -128,11 +128,15 @@
       "info": "Optional. Uses desktop photo if empty."
     },
     {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 0
@@ -142,10 +146,34 @@
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 36
     }
   ],
   "presets": [

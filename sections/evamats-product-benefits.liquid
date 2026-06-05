@@ -7,6 +7,7 @@
   endfor
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-product-benefits' %}
 <section
   id="EvamatsProductBenefits-{{ section.id }}"
   class="evamats-product-benefits"
@@ -79,6 +80,54 @@
       "id": "description",
       "label": "Description",
       "default": "<p>Dywaniki EVAMATS rozwiązują realny problem kierowców — brud, zużycie i brak dopasowania.<br>To produkt, który klient rozumie od razu i kupuje bez długiego zastanowienia.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     }
   ],
   "blocks": [

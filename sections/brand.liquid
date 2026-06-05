@@ -1,9 +1,20 @@
   {{ 'brand-style.css' | asset_url | stylesheet_tag }}
-  
-  <div class="colorTable {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
-        {% if section.settings.color-table-header != blank %}
-          <h3 class="colorTable_header">{{ section.settings.color-table-header }}</h3>
-        {% endif %}
+  {% render 'evamats-section-padding-style', section: section, target: '.colorTable' %}
+
+  <div class="colorTable page-width {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
+        {%- if section.settings.heading_before != blank or section.settings.heading_accent != blank or section.settings.heading_after != blank -%}
+          <h2 class="colorTable_header section_title text_center">
+            {%- if section.settings.heading_before != blank -%}
+              <span class="colorTable_header__before">{{ section.settings.heading_before | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_accent != blank -%}
+              <span class="colorTable_header__accent">{{ section.settings.heading_accent | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_after != blank -%}
+              <span class="colorTable_header__after">{{ section.settings.heading_after | escape }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
         <div class="colorTable_block">
            {% if section.settings.catalog-header != blank %}
               <h4 class="SectionHeader__SubHeading Heading u-h4">{{ section.settings.catalog-header }}</h4>
@@ -12,8 +23,8 @@
               {%- for block in section.blocks -%}
                 <a href="{{block.settings.product-link}}" class="color_block">
                     <div class="color_block__wrapper">
-                      <img style="width: 100%; height: 100%; object-fit: scale-down; max-width: 170px; max-height: 170px;" src="{{ block.settings.table-img | img_url: '240x'}}" alt="remowe" loading='lazy'>
-                          
+                      <img  src="{{ block.settings.table-img | img_url: '240x'}}" alt="remowe" loading='lazy'>
+                      <span class="color_block__name">{{ block.settings.color-code }}</span>
                     </div>
 
                 </a>
@@ -21,6 +32,11 @@
  
             </div>
         </div>
+        {%- if section.settings.button_label != blank -%}
+          <div class="button-row-v2 colorTable__cta">
+            <a class="button button_5" href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}">{{ section.settings.button_label | escape }}</a>
+          </div>
+        {%- endif -%}
     </div>
 
 
@@ -33,8 +49,32 @@
 "settings": [
    {
      "type": "text",
-     "id": "color-table-header",
-     "label": "Heading"
+     "id": "heading_before",
+     "label": "Heading — before accent",
+     "default": "Car mats designed to fit over "
+   },
+   {
+     "type": "text",
+     "id": "heading_accent",
+     "label": "Heading — accent (red)",
+     "default": "1,500"
+   },
+   {
+     "type": "text",
+     "id": "heading_after",
+     "label": "Heading — after accent",
+     "default": "car models"
+   },
+   {
+     "type": "text",
+     "id": "button_label",
+     "label": "Button label",
+     "default": "See all"
+   },
+   {
+     "type": "url",
+     "id": "button_link",
+     "label": "Button link"
    },
    {
      "type": "text",
@@ -46,6 +86,54 @@
      "id": "margin-bottom",
      "label": "Bottom indent",
      "default": false
+   },
+   {
+     "type": "header",
+     "content": "Section spacing (desktop)"
+   },
+   {
+     "type": "range",
+     "id": "padding_top",
+     "label": "Padding top",
+     "min": 0,
+     "max": 200,
+     "step": 4,
+     "unit": "px",
+     "default": 80
+   },
+   {
+     "type": "range",
+     "id": "padding_bottom",
+     "label": "Padding bottom",
+     "min": 0,
+     "max": 200,
+     "step": 4,
+     "unit": "px",
+     "default": 80
+   },
+   {
+     "type": "header",
+     "content": "Section spacing (mobile)"
+   },
+   {
+     "type": "range",
+     "id": "padding_top_mobile",
+     "label": "Padding top",
+     "min": 0,
+     "max": 200,
+     "step": 4,
+     "unit": "px",
+     "default": 48
+   },
+   {
+     "type": "range",
+     "id": "padding_bottom_mobile",
+     "label": "Padding bottom",
+     "min": 0,
+     "max": 200,
+     "step": 4,
+     "unit": "px",
+     "default": 48
    }
 ],
 "blocks" : [

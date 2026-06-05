@@ -1,0 +1,111 @@
+{%- comment -%}
+  Bestseller product card — Figma 1710:32972 desktop / 1710:32145 mobile
+  Accepts: card_product, section_id, lazy_load (bool), mobile_button_label
+{%- endcomment -%}
+{%- if card_product and card_product != empty -%}
+
+{%- liquid
+  assign variant = card_product.selected_or_first_available_variant
+  assign compare_at_price = variant.compare_at_price
+  assign price = variant.price
+  assign on_sale = false
+  if compare_at_price > price and compare_at_price > 0
+    assign on_sale = true
+    assign discount_amount = compare_at_price | minus: price
+    assign discount_percent = discount_amount | times: 100.0 | divided_by: compare_at_price | round
+  endif
+
+  assign card_title = card_product.title
+  if card_product.metafields.custom.short_title != blank
+    assign card_title = card_product.metafields.custom.short_title
+  endif
+
+  assign image_loading = 'lazy'
+  if lazy_load == false
+    assign image_loading = 'eager'
+  endif
+
+  assign product_form_id = 'efc-form-' | append: section_id | append: '-' | append: card_product.id
+  assign qty_rules = false
+  if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
+    assign qty_rules = true
+  endif
+  assign needs_options = false
+  if card_product.variants.size > 1 or qty_rules
+    assign needs_options = true
+  endif
+
+  assign efc_cta_desktop = 'products.product.add_to_cart' | t
+  if needs_options or variant.available == false
+    assign efc_cta_desktop = 'products.product.choose_color_and_mats_set' | t
+  endif
+  assign efc_cta_mobile = mobile_button_label | default: 'Select'
+-%}
+
+<article class="efc-card">
+  <a class="efc-card__media-link" href="{{ card_product.url }}" aria-label="{{ card_title | escape }}">
+    <div class="efc-card__media">
+      {%- if card_product.featured_media -%}
+        {%- assign efc_image_alt = card_product.featured_media.alt | default: card_title | escape -%}
+        {{
+          card_product.featured_media
+          | image_url: width: 800
+          | image_tag:
+            class: 'efc-card__image',
+            loading: image_loading,
+            widths: '163, 339, 370, 533, 740, 800',
+            sizes: '(min-width: 750px) calc((min(1520px, 100vw) - 45px) / 4), calc((100vw - 12px - 24px) / 2)',
+            alt: efc_image_alt
+        }}
+      {%- endif -%}
+    </div>
+  </a>
+
+  <div class="efc-card__body">
+    <h3 class="efc-card__title">
+      <a href="{{ card_product.url }}">{{ card_title | escape }}</a>
+    </h3>
+
+    <div class="efc-card__prices">
+      <div class="efc-card__price-line{% if on_sale %} efc-card__price-line--sale{% endif %}">
+        {%- if on_sale -%}
+          <span class="efc-card__price-old">
+            <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+            {{ compare_at_price | money_without_trailing_zeros }}
+            <span class="efc-card__price-old-line" aria-hidden="true"></span>
+          </span>
+          <span class="efc-card__price-current">
+            <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+            {{ price | money }}
+          </span>
+          <span class="efc-card__discount-badge">{{ discount_percent }}%</span>
+        {%- else -%}
+          <span class="efc-card__price-current">
+            <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+            {{ price | money }}
+          </span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="efc-card__actions">
+      {%- if needs_options or variant.available == false -%}
+        <a href="{{ card_product.url }}" class="button button_5">
+          <span class="efc-card__cta-label efc-card__cta-label--desktop">{{ efc_cta_desktop | escape }}</span>
+          <span class="efc-card__cta-label efc-card__cta-label--mobile">{{ efc_cta_mobile | escape }}</span>
+        </a>
+      {%- else -%}
+        <product-form class="efc-card__product-form">
+          {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ variant.id }}">
+            <button type="submit" name="add" class="button button_5" id="{{ product_form_id }}-submit">
+              <span class="efc-card__cta-label efc-card__cta-label--desktop">{{ efc_cta_desktop | escape }}</span>
+              <span class="efc-card__cta-label efc-card__cta-label--mobile">{{ efc_cta_mobile | escape }}</span>
+            </button>
+          {%- endform -%}
+        </product-form>
+      {%- endif -%}
+    </div>
+  </div>
+</article>
+{%- endif -%}

@@ -25,6 +25,7 @@
   {%- endif -%}
 {%- endunless -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-article-kariera-hero' %}
 <section
   id="EvamatsArticleKarieraHero-{{ section.id }}"
   class="evamats-article-kariera-hero"
@@ -347,24 +348,52 @@
       "default": "Wynagrodzenie"
     },
     {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 48
+      "default": 80
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 48
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "presets": [

@@ -515,7 +515,14 @@
       },
       {
         "name": "X5M",
-        "url": "\/collections\/dywaniki-samochodowe-eva-do-x5-m"
+        "url": "\/collections\/dywaniki-samochodowe-eva-do-x5-m",
+        "generations": [
+          {
+            "code": "E70",
+            "years": "2009-2013",
+            "image": "bmw_x5m_e70.webp"
+          }
+        ]
       },
       {
         "name": "X6M",
@@ -533,7 +540,8 @@
         "name": "Z4",
         "url": "\/collections\/bmw-z4"
       }
-    ]
+    ],
+    "logo": "bmw_logo.webp"
   },
   "Baic": {
     "models": [

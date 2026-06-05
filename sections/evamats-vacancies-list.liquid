@@ -35,11 +35,11 @@
   assign filter_all_label = section.settings.filter_all_label | default: 'Wszystko'
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-vacancies-list' %}
 <section
   id="EvamatsVacanciesList-{{ section.id }}"
   class="evamats-vacancies-list"
   data-evamats-vacancies-list
-  style="--evl-pt: {{ section.settings.padding_top }}px; --evl-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div id="vacancies-list" class="evamats-vacancies-list__inner page-width">
     {%- if section.settings.heading != blank -%}
@@ -355,11 +355,15 @@
       "default": 2
     },
     {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 48
@@ -369,10 +373,34 @@
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 120,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "blocks": [

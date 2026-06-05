@@ -17,19 +17,6 @@
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
 
-    {%- liquid
-      assign evamats_v2_template = template.name
-      if template.suffix != blank
-        assign evamats_v2_template = evamats_v2_template | append: '.' | append: template.suffix
-      endif
-      assign evamats_v2_page_templates = 'page.adv-v2,page.o-nas,page.partners,blog.vacancies,article.kariera' | split: ','
-      assign evamats_is_v2_page = false
-      if evamats_v2_page_templates contains evamats_v2_template
-        assign evamats_is_v2_page = true
-      endif
-    -%}
-
-    {%- if evamats_is_v2_page -%}
       <link
         rel="preload"
         href="{{ 'NTSomic-Regular.woff2' | asset_url }}"
@@ -42,7 +29,6 @@
         as="font"
         type="font/woff2"
         crossorigin>
-    {%- endif -%}
 
     {%- if settings.favicon != blank -%}
       <link
@@ -186,16 +172,14 @@
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}{{ body_font_bold | font_face: font_display: 'swap' }}{{ body_font_italic | font_face: font_display: 'swap' }}{{ body_font_bold_italic | font_face: font_display: 'swap' }}{{ settings.type_header_font | font_face: font_display: 'swap' }}:root {
-        --font-body-family: {{ settings.type_body_font.family }}, 
-        {{ settings.type_body_font.fallback_families }};
+        --font-body-family: "NTSomic", sans-serif;
         --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-weight: 400;
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: {{ settings.type_header_font.family }}, 
-        {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: "NTSomic", sans-serif;
         --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.type_header_font.weight }};
+        --font-heading-weight: 500;
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
@@ -398,6 +382,8 @@
       
     {% endstyle %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'component-button-v2.css' | asset_url | stylesheet_tag }}
+    {{ 'component-eva-slider-nav.css' | asset_url | stylesheet_tag }}
     {%- if evamats_is_v2_page -%}
       {{ 'base_v2.css' | asset_url | stylesheet_tag }}
       {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}

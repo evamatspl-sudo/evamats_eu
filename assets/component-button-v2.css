@@ -1,0 +1,65 @@
+/* EvaMats V2 CTA buttons — global (Figma cta-button / button_5) */
+
+.button-row-v2 {
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Outline CTA: white fill, red border — <a class="button button_5" href="..."> */
+.button.button_5 {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: auto;
+  min-height: 42px;
+  padding: 13px 61px !important;
+  margin: 0;
+  background: #fff !important;
+  color: var(--color-text-primary, #1b1d22) !important;
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--color-accent-red, #ff2741) !important;
+  border-radius: 16px !important;
+  cursor: pointer;
+  overflow: visible;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_5:hover {
+  background: #fff !important;
+  color: var(--color-text-primary, #1b1d22) !important;
+  border-color: var(--color-accent-red, #ff2741) !important;
+}
+
+.button.button_5:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_5:disabled,
+.button.button_5.disabled,
+.button.button_5[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 749px) {
+  .button.button_5 {
+    min-height: 40px;
+    padding: 13px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+  }
+}

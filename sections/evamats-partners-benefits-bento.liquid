@@ -1,4 +1,5 @@
-﻿<section
+﻿{% render 'evamats-section-padding-style', section: section, target: '.evamats-kariera-benefits' %}
+<section
   id="EvamatsKarieraBenefits-{{ section.id }}"
   class="evamats-kariera-benefits"
 >
@@ -297,11 +298,15 @@
       "label": "Heading"
     },
     {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding top",
       "min": 0,
-      "max": 160,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 80
@@ -311,10 +316,34 @@
       "id": "padding_bottom",
       "label": "Padding bottom",
       "min": 0,
-      "max": 160,
+      "max": 200,
       "step": 4,
       "unit": "px",
       "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "blocks": [

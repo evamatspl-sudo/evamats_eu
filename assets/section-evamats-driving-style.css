@@ -1,0 +1,277 @@
+/* Figma 1710:33293 desktop / 1710:32276 mobile — Driving style */
+
+.evamats-driving-style__inner {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.evamats-driving-style__layout {
+  display: grid;
+  grid-template-columns: 406px minmax(0, 559px) 406px;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 75px;
+}
+
+.evamats-driving-style__media {
+  position: relative;
+  height: 718px;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.evamats-driving-style__media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evamats-driving-style__media--left .evamats-driving-style__media-img {
+  width: 101.08%;
+  height: 101.08%;
+  max-width: none;
+  margin-left: -0.57%;
+  margin-top: -1.08%;
+}
+
+.evamats-driving-style__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 31px;
+  min-width: 0;
+  padding-top: 150px;
+}
+
+.evamats-driving-style__heading {
+  margin: 0;
+  max-width: 559px;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.evamats-driving-style__mobile-gallery {
+  display: none;
+}
+
+.evamats-driving-style__compare {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 221px) minmax(0, 221px);
+  column-gap: 65px;
+  align-items: start;
+  box-sizing: border-box;
+  width: 507px;
+  max-width: 100%;
+  margin-inline: auto;
+  flex-shrink: 0;
+}
+
+.evamats-driving-style__compare::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  width: 1px;
+  height: 188px;
+  background: #e9e9e9;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.evamats-driving-style__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.evamats-driving-style__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.evamats-driving-style__icon svg,
+.evamats-driving-style__icon-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.evamats-driving-style__icon-mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+
+.evamats-driving-style__option-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.evamats-driving-style__option-title--without {
+  color: var(--color-accent-red, #ff2741);
+}
+
+.evamats-driving-style__option-title--with {
+  color: #0061dc;
+}
+
+.evamats-driving-style__option-text {
+  margin: 0;
+  width: 100%;
+  max-width: 201px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.evamats-driving-style__cta-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.evamats-driving-style__cta {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 445px;
+  min-height: 60px;
+  padding: 22px 72px 22px 63px;
+  background: var(--color-accent-red, #ff2741);
+  border: 0;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.evamats-driving-style__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.evamats-driving-style__cta-arrow {
+  position: absolute;
+  right: 31px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-driving-style__layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+  }
+
+  .evamats-driving-style__media--desktop {
+    display: none;
+  }
+
+  .evamats-driving-style__content {
+    padding-top: 0;
+  }
+
+  .evamats-driving-style__mobile-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .evamats-driving-style__mobile-gallery .evamats-driving-style__media {
+    height: auto;
+    aspect-ratio: 440 / 779;
+    border-radius: 12px;
+  }
+
+  .evamats-driving-style__mobile-gallery .evamats-driving-style__media--left .evamats-driving-style__media-img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .evamats-driving-style__heading {
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-driving-style__compare {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 8px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .evamats-driving-style__compare::before {
+    display: none;
+  }
+
+  .evamats-driving-style__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .evamats-driving-style__icon-mark {
+    width: 16px;
+    height: 16px;
+  }
+
+  .evamats-driving-style__option-title {
+    font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-driving-style__option-text {
+    max-width: none;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-driving-style__cta {
+    max-width: 339px;
+    min-height: 50px;
+    padding: 22px 56px 22px 24px;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-driving-style__cta-arrow {
+    right: 24px;
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -3,6 +3,7 @@
   assign mat_form_wrapper_id = 'partners-consult-form-' | append: section.id
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-partners-consult-form-v2' %}
 <section
   id="PartnersConsultForm-{{ section.id }}"
   class="evamats-partners-consult-form-v2 has_anchor"
@@ -272,6 +273,54 @@
       "type": "url",
       "id": "alt_button_url",
       "label": "Alt button URL"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 88
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "presets": [
