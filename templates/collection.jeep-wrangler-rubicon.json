@@ -1,18 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": "shopify://collections/jeep"
       }
     },
     "8ba71b19-8037-4381-a22d-a21ffb8125bd": {
       "type": "mobile-button",
       "settings": {
         "btn_text": "All models",
-        "btn_url": "shopify:\/\/collections\/jeep"
+        "btn_url": "shopify://collections/jeep"
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -21,7 +34,7 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/jeep",
+            "product-link": "shopify://collections/jeep",
             "color-code": "All"
           }
         }
@@ -45,9 +58,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36

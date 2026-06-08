@@ -1,32 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "0087371f-379e-41a5-a0b0-18439126dd48": {
-      "type": "sidebar",
-      "blocks": {
-        "cb073d98-46db-4c97-98ed-f1ff95c703aa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/gmc-acadia",
-            "color-code": "Acadia"
-          }
-        }
-      },
-      "block_order": [
-        "cb073d98-46db-4c97-98ed-f1ff95c703aa"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -35,14 +27,14 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "b8d99ac0-973d-4485-9573-31aac785f82d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/gmc-acadia",
+            "product-link": "shopify://collections/gmc-acadia",
             "color-code": "Acadia"
           }
         }
@@ -51,11 +43,7 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04",
         "b8d99ac0-973d-4485-9573-31aac785f82d"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -67,9 +55,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -78,7 +63,6 @@
   },
   "order": [
     "banner",
-    "0087371f-379e-41a5-a0b0-18439126dd48",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

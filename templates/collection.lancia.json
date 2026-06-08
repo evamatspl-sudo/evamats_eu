@@ -1,88 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "94daf9ed-60af-418b-ade0-76a7a996d620": {
-      "type": "sidebar",
-      "blocks": {
-        "abe83dd3-e041-466b-8b0f-c903250d1320": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/lancia-delta",
-            "color-code": "Delta"
-          }
-        },
-        "section_QUEy9h": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-lybra",
-            "color-code": "Lybra"
-          }
-        },
-        "section_mY4Brc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-musa",
-            "color-code": "Musa"
-          }
-        },
-        "section_bPpybN": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-phedra",
-            "color-code": "Phedra"
-          }
-        },
-        "b15a09d7-8e2b-458a-bcef-95f851cee770": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-thema",
-            "color-code": "Thema"
-          }
-        },
-        "b3cd3f4d-9b7e-45df-aeb0-8170b0a17439": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-thesis",
-            "color-code": "Thesis"
-          }
-        },
-        "section_VcRLdy": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-voyager",
-            "color-code": "Voyager"
-          }
-        },
-        "f3347a09-f59d-4b2f-a702-5b1e1e4a04d4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-ypsilon",
-            "color-code": "Ypsilon"
-          }
-        }
-      },
-      "block_order": [
-        "abe83dd3-e041-466b-8b0f-c903250d1320",
-        "section_QUEy9h",
-        "section_mY4Brc",
-        "section_bPpybN",
-        "b15a09d7-8e2b-458a-bcef-95f851cee770",
-        "b3cd3f4d-9b7e-45df-aeb0-8170b0a17439",
-        "section_VcRLdy",
-        "f3347a09-f59d-4b2f-a702-5b1e1e4a04d4"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -91,63 +27,63 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "29e1a43b-123f-465e-a9dc-1338fa466fde": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/lancia-delta",
+            "product-link": "shopify://collections/lancia-delta",
             "color-code": "Delta"
           }
         },
         "section_RW8fYq": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-lybra",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-lybra",
             "color-code": "Lybra"
           }
         },
         "section_TFF68g": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-musa",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-musa",
             "color-code": "Musa"
           }
         },
         "section_XyXDQG": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-phedra",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-phedra",
             "color-code": "Phedra"
           }
         },
         "06dd4949-a194-4a8f-8176-92f806f4966d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-thema",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-thema",
             "color-code": "Thema"
           }
         },
         "8b77d34e-4eca-43be-a16b-37d54a94a27f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-thesis",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-thesis",
             "color-code": "Thesis"
           }
         },
         "section_dqD9bP": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-voyager",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-voyager",
             "color-code": "Voyager"
           }
         },
         "729d4d78-8847-45b4-ac60-aa27109a817b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lancia-ypsilon",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lancia-ypsilon",
             "color-code": "Ypsilon"
           }
         }
@@ -163,11 +99,7 @@
         "section_dqD9bP",
         "729d4d78-8847-45b4-ac60-aa27109a817b"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -179,9 +111,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -190,7 +119,6 @@
   },
   "order": [
     "banner",
-    "94daf9ed-60af-418b-ade0-76a7a996d620",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

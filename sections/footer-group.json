@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -24,12 +33,15 @@
             "heading": "Information",
             "menu": "footer"
           }
-        },
+        }, 
         "5105da44-6739-4d06-87ba-89d3f01ee03e": {
-          "type": "text",
+          "type": "contact",
           "settings": {
             "heading": "Contact us!",
-            "subtext": "<p>EVAMATS Sp. z o.o.<br\/><br\/>TIN: 5862378667<br\/><br\/><a href=\"mailto:info@evamats.store\" title=\"mailto:info@evamats.store\">info@evamats.store<\/a><\/p><p><a href=\"tel:+48 732 082 512\" title=\"tel:+48 732 082 512\">+48 732 082 512<br\/><\/a><br\/>st. Strzelca 42,<br\/>80-299 Gdańsk, Poland<br\/><\/p>"
+            "intro": "<p>EVAMATS Sp. z o.o.<br/><br/>TIN: 5862378667</p>",
+            "email": "info@evamats.store",
+            "phone": "+48 732 082 512",
+            "address": "st. Strzelca 42,\n80-299 Gdańsk, Poland"
           }
         }
       },
@@ -39,22 +51,39 @@
         "2e7efd78-a00e-44e8-a6c6-056b4923ad0f",
         "5105da44-6739-4d06-87ba-89d3f01ee03e"
       ],
-      "custom_css": [
-        "input,.field:after {border-radius: 10px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "background-1",
-        "newsletter_enable": false,
-        "newsletter_heading": "Zapisz się na nasze emaile",
-        "enable_follow_on_shop": false,
+        "newsletter_enable": true,
+        "newsletter_heading": "<p>Subscribe and get a <strong>discount</strong> on your first order</p>",
+        "newsletter_subtext": "",
+        "newsletter_placeholder": "Your email address",
+        "newsletter_button": "Sign up",
         "show_social": true,
+        "facebook_url": "",
+        "facebook_label": "",
+        "instagram_url": "",
+        "tiktok_url": "",
+        "youtube_url": "",
+        "threads_url": "",
+        "nip_number": "",
+        "regon_number": "",
+        "partners_heading": "",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
+        "payments_label": "WE ACCEPT PAYMENTS",
+        "delivery_label": "DELIVERY",
+        "delivery_link_1": "",
+        "delivery_link_2": "",
+        "delivery_link_3": "",
+        "delivery_link_4": "",
         "show_policy": false,
         "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 36,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
       }
     }
   },

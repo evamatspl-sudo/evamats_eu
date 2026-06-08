@@ -1,48 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "sidebar_PkHGyc": {
-      "type": "sidebar",
-      "blocks": {
-        "section_nkrb88": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rover-75",
-            "color-code": "75"
-          }
-        },
-        "section_CPaGBT": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/rover-200",
-            "color-code": "200"
-          }
-        },
-        "section_P6Erii": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rover-600",
-            "color-code": "600"
-          }
-        }
-      },
-      "block_order": [
-        "section_nkrb88",
-        "section_CPaGBT",
-        "section_P6Erii"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -51,28 +27,28 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "section_pDFyB9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rover-75",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rover-75",
             "color-code": "75"
           }
         },
         "5c729810-6d25-4f1b-9f12-a2b678b089fb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/rover-200",
+            "product-link": "shopify://collections/rover-200",
             "color-code": "200"
           }
         },
         "section_PKmi3y": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rover-600",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rover-600",
             "color-code": "600"
           }
         }
@@ -83,11 +59,7 @@
         "5c729810-6d25-4f1b-9f12-a2b678b089fb",
         "section_PKmi3y"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -99,9 +71,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -110,7 +79,6 @@
   },
   "order": [
     "banner",
-    "sidebar_PkHGyc",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

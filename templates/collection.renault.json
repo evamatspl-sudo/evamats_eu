@@ -1,248 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "0b1532fb-1f3d-409f-afd5-fb4761435a5f": {
-      "type": "sidebar",
-      "blocks": {
-        "25aa1896-ad11-4848-b44b-4c39cfab8cc1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-arkana",
-            "color-code": "Arkana"
-          }
-        },
-        "e02da9cd-b36b-4946-8174-b403bd95be9f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-austral",
-            "color-code": "Austral"
-          }
-        },
-        "72bf4749-200e-45ca-9a33-6252d8af4488": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-captur",
-            "color-code": "Captur"
-          }
-        },
-        "e7b12cf3-436a-4184-a1ef-708260fd356b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-clio",
-            "color-code": "Clio"
-          }
-        },
-        "section_mMJ6jd": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-duster",
-            "color-code": "Duster"
-          }
-        },
-        "section_ra7daM": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-dokker",
-            "color-code": "Dokker"
-          }
-        },
-        "8ac8b6ae-763c-4711-9b4d-dca80bb264ae": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-espace",
-            "color-code": "Espace"
-          }
-        },
-        "ae485982-f444-4758-841f-bbf4179289c9": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-grand-espace",
-            "color-code": "Grand Espace"
-          }
-        },
-        "93e7d693-26eb-49f7-a66e-28542c9375d5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-fluence",
-            "color-code": "Fluence"
-          }
-        },
-        "66811486-c1a7-467e-87d1-8f2a845def7d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-kadjar",
-            "color-code": "Kadjar"
-          }
-        },
-        "96e68360-ca09-4f3a-8eb4-510aaccc8b98": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-kangoo",
-            "color-code": "Kangoo"
-          }
-        },
-        "ce267f04-208c-48fd-8795-3691a0c177d3": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-koleos",
-            "color-code": "Koleos"
-          }
-        },
-        "c511312a-408c-4220-893a-3cfb0977579e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-laguna",
-            "color-code": "Laguna"
-          }
-        },
-        "5a4fa395-ef5b-4716-a37d-945aaac4cd0e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-latitude",
-            "color-code": "Latitude"
-          }
-        },
-        "4e863d73-d2fb-4e62-bc3b-f4d60134529d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-master",
-            "color-code": "Master"
-          }
-        },
-        "76d36d14-5996-4a84-94ef-ab60b637484e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-megane",
-            "color-code": "Megane"
-          }
-        },
-        "42a64015-c122-4d08-8d19-b034db92eb11": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-megane-e-tech",
-            "color-code": "Megane E-Tech"
-          }
-        },
-        "ddf0c41c-dd76-4b6f-9730-2fe51d114ec1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-modus",
-            "color-code": "Modus"
-          }
-        },
-        "5b8f45b1-c3c8-42cf-b09e-5bed004b1ff4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-scenic",
-            "color-code": "Scenic"
-          }
-        },
-        "62fd366e-2e98-4fe6-bb28-0c2811b1e9b8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-grand-scenic",
-            "color-code": "Grand Scenic"
-          }
-        },
-        "98ae7268-d226-40f0-88c7-dc6ee0957760": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-talisman",
-            "color-code": "Talisman"
-          }
-        },
-        "3d069dbc-149d-49e5-b04a-c6eb6663b0a1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-thalia",
-            "color-code": "Thalia"
-          }
-        },
-        "13ce44ac-b59b-4ff3-88d6-91bdf6d53a59": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-trafic",
-            "color-code": "Trafic"
-          }
-        },
-        "60f95348-4610-4059-ae61-656b621d4fab": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-twingo",
-            "color-code": "Twingo"
-          }
-        },
-        "section_UQTT3y": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/car-mats-eva-for-renauilt-premium",
-            "color-code": "Premium"
-          }
-        },
-        "section_zYbYDk": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-renault-rafale",
-            "color-code": "Rafale"
-          }
-        },
-        "2eaf7aa3-1a82-4db9-92ba-67498516d49d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-vel-satis",
-            "color-code": "Vel Satis"
-          }
-        },
-        "8dac6fff-536f-4237-a396-144d5e7b2711": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/renault-zoe",
-            "color-code": "Zoe"
-          }
-        }
-      },
-      "block_order": [
-        "25aa1896-ad11-4848-b44b-4c39cfab8cc1",
-        "e02da9cd-b36b-4946-8174-b403bd95be9f",
-        "72bf4749-200e-45ca-9a33-6252d8af4488",
-        "e7b12cf3-436a-4184-a1ef-708260fd356b",
-        "section_mMJ6jd",
-        "section_ra7daM",
-        "8ac8b6ae-763c-4711-9b4d-dca80bb264ae",
-        "ae485982-f444-4758-841f-bbf4179289c9",
-        "93e7d693-26eb-49f7-a66e-28542c9375d5",
-        "66811486-c1a7-467e-87d1-8f2a845def7d",
-        "96e68360-ca09-4f3a-8eb4-510aaccc8b98",
-        "ce267f04-208c-48fd-8795-3691a0c177d3",
-        "c511312a-408c-4220-893a-3cfb0977579e",
-        "5a4fa395-ef5b-4716-a37d-945aaac4cd0e",
-        "4e863d73-d2fb-4e62-bc3b-f4d60134529d",
-        "76d36d14-5996-4a84-94ef-ab60b637484e",
-        "42a64015-c122-4d08-8d19-b034db92eb11",
-        "ddf0c41c-dd76-4b6f-9730-2fe51d114ec1",
-        "5b8f45b1-c3c8-42cf-b09e-5bed004b1ff4",
-        "62fd366e-2e98-4fe6-bb28-0c2811b1e9b8",
-        "98ae7268-d226-40f0-88c7-dc6ee0957760",
-        "3d069dbc-149d-49e5-b04a-c6eb6663b0a1",
-        "13ce44ac-b59b-4ff3-88d6-91bdf6d53a59",
-        "60f95348-4610-4059-ae61-656b621d4fab",
-        "section_UQTT3y",
-        "section_zYbYDk",
-        "2eaf7aa3-1a82-4db9-92ba-67498516d49d",
-        "8dac6fff-536f-4237-a396-144d5e7b2711"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -251,203 +27,203 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "6c1d82db-5f9f-427e-b4de-8db3892e50de": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-arkana",
+            "product-link": "shopify://collections/renault-arkana",
             "color-code": "Arkana"
           }
         },
         "a32e4055-0020-4e8c-a8be-de2bd8d12a9a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-austral",
+            "product-link": "shopify://collections/renaul-austral",
             "color-code": "Austral"
           }
         },
         "09f6d144-5e93-4085-bd15-d7427e930292": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-captur",
+            "product-link": "shopify://collections/renaul-captur",
             "color-code": "Captur"
           }
         },
         "023a2ad0-ec27-4a0e-8269-4c56f57e3dda": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-clio",
+            "product-link": "shopify://collections/renaul-clio",
             "color-code": "Clio"
           }
         },
         "section_pJ7VEc": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-duster",
+            "product-link": "shopify://collections/renault-duster",
             "color-code": "Duster"
           }
         },
         "section_FjKHae": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-dokker",
+            "product-link": "shopify://collections/renault-dokker",
             "color-code": "Dokker"
           }
         },
         "5de3045a-fdf8-41ce-9b00-b2c2e4dcba3d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-espace",
+            "product-link": "shopify://collections/renaul-espace",
             "color-code": "Espace"
           }
         },
         "0fe305c5-aba1-42ef-af42-e70433ebf91e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-grand-espace",
+            "product-link": "shopify://collections/renaul-grand-espace",
             "color-code": "Grand Espace"
           }
         },
         "6121d111-e767-4465-83b9-d0ed7f9f41c8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-fluence",
+            "product-link": "shopify://collections/renaul-fluence",
             "color-code": "Fluence"
           }
         },
         "c48b6696-ffb8-4bd2-87cf-5454b8417054": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-kadjar",
+            "product-link": "shopify://collections/renaul-kadjar",
             "color-code": "Kadjar"
           }
         },
         "73142f1b-b59e-4eda-84e7-30f0779c440b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-kangoo",
+            "product-link": "shopify://collections/renaul-kangoo",
             "color-code": "Kangoo"
           }
         },
         "f1612456-51e5-4672-ac59-ce27ec00a847": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-koleos",
+            "product-link": "shopify://collections/renaul-koleos",
             "color-code": "Koleos"
           }
         },
         "c27026c2-f84e-4894-89ea-710c39494d62": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-laguna",
+            "product-link": "shopify://collections/renaul-laguna",
             "color-code": "Laguna"
           }
         },
         "ad51043e-cf94-4e62-9138-6ac603b757d4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-latitude",
+            "product-link": "shopify://collections/renault-latitude",
             "color-code": "Latitude"
           }
         },
         "831cb431-8e34-49f4-b95f-9c484e62603b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-master",
+            "product-link": "shopify://collections/renault-master",
             "color-code": "Master"
           }
         },
         "e9a13c5e-2f7f-4799-90b3-a4fc22c0803b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-megane",
+            "product-link": "shopify://collections/renault-megane",
             "color-code": "Megane"
           }
         },
         "531f19a9-da5f-4cb2-9b1a-fae1a51afa5f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-megane-e-tech",
+            "product-link": "shopify://collections/renault-megane-e-tech",
             "color-code": "Megane E-Tech"
           }
         },
         "42d72f3f-4473-4bca-9e07-60819809d33c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-modus",
+            "product-link": "shopify://collections/renault-modus",
             "color-code": "Modus"
           }
         },
         "5a33e7e4-5d75-4ad5-a80f-0d5a0891b4a1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-scenic",
+            "product-link": "shopify://collections/renault-scenic",
             "color-code": "Scenic"
           }
         },
         "d8b1f8bc-8368-4e73-b2d1-8fd1cbda350e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renaul-grand-scenic",
+            "product-link": "shopify://collections/renaul-grand-scenic",
             "color-code": "Grand Scenic"
           }
         },
         "2277bb0c-574c-4b86-a6d2-02cba38d42e6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-talisman",
+            "product-link": "shopify://collections/renault-talisman",
             "color-code": "Talisman"
           }
         },
         "a83822c3-f79d-41c3-9888-08a38826addd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-thalia",
+            "product-link": "shopify://collections/renault-thalia",
             "color-code": "Thalia"
           }
         },
         "c55d794c-4861-407f-88d3-f74baebc25fe": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-trafic",
+            "product-link": "shopify://collections/renault-trafic",
             "color-code": "Trafic"
           }
         },
         "1223b25f-c009-4195-a365-716f616a1194": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-twingo",
+            "product-link": "shopify://collections/renault-twingo",
             "color-code": "Twingo"
           }
         },
         "section_LcWfVx": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/car-mats-eva-for-renauilt-premium",
+            "product-link": "shopify://collections/car-mats-eva-for-renauilt-premium",
             "color-code": "Premium"
           }
         },
         "section_7nyrXn": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-renault-rafale",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-renault-rafale",
             "color-code": "Rafale"
           }
         },
         "fb1c5f61-7ff0-43a4-9a14-8f854132ac35": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-vel-satis",
+            "product-link": "shopify://collections/renault-vel-satis",
             "color-code": "Vel Satis"
           }
         },
         "40b91af7-2b45-452d-b083-6114403b5d25": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/renault-zoe",
+            "product-link": "shopify://collections/renault-zoe",
             "color-code": "Zoe"
           }
         }
@@ -483,11 +259,7 @@
         "fb1c5f61-7ff0-43a4-9a14-8f854132ac35",
         "40b91af7-2b45-452d-b083-6114403b5d25"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -499,9 +271,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -510,7 +279,6 @@
   },
   "order": [
     "banner",
-    "0b1532fb-1f3d-409f-afd5-fb4761435a5f",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

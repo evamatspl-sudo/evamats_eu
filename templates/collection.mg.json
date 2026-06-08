@@ -1,56 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb": {
-      "type": "sidebar",
-      "blocks": {
-        "section_WmjapY": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-4",
-            "color-code": "4"
-          }
-        },
-        "section_PYkfTA": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-f",
-            "color-code": "MG F"
-          }
-        },
-        "section_hQk3xz": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-hs",
-            "color-code": "MG HS"
-          }
-        },
-        "section_gW97db": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-zs",
-            "color-code": "MG ZS"
-          }
-        }
-      },
-      "block_order": [
-        "section_WmjapY",
-        "section_PYkfTA",
-        "section_hQk3xz",
-        "section_gW97db"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -59,35 +27,35 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "section_z9AXAq": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-4",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mg-4",
             "color-code": "4"
           }
         },
         "section_HzNgrL": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-f",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mg-f",
             "color-code": "MG F"
           }
         },
         "section_nkFRK8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-hs",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mg-hs",
             "color-code": "MG HS"
           }
         },
         "section_4pDgm6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mg-zs",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mg-zs",
             "color-code": "MG ZS"
           }
         }
@@ -99,11 +67,7 @@
         "section_nkFRK8",
         "section_4pDgm6"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -115,9 +79,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -126,7 +87,6 @@
   },
   "order": [
     "banner",
-    "5f6c8b90-9b0f-4f93-8510-691ea0346ecb",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

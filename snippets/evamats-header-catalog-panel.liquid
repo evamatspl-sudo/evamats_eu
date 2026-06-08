@@ -1,0 +1,83 @@
+{%- comment -%}
+  Desktop Katalog dropdown — Figma 1799:13047 (L1) + 1799:13077 (L2 flyout).
+  @param catalog_menu {linklist}
+  @param section {section}
+{%- endcomment -%}
+
+<div class="evamats-header__catalog-l1-wrap">
+  <ul class="evamats-header__catalog-l1" role="list">
+    {%- for link in catalog_menu.links -%}
+      {%- capture menu_item_handle -%}{%- render 'evamats-menu-link-handle', link: link -%}{%- endcapture -%}
+      <li
+        class="evamats-header__catalog-l1-item evamats-header__catalog-l1-item--{{ forloop.index }}{% if link.links != blank %} evamats-header__catalog-l1-item--has-flyout{% endif %}"
+        {% if link.links != blank %}data-catalog-flyout="{{ forloop.index }}"{% endif %}
+      >
+        {%- if link.links != blank -%}
+          <span class="evamats-header__catalog-l1-row" role="button" tabindex="0">
+            <span class="evamats-header__catalog-l1-icon">
+              {% render 'evamats-header-catalog-l1-icon', section: section, menu_item_handle: menu_item_handle %}
+            </span>
+            <span class="evamats-header__catalog-l1-label">{{ link.title | escape }}</span>
+            <span class="evamats-header__catalog-l1-chevron" aria-hidden="true">
+              {{- 'evamats-header-catalog-l1-chevron.svg' | inline_asset_content -}}
+            </span>
+          </span>
+        {%- else -%}
+          <a href="{{ link.url }}" class="evamats-header__catalog-l1-row evamats-header__catalog-l1-row--link">
+            <span class="evamats-header__catalog-l1-icon">
+              {% render 'evamats-header-catalog-l1-icon', section: section, menu_item_handle: menu_item_handle %}
+            </span>
+            <span class="evamats-header__catalog-l1-label">{{ link.title | escape }}</span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+{%- for link in catalog_menu.links -%}
+  {%- if link.links != blank -%}
+    <div
+      class="evamats-header__catalog-l2-slot evamats-header__catalog-l2-slot--{{ forloop.index }}"
+      data-catalog-flyout="{{ forloop.index }}"
+    >
+      <div class="evamats-header__catalog-l2-flyout">
+        <ul class="evamats-header__catalog-l2" role="list">
+          {%- for childlink in link.links -%}
+            {%- capture menu_item_handle -%}{%- render 'evamats-menu-link-handle', link: childlink -%}{%- endcapture -%}
+            <li class="evamats-header__catalog-l2-item{% if childlink.links != blank %} evamats-header__catalog-l2-item--has-flyout{% endif %}">
+              {%- if childlink.links != blank -%}
+                <span class="evamats-header__catalog-l2-row" role="button" tabindex="0">
+                  <span class="evamats-header__catalog-l2-media">
+                    {% render 'evamats-header-catalog-l2-icon', section: section, menu_item_handle: menu_item_handle %}
+                  </span>
+                  <span class="evamats-header__catalog-l2-label">{{ childlink.title | escape }}</span>
+                  {% render 'evamats-header-catalog-l2-arrow' %}
+                </span>
+                <div class="evamats-header__catalog-l3-slot">
+                  <div class="evamats-header__catalog-l3-flyout">
+                    <ul class="evamats-header__catalog-l3" role="list">
+                      {%- for grandchildlink in childlink.links -%}
+                        <li>
+                          <a href="{{ grandchildlink.url }}" class="evamats-header__catalog-l3-link">{{ grandchildlink.title | escape }}</a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </div>
+              {%- else -%}
+                <a href="{{ childlink.url }}" class="evamats-header__catalog-l2-row evamats-header__catalog-l2-row--link">
+                  <span class="evamats-header__catalog-l2-media">
+                    {% render 'evamats-header-catalog-l2-icon', section: section, menu_item_handle: menu_item_handle %}
+                  </span>
+                  <span class="evamats-header__catalog-l2-label">{{ childlink.title | escape }}</span>
+                  {% render 'evamats-header-catalog-l2-arrow' %}
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endfor -%}

@@ -7,6 +7,8 @@
   if image_mobile == blank
     assign image_mobile = image_desktop
   endif
+
+  assign logo_inverse = settings.logo_inverse
 -%}
 
 <section id="EvamatsRareFitCta-{{ section.id }}" class="evamats-rare-fit-cta">
@@ -27,7 +29,7 @@
                 class: 'evamats-rare-fit-cta__media-img',
                 loading: 'lazy',
                 widths: '375, 750, 1100, 1500, 1520, 2000, 3040',
-                sizes: '(min-width: 750px) 1520px, 100vw',
+                sizes: '(min-width: 990px) 1520px, (min-width: 750px) 100vw, 100vw',
                 alt: ''
             }}
           </picture>
@@ -37,17 +39,17 @@
       {%- endif -%}
 
       <div class="evamats-rare-fit-cta__panel">
-        {%- if settings.logo != blank -%}
+        {%- if logo_inverse != blank -%}
           <div class="evamats-rare-fit-cta__logo">
             {{
-              settings.logo
+              logo_inverse
               | image_url: width: 284
               | image_tag:
                 loading: 'lazy',
                 class: 'evamats-rare-fit-cta__logo-img',
                 widths: '109, 142, 284',
                 sizes: '(min-width: 750px) 142px, 109px',
-                alt: settings.logo.alt | default: shop.name
+                alt: logo_inverse.alt | default: shop.name
             }}
           </div>
         {%- endif -%}
@@ -62,7 +64,7 @@
 
         {%- if section.settings.button_label != blank -%}
           <a
-            class="evamats-rare-fit-cta__cta"
+            class="button button_3 evamats-rare-fit-cta__cta"
             href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
           >
             {{ section.settings.button_label | escape }}
@@ -97,10 +99,6 @@
     {
       "type": "header",
       "content": "Content"
-    },
-    {
-      "type": "paragraph",
-      "content": "Logo is taken from Theme settings → Logo."
     },
     {
       "type": "text",

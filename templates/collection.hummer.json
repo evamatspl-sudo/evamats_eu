@@ -1,40 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "ada9100d-032c-4a2a-bc80-14e741ee0b4c": {
-      "type": "sidebar",
-      "blocks": {
-        "44b95f90-6e11-4641-ba78-371d4401f56d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/hummer-h2",
-            "color-code": "H2"
-          }
-        },
-        "aeba5f65-734f-40b6-8d38-c1c4e2a9ec9d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hummer-h3",
-            "color-code": "H3"
-          }
-        }
-      },
-      "block_order": [
-        "44b95f90-6e11-4641-ba78-371d4401f56d",
-        "aeba5f65-734f-40b6-8d38-c1c4e2a9ec9d"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -43,21 +27,21 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "958456ae-8426-450b-8213-b06ae12f1e33": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/hummer-h2",
+            "product-link": "shopify://collections/hummer-h2",
             "color-code": "H2"
           }
         },
         "f9f18b28-52a1-4fbf-9b3f-bc77313f7a70": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-hummer-h3",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-hummer-h3",
             "color-code": "H3"
           }
         }
@@ -67,11 +51,7 @@
         "958456ae-8426-450b-8213-b06ae12f1e33",
         "f9f18b28-52a1-4fbf-9b3f-bc77313f7a70"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -83,9 +63,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -94,7 +71,6 @@
   },
   "order": [
     "banner",
-    "ada9100d-032c-4a2a-bc80-14e741ee0b4c",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

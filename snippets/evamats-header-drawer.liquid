@@ -1,0 +1,206 @@
+{%- liquid
+  assign catalog_menu = section.settings.catalog_menu
+  assign nav_menu = section.settings.mobile_menu
+  if nav_menu == blank
+    assign nav_menu = section.settings.menu
+  endif
+  assign view_all_label = section.settings.catalog_view_all_label
+-%}
+
+<div
+  id="EvamatsHeaderDrawer-{{ section.id }}"
+  class="evamats-header-drawer"
+  aria-hidden="true"
+  data-evamats-header-drawer
+>
+  <div class="evamats-header-drawer__overlay" data-evamats-drawer-close tabindex="-1"></div>
+
+  <div class="evamats-header-drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'sections.header.menu' | t }}">
+    {%- if section.settings.drawer_background_image != blank -%}
+      <div class="evamats-header-drawer__bg" aria-hidden="true">
+        {{
+          section.settings.drawer_background_image
+          | image_url: width: 750
+          | image_tag: class: 'evamats-header-drawer__bg-img', loading: 'lazy', alt: ''
+        }}
+      </div>
+    {%- endif -%}
+
+    <div class="evamats-header-drawer__views">
+      <div class="evamats-header-drawer__view evamats-header-drawer__view--main" data-drawer-view="main">
+        <div class="evamats-header-drawer__top">
+          <a href="{{ routes.root_url }}" class="evamats-header-drawer__logo-link">
+            {%- if settings.logo != blank -%}
+              {{
+                settings.logo
+                | image_url: width: 200
+                | image_tag: class: 'evamats-header-drawer__logo', widths: '100, 200', sizes: '100px', alt: settings.logo.alt | default: shop.name
+              }}
+            {%- else -%}
+              <span class="evamats-header__logo-text">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+          <button type="button" class="evamats-header-drawer__close" aria-label="{{ 'accessibility.close' | t }}" data-evamats-drawer-close>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="evamats-header-drawer__scroll">
+          {%- if catalog_menu != blank and catalog_menu.links.size > 0 -%}
+            <div class="evamats-header-drawer__catalog">
+              {%- for link in catalog_menu.links -%}
+                {%- capture menu_item_handle -%}{%- render 'evamats-menu-link-handle', link: link -%}{%- endcapture -%}
+                {%- if link.links != blank -%}
+                  <button
+                    type="button"
+                    class="evamats-header-drawer__catalog-item evamats-header-drawer__catalog-item--trigger"
+                    data-drawer-open-sub="catalog-l1-{{ forloop.index }}"
+                  >
+                    {% render 'evamats-header-catalog-l1-icon', section: section, menu_item_handle: menu_item_handle %}
+                    <span class="evamats-header-drawer__catalog-label">{{ link.title | escape }}</span>
+                    <svg class="evamats-header-drawer__catalog-chevron evamats-header-drawer__catalog-chevron--right" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                {%- else -%}
+                  <a href="{{ link.url }}" class="evamats-header-drawer__catalog-item">
+                    {% render 'evamats-header-catalog-l1-icon', section: section, menu_item_handle: menu_item_handle %}
+                    <span class="evamats-header-drawer__catalog-label">{{ link.title | escape }}</span>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          <hr class="evamats-header-drawer__divider" aria-hidden="true">
+          {%- if nav_menu != blank and nav_menu.links.size > 0 -%}
+            <nav class="evamats-header-drawer__nav" aria-label="Navigation">
+              {%- for link in nav_menu.links -%}
+                {%- if link.links != blank -%}
+                  <div class="evamats-header-drawer__nav-group">
+                    <p class="evamats-header-drawer__nav-group-title">{{ link.title | escape }}</p>
+                    <ul class="evamats-header-drawer__nav-sub" role="list">
+                      {%- for childlink in link.links -%}
+                        <li>
+                          <a href="{{ childlink.url }}" class="evamats-header-drawer__nav-link">{{ childlink.title | escape }}</a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- else -%}
+                  <a href="{{ link.url }}" class="evamats-header-drawer__nav-link evamats-header-drawer__nav-link--top">{{ link.title | escape }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+            </nav>
+          {%- endif -%}
+
+         
+        </div>
+
+        {% render 'evamats-header-drawer-footer', section: section %}
+      </div>
+
+      {%- if catalog_menu != blank -%}
+        {%- for link in catalog_menu.links -%}
+          {%- if link.links != blank -%}
+            <div
+              class="evamats-header-drawer__view evamats-header-drawer__view--sub"
+              data-drawer-view="catalog-l1-{{ forloop.index }}"
+              hidden
+            >
+              <div class="evamats-header-drawer__sub-top">
+                <button type="button" class="evamats-header-drawer__sub-back" data-drawer-back aria-label="{{ 'accessibility.back' | t }}">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <p class="evamats-header-drawer__sub-title">{{ link.title | escape }}</p>
+                <button type="button" class="evamats-header-drawer__close" aria-label="{{ 'accessibility.close' | t }}" data-evamats-drawer-close>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="evamats-header-drawer__sub-scroll">
+                <ul class="evamats-header-drawer__sub-grid" role="list">
+                  {%- for childlink in link.links -%}
+                    {%- capture menu_item_handle -%}{%- render 'evamats-menu-link-handle', link: childlink -%}{%- endcapture -%}
+                    <li class="evamats-header-drawer__sub-grid-item">
+                      {%- if childlink.links != blank -%}
+                        <button
+                          type="button"
+                          class="evamats-header-drawer__sub-card"
+                          data-drawer-open-sub="catalog-l2-{{ forloop.parentloop.index }}-{{ forloop.index }}"
+                        >
+                          <span class="evamats-header-drawer__sub-card-media">
+                            {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
+                          </span>
+                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                        </button>
+                      {%- else -%}
+                        <a href="{{ childlink.url }}" class="evamats-header-drawer__sub-card">
+                          <span class="evamats-header-drawer__sub-card-media">
+                            {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
+                          </span>
+                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                        </a>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+
+              {%- if link.url != blank and view_all_label != blank -%}
+                <div class="evamats-header-drawer__sub-footer">
+                  <a href="{{ link.url }}" class="evamats-header-drawer__sub-cta">{{ view_all_label | escape }}</a>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- for childlink in link.links -%}
+              {%- if childlink.links != blank -%}
+                <div
+                  class="evamats-header-drawer__view evamats-header-drawer__view--sub"
+                  data-drawer-view="catalog-l2-{{ forloop.parentloop.index }}-{{ forloop.index }}"
+                  hidden
+                >
+                  <div class="evamats-header-drawer__sub-top">
+                    <button type="button" class="evamats-header-drawer__sub-back" data-drawer-back aria-label="{{ 'accessibility.back' | t }}">
+                      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <p class="evamats-header-drawer__sub-title">{{ childlink.title | escape }}</p>
+                    <button type="button" class="evamats-header-drawer__close" aria-label="{{ 'accessibility.close' | t }}" data-evamats-drawer-close>
+                      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="evamats-header-drawer__sub-scroll">
+                    <ul class="evamats-header-drawer__sub-list" role="list">
+                      {%- for grandchildlink in childlink.links -%}
+                        <li>
+                          <a href="{{ grandchildlink.url }}" class="evamats-header-drawer__sub-list-link">{{ grandchildlink.title | escape }}</a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+
+                  {%- if childlink.url != blank and view_all_label != blank -%}
+                    <div class="evamats-header-drawer__sub-footer">
+                      <a href="{{ childlink.url }}" class="evamats-header-drawer__sub-cta">{{ view_all_label | escape }}</a>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

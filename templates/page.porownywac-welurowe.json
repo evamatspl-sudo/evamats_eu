@@ -558,28 +558,9 @@
       "disabled": true,
       "settings": {
         "title": "Zobacz inne realizacje",
-        "heading_size": "h0",
-        "custom_header_style": true,
-        "button_text": "Zobacz więcej",
-        "button_link": "https://evamats.pl/pages/dywaniki-samochodowe-eva",
-        "description": "",
-        "show_description": false,
-        "description_style": "subtitle",
         "collection": "bestsellerss",
-        "products_to_show": 14,
-        "columns_desktop": 4,
-        "full_width": false,
+        "products_to_show": 12,
         "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 52,
         "padding_bottom": 20
       }
@@ -622,63 +603,63 @@
         "text_DzQCYQ": {
           "type": "text",
           "settings": {
-            "hd": "ARE YOU SURE THE FLOOR MATS WILL FIT?",
+            "hd": "<p>ARE YOU SURE THE FLOOR MATS WILL FIT?</p>",
             "des": "<p>Of course. We make mats individually for each car model, taking into account the make, model, generation, year, gearbox type, and equipment data. Mats undergo manual processing, which means they are hand-cut, sewn, and manually profiled. Our designs are based solely on physically taken measurements from physical cars, so there is no question of any imperfections. The mats cover the entire floor, taking into account fine details and covering areas that rubber or velour mats can only dream of.</p>"
           }
         },
         "text_mX9qEM": {
           "type": "text",
           "settings": {
-            "hd": "WHAT DO YOU CLEAN IT WITH?",
+            "hd": "<p>WHAT DO YOU CLEAN IT WITH?</p>",
             "des": "<p>Thanks to its technology, the dirt that accumulates on the mat does not absorb and does not want to stick to it, so you just need to shake the mats and everything smoothly comes off them, or in case of heavy mud contamination, you can confidently wash the mats with a pressure washer and be on your way.</p>"
           }
         },
         "text_VPPPMN": {
           "type": "text",
           "settings": {
-            "hd": "FLOOR MAT OVER THE TUNNEL? WHAT IS IT?",
+            "hd": "<p>FLOOR MAT OVER THE TUNNEL? WHAT IS IT?</p>",
             "des": "<p>Evamats mats cover up to 98% of the floor, so we take care of every detail, so the rear tunnel is also covered, ensuring that the floor is always clean.</p>"
           }
         },
         "text_XjTUky": {
           "type": "text",
           "settings": {
-            "hd": "HOW LONG WILL THEY LAST?",
+            "hd": "<p>HOW LONG WILL THEY LAST?</p>",
             "des": "<p>EVA material is known for its durability and resistance to wear and tear. It is also used in gyms (as mats under machines) and in shoes (soles). Compared to alternatives, EVA mats handle wear exceptionally well, allowing them to be used for 5-7 years without any signs of wear.</p>"
           }
         },
         "text_e6APUk": {
           "type": "text",
           "settings": {
-            "hd": "CLASSICAL AND 3D, WHAT'S THE DIFFERENCE?",
+            "hd": "<p>CLASSICAL AND 3D, WHAT'S THE DIFFERENCE?</p>",
             "des": "<p>In both sets, we strive to cover the floor in the car as much as possible. Only in the 3D set do we also cover the side upholstery near the floor, and there are more 3D elements (floor profiles) that we consider and use in the production of such mats, making them fit perfectly.</p>"
           }
         },
         "text_exrU7q": {
           "type": "text",
           "settings": {
-            "hd": "WHAT IS EVA MATERIAL?",
+            "hd": "<p>WHAT IS EVA MATERIAL?</p>",
             "des": "<p>It is a foam with a thickness of 10mm and cell depth of 7mm, which allows it to easily retain dirt and water in one place without the possibility of them getting under the mat until we shake it off.</p>"
           }
         },
         "text_TqKDiD": {
           "type": "text",
           "settings": {
-            "hd": "ARE EVA MATS FOR SUMMER OR WINTER?",
+            "hd": "<p>ARE EVA MATS FOR SUMMER OR WINTER?</p>",
             "des": "<p>EVA mats are all-season. Practical to use both in winter (they are waterproof, easy to clean, and cover up to 98% of the floor) and in summer (they are odorless, pleasant to the touch, and resistant to deformation under temperature influence).</p>"
           }
         },
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
-            "hd": "WHAT IS THE LEAD TIME?",
+            "hd": "<p>WHAT IS THE LEAD TIME?</p>",
             "des": "<p>From the moment the order is placed, it takes approximately 2 weeks, as the mats are made to order for the customer. In the case of a very unique vehicle (such as a boat, helicopter, excavator, or tractor), the lead time may extend to 4-6 weeks.</p>"
           }
         },
         "text_dUePyr": {
           "type": "text",
           "settings": {
-            "hd": "WHAT IS THE DELIVERY METHOD?",
+            "hd": "<p>WHAT IS THE DELIVERY METHOD?</p>",
             "des": "<p>We send the mats directly to the customer's specified address via courier. Due to the dimensions of the product, we do not ship mats to parcel lockers. We aim to ensure that the mats are delivered in the same condition as they were made and to avoid folding or bending them, which could affect their fit.</p>"
           }
         }

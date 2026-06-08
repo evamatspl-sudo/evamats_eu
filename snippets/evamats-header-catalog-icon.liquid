@@ -1,0 +1,29 @@
+{%- comment -%}
+  Catalog menu level 2 icon from header section blocks.
+  @param section {section}
+  @param menu_item_handle {string}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu_item_handle = menu_item_handle | downcase | strip
+  assign drawer_icon = blank
+-%}
+
+{%- for block in section.blocks -%}
+  {%- if block.type == 'catalog_drawer_icon' and block.settings.icon != blank -%}
+    {%- assign block_handle = block.settings.menu_item_handle | downcase | strip -%}
+    {%- if block_handle != blank and block_handle == menu_item_handle -%}
+      {%- assign drawer_icon = block.settings.icon -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if drawer_icon != blank -%}
+  {{
+    drawer_icon
+    | image_url: width: 52
+    | image_tag: class: 'evamats-header-drawer__catalog-icon', loading: 'lazy', alt: ''
+  }}
+{%- else -%}
+  <span class="evamats-header-drawer__catalog-icon--placeholder" aria-hidden="true"></span>
+{%- endif -%}

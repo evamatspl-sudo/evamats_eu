@@ -1,128 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "daefd62d-7e36-4ed1-8564-55fc2163dfa3": {
-      "type": "sidebar",
-      "blocks": {
-        "e3915122-892f-49a0-bfaf-64eba82991f8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-avenger",
-            "color-code": "Avenger"
-          }
-        },
-        "e8b577f7-e131-484a-b3b3-476c438b86b2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-caliber",
-            "color-code": "Caliber"
-          }
-        },
-        "4389feda-c2c5-4c01-ad99-9e8e904d2068": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-challenger",
-            "color-code": "Challenger"
-          }
-        },
-        "be801973-a25b-42a0-809c-ea38296ce852": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-charger",
-            "color-code": "Charger"
-          }
-        },
-        "d2495e78-4e5c-403c-b30a-b60a5c02d137": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-dart",
-            "color-code": "Dart"
-          }
-        },
-        "5ce40085-a8c7-462a-ba22-0fc22fbbf672": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-durango",
-            "color-code": "Durango"
-          }
-        },
-        "4709cbcd-796e-4d10-964b-cc62345ae77c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-durango-r-t",
-            "color-code": "Durango R\/T"
-          }
-        },
-        "f24a3c5c-2d66-43c1-b8d1-4a23752c8969": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan",
-            "color-code": "Grand Caravan"
-          }
-        },
-        "484fecad-2880-434e-bd57-a8b643e226e4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan-gt",
-            "color-code": "Grand Caravan GT"
-          }
-        },
-        "068f2dd5-5f2a-465c-b435-d4f166ade7a5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan-r-t",
-            "color-code": "Grand Caravan R\/T"
-          }
-        },
-        "2d70f552-8ad4-4744-b2ea-d5cba9a0b8fc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-journey",
-            "color-code": "Journey"
-          }
-        },
-        "a4e37f91-b3df-4a8c-b014-d70c06eb3f7f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-magnum",
-            "color-code": "Magnum"
-          }
-        },
-        "b43535b5-e471-4620-9335-58628f080aed": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-ram",
-            "color-code": "Ram"
-          }
-        }
-      },
-      "block_order": [
-        "e3915122-892f-49a0-bfaf-64eba82991f8",
-        "e8b577f7-e131-484a-b3b3-476c438b86b2",
-        "4389feda-c2c5-4c01-ad99-9e8e904d2068",
-        "be801973-a25b-42a0-809c-ea38296ce852",
-        "d2495e78-4e5c-403c-b30a-b60a5c02d137",
-        "5ce40085-a8c7-462a-ba22-0fc22fbbf672",
-        "4709cbcd-796e-4d10-964b-cc62345ae77c",
-        "f24a3c5c-2d66-43c1-b8d1-4a23752c8969",
-        "484fecad-2880-434e-bd57-a8b643e226e4",
-        "068f2dd5-5f2a-465c-b435-d4f166ade7a5",
-        "2d70f552-8ad4-4744-b2ea-d5cba9a0b8fc",
-        "a4e37f91-b3df-4a8c-b014-d70c06eb3f7f",
-        "b43535b5-e471-4620-9335-58628f080aed"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -131,98 +27,98 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "d88f1a0c-998b-4641-ae04-37a6aa9bad6b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-avenger",
+            "product-link": "shopify://collections/dodge-avenger",
             "color-code": "Avenger"
           }
         },
         "c3d3c3d5-23cc-48ef-a597-f230e3410da1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-caliber",
+            "product-link": "shopify://collections/dodge-caliber",
             "color-code": "Caliber"
           }
         },
         "4c9bc27a-73bc-4921-ad2b-6f1d32b7b0ac": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-challenger",
+            "product-link": "shopify://collections/dodge-challenger",
             "color-code": "Challenger"
           }
         },
         "2adcd41a-5c12-49b5-9a0d-1760afc7c2bd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-charger",
+            "product-link": "shopify://collections/dodge-charger",
             "color-code": "Charger"
           }
         },
         "d883d213-08d6-40e8-a755-5db4db8f4dc5": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-dart",
+            "product-link": "shopify://collections/dodge-dart",
             "color-code": "Dart"
           }
         },
         "80a5368c-b8a7-4e35-a38d-6b22f587c976": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-durango",
+            "product-link": "shopify://collections/dodge-durango",
             "color-code": "Durango"
           }
         },
         "8a901f29-c73b-4dd5-a9e9-9119a094ab79": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-durango-r-t",
-            "color-code": "Durango R\/T"
+            "product-link": "shopify://collections/dodge-durango-r-t",
+            "color-code": "Durango R/T"
           }
         },
         "6dc0036c-0ee7-4246-a309-bbd1fe5ef4d8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan",
+            "product-link": "shopify://collections/dodge-grand-caravan",
             "color-code": "Grand Caravan"
           }
         },
         "13955ab8-9b69-4898-a7ce-cd4b169f8e4e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan-gt",
+            "product-link": "shopify://collections/dodge-grand-caravan-gt",
             "color-code": "Grand Caravan GT"
           }
         },
         "a4a7f13e-53bf-496b-8d37-a3799ba70d98": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-grand-caravan-r-t",
-            "color-code": "Grand Caravan R\/T"
+            "product-link": "shopify://collections/dodge-grand-caravan-r-t",
+            "color-code": "Grand Caravan R/T"
           }
         },
         "6d31601f-6148-486c-bd85-4d20d4b6c111": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-journey",
+            "product-link": "shopify://collections/dodge-journey",
             "color-code": "Journey"
           }
         },
         "ea1076f7-5ab5-4c52-8580-52fbdaf1b035": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-magnum",
+            "product-link": "shopify://collections/dodge-magnum",
             "color-code": "Magnum"
           }
         },
         "b79263f5-923a-4019-a49f-5c7f8092b763": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dodge-ram",
+            "product-link": "shopify://collections/dodge-ram",
             "color-code": "Ram"
           }
         }
@@ -243,11 +139,7 @@
         "ea1076f7-5ab5-4c52-8580-52fbdaf1b035",
         "b79263f5-923a-4019-a49f-5c7f8092b763"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -259,9 +151,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -270,7 +159,6 @@
   },
   "order": [
     "banner",
-    "daefd62d-7e36-4ed1-8564-55fc2163dfa3",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

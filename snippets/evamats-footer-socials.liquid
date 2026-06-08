@@ -1,0 +1,100 @@
+{%- comment -%}
+  Social row — same markup/classes as video_reviews.liquid (square icons in footer).
+  @param section {section} — facebook_url, instagram_url, tiktok_url, youtube_url, facebook_label
+{%- endcomment -%}
+
+{%- liquid
+  assign facebook_url = section.settings.facebook_url | default: settings.social_facebook_link
+  assign instagram_url = section.settings.instagram_url | default: settings.social_instagram_link
+  assign tiktok_url = section.settings.tiktok_url | default: settings.social_tiktok_link
+  assign youtube_url = section.settings.youtube_url | default: settings.social_youtube_link
+  assign threads_url = section.settings.threads_url | default: settings.social_threads_link
+
+  assign show_socials = false
+  if facebook_url != blank or instagram_url != blank or tiktok_url != blank or youtube_url != blank or threads_url != blank
+    assign show_socials = true
+  endif
+-%}
+
+{%- if show_socials -%}
+  <div class="video_reviews__socials" role="navigation" aria-label="Social media">
+    {%- if facebook_url != blank -%}
+      <a
+        class="video_reviews__social-link video_reviews__social-link--facebook"
+        href="{{ facebook_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <span class="video_reviews__social-fb-icon" aria-hidden="true">
+          <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4021 7.5834H7.58333V5.41673C7.58333 4.29873 7.67433 3.59457 9.27658 3.59457H11.3002V0.149568C10.3155 0.0477344 9.32533 -0.00209896 8.33408 6.77083e-05C5.395 6.77083e-05 3.25 1.79515 3.25 5.09065V7.5834H0V11.9167L3.25 11.9157V21.6667H7.58333V11.9135L10.9048 11.9124L11.4021 7.5834Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        {%- if section.settings.facebook_label != blank -%}
+          <span class="video_reviews__social-fb-label">{{ section.settings.facebook_label | escape }}</span>
+        {%- endif -%}
+        <span class="video_reviews__social-fb-icon video_reviews__social-fb-icon--external" aria-hidden="true">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.338778 0L8.5206 0C9.02267 0 9.42969 0.407014 9.42969 0.909091V9.09091H7.61151V3.10383L1.28882 9.42651L0.00317419 8.14087L6.32586 1.81818L0.338778 1.81818L0.338778 0Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </a>
+    {%- endif -%}
+
+    {%- if instagram_url != blank -%}
+      <a class="video_reviews__social-link" href="{{ instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M8.9401 2.70801C5.5094 2.70801 2.71094 5.50647 2.71094 8.93717V17.0622C2.71094 20.4924 5.5093 23.2913 8.9401 23.2913H17.0651C20.4954 23.2913 23.2943 20.4925 23.2943 17.0622V8.93717C23.2943 5.50637 20.4953 2.70801 17.0651 2.70801H8.9401ZM8.9401 4.33301H17.0651C19.617 4.33301 21.6693 6.38473 21.6693 8.93717V17.0622C21.6693 19.614 19.6169 21.6663 17.0651 21.6663H8.9401C6.38766 21.6663 4.33594 19.6141 4.33594 17.0622V8.93717C4.33594 6.38463 6.38756 4.33301 8.9401 4.33301ZM18.4193 6.49967C17.8207 6.49967 17.3359 6.98447 17.3359 7.58301C17.3359 8.18155 17.8207 8.66634 18.4193 8.66634C19.0178 8.66634 19.5026 8.18155 19.5026 7.58301C19.5026 6.98447 19.0178 6.49967 18.4193 6.49967ZM13.0026 7.58301C10.0208 7.58301 7.58594 10.0179 7.58594 12.9997C7.58594 15.9815 10.0208 18.4163 13.0026 18.4163C15.9844 18.4163 18.4193 15.9815 18.4193 12.9997C18.4193 10.0179 15.9844 7.58301 13.0026 7.58301ZM13.0026 9.20801C15.106 9.20801 16.7943 10.8963 16.7943 12.9997C16.7943 15.1031 15.106 16.7913 13.0026 16.7913C10.8992 16.7913 9.21094 15.1031 9.21094 12.9997C9.21094 10.8963 10.8992 9.20801 13.0026 9.20801Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    {%- endif -%}
+
+    {%- if tiktok_url != blank -%}
+      <a class="video_reviews__social-link" href="{{ tiktok_url }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M23 10.9004C22.8196 10.9169 22.6377 10.9279 22.4545 10.9279C20.3795 10.9279 18.5557 9.87188 17.4939 8.27275C17.4939 12.4651 17.4939 17.2364 17.4939 17.3161C17.4939 21.008 14.4723 24 10.747 24C7.02162 23.9986 4 21.0053 4 17.3148C4 13.6229 7.02162 10.6309 10.747 10.6309C10.8885 10.6309 11.0259 10.6433 11.1633 10.6515V13.946C11.0245 13.9295 10.8899 13.9048 10.747 13.9048C8.84542 13.9048 7.30338 15.4324 7.30338 17.3161C7.30338 19.1999 8.84404 20.7275 10.747 20.7275C12.6499 20.7275 14.3293 19.2425 14.3293 17.3588C14.3293 17.2831 14.3293 2.01042 14.3626 2H17.5397C17.8381 4.81463 20.1324 7.03663 23 7.24013V10.9004Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    {%- endif -%}
+
+    {%- if youtube_url != blank -%}
+      <a class="video_reviews__social-link" href="{{ youtube_url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M23.3497 7.53969C23.1425 6.39609 22.1553 5.56328 21.0097 5.30328C19.2953 4.93969 16.1225 4.67969 12.6897 4.67969C9.25891 4.67969 6.03531 4.93969 4.31891 5.30328C3.17531 5.56328 2.18609 6.34328 1.97891 7.53969C1.76969 8.83969 1.5625 10.6597 1.5625 12.9997C1.5625 15.3397 1.76969 17.1597 2.02969 18.4597C2.23891 19.6033 3.22609 20.4361 4.36969 20.6961C6.18969 21.0597 9.30969 21.3197 12.7425 21.3197C16.1753 21.3197 19.2953 21.0597 21.1153 20.6961C22.2589 20.4361 23.2461 19.6561 23.4553 18.4597C23.6625 17.1597 23.9225 15.2869 23.9753 12.9997C23.8697 10.6597 23.6097 8.83969 23.3497 7.53969ZM9.8825 16.6397V9.35969L16.2261 12.9997L9.8825 16.6397Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    {%- endif -%}
+    {%- if threads_url != blank -%}
+      <a class="video_reviews__social-link" href="{{ threads_url }}" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2024_10154)">
+            <path d="M18.0064 12.1964C17.9166 12.1511 17.8249 12.1071 17.732 12.0657C17.5708 8.93671 15.945 7.14511 13.2148 7.12699C11.6395 7.11599 10.2291 7.79148 9.3504 9.19358L10.8518 10.2767C11.4764 9.28028 12.4567 9.06805 13.1784 9.06805H13.2031C14.1021 9.07388 14.7808 9.34886 15.2195 9.88459C15.5389 10.2754 15.753 10.8144 15.8589 11.495C15.0614 11.3527 14.1999 11.3087 13.2781 11.3643C10.6826 11.5216 9.01381 13.1132 9.1258 15.3247C9.18241 16.4473 9.71407 17.412 10.6223 18.0429C11.3903 18.576 12.3797 18.8368 13.4074 18.7772C14.7654 18.6996 15.83 18.1548 16.5733 17.159C17.1376 16.4027 17.4945 15.4224 17.652 14.1879C18.2987 14.5981 18.7781 15.1384 19.0433 15.788C19.4931 16.8918 19.5196 18.7061 18.1117 20.1852C16.8785 21.4811 15.3955 22.0415 13.1551 22.0589C10.6691 22.0395 8.78921 21.201 7.56714 19.5673C6.4226 18.0377 5.83126 15.8281 5.80911 13C5.83126 10.1719 6.4226 7.9623 7.56714 6.43274C8.78921 4.79901 10.6691 3.96047 13.1551 3.94106C15.6583 3.96047 17.5708 4.80289 18.8402 6.44438C19.4623 7.24928 19.9312 8.26187 20.2407 9.44203L22 8.94836C21.6253 7.49579 21.0358 6.24381 20.2327 5.20534C18.6058 3.10058 16.2269 2.02265 13.1612 2H13.1489C10.0894 2.02265 7.73636 3.10511 6.15616 5.21763C4.74949 7.09723 4.024 9.71313 4 12.9922V13.0078C4.024 16.2869 4.74949 18.9028 6.15616 20.7824C7.73636 22.8949 10.0894 23.978 13.1489 24H13.1612C15.881 23.9799 17.7984 23.2313 19.378 21.5717C21.4443 19.401 21.3822 16.6803 20.701 15.0096C20.2124 13.812 19.2808 12.8389 18.0064 12.1964ZM13.3101 16.8394C12.173 16.9067 10.9909 16.3697 10.9324 15.2199C10.8894 14.3672 11.5096 13.4154 13.3803 13.3022C13.5944 13.2892 13.8049 13.2827 14.011 13.2827C14.6903 13.2827 15.326 13.352 15.9038 13.4853C15.6884 16.3153 14.4245 16.7747 13.3101 16.8394Z" fill="currentColor"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_2024_10154">
+              <rect width="26" height="26" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>          
+      </a>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,24 @@
+{%- comment -%}
+  Mobile header car CTA — link (no filter dropdown). Figma / PL header__car mobile.
+
+  @param url {string} required link target
+{%- endcomment -%}
+
+{%- if url != blank -%}
+  <div class="header__car_wr evamats-header__car-link-wr">
+    <a href="{{ url }}" class="header__car header__car--mobile">
+      {% render 'cybertruck' %}
+      <div class="header__car_info">
+        <div class="header__car_info_car">
+          <div class="header__car_info_brand"></div>
+          <div class="header__car_info_model"></div>
+          <div class="header__car_info_year"></div>
+        </div>
+        <div class="header__car_info_text">
+          <span>{{ 'general.config.select_vehicle' | t }}</span>
+          <span>{{ 'general.config.change_vehicle' | t }}</span>
+        </div>
+      </div>
+    </a>
+  </div>
+{%- endif -%}

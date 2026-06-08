@@ -1,32 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "3547cd93-d696-4e33-81c2-6261b214130c": {
-      "type": "sidebar",
-      "blocks": {
-        "bbf30586-ab59-4ebe-9cda-f222af4ec682": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/acura-mdx",
-            "color-code": "MDX"
-          }
-        }
-      },
-      "block_order": [
-        "bbf30586-ab59-4ebe-9cda-f222af4ec682"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "Wybierz model",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -35,14 +27,14 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "e003575b-a542-4681-a63c-5221cf4bda2c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/acura-mdx",
+            "product-link": "shopify://collections/acura-mdx",
             "color-code": "MDX"
           }
         }
@@ -51,11 +43,7 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c",
         "e003575b-a542-4681-a63c-5221cf4bda2c"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -67,9 +55,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -78,7 +63,6 @@
   },
   "order": [
     "banner",
-    "3547cd93-d696-4e33-81c2-6261b214130c",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

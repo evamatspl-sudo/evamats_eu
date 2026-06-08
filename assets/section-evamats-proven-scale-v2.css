@@ -1,0 +1,269 @@
+/* evamats-proven-scale-v2 — desktop / tablet / mobile */
+
+.evamats-proven-scale-v2 {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.evamats-proven-scale-v2__inner {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.evamats-proven-scale-v2__heading {
+  margin: 0 0 60px;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.evamats-proven-scale-v2__intro--mobile {
+  display: none;
+}
+
+.evamats-proven-scale-v2__hero {
+  position: relative;
+  min-height: 636px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
+  position: static;
+  margin: 40px 60px 60px;
+}
+
+.evamats-proven-scale-v2__media {
+  position: relative;
+  height: 636px;
+  overflow: hidden;
+}
+
+.evamats-proven-scale-v2__media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.evamats-proven-scale-v2__fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.evamats-proven-scale-v2__fade--top {
+  top: 0;
+  height: 45%;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.evamats-proven-scale-v2__fade--bottom {
+  bottom: 0;
+  height: 242px;
+  background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.evamats-proven-scale-v2__intro--desktop {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 2;
+  margin: 0;
+  max-width: 588px;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.evamats-proven-scale-v2__stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  bottom: 60px;
+  z-index: 2;
+  display: flex;
+  gap: 3px;
+}
+
+.evamats-proven-scale-v2__stat {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding: 22px 26px;
+  background: var(--color-surface-elevated);
+  border-radius: 20px;
+}
+
+.evamats-proven-scale-v2__stat-value {
+  margin: 0;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.evamats-proven-scale-v2__stat-plus {
+  color: #ef022d;
+}
+
+.evamats-proven-scale-v2__stat-label {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-proven-scale-v2__heading {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+
+  .evamats-proven-scale-v2__hero {
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
+    margin: 32px 0 0;
+  }
+
+  .evamats-proven-scale-v2__media {
+    height: clamp(320px, 42vw, 420px);
+    border-radius: 16px;
+  }
+
+  .evamats-proven-scale-v2__fade--bottom {
+    display: none;
+  }
+
+  .evamats-proven-scale-v2__intro--desktop {
+    top: 32px;
+    left: 32px;
+    max-width: min(480px, calc(100% - 64px));
+    font-size: 32px;
+  }
+
+  .evamats-proven-scale-v2__stats {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .evamats-proven-scale-v2__stat {
+    padding: 20px 22px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .evamats-proven-scale-v2__stat-value {
+    font-size: 34px;
+  }
+
+  .evamats-proven-scale-v2__stat-label {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-proven-scale-v2__heading {
+    margin: 0 0 16px;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-proven-scale-v2__intro--mobile {
+    display: block;
+    margin: 0 auto 24px;
+    max-width: 339px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--color-text);
+  }
+
+  .evamats-proven-scale-v2__intro--desktop {
+    display: none;
+  }
+
+  .evamats-proven-scale-v2__hero {
+    min-height: 0;
+    border-radius: 0;
+    margin-left: -18px;
+    margin-right: -18px;
+    width: calc(100% + 36px);
+    overflow: visible;
+  }
+
+  .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
+    margin: 42px 0 0;
+  }
+
+  .evamats-proven-scale-v2__media {
+    height: 200px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .evamats-proven-scale-v2__fade {
+    display: none;
+  }
+
+  .evamats-proven-scale-v2__stats {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    row-gap: 36px;
+    margin-top: 42px;
+    padding: 0 16px;
+  }
+
+  .evamats-proven-scale-v2__stat {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    gap: 21px;
+    text-align: center;
+  }
+
+  .evamats-proven-scale-v2__stat-value {
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .evamats-proven-scale-v2__stat-label {
+    font-size: 15px;
+    letter-spacing: -0.03em;
+  }
+}

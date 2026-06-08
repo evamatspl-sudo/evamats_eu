@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -18,28 +27,9 @@
       ],
       "settings": {
         "title": "Organizery do bagażnika",
-        "heading_size": "h1",
-        "custom_header_style": false,
-        "button_text": "",
-        "button_link": "",
-        "description": "<p>Każdy z nas wozi w swoim samochodzie potrzebne rzeczy. Pojazdy wyposażone są w wiele schowków, które ułatwiają zabezpieczenie najważniejszych przedmiotów. Co, jednak jeśli chcemy włożyć tam płyn do spryskiwaczy, olej lub narzędzia, które mogą pobrudzić kanapy samochodu lub bagażnik? Wtedy warto skorzystać z wygodnego rozwiązania. Jest nim organizer do bagażnika samochodowego. Dzięki niemu w łatwy sposób przechowasz nawet ubrudzone smarem narzędzia, bez konieczności wykładania bagażnika dodatkową matą.<\/p><p><strong>Organizer do bagażnika samochodu – jak on wygląda?<\/strong><\/p><p>Organizer do samochodu do bagażnika z materiału EVA jest zupełnie innowacyjny. Czym różni się on od innych produktów o podobnym przeznaczeniu? Przede wszystkim jakość materiału EVA jest fenomenalna. Z jednej strony materiał ten jest sztywny, odporny na odgniecenia, z drugiej strony, jest on całkowicie bezpieczny dla zdrowia. Organizer do bagażnika EVA nie pochłania żadnych zapachów, w tym jest całkowicie wodoszczelny – można w nim bezpiecznie przewozić płyny, smar, olej. Skutecznie hamuje rozwój pleśni i grzybów. Organizer bagażnika samochodowego jest wykonany z materiału, który oddycha. Nie wchłania on wilgoci i bardzo szybko wysycha. Jest także odporny na czyszczenie środkami, które przeznaczone są do standardowej pielęgnacji samochodu.<\/p><p><strong>Organizer samochodowy do bagażnika – jakie są jego warianty?<\/strong><\/p><p>Wiemy, że każdy z nas ma inne potrzeby, a także inny styl, dlatego też organizer bagażnika dostępny w naszym sklepie internetowym występuje w różnych wariantach kolorystycznych. Torba organizer do bagażnika pomieści aż 40 litrów! Bez problemu mogą tam Państwo włożyć płyn do szyb i kosmetyki, służące do pielęgnacji samochodu. <\/p><p><strong>Organizer do bagażnika na rzepy – gdzie można kupić?<\/strong><\/p><p>Organizer do bagażnika samochodu na rzepy znajdą Państwo w naszym sklepie internetowym. Przy składaniu zamówienia nie zapomnijcie o wyborze koloru tego niezwykłego produktu. Gwarantujemy, że będą Państwo zadowoleni nie tylko z funkcjonalności organizera, ale także jego wykonania – każdy produkt jest tworzony przez nas ręcznie, z najwyższą starannością.<\/p>",
-        "show_description": false,
-        "description_style": "body",
         "collection": "organizery-do-bagaznika",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": false,
+        "products_to_show": 12,
         "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -52,28 +42,9 @@
       ],
       "settings": {
         "title": "BESTSELLERY",
-        "heading_size": "h1",
-        "custom_header_style": false,
-        "button_text": "ZAMÓW",
-        "button_link": "",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
         "collection": "bestsellerss",
         "products_to_show": 7,
-        "columns_desktop": 4,
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }

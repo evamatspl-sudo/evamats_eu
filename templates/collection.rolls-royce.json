@@ -1,64 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "7a2c2d07-e8b9-4766-a1ed-24fbacd72b32": {
-      "type": "sidebar",
-      "blocks": {
-        "45227647-d624-4b14-b5bf-368b202b2135": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/rolls-royce-dawn",
-            "color-code": "Dawn"
-          }
-        },
-        "f15acf28-ee4a-406c-b907-7b45c6a516b0": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-ghost",
-            "color-code": "Ghost"
-          }
-        },
-        "f64190cd-e53f-4ee1-b50a-a6b555d5e708": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-wraith",
-            "color-code": "Wraith"
-          }
-        },
-        "5762e698-f6a9-4509-a74a-cb501ca9a352": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-phantom",
-            "color-code": "Phantom"
-          }
-        },
-        "2e46bac2-4ba2-4ca7-bef8-4898d39c3f07": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-cullinan",
-            "color-code": "Cullinan"
-          }
-        }
-      },
-      "block_order": [
-        "45227647-d624-4b14-b5bf-368b202b2135",
-        "f15acf28-ee4a-406c-b907-7b45c6a516b0",
-        "f64190cd-e53f-4ee1-b50a-a6b555d5e708",
-        "5762e698-f6a9-4509-a74a-cb501ca9a352",
-        "2e46bac2-4ba2-4ca7-bef8-4898d39c3f07"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -67,42 +27,42 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "05592a9d-b6b9-4fd2-a01e-284c2a71d5fd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/rolls-royce-dawn",
+            "product-link": "shopify://collections/rolls-royce-dawn",
             "color-code": "Dawn"
           }
         },
         "ad3745d5-e683-4727-9c39-496cf74b018c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-ghost",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rolls-royce-ghost",
             "color-code": "Ghost"
           }
         },
         "3adcf82e-f8e5-46f9-bf23-f6fa50aa74f5": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-wraith",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rolls-royce-wraith",
             "color-code": "Wraith"
           }
         },
         "9587e3f3-7695-4677-8717-f9821b788239": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-phantom",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rolls-royce-phantom",
             "color-code": "Phantom"
           }
         },
         "b5e01f14-5013-43b4-b568-b844b764b292": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-rolls-royce-cullinan",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-rolls-royce-cullinan",
             "color-code": "Cullinan"
           }
         }
@@ -115,11 +75,7 @@
         "9587e3f3-7695-4677-8717-f9821b788239",
         "b5e01f14-5013-43b4-b568-b844b764b292"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -131,9 +87,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -142,7 +95,6 @@
   },
   "order": [
     "banner",
-    "7a2c2d07-e8b9-4766-a1ed-24fbacd72b32",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

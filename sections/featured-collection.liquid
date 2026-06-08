@@ -34,7 +34,7 @@
         {%- if show_view_all -%}
           <a
             href="{{ collection.url }}"
-            class="evamats-featured-collection__view-all evamats-featured-collection__view-all--header"
+            class="button button_5 button_5--neutral evamats-featured-collection__view-all--header small-hide"
           >
             {{ section.settings.view_all_label | escape }}
           </a>
@@ -46,7 +46,7 @@
   {%- if product_count > 0 -%}
     <div class="evamats-featured-collection__slider-bleed page-width">
       <div class="evamats-featured-collection__stage">
-        {%- if product_count > 4 -%}
+        {%- if product_count > 3 -%}
           <button
             type="button"
             class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--prev evamats-featured-collection__nav evamats-featured-collection__nav--prev swiper-button-prev"
@@ -88,7 +88,7 @@
           </div>
         </div>
 
-        {%- if product_count > 4 -%}
+        {%- if product_count > 3 -%}
           <button
             type="button"
             class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--next evamats-featured-collection__nav evamats-featured-collection__nav--next swiper-button-next"
@@ -107,7 +107,7 @@
     {%- if show_view_all -%}
       <div class="evamats-featured-collection__inner page-width">
         <div class="evamats-featured-collection__view-all--footer">
-          <a href="{{ collection.url }}" class="evamats-featured-collection__view-all">
+          <a href="{{ collection.url }}" class="button button_5 button_5--neutral">
             {{ section.settings.view_all_label | escape }}
           </a>
         </div>
@@ -139,7 +139,7 @@
       }, 50);
     }
 
-    function isDesktop() {
+    function isSliderViewport() {
       return window.matchMedia('(min-width: 750px)').matches;
     }
 
@@ -158,7 +158,7 @@
       var slides = swiperEl.querySelectorAll('.swiper-slide');
       if (!slides.length) return;
 
-      if (!isDesktop()) {
+      if (!isSliderViewport()) {
         destroyMainSwiper(root);
         return;
       }
@@ -167,19 +167,24 @@
       var nextEl = root.querySelector('.evamats-featured-collection__nav--next');
 
       whenSwiperReady(function () {
-        if (!isDesktop()) return;
+        if (!isSliderViewport()) return;
         if (root.dataset.efcInit === '1') return;
         destroyMainSwiper(root);
         root.dataset.efcInit = '1';
 
         var opts = {
-          slidesPerView: 4,
+          slidesPerView: 3,
           spaceBetween: 15,
           speed: 480,
           watchOverflow: true,
+          breakpoints: {
+            990: {
+              slidesPerView: 4,
+            },
+          },
         };
 
-        if (slides.length > 4 && prevEl && nextEl) {
+        if (slides.length > 3 && prevEl && nextEl) {
           opts.navigation = { prevEl: prevEl, nextEl: nextEl };
         }
 
@@ -250,7 +255,7 @@
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 12,
+      "max": 25,
       "step": 1,
       "default": 8,
       "label": "Maximum products to show"

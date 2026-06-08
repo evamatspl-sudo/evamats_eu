@@ -1,120 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "00a929b8-cc05-449b-8f59-30508dcf5803": {
-      "type": "sidebar",
-      "blocks": {
-        "37adf426-544f-4d12-8281-9e087087b491": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/infiniti-fx",
-            "color-code": "FX"
-          }
-        },
-        "cf34f19a-ca50-4ef3-9138-a3e1385b805b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-m",
-            "color-code": "M"
-          }
-        },
-        "b7dc9ea6-8559-495f-bca7-36a771efc1fe": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q30",
-            "color-code": "Q30"
-          }
-        },
-        "ee4b1f03-a9cf-48eb-b762-a95afce5461e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q50",
-            "color-code": "Q50\/Q50S"
-          }
-        },
-        "285685c8-097b-44bb-9a8e-14a20ea5be41": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q60",
-            "color-code": "Q60"
-          }
-        },
-        "328b9c84-a46a-4494-921c-9d3989bba1fa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q70",
-            "color-code": "Q70"
-          }
-        },
-        "54b3d30f-ddd5-4646-b03b-2303457fa3a6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx30",
-            "color-code": "QX30"
-          }
-        },
-        "03798077-fd3d-4d3c-b8f5-f3e432b2ea27": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx50",
-            "color-code": "QX50"
-          }
-        },
-        "section_7wRrD7": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx60",
-            "color-code": "QX60"
-          }
-        },
-        "06b823ab-23a1-4e1b-aa91-33a92187b48d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx70",
-            "color-code": "QX70"
-          }
-        },
-        "4fe50f93-e26c-45d5-9b67-9f12dec9aa72": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx70s",
-            "color-code": "QX70S"
-          }
-        },
-        "f678d343-f00b-489e-b005-bb12b6b680d5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx80",
-            "color-code": "QX80"
-          }
-        }
-      },
-      "block_order": [
-        "37adf426-544f-4d12-8281-9e087087b491",
-        "cf34f19a-ca50-4ef3-9138-a3e1385b805b",
-        "b7dc9ea6-8559-495f-bca7-36a771efc1fe",
-        "ee4b1f03-a9cf-48eb-b762-a95afce5461e",
-        "285685c8-097b-44bb-9a8e-14a20ea5be41",
-        "328b9c84-a46a-4494-921c-9d3989bba1fa",
-        "54b3d30f-ddd5-4646-b03b-2303457fa3a6",
-        "03798077-fd3d-4d3c-b8f5-f3e432b2ea27",
-        "section_7wRrD7",
-        "06b823ab-23a1-4e1b-aa91-33a92187b48d",
-        "4fe50f93-e26c-45d5-9b67-9f12dec9aa72",
-        "f678d343-f00b-489e-b005-bb12b6b680d5"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -123,91 +27,91 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "2f4c9fa9-4183-4304-995f-de2f8b909acd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/infiniti-fx",
+            "product-link": "shopify://collections/infiniti-fx",
             "color-code": "FX"
           }
         },
         "2b42e65f-718f-47dd-ba14-09661f637657": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-m",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-m",
             "color-code": "M"
           }
         },
         "fdabaa69-72a3-4cd9-8ba9-ec055b2ec012": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q30",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-q30",
             "color-code": "Q30"
           }
         },
         "d5b61e4f-2568-4693-9eb9-7e21c0d0d370": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q50",
-            "color-code": "Q50\/Q50S"
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-q50",
+            "color-code": "Q50/Q50S"
           }
         },
         "08c644e5-324e-48ce-b372-09484bd980d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q60",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-q60",
             "color-code": "Q60"
           }
         },
         "5bca40fb-4713-4a28-af33-67410133e1c0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-q70",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-q70",
             "color-code": "Q70"
           }
         },
         "5eb22603-b6e0-405f-917f-3c2673dab10a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx30",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx30",
             "color-code": "QX30"
           }
         },
         "0a31f4bf-0d55-4ca4-92e0-c28aa89622fb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx50",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx50",
             "color-code": "QX50"
           }
         },
         "section_47rnNa": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx60",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx60",
             "color-code": "QX60"
           }
         },
         "4db68d62-fcf4-49ab-b2d1-27baed646419": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx70",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx70",
             "color-code": "QX70"
           }
         },
         "58080447-8b98-411b-a032-ba72611c8097": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx70s",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx70s",
             "color-code": "QX70S"
           }
         },
         "8dfad998-4f17-4fec-86c0-2478adafcdee": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-infiniti-qx80",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-infiniti-qx80",
             "color-code": "QX80"
           }
         }
@@ -227,11 +131,7 @@
         "58080447-8b98-411b-a032-ba72611c8097",
         "8dfad998-4f17-4fec-86c0-2478adafcdee"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -243,9 +143,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -254,7 +151,6 @@
   },
   "order": [
     "banner",
-    "00a929b8-cc05-449b-8f59-30508dcf5803",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

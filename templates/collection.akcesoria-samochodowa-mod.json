@@ -1,32 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "sidebar_eXGX4C": {
-      "type": "sidebar",
-      "blocks": {
-        "section_fgTHFg": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa",
-            "color-code": "All"
-          }
-        }
-      },
-      "block_order": [
-        "section_fgTHFg"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -35,7 +27,7 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa",
+            "product-link": "shopify://collections/akcesoria-samochodowa",
             "color-code": "All"
           }
         }
@@ -43,11 +35,7 @@
       "block_order": [
         "37f49a36-c9f0-4209-a441-c60995efa21c"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -59,9 +47,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": false,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -70,7 +55,6 @@
   },
   "order": [
     "banner",
-    "sidebar_eXGX4C",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

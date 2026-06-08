@@ -99,30 +99,63 @@
   color: var(--color-text-primary, #1b1d22);
 }
 
-.evamats-rare-fit-cta__cta {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.evamats-rare-fit-cta__cta.button_3 {
   max-width: 445px;
-  min-height: 60px;
-  padding: 22px 24px;
-  background: var(--color-accent-red, #ff2741);
-  border-radius: 16px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
 }
 
-.evamats-rare-fit-cta__cta:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 3px;
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-rare-fit-cta__banner {
+    height: clamp(440px, 58vw, 520px);
+    border-radius: 20px;
+  }
+
+  .evamats-rare-fit-cta__fade--left {
+    background: linear-gradient(
+      90deg,
+      rgba(27, 29, 34, 0.75) 0%,
+      rgba(27, 29, 34, 0.4) 18%,
+      rgba(27, 29, 34, 0) 38%
+    );
+  }
+
+  .evamats-rare-fit-cta__fade--right {
+    background: linear-gradient(
+      270deg,
+      rgba(27, 29, 34, 0.3) 0%,
+      rgba(27, 29, 34, 0) 28%
+    );
+  }
+
+  .evamats-rare-fit-cta__panel {
+    top: 32px;
+    right: 32px;
+    gap: 28px;
+    width: min(480px, calc(100% - 64px));
+    max-width: calc(100% - 64px);
+    padding: 36px 32px;
+    border-radius: 18px;
+  }
+
+  .evamats-rare-fit-cta__logo {
+    width: 120px;
+  }
+
+  .evamats-rare-fit-cta__heading {
+    max-width: none;
+    font-size: 28px;
+  }
+
+  .evamats-rare-fit-cta__text {
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .evamats-rare-fit-cta__cta.button_3 {
+    max-width: none;
+    width: 100%;
+    white-space: normal;
+  }
 }
 
 @media screen and (max-width: 749px) {
@@ -176,11 +209,8 @@
     letter-spacing: -0.02em;
   }
 
-  .evamats-rare-fit-cta__cta {
+  .evamats-rare-fit-cta__cta.button_3 {
     max-width: none;
-    min-height: 50px;
-    font-size: 16px;
-    letter-spacing: -0.02em;
     white-space: normal;
   }
 }

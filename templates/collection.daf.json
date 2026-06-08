@@ -1,32 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "4a86b631-9a79-43bc-bb52-92a184d55831": {
-      "type": "sidebar",
-      "blocks": {
-        "69007ef8-d6f1-406c-a690-e0856976266a": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-do-daf-106xf",
-            "color-code": "106XF"
-          }
-        }
-      },
-      "block_order": [
-        "69007ef8-d6f1-406c-a690-e0856976266a"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -35,14 +27,14 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "a5f33dd5-1265-43b9-9e71-b30bf1e66882": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-do-daf-106xf",
+            "product-link": "shopify://collections/dywaniki-samochodowe-do-daf-106xf",
             "color-code": "106XF"
           }
         }
@@ -51,11 +43,7 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6",
         "a5f33dd5-1265-43b9-9e71-b30bf1e66882"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -67,9 +55,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -78,7 +63,6 @@
   },
   "order": [
     "banner",
-    "4a86b631-9a79-43bc-bb52-92a184d55831",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

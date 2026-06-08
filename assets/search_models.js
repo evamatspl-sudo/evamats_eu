@@ -1,10 +1,6 @@
 (function () {
     const DEFAULT_FILES_CDN = 'https://cdn.shopify.com/s/files/1/0790/9218/7414/files/';
     const filterContainers = document.querySelectorAll('.filter-container-json');
-    const headerCar = document.querySelector('.header__car--desktop');
-    const headerCarBrand = headerCar && headerCar.querySelector('.header__car_info_brand');
-    const headerCarModel = headerCar && headerCar.querySelector('.header__car_info_model');
-    const headerCarYear = headerCar && headerCar.querySelector('.header__car_info_year');
 
     if (!filterContainers.length) {
         return;
@@ -25,6 +21,11 @@
         return container.dataset.filterUi === 'hero';
     }
 
+    function allowsFilterThumbs(container) {
+        const ui = container.dataset.filterUi;
+        return ui === 'hero' || ui === 'collection';
+    }
+
     function findGeneration(years, generations) {
         if (!Array.isArray(generations) || !years) return null;
         const value = String(years).trim();
@@ -36,37 +37,6 @@
         if (!generation || !generation.code) return yearLabel;
         return `${String(generation.code).trim()} · ${yearLabel}`;
     }
-
-    function updateHeaderCar() {
-        if (!headerCar || !headerCarBrand || !headerCarModel || !headerCarYear) {
-            return;
-        }
-
-        const saved = localStorage.getItem('carFilterSelections');
-        if (!saved) {
-            headerCarBrand.textContent = '';
-            headerCarModel.textContent = '';
-            headerCarYear.textContent = '';
-            headerCar.classList.remove('active');
-            return;
-        }
-
-        try {
-            const { brand, model, years } = JSON.parse(saved);
-            headerCarBrand.textContent = (brand || '').trim();
-            headerCarModel.textContent = (model || '').trim();
-            headerCarYear.textContent = (years || '').trim();
-            headerCar.classList.toggle('active', !!(brand || model || years));
-        } catch (error) {
-            console.error('Error parsing localStorage for header__car:', error);
-            headerCarBrand.textContent = '';
-            headerCarModel.textContent = '';
-            headerCarYear.textContent = '';
-            headerCar.classList.remove('active');
-        }
-    }
-
-    updateHeaderCar();
 
     function parseYearRangeForVehicleFilter(text) {
         const normalized = String(text || '').trim().replace(/\u2013|\u2014|\u2212/g, '-');
@@ -133,7 +103,6 @@
                 localJson = data;
                 populateBrandDropdown(localJson);
                 await restoreSelectionsFromLocalStorage();
-                updateHeaderCar();
             })
             .catch((error) => console.error('Error loading JSON:', error));
 
@@ -142,7 +111,7 @@
         }
 
         function setThumb(selectWrapper, filename, type) {
-            if (!heroUi) return;
+            if (!allowsFilterThumbs(container)) return;
             const thumb = selectWrapper.querySelector('.filter-field__thumb');
             if (!thumb) return;
 
@@ -280,7 +249,6 @@
                             resetYearsSelect();
                         }
                     }
-                    updateHeaderCar();
                 }
             } catch (error) {
                 console.error('Error fetching collection products:', error);
@@ -300,7 +268,7 @@
                 div.dataset.image = String(generation.image).trim();
             }
 
-            if (heroUi && generation && generation.image) {
+            if (allowsFilterThumbs(container) && generation && generation.image) {
                 div.className = 'filter-option filter-option--generation';
                 div.innerHTML = `
           <span class="filter-option__text">${label}</span>
@@ -399,18 +367,25 @@
 
         function closeAllSelects() {
             container.querySelectorAll('.select-items').forEach((item) => item.classList.add('select-hide'));
+            container.querySelectorAll('.custom-select').forEach((select) => select.classList.remove('active'));
         }
 
-        function toggleSelectOptions(selectOptions) {
-            selectOptions.classList.toggle('select-hide');
+        function toggleSelectOptions(selectOptions, customSelect) {
+            const isOpen = !selectOptions.classList.contains('select-hide');
+            closeAllSelects();
+            if (!isOpen) {
+                selectOptions.classList.remove('select-hide');
+                customSelect.classList.add('active');
+            }
         }
 
-        container.querySelector('.brand-input').addEventListener('click', () => toggleSelectOptions(brandSelectOptions));
-        container.querySelector('.model-input').addEventListener('click', () => toggleSelectOptions(modelSelectOptions));
-        container.querySelector('.years-input').addEventListener('click', () => toggleSelectOptions(yearsSelectOptions));
+        container.querySelector('.brand-input').addEventListener('click', () => toggleSelectOptions(brandSelectOptions, brandCustomSelect));
+        container.querySelector('.model-input').addEventListener('click', () => toggleSelectOptions(modelSelectOptions, modelCustomSelect));
+        container.querySelector('.years-input').addEventListener('click', () => toggleSelectOptions(yearsSelectOptions, yearsCustomSelect));
 
-        container.addEventListener('click', (event) => {
-            if (!event.target.closest('.custom-select-wrapper')) {
+        document.addEventListener('click', (event) => {
+            const wrapper = event.target.closest('.custom-select-wrapper');
+            if (!wrapper || !container.contains(wrapper)) {
                 closeAllSelects();
             }
         });
@@ -427,7 +402,6 @@
             localStorage.removeItem('carFilterSelections');
             closeAllSelects();
             checkIfSearchEnabled();
-            updateHeaderCar();
         });
 
         searchButton.addEventListener('click', () => {
@@ -491,13 +465,11 @@
                 years: (yearsInput.dataset.years || yearsInput.value || '').trim()
             };
             localStorage.setItem('carFilterSelections', JSON.stringify(selections));
-            updateHeaderCar();
         }
 
         async function restoreSelectionsFromLocalStorage() {
             const saved = localStorage.getItem('carFilterSelections');
             if (!saved) {
-                updateHeaderCar();
                 return;
             }
 

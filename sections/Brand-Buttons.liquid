@@ -1,156 +1,207 @@
-  {% comment %} <script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-    {{ 'brand-buttons.css' | asset_url | stylesheet_tag }}
-    
-  {% comment %} <div class="brand-bnts-desktop collection-colorTable {% if section.settings['collection-margin-bottom'] %} margin-bottom {% endif %}">
-        {% if section.settings['collection-color-table-header'] != blank %}
-          <h3 class="collection-colorTable_header">{{ section.settings['collection-color-table-header'] }}</h3>
-        {% endif %}
-        <div class="collection-colorTable_block">
-           {% if section.settings['collection-catalog-header'] != blank %}
-              <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings['collection-catalog-header'] }}</h4>
-           {% endif %}
-            <div class="colorTable_block__blocks-collection">
-              {% assign sorted_blocks = section.blocks | sort_natural: 'settings.color-code' %}
-              {%- for block in sorted_blocks -%}
-                <a class="collection-color_block" href="{{ block.settings['product-link'] }}">
-                    <div class="collection-color_block__wrapper">
-                        <span class="collection-color_block__material">{{ block.settings['color-code'] }}</span>
-                    </div>
+{{ 'section-evamats-popular-models.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-evamats-popular-models.js' | asset_url }}" defer></script>
 
-                </a>
-              {% endfor %}
- 
-            </div>
-        </div>
-    </div> {% endcomment %}
+{%- comment -%}
+  Legacy brand buttons (pills / brand_collection metaobject). Kept for reference.
+{%- endcomment -%}
+{%- comment -%}
+{% comment %} {{ 'brand-buttons.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
-  <div class="brand-bnts-desktop collection-colorTable {% if section.settings['collection-margin-bottom'] %} margin-bottom {% endif %}">
-    {% if section.settings['collection-color-table-header'] != blank %}
-      <h3 class="collection-colorTable_header">{{ section.settings['collection-color-table-header'] }}</h3>
-    {% endif %}
-    <div class="collection-colorTable_block">
-        {% if section.settings['collection-catalog-header'] != blank %}
-          <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings['collection-catalog-header'] }}</h4>
-        {% endif %}
-        <div class="colorTable_block__blocks-collection">
-          {% assign title_prefix = 'sections.brand_buttons.collection_title_prefix' | t %}
-          {% assign brand_collection_obj = collection.metafields.custom.brand_collection.value %}
-          {% if brand_collection_obj != blank %}
-            {% assign main_collection = brand_collection_obj.main_collection.value %}
-            {% assign subcollections = brand_collection_obj.subcollections.value %}
-            {% assign is_main_collection = false %}
-
-            {% if main_collection != blank and main_collection.handle == collection.handle %}
-              {% assign is_main_collection = true %}
-            {% endif %}
-
-            {% if is_main_collection %}
-              <a class="collection-color_block" href="{{ 'sections.brand_buttons.all_brands_path' | t }}">
-                <div class="collection-color_block__wrapper">
-                  <span class="collection-color_block__material">{{ 'sections.brand_buttons.back' | t }}</span>
-                </div>
-              </a>
-              {% assign sorted_subcollections = subcollections | sort_natural: 'title' %}
-              {% for subcollection in sorted_subcollections %}
-                {% if subcollection != blank %}
-                  {% assign brand_title = brand_collection_obj.title | strip %}
-                  {% assign subcollection_label = subcollection.title | remove: title_prefix %}
-                  {% if brand_title != blank %}
-                    {% assign subcollection_label = subcollection_label | remove: brand_title %}
-                  {% endif %}
-                  {% assign subcollection_label = subcollection_label | strip %}
-                  <a class="collection-color_block" href="{{ subcollection.url }}">
-                    <div class="collection-color_block__wrapper">
-                      <span class="collection-color_block__material">{% if subcollection_label != blank %}{{ subcollection_label }}{% else %}{{ subcollection.title | remove: 'Automobilové koberce pro' | remove: 'Automobilové koberce EVA pro' | remove: 'Car mats EVA for' | remove: 'Automatten EVA für' }}{% endif %}</span>
-                    </div>
-                  </a>
-                {% endif %}
-              {% endfor %}
-            {% elsif main_collection != blank %}
-              <a class="collection-color_block" href="{{ main_collection.url }}">
-                <div class="collection-color_block__wrapper">
-                  <span class="collection-color_block__material">{{ 'sections.brand_buttons.back' | t }}</span>
-                </div>
-              </a>
-            {% endif %}
-          {% endif %}
-        </div>
-    </div>
+<div class="brand-bnts-desktop collection-colorTable {% if section.settings['collection-margin-bottom'] %} margin-bottom {% endif %}">
+  ...
 </div>
 
-  
-<script>
-  document.querySelectorAll('.collection-color_block').forEach(function(block) {
-    block.addEventListener('click', function() {
-        document.querySelectorAll('.collection-color_block').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        this.classList.toggle('active');
-    });
-  });
-   
-</script>
+<script>...</script>
+{%- endcomment -%}
 
-  
-      
-      {% comment %} <script>
-        document.querySelectorAll('.collection-color_block').forEach(function(block) {
-          block.addEventListener('click', function() {
-              document.querySelectorAll('.collection-color_block').forEach(function(el) {
-                  el.classList.remove('active');
-              });
-              this.classList.toggle('active');
-          });
-      });
-      
-        </script> {% endcomment %}
-        
+{%- liquid
+  assign heading = section.settings.heading | strip
+  if heading == blank
+    assign heading = 'sections.brand_buttons.popular_models_heading' | t
+  endif
+
+  assign title_prefix = 'sections.brand_buttons.collection_title_prefix' | t
+  assign card_image_placeholder = 'bmw_x5m_e70.webp' | asset_url
+
+  assign featured_collections = collection.metafields.custom.featured_model_collections.value
+
+  if featured_collections == blank or featured_collections.size == 0
+    assign featured_collections = settings.collection_featured_models
+  endif
+
+  assign visible_collections_count = 0
+  if featured_collections != blank
+    for featured_item in featured_collections
+      if featured_item != blank and featured_item.handle != collection.handle
+        assign visible_collections_count = visible_collections_count | plus: 1
+      endif
+    endfor
+  endif
+-%}
+
+{%- if collection != blank and visible_collections_count > 0 -%}
+  <section
+    id="EvamatsPopularModels-{{ section.id }}"
+    class="evamats-popular-models page-width{% if section.settings.margin_bottom %} evamats-popular-models--margin-bottom{% endif %}"
+  >
+    <h2 class="evamats-popular-models__heading">{{ heading | escape }}</h2>
+
+    <div class="evamats-popular-models__stage" data-evamats-popular-models>
+      <button
+        type="button"
+        class="evamats-popular-models__nav evamats-popular-models__nav--prev"
+        aria-label="{{ 'general.slider.previous_slide' | t }}"
+      >
+        <span class="evamats-popular-models__nav-icon" aria-hidden="true">
+          {% render 'evamats-pagination-arrow', direction: 'prev' %}
+        </span>
+      </button>
+
+      <div class="evamats-popular-models__scroller">
+        <div class="evamats-popular-models__track" role="list">
+        {%- assign divider_pending = false -%}
+        {%- for featured_item in featured_collections -%}
+          {%- if featured_item == blank or featured_item.handle == collection.handle -%}
+            {%- continue -%}
+          {%- endif -%}
+
+          {%- if divider_pending -%}
+            <div class="evamats-popular-models__divider" aria-hidden="true"></div>
+          {%- endif -%}
+
+          {%- liquid
+            assign card_title = featured_item.title | remove: title_prefix | strip
+            if card_title == blank
+              assign card_title = featured_item.title
+            endif
+
+            assign card_image = featured_item.image 
+          -%}
+
+          <div class="evamats-popular-models__group" role="listitem">
+            <a class="evamats-popular-models__card" href="{{ featured_item.url }}">
+              <div class="evamats-popular-models__media">
+                {%- if card_image != blank -%}
+                  {{
+                    card_image
+                    | image_url: width: 446
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'evamats-popular-models__image',
+                      widths: '195, 210, 223, 446',
+                      sizes: '223px',
+                      alt: card_title
+                  }}
+                {%- else -%}
+                  <img
+                    class="evamats-popular-models__image"
+                    src="{{ card_image_placeholder }}"
+                    alt="{{ card_title | escape }}"
+                    width="223"
+                    height="105"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+              <p class="evamats-popular-models__title">{{ card_title | escape }}</p>
+              <p class="evamats-popular-models__count">
+                {{ 'sections.brand_buttons.products_count' | t: count: featured_item.products_count }}
+              </p>
+            </a>
+          </div>
+
+          {%- assign divider_pending = true -%}
+        {%- endfor -%}
+        </div>
+        <div class="evamats-popular-models__fade evamats-popular-models__fade--left" aria-hidden="true" hidden>
+          <span class="evamats-popular-models__fade-edge"></span>
+        </div>
+        <div class="evamats-popular-models__fade evamats-popular-models__fade--right" aria-hidden="true">
+          <span class="evamats-popular-models__fade-edge"></span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="evamats-popular-models__nav evamats-popular-models__nav--next"
+        aria-label="{{ 'general.slider.next_slide' | t }}"
+      >
+        <span class="evamats-popular-models__nav-icon" aria-hidden="true">
+          {% render 'evamats-pagination-arrow', direction: 'next' %}
+        </span>
+      </button>
+
+      <div class="evamats-popular-models__footer">
+        <div class="evamats-popular-models__scrollbar" aria-hidden="true">
+          <span class="evamats-popular-models__scrollbar-thumb"></span>
+        </div>
+        <div class="evamats-popular-models__footer-nav">
+          <button
+            type="button"
+            class="evamats-popular-models__nav evamats-popular-models__nav--footer evamats-popular-models__nav--footer-prev"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="evamats-popular-models__nav-icon" aria-hidden="true">
+              {% render 'evamats-pagination-arrow', direction: 'prev' %}
+            </span>
+          </button>
+          <button
+            type="button"
+            class="evamats-popular-models__nav evamats-popular-models__nav--footer evamats-popular-models__nav--footer-next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="evamats-popular-models__nav-icon" aria-hidden="true">
+              {% render 'evamats-pagination-arrow', direction: 'next' %}
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.brand-buttons.name",
-  "max_blocks": 50,
+  "tag": "section",
+  "class": "section-evamats-popular-models",
   "settings": [
-   {
-     "type": "text",
-     "id": "collection-color-table-header",
-     "label": "t:sections.brand-buttons.settings.collection-color-table-header.label"
-   },
-   {
-     "type": "text",
-     "id": "collection-catalog-header",
-     "label": "t:sections.brand-buttons.settings.collection-catalog-header.label"
-   },
-   {
-     "type": "checkbox",
-     "id": "collection-margin-bottom",
-     "label": "t:sections.brand-buttons.settings.collection-margin-bottom.label",
-     "default": false
-   }
-],
-"blocks" : [
     {
-    "type": "section",
-    "name": "t:sections.brand-buttons.blocks.section.name",
-    "settings": [
-        
-      {
-           "type": "url",
-           "id": "product-link",
-           "label": "t:sections.brand-buttons.blocks.section.settings.product-link.label"
-         },
-         {
-           "type": "text",
-           "id": "color-code",
-           "label": "t:sections.brand-buttons.blocks.section.settings.color-code.label"
-         }
-    ]
-  }
-],
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Popular models",
+      "info": "Leave empty to use theme translation."
+    },
+    {
+      "type": "checkbox",
+      "id": "margin_bottom",
+      "label": "Bottom spacing",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "name": "Legacy block",
+      "settings": [
+        {
+          "type": "url",
+          "id": "product-link",
+          "label": "Collection link"
+        },
+        {
+          "type": "text",
+          "id": "color-code",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
   "presets": [
-  {
-    "name": "t:sections.brand-buttons.presets.name"
-  }
-]
+    {
+      "name": "t:sections.brand-buttons.presets.name"
+    }
+  ]
 }
-
 {% endschema %}

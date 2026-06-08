@@ -1,11 +1,39 @@
 {%- liquid
   assign eds_image = image
+  assign eds_video = video
   assign eds_alt = alt | default: ''
   assign eds_modifier = modifier | default: ''
+  assign eds_video_src = ''
+
+  if eds_video != blank
+    for source in eds_video.sources
+      if source.format == 'mp4'
+        assign eds_video_src = source.url
+        break
+      endif
+    endfor
+  endif
+
+  assign eds_poster = eds_video.preview_image | default: eds_image
 -%}
 
 <figure class="evamats-driving-style__media{% if eds_modifier != blank %} {{ eds_modifier }}{% endif %}">
-  {%- if eds_image != blank -%}
+  {%- if eds_video_src != blank -%}
+    <video
+      class="evamats-driving-style__media-video"
+      data-eds-lazy-video
+      data-src="{{ eds_video_src }}"
+      muted
+      playsinline
+      loop
+      autoplay
+      preload="none"
+      {%- if eds_poster != blank -%}
+        poster="{{ eds_poster | image_url: width: 812 }}"
+      {%- endif -%}
+      aria-label="{{ eds_alt | escape }}"
+    ></video>
+  {%- elsif eds_image != blank -%}
     {{
       eds_image
       | image_url: width: 812

@@ -1,104 +1,293 @@
- <div id="faqs" class="product-faqs container-fluid">
-      <div class="page-width">
-        <div class="faqs-all-question">
-            <div class="faqs-heading">
-                <h2>{{ section.settings.hd }}</h2>
-            </div>
-          {% for block in section.blocks %}
-            <div class="faq-question">
-                <div class="accordion">
-                    <h6>
-                        {{ block.settings.hd }}
-                    </h6>
-                    <span></span>
-                </div>
-                <div class="panel">
-                    {{ block.settings.des }}
-                </div>
-            </div>
-          {% endfor %}
-            
+{% comment %} home-faq styles in assets/base.css {% endcomment %}
+{% render 'evamats-section-padding-style', section: section, target: '.home-faq-v2' %}
+
+<section id="faqs" class="product-faqs home-faq-v2">
+  <div class="page-width">
+    <div class="home-faq-v2__shell{% if section.settings.view_all_label != blank %} home-faq-v2__shell--has-cta{% endif %}">
+      <div class="home-faq-v2__intro">
+
+        <div class="home-faq-v2__heading">
+          <h2 class="home-faq-v2__title">
+            <span class="home-faq-v2__title-desktop">{{ section.settings.hd | escape }}</span>
+            <span class="home-faq-v2__title-mobile">
+              {%- if section.settings.heading_mobile != blank -%}
+                {{ section.settings.heading_mobile | escape }}
+              {%- else -%}
+                {{ section.settings.hd | escape }}
+              {%- endif -%}
+            </span>
+          </h2>
         </div>
       </div>
+
+      <div class="home-faq-v2__main">
+        <div class="faqs-all-question">
+          {%- assign theme_list_str = '' -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.category != blank -%}
+              {%- assign t = block.settings.category | strip -%}
+              {%- capture theme_marker -%}||{{ t }}||{%- endcapture -%}
+              {%- unless theme_list_str contains theme_marker -%}
+                {%- assign theme_list_str = theme_list_str | append: theme_marker -%}
+              {%- endunless -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- assign theme_order = theme_list_str | split: '||' -%}
+
+          {%- for theme_name in theme_order -%}
+            {%- if theme_name != blank -%}
+              <div class="faq-question faq-category home-faq-v2__row home-faq-v2__row--category">
+                <div class="accordion accordion--category">
+                  <div class="home-faq-v2__accordion-row">
+                    <div class="h6 home-faq-v2__question-title">{{ theme_name | escape }}</div>
+                    <span class="home-faq-v2__toggle-icon" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="panel panel--category">
+                  {%- for block in section.blocks -%}
+                    {%- if block.settings.category != blank -%}
+                      {%- assign block_theme = block.settings.category | strip -%}
+                      {%- if block_theme == theme_name -%}
+                        <div class="faq-question faq-question--inner home-faq-v2__row home-faq-v2__row--inner" {{ block.shopify_attributes }}>
+                          <div class="accordion">
+                            <div class="home-faq-v2__accordion-row">
+                              <div class="h6 faq-question__title home-faq-v2__question-title">{{ block.settings.hd }}</div>
+                              <span class="home-faq-v2__toggle-icon" aria-hidden="true"></span>
+                            </div>
+                          </div>
+                          <div class="panel">
+                            {%- if block.settings.des_html != blank -%}
+                              {{ block.settings.des_html }}
+                            {%- else -%}
+                              {{ block.settings.des }}
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- for block in section.blocks -%}
+            {%- if block.settings.category == blank -%}
+              <div class="faq-question home-faq-v2__row home-faq-v2__row--item" {{ block.shopify_attributes }}>
+                <div class="accordion">
+                  <div class="home-faq-v2__accordion-row">
+                    <div class="h6 faq-question__title home-faq-v2__question-title">{{ block.settings.hd }}</div>
+                    <span class="home-faq-v2__toggle-icon" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="panel">
+                  {%- if block.settings.des_html != blank -%}
+                    {{ block.settings.des_html }}
+                  {%- else -%}
+                    {{ block.settings.des }}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.settings.view_all_label != blank -%}
+        {%- liquid
+          assign faq_cta_href = section.settings.view_all_url
+          if faq_cta_href == blank
+            assign faq_cta_href = '#'
+          endif
+        -%}
+        <div class="home-faq-v2__cta-wrap">
+          <a class="button button_5 button_5--neutral" href="{{ faq_cta_href }}">{{ section.settings.view_all_label | escape }}</a>
+        </div>
+      {%- endif -%}
     </div>
+  </div>
+</section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {%- for block in section.blocks %}
+    {%- for block in section.blocks -%}
     {
       "@type": "Question",
-      "name": {{ block.settings.hd | strip_newlines | escape | json }},
+      "name": {{ block.settings.hd | strip_newlines | strip_html | escape | json }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ block.settings.des | strip_newlines | escape | json }}
+        "text": {{ block.settings.des_html | default: block.settings.des | strip_newlines | strip_html | escape | json }}
       }
     }{%- unless forloop.last %},{% endunless %}
-    {%- endfor %}
+    {%- endfor -%}
   ]
 }
 </script>
-    
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
+<script defer>
+  (function () {
+    function setPanelHeight(panel, open) {
+      if (!panel || !panel.classList.contains('panel')) return;
+      var isCategory = panel.classList.contains('panel--category');
+      if (open) {
+        panel.style.maxHeight = isCategory ? (panel.scrollHeight + 10000) + 'px' : panel.scrollHeight + 'px';
+      } else {
+        panel.style.maxHeight = null;
+      }
+    }
+    function expandParentCategoryPanel(panel) {
+      var parent = panel.closest('.panel--category');
+      if (parent && parent.style.maxHeight) {
+        parent.style.maxHeight = (parent.scrollHeight + 10000) + 'px';
+      }
+    }
+    var acc = document.querySelectorAll('#faqs .accordion');
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function (e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        var panel = this.nextElementSibling;
+        var wasOpen = panel && panel.style.maxHeight && panel.style.maxHeight !== '0px';
+        setPanelHeight(panel, !wasOpen);
+        if (panel && !panel.classList.contains('panel--category')) {
+          expandParentCategoryPanel(panel);
         }
-    </script>
-  
+      });
+    }
+  })();
+</script>
+
 {% schema %}
 {
   "name": "home-faq",
   "settings": [
     {
-      "type":"text",
-      "label":"Main Heading",
-      "id":"hd",
-      "default":"Często zadawane pytania"
+      "type": "text",
+      "label": "Main heading (desktop)",
+      "id": "hd",
+      "default": "Często zadawane pytania"
+    },
+    {
+      "type": "text",
+      "id": "heading_mobile",
+      "label": "Heading (mobile)",
+      "default": "FAQ",
+      "info": "Centered shorter title on small screens."
+    },
+    {
+      "type": "url",
+      "id": "eyebrow_link",
+      "label": "Eyebrow link",
+      "info": "If set, eyebrow becomes a link."
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all button label",
+      "default": "Zobacz wszystko"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all button link"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }, 
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     }
   ],
-   "blocks":[
+  "blocks": [
     {
-      "type":"text",
-      "name":"FAQ",
-      "settings":[
-       {
-      "type":"text",
-      "label":"Question",
-      "id":"hd",
-      "default":"What types of freight services do you offer?"
-    },
+      "type": "text",
+      "name": "FAQ",
+      "settings": [
         {
-      "type":"richtext",
-      "label":"Answer",
-      "id":"des",
-      "default":"<p>At StyleCo Blinds, we understand your home is supposed to be a sanctuary for you. We specialize in designing blinds, drapery and shutters that are both beautiful and functional. We believe in sustainable design so we only use natural materials and recycled material where possible; which reduces our carbon footprint while creating a unique style that.</p>"
-    }
+          "type": "text",
+          "label": "Category (optional)",
+          "id": "category",
+          "info": "Leave empty for top-level question. Same name = one dropdown with multiple questions inside."
+        },
+        {
+          "type": "richtext",
+          "label": "Question",
+          "id": "hd",
+          "default": "<p>What types of freight services do you offer?</p>"
+        },
+        {
+          "type": "richtext",
+          "label": "Answer",
+          "id": "des",
+          "default": "<p>At StyleCo Blinds, we understand your home is supposed to be a sanctuary for you. We specialize in designing blinds, drapery and shutters that are both beautiful and functional. We believe in sustainable design so we only use natural materials and recycled material where possible; which reduces our carbon footprint while creating a unique style that.</p>"
+        },
+        {
+          "type": "html",
+          "label": "Answer (HTML)",
+          "id": "des_html",
+          "info": "Optional. If filled, this HTML is shown instead of the Answer above. Use for links, lists, iframes, etc."
+        }
       ]
     }
   ],
-  "presets":[
+  "presets": [
     {
-      "name":"home-faq",
-      "category":"custom"
+      "name": "home-faq",
+      "category": "custom",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "hd": "<p>What types of freight services do you offer?</p>"
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

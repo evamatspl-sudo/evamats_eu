@@ -1,182 +1,173 @@
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{{ 'section-evamats-collection-banner.css' | asset_url | stylesheet_tag }}
+{{ 'section-evamats-collection-mobile.css' | asset_url | stylesheet_tag }}
 
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign desktop_image = section.settings.image_desktop
+  assign mobile_image = section.settings.image_mobile
 
-{%- style -%}
-  @media screen and (max-width: 749px) {
-    .collection-hero--with-image .collection-hero__inner {
-      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
-    }
-  }
-{%- endstyle -%}
+  if desktop_image == blank
+    assign desktop_image = collection.image
+  endif
 
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
+  if mobile_image == blank
+    assign mobile_image = desktop_image
+  endif
 
-      {%- if section.settings.show_collection_description -%}
-        <div class="card-text-collection collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
-    </div>
- 
-    {%- if section.settings.show_collection_image and collection.image -%}
-      <div class="collection-hero__image-container media gradient">
-        <img
-          srcset="
-            {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {{ collection.image | image_url }} {{ collection.image.width }}w
-          "
-          src="{{ collection.image | image_url: width: 750 }}"
-          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-          alt=""
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
-        >
-      </div>
+  assign root_label = section.settings.parent_label | strip
+  if root_label == blank
+    assign root_label = 'Evamats'
+  endif
+
+  assign root_url = section.settings.parent_url | strip
+  if root_url == blank
+    assign root_url = routes.root_url
+  endif
+
+  assign catalog_label = section.settings.catalog_label | strip
+  if catalog_label == blank
+    assign catalog_label = 'Сatalog'
+  endif
+
+  assign brand_collection = nil
+  assign brand_url_setting = section.settings.brand_url | strip
+
+  if brand_url_setting != blank
+    assign brand_handle = brand_url_setting | split: '/collections/' | last | split: '?' | first
+    if brand_handle != blank
+      assign brand_collection = collections[brand_handle]
+    endif
+  endif
+
+  if brand_collection == blank
+    assign candidate = ''
+    assign handle_parts = collection.handle | split: '-'
+    for part in handle_parts
+      if candidate == blank
+        assign candidate = part
+      else
+        assign candidate = candidate | append: '-' | append: part
+      endif
+      if candidate != collection.handle
+        assign test_col = collections[candidate]
+        if test_col != blank
+          assign brand_collection = test_col
+          break
+        endif
+      endif
+    endfor
+  endif
+
+  assign middle_label = ''
+  assign middle_url = ''
+  assign breadcrumb_current = catalog_label
+
+  if brand_collection != blank
+    assign middle_label = brand_collection.title
+    assign middle_url = brand_collection.url
+    assign breadcrumb_current = collection.title
+  endif
+-%}
+
+<section
+  id="EvamatsCollectionBanner-{{ section.id }}"
+  class="evamats-collection-banner shopify-section"
+>
+  <div class="evamats-collection-banner__media{% if desktop_image == blank %} evamats-collection-banner__media--fallback{% endif %}" aria-hidden="true">
+    {%- if desktop_image != blank -%}
+      <picture>
+        {%- if mobile_image != blank -%}
+          <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 1200 }}">
+        {%- endif -%}
+        {{
+          desktop_image
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'evamats-collection-banner__image',
+            sizes: '100vw',
+            widths: '750, 1100, 1500, 1920, 2560, 3840'
+        }}
+      </picture>
     {%- endif -%}
+    <div class="evamats-collection-banner__overlay"></div>
   </div>
-</div>
 
+  <div class="evamats-collection-banner__ui page-width">
+    {%- if section.settings.show_breadcrumbs -%}
+      {% render 'evamats-breadcrumbs',
+        parent_label: root_label,
+        parent_url: root_url,
+        middle_label: middle_label,
+        middle_url: middle_url,
+        current_label: breadcrumb_current,
+        class: 'evamats-collection-banner__breadcrumbs'
+      %}
+    {%- endif -%}
 
-<style>
-  .collection-hero__title+.collection-hero__description {
-    font-size: 1.1rem;
-}
-  h1 {
-    font-size: 2.5rem;
-}
-  .card-text-collection {
-    overflow: hidden;
-    max-height: 66px; /* Adjust to your desired initial height */
-    transition: max-height 0.5s ease;
-  }
-
-  .btn-read-more-collection {
-    color: #FF0000;
-    text-decoration: underline;
-    cursor: pointer;
-    background: none;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    padding: 0;
-    margin-bottom: 40px;
-  }
-  .collection-hero__description {
-    max-width: 70%;
-}
-  @media screen and (min-width: 750px){
-    .collection-hero__title+.collection-hero__description {
-    margin-bottom: 1rem;
-}
-  }
-@media screen and (max-width: 767px){
-   .card-text-collection {
-    max-height: 74px; /* Adjust to your desired initial height */
-  }
-  h1 {
-    font-size: 1.85rem;
-}
-  .collection-hero__description {
-    max-width: 100%;
-}
-      .collection-hero__title + .collection-hero__description {
-      font-size: 1.1rem; /* Уменьшаем размер текста для описания */
-    }
-}
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var readMoreLabel = {{ 'sections.main_page.read_more' | t | json }};
-    var readLessLabel = {{ 'sections.main_page.read_less' | t | json }};
-    document.querySelectorAll('.card-text-collection').forEach(function(element) {
-        var text = element.textContent;
-        var charCount = text.length;
-        var maxChars = 200; // Adjust to your desired maximum characters
-
-        if (charCount > maxChars) {
-            var small = text.substring(0, maxChars);
-            var button = document.createElement('button');
-            button.className = 'btn-read-more-collection';
-            button.textContent = readMoreLabel;
-            element.after(button);
-
-            button.addEventListener('click', function() {
-                element.classList.toggle('expanded');
-                if (element.classList.contains('expanded')) {
-                    element.style.maxHeight = element.scrollHeight + 'px';
-                    button.textContent = readLessLabel;
-                } else {
-                    element.style.maxHeight = '66px'; // Adjust to your desired initial height
-                    button.textContent = readMoreLabel;
-                }
-            });
-        }
-    });
-});
-
-</script>
+    <h1 class="evamats-collection-banner__title">
+      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+      {{- collection.title | escape -}}
+    </h1>
+  </div>
+</section>
 
 {% schema %}
 {
   "name": "t:sections.main-collection-banner.name",
-  "class": "section",
+  "class": "section-evamats-collection-banner",
   "settings": [
     {
-      "type": "paragraph",
-      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Background image (desktop)",
+      "info": "Uses collection image when empty."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background image (mobile)",
+      "info": "Optional. Uses desktop or collection image when empty."
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
     },
     {
       "type": "checkbox",
-      "id": "show_collection_description",
-      "default": true,
-      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
     },
     {
-      "type": "checkbox",
-      "id": "show_collection_image",
-      "default": false,
-      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
-      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+      "type": "text",
+      "id": "parent_label",
+      "label": "Breadcrumb root label",
+      "default": "Evamats"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
+      "type": "url",
+      "id": "parent_url",
+      "label": "Breadcrumb root link",
+      "info": "Defaults to homepage."
+    },
+    {
+      "type": "text",
+      "id": "catalog_label",
+      "label": "Catalog breadcrumb label",
+      "default": "Katalog",
+      "info": "Shown on brand and top-level collection pages."
+    },
+    {
+      "type": "url",
+      "id": "brand_url",
+      "label": "Parent brand collection",
+      "info": "Optional. Used for model pages when auto-detection is not enough."
     }
   ]
 }

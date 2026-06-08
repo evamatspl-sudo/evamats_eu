@@ -1,40 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "14a44ec4-8943-4383-84f4-a8cbe08a3073": {
-      "type": "sidebar",
-      "blocks": {
-        "8e7f0ea4-413e-4a77-846c-2664ac8793ca": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-skywell-ht-i",
-            "color-code": "HT-i"
-          }
-        },
-        "a84d484d-b2c3-4bfd-811d-7019d3ccd286": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-skywell-et5",
-            "color-code": "ET5"
-          }
-        }
-      },
-      "block_order": [
-        "8e7f0ea4-413e-4a77-846c-2664ac8793ca",
-        "a84d484d-b2c3-4bfd-811d-7019d3ccd286"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -43,21 +27,21 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "155d503b-b6c1-4e84-8e76-37f38255ee8a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-skywell-ht-i",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-skywell-ht-i",
             "color-code": "HT-i"
           }
         },
         "3b7a9776-ad67-45a7-81fe-9ff5358a4132": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-skywell-et5",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-skywell-et5",
             "color-code": "ET5"
           }
         }
@@ -67,11 +51,7 @@
         "155d503b-b6c1-4e84-8e76-37f38255ee8a",
         "3b7a9776-ad67-45a7-81fe-9ff5358a4132"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -83,9 +63,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -94,7 +71,6 @@
   },
   "order": [
     "banner",
-    "14a44ec4-8943-4383-84f4-a8cbe08a3073",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

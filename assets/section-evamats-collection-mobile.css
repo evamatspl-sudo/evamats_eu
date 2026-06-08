@@ -1,0 +1,69 @@
+/* Figma 1710:27031 / 1710:27052 / 2096:13305 — collection page mobile layout */
+
+@media screen and (max-width: 749px) {
+  .template_collection #MainContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .template_collection .shopify-section:has(.mobile-container) {
+    order: 2;
+    margin-top: -8px;
+  }
+
+  .template_collection .section-evamats-collection-product-grid,
+  .template_collection .section-evamats-collection-product-grid .evamats-collection-product-grid,
+  .template_collection .section-evamats-collection-product-grid .evamats-collection-product-grid__layout {
+    display: contents;
+  }
+
+  .template_collection .evamats-collection-product-grid__filter {
+    order: 3;
+    position: relative;
+    z-index: 5;
+    width: calc(100% - 36px);
+    max-width: 339px;
+    margin: 0 auto;
+    margin-top: -35px;
+    padding: 0;
+  }
+
+  .template_collection .section-evamats-popular-models {
+    order: 4;
+  }
+
+  .template_collection .evamats-collection-product-grid__main {
+    order: 5;
+    width: 100%;
+    padding: 0 18px 32px;
+    box-sizing: border-box;
+  }
+
+  .template_collection .mobile-container {
+    padding: 0 18px 12px;
+  }
+
+  .template_collection .mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    background: #ff2741;
+    background-image: none;
+  }
+
+  .template_collection .mobile-container a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+}

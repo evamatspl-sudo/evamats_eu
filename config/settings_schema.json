@@ -63,6 +63,12 @@
         "label": "t:settings_schema.logo.settings.logo_image.label"
       },
       {
+        "type": "image_picker",
+        "id": "logo_inverse",
+        "label": "t:settings_schema.logo.settings.logo_inverse.label",
+        "info": "t:settings_schema.logo.settings.logo_inverse.info"
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 50,
@@ -1679,6 +1685,18 @@
         "type": "number",
         "id": "fake_rating_count",
         "label": "Fake rating count"
+      }
+    ]
+  },
+  {
+    "name": "Collection pages",
+    "settings": [
+      {
+        "type": "collection_list",
+        "id": "collection_featured_models",
+        "label": "Popular model collections",
+        "limit": 12,
+        "info": "Default list for the Popular models section on collection pages. Override per collection with metafield custom.featured_model_collections (list of collections)."
       }
     ]
   }

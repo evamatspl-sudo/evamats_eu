@@ -1,0 +1,241 @@
+/*
+  EvaMats global text fields (Figma Roman — InputField)
+  Light inputs: white fill, #e9e9e9 border, 12px radius, 52px height.
+*/
+
+:root {
+  --eva-input-radius: 12px;
+  --eva-input-bg: #ffffff;
+  --eva-input-border: #e9e9e9;
+  --eva-input-border-hover: #0061dc;
+  --eva-input-text: #1b1d22;
+  --eva-input-placeholder: #939393;
+  --eva-input-focus: #0061dc;
+  --eva-input-min-h: 52px;
+  --eva-input-pad-y: 12px;
+  --eva-input-pad-x: 20px;
+  --eva-input-font-size: 18px;
+}
+
+.field:has(> .field__input):before,
+.field:has(> .field__input):after,
+.field.field--prefixed:before,
+.field.field--prefixed:after {
+  display: none !important;
+  content: none !important;
+  box-shadow: none !important;
+}
+
+input.field__input[type='text'],
+input.field__input[type='email'],
+input.field__input[type='tel'],
+input.field__input[type='url'],
+input.field__input[type='number'],
+input.field__input[type='password'],
+input.field__input[type='search'],
+textarea.field__input,
+select.select__select,
+.customer .field input[type='text'],
+.customer .field input[type='email'],
+.customer .field input[type='tel'],
+.customer .field input[type='url'],
+.customer .field input[type='password'],
+.customer select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0 !important;
+  min-height: var(--eva-input-min-h);
+  height: auto;
+  padding: 0 var(--eva-input-pad-x) !important;
+  border: 1px solid var(--eva-input-border) !important;
+  border-radius: var(--eva-input-radius) !important;
+  background-color: var(--eva-input-bg) !important;
+  color: var(--eva-input-text) !important;
+  font-family: inherit;
+  font-size: var(--eva-input-font-size);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.field__input.search__input {
+  padding-right: 9.8rem !important;
+}
+
+textarea.field__input {
+  display: block;
+  min-height: 120px;
+  height: auto;
+  resize: vertical;
+  padding: var(--eva-input-pad-y) var(--eva-input-pad-x) !important;
+}
+
+input.field__input::placeholder,
+textarea.field__input::placeholder,
+.customer .field input::placeholder {
+  color: var(--eva-input-placeholder);
+  opacity: 1;
+  font-size: var(--eva-input-font-size);
+}
+
+/* .field:has(> .field__label) .field__input::placeholder,
+.field:has(> .field__label) textarea.field__input::placeholder,
+.customer .field:has(> label) input::placeholder {
+  opacity: 0;
+} */
+
+select.select__select,
+.customer select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+input.field__input:hover,
+textarea.field__input:hover,
+select.select__select:hover,
+.customer .field input:hover,
+.customer select:hover {
+  border-color: var(--eva-input-border-hover) !important;
+}
+
+input.field__input:focus,
+input.field__input:focus-visible,
+textarea.field__input:focus,
+textarea.field__input:focus-visible,
+select.select__select:focus,
+select.select__select:focus-visible,
+.customer .field input:focus,
+.customer .field input:focus-visible,
+.customer select:focus,
+.customer select:focus-visible {
+  outline: none;
+  border-color: var(--eva-input-focus) !important;
+  box-shadow: 0 0 0 1px var(--eva-input-focus);
+}
+
+.field:not(:has(> .field__label)):not(.field--prefixed) > .field__input:focus,
+.field:not(:has(> .field__label)):not(.field--prefixed) > .field__input:focus-visible,
+.field:not(:has(> .field__label)):not(.field--prefixed) > .field__input:not(:placeholder-shown),
+.customer .field:not(:has(> label)) input:focus,
+.customer .field:not(:has(> label)) input:focus-visible,
+.customer .field:not(:has(> label)) input:not(:placeholder-shown) {
+  padding: 0 var(--eva-input-pad-x) !important;
+  margin: 0 !important;
+}
+
+.field:has(> .field__label) > .field__input:focus,
+.field:has(> .field__label) > .field__input:focus-visible,
+.field:has(> .field__label) > .field__input:not(:placeholder-shown),
+.customer .field:has(> label) input:focus,
+.customer .field:has(> label) input:focus-visible,
+.customer .field:has(> label) input:not(:placeholder-shown) {
+  padding: 2.2rem 1.5rem 0.8rem 1.5rem !important;
+  margin: var(--inputs-border-width) !important;
+}
+
+input.field__input:-webkit-autofill,
+input.field__input:-webkit-autofill:hover,
+textarea.field__input:-webkit-autofill,
+textarea.field__input:-webkit-autofill:hover,
+.customer .field input:-webkit-autofill,
+.customer .field input:-webkit-autofill:hover {
+  -webkit-text-fill-color: var(--eva-input-text);
+  caret-color: var(--eva-input-text);
+  box-shadow: 0 0 0 1000px var(--eva-input-bg) inset !important;
+  transition: background-color 99999s ease-out;
+}
+
+.field.field--prefixed {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--eva-input-min-h);
+  height: var(--eva-input-min-h);
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--eva-input-font-size);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  border: 1px solid var(--eva-input-border);
+  border-radius: var(--eva-input-radius);
+  background-color: var(--eva-input-bg);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field.field--prefixed:hover {
+  border-color: var(--eva-input-border-hover);
+}
+
+.field.field--prefixed:focus-within {
+  outline: none;
+  border-color: var(--eva-input-focus);
+  box-shadow: 0 0 0 1px var(--eva-input-focus);
+}
+
+.field--prefixed__prefix {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 0 0 var(--eva-input-pad-x);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: var(--eva-input-text);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.field--prefixed .field__input,
+.field--prefixed > input.field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
+  margin: 0 !important;
+  padding: 0 var(--eva-input-pad-x) 0 10px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: var(--eva-input-text) !important;
+}
+
+.field--prefixed .field__input:hover,
+.field--prefixed .field__input:focus,
+.field--prefixed .field__input:focus-visible,
+.field--prefixed > input.field__input:hover,
+.field--prefixed > input.field__input:focus,
+.field--prefixed > input.field__input:focus-visible {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.field--prefixed .field__input:-webkit-autofill,
+.field--prefixed .field__input:-webkit-autofill:hover,
+.field--prefixed > input.field__input:-webkit-autofill,
+.field--prefixed > input.field__input:-webkit-autofill:hover {
+  -webkit-text-fill-color: var(--eva-input-text);
+  caret-color: var(--eva-input-text);
+  box-shadow: 0 0 0 1000px var(--eva-input-bg) inset !important;
+  transition: background-color 99999s ease-out;
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --eva-input-min-h: 46px;
+    --eva-input-pad-y: 10px;
+    --eva-input-pad-x: 18px;
+    --eva-input-font-size: 16px;
+  }
+}

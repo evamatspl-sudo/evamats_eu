@@ -1,56 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "c509b67b-b1f7-4e69-8a07-eb2dec5e18d0": {
-      "type": "sidebar",
-      "blocks": {
-        "44e9f70a-8f94-4696-8864-37e4fd684073": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-corsair",
-            "color-code": "Corsair"
-          }
-        },
-        "6de62346-fe9d-4778-8e7f-90db7d34eef5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-mkx",
-            "color-code": "MKX"
-          }
-        },
-        "fc13ddf7-c355-4695-9ea2-4158727d3374": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/lincoln-navigator",
-            "color-code": "Navigator"
-          }
-        },
-        "66ade44b-5bc3-40b8-bbe7-72c3e486fe14": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-town-car",
-            "color-code": "Town Car"
-          }
-        }
-      },
-      "block_order": [
-        "44e9f70a-8f94-4696-8864-37e4fd684073",
-        "6de62346-fe9d-4778-8e7f-90db7d34eef5",
-        "fc13ddf7-c355-4695-9ea2-4158727d3374",
-        "66ade44b-5bc3-40b8-bbe7-72c3e486fe14"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -59,35 +27,35 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "98b4cbec-d3d2-4d96-9942-979260e17e55": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-corsair",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lincoln-corsair",
             "color-code": "Corsair"
           }
         },
         "d42fe7ba-9091-418f-bbcf-5194b7763568": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-mkx",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lincoln-mkx",
             "color-code": "MKX"
           }
         },
         "06812fe3-158b-4803-bcbf-78c15eacb0d3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/lincoln-navigator",
+            "product-link": "shopify://collections/lincoln-navigator",
             "color-code": "Navigator"
           }
         },
         "2250195e-0def-412f-bdb3-863157c9b154": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lincoln-town-car",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lincoln-town-car",
             "color-code": "Town Car"
           }
         }
@@ -99,11 +67,7 @@
         "06812fe3-158b-4803-bcbf-78c15eacb0d3",
         "2250195e-0def-412f-bdb3-863157c9b154"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -115,9 +79,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -126,7 +87,6 @@
   },
   "order": [
     "banner",
-    "c509b67b-b1f7-4e69-8a07-eb2dec5e18d0",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

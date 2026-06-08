@@ -1,18 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": "shopify://collections/mini"
       }
     },
     "774ecfa8-f3fa-44a6-adab-3e9cef87bbc2": {
       "type": "mobile-button",
       "settings": {
         "btn_text": "All models",
-        "btn_url": "shopify:\/\/collections\/mini"
+        "btn_url": "shopify://collections/mini"
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -21,7 +34,7 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mini",
+            "product-link": "shopify://collections/mini",
             "color-code": "All"
           }
         },
@@ -29,7 +42,7 @@
           "type": "section",
           "disabled": true,
           "settings": {
-            "product-link": "shopify:\/\/collections\/mini-clubman",
+            "product-link": "shopify://collections/mini-clubman",
             "color-code": "Clubman"
           }
         }
@@ -54,9 +67,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36

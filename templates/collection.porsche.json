@@ -1,96 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "1f91100a-4861-4342-ac69-6bcaa70ca9bd": {
-      "type": "sidebar",
-      "blocks": {
-        "afbbccf0-52ba-46f1-933a-ff4a1ecad81c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-911",
-            "color-code": "911"
-          }
-        },
-        "80c44ac8-5d67-41fb-a0ae-ced261c23b28": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-boxster",
-            "color-code": "Boxster"
-          }
-        },
-        "bbb66379-1c4f-4bc8-8b24-3bc1ff0cc23b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne",
-            "color-code": "Cayenne"
-          }
-        },
-        "af47ca4a-a789-4a0d-9fca-0d13e738a2f8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-coupe",
-            "color-code": "Cayenne Coupe"
-          }
-        },
-        "96aee439-ca57-4f0c-9685-d72d3b626b3c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-s",
-            "color-code": "Cayenne S"
-          }
-        },
-        "a25fb63c-38bc-4688-b9e1-cea06021d5a2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayman",
-            "color-code": "Cayman"
-          }
-        },
-        "a7bd4f10-a40a-4b36-a38d-5c5d00b9dc49": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-macan",
-            "color-code": "Macan"
-          }
-        },
-        "1a952563-5c98-4cbe-84b1-3fad86675d70": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-panamera",
-            "color-code": "Panamera"
-          }
-        },
-        "8fec2db6-6922-4c2a-9c7a-c1d939eb8855": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-taycan",
-            "color-code": "Taycan"
-          }
-        }
-      },
-      "block_order": [
-        "afbbccf0-52ba-46f1-933a-ff4a1ecad81c",
-        "80c44ac8-5d67-41fb-a0ae-ced261c23b28",
-        "bbb66379-1c4f-4bc8-8b24-3bc1ff0cc23b",
-        "af47ca4a-a789-4a0d-9fca-0d13e738a2f8",
-        "96aee439-ca57-4f0c-9685-d72d3b626b3c",
-        "a25fb63c-38bc-4688-b9e1-cea06021d5a2",
-        "a7bd4f10-a40a-4b36-a38d-5c5d00b9dc49",
-        "1a952563-5c98-4cbe-84b1-3fad86675d70",
-        "8fec2db6-6922-4c2a-9c7a-c1d939eb8855"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -99,70 +27,70 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "685ca4e5-c33a-481b-89af-7b5e825f5a78": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-911",
+            "product-link": "shopify://collections/porsche-911",
             "color-code": "911"
           }
         },
         "7a8bfd9c-d218-4af1-b5fd-eb41899c8a7f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-boxster",
+            "product-link": "shopify://collections/porsche-boxster",
             "color-code": "Boxster"
           }
         },
         "08247c72-1264-41b6-9fa7-eafe3b9bd4c2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne",
+            "product-link": "shopify://collections/porsche-cayenne",
             "color-code": "Cayenne"
           }
         },
         "60e69306-4b21-48ae-9350-353d625fd27e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-coupe",
+            "product-link": "shopify://collections/porsche-cayenne-coupe",
             "color-code": "Cayenne Coupe"
           }
         },
         "73f78a27-331e-4aaa-954c-d1bf44a0f1a8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-s",
+            "product-link": "shopify://collections/porsche-cayenne-s",
             "color-code": "Cayenne S"
           }
         },
         "c6f5bd9b-66e1-4f93-918f-3b9c483c13c0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayman",
+            "product-link": "shopify://collections/porsche-cayman",
             "color-code": "Cayman"
           }
         },
         "77fb563a-9085-4ab6-8a06-ea47148adc28": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-macan",
+            "product-link": "shopify://collections/porsche-macan",
             "color-code": "Macan"
           }
         },
         "6813354e-35b2-4800-9acf-6995170757eb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-panamera",
+            "product-link": "shopify://collections/porsche-panamera",
             "color-code": "Panamera"
           }
         },
         "74dfa9ff-9e02-417e-a1fd-4f6bb7230920": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-taycan",
+            "product-link": "shopify://collections/porsche-taycan",
             "color-code": "Taycan"
           }
         }
@@ -179,11 +107,7 @@
         "6813354e-35b2-4800-9acf-6995170757eb",
         "74dfa9ff-9e02-417e-a1fd-4f6bb7230920"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -195,9 +119,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -206,7 +127,6 @@
   },
   "order": [
     "banner",
-    "1f91100a-4861-4342-ac69-6bcaa70ca9bd",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

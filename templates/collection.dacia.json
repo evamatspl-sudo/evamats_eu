@@ -1,80 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "9640b2bf-bfcf-47f2-a32e-01eddc22a029": {
-      "type": "sidebar",
-      "blocks": {
-        "4884b5cf-c023-4609-8750-d00307561223": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-dokker",
-            "color-code": "Dokker"
-          }
-        },
-        "9c799704-e203-414d-bae4-0d2544ac8bff": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-duster",
-            "color-code": "Duster"
-          }
-        },
-        "5110d14f-5103-43d2-a154-c93a6b3bbbbc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-jogger",
-            "color-code": "Jogger"
-          }
-        },
-        "ca4884af-ae60-44f5-9580-8ff0c95289bb": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-lodgy",
-            "color-code": "Lodgy"
-          }
-        },
-        "c500237b-5710-4384-8eb1-f8c30a348e07": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-logan",
-            "color-code": "Logan"
-          }
-        },
-        "530ce126-7ca7-4fb8-a9f6-ba16b61ee4b9": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-sandero",
-            "color-code": "Sandero"
-          }
-        },
-        "44200521-c96a-40c3-a48e-40cf9b63ddfb": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-spring",
-            "color-code": "Spring"
-          }
-        }
-      },
-      "block_order": [
-        "4884b5cf-c023-4609-8750-d00307561223",
-        "9c799704-e203-414d-bae4-0d2544ac8bff",
-        "5110d14f-5103-43d2-a154-c93a6b3bbbbc",
-        "ca4884af-ae60-44f5-9580-8ff0c95289bb",
-        "c500237b-5710-4384-8eb1-f8c30a348e07",
-        "530ce126-7ca7-4fb8-a9f6-ba16b61ee4b9",
-        "44200521-c96a-40c3-a48e-40cf9b63ddfb"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -83,56 +27,56 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "0a4cce3f-e580-43e8-a184-e4390c678001": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-dokker",
+            "product-link": "shopify://collections/dacia-dokker",
             "color-code": "Dokker"
           }
         },
         "e6937423-a6c0-427f-b717-7f62f51a6c5a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-duster",
+            "product-link": "shopify://collections/dacia-duster",
             "color-code": "Duster"
           }
         },
         "ff4b1edb-664a-4b09-bffb-75db419dd5dc": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-jogger",
+            "product-link": "shopify://collections/dacia-jogger",
             "color-code": "Jogger"
           }
         },
         "f72929c1-c81e-4059-9e75-4835494128cb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-lodgy",
+            "product-link": "shopify://collections/dacia-lodgy",
             "color-code": "Lodgy"
           }
         },
         "618dd3ce-97e2-48d6-812d-94136e23a306": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-logan",
+            "product-link": "shopify://collections/dacia-logan",
             "color-code": "Logan"
           }
         },
         "e0154050-12d1-4ce1-a4d4-90cd85999953": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-sandero",
+            "product-link": "shopify://collections/dacia-sandero",
             "color-code": "Sandero"
           }
         },
         "b02734c6-d472-40f8-82ef-d7ca6913c459": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dacia-spring",
+            "product-link": "shopify://collections/dacia-spring",
             "color-code": "Spring"
           }
         }
@@ -147,11 +91,7 @@
         "e0154050-12d1-4ce1-a4d4-90cd85999953",
         "b02734c6-d472-40f8-82ef-d7ca6913c459"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -163,9 +103,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -174,7 +111,6 @@
   },
   "order": [
     "banner",
-    "9640b2bf-bfcf-47f2-a32e-01eddc22a029",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

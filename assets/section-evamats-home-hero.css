@@ -44,7 +44,7 @@
 }
 
 .template_index:has(.evamats-home-hero) .scrolled-past-header .header-wrapper {
-  background-color: rgb(var(--color-background));
+  background-color: transparent;
 }
 
 .template_index:has(.evamats-home-hero) .scrolled-past-header .header__inline-menu > .list-menu--inline > li > .header__menu-item,
@@ -305,10 +305,13 @@
   position: static;
   flex: 0 0 8px;
   width: 8px;
-  height: 8px;
+  height: 5px;
   margin-left: 4px;
   transform: none;
-  display: none;
+  display: block;
+  color: #1b1d22;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out;
 }
 
 .evamats-home-hero .active.custom-select svg {
@@ -390,6 +393,78 @@
 .evamats-home-hero__badge-icon--trust {
   width: 23px;
   height: 22px;
+}
+
+.evamats-home-hero__badge--google.is-loading {
+  gap: 10px;
+  min-width: 72px;
+}
+
+.evamats-home-hero__badge-data {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.evamats-home-hero__badge--google.is-loading .evamats-home-hero__badge-data {
+  display: none;
+}
+
+.evamats-home-hero__badge-loading {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.evamats-home-hero__badge--google.is-loading .evamats-home-hero__badge-loading {
+  display: inline-flex;
+}
+
+.evamats-home-hero__badge-icon--google {
+  flex-shrink: 0;
+}
+
+.evamats-home-hero__badge-spinner-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.evamats-home-hero__badge--google .path {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+.evamats-home-hero__badge--google .spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 280;
+  }
+
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(450deg);
+  }
 }
 
 .evamats-home-hero__bg--mobile,
@@ -596,10 +671,13 @@
     z-index: 2;
     display: block;
     flex: none;
-    width: 20px;
-    height: 20px;
+    width: 8px;
+    height: 5px;
     margin: 0;
+    color: #1b1d22;
     transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.2s ease-in-out;
   }
 
   .evamats-home-hero .active.custom-select svg {
@@ -640,8 +718,7 @@
   }
 
   .evamats-home-hero__badges {
-    justify-content: center;
-    gap: 10px;
+    display: none;
   }
 
   .evamats-home-hero__badge {

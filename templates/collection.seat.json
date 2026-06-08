@@ -1,120 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "bb94e990-4411-4b9e-a2ac-a1ffa3831a94": {
-      "type": "sidebar",
-      "blocks": {
-        "92e062b2-ea70-48d6-80cf-e937e313e728": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/seat-alhambra",
-            "color-code": "Alhambra"
-          }
-        },
-        "e0332f85-4422-4429-9188-d08c05463580": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-altea",
-            "color-code": "Altea"
-          }
-        },
-        "a44c0db9-da22-4e8d-aa57-73142b2ff50f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-altea-xl",
-            "color-code": "Altea XL"
-          }
-        },
-        "70234ba8-2449-463d-8a26-91015f17f5c8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-arona",
-            "color-code": "Arona"
-          }
-        },
-        "0c667b8d-d036-4973-ac8f-02bdcf82e6b1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-ateca",
-            "color-code": "Ateca"
-          }
-        },
-        "54d82e01-bb61-40b5-a91e-a2470fecad87": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-cordoba",
-            "color-code": "Cordoba"
-          }
-        },
-        "094687d0-7aff-4926-803a-a96885aab419": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-exeo",
-            "color-code": "EXEO"
-          }
-        },
-        "e41c336d-310b-460d-95fa-9f48237e536c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-ibiza",
-            "color-code": "Ibiza"
-          }
-        },
-        "f2861439-4c39-4144-a82b-49f082362ad7": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-leon",
-            "color-code": "Leon"
-          }
-        },
-        "5c0fd52a-7750-4d66-813a-ba07baf716f6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/seat-mii",
-            "color-code": "Mii"
-          }
-        },
-        "5bb42742-9bfc-4714-ab07-8c2c7f4ffc2b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-tarraco",
-            "color-code": "Tarraco"
-          }
-        },
-        "48d7e0c1-840e-44f9-b253-09c3c91c2fcf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-toledo",
-            "color-code": "Toledo"
-          }
-        }
-      },
-      "block_order": [
-        "92e062b2-ea70-48d6-80cf-e937e313e728",
-        "e0332f85-4422-4429-9188-d08c05463580",
-        "a44c0db9-da22-4e8d-aa57-73142b2ff50f",
-        "70234ba8-2449-463d-8a26-91015f17f5c8",
-        "0c667b8d-d036-4973-ac8f-02bdcf82e6b1",
-        "54d82e01-bb61-40b5-a91e-a2470fecad87",
-        "094687d0-7aff-4926-803a-a96885aab419",
-        "e41c336d-310b-460d-95fa-9f48237e536c",
-        "f2861439-4c39-4144-a82b-49f082362ad7",
-        "5c0fd52a-7750-4d66-813a-ba07baf716f6",
-        "5bb42742-9bfc-4714-ab07-8c2c7f4ffc2b",
-        "48d7e0c1-840e-44f9-b253-09c3c91c2fcf"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -123,91 +27,91 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "fd65cf4f-e597-4fbc-8053-1a96d50b23a7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/seat-alhambra",
+            "product-link": "shopify://collections/seat-alhambra",
             "color-code": "Alhambra"
           }
         },
         "5e98da9a-312f-4edc-8ef8-c6eec1d62cc7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-altea",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-altea",
             "color-code": "Altea"
           }
         },
         "7d1e9bc1-49c8-49ab-ba39-51b8b394fbf6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-altea-xl",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-altea-xl",
             "color-code": "Altea XL"
           }
         },
         "d54c02dc-06cc-4031-8a0e-d34022df500c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-arona",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-arona",
             "color-code": "Arona"
           }
         },
         "475b2e39-ff2c-424a-9c2a-a389f0b8331b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-ateca",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-ateca",
             "color-code": "Ateca"
           }
         },
         "3b106ca7-dd30-4388-8437-5141970ea8d8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-cordoba",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-cordoba",
             "color-code": "Cordoba"
           }
         },
         "e7acb964-103b-4f0b-bfa0-a84061be3bf0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-exeo",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-exeo",
             "color-code": "EXEO"
           }
         },
         "060ea55e-7cb1-4bce-b053-e8b02835fa6b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-ibiza",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-ibiza",
             "color-code": "Ibiza"
           }
         },
         "7dff6580-fe2e-4dc2-a1a0-64c11c3722a9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-leon",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-leon",
             "color-code": "Leon"
           }
         },
         "f1e855b4-f6db-4dfd-8de3-f94991fb525e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/seat-mii",
+            "product-link": "shopify://collections/seat-mii",
             "color-code": "Mii"
           }
         },
         "34c41555-08bc-4732-892d-e2c20feef1a7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-tarraco",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-tarraco",
             "color-code": "Tarraco"
           }
         },
         "7983bf13-9b5a-4668-9131-0649ea591b1a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seat-toledo",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seat-toledo",
             "color-code": "Toledo"
           }
         }
@@ -227,11 +131,7 @@
         "34c41555-08bc-4732-892d-e2c20feef1a7",
         "7983bf13-9b5a-4668-9131-0649ea591b1a"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -243,9 +143,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -254,7 +151,6 @@
   },
   "order": [
     "banner",
-    "bb94e990-4411-4b9e-a2ac-a1ffa3831a94",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

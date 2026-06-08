@@ -1,0 +1,31 @@
+{%- comment -%}
+  Stable handle for a navigation link (language-independent).
+  @param link {link}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu_link_handle = ''
+
+  if link.object.handle != blank
+    assign menu_link_handle = link.object.handle
+  else
+    assign menu_link_path = link.url | split: '?' | first
+
+    if menu_link_path contains '/collections/'
+      assign menu_link_handle = menu_link_path | split: '/collections/' | last | split: '/' | first
+    elsif menu_link_path contains '/pages/'
+      assign menu_link_handle = menu_link_path | split: '/pages/' | last | split: '/' | first
+    elsif menu_link_path contains '/products/'
+      assign menu_link_handle = menu_link_path | split: '/products/' | last | split: '/' | first
+    elsif menu_link_path contains '/blogs/'
+      assign menu_link_parts = menu_link_path | split: '/blogs/' | last | split: '/'
+      if menu_link_parts.size > 1
+        assign menu_link_handle = menu_link_parts | last
+      else
+        assign menu_link_handle = menu_link_parts | first
+      endif
+    endif
+  endif
+
+  echo menu_link_handle
+-%}

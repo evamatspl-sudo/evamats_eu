@@ -3,6 +3,8 @@
   assign mat_form_wrapper_id = 'mat-consult-form-' | append: section.id
 -%}
 
+{% render 'evamats-section-padding-style', section: section, target: '.mat-consult' %}
+
 <section
   id="mat-consult-{{ section.id }}"
   class="mat-consult"
@@ -253,6 +255,54 @@
       "id": "error_message",
       "label": "Generic error message",
       "default": "Sprawdź pola i spróbuj ponownie."
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     }
   ],
   "blocks": [

@@ -1,0 +1,45 @@
+{%- comment -%}
+  Drawer footer — Figma 1710:36037 (car CTA) + 1710:36053 (contact).
+  @param section {section}
+{%- endcomment -%}
+
+{%- liquid
+  assign car_label = section.settings.drawer_car_cta_label
+  assign car_url = section.settings.drawer_car_cta_url
+  assign phone_1 = section.settings.drawer_phone_1
+  assign phone_2 = section.settings.drawer_phone_2
+  assign drawer_email = section.settings.drawer_email
+-%}
+
+{%- if car_label != blank and car_url != blank -%}
+  <a href="{{ car_url }}" class="evamats-header-drawer__car-cta">
+    <span class="evamats-header-drawer__car-cta-icon" aria-hidden="true">
+      <img
+        src="{{ 'car_button.webp' | asset_url }}"
+        class="evamats-header-drawer__car-cta-img"
+        width="54"
+        height="54"
+        loading="lazy"
+        alt=""
+      >
+    </span>
+    <span class="evamats-header-drawer__car-cta-label">{{ car_label | escape }}</span>
+    <svg class="evamats-header-drawer__car-cta-arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+{%- endif -%}
+
+{%- if phone_1 != blank or phone_2 != blank or drawer_email != blank -%}
+  <div class="evamats-header-drawer__contact">
+    {%- if phone_1 != blank -%}
+      <a href="tel:{{ phone_1 | replace: ' ', '' | replace: '-', '' }}" class="evamats-header-drawer__contact-phone">{{ phone_1 | escape }}</a>
+    {%- endif -%}
+    {%- if phone_2 != blank -%}
+      <a href="tel:{{ phone_2 | replace: ' ', '' | replace: '-', '' }}" class="evamats-header-drawer__contact-phone">{{ phone_2 | escape }}</a>
+    {%- endif -%}
+    {%- if drawer_email != blank -%}
+      <a href="mailto:{{ drawer_email | escape }}" class="evamats-header-drawer__contact-email">{{ drawer_email | escape }}</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}

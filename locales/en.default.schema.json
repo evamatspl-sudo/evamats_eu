@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "settings_schema": {
     "global": {
@@ -164,6 +173,10 @@
       "settings": {
         "logo_image": {
           "label": "Logo"
+        },
+        "logo_inverse": {
+          "label": "Logo (inverse)",
+          "info": "For dark backgrounds (e.g. Rare fit CTA section)."
         },
         "logo_width": {
           "label": "Desktop logo width",
@@ -661,33 +674,17 @@
       }
     },
     "brand-buttons": {
-      "name": "Brand Buttons",
+      "name": "Popular models",
       "settings": {
-        "collection-color-table-header": {
+        "heading": {
           "label": "Heading"
         },
-        "collection-catalog-header": {
-          "label": "Heading catalog"
-        },
-        "collection-margin-bottom": {
-          "label": "Bottom indent"
-        }
-      },
-      "blocks": {
-        "section": {
-          "name": "Brand car",
-          "settings": {
-            "product-link": {
-              "label": "Brand link"
-            },
-            "color-code": {
-              "label": "Name"
-            }
-          }
+        "margin_bottom": {
+          "label": "Bottom spacing"
         }
       },
       "presets": {
-        "name": "Brand Buttons"
+        "name": "Popular models"
       }
     },
     "featured-collection": {

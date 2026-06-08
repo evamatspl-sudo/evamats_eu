@@ -1,72 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "d71c1af1-dc21-4f75-a548-b94833437a13": {
-      "type": "sidebar",
-      "blocks": {
-        "62c5aee5-fa7d-4493-9615-0a943c95e1de": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mini-clubman",
-            "color-code": "Clubman"
-          }
-        },
-        "37759ccd-c1b6-4483-968e-7d8d4f4239e6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-countryman",
-            "color-code": "Countryman"
-          }
-        },
-        "55819341-e931-4a15-af89-4d7777c87b7b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-cabrio",
-            "color-code": "Cabrio"
-          }
-        },
-        "b7df0141-fa48-4c85-a700-be42fb11e1ac": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-coupe",
-            "color-code": "Coupe"
-          }
-        },
-        "2716dfc4-4a50-487a-a95d-16e5152e639d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-paceman",
-            "color-code": "Paceman"
-          }
-        },
-        "1653e636-2fbe-44b2-bf4e-5cb88f9c9216": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-hatch",
-            "color-code": "Hatch"
-          }
-        }
-      },
-      "block_order": [
-        "62c5aee5-fa7d-4493-9615-0a943c95e1de",
-        "37759ccd-c1b6-4483-968e-7d8d4f4239e6",
-        "55819341-e931-4a15-af89-4d7777c87b7b",
-        "b7df0141-fa48-4c85-a700-be42fb11e1ac",
-        "2716dfc4-4a50-487a-a95d-16e5152e639d",
-        "1653e636-2fbe-44b2-bf4e-5cb88f9c9216"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -75,49 +27,49 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "85ddd29c-759f-4dbb-9158-bfe899dd4506": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mini-clubman",
+            "product-link": "shopify://collections/mini-clubman",
             "color-code": "Clubman"
           }
         },
         "0ba7283c-910f-46b2-9043-d0287ea99ae6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-countryman",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mini-countryman",
             "color-code": "Countryman"
           }
         },
         "55ad6a42-4c5b-4c09-8f49-bd978c6e3258": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-cabrio",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mini-cabrio",
             "color-code": "Cabrio"
           }
         },
         "d2924010-7145-42a9-8800-bed07f0e0779": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-coupe",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mini-coupe",
             "color-code": "Coupe"
           }
         },
         "59b62329-7bae-49a1-9962-bef936c3de0f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-hatch",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mini-hatch",
             "color-code": "Hatch"
           }
         },
         "a01cfa10-81aa-458c-8905-e703b2ad1fe7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-mini-paceman",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-mini-paceman",
             "color-code": "Paceman"
           }
         }
@@ -131,11 +83,7 @@
         "59b62329-7bae-49a1-9962-bef936c3de0f",
         "a01cfa10-81aa-458c-8905-e703b2ad1fe7"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -147,9 +95,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -158,7 +103,6 @@
   },
   "order": [
     "banner",
-    "d71c1af1-dc21-4f75-a548-b94833437a13",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

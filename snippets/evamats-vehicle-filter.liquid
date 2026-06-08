@@ -1,0 +1,80 @@
+{%- comment -%}
+  Brand / model / generation filter (all_brands.json + search_models.js).
+
+  @param filter_ui {string} hero | collection
+  @param files_cdn {string} optional Shopify Files CDN base URL
+{%- endcomment -%}
+
+{%- liquid
+  assign filter_ui = filter_ui | default: 'collection'
+  assign files_cdn = files_cdn | strip
+  if files_cdn == blank
+    assign shop_id_padded = shop.id | prepend: '000000000000' | slice: -12, 12
+    assign shop_id_part1 = shop_id_padded | slice: 0, 4
+    assign shop_id_part2 = shop_id_padded | slice: 4, 4
+    assign shop_id_part3 = shop_id_padded | slice: 8, 4
+    assign files_cdn = 'https://cdn.shopify.com/s/files/1/' | append: shop_id_part1 | append: '/' | append: shop_id_part2 | append: '/' | append: shop_id_part3 | append: '/files/'
+  endif
+-%}
+
+<div
+  class="filter-container filter-container-json filter-container--{{ filter_ui }}"
+  data-json="{{ 'all_brands.json' | asset_url }}"
+  data-filter-ui="{{ filter_ui }}"
+  data-files-cdn="{{ files_cdn }}"
+  data-label-brand="{{ 'general.config.brand' | t | escape }}"
+  data-label-model="{{ 'general.config.model' | t | escape }}"
+  data-label-generation="{{ 'general.config.generation' | t | escape }}"
+>
+  <div class="evamats-vehicle-filter__fields">
+    <div class="custom-select-wrapper">
+      <div class="custom-select brand-custom-select filter-field">
+        <div class="filter-field__body">
+          <div class="filter-field__media filter-field__media--brand">
+            <img class="filter-field__thumb filter-field__thumb--brand" alt="" width="30" height="30" hidden>
+          </div>
+          <div class="filter-field__content">
+            <span class="filter-field__label">{{ 'general.config.brand' | t }}</span>
+            <input type="text" class="select-selected brand-input" placeholder="{{ 'general.config.brand' | t }}" autocomplete="off">
+          </div>
+          {% render 'arrow-down' %}
+        </div>
+        <div class="select-items select-hide brand-select-options"></div>
+      </div>
+    </div>
+    <div class="custom-select-divider"></div>
+    <div class="custom-select-wrapper">
+      <div class="custom-select model-custom-select filter-field">
+        <div class="filter-field__body">
+          <div class="filter-field__content">
+            <span class="filter-field__label">{{ 'general.config.model' | t }}</span>
+            <input type="text" class="select-selected disabled model-input" placeholder="{{ 'general.config.model' | t }}" disabled autocomplete="off">
+          </div>
+          {% render 'arrow-down' %}
+        </div>
+        <div class="select-items select-hide model-select-options"></div>
+      </div>
+    </div>
+    <div class="custom-select-divider"></div>
+    <div class="custom-select-wrapper">
+      <div class="custom-select years-custom-select filter-field">
+        <div class="filter-field__body">
+          <div class="filter-field__media filter-field__media--generation">
+            <img class="filter-field__thumb filter-field__thumb--generation" alt="" width="66" height="48" hidden>
+          </div>
+          <div class="filter-field__content">
+            <span class="filter-field__label">{{ 'general.config.generation' | t }}</span>
+            <input type="text" class="select-selected disabled years-input" placeholder="{{ 'general.config.generation' | t }}" autocomplete="off">
+          </div>
+          {% render 'arrow-down' %}
+        </div>
+        <div class="select-items select-hide years-select-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="search-button button search-button-json" disabled aria-label="{{ 'general.config.search' | t }}">
+    <span class="search-button__label">{{ 'general.config.search' | t }}</span>
+  </button>
+  <span class="clear-filters">{{ 'general.config.reset' | t }}</span>
+</div>

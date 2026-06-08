@@ -1,428 +1,335 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'section-footer.css' | asset_url | stylesheet_tag }}
-<link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
+{% comment %} section-footer.css merged into base.css {% endcomment %}
+{{ 'section-video-reviews.css' | asset_url | stylesheet_tag }}
+{% comment %} <link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'disclosure.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}</noscript>
+{% comment %} <noscript>{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
 <noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
 
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
   @media screen and (min-width: 750px) {
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
     }
-
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  {%- liquid 
-    assign has_social_icons = true
-    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
-      assign has_social_icons = false
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-footer' %}
+
+<footer class="footer evamats-footer color-{{ section.settings.color_scheme }} gradient">
+  {%- liquid
+    assign show_footer_social = false
+    for block in section.blocks
+      if block.type == 'brand_information' and block.settings.show_social
+        assign show_footer_social = true
+      endif
+    endfor
+    unless show_footer_social
+      if section.settings.show_social
+        assign show_footer_social = true
+      endif
+    endunless
+
+    assign has_partner_blocks = false
+    for block in section.blocks
+      if block.type == 'partner' and block.settings.image != blank
+        assign has_partner_blocks = true
+        break
+      endif
+    endfor
+    assign show_partners = false
+    if section.settings.partners_heading != blank and has_partner_blocks
+      assign show_partners = true
     endif
 
-    if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
-      assign brand_empty = true
+    assign has_delivery_images = false
+    if section.settings.delivery_image_1 != blank or section.settings.delivery_image_2 != blank or section.settings.delivery_image_3 != blank or section.settings.delivery_image_4 != blank
+      assign has_delivery_images = true
     endif
+  -%} 
 
-    if section.blocks.size == 1 and section.blocks[0].type == 'brand_information' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
-      assign only_empty_brand = true
-    endif
-  -%}
-  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social or section.settings.enable_follow_on_shop -%}
-    {%- unless only_empty_brand -%}
-      <div class="footer__content-top page-width">
-        {%- if section.blocks.size > 0 -%}
-          {%- liquid
-            if section.blocks.size == 9
-              assign footer_grid_class = 'grid--3-col-tablet'
-            elsif section.blocks.size > 6
-              assign footer_grid_class = 'grid--4-col-desktop'
-            elsif section.blocks.size > 4
-              assign footer_grid_class = 'grid--3-col-tablet'
-            endif
-          -%}
-          <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
-            {%- for block in section.blocks -%}
-              <div class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading">{{- block.settings.heading | escape -}}</h2>
-                {%- endif -%}
-
-                {%- case block.type -%}
-                  {%- when '@app' -%}
-                    {% render block %}
-                  {%- when 'text' -%}
-                    <div class="footer-block__details-content rte">
-                      {{ block.settings.subtext }}
-                    </div>
-                  {%- when 'link_list' -%}
-                    {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
-                        {%- for link in block.settings.menu.links -%}
-                          <li>
-                            <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
-                              {{ link.title }}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    {%- endif -%}
-                  {%- when 'brand_information' -%}
-                    <div class="footer-block__brand-info">
-                      {%- if settings.brand_image != blank -%}
-                        {%- assign brand_image_height = settings.brand_image_width | divided_by: settings.brand_image.aspect_ratio -%}
-                        <div class="footer-block__image-wrapper" style="max-width: min(100%, {{ settings.brand_image_width }}px);">
-                          {{ settings.brand_image | image_url: width: 1100 | image_tag:
-                            loading: 'lazy',
-                            widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                            height: brand_image_height,
-                            width: settings.brand_image_width
-                          }}
-                        </div>
-                      {%- endif -%}
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
-                      {%- endif -%}
-                      {%- if settings.brand_description != blank -%}
-                        <div class="rte">{{ settings.brand_description }}</div>
-                      {%- endif -%}
-                      {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons' -%}
-                      {%- endif -%}
-                    </div>
-                  {%- when 'image' -%}
-                    <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
-                      {%- if block.settings.image != blank -%}
-                        {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
-                        <div class="footer-block__image-wrapper global-media-settings"  style="max-width: min(100%, {{ block.settings.image_width }}px);">
-                          <img
-                            srcset= "{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                            src="{{ block.settings.image | image_url: width: 760 }}"
-                            alt="{{ block.settings.image.alt | escape }}"
-                            loading="lazy"
-                            width="{{ block.settings.image.width }}"
-                            height="{{ block.settings.image.height }}"
-                          >
-                        </div>
-                      {%- else -%}
-                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                      {%- endif -%}
-                    </div>
-                  {%- endcase -%}
+  {%- comment -%} ── 1. Top: menus + contacts ── {%- endcomment -%}
+  <div class="evamats-footer__content-top page-width">
+    <div class="evamats-footer__main">
+      <div class="evamats-footer__menus">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              <div class="evamats-footer__app" {{ block.shopify_attributes }}>
+                {% render block %}
               </div>
-            {%- endfor -%}
-          
+            {%- when 'link_list' -%}
+              <div class="evamats-footer__menu" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <p class="evamats-footer__menu-heading">{{ block.settings.heading | escape }}</p>
+                {%- endif -%}
+                {%- if block.settings.menu != blank -%}
+                  <ul class="evamats-footer__menu-list list-unstyled">
+                    {%- for link in block.settings.menu.links -%}
+                      <li>
+                        <a
+                          href="{{ link.url }}"
+                          class="evamats-footer__menu-link{% if link.active %} evamats-footer__menu-link--active{% endif %}"
+                        >
+                          {{ link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </div>
+            {%- when 'image' -%}
+              <div class="evamats-footer__image-block footer-block-image {{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+                {%- if block.settings.image != blank -%}
+                  {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
+                  <div class="footer-block__image-wrapper global-media-settings" style="max-width: min(100%, {{ block.settings.image_width }}px);">
+                    <img
+                      srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                      src="{{ block.settings.image | image_url: width: 760 }}"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  </div>
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="evamats-footer__aside">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'contact' -%}
+            {% render 'evamats-footer-contact-block', block: block %}
+          {%- elsif block.type == 'text' -%}
+            <div class="evamats-footer__contact" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <p class="evamats-footer__menu-heading">{{ block.settings.heading | escape }}</p>
+              {%- endif -%}
+              {%- if block.settings.subtext != blank -%}
+                <div class="evamats-footer__contact-body rte">
+                  {{ block.settings.subtext }}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if show_footer_social -%}
+          <div class="evamats-footer__social-wrap">
+            {% render 'evamats-footer-socials', section: section %}
           </div>
         {%- endif -%}
+      </div>
+    </div>
+  </div>
 
-        <div class="footer-block--newsletter">
-          {%- if section.settings.newsletter_enable -%}
-            <div class="footer-block__newsletter">
-              {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading">{{ section.settings.newsletter_heading | escape }}</h2>
-              {%- endif -%}
-              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <div class="newsletter-form__field-wrapper">
-                  <div class="field">
-                    <input
-                      id="NewsletterForm--{{ section.id }}"
-                      type="email"
-                      name="contact[email]"
-                      class="field__input"
-                      value="{{ form.email }}"
-                      aria-required="true"
-                      autocorrect="off"
-                      autocapitalize="off"
-                      autocomplete="email"
-                      {% if form.errors %}
-                        autofocus
-                        aria-invalid="true"
-                        aria-describedby="ContactFooter-error"
-                      {% elsif form.posted_successfully? %}
-                        aria-describedby="ContactFooter-success"
-                      {% endif %}
-                      placeholder="{{ 'newsletter.label' | t }}"
-                      required
-                    >
-                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                      {{ 'newsletter.label' | t }}
-                    </label>
-                    <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                      {% render 'icon-arrow' %}
-                    </button>
-                  </div>
-                  {%- if form.errors -%}
-                    <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
-                  {%- endif -%}
-                </div>
-                {%- if form.posted_successfully? -%}
-                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
-                {%- endif -%}
-              {%- endform -%}
-            </div>
+  {%- comment -%} ── 2. Newsletter ── {%- endcomment -%}
+  {%- if section.settings.newsletter_enable -%}
+    <div class="evamats-footer__newsletter-wrap page-width">
+      <div class="evamats-footer__newsletter">
+        <div class="evamats-footer__newsletter-text">
+          {%- if section.settings.newsletter_heading != blank -%}
+            <div class="evamats-footer__newsletter-heading">{{ section.settings.newsletter_heading }}</div>
           {%- endif -%}
-
-          {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-            <div class="footer__follow-on-shop">
-            {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
-            {% # theme-check-disable %}
-              {{ shop | login_button: action: 'follow' }}
-            {% # theme-check-enable %}
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons' -%}
+          {%- if section.settings.newsletter_subtext != blank -%}
+            <div class="evamats-footer__newsletter-subtext">{{ section.settings.newsletter_subtext | escape }}</div>
           {%- endif -%}
         </div>
+        {%- form 'customer', id: 'ContactFooter', class: 'evamats-footer__newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="evamats-footer__newsletter-field-wrap">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="evamats-footer__newsletter-input field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="ContactFooter-error"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="ContactFooter-success"
+              {% endif %}
+              placeholder="{{ section.settings.newsletter_placeholder | default: 'Twój adres e-mail' }}"
+              required
+            >
+            <button type="submit" class="button button_3 evamats-footer__newsletter-btn" name="commit">
+              {{ section.settings.newsletter_button | default: 'Zapisz się' }}
+            </button>
+          </div>
+          {%- if form.errors -%}
+            <small class="evamats-footer__newsletter-msg evamats-footer__newsletter-msg--error" id="ContactFooter-error">
+              {% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+            </small>
+          {%- endif -%}
+          {%- if form.posted_successfully? -%}
+            <p class="evamats-footer__newsletter-msg evamats-footer__newsletter-msg--success" id="ContactFooter-success" tabindex="-1" autofocus>
+              {% render 'icon-success' %}{{ 'newsletter.success' | t }}
+            </p>
+          {%- endif -%}
+        {%- endform -%}
       </div>
-    {%- endunless -%}
+    </div>
   {%- endif -%}
 
-  <div class="footer__content-bottom">
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          {% comment %} <noscript>
-            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select class="localization-selector link" name="country_code" aria-labelledby="FooterCountryLabelNoScript">
-                  {%- for country in localization.available_countries -%}
-                    <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
-                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-          <localization-form>
-            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                <div class="disclosure">
-                  <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
-                    {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
-                    {% render 'icon-caret' %}
-                  </button>
-                  <div class="disclosure__list-wrapper" hidden>
-                    <ul id="FooterCountryList" role="list" class="disclosure__list list-unstyled">
-                      {%- for country in localization.available_countries -%}
-                        <li class="disclosure__item" tabindex="-1">
-                          <a class="link link--text disclosure__link caption-large{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
-                            {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </div>
-                </div>
-                <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
-              </div>
-            {%- endform -%}
-          </localization-form> {% endcomment %}
-        {%- endif -%}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form>
-            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <div class="disclosure">
-                  <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel">
-                    {{ localization.language.iso_code | capitalize }}
-                    {% render 'icon-caret' %}
-                  </button>
-                  <div class="disclosure__list-wrapper" hidden>
-                    <ul id="FooterLanguageList" role="list" class="disclosure__list list-unstyled">
-                      {%- for language in localization.available_languages -%}
-                        <li class="disclosure__item" tabindex="-1">
-                          <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
-  
-                            {% assign icon = language.iso_code | append: '.svg' %}
-  
-                            <img src="{{ icon | file_url }}" alt="" class="lang_icon" loading='lazy'>
-                            {{ language.endonym_name | capitalize }}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </div>
-                </div>
-                <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="footer__column footer__column--info">
+  {%- comment -%} ── 3. Payments + Delivery ── {%- endcomment -%}
+  {%- if section.settings.payment_enable or has_delivery_images -%}
+    <div class="evamats-footer__payments-wrap page-width">
+      <hr class="evamats-footer__divider" aria-hidden="true">
+      <div class="evamats-footer__payments-row">
         {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {% assign payment_gateways = "visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik" | split: "," %}
-
+          <div class="evamats-footer__payments-group">
+            {%- if section.settings.payments_label != blank -%}
+              <p class="evamats-footer__payments-label">{{ section.settings.payments_label | escape }}</p>
+            {%- endif -%}
+            <ul class="evamats-footer__payment-list list-unstyled" role="list">
+              {%- assign payment_gateways = 'visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik' | split: ',' -%}
               {%- for type in payment_gateways -%}
-                <li class="list-payment__item">
-                  {% assign typeSvg = type | append: '.svg' %}
-                  <img src="{{ typeSvg | file_url }}" alt="" loading='lazy'>                  
+                <li class="evamats-footer__payment-item">
+                  {%- assign typeSvg = type | append: '.svg' -%}
+                  <img src="{{ typeSvg | file_url }}" alt="{{ type }}" loading="lazy">
                 </li>
               {%- endfor -%}
             </ul>
           </div>
         {%- endif -%}
-      </div>
-      
-    </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
-        <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: routes.root_url }}</small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li><small class="copyright__content"><a href="{{ policy.url }}">{{ policy.title }}</a></small></li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
+
+        {%- if has_delivery_images -%}
+          <div class="evamats-footer__delivery-group">
+            {%- if section.settings.delivery_label != blank -%}
+              <p class="evamats-footer__payments-label">{{ section.settings.delivery_label | escape }}</p>
+            {%- endif -%}
+            <div class="evamats-footer__delivery-list">
+              {%- assign delivery_slots = '1,2,3,4' | split: ',' -%}
+              {%- for slot in delivery_slots -%}
+                {%- assign img_key = 'delivery_image_' | append: slot -%}
+                {%- assign link_key = 'delivery_link_' | append: slot -%}
+                {%- assign delivery_img = section.settings[img_key] -%}
+                {%- assign delivery_link = section.settings[link_key] -%}
+                {%- if delivery_img != blank -%}
+                  <div class="evamats-footer__delivery-item">
+                    {%- if delivery_link != blank -%}
+                      <a href="{{ delivery_link }}" target="_blank" rel="noopener noreferrer">
+                    {%- endif -%}
+                    {{
+                      delivery_img
+                      | image_url: width: 120
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'evamats-footer__delivery-img',
+                        widths: '60, 90, 120',
+                        sizes: '60px',
+                        alt: delivery_img.alt
+                    }}
+                    {%- if delivery_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
         {%- endif -%}
       </div>
     </div>
+  {%- endif -%}
+
+  {%- comment -%} ── 4. Bottom bar: logo + copyright + NIP/REGON | partners ── {%- endcomment -%}
+  <div class="evamats-footer__bar-wrap page-width">
+    <hr class="evamats-footer__divider" aria-hidden="true">
+    <div class="evamats-footer__bar">
+      <div class="evamats-footer__bar-start">
+        {%- if settings.logo != blank -%}
+          <a href="{{ routes.root_url }}" class="evamats-footer__logo-link">
+            {{
+              settings.logo
+              | image_url: width: 228
+              | image_tag:
+                loading: 'lazy',
+                class: 'evamats-footer__logo',
+                widths: '91, 114, 182, 228',
+                sizes: '114px',
+                alt: shop.name
+            }}
+          </a>
+        {%- endif -%}
+        <div class="evamats-footer__copyright-wrap">
+          <p class="evamats-footer__copyright">
+            <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}</small>
+          </p>
+          {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
+            <p class="evamats-footer__legal">
+              {%- if section.settings.nip_number != blank -%}
+                <span>NIP: {{ section.settings.nip_number | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.nip_number != blank and section.settings.regon_number != blank -%}
+                <span class="evamats-footer__legal-sep">&nbsp;&middot;&nbsp;</span>
+              {%- endif -%}
+              {%- if section.settings.regon_number != blank -%}
+                <span>REGON: {{ section.settings.regon_number | escape }}</span>
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if show_partners -%}
+        <div class="evamats-footer__partners">
+          <p class="evamats-footer__partners-label">{{ section.settings.partners_heading | escape }}</p>
+          <div class="evamats-footer__partners-logos">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'partner' and block.settings.image != blank -%}
+                <div class="evamats-footer__partner" {{ block.shopify_attributes }}>
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}" class="evamats-footer__partner-link" target="_blank" rel="noopener noreferrer">
+                  {%- endif -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 160
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'evamats-footer__partner-img',
+                      widths: '70, 90, 140, 160',
+                      sizes: '80px',
+                      alt: block.settings.image.alt
+                  }}
+                  {%- if block.settings.link != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
   </div>
+
 </footer>
 
-{% javascript %}
-  class LocalizationForm extends HTMLElement {
-    constructor() {
-      super();
-      this.elements = {
-        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
-        button: this.querySelector('button'),
-        panel: this.querySelector('.disclosure__list-wrapper'),
-      };
-      this.elements.button.addEventListener('click', this.openSelector.bind(this));
-      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
-      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
 
-      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
-    }
-
-    hidePanel() {
-      this.elements.button.setAttribute('aria-expanded', 'false');
-      this.elements.panel.setAttribute('hidden', true);
-    }
-
-    onContainerKeyUp(event) {
-      if (event.code.toUpperCase() !== 'ESCAPE') return;
-
-      this.hidePanel();
-      this.elements.button.focus();
-    }
-
-    onItemClick(event) {
-      event.preventDefault();
-      const selectedLocale = event.currentTarget.dataset.value;
-
-      const domainMap = {
-        'cs': 'https://evaautokoberce.cz',
-        'de': 'https://evamattende.de',
-        'fr': 'https://evamats.store/fr',
-        'it': 'https://evamats.store/it',
-        'es': 'https://evamats.store/es',
-        'sk': 'https://evamats.store/sk',
-        'en': 'https://evamats.store'
-      };
-
-      const currentPath = window.location.pathname + window.location.search;
-      const targetDomain = domainMap[selectedLocale];
-
-      if (targetDomain && window.location.hostname !== new URL(targetDomain).hostname) {
-        const cleanDomain = targetDomain.replace(/\/$/, '');
-
-        // Языковые префиксы, которые нужно удалить с начала пути при переходе между доменами
-        const pathLocalePrefixes = ['fr', 'it', 'es', 'sk'];
-        let cleanedPath = currentPath;
-
-        const pathParts = currentPath.split('/');
-        const firstPart = pathParts[1];
-
-        if (pathLocalePrefixes.includes(firstPart)) {
-          // Удаляем языковой префикс
-          cleanedPath = '/' + pathParts.slice(2).join('/');
-        }
-
-        // Защита от двойных слэшей
-        if (!cleanedPath.startsWith('/')) {
-          cleanedPath = '/' + cleanedPath;
-        }
-
-        // Выполняем редирект
-        window.location.href = `${cleanDomain}${cleanedPath}`;
-      } else {
-        // Язык меняется на том же домене
-        const form = this.querySelector('form');
-        this.elements.input.value = selectedLocale;
-        if (form) form.submit();
-      }
-    }
-
-
-    openSelector() {
-      this.elements.button.focus();
-      this.elements.panel.toggleAttribute('hidden');
-      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
-    }
-
-    closeSelector(event) {
-      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
-      if (event.relatedTarget === null || shouldClose) {
-        this.hidePanel();
-      }
-    }
-  }
-
-  customElements.define('localization-form', LocalizationForm);
-{% endjavascript %}
-
-<style>
-      .guaranteed-container{
-       display: flex;
-       justify-content: flex-start;
-       margin: 40px auto 40px 0;
-       width: 100%;
-       max-width: 350px;
-       gap: 8px;
-     }
-     
-     .guaranteed-container img {
-       width: 50px;
-     }
-  </style>
-  
 {% schema %}
 {
   "name": "t:sections.footer.name",
@@ -471,6 +378,39 @@
       ]
     },
     {
+      "type": "contact",
+      "name": "Contact",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Skontaktuj się z nami"
+        },
+        {
+          "type": "richtext",
+          "id": "intro",
+          "label": "Company / intro (optional)"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address"
+        }
+      ]
+    },
+    {
       "type": "text",
       "name": "t:sections.footer.blocks.text.name",
       "settings": [
@@ -485,6 +425,22 @@
           "id": "subtext",
           "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    },
+    {
+      "type": "partner",
+      "name": "Partner logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
         }
       ]
     },
@@ -561,31 +517,36 @@
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__1.content",
-      "info": "t:sections.footer.settings.header__1.info"
+      "content": "Newsletter"
     },
     {
       "type": "checkbox",
       "id": "newsletter_enable",
       "default": true,
-      "label": "t:sections.footer.settings.newsletter_enable.label"
+      "label": "Show newsletter form"
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_heading",
+      "default": "<p>Zapisz się i odbierz rabat na pierwsze zamówienie</p>",
+      "label": "Newsletter heading"
     },
     {
       "type": "text",
-      "id": "newsletter_heading",
-      "default": "Subscribe to our emails",
-      "label": "t:sections.footer.settings.newsletter_heading.label"
-    },
-     {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__9.content",
-      "info": "t:sections.footer.settings.header__9.info"
+      "id": "newsletter_subtext",
+      "label": "Newsletter subtext"
     },
     {
-      "type": "checkbox",
-      "id": "enable_follow_on_shop",
-      "default": false,
-      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "default": "Twój adres e-mail",
+      "label": "Email input placeholder"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "default": "Zapisz się",
+      "label": "Button label"
     },
     {
       "type": "header",
@@ -597,6 +558,63 @@
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "text",
+      "id": "facebook_label",
+      "label": "Facebook button text"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube"
+    },
+    {
+      "type": "url",
+      "id": "threads_url",
+      "label": "Threads"
+    },
+    {
+      "type": "header",
+      "content": "Legal info (bottom bar)"
+    },
+    {
+      "type": "text",
+      "id": "nip_number",
+      "label": "NIP"
+    },
+    {
+      "type": "text",
+      "id": "regon_number",
+      "label": "REGON"
+    },
+    {
+      "type": "header",
+      "content": "Partners"
+    },
+    {
+      "type": "text",
+      "id": "partners_heading",
+      "label": "Partners heading"
     },
     {
       "type": "header",
@@ -622,13 +640,65 @@
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__7.content"
+      "content": "Payments & Delivery"
     },
     {
       "type": "checkbox",
       "id": "payment_enable",
       "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
+      "label": "Show payment icons"
+    },
+    {
+      "type": "text",
+      "id": "payments_label",
+      "default": "AKCEPTUJEMY PŁATNOŚCI",
+      "label": "Payments label"
+    },
+    {
+      "type": "text",
+      "id": "delivery_label",
+      "default": "DOSTAWA",
+      "label": "Delivery label"
+    },
+    {
+      "type": "image_picker",
+      "id": "delivery_image_1",
+      "label": "Delivery icon 1"
+    },
+    {
+      "type": "url",
+      "id": "delivery_link_1",
+      "label": "Delivery link 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "delivery_image_2",
+      "label": "Delivery icon 2"
+    },
+    {
+      "type": "url",
+      "id": "delivery_link_2",
+      "label": "Delivery link 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "delivery_image_3",
+      "label": "Delivery icon 3"
+    },
+    {
+      "type": "url",
+      "id": "delivery_link_3",
+      "label": "Delivery link 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "delivery_image_4",
+      "label": "Delivery icon 4"
+    },
+    {
+      "type": "url",
+      "id": "delivery_link_4",
+      "label": "Delivery link 4"
     },
     {
       "type": "header",
@@ -657,27 +727,51 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Section spacing (desktop)"
     },
     {
       "type": "range",
       "id": "padding_top",
+      "label": "Padding top",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
       "default": 36
     },
     {
       "type": "range",
       "id": "padding_bottom",
+      "label": "Padding bottom",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 28
     }
   ],
   "default": {
@@ -686,7 +780,7 @@
         "type": "link_list"
       },
       {
-        "type": "text"
+        "type": "contact"
       }
     ]
   }

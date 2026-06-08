@@ -1,32 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "6a686134-3746-492b-b074-3b688b9db393": {
-      "type": "sidebar",
-      "blocks": {
-        "7017f5c1-c259-435f-8a64-7811aa53dd14": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-plymoth-fury-3-1967",
-            "color-code": "Fury"
-          }
-        }
-      },
-      "block_order": [
-        "7017f5c1-c259-435f-8a64-7811aa53dd14"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -35,14 +27,14 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "2abd4d47-283f-401b-9aae-0971722f8ca2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-plymoth-fury-3-1967",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-plymoth-fury-3-1967",
             "color-code": "Fury"
           }
         }
@@ -51,11 +43,7 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6",
         "2abd4d47-283f-401b-9aae-0971722f8ca2"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -67,9 +55,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -78,7 +63,6 @@
   },
   "order": [
     "banner",
-    "6a686134-3746-492b-b074-3b688b9db393",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

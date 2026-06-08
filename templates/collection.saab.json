@@ -1,64 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "f883fc57-d276-44ea-b149-c355a0115e74": {
-      "type": "sidebar",
-      "blocks": {
-        "4485a144-e71c-4701-846f-578a9cade063": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/saab-9-2x",
-            "color-code": "9-2X"
-          }
-        },
-        "12b36269-0252-49fa-8254-47e1c7e884e3": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-3",
-            "color-code": "9-3"
-          }
-        },
-        "e9f17ee8-a633-4105-afb1-4be5454fe167": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-5",
-            "color-code": "9-5"
-          }
-        },
-        "e5c6277d-ac33-4f52-9df3-a268d722fa8b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-7",
-            "color-code": "9-7"
-          }
-        },
-        "71415f6b-fe50-4a66-ae23-71389119e58f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-900",
-            "color-code": "900"
-          }
-        }
-      },
-      "block_order": [
-        "4485a144-e71c-4701-846f-578a9cade063",
-        "12b36269-0252-49fa-8254-47e1c7e884e3",
-        "e9f17ee8-a633-4105-afb1-4be5454fe167",
-        "e5c6277d-ac33-4f52-9df3-a268d722fa8b",
-        "71415f6b-fe50-4a66-ae23-71389119e58f"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -67,42 +27,42 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "e52a3290-6ec6-4d1a-8b93-07d599bbd91b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/saab-9-2x",
+            "product-link": "shopify://collections/saab-9-2x",
             "color-code": "9-2X"
           }
         },
         "e1adafb0-e696-483f-b4aa-f76b428d7074": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-3",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-saab-9-3",
             "color-code": "9-3"
           }
         },
         "2e215533-05e2-4ffd-b516-399fc3c853f8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-5",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-saab-9-5",
             "color-code": "9-5"
           }
         },
         "3dc4dfe8-995a-4ff4-82d1-e7bf72ae5972": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-9-7",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-saab-9-7",
             "color-code": "9-7X"
           }
         },
         "f3477619-a46c-487d-8aa8-36ad7d4545c5": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-saab-900",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-saab-900",
             "color-code": "900"
           }
         }
@@ -115,11 +75,7 @@
         "3dc4dfe8-995a-4ff4-82d1-e7bf72ae5972",
         "f3477619-a46c-487d-8aa8-36ad7d4545c5"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -131,9 +87,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -142,7 +95,6 @@
   },
   "order": [
     "banner",
-    "f883fc57-d276-44ea-b149-c355a0115e74",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

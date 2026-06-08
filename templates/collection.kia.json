@@ -1,200 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "a6cb3ca0-6c67-4fb1-bf5e-84e46e8ed22c": {
-      "type": "sidebar",
-      "blocks": {
-        "5b4d5970-f3bb-44c1-b6b3-d72abee3aa32": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/kia-carnival",
-            "color-code": "Carnival"
-          }
-        },
-        "9984acea-e7df-4280-a2b6-ac332bbc36b5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-carens",
-            "color-code": "Carens"
-          }
-        },
-        "899a2820-8841-4017-aa40-8fe266ac6827": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-ceed",
-            "color-code": "Ceed"
-          }
-        },
-        "c07a271b-51df-49ad-b3fc-d0936e3a8b56": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-clarus",
-            "color-code": "Clarus"
-          }
-        },
-        "7695828a-9bba-4267-8e3a-435341f710cc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-ev6",
-            "color-code": "EV6"
-          }
-        },
-        "d819487f-e868-4be8-a890-00b6a00c6666": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-joice",
-            "color-code": "Joice"
-          }
-        },
-        "413fbae9-a26a-4bcd-84cb-7bf6103eafe9": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-magentis",
-            "color-code": "Magentis"
-          }
-        },
-        "508edccb-651a-4394-853a-93b20dbe44f0": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-niro",
-            "color-code": "Niro"
-          }
-        },
-        "fb0e8c06-c9be-43b2-876f-3029506cf89d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-optima",
-            "color-code": "Optima"
-          }
-        },
-        "59eed0e6-4b43-4d73-b815-e9de38b64ea5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-picanto",
-            "color-code": "Picanto"
-          }
-        },
-        "0e993829-594e-4b7c-b334-0b957785c4bc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-proceed",
-            "color-code": "ProCeed"
-          }
-        },
-        "87248fd3-bd0f-4a1c-b373-bed61e2493ff": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-rio",
-            "color-code": "Rio"
-          }
-        },
-        "13af9ec1-1cff-4672-b2b0-a49b7873cfc6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sephia",
-            "color-code": "Sephia"
-          }
-        },
-        "section_EUUckE": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sedona",
-            "color-code": "Sedona"
-          }
-        },
-        "09109ad7-5330-4f93-8bfc-95b12c7cdcd6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sorento",
-            "color-code": "Sorento"
-          }
-        },
-        "7cc98252-aaa2-4a73-a576-6b53760e4c00": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-soul",
-            "color-code": "Soul"
-          }
-        },
-        "29cc176e-4179-43ce-9215-bde55bc15a6e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sportage",
-            "color-code": "Sportage"
-          }
-        },
-        "d7a336fd-f3a3-4ac0-bdda-4225934c7042": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-stinger",
-            "color-code": "Stinger"
-          }
-        },
-        "2d162f0b-d88b-4a00-a53e-a0c65f0766e5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-stonic",
-            "color-code": "Stonic"
-          }
-        },
-        "section_GJVHPF": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-telluride",
-            "color-code": "Telluride"
-          }
-        },
-        "cf301396-ad20-4b30-af0a-36e03eff8426": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-venga",
-            "color-code": "Venga"
-          }
-        },
-        "ce1ebe95-3625-4f8b-9bea-1a6823ca3f0f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-xceed",
-            "color-code": "XCeed"
-          }
-        }
-      },
-      "block_order": [
-        "5b4d5970-f3bb-44c1-b6b3-d72abee3aa32",
-        "9984acea-e7df-4280-a2b6-ac332bbc36b5",
-        "899a2820-8841-4017-aa40-8fe266ac6827",
-        "c07a271b-51df-49ad-b3fc-d0936e3a8b56",
-        "7695828a-9bba-4267-8e3a-435341f710cc",
-        "d819487f-e868-4be8-a890-00b6a00c6666",
-        "413fbae9-a26a-4bcd-84cb-7bf6103eafe9",
-        "508edccb-651a-4394-853a-93b20dbe44f0",
-        "fb0e8c06-c9be-43b2-876f-3029506cf89d",
-        "59eed0e6-4b43-4d73-b815-e9de38b64ea5",
-        "0e993829-594e-4b7c-b334-0b957785c4bc",
-        "87248fd3-bd0f-4a1c-b373-bed61e2493ff",
-        "13af9ec1-1cff-4672-b2b0-a49b7873cfc6",
-        "section_EUUckE",
-        "09109ad7-5330-4f93-8bfc-95b12c7cdcd6",
-        "7cc98252-aaa2-4a73-a576-6b53760e4c00",
-        "29cc176e-4179-43ce-9215-bde55bc15a6e",
-        "d7a336fd-f3a3-4ac0-bdda-4225934c7042",
-        "2d162f0b-d88b-4a00-a53e-a0c65f0766e5",
-        "section_GJVHPF",
-        "cf301396-ad20-4b30-af0a-36e03eff8426",
-        "ce1ebe95-3625-4f8b-9bea-1a6823ca3f0f"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -203,161 +27,161 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "24d1f508-bbb3-44ba-8c0c-01a39f68e6b6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/kia-carnival",
+            "product-link": "shopify://collections/kia-carnival",
             "color-code": "Carnival"
           }
         },
         "523e5f91-32c7-4098-8bb2-0ddcfb894e46": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-carens",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-carens",
             "color-code": "Carens"
           }
         },
         "b7fc2773-961a-4235-935d-cb1a64e10a10": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-ceed",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-ceed",
             "color-code": "Ceed"
           }
         },
         "b73f06dd-c3c7-4f80-b7ef-3f13f78651b7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-clarus",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-clarus",
             "color-code": "Clarus"
           }
         },
         "5601e4a9-f5d7-4eb3-8224-0ddba6ec3253": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-ev6",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-ev6",
             "color-code": "EV6"
           }
         },
         "837560c1-7025-4e9f-8ff8-ce9d90ad796a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-joice",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-joice",
             "color-code": "Joice"
           }
         },
         "690068ed-8929-4535-99f3-03fa00050661": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-magentis",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-magentis",
             "color-code": "Magentis"
           }
         },
         "5c82b737-8a70-4f12-ad98-16b0e3927dda": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-niro",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-niro",
             "color-code": "Niro"
           }
         },
         "48425c7f-3f8c-4074-b339-0b0014559445": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-optima",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-optima",
             "color-code": "Optima"
           }
         },
         "59cbe966-ff8b-4f50-860a-282cd3fb5e75": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-picanto",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-picanto",
             "color-code": "Picanto"
           }
         },
         "7db57b07-9afc-4f24-b00b-ccf4af653d1b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-proceed",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-proceed",
             "color-code": "ProCeed"
           }
         },
         "f517485b-ccd5-4b1b-93bc-e212234646a2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-rio",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-rio",
             "color-code": "Rio"
           }
         },
         "section_Wa7hPF": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sedona",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-sedona",
             "color-code": "Sedona"
           }
         },
         "ae3f8965-7cc0-4768-9ece-672ba07acd5a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sephia",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-sephia",
             "color-code": "Sephia"
           }
         },
         "8c333d48-c138-45bf-87f7-6d6b39848726": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sorento",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-sorento",
             "color-code": "Sorento"
           }
         },
         "5c8007f2-fdd2-4982-b765-869038ce18f3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-soul",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-soul",
             "color-code": "Soul"
           }
         },
         "378ef377-c3e8-4763-94f0-9910e37a9ccb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-sportage",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-sportage",
             "color-code": "Sportage"
           }
         },
         "8676b03f-5d9f-4b95-9ee0-81a0f0fd7efe": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-stinger",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-stinger",
             "color-code": "Stinger"
           }
         },
         "bf69cac8-be2c-4aeb-b44c-1b35ad6181e2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-stonic",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-stonic",
             "color-code": "Stonic"
           }
         },
         "section_tNTCaG": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-telluride",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-telluride",
             "color-code": "Telluride"
           }
         },
         "082bfc95-c415-4155-b1d9-673a22c60fb6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-venga",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-venga",
             "color-code": "Venga"
           }
         },
         "4c2d0e49-fe99-48cb-95e5-74f31f9e9c6e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-kia-xceed",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-kia-xceed",
             "color-code": "XCeed"
           }
         }
@@ -387,11 +211,7 @@
         "082bfc95-c415-4155-b1d9-673a22c60fb6",
         "4c2d0e49-fe99-48cb-95e5-74f31f9e9c6e"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -403,9 +223,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -414,7 +231,6 @@
   },
   "order": [
     "banner",
-    "a6cb3ca0-6c67-4fb1-bf5e-84e46e8ed22c",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

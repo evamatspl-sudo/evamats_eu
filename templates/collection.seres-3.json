@@ -1,40 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "sidebar_qxV8BK": {
-      "type": "sidebar",
-      "blocks": {
-        "section_pHngz6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/seres-3-dfsk",
-            "color-code": "DFSK"
-          }
-        },
-        "section_WGpXV8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seres-sf5",
-            "color-code": "SF5"
-          }
-        }
-      },
-      "block_order": [
-        "section_pHngz6",
-        "section_WGpXV8"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -43,21 +27,21 @@
         "section_gqtApL": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "c8897c1a-6924-466d-99d1-88ea21452d87": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/seres-3-dfsk",
+            "product-link": "shopify://collections/seres-3-dfsk",
             "color-code": "DFSK"
           }
         },
         "section_mztypN": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-seres-sf5",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-seres-sf5",
             "color-code": "SF5"
           }
         }
@@ -67,11 +51,7 @@
         "c8897c1a-6924-466d-99d1-88ea21452d87",
         "section_mztypN"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -83,9 +63,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -94,7 +71,6 @@
   },
   "order": [
     "banner",
-    "sidebar_qxV8BK",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

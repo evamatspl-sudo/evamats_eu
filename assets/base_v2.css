@@ -232,36 +232,8 @@
     text-align: center;
   }
 
-  .adv-clean-hero-v2 a.adv-clean-hero-v2__cta {
-    color: var(--color-text-on-dark);
-  }
-
-  .adv-clean-hero-v2 .adv-clean-hero-v2__cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .adv-clean-hero-v2 .adv-clean-hero-v2__cta.button_3 {
     width: 100%;
-    min-height: 60px;
-    padding: 16px 24px;
-    border-radius: 16px;
-    background: #ff2741;
-    color: var(--color-text-on-dark);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.32px;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .adv-clean-hero-v2 .adv-clean-hero-v2__cta:hover {
-    opacity: 0.92;
-  }
-
-  .adv-clean-hero-v2 .adv-clean-hero-v2__cta--disabled {
-    opacity: 0.45;
-    pointer-events: none;
   }
 
   @media screen and (max-width: 989px) {
@@ -357,15 +329,11 @@
       text-align: left;
     }
 
-    .adv-clean-hero-v2 .adv-clean-hero-v2__cta {
+    .adv-clean-hero-v2 .adv-clean-hero-v2__cta.button_3 {
       flex: 0 0 auto;
       width: auto;
       min-width: 280px;
-      min-height: 70px;
-      padding: 22px 48px;
-      font-size: 18px;
-      font-weight: 500;
-      text-transform: none;
+      max-width: none;
     }
   }
 
@@ -538,26 +506,9 @@
     color: var(--color-accent-red, #ff2741);
   }
 
-  .adv-promo-offer-v2 .adv-promo-offer-v2__cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
     width: 100%;
-    min-height: 50px;
-    padding: 12px 20px;
-    border-radius: 12px;
-    background: var(--color-accent-red, #ff2741);
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.32px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  .adv-promo-offer-v2 .adv-promo-offer-v2__cta:hover {
-    filter: brightness(1.05);
+    max-width: none;
   }
 
   @media screen and (max-width: 989px) {
@@ -679,13 +630,8 @@
       text-align: right;
     }
 
-    .adv-promo-offer-v2 .adv-promo-offer-v2__cta {
-      min-height: 60px;
-      border-radius: 16px;
-      font-size: var(--font-label-m-size, 18px);
-      letter-spacing: -0.36px;
-      text-transform: none;
-      font-weight: 600;
+    .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
+      max-width: none;
     }
   }
 
@@ -1522,28 +1468,8 @@
     text-decoration: underline;
   }
 
-  .evamats-careers-contact__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  .evamats-careers-contact__button.button_3 {
     max-width: 445px;
-    min-height: 60px;
-    padding: 22px 63px;
-    border-radius: 16px;
-    background: var(--color-accent-red, #ff2741);
-    color: var(--color-text-on-dark);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .evamats-careers-contact__button:hover {
-    opacity: 0.9;
   }
 
   .evamats-careers-contact__footer {
@@ -1645,12 +1571,8 @@
       line-height: 1.6;
     }
 
-    .evamats-careers-contact__button {
-      min-height: 50px;
+    .evamats-careers-contact__button.button_3 {
       max-width: none;
-      padding-left: 24px;
-      padding-right: 24px;
-      font-size: 16px;
     }
 
     .evamats-careers-contact__footer {
@@ -1714,34 +1636,9 @@
     justify-content: center;
   }
 
-  .evamats-hero-cta__button {
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .evamats-hero-cta__actions .button.button_3 {
     min-width: 242px;
-    min-height: 60px;
-    padding: 14px 63px;
-    background: var(--color-accent-red, #ff2741);
-    border-radius: 16px;
-    color: var(--color-text);
-    
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 0;
-  }
-
-  .evamats-hero-cta__button--static {
-    pointer-events: none;
-  }
-
-  .evamats-hero-cta__button:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
+    max-width: none;
   }
 
   .evamats-hero-cta__media {
@@ -1778,11 +1675,9 @@
       font-size: 16px;
     }
 
-    .evamats-hero-cta__button {
-      min-height: 50px;
-      padding-left: 32px;
-      padding-right: 32px;
-      font-size: 16px;
+    .evamats-hero-cta__actions .button.button_3 {
+      min-width: 0;
+      width: 100%;
     }
   }
 
@@ -3988,214 +3883,6 @@
     }
   }
 
-/* --- evamats-proven-scale-v2.liquid --- */
-.evamats-proven-scale-v2 {
-    background: transparent;
-    color: var(--color-text);
-  }
-
-  .evamats-proven-scale-v2__inner {
-    max-width: 1520px;
-    margin: 0 auto;
-  }
-
-  .evamats-proven-scale-v2__heading {
-    margin: 0 0 60px;
-    font-weight: 600;
-    font-size: 46px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    text-align: center;
-    color: var(--color-text);
-  }
-
-  .evamats-proven-scale-v2__intro--mobile {
-    display: none;
-  }
-
-  .evamats-proven-scale-v2__hero {
-    position: relative;
-    min-height: 636px;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
-    position: static;
-    margin: 40px 60px 60px;
-  }
-
-  .evamats-proven-scale-v2__media {
-    position: relative;
-    height: 636px;
-    overflow: hidden;
-  }
-
-  .evamats-proven-scale-v2__media-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .evamats-proven-scale-v2__fade {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .evamats-proven-scale-v2__fade--top {
-    top: 0;
-    height: 45%;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  }
-
-  .evamats-proven-scale-v2__fade--bottom {
-    bottom: 0;
-    height: 242px;
-    background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  }
-
-  .evamats-proven-scale-v2__intro--desktop {
-    position: absolute;
-    top: 40px;
-    left: 60px;
-    z-index: 2;
-    margin: 0;
-    max-width: 588px;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-  }
-
-  .evamats-proven-scale-v2__stats {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 60px;
-    right: 60px;
-    bottom: 60px;
-    z-index: 2;
-    display: flex;
-    gap: 3px;
-  }
-
-  .evamats-proven-scale-v2__stat {
-    flex: 1 1 0;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 21px;
-    padding: 22px 26px;
-    background: var(--color-surface-elevated);
-    border-radius: 20px;
-  }
-
-  .evamats-proven-scale-v2__stat-value {
-    margin: 0;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-  }
-
-  .evamats-proven-scale-v2__stat-plus {
-    color: #ef022d;
-  }
-
-  .evamats-proven-scale-v2__stat-label {
-    margin: 0;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-  }
-
-  @media screen and (max-width: 749px) {
-    .evamats-proven-scale-v2__heading {
-      margin: 0 0 16px;
-      font-size: 26px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-
-    .evamats-proven-scale-v2__intro--mobile {
-      display: block;
-      margin: 0 auto 24px;
-      max-width: 339px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.6;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: var(--color-text);
-    }
-
-    .evamats-proven-scale-v2__intro--desktop {
-      display: none;
-    }
-
-    .evamats-proven-scale-v2__hero {
-      min-height: 0;
-      border-radius: 0;
-      margin-left: -18px;
-      margin-right: -18px;
-      width: calc(100% + 36px);
-      overflow: visible;
-    }
-
-    .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
-      margin: 42px 0 0;
-    }
-
-    .evamats-proven-scale-v2__media {
-      height: 200px;
-      border-radius: 0;
-      overflow: hidden;
-    }
-
-    .evamats-proven-scale-v2__fade {
-      display: none;
-    }
-
-    .evamats-proven-scale-v2__stats {
-      position: static;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 16px;
-      row-gap: 36px;
-      margin-top: 42px;
-      padding: 0 16px;
-    }
-
-    .evamats-proven-scale-v2__stat {
-      padding: 0;
-      background: transparent;
-      border-radius: 0;
-      gap: 21px;
-      text-align: center;
-    }
-
-    .evamats-proven-scale-v2__stat-value {
-      font-size: 36px;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    .evamats-proven-scale-v2__stat-label {
-      font-size: 15px;
-      letter-spacing: -0.03em;
-    }
-  }
-
 /* --- evamats-vacancies-list.liquid --- */
 .evamats-vacancies-list {
     background: transparent;
@@ -4345,28 +4032,10 @@
     font-weight: 700;
   }
 
-  .evamats-vacancies-list__cta {
+  .evamats-vacancies-list__cta.button_3 {
     flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     min-width: 299px;
-    min-height: 60px;
-    padding: 14px 32px;
-    border-radius: 16px;
-    background: var(--color-accent-red, #ff2741);
-    color: var(--color-text-on-dark);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .evamats-vacancies-list__cta:hover {
-    opacity: 0.92;
+    max-width: none;
   }
 
   .evamats-vacancies-list__empty {
@@ -4377,30 +4046,10 @@
     color: var(--color-text-secondary);
   }
 
-  .evamats-vacancies-list__more {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .evamats-vacancies-list__more.button_5 {
     width: 100%;
     max-width: 1520px;
-    min-height: 60px;
     margin: 40px auto 0;
-    padding: 13px 61px;
-    border-radius: 16px;
-    border: 1px solid var(--color-accent-red, #ff2741);
-    background: transparent;
-    color: var(--color-text);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .evamats-vacancies-list__more:hover {
-    opacity: 0.9;
   }
 
   @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -4415,10 +4064,9 @@
       margin-bottom: 24px;
     }
 
-    .evamats-vacancies-list__cta {
+    .evamats-vacancies-list__cta.button_3 {
       width: 100%;
       min-width: 0;
-      min-height: 52px;
     }
   }
 
@@ -4485,20 +4133,14 @@
       white-space: normal;
     }
 
-    .evamats-vacancies-list__cta {
+    .evamats-vacancies-list__cta.button_3 {
       width: 100%;
       min-width: 0;
-      min-height: 40px;
-      border-radius: 10px;
-      font-size: 16px;
     }
 
-    .evamats-vacancies-list__more {
+    .evamats-vacancies-list__more.button_5 {
       max-width: 339px;
-      min-height: 50px;
       margin-top: 24px;
-      padding-left: 24px;
-      padding-right: 24px;
     }
   }
 
@@ -4723,10 +4365,6 @@
 }
 
 @media screen and (max-width: 749px) {
-  .mat-consult {
-    padding: 40px 0 48px;
-  }
-
   .mat-consult__hotspot {
     transform: translate(-50%, -50%);
   }
@@ -7163,31 +6801,9 @@
     color: var(--color-text);
   }
 
-  .product-spotlight-v2 .product-spotlight-v2__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70px;
+  .product-spotlight-v2 .product-spotlight-v2__cta.button_3 {
     min-width: 280px;
-    padding: 22px 48px;
-    border-radius: 16px;
-    background: var(--color-accent-red);
-    color: var(--color-text-on-dark);
-    font-size: var(--font-label-m-size);
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.36px;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__cta:hover {
-    opacity: 0.92;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__cta--disabled {
-    opacity: 0.45;
-    pointer-events: none;
+    max-width: none;
   }
 
   @media screen and (max-width: 989px) {
@@ -7259,15 +6875,9 @@
       letter-spacing: -0.32px;
     }
 
-    .product-spotlight-v2 .product-spotlight-v2__cta {
+    .product-spotlight-v2 .product-spotlight-v2__cta.button_3 {
       width: 100%;
       min-width: 0;
-      min-height: 60px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.32px;
-      text-transform: uppercase;
-      background: #ff2741;
     }
   }
 

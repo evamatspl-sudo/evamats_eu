@@ -1,144 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "2583ccff-9f77-4465-b409-fa03953d4a68": {
-      "type": "sidebar",
-      "blocks": {
-        "382285cf-c723-4e13-ba41-1f9783b071ac": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct4",
-            "color-code": "CT4"
-          }
-        },
-        "ce1a9460-6496-47bf-9942-456db4e5978d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct5",
-            "color-code": "CT5"
-          }
-        },
-        "cf4f2262-9ea9-486a-a54e-15b53e3b5bff": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct6",
-            "color-code": "CT6"
-          }
-        },
-        "ca71dfc1-9cba-4a55-aba1-75734bc50759": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-cts",
-            "color-code": "CTS"
-          }
-        },
-        "58f49609-82b5-44b4-83fa-2fde4bf58186": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-deville",
-            "color-code": "DeVille"
-          }
-        },
-        "caf6de11-555d-40c0-b2b3-eb899443f6b3": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-eldorado",
-            "color-code": "Eldorado"
-          }
-        },
-        "072741c9-3de1-4743-8abc-5405bb362d65": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-escalade",
-            "color-code": "Escalade"
-          }
-        },
-        "b3a106f9-c729-4a2c-96d3-c380a6675a2c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-escalade-esv",
-            "color-code": "Escalade ESV"
-          }
-        },
-        "3bc3c898-1722-475f-aa60-4cca2008c300": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-gt4",
-            "color-code": "GT4"
-          }
-        },
-        "447782c7-4ecc-4723-8cbc-21518e01b6b4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-lyriq",
-            "color-code": "Lyriq"
-          }
-        },
-        "aa5cd606-c4c8-4aa5-b736-b2dd3adada33": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-srx",
-            "color-code": "SRX"
-          }
-        },
-        "efb6d309-35d6-40a6-bfd5-7677632df84e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt4",
-            "color-code": "XT4"
-          }
-        },
-        "a130b944-2619-40a3-bb81-e525c9a481ea": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt5",
-            "color-code": "XT5"
-          }
-        },
-        "7e415f9d-5e26-49b4-9715-fb5b97e8cfef": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt6",
-            "color-code": "XT6"
-          }
-        },
-        "b6f63531-c985-4148-bbde-7ca29e20debf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-xts",
-            "color-code": "XTS"
-          }
-        }
-      },
-      "block_order": [
-        "382285cf-c723-4e13-ba41-1f9783b071ac",
-        "ce1a9460-6496-47bf-9942-456db4e5978d",
-        "cf4f2262-9ea9-486a-a54e-15b53e3b5bff",
-        "ca71dfc1-9cba-4a55-aba1-75734bc50759",
-        "58f49609-82b5-44b4-83fa-2fde4bf58186",
-        "caf6de11-555d-40c0-b2b3-eb899443f6b3",
-        "072741c9-3de1-4743-8abc-5405bb362d65",
-        "b3a106f9-c729-4a2c-96d3-c380a6675a2c",
-        "3bc3c898-1722-475f-aa60-4cca2008c300",
-        "447782c7-4ecc-4723-8cbc-21518e01b6b4",
-        "aa5cd606-c4c8-4aa5-b736-b2dd3adada33",
-        "efb6d309-35d6-40a6-bfd5-7677632df84e",
-        "a130b944-2619-40a3-bb81-e525c9a481ea",
-        "7e415f9d-5e26-49b4-9715-fb5b97e8cfef",
-        "b6f63531-c985-4148-bbde-7ca29e20debf"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -147,112 +27,112 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "d019c760-81c0-4387-a450-6c3a6802c9e6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct4",
+            "product-link": "shopify://collections/cadillac-ct4",
             "color-code": "CT4"
           }
         },
         "f7d7544b-b77d-4aaf-9698-585a0170c420": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct5",
+            "product-link": "shopify://collections/cadillac-ct5",
             "color-code": "CT5"
           }
         },
         "2aee4893-eecc-4db6-a76f-5eaf18b4c9c1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-ct6",
+            "product-link": "shopify://collections/cadillac-ct6",
             "color-code": "CT6"
           }
         },
         "a82c66a1-5125-4fe5-9310-29f2192f144e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-cts",
+            "product-link": "shopify://collections/cadillac-cts",
             "color-code": "CTS"
           }
         },
         "bbd3007e-507b-4e4d-ace5-27e3f7ab7902": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-deville",
+            "product-link": "shopify://collections/cadillac-deville",
             "color-code": "DeVille"
           }
         },
         "ced8730a-8e09-47c2-a896-02457eb1a72a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-eldorado",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-eldorado",
             "color-code": "Eldorado"
           }
         },
         "b2f353fe-a192-47e3-95ed-2156f058de18": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-escalade",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-escalade",
             "color-code": "Escalade"
           }
         },
         "2ea2fbd2-ff45-44cb-a0c7-4831b181a331": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-escalade-esv",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-escalade-esv",
             "color-code": "Escalade ESV"
           }
         },
         "fedc72e6-1502-478b-a1a5-8085bfd45501": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-gt4",
+            "product-link": "shopify://collections/cadillac-gt4",
             "color-code": "GT4"
           }
         },
         "818afbd4-cd32-4a68-a55c-b4bc014cfdda": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-lyriq",
+            "product-link": "shopify://collections/cadillac-lyriq",
             "color-code": "Lyriq"
           }
         },
         "8bc0ebe8-c143-4213-a488-8032244cbe48": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-srx",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-srx",
             "color-code": "SRX"
           }
         },
         "8e3d183a-03f8-488e-be63-a839c74bb09e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt4",
+            "product-link": "shopify://collections/cadillac-xt4",
             "color-code": "XT4"
           }
         },
         "c2013ebc-9faa-41f5-bb7d-90105ecd98ab": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt5",
+            "product-link": "shopify://collections/cadillac-xt5",
             "color-code": "XT5"
           }
         },
         "b8e8721c-b1b4-4f15-83d0-46ef6a7f04a1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/cadillac-xt6",
+            "product-link": "shopify://collections/cadillac-xt6",
             "color-code": "XT6"
           }
         },
         "8baae353-24d4-4d4d-878a-5b5b52d7ffd3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-cadillac-xts",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-xts",
             "color-code": "XTS"
           }
         }
@@ -275,11 +155,7 @@
         "b8e8721c-b1b4-4f15-83d0-46ef6a7f04a1",
         "8baae353-24d4-4d4d-878a-5b5b52d7ffd3"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -291,9 +167,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -302,7 +175,6 @@
   },
   "order": [
     "banner",
-    "2583ccff-9f77-4465-b409-fa03953d4a68",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

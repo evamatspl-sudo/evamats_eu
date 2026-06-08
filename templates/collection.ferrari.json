@@ -1,104 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "0cdb4453-1510-40d7-9987-aca0ef4c2bbb": {
-      "type": "sidebar",
-      "blocks": {
-        "4c3f0580-f14a-498e-9546-55740857c40f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-296",
-            "color-code": "296"
-          }
-        },
-        "aa2565e1-8cd5-4f82-bcd6-eb681f5700d4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ferrari-360",
-            "color-code": "360"
-          }
-        },
-        "82731f33-37e6-4385-8c67-c5f285aa68cd": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-488",
-            "color-code": "488"
-          }
-        },
-        "66981292-93a4-49e2-83b8-1ba8d41929d5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-812",
-            "color-code": "812"
-          }
-        },
-        "b17815f3-a40f-485e-ab8d-fd410f7a0857": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-california",
-            "color-code": "California"
-          }
-        },
-        "acb78aa9-9170-4bb9-9e71-390a1b42669e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-f8",
-            "color-code": "F8"
-          }
-        },
-        "197fe14f-f807-454a-9914-2c7a05be3b66": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-gtc4lusso",
-            "color-code": "GTC4Lusso"
-          }
-        },
-        "f0de8778-a77d-41b2-9184-76200979cfeb": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-portofino",
-            "color-code": "Portofino"
-          }
-        },
-        "6293c256-cec7-4ede-b07e-cc146114af95": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-roma",
-            "color-code": "Roma"
-          }
-        },
-        "d6a32445-12f2-44ca-a23f-d38130c11a78": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-sf90-stradale",
-            "color-code": "SF90 Stradale"
-          }
-        }
-      },
-      "block_order": [
-        "4c3f0580-f14a-498e-9546-55740857c40f",
-        "aa2565e1-8cd5-4f82-bcd6-eb681f5700d4",
-        "82731f33-37e6-4385-8c67-c5f285aa68cd",
-        "66981292-93a4-49e2-83b8-1ba8d41929d5",
-        "b17815f3-a40f-485e-ab8d-fd410f7a0857",
-        "acb78aa9-9170-4bb9-9e71-390a1b42669e",
-        "197fe14f-f807-454a-9914-2c7a05be3b66",
-        "f0de8778-a77d-41b2-9184-76200979cfeb",
-        "6293c256-cec7-4ede-b07e-cc146114af95",
-        "d6a32445-12f2-44ca-a23f-d38130c11a78"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -107,77 +27,77 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "6e9fba7b-5542-42d2-bf34-4bd78f593ec4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-296",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-296",
             "color-code": "296"
           }
         },
         "a856089b-8e6b-48dc-9fba-609821a5c94d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ferrari-360",
+            "product-link": "shopify://collections/ferrari-360",
             "color-code": "360"
           }
         },
         "06e5162c-74e7-4087-8199-74fdd40f40e9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-488",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-488",
             "color-code": "488"
           }
         },
         "35fed631-9c27-4f9f-98d9-b80fda60b3ad": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-812",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-812",
             "color-code": "812"
           }
         },
         "64d0d4a6-5bbf-46cb-b27e-1ae5b5fee396": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-california",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-california",
             "color-code": "California"
           }
         },
         "6c81fd36-792f-490d-abab-2bf0259663e3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-f8",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-f8",
             "color-code": "F8"
           }
         },
         "64d25d71-920d-4f7d-b9ef-460bff00285d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-gtc4lusso",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-gtc4lusso",
             "color-code": "GTC4Lusso"
           }
         },
         "fff46f7c-880b-45a3-9568-a9950d5b7eb9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-portofino",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-portofino",
             "color-code": "Portofino"
           }
         },
         "1b17bbbf-0612-4d37-b349-a56785a1113e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-roma",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-roma",
             "color-code": "Roma"
           }
         },
         "dd8b5636-aee9-4c2c-a2d9-f3910d64be92": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ferrari-sf90-stradale",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ferrari-sf90-stradale",
             "color-code": "SF90 Stradale"
           }
         }
@@ -195,11 +115,7 @@
         "1b17bbbf-0612-4d37-b349-a56785a1113e",
         "dd8b5636-aee9-4c2c-a2d9-f3910d64be92"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -211,9 +127,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -222,7 +135,6 @@
   },
   "order": [
     "banner",
-    "0cdb4453-1510-40d7-9987-aca0ef4c2bbb",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

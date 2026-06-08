@@ -1,0 +1,192 @@
+{%- comment -%}
+  EvaMats header body — desktop + mobile bar.
+  Expects section with catalog_menu, menu (navigation), image settings.
+{%- endcomment -%}
+
+{%- liquid
+  assign catalog_menu = section.settings.catalog_menu
+  assign nav_menu = section.settings.menu
+  assign catalog_label = section.settings.catalog_button_label | default: 'Catalog'
+  assign mobile_car_url = section.settings.mobile_car_link_url | default: section.settings.drawer_car_cta_url
+-%}
+
+<div class="evamats-header__inner page-width">
+  <div class="evamats-header__start">
+    {%- if request.page_type == 'index' -%}
+      <h1 class="evamats-header__logo-wrap">
+    {%- endif -%}
+    <a href="{{ routes.root_url }}" class="evamats-header__logo-link">
+      {%- if settings.logo != blank -%}
+        {{
+          settings.logo
+          | image_url: width: 304
+          | image_tag:
+            class: 'evamats-header__logo',
+            widths: '100, 152, 200, 304',
+            sizes: '(min-width: 990px) 152px, 100px',
+            alt: settings.logo.alt | default: shop.name
+        }}
+      {%- else -%}
+        <span class="evamats-header__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+    {%- if request.page_type == 'index' -%}
+      </h1>
+    {%- endif -%}
+
+    {%- if mobile_car_url != blank -%}
+      <div class="evamats-header__car-link large-up-hide">
+        {% render 'evamats-header-car-link', url: mobile_car_url %}
+      </div>
+    {%- endif -%}
+
+    {%- if catalog_menu != blank and catalog_menu.links.size > 0 -%}
+      <div class="evamats-header__catalog small-hide medium-hide">
+        <header-menu>
+          <details id="Details-EvamatsCatalog-{{ section.id }}">
+            <summary class="evamats-header__catalog-trigger">
+              <span class="evamats-header__catalog-thumb">
+                {%- if section.settings.catalog_button_image != blank -%}
+                  {{
+                    section.settings.catalog_button_image
+                    | image_url: width: 92
+                    | image_tag: class: 'evamats-header__catalog-thumb-img', loading: 'lazy', alt: ''
+                  }}
+                {%- endif -%}
+              </span>
+              <span class="evamats-header__catalog-label">{{ catalog_label | escape }}</span>
+              <svg class="evamats-header__chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="evamats-header__catalog-panel">
+              {% render 'evamats-header-catalog-panel', section: section, catalog_menu: catalog_menu %}
+            </div>
+          </details>
+        </header-menu>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if nav_menu != blank and nav_menu.links.size > 0 -%}
+    <nav class="evamats-header__nav small-hide medium-hide" aria-label="Main navigation">
+      <ul class="evamats-header__nav-list" role="list">
+        {%- for link in nav_menu.links -%}
+          <li class="evamats-header__nav-item">
+            {%- if link.links != blank -%}
+              <header-menu>
+                <details id="Details-EvamatsNav-{{ section.id }}-{{ forloop.index }}">
+                  <summary class="evamats-header__nav-link">
+                    <span>{{ link.title | escape }}</span>
+                    <svg class="evamats-header__chevron evamats-header__chevron--muted" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </summary>
+                  <div class="evamats-header__nav-panel">
+                    {%- for childlink in link.links -%}
+                      <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                    {%- endfor -%}
+                  </div>
+                </details>
+              </header-menu>
+            {%- else -%}
+              <a href="{{ link.url }}" class="evamats-header__nav-link">{{ link.title | escape }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+
+  <div class="evamats-header__actions">
+    {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+      <div class="evamats-header__lang small-hide medium-hide">
+        <localization-form>
+          {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+            <div class="no-js-hidden">
+              <div class="disclosure">
+                <button type="button" class="disclosure__button localization-form__select localization-selector" aria-expanded="false" aria-controls="HeaderLanguageList">
+                  {{ localization.language.iso_code | upcase }}
+                  <svg class="evamats-header__chevron evamats-header__chevron--muted" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M1.5 3.5L5 7L8.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="disclosure__list-wrapper" hidden>
+                  <ul id="HeaderLanguageList" role="list" class="disclosure__list list-unstyled">
+                    {%- for language in localization.available_languages -%}
+                      <li class="disclosure__item">
+                        <a
+                          class="link disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset"
+                          href="#"
+                          hreflang="{{ language.iso_code }}"
+                          lang="{{ language.iso_code }}"
+                          {% if language.iso_code == localization.language.iso_code %}
+                            aria-current="true"
+                          {% endif %}
+                          data-value="{{ language.iso_code }}"
+                        >
+                          {{ language.endonym_name | capitalize }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              </div>
+              <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+            </div>
+          {%- endform -%}
+        </localization-form>
+      </div>
+    {%- endif -%}
+
+    <div class="evamats-header__icon-actions">
+      {% render 'evamats-header-search',
+        section: section,
+        input_id: 'Search-In-Modal-Evamats-Desktop',
+        summary_class: ' evamats-header__search-wrap--desktop small-hide medium-hide'
+      %}
+
+      {% render 'evamats-header-search',
+        section: section,
+        input_id: 'Search-In-Modal-Evamats-Mobile',
+        summary_class: ' evamats-header__search-wrap--mobile large-up-hide'
+      %}
+
+      <a href="{{ routes.cart_url }}" class="evamats-header__icon-btn header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {%- if section.settings.icon_cart != blank -%}
+          {{ section.settings.icon_cart | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' }}
+        {%- else -%}
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M8 8H26L24 22H10L8 8ZM8 8L6 4H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="27" r="2" fill="currentColor"/>
+            <circle cx="22" cy="27" r="2" fill="currentColor"/>
+          </svg>
+        {%- endif -%}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
+
+      <button
+        type="button"
+        class="evamats-header__drawer-toggle large-up-hide"
+        aria-label="{{ 'sections.header.menu' | t }}"
+        aria-controls="EvamatsHeaderDrawer-{{ section.id }}"
+        aria-expanded="false"
+        data-evamats-drawer-open
+      >
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 1H24" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 9H24" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 17H24" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

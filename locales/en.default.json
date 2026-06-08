@@ -189,6 +189,7 @@
     "skip_to_text": "Skip to content",
     "skip_to_product_info": "Skip to product information",
     "close": "Close",
+    "back": "Back",
     "unit_price_separator": "per",
     "vendor": "Vendor:",
     "error": "Error",
@@ -410,7 +411,9 @@
     "brand_buttons": {
       "back": "All",
       "collection_title_prefix": "Car mats EVA for ",
-      "all_brands_path": "\/pages\/car-brands"
+      "all_brands_path": "\/pages\/car-brands",
+      "popular_models_heading": "Popular models",
+      "products_count": "{{ count }} items"
     },
     "cart": {
       "title": "Your cart",

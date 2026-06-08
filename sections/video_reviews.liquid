@@ -1,69 +1,277 @@
 {{ 'section-video-reviews.css' | asset_url | stylesheet_tag }}
+{% render 'evamats-section-padding-style', section: section, target: '.video_reviews' %}
 
 <div class="video_reviews">
-    <div class="page-width">
-        <div class="video_reviews__content">
-            <h2 class="title section__title h1">{{ section.settings.title }}</h2>
+  <div class="page-width">
+    <div class="video_reviews__content">
+      <div class="video_reviews__head">
+        <h2 class="title video_reviews__title">
+          {%- if section.settings.title != blank -%}
+            <span class="video_reviews__title-line">{{ section.settings.title | escape }}</span>
+          {%- endif -%}
+          {%- if section.settings.title_accent != blank -%}
+            <span class="video_reviews__title-accent">{{ section.settings.title_accent | escape }}</span>
+          {%- endif -%}
+        </h2>
 
-            <div class="video_reviews__container_wr">
-                <div class="video_reviews__container video_reviews__container_slider swiper">
-                    <div class="swiper-wrapper">
-                        {% for block in section.blocks %}
-                            <div class="video_reviews__item swiper-slide">
-                                <video src="{{ block.settings.video.sources[1].url }}"  loop  muted  playsinline ></video>
-                            </div>                        
-                        {% endfor %}
-                    </div>
-    
-                    
-                </div>
+        {%- liquid
+          assign show_socials = false
+          if section.settings.facebook_url != blank or section.settings.instagram_url != blank or section.settings.tiktok_url != blank or section.settings.youtube_url != blank
+            assign show_socials = true
+          endif
+        -%}
+        {%- if show_socials -%}
+          <div class="video_reviews__socials" role="navigation" aria-label="Social media">
+            {%- if section.settings.facebook_url != blank -%}
+              <a
+                class="video_reviews__social-link video_reviews__social-link--facebook"
+                href="{{ section.settings.facebook_url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="video_reviews__social-fb-icon" aria-hidden="true">
+                  <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.4021 7.5834H7.58333V5.41673C7.58333 4.29873 7.67433 3.59457 9.27658 3.59457H11.3002V0.149568C10.3155 0.0477344 9.32533 -0.00209896 8.33408 6.77083e-05C5.395 6.77083e-05 3.25 1.79515 3.25 5.09065V7.5834H0V11.9167L3.25 11.9157V21.6667H7.58333V11.9135L10.9048 11.9124L11.4021 7.5834Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <span class="video_reviews__social-fb-label">{{ section.settings.facebook_label | default: 'Więcej u nas na Facebooku' | escape }}</span>
+                <span class="video_reviews__social-fb-icon video_reviews__social-fb-icon--external" aria-hidden="true">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.338778 0L8.5206 0C9.02267 0 9.42969 0.407014 9.42969 0.909091V9.09091H7.61151V3.10383L1.28882 9.42651L0.00317419 8.14087L6.32586 1.81818L0.338778 1.81818L0.338778 0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </a>
+            {%- endif -%}
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+            {%- if section.settings.instagram_url != blank -%}
+              <a class="video_reviews__social-link" href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M8.9401 2.70801C5.5094 2.70801 2.71094 5.50647 2.71094 8.93717V17.0622C2.71094 20.4924 5.5093 23.2913 8.9401 23.2913H17.0651C20.4954 23.2913 23.2943 20.4925 23.2943 17.0622V8.93717C23.2943 5.50637 20.4953 2.70801 17.0651 2.70801H8.9401ZM8.9401 4.33301H17.0651C19.617 4.33301 21.6693 6.38473 21.6693 8.93717V17.0622C21.6693 19.614 19.6169 21.6663 17.0651 21.6663H8.9401C6.38766 21.6663 4.33594 19.6141 4.33594 17.0622V8.93717C4.33594 6.38463 6.38756 4.33301 8.9401 4.33301ZM18.4193 6.49967C17.8207 6.49967 17.3359 6.98447 17.3359 7.58301C17.3359 8.18155 17.8207 8.66634 18.4193 8.66634C19.0178 8.66634 19.5026 8.18155 19.5026 7.58301C19.5026 6.98447 19.0178 6.49967 18.4193 6.49967ZM13.0026 7.58301C10.0208 7.58301 7.58594 10.0179 7.58594 12.9997C7.58594 15.9815 10.0208 18.4163 13.0026 18.4163C15.9844 18.4163 18.4193 15.9815 18.4193 12.9997C18.4193 10.0179 15.9844 7.58301 13.0026 7.58301ZM13.0026 9.20801C15.106 9.20801 16.7943 10.8963 16.7943 12.9997C16.7943 15.1031 15.106 16.7913 13.0026 16.7913C10.8992 16.7913 9.21094 15.1031 9.21094 12.9997C9.21094 10.8963 10.8992 9.20801 13.0026 9.20801Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            {%- endif -%}
+
+            {%- if section.settings.tiktok_url != blank -%}
+              <a class="video_reviews__social-link" href="{{ section.settings.tiktok_url }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23 10.9004C22.8196 10.9169 22.6377 10.9279 22.4545 10.9279C20.3795 10.9279 18.5557 9.87188 17.4939 8.27275C17.4939 12.4651 17.4939 17.2364 17.4939 17.3161C17.4939 21.008 14.4723 24 10.747 24C7.02162 23.9986 4 21.0053 4 17.3148C4 13.6229 7.02162 10.6309 10.747 10.6309C10.8885 10.6309 11.0259 10.6433 11.1633 10.6515V13.946C11.0245 13.9295 10.8899 13.9048 10.747 13.9048C8.84542 13.9048 7.30338 15.4324 7.30338 17.3161C7.30338 19.1999 8.84404 20.7275 10.747 20.7275C12.6499 20.7275 14.3293 19.2425 14.3293 17.3588C14.3293 17.2831 14.3293 2.01042 14.3626 2H17.5397C17.8381 4.81463 20.1324 7.03663 23 7.24013V10.9004Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            {%- endif -%}
+
+            {%- if section.settings.youtube_url != blank -%}
+              <a class="video_reviews__social-link" href="{{ section.settings.youtube_url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.3497 7.53969C23.1425 6.39609 22.1553 5.56328 21.0097 5.30328C19.2953 4.93969 16.1225 4.67969 12.6897 4.67969C9.25891 4.67969 6.03531 4.93969 4.31891 5.30328C3.17531 5.56328 2.18609 6.34328 1.97891 7.53969C1.76969 8.83969 1.5625 10.6597 1.5625 12.9997C1.5625 15.3397 1.76969 17.1597 2.02969 18.4597C2.23891 19.6033 3.22609 20.4361 4.36969 20.6961C6.18969 21.0597 9.30969 21.3197 12.7425 21.3197C16.1753 21.3197 19.2953 21.0597 21.1153 20.6961C22.2589 20.4361 23.2461 19.6561 23.4553 18.4597C23.6625 17.1597 23.9225 15.2869 23.9753 12.9997C23.8697 10.6597 23.6097 8.83969 23.3497 7.53969ZM9.8825 16.6397V9.35969L16.2261 12.9997L9.8825 16.6397Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="video_reviews__slider-bleed"> 
+        <button
+          type="button"
+          class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--prev swiper-button-prev video_reviews__nav video_reviews__nav--outset"
+          aria-label="Previous slide"
+        >
+          <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
+            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10054 4.39663e-05L0.356982 7.7436C-0.118202 8.21879 -0.118201 8.98921 0.356983 9.46439L8.10054 17.208L9.82133 15.4872L4.15495 9.82078L16.123 9.82078L16.123 7.38722L4.15495 7.38722L9.82133 1.72084L8.10054 4.39663e-05Z" fill="white"/>
+            </svg>
+          </span>
+        </button>
+
+      <div class="video_reviews__slider-grid__track">
+        <div class="video_reviews__container video_reviews__container_slider swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="video_reviews__item swiper-slide" {{ block.shopify_attributes }}>
+                {%- assign poster_url = block.settings.cover_image | default: block.settings.video.preview_image -%}
+                <video
+                  data-src="{{ block.settings.video.sources[1].url }}"
+                  {% if poster_url %}
+                    poster="{{ poster_url | image_url: width: 320 }}"
+                  {% endif %}
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                ></video>
+              </div>
+            {% endfor %}
+          </div>
         </div>
+      </div>
 
-        <div class="video_reviews__container_full swiper">
-            <div class="swiper-wrapper">
-                {% for block in section.blocks %}
-                    <div class="video_reviews__item swiper-slide">
-                        <video src="{{ block.settings.video.sources[1].url }}" controls loop  playsinline ></video>
-                    </div>                        
-                {% endfor %}
-            </div>
+        <button
+          type="button"
+          class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--next swiper-button-next video_reviews__nav video_reviews__nav--outset"
+          aria-label="Next slide"
+        >
+          <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
+            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.02446 4.39663e-05L15.768 7.7436C16.2432 8.21879 16.2432 8.98921 15.768 9.46439L8.02446 17.208L6.30367 15.4872L11.97 9.82078L0.00203078 9.82078L0.00203057 7.38722L11.97 7.38722L6.30367 1.72084L8.02446 4.39663e-05Z" fill="white"/>
+            </svg>
+          </span>
+        </button>
+    </div>
+  </div>
 
-            <div class="close">{% render 'icon-close' %}</div>
-        </div>
+    <div class="video_reviews__container_full swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="video_reviews__item swiper-slide">
+            <video
+              data-src="{{ block.settings.video.sources[1].url }}"
+              controls
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="close">{% render 'icon-close' %}</div>
     </div>
 </div>
- 
+
 {% schema %}
+{
+  "name": "Video reviews",
+  "settings": [
     {
-        "name": "Video reviews",
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Title"
-            }
-        ],
-        "blocks": [
-            {
-                "type": "item",
-                "name": "Item",
-                "settings": [
-                    {
-                        "type": "video",
-                        "id": "video",
-                        "label": "Video"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-            {
-                "name": "Video reviews"
-            }
-        ]
+      "type": "text",
+      "id": "title",
+      "label": "Title (first line)"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Title accent (second line, red)"
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "text",
+      "id": "facebook_label",
+      "label": "Facebook button text",
+      "default": "Więcej u nas na Facebooku"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 28
     }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Poster (optional)",
+          "info": "If not set, video preview frame is used"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video reviews"
+    }
+  ]
+}
 {% endschema %}

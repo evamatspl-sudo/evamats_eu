@@ -213,6 +213,99 @@
   height: 12px;
 }
 
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .section-evamats-our-offer .evamats-our-offer {
+    --eoo-gap: 12px;
+    --eoo-tall-h: clamp(300px, 42vw, 440px);
+    --eoo-stack-h: calc((var(--eoo-tall-h) - var(--eoo-gap)) / 2);
+    --eoo-compact-min-h: calc((var(--eoo-tall-h) - 2 * var(--eoo-gap)) / 3);
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__header {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__header-title {
+    max-width: none;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__overline {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__heading,
+  .section-evamats-our-offer .evamats-our-offer__heading.section_title {
+    font-size: 36px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__description {
+    padding-top: 32px;
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__mosaic {
+    align-items: stretch;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__col--stack,
+  .section-evamats-our-offer .evamats-our-offer__col--list {
+    min-height: var(--eoo-tall-h);
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--tall {
+    height: var(--eoo-tall-h);
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--stack {
+    height: var(--eoo-stack-h);
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--compact {
+    flex: 1 1 0;
+    min-height: var(--eoo-compact-min-h);
+    padding: 14px 16px 14px 14px;
+    gap: 10px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--compact .evamats-our-offer__tile-media {
+    width: 72px;
+    min-height: 56px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--compact .evamats-our-offer__tile-image {
+    max-height: 72px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--compact .evamats-our-offer__tile-title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile-gradient {
+    height: 64px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile-foot {
+    padding: 0 16px 16px;
+    gap: 8px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile--tall .evamats-our-offer__tile-title,
+  .section-evamats-our-offer .evamats-our-offer__tile--stack .evamats-our-offer__tile-title {
+    font-size: 18px;
+  }
+
+  .section-evamats-our-offer .evamats-our-offer__tile-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .evamats-our-offer {
     --eoo-gap: 9px;

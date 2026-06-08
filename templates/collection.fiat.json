@@ -1,264 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "d0e8505d-9b86-4fef-a860-d2b8c176556c": {
-      "type": "sidebar",
-      "blocks": {
-        "7e12017a-3580-4afd-8344-9997e703ad19": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-126",
-            "color-code": "126"
-          }
-        },
-        "06435c92-1e41-43a0-a963-9f8e521aa15d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500",
-            "color-code": "500"
-          }
-        },
-        "edf52c6e-0bac-44aa-ada7-ad8a8509de61": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500-new",
-            "color-code": "500 New"
-          }
-        },
-        "7f91f60e-2837-4ebf-912d-c928518864a6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500e",
-            "color-code": "500E"
-          }
-        },
-        "d25b6031-e32f-49ea-99e8-9e3703cc2925": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500l",
-            "color-code": "500L"
-          }
-        },
-        "0a9d494b-cd8a-47bf-8a13-37122314e33b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500x",
-            "color-code": "500X"
-          }
-        },
-        "section_3TVLGT": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-600",
-            "color-code": "600"
-          }
-        },
-        "71ed8d91-f9a2-4bd0-9ab2-f1adf4ab3065": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-600e",
-            "color-code": "600e"
-          }
-        },
-        "0fd7611c-69c0-45ea-b630-27f9557f43be": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-barchetta",
-            "color-code": "Barchetta"
-          }
-        },
-        "491d1e2e-cade-417f-8898-dcdee692f211": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-bravo",
-            "color-code": "Bravo"
-          }
-        },
-        "f397caf1-9ca3-4798-9e91-20454490c97d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-coupe",
-            "color-code": "Coupe"
-          }
-        },
-        "66f85d2c-a1fb-46c8-9291-ca06901c5984": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-croma",
-            "color-code": "Croma"
-          }
-        },
-        "f6164f20-fdd9-4d4f-b5d0-e9f488266139": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-doblo",
-            "color-code": "Doblo"
-          }
-        },
-        "436b9cf5-766d-4364-825c-da489b22c3c1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-ducato",
-            "color-code": "Ducato"
-          }
-        },
-        "a18e52d5-39a2-4a36-b8c0-ff36a0c85f88": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-fiorino",
-            "color-code": "Fiorino"
-          }
-        },
-        "a3363202-4c98-4254-a5d1-98d122e36811": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-freemont",
-            "color-code": "Freemont"
-          }
-        },
-        "477107b0-92c8-44b0-b116-e8a1a81867cd": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-fullback",
-            "color-code": "Fullback"
-          }
-        },
-        "52e644c4-d32e-42cc-9cd5-493840b7ae9a": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-grande-punto",
-            "color-code": "Grande Punto"
-          }
-        },
-        "16440969-c24a-4f78-b719-ee3729159b56": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-linea",
-            "color-code": "Linea"
-          }
-        },
-        "1ba9005f-1b4b-43ec-b2d0-a5c07bba0e27": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-panda",
-            "color-code": "Panda"
-          }
-        },
-        "ce075a14-efe8-4057-ace9-6d71cab4c8f1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-punto",
-            "color-code": "Punto"
-          }
-        },
-        "787dfdcc-9a6b-43ea-b01b-6c1582a92582": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-qubo",
-            "color-code": "Qubo"
-          }
-        },
-        "663409be-dd56-4fbe-ae5d-fa9275a549ab": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-sedici",
-            "color-code": "Sedici"
-          }
-        },
-        "911ab7b1-d514-48ed-ac0f-d3fc25403faf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-seicento",
-            "color-code": "Seicento"
-          }
-        },
-        "ecdf8ae6-c4b4-4549-8ead-da7059f94c72": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-siena",
-            "color-code": "Siena"
-          }
-        },
-        "20ab49a5-3ba3-40b0-a817-396566986d78": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-stilo",
-            "color-code": "Stilo"
-          }
-        },
-        "330465bd-712f-4dc3-8d01-cc0e8e6aba68": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-talento",
-            "color-code": "Talento"
-          }
-        },
-        "f7a077ba-10eb-43a6-9482-56131428abac": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-tipo",
-            "color-code": "Tipo"
-          }
-        },
-        "49bdc1b7-c9cd-429b-baae-5f9edf1c0995": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-tipo-cross",
-            "color-code": "Tipo Cross"
-          }
-        },
-        "2228aba3-981d-4771-bedc-40b20e98687f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-uno",
-            "color-code": "Uno"
-          }
-        }
-      },
-      "block_order": [
-        "7e12017a-3580-4afd-8344-9997e703ad19",
-        "06435c92-1e41-43a0-a963-9f8e521aa15d",
-        "edf52c6e-0bac-44aa-ada7-ad8a8509de61",
-        "7f91f60e-2837-4ebf-912d-c928518864a6",
-        "d25b6031-e32f-49ea-99e8-9e3703cc2925",
-        "0a9d494b-cd8a-47bf-8a13-37122314e33b",
-        "section_3TVLGT",
-        "71ed8d91-f9a2-4bd0-9ab2-f1adf4ab3065",
-        "0fd7611c-69c0-45ea-b630-27f9557f43be",
-        "491d1e2e-cade-417f-8898-dcdee692f211",
-        "f397caf1-9ca3-4798-9e91-20454490c97d",
-        "66f85d2c-a1fb-46c8-9291-ca06901c5984",
-        "f6164f20-fdd9-4d4f-b5d0-e9f488266139",
-        "436b9cf5-766d-4364-825c-da489b22c3c1",
-        "a18e52d5-39a2-4a36-b8c0-ff36a0c85f88",
-        "a3363202-4c98-4254-a5d1-98d122e36811",
-        "477107b0-92c8-44b0-b116-e8a1a81867cd",
-        "52e644c4-d32e-42cc-9cd5-493840b7ae9a",
-        "16440969-c24a-4f78-b719-ee3729159b56",
-        "1ba9005f-1b4b-43ec-b2d0-a5c07bba0e27",
-        "ce075a14-efe8-4057-ace9-6d71cab4c8f1",
-        "787dfdcc-9a6b-43ea-b01b-6c1582a92582",
-        "663409be-dd56-4fbe-ae5d-fa9275a549ab",
-        "911ab7b1-d514-48ed-ac0f-d3fc25403faf",
-        "ecdf8ae6-c4b4-4549-8ead-da7059f94c72",
-        "20ab49a5-3ba3-40b0-a817-396566986d78",
-        "330465bd-712f-4dc3-8d01-cc0e8e6aba68",
-        "f7a077ba-10eb-43a6-9482-56131428abac",
-        "49bdc1b7-c9cd-429b-baae-5f9edf1c0995",
-        "2228aba3-981d-4771-bedc-40b20e98687f"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -267,238 +27,238 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "302af0f9-5fb9-4c77-8034-ee33a8b96580": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-126",
+            "product-link": "shopify://collections/fiat-126",
             "color-code": "126"
           }
         },
         "8432645d-6cf7-4aa7-ad8b-d0b8fe602506": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500",
+            "product-link": "shopify://collections/fiat-500",
             "color-code": "500"
           }
         },
         "bfbf4e42-bae0-46bc-96a0-cda5c93a2458": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500-new",
+            "product-link": "shopify://collections/fiat-500-new",
             "color-code": "500 New"
           }
         },
         "b75aaf54-3ecf-460b-9746-b966481fc816": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500e",
+            "product-link": "shopify://collections/fiat-500e",
             "color-code": "500E"
           }
         },
         "437d9f67-bd38-429d-a5ad-bb5d834c21ac": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500l",
+            "product-link": "shopify://collections/fiat-500l",
             "color-code": "500L"
           }
         },
         "ba6354c0-5ca5-4ae2-9186-d48467cd9c13": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-500x",
+            "product-link": "shopify://collections/fiat-500x",
             "color-code": "500X"
           }
         },
         "section_N6M8ib": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-600",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-600",
             "color-code": "600"
           }
         },
         "474e0036-6061-44a4-bc9e-0b2a520ca2d8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-600e",
+            "product-link": "shopify://collections/fiat-600e",
             "color-code": "600e"
           }
         },
         "de9edae6-d8bf-4d16-9f23-c8bb3aa73427": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-barchetta",
+            "product-link": "shopify://collections/fiat-barchetta",
             "color-code": "Barchetta"
           }
         },
         "f8e501e0-b771-4bf4-af91-db61cd0ceb90": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-bravo",
+            "product-link": "shopify://collections/fiat-bravo",
             "color-code": "Bravo"
           }
         },
         "000dd925-4cbe-4c30-ae5e-0e73953e96e3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-coupe",
+            "product-link": "shopify://collections/fiat-coupe",
             "color-code": "Coupe"
           }
         },
         "b034b5c6-5351-4098-bb67-1185a78ddb4c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-croma",
+            "product-link": "shopify://collections/fiat-croma",
             "color-code": "Croma"
           }
         },
         "1aafed40-af6f-4508-b7e4-f3a6e50cfe4c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-doblo",
+            "product-link": "shopify://collections/fiat-doblo",
             "color-code": "Doblo"
           }
         },
         "c9f7fe63-dd05-40e2-9c08-70e21d37bb91": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-ducato",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-ducato",
             "color-code": "Ducato"
           }
         },
         "932a8fdb-0b6a-4c74-b9ff-7d69507a5a6d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-fiorino",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-fiorino",
             "color-code": "Fiorino"
           }
         },
         "8a0c28c4-9bbd-4208-9956-98e24307998a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-freemont",
+            "product-link": "shopify://collections/fiat-freemont",
             "color-code": "Freemont"
           }
         },
         "1453432f-8a81-48d0-b958-fb38e1eba01d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-fullback",
+            "product-link": "shopify://collections/fiat-fullback",
             "color-code": "Fullback"
           }
         },
         "34303ecc-c80f-40e0-88f0-2154ea1c7ec9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-grande-punto",
+            "product-link": "shopify://collections/fiat-grande-punto",
             "color-code": "Grande Punto"
           }
         },
         "f9f69144-1aa7-4d7c-b1e4-f8187175a333": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-linea",
+            "product-link": "shopify://collections/fiat-linea",
             "color-code": "Linea"
           }
         },
         "f2653920-91b9-479d-9993-ee87c3a9bff8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-panda",
+            "product-link": "shopify://collections/fiat-panda",
             "color-code": "Panda"
           }
         },
         "95ef1825-ecf3-4785-939b-00a389990480": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-punto",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-punto",
             "color-code": "Punto"
           }
         },
         "2aa88bc6-a5b2-40fb-8421-748ba5a58172": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-qubo",
+            "product-link": "shopify://collections/fiat-qubo",
             "color-code": "Qubo"
           }
         },
         "section_zD4dtJ": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-scudo",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-scudo",
             "color-code": "Scudo"
           }
         },
         "bf35af95-c308-452b-9114-fe708043fd37": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-sedici",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-sedici",
             "color-code": "Sedici"
           }
         },
         "042a39a8-25f9-4dcf-a7f7-cf52b56bd2e1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-seicento",
+            "product-link": "shopify://collections/fiat-seicento",
             "color-code": "Seicento"
           }
         },
         "f53b1554-2829-468c-87c4-887dda8e5f2e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-siena",
+            "product-link": "shopify://collections/fiat-siena",
             "color-code": "Siena"
           }
         },
         "4be02ac4-e833-4e1f-b732-de945804a25e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-stilo",
+            "product-link": "shopify://collections/fiat-stilo",
             "color-code": "Stilo"
           }
         },
         "section_tyHTAQ": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-strada",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-strada",
             "color-code": "Strada"
           }
         },
         "8757feb1-520d-422b-98e3-9b5948b66f2e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-talento",
+            "product-link": "shopify://collections/fiat-talento",
             "color-code": "Talento"
           }
         },
         "54461170-3f36-4cb8-be8e-9a9447081bd7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-tipo",
+            "product-link": "shopify://collections/fiat-tipo",
             "color-code": "Tipo"
           }
         },
         "9016ee2f-95bc-40ab-a2cc-86dc64b8ce61": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-tipo-cross",
+            "product-link": "shopify://collections/fiat-tipo-cross",
             "color-code": "Tipo Cross"
           }
         },
         "section_BQJLU4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-fiat-ulysse",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-fiat-ulysse",
             "color-code": "Ulysse"
           }
         },
         "026cd9c5-0e99-449d-a698-e49d498866f9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/fiat-uno",
+            "product-link": "shopify://collections/fiat-uno",
             "color-code": "Uno"
           }
         }
@@ -539,11 +299,7 @@
         "section_BQJLU4",
         "026cd9c5-0e99-449d-a698-e49d498866f9"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -555,9 +311,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -566,7 +319,6 @@
   },
   "order": [
     "banner",
-    "d0e8505d-9b86-4fef-a860-d2b8c176556c",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -1,200 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "441226eb-e840-464d-8d67-54c1891aa12a": {
-      "type": "sidebar",
-      "blocks": {
-        "cbb7e0a3-0c5d-4f82-affa-e1aaf5d88a0f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-740",
-            "color-code": "740"
-          }
-        },
-        "945eb0c3-127c-4fd5-87a5-f995673e44a2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-850",
-            "color-code": "850"
-          }
-        },
-        "f4a7e904-efd0-4ef2-9e08-21fba543ff1c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-evamats-do-volvo-940",
-            "color-code": "940"
-          }
-        },
-        "86950821-1f58-4474-a345-ea88494bfd4c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-960",
-            "color-code": "960"
-          }
-        },
-        "9f3db461-2bfa-47d9-868e-9d3321a01f5d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c30",
-            "color-code": "C30"
-          }
-        },
-        "73e2c4a5-e639-4e10-a43e-eb5862def5c2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c40",
-            "color-code": "C40"
-          }
-        },
-        "49e28efb-fdc8-48bb-87b8-72ccd1a11ded": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c70",
-            "color-code": "C70"
-          }
-        },
-        "d7755275-c005-4bbb-abc9-f541b635e5a1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-ex30",
-            "color-code": "EX30"
-          }
-        },
-        "e972ef89-bb54-49e7-895c-c5113f5e9419": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-ex90",
-            "color-code": "EX90"
-          }
-        },
-        "db09fb6c-1dbb-44c4-ae03-2180fc17c375": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s40",
-            "color-code": "S40"
-          }
-        },
-        "9d717866-05aa-4d84-8ec8-ad3cddcf0592": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s60",
-            "color-code": "S60"
-          }
-        },
-        "9fbfc69d-3067-4b68-8bc5-a142cf6195d6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s80",
-            "color-code": "S80"
-          }
-        },
-        "5b2b1b04-1832-44f8-87ff-938233646f66": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s90",
-            "color-code": "S90"
-          }
-        },
-        "866ea20c-1a82-4a2c-b72a-d4e92c0fca63": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v40",
-            "color-code": "V40"
-          }
-        },
-        "d02d9195-7511-4f6e-b474-a0a8f7e522dc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v50",
-            "color-code": "V50"
-          }
-        },
-        "555b4384-e898-4c10-9a9a-05d4ba232b60": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v60",
-            "color-code": "V60"
-          }
-        },
-        "44d6080c-33c3-403e-b0bf-580d4efc9190": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v70",
-            "color-code": "V70"
-          }
-        },
-        "5398854e-b367-4a39-9d6d-8a5b8dded2fb": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v90",
-            "color-code": "V90"
-          }
-        },
-        "77c7309e-cde0-41e1-9f36-4a047d15d8cd": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc40",
-            "color-code": "XC40"
-          }
-        },
-        "b54448c6-a9e9-4128-a1a9-c94c4df14662": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc60",
-            "color-code": "XC60"
-          }
-        },
-        "16db185a-d2a9-48f6-b280-abd4fa8ebba1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc70",
-            "color-code": "XC70"
-          }
-        },
-        "9454283f-feb3-460b-bdd4-c1dc17bec330": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc90",
-            "color-code": "XC90"
-          }
-        }
-      },
-      "block_order": [
-        "cbb7e0a3-0c5d-4f82-affa-e1aaf5d88a0f",
-        "945eb0c3-127c-4fd5-87a5-f995673e44a2",
-        "f4a7e904-efd0-4ef2-9e08-21fba543ff1c",
-        "86950821-1f58-4474-a345-ea88494bfd4c",
-        "9f3db461-2bfa-47d9-868e-9d3321a01f5d",
-        "73e2c4a5-e639-4e10-a43e-eb5862def5c2",
-        "49e28efb-fdc8-48bb-87b8-72ccd1a11ded",
-        "d7755275-c005-4bbb-abc9-f541b635e5a1",
-        "e972ef89-bb54-49e7-895c-c5113f5e9419",
-        "db09fb6c-1dbb-44c4-ae03-2180fc17c375",
-        "9d717866-05aa-4d84-8ec8-ad3cddcf0592",
-        "9fbfc69d-3067-4b68-8bc5-a142cf6195d6",
-        "5b2b1b04-1832-44f8-87ff-938233646f66",
-        "866ea20c-1a82-4a2c-b72a-d4e92c0fca63",
-        "d02d9195-7511-4f6e-b474-a0a8f7e522dc",
-        "555b4384-e898-4c10-9a9a-05d4ba232b60",
-        "44d6080c-33c3-403e-b0bf-580d4efc9190",
-        "5398854e-b367-4a39-9d6d-8a5b8dded2fb",
-        "77c7309e-cde0-41e1-9f36-4a047d15d8cd",
-        "b54448c6-a9e9-4128-a1a9-c94c4df14662",
-        "16db185a-d2a9-48f6-b280-abd4fa8ebba1",
-        "9454283f-feb3-460b-bdd4-c1dc17bec330"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -203,161 +27,161 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "fcbecbce-7c63-46d3-af12-ce868ee9c397": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-740",
+            "product-link": "shopify://collections/volvo-740",
             "color-code": "740"
           }
         },
         "bd063220-2fc1-4695-a41f-43e5bc062553": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-850",
+            "product-link": "shopify://collections/volvo-850",
             "color-code": "850"
           }
         },
         "0624ea1d-fb03-48b1-8c30-34ff6aaa8c40": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-evamats-do-volvo-940",
+            "product-link": "shopify://collections/dywaniki-evamats-do-volvo-940",
             "color-code": "940"
           }
         },
         "d8b16799-644c-4b57-a8cf-986dcef7112b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-960",
+            "product-link": "shopify://collections/volvo-960",
             "color-code": "960"
           }
         },
         "e828bede-d950-4718-9293-ed51600ee61b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c30",
+            "product-link": "shopify://collections/volvo-c30",
             "color-code": "C30"
           }
         },
         "0ef1075a-b95d-4a1b-9a29-56a1f9729805": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c40",
+            "product-link": "shopify://collections/volvo-c40",
             "color-code": "C40"
           }
         },
         "7db3aa6a-005f-43b8-aa6d-3c2dea39e9b4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-c70",
+            "product-link": "shopify://collections/volvo-c70",
             "color-code": "C70"
           }
         },
         "409d2668-42de-4060-ae27-34e8795bf8c1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-ex30",
+            "product-link": "shopify://collections/volvo-ex30",
             "color-code": "EX30"
           }
         },
         "9af9d8a9-40bd-414c-8401-c9dd7aa01fb9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-ex90",
+            "product-link": "shopify://collections/volvo-ex90",
             "color-code": "EX90"
           }
         },
         "30461181-68ea-4f1f-8a9f-9902ff0a8b71": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s40",
+            "product-link": "shopify://collections/volvo-s40",
             "color-code": "S40"
           }
         },
         "dff787ef-9a94-4572-9208-f600e685af72": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s60",
+            "product-link": "shopify://collections/volvo-s60",
             "color-code": "S60"
           }
         },
         "affc4584-ddf3-4a60-afb3-cea4835da743": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s80",
+            "product-link": "shopify://collections/volvo-s80",
             "color-code": "S80"
           }
         },
         "226761b2-0b6d-47e6-b865-ba1c306bd67d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-s90",
+            "product-link": "shopify://collections/volvo-s90",
             "color-code": "S90"
           }
         },
         "ef4198b5-94a7-48ca-83f1-80fc84e746de": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v40",
+            "product-link": "shopify://collections/volvo-v40",
             "color-code": "V40"
           }
         },
         "04d0190a-d6d1-4e92-a90f-b4a59d01ca9f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v50",
+            "product-link": "shopify://collections/volvo-v50",
             "color-code": "V50"
           }
         },
         "8cfbff63-96b8-4e33-873a-70a51e923a82": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v60",
+            "product-link": "shopify://collections/volvo-v60",
             "color-code": "V60"
           }
         },
         "c224c74e-abc9-4a63-a3d6-3d823157e2ff": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v70",
+            "product-link": "shopify://collections/volvo-v70",
             "color-code": "V70"
           }
         },
         "06be97fe-324a-49bb-80ec-88897de7452e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-v90",
+            "product-link": "shopify://collections/volvo-v90",
             "color-code": "V90"
           }
         },
         "1e7966d8-8d0f-4972-b884-91d8a4c3d85d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc40",
+            "product-link": "shopify://collections/volvo-xc40",
             "color-code": "XC40"
           }
         },
         "90162e56-25bd-4895-9e82-1557b86dc3df": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc60",
+            "product-link": "shopify://collections/volvo-xc60",
             "color-code": "XC60"
           }
         },
         "dc01bcaa-128a-4eca-8d25-541f3b68e3ff": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc70",
+            "product-link": "shopify://collections/volvo-xc70",
             "color-code": "XC70"
           }
         },
         "375740ee-cc0e-4abe-9d28-c531f5dc0490": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/volvo-xc90",
+            "product-link": "shopify://collections/volvo-xc90",
             "color-code": "XC90"
           }
         }
@@ -388,11 +212,7 @@
         "375740ee-cc0e-4abe-9d28-c531f5dc0490"
       ],
       "custom_css": [],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -404,9 +224,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -415,7 +232,6 @@
   },
   "order": [
     "banner",
-    "441226eb-e840-464d-8d67-54c1891aa12a",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

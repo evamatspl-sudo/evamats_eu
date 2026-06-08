@@ -26,21 +26,21 @@
       {%- endif -%}
 
       {%- if section.settings.button_label != blank -%}
-        <div class="evamats-hero-cta__actions">
+        <div class="button-row-v2 evamats-hero-cta__actions">
           {%- if section.settings.button_link != blank -%}
-            <a class="evamats-hero-cta__button" href="{{ section.settings.button_link }}">
+            <a class="button button_3" href="{{ section.settings.button_link }}">
               {{- section.settings.button_label | escape -}}
             </a>
           {%- elsif section.settings.button_scroll_to_list -%}
             <a
-              class="evamats-hero-cta__button"
+              class="button button_3"
               href="#vacancies-list"
               data-evamats-hero-cta-scroll="{{ section.settings.button_scroll_selector | escape }}"
             >
               {{- section.settings.button_label | escape -}}
             </a>
           {%- else -%}
-            <span class="evamats-hero-cta__button evamats-hero-cta__button--static">
+            <span class="button button_3 disabled" aria-disabled="true">
               {{- section.settings.button_label | escape -}}
             </span>
           {%- endif -%}

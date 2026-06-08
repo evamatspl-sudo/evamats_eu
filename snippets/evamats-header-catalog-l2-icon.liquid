@@ -1,0 +1,29 @@
+{%- comment -%}
+  Catalog menu level 2 image — desktop flyout (Figma 1799:13077).
+  @param section {section}
+  @param menu_item_handle {string}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu_item_handle = menu_item_handle | downcase | strip
+  assign catalog_icon = blank
+-%}
+
+{%- for block in section.blocks -%}
+  {%- if block.type == 'catalog_drawer_icon' and block.settings.icon != blank -%}
+    {%- assign block_handle = block.settings.menu_item_handle | downcase | strip -%}
+    {%- if block_handle != blank and block_handle == menu_item_handle -%}
+      {%- assign catalog_icon = block.settings.icon -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if catalog_icon != blank -%}
+  {{
+    catalog_icon
+    | image_url: width: 130
+    | image_tag: class: 'evamats-header__catalog-l2-img', loading: 'lazy', alt: ''
+  }}
+{%- else -%}
+  <span class="evamats-header__catalog-l2-img--placeholder" aria-hidden="true"></span>
+{%- endif -%}

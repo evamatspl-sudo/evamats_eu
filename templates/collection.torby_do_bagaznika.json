@@ -1,136 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "sidebar_jcEEqM": {
-      "type": "sidebar",
-      "blocks": {
-        "section_HBthQr": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa",
-            "color-code": "All"
-          }
-        },
-        "section_RxrWPC": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/torby-pojedyncze",
-            "color-code": "Torby pojedyncze"
-          }
-        },
-        "section_xaEqcE": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-do-bagaznika",
-            "color-code": "Zestawy Toreb"
-          }
-        },
-        "section_Vjaz4w": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-audi",
-            "color-code": "Zestawy toreb do Audi"
-          }
-        },
-        "section_feUGtB": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-bmw",
-            "color-code": "Zestawy toreb do BMW"
-          }
-        },
-        "section_rFwbhT": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-ford",
-            "color-code": "Zestawy toreb do Ford"
-          }
-        },
-        "section_WMwzQK": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-renault",
-            "color-code": "Zestawy toreb do Renault"
-          }
-        },
-        "section_BKacBH": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-peugeot",
-            "color-code": "Zestawy toreb do Peugeot"
-          }
-        },
-        "section_PdLe7N": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-mazda",
-            "color-code": "Zestawy toreb do Mazda"
-          }
-        },
-        "section_WTqdWH": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-honda",
-            "color-code": "Zestawy toreb do Honda"
-          }
-        },
-        "section_nbJKkj": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-toyota",
-            "color-code": "Zestawy toreb do Toyota"
-          }
-        },
-        "section_zi9rDW": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-skoda",
-            "color-code": "Zestawy toreb do Skoda"
-          }
-        },
-        "section_3mk8NE": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-kia",
-            "color-code": "Zestawy toreb do Kia"
-          }
-        },
-        "section_r9zLUJ": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-volvo",
-            "color-code": "Zestawy toreb do Volvo"
-          }
-        }
-      },
-      "block_order": [
-        "section_HBthQr",
-        "section_RxrWPC",
-        "section_xaEqcE",
-        "section_Vjaz4w",
-        "section_feUGtB",
-        "section_rFwbhT",
-        "section_WMwzQK",
-        "section_BKacBH",
-        "section_PdLe7N",
-        "section_WTqdWH",
-        "section_nbJKkj",
-        "section_zi9rDW",
-        "section_3mk8NE",
-        "section_r9zLUJ"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -139,21 +27,21 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa",
+            "product-link": "shopify://collections/akcesoria-samochodowa",
             "color-code": "All"
           }
         },
         "section_mH7Nn6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/torby-pojedyncze",
+            "product-link": "shopify://collections/torby-pojedyncze",
             "color-code": "Torby pojedyncze"
           }
         },
         "section_eVFRDD": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-do-bagaznika",
+            "product-link": "shopify://collections/zestawy-do-bagaznika",
             "color-code": "Zestawy Toreb"
           }
         },
@@ -167,70 +55,70 @@
         "section_dF4kX4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-bmw",
+            "product-link": "shopify://collections/zestaw-toreb-do-bmw",
             "color-code": "Zestawy toreb do BMW"
           }
         },
         "section_mEj3qB": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-ford",
+            "product-link": "shopify://collections/zestaw-toreb-do-ford",
             "color-code": "Zestawy toreb do Ford"
           }
         },
         "section_WnQzDU": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-renault",
+            "product-link": "shopify://collections/zestawy-toreb-do-renault",
             "color-code": "Zestawy toreb do Renault"
           }
         },
         "section_tjdyyz": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-peugeot",
+            "product-link": "shopify://collections/zestawy-toreb-do-peugeot",
             "color-code": "Zestawy toreb do Peugeot"
           }
         },
         "section_Kz6zNg": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-honda",
+            "product-link": "shopify://collections/zestawy-toreb-do-honda",
             "color-code": "Zestawy toreb do Mazda"
           }
         },
         "section_zcKFpY": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestawy-toreb-do-honda",
+            "product-link": "shopify://collections/zestawy-toreb-do-honda",
             "color-code": "Zestawy toreb do Honda"
           }
         },
         "section_zeWLzU": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-toyota",
+            "product-link": "shopify://collections/zestaw-toreb-do-toyota",
             "color-code": "Zestawy toreb do Toyota"
           }
         },
         "section_CHphct": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-skoda",
+            "product-link": "shopify://collections/zestaw-toreb-do-skoda",
             "color-code": "Zestawy toreb do Skoda"
           }
         },
         "section_4mMb4D": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-kia",
+            "product-link": "shopify://collections/zestaw-toreb-do-kia",
             "color-code": "Zestawy toreb do Kia"
           }
         },
         "section_g3AJVE": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/zestaw-toreb-do-volvo",
+            "product-link": "shopify://collections/zestaw-toreb-do-volvo",
             "color-code": "Zestawy toreb do Volvo"
           }
         }
@@ -251,11 +139,7 @@
         "section_4mMb4D",
         "section_g3AJVE"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -267,9 +151,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -278,7 +159,6 @@
   },
   "order": [
     "banner",
-    "sidebar_jcEEqM",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

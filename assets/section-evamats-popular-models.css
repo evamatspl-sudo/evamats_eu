@@ -1,0 +1,351 @@
+/* Figma 1710:29371 — Popular models row on collection pages */
+
+.evamats-popular-models {
+  --epm-card-width: 295px;
+  --epm-card-height: 193px;
+  --epm-gap: 26px;
+  --epm-heading-gap: 13px;
+  --epm-fade-width: 71px;
+  --epm-fade-height: 183px;
+  --epm-fade-top: 10px;
+  margin-top: 43px;
+}
+
+.evamats-popular-models--margin-bottom {
+  margin-bottom: 48px;
+}
+
+.evamats-popular-models__heading {
+  margin: 0 0 var(--epm-heading-gap);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1b1d22;
+}
+
+.evamats-popular-models__stage {
+  position: relative;
+}
+
+.evamats-popular-models__scroller {
+  position: relative;
+  overflow: hidden;
+}
+
+.evamats-popular-models__track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--epm-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.evamats-popular-models__track::-webkit-scrollbar {
+  display: none;
+}
+
+.evamats-popular-models__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  gap: var(--epm-gap);
+}
+
+.evamats-popular-models__card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 var(--epm-card-width);
+  width: var(--epm-card-width);
+  min-height: var(--epm-card-height);
+  text-decoration: none;
+  color: inherit;
+}
+
+.evamats-popular-models__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 105px;
+  margin-bottom: 8px;
+}
+
+.evamats-popular-models__image {
+  display: block;
+  width: 100%;
+  max-width: 223px;
+  height: auto;
+  max-height: 105px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.evamats-popular-models__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: #1b1d22;
+}
+
+.evamats-popular-models__count {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: #8090a4;
+}
+
+.evamats-popular-models__divider {
+  flex: 0 0 1px;
+  align-self: center;
+  width: 1px;
+  height: 173px;
+  background: #8090a4;
+  opacity: 0.2;
+}
+
+.evamats-popular-models__fade {
+  position: absolute;
+  top: var(--epm-fade-top);
+  width: var(--epm-fade-width);
+  height: var(--epm-fade-height);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.evamats-popular-models__fade-edge {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.evamats-popular-models__fade--left {
+  left: 0;
+  background: linear-gradient(90deg, #fff 71.64%, rgba(255, 255, 255, 0) 100%);
+}
+
+.evamats-popular-models__fade--right {
+  right: 0;
+  background: linear-gradient(270deg, #fff 71.64%, rgba(255, 255, 255, 0) 100%);
+}
+
+.evamats-popular-models__nav {
+  position: absolute;
+  top: calc(var(--epm-fade-top) + var(--epm-fade-height) / 2);
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: #ff2741;
+  color: #fff;
+  box-shadow: none;
+  transition:
+    transform 0.22s cubic-bezier(0.34, 1.45, 0.64, 1),
+    opacity 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.evamats-popular-models__nav--prev {
+  left: 8px;
+}
+
+.evamats-popular-models__nav--next {
+  right: 8px;
+}
+
+.evamats-popular-models__nav:disabled {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.evamats-popular-models__stage:not(.evamats-popular-models__stage--scrollable) .evamats-popular-models__nav {
+  display: none;
+}
+
+.evamats-popular-models__nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evamats-popular-models__nav-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-popular-models {
+    --epm-mobile-pad: 18px;
+    --epm-card-width: 106px;
+    --epm-card-height: auto;
+    --epm-gap: 39px;
+    --epm-heading-gap: 27px;
+    margin-top: 24px;
+    padding-left: var(--epm-mobile-pad);
+    padding-right: var(--epm-mobile-pad);
+  }
+
+  .evamats-popular-models.page-width {
+    max-width: none;
+  }
+
+  .evamats-popular-models--margin-bottom {
+    margin-bottom: 32px;
+  }
+
+  .evamats-popular-models__heading {
+    font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-popular-models__stage {
+    margin-top: 10px;
+    margin-left: calc(-1 * var(--epm-mobile-pad));
+    margin-right: calc(-1 * var(--epm-mobile-pad));
+  }
+
+  .evamats-popular-models__scroller {
+    overflow: visible;
+  }
+
+  .evamats-popular-models__track {
+    gap: var(--epm-gap);
+    padding-left: var(--epm-mobile-pad);
+    padding-right: var(--epm-mobile-pad);
+    scroll-padding-left: var(--epm-mobile-pad);
+    scroll-padding-right: var(--epm-mobile-pad);
+    scrollbar-width: none;
+  }
+
+  .evamats-popular-models__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .evamats-popular-models__divider {
+    display: none;
+  }
+
+  .evamats-popular-models__card {
+    min-height: 0;
+  }
+
+  .evamats-popular-models__media {
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  .evamats-popular-models__image {
+    max-width: 106px;
+    max-height: 50px;
+  }
+
+  .evamats-popular-models__title {
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .evamats-popular-models__count {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+
+  .evamats-popular-models__fade,
+  .evamats-popular-models__nav:not(.evamats-popular-models__nav--footer) {
+    display: none !important;
+  }
+
+  .evamats-popular-models__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding-left: var(--epm-mobile-pad);
+    padding-right: var(--epm-mobile-pad);
+  }
+
+  .evamats-popular-models__footer-nav {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .evamats-popular-models__scrollbar {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(217, 217, 217, 0.5);
+  }
+
+  .evamats-popular-models__scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: rgba(128, 144, 164, 0.5);
+    transition: left 0.15s ease, width 0.15s ease;
+  }
+
+  .evamats-popular-models__nav--footer {
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    display: inline-flex !important;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    transform: none;
+    margin: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #1b1d22;
+    box-shadow: none;
+    transition: color 0.2s ease;
+  }
+
+  .evamats-popular-models__nav--footer:not(:disabled):hover,
+  .evamats-popular-models__nav--footer:not(:disabled):active {
+    color: #ff2741;
+  }
+
+  .evamats-popular-models__nav--footer .evamats-popular-models__nav-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .evamats-popular-models__nav--footer:disabled {
+    opacity: 0.3;
+    visibility: visible;
+    pointer-events: none;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-popular-models__footer {
+    display: none;
+  }
+}

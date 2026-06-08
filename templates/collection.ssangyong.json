@@ -1,80 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "6673e7d9-6a0a-4d45-8794-d305e1531534": {
-      "type": "sidebar",
-      "blocks": {
-        "b0d435e2-09aa-4128-bdc6-74133bcca876": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ssangyong-korando",
-            "color-code": "Korando"
-          }
-        },
-        "section_kRj8GA": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-musso",
-            "color-code": "Musso"
-          }
-        },
-        "d10af68e-d1aa-4a38-b6f1-9d45845476ad": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-rexton",
-            "color-code": "Rexton"
-          }
-        },
-        "1105a252-0644-45ec-b5ac-31072a1e11f7": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-tivoli",
-            "color-code": "Tivoli"
-          }
-        },
-        "1a701884-0992-437c-ae40-8ffd10525c55": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-tivoli-grand",
-            "color-code": "Tivoli Grand"
-          }
-        },
-        "section_nArDwh": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-toress",
-            "color-code": "Torres"
-          }
-        },
-        "section_HjMMTj": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-xlv",
-            "color-code": "XLV"
-          }
-        }
-      },
-      "block_order": [
-        "b0d435e2-09aa-4128-bdc6-74133bcca876",
-        "section_kRj8GA",
-        "d10af68e-d1aa-4a38-b6f1-9d45845476ad",
-        "1105a252-0644-45ec-b5ac-31072a1e11f7",
-        "1a701884-0992-437c-ae40-8ffd10525c55",
-        "section_nArDwh",
-        "section_HjMMTj"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -83,56 +27,56 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "20168ba8-14f1-4162-b9ec-a4e70e7f1cde": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ssangyong-korando",
+            "product-link": "shopify://collections/ssangyong-korando",
             "color-code": "Korando"
           }
         },
         "section_XQdnhX": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-musso",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-musso",
             "color-code": "Musso"
           }
         },
         "6354b4b7-afed-46a0-b326-49c3e97c67c8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-rexton",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-rexton",
             "color-code": "Rexton"
           }
         },
         "187622a2-859a-43c5-bf4e-e3b230e5e5ca": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-tivoli",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-tivoli",
             "color-code": "Tivoli"
           }
         },
         "859cb059-0ad6-4136-9c8c-3c43517e5489": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-tivoli-grand",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-tivoli-grand",
             "color-code": "Tivoli Grand"
           }
         },
         "section_TDH7qE": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-toress",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-toress",
             "color-code": "Torres"
           }
         },
         "section_kW6D7i": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ssangyong-xlv",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ssangyong-xlv",
             "color-code": "XLV"
           }
         }
@@ -147,11 +91,7 @@
         "section_TDH7qE",
         "section_kW6D7i"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -163,9 +103,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -174,7 +111,6 @@
   },
   "order": [
     "banner",
-    "6673e7d9-6a0a-4d45-8794-d305e1531534",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

@@ -1,288 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "8ea857cc-1a88-4974-b783-8bc2246cb176": {
-      "type": "sidebar",
-      "blocks": {
-        "d5a35066-982b-4f33-a872-8eb69e7ba725": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/peugeot-106",
-            "color-code": "106"
-          }
-        },
-        "a90ff4ce-07ec-4081-92a5-98eae9a1f3d8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-1007",
-            "color-code": "1007"
-          }
-        },
-        "e1f8f1c1-4c48-486f-a54f-fc14c2591799": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-107",
-            "color-code": "107"
-          }
-        },
-        "section_bUBMRF": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-108",
-            "color-code": "108"
-          }
-        },
-        "b4ac22bb-6a35-47fc-924f-9d809dd86d42": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-2008",
-            "color-code": "2008"
-          }
-        },
-        "e06d8cba-fed7-4b19-abf9-09d1a94e7b87": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-206",
-            "color-code": "206"
-          }
-        },
-        "265acf63-87cf-4d9c-a523-795b22d892c8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-207",
-            "color-code": "207"
-          }
-        },
-        "c09eac35-248d-43c0-a988-e72607edfb22": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-208",
-            "color-code": "208"
-          }
-        },
-        "fc570db8-8c0f-4708-88a3-97500e303f1b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-208-e",
-            "color-code": "208 E"
-          }
-        },
-        "3332d102-7548-46e9-81c7-54876a8f39f5": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-3008",
-            "color-code": "3008"
-          }
-        },
-        "a88cb6c8-1c0c-4e75-b78b-2b3fc086ae82": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-301",
-            "color-code": "301"
-          }
-        },
-        "86d79dd4-c87d-4454-a448-625c72140a31": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-306",
-            "color-code": "306"
-          }
-        },
-        "4d3249f1-5fec-4281-aa65-6ac500c303d8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-307",
-            "color-code": "307"
-          }
-        },
-        "fa0d6ff2-b7af-4b69-a292-a1a4a3a71209": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-308",
-            "color-code": "308"
-          }
-        },
-        "9bdafa6d-8573-415b-ae04-dc61d856846a": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-4008",
-            "color-code": "4008"
-          }
-        },
-        "4930e1ae-fd02-445f-9088-ea62fd8bc30b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-405",
-            "color-code": "405"
-          }
-        },
-        "46ced8b2-0dd4-4d43-bd70-bf6c24435799": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-406-coupe",
-            "color-code": "406"
-          }
-        },
-        "ca6bd69d-ad5a-4571-b17a-196803d9a111": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-407",
-            "color-code": "407"
-          }
-        },
-        "section_CTKbAq": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-408",
-            "color-code": "408"
-          }
-        },
-        "96cc27b7-67bc-41bc-a332-d77084e99871": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-5008",
-            "color-code": "5008"
-          }
-        },
-        "b4bb4c54-5bbd-4f41-9f59-418e4ea2c1fc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-508",
-            "color-code": "508"
-          }
-        },
-        "b26957f3-829c-4a55-b989-2355bc24f442": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-607",
-            "color-code": "607"
-          }
-        },
-        "b3c2e685-01d1-4c6f-bf54-5a9ea5244177": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-807",
-            "color-code": "807"
-          }
-        },
-        "84fa9006-c93c-4eea-a752-e48795522707": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-boxer",
-            "color-code": "Boxer"
-          }
-        },
-        "section_PjYnB4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-bipper",
-            "color-code": "Bipper"
-          }
-        },
-        "95ef0637-214c-4b60-b5b7-dc31f50290ba": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-e-2008",
-            "color-code": "e-2008"
-          }
-        },
-        "section_bKdLtw": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-e-3008",
-            "color-code": "e-3008"
-          }
-        },
-        "68299029-117b-40e0-83d1-4d136c43e9fa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-expert",
-            "color-code": "Expert"
-          }
-        },
-        "2427bea9-d4d2-4e32-9bf7-ee2074c22dbc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-ion",
-            "color-code": "iON"
-          }
-        },
-        "44f28b83-68a4-43b7-95f3-3165aa663666": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-partner",
-            "color-code": "Partner"
-          }
-        },
-        "a7d6a5fc-16c2-4ab8-9e23-983df83b437e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-rcz",
-            "color-code": "RCZ"
-          }
-        },
-        "943bff7f-2e9c-4331-8d9a-8e03909d77d8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-rifter",
-            "color-code": "Rifter"
-          }
-        },
-        "section_BhyPQc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-traveller",
-            "color-code": "Traveller"
-          }
-        }
-      },
-      "block_order": [
-        "d5a35066-982b-4f33-a872-8eb69e7ba725",
-        "a90ff4ce-07ec-4081-92a5-98eae9a1f3d8",
-        "e1f8f1c1-4c48-486f-a54f-fc14c2591799",
-        "section_bUBMRF",
-        "b4ac22bb-6a35-47fc-924f-9d809dd86d42",
-        "e06d8cba-fed7-4b19-abf9-09d1a94e7b87",
-        "265acf63-87cf-4d9c-a523-795b22d892c8",
-        "c09eac35-248d-43c0-a988-e72607edfb22",
-        "fc570db8-8c0f-4708-88a3-97500e303f1b",
-        "3332d102-7548-46e9-81c7-54876a8f39f5",
-        "a88cb6c8-1c0c-4e75-b78b-2b3fc086ae82",
-        "86d79dd4-c87d-4454-a448-625c72140a31",
-        "4d3249f1-5fec-4281-aa65-6ac500c303d8",
-        "fa0d6ff2-b7af-4b69-a292-a1a4a3a71209",
-        "9bdafa6d-8573-415b-ae04-dc61d856846a",
-        "4930e1ae-fd02-445f-9088-ea62fd8bc30b",
-        "46ced8b2-0dd4-4d43-bd70-bf6c24435799",
-        "ca6bd69d-ad5a-4571-b17a-196803d9a111",
-        "section_CTKbAq",
-        "96cc27b7-67bc-41bc-a332-d77084e99871",
-        "b4bb4c54-5bbd-4f41-9f59-418e4ea2c1fc",
-        "b26957f3-829c-4a55-b989-2355bc24f442",
-        "b3c2e685-01d1-4c6f-bf54-5a9ea5244177",
-        "84fa9006-c93c-4eea-a752-e48795522707",
-        "section_PjYnB4",
-        "95ef0637-214c-4b60-b5b7-dc31f50290ba",
-        "section_bKdLtw",
-        "68299029-117b-40e0-83d1-4d136c43e9fa",
-        "2427bea9-d4d2-4e32-9bf7-ee2074c22dbc",
-        "44f28b83-68a4-43b7-95f3-3165aa663666",
-        "a7d6a5fc-16c2-4ab8-9e23-983df83b437e",
-        "943bff7f-2e9c-4331-8d9a-8e03909d77d8",
-        "section_BhyPQc"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -291,238 +27,238 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "3ee1a756-3032-4587-bfe0-666b65fd996f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/peugeot-106",
+            "product-link": "shopify://collections/peugeot-106",
             "color-code": "106"
           }
         },
         "71c25c42-9b11-4410-9591-80644a566d57": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-107",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-107",
             "color-code": "107"
           }
         },
         "section_DE7thV": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-108",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-108",
             "color-code": "108"
           }
         },
         "c10bbe7d-39df-4930-bf0b-44c4c655d8a7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-1007",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-1007",
             "color-code": "1007"
           }
         },
         "566f5c58-5a57-4894-b042-8c9a7eca0387": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-2008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-2008",
             "color-code": "2008"
           }
         },
         "75a39baf-d75f-4cf4-92e2-3b090eb26687": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-206",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-206",
             "color-code": "206"
           }
         },
         "5970d725-b644-481f-949e-e442e20a8b64": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-207",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-207",
             "color-code": "207"
           }
         },
         "da6b02ea-96dd-4184-b7ea-e808b8afdbf2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-208",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-208",
             "color-code": "208"
           }
         },
         "b2158d3a-041e-43d6-b56d-016989c87e6b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-208-e",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-208-e",
             "color-code": "208 E"
           }
         },
         "b0bcd1ad-ee99-4313-9ab7-09bdfd34964f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-3008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-3008",
             "color-code": "3008"
           }
         },
         "b8f718e7-588c-452c-bbb0-b5af8af4ad90": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-301",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-301",
             "color-code": "301"
           }
         },
         "b30ebc7b-91ad-4ce0-a6b3-058bb445fcf3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-306",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-306",
             "color-code": "306"
           }
         },
         "3758fd85-ab3c-4cec-95d6-d664bdc70f73": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-307",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-307",
             "color-code": "307"
           }
         },
         "b40a6850-fb64-4c66-89c3-cec92ae97ee9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-308",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-308",
             "color-code": "308"
           }
         },
         "b8bdd3eb-1338-47fa-9e09-5a71278f0f03": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-4008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-4008",
             "color-code": "4008"
           }
         },
         "dc430d8c-1fdf-4325-8794-e3a22b9d4e2c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-405",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-405",
             "color-code": "405"
           }
         },
         "22f9914b-de33-4fc6-b490-982ef2f1700f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-406-coupe",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-406-coupe",
             "color-code": "406"
           }
         },
         "96d0735a-59f8-429e-8cec-cb0aed7dba13": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-407",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-407",
             "color-code": "407"
           }
         },
         "section_H6HiKw": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-408",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-408",
             "color-code": "408"
           }
         },
         "5eb973be-de4d-4b1e-8928-7e6c22b3a0ce": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-5008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-5008",
             "color-code": "5008"
           }
         },
         "4b8b53f0-b305-4088-b59d-15132668197b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-508",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-508",
             "color-code": "508"
           }
         },
         "0dae3d8c-4539-40ea-9596-84d1ef584fa7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-607",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-607",
             "color-code": "607"
           }
         },
         "8f55e021-c25b-4afc-bb55-22350eb96986": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-807",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-807",
             "color-code": "807"
           }
         },
         "3246c2f4-670b-4df9-9493-6445d85c8dc6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-boxer",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-boxer",
             "color-code": "Boxer"
           }
         },
         "section_c7wbiC": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-bipper",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-bipper",
             "color-code": "Bipper"
           }
         },
         "d4a668d6-b00d-4f91-af36-28fad03b81aa": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-e-2008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-e-2008",
             "color-code": "e-2008"
           }
         },
         "section_p4Vhgg": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-e-3008",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-e-3008",
             "color-code": "e-3008"
           }
         },
         "50c61e15-a94e-4e7f-82ca-82a4951c404f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-expert",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-expert",
             "color-code": "Expert"
           }
         },
         "41daf04a-06a6-48c9-b039-ebe83031d777": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-ion",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-ion",
             "color-code": "iON"
           }
         },
         "b0463529-7843-45dd-898a-fc42a11a34dd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-partner",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-partner",
             "color-code": "Partner"
           }
         },
         "78169be0-4186-4f27-a22a-4c6e6e3de3e6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-rcz",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-rcz",
             "color-code": "RCZ"
           }
         },
         "b5b41022-cc91-4a3e-b323-e28557880814": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-rifter",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-rifter",
             "color-code": "Rifter"
           }
         },
         "section_trtt7b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-peugeot-traveller",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-peugeot-traveller",
             "color-code": "Traveller"
           }
         }
@@ -563,11 +299,7 @@
         "b5b41022-cc91-4a3e-b323-e28557880814",
         "section_trtt7b"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -579,9 +311,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -590,7 +319,6 @@
   },
   "order": [
     "banner",
-    "8ea857cc-1a88-4974-b783-8bc2246cb176",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

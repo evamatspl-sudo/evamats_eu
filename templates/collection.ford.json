@@ -1,384 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "1fa46b59-0e05-4772-902d-aec56f1741ca": {
-      "type": "sidebar",
-      "blocks": {
-        "0b7235ba-5ea5-44bb-983a-7dd054ca1f19": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-b-max",
-            "color-code": "B-Max"
-          }
-        },
-        "cde6a93a-8ba5-4425-b6d0-83f0d295c3ba": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-c-max",
-            "color-code": "C-Max"
-          }
-        },
-        "8f2b7388-dbbc-4181-add6-e86cac06bcbb": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-grand-c-max",
-            "color-code": "Grand C-Max"
-          }
-        },
-        "6eb688c9-e08b-44ab-ae6a-8e0c3f2c66db": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ecosport",
-            "color-code": "Ecosport"
-          }
-        },
-        "9578ae12-a696-4020-b010-19cbc47f24d0": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-edge",
-            "color-code": "Edge"
-          }
-        },
-        "edab4a41-45ae-4031-850d-bbf7108b0dcc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-escape",
-            "color-code": "Escape"
-          }
-        },
-        "54b0da66-18eb-4fe7-9ce9-be23e34ab509": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-escort",
-            "color-code": "Escort"
-          }
-        },
-        "e8f30111-0b27-4b92-a698-c62a067bec39": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-expedition",
-            "color-code": "Expedition"
-          }
-        },
-        "9242fe8a-c4dc-4671-af8a-dbfc50f47384": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-explorer",
-            "color-code": "Explorer"
-          }
-        },
-        "b29d8b01-7945-4a9e-9447-e791eb7170c6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-f-150",
-            "color-code": "F-150"
-          }
-        },
-        "53ce5e89-9228-4613-918a-f92da0951ba6": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-f250",
-            "color-code": "F-250"
-          }
-        },
-        "281f76d9-ed95-4a3b-9d18-3457356eea61": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta",
-            "color-code": "Fiesta"
-          }
-        },
-        "5ba4e242-2a54-4c43-ab10-f0d00574c754": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta-active",
-            "color-code": "Fiesta Active"
-          }
-        },
-        "8ba940b1-c291-4b2f-a371-e13ba6057425": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta-st",
-            "color-code": "Fiesta ST"
-          }
-        },
-        "922728d7-4682-4ab4-a89f-c22976758fe4": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-flex",
-            "color-code": "Flex"
-          }
-        },
-        "8bfdcee5-4c90-4954-924e-a1915242d341": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-focus",
-            "color-code": "Focus"
-          }
-        },
-        "7c65fc2d-9085-428f-a64b-7b3cba47c7d0": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-focus-st",
-            "color-code": "Focus ST"
-          }
-        },
-        "c1b74b39-763d-4a43-86c5-2aa9dc7bf20e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fusion",
-            "color-code": "Fusion"
-          }
-        },
-        "section_wi9YzL": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-f-max",
-            "color-code": "F-Max"
-          }
-        },
-        "e2f1e868-5403-4372-858e-54bc352658c1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-galaxy",
-            "color-code": "Galaxy"
-          }
-        },
-        "3836a63a-cc6f-476e-8c03-6652b16513a1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ka-1",
-            "color-code": "KA"
-          }
-        },
-        "d33e5e17-ff36-4477-9d13-158f472441fa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ka",
-            "color-code": "KA+"
-          }
-        },
-        "6065147d-dffe-4db1-adee-514c84f4b968": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-kuga",
-            "color-code": "Kuga"
-          }
-        },
-        "section_HGCPta": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-ltd",
-            "color-code": "LTD"
-          }
-        },
-        "c3e6f3c6-1813-40a1-831e-79ce66262894": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-maverick",
-            "color-code": "Maverick"
-          }
-        },
-        "b22443e6-24ef-4757-b68a-9eff2a577657": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mondeo",
-            "color-code": "Mondeo"
-          }
-        },
-        "c0077cdf-699a-4855-9bcc-7d8eb7f4e24f": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mustang",
-            "color-code": "Mustang"
-          }
-        },
-        "section_6mR7PB": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-mustang-mach",
-            "color-code": "Mustang Mach"
-          }
-        },
-        "7cf9d40a-8ac5-4631-8098-8b7962f15d1e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mustang-mach-e",
-            "color-code": "Mustang Mach-E"
-          }
-        },
-        "f4b45bc3-52e9-46a7-a36f-77bd46b4c34e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-puma",
-            "color-code": "Puma"
-          }
-        },
-        "5af6402e-2cce-4402-b695-8901a14373c2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ranger",
-            "color-code": "Ranger"
-          }
-        },
-        "c48c68cb-903f-47b8-8188-7298ac5c918e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ranger-raptor",
-            "color-code": "Ranger Raptor"
-          }
-        },
-        "e916d0b0-faaf-4d44-9569-313db653c94b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-raptor",
-            "color-code": "Raptor"
-          }
-        },
-        "45a0c297-ca57-4250-b7c1-64cf6b626806": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-s-max",
-            "color-code": "S-Max"
-          }
-        },
-        "section_zjFtdf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-taurus",
-            "color-code": "Taurus"
-          }
-        },
-        "section_GMwy9P": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-thunderbird",
-            "color-code": "Thunderbird"
-          }
-        },
-        "ccb0c759-75e4-4c57-a6c3-57ffab0867fa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-grand-tourneo-connect",
-            "color-code": "Tourneo Connect"
-          }
-        },
-        "b531a11b-714e-4d93-b1ab-1368275df65c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-grand-tourneo-connect",
-            "color-code": "Grand Tourneo Connect"
-          }
-        },
-        "9c65c369-534c-4862-9c59-adcc3fbde2e3": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-tourneo-courier",
-            "color-code": "Tourneo Courier"
-          }
-        },
-        "ef5fa743-92e8-4e0b-b449-ef66b230be69": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-tourneo-custom",
-            "color-code": "Tourneo Custom"
-          }
-        },
-        "4c9a4274-c026-4bbc-96ff-2e9e4bd1ba9b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit",
-            "color-code": "Transit"
-          }
-        },
-        "8270f773-e2bc-452e-b579-d0c98012227b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-camper",
-            "color-code": "Transit Camper"
-          }
-        },
-        "section_8CNWqf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-transit-connect",
-            "color-code": "Transit Connect"
-          }
-        },
-        "734aba0b-ecad-4147-a897-cbed0ba48eb7": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-courier",
-            "color-code": "Transit Courier"
-          }
-        },
-        "6216687e-515d-4e9f-bff0-d89a7a99f1ec": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-custom",
-            "color-code": "Transit Custom"
-          }
-        }
-      },
-      "block_order": [
-        "0b7235ba-5ea5-44bb-983a-7dd054ca1f19",
-        "cde6a93a-8ba5-4425-b6d0-83f0d295c3ba",
-        "8f2b7388-dbbc-4181-add6-e86cac06bcbb",
-        "6eb688c9-e08b-44ab-ae6a-8e0c3f2c66db",
-        "9578ae12-a696-4020-b010-19cbc47f24d0",
-        "edab4a41-45ae-4031-850d-bbf7108b0dcc",
-        "54b0da66-18eb-4fe7-9ce9-be23e34ab509",
-        "e8f30111-0b27-4b92-a698-c62a067bec39",
-        "9242fe8a-c4dc-4671-af8a-dbfc50f47384",
-        "b29d8b01-7945-4a9e-9447-e791eb7170c6",
-        "53ce5e89-9228-4613-918a-f92da0951ba6",
-        "281f76d9-ed95-4a3b-9d18-3457356eea61",
-        "5ba4e242-2a54-4c43-ab10-f0d00574c754",
-        "8ba940b1-c291-4b2f-a371-e13ba6057425",
-        "922728d7-4682-4ab4-a89f-c22976758fe4",
-        "8bfdcee5-4c90-4954-924e-a1915242d341",
-        "7c65fc2d-9085-428f-a64b-7b3cba47c7d0",
-        "c1b74b39-763d-4a43-86c5-2aa9dc7bf20e",
-        "section_wi9YzL",
-        "e2f1e868-5403-4372-858e-54bc352658c1",
-        "3836a63a-cc6f-476e-8c03-6652b16513a1",
-        "d33e5e17-ff36-4477-9d13-158f472441fa",
-        "6065147d-dffe-4db1-adee-514c84f4b968",
-        "section_HGCPta",
-        "c3e6f3c6-1813-40a1-831e-79ce66262894",
-        "b22443e6-24ef-4757-b68a-9eff2a577657",
-        "c0077cdf-699a-4855-9bcc-7d8eb7f4e24f",
-        "section_6mR7PB",
-        "7cf9d40a-8ac5-4631-8098-8b7962f15d1e",
-        "f4b45bc3-52e9-46a7-a36f-77bd46b4c34e",
-        "5af6402e-2cce-4402-b695-8901a14373c2",
-        "c48c68cb-903f-47b8-8188-7298ac5c918e",
-        "e916d0b0-faaf-4d44-9569-313db653c94b",
-        "45a0c297-ca57-4250-b7c1-64cf6b626806",
-        "section_zjFtdf",
-        "section_GMwy9P",
-        "ccb0c759-75e4-4c57-a6c3-57ffab0867fa",
-        "b531a11b-714e-4d93-b1ab-1368275df65c",
-        "9c65c369-534c-4862-9c59-adcc3fbde2e3",
-        "ef5fa743-92e8-4e0b-b449-ef66b230be69",
-        "4c9a4274-c026-4bbc-96ff-2e9e4bd1ba9b",
-        "8270f773-e2bc-452e-b579-d0c98012227b",
-        "section_8CNWqf",
-        "734aba0b-ecad-4147-a897-cbed0ba48eb7",
-        "6216687e-515d-4e9f-bff0-d89a7a99f1ec"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -387,322 +27,322 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "ca36028f-4729-45ff-bdc8-4172f04f47a7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-b-max",
+            "product-link": "shopify://collections/ford-b-max",
             "color-code": "B-Max"
           }
         },
         "8feb777d-a0a8-4fa4-810d-cc52047ec7e9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-c-max",
+            "product-link": "shopify://collections/ford-c-max",
             "color-code": "C-Max"
           }
         },
         "bd277e88-f31f-4d9a-8773-9da6121570c7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-grand-c-max",
+            "product-link": "shopify://collections/ford-grand-c-max",
             "color-code": "Grand C-Max"
           }
         },
         "6a114833-a2df-48e1-8dbe-b13532eb294c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ecosport",
+            "product-link": "shopify://collections/ford-ecosport",
             "color-code": "Ecosport"
           }
         },
         "f81280f7-8dde-49b8-b0fd-e2969b769d56": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-edge",
+            "product-link": "shopify://collections/ford-edge",
             "color-code": "Edge"
           }
         },
         "6d924c12-d9b1-409e-8216-b7bc7a766c50": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-escape",
+            "product-link": "shopify://collections/ford-escape",
             "color-code": "Escape"
           }
         },
         "47ceb439-b3bf-4927-95b9-ce16fede73b7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-escort",
+            "product-link": "shopify://collections/ford-escort",
             "color-code": "Escort"
           }
         },
         "9028e32c-3dc8-4870-bdba-e9fc691b7b00": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-expedition",
+            "product-link": "shopify://collections/ford-expedition",
             "color-code": "Expedition"
           }
         },
         "3964e259-654f-4e4b-bc3f-b237c71e3045": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-explorer",
+            "product-link": "shopify://collections/ford-explorer",
             "color-code": "Explorer"
           }
         },
         "5417b59f-27db-486b-aad5-0e95b5e19fa9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-f-150",
+            "product-link": "shopify://collections/ford-f-150",
             "color-code": "F-150"
           }
         },
         "eba22e81-cc89-4a9e-9538-67a9da8aeb02": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-f250",
+            "product-link": "shopify://collections/ford-f250",
             "color-code": "F-250"
           }
         },
         "41d24dde-b730-4a0b-b7d4-7892e51661a0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta",
+            "product-link": "shopify://collections/ford-fiesta",
             "color-code": "Fiesta"
           }
         },
         "135fdec3-8b8a-4027-99f8-f1cda7d59d95": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta-active",
+            "product-link": "shopify://collections/ford-fiesta-active",
             "color-code": "Fiesta Active"
           }
         },
         "4793bb57-15de-4d00-aea5-8907979f9bbb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fiesta-st",
+            "product-link": "shopify://collections/ford-fiesta-st",
             "color-code": "Fiesta ST"
           }
         },
         "cf123d6e-44c2-4cb6-898e-a5046268409b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-flex",
+            "product-link": "shopify://collections/ford-flex",
             "color-code": "Flex"
           }
         },
         "1d72ff41-db05-4ddf-ba97-0eee99e4ec6b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-focus",
+            "product-link": "shopify://collections/ford-focus",
             "color-code": "Focus"
           }
         },
         "c5ae47c1-8618-4f1c-93b0-72350c046170": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-focus-st",
+            "product-link": "shopify://collections/ford-focus-st",
             "color-code": "Focus ST"
           }
         },
         "85e1e3ad-e09b-48d7-90d2-fc8bf2059926": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-fusion",
+            "product-link": "shopify://collections/ford-fusion",
             "color-code": "Fusion"
           }
         },
         "section_4Td8Fh": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-f-max",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-f-max",
             "color-code": "F-Max"
           }
         },
         "41b7fece-e290-40a2-a02a-9fe32857cf95": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-galaxy",
+            "product-link": "shopify://collections/ford-galaxy",
             "color-code": "Galaxy"
           }
         },
         "68e218f9-c96f-435c-8a81-f3cde4fabbe4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ka-1",
+            "product-link": "shopify://collections/ford-ka-1",
             "color-code": "KA"
           }
         },
         "d1e5897e-b121-47d4-a2e0-26eaab6b88e2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ka",
+            "product-link": "shopify://collections/ford-ka",
             "color-code": "KA+"
           }
         },
         "19add92a-0823-43ab-9a2d-3de374ba9f5b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-kuga",
+            "product-link": "shopify://collections/ford-kuga",
             "color-code": "Kuga"
           }
         },
         "section_xmeBwb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-ltd",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ford-ltd",
             "color-code": "LTD"
           }
         },
         "8dbd7801-679e-4639-87bb-26553493612c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-maverick",
+            "product-link": "shopify://collections/ford-maverick",
             "color-code": "Maverick"
           }
         },
         "2815019a-d0bc-423b-ab7c-3901d922a3c6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mondeo",
+            "product-link": "shopify://collections/ford-mondeo",
             "color-code": "Mondeo"
           }
         },
         "39da6bd0-4a35-4d64-81d9-def445a14436": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mustang",
+            "product-link": "shopify://collections/ford-mustang",
             "color-code": "Mustang"
           }
         },
         "section_NFTLCj": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-mustang-mach",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ford-mustang-mach",
             "color-code": "Mustang Mach"
           }
         },
         "2254d5ce-99fe-4d5d-be21-b93bb2008290": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-mustang-mach-e",
+            "product-link": "shopify://collections/ford-mustang-mach-e",
             "color-code": "Mustang Mach-E"
           }
         },
         "ad3bffb9-9524-4476-ae1d-9af8d0851a06": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-puma",
+            "product-link": "shopify://collections/ford-puma",
             "color-code": "Puma"
           }
         },
         "6cbdff44-8501-451c-896c-60336ea9d63c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ranger",
+            "product-link": "shopify://collections/ford-ranger",
             "color-code": "Ranger"
           }
         },
         "449d4fef-90ee-4300-8ca9-2301c2acfb4d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-ranger-raptor",
+            "product-link": "shopify://collections/ford-ranger-raptor",
             "color-code": "Ranger Raptor"
           }
         },
         "21b081af-2842-457c-a1d6-100731e9ecd3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-raptor",
+            "product-link": "shopify://collections/ford-raptor",
             "color-code": "Raptor"
           }
         },
         "0a6c8aab-4c0b-4312-b670-5e61782ca995": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-s-max",
+            "product-link": "shopify://collections/ford-s-max",
             "color-code": "S-Max"
           }
         },
         "section_mG3Mmz": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-taurus",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ford-taurus",
             "color-code": "Taurus"
           }
         },
         "section_pzgkbW": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-thunderbird",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ford-thunderbird",
             "color-code": "Thunderbird"
           }
         },
         "49a8d1a9-97ea-42ce-ae8d-24264532818f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-tourneo-connect",
+            "product-link": "shopify://collections/ford-tourneo-connect",
             "color-code": "Tourneo Connect"
           }
         },
         "8fe0ff4e-879f-4278-9f23-225ce4dde1a1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-grand-tourneo-connect",
+            "product-link": "shopify://collections/ford-grand-tourneo-connect",
             "color-code": "Grand Tourneo Connect"
           }
         },
         "2978eb5a-1f7e-4db5-a498-0245ad334229": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-tourneo-courier",
+            "product-link": "shopify://collections/ford-tourneo-courier",
             "color-code": "Tourneo Courier"
           }
         },
         "5be0a42b-c916-4664-978b-284d6247febf": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-tourneo-custom",
+            "product-link": "shopify://collections/ford-tourneo-custom",
             "color-code": "Tourneo Custom"
           }
         },
         "640b6734-1f2a-4f75-bd13-dbf9fcfc9a39": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit",
+            "product-link": "shopify://collections/ford-transit",
             "color-code": "Transit"
           }
         },
         "c1ecb334-5310-446d-ae4a-e0744fe0b7d8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-camper",
+            "product-link": "shopify://collections/ford-transit-camper",
             "color-code": "Transit Camper"
           }
         },
         "section_ReprcC": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-ford-transit-connect",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ford-transit-connect",
             "color-code": "Transit Connect"
           }
         },
         "d6eab12a-c313-4437-8eb1-d07d6e7fb5c5": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-courier",
+            "product-link": "shopify://collections/ford-transit-courier",
             "color-code": "Transit Courier"
           }
         },
         "1fb3716f-ef21-457c-bb01-45d07089cc5f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/ford-transit-custom",
+            "product-link": "shopify://collections/ford-transit-custom",
             "color-code": "Transit Custom"
           }
         }
@@ -755,11 +395,7 @@
         "d6eab12a-c313-4437-8eb1-d07d6e7fb5c5",
         "1fb3716f-ef21-457c-bb01-45d07089cc5f"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -771,9 +407,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -782,7 +415,6 @@
   },
   "order": [
     "banner",
-    "1fa46b59-0e05-4772-902d-aec56f1741ca",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

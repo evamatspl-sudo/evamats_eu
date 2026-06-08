@@ -398,7 +398,6 @@ body{
 .product-faqs .faqs-all-question .faq-question .panel p{
     font-size:1.6rem;
     line-height:140%;
-    color:rgba(0,0,0,.6)
 }
 .product-faqs .faqs-all-question .faq-question .accordion:after{
     background:linear-gradient(93.45deg,var(--color-1) -4.53%,#cb0428 104.95%);
@@ -640,7 +639,7 @@ html.no-js .no-js-inline{
     display:inline-block!important
 }
 .page-width{
-    max-width:1550px;
+    max-width:1620px;
     margin:0 auto;
     padding:0 1.5rem
 }
@@ -1452,11 +1451,6 @@ summary::-webkit-details-marker{
     border:0
 }
 
-.field__input {
-    border-radius: 10px;
-    border: 1px solid rgba(var(--color-foreground), .2);
-}
-
 .select__select{
     border-radius: 8px;
     font-size:1.2rem;
@@ -1724,7 +1718,7 @@ input[type=checkbox]{
     left:0;
     right:0;
     bottom:0;
-    background:rgb(var(--color-background));
+    background:#fff;
     z-index:4;
     display:flex;
     justify-content:center;
@@ -1894,7 +1888,6 @@ input[type=checkbox]{
 }
 .header__icon--cart{
     position:relative;
-    margin-right:-1.2rem
 }
 @media screen and (max-width:989px){
     .header__heading,.header__heading-link{
@@ -2156,11 +2149,6 @@ details[open]>.header__submenu{
     text-align:center;
     background-color:rgb(var(--color-foreground));
     color: #fff;
-}
-.gradient{
-    background:rgb(var(--color-background));
-    background:var(--gradient-background);
-    background-attachment:fixed
 }
 @media screen and (forced-colors:active){
     .button.loading{
@@ -3029,10 +3017,6 @@ body #add-to-cart-and-checkout {
     transform: rotate(-180deg);
 }
 
-.active.custom-select path,
-.selected.custom-select path {
-    stroke: #02130F;
-}
 
 .select-items {
     position: absolute;
@@ -3931,12 +3915,6 @@ fieldset {
         border-bottom: 0;
     }
 
-    :not(.header__car_dropdown) > .filter-container .custom-select-wrapper:last-of-type {
-        margin-bottom: 46px;
-        border-radius: 0 0 10px 10px;
-        /* border-top: 0; */
-    }
-
     body .custom-select-divider {
         display: none;
     }
@@ -4268,36 +4246,8 @@ fieldset {
       text-align: center;
     }
   
-    .adv-clean-hero-v2 a.adv-clean-hero-v2__cta {
-      color: var(--color-text-on-dark);
-    }
-  
-    .adv-clean-hero-v2 .adv-clean-hero-v2__cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .adv-clean-hero-v2 .adv-clean-hero-v2__cta.button_3 {
       width: 100%;
-      min-height: 60px;
-      padding: 16px 24px;
-      border-radius: 16px;
-      background: #ff2741;
-      color: var(--color-text-on-dark);
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.32px;
-      text-decoration: none;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  
-    .adv-clean-hero-v2 .adv-clean-hero-v2__cta:hover {
-      opacity: 0.92;
-    }
-  
-    .adv-clean-hero-v2 .adv-clean-hero-v2__cta--disabled {
-      opacity: 0.45;
-      pointer-events: none;
     }
   
     @media screen and (max-width: 989px) {
@@ -4393,15 +4343,11 @@ fieldset {
         text-align: left;
       }
   
-      .adv-clean-hero-v2 .adv-clean-hero-v2__cta {
+      .adv-clean-hero-v2 .adv-clean-hero-v2__cta.button_3 {
         flex: 0 0 auto;
         width: auto;
         min-width: 280px;
-        min-height: 70px;
-        padding: 22px 48px;
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: none;
+        max-width: none;
       }
     }
   
@@ -4574,26 +4520,9 @@ fieldset {
       color: var(--color-accent-red, #ff2741);
     }
   
-    .adv-promo-offer-v2 .adv-promo-offer-v2__cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
       width: 100%;
-      min-height: 50px;
-      padding: 12px 20px;
-      border-radius: 12px;
-      background: var(--color-accent-red, #ff2741);
-      color: #ffffff !important;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: -0.32px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-  
-    .adv-promo-offer-v2 .adv-promo-offer-v2__cta:hover {
-      filter: brightness(1.05);
+      max-width: none;
     }
   
     @media screen and (max-width: 989px) {
@@ -4715,13 +4644,8 @@ fieldset {
         text-align: right;
       }
   
-      .adv-promo-offer-v2 .adv-promo-offer-v2__cta {
-        min-height: 60px;
-        border-radius: 16px;
-        font-size: var(--font-label-m-size, 18px);
-        letter-spacing: -0.36px;
-        text-transform: none;
-        font-weight: 600;
+      .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
+        max-width: none;
       }
     }
   
@@ -5558,28 +5482,8 @@ fieldset {
       text-decoration: underline;
     }
   
-    .evamats-careers-contact__button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
+    .evamats-careers-contact__button.button_3 {
       max-width: 445px;
-      min-height: 60px;
-      padding: 22px 63px;
-      border-radius: 16px;
-      background: var(--color-accent-red, #ff2741);
-      color: var(--color-text-on-dark);
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-  
-    .evamats-careers-contact__button:hover {
-      opacity: 0.9;
     }
   
     .evamats-careers-contact__footer {
@@ -5681,12 +5585,8 @@ fieldset {
         line-height: 1.6;
       }
   
-      .evamats-careers-contact__button {
-        min-height: 50px;
+      .evamats-careers-contact__button.button_3 {
         max-width: none;
-        padding-left: 24px;
-        padding-right: 24px;
-        font-size: 16px;
       }
   
       .evamats-careers-contact__footer {
@@ -5750,34 +5650,9 @@ fieldset {
       justify-content: center;
     }
   
-    .evamats-hero-cta__button {
-      box-sizing: border-box;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .evamats-hero-cta__actions .button.button_3 {
       min-width: 242px;
-      min-height: 60px;
-      padding: 14px 63px;
-      background: var(--color-accent-red, #ff2741);
-      border-radius: 16px;
-      color: var(--color-text);
-      
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 0;
-    }
-  
-    .evamats-hero-cta__button--static {
-      pointer-events: none;
-    }
-  
-    .evamats-hero-cta__button:focus-visible {
-      outline: 2px solid #fff;
-      outline-offset: 3px;
+      max-width: none;
     }
   
     .evamats-hero-cta__media {
@@ -5814,11 +5689,9 @@ fieldset {
         font-size: 16px;
       }
   
-      .evamats-hero-cta__button {
-        min-height: 50px;
-        padding-left: 32px;
-        padding-right: 32px;
-        font-size: 16px;
+      .evamats-hero-cta__actions .button.button_3 {
+        min-width: 0;
+        width: 100%;
       }
     }
   
@@ -8024,214 +7897,6 @@ fieldset {
       }
     }
   
-  /* --- evamats-proven-scale-v2.liquid --- */
-  .evamats-proven-scale-v2 {
-      background: transparent;
-      color: var(--color-text);
-    }
-  
-    .evamats-proven-scale-v2__inner {
-      max-width: 1520px;
-      margin: 0 auto;
-    }
-  
-    .evamats-proven-scale-v2__heading {
-      margin: 0 0 60px;
-      font-weight: 600;
-      font-size: 46px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: var(--color-text);
-    }
-  
-    .evamats-proven-scale-v2__intro--mobile {
-      display: none;
-    }
-  
-    .evamats-proven-scale-v2__hero {
-      position: relative;
-      min-height: 636px;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-  
-    .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
-      position: static;
-      margin: 40px 60px 60px;
-    }
-  
-    .evamats-proven-scale-v2__media {
-      position: relative;
-      height: 636px;
-      overflow: hidden;
-    }
-  
-    .evamats-proven-scale-v2__media-img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-  
-    .evamats-proven-scale-v2__fade {
-      position: absolute;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-  
-    .evamats-proven-scale-v2__fade--top {
-      top: 0;
-      height: 45%;
-      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-    }
-  
-    .evamats-proven-scale-v2__fade--bottom {
-      bottom: 0;
-      height: 242px;
-      background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-    }
-  
-    .evamats-proven-scale-v2__intro--desktop {
-      position: absolute;
-      top: 40px;
-      left: 60px;
-      z-index: 2;
-      margin: 0;
-      max-width: 588px;
-      font-weight: 600;
-      font-size: 42px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-  
-    .evamats-proven-scale-v2__stats {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      left: 60px;
-      right: 60px;
-      bottom: 60px;
-      z-index: 2;
-      display: flex;
-      gap: 3px;
-    }
-  
-    .evamats-proven-scale-v2__stat {
-      flex: 1 1 0;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 21px;
-      padding: 22px 26px;
-      background: var(--color-surface-elevated);
-      border-radius: 20px;
-    }
-  
-    .evamats-proven-scale-v2__stat-value {
-      margin: 0;
-      font-weight: 600;
-      font-size: 42px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-    }
-  
-    .evamats-proven-scale-v2__stat-plus {
-      color: #ef022d;
-    }
-  
-    .evamats-proven-scale-v2__stat-label {
-      margin: 0;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 1.6;
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-    }
-  
-    @media screen and (max-width: 749px) {
-      .evamats-proven-scale-v2__heading {
-        margin: 0 0 16px;
-        font-size: 26px;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-      }
-  
-      .evamats-proven-scale-v2__intro--mobile {
-        display: block;
-        margin: 0 auto 24px;
-        max-width: 339px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.6;
-        letter-spacing: -0.02em;
-        text-align: center;
-        color: var(--color-text);
-      }
-  
-      .evamats-proven-scale-v2__intro--desktop {
-        display: none;
-      }
-  
-      .evamats-proven-scale-v2__hero {
-        min-height: 0;
-        border-radius: 0;
-        margin-left: -18px;
-        margin-right: -18px;
-        width: calc(100% + 36px);
-        overflow: visible;
-      }
-  
-      .evamats-proven-scale-v2__hero:not(:has(.evamats-proven-scale-v2__media)) .evamats-proven-scale-v2__stats {
-        margin: 42px 0 0;
-      }
-  
-      .evamats-proven-scale-v2__media {
-        height: 200px;
-        border-radius: 0;
-        overflow: hidden;
-      }
-  
-      .evamats-proven-scale-v2__fade {
-        display: none;
-      }
-  
-      .evamats-proven-scale-v2__stats {
-        position: static;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 16px;
-        row-gap: 36px;
-        margin-top: 42px;
-        padding: 0 16px;
-      }
-  
-      .evamats-proven-scale-v2__stat {
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        gap: 21px;
-        text-align: center;
-      }
-  
-      .evamats-proven-scale-v2__stat-value {
-        font-size: 36px;
-        line-height: 1;
-        letter-spacing: -0.03em;
-      }
-  
-      .evamats-proven-scale-v2__stat-label {
-        font-size: 15px;
-        letter-spacing: -0.03em;
-      }
-    }
-  
   /* --- evamats-vacancies-list.liquid --- */
   .evamats-vacancies-list {
       background: transparent;
@@ -8381,28 +8046,10 @@ fieldset {
       font-weight: 700;
     }
   
-    .evamats-vacancies-list__cta {
+    .evamats-vacancies-list__cta.button_3 {
       flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       min-width: 299px;
-      min-height: 60px;
-      padding: 14px 32px;
-      border-radius: 16px;
-      background: var(--color-accent-red, #ff2741);
-      color: var(--color-text-on-dark);
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      text-decoration: none;
-      text-align: center;
-    }
-  
-    .evamats-vacancies-list__cta:hover {
-      opacity: 0.92;
+      max-width: none;
     }
   
     .evamats-vacancies-list__empty {
@@ -8413,30 +8060,10 @@ fieldset {
       color: var(--color-text-secondary);
     }
   
-    .evamats-vacancies-list__more {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .evamats-vacancies-list__more.button_5 {
       width: 100%;
       max-width: 1520px;
-      min-height: 60px;
       margin: 40px auto 0;
-      padding: 13px 61px;
-      border-radius: 16px;
-      border: 1px solid var(--color-accent-red, #ff2741);
-      background: transparent;
-      color: var(--color-text);
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      cursor: pointer;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-  
-    .evamats-vacancies-list__more:hover {
-      opacity: 0.9;
     }
   
     @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -8451,10 +8078,9 @@ fieldset {
         margin-bottom: 24px;
       }
   
-      .evamats-vacancies-list__cta {
+      .evamats-vacancies-list__cta.button_3 {
         width: 100%;
         min-width: 0;
-        min-height: 52px;
       }
     }
   
@@ -8521,20 +8147,14 @@ fieldset {
         white-space: normal;
       }
   
-      .evamats-vacancies-list__cta {
+      .evamats-vacancies-list__cta.button_3 {
         width: 100%;
         min-width: 0;
-        min-height: 40px;
-        border-radius: 10px;
-        font-size: 16px;
       }
   
-      .evamats-vacancies-list__more {
+      .evamats-vacancies-list__more.button_5 {
         max-width: 339px;
-        min-height: 50px;
         margin-top: 24px;
-        padding-left: 24px;
-        padding-right: 24px;
       }
     }
   
@@ -8574,20 +8194,14 @@ fieldset {
   
   /* --- mat-hotspot-consult.liquid --- */
   .mat-consult {
-    --mat-bg: transparent;
-    --mat-text: var(--color-text);
     --mat-muted: var(--color-text-secondary);
     --mat-accent: #ff2741;
     --mat-tooltip-bg: #ffffff;
     --mat-tooltip-text: #1b1d22;
-    background: var(--mat-bg);
-    color: var(--mat-text);
-    font-family: var(--font-body-family, inherit);
+    background: #F6F6F6;
   }
   
   .mat-consult__page {
-    max-width: 1520px;
-    margin: 0 auto;
     overflow: visible;
   }
   
@@ -8759,10 +8373,6 @@ fieldset {
   }
   
   @media screen and (max-width: 749px) {
-    .mat-consult {
-      padding: 40px 0 48px;
-    }
-  
     .mat-consult__hotspot {
       transform: translate(-50%, -50%);
     }
@@ -11199,31 +10809,9 @@ fieldset {
       color: var(--color-text);
     }
   
-    .product-spotlight-v2 .product-spotlight-v2__cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 70px;
+    .product-spotlight-v2 .product-spotlight-v2__cta.button_3 {
       min-width: 280px;
-      padding: 22px 48px;
-      border-radius: 16px;
-      background: var(--color-accent-red);
-      color: var(--color-text-on-dark);
-      font-size: var(--font-label-m-size);
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.36px;
-      text-decoration: none;
-      text-align: center;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__cta:hover {
-      opacity: 0.92;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__cta--disabled {
-      opacity: 0.45;
-      pointer-events: none;
+      max-width: none;
     }
   
     @media screen and (max-width: 989px) {
@@ -11295,15 +10883,9 @@ fieldset {
         letter-spacing: -0.32px;
       }
   
-      .product-spotlight-v2 .product-spotlight-v2__cta {
+      .product-spotlight-v2 .product-spotlight-v2__cta.button_3 {
         width: 100%;
         min-width: 0;
-        min-height: 60px;
-        font-size: 16px;
-        font-weight: 700;
-        letter-spacing: -0.32px;
-        text-transform: uppercase;
-        background: #ff2741;
       }
     }
   
@@ -11827,6 +11409,1270 @@ fieldset {
       }
     }
   
+/* === ActionButton (Figma 1799:13246) — button_2 … button_6 === */
+.button, button {
+  font-family: var(--font-body-family, inherit);
+}
+.button-row-v2 {
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Large red + arrow — button_2 */
+.button.button_2 {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 498px;
+  min-width: auto !important;
+  min-height: 60px !important;
+  padding: 22px 56px 22px 28px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 18px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase !important;
+  text-decoration: none;
+  text-align: center;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_2:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_2:active {
+  background: #ce1534 !important;
+}
+
+.button.button_2:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_2::after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20d%3D%22M3%209%20L9%203%20M9%209%20L9%203%20L3%203%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+}
+
+.button.button_2:disabled,
+.button.button_2.disabled,
+.button.button_2[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Large red, no arrow — button_3 */
+.button.button_3 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 498px;
+  min-width: auto !important;
+  min-height: 60px !important;
+  padding: 22px 28px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 18px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase !important;
+  text-decoration: none;
+  text-align: center;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_3:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_3:active {
+  background: #ce1534 !important;
+}
+
+.button.button_3:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_3:disabled,
+.button.button_3.disabled,
+.button.button_3[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Medium red + inline arrow — button_4 */
+.button.button_4 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: auto !important;
+  min-height: 50px !important;
+  padding: 13px 61px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  text-decoration: none;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_4:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_4:active {
+  background: #ce1534 !important;
+}
+
+.button.button_4:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_4 .button__arrow {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.button.button_4 .button__arrow svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.button.button_4:disabled,
+.button.button_4.disabled,
+.button.button_4[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Medium outline accent — button_5 (text) / button_6 (+ icon) Figma 1710:32889 & 1799:13323 */
+.button.button_5,
+.button.button_6 {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: auto !important;
+  min-height: 50px !important;
+  margin: 0;
+  background: #fff !important;
+  color: var(--color-text-primary, #1b1d22) !important;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--color-accent-red, #ff2741) !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  overflow: visible;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_5 {
+  padding: 13px 61px !important;
+  font-size: 16px !important;
+}
+
+.button.button_5.button_5--neutral {
+  border-color: #e9e9e9 !important;
+}
+
+.button.button_6 {
+  gap: 12px;
+  padding: 12px 56px !important;
+  font-size: 18px !important;
+}
+
+.button.button_5:hover,
+.button.button_6:hover {
+  background: var(--color-accent-red, #ff2741) !important;
+  border-color: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+}
+
+.button.button_5:active,
+.button.button_6:active {
+  background: #e6173a !important;
+  border-color: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_5:focus-visible,
+.button.button_6:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_5:disabled,
+.button.button_5.disabled,
+.button.button_5[aria-disabled='true'],
+.button.button_6:disabled,
+.button.button_6.disabled,
+.button.button_6[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button.button_6 .button__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.button.button_6 .button__icon-svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+@media screen and (max-width: 749px) {
+  .button.button_2,
+  .button.button_3 {
+    min-height: 50px !important;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px !important;
+  }
+
+  .button.button_2 {
+    padding: 15px 48px 15px 24px !important;
+  }
+
+  .button.button_2::after {
+    right: 24px;
+  }
+
+  .button.button_3 {
+    padding: 15px 24px !important;
+  }
+
+  .button.button_4 {
+    min-height: 40px !important;
+    padding: 13px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+  }
+
+  .button.button_5,
+  .button.button_6 {
+    min-height: 44px !important;
+    padding: 10px 20px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+  }
+
+  .button.button_6 {
+    gap: 8px;
+  }
+
+  .button.button_6 .button__icon,
+  .button.button_6 .button__icon-svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* === home-faq-v2 (from evamats) === */
+.home-faq-v2 .faqs-all-question .faq-question {
+  border-bottom: 0;
+}
+
+.home-faq-v2 .faqs-all-question .faq-question .accordion:after {
+  content: none;
+  display: none;
+}
+
+.home-faq-v2 .faqs-all-question .accordion {
+  height: auto;
+}
+
+.home-faq-v2 {
+  --home-faq-muted: #1b1d22;
+  --home-faq-accent: #ff2741;
+  --home-faq-rule-desktop: #e9e9e9;
+  --home-faq-rule-mobile: #3c3c3c;
+  font-family: var(--font-body-family, inherit);
+}
+
+.home-faq-v2 .page-width {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.home-faq-v2__shell {
+  display: grid;
+  grid-template-columns: minmax(0, 273px) minmax(0, 1fr);
+  column-gap: 108px;
+  row-gap: 0;
+  align-items: start;
+}
+
+.home-faq-v2__intro {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.home-faq-v2__main {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-width: 0;
+}
+
+.home-faq-v2__shell:not(.home-faq-v2__shell--has-cta) .home-faq-v2__main {
+  grid-row: 1;
+}
+
+.home-faq-v2__cta-wrap {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 24px;
+}
+
+.home-faq-v2__eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--home-faq-muted);
+  text-decoration: none;
+}
+
+.home-faq-v2__eyebrow:hover {
+  text-decoration: underline;
+}
+
+.home-faq-v2__eyebrow--text {
+  cursor: default;
+}
+
+.home-faq-v2__eyebrow--text:hover {
+  text-decoration: none;
+}
+
+.home-faq-v2__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--home-faq-text);
+}
+
+.home-faq-v2__title-desktop {
+  display: inline;
+}
+
+.home-faq-v2__title-mobile {
+  display: none;
+}
+
+.home-faq-v2 .faqs-all-question {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-faq-v2__accordion-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.home-faq-v2__question-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--home-faq-text);
+  text-align: left;
+}
+
+.home-faq-v2__row--category .home-faq-v2__question-title {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.home-faq-v2__toggle-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--home-faq-accent);
+}
+
+.home-faq-v2__toggle-icon::before,
+.home-faq-v2__toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+
+.home-faq-v2__toggle-icon::before {
+  width: 12px;
+  height: 2px;
+}
+
+.home-faq-v2__toggle-icon::after {
+  width: 2px;
+  height: 12px;
+}
+
+.home-faq-v2 .accordion.active .home-faq-v2__toggle-icon::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.home-faq-v2 .accordion {
+  cursor: pointer;
+  border: 0;
+  padding: 0 0 26px;
+  margin: 0;
+  border-bottom: 1px solid var(--home-faq-rule-desktop);
+  background: transparent;
+}
+
+.home-faq-v2 .faq-question:last-child > .accordion {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-faq-v2 .panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.home-faq-v2 .accordion.active + .panel {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.home-faq-v2 .faq-question--inner .accordion {
+  border-bottom-color: var(--home-faq-rule-desktop);
+  padding-bottom: 20px;
+  margin-top: 16px;
+}
+
+.home-faq-v2 .faq-question--inner:first-child .accordion {
+  margin-top: 8px;
+}
+
+.home-faq-v2 .faq-category .panel--category {
+  padding: 0 0 8px;
+  margin: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.home-faq-v2 .faq-category .panel--category .faq-question--inner:last-child .accordion {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-faq-v2 .panel p {
+  margin: 0 0 0.75em;
+}
+
+.home-faq-v2 .panel p:last-child {
+  margin-bottom: 0;
+}
+
+.home-faq-v2 .faq-question__title p {
+  margin: 0;
+}
+
+.home-faq-v2 .faq-question__title p:first-child {
+  display: inline;
+}
+
+.home-faq-v2 .faq-question--inner iframe {
+  width: 100%;
+  height: 350px;
+}
+
+.has_anchor {
+  position: relative;
+}
+
+.anchor {
+  position: absolute;
+  top: -120px;
+  display: block !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 989px) {
+  .home-faq-v2__shell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .home-faq-v2__intro {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home-faq-v2__eyebrow,
+  .home-faq-v2__eyebrow--text {
+    display: none;
+  }
+
+  .home-faq-v2__title-desktop {
+    display: none;
+  }
+
+  .home-faq-v2__title-mobile {
+    display: inline;
+  }
+
+  .home-faq-v2__title {
+    font-size: 26px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .home-faq-v2__main {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-faq-v2__cta-wrap {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+  }
+
+  .home-faq-v2__cta-wrap .button.button_5 {
+    width: 100%;
+  }
+
+  .home-faq-v2 .accordion {
+    border-bottom-color: var(--home-faq-rule-mobile);
+    padding-bottom: 20px;
+  }
+
+  .home-faq-v2 .faq-question:last-child > .accordion {
+    padding-bottom: 0;
+  }
+
+  .home-faq-v2__question-title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .home-faq-v2__row--category .home-faq-v2__question-title {
+    font-size: 18px;
+  }
+
+  .home-faq-v2__toggle-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-faq-v2 .faq-question--inner .accordion {
+    border-bottom-color: var(--home-faq-rule-mobile);
+  }
+}
+
+.z_index_one {
+  z-index: 1 !important;
+}
+
+/* === evamats-footer (from sections/footer.liquid) === */
+.evamats-footer {
+  border-top: 1px solid #e9e9e9;
+}
+
+/* ── Top: menus + contacts ── */
+.evamats-footer__content-top {
+  padding-bottom: 0;
+}
+
+.evamats-footer__main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.evamats-footer__menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evamats-footer__menu-heading {
+  display: block;
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.44px;
+  color: #000;
+}
+
+.evamats-footer__menu-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evamats-footer__menu-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.32px;
+}
+
+.evamats-footer__menu-link:hover {
+  opacity: 0.85;
+}
+
+.evamats-footer__aside {
+  flex: 0 0 298px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.evamats-footer__contact-heading {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  color: #000;
+}
+
+.evamats-footer__contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.evamats-footer__contact-intro {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  color: #000;
+}
+
+.evamats-footer__contact-intro p {
+  margin: 0;
+}
+
+.evamats-footer__contact-intro p + p {
+  margin-top: 12px;
+}
+
+.evamats-footer__contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.evamats-footer__contact-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: #1b1d22;
+}
+
+.evamats-footer__contact-icon-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.evamats-footer__contact-row--email .evamats-footer__contact-icon {
+  color: #ff2741;
+}
+
+.evamats-footer__contact-value {
+  margin: 0;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  color: #000;
+  text-decoration: none;
+}
+
+.evamats-footer__contact-value--email {
+  color: #ff2741;
+  letter-spacing: -0.44px;
+}
+
+.evamats-footer__contact-value--email:hover {
+  opacity: 0.85;
+}
+
+.evamats-footer__contact-value--phone {
+  line-height: 1;
+  letter-spacing: -0.52px;
+}
+
+.evamats-footer__contact-body p {
+  margin: 0;
+}
+
+.evamats-footer__contact-body p:empty {
+  display: none;
+}
+
+.evamats-footer__contact-body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.evamats-footer__contact-body a[href^='mailto:'] {
+  color: #ff2741;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.44px;
+}
+
+.evamats-footer__contact-body a[href^='tel:'] {
+  display: block;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.52px;
+  color: #000;
+}
+
+.evamats-footer__contact-body p:not(:has(a)) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  color: #000;
+}
+
+.evamats-footer .video_reviews__socials {
+  gap: 6px;
+}
+
+.evamats-footer .video_reviews__social-fb-label,
+.evamats-footer .video_reviews__social-fb-icon--external {
+  display: none;
+}
+
+.evamats-footer .video_reviews__social-link--facebook {
+  width: 50px;
+  min-height: 50px;
+  padding: 0;
+  justify-content: center;
+}
+
+/* ── Newsletter ── */
+.evamats-footer__newsletter-wrap {
+  padding-bottom: 32px;
+}
+
+.evamats-footer__newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: #f6f6f6;
+  border-radius: 12px;
+  padding: 32px 40px;
+  margin-bottom: 0;
+}
+
+.evamats-footer__newsletter-text {
+  max-width: 580px;
+}
+
+.evamats-footer__newsletter-heading {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.44px;
+  color: #000;
+}
+
+.evamats-footer__newsletter-heading p {
+  margin: 0;
+}
+
+.evamats-footer__newsletter-heading strong {
+  color: #ff2741;
+}
+
+.evamats-footer__newsletter-subtext {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.evamats-footer__newsletter-form {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evamats-footer__newsletter-field-wrap {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.evamats-footer__newsletter-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 52px;
+  padding: 0 20px;
+}
+
+.evamats-footer__newsletter-btn.button_3 {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  min-height: 52px !important;
+  height: 52px;
+  white-space: nowrap;
+}
+
+.evamats-footer__newsletter-msg {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.evamats-footer__newsletter-msg--error {
+  color: #ff2741;
+}
+
+.evamats-footer__newsletter-msg--success {
+  color: #4caf50;
+}
+
+/* ── Payments + Delivery row ── */
+.evamats-footer__payments-wrap {
+  padding-bottom: 0;
+}
+
+.evamats-footer__payments-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 32px 0;
+}
+
+.evamats-footer__payments-group,
+.evamats-footer__delivery-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evamats-footer__payments-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.evamats-footer__payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.evamats-footer__payment-item {
+  display: flex;
+  align-items: center;
+}
+
+.evamats-footer__payment-item img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.evamats-footer__delivery-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.evamats-footer__delivery-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.evamats-footer__delivery-img {
+  display: block;
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Divider ── */
+.evamats-footer__divider {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  background: #e9e9e9;
+}
+
+/* ── Bottom bar ── */
+.evamats-footer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0 36px;
+}
+
+.evamats-footer__bar-start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.evamats-footer__logo {
+  display: block;
+  width: auto;
+  height: 31px;
+  max-width: 114px;
+  object-fit: contain;
+}
+
+.evamats-footer__copyright-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.evamats-footer__copyright {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.28px;
+}
+
+.evamats-footer__copyright a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.evamats-footer__legal {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.evamats-footer__legal-sep {
+  opacity: 0.5;
+}
+
+.evamats-footer__partners {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.evamats-footer__partners-label {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.evamats-footer__partners-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evamats-footer__partner-img {
+  display: block;
+  width: auto;
+  height: 70px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.evamats-footer .footer__content-bottom {
+  border-top-color: #e9e9e9;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-footer__main {
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+
+  .evamats-footer__aside {
+    flex: none;
+    width: 100%;
+    order: -1;
+  }
+
+  .evamats-footer__menus {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .evamats-footer__menu {
+    margin-bottom: 54px;
+  }
+
+  .evamats-footer__menu:last-child {
+    margin-bottom: 0;
+  }
+
+  .evamats-footer__menu-heading {
+    margin-bottom: 16px;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+  }
+
+  .evamats-footer__menu-link {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  .evamats-footer__contact-value--phone {
+    line-height: 1.4;
+    letter-spacing: -0.44px;
+  }
+
+  .evamats-footer__contact-value--email {
+    letter-spacing: -0.36px;
+  }
+
+  .evamats-footer__contact-body a[href^='tel:'] {
+    line-height: 1.4;
+    letter-spacing: -0.44px;
+    margin-bottom: 9px;
+  }
+
+  .evamats-footer__contact-body a[href^='mailto:'] {
+    letter-spacing: -0.36px;
+  }
+
+  .evamats-footer__newsletter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 24px 20px;
+    border-radius: 8px;
+  }
+
+  .evamats-footer__newsletter-text {
+    max-width: 100%;
+  }
+
+  .evamats-footer__newsletter-heading {
+    font-size: 18px;
+    letter-spacing: -0.36px;
+  }
+
+  .evamats-footer__newsletter-field-wrap {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .evamats-footer__newsletter-input {
+    height: 48px;
+  }
+
+  .evamats-footer__newsletter-btn.button_3 {
+    height: 48px;
+    min-height: 48px !important;
+  }
+
+  .evamats-footer__payments-row {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+  }
+
+  .evamats-footer__bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 24px 0 28px;
+  }
+
+  .evamats-footer__bar-start {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .evamats-footer__copyright-wrap {
+    text-align: right;
+  }
+
+  .evamats-footer__copyright {
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    line-height: 1.4;
+  }
+
+  .evamats-footer__partners {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .evamats-footer__logo {
+    height: 26px;
+    max-width: 98px;
+  }
+
+  .evamats-footer__partner-img {
+    height: 39px;
+    max-height: 39px;
+  }
+
+  .evamats-footer__content-top.page-width {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .evamats-footer__newsletter-wrap.page-width,
+  .evamats-footer__payments-wrap.page-width,
+  .evamats-footer__bar-wrap.page-width {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .evamats-footer__payment-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .evamats-footer__payment-item img {
+    height: auto;
+    width: 100%;
+  }
+}
+
 /* 
 * {
     outline: 1px solid red;

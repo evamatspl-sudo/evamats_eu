@@ -1,0 +1,58 @@
+{%- comment -%}
+  Catalog menu level 1 icon — desktop + mobile drawer (Figma 26×26).
+  Edit handle → asset mapping in the case block below.
+
+  @param section {section} — optional fallback via catalog_l1_icon blocks
+  @param menu_item_handle {string}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu_item_handle = menu_item_handle | downcase | strip
+  assign catalog_icon_asset = blank
+
+  case menu_item_handle
+    when 'akcesoria'
+      assign catalog_icon_asset = 'Medium Icons.svg'
+    when 'dog-bowl-mat'
+      assign catalog_icon_asset = 'Cat Footprint.svg'
+    when 'mats-for-the-home'
+      assign catalog_icon_asset = 'Home.svg'
+    when 'car-brands'
+      assign catalog_icon_asset = 'Car.svg'
+  endcase
+-%}
+
+{%- if catalog_icon_asset != blank -%}
+  {%- capture catalog_l1_icon_markup -%}
+    {{- catalog_icon_asset | inline_asset_content -}}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if catalog_l1_icon_markup != blank -%}
+  <span class="evamats-header-drawer__catalog-icon evamats-header-drawer__catalog-icon--inline" aria-hidden="true">
+    {{- catalog_l1_icon_markup -}}
+  </span>
+{%- else -%}
+  {%- liquid
+    assign catalog_icon = blank
+
+    for block in section.blocks
+      if block.type == 'catalog_l1_icon' and block.settings.icon != blank
+        assign block_handle = block.settings.menu_item_handle | downcase | strip
+        if block_handle != blank and block_handle == menu_item_handle
+          assign catalog_icon = block.settings.icon
+        endif
+      endif
+    endfor
+  -%}
+
+  {%- if catalog_icon != blank -%}
+    {{
+      catalog_icon
+      | image_url: width: 52
+      | image_tag: class: 'evamats-header-drawer__catalog-icon', loading: 'lazy', alt: ''
+    }}
+  {%- else -%}
+    {% render 'evamats-catalog-icon-placeholder' %}
+  {%- endif -%}
+{%- endif -%}

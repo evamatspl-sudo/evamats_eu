@@ -77,9 +77,9 @@
         {%- endif -%}
 
         {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
-          <a class="product-spotlight-v2__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label | escape }}</a>
+          <a class="button button_3 product-spotlight-v2__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label | escape }}</a>
         {%- elsif section.settings.cta_label != blank -%}
-          <span class="product-spotlight-v2__cta product-spotlight-v2__cta--disabled">{{ section.settings.cta_label | escape }}</span>
+          <span class="button button_3 product-spotlight-v2__cta disabled" aria-disabled="true">{{ section.settings.cta_label | escape }}</span>
         {%- endif -%}
       </div>
 

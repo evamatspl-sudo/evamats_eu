@@ -7,6 +7,7 @@
       <div class="evamats-driving-style__media--desktop">
         {% render 'evamats-driving-style-media',
           image: section.settings.image_left,
+          video: section.settings.video_left,
           alt: section.settings.image_left_label,
           modifier: 'evamats-driving-style__media--left'
         %}
@@ -20,10 +21,12 @@
         <div class="evamats-driving-style__mobile-gallery">
           {% render 'evamats-driving-style-media',
             image: section.settings.image_right,
+            video: section.settings.video_right,
             alt: section.settings.image_right_label
           %}
           {% render 'evamats-driving-style-media',
             image: section.settings.image_left,
+            video: section.settings.video_left,
             alt: section.settings.image_left_label,
             modifier: 'evamats-driving-style__media--left'
           %}
@@ -79,15 +82,12 @@
         </div>
 
         {%- if section.settings.button_label != blank -%}
-          <div class="evamats-driving-style__cta-wrap">
+          <div class="button-row-v2 evamats-driving-style__cta-wrap">
             <a
-              class="evamats-driving-style__cta"
+              class="button button_2"
               href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}#{% endif %}"
             >
-              <span class="evamats-driving-style__cta-label">{{ section.settings.button_label | escape }}</span>
-              <span class="evamats-driving-style__cta-arrow" aria-hidden="true">
-                {{ 'evamats-driving-style-cta-arrow.svg' | inline_asset_content }}
-              </span>
+              {{ section.settings.button_label | escape }}
             </a>
           </div>
         {%- endif -%}
@@ -96,12 +96,84 @@
       <div class="evamats-driving-style__media--desktop">
         {% render 'evamats-driving-style-media',
           image: section.settings.image_right,
+          video: section.settings.video_right,
           alt: section.settings.image_right_label
         %}
       </div>
     </div>
   </div>
 </section>
+
+{% javascript %}
+  (function () {
+    function hydrateDrivingStyleVideo(video) {
+      if (!video || video.src) return;
+      var src = video.getAttribute('data-src');
+      if (!src) return;
+      video.src = src;
+      video.removeAttribute('data-src');
+    }
+
+    function playDrivingStyleVideo(video) {
+      if (!video) return;
+      hydrateDrivingStyleVideo(video);
+      if (!video.src) return;
+      var playPromise = video.play();
+      if (playPromise && playPromise.catch) {
+        playPromise.catch(function () {});
+      }
+    }
+
+    function initDrivingStyleVideos(section) {
+      if (!section || section.dataset.edsVideoInit === '1') return;
+
+      var mediaBlocks = section.querySelectorAll('.evamats-driving-style__media [data-eds-lazy-video]');
+      if (!mediaBlocks.length) return;
+
+      section.dataset.edsVideoInit = '1';
+
+      if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+        mediaBlocks.forEach(function (video) {
+          playDrivingStyleVideo(video);
+        });
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            var video = entry.target.querySelector('[data-eds-lazy-video]');
+            if (!video) return;
+
+            if (entry.isIntersecting) {
+              playDrivingStyleVideo(video);
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: '80px 0px' }
+      );
+
+      section.querySelectorAll('.evamats-driving-style__media').forEach(function (media) {
+        if (media.querySelector('[data-eds-lazy-video]')) {
+          io.observe(media);
+        }
+      });
+    }
+
+    function initAllDrivingStyleVideos() {
+      document.querySelectorAll('.evamats-driving-style').forEach(initDrivingStyleVideos);
+    }
+
+    initAllDrivingStyleVideos();
+
+    document.addEventListener('shopify:section:load', function (event) {
+      var section = event.target.querySelector('.evamats-driving-style');
+      if (section) initDrivingStyleVideos(section);
+    });
+  })();
+{% endjavascript %}
 
 {% schema %}
 {
@@ -125,6 +197,12 @@
       "label": "Image — left (tunnel mat)"
     },
     {
+      "type": "video",
+      "id": "video_left",
+      "label": "Video — left",
+      "info": "Optional. Replaces the left image when set."
+    },
+    {
       "type": "text",
       "id": "image_left_label",
       "label": "Left image alt text",
@@ -134,6 +212,12 @@
       "type": "image_picker",
       "id": "image_right",
       "label": "Image — right (fitted mat)"
+    },
+    {
+      "type": "video",
+      "id": "video_right",
+      "label": "Video — right",
+      "info": "Optional. Replaces the right image when set."
     },
     {
       "type": "text",

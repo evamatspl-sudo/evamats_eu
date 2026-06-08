@@ -1,82 +1,87 @@
-.pagination-wrapper {
-  margin-top: 4rem;
+/* Figma 1710:29417 — collection pagination */
+
+.evamats-pagination {
+  margin-top: 48px;
 }
 
-@media screen and (min-width: 990px) {
-  .pagination-wrapper {
-    margin-top: 5rem;
-  }
-}
-
-.pagination__list {
+.evamats-pagination__nav {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.pagination__list > li {
-  flex: 1 0 4.4rem;
-  max-width: 4.4rem;
-}
-
-.pagination__list > li:not(:last-child) {
-  margin-right: 1rem;
-}
-
-.pagination__item {
-  color: rgb(var(--color-foreground));
-  display: inline-flex;
-  justify-content: center;
+.evamats-pagination__list {
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  position: relative;
-  height: 4.4rem;
-  width: 100%;
+  gap: 12px;
+  margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+.evamats-pagination__item {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.evamats-pagination__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid transparent;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1b1d22;
   text-decoration: none;
 }
 
-a.pagination__item:hover::after {
-  height: 0.1rem;
+a.evamats-pagination__page:hover {
+  color: #1b1d22;
 }
 
-.pagination__item .icon-caret {
-  height: 0.6rem;
+.evamats-pagination__page--current {
+  border-color: #ff2741;
 }
 
-.pagination__item--current::after {
-  height: 0.1rem;
+.evamats-pagination__page--ellipsis {
+  pointer-events: none;
 }
 
-.pagination__item--current::after,
-.pagination__item:hover::after {
-  content: '';
+.evamats-pagination__arrow {
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1b1d22;
+  text-decoration: none;
+}
+
+.evamats-pagination__arrow svg {
   display: block;
-  width: 2rem;
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: currentColor;
+  width: 24px;
+  height: 24px;
 }
 
-.pagination__item--next .icon {
-  margin-left: -0.2rem;
-  transform: rotate(90deg);
+a.evamats-pagination__arrow:hover {
+  color: #1b1d22;
 }
 
-.pagination__item--next:hover .icon {
-  transform: rotate(90deg) scale(1.07);
+.evamats-pagination__arrow--disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
-.pagination__item--prev .icon {
-  margin-right: -0.2rem;
-  transform: rotate(-90deg);
-}
-
-.pagination__item--prev:hover .icon {
-  transform: rotate(-90deg) scale(1.07);
-}
-
-.pagination__item-arrow:hover::after {
-  display: none;
+@media screen and (max-width: 749px) {
+  .evamats-pagination {
+    margin-top: 32px;
+  }
 }

@@ -1,72 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "1160737c-7d39-453f-810e-6a749178136e": {
-      "type": "sidebar",
-      "blocks": {
-        "65aa223d-b604-4f3f-9a4f-3d67f24379af": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-aventador",
-            "color-code": "Aventador"
-          }
-        },
-        "a6e682f2-40da-4c73-b23e-4345505f3a03": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/lamborghini-urus",
-            "color-code": "Urus"
-          }
-        },
-        "cf86f223-a8c8-4414-9822-d4fe862a641e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborghini-gallardo",
-            "color-code": "Gallardo"
-          }
-        },
-        "ad3797e1-7566-4867-8a48-3f8a9901527c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-murcielago",
-            "color-code": "Murcielago"
-          }
-        },
-        "b17f4705-4a9f-48a1-b2a7-6e9c29f5c834": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-huracan",
-            "color-code": "Huracán"
-          }
-        },
-        "3ee4176d-8fd2-49f8-a281-7d345f16e27e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-revuelto",
-            "color-code": "Revuelto"
-          }
-        }
-      },
-      "block_order": [
-        "65aa223d-b604-4f3f-9a4f-3d67f24379af",
-        "a6e682f2-40da-4c73-b23e-4345505f3a03",
-        "cf86f223-a8c8-4414-9822-d4fe862a641e",
-        "ad3797e1-7566-4867-8a48-3f8a9901527c",
-        "b17f4705-4a9f-48a1-b2a7-6e9c29f5c834",
-        "3ee4176d-8fd2-49f8-a281-7d345f16e27e"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -75,49 +27,49 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "33e61f00-7959-4cff-8de2-156a9909c235": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-aventador",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-aventador",
             "color-code": "Aventador"
           }
         },
         "d52d81bd-f6ee-4e93-9357-e69fe2ff7277": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/lamborghini-urus",
+            "product-link": "shopify://collections/lamborghini-urus",
             "color-code": "Urus"
           }
         },
         "8b55a1c6-12e9-4748-ab43-a45319c211a2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborghini-gallardo",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborghini-gallardo",
             "color-code": "Gallardo"
           }
         },
         "8c663dca-5053-4568-b315-68e831de406a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-murcielago",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-murcielago",
             "color-code": "Murcielago"
           }
         },
         "b698ba3a-3e2f-43b6-a989-4d15556bd85c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-huracan",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-huracan",
             "color-code": "Huracán"
           }
         },
         "b65af34f-80d9-4874-84e5-52afdb1d7555": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-lamborgini-revuelto",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-revuelto",
             "color-code": "Revuelto"
           }
         }
@@ -131,11 +83,7 @@
         "b698ba3a-3e2f-43b6-a989-4d15556bd85c",
         "b65af34f-80d9-4874-84e5-52afdb1d7555"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -147,9 +95,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -158,7 +103,6 @@
   },
   "order": [
     "banner",
-    "1160737c-7d39-453f-810e-6a749178136e",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

@@ -1,152 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "d5cc4e2e-255b-476c-b353-a113a80d093f": {
-      "type": "sidebar",
-      "blocks": {
-        "5a49314c-576b-4dc9-affa-1ab2b00df393": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-asx",
-            "color-code": "ASX"
-          }
-        },
-        "c8492b51-587e-48df-b61e-a3ce9a4e8728": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-carisma",
-            "color-code": "Carisma"
-          }
-        },
-        "5779694f-e5fe-4272-9731-4e0f14aff0bd": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-colt",
-            "color-code": "Colt"
-          }
-        },
-        "03b60ef2-2c88-43dc-ab9e-b955bdeafa29": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-eclipse",
-            "color-code": "Eclipse"
-          }
-        },
-        "9e290d87-2d43-410a-9b1f-0d682d3d38fe": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-eclipse-cross",
-            "color-code": "Eclipse Cross"
-          }
-        },
-        "d0948a6d-22ec-4807-9c68-ab2e1b201d9d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-galant",
-            "color-code": "Galant"
-          }
-        },
-        "2ab11162-0fc6-4d6f-b8ee-25f84a57930c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-grandis",
-            "color-code": "Grandis"
-          }
-        },
-        "90b2c660-9070-4475-b9cc-f7d19c0da3d8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-i-miev",
-            "color-code": "i-MieV"
-          }
-        },
-        "b47601d3-7ae2-49de-95b8-e74de2842175": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-l200",
-            "color-code": "L200"
-          }
-        },
-        "f5f57301-ac30-42fe-873a-61cb754b5765": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-lancer",
-            "color-code": "Lancer"
-          }
-        },
-        "6611acc4-c137-4a1c-b6b0-08d732e7182b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-lancer-evolution",
-            "color-code": "Lancer Evolution"
-          }
-        },
-        "3d0400e6-5e87-4095-be8e-88a23f7e53fa": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-outlander",
-            "color-code": "Outlander"
-          }
-        },
-        "3ed8adf4-a985-4048-a62c-d66fd2080255": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero",
-            "color-code": "Pajero"
-          }
-        },
-        "0ac7fceb-16a3-4e23-a091-53bf8e41ac05": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero-pinin",
-            "color-code": "Pajero Pinin"
-          }
-        },
-        "d7ee74d3-b82a-4712-9f42-4f9c87e88580": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero-sport",
-            "color-code": "Pajero Sport"
-          }
-        },
-        "c86715d4-1304-488b-9083-c9123d7ca6cc": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-space-star",
-            "color-code": "Space Star"
-          }
-        }
-      },
-      "block_order": [
-        "5a49314c-576b-4dc9-affa-1ab2b00df393",
-        "c8492b51-587e-48df-b61e-a3ce9a4e8728",
-        "5779694f-e5fe-4272-9731-4e0f14aff0bd",
-        "03b60ef2-2c88-43dc-ab9e-b955bdeafa29",
-        "9e290d87-2d43-410a-9b1f-0d682d3d38fe",
-        "d0948a6d-22ec-4807-9c68-ab2e1b201d9d",
-        "2ab11162-0fc6-4d6f-b8ee-25f84a57930c",
-        "90b2c660-9070-4475-b9cc-f7d19c0da3d8",
-        "b47601d3-7ae2-49de-95b8-e74de2842175",
-        "f5f57301-ac30-42fe-873a-61cb754b5765",
-        "6611acc4-c137-4a1c-b6b0-08d732e7182b",
-        "3d0400e6-5e87-4095-be8e-88a23f7e53fa",
-        "3ed8adf4-a985-4048-a62c-d66fd2080255",
-        "0ac7fceb-16a3-4e23-a091-53bf8e41ac05",
-        "d7ee74d3-b82a-4712-9f42-4f9c87e88580",
-        "c86715d4-1304-488b-9083-c9123d7ca6cc"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -155,119 +27,119 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "34da68d3-9e8a-485d-b43c-4400d6be066d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-asx",
+            "product-link": "shopify://collections/mitsubishi-asx",
             "color-code": "ASX"
           }
         },
         "144abc96-1e72-4d1c-bde8-519286f8e592": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-carisma",
+            "product-link": "shopify://collections/mitsubishi-carisma",
             "color-code": "Carisma"
           }
         },
         "4bdd27ea-fc18-4c16-ae99-b1ec7d45f046": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-colt",
+            "product-link": "shopify://collections/mitsubishi-colt",
             "color-code": "Colt"
           }
         },
         "bb682dd4-3a62-4952-b92c-69b3fc4d7b7d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-eclipse",
+            "product-link": "shopify://collections/mitsubishi-eclipse",
             "color-code": "Eclipse"
           }
         },
         "8c01556d-28c9-49a3-a4a5-e3e21e96c07e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-eclipse-cross",
+            "product-link": "shopify://collections/mitsubishi-eclipse-cross",
             "color-code": "Eclipse Cross"
           }
         },
         "f072e5e1-fe5a-4f97-a961-ec761d70c8a2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-galant",
+            "product-link": "shopify://collections/mitsubishi-galant",
             "color-code": "Galant"
           }
         },
         "9a7bc931-7b30-4d56-8f65-d52658dfd701": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-grandis",
+            "product-link": "shopify://collections/mitsubishi-grandis",
             "color-code": "Grandis"
           }
         },
         "82498f64-d2e1-4d99-bb0c-f25e83beb6e4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-i-miev",
+            "product-link": "shopify://collections/mitsubishi-i-miev",
             "color-code": "i-MieV"
           }
         },
         "4ab60eb2-8e17-4218-ae2b-54b562411607": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-l200",
+            "product-link": "shopify://collections/mitsubishi-l200",
             "color-code": "L200"
           }
         },
         "0c5ea93e-f7ec-4fd7-9145-4b0aa70a6e68": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-lancer",
+            "product-link": "shopify://collections/mitsubishi-lancer",
             "color-code": "Lancer"
           }
         },
         "6eaf0074-daec-45c4-a12a-805c0cfda2ac": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-lancer-evolution",
+            "product-link": "shopify://collections/mitsubishi-lancer-evolution",
             "color-code": "Lancer Evolution"
           }
         },
         "64e5270a-dfcf-4ade-aea4-bc97eabca930": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-outlander",
+            "product-link": "shopify://collections/mitsubishi-outlander",
             "color-code": "Outlander"
           }
         },
         "1a3c67a9-a337-4913-9d7d-2d4462fc5fa4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero",
+            "product-link": "shopify://collections/mitsubishi-pajero",
             "color-code": "Pajero"
           }
         },
         "0212debd-19d3-405d-8e82-255b4fb93c4d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero-pinin",
+            "product-link": "shopify://collections/mitsubishi-pajero-pinin",
             "color-code": "Pajero Pinin"
           }
         },
         "7b8725ad-559c-4ed4-adfe-4edd5612039f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-pajero-sport",
+            "product-link": "shopify://collections/mitsubishi-pajero-sport",
             "color-code": "Pajero Sport"
           }
         },
         "4abfde4b-8e95-4914-87b5-0807cfb8d1f2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mitsubishi-space-star",
+            "product-link": "shopify://collections/mitsubishi-space-star",
             "color-code": "Space Star"
           }
         }
@@ -291,11 +163,7 @@
         "7b8725ad-559c-4ed4-adfe-4edd5612039f",
         "4abfde4b-8e95-4914-87b5-0807cfb8d1f2"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -307,9 +175,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -318,7 +183,6 @@
   },
   "order": [
     "banner",
-    "d5cc4e2e-255b-476c-b353-a113a80d093f",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

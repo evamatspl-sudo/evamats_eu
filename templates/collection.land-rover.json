@@ -1,112 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "1e80ebc5-bb2c-4975-9281-7c114d3aa5cc": {
-      "type": "sidebar",
-      "blocks": {
-        "8c5319e1-274f-49f4-9bde-cf0925fe941c": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/land-rover-defender",
-            "color-code": "Defender"
-          }
-        },
-        "da7a6ae0-f762-4eb1-98ed-58cd54d40181": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-1",
-            "color-code": "Discovery 1"
-          }
-        },
-        "84eb5d19-74d5-4573-b656-0917d0c885b0": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-3",
-            "color-code": "Discovery 3"
-          }
-        },
-        "87d861a9-51f5-44b6-86f6-2bdae2643b59": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-4",
-            "color-code": "Discovery 4"
-          }
-        },
-        "c9728448-4260-4bbe-9968-c5e83b371611": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-5",
-            "color-code": "Discovery 5"
-          }
-        },
-        "0ea126e7-bf45-48e8-864a-ca88a8a5f6a1": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-sport",
-            "color-code": "Discovery Sport"
-          }
-        },
-        "74c6ad05-b38f-476b-b2b8-f6f7c71f256b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-freelander",
-            "color-code": "Freelander"
-          }
-        },
-        "2b5da95d-eb23-44a6-9b54-877496a0327b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover",
-            "color-code": "Range Rover"
-          }
-        },
-        "0bc2e5d5-5fad-44ee-a71f-771daac5a658": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-evoque",
-            "color-code": "Range Rover EVOQUE"
-          }
-        },
-        "be2da208-b1bd-4055-b433-0059e4d2da39": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-sport",
-            "color-code": "Range Rover Sport"
-          }
-        },
-        "d3807d9c-1af8-456e-aa83-366082e5cb0e": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-velar",
-            "color-code": "Range Rover VELAR"
-          }
-        }
-      },
-      "block_order": [
-        "8c5319e1-274f-49f4-9bde-cf0925fe941c",
-        "da7a6ae0-f762-4eb1-98ed-58cd54d40181",
-        "84eb5d19-74d5-4573-b656-0917d0c885b0",
-        "87d861a9-51f5-44b6-86f6-2bdae2643b59",
-        "c9728448-4260-4bbe-9968-c5e83b371611",
-        "0ea126e7-bf45-48e8-864a-ca88a8a5f6a1",
-        "74c6ad05-b38f-476b-b2b8-f6f7c71f256b",
-        "2b5da95d-eb23-44a6-9b54-877496a0327b",
-        "0bc2e5d5-5fad-44ee-a71f-771daac5a658",
-        "be2da208-b1bd-4055-b433-0059e4d2da39",
-        "d3807d9c-1af8-456e-aa83-366082e5cb0e"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -115,84 +27,84 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "27e810d2-ef41-41ef-9af6-6ab0736c375a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/land-rover-defender",
+            "product-link": "shopify://collections/land-rover-defender",
             "color-code": "Defender"
           }
         },
         "7e1d01e0-43ee-478d-b534-bf8aaab35ad3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-1",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-1",
             "color-code": "Discovery 1"
           }
         },
         "26ce33b3-d37f-481b-958c-af503c522e32": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-3",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-3",
             "color-code": "Discovery 3"
           }
         },
         "43798085-cf8c-46cb-9d39-e5424e0799d4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-4",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-4",
             "color-code": "Discovery 4"
           }
         },
         "5f32a35f-1b93-4eb7-9adc-6f2bbfe4a21b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-5",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-5",
             "color-code": "Discovery 5"
           }
         },
         "e964cf04-1862-4fba-a101-492c2707a1b6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-discovery-sport",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-sport",
             "color-code": "Discovery Sport"
           }
         },
         "1a3c5e69-9930-4c54-9879-47e202189b75": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-freelander",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-freelander",
             "color-code": "Freelander"
           }
         },
         "fd313483-ff49-4aef-9240-321a5f120058": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-range-rover",
             "color-code": "Range Rover"
           }
         },
         "21855554-5706-4651-9b26-2cec60aaa0d2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-evoque",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-range-rover-evoque",
             "color-code": "Range Rover EVOQUE"
           }
         },
         "7461e776-3282-4dc8-a952-ab98c266d6cd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-sport",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-range-rover-sport",
             "color-code": "Range Rover Sport"
           }
         },
         "a6a40d05-8a79-4362-8c50-9b27271e65f7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-land-rover-range-rover-velar",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-range-rover-velar",
             "color-code": "Range Rover VELAR"
           }
         }
@@ -211,11 +123,7 @@
         "7461e776-3282-4dc8-a952-ab98c266d6cd",
         "a6a40d05-8a79-4362-8c50-9b27271e65f7"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -227,9 +135,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -238,7 +143,6 @@
   },
   "order": [
     "banner",
-    "1e80ebc5-bb2c-4975-9281-7c114d3aa5cc",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

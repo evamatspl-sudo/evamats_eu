@@ -1,0 +1,94 @@
+/* Collection product grid — same cards as featured-collection (efc-card) */
+
+.evamats-collection-product-grid {
+  --ecpg-gap: 15px;
+  --ecpg-cols-desktop: 4;
+  --ecpg-cols-tablet: 3;
+  --ecpg-cols-mobile: 2;
+}
+
+.evamats-collection-product-grid__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.evamats-collection-product-grid__filter {
+  flex-shrink: 0;
+}
+
+.evamats-collection-product-grid__main {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+.evamats-collection-product-grid__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--ecpg-gap);
+  grid-template-columns: repeat(var(--ecpg-cols-mobile), minmax(0, 1fr));
+}
+
+.evamats-collection-product-grid__item {
+  min-width: 0;
+  width: auto;
+  max-width: none;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.evamats-collection-product-grid .efc-card__actions .button.button_5,
+.evamats-collection-product-grid .efc-card__actions .button.button_6,
+.evamats-collection-product-grid .efc-card__product-form .button.button_6 {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-collection-product-grid__list {
+    grid-template-columns: repeat(var(--ecpg-cols-tablet), minmax(0, 1fr));
+  }
+
+  .evamats-collection-product-grid .efc-card__title {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .evamats-collection-product-grid .efc-card__price-old,
+  .evamats-collection-product-grid .efc-card__price-current {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-collection-product-grid__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .evamats-collection-product-grid__filter {
+    position: sticky;
+    top: calc(var(--header-height, 96px) + 24px);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .evamats-collection-product-grid__list {
+    grid-template-columns: repeat(var(--ecpg-cols-desktop), minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-collection-product-grid {
+    --ecpg-gap: 12px;
+  }
+
+  .evamats-collection-product-grid__filter {
+    max-width: none;
+  }
+}

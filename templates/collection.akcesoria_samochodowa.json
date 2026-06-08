@@ -1,104 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "sidebar_dTVrzV": {
-      "type": "sidebar",
-      "blocks": {
-        "section_zCQiAP": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-chemia",
-            "color-code": "Chemia"
-          }
-        },
-        "section_8WQqai": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/folia-ochronna",
-            "color-code": "Folia Ochronna"
-          }
-        },
-        "section_dzDxCN": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-organizery",
-            "color-code": "Organizery"
-          }
-        },
-        "section_aTGyCH": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/odswiezacz-do-samochodu",
-            "color-code": "Odświeżacz do samochodu"
-          }
-        },
-        "section_rX8aWJ": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/pokrowcy-na-opony",
-            "color-code": "Pokrowieć na Opony"
-          }
-        },
-        "section_QNDxX8": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/pokrowiec-na-kierownice",
-            "color-code": "Pokrowieć na Kierownicę"
-          }
-        },
-        "section_3ULFcm": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/sciereczki",
-            "color-code": "Ściereczki"
-          }
-        },
-        "section_ATXWJx": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-kosz-na-smieci",
-            "color-code": "Kosz na śmieci"
-          }
-        },
-        "section_XXBgmM": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/torby-do-bagaznika",
-            "color-code": "Torby do bagażnika"
-          }
-        },
-        "section_NAx8qn": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/wieszaki",
-            "color-code": "Wieszaki"
-          }
-        }
-      },
-      "block_order": [
-        "section_zCQiAP",
-        "section_8WQqai",
-        "section_dzDxCN",
-        "section_aTGyCH",
-        "section_rX8aWJ",
-        "section_QNDxX8",
-        "section_3ULFcm",
-        "section_ATXWJx",
-        "section_XXBgmM",
-        "section_NAx8qn"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -107,77 +27,77 @@
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/dywaniki-samochodowe-eva",
+            "product-link": "shopify://pages/dywaniki-samochodowe-eva",
             "color-code": "Wszystko"
           }
         },
         "section_HWLnEU": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-chemia",
+            "product-link": "shopify://collections/akcesoria-samochodowa-chemia",
             "color-code": "Chemia"
           }
         },
         "section_xjgqY6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/folia-ochronna",
+            "product-link": "shopify://collections/folia-ochronna",
             "color-code": "Folia Ochronna"
           }
         },
         "section_GiDaqk": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-organizery",
+            "product-link": "shopify://collections/akcesoria-samochodowa-organizery",
             "color-code": "Organizery"
           }
         },
         "section_Bxz3d7": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/odswiezacz-do-samochodu",
+            "product-link": "shopify://collections/odswiezacz-do-samochodu",
             "color-code": "Odświeżacz do samochodu"
           }
         },
         "section_Pbg9eM": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/pokrowcy-na-opony",
+            "product-link": "shopify://collections/pokrowcy-na-opony",
             "color-code": "Pokrowieć na Opony"
           }
         },
         "section_g6gJxj": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/pokrowiec-na-kierownice",
+            "product-link": "shopify://collections/pokrowiec-na-kierownice",
             "color-code": "Pokrowieć na Kierownicę"
           }
         },
         "section_xpGJDT": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/sciereczki",
+            "product-link": "shopify://collections/sciereczki",
             "color-code": "Ściereczki"
           }
         },
         "section_fnzetY": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/akcesoria-samochodowa-kosz-na-smieci",
+            "product-link": "shopify://collections/akcesoria-samochodowa-kosz-na-smieci",
             "color-code": "Kosz na śmieci"
           }
         },
         "section_jRwzXT": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/torby-do-bagaznika",
+            "product-link": "shopify://collections/torby-do-bagaznika",
             "color-code": "Torby do bagażnika"
           }
         },
         "section_LmDHPY": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/wieszaki",
+            "product-link": "shopify://collections/wieszaki",
             "color-code": "Wieszaki"
           }
         }
@@ -195,11 +115,7 @@
         "section_jRwzXT",
         "section_LmDHPY"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -211,9 +127,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": false,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -222,7 +135,6 @@
   },
   "order": [
     "banner",
-    "sidebar_dTVrzV",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

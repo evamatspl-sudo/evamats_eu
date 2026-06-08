@@ -98,7 +98,8 @@
         <product-form class="efc-card__product-form">
           {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
             <input type="hidden" name="id" value="{{ variant.id }}">
-            <button type="submit" name="add" class="button button_5" id="{{ product_form_id }}-submit">
+            <button type="submit" name="add" class="button button_6" id="{{ product_form_id }}-submit">
+              <span class="button__icon">{% render 'evamats-button-cart-icon' %}</span>
               <span class="efc-card__cta-label efc-card__cta-label--desktop">{{ efc_cta_desktop | escape }}</span>
               <span class="efc-card__cta-label efc-card__cta-label--mobile">{{ efc_cta_mobile | escape }}</span>
             </button>

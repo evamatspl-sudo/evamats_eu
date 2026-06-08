@@ -1,128 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "fc5c1401-1c9b-4658-9612-513076ebad36": {
-      "type": "sidebar",
-      "blocks": {
-        "c8713bd8-7409-41bf-8b4c-079abdc9d083": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-200",
-            "color-code": "200"
-          }
-        },
-        "c3f89dca-07a9-430d-acb3-143ffe839c6b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-300",
-            "color-code": "300"
-          }
-        },
-        "1bc3623b-5d7d-4d55-b7e4-e3dbd21a1485": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-aspen",
-            "color-code": "Aspen"
-          }
-        },
-        "a855b468-12c1-4045-ab8d-11fd94624962": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-crossfire",
-            "color-code": "Crossfire"
-          }
-        },
-        "8b6fc182-8bf8-44ae-a292-d2b87590749d": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-grand-voyager",
-            "color-code": "Grand Voyager"
-          }
-        },
-        "d5d924b9-c1e7-4caf-ac9b-99362237b7d2": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-new-yorker",
-            "color-code": "New Yorker"
-          }
-        },
-        "5d4bb0a3-3cbd-4784-a75a-47b38e54ff1b": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pacifica",
-            "color-code": "Pacifica"
-          }
-        },
-        "ac32bbc3-92e8-415b-80f0-25ad00c6d229": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pacifica-pinnacle",
-            "color-code": "Pacifica Pinnacle"
-          }
-        },
-        "9762875f-8ba3-463b-b662-436252cfe930": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pt-cruiser",
-            "color-code": "PT Cruiser"
-          }
-        },
-        "ffb16123-6900-4c95-82da-21c9ff7b54fe": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-sebring",
-            "color-code": "Sebring"
-          }
-        },
-        "13ed876b-1a50-4055-9515-17a2ab8bdeb3": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-stratus",
-            "color-code": "Stratus"
-          }
-        },
-        "93432d3b-dffb-4c92-a00b-1b89273c98db": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-town-country",
-            "color-code": "Town & Country"
-          }
-        },
-        "dc2352aa-34f5-4721-9558-7e0a7804bdc7": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-voyager",
-            "color-code": "Voyager"
-          }
-        }
-      },
-      "block_order": [
-        "c8713bd8-7409-41bf-8b4c-079abdc9d083",
-        "c3f89dca-07a9-430d-acb3-143ffe839c6b",
-        "1bc3623b-5d7d-4d55-b7e4-e3dbd21a1485",
-        "a855b468-12c1-4045-ab8d-11fd94624962",
-        "8b6fc182-8bf8-44ae-a292-d2b87590749d",
-        "d5d924b9-c1e7-4caf-ac9b-99362237b7d2",
-        "5d4bb0a3-3cbd-4784-a75a-47b38e54ff1b",
-        "ac32bbc3-92e8-415b-80f0-25ad00c6d229",
-        "9762875f-8ba3-463b-b662-436252cfe930",
-        "ffb16123-6900-4c95-82da-21c9ff7b54fe",
-        "13ed876b-1a50-4055-9515-17a2ab8bdeb3",
-        "93432d3b-dffb-4c92-a00b-1b89273c98db",
-        "dc2352aa-34f5-4721-9558-7e0a7804bdc7"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -131,98 +27,98 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "2c59e01e-9d56-4955-a0fb-c2c96997b552": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-200",
+            "product-link": "shopify://collections/chrysler-200",
             "color-code": "200"
           }
         },
         "90c4f259-f539-4f55-b012-16d9b0f710ef": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-300",
+            "product-link": "shopify://collections/chrysler-300",
             "color-code": "300"
           }
         },
         "21acce05-e98a-4236-98e5-8fa92f731815": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-aspen",
+            "product-link": "shopify://collections/chrysler-aspen",
             "color-code": "Aspen"
           }
         },
         "9e3303a9-2ca9-4f51-82ef-75fbf5120d39": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-crossfire",
+            "product-link": "shopify://collections/chrysler-crossfire",
             "color-code": "Crossfire"
           }
         },
         "21614223-548b-4665-b562-78f9a1cbb3f8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-grand-voyager",
+            "product-link": "shopify://collections/chrysler-grand-voyager",
             "color-code": "Grand Voyager"
           }
         },
         "b6421fdb-887e-40bf-a350-82913f229059": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-new-yorker",
+            "product-link": "shopify://collections/chrysler-new-yorker",
             "color-code": "New Yorker"
           }
         },
         "12098c53-832a-4a64-a7dd-1d7f037e555c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pacifica",
+            "product-link": "shopify://collections/chrysler-pacifica",
             "color-code": "Pacifica"
           }
         },
         "ffcc4ac1-80b5-4237-8e0e-f8af65ab2c40": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pacifica-pinnacle",
+            "product-link": "shopify://collections/chrysler-pacifica-pinnacle",
             "color-code": "Pacifica Pinnacle"
           }
         },
         "011bb4fb-9f2d-470f-802c-0e3fbdc8e1dd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-pt-cruiser",
+            "product-link": "shopify://collections/chrysler-pt-cruiser",
             "color-code": "PT Cruiser"
           }
         },
         "1bba8a42-78a0-4d92-b946-d8ca0ddff08a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-sebring",
+            "product-link": "shopify://collections/chrysler-sebring",
             "color-code": "Sebring"
           }
         },
         "2517a81c-e56a-4538-9566-975691ab89f9": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-stratus",
+            "product-link": "shopify://collections/chrysler-stratus",
             "color-code": "Stratus"
           }
         },
         "26693130-e47b-418b-a401-95305d8b4c14": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-town-country",
+            "product-link": "shopify://collections/chrysler-town-country",
             "color-code": "Town & Country"
           }
         },
         "53a896b9-2df3-4107-a9c3-5829021551ff": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/chrysler-voyager",
+            "product-link": "shopify://collections/chrysler-voyager",
             "color-code": "Voyager"
           }
         }
@@ -243,11 +139,7 @@
         "26693130-e47b-418b-a401-95305d8b4c14",
         "53a896b9-2df3-4107-a9c3-5829021551ff"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -259,9 +151,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -270,7 +159,6 @@
   },
   "order": [
     "banner",
-    "fc5c1401-1c9b-4658-9612-513076ebad36",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

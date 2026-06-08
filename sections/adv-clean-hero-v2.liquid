@@ -112,9 +112,9 @@
                 <p class="adv-clean-hero-v2__tagline">{{ section.settings.tagline | escape }}</p>
               {%- endif -%}
               {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
-                <a class="adv-clean-hero-v2__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label | escape }}</a>
+                <a class="button button_3 adv-clean-hero-v2__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label | escape }}</a>
               {%- elsif section.settings.cta_label != blank -%}
-                <span class="adv-clean-hero-v2__cta adv-clean-hero-v2__cta--disabled">{{ section.settings.cta_label | escape }}</span>
+                <span class="button button_3 adv-clean-hero-v2__cta disabled" aria-disabled="true">{{ section.settings.cta_label | escape }}</span>
               {%- endif -%}
             </div>
           </div>

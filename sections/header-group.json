@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -26,18 +35,97 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        ".list-menu--inline {gap: 0.5rem;}"
+      "blocks": {
+        "catalog_l1_icon_ejMCpN": {
+          "type": "catalog_l1_icon",
+          "settings": {
+            "menu_item_handle": "akcesoria",
+            "icon": "shopify://shop_images/Medium_Icons.svg"
+          }
+        },
+        "catalog_l1_icon_G6yrKc": {
+          "type": "catalog_l1_icon",
+          "settings": {
+            "menu_item_handle": "dog-bowl-mat",
+            "icon": "shopify://shop_images/Cat_Footprint.svg"
+          }
+        },
+        "catalog_l1_icon_UxMVmB": {
+          "type": "catalog_l1_icon",
+          "settings": {
+            "menu_item_handle": "mats-for-the-home",
+            "icon": "shopify://shop_images/Home.svg"
+          }
+        },
+        "catalog_l1_icon_eG3KdY": {
+          "type": "catalog_l1_icon",
+          "settings": {
+            "menu_item_handle": "car-brands",
+            "icon": "shopify://shop_images/Car.svg"
+          }
+        },
+        "catalog_drawer_icon_jhChxQ": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "car-brands",
+            "icon": "shopify://shop_images/image_106.webp"
+          }
+        },
+        "catalog_drawer_icon_6Lzwmx": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "organizers-to-trunk",
+            "icon": "shopify://shop_images/image_90_c8545f80-aa0f-4234-b472-2896a77c80ba.webp"
+          }
+        },
+        "catalog_drawer_icon_NmkmV7": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "podpietki",
+            "icon": "shopify://shop_images/image_91_dd1c4b12-b256-496e-93af-547a634bc1ca.webp"
+          }
+        },
+        "catalog_drawer_icon_xwCwyy": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "akcesoria-samochodowa",
+            "icon": "shopify://shop_images/image_92_ae3621df-f040-4652-9031-662583d182b7.webp"
+          }
+        }
+      },
+      "block_order": [
+        "catalog_l1_icon_ejMCpN",
+        "catalog_l1_icon_G6yrKc",
+        "catalog_l1_icon_UxMVmB",
+        "catalog_l1_icon_eG3KdY",
+        "catalog_drawer_icon_jhChxQ",
+        "catalog_drawer_icon_6Lzwmx",
+        "catalog_drawer_icon_NmkmV7",
+        "catalog_drawer_icon_xwCwyy"
       ],
+      "custom_css": [],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "logo_position": "middle-left",
-        "menu": "main-menu",
+        "menu": "main-menu-v2",
+        "catalog_menu": "catalog",
+        "mobile_menu": "mobile-menu-v2",
+        "catalog_button_image": "shopify://shop_images/Group_1632526272.webp",
+        "catalog_button_label": "Catalog",
+        "drawer_background_image": "shopify://shop_images/Group_1948754924_1.webp",
+        "drawer_car_cta_label": "Choose a car",
+        "drawer_car_cta_url": "shopify://pages/car-brands",
+        "mobile_car_link_url": "",
+        "drawer_phone_1": "+48 510 339 471",
+        "drawer_phone_2": "+48 577 771 443",
+        "drawer_email": "evamatsinfo@gmail.com",
+        "catalog_view_all_label": "View the entire category",
+        "enable_language_selector": true,
         "header-tel": "",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
         "show_line_separator": false,
-        "mobile_logo_position": "center",
+        "mobile_logo_position": "left",
         "custom_collection": "evamatsaccessoriesby_order",
         "margin_bottom": 0,
         "padding_top": 20,
@@ -48,7 +136,7 @@
       "type": "apps",
       "blocks": {
         "9f12b480-5fee-45c4-9f9e-28d84383a56a": {
-          "type": "shopify:\/\/apps\/tt-breadcrumbs-seo-schema\/blocks\/breadcrumbSection\/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
+          "type": "shopify://apps/tt-breadcrumbs-seo-schema/blocks/breadcrumbSection/dda6b26d-4f1a-43c6-a94b-6443ed0f750b",
           "settings": {}
         }
       },

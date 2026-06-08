@@ -1,80 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "91bc8e32-e905-42d4-8f8e-22aa46fea149": {
-      "type": "sidebar",
-      "blocks": {
-        "section_raLCaR": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-57",
-            "color-code": "57"
-          }
-        },
-        "section_Vn6eER": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-62",
-            "color-code": "62"
-          }
-        },
-        "section_pPkNUD": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-exelero",
-            "color-code": "Exelero"
-          }
-        },
-        "section_KD6jaW": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-eqs",
-            "color-code": "EQS"
-          }
-        },
-        "6bade07c-5931-420b-9ef3-3156380eb2bf": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/maybach-gls",
-            "color-code": "GLS"
-          }
-        },
-        "section_b4AMmL": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-g650",
-            "color-code": "G650"
-          }
-        },
-        "e37d33c5-a16e-46dd-bd8a-f628d1c2cc65": {
-          "type": "section",
-          "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-s-klasa",
-            "color-code": "S klasa"
-          }
-        }
-      },
-      "block_order": [
-        "section_raLCaR",
-        "section_Vn6eER",
-        "section_pPkNUD",
-        "section_KD6jaW",
-        "6bade07c-5931-420b-9ef3-3156380eb2bf",
-        "section_b4AMmL",
-        "e37d33c5-a16e-46dd-bd8a-f628d1c2cc65"
-      ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "txt-buttons": "All models",
-        "collection-margin-bottom": false
+        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Katalog",
+        "brand_url": ""
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -83,56 +27,56 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/pages\/car-brands",
+            "product-link": "shopify://pages/car-brands",
             "color-code": "All"
           }
         },
         "section_94Fk9n": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-57",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-57",
             "color-code": "57"
           }
         },
         "section_8EwcJG": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-62",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-62",
             "color-code": "62"
           }
         },
         "section_jRJTVF": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-exelero",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-exelero",
             "color-code": "Exelero"
           }
         },
         "section_U36Xrm": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-eqs",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-eqs",
             "color-code": "EQS"
           }
         },
         "d4616dc4-bdd4-4055-b34a-90ed0aa4c4d2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/maybach-gls",
+            "product-link": "shopify://collections/maybach-gls",
             "color-code": "GLS"
           }
         },
         "section_3DD7pt": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-g650",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-g650",
             "color-code": "G650"
           }
         },
         "d122c4aa-b8ef-499c-9d67-1fcdd39de31f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-maybach-s-klasa",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-maybach-s-klasa",
             "color-code": "S klasa"
           }
         }
@@ -147,11 +91,7 @@
         "section_3DD7pt",
         "d122c4aa-b8ef-499c-9d67-1fcdd39de31f"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -163,9 +103,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -174,7 +111,6 @@
   },
   "order": [
     "banner",
-    "91bc8e32-e905-42d4-8f8e-22aa46fea149",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]
