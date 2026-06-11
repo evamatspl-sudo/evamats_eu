@@ -1,83 +1,295 @@
-  <script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
-  {{ 'brand-buttons-for-blog.css' | asset_url | stylesheet_tag }}
-  {{ 'component-search-brand.css' | asset_url | stylesheet_tag }}
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{{ 'brand-buttons-for-blog.css' | asset_url | stylesheet_tag }}
+{{ 'component-search-brand.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'brand-buttons-for-blog.js' | asset_url }}" defer></script>
+
+{% liquid
+    assign background = section.settings.background
+    assign heading = section.settings.heading
+
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+
+    assign active_block = section.blocks.first
+
+    for block in section.blocks
+    if block.settings.blog.handle == blog.handle
+        assign active_block = block
+      endif
+    endfor
+
+    assign root_label = section.settings.parent_label | strip
+    if root_label == blank
+    assign root_label = 'Evamats'
+    endif
+
+    assign root_url = section.settings.parent_url | strip
+    if root_url == blank
+    assign root_url = routes.root_url
+    endif
+
+    assign catalog_label = section.settings.catalog_label | strip
+    if catalog_label == blank
+    assign catalog_label = 'Сatalog'
+    endif
+
+    assign brand_collection = nil
+    assign brand_url_setting = section.settings.brand_url | strip
+
+    if brand_url_setting != blank
+    assign brand_handle = brand_url_setting | split: '/collections/' | last | split: '?' | first
+    if brand_handle != blank
+    assign brand_collection = collections[brand_handle]
+    endif
+    endif
+
+    if brand_collection == blank
+    assign candidate = ''
+    assign handle_parts = collection.handle | split: '-'
+    for part in handle_parts
+    if candidate == blank
+    assign candidate = part
+    else
+    assign candidate = candidate | append: '-' | append: part
+    endif
+    if candidate != collection.handle
+    assign test_col = collections[candidate]
+    if test_col != blank
+    assign brand_collection = test_col
+    break
+    endif
+    endif
+    endfor
+    endif
+
+    assign middle_label = ''
+    assign middle_url = ''
+    assign breadcrumb_current = catalog_label
+
+    if brand_collection != blank
+    assign middle_label = brand_collection.title
+    assign middle_url = brand_collection.url
+    assign breadcrumb_current = collection.title
+    endif
+%}
+
   {% style %}
     .hide {
       display: none !important;
     }
 
   {% endstyle %}
-  <div class="btns-for-blog collection-colorTable {% if section.settings.margin-bottom %} margin-bottom {% endif %}">
-        {% if section.settings.color-table-header != blank %}
-          <h3 class="collection-colorTable_header">{{ section.settings.color-table-header }}</h3>
+  <div class="main-blog" style="
+    --background:{{ background }};
+    --padding_top: {{ padding_top }};
+    --padding_top_mobile: {{ padding_top_mobile }};
+    --padding_bottom: {{ padding_bottom  }};
+    --padding_bottom_mobile: {{ padding_bottom_mobile }};
+    ">
+    <div class="page-width">
+        {%- if section.settings.show_breadcrumbs -%}
+            {% render 'evamats-breadcrumbs',
+                parent_label: root_label,
+                parent_url: root_url,
+                middle_label: middle_label,
+                middle_url: middle_url,
+                current_label: breadcrumb_current
+            %}
+        {%- endif -%}
+
+        {% if heading != blank %}
+            <h2 class="main-blog__heading">{{ heading }}</h2>
         {% endif %}
-        <div class="collection-colorTable_block">
-           {% if section.settings.catalog-header != blank %}
-              <h4 class="collection-SectionHeader__SubHeading Heading u-h4">{{ section.settings.catalog-header }}</h4>
-           {% endif %}
-<!--             <div data-section-id="{{ section.id }}" class="search-container">
-              <input id="search_input" class="search" type="text" oninput="filterLinks()" placeholder="SEARCH">
-            </div> -->
-            <div class="colorTable_block__blocks-collection">
-              {% assign sorted_blocks = section.blocks | sort_natural: 'settings.color-code' %}
-              {%- for block in sorted_blocks -%}
-                
-                {%liquid
-                  assign link = ''
-                  if block.settings.page_link != blank
-                    assign link = block.settings.page_link.url
-                  else
-                    assign link = block.settings.blog.url
-                  endif
-                %}
-                  <a  class="collection-color_block" href="{{ link }}">
-                    <div class="collection-color_block__wrapper">
-                        <span class="collection-color_block__material">{{ block.settings.color-code }}</span>
+
+        <div class="main-blog__brands-wrap">
+
+            <div class="main-blog__drop-result">
+                <div class="main-blog__brands-dropdown">
+
+                <button class="main-blog__dropdown-toggle" type="button">
+
+                    {% if active_block.settings.brand_image != blank %}
+                    <div class="main-blog__toggle-image">
+                        {{
+                        active_block.settings.brand_image
+                        | image_url: width: 80
+                        | image_tag:
+                        loading: 'lazy',
+                        alt: active_block.settings.brand_heading
+                        }}
                     </div>
-                  </a>
-              {% endfor %}
- 
-            </div>
-            <div data-section-id="{{ section.id }}" class="search-container">
-              <input id="search_input" class="search search-style" type="text" oninput="filterLinks()" placeholder="{{ 'general.search.search' | t }}">
+                    {% else %}
+                        <div class="main-blog__image-empty"><span class="visually-hidden">{{ active_block.settings.brand_heading }}</span></div>
+                    {% endif %}
+
+                    <div class="main-blog__toggle-content">
+                      <span class="main-blog__toggle-label">Марка</span>
+                      <span class="main-blog__toggle-title">{{ active_block.settings.brand_heading }}</span>
+
+                        <span class="main-blog__arrow-mobile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                                <path d="M6.17675 0.07325C6.07908 -0.0244167 5.92092 -0.0244167 5.82325 0.07325L3.66658 2.22992L1.51008 0.07325C1.41242 -0.0244167 1.25425 -0.0244167 1.15658 0.07325L0.07325 1.15658C-0.0244167 1.25425 -0.0244167 1.41242 0.07325 1.51008L3.48992 4.92675C3.53858 4.97575 3.60258 5.00008 3.66658 5.00008C3.73058 5.00008 3.79458 4.97575 3.84342 4.92692L7.26008 1.51025C7.35775 1.41258 7.35775 1.25442 7.26008 1.15675L6.17675 0.07325Z" fill="#1B1D22"/>
+                            </svg>
+                        </span>
+
+                    </div>
+
+                </button>
+
+                    <div class="main-blog__brand-list">
+                        {%- for block in section.blocks -%}
+
+                            {% liquid
+                                assign heading = block.settings.brand_heading
+
+                                assign link = ''
+                                if block.settings.page_link != blank
+                                assign link = block.settings.page_link.url
+                                else
+                                assign link = block.settings.blog.url
+                                endif
+
+                                assign is_active = false
+                                if canonical_url contains link
+                                assign is_active = true
+                                endif
+                            %}
+
+                            <a class="main-blog__brand-item{% if is_active %} active{% endif %}" href="{{ link }}">
+                                {{ heading }}
+                            </a>
+
+                        {%- endfor -%}
+                    </div>
+
             </div>
 
+                <div class="main-blog__count-result">
+                  <span class="js-search-count">
+                    {{ blog.articles.size }}
+                  </span>
+
+                    <span  class="js-search-label" data-singular="result" data-plural="results">
+                      {{ blog.articles.size | pluralize: 'result', 'results' }}
+                  </span>
+                </div>
+            </div>
+
+            <div class="main-blog__search">
+                <div class="main-blog__search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                        <path d="M20.75 22.5L12.875 14.625C12.25 15.125 11.5312 15.5208 10.7188 15.8125C9.90625 16.1042 9.04167 16.25 8.125 16.25C5.85417 16.25 3.93229 15.4635 2.35938 13.8906C0.786458 12.3177 0 10.3958 0 8.125C0 5.85417 0.786458 3.93229 2.35938 2.35938C3.93229 0.786458 5.85417 0 8.125 0C10.3958 0 12.3177 0.786458 13.8906 2.35938C15.4635 3.93229 16.25 5.85417 16.25 8.125C16.25 9.04167 16.1042 9.90625 15.8125 10.7188C15.5208 11.5312 15.125 12.25 14.625 12.875L22.5 20.75L20.75 22.5ZM8.125 13.75C9.6875 13.75 11.0156 13.2031 12.1094 12.1094C13.2031 11.0156 13.75 9.6875 13.75 8.125C13.75 6.5625 13.2031 5.23438 12.1094 4.14062C11.0156 3.04688 9.6875 2.5 8.125 2.5C6.5625 2.5 5.23438 3.04688 4.14062 4.14062C3.04688 5.23438 2.5 6.5625 2.5 8.125C2.5 9.6875 3.04688 11.0156 4.14062 12.1094C5.23438 13.2031 6.5625 13.75 8.125 13.75Z" fill="#1B1D22"/>
+                    </svg>
+                </div>
+                <input
+                        type="text"
+                        class="main-blog__search-input"
+                        placeholder="Szukaj"
+                        autocomplete="off"
+                >
+            </div>
         </div>
     </div>
-      
-      <script>
-        document.querySelectorAll('.collection-color_block').forEach(function(block) {
-          block.addEventListener('click', function() {
-              document.querySelectorAll('.collection-color_block').forEach(function(el) {
-                  el.classList.remove('active');
-              });
-              this.classList.toggle('active');
-          });
-      });
-      
-      </script>
+  </div>
 
 {% schema %}
 {
 "name": "Brand Buttons for Blog",
 "max_blocks": 50,
 "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#f6f6f6"
+      },
    {
      "type": "text",
-     "id": "collection-color-table-header",
-     "label": "Heading"
+     "id": "heading",
+     "label": "Heading",
+     "default": "Heading"
    },
-   {
-     "type": "text",
-     "id": "collection-catalog-header",
-     "label": "Heading Catalog"
-   },
-   {
-     "type": "checkbox",
-     "id": "collection-margin-bottom",
-     "label": "Bottom indent",
-     "default": false
-   }
+  {
+    "type": "header",
+    "content": "Breadcrumbs"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_breadcrumbs",
+    "label": "Show breadcrumbs",
+    "default": true
+  },
+  {
+    "type": "text",
+    "id": "parent_label",
+    "label": "Breadcrumb root label",
+    "default": "Evamats"
+  },
+  {
+    "type": "url",
+    "id": "parent_url",
+    "label": "Breadcrumb root link",
+    "info": "Defaults to homepage."
+  },
+  {
+    "type": "text",
+    "id": "catalog_label",
+    "label": "Catalog breadcrumb label",
+    "default": "Katalog",
+    "info": "Shown on brand and top-level collection pages."
+  },
+  {
+    "type": "url",
+    "id": "brand_url",
+    "label": "Parent brand collection",
+    "info": "Optional. Used for model pages when auto-detection is not enough."
+  },
+  {
+    "type": "header",
+    "content": "Section padding"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "label": "Padding top",
+    "min": 0,
+    "max": 120,
+    "step": 4,
+    "unit": "px",
+    "default": 60
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "label": "Padding bottom",
+    "min": 0,
+    "max": 120,
+    "step": 4,
+    "unit": "px",
+    "default": 60
+  },
+  {
+    "type": "range",
+    "id": "padding_top_mobile",
+    "label": "Padding top mobile",
+    "min": 0,
+    "max": 80,
+    "step": 4,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom_mobile",
+    "label": "Padding bottom mobile",
+    "min": 0,
+    "max": 80,
+    "step": 4,
+    "unit": "px",
+    "default": 20
+  }
 ],
 "blocks" : [
     {
@@ -98,8 +310,13 @@
       },
       {
         "type": "text",
-        "id": "color-code",
-          "label": "Name"
+        "id": "brand_heading",
+         "label": "Brand heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_image",
+        "label": "Brand image"
       }
     ]
   }

@@ -51,8 +51,9 @@
 .card--standard .card__inner {
   position: relative;
   box-sizing: border-box;
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   border: var(--border-width) solid rgba(var(--color-foreground), var(--border-opacity));
+  overflow: hidden;
 }
 
 .card--card:after,
@@ -64,7 +65,7 @@
   height: calc(var(--border-width) * 2 + 100%);
   top: calc(var(--border-width) * -1);
   left: calc(var(--border-width) * -1);
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
 }
 
@@ -382,3 +383,5 @@
   border-radius: 6px 6px 0 0;
   padding: 4px 6px;
 }
+
+

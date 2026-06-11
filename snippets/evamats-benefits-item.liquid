@@ -1,0 +1,59 @@
+<div class="evamats-benefits__item {% if active %}is-active{% endif %}">
+
+    <button
+            class="evamats-benefits__trigger"
+            type="button"
+            aria-expanded="{% if active %}true{% else %}false{% endif %}"
+    >
+
+        <div class="evamats-benefits__left">
+
+            {% if icon != blank %}
+                <div class="evamats-benefits__icon">
+
+                    {{ icon | image_url: width: 100 | image_tag: loading: 'lazy' }}
+
+                </div>
+            {% endif %}
+
+            <div class="evamats-benefits__text">
+
+                {% if title != blank %}
+                    <h3 class="evamats-benefits__heading">
+                        {{ title }}
+                    </h3>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <span class="evamats-benefits__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M8.13891 1.96644C8.01682 1.84436 7.81911 1.84436 7.69703 1.96644L5.0012 4.66227L2.30557 1.96644C2.18349 1.84436 1.98578 1.84436 1.8637 1.96644L0.509531 3.32061C0.387448 3.44269 0.387448 3.6404 0.509531 3.76248L4.78036 8.03332C4.8412 8.09457 4.9212 8.12498 5.0012 8.12498C5.0812 8.12498 5.1612 8.09457 5.22224 8.03352L9.49307 3.76269C9.61516 3.64061 9.61516 3.4429 9.49307 3.32082L8.13891 1.96644Z" fill="#1B1D22"/>
+            </svg>
+        </span>
+
+    </button>
+
+    {% if text != blank %}
+        <div class="evamats-benefits__body">
+
+            <div class="evamats-benefits__body-inner">
+
+                <div class="evamats-benefits__body-content">
+
+                    {% if is_metaobject %}
+                        {{ text | metafield_tag }}
+                    {% else %}
+                        {{ text }}
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+    {% endif %}
+
+</div>
