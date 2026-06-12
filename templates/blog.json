@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "a4159d87-0702-46b5-8359-2750a493d775": {
@@ -5,10 +14,11 @@
       "blocks": {
         "05a94be3-dde1-4673-8942-00161b5cc359": {
           "type": "section",
+          "disabled": true,
           "settings": {
             "blog": "",
             "page_link": "realizacja",
-            "color-code": "Wszystko"
+            "brand_heading": ""
           }
         },
         "b603f5de-e786-4b88-80b9-85434f501d58": {
@@ -16,7 +26,8 @@
           "settings": {
             "blog": "audi",
             "page_link": "",
-            "color-code": "Audi"
+            "brand_heading": "Audi",
+            "brand_image": "shopify://shop_images/audi.webp"
           }
         },
         "1b142488-f0e2-4776-917e-2fbee992ab73": {
@@ -24,7 +35,8 @@
           "settings": {
             "blog": "bmw",
             "page_link": "",
-            "color-code": "BMW"
+            "brand_heading": "BMW",
+            "brand_image": "shopify://shop_images/bmw.webp"
           }
         },
         "74a1c910-26e3-4fde-833a-e0523e647e2f": {
@@ -32,7 +44,7 @@
           "settings": {
             "blog": "citroen",
             "page_link": "",
-            "color-code": "Citroen"
+            "brand_heading": "Citroen"
           }
         },
         "ad6603ad-58a3-4bb1-9c3b-a09fbce3c8c8": {
@@ -40,7 +52,7 @@
           "settings": {
             "blog": "chevrolet",
             "page_link": "",
-            "color-code": "Chevrolet"
+            "brand_heading": "Chevrolet"
           }
         },
         "20f2eb12-57b5-4e56-9dd7-c37c9b33e3bb": {
@@ -48,7 +60,7 @@
           "settings": {
             "blog": "chrysler",
             "page_link": "",
-            "color-code": "Chrysler"
+            "brand_heading": "Chrysler"
           }
         },
         "578a9988-bff8-42da-b368-f7cee8d64223": {
@@ -56,7 +68,7 @@
           "settings": {
             "blog": "dacia",
             "page_link": "",
-            "color-code": "Dacia"
+            "brand_heading": "Dacia"
           }
         },
         "872eede8-1527-4623-bc4f-9387bc89ead7": {
@@ -64,7 +76,7 @@
           "settings": {
             "blog": "dodge",
             "page_link": "",
-            "color-code": "Dodge"
+            "brand_heading": "Dodge"
           }
         },
         "cfaf8ce6-bc59-4af0-bc08-7ddce8ab484e": {
@@ -72,7 +84,7 @@
           "settings": {
             "blog": "fiat",
             "page_link": "",
-            "color-code": "Fiat"
+            "brand_heading": "Fiat"
           }
         },
         "b0ff8155-f0ec-425d-94a6-497fbeb98f0b": {
@@ -80,7 +92,8 @@
           "settings": {
             "blog": "ford",
             "page_link": "",
-            "color-code": "Ford"
+            "brand_heading": "Ford",
+            "brand_image": "shopify://shop_images/ford.webp"
           }
         },
         "bd707374-f02a-4d5f-ab84-ee128608dae9": {
@@ -88,7 +101,7 @@
           "settings": {
             "blog": "honda",
             "page_link": "",
-            "color-code": "Honda"
+            "brand_heading": "Honda"
           }
         },
         "0473f8af-d18b-459f-86a8-58abb2f7ae56": {
@@ -96,7 +109,8 @@
           "settings": {
             "blog": "hyundai",
             "page_link": "",
-            "color-code": "Hyundai"
+            "brand_heading": "Hyndai",
+            "brand_image": "shopify://shop_images/hyundai.webp"
           }
         },
         "f0a80ee3-39ac-4ee6-9b38-91a40dca3333": {
@@ -104,7 +118,7 @@
           "settings": {
             "blog": "lexus",
             "page_link": "",
-            "color-code": "Lexus"
+            "brand_heading": "Lexus"
           }
         },
         "9506100a-75ae-4cda-99b2-74ddef9350de": {
@@ -112,7 +126,7 @@
           "settings": {
             "blog": "mazda",
             "page_link": "",
-            "color-code": "Mazda"
+            "brand_heading": "Mazda"
           }
         },
         "bb44c827-1df0-45f0-815b-1a0dccd74657": {
@@ -120,7 +134,8 @@
           "settings": {
             "blog": "mercedes-benz",
             "page_link": "",
-            "color-code": "Mercedes-Benz"
+            "brand_heading": "Mercedes-Benz",
+            "brand_image": "shopify://shop_images/mercedes.webp"
           }
         },
         "30368a0c-e96f-403d-9fd5-461678e4c24a": {
@@ -128,7 +143,7 @@
           "settings": {
             "blog": "nissan",
             "page_link": "",
-            "color-code": "Nissan"
+            "brand_heading": "Nissan"
           }
         },
         "7c27b4bf-fe24-4446-8001-753ffb29b720": {
@@ -136,7 +151,8 @@
           "settings": {
             "blog": "opel",
             "page_link": "",
-            "color-code": "Opel"
+            "brand_heading": "Opel",
+            "brand_image": "shopify://shop_images/opel.webp"
           }
         },
         "a85cb45e-fc68-40a9-848c-33fb550f71ef": {
@@ -144,7 +160,7 @@
           "settings": {
             "blog": "peugeot",
             "page_link": "",
-            "color-code": "Peugeot"
+            "brand_heading": "Peugeot"
           }
         },
         "82be44c6-b241-4248-982b-fc039c1a1782": {
@@ -152,7 +168,7 @@
           "settings": {
             "blog": "jeep",
             "page_link": "",
-            "color-code": "Jeep"
+            "brand_heading": "Jeep"
           }
         },
         "faf18161-8715-40ab-b20d-17b9bfa5037a": {
@@ -160,7 +176,7 @@
           "settings": {
             "blog": "porsche",
             "page_link": "",
-            "color-code": "Porsche"
+            "brand_heading": "Porsche"
           }
         },
         "4db8996b-2e05-4e67-8a93-ac284089dd14": {
@@ -168,7 +184,7 @@
           "settings": {
             "blog": "range-rover",
             "page_link": "",
-            "color-code": "Range Rover"
+            "brand_heading": "Range Rover"
           }
         },
         "ef352d2c-5c5f-4517-a970-94d18d1aba43": {
@@ -176,7 +192,8 @@
           "settings": {
             "blog": "renault",
             "page_link": "",
-            "color-code": "Renault"
+            "brand_heading": "Renault",
+            "brand_image": "shopify://shop_images/renault.webp"
           }
         },
         "2d88833d-1941-49e4-b20b-59e424fbb60e": {
@@ -184,7 +201,7 @@
           "settings": {
             "blog": "saab",
             "page_link": "",
-            "color-code": "Saab"
+            "brand_heading": "Saab"
           }
         },
         "5090e88a-9cb2-4100-8298-8353d4835325": {
@@ -192,7 +209,7 @@
           "settings": {
             "blog": "seat",
             "page_link": "",
-            "color-code": "Seat"
+            "brand_heading": "Seat"
           }
         },
         "fa20a2c2-251c-4dce-a6a5-65485f67375c": {
@@ -200,7 +217,7 @@
           "settings": {
             "blog": "seres",
             "page_link": "",
-            "color-code": "Seres"
+            "brand_heading": "Seres"
           }
         },
         "4f4b3807-3816-4461-ae4d-db5b6e5d184b": {
@@ -208,7 +225,8 @@
           "settings": {
             "blog": "skoda",
             "page_link": "",
-            "color-code": "Skoda"
+            "brand_heading": "Skoda",
+            "brand_image": "shopify://shop_images/skoda.webp"
           }
         },
         "7f4dcbf9-e9ed-4781-b708-c6f895ce2195": {
@@ -216,7 +234,7 @@
           "settings": {
             "blog": "skywell",
             "page_link": "",
-            "color-code": "Skywell"
+            "brand_heading": "Skywell"
           }
         },
         "aa65d584-b597-4a6a-81e1-21c39c48b137": {
@@ -224,7 +242,7 @@
           "settings": {
             "blog": "subaru",
             "page_link": "",
-            "color-code": "Subaru"
+            "brand_heading": "Subaru"
           }
         },
         "b2179070-4df5-434d-984f-37171e73da5f": {
@@ -232,7 +250,7 @@
           "settings": {
             "blog": "suzuki",
             "page_link": "",
-            "color-code": "Suzuki"
+            "brand_heading": "Suzuki"
           }
         },
         "27085e41-2e5d-4a1e-8200-b9a1717b8534": {
@@ -240,7 +258,7 @@
           "settings": {
             "blog": "tesla",
             "page_link": "",
-            "color-code": "Tesla"
+            "brand_heading": "Tesla"
           }
         },
         "6c7cd9ad-a359-404c-85cd-7a6f636841d8": {
@@ -248,7 +266,8 @@
           "settings": {
             "blog": "toyota",
             "page_link": "",
-            "color-code": "Toyota"
+            "brand_heading": "Toyota",
+            "brand_image": "shopify://shop_images/toyota.webp"
           }
         },
         "09f4d748-4269-4f49-8ba7-7fed7aa09563": {
@@ -256,7 +275,8 @@
           "settings": {
             "blog": "kia",
             "page_link": "",
-            "color-code": "Kia"
+            "brand_heading": "Kia",
+            "brand_image": "shopify://shop_images/kia.webp"
           }
         },
         "601fb06f-ad58-490c-86d0-b42de7a273e5": {
@@ -264,7 +284,8 @@
           "settings": {
             "blog": "volvo",
             "page_link": "",
-            "color-code": "Volvo"
+            "brand_heading": "Volvo",
+            "brand_image": "shopify://shop_images/volvo.webp"
           }
         },
         "c691e1ed-e75b-427d-811b-dc9ec55e1a6f": {
@@ -272,7 +293,8 @@
           "settings": {
             "blog": "volkswagen",
             "page_link": "",
-            "color-code": "Volkswagen"
+            "brand_heading": "Volkswagen",
+            "brand_image": "shopify://shop_images/vw.webp"
           }
         },
         "6c1ec6ed-b615-4be9-afed-ff5e56795a4e": {
@@ -280,7 +302,7 @@
           "settings": {
             "blog": "minivan",
             "page_link": "",
-            "color-code": "Minivan"
+            "brand_heading": "Minivan"
           }
         },
         "49fba8df-ad24-4568-9173-774b0861fc8e": {
@@ -288,7 +310,7 @@
           "settings": {
             "blog": "bus",
             "page_link": "",
-            "color-code": "Bus"
+            "brand_heading": "Bus"
           }
         },
         "9f398bbd-542c-4c02-b606-f47d8d21f7f4": {
@@ -296,7 +318,7 @@
           "settings": {
             "blog": "camper",
             "page_link": "",
-            "color-code": "Camper"
+            "brand_heading": "Camper"
           }
         },
         "bc902d33-6351-49b5-9380-2f1c29bba105": {
@@ -304,7 +326,7 @@
           "settings": {
             "blog": "pick-up",
             "page_link": "",
-            "color-code": "Pick-up"
+            "brand_heading": "Pick-up"
           }
         },
         "b7703e84-3d6b-49dd-b8b5-06c9f6748eb2": {
@@ -312,7 +334,7 @@
           "settings": {
             "blog": "inne",
             "page_link": "",
-            "color-code": "Inne"
+            "brand_heading": "Other"
           }
         }
       },
@@ -358,9 +380,17 @@
         "b7703e84-3d6b-49dd-b8b5-06c9f6748eb2"
       ],
       "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
+        "background": "#f6f6f6",
+        "heading": "Poznaj realizacje marki Evamats!",
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": "",
+        "catalog_label": "Blogs",
+        "brand_url": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
       }
     },
     "main": {
@@ -371,7 +401,7 @@
         "image_height": "large",
         "show_date": false,
         "show_author": false,
-        "padding_top": 0,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -380,7 +410,7 @@
       "disabled": true,
       "settings": {
         "btn_text": "All brands",
-        "btn_url": "shopify:\/\/pages\/realizacja"
+        "btn_url": "shopify://pages/realizacja"
       }
     }
   },

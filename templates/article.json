@@ -1,10 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "6b18e7eb-f1ea-4905-a998-9547c2445c33": {
       "type": "home-5",
+      "disabled": true,
       "settings": {
         "btn_text": "Back to blog",
-        "btn_url": "shopify:\/\/blogs\/nasze-realizacje"
+        "btn_url": "shopify://blogs/nasze-realizacje"
       }
     },
     "main": {
@@ -19,7 +29,6 @@
         },
         "title": {
           "type": "title",
-          "disabled": true,
           "settings": {
             "blog_show_date": false,
             "blog_show_author": false
@@ -45,40 +54,117 @@
       ],
       "settings": {}
     },
+    "evamats_benefits_TTtAVp": {
+      "type": "evamats-benefits",
+      "blocks": {
+        "item_xfrWP7": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-1.png",
+            "heading": "Perfekcyjne dopasowanie",
+            "text": "<p>Jest to materiał, który jest łatwy do przetworzenia i recyklingu, co oznacza, że jego produkcja ma minimalny wpływ na środowisko. Ponadto, materiał ten jest również bezpieczny dla zdrowia, ponieważ nie zawiera szkodliwych substancji chemicznych, takich jak ftalany czy chlorowany parafiny.</p>"
+          }
+        },
+        "item_tjhzJd": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-2.png",
+            "heading": "Wysokiej jakości materiały",
+            "text": "<p>Jest to materiał, który jest łatwy do przetworzenia i recyklingu, co oznacza, że jego produkcja ma minimalny wpływ na środowisko.</p>"
+          }
+        },
+        "item_Jqijjk": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-4.png",
+            "heading": "Łatwa pielęgnacja",
+            "text": "<p>Jest to materiał, który jest łatwy do przetworzenia i recyklingu, co oznacza, że jego produkcja ma minimalny wpływ na środowisko.</p>"
+          }
+        },
+        "item_PeL9gG": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-3.png",
+            "heading": "Stylowy wybór",
+            "text": "<p>Oferujemy dywaniki w różnych wzorach i kolorach, które można dopasować do indywidualnych preferencji i charakteru Twojego Audi Q5, dodając mu osobistego akcentu.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_xfrWP7",
+        "item_tjhzJd",
+        "item_Jqijjk",
+        "item_PeL9gG"
+      ],
+      "name": "EVAMATS Benefits",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "title": "",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "featured_media_3wRQwp": {
+      "type": "featured-media",
+      "name": "Featured Media",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "highlight_text_color": "#ff2741",
+        "heading": "",
+        "video_url": "",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "eva_product_slider_czea8i": {
+      "type": "eva-product-slider",
+      "name": "EVA Product Slider",
+      "settings": {
+        "background": "#1b1d22",
+        "text_color": "#1b1d22",
+        "product": "",
+        "top_right_image": "shopify://shop_images/compare-cards-top-image.webp",
+        "bottom_left_image": "shopify://shop_images/compare-cards-bottom-image.webp",
+        "button_text": "ZOBACZ PRODUKT",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    },
     "d40b4576-0def-4897-9e6a-7ae1777a62bb": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Możesz także polubić",
-        "heading_size": "h1",
-        "custom_header_style": false,
-        "button_text": "",
-        "button_link": "",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
+        "view_all_label": "View all",
         "collection": "bestsellery-blog",
         "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
+        "mobile_button_label": "Select",
         "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     }
   },
   "order": [
     "6b18e7eb-f1ea-4905-a998-9547c2445c33",
     "main",
+    "evamats_benefits_TTtAVp",
+    "featured_media_3wRQwp",
+    "eva_product_slider_czea8i",
     "d40b4576-0def-4897-9e6a-7ae1777a62bb"
   ]
 }
