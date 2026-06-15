@@ -83,6 +83,7 @@
           {%- endif -%}
         </header>
 
+
       {%- when 'content' -%}
         <div
           class="article-template__content page-width rte"
@@ -90,6 +91,22 @@
           {{ block.shopify_attributes }}
         >
           {{ article.content }}
+        </div>
+
+      {% when 'description' %}
+        {% liquid
+          assign padding_top = block.settings.padding_top | append: 'px'
+          assign padding_top_mobile = block.settings.padding_top_mobile | append: 'px'
+          assign padding_bottom = block.settings.padding_bottom | append: 'px'
+          assign padding_bottom_mobile = block.settings.padding_bottom_mobile | append: 'px'
+        %}
+        <div class="article-template__description" style="
+                --padding_top: {{ padding_top }};
+                --padding_top_mobile: {{ padding_top_mobile }};
+                --padding_bottom: {{ padding_bottom  }};
+                --padding_bottom_mobile: {{ padding_bottom_mobile }};">
+
+          <div class="page-width">{{ article.excerpt }}</div>
         </div>
 
       {%- when 'share' -%}
@@ -408,6 +425,53 @@
       "type": "content",
       "name": "t:sections.main-article.blocks.content.name",
       "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top mobile",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom mobile",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "default": 20
+        }
+      ]
     },
     {
       "type": "share",
