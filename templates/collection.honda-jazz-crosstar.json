@@ -51,11 +51,7 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c",
         "4bae77a4-a1df-4723-9255-512b2e56399f"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",

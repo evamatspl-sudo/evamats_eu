@@ -1,6 +1,35 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign root_label = section.settings.parent_label | strip
+  if root_label == blank
+  assign root_label = 'Evamats'
+  endif
+
+  assign root_url = section.settings.parent_url | strip
+  if root_url == blank
+  assign root_url = routes.root_url
+  endif
+
+  assign middle_label = blog.title
+  assign middle_url = blog.url
+
+  assign breadcrumb_current = article.title
+%}
 
 <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="page-width">
+    {% if section.settings.show_breadcrumbs %}
+      {% render 'evamats-breadcrumbs',
+        parent_label: root_label,
+        parent_url: root_url,
+        middle_label: middle_label,
+        middle_url: middle_url,
+        current_label: breadcrumb_current
+      %}
+    {% endif %}
+  </div>
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -40,7 +69,7 @@
         {%- endif -%}
 
       {%- when 'title' -%}
-        <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
+        <header class="page-width" {{ block.shopify_attributes }}>
           <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
           {%- if block.settings.blog_show_date -%}
             <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
@@ -56,7 +85,7 @@
 
       {%- when 'content' -%}
         <div
-          class="article-template__content page-width page-width--narrow rte"
+          class="article-template__content page-width rte"
           itemprop="articleBody"
           {{ block.shopify_attributes }}
         >
@@ -71,7 +100,7 @@
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class="article-template__back element-margin-top center">
+  <div class="article-template__back element-margin-top center" style="display:none;">
     <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
       <span class="icon-wrap">{% render 'icon-arrow' %}</span>
       {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
@@ -296,6 +325,30 @@
   "name": "t:sections.main-article.name",
   "tag": "section",
   "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "parent_label",
+      "label": "Breadcrumb root label",
+      "default": "Evamats"
+    },
+    {
+      "type": "url",
+      "id": "parent_url",
+      "label": "Breadcrumb root link",
+      "info": "Defaults to homepage."
+    }
+  ],
   "blocks": [
     {
       "type": "@app"

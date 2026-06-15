@@ -30,6 +30,9 @@
     opacity:80%;
     transition:.3s
 }
+.is-hidden {
+    display: none !important;
+}
 body{
     margin:0;
     padding:0;

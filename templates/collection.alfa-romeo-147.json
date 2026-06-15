@@ -42,11 +42,7 @@
       "block_order": [
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04"
       ],
-      "settings": {
-        "collection-color-table-header": "",
-        "collection-catalog-header": "",
-        "collection-margin-bottom": false
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",

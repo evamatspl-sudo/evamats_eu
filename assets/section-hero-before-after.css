@@ -45,7 +45,7 @@
     width: 4px;
     height: 100%;
     background: var(--divider-background);
-    z-index: 5;
+    z-index: 2;
 }
 
 .hero-before-after__badge {
@@ -69,7 +69,7 @@
 .hero-before-after__label {
     position: absolute;
     bottom: 0;
-    z-index: 4;
+    z-index: 1;
     left: 0;
     right: 0;
     padding: 36px 10px;

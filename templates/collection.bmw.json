@@ -339,13 +339,17 @@
         "9cd4e4f7-ef20-47ef-aa7f-bc48bea9ee6b",
         "3b6d4f8c-d4ff-468f-952a-88feffe4ea58"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "Popular models",
+        "margin_bottom": true
+      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
+        "mobile_button_label": "Wybierz",
         "image_ratio": "square",
         "show_secondary_image": true,
         "show_vendor": false,

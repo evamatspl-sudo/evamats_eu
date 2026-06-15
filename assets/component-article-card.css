@@ -97,7 +97,7 @@
 }
 
 .article-card__image--large .ratio::before {
-  padding-bottom: 33rem;
+  padding-bottom: 37rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -110,7 +110,7 @@
   }
 
   .article-card__image--large .ratio::before {
-    padding-bottom: 27.5rem;
+    padding-bottom: 40.5rem;
   }
 }
 
@@ -124,7 +124,7 @@
   }
 
   .article-card__image--large .ratio::before {
-    padding-bottom: 40.7rem;
+    padding-bottom: 54.2rem;
   }
 }
 

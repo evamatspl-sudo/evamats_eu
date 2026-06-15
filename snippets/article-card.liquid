@@ -23,7 +23,7 @@
       assign ratio = media_aspect_ratio
     endif
   -%}
-  <div class="article-card-wrapper card-wrapper underline-links-hover">
+  <div class="article-card-wrapper card-wrapper underline-links-hover" data-title="{{ article.title | downcase }}">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
     <div
       class="
@@ -112,11 +112,12 @@
           {%- endif -%}
         </div>
       </div>
+
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
-              {{ article.title | truncate: 50 | escape }}
+              {{ article.title | escape }}
             </a>
           </h3>
           <div class="article-card__info caption-with-letter-spacing h5">
@@ -150,6 +151,13 @@
           </div>
         {%- endif -%}
       </div>
+
+      <a href="{{ article.url }}" class="card__button-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.403409 0H10.2216C10.8241 0 11.3125 0.488417 11.3125 1.09091V10.9091H9.13068V3.7246L1.54346 11.3118L0.000684023 9.76904L7.5879 2.18182H0.403409V0Z" fill="white"/>
+        </svg>
+      </a>
+
     </div>
   </div>
 {%- endif -%}

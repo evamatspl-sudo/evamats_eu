@@ -1,0 +1,244 @@
+.evamats-benefits {
+    background: var(--background);
+    padding-top: var(--padding_top);
+    padding-bottom: var(--padding_bottom);
+    overflow: hidden;
+}
+
+.evamats-benefits__wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 625px) minmax(0, 1fr);
+    gap: 145px;
+}
+
+.evamats-benefits__content {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.evamats-benefits__title {
+    font-family: var(--font-ntc-somic-family);
+    font-weight: var(--font-body-weight-bold);
+    margin: 0 0 34px;
+    font-size: 4.6rem;
+    line-height: 1;
+    letter-spacing: -0.92px;
+    color: var(--text_color);
+}
+
+.evamats-benefits__item {
+    padding: 26px 0;
+}
+
+.evamats-benefits__item:not(:last-child)  {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.evamats-benefits__trigger {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: left;
+}
+
+.evamats-benefits__left {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    flex: 1;
+}
+
+.evamats-benefits__icon {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #E9E9E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    transition:
+            border-color 0.3s ease,
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+.evamats-benefits__icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+}
+
+.evamats-benefits__item.is-active .evamats-benefits__icon {
+    border-color: #FF2741;
+}
+
+.evamats-benefits__text {
+    flex: 1;
+}
+
+.evamats-benefits__heading {
+    font-family: var(--font-ntc-somic-family);
+    font-weight: var(--font-body-weight-bold);
+    margin: 0;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -0.52px;
+    color: var(--text_color);
+}
+
+.evamats-benefits__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.evamats-benefits__body-inner {
+    overflow: hidden;
+}
+
+.evamats-benefits__body-content {
+    padding: 12px 0 0 96px;
+}
+
+.evamats-benefits__body-content p {
+    font-family: var(--font-ntc-somic-family);
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    letter-spacing: -0.32px;
+    color: var(--text_color);
+}
+
+.evamats-benefits__body-content p + p {
+    margin-top: 16px;
+}
+
+.evamats-benefits__item.is-active .evamats-benefits__body {
+    grid-template-rows: 1fr;
+}
+
+.evamats-benefits__arrow {
+    width: 10px;
+    min-width: 10px;
+    transition: transform 0.3s ease;
+}
+
+.evamats-benefits__arrow svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.evamats-benefits__item.is-active .evamats-benefits__arrow {
+    transform: rotate(180deg);
+}
+
+.evamats-benefits__media {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.evamats-benefits__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.evamats-benefits__media--mobile {
+    display: none;
+}
+
+@media screen and (max-width:1200px) {
+    .evamats-benefits__wrapper {
+        grid-template-columns: minmax(0, 455px) minmax(0, 1fr);
+        gap: 70px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .evamats-benefits {
+        padding-top: var(--padding_top_mobile);
+        padding-bottom: var(--padding_bottom_mobile);
+    }
+
+    .evamats-benefits__wrapper {
+        grid-template-columns: minmax(0, 385px) minmax(0, 1fr);
+        gap: 60px;
+    }
+
+    .evamats-benefits__title {
+        font-size: 2.6rem;
+        letter-spacing: -0.52px;
+        margin: 0 0 15px;
+    }
+
+    .evamats-benefits__item {
+        padding: 16px 0;
+    }
+
+    .evamats-benefits__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .evamats-benefits__icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .evamats-benefits__left {
+        gap: 18px;
+    }
+
+    .evamats-benefits__heading {
+        font-size: 1.8rem;
+        letter-spacing: -0.36px;
+    }
+
+    .evamats-benefits__body-content {
+        padding: 5px 0 0 65px;
+    }
+
+    .evamats-benefits__body-content p {
+        font-size: 1.4rem;
+        letter-spacing: -0.28px;
+    }
+
+    .evamats-benefits__content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .evamats-benefits__wrapper {
+        display: block;
+    }
+
+    .evamats-benefits__media--mobile {
+        display: block;
+    }
+
+    .evamats-benefits__media--desktop {
+        display: none;
+    }
+
+    .evamats-benefits__title {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+
+    .evamats-benefits__accordion {
+        padding-top: 5px;
+    }
+}
