@@ -19,6 +19,27 @@
   object-fit: cover;
 }
 
+.article-template__description {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+}
+
+.article-template__description {
+  padding-top: var(--padding_top);
+  padding-bottom: var(--padding_bottom);
+}
+
+@media screen and (max-width: 750px) {
+  .article-template__description {
+    font-size: 1.6rem;
+    letter-spacing: -0.32px;
+    padding-top: var(--padding_top_mobile);
+    padding-bottom: var(--padding_bottom_mobile);
+  }
+}
+
 @media screen and (max-width: 989px) {
   .article-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -152,6 +173,7 @@
   .article-template__title {
     font-size: 4.6rem;
     letter-spacing: -0.92px;
+    padding-bottom: 50px;
   }
 }
 

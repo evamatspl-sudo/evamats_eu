@@ -44,15 +44,29 @@
         "content": {
           "type": "content",
           "settings": {}
+        },
+        "description_7YA9FB": {
+          "type": "description",
+          "settings": {
+            "padding_top": 30,
+            "padding_bottom": 0,
+            "padding_top_mobile": 0,
+            "padding_bottom_mobile": 20
+          }
         }
       },
       "block_order": [
         "featured_image",
         "title",
         "share",
-        "content"
+        "content",
+        "description_7YA9FB"
       ],
-      "settings": {}
+      "settings": {
+        "show_breadcrumbs": true,
+        "parent_label": "Evamats",
+        "parent_url": ""
+      }
     },
     "evamats_benefits_TTtAVp": {
       "type": "evamats-benefits",
@@ -120,7 +134,7 @@
         "highlight_text_color": "#ff2741",
         "heading": "",
         "video_url": "",
-        "padding_top": 120,
+        "padding_top": 0,
         "padding_bottom": 120,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
