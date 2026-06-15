@@ -1,4 +1,4 @@
-<section class="mobile">
+<divclass="mobile">
 {% if section.settings.back-to-top-button-enabled %}
 <button id="back-to-top-button" type="button" class="{{ section.settings.back-to-top-button-position }}" title="{{ section.settings.btn_text | escape }}">
   {% if section.settings.html != blank %}
@@ -10,7 +10,7 @@
   {% endif %}
 </button>
 {% endif %}
-</section>
+</div>
 
 <style>
   @media screen and (min-width: 767px){

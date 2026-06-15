@@ -1,31 +1,83 @@
 {%- comment -%}
-  Breadcrumbs — Figma 1710:63132 (desktop), 1710:58082 (mobile), 1710:28869 (collection).
+  Breadcrumbs — Figma 1710:17901 (product), 1710:63132 / 1710:28869 (collection).
 
-  @param parent_label {string} optional
-  @param parent_url {string}
-  @param middle_label {string} optional
-  @param middle_url {string} optional
-  @param current_label {string} required
-  @param class {string} optional extra classes
+  Explicit mode — pass labels/urls:
+  @param parent_label, parent_url, middle_label, middle_url, current_label, class
+
+  Product mode — pass auto_product: true (uses global product + optional overrides):
+  @param auto_product {boolean}
+  @param catalog_label {string} middle link label, default Catalog
 {%- endcomment -%}
 
-{%- if current_label != blank -%}
+{%- liquid
+  assign bc_parent_label = parent_label
+  assign bc_parent_url = parent_url
+  assign bc_middle_label = middle_label
+  assign bc_middle_url = middle_url
+  assign bc_current_label = current_label
+
+  if auto_product and product != blank
+    if bc_parent_label == blank
+      assign bc_parent_label = 'Evamats'
+    endif
+    if bc_parent_url == blank
+      assign bc_parent_url = routes.root_url
+    endif
+
+    assign bc_catalog_label = catalog_label | default: 'Catalog'
+    assign bc_current_label = product.title
+
+    assign breadcrumb_collection = collection
+
+    if breadcrumb_collection == blank
+      for tag in product.tags
+        for product_collection in product.collections
+          if product_collection.title contains tag
+            assign breadcrumb_collection = product_collection
+            break
+          endif
+        endfor
+        if breadcrumb_collection != blank
+          break
+        endif
+      endfor
+    endif
+
+    if breadcrumb_collection == blank
+      for product_collection in product.collections
+        unless product_collection.handle == 'outlet' or product_collection.handle == 'all'
+          assign breadcrumb_collection = product_collection
+          break
+        endunless
+      endfor
+    endif
+
+    assign bc_middle_label = bc_catalog_label
+    if breadcrumb_collection != blank
+      assign bc_middle_url = breadcrumb_collection.url
+    else
+      assign bc_middle_url = routes.all_products_collection_url
+    endif
+  endif
+-%}
+
+{%- if bc_current_label != blank -%}
   <nav class="evamats-breadcrumbs{% if class != blank %} {{ class }}{% endif %}" aria-label="Breadcrumb">
     <ol class="evamats-breadcrumbs__list">
-      {%- if parent_label != blank -%}
+      {%- if bc_parent_label != blank -%}
         <li class="evamats-breadcrumbs__item">
-          <a class="evamats-breadcrumbs__link" href="{{ parent_url }}">{{ parent_label | escape }}</a>
+          <a class="evamats-breadcrumbs__link" href="{{ bc_parent_url }}">{{ bc_parent_label | escape }}</a>
         </li>
         <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
       {%- endif -%}
-      {%- if middle_label != blank -%}
+      {%- if bc_middle_label != blank -%}
         <li class="evamats-breadcrumbs__item">
-          <a class="evamats-breadcrumbs__link" href="{{ middle_url }}">{{ middle_label | escape }}</a>
+          <a class="evamats-breadcrumbs__link" href="{{ bc_middle_url }}">{{ bc_middle_label | escape }}</a>
         </li>
         <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
       {%- endif -%}
       <li class="evamats-breadcrumbs__item">
-        <span class="evamats-breadcrumbs__current" aria-current="page">{{ current_label | escape }}</span>
+        <span class="evamats-breadcrumbs__current" aria-current="page">{{ bc_current_label | escape }}</span>
       </li>
     </ol>
   </nav>

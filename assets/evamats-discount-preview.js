@@ -83,6 +83,27 @@
         el.classList.add("hidden");
       }
     });
+    syncStickyDiscount();
+  }
+
+  function syncStickyDiscount() {
+    var savingsEl = document.querySelector("[data-evamats-savings]");
+    var stickyDiscounts = document.querySelectorAll(".evamats-sticky-card__discount");
+    if (!stickyDiscounts.length) return;
+    if (!savingsEl || savingsEl.style.display === "none" || !savingsEl.textContent.trim()) {
+      stickyDiscounts.forEach(function (stickyDiscount) {
+        stickyDiscount.textContent = "";
+        stickyDiscount.classList.add("hidden");
+      });
+      return;
+    }
+    var text = savingsEl.textContent.trim();
+    var match = text.match(/(\d+)\s*%/);
+    var badgeText = match ? match[1] + "%" : text.replace(/^-/, "");
+    stickyDiscounts.forEach(function (stickyDiscount) {
+      stickyDiscount.textContent = badgeText;
+      stickyDiscount.classList.remove("hidden");
+    });
   }
 
   function applyNoDiscount(root) {
@@ -268,6 +289,8 @@
   document.querySelectorAll("[data-evamats-discount]").forEach(function (root) {
     updateRoot(root);
   });
+
+  document.addEventListener("evamats:discount-updated", syncStickyDiscount);
 
   setTimeout(function () {
     var current = getCurrentVariantFromDom();

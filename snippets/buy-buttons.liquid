@@ -19,7 +19,7 @@
   {{ content_for_header }}
   </div> ttons', block: block, product: product, product_form_id: product_form_id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }}>
+<div{% unless skip_block_attributes %} {{ block.shopify_attributes }}{% endunless %}>
   {%- if product != blank -%}
     <product-form class="product-form">
       <div
@@ -85,11 +85,7 @@
         {{ 'date.min.js' | asset_url | script_tag }}
         
         
-        <div id="product-form__buttons--add " class="{%- unless product.tags contains 'no-mws-options' or product.template_suffix contains 'config' -%} disabled-mws {% endunless %}  product-form__buttons ">
-          {% if request.locale.iso_code == 'en'  %}
-            <div class="product__right_hand_message hide_on_outlet openPopup" data-popup="popupOverlayRightHand">{{ 'general.config.right_hand_message_short' | t }}</div>
-            <div class="product__right_hand_message show_on_outlet">🚗 This set for left-hand drive vehicle</div>
-          {% endif %}
+        <div id="product-form__buttons--add " class="{%- unless product.tags contains 'no-mws-options' or product.template_suffix contains 'config' -%} disabled-mws {% endunless %} product-form__buttons{% if config_checkout %} evamats-config-checkout__form-buttons{% endif %}">
           
 
           {%- liquid
@@ -105,14 +101,20 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if config_checkout %}evamats-config-checkout__cart{% elsif block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
             disabled
             {% endif %}
           >
             
             <div style="position: absolute; display: block; width: 100%;height: 100%;"></div>
-            <span>
+            <div class="loading-overlay__spinner hidden" aria-hidden="true">
+              <span class="loader"></span>
+            </div>
+            {%- if config_checkout -%}
+              {% render 'icon-cart' %}
+            {%- endif -%}
+            <span class="{% if config_checkout %}evamats-config-checkout__cart-label{% endif %}"{% if config_checkout %} data-add-to-cart-label{% endif %}>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
@@ -120,18 +122,15 @@
               {%- endif -%}
             </span>
 
-            <span id="mws-product_price">
-              {{ money_price }}
-            </span>
+            {%- unless config_checkout -%}
+              <span id="mws-product_price">
+                {{ money_price }}
+              </span>
 
-            {%- assign btn_variant = product.selected_or_first_available_variant -%}
-            <div class="button_price">{{ btn_variant.price | money_without_trailing_zeros }}</div>
+              {%- assign btn_variant = product.selected_or_first_available_variant -%}
+              <div class="button_price">{{ btn_variant.price | money_without_trailing_zeros }}</div>
+            {%- endunless -%}
 
-            <div class="loading-overlay__spinner hidden">
-              <span class="loader"></span>
-            <!-- <svg  aria-hidden="true"  focusable="false"  class="spinner"  viewBox="0 0 66 66"  xmlns="http://www.w3.org/2000/svg">  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg> -->
-            </div>
-          
           </button>
 
           {%- if block.settings.show_dynamic_checkout -%}
@@ -148,6 +147,13 @@
 
       {%- endform -%}
     </product-form>
+
+    {%- unless config_checkout -%}
+      {%- if request.locale.iso_code == 'en' -%}
+        <div class="product__right_hand_message hide_on_outlet openPopup" data-popup="popupOverlayRightHand">{{ 'general.config.right_hand_message_short' | t }}</div>
+        <div class="product__right_hand_message show_on_outlet">🚗 This set for left-hand drive vehicle</div>
+      {%- endif -%}
+    {%- endunless -%}
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">

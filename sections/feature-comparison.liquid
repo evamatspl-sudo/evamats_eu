@@ -15,7 +15,7 @@
     assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
 %}
 
-<section class="feature-comparison" style="
+<divclass="feature-comparison" style="
         --text-color: {{ text_color }};
         --background: {{ background }};
         --highlight-background: {{ highlight_background }};
@@ -143,7 +143,7 @@
             {% endfor %}
         </div>
     </div>
-</section>
+</div>
 
 {% schema %}
 {

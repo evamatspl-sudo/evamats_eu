@@ -1,0 +1,759 @@
+/* Figma 1710:11106 desktop cart items / 1710:10691 + 1710:10701 mobile */
+
+.evamats-cart {
+  --ec-surface: #f6f6f6;
+  --ec-radius-lg: 12px;
+  --ec-radius-media: 12px;
+  --ec-chip-border: #e9e9e9;
+  --ec-text: var(--color-text-primary, #1b1d22);
+  --ec-muted: #8090a4;
+}
+
+.evamats-cart .title-wrapper-with-link {
+  margin-bottom: 32px;
+}
+
+.evamats-cart .title-wrapper-with-link .title--primary {
+  margin: 0;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart .cart__items {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.evamats-cart__surface {
+  background: var(--ec-surface);
+  border-radius: var(--ec-radius-lg);
+  padding: 24px 18px;
+}
+
+.evamats-cart-items {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Line item --- */
+
+.evamats-cart-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  grid-template-areas:
+    'media body'
+    'media body';
+  gap: 12px 14px;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.evamats-cart-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.evamats-cart-item__media {
+  grid-area: media;
+}
+
+.evamats-cart-item__image-wrap {
+  width: 78px;
+  height: 78px;
+  border-radius: var(--ec-radius-media);
+  background: #fff;
+  overflow: hidden;
+}
+
+.evamats-cart-item__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.evamats-cart-item__body {
+  grid-area: body;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evamats-cart-item__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas: 'title price remove';
+  gap: 4px 8px;
+  align-items: start;
+}
+
+.evamats-cart-item__title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ec-text);
+}
+
+.evamats-cart-item__title:hover {
+  text-decoration: underline;
+}
+
+.evamats-cart-item__remove-wrap {
+  grid-area: remove;
+  justify-self: end;
+}
+
+.evamats-cart-item__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ec-muted);
+  cursor: pointer;
+}
+
+.evamats-cart-item__remove::before,
+.evamats-cart-item__remove::after {
+  content: none;
+}
+
+.evamats-cart-item__remove .icon-close-small {
+  width: 12px;
+  height: 13px;
+}
+
+.evamats-cart-item__price-mobile {
+  grid-area: price;
+  justify-self: end;
+}
+
+.evamats-cart-item__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.evamats-cart-item__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  min-height: 27px;
+  padding: 2px 8px 2px 2px;
+  border: 1px solid var(--ec-chip-border);
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.evamats-cart-item__chip-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.evamats-cart-item__chip-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evamats-cart-item__chip-text {
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evamats-cart-item__discounts {
+  margin: 0;
+}
+
+.evamats-cart-item__discounts:empty {
+  display: none;
+}
+
+.evamats-cart-item .cart-item__quantity-wrapper {
+  margin: 0;
+}
+
+.evamats-cart-item cart-remove-button {
+  margin: 0;
+}
+
+.evamats-cart-item__qty-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evamats-cart-item__quantity.quantity {
+  width: 100px;
+  min-height: 28px;
+  height: 28px;
+  border: 1px solid var(--ec-chip-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.evamats-cart-item__quantity .quantity__button {
+  width: 28px;
+  min-height: 28px;
+  height: 28px;
+  color: var(--ec-text);
+}
+
+.evamats-cart-item__quantity .quantity__button svg {
+  width: 12px;
+  height: 12px;
+}
+
+.evamats-cart-item__quantity .quantity__input {
+  min-height: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ec-text);
+}
+
+.evamats-cart-item__unit-price {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ec-muted);
+}
+
+/* --- Prices --- */
+
+.evamats-cart-item__prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.evamats-cart-item__prices--mobile {
+  align-items: flex-end;
+}
+
+.evamats-cart-item__price-current {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-item__price-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.evamats-cart-item__price-old {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.evamats-cart-item__price-old-value {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ec-muted);
+}
+
+.evamats-cart-item__price-old-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: #ff2741;
+}
+
+.evamats-cart-item__discount-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 14px;
+  padding: 0 6px 0 8px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  background: #ff2741;
+  border-radius: 0 2px 2px 0;
+  clip-path: polygon(6px 0, 100% 0, 100% 100%, 6px 100%, 0 50%);
+}
+
+.evamats-cart-item__aside {
+  display: none;
+}
+
+/* --- Gift / progress banner (1710:10691 / 11229) --- */
+
+.evamats-cart-gift-banner {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 16px 72px 20px 16px;
+  border-radius: var(--ec-radius-lg);
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.evamats-cart-gift-banner__text-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: calc(100% - 8px);
+  margin-bottom: 12px;
+}
+
+.evamats-cart-gift-banner__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-gift-banner__info {
+  flex-shrink: 0;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: var(--ec-muted);
+}
+
+.evamats-cart-gift-banner__info svg {
+  width: 16px;
+  height: 16px;
+}
+
+.evamats-cart-gift-banner__bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  border-radius: 30px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.evamats-cart-gift-banner__bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 30px;
+  background: var(--color-accent-red, #ff2741);
+  max-width: 100%;
+}
+
+.evamats-cart-gift-banner__gift {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 53px;
+  height: 53px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff4f6 0%, #ffe8ec 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.evamats-cart-gift-banner__gift svg {
+  width: 28px;
+  height: 28px;
+}
+
+.drawer__progress.evamats-cart-gift-banner-wrap {
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+/* --- Two-column body (Figma 1710:11107 / 1710:11244) --- */
+
+.evamats-cart__body {
+  background: var(--ec-surface);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 24px 0 48px;
+  width: 100vw;
+}
+
+.evamats-cart__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.evamats-cart__col-main {
+  min-width: 0;
+}
+
+.evamats-cart-sidebar {
+  background: #fff;
+  border-radius: var(--ec-radius-lg);
+  padding: 24px 18px 28px;
+  box-sizing: border-box;
+}
+
+.evamats-cart-sidebar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.evamats-cart-sidebar__count {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ec-muted);
+  cursor: pointer;
+}
+
+.evamats-cart-sidebar__clear-icon {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  color: var(--ec-muted);
+}
+
+.evamats-cart-sidebar__reservation {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: var(--ec-radius-lg);
+  background: var(--ec-surface);
+  box-sizing: border-box;
+}
+
+.evamats-cart-sidebar__reservation-icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__reservation-text {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__timer {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__extend {
+  margin-top: 8px;
+}
+
+.evamats-cart-sidebar__totals {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.evamats-cart-sidebar__total-label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__total-value {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+  white-space: nowrap;
+}
+
+.evamats-cart-sidebar__discounts:empty {
+  display: none;
+}
+
+.evamats-cart-sidebar__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evamats-cart-sidebar__terms {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--ec-text);
+}
+
+.evamats-cart-sidebar__message {
+  color: var(--color-1, #ff2741);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.evamats-cart-sidebar__checkout {
+  width: 100%;
+  min-height: 60px;
+  height: 60px;
+}
+
+.evamats-cart-sidebar__dynamic-checkout {
+  width: 100%;
+}
+
+.evamats-cart-sidebar__dynamic-checkout .shopify-cleanslate ul,
+.evamats-cart-sidebar__dynamic-checkout .additional-checkout-buttons ul {
+  margin: 0 !important;
+}
+
+.evamats-cart-sidebar__dynamic-checkout .shopify-cleanslate li,
+.evamats-cart-sidebar__dynamic-checkout .additional-checkout-buttons li {
+  margin: 0 !important;
+}
+
+.evamats-cart-sidebar__dynamic-checkout .shopify-cleanslate div[role='button'],
+.evamats-cart-sidebar__dynamic-checkout .additional-checkout-buttons div[role='button'] {
+  min-height: 60px !important;
+  border-radius: var(--ec-radius-lg) !important;
+}
+
+.evamats-cart-sidebar__errors:empty {
+  display: none;
+}
+
+/* --- Desktop --- */
+
+@media screen and (min-width: 750px) {
+  .evamats-cart__surface {
+    padding: 32px 24px;
+  }
+
+  .evamats-cart-item {
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    grid-template-areas: 'media body aside';
+    gap: 24px 32px;
+    align-items: start;
+    padding: 0 0 30px;
+    margin: 0 0 30px;
+  }
+
+  .evamats-cart-item__image-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .evamats-cart-item__body {
+    gap: 14px;
+  }
+
+  .evamats-cart-item__top {
+    display: block;
+  }
+
+  .evamats-cart-item__title {
+    font-size: 18px;
+    line-height: 1.35;
+    padding-right: 24px;
+  }
+
+  .evamats-cart-item__remove-wrap {
+    display: none;
+  }
+
+  .evamats-cart-item__price-mobile {
+    display: none !important;
+  }
+
+  .evamats-cart-item__chip {
+    min-height: 36px;
+    padding: 4px 16px 4px 4px;
+    border-radius: 10px;
+    gap: 8px;
+  }
+
+  .evamats-cart-item__chip-text {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .evamats-cart-item__quantity.quantity {
+    width: 131px;
+    min-height: 46px;
+    height: 46px;
+    border-radius: var(--ec-radius-lg);
+  }
+
+  .evamats-cart-item__quantity .quantity__button {
+    width: 40px;
+    min-height: 46px;
+    height: 46px;
+  }
+
+  .evamats-cart-item__quantity .quantity__button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .evamats-cart-item__quantity .quantity__input {
+    min-height: 46px;
+    height: 46px;
+    font-size: 16px;
+  }
+
+  .evamats-cart-item__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    grid-area: aside;
+    gap: 12px;
+    min-width: 96px;
+  }
+
+  .evamats-cart-item__price-current {
+    font-size: 22px;
+  }
+
+  .evamats-cart-item__price-old-value {
+    font-size: 16px;
+  }
+
+  .evamats-cart-item__discount-badge {
+    height: 18px;
+    font-size: 12px;
+    padding: 0 8px 0 10px;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  }
+
+  .evamats-cart-gift-banner {
+    padding: 20px 110px 24px 24px;
+    min-height: 97px;
+    margin-bottom: 32px;
+  }
+
+  .evamats-cart-gift-banner__text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .evamats-cart-gift-banner__gift {
+    width: 87px;
+    height: 87px;
+    right: 16px;
+  }
+
+  .evamats-cart-gift-banner__gift svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .evamats-cart__body {
+    padding: 32px 0 80px;
+  }
+
+  .evamats-cart__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 961fr) minmax(0, 480fr);
+    gap: 44px 44px;
+    align-items: start;
+  }
+
+  .evamats-cart-sidebar {
+    position: sticky;
+    top: 24px;
+    padding: 24px 30px 32px;
+  }
+
+  .evamats-cart-sidebar__count {
+    font-size: 22px;
+  }
+
+  .evamats-cart-sidebar__reservation-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .evamats-cart-sidebar__timer {
+    font-size: 20px;
+  }
+
+  .evamats-cart-sidebar__total-label {
+    font-size: 22px;
+  }
+
+  .evamats-cart-sidebar__total-value {
+    font-size: 32px;
+  }
+}

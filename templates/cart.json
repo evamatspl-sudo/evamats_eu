@@ -26,6 +26,7 @@
     },
     "cart-footer": {
       "type": "main-cart-footer",
+      "disabled": true,
       "blocks": {
         "subtotal": {
           "type": "subtotal",
@@ -46,34 +47,18 @@
         "url": ""
       }
     },
-    "21c99148-881b-43f6-b502-5781eb36f88b": {
-      "type": "featured-collection",
+    "cart-related-products": {
+      "type": "related-products-custom",
       "settings": {
-        "title": "People often buy this product",
-        "heading_size": "h2",
-        "custom_header_style": false,
-        "button_text": "",
-        "button_link": "",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "akcesoria-samochodowa",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "custom_collection": "akcesoria",
+        "heading": "More products",
+        "products_to_show": 12,
+        "card_button_label": "View product",
+        "mobile_button_label": "Select",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "1699267887e6f6e589": {
@@ -116,7 +101,7 @@
     "cart-items",
     "17006502811585db2c",
     "cart-footer",
-    "21c99148-881b-43f6-b502-5781eb36f88b",
+    "cart-related-products",
     "1699267887e6f6e589"
   ]
 }

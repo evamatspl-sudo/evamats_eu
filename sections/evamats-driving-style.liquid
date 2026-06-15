@@ -1,7 +1,7 @@
 {{ 'section-evamats-driving-style.css' | asset_url | stylesheet_tag }}
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-driving-style' %}
 
-<section id="EvamatsDrivingStyle-{{ section.id }}" class="evamats-driving-style">
+<divid="EvamatsDrivingStyle-{{ section.id }}" class="evamats-driving-style">
   <div class="evamats-driving-style__inner page-width">
     <div class="evamats-driving-style__layout">
       <div class="evamats-driving-style__media--desktop">
@@ -102,7 +102,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 {% javascript %}
   (function () {

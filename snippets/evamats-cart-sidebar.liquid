@@ -1,0 +1,82 @@
+{% comment %}
+  Cart summary sidebar — Figma 1710:11244 desktop / 1710:10859 mobile
+{% endcomment %}
+<aside class="evamats-cart-sidebar" aria-label="{{ 'sections.cart.caption' | t }}">
+  <div class="evamats-cart-sidebar__head">
+    <p class="evamats-cart-sidebar__count">
+      {{ 'sections.cart.items_in_cart_html' | t: count: cart.item_count }}
+    </p>
+    <button type="button" class="evamats-cart-sidebar__clear" data-clear-cart>
+      <span class="evamats-cart-sidebar__clear-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>{{ 'sections.cart.clear_cart' | t }}</span>
+    </button>
+  </div>
+
+  <div class="evamats-cart-sidebar__reservation">
+    <span class="evamats-cart-sidebar__reservation-icon" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M12 7V12L15.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <div class="evamats-cart-sidebar__reservation-body">
+      <p class="evamats-cart-sidebar__reservation-text">{{ 'sections.cart.reservation_sidebar_text' | t }}</p>
+      <p class="evamats-cart-sidebar__timer" id="countdown-timer" aria-live="polite">10:00</p>
+      <button id="extend-button" class="evamats-cart-sidebar__extend button" type="button" style="display:none;">
+        {{ 'sections.cart.reservation_button' | t }}
+      </button>
+    </div>
+  </div>
+
+  <div class="evamats-cart-sidebar__totals">
+    <span class="evamats-cart-sidebar__total-label">{{ 'sections.cart.headings.total' | t }}</span>
+    <span class="evamats-cart-sidebar__total-value bcpo-cart-original-total">{{ cart.total_price | money_with_currency }}</span>
+  </div>
+
+  <div id="discountMessage" class="evamats-cart-sidebar__discounts">
+    {%- if cart.cart_level_discount_applications.size > 0 -%}
+      <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+        {%- for discount in cart.cart_level_discount_applications -%}
+          <li class="discounts__discount discounts__discount--position">
+            {%- render 'icon-discount' -%}
+            {{ discount.title }}
+            (-{{ discount.total_allocated_amount | money }})
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+
+  <div class="evamats-cart-sidebar__actions">
+    <label class="evamats-cart-sidebar__terms checkbox-container">
+      {{ 'sections.application_form.privacy_text_html' | t }}
+      <input type="checkbox" id="newsletter-checkbox" required>
+      <span class="checkmark"></span>
+    </label>
+    <span class="message_text hidden">{{ 'general.config.warning_message' | t }}</span>
+    <div id="message" class="evamats-cart-sidebar__message"></div>
+
+    <button
+      type="submit"
+      id="checkout"
+      class="evamats-cart-sidebar__checkout cart__checkout-button button button_2"
+      name="checkout"
+      form="cart"
+      disabled
+    >
+      {{ 'sections.cart.checkout' | t }}
+    </button>
+
+    {%- if additional_checkout_buttons -%}
+      <div class="evamats-cart-sidebar__dynamic-checkout cart__dynamic-checkout-buttons additional-checkout-buttons">
+        {{ content_for_additional_checkout_buttons }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div id="cart-errors" class="evamats-cart-sidebar__errors"></div>
+</aside>

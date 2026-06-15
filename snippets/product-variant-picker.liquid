@@ -18,10 +18,174 @@
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
     {% if product.template_suffix contains 'config' %}
-      <div class="product__dropdown_wr  {% unless product.metafields.custom.body_type == 'corners' %}disabled{% endunless %} {% if product.metafields.custom.body_type == 'corners' %}open{% endif %}" {% unless isHeelPad %}data-dropdown="mats_set_type"{% endunless %}>
-        <div class="product__dropdown_title">{% if product.metafields.custom.body_type == 'corners' %}{{ 'general.config.select_size' | t }}:{% else %}{{ 'general.config.select_mats_type_and_set' | t }}: {% endif %}  <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}{% render 'icon-edit' %}</div>
-        <div class="product__dropdown_inner">
-    {% endif %}
+      <variant-radios
+        id="variant-radios-{{ section.id }}"
+        class="no-js-hidden"
+        data-section="{{ section.id }}"
+        data-url="{{ product.url }}"
+        {% if update_url == false %}
+          data-update-url="false"
+        {% endif %}
+        {{ block.shopify_attributes }}
+      >
+        <div class="evamats-config-intro" data-config-intro>
+          {%- for option in product.options_with_values -%}
+            {% assign optionMatsType = 'general.config.mats_type' | t %}
+            {% assign isMatsType = false %}
+            {% assign fieldsetClass = '' %}
+
+            {% if option.name contains optionMatsType or option.name == 'Mats type' %}
+              {% assign isMatsType = true %}
+              {% assign fieldsetClass = 'mats_type' %}
+            {% endif %}
+
+            {% if isMatsType %}
+              <fieldset class="js product-form__input lip__field" data-name="{{ fieldsetClass }}">
+                <legend class="form__label lip__title">
+                  <span class="form__label_text">{{ option.name }}</span>
+                  <div class="lip__title_value"></div>
+                </legend>
+                {% render 'product-variant-options', product: product, option: option, block: block %}
+              </fieldset>
+            {% endif %}
+          {%- endfor -%}
+
+          {% unless product.metafields.custom.body_type == 'corners' %}
+            {% render 'evamats-config-intro-fields', product: product, product_form_id: product_form_id, section: section %}
+          {% endunless %}
+
+          <button type="button" class="product__dropdown_button button button_5">{{ 'general.config.continue' | t }}</button>
+        </div>
+
+        <div class="product__dropdown_wr disabled" {% unless isHeelPad %}data-dropdown="mats_set_type"{% endunless %}>
+          <div class="product__dropdown_title">
+            {% if product.metafields.custom.body_type == 'corners' %}
+              {{ 'general.config.select_size' | t }}:
+            {% else %}
+              {{ 'general.config.select_mats_type_and_set' | t }}:
+            {% endif %}
+            <span class="product__dropdown_value"></span>
+            {% render 'icon-config-caret' %}{% render 'icon-edit' %}
+          </div>
+          <div class="product__dropdown_inner">
+            {%- for option in product.options_with_values -%}
+              {% assign optionMatsSet = 'general.config.mats_set' | t %}
+              {% assign optionMatsSize = 'general.config.mats_size' | t %}
+              {% assign isMatsSet = false %}
+              {% assign isMatsSize = false %}
+              {% assign fieldsetClass = '' %}
+
+              {% if option.name contains optionMatsSet or option.name == 'Mats set' %}
+                {% assign isMatsSet = true %}
+                {% assign fieldsetClass = 'mats_set' %}
+              {% endif %}
+              {% if option.name contains optionMatsSize or option.name == 'Size' %}
+                {% assign isMatsSize = true %}
+                {% assign fieldsetClass = 'mats_size' %}
+              {% endif %}
+
+              {% if isMatsSet or isMatsSize %}
+                <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}">
+                  <legend class="form__label lip__title">
+                    <span class="form__label_text">{{ option.name }}</span>
+                    <div class="lip__title_value"></div>
+                  </legend>
+                  
+                  {% render 'product-variant-options', product: product, option: option, block: block %}
+                  {% if isMatsSet %}
+                    {% assign dataPopup = 'popupOverlayTrunkMessage' %}
+                    {% assign metaBodyType = product.metafields.custom.body_type %}
+                    {% if metaBodyType == '5os' or metaBodyType == '7os' %}
+                      {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
+                    {% endif %}
+                    <div class="evamats-config-trunk-notice label_trunk openPopup hidden" data-popup="{{ dataPopup }}" role="button" tabindex="0">
+                      <span class="evamats-config-trunk-notice__icon" aria-hidden="true">{% render 'icon-attention' %}</span>
+                      <span class="evamats-config-trunk-notice__text">{{ 'general.config.label_trunk' | t }}</span>
+                    </div>
+                  {% endif %}
+                </fieldset>
+                {% if block.settings.show_discounts %}
+                  {% if option.name == 'Zestaw' %}
+                    <div class="table_options__wr">
+                      <div class="table_options__title">Uzyskaj rabat na swoje zamówienie</div>
+                      <table width="100%">
+                        <thead>
+                          <tr>
+                            <td>Rabat</td>
+                            <td>Od</td>
+                            <td>Kod</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>-5%</td>
+                            <td>500 zł</td>
+                            <td>NEWYEAR5%</td>
+                          </tr>
+                          <tr>
+                            <td>-15%</td>
+                            <td>1200 zł</td>
+                            <td>NEWYEAR15%</td>
+                          </tr>
+                          <tr>
+                            <td>-20%</td>
+                            <td>2400 zł</td>
+                            <td>NEWYEAR20%</td>
+                          </tr>
+                          <tr>
+                            <td>-25%</td>
+                            <td>3600 zł</td>
+                            <td>NEWYEAR25%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {%- endfor -%}
+
+            <button type="button" class="product__dropdown_button button button_5">{{ 'general.config.continue' | t }}</button>
+          </div>
+        </div>
+
+        {% if product.metafields.custom.outlet_options %}
+          {% assign optionName = '' %}
+          {% for item in product.metafields.custom.outlet_options.value %}
+            {% case forloop.index %}
+              {% when 1 %}
+                {% assign optionName = 'Kolor materialu' %}
+              {% when 2 %}
+                {% assign optionName = 'Trim Color' %}
+              {% when 3 %}
+                {% assign optionName = 'Ksztalt komórek' %}
+            {% endcase %}
+            <fieldset class="js product-form__input">
+              <legend class="form__label lip__title">
+                <span class="form__label_text">{{ optionName }}</span>
+              </legend>
+              <input
+                type="radio"
+                id="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}"
+                name="properties[{{ optionName }}]"
+                data-title="{{ item }}"
+                value="{{ item | escape }}"
+                form="{{ product_form_id }}"
+                checked
+              >
+              <label for="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}">
+                {{ item -}}
+                <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+              </label>
+            </fieldset>
+          {% endfor %}
+        {% endif %}
+
+        <script type="application/json">
+          {{ product.variants | json }}
+        </script>
+      </variant-radios>
+    {% else %}
           <variant-radios
             id="variant-radios-{{ section.id }}"
             class="no-js-hidden "
@@ -33,7 +197,7 @@
             {{ block.shopify_attributes }}
           >
             {%- for option in product.options_with_values -%}
-  
+
               {% assign optionMatsType = 'general.config.mats_type' | t %}
               {% assign optionMatsSet = 'general.config.mats_set' | t %}
               {% assign optionMatsSize = 'general.config.mats_size' | t %}
@@ -41,7 +205,7 @@
               {% assign isMatsSet = false %}
               {% assign isMatsSize = false %}
               {% assign fieldsetClass = '' %}
-  
+
               {% if option.name contains optionMatsType or option.name == 'Mats type' %}
                 {% assign isMatsType = true %}
                 {% assign fieldsetClass = 'mats_type' %}
@@ -56,29 +220,22 @@
               {% endif %}
               <fieldset class="js product-form__input lip__field" {% if  option.name == "Title"%} style="display: none"{% endif %} data-name="{{ fieldsetClass }}">
                 <legend class="form__label lip__title">
-                  <span class="form__label_text">{{ option.name }}</span> 
-                    <div class="lip__title_value"></div>
-                    <div class="lip__title_value"></div>
-                    {% if isMatsSet %}
-                      {%- assign mats_set_variant = product.selected_or_first_available_variant -%}
-                      <div class="option__price_wr">
-                        <div class="option__price_compare hidden"></div>
-                        <div class="option__price_regular">{{ mats_set_variant.price | money_without_trailing_zeros }}</div>
-                      </div>
-                    {% endif %}
+                  <span class="form__label_text">{{ option.name }}</span>
+                  <div class="lip__title_value"></div>
                 </legend>
+                {% if isMatsSet %}
+                  {% assign dataPopup = 'popupOverlayTrunkMessage' %}
+                  {% assign metaBodyType = product.metafields.custom.body_type %}
+                  {% if metaBodyType == '5os' or metaBodyType == '7os' %}
+                    {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
+                  {% endif %}
+                  <div class="evamats-config-trunk-notice label_trunk openPopup hidden" data-popup="{{ dataPopup }}" role="button" tabindex="0">
+                    <span class="evamats-config-trunk-notice__icon" aria-hidden="true">{% render 'icon-attention' %}</span>
+                    <span class="evamats-config-trunk-notice__text">{{ 'general.config.label_trunk' | t }}</span>
+                  </div>
+                {% endif %}
                 {% render 'product-variant-options', product: product, option: option, block: block %}
               </fieldset>
-              {% if isMatsSet  %}
-                {% assign dataPopup = 'popupOverlayTrunkMessage' %}
-                {% assign metaBodyType = product.metafields.custom.body_type %}
-                {% if metaBodyType == '5os' or metaBodyType == '7os' %}
-                  {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
-                {% endif %}
-                <div class="label_trunk openPopup hidden" data-popup="{{ dataPopup }}">{% render 'icon-attention' %} {{ 'general.config.label_trunk' | t }}</div>
-                {% unless product.type == 'Individual' %}
-                {% endunless %}
-              {% endif %} 
               {% if block.settings.show_discounts %}
                 {% if option.name == 'Zestaw' %}
                   <div class="table_options__wr">
@@ -115,10 +272,10 @@
                       </tbody>
                     </table>
                   </div>
-                {% endif %}           
+                {% endif %}
               {% endif %}
             {%- endfor -%}
-  
+
             {% if product.metafields.custom.outlet_options %}
               {% assign optionName = '' %}
               {% for item in product.metafields.custom.outlet_options.value %}
@@ -130,11 +287,11 @@
                   {% when 3 %}
                     {% assign optionName = 'Ksztalt komórek' %}
                   {% else %}
-                    
+
                 {% endcase %}
               <fieldset class="js product-form__input" >
                 <legend class="form__label lip__title">
-                  <span class="form__label_text">{{ optionName }}</span> 
+                  <span class="form__label_text">{{ optionName }}</span>
                 </legend>
                 <input
                   type="radio"
@@ -143,7 +300,7 @@
                   data-title="{{ item }}"
                   value="{{ item | escape }}"
                   form="{{ product_form_id }}"
-                  
+
                     checked
                 >
                 <label for="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}">
@@ -151,17 +308,13 @@
                   <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
                 </label>
               </fieldset>
-              
+
             {% endfor %}
             {% endif %}
             <script type="application/json">
               {{ product.variants | json }}
             </script>
           </variant-radios>
-    {% if product.template_suffix contains 'config' %}
-          <button class="product__dropdown_button button">{{'general.config.continue' | t}}</button>
-        </div>
-      </div>
     {% endif %}
   {%- else -%}
     <variant-selects

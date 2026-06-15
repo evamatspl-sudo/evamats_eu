@@ -1,0 +1,151 @@
+/* Figma 2155:10419 desktop / 1710:11761 mobile — Related products */
+/* Figma 1710:11289 desktop / 1710:11761 mobile — Cart recommended products */
+
+.evamats-related-products {
+  --erp-gap: 15px;
+  --erp-slide-width: 370px;
+}
+
+.evamats-related-products--cart .evamats-related-products__inner.page-width {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-related-products--cart .evamats-related-products__inner.page-width,
+  .evamats-related-products--cart .evamats-related-products__slider-bleed.page-width {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .evamats-related-products--cart .evamats-related-products__inner.page-width,
+  .evamats-related-products--cart .evamats-related-products__slider-bleed.page-width {
+    max-width: 1520px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.evamats-related-products__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.evamats-related-products__heading {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  max-width: none;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.evamats-related-products__header-nav {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.evamats-related-products__header-nav.is-hidden {
+  display: none;
+}
+
+.evamats-related-products__nav {
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
+  transform: none;
+}
+
+.evamats-related-products__slider-bleed {
+  position: relative;
+}
+
+.evamats-related-products__stage {
+  position: relative;
+}
+
+.evamats-related-products__swiper {
+  overflow: hidden;
+}
+
+.evamats-related-products__swiper .swiper-slide {
+  width: var(--erp-slide-width);
+  height: auto;
+}
+
+.evamats-related-products .efc-card__media {
+  background: #fff;
+}
+
+.evamats-related-products .efc-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-related-products {
+    --erp-slide-width: auto;
+  }
+
+  .evamats-related-products__header {
+    margin-bottom: 40px;
+  }
+
+  .evamats-related-products__heading {
+    font-size: 36px;
+  }
+
+  .evamats-related-products__swiper .swiper-slide {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-related-products {
+    --erp-gap: 12px;
+    --erp-slide-width: auto;
+  }
+
+  .evamats-related-products__header {
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .evamats-related-products__heading {
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .evamats-related-products__header-nav {
+    gap: 8px;
+  }
+
+  .evamats-related-products .evamats-related-products__nav.eva-slider-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .evamats-related-products .evamats-related-products__nav .eva-slider-nav__icon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .evamats-related-products__swiper .swiper-slide {
+    width: auto;
+  }
+}

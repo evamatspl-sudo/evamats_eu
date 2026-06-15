@@ -8,7 +8,7 @@
 
 {{ 'section-evamats-proven-scale-v2.css' | asset_url | stylesheet_tag }}
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-proven-scale-v2' %}
-<section
+<div
   id="EvamatsProvenScale-{{ section.id }}"
   class="evamats-proven-scale-v2"
 >
@@ -79,7 +79,7 @@
       {%- endif -%}
     </div>
   </div>
-</section>
+</div>
 
 {% comment %} styles in assets/section-evamats-proven-scale-v2.css {% endcomment %}
 

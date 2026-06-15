@@ -28,7 +28,7 @@
 -%}
 
 {%- if show_breadcrumbs_block or show_content_block -%}
-  <section
+  <div
     id="MainPageV2-{{ section.id }}"
     class="main-page-v2"
   >
@@ -45,7 +45,7 @@
         <div class="main-page-v2__content rte">{{ page.content }}</div>
       {%- endif -%}
     </div>
-  </section>
+  </div>
 {%- endif -%}
 
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}

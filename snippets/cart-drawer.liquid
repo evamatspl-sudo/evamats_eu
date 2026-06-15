@@ -77,7 +77,11 @@
           class="cart__contents cart-drawer__form"
           method="post"
         >
-          <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
+          <div id="CartDrawer-CartItems" class="drawer__contents js-contents cart-page-layout">
+            <div class="cart-page-layout__upsell">
+              {% render 'drawer_progress', section_id: 'cart-drawer' %}
+            </div>
+            <div class="cart-page-layout__items">
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
@@ -347,6 +351,7 @@
                 </table>
               </div>
             {%- endif -%}
+            </div>
             <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status"></p>
             <p id="CartDrawer-LineItemStatus" class="visually-hidden" aria-hidden="true" role="status">
               {{ 'accessibility.loading' | t }}

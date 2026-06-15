@@ -1,105 +1,327 @@
-<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-<link
-  rel="stylesheet"
-  href="{{ 'section-related-products.css' | asset_url }}"
-  media="print"
-  onload="this.media='all'"
->
+{{ 'section-evamats-featured-collection.css' | asset_url | stylesheet_tag }}
+{{ 'section-evamats-related-products.css' | asset_url | stylesheet_tag }}
+{% render 'evamats-section-padding-style', section: section, target: '.evamats-related-products' %}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-  }
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+{%- liquid  assign is_cart_template = false
+  if template.name == 'cart'
+    assign is_cart_template = true
+  endif
+
+  if is_cart_template and cart == empty
+    assign erp_skip_render = true
+  endif
+
+  assign use_collection = false
+  if section.settings.custom_collection != blank
+    assign use_collection = true
+    assign source_products = section.settings.custom_collection.products
+  elsif is_cart_template and settings.order_related_collection != blank
+    assign use_collection = true
+    assign source_products = settings.order_related_collection.products
+  endif
+
+  assign erp_products = blank
+  assign erp_slide_count = 0
+  assign erp_has_products = false
+
+  if use_collection
+    assign erp_products = source_products
+  elsif recommendations.performed and recommendations.products_count > 0
+    assign erp_products = recommendations.products
+  endif
+
+  if erp_products != blank
+    for item in erp_products limit: 50
+      if item.available != true
+        continue
+      endif
+      if item.type == 'mws_apo_generated'
+        continue
+      endif
+      assign erp_slide_count = erp_slide_count | plus: 1
+    endfor
+    if erp_slide_count > 0
+      assign erp_has_products = true
+    endif
+  endif
+
+  assign erp_show_nav = false
+  if erp_slide_count > 3
+    assign erp_show_nav = true
+  endif
+
+  unless erp_has_products
+    assign erp_skip_render = true
+  endunless
+-%}
+
+{%- if is_cart_template -%}
+  {%- style -%}
+    #shopify-section-{{ section.id }} {
+      background: #f6f6f6;
     }
-  }
-{%- endstyle -%}
-<div class="related-products-custom color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+  {%- endstyle -%}
+{%- endif -%}
 
-  {% if section.settings.custom_collection %}
-  <div class="related-products page-width  section-{{ section.id }}-padding isolate">
-    <h2 class="related-products__heading {{ section.settings.heading_size }}">
-      {{ section.settings.heading | escape }}
-    </h2>
-    <ul
-       class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down related-products__grid"
-        role="list"
-    >
-      {% for recommendation in section.settings.custom_collection.products %}
-        {% if recommendation.available %}
-          <li class="grid__item  hidden">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>          
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var allProducts = document.querySelectorAll('.related-products-custom .related-products__grid .grid__item');
-      var productArray = Array.prototype.slice.call(allProducts);
-      var shuffled = productArray.sort(function() { return 0.5 - Math.random() });
-      var selected = shuffled.slice(0, 12);
-  
-      var container = document.querySelector('.related-products-custom .related-products__grid');
-      container.innerHTML = '';
-      
-      selected.forEach(function(product) {
-        product.classList.remove('hidden')
-        container.appendChild(product);
-      });
-    });
-  </script>
-  {% else %}
-  <product-recommendations
-    class="related-products  section-{{ section.id }}-padding isolate"
-    style="margin-bottom:0px;padding-bottom:0px;"
-    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+{%- unless erp_skip_render -%}
+{%- capture related_products_inner -%}
+  <div
+    id="EvamatsRelatedProducts-{{ section.id }}"
+    class="evamats-related-products{% if is_cart_template %} evamats-related-products--cart{% endif %}"
+    data-erp-root
   >
-    {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading {{ section.settings.heading_size }}">
-        {{ section.settings.heading | escape }}
-      </h2>
-      <ul
-        style="display:flex; margin:auto; justify-content:center;border-top:0.5px solid black;"
-        class="grid product-grid product-grid grid--4-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item ">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </product-recommendations>
-  {% endif %}
-  
-</div>
+    {%- if section.settings.heading != blank or erp_has_products -%}
+      <div class="evamats-related-products__inner page-width">
+        <div class="evamats-related-products__header">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="evamats-related-products__heading section_title">{{ section.settings.heading | escape }}</h2>
+          {%- endif -%}
+          {%- if erp_show_nav -%}
+            <div class="evamats-related-products__header-nav" data-erp-header-nav>
+              {% render 'evamats-related-products-nav' %}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if use_collection -%}
+      {% render 'evamats-related-products-slider',
+        section: section,
+        products: source_products,
+        shuffle: true
+      %}
+    {%- elsif recommendations.performed and recommendations.products_count > 0 -%}
+      {% render 'evamats-related-products-slider',
+        section: section,
+        products: recommendations.products,
+        shuffle: false
+      %}
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
+
+{%- if use_collection -%}
+  <div class="related-products-custom no-js-hidden">
+    {{ related_products_inner }}
+  </div>
+{%- else -%}
+  <div class="related-products-custom no-js-hidden">
+    <product-recommendations
+      class="isolate"
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+    >
+      {{ related_products_inner }}
+    </product-recommendations>
+  </div>
+{%- endif -%}
+{%- endunless -%}
+
+<script>
+  (function () {
+    function whenSwiperReady(cb) {
+      if (typeof window.Swiper !== 'undefined') {
+        cb();
+        return;
+      }
+      if (typeof window.ensureSwiperLoaded === 'function') {
+        window.ensureSwiperLoaded(cb);
+        return;
+      }
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries += 1;
+        if (typeof window.Swiper !== 'undefined') {
+          clearInterval(timer);
+          cb();
+        } else if (tries > 80) {
+          clearInterval(timer);
+        }
+      }, 50);
+    }
+
+    function getSlidesPerView() {
+      if (window.matchMedia('(min-width: 990px)').matches) return 4;
+      if (window.matchMedia('(min-width: 750px)').matches) return 3;
+      return 2;
+    }
+
+    function updateHeaderNav(root, slideCount) {
+      var nav = root.querySelector('[data-erp-header-nav]');
+      if (!nav) return;
+      if (slideCount > getSlidesPerView()) {
+        nav.classList.remove('is-hidden');
+      } else {
+        nav.classList.add('is-hidden');
+      }
+    }
+
+    function destroyMainSwiper(root) {
+      if (root._erpSwiper && typeof root._erpSwiper.destroy === 'function') {
+        root._erpSwiper.destroy(true, true);
+        root._erpSwiper = null;
+      }
+      root.dataset.erpInit = '';
+    }
+
+    function prepareSlides(root) {
+      if (root.dataset.erpPrepared === '1') {
+        return root.querySelectorAll('[data-erp-slide]').length;
+      }
+
+      var swiperEl = root.querySelector('[data-erp-swiper]');
+      if (!swiperEl) return 0;
+
+      var wrapper = swiperEl.querySelector('.swiper-wrapper');
+      if (!wrapper) return 0;
+
+      var slides = Array.prototype.slice.call(wrapper.querySelectorAll('[data-erp-slide]'));
+      if (!slides.length) return 0;
+
+      var limit = parseInt(swiperEl.dataset.erpLimit, 10);
+      if (!limit || limit < 1) limit = slides.length;
+
+      if (swiperEl.dataset.erpShuffle === '1') {
+        slides.sort(function () {
+          return 0.5 - Math.random();
+        });
+      }
+
+      slides = slides.slice(0, limit);
+      wrapper.innerHTML = '';
+      slides.forEach(function (slide) {
+        wrapper.appendChild(slide);
+      });
+
+      root.dataset.erpPrepared = '1';
+      return slides.length;
+    }
+
+    function initMainSwiper(root) {
+      var swiperEl = root.querySelector('[data-erp-swiper]');
+      if (!swiperEl) return;
+
+      var slideCount = prepareSlides(root);
+      if (!slideCount) return;
+
+      updateHeaderNav(root, slideCount);
+
+      var prevEl = root.querySelector('.evamats-related-products__nav--prev');
+      var nextEl = root.querySelector('.evamats-related-products__nav--next');
+
+      whenSwiperReady(function () {
+        if (root.dataset.erpInit === '1') return;
+        destroyMainSwiper(root);
+        root.dataset.erpInit = '1';
+
+        var perView = getSlidesPerView();
+        updateHeaderNav(root, slideCount);
+
+        var opts = {
+          slidesPerView: 2,
+          spaceBetween: 12,
+          speed: 480,
+          watchOverflow: true,
+          breakpoints: {
+            750: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            990: {
+              slidesPerView: 4,
+              spaceBetween: 15,
+            },
+          },
+        };
+
+        if (slideCount > perView && prevEl && nextEl) {
+          opts.navigation = { prevEl: prevEl, nextEl: nextEl };
+        }
+
+        root._erpSwiper = new window.Swiper(swiperEl, opts);
+      });
+    }
+
+    function initSection(root) {
+      if (!root) return;
+      initMainSwiper(root);
+    }
+
+    function boot() {
+      document.querySelectorAll('[data-erp-root]').forEach(initSection);
+    }
+
+    function initProductRecommendations(el) {
+      if (!el || el.dataset.erpLoaded === '1' || !el.dataset.url) return;
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        if (!entries[0].isIntersecting) return;
+        obs.disconnect();
+
+        fetch(el.dataset.url)
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var html = document.createElement('div');
+            html.innerHTML = text;
+            var recommendations = html.querySelector('product-recommendations');
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              el.innerHTML = recommendations.innerHTML;
+              el.dataset.erpLoaded = '1';
+              var root = el.querySelector('[data-erp-root]');
+              if (root) initSection(root);
+            } else {
+              el.remove();
+            }
+          })
+          .catch(function () {
+            el.remove();
+          });
+      }, { rootMargin: '0px 0px 400px 0px' });
+
+      observer.observe(el);
+    }
+
+    function bootRecommendations() {
+      document.querySelectorAll('.related-products-custom product-recommendations:not([data-erp-loaded])').forEach(initProductRecommendations);
+    }
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        document.querySelectorAll('[data-erp-root]').forEach(function (root) {
+          destroyMainSwiper(root);
+          root.dataset.erpInit = '';
+          initMainSwiper(root);
+        });
+      }, 150);
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        boot();
+        bootRecommendations();
+      });
+    } else {
+      boot();
+      bootRecommendations();
+    }
+
+    document.addEventListener('shopify:section:load', function (event) {
+      var root = event.target.querySelector('[data-erp-root]');
+      if (root) initSection(root);
+      event.target.querySelectorAll('product-recommendations:not([data-erp-loaded])').forEach(initProductRecommendations);
+    });
+  })();
+</script>
 
 {% schema %}
 {
   "name": "Related product custom",
   "tag": "section",
-  "class": "section",
+  "class": "section-evamats-related-products",
   "settings": [
     {
       "type": "collection",
@@ -108,173 +330,91 @@
     },
     {
       "type": "paragraph",
-      "content": "t:sections.related-products.settings.paragraph__1.content"
+      "content": "If no collection is selected, Shopify product recommendations are used."
     },
     {
       "type": "text",
       "id": "heading",
-      "default": "You may also like",
-      "label": "t:sections.related-products.settings.heading.label"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "label": "Heading",
+      "default": "You may also like"
     },
     {
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 10,
+      "max": 12,
       "step": 1,
-      "default": 4,
-      "label": "t:sections.related-products.settings.products_to_show.label"
+      "default": 12,
+      "label": "Maximum products to show"
     },
     {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 4,
-      "label": "t:sections.related-products.settings.columns_desktop.label"
+      "type": "text",
+      "id": "card_button_label",
+      "label": "Card button label",
+      "default": "View product"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
+      "type": "text",
+      "id": "mobile_button_label",
+      "label": "Mobile card button label (legacy)",
+      "default": "Select"
     },
     {
       "type": "header",
-      "content": "t:sections.related-products.settings.header__2.content"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.related-products.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.related-products.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.related-products.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.related-products.settings.image_ratio.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_vendor.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_rating.label",
-      "info": "t:sections.related-products.settings.show_rating.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.related-products.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "default": "2",
-      "label": "t:sections.related-products.settings.columns_mobile.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.related-products.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.related-products.settings.columns_mobile.options__2.label"
-        }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Section spacing (desktop)"
     },
     {
       "type": "range",
       "id": "padding_top",
+      "label": "Padding top",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 80
     },
     {
       "type": "range",
       "id": "padding_bottom",
+      "label": "Padding bottom",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     }
   ],
   "presets": [
     {
       "name": "Related products custom"
     }
-  ]
+  ],
+  "enabled_on": {
+    "templates": ["cart", "product"]
+  }
 }
 {% endschema %}

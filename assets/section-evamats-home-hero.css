@@ -64,15 +64,10 @@
   color: #fff;
 }
 
-.evamats-home-hero__bg,
-.evamats-home-hero__overlay,
-.evamats-home-hero__foreground {
+.evamats-home-hero__bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-.evamats-home-hero__bg {
   z-index: 0;
 }
 
@@ -83,28 +78,6 @@
   object-position: center;
 }
 
-.evamats-home-hero__overlay {
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(19, 17, 18, 0.6) 32.69%, rgba(19, 17, 18, 0) 100%),
-    linear-gradient(180deg, rgba(19, 17, 18, 0.5) 0%, rgba(19, 17, 18, 0.15) 45%, rgba(12, 11, 12, 0.85) 100%);
-}
-
-.evamats-home-hero__foreground {
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding-right: 0;
-}
-
-.evamats-home-hero__foreground-image {
-  width: min(52vw, 780px);
-  height: auto;
-  max-height: 92%;
-  object-fit: contain;
-  object-position: right bottom;
-}
 
 .evamats-home-hero__inner {
   position: relative;
@@ -265,8 +238,7 @@
   height: 100%;
 }
 
-.evamats-home-hero .select-selected,
-.evamats-home-hero .selectSelected {
+.evamats-home-hero .select-selected {
   width: 100%;
   padding: 0;
   border: 0;
@@ -288,8 +260,7 @@
   font-size: 16px;
 }
 
-.evamats-home-hero .custom-select:not(.selected) .select-selected::placeholder,
-.evamats-home-hero .custom-select:not(.selected) .selectSelected::placeholder {
+.evamats-home-hero .custom-select:not(.selected) .select-selected::placeholder {
   color: #1b1d22;
   opacity: 0.5;
 }
@@ -467,8 +438,7 @@
   }
 }
 
-.evamats-home-hero__bg--mobile,
-.evamats-home-hero__foreground--mobile {
+.evamats-home-hero__bg--mobile {
   display: none;
 }
 
@@ -477,35 +447,12 @@
     min-height: 681px;
   }
 
-  .evamats-home-hero__bg--desktop,
-  .evamats-home-hero__foreground--desktop {
+  .evamats-home-hero__bg--desktop {
     display: none;
   }
 
   .evamats-home-hero__bg--mobile {
     display: block;
-  }
-
-  .evamats-home-hero__foreground--mobile {
-    display: flex;
-  }
-
-  .evamats-home-hero__overlay {
-    background:
-      linear-gradient(180deg, rgba(19, 17, 18, 0.3) 0%, rgba(19, 17, 18, 0) 18%),
-      linear-gradient(180deg, rgba(19, 17, 18, 0) 35%, rgba(12, 11, 12, 0.92) 72%);
-  }
-
-  .evamats-home-hero__foreground {
-    align-items: center;
-    justify-content: center;
-    padding-top: 84px;
-  }
-
-  .evamats-home-hero__foreground-image {
-    width: min(72vw, 320px);
-    max-height: 52%;
-    object-position: center bottom;
   }
 
   .evamats-home-hero__inner {
@@ -649,8 +596,7 @@
     height: 37px;
   }
 
-  .evamats-home-hero .filter-container .select-selected,
-  .evamats-home-hero .filter-container .selectSelected {
+  .evamats-home-hero .filter-container .select-selected {
     padding: 0;
     font-size: 15px;
     font-weight: 600;
@@ -658,8 +604,7 @@
     text-align: left;
   }
 
-  .evamats-home-hero .filter-field:not(.selected) .select-selected,
-  .evamats-home-hero .filter-field:not(.selected) .selectSelected {
+  .evamats-home-hero .filter-field:not(.selected) .select-selected {
     font-weight: 400;
   }
 

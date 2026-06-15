@@ -6,7 +6,7 @@
 %}
 
 
-<section class="hero-slider swiper page-width hero-slider--{{ section.id }}" data-time="{{ section.settings.time }}"> 
+<divclass="hero-slider swiper page-width hero-slider--{{ section.id }}" data-time="{{ section.settings.time }}"> 
   <div class="hero-slider__wrapper swiper-wrapper">
    {% for block in section.blocks %}
         {% assign bs = block.settings %}
@@ -71,7 +71,7 @@
    {% endfor %} 
     </div>
   <div class="swiper-pagination swiper-pagination--{{ section.id }}"></div>
-</section>
+</div>
 
 
 {% schema %}

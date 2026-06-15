@@ -363,7 +363,7 @@ class VariantSelects extends HTMLElement {
     const totalHTML = getSumHTML(saleHTML, upsellTotal);
     const buttonPrice = document.querySelectorAll('.product__info-wrapper .button_price');
     const optionPrice = document.querySelector('.option__price_regular');
-    const optionPriceCompare = document.querySelector('.option__price_compare');
+    const optionPriceCompareEls = document.querySelectorAll('.option__price_compare');
 
     if (stickyConfigPriceElementPrice) {
       stickyConfigPriceElementPrice.innerHTML = totalHTML;
@@ -378,7 +378,7 @@ class VariantSelects extends HTMLElement {
     if (optionPrice) {
       optionPrice.innerHTML = saleHTML;
     }
-    if (optionPriceCompare) {
+    if (optionPriceCompareEls.length) {
       let fullPriceHTML = compareHTML;
 
       if (!fullPriceHTML && this.currentVariant?.price) {
@@ -389,18 +389,22 @@ class VariantSelects extends HTMLElement {
         }
       }
 
-      if (fullPriceHTML) {
-        optionPriceCompare.classList.remove('hidden');
-        optionPriceCompare.innerHTML = fullPriceHTML;
-        optionPrice?.classList.add('option__price_regular--sale');
-      } else {
-        optionPriceCompare.classList.add('hidden');
-        optionPriceCompare.innerHTML = '';
-        optionPrice?.classList.remove('option__price_regular--sale');
-      }
+      optionPriceCompareEls.forEach((optionPriceCompare) => {
+        if (fullPriceHTML) {
+          optionPriceCompare.classList.remove('hidden');
+          optionPriceCompare.innerHTML = fullPriceHTML;
+          optionPrice?.classList.add('option__price_regular--sale');
+        } else {
+          optionPriceCompare.classList.add('hidden');
+          optionPriceCompare.innerHTML = '';
+          optionPrice?.classList.remove('option__price_regular--sale');
+        }
+      });
     }
 
-    if (stickyConfigPriceElement) {
+    document.dispatchEvent(new CustomEvent('evamats:discount-updated'));
+
+    if (stickyConfigPriceElement && !stickyConfigPriceElement.closest('.evamats-config')) {
       stickyConfigPriceElement.removeAttribute('style');
       stickyConfigPriceElement.style.width = stickyConfigPriceElement.offsetWidth + 1 + 'px';
     }
@@ -506,9 +510,14 @@ class VariantRadios extends VariantSelects {
   }
 
   updateOptions() {
-    const fieldsets = Array.from(this.querySelectorAll('fieldset'));
+    const fieldsets = Array.from(this.querySelectorAll('fieldset')).filter((fieldset) => {
+      return fieldset.querySelector('input[type="radio"]:not([name^="properties["])');
+    });
     this.options = fieldsets.map((fieldset) => {
-      return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
+      const checked = Array.from(
+        fieldset.querySelectorAll('input[type="radio"]:not([name^="properties["])')
+      ).find((radio) => radio.checked);
+      return checked ? checked.value : undefined;
     });
   }
 }
@@ -572,48 +581,52 @@ customElements.define('variant-radios', VariantRadios);
 
 // toggle galleries on change mats type inputs
 (function () {
-    const thumbnailItems = document.querySelectorAll('.thumbnail-slider')
-    // thumbnailItems.forEach((el) => {
-    //   el.querySelector('.thumbnail').click()
-    //   el.closest('media-gallery').classList.add('show')
-    // })
-    const radioButtons = document.querySelectorAll('product-info fieldset[data-name="mats_type"] input');
-    if (radioButtons) {
+    function initMatsTypeGalleryToggle() {
+      const radioButtons = document.querySelectorAll('fieldset[data-name="mats_type"] input[type="radio"]');
       const mediaGalleryWithoutEdges = document.querySelector('.product__media_without_edges');
       const mediaGalleryWithEdges = document.querySelector('.product__media_with_edges');
 
+      if (!radioButtons.length || !mediaGalleryWithoutEdges || !mediaGalleryWithEdges) return;
+
       const clickSecondImage = (index) => {
-        if (index === 1) {
-          mediaGalleryWithoutEdges.querySelectorAll('.thumbnail')[1].click()
+        const gallery = Number(index) === 1 ? mediaGalleryWithoutEdges : mediaGalleryWithEdges;
+        const thumbnail = gallery.querySelectorAll('.thumbnail')[1];
+        if (thumbnail) thumbnail.click();
+      };
+
+      const applyMatsTypeGallery = (index, selectSecondSlide) => {
+        const idx = Number(index);
+        if (idx === 1) {
+          mediaGalleryWithoutEdges.classList.add('active');
+          mediaGalleryWithEdges.classList.remove('active');
+        } else if (idx === 2) {
+          mediaGalleryWithoutEdges.classList.remove('active');
+          mediaGalleryWithEdges.classList.add('active');
+        } else {
+          return;
         }
-        if (index === 2) {
-          mediaGalleryWithEdges.querySelectorAll('.thumbnail')[1].click()
+
+        if (selectSecondSlide) {
+          requestAnimationFrame(() => clickSecondImage(idx));
         }
-      }
-  
+      };
+
       radioButtons.forEach((radio) => {
-        if (radio.checked && radio.dataset.index === 1) {
-          mediaGalleryWithoutEdges.classList.add('active')
-          mediaGalleryWithEdges.classList.remove('active')
-        } else if (radio.checked && radio.dataset.index === 2) {
-          mediaGalleryWithoutEdges.classList.remove('active')
-          mediaGalleryWithEdges.classList.add('active')
-        }
-        radio.addEventListener("change", function () {
-          const index = this.dataset.index;
-          if (index == 1) {
-            mediaGalleryWithoutEdges.classList.add('active')
-            mediaGalleryWithEdges.classList.remove('active')
-            clickSecondImage(index)
-  
-          } else if (index == 2) {
-            mediaGalleryWithoutEdges.classList.remove('active')
-            mediaGalleryWithEdges.classList.add('active')
-            clickSecondImage(index)
-          }
-  
+        radio.addEventListener('change', function () {
+          applyMatsTypeGallery(this.dataset.index, true);
         });
       });
+
+      const checkedRadio = document.querySelector('fieldset[data-name="mats_type"] input[type="radio"]:checked');
+      if (checkedRadio) {
+        applyMatsTypeGallery(checkedRadio.dataset.index, true);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMatsTypeGalleryToggle);
+    } else {
+      initMatsTypeGalleryToggle();
     }
   })();
 // toggle size product config mobile
@@ -664,6 +677,8 @@ customElements.define('variant-radios', VariantRadios);
 
 // product sticky price
 (function () {
+  if (document.querySelector('[data-evamats-config-step-bar]')) return;
+
   const mainPriceElement = document.querySelector('.main_price');
   const stickyConfigPriceElement = document.querySelector('.sticky_container');
 
@@ -682,7 +697,9 @@ customElements.define('variant-radios', VariantRadios);
       });
       
       window.addEventListener('load', () => {
-          stickyConfigPriceElement.style.width = stickyConfigPriceElement.offsetWidth + 1 + 'px'
+          if (!stickyConfigPriceElement.closest('.evamats-config')) {
+            stickyConfigPriceElement.style.width = stickyConfigPriceElement.offsetWidth + 1 + 'px';
+          }
       })
       
       // Начинаем наблюдение за основным элементом
@@ -720,23 +737,29 @@ customElements.define('variant-radios', VariantRadios);
 // product tabs
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".product_tabs__item");
-    const containers = document.querySelectorAll(".product_tabs__containers_item");
+    const root = document.querySelector(".evamats-product-tabs");
+    if (!root) return;
+
+    const tabs = root.querySelectorAll(".product_tabs__item");
+    const containers = root.querySelectorAll(".product_tabs__containers_item");
     const descriptionSections = document.querySelectorAll(".image-with-text--description");
 
     function switchTab(activeId) {
-        // Убираем активные классы
-        tabs.forEach(tab => tab.classList.remove("active"));
+        tabs.forEach(tab => {
+          tab.classList.remove("active");
+          tab.setAttribute("aria-selected", "false");
+        });
         containers.forEach(container => container.classList.remove("active"));
 
-        // Назначаем активный таб и контейнер
-        const activeTab = document.querySelector(`.product_tabs__item[data-id="${activeId}"]`);
-        const activeContainer = document.querySelector(`.product_tabs__containers_item[data-id="${activeId}"]`);
+        const activeTab = root.querySelector(`.product_tabs__item[data-id="${activeId}"]`);
+        const activeContainer = root.querySelector(`.product_tabs__containers_item[data-id="${activeId}"]`);
 
-        if (activeTab) activeTab.classList.add("active");
+        if (activeTab) {
+          activeTab.classList.add("active");
+          activeTab.setAttribute("aria-selected", "true");
+        }
         if (activeContainer) activeContainer.classList.add("active");
 
-        // Показываем или скрываем .image-with-text--description
         descriptionSections.forEach(section => {
             if (activeId === "description") {
                 section.style.display = "";
@@ -746,7 +769,6 @@ customElements.define('variant-radios', VariantRadios);
         });
     }
 
-    // Назначаем обработчики кликов
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
             const id = tab.getAttribute("data-id");
@@ -754,7 +776,6 @@ customElements.define('variant-radios', VariantRadios);
         });
     });
 
-    // Инициализация по умолчанию
     const firstTab = tabs[0];
     if (firstTab) {
         const id = firstTab.getAttribute("data-id");

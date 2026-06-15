@@ -1,0 +1,46 @@
+{%- comment -%}
+  Mobile mat preview popup — Figma 1710:26297 (Selector-popup)
+{%- endcomment -%}
+<div class="product__config_image product__config_image--main product__config_image--mobile evamats-config-preview">
+  <button type="button" class="product__config_image_remove_fixed evamats-config-preview__toggle" aria-label="{{ 'accessibility.close' | t }}">
+    {% render 'icon-close' %}
+    <div class="hidden_state">
+      {{ 'general.config.preview_badge' | t }}
+      {% render 'icon-eye' %}
+    </div>
+  </button>
+
+  <div class="evamats-config-preview__panel">
+    {%- if product_title != blank -%}
+      <p class="evamats-config-preview__title">{{ product_title }}</p>
+    {%- endif -%}
+
+    <div class="evamats-config-preview__chips">
+      <div class="evamats-config-preview__chip" data-name="mats_set" hidden></div>
+      <div class="evamats-config-preview__chip" data-name="mats_type" hidden></div>
+      <div class="evamats-config-preview__chip" data-type="matPattern" hidden></div>
+      <div class="evamats-config-preview__chip" data-type="matColor" hidden></div>
+      <div class="evamats-config-preview__chip" data-type="trimColor" data-chip-label="{{ 'general.config.trim_color' | t }}" hidden></div>
+    </div>
+
+    <div class="evamats-config-preview__stage">
+      <div class="evamats-config-preview__swatches">
+        <div class="evamats-config-preview__swatch" data-type="matPattern" hidden></div>
+        <div class="evamats-config-preview__swatch" data-type="trimColor" hidden></div>
+      </div>
+      <img
+        src="{{ '1x1_000000.webp' | file_url }}"
+        alt=""
+        class="product__config_image--mobile_image evamats-config-preview__image"
+        width="600"
+        height="600"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="evamats-config-preview__note lip__comment openPopup" data-popup="popupOverlayLipComment">
+      *{{ 'general.config.comment' | t }}
+      <span class="lip__comment_icon">{% render 'icon-info' %}</span>
+    </div>
+  </div>
+</div>

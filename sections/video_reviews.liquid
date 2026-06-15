@@ -2,8 +2,8 @@
 {% render 'evamats-section-padding-style', section: section, target: '.video_reviews' %}
 
 <div class="video_reviews">
-  <div class="page-width">
-    <div class="video_reviews__content">
+    <div class="page-width">
+        <div class="video_reviews__content">
       <div class="video_reviews__head">
         <h2 class="title video_reviews__title">
           {%- if section.settings.title != blank -%}
@@ -102,9 +102,9 @@
         </button>
 
       <div class="video_reviews__slider-grid__track">
-        <div class="video_reviews__container video_reviews__container_slider swiper">
-          <div class="swiper-wrapper">
-            {% for block in section.blocks %}
+                <div class="video_reviews__container video_reviews__container_slider swiper">
+                    <div class="swiper-wrapper">
+                        {% for block in section.blocks %}
               <div class="video_reviews__item swiper-slide" {{ block.shopify_attributes }}>
                 {%- assign poster_url = block.settings.cover_image | default: block.settings.video.preview_image -%}
                 <video
@@ -117,11 +117,11 @@
                   playsinline
                   preload="metadata"
                 ></video>
-              </div>
-            {% endfor %}
-          </div>
+                            </div>                        
+                        {% endfor %}
+                    </div>
         </div>
-      </div>
+                </div>
 
         <button
           type="button"
@@ -134,13 +134,13 @@
             </svg>
           </span>
         </button>
-    </div>
-  </div>
+            </div>
+        </div>
 
-    <div class="video_reviews__container_full swiper">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="video_reviews__item swiper-slide">
+        <div class="video_reviews__container_full swiper">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="video_reviews__item swiper-slide">
             <video
               data-src="{{ block.settings.video.sources[1].url }}"
               controls
@@ -148,21 +148,21 @@
               playsinline
               preload="metadata"
             ></video>
-          </div>
-        {% endfor %}
-      </div>
+                    </div>                        
+                {% endfor %}
+            </div>
 
-      <div class="close">{% render 'icon-close' %}</div>
+            <div class="close">{% render 'icon-close' %}</div>
     </div>
 </div>
-
+ 
 {% schema %}
-{
-  "name": "Video reviews",
-  "settings": [
     {
-      "type": "text",
-      "id": "title",
+        "name": "Video reviews",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
       "label": "Title (first line)"
     },
     {
@@ -247,31 +247,31 @@
       "step": 4,
       "unit": "px",
       "default": 28
-    }
-  ],
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Item",
-      "settings": [
-        {
-          "type": "video",
-          "id": "video",
-          "label": "Video"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "item",
+                "name": "Item",
+                "settings": [
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "Video"
         },
         {
           "type": "image_picker",
           "id": "cover_image",
           "label": "Poster (optional)",
           "info": "If not set, video preview frame is used"
-        }
-      ]
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Video reviews"
+            }
+        ]
     }
-  ],
-  "presets": [
-    {
-      "name": "Video reviews"
-    }
-  ]
-}
 {% endschema %}

@@ -15,6 +15,7 @@
     - media_fit: {String} Method ("contain" or "cover") to fit image into container
     - media_width: {Float} The width percentage that the media column occupies on desktop.
     - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+    - hide_media_icon: {Boolean} Hide zoom/play overlay icon (EvaMats gallery)
 
     Usage:
     {% render 'product-thumbnail',
@@ -40,7 +41,7 @@
     assign mobile_columns = 2
   endif
 
-  if media.media_type == 'image'
+  if media.media_type == 'image' and hide_media_icon != true
     assign image_class = 'image-magnify-' | append: section.settings.image_zoom
   endif
 -%}
@@ -78,18 +79,20 @@
   </noscript>
 
   <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
-    <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}" aria-hidden="true">
-      {%- liquid
-        case media.media_type
-        when 'video' or 'external_video'
-          render 'icon-play'
-        when 'model'
-          render 'icon-3d-model'
-        else
-          render 'icon-zoom'
-        endcase
-      -%}
-    </span>
+    {%- unless hide_media_icon -%}
+      <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}" aria-hidden="true">
+        {%- liquid
+          case media.media_type
+          when 'video' or 'external_video'
+            render 'icon-play'
+          when 'model'
+            render 'icon-3d-model'
+          else
+            render 'icon-zoom'
+          endcase
+        -%}
+      </span>
+    {%- endunless -%}
     <div class="product__media media media--transparent">
       {{ media.preview_image | image_url: width: 1946 | image_tag:
         class: image_class,
@@ -100,7 +103,7 @@
         title: media.alt
       }}
     </div>
-    <button class="product__media-toggle quick-add-hidden product__media-zoom-{{ section.settings.image_zoom }}" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
+    <button class="product__media-toggle quick-add-hidden product__media-zoom-{% if hide_media_icon %}none{% else %}{{ section.settings.image_zoom }}{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
       <span class="visually-hidden">
         {{ 'products.product.media.open_media' | t: index: position }}
       </span>

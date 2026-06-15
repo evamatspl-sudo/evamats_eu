@@ -40,7 +40,7 @@
 -%}
 
 {%- if collection != blank and visible_collections_count > 0 -%}
-  <section
+  <div
     id="EvamatsPopularModels-{{ section.id }}"
     class="evamats-popular-models page-width{% if section.settings.margin_bottom %} evamats-popular-models--margin-bottom{% endif %}"
   >
@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 {%- endif -%}
 
 {% schema %}

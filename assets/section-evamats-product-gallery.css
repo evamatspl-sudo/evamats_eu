@@ -1,0 +1,495 @@
+/* Thumbnails left on desktop. Do NOT set position on .evamats-product-gallery — breaks sticky. */
+
+.product__media-wrapper:has(.evamats-product-gallery) {
+  position: relative;
+}
+
+.evamats-product-gallery__badge {
+  position: absolute;
+  z-index: 4;
+  top: 11px;
+  right: 0px;
+  width: 77px;
+  height: 77px;
+  pointer-events: none;
+}
+
+.evamats-product-gallery__badge-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.evamats-product-gallery__disclaimer {
+  margin: 12px 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  color: #8090a4;
+}
+
+.evamats-product-gallery__disclaimer-mark {
+  color: #ff2741;
+}
+
+.evamats-product-gallery__disclaimer-text {
+  color: inherit;
+}
+
+.evamats-product-gallery .slider-counter:not(.evamats-product-gallery__dots) {
+  display: none;
+}
+
+.evamats-product-gallery .evamats-product-gallery__dots {
+  display: none;
+}
+
+.evamats-product-gallery .evamats-product-gallery__arrow .icon {
+  display: none;
+}
+
+.evamats-product-gallery .evamats-product-gallery__arrow {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #1b1d22;
+  background: transparent;
+  transition: color 0.2s ease;
+}
+
+.evamats-product-gallery .evamats-slider-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evamats-product-gallery .evamats-slider-arrow svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.evamats-product-gallery .evamats-product-gallery__arrow:not([disabled]):hover,
+.evamats-product-gallery .evamats-product-gallery__arrow:not([disabled]):active {
+  color: #ff2741;
+}
+
+.evamats-product-gallery .evamats-product-gallery__arrow[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Main viewer: arrows beside image, not on top */
+.evamats-product-gallery slider-component:not(.thumbnail-slider) {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 22px;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.evamats-product-gallery slider-component:not(.thumbnail-slider) > .product__media-list {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.evamats-product-gallery slider-component:not(.thumbnail-slider) > .slider-buttons {
+  display: contents;
+}
+
+.evamats-product-gallery slider-component:not(.thumbnail-slider) .slider-button--prev {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.evamats-product-gallery slider-component:not(.thumbnail-slider) .slider-button--next {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.evamats-product-gallery .product__media-icon {
+  display: none !important;
+}
+
+.evamats-product-gallery .product__modal-opener--image .product__media-toggle:hover {
+  cursor: default;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-product-gallery__disclaimer {
+    display: none;
+  }
+
+  .evamats-product-gallery .thumbnail-slider {
+    display: none !important;
+  }
+
+  .evamats-product-gallery .slider-buttons.small-hide {
+    display: contents !important;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) {
+    box-sizing: border-box;
+    max-width: 359px;
+    margin: 0 auto;
+    padding: 0 8px;
+    grid-template-columns: 27px 237px 27px;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    column-gap: 26px;
+    row-gap: 16px;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) > .product__media-list {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 237px;
+    min-width: 237px;
+    max-width: 237px;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) > .product__media-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .evamats-product-gallery .product__media-list.slider--mobile {
+    margin-bottom: 0;
+  }
+
+  .evamats-product-gallery .product__media-list.slider--mobile::after {
+    content: none;
+    display: none;
+    width: 0;
+    padding: 0;
+  }
+
+  .evamats-product-gallery .grid--peek.slider--mobile {
+    margin: 0;
+    width: 237px;
+  }
+
+  .evamats-product-gallery .grid--peek.slider--mobile .grid__item:first-of-type {
+    margin-left: 0;
+  }
+
+  .evamats-product-gallery .grid--peek.slider--mobile .grid__item,
+  .evamats-product-gallery .product__media-list.grid--peek .product__media-item {
+    min-width: 237px;
+  }
+
+  .evamats-product-gallery .product__media-item {
+    flex: 0 0 237px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 237px;
+    min-width: 237px;
+    max-width: 237px;
+    margin: 0 !important;
+    padding: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .evamats-product-gallery .product__media-list .product__media-item.slider__slide {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) .slider-button--prev {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) .slider-button--next {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) .evamats-product-gallery__dots {
+    display: flex !important;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .evamats-product-gallery slider-component:not(.thumbnail-slider) .evamats-product-gallery__dots::-webkit-scrollbar {
+    display: none;
+  }
+
+  .evamats-product-gallery .evamats-product-gallery__dots .slider-counter__link {
+    flex: 0 0 auto;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+  }
+
+  .evamats-product-gallery .evamats-product-gallery__dots .slider-counter__link--dots .dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 0;
+    padding: 0;
+    background: rgba(128, 144, 164, 0.5);
+    transition: width 0.2s ease, height 0.2s ease, border-radius 0.2s ease, background-color 0.2s ease;
+  }
+
+  .evamats-product-gallery .evamats-product-gallery__dots .slider-counter__link--active.slider-counter__link--dots .dot {
+    background: #ff2741;
+  }
+
+  .evamats-product-gallery .product__media-list .product__media-item .product__modal-opener,
+  .evamats-product-gallery .product__media-list .product__media-item .media {
+    width: 100%;
+  }
+
+  .evamats-product-gallery .product__media-list .media {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-product-gallery__badge {
+    top: 8px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .evamats-product-gallery .product__media_without_edges.active,
+  .evamats-product-gallery .product__media_with_edges.active,
+  .evamats-product-gallery > media-gallery:not(.product__media_without_edges):not(.product__media_with_edges) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .evamats-product-gallery .product__media_without_edges.active > slider-component:not(.thumbnail-slider),
+  .evamats-product-gallery .product__media_with_edges.active > slider-component:not(.thumbnail-slider),
+  .evamats-product-gallery > media-gallery:not(.product__media_without_edges):not(.product__media_with_edges) > slider-component:not(.thumbnail-slider) {
+    order: 2;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .evamats-product-gallery .product__media_without_edges.active > .thumbnail-slider,
+  .evamats-product-gallery .product__media_with_edges.active > .thumbnail-slider,
+  .evamats-product-gallery > media-gallery:not(.product__media_without_edges):not(.product__media_with_edges) > .thumbnail-slider {
+    order: 1;
+    flex: 0 0 88px;
+    width: 88px;
+    max-height: 540px;
+    overflow: visible;
+  }
+
+  .evamats-product-gallery .product__media_without_edges.active > .product__xr-button,
+  .evamats-product-gallery .product__media_with_edges.active > .product__xr-button {
+    order: 3;
+    flex: 1 1 100%;
+  }
+
+  .evamats-product-gallery .thumbnail-slider .slider-button {
+    display: none !important;
+  }
+
+  .evamats-product-gallery .slider--mobile + .slider-buttons {
+    display: contents !important;
+  }
+
+  .evamats-product-gallery .product__media-wrapper .slider-mobile-gutter .slider-button,
+  .evamats-product-gallery .product__media-wrapper .slider-mobile-gutter .evamats-product-gallery__arrow {
+    display: flex !important;
+  }
+
+  .evamats-product-gallery .thumbnail-list,
+  .evamats-product-gallery .thumbnail-list.slider,
+  .evamats-product-gallery .thumbnail-list.slider--tablet-up {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 12px;
+    box-sizing: border-box;
+    width: 88px !important;
+    max-width: 88px;
+    max-height: 540px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(128, 144, 164, 0.5) transparent;
+  }
+
+  .evamats-product-gallery .thumbnail-list::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .evamats-product-gallery .thumbnail-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .evamats-product-gallery .thumbnail-list::-webkit-scrollbar-thumb {
+    background: rgba(128, 144, 164, 0.5);
+    border-radius: 1px;
+  }
+
+  .evamats-product-gallery .thumbnail-list__item.slider__slide {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+    max-width: 80px !important;
+    height: 80px !important;
+    margin: 0 !important;
+  }
+
+  .evamats-product-gallery .thumbnail-list__item::before {
+    display: none;
+  }
+
+  .evamats-product-gallery .thumbnail {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .evamats-product-gallery .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .evamats-product-gallery .thumbnail[aria-current] {
+    border: 2px solid #ff2741;
+    background: #f6f6f6;
+  }
+
+  .evamats-product-gallery .product__media-list .media {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .evamats-product-gallery .product__media-list .product__media-item:not(.is-active) {
+    display: none;
+  }
+
+  .evamats-product-gallery .product__media-list .product__media-item.is-active {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .evamats-product-gallery .product-media-container,
+  .evamats-product-gallery .product-media-container.constrain-height.media-fit-contain {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .evamats-product-gallery .product-media-container .product__modal-opener,
+  .evamats-product-gallery .product-media-container .media {
+    width: 100%;
+  }
+
+  .evamats-product-gallery .product-media-container .media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product--thumbnail_slider .evamats-product-gallery__disclaimer,
+  .product--thumbnail .evamats-product-gallery__disclaimer {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-config .evamats-product-gallery__badge {
+    width: 84px;
+    height: 84px;
+  }
+
+  .evamats-config .evamats-product-gallery .product__media_without_edges.active,
+  .evamats-config .evamats-product-gallery .product__media_with_edges.active,
+  .evamats-config .evamats-product-gallery > media-gallery:not(.product__media_without_edges):not(.product__media_with_edges) {
+    gap: 20px;
+  }
+
+  .evamats-config .evamats-product-gallery .product__media_without_edges.active > .thumbnail-slider,
+  .evamats-config .evamats-product-gallery .product__media_with_edges.active > .thumbnail-slider,
+  .evamats-config .evamats-product-gallery > media-gallery:not(.product__media_without_edges):not(.product__media_with_edges) > .thumbnail-slider {
+    flex: 0 0 72px;
+    width: 72px;
+    max-height: min(420px, 50vh);
+  }
+
+  .evamats-config .evamats-product-gallery .thumbnail-list,
+  .evamats-config .evamats-product-gallery .thumbnail-list.slider,
+  .evamats-config .evamats-product-gallery .thumbnail-list.slider--tablet-up {
+    width: 72px !important;
+    max-width: 72px;
+    max-height: min(420px, 50vh);
+    gap: 10px;
+  }
+
+  .evamats-config .evamats-product-gallery .thumbnail-list__item.slider__slide {
+    flex: 0 0 64px !important;
+    width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+  }
+
+  .evamats-config .evamats-product-gallery .thumbnail {
+    width: 64px;
+    height: 64px;
+  }
+
+  .evamats-config .evamats-product-gallery slider-component:not(.thumbnail-slider) {
+    column-gap: 12px;
+  }
+
+  .evamats-config.product--thumbnail_slider .evamats-product-gallery__disclaimer,
+  .evamats-config.product--thumbnail .evamats-product-gallery__disclaimer {
+    margin-left: 92px;
+  }
+}

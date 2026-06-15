@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "config": {
@@ -66,6 +75,7 @@
       "label_trunk": "Achtung – Kofferraummatte",
       "select_shape_and_colors": "Form und Farben auswählen",
       "select_heels": "Fersenpolster (optional)",
+      "select_heels_optional": "(optional)",
       "reset": "Zurücksetzen",
       "buy_now": "Jetzt kaufen",
       "gallery_body_type": "Körperform auswählen",

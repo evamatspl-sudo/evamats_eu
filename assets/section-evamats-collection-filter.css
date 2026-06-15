@@ -119,8 +119,7 @@
   margin-bottom: 2px;
 }
 
-.evamats-collection-product-grid .filter-container--collection .select-selected,
-.evamats-collection-product-grid .filter-container--collection .selectSelected {
+.evamats-collection-product-grid .filter-container--collection .select-selected {
   width: 100%;
   padding: 0;
   border: 0;
@@ -134,21 +133,18 @@
   cursor: pointer;
 }
 
-.evamats-collection-product-grid .filter-container--collection .filter-field.selected .select-selected,
-.evamats-collection-product-grid .filter-container--collection .filter-field.selected .selectSelected {
+.evamats-collection-product-grid .filter-container--collection .filter-field.selected .select-selected {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
 }
 
-.evamats-collection-product-grid .filter-container--collection .custom-select:not(.selected) .select-selected::placeholder,
-.evamats-collection-product-grid .filter-container--collection .custom-select:not(.selected) .selectSelected::placeholder {
+.evamats-collection-product-grid .filter-container--collection .custom-select:not(.selected) .select-selected::placeholder {
   color: #1b1d22;
   opacity: 1;
 }
 
-.evamats-collection-product-grid .filter-container--collection .select-selected[disabled],
-.evamats-collection-product-grid .filter-container--collection .selectSelected[disabled] {
+.evamats-collection-product-grid .filter-container--collection .select-selected[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }

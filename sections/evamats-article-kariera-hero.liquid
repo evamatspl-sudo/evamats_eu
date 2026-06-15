@@ -26,7 +26,7 @@
 {%- endunless -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-article-kariera-hero' %}
-<section
+<div
   id="EvamatsArticleKarieraHero-{{ section.id }}"
   class="evamats-article-kariera-hero"
   style="--akh-aside-top: calc(var(--header-height, 0px) + 24px);"
@@ -130,7 +130,7 @@
       {%- endif -%}
     </div>
   </div>
-</section>
+</div>
 
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
 

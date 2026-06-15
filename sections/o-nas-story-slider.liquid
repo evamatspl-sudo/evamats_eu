@@ -65,7 +65,7 @@
   assign logo_sizes = '(max-width: 749px) ' | append: logo_max_w_mobile | append: 'px, ' | append: logo_max_w | append: 'px'
 -%}
 
-<section
+<div
   id="ONasStory-{{ section.id }}"
   class="o-nas-story{% if bg_is_banner %} o-nas-story--banner{% endif %}"
   data-ons-story-root
@@ -255,7 +255,7 @@
       <p class="o-nas-story__empty">Add one or more “Slide” blocks in the theme editor.</p>
     </div>
   {%- endif -%}
-</section>
+</div>
 
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
 

@@ -1,6 +1,6 @@
 {%- comment -%}
   Bestseller product card — Figma 1710:32972 desktop / 1710:32145 mobile
-  Accepts: card_product, section_id, lazy_load (bool), mobile_button_label
+  Accepts: card_product, section_id, lazy_load (bool), mobile_button_label, link_to_product (bool), card_button_label
 {%- endcomment -%}
 {%- if card_product and card_product != empty -%}
 
@@ -40,6 +40,15 @@
     assign efc_cta_desktop = 'products.product.choose_color_and_mats_set' | t
   endif
   assign efc_cta_mobile = mobile_button_label | default: 'Select'
+
+  if link_to_product
+    if card_button_label != blank
+      assign efc_cta_desktop = card_button_label
+    else
+      assign efc_cta_desktop = 'sections.evamats_related_products.view_product' | t
+    endif
+    assign efc_cta_mobile = efc_cta_desktop
+  endif
 -%}
 
 <article class="efc-card">
@@ -89,8 +98,9 @@
     </div>
 
     <div class="efc-card__actions">
-      {%- if needs_options or variant.available == false -%}
-        <a href="{{ card_product.url }}" class="button button_5">
+      {%- if link_to_product or needs_options or variant.available == false -%}
+        <a href="{{ card_product.url }}" class="button button_6">
+          <span class="button__icon">{% render 'evamats-button-cart-icon' %}</span>
           <span class="efc-card__cta-label efc-card__cta-label--desktop">{{ efc_cta_desktop | escape }}</span>
           <span class="efc-card__cta-label efc-card__cta-label--mobile">{{ efc_cta_mobile | escape }}</span>
         </a>

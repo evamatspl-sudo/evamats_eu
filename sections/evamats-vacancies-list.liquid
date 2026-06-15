@@ -36,7 +36,7 @@
 -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-vacancies-list' %}
-<section
+<div
   id="EvamatsVacanciesList-{{ section.id }}"
   class="evamats-vacancies-list"
   data-evamats-vacancies-list
@@ -191,7 +191,7 @@
       {{ section.settings.load_more_label | escape }}
     </button>
   </div>
-</section>
+</div>
 
 <script>
   (function () {

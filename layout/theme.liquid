@@ -54,6 +54,9 @@
     {%- if template.name == 'cart' or settings.cart_type == 'drawer' -%}
       {%- comment -%} Swiper .swiper-slide { width: 100% } wins until component-cart loads — prevents overlap FOUC. {%- endcomment -%}
       <style id="cart-upsell-swiper-layout">
+        .drawer__progress_products-block {
+          container-type: inline-size;
+        }
         .drawer__progress_products .swiper-wrapper {
           display: flex;
           box-sizing: border-box;
@@ -62,11 +65,12 @@
         .drawer__progress_products .swiper-slide {
           flex-shrink: 0;
           box-sizing: border-box;
-          width: 280px;
-          max-width: min(280px, calc(100vw - 7rem));
-          padding: 0 8px;
+          width: 261px;
           height: auto;
           align-self: stretch !important;
+        }
+        @container (min-width: 750px) {
+          .drawer__progress_products .swiper-slide { width: 466px !important; max-width: none; }
         }
       </style>
     {%- endif -%}
@@ -75,6 +79,7 @@
       <link rel="preload" href="{{ 'component-cart-items.css' | asset_url }}" as="style">
       {{- 'component-cart.css' | asset_url | stylesheet_tag -}}
       {{- 'component-cart-items.css' | asset_url | stylesheet_tag -}}
+      {{- 'section-evamats-cart.css' | asset_url | stylesheet_tag -}}
     {%- endif -%}
     {% comment %} <link
       rel="preload"
@@ -385,7 +390,6 @@
     {{ 'component-eva-input.css' | asset_url | stylesheet_tag }}
     {{ 'component-eva-slider-nav.css' | asset_url | stylesheet_tag }}
     {%- if evamats_is_v2_page -%}
-      {{ 'base_v2.css' | asset_url | stylesheet_tag }}
       {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
@@ -475,7 +479,7 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
         <span class="popup_close_btn" >{% render 'icon-close' %}</span>
       </div>      
     {% endif %}
-    {% unless cart.empty? or template contains 'cart' %} 
+    {% comment %} {% unless cart.empty? or template contains 'cart' %} 
       
       <div class="cart__toast">
         <img src="{{cart.items[0].image | img_url: '100x' }}" alt="" class="cart__toast_image" loading="lazy">
@@ -488,7 +492,7 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
           {% render 'icon-close' %}
         </button>
       </div>
-    {% endunless %}
+    {% endunless %} {% endcomment %}
 
     {%- unless template contains 'cart'  -%}
       <script src="{{ 'instantpage.js' | asset_url }}" type="module" defer></script>
@@ -510,6 +514,7 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
 
       window.variantStrings = {
         addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        addingToCart: `{{ 'products.product.adding_to_cart' | t }}`,
         soldOut: `{{ 'products.product.sold_out' | t }}`,
         unavailable: `{{ 'products.product.unavailable' | t }}`,
         unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,

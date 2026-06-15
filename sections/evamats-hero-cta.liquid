@@ -7,7 +7,7 @@
 -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-hero-cta__intro' %}
-<section
+<div
   id="EvamatsHeroCta-{{ section.id }}"
   class="evamats-hero-cta"
 >
@@ -70,7 +70,7 @@
       {{ 'lifestyle-2' | placeholder_svg_tag: 'evamats-hero-cta__image evamats-hero-cta__image--placeholder' }}
     {%- endif -%}
   </div>
-</section>
+</div>
 
 {%- if section.settings.button_label != blank and section.settings.button_link == blank and section.settings.button_scroll_to_list -%}
   <script>

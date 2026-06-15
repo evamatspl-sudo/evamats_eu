@@ -1,0 +1,269 @@
+/* Image with text — Evamats product (Figma 1710:18160 / 18182 / 18202) */
+
+.evamats-image-with-text {
+  --eiw-bg: #f6f6f6;
+  --eiw-card-bg: #fff;
+  --eiw-text: #1b1d22;
+  --eiw-red: #ff2741;
+  --eiw-radius: 26px;
+  --eiw-outer-pt: 80px;
+  --eiw-outer-pb: 8px;
+  --eiw-card-px: 48px;
+  --eiw-card-py: 81px;
+  --eiw-col-gap: 86px;
+  --eiw-point-gap: 14px;
+  --eiw-icon-gap: 22px;
+  background: var(--eiw-bg);
+  padding-top: var(--eiw-outer-pt);
+  padding-bottom: var(--eiw-outer-pb);
+}
+
+.evamats-image-with-text .page-width {
+  max-width: 1520px;
+}
+
+.evamats-image-with-text__card {
+  background: var(--eiw-card-bg);
+  border-radius: var(--eiw-radius);
+  overflow: hidden;
+  padding: var(--eiw-card-py) var(--eiw-card-px);
+}
+
+.evamats-image-with-text__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--eiw-col-gap);
+  margin-bottom: 0;
+}
+
+.evamats-image-with-text__grid--reverse {
+  flex-direction: row-reverse;
+}
+
+.evamats-image-with-text__grid .image-with-text__media-item,
+.evamats-image-with-text__grid .image-with-text__text-item {
+  width: auto;
+  max-width: none;
+  flex: 0 1 auto;
+}
+
+.evamats-image-with-text__grid .image-with-text__media-item {
+  flex: 0 0 auto;
+}
+
+.evamats-image-with-text__grid .image-with-text__text-item {
+  flex: 1 1 724px;
+  min-width: 0;
+}
+
+.evamats-image-with-text .grid__item::after,
+.evamats-image-with-text .image-with-text__media-item::after,
+.evamats-image-with-text .image-with-text__text-item::after {
+  display: none;
+}
+
+.evamats-image-with-text .image-with-text__media-item > *,
+.evamats-image-with-text .image-with-text__text-item > * {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.evamats-image-with-text .image-with-text__media {
+  min-height: 0;
+  padding: 0 !important;
+  background: transparent;
+}
+
+.evamats-image-with-text .image-with-text__media.media > img {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-width: 469px;
+  margin: 0;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  border-radius: 16px;
+}
+
+.evamats-image-with-text .image-with-text__media.image-with-text__media--two_images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 291px));
+  gap: 0;
+  width: 582px;
+  max-width: 582px;
+  margin: 0;
+}
+
+.evamats-image-with-text .image-with-text__media.image-with-text__media--two_images.media > img {
+  max-width: 291px;
+  width: 100%;
+}
+
+.evamats-image-with-text .image-with-text__content {
+  align-items: flex-start;
+  align-self: center;
+  justify-content: flex-start;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  color: var(--eiw-text);
+}
+
+.evamats-image-with-text__heading {
+  margin: 0 0 24px;
+  max-width: 615px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  line-height: 1.1;
+  color: var(--eiw-text);
+  text-transform: none;
+}
+
+.evamats-image-with-text__heading-index {
+  color: var(--eiw-red);
+}
+
+.evamats-image-with-text__points {
+  max-width: 724px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  color: var(--eiw-text);
+}
+
+.evamats-image-with-text__points p {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--eiw-icon-gap);
+  margin: 0 0 var(--eiw-point-gap);
+}
+
+.evamats-image-with-text__points p:last-child {
+  margin-bottom: 0;
+}
+
+.evamats-image-with-text__points p::before {
+  content: '';
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  background: url('product-tab-confidence-check.svg') center / contain no-repeat;
+}
+
+.evamats-image-with-text__points strong,
+.evamats-image-with-text__points b {
+  color: var(--eiw-red);
+  font-weight: 400;
+}
+
+/* 750–1199: row + fixed 582px media does not fit (~1140px min); stack like mobile */
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+  .evamats-image-with-text {
+    --eiw-outer-pt: 64px;
+    --eiw-col-gap: 32px;
+    --eiw-point-gap: 12px;
+    --eiw-icon-gap: 18px;
+  }
+
+  .evamats-image-with-text__card {
+    --eiw-card-px: 32px;
+    --eiw-card-py: 48px;
+  }
+
+  .evamats-image-with-text__grid,
+  .evamats-image-with-text__grid--reverse {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .evamats-image-with-text__grid .image-with-text__media-item,
+  .evamats-image-with-text__grid .image-with-text__text-item {
+    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .evamats-image-with-text__heading {
+    margin-bottom: 20px;
+    max-width: none;
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+
+  .evamats-image-with-text__points {
+    max-width: none;
+  }
+
+  .evamats-image-with-text .image-with-text__media.image-with-text__media--two_images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+  }
+
+  .evamats-image-with-text .image-with-text__media.media > img,
+  .evamats-image-with-text .image-with-text__media.image-with-text__media--two_images.media > img {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-image-with-text {
+    --eiw-outer-pt: 48px;
+    --eiw-outer-pb: 8px;
+    --eiw-col-gap: 24px;
+    --eiw-point-gap: 12px;
+    --eiw-icon-gap: 16px;
+  }
+
+  .evamats-image-with-text .page-width {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .evamats-image-with-text__card {
+    --eiw-card-px: 20px;
+    --eiw-card-py: 32px;
+  }
+
+  .evamats-image-with-text__grid,
+  .evamats-image-with-text__grid--reverse {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .evamats-image-with-text__grid .image-with-text__media-item,
+  .evamats-image-with-text__grid .image-with-text__text-item {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .evamats-image-with-text__heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .evamats-image-with-text__points p::before {
+    margin-top: 0;
+  }
+
+  .evamats-image-with-text .image-with-text__media.image-with-text__media--two_images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+  }
+
+  .evamats-image-with-text .image-with-text__media.media > img,
+  .evamats-image-with-text .image-with-text__media.image-with-text__media--two_images.media > img {
+    max-width: none;
+    width: 100%;
+  }
+}

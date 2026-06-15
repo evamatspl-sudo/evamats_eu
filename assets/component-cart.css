@@ -249,14 +249,81 @@ cart-items {
   text-align:center
 }
 
-/* Swiper layout — fixed slide width so buttons don't bleed into next slide */
+/* Figma 1710:11002 / 1710:11001 desktop / 1710:10905 mobile — cart upsell strip */
+.cart-page-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-page-layout__upsell {
+  order: 3;
+}
+
+.cart-page-layout__items {
+  order: 2;
+}
+
+.evamats-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.evamats-cart > .evamats-cart-upsell {
+  order: 1;
+}
+
+.evamats-cart__main {
+  order: 2;
+}
+
+.evamats-cart-upsell {
+  background: #f6f6f6;
+  padding: 0 0 28px;
+  margin: 0;
+}
+
+.evamats-cart-upsell__inner {
+  display: block;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.evamats-cart-upsell__heading {
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.drawer__progress_products-block {
+  position: relative;
+  container-type: inline-size;
+  padding-right: 72px;
+  box-sizing: border-box;
+}
+
+.drawer__progress_products-block::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 127px;
+  height: 110px;
+  pointer-events: none;
+  background: linear-gradient(270deg, #f6f6f6 0%, rgba(246, 246, 246, 0) 100%);
+}
+
 .drawer__progress_products.swiper {
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 12px 44px;
-  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
   box-sizing: border-box;
 }
 
@@ -269,214 +336,372 @@ cart-items {
 .drawer__progress_products .swiper-slide {
   flex-shrink: 0;
   box-sizing: border-box;
-  width: 280px;
-  max-width: min(280px, calc(100vw - 7rem));
-  padding: 0 8px;
+  width: 261px;
   height: auto;
   align-self: stretch !important;
+}
+
+@container (min-width: 750px) {
+  .drawer__progress_products .swiper-slide {
+    width: 466px !important;
+    max-width: none;
+  }
 }
 
 .drawer__progress_products .drawer__progress_products_item {
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  min-height: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
-  padding: 12px 14px;
+  padding: 0;
   box-sizing: border-box;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 0;
+  border-radius: 0;
+}
+
+.drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
+  background: #fff;
+  padding: 8px;
+}
+
+@media screen and (min-width: 750px) {
+  .drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
+    padding: 10px;
+  }
 }
 
 .drawer__progress_products .product__upsell_item {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  width: 100%;
-  min-width: 0;
-  min-height: 100%;
-  height: 100%;
-}
-
-.drawer__progress_products .product__upsell_item_top {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 14px;
   width: 100%;
   min-width: 0;
 }
 
-.drawer__progress_products .img_wr {
-  flex-shrink: 0;
-  width: 42%;
-  max-width: 42%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  align-self: flex-start;
-  border-radius: 0.4rem;
+.drawer__progress_products-arrows {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.drawer__progress_products .img_wr img {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.drawer__progress_products .product__upsell_item_heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1;
-  min-width: 0;
-  min-height: 0;
-}
-
-.drawer__progress_products .product-form__buttons {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.drawer__progress_products .product-form__submit {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  font-size: 12px;
-  padding: 6px 10px;
+.drawer__progress_products-arrows .eva-slider-controls__arrows {
   position: relative;
-}
-
-.drawer__progress_products .product__upsell_item_title {
-  font-size: 12px;
-  line-height: 16px;
-  text-decoration: none;
-  text-align: center;
-  word-break: break-word;
-  display: block;
-  margin-bottom: 8px;
-  color: #000;
-}
-
-.drawer__progress_products .product__upsell_item_title:hover,
-.drawer__progress_products .product__upsell_item_title:focus {
-  color: #000;
-}
-
-.drawer__progress_products .product__upsell_item_title:visited {
-  color: #000;
-}
-
-.drawer__progress_products .product__upsell_item_heading .product__upsell_price {
-  text-align: center;
-  margin-top: 0.35rem;
-  margin-bottom: 0;
-  display: block;
-  font-size: 1.15rem;
-  line-height: 1.3;
-  font-weight: 600;
-}
-
-.drawer__progress_products .product__upsell_item_variants {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 6px;
-  margin-top: 8px;
   width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  justify-content: flex-start;
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  height: 100%;
+  display: block;
+  gap: 0;
 }
 
-.drawer__progress_products .product__upsell_item_variant {
-  flex-shrink: 0;
-  white-space: nowrap;
-  padding: .3rem 0.5rem;
-  font-size: 10px;
-  box-sizing: border-box;
-  max-width: none;
-}
-
-.drawer__progress_products .swiper-button-next,
-.drawer__progress_products .swiper-button-prev {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  margin-top: 0;
+.drawer__progress_products-arrows .eva-slider-nav {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
-  color: var(--color-1);
+  pointer-events: auto;
+  width: 58px;
+  height: 58px;
+  margin: 0;
+  background: #ff2741;
 }
 
-.drawer__progress_products .swiper-button-prev {
-  left: 6px !important;
+.drawer__progress_products-arrows .eva-slider-nav::after {
+  display: none !important;
+  content: none !important;
 }
 
-.drawer__progress_products .swiper-button-next {
-  right: 6px !important;
+.drawer__progress_products-arrows .eva-slider-nav .eva-slider-nav__icon svg {
+  width: 12px;
+  height: 12px;
 }
 
-.drawer__progress_products .swiper-button-next::after,
-.drawer__progress_products .swiper-button-prev::after {
-  font-size: 16px;
-  font-weight: bold;
+.drawer__progress_products-arrows .eva-slider-nav:not(.swiper-button-disabled) .eva-slider-nav__icon svg path {
+  fill: #fff;
 }
 
-@media (max-width: 1023px) {
-  .drawer__progress_products .product__upsell_item_top {
-    flex-direction: column;
-    align-items: center;
+.drawer__progress_products-arrows .eva-slider-nav.swiper-button-disabled {
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+.drawer__progress_products-arrows .eva-slider-nav.swiper-button-disabled .eva-slider-nav__icon svg path {
+  fill: #8090a4;
+}
+
+.drawer__progress_products-arrows .eva-slider-nav--prev,
+.drawer__progress_products-arrows .swiper-button-prev {
+  left: 0;
+  right: auto;
+}
+
+.drawer__progress_products-arrows .eva-slider-nav--next,
+.drawer__progress_products-arrows .swiper-button-next {
+  right: 0;
+  left: auto;
+}
+
+.drawer__progress_products-block:has(.drawer__progress_products.swiper-button-lock) .drawer__progress_products-arrows {
+  display: none;
+}
+
+/* Horizontal upsell card — Figma 466×110 desktop / 261×110 mobile, 10px / 8px inset */
+.cart-upsell-strip {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  padding: 8px;
+  border-radius: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cart-upsell-strip__row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  height: 100%;
+}
+
+.cart-upsell-strip__media {
+  flex-shrink: 0;
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+}
+
+.cart-upsell-strip__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cart-upsell-strip__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.cart-upsell-strip__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--color-text-primary, #1b1d22);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cart-upsell-strip__title:hover,
+.cart-upsell-strip__title:focus,
+.cart-upsell-strip__title:visited {
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.cart-upsell-strip__note {
+  font-size: 11px;
+  line-height: 1.3;
+  color: #8090a4;
+}
+
+.cart-upsell-strip__priceline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.cart-upsell-strip__old-price {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cart-upsell-strip__old-value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #8090a4;
+}
+
+.cart-upsell-strip__old-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  margin-top: -0.5px;
+  background: #8090a4;
+}
+
+.cart-upsell-strip__discount .product__upsell_discount__inner {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+}
+
+.cart-upsell-strip__discount .product__upsell_discount__value {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1;
+  color: #fff;
+  background: #ff2741;
+  padding: 1px 4px 1px 2px;
+}
+
+.cart-upsell-strip__discount .product__upsell_discount__cap {
+  width: auto;
+  height: 14px;
+}
+
+.cart-upsell-strip__price {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1b1d22);
+}
+
+.cart-upsell-strip__variants {
+  display: none;
+}
+
+.cart-upsell-strip__actions {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.cart-upsell-strip__cart-btn {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #ff2741;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-upsell-strip__cart-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cart-upsell-strip__cart-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.cart-upsell-strip__cart-btn-icon .icon-cart {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+.cart-upsell-strip__sold-out {
+  font-size: 12px;
+  color: #8090a4;
+}
+
+.evamats-cart__main {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-cart-upsell {
+    padding-bottom: 29px;
   }
 
-  .drawer__progress_products .product__upsell_item_top .img_wr {
-    width: min(9.5rem, 40vw);
-    max-width: min(9.5rem, 40vw);
-    margin-left: auto;
-    margin-right: auto;
+  .evamats-cart-upsell__inner {
+    padding-top: 50px;
   }
 
-  .drawer__progress_products .product__upsell_item_top .img_wr img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    max-width: none;
+  .evamats-cart-upsell__heading {
+    margin-bottom: 29px;
+    font-size: 22px;
+    text-align: left;
   }
 
-  .drawer__progress_products .product__upsell_item_top .product__upsell_item_heading {
-    flex: none;
-    width: 100%;
+  .cart-upsell-strip {
+    padding: 10px;
+  }
+
+  .cart-upsell-strip__row {
+    gap: 20px;
+  }
+
+  .cart-upsell-strip__media {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+  }
+
+  .cart-upsell-strip__title {
+    font-size: 16px;
+    line-height: 1.35;
+    -webkit-line-clamp: 1;
+  }
+
+  .cart-upsell-strip__old-value {
+    font-size: 14px;
+  }
+
+  .cart-upsell-strip__price {
+    font-size: 16px;
+  }
+
+  .cart-upsell-strip__cart-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 749px) {
+  .evamats-cart > .evamats-cart-upsell {
+    order: 3;
+  }
+
+  .evamats-cart__main {
+    order: 1;
+  }
+
+  .drawer__progress_products-block {
+    padding-right: 72px;
+  }
+
   .drawer__progress_products .swiper-slide {
-    width: min(260px, calc(100vw - 5.5rem));
     height: auto !important;
   }
 
-  .drawer__progress_products .drawer__progress_products_item {
-    min-height: 0;
-    height: auto;
+  .cart-page-layout__upsell {
+    order: 3;
   }
 
-  .drawer__progress_products .product__upsell_item {
-    min-height: 0;
-    height: auto;
+  .cart-page-layout__items {
+    order: 2;
   }
 }
 

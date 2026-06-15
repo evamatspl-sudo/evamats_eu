@@ -1,0 +1,124 @@
+{% comment %}
+  Year, body type, and Individual fields for the static config intro.
+  Accepts: product, product_form_id, section
+{% endcomment %}
+{% assign bodyTypes = product.metafields.custom.custom_list_body_type_in_config.value %}
+
+<fieldset class="product-form__input product-form__input--dropdown">
+  <legend class="form__label lip__title">{{ 'general.config.year_label' | t }}: <div class="lip__title_value"></div></legend>
+  <div class="select">
+    <select required class="select__select" id="rok-produkcji" name="properties[{{ 'general.config.year_production' | t }}]" form="{{ product_form_id }}" aria-required="true" data-text="{{ 'general.config.please_select' | t }}">
+      <option value="">{{ 'general.config.please_select' | t }}</option>
+      {% assign currentYear = 'now' | date: '%Y' | plus: 0 %}
+
+      {% if product.metafields.custom.year_of_production %}
+        {% assign startDate = 0 %}
+        {% assign endDate = 0 %}
+        {% assign arr = product.metafields.custom.year_of_production | split: ',' %}
+
+        {% for item in arr %}
+          {% if forloop.index == 1 %}
+            {% assign startDate = item %}
+          {% endif %}
+          {% if forloop.index == 2 %}
+            {% assign endDate = item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in (startDate..endDate) %}
+          <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+      {% else %}
+        {% for item in (1980..currentYear) %}
+          <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+      {% endif %}
+    </select>
+  </div>
+  <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+</fieldset>
+
+{% if bodyTypes != blank %}
+  <fieldset class="product-form__input lip__field body_type variant-radios">
+    <legend class="form__label lip__title">{{ 'general.config.bodyType' | t }}: <div class="lip__title_value"></div></legend>
+    {% for item in bodyTypes %}
+      {% assign title_lower = item.title | downcase %}
+      {% assign body_type_norm = '' %}
+      {% if title_lower contains '7os' %}{% assign body_type_norm = '7os' %}
+      {% elsif title_lower contains '5os' %}{% assign body_type_norm = '5os' %}
+      {% endif %}
+      <input
+        required
+        class="js-config-body-type"
+        id="body-type-{{ section.id }}-{{ forloop.index }}"
+        type="radio"
+        name="properties[{{ 'general.config.bodyType' | t }}]"
+        value="{{ item.title | escape }}"
+        form="{{ product_form_id }}"
+        aria-required="true"
+        data-title="{{ item.title | escape }}"
+        {%- if body_type_norm != '' %} data-body-type="{{ body_type_norm }}"{% endif %}
+      >
+      <label for="body-type-{{ section.id }}-{{ forloop.index }}" class="default_option">
+        {% if item.image %}
+          <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="400">
+        {% endif %}
+        <span class="evamats-config-body-label">{{ item.title }}</span>
+        <div class="label__tooltip">{{ item.title }}</div>
+      </label>
+    {% endfor %}
+    <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+  </fieldset>
+{% endif %}
+
+{% if product.type == 'Individual' %}
+  <fieldset class="line-item-property__field product-form__input lip__field">
+    <div class="lip__title" for="IndividualBrand-{{ section.id }}">{{ 'general.config.brand' | t }}: * <div class="lip__title_value"></div></div>
+    <input
+      type="text"
+      required
+      id="IndividualBrand-{{ section.id }}"
+      form="{{ product_form_id }}"
+      name="properties[{{ 'general.config.brand' | t }}]"
+      placeholder="{{ 'general.config.brand' | t }}"
+      aria-required="true"
+    >
+    <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+  </fieldset>
+
+  <fieldset class="line-item-property__field product-form__input lip__field">
+    <div class="lip__title" for="IndividualModel-{{ section.id }}">{{ 'general.config.model' | t }}: * <div class="lip__title_value"></div></div>
+    <input
+      type="text"
+      required
+      id="IndividualModel-{{ section.id }}"
+      form="{{ product_form_id }}"
+      name="properties[{{ 'general.config.model' | t }}]"
+      placeholder="{{ 'general.config.model' | t }}"
+      aria-required="true"
+    >
+    <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+  </fieldset>
+
+  {% assign individual_body_list = 'general.config.bodyTypeElements' | t | split: ',' %}
+  <fieldset class="product-form__input lip__field body_type radio_container">
+    <div class="lip__title">{{ 'general.config.bodyType' | t }}: *<div class="lip__title_value"></div></div>
+    {% for item in individual_body_list %}
+      {% assign bt = item | strip %}
+      {% if bt != blank %}
+        <input
+          required
+          id="ind-body-{{ section.id }}-{{ forloop.index }}"
+          type="radio"
+          name="properties[{{ 'general.config.bodyType' | t }}]"
+          value="{{ bt | escape }}"
+          form="{{ product_form_id }}"
+          aria-required="true"
+          data-title="{{ bt | escape }}"
+        >
+        <label for="ind-body-{{ section.id }}-{{ forloop.index }}">{{ bt }}</label>
+      {% endif %}
+    {% endfor %}
+    <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+  </fieldset>
+{% endif %}

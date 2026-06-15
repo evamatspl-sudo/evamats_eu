@@ -66,13 +66,14 @@ if (!customElements.get('product-form')) {
       this.getContactsForm = document.querySelector('#popupOverlayGetContacts');
       this.form = this.querySelector('form');
       this.form.querySelector('[name=id]').disabled = false;
-      this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-      this.submitButton = this.querySelector('button[type="button"]') || document.querySelector('button[type="button"]');
-      if (this.cart && document.querySelector('cart-drawer')) {
+      this.cart = document.querySelector('cart-drawer') || document.querySelector('cart-notification');
+      this.submitButton = this.querySelector('[name="add"]') || this.querySelector('.product-form__submit');
+      if (this.submitButton && this.cart && document.querySelector('cart-drawer')) {
         this.submitButton.setAttribute('aria-haspopup', 'dialog');
       }
       this.responseProduct = '';
       const showNotification = document.querySelector('.showNotification');
+      if (!showNotification) return;
       showNotification.addEventListener('click', () => {
         this.cart.renderContents(this.responseProduct);
         this.getContactsForm.classList.remove('show');
@@ -86,19 +87,78 @@ if (!customElements.get('product-form')) {
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
     }
 
+    getStickyCartButtons() {
+      return Array.from(document.querySelectorAll('.sticky_add_to_cart'));
+    }
+
+    isConfigCartButton(button) {
+      return button?.matches('.evamats-config-checkout__cart, .evamats-config-step-bar__cart');
+    }
+
+    getCartButtonLabel(button) {
+      return (
+        button?.querySelector('[data-add-to-cart-label]') ||
+        button?.querySelector('.evamats-config-checkout__cart-label')
+      );
+    }
+
+    setLoadingState(isLoading) {
+      const addingText = window.variantStrings?.addingToCart || 'Adding...';
+      const buttons = [this.submitButton, ...this.getStickyCartButtons()].filter(Boolean);
+
+      buttons.forEach((button) => {
+        const isConfigBtn = this.isConfigCartButton(button);
+        const label = this.getCartButtonLabel(button);
+        const icon = button.querySelector(':scope > svg');
+        const spinner = button.querySelector('.loading-overlay__spinner');
+
+        if (isLoading) {
+          button.setAttribute('aria-disabled', 'true');
+          button.setAttribute('aria-busy', 'true');
+
+          if (isConfigBtn) {
+            button.classList.add('is-adding-to-cart');
+            button.classList.remove('loading');
+          } else {
+            button.classList.add('loading');
+          }
+
+          if (label) {
+            if (!label.dataset.defaultLabel) {
+              label.dataset.defaultLabel = label.textContent.trim();
+            }
+            label.textContent = addingText;
+          }
+
+          if (icon) icon.setAttribute('aria-hidden', 'true');
+          if (spinner) spinner.classList.remove('hidden');
+        } else {
+          button.classList.remove('loading', 'is-adding-to-cart');
+          button.removeAttribute('aria-busy');
+          if (!this.error) button.removeAttribute('aria-disabled');
+
+          if (label && label.dataset.defaultLabel) {
+            label.textContent = label.dataset.defaultLabel;
+          }
+
+          if (icon) icon.removeAttribute('aria-hidden');
+          if (spinner) spinner.classList.add('hidden');
+        }
+      });
+    }
+
     async onSubmitHandler(evt) {
       evt.preventDefault();
       const matPatternInputChecked = document.querySelector('[data-type="matPattern"] input:checked');
 
-      if (this.submitButton.getAttribute("aria-disabled") === "true") return;
+      if (this.submitButton?.getAttribute("aria-disabled") === "true") return;
 
       if (this.handleErrorMessage() == false) {
         return;
       }
 
-      this.submitButton.setAttribute("aria-disabled", true);
-      this.submitButton.classList.add("loading");
-      this.querySelector(".loading-overlay__spinner").classList.remove("hidden");
+      this.error = false;
+      this.setLoadingState(true);
 
       const config = fetchConfig("javascript");
       config.headers["X-Requested-With"] = "XMLHttpRequest";
@@ -121,8 +181,6 @@ if (!customElements.get('product-form')) {
         ? productUpsell.querySelectorAll(".product__upsell_item")
         : [];
 
-      
-
       const checkProductUpsell = async () => {
         for (const item of upsellItems) {
           const input = item.querySelector("input[type='checkbox']");
@@ -132,82 +190,74 @@ if (!customElements.get('product-form')) {
         }
       };
 
-      if (productUpsell) await checkProductUpsell();
+      try {
+        if (productUpsell) await checkProductUpsell();
 
-      const extrasWr = document.querySelector(".product__dropdown_wr--extras");
-      if (extrasWr) {
-        const extrasChecked = extrasWr.querySelectorAll("input[name='product__extras']:checked");
-        for (const input of extrasChecked) {
-          if (input.value) await addUpsells(input.value);
+        const extrasWr = document.querySelector(".product__dropdown_wr--extras");
+        if (extrasWr) {
+          const extrasChecked = extrasWr.querySelectorAll("input[name='product__extras']:checked");
+          for (const input of extrasChecked) {
+            if (input.value) await addUpsells(input.value);
+          }
+        }
+
+        if (matPatternInputChecked) {
+          if (matPatternInputChecked.getAttribute('data-value') == 'drop') {
+            console.log('[product-form] add drop surcharge variant', DROP_CELL_SHAPE_VARIANT_ID);
+            await addDropCellShape(DROP_CELL_SHAPE_VARIANT_ID);
+          }
+        }
+
+        const response = await fetch(`${routes.cart_add_url}`, config).then((res) => res.json());
+
+        if (response.status) {
+          this.handleErrorMessage(response.description);
+          const soldOutMessage = this.submitButton.querySelector(".sold-out-message");
+          if (soldOutMessage) {
+            this.submitButton.setAttribute("aria-disabled", true);
+            this.submitButton.querySelector("span").classList.add("hidden");
+            soldOutMessage.classList.remove("hidden");
+            this.error = true;
+          }
+          this.setLoadingState(false);
+          return;
+        }
+
+        if (!this.cart) {
+          setTimeout(() => {
+            window.location.href = '/cart';
+          }, 2000);
+          return;
+        }
+
+        publish(PUB_SUB_EVENTS.cartUpdate, { source: "product-form" });
+        const quickAddModal = this.closest("quick-add-modal");
+        if (quickAddModal) {
+          document.body.addEventListener(
+            "modalClosed",
+            () => {
+              setTimeout(() => {
+                this.cart.renderContents(response);
+              });
+            },
+            { once: true }
+          );
+          quickAddModal.hide(true);
+        } else {
+          this.cart.renderContents(response);
+          this.responseProduct = response;
+        }
+
+        setTimeout(() => this.setLoadingState(false), 600);
+      } catch (e) {
+        console.error(e);
+        this.error = true;
+        this.setLoadingState(false);
+      } finally {
+        if (this.cart && this.cart.classList.contains("is-empty")) {
+          this.cart.classList.remove("is-empty");
         }
       }
-
-      if (matPatternInputChecked) {
-        if (matPatternInputChecked.getAttribute('data-value') == 'drop') {
-          console.log('[product-form] add drop surcharge variant', DROP_CELL_SHAPE_VARIANT_ID);
-          await addDropCellShape(DROP_CELL_SHAPE_VARIANT_ID);
-        }
-      }
-
-      await fetch(`${routes.cart_add_url}`, config)
-        .then((response) => response.json())
-        .then((response) => {
-          if (response.status) {
-            this.handleErrorMessage(response.description);
-            const soldOutMessage = this.submitButton.querySelector(
-              ".sold-out-message"
-            );
-            if (soldOutMessage) {
-              this.submitButton.setAttribute("aria-disabled", true);
-              this.submitButton.querySelector("span").classList.add("hidden");
-              soldOutMessage.classList.remove("hidden");
-              this.error = true;
-            }
-            return;
-          } else if (!this.cart) {
-            setTimeout(() => {
-              window.location.href = '/cart';
-            }, 2000);
-            return;
-          }
-
-          if (!this.error)
-            publish(PUB_SUB_EVENTS.cartUpdate, { source: "product-form" });
-          this.error = false;
-          const quickAddModal = this.closest("quick-add-modal");
-          if (quickAddModal) {
-            document.body.addEventListener(
-              "modalClosed",
-              () => {
-                setTimeout(() => {
-                  this.cart.renderContents(response);
-                });
-              },
-              { once: true }
-            );
-            quickAddModal.hide(true);
-          } else {
-            this.cart.renderContents(response); // open notification
-            this.responseProduct = response;
-            // if (this.getContactsForm) {
-            //   this.getContactsForm.classList.add('show');
-            //   document.querySelector('html').classList.add('overflow-hidden')
-            // }
-          }
-        })
-        .catch((e) => {
-          console.error(e);
-        })
-        .finally(() => {
-          this.submitButton.classList.remove("loading");
-          if (this.cart && this.cart.classList.contains("is-empty")) {
-            this.cart.classList.remove("is-empty");
-          }
-          if (!this.error) this.submitButton.removeAttribute("aria-disabled");
-          this.querySelector(".loading-overlay__spinner").classList.add("hidden");
-        });
-      
-      
     }
 
     handleErrorMessage() {

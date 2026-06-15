@@ -1,0 +1,29 @@
+{% comment %}
+  Cart line price block — Figma priceline + discount-tag
+  Params: item, has_discount, discount_percent, mobile (bool)
+{% endcomment %}
+<div class="evamats-cart-item__prices{% if mobile %} evamats-cart-item__prices--mobile{% endif %}">
+  <div class="evamats-cart-item__price-current">
+    {%- if item.original_line_price != item.final_line_price -%}
+      <span class="bcpo-cart-item-line-price" data-key="{{ item.key }}">{{ item.final_line_price | money }}</span>
+    {%- else -%}
+      <span class="bcpo-cart-item-original-line-price" data-key="{{ item.key }}">{{ item.original_line_price | money }}</span>
+    {%- endif -%}
+  </div>
+
+  {%- if has_discount -%}
+    <div class="evamats-cart-item__price-meta">
+      <span class="evamats-cart-item__price-old">
+        {%- if item.variant.compare_at_price > item.variant.price -%}
+          <span class="evamats-cart-item__price-old-value">{{ item.variant.compare_at_price | times: item.quantity | money }}</span>
+        {%- else -%}
+          <span class="evamats-cart-item__price-old-value bcpo-cart-item-original-line-price" data-key="{{ item.key }}">{{ item.original_line_price | money }}</span>
+        {%- endif -%}
+        <span class="evamats-cart-item__price-old-line" aria-hidden="true"></span>
+      </span>
+      {%- if discount_percent > 0 -%}
+        <span class="evamats-cart-item__discount-badge">-{{ discount_percent }}%</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

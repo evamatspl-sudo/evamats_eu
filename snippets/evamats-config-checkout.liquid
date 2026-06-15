@@ -1,0 +1,110 @@
+{%- liquid
+  assign checkout_variant = product.selected_or_first_available_variant
+
+  assign delivery_line_1 = block.settings.config_delivery_line_1
+  assign delivery_line_2 = block.settings.config_delivery_line_2
+  if delivery_line_1 == blank and product.type == 'Individual'
+    assign delivery_line_1 = 'general.config.checkout_delivery_individual_line_1' | t
+    assign delivery_line_2 = 'general.config.checkout_delivery_individual_line_2' | t
+  endif
+
+  assign trusted_line_1 = block.settings.config_trusted_line_1
+  assign trusted_line_2 = block.settings.config_trusted_line_2
+  if trusted_line_1 == blank
+    assign trusted_line_1 = 'general.config.checkout_trusted_line_1' | t
+    assign trusted_line_2 = 'general.config.checkout_trusted_line_2' | t
+  endif
+
+  assign show_delivery_note = false
+  if delivery_line_1 != blank and block.settings.config_delivery_icon != blank
+    assign show_delivery_note = true
+  endif
+
+  assign show_trusted_note = false
+  if trusted_line_1 != blank and block.settings.config_trusted_seal != blank
+    assign show_trusted_note = true
+  endif
+-%}
+
+<div class="evamats-config-checkout" {{ block.shopify_attributes }}>
+  <div class="evamats-config-checkout__card">
+    <div class="evamats-config-checkout__total-row">
+      <p class="evamats-config-checkout__total-label">{{ 'general.config.total' | t }}</p>
+      <div class="evamats-config-checkout__prices">
+        <span class="evamats-config-checkout__price-old sticky_config_price_compare option__price_compare hidden"></span>
+        <span class="evamats-config-checkout__price-current sticky_config_price_price">
+          {{- checkout_variant.price | money_without_trailing_zeros -}}
+        </span>
+        <span class="evamats-config-checkout__discount evamats-sticky-card__discount hidden"></span>
+      </div>
+    </div>
+
+    {%- render 'buy-buttons',
+      block: block,
+      product: product,
+      product_form_id: product_form_id,
+      section_id: section_id,
+      show_pickup_availability: false,
+      config_checkout: true,
+      skip_block_attributes: true
+    -%}
+  </div>
+
+  {%- if request.locale.iso_code == 'en' -%}
+    <div class="product__right_hand_message hide_on_outlet openPopup" data-popup="popupOverlayRightHand">{{ 'general.config.right_hand_message_short' | t }}</div>
+    <div class="product__right_hand_message show_on_outlet">🚗 This set for left-hand drive vehicle</div>
+  {%- endif -%}
+
+  {%- if show_delivery_note or show_trusted_note -%}
+    <div class="evamats-config-checkout__notes">
+      {%- if show_delivery_note -%}
+        <div class="evamats-config-checkout__note">
+          <div class="evamats-config-checkout__note-icon evamats-config-checkout__note-icon--delivery">
+            {{
+              block.settings.config_delivery_icon
+              | image_url: width: 104
+              | image_tag: loading: 'lazy', widths: '52,104', alt: ''
+            }}
+          </div>
+          <div class="evamats-config-checkout__note-text">
+            {%- if delivery_line_1 != blank -%}
+              <p class="evamats-config-checkout__note-line">{{ delivery_line_1 | escape }}</p>
+            {%- endif -%}
+            {%- if delivery_line_2 != blank -%}
+              <p class="evamats-config-checkout__note-line">{{ delivery_line_2 | escape }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if show_trusted_note -%}
+        <div class="evamats-config-checkout__note evamats-config-checkout__note--trusted">
+          <div class="evamats-config-checkout__note-icon evamats-config-checkout__note-icon--seal">
+            {{
+              block.settings.config_trusted_seal
+              | image_url: width: 96
+              | image_tag: loading: 'lazy', widths: '48,96', alt: ''
+            }}
+          </div>
+          <div class="evamats-config-checkout__note-text">
+            {%- if trusted_line_1 != blank -%}
+              <p class="evamats-config-checkout__note-line">{{ trusted_line_1 | escape }}</p>
+            {%- endif -%}
+            {%- if trusted_line_2 != blank -%}
+              <p class="evamats-config-checkout__note-line">{{ trusted_line_2 | escape }}</p>
+            {%- endif -%}
+          </div>
+          {%- if block.settings.config_trusted_logo != blank -%}
+            <div class="evamats-config-checkout__trusted-logo">
+              {{
+                block.settings.config_trusted_logo
+                | image_url: width: 170
+                | image_tag: loading: 'lazy', widths: '85,170', alt: ''
+              }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

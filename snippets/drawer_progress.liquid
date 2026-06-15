@@ -1,102 +1,197 @@
 {% assign progress_bar_setting = settings.progress_bar_type | default: settings.progrss_bar_type %}
-{% comment %} Sync inline styles: progress + upsell strip on first paint {% endcomment %}
+{% assign progress_part = part | default: 'all' %}
+{% assign is_cart_drawer = false %}
+{% if section_id == 'cart-drawer' %}
+  {% assign is_cart_drawer = true %}
+{% endif %}
+
+{% comment %} Critical CSS: upsell strip first paint (Figma 1710:11002) {% endcomment %}
 <style id="cart-upsell-critical-css">
-  #drawer__progress.drawer__progress { margin: 20px auto 10px; padding-bottom: 22px; }
-  .drawer__progress_bar { position: relative; width: 100%; height: 6px; border-radius: 30px; background: #f0f0f0; }
-  .drawer__progress_bar .line {
-    position: absolute; top: 0; left: 0; height: 6px; border-radius: 30px;
-    background: var(--color-1, #ef022d); max-width: 100%; display: block !important;
+  .evamats-cart-upsell {
+    background: #f6f6f6;
+    padding: 0 0 28px;
+    margin: 0;
   }
-  .drawer__progress_text { margin-bottom: 8px; text-align: center; }
+  .evamats-cart-upsell__inner {
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  .evamats-cart-upsell__heading {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary, #1b1d22);
+  }
+  .drawer__progress_products-block {
+    position: relative;
+    container-type: inline-size;
+    padding-right: 72px;
+    box-sizing: border-box;
+  }
+  .drawer__progress_products-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 127px;
+    height: 110px;
+    pointer-events: none;
+    background: linear-gradient(270deg, #f6f6f6 0%, rgba(246, 246, 246, 0) 100%);
+  }
   .drawer__progress_products.swiper {
-    position: relative; overflow: hidden; margin-bottom: 20px; background: #fff;
-    padding: 12px ; border-radius: 10px; box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-sizing: border-box;
   }
   .drawer__progress_products .swiper-wrapper {
-    display: flex; align-items: stretch !important; box-sizing: border-box;
+    display: flex;
+    align-items: stretch !important;
+    box-sizing: border-box;
   }
   .drawer__progress_products .swiper-slide {
-    flex-shrink: 0; box-sizing: border-box; width: 280px;
-    max-width: min(280px, calc(100vw - 7rem)); padding: 0 8px; align-self: stretch !important;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 261px;
+    height: auto;
+    align-self: stretch !important;
   }
-  .drawer__progress_products .drawer__progress_products_item {
-    width: 100%; min-height: 100%; height: 100%; padding: 12px 14px;
-    box-sizing: border-box; border-radius: 8px; overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+  .drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
+    padding: 8px;
+    background: #fff;
   }
-  .drawer__progress_products .product__upsell_item {
-    display: flex; flex-direction: column; align-items: stretch; gap: 0;
-    width: 100%; min-height: 100%; min-width: 0;
+  .cart-upsell-strip {
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
   }
-  .drawer__progress_products .product__upsell_item_top {
-    display: flex; flex-direction: row; align-items: flex-start; gap: 14px;
-    width: 100%; min-width: 0;
+  .cart-upsell-strip__row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    height: 100%;
   }
-  .drawer__progress_products .img_wr { flex-shrink: 0; width: 42%; max-width: 42%; aspect-ratio: 1 / 1; overflow: hidden; align-self: flex-start; border-radius: 0.4rem; }
-  .drawer__progress_products .img_wr img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; display: block; }
-  .drawer__progress_products .product__upsell_item_heading {
-    display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0;
+  .cart-upsell-strip__media {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
   }
-  .drawer__progress_products .product-form__buttons {
-    margin-top: auto; padding-top: 10px; width: 100%; max-width: 100%; box-sizing: border-box;
-  }
-  .drawer__progress_products .product-form__submit {
-    width: 100%; box-sizing: border-box; font-size: 12px; padding: 6px 10px; position: relative;
-    background: var(--color-1, #ef022d); color: #fff; border: 1px solid transparent;
-    border-radius: var(--buttons-radius, 4px); cursor: pointer; text-transform: uppercase;
-  }
-  .drawer__progress_products .product__upsell_item_title {
-    font-size: 12px; line-height: 16px; text-align: center; word-break: break-word;
-    display: block; margin-bottom: 8px; color: #000;
-  }
-  .drawer__progress_products .product__upsell_item_title:visited,
-  .drawer__progress_products .product__upsell_item_title:hover,
-  .drawer__progress_products .product__upsell_item_title:focus {
-    color: #000;
-  }
-  .drawer__progress_products .product__upsell_item_heading .product__upsell_price {
-    text-align: center; margin-top: 0.35rem; margin-bottom: 0; display: block;
-    font-size: 1.15rem; line-height: 1.3; font-weight: 600;
-  }
-  .drawer__progress_products .product__upsell_item_variants {
-    display: flex; flex-wrap: nowrap; gap: 6px; margin-top: 8px; width: 100%; min-width: 0;
-    overflow-x: auto; overflow-y: hidden; justify-content: flex-start; padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch; scrollbar-width: thin;
-  }
-  .drawer__progress_products .product__upsell_item_variant {
-    flex-shrink: 0; white-space: nowrap; padding: 0.3rem 0.5rem; font-size: 10px; box-sizing: border-box;
-  }
-  @media (max-width: 1023px) {
-    .drawer__progress_products .product__upsell_item_top {
-      flex-direction: column;
-      align-items: center;
-    }
-    .drawer__progress_products .product__upsell_item_top .img_wr {
-      width: min(9.5rem, 40vw);
-      max-width: min(9.5rem, 40vw);
-      margin-left: auto;
-      margin-right: auto;
-    }
-  .drawer__progress_products .product__upsell_item_top .img_wr img {
+  .cart-upsell-strip__image {
+    display: block;
     width: 100%;
     height: 100%;
-    aspect-ratio: auto;
     object-fit: cover;
     object-position: center;
-    max-width: none;
   }
-    .drawer__progress_products .product__upsell_item_top .product__upsell_item_heading {
-      flex: none;
-      width: 100%;
-      min-width: 0;
+  .cart-upsell-strip__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+  }
+  .cart-upsell-strip__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--color-text-primary, #1b1d22);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .cart-upsell-strip__priceline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 6px;
+  }
+  .cart-upsell-strip__price {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary, #1b1d22);
+  }
+  .cart-upsell-strip__cart-btn {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #ff2741;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-upsell-strip__cart-btn .icon-cart {
+    fill: #fff;
+  }
+  .cart-upsell-strip__variants {
+    display: none;
+  }
+  @media screen and (min-width: 750px) {
+    .evamats-cart-upsell__inner {
+      padding-top: 50px;
+    }
+    .drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
+      padding: 10px;
+    }
+    .cart-upsell-strip {
+      padding: 10px;
+    }
+    .cart-upsell-strip__row {
+      gap: 20px;
     }
   }
-  @media (max-width: 767px) {
-    .drawer__progress_products .swiper-slide { height: auto !important; }
-    .drawer__progress_products .drawer__progress_products_item { min-height: 0; height: auto; }
-    .drawer__progress_products .product__upsell_item { min-height: 0; height: auto; }
+  @container (min-width: 750px) {
+    .drawer__progress_products .swiper-slide {
+      width: 466px !important;
+      max-width: none;
+    }
+    .cart-upsell-strip__media {
+      width: 90px;
+      height: 90px;
+    }
+    .cart-upsell-strip__title {
+      font-size: 16px;
+      line-height: 1.35;
+      -webkit-line-clamp: 1;
+    }
+    .cart-upsell-strip__price {
+      font-size: 16px;
+    }
+    .cart-upsell-strip__cart-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+    }
   }
 </style>
+
 {% capture drawer_products %}
   {% assign drawer_pool_collection = settings.order_related_collection %}
   {% assign drawer_random_limit = settings.order_related_collection_limit | default: 5 %}
@@ -126,32 +221,34 @@
   {% endif %}
 
   {% if drawer_use_collection_random or settings.order_related_products != blank %}
-    <div class="drawer__progress_products swiper">
-      <div
-        class="swiper-wrapper"
-        {% if drawer_use_collection_random %}
-          id="drawer-upsell-random-wrapper"
-          data-random-pool
-          data-random-limit="{{ drawer_random_limit }}"
-        {% endif %}
-      >
-        {% if drawer_use_collection_random %}
-          {% for item in drawer_pool_collection.products %}
-            {% if item.available %}
-              {% render 'drawer-progress-upsell-if-not-heeled', item: item, section_id: section_id, random_pick: true %}
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {% for item in settings.order_related_products %}
-            {% if item.available %}
-              {% render 'drawer-progress-upsell-if-not-heeled', item: item, section_id: section_id %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+    <div class="drawer__progress_products-block">
+      <div class="drawer__progress_products swiper">
+        <div
+          class="swiper-wrapper"
+          {% if drawer_use_collection_random %}
+            id="drawer-upsell-random-wrapper"
+            data-random-pool
+            data-random-limit="{{ drawer_random_limit }}"
+          {% endif %}
+        >
+          {% if drawer_use_collection_random %}
+            {% for item in drawer_pool_collection.products %}
+              {% if item.available %}
+                {% render 'drawer-progress-upsell-if-not-heeled', item: item, section_id: section_id, random_pick: true %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for item in settings.order_related_products %}
+              {% if item.available %}
+                {% render 'drawer-progress-upsell-if-not-heeled', item: item, section_id: section_id %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
       </div>
-
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="drawer__progress_products-arrows eva-slider-controls__arrows">
+        {% render 'eva-slider-arrows' %}
+      </div>
     </div>
     {% if drawer_use_collection_random %}
       <script>
@@ -176,142 +273,207 @@
   {% endif %}
 {% endcapture %}
 
-{% comment %} {% if progress_bar_setting == 'shipping' %}
-  {% assign progressThreshold = 0 %}
-  {% assign freeShipping = false %}
+{% assign drawer_products_stripped = drawer_products | strip %}
+{% assign has_upsell_products = false %}
+{% if drawer_products_stripped != '' %}
+  {% assign has_upsell_products = true %}
+{% endif %}
 
-  {% assign threshold = settings.order_total | times: 100.0 %}
-  {% assign progressThreshold = cart.total_price | divided_by: threshold %}
-
-  {% if progressThreshold > 1 %}
-    {% assign freeShipping = true %}
+{% if progress_part == 'upsell' or progress_part == 'all' %}
+  {% if has_upsell_products %}
+    {% if is_cart_drawer %}
+      {{ drawer_products }}
+    {% else %}
+      <section class="evamats-cart-upsell" aria-labelledby="evamats-cart-upsell-heading-{{ section_id }}">
+        <div class="evamats-cart-upsell__inner page-width">
+          <h2 id="evamats-cart-upsell-heading-{{ section_id }}" class="evamats-cart-upsell__heading">
+            {{ 'sections.cart.upsell_heading' | t }}
+          </h2>
+          {{ drawer_products }}
+        </div>
+      </section>
+    {% endif %}
   {% endif %}
+{% endif %}
 
-  {% if threshold != '' %}
-    <div id="drawer__progress" class="drawer__progress">
+{% if progress_part == 'gift' or progress_part == 'all' %}
+  {% if progress_bar_setting == 'shipping' %}
+    {% assign progressThreshold = 0 %}
+    {% assign freeShipping = false %}
+
+    {% assign threshold = settings.order_total | times: 100.0 %}
+    {% assign progressThreshold = cart.total_price | divided_by: threshold %}
+
+    {% if progressThreshold > 1 %}
+      {% assign freeShipping = true %}
+    {% endif %}
+
+    {% if threshold != '' and cart != empty %}
+      <div id="drawer__progress" class="drawer__progress evamats-cart-gift-banner-wrap">
+        <div class="evamats-cart-gift-banner">
+          <div class="evamats-cart-gift-banner__text-row">
+            <p class="evamats-cart-gift-banner__text">
+              {% if freeShipping %}
+                {{ 'sections.cart.progress_free_shipping' | t }}
+              {% else %}
+                {% assign value = threshold | minus: cart.total_price | money %}
+                {{ 'sections.cart.progress_text_order_value' | t: value: value }}
+              {% endif %}
+            </p>
+            <span class="evamats-cart-gift-banner__info" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M8 7.2V11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="8" cy="5.1" r="0.9" fill="currentColor"/>
+              </svg>
+            </span>
+          </div>
+          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progressThreshold | times: 100 | at_most: 100 | round }}">
+            <div class="evamats-cart-gift-banner__bar-fill" style="width: {{ progressThreshold | times: 100 | at_most: 100 }}%;"></div>
+          </div>
+          <div class="evamats-cart-gift-banner__gift" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 18V32H32V18" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 18V32" stroke="#FF2741" stroke-width="2"/>
+              <path d="M8 18H32V14C32 12.8954 31.1046 12 30 12H10C8.89543 12 8 12.8954 8 14V18Z" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 12C20 9.5 17.5 7 15 7C12.5 7 11 8.5 11 10.5C11 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 12C20 9.5 22.5 7 25 7C27.5 7 29 8.5 29 10.5C29 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% elsif progress_bar_setting == 'discount' %}
+    {% assign discount5 = 50000 %}
+    {% assign discount15 = 120000 %}
+    {% assign discount20 = 240000 %}
+    {% assign discount25 = 360000 %}
+
+    {% assign total = cart.total_price %}
+
+    {% assign nextDiscount = '' %}
+    {% assign value = 0 %}
+    {% assign progressThreshold = 0 %}
+
+    {% if total < discount5 %}
+      {% assign nextDiscount = '5%' %}
+      {% assign value = discount5 | minus: total %}
+      {% assign progressThreshold = total | times: 100.0 | divided_by: discount5 %}
+    {% elsif total < discount15 %}
+      {% assign nextDiscount = '15%' %}
+      {% assign value = discount15 | minus: total %}
+      {% assign progressThreshold = total | times: 100.0 | divided_by: discount15 %}
+    {% elsif total < discount20 %}
+      {% assign nextDiscount = '20%' %}
+      {% assign progressThreshold = total | times: 100.0 | divided_by: discount20 %}
+      {% assign value = discount20 | minus: total %}
+    {% elsif total < discount25 %}
+      {% assign nextDiscount = '25%' %}
+      {% assign value = discount25 | minus: total %}
+      {% assign progressThreshold = total | times: 100.0 | divided_by: discount25 %}
+    {% else %}
+      {% assign nextDiscount = 'full discount' %}
+      {% assign progressThreshold = 100.0 %}
+    {% endif %}
+
+    {% if total != 0 and nextDiscount != 'full discount' %}
+      <div id="drawer__progress" class="drawer__progress evamats-cart-gift-banner-wrap">
+        <div class="evamats-cart-gift-banner">
+          <div class="evamats-cart-gift-banner__text-row">
+            <p class="evamats-cart-gift-banner__text">
+              {% assign value_money = value | money %}
+              {{ 'sections.cart.progress_text_discount' | t: value: value_money, nextDiscount: nextDiscount }}
+            </p>
+            <span class="evamats-cart-gift-banner__info" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M8 7.2V11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="8" cy="5.1" r="0.9" fill="currentColor"/>
+              </svg>
+            </span>
+          </div>
+          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progressThreshold | round }}">
+            <div class="evamats-cart-gift-banner__bar-fill" style="width: {{ progressThreshold }}%;"></div>
+          </div>
+          <div class="evamats-cart-gift-banner__gift" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 18V32H32V18" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 18V32" stroke="#FF2741" stroke-width="2"/>
+              <path d="M8 18H32V14C32 12.8954 31.1046 12 30 12H10C8.89543 12 8 12.8954 8 14V18Z" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M20 12C20 9.5 17.5 7 15 7C12.5 7 11 8.5 11 10.5C11 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 12C20 9.5 22.5 7 25 7C27.5 7 29 8.5 29 10.5C29 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    {% elsif total != 0 %}
       <div class="drawer__progress_text">
-        {% if freeShipping %}
-          {{ 'sections.cart.progress_free_shipping' | t }}
-        {% else %}
-          {% assign value = threshold | minus: cart.total_price | money %}
-          {{ 'sections.cart.progress_text_order_value' | t: value: value }}
-        {% endif %}
+        {{ 'sections.cart.progress_max_discount' | t }}
       </div>
-      <div class="drawer__progress_bar ">
-        <div class="line" style="width: {{ progressThreshold | times: 100 | at_most: 100 }}%;"></div>
-      </div>
-    </div>
-
-    {{ drawer_products }}
+    {% endif %}
   {% endif %}
-{% elsif progress_bar_setting == 'discount' %}
-  {% assign discount5 = 50000 %}
-  {% assign discount15 = 120000 %}
-  {% assign discount20 = 240000 %}
-  {% assign discount25 = 360000 %}
+{% endif %}
 
-  {% assign total = cart.total_price %}
-
-  {% assign nextDiscount = '' %}
-  {% assign value = 0 %}
-  {% assign progressThreshold = 0 %}
-
-  {% if total < discount5 %}
-    {% assign nextDiscount = '5%' %}
-    {% assign value = discount5 | minus: total %}
-    {% assign progressThreshold = total | times: 100.0 | divided_by: discount5 %}
-  {% elsif total < discount15 %}
-    {% assign nextDiscount = '15%' %}
-    {% assign value = discount15 | minus: total %}
-    {% assign progressThreshold = total | times: 100.0 | divided_by: discount15 %}
-  {% elsif total < discount20 %}
-    {% assign nextDiscount = '20%' %}
-    {% assign progressThreshold = total | times: 100.0 | divided_by: discount20 %}
-    {% assign value = discount20 | minus: total %}
-  {% elsif total < discount25 %}
-    {% assign nextDiscount = '25%' %}
-    {% assign value = discount25 | minus: total %}
-    {% assign progressThreshold = total | times: 100.0 | divided_by: discount25 %}
-  {% else %}
-    {% assign nextDiscount = 'full discount' %}
-    {% assign progressThreshold = 100.0 %}
-  {% endif %}
-
-  {% if total != 0 and nextDiscount != 'full discount' %}
-    <div id="drawer__progress" class="drawer__progress">
-      <div class="drawer__progress_text">
-        {% assign value_money = value | money %}
-        {{ 'sections.cart.progress_text_discount' | t: value: value_money, nextDiscount: nextDiscount }}
-      </div>
-      <div class="drawer__progress_bar">
-        <div class="line" style="width: {{ progressThreshold }}%;"></div>
-      </div>
-    </div>
-  {% else %}
-    <div class="drawer__progress_text">
-      {{ 'sections.cart.progress_max_discount' | t }}
-    </div>
-  {% endif %}
-
-{% endif %} {% endcomment %}
-
+{% unless progress_part == 'gift' %}
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.drawer__progress_products .product-form__submit').forEach(function (button) {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
+  (function () {
+    if (window.__cartUpsellDelegated) return;
+    window.__cartUpsellDelegated = true;
 
-        const productWrapper = button.closest('.product__upsell_item');
-        if (!productWrapper) return;
-
-        let variantId = null;
-
-        const activeVariant = productWrapper.querySelector('.product__upsell_item_variant.active');
-        if (activeVariant) {
-          variantId = activeVariant.dataset.id;
-        } else {
-          variantId = productWrapper.dataset.id;
-        }
-
-        if (!variantId) {
-          alert({{ 'sections.cart.cart_upsell_variant_error' | t | json }});
-          return;
-        }
-
-        fetch(window.routes.cart_add_url + '.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: 1,
-          }),
-        })
-          .then(function (response) {
-            if (!response.ok) throw new Error('Cart add error');
-            return response.json();
-          })
-          .then(function () {
-            location.reload();
-          })
-          .catch(function (err) {
-            console.error(err);
-          });
-      });
-    });
-
-    document.querySelectorAll('.drawer__progress_products .product__upsell_item_variant').forEach(function (variant) {
-      variant.addEventListener('click', function () {
-        const group = variant.closest('.product__upsell_item_variants');
+    document.addEventListener('click', function (e) {
+      var variant = e.target.closest('.drawer__progress_products .product__upsell_item_variant');
+      if (variant && !variant.classList.contains('disabled')) {
+        var group = variant.closest('.product__upsell_item_variants');
         if (!group) return;
-
         group.querySelectorAll('.product__upsell_item_variant').forEach(function (v) {
           v.classList.remove('active');
         });
         variant.classList.add('active');
-      });
+        return;
+      }
+
+      var button = e.target.closest('.drawer__progress_products .product-form__submit');
+      if (!button || button.disabled) return;
+      e.preventDefault();
+
+      var productWrapper = button.closest('.product__upsell_item');
+      if (!productWrapper) return;
+
+      var variantId = null;
+      var activeVariant = productWrapper.querySelector('.product__upsell_item_variant.active');
+      if (activeVariant) {
+        variantId = activeVariant.dataset.id;
+      } else {
+        variantId = productWrapper.dataset.id;
+      }
+
+      if (!variantId) {
+        alert({{ 'sections.cart.cart_upsell_variant_error' | t | json }});
+        return;
+      }
+
+      fetch(window.routes.cart_add_url + '.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: 1,
+        }),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Cart add error');
+          return response.json();
+        })
+        .then(function () {
+          location.reload();
+        })
+        .catch(function (err) {
+          console.error(err);
+        });
     });
-  });
+  })();
 </script>
+{% endunless %}

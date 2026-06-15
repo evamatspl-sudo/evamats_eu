@@ -1,0 +1,115 @@
+{%- comment -%}
+  Collection link — car thumbnail + forward chevron (Figma 2114:13410 desktop, 1710:25925 mobile).
+{%- endcomment -%}
+
+{%- liquid
+  assign parent_collection = nil
+  assign product_collection = nil
+  assign title_collection_link = nil
+  assign title_collection_thumb = nil
+  assign excluded_handles = 'outlet,bestsellery,podpietki,akcesoria-samochodowa-mod,akcesoria,organizers-to-trunk' | split: ','
+ 
+  if collection != blank
+    unless excluded_handles contains collection.handle
+      assign product_collection = collection
+    endunless
+  endif
+
+  if product_collection == blank and product.metafields.custom.bitrix_collection != blank
+    assign bitrix_handle = product.metafields.custom.bitrix_collection | strip | handleize
+    if collections[bitrix_handle] != blank
+      assign product_collection = collections[bitrix_handle]
+    endif
+  endif
+
+  if product_collection == blank and product.metafields.custom.bitrix_colection != blank
+    assign bitrix_handle = product.metafields.custom.bitrix_colection | strip | handleize
+    if collections[bitrix_handle] != blank
+      assign product_collection = collections[bitrix_handle]
+    endif
+  endif
+
+  if product_collection == blank
+    for tag in product.tags
+      for item in product.collections
+        unless excluded_handles contains item.handle
+          if item.title contains tag
+            assign product_collection = item
+            break
+          endif
+        endunless
+      endfor
+      if product_collection != blank
+        break
+      endif
+    endfor
+  endif
+
+  if product_collection == blank
+    assign best_handle_length = 0
+    for item in product.collections
+      unless excluded_handles contains item.handle
+        assign handle_length = item.handle | size
+        if handle_length > best_handle_length
+          assign best_handle_length = handle_length
+          assign product_collection = item
+        endif
+      endunless
+    endfor
+  endif
+
+  if product_collection != blank
+    assign candidate = ''
+    assign handle_parts = product_collection.handle | split: '-'
+    for part in handle_parts
+      if candidate == blank
+        assign candidate = part
+      else
+        assign candidate = candidate | append: '-' | append: part
+      endif
+      if candidate != product_collection.handle
+        assign test_col = collections[candidate]
+        if test_col != blank
+          assign parent_collection = test_col
+          break
+        endif
+      endif
+    endfor
+  endif
+
+  if parent_collection != blank
+    assign title_collection_link = parent_collection
+  elsif product_collection != blank
+    assign title_collection_link = product_collection
+  endif
+
+  if product_collection != blank and product_collection.image != blank
+    assign title_collection_thumb = product_collection.image
+  elsif title_collection_link != blank and title_collection_link.image != blank
+    assign title_collection_thumb = title_collection_link.image
+  endif
+-%}
+
+{%- if title_collection_link != blank -%}
+  <a
+    href="{{ title_collection_link.url }}"
+    class="evamats-product-title__collection-link"
+    aria-label="{{ title_collection_link.title | escape }}"
+  >
+    {%- if title_collection_thumb != blank -%}
+      {{
+        title_collection_thumb
+        | image_url: width: 304
+        | image_tag:
+          class: 'evamats-product-title__car-thumb',
+          loading: 'lazy',
+          widths: '79, 152, 304',
+          sizes: '(max-width: 749px) 79px, 152px',
+          alt: ''
+      }}
+    {%- endif -%}
+    <span class="evamats-product-title__chevron" aria-hidden="true">
+      {% render 'evamats-icon-forward' %}
+    </span>
+  </a>
+{%- endif -%}

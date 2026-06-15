@@ -1,0 +1,75 @@
+{%- liquid
+  assign bar_title = product.title | escape
+  if product.metafields.custom.custom_title != blank
+    assign bar_title = product.metafields.custom.custom_title | escape
+  endif
+
+  assign bar_thumb = product.featured_media.preview_image | image_url: width: 120
+  if bar_thumb == blank
+    assign bar_thumb = '1x1_000000.webp' | file_url
+  endif
+
+  assign sticky_variant = product.selected_or_first_available_variant
+-%}
+
+<div
+  class="evamats-config-step-bar sticky_container active"
+  data-evamats-config-step-bar
+  data-progress-template="{{ 'general.config.steps_progress' | t | escape }}"
+>
+  <div class="evamats-config-step-bar__inner">
+    <div class="evamats-config-step-bar__lead">
+      <div class="evamats-config-step-bar__thumb">
+        <img
+          src="{{ bar_thumb }}"
+          alt=""
+          width="56"
+          height="56"
+          loading="lazy"
+          data-step-bar-thumb
+        >
+      </div>
+      <div class="evamats-config-step-bar__info">
+        <p class="evamats-config-step-bar__title" data-step-bar-title>{{ bar_title }}</p>
+        <p class="evamats-config-step-bar__progress" data-step-bar-progress hidden></p>
+        <p class="evamats-config-step-bar__hint">
+          <span data-step-bar-hint></span>
+          <button
+            type="button"
+            class="evamats-config-step-bar__info-btn openPopup"
+            data-popup="popupOverlayPriceComment"
+            aria-label="{{ 'general.config.preview_badge' | t }}"
+          >
+            {% render 'icon-info' %}
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <div class="evamats-config-step-bar__actions">
+      <div class="evamats-config-step-bar__price-row">
+        <span class="sticky_config_price_compare option__price_compare hidden"></span>
+        <span class="sticky_config_price_price">{{ sticky_variant.price | money_without_trailing_zeros }}</span>
+        <span class="evamats-sticky-card__discount hidden"></span>
+      </div>
+      <button
+        type="button"
+        class="evamats-config-step-bar__next button button_5"
+        data-step-bar-next
+      >
+        {{ 'general.config.continue' | t }}
+      </button>
+      <button
+        type="button"
+        class="evamats-config-step-bar__cart button sticky_add_to_cart hidden"
+        data-step-bar-cart
+      >
+        <span class="loading-overlay__spinner hidden" aria-hidden="true">
+          <span class="loader"></span>
+        </span>
+        {% render 'icon-cart' %}
+        <span data-add-to-cart-label>{{ 'products.product.add_to_cart' | t }}</span>
+      </button>
+    </div>
+  </div>
+</div>

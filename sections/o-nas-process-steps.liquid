@@ -9,7 +9,7 @@
   assign onp_layout = section.settings.layout | default: 'horizontal'
 -%}
 
-<section
+<div
   id="ONasProcess-{{ section.id }}"
   class="o-nas-process{% if onp_layout == 'stack' %} o-nas-process--stack{% endif %}"
 >
@@ -81,7 +81,7 @@
       </div>
     {%- endif -%}
   </div>
-</section>
+</div>
 
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
 

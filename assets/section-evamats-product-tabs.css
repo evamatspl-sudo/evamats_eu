@@ -1,0 +1,441 @@
+/* Product tabs — Figma 1710:18145 / 2142:10449 (desktop-first) */
+
+.evamats-product-tabs {
+  --ept-red: #ff2741;
+  --ept-text: #1b1d22;
+  --ept-muted-bg: #f6f6f6;
+  --ept-tab-height: 61px;
+  padding: 0 0 80px;
+  background: transparent;
+}
+
+.evamats-product-tabs .page-width {
+  max-width: 1520px;
+}
+
+.evamats-product-tabs__shell {
+  position: relative;
+  background: #fff;
+}
+
+.evamats-product-tabs__nav.product_tabs__items {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: none;
+}
+
+.evamats-product-tabs__tab.product_tabs__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: var(--ept-tab-height);
+  margin: 0;
+  padding: 20px 24px 19px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ept-text);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.evamats-product-tabs__tab.product_tabs__item:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+.evamats-product-tabs__tab.product_tabs__item:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+.evamats-product-tabs__tab.product_tabs__item.active,
+.evamats-product-tabs .product_tabs__item.active {
+  background: #fff;
+  border-color: transparent;
+  color: var(--ept-text);
+  font-weight: 600;
+}
+
+.evamats-product-tabs__body.product_tabs__containers {
+  background: #fff;
+}
+
+.evamats-product-tabs__panel.product_tabs__containers_item {
+  display: none;
+  margin: 0;
+  padding: 40px 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs .product_tabs__containers_item {
+  background: transparent;
+  padding: 40px 0 0;
+  border-radius: 0;
+  color: var(--ept-text);
+  margin-top: 0;
+}
+
+.evamats-product-tabs__panel.product_tabs__containers_item.active {
+  display: block;
+}
+
+.evamats-product-tabs__panel.product_tabs__containers_item h1,
+.evamats-product-tabs__panel.product_tabs__containers_item h2,
+.evamats-product-tabs__panel.product_tabs__containers_item h3,
+.evamats-product-tabs__panel.product_tabs__containers_item h4,
+.evamats-product-tabs__panel.product_tabs__containers_item h5,
+.evamats-product-tabs__panel.product_tabs__containers_item h6 {
+  color: var(--ept-text);
+}
+
+/* ── About tab (config) ── */
+.evamats-product-tabs-about {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.evamats-product-tabs-about__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.evamats-product-tabs-about__heading {
+  margin: 0;
+  max-width: 735px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  line-height: 1.1;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__heading-brand {
+  color: var(--ept-red);
+  margin-inline: 0.25em;
+}
+
+.evamats-product-tabs-about__intro-text {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__intro-text p {
+  margin: 0 0 1em;
+}
+
+.evamats-product-tabs-about__intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.evamats-product-tabs-about__features {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.evamats-product-tabs-about__features-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.52px;
+  line-height: 1.1;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.evamats-product-tabs-about__features-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.evamats-product-tabs-about__feature {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.evamats-product-tabs-about__features-row--single .evamats-product-tabs-about__feature {
+  flex: 0 1 calc(50% - 12px);
+  max-width: calc(50% - 12px);
+}
+
+.evamats-product-tabs-about__feature-media {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+}
+
+.evamats-product-tabs-about__feature-media img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+}
+
+.evamats-product-tabs-about__feature-text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__confidence {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.evamats-product-tabs-about__confidence-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.52px;
+  line-height: 1.1;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__confidence-grid {
+  display: flex;
+  gap: 3px;
+}
+
+.evamats-product-tabs-about__confidence-card {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+  padding: 20px 30px;
+  border-radius: 16px;
+  background: var(--ept-muted-bg);
+}
+
+.evamats-product-tabs-about__confidence-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+}
+
+.evamats-product-tabs-about__confidence-icon img,
+.evamats-product-tabs-about__confidence-icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.evamats-product-tabs-about__confidence-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs-about__confidence-card:first-child .evamats-product-tabs-about__confidence-text {
+  margin-left: 22px;
+}
+
+/* ── Generic tab richtext (specs, delivery, product description) ── */
+.evamats-product-tabs__richtext {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs__richtext p {
+  margin: 0 0 1em;
+}
+
+.evamats-product-tabs__richtext p:last-child {
+  margin-bottom: 0;
+}
+
+.evamats-product-tabs__richtext ul,
+.evamats-product-tabs__richtext ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 1em;
+  padding-left: 20px;
+}
+
+.evamats-product-tabs__richtext p strong,
+.evamats-product-tabs__richtext h2,
+.evamats-product-tabs__richtext h3 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.52px;
+  line-height: 1.1;
+}
+
+.evamats-product-tabs__richtext .product_tabs__containers_item_block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 16px;
+}
+
+.evamats-product-tabs__richtext .product_tabs__containers_item_block img {
+  flex-shrink: 0;
+  width: 100px;
+  height: 50px;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.evamats-product-tabs__richtext img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 8px 8px 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-product-tabs {
+    padding-bottom: 48px;
+  }
+
+
+  .evamats-product-tabs {
+    --ept-tab-height: 52px;
+  }
+
+  .evamats-product-tabs__nav.product_tabs__items {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .evamats-product-tabs__nav.product_tabs__items::-webkit-scrollbar {
+    display: none;
+  }
+
+  .evamats-product-tabs__tab.product_tabs__item {
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding: 16px 20px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .evamats-product-tabs__panel.product_tabs__containers_item {
+    padding-top: 24px;
+  }
+
+  .evamats-product-tabs-about {
+    gap: 40px;
+  }
+
+  .evamats-product-tabs-about__heading {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .evamats-product-tabs-about__intro-text,
+  .evamats-product-tabs-about__feature-text {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .evamats-product-tabs-about__features-title,
+  .evamats-product-tabs-about__confidence-title {
+    font-size: 22px;
+    letter-spacing: -0.44px;
+  }
+
+  .evamats-product-tabs-about__features-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+  }
+
+  .evamats-product-tabs-about__features-row--single .evamats-product-tabs-about__feature {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  .evamats-product-tabs-about__confidence-grid {
+    flex-direction: column;
+  }
+
+  .evamats-product-tabs-about__confidence-card:first-child .evamats-product-tabs-about__confidence-text {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .evamats-product-tabs-about__confidence {
+    gap: 24px;
+  }
+
+  .evamats-product-tabs-about__confidence-title {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .evamats-product-tabs-about__confidence-grid {
+    gap: 8px;
+  }
+
+  .evamats-product-tabs-about__confidence-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .evamats-product-tabs-about__confidence-card:first-child .evamats-product-tabs-about__confidence-text {
+    margin-left: 0;
+  }
+
+  .evamats-product-tabs-about__confidence-text {
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 1.5;
+  }
+}

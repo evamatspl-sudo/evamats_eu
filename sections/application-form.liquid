@@ -325,11 +325,11 @@
                               </fieldset>
 
                             {% comment %} matColor {% endcomment %}
-                            <div class="lip__comment">
+                            <div class="lip__comment openPopup" data-popup="popupOverlayLipComment" role="button" tabindex="0">
                                 *{{'general.config.comment' | t}}
-                                <div class="lip__comment_icon openPopup" data-popup="popupOverlayLipComment">
+                                <span class="lip__comment_icon" aria-hidden="true">
                                 {% render 'icon-info' %}
-                                </div>
+                                </span>
                             </div>
 
                             {% comment %} trimColor {% endcomment %}

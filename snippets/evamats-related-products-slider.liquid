@@ -1,0 +1,61 @@
+{%- comment -%}
+  Related products slider — reuses evamats-product-card-bestseller + Swiper
+  Accepts:
+  - section (required)
+  - products (required) — product list
+  - shuffle (bool) — randomize before limiting
+{%- endcomment -%}
+
+{%- liquid
+  assign products_limit = section.settings.products_to_show | default: 12
+  assign product_index = 0
+  assign slide_count = 0
+
+  for item in products limit: 50
+    if item.available != true
+      continue
+    endif
+    if item.type == 'mws_apo_generated'
+      continue
+    endif
+    assign slide_count = slide_count | plus: 1
+  endfor
+-%}
+
+{%- if slide_count > 0 -%}
+  <div class="evamats-related-products__slider-bleed page-width">
+    <div class="evamats-related-products__stage">
+      <div class="evamats-related-products__inner">
+        <div
+          class="evamats-related-products__swiper swiper"
+          data-erp-swiper
+          id="ErpSwiper-{{ section.id }}"
+          data-erp-limit="{{ products_limit }}"
+          {% if shuffle %}data-erp-shuffle="1"{% endif %}
+        >
+          <div class="swiper-wrapper">
+            {%- for item in products limit: 50 -%}
+              {%- if item.available and item.type != 'mws_apo_generated' -%}
+                {%- assign product_index = product_index | plus: 1 -%}
+                {%- assign lazy_load_card = false -%}
+                {%- if product_index > 4 -%}
+                  {%- assign lazy_load_card = true -%}
+                {%- endif -%}
+                <div class="swiper-slide" data-erp-slide>
+                  {% render 'evamats-product-card-bestseller',
+                    card_product: item,
+                    section_id: section.id,
+                    lazy_load: lazy_load_card,
+                    mobile_button_label: section.settings.mobile_button_label,
+                    link_to_product: true,
+                    card_button_label: section.settings.card_button_label
+                  %}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for (i = 0; i < slides.length; i++) {
       slides[i].style.height = '';
     }
-    if (typeof window.matchMedia === 'function' && window.matchMedia('(max-width: 767px)').matches) {
+    if (typeof window.matchMedia === 'function' && window.matchMedia('(max-width: 749px)').matches) {
       return;
     }
-    if (window.innerWidth <= 767) return;
+    if (window.innerWidth <= 749) return;
     var max = 0;
     for (i = 0; i < slides.length; i++) {
       max = Math.max(max, slides[i].offsetHeight);
@@ -31,6 +31,58 @@ document.addEventListener("DOMContentLoaded", function () {
     for (i = 0; i < slides.length; i++) {
       slides[i].style.height = max + 'px';
     }
+  };
+
+  window.initDrawerProgressUpsell = function (root) {
+    if (!root) root = document.querySelector('.drawer__progress_products');
+    if (!root) return null;
+    var navRoot = root.closest('.drawer__progress_products-block') || root.parentElement;
+
+    if (root.swiper) root.swiper.destroy(true, true);
+
+    function run() {
+      if (typeof Swiper === 'undefined') return null;
+      var eq = function () {
+        if (window.equalizeDrawerUpsellHeights) window.equalizeDrawerUpsellHeights(root);
+      };
+      var swiper = new Swiper(root, {
+        spaceBetween: 6,
+        slidesPerView: 'auto',
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          nextEl: navRoot.querySelector('.swiper-button-next'),
+          prevEl: navRoot.querySelector('.swiper-button-prev'),
+        },
+        on: {
+          init: eq,
+          resize: eq,
+          slideChangeTransitionEnd: eq,
+        },
+      });
+      eq();
+      setTimeout(eq, 50);
+      setTimeout(eq, 250);
+      root.querySelectorAll('img').forEach(function (img) {
+        if (img.complete) return;
+        img.addEventListener(
+          'load',
+          function () {
+            eq();
+            swiper.update();
+          },
+          { once: true }
+        );
+      });
+      return swiper;
+    }
+
+    if (window.ensureSwiperLoaded) {
+      window.ensureSwiperLoaded(run);
+      return null;
+    }
+    return run();
   };
 })();
 
@@ -103,9 +155,31 @@ document.addEventListener('DOMContentLoaded', function () {
         return `${amount.toLocaleString(document.documentElement.lang || 'en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currency}`.trim();
       }
 
-      function updateUpsellPrice(cents) {
-        if (!priceEl) return;
-        priceEl.textContent = formatUpsellPrice(cents);
+      function updateUpsellPrice(cents, variant) {
+        const priceRow = upsellItem.querySelector('.product__upsell_price-row');
+        const regularEl = priceRow?.querySelector('.product__upsell_price') || priceEl;
+        const compareEl = priceRow?.querySelector('.product__upsell_price_compare');
+        const discountEl = priceRow?.querySelector('.product__upsell_discount');
+
+        if (regularEl) {
+          regularEl.textContent = formatUpsellPrice(cents);
+        } else if (priceEl) {
+          priceEl.textContent = formatUpsellPrice(cents);
+        }
+
+        if (!compareEl || !discountEl) return;
+
+        const compareCents = variant?.compare_at_price;
+        if (compareCents && compareCents > cents) {
+          compareEl.textContent = formatUpsellPrice(compareCents);
+          compareEl.classList.remove('hidden');
+          const discountValueEl = discountEl.querySelector('.product__upsell_discount__value');
+          (discountValueEl || discountEl).textContent = `${Math.round(((compareCents - cents) / compareCents) * 100)}%`;
+          discountEl.classList.remove('hidden');
+        } else {
+          compareEl.classList.add('hidden');
+          discountEl.classList.add('hidden');
+        }
       }
 
       function updateCheckbox() {
@@ -127,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (matchingVariant) {
           checkbox.value = matchingVariant.id;
           checkbox.dataset.price = matchingVariant.price;
-          updateUpsellPrice(matchingVariant.price);
+          updateUpsellPrice(matchingVariant.price, matchingVariant);
 
           if (matchingVariant.featured_image && matchingVariant.featured_image.src) {
             const src = matchingVariant.featured_image.src;
@@ -139,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           checkbox.value = variants[0].id;
           checkbox.dataset.price = variants[0].price;
-          updateUpsellPrice(variants[0].price);
+          updateUpsellPrice(variants[0].price, variants[0]);
           if (variants[0].featured_image && variants[0].featured_image.src) {
             const src = variants[0].featured_image.src;
             const mainImg = upsellItem.querySelector('.product__upsell_image');
@@ -199,13 +273,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 otherCheckbox.value = otherMatch.id;
                 otherCheckbox.dataset.price = otherMatch.price;
                 const otherPriceEl = item.querySelector('.product__upsell_price');
-                if (otherPriceEl) {
+                const otherPriceRow = item.querySelector('.product__upsell_price-row');
+                const otherRegularEl = otherPriceRow?.querySelector('.product__upsell_price') || otherPriceEl;
+                const otherCompareEl = otherPriceRow?.querySelector('.product__upsell_price_compare');
+                const otherDiscountEl = otherPriceRow?.querySelector('.product__upsell_discount');
+                if (otherRegularEl) {
                   if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
-                    otherPriceEl.textContent = window.Shopify.formatMoney(otherMatch.price);
+                    otherRegularEl.textContent = window.Shopify.formatMoney(otherMatch.price);
                   } else {
-                    const otherCurrency = otherPriceEl.textContent.replace(/[\d.,\s\u00A0-]/g, '').trim() || '€';
+                    const otherCurrency = (otherRegularEl.textContent || '').replace(/[\d.,\s\u00A0-]/g, '').trim() || '€';
                     const otherAmount = (Number(otherMatch.price) || 0) / 100;
-                    otherPriceEl.textContent = `${otherAmount.toLocaleString(document.documentElement.lang || 'en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${otherCurrency}`.trim();
+                    otherRegularEl.textContent = `${otherAmount.toLocaleString(document.documentElement.lang || 'en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${otherCurrency}`.trim();
+                  }
+                }
+                if (otherCompareEl && otherDiscountEl) {
+                  const compareCents = otherMatch.compare_at_price;
+                  if (compareCents && compareCents > otherMatch.price) {
+                    otherCompareEl.textContent = window.Shopify?.formatMoney
+                      ? window.Shopify.formatMoney(compareCents)
+                      : otherCompareEl.textContent;
+                    otherCompareEl.classList.remove('hidden');
+                    const otherDiscountValueEl = otherDiscountEl.querySelector('.product__upsell_discount__value');
+                    (otherDiscountValueEl || otherDiscountEl).textContent = `${Math.round(((compareCents - otherMatch.price) / compareCents) * 100)}%`;
+                    otherDiscountEl.classList.remove('hidden');
+                  } else {
+                    otherCompareEl.classList.add('hidden');
+                    otherDiscountEl.classList.add('hidden');
                   }
                 }
               }
@@ -874,55 +967,18 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 // product options hover on mobile
 
-// Cart upsell progress carousel (same section as PL theme)
+// Cart upsell progress carousel
 (function () {
-  var root = document.querySelector('.drawer__progress_products');
-  if (!root) return;
-
-  function bindImagesLoad() {
-    root.querySelectorAll('img').forEach(function (img) {
-      if (img.complete) return;
-      img.addEventListener(
-        'load',
-        function () {
-          window.equalizeDrawerUpsellHeights(root);
-        },
-        { once: true }
-      );
+  function initAllCartUpsells() {
+    document.querySelectorAll('.drawer__progress_products').forEach(function (root) {
+      if (window.initDrawerProgressUpsell) window.initDrawerProgressUpsell(root);
     });
   }
 
-  function initDrawerSwiper() {
-    if (typeof Swiper === 'undefined') return;
-    var eq = function () {
-      window.equalizeDrawerUpsellHeights(root);
-    };
-    new Swiper(root, {
-      spaceBetween: 10,
-      slidesPerView: 'auto',
-      navigation: {
-        nextEl: root.querySelector('.swiper-button-next'),
-        prevEl: root.querySelector('.swiper-button-prev'),
-      },
-      breakpoints: {
-        768: { slidesPerView: 2, centeredSlides: false },
-        1024: { slidesPerView: 3, centeredSlides: false },
-      },
-      on: {
-        init: eq,
-        resize: eq,
-        slideChangeTransitionEnd: eq,
-      },
-    });
-    eq();
-    setTimeout(eq, 50);
-    setTimeout(eq, 250);
-    bindImagesLoad();
-  }
-  if (window.ensureSwiperLoaded) {
-    window.ensureSwiperLoaded(initDrawerSwiper);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAllCartUpsells);
   } else {
-    initDrawerSwiper();
+    initAllCartUpsells();
   }
 })();
 

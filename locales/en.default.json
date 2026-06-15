@@ -66,6 +66,7 @@
       "gallery_error_message": "No images found in the gallery.",
       "gallery_divider_text": "We have even more for you to discover",
       "continue": "Continue",
+      "steps_progress": "{{ current }} of {{ total }} selected",
       "custom_order_title": "Order mats for an unusual vehicle",
       "custom_order_subtitle": "Boat, plane, quad? Order custom-made rugs here",
       "super_offer": "Super offer",
@@ -79,8 +80,14 @@
       "body_types_available_badge": "All listed body types available",
       "select_brand_model_and_body_type": "Select brand, model and body type",
       "select_heels": "Heel pads (optional)",
+      "select_heels_optional": "(optional)",
       "select_size": "Select size",
       "select_mats_type_and_set": "Select mats type and set",
+      "total": "Total",
+      "checkout_delivery_individual_line_1": "Individual order",
+      "checkout_delivery_individual_line_2": "Estimated delivery time: 14 days.",
+      "checkout_trusted_line_1": "Order with confidence",
+      "checkout_trusted_line_2": "Buyer protection available in the next steps",
       "body_type": "Body type",
       "label_delivery": "Buy for €100+ – free delivery!",
       "label_trunk": "Attention - Trunk mat",
@@ -231,6 +238,7 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "adding_to_cart": "Adding...",
       "choose_color_and_mats_set": "Choose color and mats set",
       "check_set": "Check the set",
       "choose_options": "Choose options",
@@ -450,7 +458,15 @@
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in<\/a> to check out faster."
       },
-      "upsell_add_to_cart": "Add"
+      "upsell_heading": "You might also need",
+      "upsell_add_to_cart": "Add",
+      "unit_price_each_html": "{{ price }} each",
+      "items_in_cart_html": "{{ count }} items in cart",
+      "clear_cart": "Clear",
+      "reservation_sidebar_text": "Due to high demand, we have reserved processing time for your order."
+    },
+    "evamats_related_products": {
+      "view_product": "View product"
     },
     "footer": {
       "payment": "Payment methods"

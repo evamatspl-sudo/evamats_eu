@@ -52,14 +52,29 @@ class CartItems extends HTMLElement {
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const sourceQty = html.querySelector('cart-items');
         this.innerHTML = sourceQty.innerHTML;
+        this.afterCartContentsUpdate();
       })
       .catch(e => {
         console.error(e);
       });
   }
 
+  afterCartContentsUpdate() {
+    if (window.initEvamatsCartReservationTimer) {
+      window.initEvamatsCartReservationTimer();
+    }
+    if (window.initEvamatsCartSidebarControls) {
+      window.initEvamatsCartSidebarControls();
+    }
+    document.querySelectorAll('.drawer__progress_products').forEach(function (upsellRoot) {
+      if (window.initDrawerProgressUpsell) {
+        window.initDrawerProgressUpsell(upsellRoot);
+      }
+    });
+  }
+
   getSectionsToRender() {
-    return [
+    const sections = [
       {
         id: 'main-cart-items',
         section: document.getElementById('main-cart-items').dataset.id,
@@ -74,13 +89,19 @@ class CartItems extends HTMLElement {
         id: 'cart-live-region-text',
         section: 'cart-live-region-text',
         selector: '.shopify-section'
-      },
-      {
-        id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
-        selector: '.js-contents'
       }
     ];
+
+    const cartFooter = document.getElementById('main-cart-footer');
+    if (cartFooter && cartFooter.dataset.id) {
+      sections.push({
+        id: 'main-cart-footer',
+        section: cartFooter.dataset.id,
+        selector: '.js-contents'
+      });
+    }
+
+    return sections;
   }
 
   async updateQuantity(line, quantity, name) {
@@ -277,44 +298,7 @@ class CartItems extends HTMLElement {
 
     publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items' });
 
-    var upsellRoot = document.querySelector('.drawer__progress_products');
-    if (upsellRoot) {
-      function initCartUpsellSwiper() {
-        if (typeof Swiper === 'undefined') return;
-        var eq = function () {
-          if (window.equalizeDrawerUpsellHeights) window.equalizeDrawerUpsellHeights(upsellRoot);
-        };
-        new Swiper(upsellRoot, {
-          spaceBetween: 10,
-          slidesPerView: 'auto',
-          navigation: {
-            nextEl: upsellRoot.querySelector('.swiper-button-next'),
-            prevEl: upsellRoot.querySelector('.swiper-button-prev'),
-          },
-          breakpoints: {
-            768: { slidesPerView: 2, centeredSlides: false },
-            1024: { slidesPerView: 3, centeredSlides: false },
-          },
-          on: {
-            init: eq,
-            resize: eq,
-            slideChangeTransitionEnd: eq,
-          },
-        });
-        eq();
-        setTimeout(eq, 50);
-        setTimeout(eq, 250);
-        upsellRoot.querySelectorAll('img').forEach(function (img) {
-          if (img.complete) return;
-          img.addEventListener('load', eq, { once: true });
-        });
-      }
-      if (window.ensureSwiperLoaded) {
-        window.ensureSwiperLoaded(initCartUpsellSwiper);
-      } else {
-        initCartUpsellSwiper();
-      }
-    }
+    this.afterCartContentsUpdate();
   } catch (err) {
     console.error(err);
     this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));

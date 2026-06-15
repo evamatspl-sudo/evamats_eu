@@ -1,3 +1,15 @@
+/* Breadcrumbs — Figma 1710:17901 (description/regular XS) */
+
+.evamats-breadcrumbs {
+  --eb-gap: 12px;
+  --eb-link: #8090a4;
+  --eb-current: #1b1d22;
+  --eb-sep: #8090a4;
+  --eb-size: 14px;
+  --eb-lh: 1.6;
+  --eb-ls: -0.28px;
+}
+
 .evamats-breadcrumbs__list {
   list-style: none;
   margin: 0;
@@ -5,21 +17,33 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: var(--eb-gap);
+}
+
+.evamats-breadcrumbs__item {
+  list-style: none;
+}
+
+.evamats-breadcrumbs__link,
+.evamats-breadcrumbs__current {
+  font-size: var(--eb-size);
+  font-weight: 400;
+  line-height: var(--eb-lh);
+  letter-spacing: var(--eb-ls);
 }
 
 .evamats-breadcrumbs__link {
-  font-family: var(--font-heading-family);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: rgba(27, 29, 34, 0.5);
+  color: var(--eb-link);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .evamats-breadcrumbs__link:hover {
-  color: rgba(27, 29, 34, 0.85);
+  color: var(--eb-current);
+}
+
+.evamats-breadcrumbs__current {
+  color: var(--eb-current);
 }
 
 .evamats-breadcrumbs__item--sep {
@@ -27,25 +51,13 @@
   height: 5px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(27, 29, 34, 0.35);
-}
-
-.evamats-breadcrumbs__current {
-  font-family: var(--font-heading-family);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #1b1d22;
+  background: var(--eb-sep);
 }
 
 @media screen and (max-width: 749px) {
-  .evamats-breadcrumbs__link,
-  .evamats-breadcrumbs__current {
-    font-family: var(--font-body-family);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.02em;
+  .evamats-breadcrumbs {
+    --eb-size: 14px;
+    --eb-lh: 1.6;
+    --eb-ls: -0.28px;
   }
 }

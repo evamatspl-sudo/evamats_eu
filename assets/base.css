@@ -749,19 +749,24 @@ html.no-js .no-js-inline{
     font-size:calc(var(--font-heading-scale) * 4rem)
 }
 .h1,h1{
-    font-size:calc(var(--font-heading-scale) * 3rem)
+    font-size:var(--font-h1-size);
+    line-height:var(--font-h1-line)
 }
 .h2,h2{
-    font-size:calc(var(--font-heading-scale) * 2rem)
+    font-size:var(--font-h2-size);
+    line-height:var(--font-h2-line)
 }
 .h3,h3{
-    font-size:calc(var(--font-heading-scale) * 1.7rem)
+    font-size:var(--font-h3-size);
+    line-height:var(--font-h3-line)
 }
 .h4,h4{
-    font-size:calc(var(--font-heading-scale) * 1.5rem)
+    font-size:var(--font-h4-size);
+    line-height:var(--font-h4-line)
 }
 .h5,h5{
-    font-size:calc(var(--font-heading-scale) * 1.2rem)
+    font-size:var(--font-h5-size);
+    line-height:var(--font-h5-line)
 }
 @media only screen and (min-width:750px){
     .hxl{
@@ -769,18 +774,6 @@ html.no-js .no-js-inline{
     }
     .h0{
         font-size:calc(var(--font-heading-scale) * 5.2rem)
-    }
-    .h1,h1{
-        font-size:calc(var(--font-heading-scale) * 4rem)
-    }
-    .h2,h2{
-        font-size:calc(var(--font-heading-scale) * 2.4rem)
-    }
-    .h3,h3{
-        font-size:calc(var(--font-heading-scale) * 1.8rem)
-    }
-    .h5,h5{
-        font-size:calc(var(--font-heading-scale) * 1.3rem)
     }
 }
 .h6,h6{
@@ -1733,7 +1726,7 @@ input[type=checkbox]{
 .cart-count-bubble{
     position:absolute;
     background-color:rgb(var(--color-button));
-    color:#fff;
+    color:#000;
     border-radius:100%;
     display:flex;
     justify-content:center;
@@ -2419,12 +2412,6 @@ details[open]>.header__submenu{
     border:1px solid red;
     color:rgb(var(--color-foreground))
 }
-.product__title h1{
-    margin: 0;
-    font-size:2.3rem;
-    font-weight: 700;
-    /* color: #000; */
-}
 #menu-drawer,.header__icon--menu[aria-expanded=true]:before{
     height:100vh
 }
@@ -2472,8 +2459,11 @@ details[open]>.header__submenu{
     gap: 4px;
     border-radius: 10px;
 }
-.product-form__submit .loading-overlay__spinner {
+.product-form__submit:not(.loading) .loading-overlay__spinner {
     display: none !important;
+}
+.product-form__submit.loading > .loading-overlay__spinner {
+    display: flex !important;
 }
 .cCgJSx{
     background:#cb0428!important;
@@ -3410,7 +3400,6 @@ padding: 1rem 2rem;
 font-size: 1.4rem;
 letter-spacing: 0.1rem;
 line-height: 1;
-text-align: center;
 transition: border var(--duration-short) ease;
 cursor: pointer;
 position: relative;
@@ -3995,9 +3984,6 @@ fieldset {
         bottom: 80px;
     }
 
-    .product__title .h1 {
-        font-size: 1.8rem;
-    }
 }
 
 
@@ -4025,19 +4011,20 @@ fieldset {
     --color-border-light: #e9e9e9;
     --color-surface-muted: #f2f2f2;
   
-    --font-h1-size: 72px;
+    /* Desktop heading scale — Figma / evamats-* sections (1920) */
+    --font-h1-size: 36px;
     --font-h1-line: 1;
   
-    --font-h2-size: 46px;
+    --font-h2-size: 32px;
     --font-h2-line: 1;
   
-    --font-h3-size: 42px;
+    --font-h3-size: 28px;
     --font-h3-line: 1.1;
   
-    --font-h4-size: 32px;
+    --font-h4-size: 24px;
     --font-h4-line: 1.1;
   
-    --font-h5-size: 26px;
+    --font-h5-size: 18px;
     --font-h5-line: 1.1;
   
     --font-body-m-size: 18px;
@@ -4064,6 +4051,25 @@ fieldset {
     --font-label-xs-size: 14px;
     --font-label-xs-line: 1;
   }
+
+  @media screen and (max-width: 749px) {
+    :root {
+      --font-h1-size: 32px;
+      --font-h2-size: 28px;
+      --font-h3-size: 24px;
+      --font-h4-size: 20px;
+      --font-h5-size: 18px;
+    }
+  }
+
+  .evamats-v2 .page-width {
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: max(var(--grid-mobile-horizontal-spacing, 0px), 18px);
+    padding-right: max(var(--grid-mobile-horizontal-spacing, 0px), 18px);
+  }
+
   .text_center {
     text-align: center
   }

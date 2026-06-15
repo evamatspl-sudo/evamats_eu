@@ -1,13 +1,17 @@
 
 
-<section
+<div
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'section-evamats-product-gallery.css' | asset_url | stylesheet_tag }}
   {% if product.template_suffix == 'config' %}
-    {{ 'product-config.css' | asset_url | stylesheet_tag }}    
+    {{ 'product-config.css' | asset_url | stylesheet_tag }}
+    {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
+    {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'evamats-config-step-bar.js' | asset_url }}" defer="defer"></script>
   {% endif %}
   {% comment %} {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -84,11 +88,29 @@
     {% assign hasBitrixCollection = true %}
   {% endif %}
 
-  {% render 'breadcrumbs' %}
+  {%- if product.template_suffix == 'config' -%}
+    <div class="evamats-config-breadcrumbs">
+      {%- render 'evamats-breadcrumbs', auto_product: true, class: 'evamats-config-breadcrumbs__nav' -%}
+    </div>
+  {%- endif -%}
 
-  <div class="product config_container product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %} {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}product--mats{% endif %} {% if isOutlet %}product--outlet{% endif %}{% if hasBitrixCollection %}product--hasBitrixCollection{% endif %}" {% if product.metafields.custom.body_type %}data-type={{ product.metafields.custom.body_type }}{% endif %} >
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      <div class="product-media-gallery-wr">
+  <div class="product config_container{% if product.template_suffix == 'config' %} evamats-config{% endif %} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }}  {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %} product--mats{% endif %}{% if isOutlet %} product--outlet{% endif %}{% if hasBitrixCollection %} product--hasBitrixCollection{% endif %}" {% if product.metafields.custom.body_type %}data-type={{ product.metafields.custom.body_type }}{% endif %}>
+    <div class=" product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+      <div class="product-media-gallery-wr evamats-product-gallery">
+        {%- if section.settings.gallery_badge != blank -%}
+          <div class="evamats-product-gallery__badge">
+            {{
+              section.settings.gallery_badge
+              | image_url: width: 200
+              | image_tag:
+                class: 'evamats-product-gallery__badge-img',
+                loading: 'lazy',
+                widths: '84, 100, 200',
+                sizes: '100px',
+                alt: section.settings.gallery_badge.alt | default: '' | escape
+            }}
+          </div>
+        {%- endif -%}
          {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
           {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges.value  %}
           {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges.value  %}
@@ -500,8 +522,15 @@
           {% endif %}
           
         
-          {% render 'product-media-gallery_without_edges', images: withoutEdgesImages  %}
+          {% render 'product-media-gallery_without_edges', images: withoutEdgesImages %}
           {% render 'product-media-gallery_with_edges', images: withEdgesImages %}
+
+          {%- if section.settings.gallery_disclaimer != blank -%}
+            <p class="evamats-product-gallery__disclaimer">
+              <span class="evamats-product-gallery__disclaimer-mark" aria-hidden="true">*</span>
+              <span class="evamats-product-gallery__disclaimer-text">{{ section.settings.gallery_disclaimer | escape }}</span>
+            </p>
+          {%- endif -%}
 
           {% if product.template_suffix contains 'config' %}
             <div class="product__config_image product__config_image--desktop">
@@ -517,7 +546,7 @@
     </div>
    
     
-    <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+    <div class="product__info-wrapper {% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
         data-section="{{ section.id }}"
@@ -537,17 +566,32 @@
               >
                 {{- block.settings.text -}}
               </p>
-            {%- when 'title' -%}
-              <div class="product__title" {{ block.shopify_attributes }}>
+            {%- when 'title' -%} 
+              {%- liquid
+                assign product_title = product.title | escape
+                if product.metafields.custom.custom_title != blank
+                  assign product_title = product.metafields.custom.custom_title | escape
+                endif
+              -%}
+              <div class="evamats-product-title product__title" {{ block.shopify_attributes }}>
                 {% if block.settings.show_sale_image and block.settings.sale_image %}
-                  <img src="{{block.settings.sale_image | img_url: '300x' }}" alt="" loading='lazy' style="background-color: {{block.settings.sale_background }};width:{{block.settings.sale_width }}px">
+                  <img
+                    class="evamats-product-title__sale-image"
+                    src="{{ block.settings.sale_image | img_url: '300x' }}"
+                    alt=""
+                    loading="lazy"
+                    style="background-color: {{ block.settings.sale_background }};width:{{ block.settings.sale_width }}px"
+                  >
                 {% endif %}
-                <h1>{{ product.title | escape }}</h1>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h1">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
+                <div class="evamats-product-title__inner">
+                  {%- if product.template_suffix == 'config' and product.selected_or_first_available_variant.sku != blank -%}
+                    <p class="evamats-product-title__sku">
+                      {{- 'products.product.sku' | t -}}: {{ product.selected_or_first_available_variant.sku | escape }}
+                    </p>
+                  {%- endif -%}
+                  <h1 class="evamats-product-title__heading">{{ product_title }}</h1>
+                  {% render 'evamats-product-title-collection-link' %}
+                </div>
               </div>
               <div class="price price--large price--show-badge" id="google_prices"></div>
             {%- when 'price' -%}
@@ -905,7 +949,16 @@
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              {%- if product.template_suffix == 'config' -%}
+                {%- render 'evamats-config-checkout',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id
+                -%}
+              {%- else -%}
+                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              {%- endif -%}
             {%- when 'rating' -%}
               <div class="rating">
                 {% assign ratingValue = 0 %}
@@ -1016,6 +1069,7 @@
                 block: block
               %}
             {%- when 'date_of_production' -%}
+              {% unless product.template_suffix contains 'config' %}
               {% unless product.metafields.custom.body_type == 'corners' %}
                 {% assign bodyTypes = product.metafields.custom.custom_list_body_type_in_config.value %}
                 {% assign step_title = 'general.config.select_year' | t %}
@@ -1090,6 +1144,7 @@
                             {% if item.image %}
                               <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="400">
                             {% endif %}
+                            <span class="evamats-config-body-label">{{ item.title }}</span>
                             <div class="label__tooltip">{{ item.title }}</div>
                           </label>
                         {% endfor %}
@@ -1150,13 +1205,14 @@
                       </fieldset>
                     {% endif %}
     
-                    <button class="product__dropdown_button button" disabled>{{'general.config.continue' | t}}</button>
+                    <button class="product__dropdown_button button button_5" disabled>{{'general.config.continue' | t}}</button>
                   </div>
                 </div>
               {% endunless %}
+              {% endunless %}
             {%- when 'config' -%}
               <div class="product__dropdown_wr disabled" data-dropdown="mat_patterns_colors">
-                <div class="product__dropdown_title">{{ 'general.config.select_shape_and_colors' | t }}:<span class="product__dropdown_value"></span>  {% render 'icon-caret' %}{% render 'icon-edit' %}</div>
+                <div class="product__dropdown_title">{{ 'general.config.select_shape_and_colors' | t }}:<span class="product__dropdown_value"></span>  {% render 'icon-config-caret' %}{% render 'icon-edit' %}</div>
                 <div class="product__dropdown_inner">
                   <div class="product__config_main">
                     {% comment %} matPattern {% endcomment %}
@@ -1274,16 +1330,15 @@
                           <div class="label__tooltip">{{ 'general.colors.white' | t }}</div>
                         </label>
                       </div>
+                      <div class="lip__comment openPopup" data-popup="popupOverlayLipComment" role="button" tabindex="0">
+                        *{{ 'general.config.comment' | t }}
+                        <span class="lip__comment_icon" aria-hidden="true">
+                          {% render 'icon-info' %}
+                        </span>
+                      </div>
                     </fieldset>
                     
                     {% comment %} matColor {% endcomment %}
-                    <div class="lip__comment">
-                      *{{ 'general.config.comment' | t }}
-                      <div class="lip__comment_icon openPopup" data-popup="popupOverlayLipComment">
-                        {% render 'icon-info' %}
-                      </div>
-                    </div>
-      
                   
                     {% comment %} trimColor {% endcomment %}
                     <fieldset  class="lip__field" data-type="trimColor">
@@ -1364,52 +1419,25 @@
                   
                   </div>
   
-                  <button class="product__dropdown_button button">{{'general.config.continue' | t}}</button>
+                  <button class="product__dropdown_button button button_5">{{'general.config.continue' | t}}</button>
                 </div>
               </div>
                 {% comment %} trimColor {% endcomment %}
                 {% if product.template_suffix contains 'config' %}
-                  <div class="product__config_image product__config_image--main product__config_image--mobile">
-                    <div class="product__config_image_remove_fixed">
-                      {% render 'icon-close' %}
-                      <div class="hidden_state">
-                        {{ 'general.config.preview_badge' | t }}
-                        {% render 'icon-eye' %}
-                      </div>
-                    </div>
-                    <div class="lip__comment openPopup" data-popup="popupOverlayLipComment">
-                      *{{ 'general.config.comment' | t }}
-                      <div class="lip__comment_icon">
-                        {% render 'icon-info' %}
-                      </div>
-                    </div>
-                    <div class="product__config_image--mobile_inner">
-                      <div class="product__config_image_selected_value_wr">
-                        <div class="product__config_image_selected_value" data-name="mats_type"></div>
-                        <div class="product__config_image_selected_value" data-name="mats_set"></div>
-                        <div class="product__config_image_selected_value" data-type="matColor"><img src="" alt="" width="1" height="1"></div>
-                        <div class="product__config_image_selected_value" data-type="trimColor"><img src="" alt="" width="1" height="1"></div>
-                      </div>
-                      <img src="{{ "1x1_000000.webp" | file_url }}" alt="" class="product__config_image--mobile_image" width="600" height="600" loading="lazy">
-                    </div>
-                  </div>
-                {% endif %} 
-              
-              <div class="sticky_container">
-                
-                <button class="sticky_add_to_cart button">
-                  {%- assign sticky_variant = product.selected_or_first_available_variant -%}
-                  <div class="sticky_config_price_price">{{ sticky_variant.price | money_without_trailing_zeros }}</div>
-                  {% render 'icon-cart' %}
-                </button>
-              </div>
-              
+                  {%- liquid
+                    assign preview_title = product.title | escape
+                    if product.metafields.custom.custom_title != blank
+                      assign preview_title = product.metafields.custom.custom_title | escape
+                    endif
+                  -%}
+                  {% render 'evamats-config-preview-mobile', product_title: preview_title %}
+                {% endif %}
 
             {%- when 'config_top' -%}
               {% comment %} Same as main evamats: no separate brand/model step for Individual — those fields are in date_of_production. {% endcomment %}
               {% if product.metafields.custom.body_type == 'custom' and product.type != 'Individual' %}
                 <div class="product__dropdown_wr disabled">
-                  <div class="product__dropdown_title">{{ 'general.config.select_brand_model_and_body_type' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}{% render 'icon-edit' %}</div>
+                  <div class="product__dropdown_title">{{ 'general.config.select_brand_model_and_body_type' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-config-caret' %}{% render 'icon-edit' %}</div>
                   <div class="product__dropdown_inner">
                     <fieldset class="line-item-property__field lip__field product-form__input">
                       <div class="lip__title" for="marka_samochodu">{{ 'general.config.brand' | t }}: * <div class="lip__title_value"></div></div>
@@ -1434,7 +1462,7 @@
                       {% endfor %}
                       <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
                     </fieldset>
-                    <button class="product__dropdown_button button">{{'general.config.continue' | t}}</button>
+                    <button class="product__dropdown_button button button_5">{{'general.config.continue' | t}}</button>
                   </div>
                 </div>
               {% else %}
@@ -1510,7 +1538,20 @@
               {% endif %}
               {% if isHeel %}
                 <div class="product__dropdown_wr product__dropdown_wr--heel disabled">
-                  <div class="product__dropdown_title">{{ 'general.config.select_heels' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}{% render 'icon-edit' %}</div>
+                  <div class="product__dropdown_title product__dropdown_title--heel">
+                    <span class="product__dropdown_title_heading">
+                      <span class="product__dropdown_title_text">{{ 'general.config.heel' | t }}</span>
+                      <span class="product__dropdown_title_optional">{{ 'general.config.select_heels_optional' | t }}</span>
+                    </span>
+                    <span class="product__dropdown_value"></span>
+                    <span class="product__dropdown_title_actions">
+                      <button type="button" class="product__heel_help openPopup" data-popup="popupOverlayUpsellVideo">
+                        {% render 'icon-config-help' %}
+                        <span>{{ 'general.config.read_more' | t }}</span>
+                      </button>
+                      {% render 'icon-config-caret' %}{% render 'icon-edit' %}
+                    </span>
+                  </div>
                   <div class="product__dropdown_inner done super_done">
                     {% assign isHeel = false %}
 
@@ -1522,9 +1563,7 @@
 
                     {% if isHeel %}
                       <div class="product__upsell">
-                        <div class="product__upsell_info">
-                          <div class="product__upsell_info_video openPopup" data-popup="popupOverlayUpsellVideo">{{ 'general.config.read_more' | t }} {% render 'icon-video' %}</div>
-                        </div>
+                        {% comment %} Help link moved to product__dropdown_title--heel {% endcomment %}
                         {% comment %} <div class="product__upsell__main_title">
                           {{ 'general.config.heel' | t }}</div> {% endcomment %}
                         {% for item in settings.product_upsell %}
@@ -1560,7 +1599,12 @@
                               <div class="product__upsell_item_sold_out_message">{{'general.config.sold_out' | t }}</div>
                             {% endif %}
                             <div class="img_wr">
-                              <img src="{{ item.featured_image | img_url: '300x' }}" alt="" class="product__upsell_image" loading='lazy'>
+                              <div class="product__upsell_thumb">
+                                <img src="{{ item.featured_image | img_url: '300x' }}" alt="" class="product__upsell_image" loading='lazy'>
+                                <div class="openPopup product__upsell_button_zoom" data-popup="product__upsell_image_{{ forloop.index }}">
+                                  {% render 'icon-camera' %}
+                                </div>
+                              </div>
 
                               <div id="product__upsell_image_{{ forloop.index }}" class="popup_overlay popup-overlay--product__upsell">
                                 <div class="popup">
@@ -1575,18 +1619,6 @@
                                   </div>
                                 </div>
                                 <span class="popup_close_btn">{% render 'icon-close' %}</span>
-                              </div>
-
-                              <div class="openPopup product__upsell_button_zoom" data-popup="product__upsell_image_{{ forloop.index }}">
-                                {% render 'icon-camera' %}
-                              </div>
-                              <div class="product__upsell_custom_checkbox">
-                                {% if item.variants.size == 1 %}
-                                  <input type="checkbox" name="product__upsell" id="product__upsell_{{ forloop.index }}" value="{{ item.variants[0].id }}" data-price="{{ item.variants[0].price }}">
-                                {% else %}
-                                  <input type="checkbox" name="product__upsell" id="product__upsell_{{ forloop.index }}" value="" data-price="{{ item.variants[0].price }}">
-                                {% endif %}
-                                <label for="product__upsell_{{ forloop.index }}"></label>
                               </div>
                             </div>
 
@@ -1669,7 +1701,29 @@
                                   {{ mount_option_markup }}
                                 </div>
                               {% endif %}
-                              <div class="product__upsell_price">{{ item.price | money }}</div>
+                              {%- assign upsell_v = item.selected_or_first_available_variant -%}
+                              <div class="product__upsell_price-row" data-upsell-price-row>
+                                {%- if upsell_v.compare_at_price > upsell_v.price -%}
+                                  <span class="product__upsell_price_compare">{{ upsell_v.compare_at_price | money_without_trailing_zeros }}</span>
+                                {%- else -%}
+                                  <span class="product__upsell_price_compare hidden"></span>
+                                {%- endif -%}
+                                <span class="product__upsell_price">{{ upsell_v.price | money_without_trailing_zeros }}</span>
+                                {%- if upsell_v.compare_at_price > upsell_v.price -%}
+                                  {%- assign upsell_pct = upsell_v.compare_at_price | minus: upsell_v.price | times: 100.0 | divided_by: upsell_v.compare_at_price | round -%}
+                                  <span class="product__upsell_discount">{% render 'evamats-upsell-discount-badge', value: upsell_pct %}</span>
+                                {%- else -%}
+                                  <span class="product__upsell_discount hidden">{% render 'evamats-upsell-discount-badge', value: '' %}</span>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                            <div class="product__upsell_custom_checkbox">
+                              {% if item.variants.size == 1 %}
+                                <input type="checkbox" name="product__upsell" id="product__upsell_{{ forloop.index }}" value="{{ item.variants[0].id }}" data-price="{{ item.variants[0].price }}">
+                              {% else %}
+                                <input type="checkbox" name="product__upsell" id="product__upsell_{{ forloop.index }}" value="" data-price="{{ item.variants[0].price }}">
+                              {% endif %}
+                              <label for="product__upsell_{{ forloop.index }}"></label>
                             </div>
                           </div>
                         {% endfor %}
@@ -1681,7 +1735,12 @@
               {% endif %}
               {% if product.template_suffix contains 'config' and settings.extra_product != blank and settings.extra_product.size > 0 %}
               <div class="product__dropdown_wr product__dropdown_wr--extras disabled" data-dropdown="extras">
-                <div class="product__dropdown_title product__dropdown_title--extras">{{ 'general.config.additional_options' | t }} {% render 'icon-caret' %}</div>
+                <div class="product__dropdown_title product__dropdown_title--extras">
+                  <span class="product__dropdown_title_text">{{ 'general.config.additional_options' | t }}</span>
+                  <span class="product__dropdown_title_actions">
+                    {% render 'icon-config-caret' %}
+                  </span>
+                </div>
                 <div class="product__dropdown_inner done super_done">
                   <div class="product__extras_options product__upsell">
                     {% for item in settings.extra_product %}
@@ -1691,14 +1750,6 @@
                         {% endif %}
                         <div class="img_wr">
                           <img src="{{ item.featured_image | img_url: '300x' }}" alt="" class="product__upsell_image" loading="lazy">
-                          <div class="product__upsell_custom_checkbox">
-                            {% if item.variants.size == 1 %}
-                              <input type="checkbox" name="product__extras" id="product__extras_{{ forloop.index }}" value="{{ item.variants[0].id }}" data-price="{{ item.variants[0].price }}" data-title="{{ item.title }}">
-                            {% else %}
-                              <input type="checkbox" name="product__extras" id="product__extras_{{ forloop.index }}" value="" data-price="{{ item.variants[0].price }}" data-title="{{ item.title }}">
-                            {% endif %}
-                            <label for="product__extras_{{ forloop.index }}"></label>
-                          </div>
                         </div>
                         <div class="product__upsell_item_info">
                           <div class="product__upsell_item_title">{{ item.title }}</div>
@@ -1718,14 +1769,36 @@
                                   <div class="product__upsell_item_variants_label">{{ option.name }}</div>
                                   <div class="option-group_wr">
                                     {% for value in option.values %}
-                                      <div class="product__upsell_item_variant" data-group="{{ option.name }}" data-value="{{ value | escape }}">{{ value }}</div>
+                                      <div class="product__upsell_item_variant{% if forloop.first %} active{% endif %}" data-group="{{ option.name }}" data-value="{{ value | escape }}">{{ value }}</div>
                                     {% endfor %}
                                   </div>
                                 </div>
                               {% endfor %}
                             </div>
                           {% endif %}
-                          <div class="product__upsell_price">{{ item.price | money }}</div>
+                          {%- assign extras_v = item.selected_or_first_available_variant -%}
+                          <div class="product__upsell_price-row" data-upsell-price-row>
+                            {%- if extras_v.compare_at_price > extras_v.price -%}
+                              <span class="product__upsell_price_compare">{{ extras_v.compare_at_price | money_without_trailing_zeros }}</span>
+                            {%- else -%}
+                              <span class="product__upsell_price_compare hidden"></span>
+                            {%- endif -%}
+                            <span class="product__upsell_price">{{ extras_v.price | money_without_trailing_zeros }}</span>
+                            {%- if extras_v.compare_at_price > extras_v.price -%}
+                              {%- assign extras_pct = extras_v.compare_at_price | minus: extras_v.price | times: 100.0 | divided_by: extras_v.compare_at_price | round -%}
+                              <span class="product__upsell_discount">{% render 'evamats-upsell-discount-badge', value: extras_pct %}</span>
+                            {%- else -%}
+                              <span class="product__upsell_discount hidden">{% render 'evamats-upsell-discount-badge', value: '' %}</span>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                        <div class="product__upsell_custom_checkbox">
+                          {% if item.variants.size == 1 %}
+                            <input type="checkbox" name="product__extras" id="product__extras_{{ forloop.index }}" value="{{ item.variants[0].id }}" data-price="{{ item.variants[0].price }}" data-title="{{ item.title }}">
+                          {% else %}
+                            <input type="checkbox" name="product__extras" id="product__extras_{{ forloop.index }}" value="" data-price="{{ item.variants[0].price }}" data-title="{{ item.title }}">
+                          {% endif %}
+                          <label for="product__extras_{{ forloop.index }}"></label>
                         </div>
                       </div>
                     {% endfor %}
@@ -1736,6 +1809,9 @@
             {%- when 'fake_rating' -%}
             {%- endcase -%}
         {%- endfor -%}
+        {% if product.template_suffix == 'config' %}
+          {% render 'evamats-config-step-bar', product: product %}
+        {% endif %}
         {%- form 'contact', id: application_form_id, class: 'getContactsForm' -%}
           <div id="popupOverlayGetContacts" class=" popup_overlay popup-overlay--get_contacts">
             <div class="popup">  
@@ -1974,13 +2050,13 @@
     </div>
     <span class="popup_close_btn" >{% render 'icon-close' %}</span>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section--product",
   "blocks": [
     {
       "type": "@app"
@@ -2215,6 +2291,45 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "header",
+          "content": "Config checkout notes"
+        },
+        {
+          "type": "image_picker",
+          "id": "config_delivery_icon",
+          "label": "Delivery note icon"
+        },
+        {
+          "type": "text",
+          "id": "config_delivery_line_1",
+          "label": "Delivery note line 1"
+        },
+        {
+          "type": "text",
+          "id": "config_delivery_line_2",
+          "label": "Delivery note line 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "config_trusted_seal",
+          "label": "Buyer protection seal"
+        },
+        {
+          "type": "text",
+          "id": "config_trusted_line_1",
+          "label": "Buyer protection line 1"
+        },
+        {
+          "type": "text",
+          "id": "config_trusted_line_2",
+          "label": "Buyer protection line 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "config_trusted_logo",
+          "label": "Trusted Shops logo"
         }
       ]
     },
@@ -3571,6 +3686,23 @@
       "type": "richtext",
       "id": "trunk_message_5_7_os",
       "label": "Trunk message for 5 and 7 seater"
+    },
+    {
+      "type": "header",
+      "content": "Gallery"
+    },
+    {
+      "type": "image_picker",
+      "id": "gallery_badge",
+      "label": "Gallery badge image",
+      "info": "Top-right badge on the product gallery. Leave empty to hide."
+    },
+    {
+      "type": "text",
+      "id": "gallery_disclaimer",
+      "label": "Gallery disclaimer",
+      "default": "The photo may differ from the final result. When ordering, you will receive mats that correspond to your car model.",
+      "info": "Shown below the gallery on desktop. Leave empty to hide."
     },
     {
       "type": "header",

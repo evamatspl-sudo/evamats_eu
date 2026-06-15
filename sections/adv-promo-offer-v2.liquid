@@ -14,7 +14,7 @@
   assign apo_img_alt = section.settings.image_alt | strip | escape
 -%}
 
-<section
+<div
   id="AdvPromoOffer-{{ section.id }}"
   class="adv-promo-offer-v2"
 >
@@ -108,7 +108,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 {% comment %} styles moved to assets/base_v2.css (style) {% endcomment %}
 

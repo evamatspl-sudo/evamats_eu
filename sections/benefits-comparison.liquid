@@ -10,7 +10,7 @@
     assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
 %}
 
-<section class="benefits-comparison" style="
+<divclass="benefits-comparison" style="
         --background: {{ background }};
         --text-color: {{ text_color }};
         --padding_top: {{ padding_top }};
@@ -66,7 +66,7 @@
             {% endfor %}
         </div>
     </div>
-</section>
+</div>
 
 {% schema %}
 {

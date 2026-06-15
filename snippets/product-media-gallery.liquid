@@ -84,7 +84,8 @@
             media_width: media_width,
             media_fit: section.settings.media_fit,
             constrain_to_viewport: section.settings.constrain_to_viewport,
-            lazy_load: false
+            lazy_load: false,
+            hide_media_icon: true
           %}
         </li>
       {%- endif -%}
@@ -114,37 +115,15 @@
                 media_width: media_width,
                 media_fit: section.settings.media_fit,
                 constrain_to_viewport: section.settings.constrain_to_viewport,
-                lazy_load: lazy_load
+                lazy_load: lazy_load,
+                hide_media_icon: true
               %}
           </li>
         {%- endunless -%}
       {%- endfor -%}
     </ul>
     {%- unless is_duplicate -%}
-      <div class="slider-buttons no-js-hidden quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
-        <button
-          type="button"
-          class="slider-button slider-button--prev"
-          name="previous"
-          aria-label="{{ 'general.slider.previous_slide' | t }}"
-        >
-          {% render 'icon-caret' %}
-        </button>
-        <div class="slider-counter caption">
-          <span class="slider-counter--current">1</span>
-          <span aria-hidden="true"> / </span>
-          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-          <span class="slider-counter--total">{{ media_count }}</span>
-        </div>
-        <button
-          type="button"
-          class="slider-button slider-button--next"
-          name="next"
-          aria-label="{{ 'general.slider.next_slide' | t }}"
-        >
-          {% render 'icon-caret' %}
-        </button>
-      </div>
+      {% render 'evamats-product-gallery-slider-controls', media_count: media_count, hide_mobile_slider: hide_mobile_slider %}
     {%- endunless -%}
   </slider-component>
   {%- if first_3d_model -%}
@@ -299,6 +278,12 @@
   {%- endif -%}   
 </media-gallery>
 
+{%- if section.settings.gallery_disclaimer != blank -%}
+  <p class="evamats-product-gallery__disclaimer">
+    <span class="evamats-product-gallery__disclaimer-mark" aria-hidden="true">*</span>
+    <span class="evamats-product-gallery__disclaimer-text">{{ section.settings.gallery_disclaimer | escape }}</span>
+  </p>
+{%- endif -%}
 
 {% if product.template_suffix contains 'config' %}
   <div class="product__config_image product__config_image--desktop">

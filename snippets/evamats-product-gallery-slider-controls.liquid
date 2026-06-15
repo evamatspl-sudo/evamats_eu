@@ -1,0 +1,40 @@
+{%- comment -%}
+  EvaMats product gallery viewer controls — Figma 2109:13380 mobile / 2106:13355 desktop.
+
+  Accepts:
+  - media_count: {Number}
+  - hide_mobile_slider: {Boolean} Dawn flag; overridden in CSS for .evamats-product-gallery
+{%- endcomment -%}
+
+<div class="slider-buttons no-js-hidden quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
+  <button
+    type="button"
+    class="slider-button slider-button--prev evamats-product-gallery__arrow"
+    name="previous"
+    aria-label="{{ 'general.slider.previous_slide' | t }}"
+  >
+    {% render 'evamats-slider-arrow', direction: 'prev' %}
+  </button>
+  {%- if media_count > 1 -%}
+    <div class="slider-counter slider-counter--dots evamats-product-gallery__dots caption">
+      {%- for i in (1..media_count) -%}
+        <button
+          type="button"
+          class="slider-counter__link slider-counter__link--dots{% if forloop.first %} slider-counter__link--active{% endif %}"
+          aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ media_count }}"
+          aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+        >
+          <span class="dot"></span>
+        </button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  <button
+    type="button"
+    class="slider-button slider-button--next evamats-product-gallery__arrow"
+    name="next"
+    aria-label="{{ 'general.slider.next_slide' | t }}"
+  >
+    {% render 'evamats-slider-arrow', direction: 'next' %}
+  </button>
+</div>

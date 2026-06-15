@@ -1,0 +1,72 @@
+{%- comment -%}
+  Config product — About tab content (Figma 2142:10449)
+  Accepts: section
+{%- endcomment -%}
+
+<div class="evamats-product-tabs-about">
+  <div class="evamats-product-tabs-about__intro">
+    <h2 class="evamats-product-tabs-about__heading">
+      {{ section.settings.about_heading_before | escape }}
+      <span class="evamats-product-tabs-about__heading-brand">{{ section.settings.about_heading_brand | escape }}</span>
+      {{ section.settings.about_heading_after | escape }}
+    </h2>
+    {%- if section.settings.about_intro != blank -%}
+      <div class="evamats-product-tabs-about__intro-text rte">
+        {{ section.settings.about_intro }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="evamats-product-tabs-about__features">
+    {%- if section.settings.about_features_heading != blank -%}
+      <h3 class="evamats-product-tabs-about__features-title">{{ section.settings.about_features_heading | escape }}</h3>
+    {%- endif -%}
+
+    <div class="evamats-product-tabs-about__features-list">
+      <div class="evamats-product-tabs-about__features-row">
+        {%- render 'evamats-product-tabs-feature-item', section: section, index: 1, fallback_asset: 'product-tab-feature-water.png' -%}
+        {%- render 'evamats-product-tabs-feature-item', section: section, index: 2, fallback_asset: 'product-tab-feature-coverage.png' -%}
+      </div>
+      <div class="evamats-product-tabs-about__features-row">
+        {%- render 'evamats-product-tabs-feature-item', section: section, index: 3, fallback_asset: 'product-tab-feature-clean.png' -%}
+        {%- render 'evamats-product-tabs-feature-item', section: section, index: 4, fallback_asset: 'product-tab-feature-season.png' -%}
+      </div>
+      <div class="evamats-product-tabs-about__features-row evamats-product-tabs-about__features-row--single">
+        {%- render 'evamats-product-tabs-feature-item', section: section, index: 5, fallback_asset: 'product-tab-feature-eco.png' -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="evamats-product-tabs-about__confidence">
+    {%- if section.settings.about_confidence_heading != blank -%}
+      <h3 class="evamats-product-tabs-about__confidence-title">{{ section.settings.about_confidence_heading | escape }}</h3>
+    {%- endif -%}
+
+    <div class="evamats-product-tabs-about__confidence-grid">
+      {%- if section.settings.about_confidence_1_text != blank -%}
+        <div class="evamats-product-tabs-about__confidence-card">
+          <div class="evamats-product-tabs-about__confidence-icon">
+            {%- render 'evamats-product-tabs-confidence-icon', icon: section.settings.about_confidence_1_icon -%}
+          </div>
+          <p class="evamats-product-tabs-about__confidence-text">{{ section.settings.about_confidence_1_text | escape }}</p>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.about_confidence_2_text != blank -%}
+        <div class="evamats-product-tabs-about__confidence-card">
+          <div class="evamats-product-tabs-about__confidence-icon">
+            {%- render 'evamats-product-tabs-confidence-icon', icon: section.settings.about_confidence_2_icon -%}
+          </div>
+          <p class="evamats-product-tabs-about__confidence-text">{{ section.settings.about_confidence_2_text | escape }}</p>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.about_confidence_3_text != blank -%}
+        <div class="evamats-product-tabs-about__confidence-card">
+          <div class="evamats-product-tabs-about__confidence-icon">
+            {%- render 'evamats-product-tabs-confidence-icon', icon: section.settings.about_confidence_3_icon -%}
+          </div>
+          <p class="evamats-product-tabs-about__confidence-text">{{ section.settings.about_confidence_3_text | escape }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

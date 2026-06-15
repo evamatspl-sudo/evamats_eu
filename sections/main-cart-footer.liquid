@@ -87,7 +87,7 @@
                   </div> {% endcomment %}
                   <div>
 
-                    <section>
+                    <div
                       <form id="discount-form">
                         <div style="display: none;">
                           <label for="total_price">Cena całkowita:</label>
@@ -110,7 +110,7 @@
                         Opłatę należy uiścić na poczcie:
                         <span style="font-weight: bold;">{{ cart.total_price | money_without_currency }}</span>
                       </div>
-                    </section>
+                    </div>
                   </div>
                   {% comment %}
                     discount-popup-end

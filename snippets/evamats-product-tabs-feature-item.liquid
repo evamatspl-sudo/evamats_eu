@@ -1,0 +1,35 @@
+{%- comment -%}
+  Single feature row cell for config About tab.
+  Accepts: section, index (1-5), fallback_asset
+{%- endcomment -%}
+
+{%- case index -%}
+  {%- when 1 -%}
+    {%- assign feature_text = section.settings.about_feature_1_text -%}
+    {%- assign feature_image = section.settings.about_feature_1_image -%}
+  {%- when 2 -%}
+    {%- assign feature_text = section.settings.about_feature_2_text -%}
+    {%- assign feature_image = section.settings.about_feature_2_image -%}
+  {%- when 3 -%}
+    {%- assign feature_text = section.settings.about_feature_3_text -%}
+    {%- assign feature_image = section.settings.about_feature_3_image -%}
+  {%- when 4 -%}
+    {%- assign feature_text = section.settings.about_feature_4_text -%}
+    {%- assign feature_image = section.settings.about_feature_4_image -%}
+  {%- when 5 -%}
+    {%- assign feature_text = section.settings.about_feature_5_text -%}
+    {%- assign feature_image = section.settings.about_feature_5_image -%}
+{%- endcase -%}
+
+{%- if feature_text != blank -%}
+  <div class="evamats-product-tabs-about__feature">
+    <div class="evamats-product-tabs-about__feature-media">
+      {%- if feature_image != blank -%}
+        {{ feature_image | image_url: width: 192 | image_tag: loading: 'lazy', widths: '96, 192', sizes: '96px', alt: '' }}
+      {%- else -%}
+        <img src="{{ fallback_asset | asset_url }}" alt="" width="96" height="96" loading="lazy">
+      {%- endif -%}
+    </div>
+    <p class="evamats-product-tabs-about__feature-text">{{ feature_text | escape }}</p>
+  </div>
+{%- endif -%}
