@@ -1,0 +1,153 @@
+/* 404 — Figma 2251:10452 desktop / 2251:10453 mobile */
+
+.shopify-section:has(.evamats-404) {
+  margin-top: 0;
+}
+
+.evamats-404 {
+  --e404-pt: 80px;
+  --e404-pb: 80px;
+  padding-top: var(--e404-pt);
+  padding-bottom: var(--e404-pb);
+  background: #fff;
+}
+
+.evamats-404__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.evamats-404__media {
+  width: 422px;
+  max-width: 100%;
+}
+
+.evamats-404__media-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.evamats-404__heading {
+  margin-top: 32px;
+  max-width: 632px;
+}
+
+.evamats-404__heading-line {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.64px;
+  color: #1b1d22;
+}
+
+.evamats-404__heading-line + .evamats-404__heading-line {
+  margin-top: 0;
+}
+
+.evamats-404__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.evamats-404__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 60px;
+  padding: 13px 24px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  text-decoration: none;
+  width: 238px;
+}
+
+.evamats-404__btn--secondary {
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  color: #1b1d22;
+}
+
+.evamats-404__btn--primary {
+  gap: 12px;
+  padding: 3px 24px 3px 29px;
+  background: #ff2741;
+  color: #fff;
+  justify-content: flex-start;
+}
+
+.evamats-404__btn-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+}
+
+.evamats-404__btn-icon .evamats-header-drawer__car-cta-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.evamats-404__btn-label {
+  flex: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-404 {
+    --e404-pt: 48px;
+    --e404-pb: 48px;
+  }
+
+  .evamats-404__media {
+    width: min(100%, 339px);
+  }
+
+  .evamats-404__heading {
+    margin-top: 24px;
+    max-width: 339px;
+  }
+
+  .evamats-404__heading-line {
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.36px;
+  }
+
+  .evamats-404__actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 339px;
+    margin-top: 24px;
+  }
+
+  .evamats-404__btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .evamats-404__btn--primary {
+    padding: 0 20px 0 13px;
+  }
+
+  .evamats-404__btn-icon {
+    width: 52px;
+    height: 52px;
+  }
+}

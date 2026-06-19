@@ -2465,13 +2465,7 @@ slider-component.slider-component-full-width {
 }
 
 .product_tabs__containers_item img {
-  width: 100px;
-  height: 50px;
-  object-fit: contain;
-
-  background-color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
+  width: 100%;
 }
 
 .product_tabs__containers_item.active {

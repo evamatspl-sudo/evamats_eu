@@ -40,13 +40,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (root.swiper) root.swiper.destroy(true, true);
 
+    function updateChrome(swiper) {
+      if (!navRoot || !swiper) return;
+      var locked = swiper.isLocked;
+      navRoot.classList.toggle('has-fade-prev', !locked && !swiper.isBeginning);
+      navRoot.classList.toggle('has-fade-next', !locked && !swiper.isEnd);
+    }
+
     function run() {
       if (typeof Swiper === 'undefined') return null;
       var eq = function () {
         if (window.equalizeDrawerUpsellHeights) window.equalizeDrawerUpsellHeights(root);
       };
+      var sync = function (swiper) {
+        eq();
+        updateChrome(swiper);
+      };
       var swiper = new Swiper(root, {
-        spaceBetween: 6,
+        spaceBetween: 8,
         slidesPerView: 'auto',
         watchOverflow: true,
         observer: true,
@@ -56,20 +67,28 @@ document.addEventListener("DOMContentLoaded", function () {
           prevEl: navRoot.querySelector('.swiper-button-prev'),
         },
         on: {
-          init: eq,
-          resize: eq,
-          slideChangeTransitionEnd: eq,
+          init: sync,
+          resize: sync,
+          slideChange: updateChrome,
+          slideChangeTransitionEnd: sync,
+          reachBeginning: updateChrome,
+          reachEnd: updateChrome,
+          fromEdge: updateChrome,
         },
       });
-      eq();
-      setTimeout(eq, 50);
-      setTimeout(eq, 250);
+      sync(swiper);
+      setTimeout(function () {
+        sync(swiper);
+      }, 50);
+      setTimeout(function () {
+        sync(swiper);
+      }, 250);
       root.querySelectorAll('img').forEach(function (img) {
         if (img.complete) return;
         img.addEventListener(
           'load',
           function () {
-            eq();
+            sync(swiper);
             swiper.update();
           },
           { once: true }

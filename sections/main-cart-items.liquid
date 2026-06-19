@@ -27,10 +27,10 @@
   {%- endunless -%}
 
   <div class="evamats-cart__main page-width{% unless cart == empty %} section-{{ section.id }}-padding{% endunless %}">
-    <div class="title-wrapper-with-link">
+    {% comment %} <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
       <a href="/pages/car-brands" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
-    </div>
+    </div> {% endcomment %}
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>

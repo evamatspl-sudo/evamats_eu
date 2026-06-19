@@ -21,6 +21,12 @@
   assign variants_option3_arr = product.variants | map: 'option3'
 
   assign product_form_id = 'product-form-' | append: section.id
+
+  assign meta_body_type = product.metafields.custom.body_type
+  assign trunk_tooltip_content = section.settings.trunk_message
+  if meta_body_type == '5os' or meta_body_type == '7os'
+    assign trunk_tooltip_content = section.settings.trunk_message_5_7_os
+  endif
 -%}
 
 {%- for value in option.values -%}
@@ -51,13 +57,19 @@
     {% assign optionMatsType = 'general.config.mats_type' | t %}
     {% assign optionMatsSet = 'general.config.mats_set' | t %}
     {% assign optionMatsSize = 'general.config.mats_size' | t %}
-    {% assign isMatsTypeOption = false %}
-    {% if option.name == optionMatsType or option.name == 'Mats type' %}
-      {% assign isMatsTypeOption = true %}
+    {% assign isConfigTemplate = false %}
+    {% if product.template_suffix contains 'config' %}
+      {% assign isConfigTemplate = true %}
     {% endif %}
+    {% assign isMatsTypeOption = false %}
     {% assign isMatsSetOption = false %}
-    {% if option.name == optionMatsSet or option.name == 'Mats set' %}
-      {% assign isMatsSetOption = true %}
+    {% if isConfigTemplate %}
+      {% if option.name == optionMatsType or option.name == 'Mats type' %}
+        {% assign isMatsTypeOption = true %}
+      {% endif %}
+      {% if option.name == optionMatsSet or option.name == 'Mats set' %}
+        {% assign isMatsSetOption = true %}
+      {% endif %}
     {% endif %}
     {% assign metaBodyType = product.metafields.custom.body_type %}
     
@@ -113,7 +125,7 @@
               <div class="label_badge">-15%</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == '2os' %}
@@ -137,7 +149,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'electro' %}
@@ -172,7 +184,7 @@
               <div class="label_badge">-15%</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'electro_7os'   %}
@@ -227,7 +239,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == '7os'   %}  
@@ -270,7 +282,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'minivan'   %}
@@ -312,7 +324,7 @@
               <div class="label_badge">-15%</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'bus'   %}
@@ -343,7 +355,7 @@
               <div class="label__tooltip">{{ value }}</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'bus_solid'   %}
@@ -372,7 +384,7 @@
            
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'camper'   %}
@@ -384,7 +396,7 @@
               <div class="label__tooltip">{{ value }}</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'pickup'   %}
@@ -407,7 +419,7 @@
               <div class="label__tooltip">{{ value }}</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'pickup2kabina'   %}
@@ -439,7 +451,7 @@
           {% endcase %}
 
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'tir' %}
@@ -459,7 +471,7 @@
               <div class="label_badge">-15%</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_duzy' %}
@@ -484,7 +496,7 @@
           {% endcase %}
 
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_duzy_separate' %}
@@ -508,7 +520,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_duzy_separate_2_row' %}
@@ -537,7 +549,7 @@
               <div class="label__tooltip">{{ value }}</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_duzy_solid' %}
@@ -558,7 +570,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_duzy_solid_2_row' %}
@@ -584,7 +596,7 @@
               <div class="label__tooltip">{{ value }}</div>
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'van_maly' %}
@@ -608,7 +620,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% elsif metaBodyType == 'tractor' %}
@@ -643,7 +655,7 @@
               
           {% endcase %}
           {% if valueLowercase contains trunkWord %}
-            <div class="trunk_message">{% render 'icon-attention' %}</div>
+            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
           {% endif %}
         </label>
       {% endif %}
@@ -661,6 +673,103 @@
         <span class="evamats-config-option-label">{{ value | remove: 'EVAMATS' }}</span>
 
       </label>
+    {% elsif is_simple_product %}
+      {%- liquid
+        assign value_variant = nil
+        assign gift_amount_variant = nil
+
+        if option_is_gift_amount
+          if option.position == 2
+            assign selected_card_type = product.selected_or_first_available_variant.option1
+            for variant in product.variants
+              if variant.option1 == selected_card_type and variant.option2 == value
+                assign gift_amount_variant = variant
+                assign value_variant = variant
+                break
+              endif
+            endfor
+          elsif option.position == 1
+            assign selected_card_type = product.selected_or_first_available_variant.option2
+            for variant in product.variants
+              if variant.option2 == selected_card_type and variant.option1 == value
+                assign gift_amount_variant = variant
+                assign value_variant = variant
+                break
+              endif
+            endfor
+          endif
+        else
+          for variant in product.variants
+            case option.position
+              when 1
+                if variant.option1 == value
+                  assign value_variant = variant
+                endif
+              when 2
+                if variant.option2 == value
+                  assign value_variant = variant
+                endif
+              when 3
+                if variant.option3 == value
+                  assign value_variant = variant
+                endif
+            endcase
+          endfor
+        endif
+      -%}
+      {% if option_is_gift_amount %}
+        <label
+          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+          {% if value contains '#MWS' or value contains 'Default Title' %} style="display: none"{% endif %}
+          class="evamats-product-option__swatch evamats-product-option__amount-swatch"
+        >
+          <span class="evamats-product-option__amount-media">
+            {%- if value_variant.featured_media -%}
+              {{
+                value_variant.featured_media
+                | image_url: width: 220
+                | image_tag: loading: 'lazy', widths: '110, 220', sizes: '110px', alt: value, class: 'evamats-product-option__amount-image'
+              }}
+            {%- elsif product.featured_media -%}
+              {{
+                product.featured_media
+                | image_url: width: 220
+                | image_tag: loading: 'lazy', widths: '110, 220', sizes: '110px', alt: value, class: 'evamats-product-option__amount-image'
+              }}
+            {%- endif -%}
+          </span>
+          <span class="evamats-product-option__amount-label" data-gift-amount-value="{{ value | escape }}">
+            {%- if gift_amount_variant -%}
+              {{ gift_amount_variant.price | money }}
+            {%- else -%}
+              {{ value }}
+            {%- endif -%}
+          </span>
+          <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+        </label>
+      {% elsif option_has_swatch and value_variant.featured_media %}
+        <label
+          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+          {% if value contains '#MWS' or value contains 'Default Title' %} style="display: none"{% endif %}
+          class="evamats-product-option__swatch"
+        >
+          {{
+            value_variant.featured_media
+            | image_url: width: 128
+            | image_tag: loading: 'lazy', widths: '64,128', sizes: '64px', alt: value
+          }}
+          <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+        </label>
+      {% else %}
+        <label
+          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+          {% if value contains '#MWS' or value contains 'Default Title' %} style="display: none"{% endif %}
+          class="evamats-product-option__pill"
+        >
+          {{- value -}}
+          <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+        </label>
+      {% endif %}
     {% else %}
       <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %}>
         {{ value -}}

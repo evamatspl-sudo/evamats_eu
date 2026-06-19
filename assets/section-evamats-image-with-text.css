@@ -18,10 +18,6 @@
   padding-bottom: var(--eiw-outer-pb);
 }
 
-.evamats-image-with-text .page-width {
-  max-width: 1520px;
-}
-
 .evamats-image-with-text__card {
   background: var(--eiw-card-bg);
   border-radius: var(--eiw-radius);

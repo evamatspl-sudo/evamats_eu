@@ -9,33 +9,9 @@
  */
 {
   "sections": {
-    "02fe151c-258f-4dde-b6d7-c431c9eb9137": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "settings": {
-        "custom_liquid": "{% render \"preloader\" %}",
-        "color_scheme": "background-1",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
-        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0": {
-          "type": "custom_liquid",
-          "disabled": true,
-          "settings": {
-            "custom_liquid": "{% render \"preloader\" %}"
-          }
-        },
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -44,16 +20,16 @@
             "sale_width": 100
           }
         },
-        "rating_9NGqaN": {
-          "type": "rating",
-          "settings": {}
-        },
         "price": {
           "type": "price",
           "settings": {
             "show_badge": true,
             "info_text": "",
-            "info_html": ""
+            "info_text_individual": "",
+            "info_html": "",
+            "info_html_individual": "",
+            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours and add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm and send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
+            "auto_open_individual_welcome_popup": true
           }
         },
         "variant_picker": {
@@ -77,19 +53,21 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false
+            "show_dynamic_checkout": false,
+            "config_delivery_line_1": "",
+            "config_delivery_line_2": "",
+            "config_trusted_line_1": "",
+            "config_trusted_line_2": ""
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         }
       },
       "block_order": [
-        "2cf0cf6a-bfce-4eba-9cb6-995eb93766f0",
-        "vendor",
         "title",
-        "rating_9NGqaN",
         "price",
         "variant_picker",
         "uwagi_pPPRKt",
@@ -122,6 +100,71 @@
         "padding_bottom": 12
       }
     },
+    "product_tabs_dcJdPK": {
+      "type": "product_tabs",
+      "blocks": {
+        "tab_4P3cyN": {
+          "type": "tab",
+          "settings": {
+            "title": "About the product",
+            "id": "description",
+            "html": ""
+          }
+        },
+        "tab_kAfLU4": {
+          "type": "tab",
+          "settings": {
+            "title": "Specifications",
+            "id": "tech",
+            "html": "<p><strong>🔧 Technical Specifications</strong></p>\n<ul>\n  <li>\n<strong>Material:</strong> High-quality EVA foam (Ethylene Vinyl Acetate)</li>\n  <li>\n<strong>Mat thickness:</strong> Approx. 10 mm — ideal balance between flexibility and durability</li>\n  <li>\n<strong>Cell structure:</strong> Diamond (7 mm) / Honeycomb (8 mm) — choose during purchase</li>\n  <li>\n<strong>Set weight:</strong> From 1.2 to 2.5 kg (depending on the version)</li>\n  <li>\n<strong>Number of pieces:</strong> 2–6 pieces (full set: front + rear + optional trunk)</li>\n  <li>\n<strong>Floor coverage:</strong> Up to 95% of the car’s floor surface</li>\n  <li>\n<strong>Seasonality:</strong> All-season — resistant to temperatures from -50°C to +50°C</li>\n  <li>\n<strong>Water resistance:</strong> 100% — does not absorb liquids, no staining</li>\n  <li>\n<strong>Fastening:</strong> Plastic stoppers (original) / Velcro strips — compatible with factory mounting points</li>\n  <li>\n<strong>Edging (trim):</strong> 14 color variants to choose from</li>\n  <li>\n<strong>Additional options:</strong> Reinforced heel pads</li>\n</ul>"
+          }
+        },
+        "tab_QjEwcm": {
+          "type": "tab",
+          "settings": {
+            "title": "Q&A",
+            "id": "faq",
+            "html": ""
+          }
+        },
+        "tab_Eh7cBq": {
+          "type": "tab",
+          "settings": {
+            "title": "Delivery and payment",
+            "id": "delivery",
+            "html": "<p><strong>📦 Delivery and Payment</strong></p>\n\n<p>All EVA mats are made to order from scratch, with attention to detail and a perfect fit for your specific car model.</p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 The current standard order processing time is 14 business days.</p>\n\n<p>Choose the production speed of your order</p>\n\n<p>Each set of mats is made individually, so you can decide how quickly your order enters production.</p>\n\n<p>Available production options:</p>\n\n<p>🟢 Standard - 14 business days<br>\nProcessed in the standard production queue.</p>\n\n<p>🟠 Express - 7 business days<br>\nHigher priority in the production queue.</p>\n\n<p>Once production is completed, the mats are immediately prepared for shipment.</p>\n\n<p>You can choose the priority production option on the “Delivery and Payment” page when selecting the delivery method. The Express service is available at an additional cost.</p>\n\n<p>🚗 We do our best to process orders as quickly as possible. However, during periods of increased order volume, such as seasonal peaks, promotions, or holidays, processing times may be extended.</p>\n\n<p><strong>Delivery methods:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost Courier (online payment or cash on delivery)</li>\n    <li>InPost Parcel Locker (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD Courier (online payment or cash on delivery)</li>\n    <li>DPD Pickup Point (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS Courier (online payment or cash on delivery)</li>\n    <li>GLS Parcel Shop (online payment only)</li>\n  </ul>\n</div>\n\n<p><strong>Online payments:</strong></p>\n\n<ul class=\"evamats-footer__payment-list list-unstyled\">\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/przelewy24_logo_svg.svg?v=1754575627\" alt=\"Przelewy24\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/blik_9f0af63c-fe50-41e4-9eed-8eba66188150.svg?v=1754574036\" alt=\"BLIK\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/PayPo_logo_kolor.svg?v=1754574985\" alt=\"PayPo\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n  </li>\n<p></p>\n\n<p><strong>Safe shopping:</strong></p>\n<ul>\n  <li>Encrypted payments</li>\n  <li>Reliable logistics</li>\n  <li>Ongoing customer support</li>\n</ul>\n\n<p>Thank you for choosing a Polish-made product designed with quality and functionality in mind. Driver satisfaction is our top priority.</p>\n</ul>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_4P3cyN",
+        "tab_kAfLU4",
+        "tab_QjEwcm",
+        "tab_Eh7cBq"
+      ],
+      "name": "Product tabs",
+      "settings": {
+        "about_heading_before": "Original",
+        "about_heading_brand": "EVAMATS",
+        "about_heading_after": "car mats — modern interior protection",
+        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, and water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sand, water) deep within the material, keeping the surface around them dry and clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, and edging to perfectly match your car's interior.</p>",
+        "about_features_heading": "What makes our car mats stand out?",
+        "about_feature_1_text": "100% waterproof — no leaks",
+        "about_feature_1_image": "shopify://shop_images/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
+        "about_feature_2_text": "Covers up to 95% of the floor surface",
+        "about_feature_2_image": "shopify://shop_images/Frame_1632526598_1.webp",
+        "about_feature_3_text": "Easy to clean — simply shake out or rinse",
+        "about_feature_3_image": "shopify://shop_images/Frame_1632526597.webp",
+        "about_feature_4_text": "Suitable for all seasons: from −50°C to +50°C",
+        "about_feature_4_image": "shopify://shop_images/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
+        "about_feature_5_text": "Safe for health and the environment — toxin-free and recyclable",
+        "about_feature_5_image": "shopify://shop_images/Frame_1632526601.webp",
+        "about_confidence_heading": "Shop with confidence",
+        "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
+        "about_confidence_2_text": "Security — encrypted payments, trusted couriers",
+        "about_confidence_3_text": "Made in Poland — local production, fast delivery"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -140,105 +183,122 @@
         "padding_bottom": 28
       }
     },
-    "174619073172eda5d5": {
-      "type": "apps",
-      "blocks": {
-        "google_reviews_masonry_widget_block_MaDYmh": {
-          "type": "shopify://apps/google-reviews/blocks/masonry-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "disabled": true,
-          "settings": {
-            "contentIndex": "1",
-            "customContentIndex": 31,
-            "font": "default",
-            "themeId": "light",
-            "ratingType": "stars",
-            "emojiType": "0",
-            "cardColor": "#f3f6f9",
-            "starsColor": "#fbb000",
-            "textColor": "#404040",
-            "transparent": 1,
-            "solidShadow": false,
-            "reviewPhotosType": "small",
-            "writeReview": true,
-            "numberOfRowsMobile": 3,
-            "numberOfRowsDesktop": 2
-          }
-        }
-      },
-      "block_order": [
-        "google_reviews_masonry_widget_block_MaDYmh"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "ec4f7a30-20ed-4eae-9767-925bbd2034ad": {
-      "type": "featured-blog",
-      "custom_css": [
-        "h2 {color: #ff1d3a; font-weight: 600;}"
-      ],
-      "settings": {
-        "show_related_posts": true,
-        "heading": "Our realizations",
-        "heading_size": "h1",
-        "blog": "nasze-realizacje",
-        "post_limit": 3,
-        "columns_desktop": 2,
-        "color_scheme": "background-1",
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_view_all": false,
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "2959ec46-bbb7-4260-b81d-7024c179ac2a": {
-      "type": "home-5",
-      "settings": {
-        "btn_text": "All posts",
-        "btn_url": "shopify://pages/realizacja"
-      }
-    },
-    "ca715e5f-0884-4a81-ac3b-f6012a690383": {
-      "type": "home-8",
-      "settings": {
-        "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form and we will realize individually tailored floor mats for your car.</p>",
-        "btn_text": "CUSTOM ORDER",
-        "btn_url": "shopify://products/custom-order",
-        "img": "shopify://shop_images/Group_242.webp"
-      }
-    },
-    "080cd113-d353-46cb-aa5d-cfdeee68c912": {
-      "type": "scroll-to-top-button",
-      "settings": {
-        "back-to-top-button-enabled": true,
-        "smooth-scroll-enabled": true,
-        "btn_text": "Zobacz matę",
-        "html": "",
-        "button-color": "#848282",
-        "text-color": "#ffffff",
-        "back-to-top-button-position": "bottom-right"
-      }
-    },
     "application_form_kK67Dy": {
       "type": "application-form",
       "disabled": true,
       "settings": {
         "alternative_zestaw": false
       }
+    },
+    "mat_hotspot_consult_qGkJey": {
+      "type": "mat-hotspot-consult",
+      "blocks": {
+        "hotspot_NBErRP": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 24,
+            "position_y": 12,
+            "tooltip_heading": "Struktura",
+            "tooltip_text": "Struktura zatrzymująca brud i wodę"
+          }
+        },
+        "hotspot_BkFpdP": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 72,
+            "position_y": 35,
+            "tooltip_heading": "Dopasowanie",
+            "tooltip_text": "Precyzyjne dopasowanie do modelu auta"
+          }
+        },
+        "hotspot_iwgdyG": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 38,
+            "position_y": 53,
+            "tooltip_heading": "Materiał",
+            "tooltip_text": "Wytrzymały materiał EVA odporny na zużycie"
+          }
+        },
+        "hotspot_Wfp8fW": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 88,
+            "position_y": 78,
+            "tooltip_heading": "Rant",
+            "tooltip_text": "Podwyższony rant chroni wnętrze auta"
+          }
+        },
+        "hotspot_iMWJNT": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 21,
+            "position_y": 83,
+            "tooltip_heading": "Czyszczenie",
+            "tooltip_text": "Łatwe czyszczenie w kilka sekund"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_NBErRP",
+        "hotspot_BkFpdP",
+        "hotspot_iwgdyG",
+        "hotspot_Wfp8fW",
+        "hotspot_iMWJNT"
+      ],
+      "name": "Mat hotspot consultation",
+      "settings": {
+        "heading": "Uzyskaj bezpłatną konsultację!",
+        "subheading": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "Dywanik EVA",
+        "label_name": "Imię i nazwisko",
+        "placeholder_name": "Jan Kowalski",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "Email",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Komentarz (opcjonalnie)",
+        "placeholder_message": "Twoja wiadomość…",
+        "submit_label": "Zostaw zapytanie",
+        "consent_intro": "Zgadzam się z",
+        "terms_label": "regulaminem",
+        "terms_url": "",
+        "consent_mid": "oraz",
+        "privacy_label": "Polityką prywatności",
+        "privacy_url": "",
+        "consent_end": ".",
+        "success_message": "Dziękujemy! Skontaktujemy się wkrótce.",
+        "error_message": "Sprawdź pola i spróbuj ponownie.",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "related_products_custom_GpbmYf": {
+      "type": "related-products-custom",
+      "name": "Related products custom",
+      "settings": {
+        "custom_collection": "akcesoria",
+        "heading": "Other products",
+        "products_to_show": 12,
+        "card_button_label": "View product",
+        "mobile_button_label": "Select",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
     }
   },
   "order": [
-    "02fe151c-258f-4dde-b6d7-c431c9eb9137",
     "main",
+    "product_tabs_dcJdPK",
     "related-products",
-    "174619073172eda5d5",
-    "ec4f7a30-20ed-4eae-9767-925bbd2034ad",
-    "2959ec46-bbb7-4260-b81d-7024c179ac2a",
-    "ca715e5f-0884-4a81-ac3b-f6012a690383",
-    "080cd113-d353-46cb-aa5d-cfdeee68c912",
-    "application_form_kK67Dy"
+    "application_form_kK67Dy",
+    "mat_hotspot_consult_qGkJey",
+    "related_products_custom_GpbmYf"
   ]
 }

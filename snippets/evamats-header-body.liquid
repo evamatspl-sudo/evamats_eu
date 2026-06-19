@@ -100,9 +100,15 @@
 
   <div class="evamats-header__actions">
     {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+      {%- liquid
+        assign localization_return_to = request.path
+        if request.query_string != blank
+          assign localization_return_to = localization_return_to | append: '?' | append: request.query_string
+        endif
+      -%}
       <div class="evamats-header__lang small-hide medium-hide">
         <localization-form>
-          {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+          {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form', return_to: localization_return_to -%}
             <div class="no-js-hidden">
               <div class="disclosure">
                 <button type="button" class="disclosure__button localization-form__select localization-selector" aria-expanded="false" aria-controls="HeaderLanguageList">

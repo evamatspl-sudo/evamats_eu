@@ -92,17 +92,6 @@
                   </legend>
                   
                   {% render 'product-variant-options', product: product, option: option, block: block %}
-                  {% if isMatsSet %}
-                    {% assign dataPopup = 'popupOverlayTrunkMessage' %}
-                    {% assign metaBodyType = product.metafields.custom.body_type %}
-                    {% if metaBodyType == '5os' or metaBodyType == '7os' %}
-                      {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
-                    {% endif %}
-                    <div class="evamats-config-trunk-notice label_trunk openPopup hidden" data-popup="{{ dataPopup }}" role="button" tabindex="0">
-                      <span class="evamats-config-trunk-notice__icon" aria-hidden="true">{% render 'icon-attention' %}</span>
-                      <span class="evamats-config-trunk-notice__text">{{ 'general.config.label_trunk' | t }}</span>
-                    </div>
-                  {% endif %}
                 </fieldset>
                 {% if block.settings.show_discounts %}
                   {% if option.name == 'Zestaw' %}
@@ -186,6 +175,16 @@
         </script>
       </variant-radios>
     {% else %}
+      {%- liquid
+        assign is_simple_product = false
+        if product.metafields.custom.body_type == blank or product.metafields.custom.body_type == 'corners'
+          assign is_simple_product = true
+        endif
+        assign is_gift_card_product = false
+        if product.template_suffix == 'gift-card'
+          assign is_gift_card_product = true
+        endif
+      -%}
           <variant-radios
             id="variant-radios-{{ section.id }}"
             class="no-js-hidden "
@@ -201,41 +200,101 @@
               {% assign optionMatsType = 'general.config.mats_type' | t %}
               {% assign optionMatsSet = 'general.config.mats_set' | t %}
               {% assign optionMatsSize = 'general.config.mats_size' | t %}
+              {% assign isConfigTemplate = false %}
+              {% if product.template_suffix contains 'config' %}
+                {% assign isConfigTemplate = true %}
+              {% endif %}
               {% assign isMatsType = false %}
               {% assign isMatsSet = false %}
               {% assign isMatsSize = false %}
               {% assign fieldsetClass = '' %}
 
-              {% if option.name contains optionMatsType or option.name == 'Mats type' %}
-                {% assign isMatsType = true %}
-                {% assign fieldsetClass = 'mats_type' %}
+              {% if isConfigTemplate %}
+                {% if option.name contains optionMatsType or option.name == 'Mats type' %}
+                  {% assign isMatsType = true %}
+                  {% assign fieldsetClass = 'mats_type' %}
+                {% endif %}
+                {% if option.name contains optionMatsSet or option.name == 'Mats set' %}
+                  {% assign isMatsSet = true %}
+                  {% assign fieldsetClass = 'mats_set' %}
+                {% endif %}
+                {% if option.name contains optionMatsSize or option.name == 'Size' %}
+                  {% assign isMatsSize = true %}
+                  {% assign fieldsetClass = 'mats_size' %}
+                {% endif %}
               {% endif %}
-              {% if option.name contains optionMatsSet or option.name == 'Mats set' %}
-                {% assign isMatsSet = true %}
-                {% assign fieldsetClass = 'mats_set' %}
+              {% assign option_has_swatch = false %}
+              {% assign option_is_gift_amount = false %}
+              {% assign option_media_ids = '' %}
+              {% assign option_distinct_media_count = 0 %}
+              {% if is_simple_product %}
+                {% for value in option.values %}
+                  {% assign value_variant = nil %}
+                  {% for variant in product.variants %}
+                    {% case option.position %}
+                      {% when 1 %}
+                        {% if variant.option1 == value %}
+                          {% assign value_variant = variant %}
+                        {% endif %}
+                      {% when 2 %}
+                        {% if variant.option2 == value %}
+                          {% assign value_variant = variant %}
+                        {% endif %}
+                      {% when 3 %}
+                        {% if variant.option3 == value %}
+                          {% assign value_variant = variant %}
+                        {% endif %}
+                    {% endcase %}
+                  {% endfor %}
+                  {% if value_variant.featured_media %}
+                    {% assign media_key = ',' | append: value_variant.featured_media.id | append: ',' %}
+                    {% unless option_media_ids contains media_key %}
+                      {% assign option_media_ids = option_media_ids | append: media_key %}
+                      {% assign option_distinct_media_count = option_distinct_media_count | plus: 1 %}
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+                {% if option_distinct_media_count >= 2 %}
+                  {% assign option_has_swatch = true %}
+                {% endif %}
+                {% if is_gift_card_product %}
+                  {% assign option_name_lc = option.name | downcase %}
+                  {% if option_name_lc contains 'amount' or option_name_lc contains 'kwot' %}
+                    {% assign option_is_gift_amount = true %}
+                    {% assign option_has_swatch = true %}
+                  {% endif %}
+                {% endif %}
               {% endif %}
-              {% if option.name contains optionMatsSize or option.name == 'Size' %}
-                {% assign isMatsSize = true %}
-                {% assign fieldsetClass = 'mats_size' %}
-              {% endif %}
-              <fieldset class="js product-form__input lip__field" {% if  option.name == "Title"%} style="display: none"{% endif %} data-name="{{ fieldsetClass }}">
+              {% if is_simple_product %}
+              <fieldset class="js product-form__input lip__field evamats-product-option evamats-product-option--{% if option_is_gift_amount %}amount{% elsif option_has_swatch %}swatch{% else %}text{% endif %}" data-option-position="{{ option.position }}"{% if option_is_gift_amount %} id="gift-card-amount" data-amount-position="{{ option.position }}"{% endif %}{% if option.name == 'Title' %} style="display: none"{% endif %}>
+                <legend class="form__label evamats-product-option__legend">
+                  <span class="evamats-product-option__label">{{ option.name }}</span>
+                  <span class="evamats-product-option__value lip__title_value">
+                    {%- if option_is_gift_amount -%}
+                      {{- product.selected_or_first_available_variant.price | money -}}
+                    {%- else -%}
+                      {{- option.selected_value -}}
+                    {%- endif -%}
+                  </span>
+                </legend>
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  is_simple_product: is_simple_product,
+                  option_has_swatch: option_has_swatch,
+                  option_is_gift_amount: option_is_gift_amount
+                %}
+              </fieldset>
+              {% else %}
+              <fieldset class="js product-form__input lip__field"{% if  option.name == "Title"%} style="display: none"{% endif %}{% if fieldsetClass != '' %} data-name="{{ fieldsetClass }}"{% endif %}>
                 <legend class="form__label lip__title">
                   <span class="form__label_text">{{ option.name }}</span>
                   <div class="lip__title_value"></div>
                 </legend>
-                {% if isMatsSet %}
-                  {% assign dataPopup = 'popupOverlayTrunkMessage' %}
-                  {% assign metaBodyType = product.metafields.custom.body_type %}
-                  {% if metaBodyType == '5os' or metaBodyType == '7os' %}
-                    {% assign dataPopup = 'popupOverlayTrunkMessage_5_7_os' %}
-                  {% endif %}
-                  <div class="evamats-config-trunk-notice label_trunk openPopup hidden" data-popup="{{ dataPopup }}" role="button" tabindex="0">
-                    <span class="evamats-config-trunk-notice__icon" aria-hidden="true">{% render 'icon-attention' %}</span>
-                    <span class="evamats-config-trunk-notice__text">{{ 'general.config.label_trunk' | t }}</span>
-                  </div>
-                {% endif %}
                 {% render 'product-variant-options', product: product, option: option, block: block %}
               </fieldset>
+              {% endif %}
               {% if block.settings.show_discounts %}
                 {% if option.name == 'Zestaw' %}
                   <div class="table_options__wr">

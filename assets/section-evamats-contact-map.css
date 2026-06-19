@@ -1,0 +1,28 @@
+/* Contact map — Figma 1710:31936 desktop / 1710:26908 mobile */
+
+.evamats-contact-map {
+  position: relative;
+  width: 100%;
+  height: 631px;
+  background: #e9e9e9;
+  overflow: hidden;
+}
+
+.evamats-contact-map__embed {
+  width: 100%;
+  height: 100%;
+}
+
+.evamats-contact-map__embed iframe,
+.evamats-contact-map__frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-contact-map {
+    height: 335px;
+  }
+}

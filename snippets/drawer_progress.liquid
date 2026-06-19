@@ -5,11 +5,11 @@
   {% assign is_cart_drawer = true %}
 {% endif %}
 
-{% comment %} Critical CSS: upsell strip first paint (Figma 1710:11002) {% endcomment %}
+{% comment %} Critical CSS: upsell strip first paint (Figma 1710:11033 / 11001 / 10905) {% endcomment %}
 <style id="cart-upsell-critical-css">
   .evamats-cart-upsell {
     background: #f6f6f6;
-    padding: 0 0 28px;
+    padding: 0 0 50px;
     margin: 0;
   }
   .evamats-cart-upsell__inner {
@@ -26,20 +26,40 @@
   }
   .drawer__progress_products-block {
     position: relative;
+    width: 100%;
     container-type: inline-size;
-    padding-right: 72px;
     box-sizing: border-box;
+    --cart-upsell-fade: #f6f6f6;
   }
+  .drawer__progress_products-block::before,
   .drawer__progress_products-block::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    bottom: 0;
     z-index: 2;
-    width: 127px;
-    height: 110px;
+    width: 72px;
     pointer-events: none;
-    background: linear-gradient(270deg, #f6f6f6 0%, rgba(246, 246, 246, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .drawer__progress_products-block::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--cart-upsell-fade) 0%, rgba(246, 246, 246, 0) 100%);
+  }
+  .drawer__progress_products-block::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--cart-upsell-fade) 0%, rgba(246, 246, 246, 0) 100%);
+  }
+  .drawer__progress_products-block.has-fade-prev::before,
+  .drawer__progress_products-block.has-fade-next::after {
+    opacity: 1;
+  }
+  @media screen and (min-width: 750px) {
+    .drawer__progress_products-block::before,
+    .drawer__progress_products-block::after {
+      width: 127px;
+    }
   }
   .drawer__progress_products.swiper {
     position: relative;
@@ -189,6 +209,9 @@
       height: 52px;
       border-radius: 12px;
     }
+    .cart-upsell-strip {
+      border-radius: 12px;
+    }
   }
 </style>
 
@@ -298,17 +321,21 @@
 
 {% if progress_part == 'gift' or progress_part == 'all' %}
   {% if progress_bar_setting == 'shipping' %}
-    {% assign progressThreshold = 0 %}
     {% assign freeShipping = false %}
+    {% assign progress_percent = 0 %}
 
-    {% assign threshold = settings.order_total | times: 100.0 %}
-    {% assign progressThreshold = cart.total_price | divided_by: threshold %}
+    {% capture free_shipping_order_total_raw %}{% render 'evamats-free-shipping-threshold' %}{% endcapture %}
+    {% assign free_shipping_order_total_raw = free_shipping_order_total_raw | strip %}
+    {% assign threshold = free_shipping_order_total_raw | times: 100.0 %}
 
-    {% if progressThreshold > 1 %}
-      {% assign freeShipping = true %}
-    {% endif %}
+    {% if threshold > 0 and cart != empty %}
+      {% assign progress_percent = cart.total_price | times: 100 | divided_by: threshold | at_most: 100 %}
 
-    {% if threshold != '' and cart != empty %}
+      {% if cart.total_price >= threshold %}
+        {% assign freeShipping = true %}
+        {% assign progress_percent = 100 %}
+      {% endif %}
+
       <div id="drawer__progress" class="drawer__progress evamats-cart-gift-banner-wrap">
         <div class="evamats-cart-gift-banner">
           <div class="evamats-cart-gift-banner__text-row">
@@ -328,18 +355,10 @@
               </svg>
             </span>
           </div>
-          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progressThreshold | times: 100 | at_most: 100 | round }}">
-            <div class="evamats-cart-gift-banner__bar-fill" style="width: {{ progressThreshold | times: 100 | at_most: 100 }}%;"></div>
+          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
+            <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>
           </div>
-          <div class="evamats-cart-gift-banner__gift" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 18V32H32V18" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M20 18V32" stroke="#FF2741" stroke-width="2"/>
-              <path d="M8 18H32V14C32 12.8954 31.1046 12 30 12H10C8.89543 12 8 12.8954 8 14V18Z" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M20 12C20 9.5 17.5 7 15 7C12.5 7 11 8.5 11 10.5C11 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20 12C20 9.5 22.5 7 25 7C27.5 7 29 8.5 29 10.5C29 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+          {% render 'evamats-cart-gift-banner-icon' %}
         </div>
       </div>
     {% endif %}
@@ -377,6 +396,7 @@
     {% endif %}
 
     {% if total != 0 and nextDiscount != 'full discount' %}
+      {% assign progress_percent = progressThreshold | at_most: 100 | round: 1 %}
       <div id="drawer__progress" class="drawer__progress evamats-cart-gift-banner-wrap">
         <div class="evamats-cart-gift-banner">
           <div class="evamats-cart-gift-banner__text-row">
@@ -392,18 +412,10 @@
               </svg>
             </span>
           </div>
-          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progressThreshold | round }}">
-            <div class="evamats-cart-gift-banner__bar-fill" style="width: {{ progressThreshold }}%;"></div>
+          <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
+            <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>
           </div>
-          <div class="evamats-cart-gift-banner__gift" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 18V32H32V18" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M20 18V32" stroke="#FF2741" stroke-width="2"/>
-              <path d="M8 18H32V14C32 12.8954 31.1046 12 30 12H10C8.89543 12 8 12.8954 8 14V18Z" stroke="#FF2741" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M20 12C20 9.5 17.5 7 15 7C12.5 7 11 8.5 11 10.5C11 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20 12C20 9.5 22.5 7 25 7C27.5 7 29 8.5 29 10.5C29 12.5 20 12 20 12Z" stroke="#FF2741" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+          {% render 'evamats-cart-gift-banner-icon' %}
         </div>
       </div>
     {% elsif total != 0 %}

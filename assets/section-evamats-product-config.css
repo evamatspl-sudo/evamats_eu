@@ -185,6 +185,10 @@
   background: #fff;
 }
 
+.evamats-config fieldset[data-name="mats_type"] input[type="radio"]:not(:checked) + label.default_option:hover .evamats-config-option-label {
+  color: var(--evc-red);
+}
+
 .evamats-config fieldset[data-name="mats_type"] input[type="radio"]:checked + label.default_option {
   border-color: var(--evc-red);
 }
@@ -209,6 +213,7 @@
   letter-spacing: -0.32px;
   line-height: 1;
   color: var(--evc-text);
+  transition: color 0.3s ease-in-out;
 }
 
 .evamats-config fieldset[data-name="mats_type"] .label__tooltip {
@@ -219,9 +224,10 @@
 .evamats-config fieldset[data-name="mats_set"] {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 12px 6px;
   align-items: flex-start;
   margin-bottom: 32px;
+  overflow: visible;
 }
 
 .evamats-config fieldset[data-name="mats_set"] > legend {
@@ -268,6 +274,7 @@
   border-radius: 0;
   background: transparent;
   text-decoration: none;
+  overflow: visible;
 }
 
 .evamats-config fieldset[data-name="mats_set"] input[type="radio"].disabled + label.default_option,
@@ -318,65 +325,92 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
+  width: 19px;
   height: 20px;
-  /* border-radius: 999px; */
-  /* background: var(--evc-text); */
-  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
-.evamats-config fieldset[data-name="mats_set"] .trunk_message svg {
-  display: block;
-  width: 16px;
-  height: auto;
-}
-
-/* Trunk notice — full-width alert before option grid */
-.evamats-config fieldset[data-name="mats_set"] > .evamats-config-trunk-notice {
-  flex: 0 0 100%;
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__icon {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
-  margin: 20px 0 0 0;
-  padding: 10px 12px;
-  border: 1px solid #ffe4a8;
-  border-radius: 12px;
-  background: #fff8e6;
+  justify-content: center;
+}
+
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__icon--active {
+  display: none;
+}
+
+.evamats-config fieldset[data-name="mats_set"] input[type="radio"]:checked + label.default_option .trunk_message__icon--default {
+  display: none;
+}
+
+.evamats-config fieldset[data-name="mats_set"] input[type="radio"]:checked + label.default_option .trunk_message__icon--active {
+  display: flex;
+}
+
+.evamats-config fieldset[data-name="mats_set"] .evamats-trunk-attention-icon {
+  display: block;
+  width: 19px;
+  height: 20px;
+}
+
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -6px;
+  z-index: 20;
+  display: block;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 320px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 16px;
+  background: #fff;
   color: var(--evc-text);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.28px;
-  line-height: 1.35;
-  cursor: pointer;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  box-shadow: 0 10px 30px rgba(27, 29, 34, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-.evamats-config fieldset[data-name="mats_set"] > .evamats-config-trunk-notice.hidden {
-  display: none;
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip p {
+  margin: 0 0 0.75em;
 }
 
-.evamats-config-trunk-notice__icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip p:last-child {
+  margin-bottom: 0;
 }
 
-.evamats-config-trunk-notice__icon svg {
-  display: block;
-  width: 18px;
-  height: auto;
-}
-.evamats-config-trunk-notice__text {
-  flex: 1 1 auto;
-  min-width: 0;
+.evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip strong {
+  font-weight: 600;
 }
 
-/* ── Body type cards ── */
+.evamats-config fieldset[data-name="mats_set"] .trunk_message:hover .trunk_message__tooltip,
+.evamats-config fieldset[data-name="mats_set"] .trunk_message:focus-visible .trunk_message__tooltip,
+.evamats-config fieldset[data-name="mats_set"] .trunk_message.is-tooltip-open .trunk_message__tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Body type cards Figma 1710:17955 ── */
 .evamats-config .body_type.variant-radios {
   display: flex;
   flex-wrap: wrap;
@@ -384,24 +418,42 @@
   align-items: flex-start;
 }
 
-.evamats-config .body_type input[type="radio"] + label.default_option {
+.evamats-config .body_type input[type="radio"] + label.default_option,
+.evamats-config .body_type input[type="radio"]:checked + label.default_option,
+.evamats-config .body_type input[type="radio"].disabled + label.default_option,
+.evamats-config .body_type input[type="radio"]:disabled + label.default_option {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.evamats-config .body_type .evamats-config-body-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   padding: 6px 12px;
   border: 1.5px solid transparent;
   border-radius: 16px;
 }
 
-.evamats-config .body_type input[type="radio"]:checked + label.default_option {
+.evamats-config .body_type input[type="radio"]:checked + label.default_option .evamats-config-body-thumb {
   border-color: var(--evc-red);
 }
 
 .evamats-config .body_type label.default_option img {
+  display: block;
+  width: 103px;
   height: 48px;
-  width: auto;
   max-width: 103px;
   border: none;
   border-radius: 0;
@@ -420,11 +472,18 @@
   letter-spacing: -0.36px;
   line-height: 1;
   text-align: center;
+  text-decoration: none;
   color: var(--evc-muted);
 }
 
 .evamats-config .body_type input[type="radio"]:checked + label .evamats-config-body-label {
   color: var(--evc-text);
+}
+
+.evamats-config .body_type input[type="radio"].disabled + label .evamats-config-body-label,
+.evamats-config .body_type input[type="radio"]:disabled + label .evamats-config-body-label {
+  text-decoration: none;
+  color: var(--evc-muted);
 }
 
 .evamats-config .body_type .label__tooltip {
@@ -789,13 +848,11 @@
     flex: 1 1 calc(50% - 3px);
     max-width: calc(50% - 3px);
     gap: 15px;
-    padding: 6px 12px;
-    border-radius: 16px;
   }
 
   .evamats-config .body_type label.default_option img {
+    width: 103px;
     height: 48px;
-    width: auto;
     max-width: 103px;
   }
 
@@ -806,7 +863,7 @@
 
   .evamats-config fieldset[data-name="mats_set"] {
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 12px 6px;
     overflow: visible;
   }
 
@@ -838,32 +895,23 @@
     margin-bottom: 16px;
   }
 
-  .evamats-config fieldset[data-name="mats_set"] > .evamats-config-trunk-notice {
-    margin-bottom: 12px;
-    padding: 8px 10px;
-    gap: 8px;
+  .evamats-config fieldset[data-name="mats_set"] .trunk_message {
+    width: 19px;
+    height: 20px;
+  }
+
+  .evamats-config fieldset[data-name="mats_set"] .evamats-trunk-attention-icon {
+    width: 19px;
+    height: 20px;
+  }
+
+  .evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip {
+    right: -10px;
+    max-width: min(280px, calc(100vw - 40px));
+    padding: 16px 20px;
     font-size: 13px;
     letter-spacing: -0.26px;
-  }
-
-  .evamats-config-trunk-notice__icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .evamats-config-trunk-notice__icon svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .evamats-config fieldset[data-name="mats_set"] .trunk_message {
-    width: 18px;
-    height: 18px;
-  }
-
-  .evamats-config fieldset[data-name="mats_set"] .trunk_message svg {
-    width: 9px;
-    height: 9px;
+    line-height: 1.45;
   }
 
   .evamats-config fieldset[data-name="mats_set"] input[type="radio"] + label.default_option {
@@ -1939,26 +1987,26 @@
   color: #fff;
 }
 
-.evamats-config .evamats-config-checkout__notes {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__notes {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.evamats-config .evamats-config-checkout__note {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note {
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr);
   gap: 19px;
   align-items: start;
 }
 
-.evamats-config .evamats-config-checkout__note--trusted {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note--trusted {
   grid-template-columns: 48px minmax(0, 1fr) auto;
   gap: 23px;
   align-items: center;
 }
 
-.evamats-config .evamats-config-checkout__note-icon {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1966,36 +2014,36 @@
   overflow: hidden;
 }
 
-.evamats-config .evamats-config-checkout__note-icon--delivery {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-icon--delivery {
   width: 52px;
   height: 52px;
   border-radius: 999px;
   background: #fff;
 }
 
-.evamats-config .evamats-config-checkout__note-icon--delivery img {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-icon--delivery img {
   display: block;
   width: 100%;
   object-fit: contain;
 }
 
-.evamats-config .evamats-config-checkout__note-icon--seal {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-icon--seal {
   width: 48px;
   height: 48px;
 }
 
-.evamats-config .evamats-config-checkout__note-icon--seal img {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-icon--seal img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.evamats-config .evamats-config-checkout__note-text {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-text {
   min-width: 0;
 }
 
-.evamats-config .evamats-config-checkout__note-line {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-line {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -2004,17 +2052,185 @@
   color: var(--evc-text);
 }
 
-.evamats-config .evamats-config-checkout__note-line + .evamats-config-checkout__note-line {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note-line + .evamats-config-checkout__note-line {
   margin-top: 0;
 }
 
-.evamats-config .evamats-config-checkout__trusted-logo {
+/* --- Checkout: Delivery rules dropdown (Figma 2209:15231) --- */
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown {
+  margin: 0;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  min-height: 52px;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-summary {
+  padding: 0;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1.5px solid var(--evc-border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-text {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-title,
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-subtitle {
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 1.4;
+  color: var(--evc-text);
+  word-break: break-word;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-title {
+  font-weight: 600;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-subtitle {
+  font-weight: 400;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--evc-text);
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret svg,
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret .icon-config-caret {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret-dot {
+  position: absolute;
+  right: -4px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--evc-red);
+  pointer-events: none;
+}
+
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown[open]
+  .evamats-config-checkout__delivery-dropdown-caret
+  .icon-config-caret {
+  transform: rotate(180deg);
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-body {
+  display: none;
+  padding: 7px 0 0 79px;
+  flex-direction: column;
+  gap: 26px;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown[open] .evamats-config-checkout__delivery-dropdown-body {
+  display: flex;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-body-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  line-height: 1.4;
+  color: var(--evc-text);
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-rule {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown-rule--express,
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown-rule--premium {
+  align-items: flex-end;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-rule svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: block;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-rule span {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 1.4;
+  color: var(--evc-text);
+  word-break: break-word;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-footer {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 1.4;
+  color: var(--evc-text);
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__trusted-logo {
   flex-shrink: 0;
   width: 85px;
   height: 35px;
 }
 
-.evamats-config .evamats-config-checkout__trusted-logo img {
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__trusted-logo img {
   display: block;
   width: 100%;
   height: 100%;
@@ -2153,26 +2369,32 @@
     letter-spacing: -0.28px;
   }
 
-  .evamats-config .evamats-config-checkout__note {
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note {
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 16px;
   }
 
-  .evamats-config .evamats-config-checkout__note--trusted {
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note--trusted {
     grid-template-columns: 48px minmax(0, 1fr) auto;
     gap: 12px;
     align-items: center;
   }
 
-  .evamats-config .evamats-config-checkout__note--trusted .evamats-config-checkout__note-line {
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note--trusted .evamats-config-checkout__note-line {
     font-size: 14px;
     letter-spacing: -0.28px;
     line-height: 1.4;
   }
 
-  .evamats-config .evamats-config-checkout__note--trusted .evamats-config-checkout__trusted-logo {
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__note--trusted .evamats-config-checkout__trusted-logo {
     width: 70px;
     height: 29px;
+  }
+
+  /* Delivery rules dropdown (mobile) */
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-body {
+    padding-left: 62px;
+    gap: 20px;
   }
 
   .evamats-config [data-dropdown="mat_patterns_colors"] .product__config_main {
@@ -2607,8 +2829,9 @@
   }
 
   .evamats-config .body_type label.default_option img {
-    max-width: 88px;
-    height: 44px;
+    width: 103px;
+    height: 48px;
+    max-width: 103px;
   }
 
   .evamats-config [data-dropdown="mat_patterns_colors"] .product__config_main {

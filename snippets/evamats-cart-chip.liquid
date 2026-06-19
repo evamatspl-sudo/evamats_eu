@@ -1,0 +1,12 @@
+{% comment %}
+  Cart chip — Figma 1710:11136 / config preview chip markup
+  Params: chip_label, chip_image (optional)
+{% endcomment %}
+<span class="evamats-cart-item__chip">
+  {%- if chip_image != blank -%}
+    <span class="evamats-cart-item__chip-icon">
+      <img src="{{ chip_image }}" alt="" width="22" height="22" loading="lazy">
+    </span>
+  {%- endif -%}
+  <span class="evamats-cart-item__chip-text">{{ chip_label }}</span>
+</span>

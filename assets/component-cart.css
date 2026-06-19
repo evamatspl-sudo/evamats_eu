@@ -249,7 +249,7 @@ cart-items {
   text-align:center
 }
 
-/* Figma 1710:11002 / 1710:11001 desktop / 1710:10905 mobile — cart upsell strip */
+/* Figma 1710:11033 slider / 1710:11001 desktop card / 1710:10905 mobile card */
 .cart-page-layout {
   display: flex;
   flex-direction: column;
@@ -274,6 +274,7 @@ cart-items {
 
 .evamats-cart__main {
   order: 2;
+  background-color: #fff;
 }
 
 .evamats-cart-upsell {
@@ -300,21 +301,71 @@ cart-items {
 
 .drawer__progress_products-block {
   position: relative;
+  width: 100%;
   container-type: inline-size;
-  padding-right: 72px;
   box-sizing: border-box;
+  --cart-upsell-fade: #f6f6f6;
 }
 
+.evamats-cart-upsell .drawer__progress_products-block {
+  --cart-upsell-fade: #f6f6f6;
+}
+
+.cart-page-layout__upsell .drawer__progress_products-block {
+  --cart-upsell-fade: rgb(var(--color-background));
+}
+
+.drawer__progress_products-block::before,
 .drawer__progress_products-block::after {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
+  bottom: 0;
   z-index: 2;
-  width: 127px;
-  height: 110px;
+  width: 72px;
   pointer-events: none;
-  background: linear-gradient(270deg, #f6f6f6 0%, rgba(246, 246, 246, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drawer__progress_products-block::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--cart-upsell-fade) 0%, rgba(246, 246, 246, 0) 100%);
+}
+
+.cart-page-layout__upsell .drawer__progress_products-block::before {
+  background: linear-gradient(90deg, rgb(var(--color-background)) 0%, rgba(var(--color-background), 0) 100%);
+}
+
+.drawer__progress_products-block::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--cart-upsell-fade) 0%, rgba(246, 246, 246, 0) 100%);
+}
+
+.cart-page-layout__upsell .drawer__progress_products-block::after {
+  background: linear-gradient(270deg, rgb(var(--color-background)) 0%, rgba(var(--color-background), 0) 100%);
+}
+
+.drawer__progress_products-block.has-fade-prev::before,
+.drawer__progress_products-block.has-fade-next::after {
+  opacity: 1;
+}
+
+@media screen and (min-width: 750px) {
+  .drawer__progress_products-block::before,
+  .drawer__progress_products-block::after {
+    width: 127px;
+  }
+
+  .drawer__progress_products-arrows .eva-slider-nav--prev,
+  .drawer__progress_products-arrows .swiper-button-prev {
+    left: 0;
+  }
+
+  .drawer__progress_products-arrows .eva-slider-nav--next,
+  .drawer__progress_products-arrows .swiper-button-next {
+    right: 0;
+  }
 }
 
 .drawer__progress_products.swiper {
@@ -363,11 +414,13 @@ cart-items {
 .drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
   background: #fff;
   padding: 8px;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 750px) {
   .drawer__progress_products .drawer__progress_products_item.cart-upsell-strip {
     padding: 10px;
+    border-radius: 12px;
   }
 }
 
@@ -399,7 +452,13 @@ cart-items {
   width: 58px;
   height: 58px;
   margin: 0;
-  background: #ff2741;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(27, 29, 34, 0.1);
+  opacity: 1;
+  transition:
+    opacity 0.3s ease,
+    transform 0.22s cubic-bezier(0.34, 1.45, 0.64, 1),
+    box-shadow 0.22s ease;
 }
 
 .drawer__progress_products-arrows .eva-slider-nav::after {
@@ -413,16 +472,14 @@ cart-items {
 }
 
 .drawer__progress_products-arrows .eva-slider-nav:not(.swiper-button-disabled) .eva-slider-nav__icon svg path {
-  fill: #fff;
+  fill: #1b1d22;
 }
 
 .drawer__progress_products-arrows .eva-slider-nav.swiper-button-disabled {
+  opacity: 0;
+  pointer-events: none;
   transform: translateY(-50%);
-  background: #fff;
-}
-
-.drawer__progress_products-arrows .eva-slider-nav.swiper-button-disabled .eva-slider-nav__icon svg path {
-  fill: #8090a4;
+  box-shadow: none;
 }
 
 .drawer__progress_products-arrows .eva-slider-nav--prev,
@@ -435,10 +492,6 @@ cart-items {
 .drawer__progress_products-arrows .swiper-button-next {
   right: 0;
   left: auto;
-}
-
-.drawer__progress_products-block:has(.drawer__progress_products.swiper-button-lock) .drawer__progress_products-arrows {
-  display: none;
 }
 
 /* Horizontal upsell card — Figma 466×110 desktop / 261×110 mobile, 10px / 8px inset */
@@ -646,6 +699,7 @@ cart-items {
 
   .cart-upsell-strip {
     padding: 10px;
+    border-radius: 12px;
   }
 
   .cart-upsell-strip__row {
@@ -688,12 +742,23 @@ cart-items {
     order: 1;
   }
 
-  .drawer__progress_products-block {
-    padding-right: 72px;
-  }
-
   .drawer__progress_products .swiper-slide {
     height: auto !important;
+  }
+
+  .drawer__progress_products-arrows .eva-slider-nav {
+    width: 48px;
+    height: 48px;
+  }
+
+  .drawer__progress_products-arrows .eva-slider-nav--prev,
+  .drawer__progress_products-arrows .swiper-button-prev {
+    left: 0;
+  }
+
+  .drawer__progress_products-arrows .eva-slider-nav--next,
+  .drawer__progress_products-arrows .swiper-button-next {
+    right: 0;
   }
 
   .cart-page-layout__upsell {

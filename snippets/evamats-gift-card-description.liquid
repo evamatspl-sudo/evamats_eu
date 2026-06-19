@@ -1,0 +1,219 @@
+{{ 'section-evamats-gift-card-description.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'evamats-gift-card-description.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign gift_amount_option = nil
+  assign gift_card_type_option = nil
+  assign gift_amount_position = 0
+  assign gift_card_type_position = 0
+
+  for option in product.options_with_values
+    assign option_name_lc = option.name | downcase
+    if option_name_lc contains 'amount' or option_name_lc contains 'kwot'
+      assign gift_amount_option = option
+      assign gift_amount_position = option.position
+    elsif option_name_lc contains 'card' or option_name_lc contains 'karta' or option_name_lc contains 'typ'
+      assign gift_card_type_option = option
+      assign gift_card_type_position = option.position
+    endif
+  endfor
+
+  if gift_amount_option == nil
+    for option in product.options_with_values
+      if option.position == 2
+        assign gift_amount_option = option
+        assign gift_amount_position = 2
+      endif
+    endfor
+  endif
+
+  if gift_card_type_option == nil
+    for option in product.options_with_values
+      if option.position == 1
+        assign gift_card_type_option = option
+        assign gift_card_type_position = 1
+      endif
+    endfor
+  endif
+
+  assign cta_label = section.settings.gift_card_cta_label | default: 'Buy card'
+
+  assign gc_item_image_1 = section.settings.gift_card_item_1_image
+  assign gc_item_image_2 = section.settings.gift_card_item_2_image
+  assign gc_item_image_3 = section.settings.gift_card_item_3_image
+  assign gc_item_image_4 = section.settings.gift_card_item_4_image
+  assign gc_item_image_5 = section.settings.gift_card_item_5_image
+  assign gc_item_image_count = 0
+  assign gc_item_shared_image = nil
+
+  if gc_item_image_1 != blank
+    assign gc_item_image_count = gc_item_image_count | plus: 1
+    assign gc_item_shared_image = gc_item_image_1
+  endif
+  if gc_item_image_2 != blank
+    assign gc_item_image_count = gc_item_image_count | plus: 1
+    assign gc_item_shared_image = gc_item_image_2
+  endif
+  if gc_item_image_3 != blank
+    assign gc_item_image_count = gc_item_image_count | plus: 1
+    assign gc_item_shared_image = gc_item_image_3
+  endif
+  if gc_item_image_4 != blank
+    assign gc_item_image_count = gc_item_image_count | plus: 1
+    assign gc_item_shared_image = gc_item_image_4
+  endif
+  if gc_item_image_5 != blank
+    assign gc_item_image_count = gc_item_image_count | plus: 1
+    assign gc_item_shared_image = gc_item_image_5
+  endif
+
+  if gc_item_image_count != 1
+    assign gc_item_shared_image = nil
+  endif
+-%}
+
+<div
+  class="evamats-gift-card-description"
+  data-amount-position="{{ gift_amount_position }}"
+  data-card-type-position="{{ gift_card_type_position }}"
+  {% if gift_amount_option %}
+    data-amount-option-name="{{ gift_amount_option.name | escape }}"
+  {% endif %}
+  {% if gift_card_type_option %}
+    data-card-type-option-name="{{ gift_card_type_option.name | escape }}"
+  {% endif %}
+>
+  <script type="application/json" data-gift-card-variants-json>
+    [
+      {%- for variant in product.variants -%}
+        {
+          "id": {{ variant.id }},
+          "option1": {{ variant.option1 | json }},
+          "option2": {{ variant.option2 | json }},
+          "option3": {{ variant.option3 | json }},
+          "price": {{ variant.price }}
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  </script>
+
+  <div class="evamats-gift-card-description__intro">
+    <h2 class="evamats-gift-card-description__heading">
+      The EVAMATS gift card is an elegant way to give a loved one complete freedom of choice.
+    </h2>
+    <div class="evamats-gift-card-description__intro-text">
+      <p>
+        The EVAMATS gift card is an elegant way to give a loved one complete freedom of choice. 🎁 Instead of risking a mistake when specifying the technical details of the car, you give the driver the opportunity to independently configure the perfect mats for their vehicle. Every detail – from the car model to the color of the trim – matters, so a gift card is a guarantee of satisfaction and a perfect fit.
+      </p>
+      <p>
+        By choosing EVAMATS, you give the joy of personalizing the car interior, combining aesthetics with the highest functionality. 🚗🎨
+      </p>
+    </div>
+  </div>
+
+  <h3 class="evamats-gift-card-description__section-title">What can be financed with the card?</h3>
+
+  {%- if gift_amount_option -%}
+    <div class="evamats-gift-card-description__grid">
+      {%- for amount_value in gift_amount_option.values -%}
+        {%- liquid
+          assign card_description = ''
+          assign card_image = nil
+          case forloop.index
+            when 1
+              assign card_description = section.settings.gift_card_item_1_description
+              assign card_image = gc_item_image_1
+            when 2
+              assign card_description = section.settings.gift_card_item_2_description
+              assign card_image = gc_item_image_2
+            when 3
+              assign card_description = section.settings.gift_card_item_3_description
+              assign card_image = gc_item_image_3
+            when 4
+              assign card_description = section.settings.gift_card_item_4_description
+              assign card_image = gc_item_image_4
+            when 5
+              assign card_description = section.settings.gift_card_item_5_description
+              assign card_image = gc_item_image_5
+          endcase
+
+          if card_image == blank and gc_item_shared_image != blank
+            assign card_image = gc_item_shared_image
+          endif
+
+          assign card_price_variant = nil
+          if gift_amount_position == 2
+            assign selected_card_type = product.selected_or_first_available_variant.option1
+            for variant in product.variants
+              if variant.option1 == selected_card_type and variant.option2 == amount_value
+                assign card_price_variant = variant
+                break
+              endif
+            endfor
+          elsif gift_amount_position == 1
+            assign selected_card_type = product.selected_or_first_available_variant.option2
+            for variant in product.variants
+              if variant.option2 == selected_card_type and variant.option1 == amount_value
+                assign card_price_variant = variant
+                break
+              endif
+            endfor
+          endif
+        -%}
+
+        {%- if card_description != blank -%}
+          <button
+            type="button"
+            class="evamats-gift-card-description__card{% if gift_amount_option.selected_value == amount_value %} is-selected{% endif %}"
+            data-gift-amount="{{ amount_value | escape }}"
+          >
+            <div class="evamats-gift-card-description__card-inner">
+              <div class="evamats-gift-card-description__card-media" aria-hidden="true">
+                {%- if card_image != blank -%}
+                  {{
+                    card_image
+                    | image_url: width: 440
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '88, 148, 220, 440',
+                      sizes: '(min-width: 750px) 220px, 88px',
+                      alt: '',
+                      class: 'evamats-gift-card-description__card-image'
+                  }}
+                {%- else -%}
+                  <img
+                    class="evamats-gift-card-description__card-image"
+                    src="{{ 'evamats-gift-card-mats.webp' | asset_url }}"
+                    alt=""
+                    width="220"
+                    height="140"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+
+              <p class="evamats-gift-card-description__card-text">{{ card_description }}</p>
+
+              <p class="evamats-gift-card-description__price">
+                {%- if card_price_variant -%}
+                  {{- card_price_variant.price | money -}}
+                {%- else -%}
+                  {{- amount_value -}}
+                {%- endif -%}
+              </p>
+
+              <span class="evamats-gift-card-description__card-action" aria-hidden="true">
+                {%- render 'evamats-gift-card-action-icon' -%}
+              </span>
+            </div>
+
+            <span class="evamats-gift-card-description__card-cta">
+              <span class="evamats-gift-card-description__card-cta-text">{{ cta_label }}</span>
+              {%- render 'evamats-gift-card-cta-arrows' -%}
+            </span>
+          </button>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>

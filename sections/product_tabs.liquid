@@ -5,9 +5,14 @@
   if template.suffix == 'config'
     assign is_config_template = true
   endif
+
+  assign is_gift_card_template = false
+  if template.suffix == 'gift-card'
+    assign is_gift_card_template = true
+  endif
 -%}
 
-<divclass="evamats-product-tabs product_tabs" id="product-tabs-{{ section.id }}">
+<div class="evamats-product-tabs product_tabs" id="product-tabs-{{ section.id }}">
   <div class="page-width">
     <div class="evamats-product-tabs__shell">
       <div class="evamats-product-tabs__nav product_tabs__items" role="tablist">
@@ -34,6 +39,8 @@
           >
             {%- if block.settings.id == 'description' and is_config_template -%}
               {%- render 'evamats-product-tabs-about-config', section: section -%}
+            {%- elsif block.settings.id == 'description' and is_gift_card_template -%}
+              {%- render 'evamats-gift-card-description', product: product, section: section -%}
             {%- elsif block.settings.id == 'description' -%}
               <div class="evamats-product-tabs__richtext rte">
                 {%- if product.description != blank -%}
@@ -185,6 +192,71 @@
       "type": "image_picker",
       "id": "about_confidence_3_icon",
       "label": "Confidence card 3 icon"
+    },
+    {
+      "type": "header",
+      "content": "Gift card description (gift-card template)"
+    },
+    {
+      "type": "text",
+      "id": "gift_card_cta_label",
+      "label": "Selected card CTA label",
+      "default": "Buy card"
+    },
+    {
+      "type": "textarea",
+      "id": "gift_card_item_1_description",
+      "label": "Coverage card 1 description",
+      "default": "A set of dedicated front mats without edges, complete with an EVA material heel pad. The perfect combination of functionality and elegance! 🏎️"
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_card_item_1_image",
+      "label": "Coverage card 1 image"
+    },
+    {
+      "type": "textarea",
+      "id": "gift_card_item_2_description",
+      "label": "Coverage card 2 description",
+      "default": "Front and rear mats without edges, ensuring comfort and aesthetics in every detail. 🌟 (Front mats with edges are also available for this price!)"
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_card_item_2_image",
+      "label": "Coverage card 2 image"
+    },
+    {
+      "type": "textarea",
+      "id": "gift_card_item_3_description",
+      "label": "Coverage card 3 description",
+      "default": "Front and rear mats without edges, enriched with additional accessories for full protection and style. 💼 (Front mats with edges are also available for this price!)"
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_card_item_3_image",
+      "label": "Coverage card 3 image"
+    },
+    {
+      "type": "textarea",
+      "id": "gift_card_item_4_description",
+      "label": "Coverage card 4 description",
+      "default": "A full set of mats without edges, including trunk mats, ideal for a 5-seater car. (Possibility to buy front and rear mats with edges at the same price!)"
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_card_item_4_image",
+      "label": "Coverage card 4 image"
+    },
+    {
+      "type": "textarea",
+      "id": "gift_card_item_5_description",
+      "label": "Coverage card 5 description",
+      "default": "A full set of 3D mats with edges for a 5-seater and accessories that will ensure excellent protection and interior appearance. ✨"
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_card_item_5_image",
+      "label": "Coverage card 5 image"
     }
   ],
   "blocks": [

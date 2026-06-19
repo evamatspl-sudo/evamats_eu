@@ -47,6 +47,14 @@
     min-width: 0;
 }
 
+.eva-product__gallery--mats {
+    display: block;
+}
+
+.eva-product__gallery--mats .eva-product__gallery-inner {
+    width: 100%;
+}
+
 .eva-product-thumbs {
     width: 80px;
 }

@@ -1,0 +1,258 @@
+/* Gallery page — Figma 1710:39460 / 1710:39461 */
+
+.shopify-section:has(.gallery) {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.gallery {
+  padding-top: 0;
+}
+
+.gallery__hero {
+  background: #f6f6f6;
+  padding: 61px 0;
+}
+
+.gallery__hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gallery__breadcrumbs {
+  margin-bottom: 23px;
+}
+
+.gallery__title {
+  margin: 0 0 43px;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.92px;
+  color: #1b1d22;
+  text-align: left;
+}
+
+.gallery__filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.gallery__tabs_edges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  cursor: initial;
+}
+
+.gallery__tabs_item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 2px 18px 2px 2px;
+  border: 1.5px solid #ebebeb;
+  border-radius: 16px;
+  background: #fff;
+  color: #1b1d22;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gallery__tabs_item.active {
+  border-color: #ff2741;
+}
+
+.gallery__tabs_edges .gallery__tabs_item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.gallery__tabs_item-thumb {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gallery__tabs_item-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.gallery__tabs_types.eva__tabs.custom-select {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 387px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.gallery__tabs_types .select-header_wr {
+  position: relative;
+}
+
+.gallery__tabs_types .select-header {
+  padding: 14px 40px 14px 20px;
+  border: 1.5px solid #ebebeb;
+  border-radius: 16px;
+  background: #fff;
+  color: #1b1d22;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  text-align: left;
+  transition: border-color 0.2s ease-in-out;
+  user-select: none;
+}
+
+.gallery__tabs_types.open .select-header {
+  border-color: #ff2741;
+}
+
+.gallery__tabs_types .select-header_wr svg {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery__tabs_types .select-header_wr path {
+  fill: #1b1d22;
+}
+
+.gallery__tabs_types.open .select-header_wr svg {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.gallery__tabs_types .select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #ebebeb;
+  border-radius: 16px;
+  z-index: 100;
+  display: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.gallery__tabs_types.open .select-options {
+  display: block;
+}
+
+.gallery__tabs_types .select-options .eva__tabs_item.gallery__tabs_item {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  width: 100%;
+  font-weight: 400;
+}
+
+.gallery__tabs_types .select-options .eva__tabs_item.gallery__tabs_item:hover,
+.gallery__tabs_types .select-options .eva__tabs_item.gallery__tabs_item.active {
+  background: #f6f6f6;
+  color: #1b1d22;
+  opacity: 1;
+}
+
+.gallery__tabs_types .select-options .eva__tabs_item.gallery__tabs_item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.gallery__reset {
+  cursor: pointer;
+  color: #ff2741;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.28px;
+}
+
+.gallery__body {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.gallery__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.gallery__container img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.gallery__image_wr {
+  width: calc((100% - 12px) / 4);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .gallery__hero {
+    padding: 24px 0 32px;
+  }
+
+  .gallery__breadcrumbs {
+    margin-bottom: 16px;
+  }
+
+  .gallery__title {
+    margin-bottom: 24px;
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
+  .gallery__filters {
+    gap: 16px;
+  }
+
+  .gallery__tabs_types.eva__tabs.custom-select {
+    max-width: none;
+  }
+
+  .gallery__image_wr {
+    width: calc((100% - 8px) / 2);
+  }
+
+  .gallery__image_wr--full {
+    width: 100%;
+  }
+
+  .gallery__container {
+    gap: 8px;
+  }
+
+  .gallery__body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}

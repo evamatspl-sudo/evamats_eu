@@ -353,9 +353,15 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
     
+    const isGiftCardAmountField = (field) =>
+      field &&
+      (field.id === 'gift-card-amount' || field.classList.contains('evamats-product-option--amount'));
+
     const updateLipTitleValue = () => {
     
       lipFields.forEach(field => {
+        if (isGiftCardAmountField(field)) return;
+
         const inputChecked = field.querySelector('input:checked')
         if (inputChecked) {
           const value = field.querySelector('input:checked').dataset.title;
@@ -1101,7 +1107,28 @@ if (window.innerWidth < 990) {
 
     const matsSetInputs = document.querySelectorAll('[data-name="mats_set"] input');
     const matsSetInputChecked = document.querySelector('[data-name="mats_set"] input:checked');
-    const labelTrunk = document.querySelector('.label_trunk');
+
+    document.querySelectorAll('.trunk_message').forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = trigger.classList.contains('is-tooltip-open');
+        document.querySelectorAll('.trunk_message.is-tooltip-open').forEach((el) => {
+          el.classList.remove('is-tooltip-open');
+        });
+        if (!isOpen) {
+          trigger.classList.add('is-tooltip-open');
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('.trunk_message')) return;
+      document.querySelectorAll('.trunk_message.is-tooltip-open').forEach((el) => {
+        el.classList.remove('is-tooltip-open');
+      });
+    });
 
     const normalize = (str) => (str || '')
       .toString()
@@ -1160,23 +1187,13 @@ if (window.innerWidth < 990) {
       });
     };
 
-    const showTrunkLabel = (input) => {
-      if (!input || !labelTrunk) return;
-      if (input.classList.contains('input_trunk')) {
-        labelTrunk.classList.remove('hidden');
-      } else {
-        labelTrunk.classList.add('hidden');
-      }
-    };
     if (matsSetInputs.length > 0) {
       matsSetInputs.forEach(input => {
         input.addEventListener('change', function () {
-          showTrunkLabel(input);
           syncHeelMountGroupsVisibility(input);
         });
       });
     }
-    showTrunkLabel(matsSetInputChecked);
     syncHeelMountGroupsVisibility(matsSetInputChecked);
 
     function formatExtrasMoney(cents, fallbackEl) {
@@ -1272,7 +1289,16 @@ if (window.innerWidth < 990) {
 
 
 (function () {
+  function isGiftCardAmountField(field) {
+    return (
+      field &&
+      (field.id === 'gift-card-amount' || field.classList.contains('evamats-product-option--amount'))
+    );
+  }
+
   function syncTitleValue(field, control) {
+    if (isGiftCardAmountField(field)) return;
+
     const titleEl = field.querySelector('.lip__title_value');
     if (!titleEl) return;
     const value = control.tagName === 'SELECT'
@@ -1282,6 +1308,8 @@ if (window.innerWidth < 990) {
   }
 
   document.querySelectorAll('.lip__field').forEach((field) => {
+    if (isGiftCardAmountField(field)) return;
+
     field.querySelectorAll('input').forEach((input) => {
       input.addEventListener('change', () => syncTitleValue(field, input));
     });

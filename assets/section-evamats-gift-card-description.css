@@ -1,0 +1,286 @@
+/* Gift card description — Figma 2233:11898 desktop, 2233:11901 mobile (desktop-first) */
+
+.evamats-gift-card-description {
+  --egcd-red: #ff2741;
+  --egcd-text: #1b1d22;
+  --egcd-border: #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.evamats-gift-card-description__heading {
+  margin: 0;
+  max-width: 811px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  line-height: 1.1;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__intro-text {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__intro-text p {
+  margin: 0 0 1em;
+}
+
+.evamats-gift-card-description__intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.evamats-gift-card-description__section-title {
+  margin: 0;
+  max-width: 811px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  line-height: 1.1;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.evamats-gift-card-description__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 338px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--egcd-border);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--egcd-text);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.evamats-gift-card-description__card:hover,
+.evamats-gift-card-description__card.is-selected {
+  border-color: var(--egcd-red);
+}
+
+.evamats-gift-card-description__card-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.evamats-gift-card-description__card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 17px 34px 0;
+}
+
+.evamats-gift-card-description__card-image {
+  display: block;
+  width: auto;
+  max-width: 220px;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.evamats-gift-card-description__card-action {
+  display: none;
+}
+
+.evamats-gift-card-description__card-text {
+  margin: 0;
+  padding: 15px 34px 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__price {
+  margin: 0;
+  padding: 16px 34px 24px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  line-height: 1.1;
+  color: var(--egcd-text);
+}
+
+.evamats-gift-card-description__card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 58px;
+  margin-top: auto;
+  background: var(--egcd-red);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.evamats-gift-card-description__card-cta-icon {
+  display: block;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.evamats-gift-card-description__card:hover .evamats-gift-card-description__card-cta,
+.evamats-gift-card-description__card.is-selected .evamats-gift-card-description__card-cta {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.evamats-product-simple #gift-card-amount {
+  scroll-margin-top: 120px;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-gift-card-description {
+    gap: 24px;
+  }
+
+  .evamats-gift-card-description__heading {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .evamats-gift-card-description__intro-text {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .evamats-gift-card-description__section-title {
+    font-size: 22px;
+    letter-spacing: -0.44px;
+  }
+
+  .evamats-gift-card-description__grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .evamats-gift-card-description__card {
+    min-height: 0;
+    border-width: 1px;
+  }
+
+  .evamats-gift-card-description__card:hover,
+  .evamats-gift-card-description__card.is-selected {
+    border-color: var(--egcd-red);
+  }
+
+  .evamats-gift-card-description__card-cta {
+    display: none !important;
+    min-height: 0;
+    opacity: 0;
+  }
+
+  .evamats-gift-card-description__card:hover .evamats-gift-card-description__card-cta,
+  .evamats-gift-card-description__card.is-selected .evamats-gift-card-description__card-cta {
+    display: none !important;
+    opacity: 0;
+  }
+
+  .evamats-gift-card-description__card-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'media price action'
+      'text text text';
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 0;
+    padding: 22px 18px 18px;
+  }
+
+  .evamats-gift-card-description__card-media {
+    grid-area: media;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 0;
+    margin-left: 6px;
+  }
+
+  .evamats-gift-card-description__card-image {
+    max-width: 88px;
+    max-height: 63px;
+  }
+
+  .evamats-gift-card-description__price {
+    grid-area: price;
+    align-self: center;
+    padding: 0;
+    font-size: 22px;
+    letter-spacing: -0.44px;
+    color: var(--egcd-text);
+  }
+
+  .evamats-gift-card-description__card-action {
+    grid-area: action;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--egcd-red);
+    border-radius: 15px;
+    background: #fff;
+    color: var(--egcd-text);
+  }
+
+  .evamats-gift-card-description__action-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .evamats-gift-card-description__card-text {
+    grid-area: text;
+    padding: 12px 0 0;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: var(--egcd-text);
+  }
+
+  .evamats-product-simple #gift-card-amount {
+    scroll-margin-top: 88px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-gift-card-description__card {
+    min-height: 396px;
+  }
+}

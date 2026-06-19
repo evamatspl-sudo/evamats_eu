@@ -1,0 +1,506 @@
+/* Gallery Fancybox — Figma 1710:39547 desktop / 1710:39580 mobile */
+
+/* Hide built-in Fancybox UI we replace */
+.gallery-fancybox .fancybox__infobar,
+.gallery-fancybox .fancybox__toolbar,
+.gallery-fancybox .f-thumbs,
+.gallery-fancybox [data-panzoom-action],
+.gallery-fancybox [data-fancybox-toggle-slideshow],
+.gallery-fancybox [data-fancybox-toggle-fullscreen],
+.gallery-fancybox [data-fancybox-toggle-thumbs],
+.gallery-fancybox [data-fancybox-download] {
+  display: none !important;
+}
+
+.gallery-fancybox .f-carousel__toolbar .f-button:not(.is-close-btn) {
+  display: none !important;
+}
+
+.gallery-fancybox.is-closing .gallery-fancybox__thumbs,
+.gallery-fancybox.is-closing .gallery-fancybox__aside,
+.gallery-fancybox.is-closing .gallery-fancybox__close-host,
+.gallery-fancybox.is-closing .gallery-fancybox__mobile-top,
+.gallery-fancybox.is-closing .gallery-fancybox__mobile-bar {
+  display: none;
+}
+
+.gallery-fancybox.is-closing .fancybox__content,
+.gallery-fancybox.is-closing .fancybox__image {
+  animation: none !important;
+  transition: none !important;
+}
+
+.gallery-fancybox.is-closing.fancybox__container {
+  transition: none !important;
+}
+
+.gallery-fancybox.fancybox__container {
+  position: fixed;
+  --fancybox-bg: #fff;
+  --fancybox-color: #1b1d22;
+}
+
+.gallery-fancybox.fancybox__container,
+.gallery-fancybox .fancybox__backdrop {
+  background: #fff !important;
+}
+
+.gallery-fancybox .fancybox__backdrop {
+  opacity: 1 !important;
+}
+
+.gallery-fancybox.is-compact .fancybox__footer,
+.gallery-fancybox.is-compact .fancybox__toolbar {
+  background: transparent !important;
+}
+
+.gallery-fancybox .fancybox__footer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+}
+
+.gallery-fancybox .fancybox__footer .f-carousel__toolbar {
+  display: none;
+}
+
+/* Close — 50×50, top 20 / right 20 */
+.gallery-fancybox__close-host {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 45;
+  pointer-events: auto;
+}
+
+.gallery-fancybox .gallery-fancybox__close {
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.gallery-fancybox .gallery-fancybox__close svg {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.gallery-fancybox .fancybox__carousel {
+  height: 100%;
+}
+
+.gallery-fancybox .fancybox__viewport {
+  height: 100%;
+}
+
+.gallery-fancybox .fancybox__slide {
+  padding: 20px 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.gallery-fancybox .fancybox__content {
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.gallery-fancybox .fancybox__image,
+.gallery-fancybox .f-panzoom__content img {
+  border-radius: 16px;
+}
+
+/* Nav arrows */
+.gallery-fancybox .fancybox__nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.gallery-fancybox .fancybox__nav .f-button.is-prev,
+.gallery-fancybox .fancybox__nav .f-button.is-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  color: #1b1d22;
+  background: transparent;
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+}
+
+.gallery-fancybox .fancybox__nav .f-button.is-prev svg,
+.gallery-fancybox .fancybox__nav .f-button.is-next svg {
+  width: 30px;
+  height: 30px;
+  filter: none;
+}
+
+/* Custom thumbnails */
+.gallery-fancybox__thumbs {
+  position: absolute;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+.gallery-fancybox__thumbs-track {
+  display: flex;
+  gap: 6px;
+}
+
+.gallery-fancybox__thumb-item {
+  display: block;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-fancybox .gallery-fancybox__thumb-frame {
+  display: block;
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.gallery-fancybox .gallery-fancybox__thumb-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-fancybox .gallery-fancybox__thumb-item.is-selected .gallery-fancybox__thumb-frame {
+  border: 2px solid #ff2741;
+  padding: 2px;
+}
+
+/* Desktop aside CTA */
+.gallery-fancybox__aside {
+  display: none;
+}
+
+.gallery-fancybox__mobile-top,
+.gallery-fancybox__mobile-bar {
+  display: none;
+}
+
+.gallery-fancybox__aside-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 307px;
+  min-height: 296px;
+  padding: 23px 20px 24px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: #f6f6f6;
+}
+
+.gallery-fancybox__aside-logo,
+.gallery-fancybox__mobile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-fancybox__aside-logo-img {
+  display: block;
+  width: 97px;
+  height: auto;
+}
+
+.gallery-fancybox__aside-heading {
+  margin: 16px 0 0;
+  max-width: 232px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  text-align: center;
+  color: #1b1d22;
+}
+
+.gallery-fancybox__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 13px 24px;
+  border-radius: 16px;
+  background: #ff2741;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.gallery-fancybox__cta--desktop {
+  width: 266px;
+  min-height: 50px;
+}
+
+.gallery-fancybox__cta-label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.32px;
+}
+
+.gallery-fancybox__cta-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.gallery-fancybox__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.gallery-fancybox__contacts--desktop {
+  margin-top: 20px;
+}
+
+.gallery-fancybox__phone,
+.gallery-fancybox__email {
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gallery-fancybox__contacts--desktop .gallery-fancybox__phone {
+  font-size: 18px;
+  letter-spacing: -0.36px;
+  color: #1b1d22;
+}
+
+.gallery-fancybox__contacts--desktop .gallery-fancybox__email {
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  color: #ff2741;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 750px) {
+  .gallery-fancybox .fancybox__slide {
+    padding: 20px 387px 20px 166px;
+  }
+
+  .gallery-fancybox__thumbs {
+    left: 60px;
+    top: 20px;
+    bottom: 20px;
+    width: 96px;
+  }
+
+  .gallery-fancybox__thumbs-track {
+    flex-direction: column;
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+  }
+
+  .gallery-fancybox__thumbs-track::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .gallery-fancybox__thumbs-track::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #d9d9d9;
+  }
+
+  .gallery-fancybox__thumb-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev {
+    left: calc(50% - 402px);
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-next {
+    right: calc(50% - 402px);
+  }
+  .gallery-fancybox__aside {
+    display: block;
+    position: absolute;
+    top: 89px;
+    right: 70px;
+    z-index: 30;
+    pointer-events: auto;
+  }
+}
+
+/* Mobile layout */
+@media screen and (max-width: 749px) {
+  .gallery-fancybox .fancybox__slide {
+    padding: 56px 4px 200px;
+  }
+
+  .gallery-fancybox__mobile-top {
+    display: block;
+    position: fixed;
+    top: 56px;
+    left: 18px;
+    z-index: 35;
+    pointer-events: auto;
+  }
+
+  .gallery-fancybox__contacts--mobile {
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .gallery-fancybox__contacts--mobile .gallery-fancybox__phone {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    color: #1b1d22;
+  }
+
+  .gallery-fancybox__contacts--mobile .gallery-fancybox__email {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: #ff2741;
+  }
+
+  .gallery-fancybox__thumbs {
+    left: 4px;
+    right: 4px;
+    bottom: 118px;
+    width: auto;
+  }
+
+  .gallery-fancybox__thumbs-track {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .gallery-fancybox__thumbs-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-fancybox__thumb-item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gallery-fancybox .gallery-fancybox__thumb-frame {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gallery-fancybox__mobile-bar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 35;
+    pointer-events: auto;
+    padding: 18px 18px 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 28%);
+  }
+
+  .gallery-fancybox__mobile-bar-inner {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gallery-fancybox__mobile-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #1b1d22;
+  }
+
+  .gallery-fancybox__mobile-logo-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-fancybox__mobile-heading {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.28px;
+    color: #1b1d22;
+  }
+
+  .gallery-fancybox__cta--mobile {
+    width: 154px;
+    min-height: 42px;
+    margin-top: 0;
+    padding: 9px 16px;
+  }
+
+  .gallery-fancybox__cta--mobile .gallery-fancybox__cta-label {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev,
+  .gallery-fancybox .fancybox__nav .f-button.is-next {
+    width: 27px;
+    height: 54px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev {
+    left: 4px;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-next {
+    right: 4px;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev svg,
+  .gallery-fancybox .fancybox__nav .f-button.is-next svg {
+    display: none;
+  }
+
+  .gallery-fancybox .fancybox__nav .gallery-fancybox__nav-img {
+    display: block;
+    width: 27px;
+    height: 54px;
+  }
+}

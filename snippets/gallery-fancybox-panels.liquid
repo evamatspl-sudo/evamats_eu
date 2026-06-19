@@ -1,0 +1,105 @@
+{%- comment -%}
+  Gallery lightbox panels — Figma 1710:39547 desktop / 1710:39580 mobile.
+  Cloned into Fancybox container on open.
+{%- endcomment -%}
+
+{%- liquid
+  assign lightbox_cta_href = section.settings.lightbox_cta_url
+  if lightbox_cta_href == blank
+    assign lightbox_cta_href = '/pages/contact'
+  endif
+-%}
+
+<template id="gallery-fancybox-panels">
+  <aside class="gallery-fancybox__aside" aria-label="{{ section.settings.lightbox_heading | escape }}">
+    <div class="gallery-fancybox__aside-inner">
+      {%- if settings.logo_inverse != blank -%}
+        <div class="gallery-fancybox__aside-logo">
+          {{
+            settings.logo_inverse
+            | image_url: width: 200
+            | image_tag: loading: 'lazy', alt: shop.name, widths: '97, 194', class: 'gallery-fancybox__aside-logo-img'
+          }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.lightbox_heading != blank -%}
+        <p class="gallery-fancybox__aside-heading">{{ section.settings.lightbox_heading | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.lightbox_cta_label != blank -%}
+        <a
+          class="gallery-fancybox__cta gallery-fancybox__cta--desktop"
+          href="{{ lightbox_cta_href }}"
+        >
+          <span class="gallery-fancybox__cta-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C7.02944 3 3 6.92487 3 11.7656C3 14.84 4.79167 17.5085 7.3125 19.0312V21.75L11.0625 19.5C11.3672 19.5234 11.6797 19.5391 12 19.5391C16.9706 19.5391 21 15.6142 21 10.7734C21 6.13281 16.9706 3 12 3ZM12 17.25C11.6953 17.25 11.3984 17.2344 11.1094 17.2031C10.8984 17.1797 10.6875 17.1484 10.4844 17.1094L8.25 18.1875V17.0625C6.46875 15.8906 5.25 13.9688 5.25 11.7656C5.25 8.36719 8.27344 5.625 12 5.625C15.7266 5.625 18.75 8.36719 18.75 11.7656C18.75 15.1641 15.7266 17.25 12 17.25Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="gallery-fancybox__cta-label">{{ section.settings.lightbox_cta_label | escape }}</span>
+        </a>
+      {%- endif -%}
+
+      <div class="gallery-fancybox__contacts gallery-fancybox__contacts--desktop">
+        {%- if section.settings.lightbox_phone != blank -%}
+          <a class="gallery-fancybox__phone" href="tel:{{ section.settings.lightbox_phone | replace: ' ', '' }}">
+            {{- section.settings.lightbox_phone | escape -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.lightbox_email != blank -%}
+          <a class="gallery-fancybox__email" href="mailto:{{ section.settings.lightbox_email | escape }}">
+            {{- section.settings.lightbox_email | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </aside>
+
+  <div class="gallery-fancybox__mobile-top">
+    <div class="gallery-fancybox__contacts gallery-fancybox__contacts--mobile">
+      {%- if section.settings.lightbox_phone != blank -%}
+        <a class="gallery-fancybox__phone" href="tel:{{ section.settings.lightbox_phone | replace: ' ', '' }}">
+          {{- section.settings.lightbox_phone | escape -}}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.lightbox_email != blank -%}
+        <a class="gallery-fancybox__email" href="mailto:{{ section.settings.lightbox_email | escape }}">
+          {{- section.settings.lightbox_email | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="gallery-fancybox__mobile-bar">
+    <div class="gallery-fancybox__mobile-bar-inner">
+      {%- if settings.logo != blank -%}
+        <div class="gallery-fancybox__mobile-logo">
+          {{
+            settings.logo
+            | image_url: width: 72
+            | image_tag: loading: 'lazy', alt: shop.name, widths: '36, 72', class: 'gallery-fancybox__mobile-logo-img'
+          }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.lightbox_heading != blank -%}
+        <p class="gallery-fancybox__mobile-heading">{{ section.settings.lightbox_heading | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.lightbox_cta_label != blank -%}
+        <a
+          class="gallery-fancybox__cta gallery-fancybox__cta--mobile"
+          href="{{ lightbox_cta_href }}"
+        >
+          <span class="gallery-fancybox__cta-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C7.02944 3 3 6.92487 3 11.7656C3 14.84 4.79167 17.5085 7.3125 19.0312V21.75L11.0625 19.5C11.3672 19.5234 11.6797 19.5391 12 19.5391C16.9706 19.5391 21 15.6142 21 10.7734C21 6.13281 16.9706 3 12 3ZM12 17.25C11.6953 17.25 11.3984 17.2344 11.1094 17.2031C10.8984 17.1797 10.6875 17.1484 10.4844 17.1094L8.25 18.1875V17.0625C6.46875 15.8906 5.25 13.9688 5.25 11.7656C5.25 8.36719 8.27344 5.625 12 5.625C15.7266 5.625 18.75 8.36719 18.75 11.7656C18.75 15.1641 15.7266 17.25 12 17.25Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="gallery-fancybox__cta-label">{{ section.settings.lightbox_cta_label | escape }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</template>

@@ -1,164 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "custom_css": [],
+      "type": "evamats-contact",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "breadcrumb_parent_label": "Evamats",
+        "breadcrumb_parent_url": "",
+        "breadcrumb_current_label": "Contact",
+        "contact_heading": "Contact us",
+        "phone": "+48 732 082 512",
+        "email_general_label": "General Information and Customer Service",
+        "email_general": "info@evamats.store",
+        "email_claims_label": "Complaints and Returns",
+        "email_claims": "",
+        "email_production_label": "Contact the Production Department",
+        "email_production": "",
+        "address_label": "Registered office address:",
+        "address": "EVAMATS Sp. z o.o.\nSt. Strzelca 42, 80-299 Gdańsk, Poland",
+        "tin_label": "NIP:",
+        "tin": "5862378667",
+        "facebook_url": "https://www.facebook.com/evamats.store",
+        "instagram_url": "https://www.instagram.com/theofficialevamats/",
+        "tiktok_url": "https://www.tiktok.com/@evamats.store",
+        "youtube_url": "https://www.youtube.com/@evamats_store",
+        "threads_url": "",
+        "hidden_form_tag": "Contact — Form (Website)",
+        "heading": "Get a free consultation!",
+        "subheading": "We'd be happy to help you choose the right solution.",
+        "label_name": "First and Last Name",
+        "placeholder_name": "Jan Kowalski",
+        "label_phone": "Phone",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "Email",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Comment (optional)",
+        "placeholder_message": "Your message…",
+        "submit_label": "Submit a request",
+        "consent_intro": "I agree with",
+        "terms_label": "the rules and regulations",
+        "terms_url": "",
+        "consent_mid": "and",
+        "privacy_label": "Privacy Policy",
+        "privacy_url": "",
+        "consent_end": ".",
+        "consent_error_message": "You must accept the privacy policy and terms of service.",
+        "success_message": "Thank you! We'll be in touch soon.",
+        "error_message": "Check the boxes and try again."
       }
     },
-    "b7d83082-525d-422e-b8fe-4f424fdb1dfa": {
-      "type": "image-with-text",
+    "partners": {
+      "type": "evamats-contact-partners",
       "blocks": {
-        "template--18288165945650__b7d83082-525d-422e-b8fe-4f424fdb1dfa-167932474090f12d51-0": {
-          "type": "heading",
+        "partner_1": {
+          "type": "partner",
           "settings": {
-            "heading": "HAVE A QUESTION? CONTACT US!",
-            "heading_size": "h1"
+            "logo": "shopify://shop_images/image_136.webp",
+            "title": "Warszawa",
+            "address": "al. „Solidarności” 163/lok.\nu010, 00-877"
           }
         },
-        "template--18288165945650__b7d83082-525d-422e-b8fe-4f424fdb1dfa-167932474090f12d51-1": {
-          "type": "text",
+        "partner_2": {
+          "type": "partner",
           "settings": {
-            "text": "<p><strong>EVAMATS Sp. z o.o.<\/strong><br\/>📍 <strong>Address:<\/strong><br\/>St. Strzelca 42, 80-299 Gdańsk, Poland<\/p><p>📧 <strong>E-mail:<\/strong><br\/><a>info@evamats.store<\/a><\/p><p>📞 <strong>Phone:<\/strong><br\/>+48 732 082 512<\/p><p>🆔 <strong>TIN (Tax Identification Number):<\/strong><br\/>5862378667<\/p>",
-            "text_style": "body"
+            "logo": "shopify://shop_images/image_137.webp",
+            "title": "Warszawa",
+            "address": "ul. Jana Ostroroga 24C"
           }
         }
       },
       "block_order": [
-        "template--18288165945650__b7d83082-525d-422e-b8fe-4f424fdb1dfa-167932474090f12d51-0",
-        "template--18288165945650__b7d83082-525d-422e-b8fe-4f424fdb1dfa-167932474090f12d51-1"
-      ],
-      "custom_css": [
-        ".image-with-text:not(.image-with-text--overlap) .image-with-text__media-item > * {border-radius: 10px;}"
+        "partner_1",
+        "partner_2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_289_371c1578-569f-4706-a0e8-fd6b2b5fea5c.webp",
-        "height": "contain",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Where can you find our products?",
+        "subheading": "You can check out the quality of our products in person at our partners' locations"
       }
     },
-    "157a8153-f649-40a5-8adf-082ec8eadafc": {
-      "type": "rich-text",
-      "blocks": {
-        "template--18288165945650__157a8153-f649-40a5-8adf-082ec8eadafc-167932509716f4d5bc-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Mam pytanie? Skontaktuj się z nami!<\/p>",
-            "heading_size": "h2"
-          }
-        },
-        "template--18288165945650__157a8153-f649-40a5-8adf-082ec8eadafc-167932509716f4d5bc-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>ul. Kwidzyńska 19, Gdynia 81-306<br\/>evamatsinfo@gmail.com<br\/>+48 510 339 471<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--18288165945650__157a8153-f649-40a5-8adf-082ec8eadafc-167932509716f4d5bc-0",
-        "template--18288165945650__157a8153-f649-40a5-8adf-082ec8eadafc-167932509716f4d5bc-1"
-      ],
-      "disabled": true,
+    "map": {
+      "type": "evamats-contact-map",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 24
-      }
-    },
-    "5edcc7aa-25ae-4bf0-8598-889464fc0ebd": {
-      "type": "rich-text",
-      "blocks": {
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-0": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "<p>Mam pytanie? Skontaktuj się z nami!<\/p>",
-            "heading_size": "h2"
-          }
-        },
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mam pytanie? Skontaktuj się z nami!<\/p>"
-          }
-        },
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-2": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-0",
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-1",
-        "template--18288165945650__5edcc7aa-25ae-4bf0-8598-889464fc0ebd-1685355360211d8144-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "custom_css": [],
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "des-newsletter": "<p>I agree with the  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">privacy policy<\/a> and <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>"
-      }
-    },
-    "soc_icons_section_JK37ER": {
-      "type": "soc-icons-section",
-      "settings": {
-        "des1": "<p>Facebook<\/p>",
-        "img1": "shopify:\/\/shop_images\/fb_c9532e0c-af28-413c-82b0-81ec355eccfd.png",
-        "button_link1": "https:\/\/www.facebook.com\/evamats.store",
-        "des2": "<p>Instagram<\/p>",
-        "img2": "shopify:\/\/shop_images\/Instagram_95b0c479-0033-44e7-8043-fe1e39139dce.png",
-        "button_link2": "https:\/\/www.instagram.com\/theofficialevamats\/",
-        "des3": "<p>TikTok<\/p>",
-        "img3": "shopify:\/\/shop_images\/TikTok_11e7fa32-b436-4c81-b1dc-2b71e98e6bfa.png",
-        "button_link3": "https:\/\/www.tiktok.com\/@evamats.store",
-        "des4": "<p>YouTube<\/p>",
-        "img4": "shopify:\/\/shop_images\/YT_d6be9d83-59da-4e11-903a-f9e86de3d5fc.png",
-        "button_link4": "https:\/\/www.youtube.com\/@evamats_store"
+        "map_title": "EVAMATS",
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.789253743468!2d18.452500941064276!3d54.41030689571039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd733dad1ee031%3A0x3e8ca62b780caa88!2sEVAMATS%20Car%20Mats!5e0!3m2!1sru!2sua!4v1781795719670!5m2!1sru!2sua"
       }
     }
   },
   "order": [
     "main",
-    "b7d83082-525d-422e-b8fe-4f424fdb1dfa",
-    "157a8153-f649-40a5-8adf-082ec8eadafc",
-    "5edcc7aa-25ae-4bf0-8598-889464fc0ebd",
-    "form",
-    "soc_icons_section_JK37ER"
+    "partners",
+    "map"
   ]
 }

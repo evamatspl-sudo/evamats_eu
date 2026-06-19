@@ -6,28 +6,6 @@
   --erp-slide-width: 370px;
 }
 
-.evamats-related-products--cart .evamats-related-products__inner.page-width {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-@media screen and (min-width: 750px) {
-  .evamats-related-products--cart .evamats-related-products__inner.page-width,
-  .evamats-related-products--cart .evamats-related-products__slider-bleed.page-width {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  .evamats-related-products--cart .evamats-related-products__inner.page-width,
-  .evamats-related-products--cart .evamats-related-products__slider-bleed.page-width {
-    max-width: 1520px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .evamats-related-products__header {
   display: flex;
   align-items: center;

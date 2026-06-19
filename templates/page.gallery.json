@@ -1,8 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "section-gallery",
-      "settings": {}
+      "settings": {
+        "title": "Galeria EVAMATS",
+        "breadcrumb_parent_label": "Evamats",
+        "breadcrumb_parent_url": "",
+        "breadcrumb_current_label": "Catalog",
+        "lightbox_heading": "Do you want this look for your car?",
+        "lightbox_cta_label": "Ask for help",
+        "lightbox_cta_url": "",
+        "lightbox_phone": "+48 732 082 512",
+        "lightbox_email": "ksiegowosc.evamats@gmail.com"
+      }
     }
   },
   "order": [

@@ -1,0 +1,420 @@
+﻿{% comment %}
+  Mats product gallery (without_edges / with_edges) for any product context.
+  Accepts: product
+{% endcomment %}
+<div class="product-media-gallery-wr evamats-product-gallery eva-product__gallery-inner">
+{% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
+ {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges.value  %}
+ {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges.value  %}
+
+ {% if request.locale.iso_code == 'de' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_de.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_de.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_de.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_de.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% if request.locale.iso_code == 'fr' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_fr.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_fr.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_fr.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_fr.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% if request.locale.iso_code == 'sk' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_sk.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_sk.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_sk.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_sk.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% if request.locale.iso_code == 'cs' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_cs.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_cs.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_cs.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_cs.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% if request.locale.iso_code == 'it' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_it.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_it.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_it.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_it.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% if request.locale.iso_code == 'es' %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_es.value != blank %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges_es.value  %}
+   {% endif %}
+   {% if shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_es.value != blank %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges_es.value  %}
+   {% endif %}
+ {% endif %} 
+
+ {% case product.metafields.custom.body_type %}
+   {% when 'tir' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges.value  %}
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.tir.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tir.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tir.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tir.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+
+   {% when 'bus' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges.value  %}
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.bus.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.bus.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.bus.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.bus.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+
+   {% when 'tractor' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractors.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractors.with_edges.value  %}
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractor.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.tractor.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractor.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+   {% when 'camper' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.tractors.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.tractors.with_edges.value  %}
+
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.camper.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.camper.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.camper.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.camper.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+
+   {% when 'minivan' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges.value  %}
+
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.minivan.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.minivan.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.minivan.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+   {% when 'van_duzy' %}
+     {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges.value  %}
+     {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges.value  %}
+
+     {% if request.locale.iso_code == 'de' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_de.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_de.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_de.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_de.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'fr' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_fr.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_fr.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_fr.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_fr.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'sk' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_sk.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_sk.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_sk.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_sk.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'cs' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_cs.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_cs.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_cs.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_cs.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'it' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_it.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_it.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_it.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_it.value  %}
+       {% endif %}
+     {% endif %} 
+
+     {% if request.locale.iso_code == 'es' %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.without_edges_es.value != blank %}
+         {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.van_big.without_edges_es.value  %}
+       {% endif %}
+       {% if shop.metaobjects.product_mats_type_images.van_big.with_edges_es.value != blank %}
+         {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.van_big.with_edges_es.value  %}
+       {% endif %}
+     {% endif %} 
+ {% endcase %}
+
+ {% if product.metafields.custom.without_edges_photos %}
+   {% assign withoutEdgesImages = product.metafields.custom.without_edges_photos.value  %}
+ {% endif %}
+ {% if product.metafields.custom.with_edges_photos %}
+   {% assign withEdgesImages = product.metafields.custom.with_edges_photos.value  %}
+ {% endif %}
+
+ {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+ {% render 'product-media-gallery_without_edges', images: withoutEdgesImages, gallery_product: product, variant_images: variant_images %}
+ {% render 'product-media-gallery_with_edges', images: withEdgesImages, gallery_product: product, variant_images: variant_images %}
+{% endif %}
+</div>

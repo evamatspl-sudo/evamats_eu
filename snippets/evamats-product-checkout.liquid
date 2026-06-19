@@ -1,0 +1,30 @@
+{%- liquid
+  assign checkout_variant = product.selected_or_first_available_variant
+-%}
+
+<div class="evamats-product-checkout" {{ block.shopify_attributes }}>
+  <div class="evamats-product-checkout__card">
+    <div class="evamats-product-checkout__total-row">
+      <p class="evamats-product-checkout__total-label">{{ 'general.config.total' | t }}</p>
+      <div class="evamats-product-checkout__prices">
+        <span class="evamats-product-checkout__price-old sticky_config_price_compare hidden"></span>
+        <span class="evamats-product-checkout__price-current sticky_config_price_price">
+          {{- checkout_variant.price | money_without_trailing_zeros -}}
+        </span>
+        <span class="evamats-product-checkout__discount evamats-sticky-card__discount hidden"></span>
+      </div>
+    </div>
+
+    {%- render 'buy-buttons',
+      block: block,
+      product: product,
+      product_form_id: product_form_id,
+      section_id: section_id,
+      show_pickup_availability: false,
+      config_checkout: true,
+      skip_block_attributes: true
+    -%}
+  </div>
+
+  {%- render 'evamats-config-checkout-notes', block: block, product: product -%}
+</div>

@@ -1,22 +1,66 @@
-{% comment %} home-faq styles in assets/base.css {% endcomment %}
-{% render 'evamats-section-padding-style', section: section, target: '.home-faq-v2' %}
+{% comment %} home-faq styles in assets/base.css; page variant in section-home-faq-page.css {% endcomment %}
+{%- liquid
+  assign is_page_faq = false
+  if section.settings.design_variant == 'page'
+    assign is_page_faq = true
+  endif
 
-<divid="faqs" class="product-faqs home-faq-v2">
+  assign breadcrumb_parent_label = section.settings.breadcrumb_parent_label | strip
+  if breadcrumb_parent_label == blank
+    assign breadcrumb_parent_label = 'Evamats'
+  endif
+
+  assign breadcrumb_parent_url = section.settings.breadcrumb_parent_url | strip
+  if breadcrumb_parent_url == blank
+    assign breadcrumb_parent_url = routes.root_url
+  endif
+
+  assign breadcrumb_current_label = section.settings.breadcrumb_current_label | strip
+  if breadcrumb_current_label == blank
+    assign breadcrumb_current_label = 'FAQ'
+  endif
+-%}
+
+{%- if is_page_faq -%}
+  {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+  {{ 'section-home-faq-page.css' | asset_url | stylesheet_tag }}
+{%- else -%}
+  {% render 'evamats-section-padding-style', section: section, target: '.home-faq-v2' %}
+{%- endif -%}
+
+<div id="faqs" class="product-faqs home-faq-v2{% if is_page_faq %} home-faq-v2--page{% endif %}">
   <div class="page-width">
-    <div class="home-faq-v2__shell{% if section.settings.view_all_label != blank %} home-faq-v2__shell--has-cta{% endif %}">
+    <div class="home-faq-v2__shell{% if section.settings.view_all_label != blank and is_page_faq == false %} home-faq-v2__shell--has-cta{% endif %}">
       <div class="home-faq-v2__intro">
+        {%- if is_page_faq -%}
+          {% render 'evamats-breadcrumbs',
+            parent_label: breadcrumb_parent_label,
+            parent_url: breadcrumb_parent_url,
+            current_label: breadcrumb_current_label,
+            class: 'home-faq-v2__breadcrumbs'
+          %}
+        {%- endif -%}
 
         <div class="home-faq-v2__heading">
-          <h2 class="home-faq-v2__title">
-            <span class="home-faq-v2__title-desktop">{{ section.settings.hd | escape }}</span>
-            <span class="home-faq-v2__title-mobile">
-              {%- if section.settings.heading_mobile != blank -%}
-                {{ section.settings.heading_mobile | escape }}
-              {%- else -%}
-                {{ section.settings.hd | escape }}
+          {%- if is_page_faq -%}
+            <h1 class="home-faq-v2__title home-faq-v2__title--page">
+              <span class="home-faq-v2__title-main">{{ section.settings.hd | escape }}</span>
+              {%- if section.settings.heading_accent != blank -%}
+                <span class="home-faq-v2__title-accent">{{ section.settings.heading_accent | escape }}</span>
               {%- endif -%}
-            </span>
-          </h2>
+            </h1>
+          {%- else -%}
+            <h2 class="home-faq-v2__title">
+              <span class="home-faq-v2__title-desktop">{{ section.settings.hd | escape }}</span>
+              <span class="home-faq-v2__title-mobile">
+                {%- if section.settings.heading_mobile != blank -%}
+                  {{ section.settings.heading_mobile | escape }}
+                {%- else -%}
+                  {{ section.settings.hd | escape }}
+                {%- endif -%}
+              </span>
+            </h2>
+          {%- endif -%}
         </div>
       </div>
 
@@ -93,17 +137,19 @@
         </div>
       </div>
 
-      {%- if section.settings.view_all_label != blank -%}
-        {%- liquid
-          assign faq_cta_href = section.settings.view_all_url
-          if faq_cta_href == blank
-            assign faq_cta_href = '#'
-          endif
-        -%}
-        <div class="home-faq-v2__cta-wrap">
-          <a class="button button_5 button_5--neutral" href="{{ faq_cta_href }}">{{ section.settings.view_all_label | escape }}</a>
-        </div>
-      {%- endif -%}
+      {%- unless is_page_faq -%}
+        {%- if section.settings.view_all_label != blank -%}
+          {%- liquid
+            assign faq_cta_href = section.settings.view_all_url
+            if faq_cta_href == blank
+              assign faq_cta_href = '#'
+            endif
+          -%}
+          <div class="home-faq-v2__cta-wrap">
+            <a class="button button_5 button_5--neutral" href="{{ faq_cta_href }}">{{ section.settings.view_all_label | escape }}</a>
+          </div>
+        {%- endif -%}
+      {%- endunless -%}
     </div>
   </div>
 </div>
@@ -165,6 +211,22 @@
   "name": "home-faq",
   "settings": [
     {
+      "type": "select",
+      "id": "design_variant",
+      "label": "Design variant",
+      "options": [
+        {
+          "value": "home",
+          "label": "Home (sidebar layout)"
+        },
+        {
+          "value": "page",
+          "label": "Page (breadcrumbs, full width)"
+        }
+      ],
+      "default": "home"
+    },
+    {
       "type": "text",
       "label": "Main heading (desktop)",
       "id": "hd",
@@ -172,27 +234,55 @@
     },
     {
       "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent (page variant)",
+      "info": "Gray suffix after the main heading. Used only when Design variant is Page."
+    },
+    {
+      "type": "text",
       "id": "heading_mobile",
       "label": "Heading (mobile)",
       "default": "FAQ",
-      "info": "Centered shorter title on small screens."
+      "info": "Centered shorter title on small screens. Home variant only."
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_parent_label",
+      "label": "Parent breadcrumb label",
+      "default": "Evamats",
+      "info": "Page variant only."
+    },
+    {
+      "type": "url",
+      "id": "breadcrumb_parent_url",
+      "label": "Parent breadcrumb URL",
+      "info": "Page variant only. Leave empty for homepage."
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_current_label",
+      "label": "Current breadcrumb label",
+      "default": "FAQ",
+      "info": "Page variant only."
     },
     {
       "type": "url",
       "id": "eyebrow_link",
       "label": "Eyebrow link",
-      "info": "If set, eyebrow becomes a link."
+      "info": "If set, eyebrow becomes a link. Home variant only."
     },
     {
       "type": "text",
       "id": "view_all_label",
       "label": "View all button label",
-      "default": "Zobacz wszystko"
+      "default": "Zobacz wszystko",
+      "info": "Home variant only."
     },
     {
       "type": "url",
       "id": "view_all_url",
-      "label": "View all button link"
+      "label": "View all button link",
+      "info": "Home variant only."
     },
     {
       "type": "header",
@@ -207,7 +297,7 @@
       "step": 4,
       "unit": "px",
       "default": 0
-    }, 
+    },
     {
       "type": "range",
       "id": "padding_bottom",

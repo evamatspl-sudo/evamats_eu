@@ -1,0 +1,44 @@
+{%- liquid
+  assign country_code = localization.country.iso_code
+  assign currency_code = cart.currency.iso_code
+  assign order_total_raw = ''
+
+  if country_code == 'CZ' or currency_code == 'CZK'
+    assign order_total_raw = settings.order_total_czk
+  elsif country_code == 'DE'
+    assign order_total_raw = settings.order_total_eur_de
+    if order_total_raw == blank
+      assign order_total_raw = settings.order_total_eur
+    endif
+  elsif currency_code == 'EUR'
+    assign order_total_raw = settings.order_total_eur
+  elsif currency_code == 'PLN'
+    assign order_total_raw = settings.order_total_pln
+  elsif currency_code == 'UAH'
+    assign order_total_raw = settings.order_total_uah
+  elsif currency_code == 'GBP'
+    assign order_total_raw = settings.order_total_gbp
+  elsif currency_code == 'CHF'
+    assign order_total_raw = settings.order_total_chf
+  elsif currency_code == 'HUF'
+    assign order_total_raw = settings.order_total_huf
+  elsif currency_code == 'RON'
+    assign order_total_raw = settings.order_total_ron
+  elsif currency_code == 'BGN'
+    assign order_total_raw = settings.order_total_bgn
+  elsif currency_code == 'SEK'
+    assign order_total_raw = settings.order_total_sek
+  elsif currency_code == 'DKK'
+    assign order_total_raw = settings.order_total_dkk
+  elsif currency_code == 'NOK'
+    assign order_total_raw = settings.order_total_nok
+  elsif currency_code == 'TRY'
+    assign order_total_raw = settings.order_total_try
+  endif
+
+  if order_total_raw == blank
+    assign order_total_raw = settings.order_total
+  endif
+
+  echo order_total_raw
+-%}

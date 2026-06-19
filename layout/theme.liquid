@@ -387,6 +387,9 @@
       
     {% endstyle %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {%- if request.page_type == 'policy' -%}
+      {{- 'section-evamats-policy.css' | asset_url | stylesheet_tag -}}
+    {%- endif -%}
     {{ 'component-eva-input.css' | asset_url | stylesheet_tag }}
     {{ 'component-eva-slider-nav.css' | asset_url | stylesheet_tag }}
     {%- if evamats_is_v2_page -%}
@@ -449,12 +452,16 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
     </ul>
 
     <div id="popupOverlayLipComment" class="popup_overlay popup-overlay--lip_comment">
-      <div class="popup">
-          <div class="popup-content">
-              {{settings.popup_info_text }}
+      <div class="popup-overlay--lip_comment__inner">
+        <div class="popup">
+          <div class="popup-content rte">
+            {{ settings.popup_info_text }}
           </div>
+        </div>
+        <button type="button" class="popup_close_btn" aria-label="{{ 'accessibility.close' | t }}">
+          {% render 'icon-close' %}
+        </button>
       </div>
-      <span class="popup_close_btn" >{% render 'icon-close' %}</span>
     </div>
     <div id="popupOverlayUpsellVideo" class="popup_overlay popup-overlay--upsell_video">
       <div class="popup">

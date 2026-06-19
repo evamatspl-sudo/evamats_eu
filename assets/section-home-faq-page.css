@@ -1,0 +1,194 @@
+/* FAQ page variant — Figma 1710:31733 desktop / mobile FAQ frames */
+
+.home-faq-v2--page {
+  --hfaq-page-pt: 42px;
+  --hfaq-page-pb: 80px;
+  padding-top: var(--hfaq-page-pt);
+  padding-bottom: var(--hfaq-page-pb);
+  color: #1b1d22;
+}
+
+.home-faq-v2--page .page-width {
+  max-width: 1520px;
+}
+
+.home-faq-v2--page .home-faq-v2__shell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+.home-faq-v2--page .home-faq-v2__intro,
+.home-faq-v2--page .home-faq-v2__main {
+  width: 100%;
+  min-width: 0;
+}
+
+.home-faq-v2--page .home-faq-v2__breadcrumbs {
+  margin-bottom: 23px;
+}
+
+.home-faq-v2--page .home-faq-v2__title--page {
+  margin: 0 0 71px;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.92px;
+  color: #1b1d22;
+  text-align: left;
+}
+
+.home-faq-v2--page .home-faq-v2__title-accent {
+  color: #8090a4;
+}
+
+.home-faq-v2--page .home-faq-v2__title-desktop,
+.home-faq-v2--page .home-faq-v2__title-mobile {
+  display: none;
+}
+
+.home-faq-v2--page .home-faq-v2__question-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.4px;
+}
+
+.home-faq-v2--page .home-faq-v2__row--category .home-faq-v2__question-title {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.home-faq-v2--page .faq-question > .accordion {
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 26px;
+}
+
+.home-faq-v2--page .faq-question:last-child > .accordion {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-faq-v2--page .faq-question:has(> .accordion.active) {
+  border-bottom: 2px solid #ff2741;
+  padding-bottom: 26px;
+}
+
+.home-faq-v2--page .faq-question:has(> .accordion.active) > .accordion {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-faq-v2--page .faq-question:has(> .accordion.active):last-child {
+  border-bottom: 2px solid #ff2741;
+  padding-bottom: 26px;
+}
+
+.home-faq-v2--page .accordion.active + .panel {
+  padding-top: 22px;
+  padding-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.32px;
+  color: #1b1d22;
+}
+
+.home-faq-v2--page .accordion.active .home-faq-v2__toggle-icon {
+  background: #f2f2f2;
+}
+
+.home-faq-v2--page .accordion.active .home-faq-v2__toggle-icon::before,
+.home-faq-v2--page .accordion.active .home-faq-v2__toggle-icon::after {
+  background: #1b1d22;
+  width: 12px;
+  height: 2px;
+}
+
+.home-faq-v2--page .accordion.active .home-faq-v2__toggle-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.home-faq-v2--page .accordion.active .home-faq-v2__toggle-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 12px;
+  height: 2px;
+}
+
+.home-faq-v2--page .faq-question--inner .accordion {
+  border-bottom-color: #e9e9e9;
+  padding-bottom: 20px;
+}
+
+.home-faq-v2--page .accordion {
+  border-bottom-color: #e9e9e9;
+}
+
+@media screen and (max-width: 989px) {
+  .home-faq-v2--page .home-faq-v2__shell {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .home-faq-v2--page .home-faq-v2__intro {
+    text-align: left;
+    align-items: stretch;
+  }
+
+  .home-faq-v2--page .home-faq-v2__title--page {
+    text-align: left;
+    font-size: 26px;
+    letter-spacing: -0.52px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .home-faq-v2--page {
+    --hfaq-page-pt: 15px;
+    --hfaq-page-pb: 48px;
+  }
+
+  .home-faq-v2--page .home-faq-v2__breadcrumbs {
+    margin-bottom: 21px;
+  }
+
+  .home-faq-v2--page .home-faq-v2__breadcrumbs.evamats-breadcrumbs {
+    --eb-size: 12px;
+    --eb-lh: 1;
+    --eb-ls: -0.24px;
+  }
+
+  .home-faq-v2--page .home-faq-v2__title--page {
+    margin-bottom: 46px;
+    font-size: 26px;
+    letter-spacing: -0.52px;
+  }
+
+  .home-faq-v2--page .home-faq-v2__question-title {
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.32px;
+  }
+
+  .home-faq-v2--page .home-faq-v2__row--category .home-faq-v2__question-title {
+    font-size: 16px;
+  }
+
+  .home-faq-v2--page .faq-question > .accordion {
+    padding-bottom: 20px;
+  }
+
+  .home-faq-v2--page .faq-question:has(> .accordion.active) {
+    padding-bottom: 20px;
+  }
+
+  .home-faq-v2--page .faq-question:has(> .accordion.active):last-child {
+    padding-bottom: 20px;
+  }
+
+  .home-faq-v2--page .accordion.active + .panel {
+    padding-top: 16px;
+    line-height: 1.4;
+  }
+}

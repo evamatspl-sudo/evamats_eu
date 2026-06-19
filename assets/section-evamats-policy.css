@@ -1,0 +1,89 @@
+/* Policy pages — Figma 1710:31971 / 31974 / 31975 desktop, 1710:26957 / 26960 / 26961 mobile */
+
+.shopify-policy__title h1 {
+  margin: 0;
+  font-family: var(--font-body-family, NTSomic, sans-serif);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.92px;
+  color: #1b1d22;
+}
+
+.shopify-policy__body {
+  font-family: var(--font-body-family, NTSomic, sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.36px;
+  color: #1b1d22;
+}
+
+.shopify-policy__body h1,
+.shopify-policy__body h2,
+.shopify-policy__body h3 {
+  font-family: inherit;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.52px;
+  color: #1b1d22;
+}
+
+/* § section markers + title lines in policy HTML (no semantic headings) */
+.shopify-policy__body p:has(> strong:only-child),
+.shopify-policy__body div[style*='text-align:center'] > strong,
+.shopify-policy__body p:has(> strong:only-child) + p,
+.shopify-policy__body div[style*='text-align:center']:has(strong) + p {
+  font-family: inherit;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.52px;
+  color: #1b1d22;
+}
+
+.shopify-policy__body p,
+.shopify-policy__body li,
+.shopify-policy__body td,
+.shopify-policy__body th,
+.shopify-policy__body ol,
+.shopify-policy__body ul {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+.shopify-policy__body strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 749px) {
+  .shopify-policy__title h1 {
+    font-size: 26px;
+    letter-spacing: -0.52px;
+  }
+
+  .shopify-policy__body {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .shopify-policy__body h1 {
+    font-size: 26px;
+    letter-spacing: -0.52px;
+  }
+
+  .shopify-policy__body h2,
+  .shopify-policy__body h3,
+  .shopify-policy__body p:has(> strong:only-child),
+  .shopify-policy__body div[style*='text-align:center'] > strong,
+  .shopify-policy__body p:has(> strong:only-child) + p,
+  .shopify-policy__body div[style*='text-align:center']:has(strong) + p {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+}

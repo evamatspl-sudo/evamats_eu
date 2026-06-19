@@ -1,0 +1,25 @@
+<span
+  class="trunk_message"
+  tabindex="0"
+  role="button"
+  aria-label="{{ 'general.config.label_trunk' | t | escape }}"
+  aria-describedby="trunk-tooltip-{{ section.id }}-{{ forloop.index0 }}"
+>
+  <span class="trunk_message__icon trunk_message__icon--default" aria-hidden="true">
+    {%- render 'evamats-trunk-attention-icon', state: 'default' -%}
+  </span>
+  <span class="trunk_message__icon trunk_message__icon--active" aria-hidden="true">
+    {%- render 'evamats-trunk-attention-icon', state: 'active' -%}
+  </span>
+  <span
+    class="trunk_message__tooltip rte"
+    id="trunk-tooltip-{{ section.id }}-{{ forloop.index0 }}"
+    role="tooltip"
+  >
+    {%- if trunk_content != blank -%}
+      {{- trunk_content -}}
+    {%- else -%}
+      {{- 'general.config.label_trunk' | t -}}
+    {%- endif -%}
+  </span>
+</span>

@@ -1,0 +1,170 @@
+{%- liquid
+  assign delivery_line_1 = block.settings.config_delivery_line_1
+  assign delivery_line_2 = block.settings.config_delivery_line_2
+  if delivery_line_1 == blank
+    if product.type == 'Individual'
+      assign delivery_line_1 = 'general.config.checkout_delivery_individual_line_1' | t
+      assign delivery_line_2 = 'general.config.checkout_delivery_individual_line_2' | t
+    else
+      assign delivery_line_1 = 'general.config.checkout_delivery_line_1' | t
+      assign delivery_line_2 = 'general.config.checkout_delivery_line_2' | t
+    endif
+  endif
+
+  assign trusted_line_1 = block.settings.config_trusted_line_1
+  assign trusted_line_2 = block.settings.config_trusted_line_2
+  if trusted_line_1 == blank
+    assign trusted_line_1 = 'general.config.checkout_trusted_line_1' | t
+    assign trusted_line_2 = 'general.config.checkout_trusted_line_2' | t
+  endif
+
+  assign delivery_icon = block.settings.config_delivery_icon
+  assign trusted_seal = block.settings.config_trusted_seal
+  assign trusted_logo = block.settings.config_trusted_logo
+
+  assign show_delivery_note = false
+  if delivery_line_1 != blank
+    assign show_delivery_note = true
+  endif
+
+  assign show_trusted_note = false
+  if trusted_line_1 != blank
+    assign show_trusted_note = true
+  endif
+-%}
+
+{%- if show_delivery_note or show_trusted_note -%}
+  <div class="evamats-config-checkout__notes">
+    {%- if show_delivery_note -%}
+      <details class="evamats-config-checkout__delivery-dropdown">
+        <summary class="evamats-config-checkout__delivery-dropdown-summary">
+          <span class="evamats-config-checkout__delivery-dropdown-icon" aria-hidden="true">
+            {%- if delivery_icon != blank -%}
+              {{
+                delivery_icon
+                | image_url: width: 52
+                | image_tag: loading: 'lazy', widths: '26,52', alt: ''
+              }}
+            {%- else -%}
+              <img
+                src="{{ 'Group_1948755301.webp' | file_url }}"
+                alt=""
+                loading="lazy"
+                width="52"
+                height="52"
+              >
+            {%- endif -%}
+          </span>
+
+          <span class="evamats-config-checkout__delivery-dropdown-text">
+            {%- if delivery_line_1 != blank -%}
+              <span class="evamats-config-checkout__delivery-dropdown-title">{{ delivery_line_1 | escape }}</span>
+            {%- endif -%}
+            {%- if delivery_line_2 != blank -%}
+              <span class="evamats-config-checkout__delivery-dropdown-subtitle">{{ delivery_line_2 | escape }}</span>
+            {%- endif -%}
+          </span>
+
+          <span class="evamats-config-checkout__delivery-dropdown-caret" aria-hidden="true">
+            {% render 'icon-config-caret' %}
+            <span class="evamats-config-checkout__delivery-dropdown-caret-dot"></span>
+          </span>
+        </summary>
+
+        <div class="evamats-config-checkout__delivery-dropdown-body">
+          <p class="evamats-config-checkout__delivery-dropdown-body-title">Potřebujete to rychleji? Lze.</p>
+
+          <div class="evamats-config-checkout__delivery-dropdown-rules">
+            <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--standard">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#D3D3D3" fill-opacity="0.3"/>
+                <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#D3D3D3"/>
+              </svg>
+              <span>Standard — 14 pracovních dnů</span>
+            </div>
+
+            <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--express">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g clip-path="url(#clip0_{{ block.id }})">
+                  <mask id="mask0_{{ block.id }}" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <path d="M24 0H0V24H24V0Z" fill="white"/>
+                  </mask>
+                  <g mask="url(#mask0_{{ block.id }})">
+                    <path d="M17.9105 10.7209H14.8205V3.52087C14.8205 1.84087 13.9105 1.50087 12.8005 2.76087L12.0005 3.67087L5.2305 11.3709C4.3005 12.4209 4.6905 13.2809 6.0905 13.2809H9.1805V20.4809C9.1805 22.1609 10.0905 22.5009 11.2005 21.2409L12.0005 20.3309L18.7705 12.6309C19.7005 11.5809 19.3105 10.7209 17.9105 10.7209Z" fill="#CEE41A"/>
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_{{ block.id }}">
+                    <rect width="24" height="24" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+              <span>Express — 7 pracovních dnů</span>
+            </div>
+
+            <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--premium">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M6 21.0001C3.79086 21.0001 2 19.2092 2 17.0001V6.41431C2 5.5234 3.07714 5.07724 3.70711 5.7072L6.29289 8.29299C6.68342 8.68351 7.31658 8.68351 7.70711 8.29299L11.2929 4.7072C11.6834 4.31668 12.3166 4.31668 12.7071 4.7072L16.2929 8.29299C16.6834 8.68351 17.3166 8.68351 17.7071 8.29299L20.2929 5.7072C20.9229 5.07723 22 5.5234 22 6.41431V17.0001C22 19.2092 20.2091 21.0001 18 21.0001H6Z" fill="#005128"/>
+                <path d="M14.4368 13.4881H13.1627V10.6083C13.1627 9.93636 12.7875 9.80037 12.3299 10.3043L12 10.6683L9.20859 13.748C8.82513 14.168 8.98594 14.512 9.56319 14.512H10.8373V17.3917C10.8373 18.0636 11.2125 18.1996 11.6701 17.6957L12 17.3317L14.7914 14.252C15.1749 13.832 15.0141 13.4881 14.4368 13.4881Z" fill="#D9F021"/>
+              </svg>
+              <span>Premium — 3 pracovní dny</span>
+            </div>
+          </div>
+
+          <p class="evamats-config-checkout__delivery-dropdown-footer">
+            Možnost zrychlení vyberete v košíku, při výběru dopravy. Express a Premium — zpoplatněny navíc.
+          </p>
+        </div>
+      </details>
+    {%- endif -%}
+
+    {%- if show_trusted_note -%}
+      <div class="evamats-config-checkout__note evamats-config-checkout__note--trusted">
+        <div class="evamats-config-checkout__note-icon evamats-config-checkout__note-icon--seal">
+          {%- if trusted_seal != blank -%}
+            {{
+              trusted_seal
+              | image_url: width: 96
+              | image_tag: loading: 'lazy', widths: '48,96', alt: ''
+            }}
+          {%- else -%}
+            <img
+              src="{{ '6f13a48de7783505c9cd_1.svg' | file_url }}"
+              alt=""
+              loading="lazy"
+              width="48"
+              height="48"
+            >
+          {%- endif -%}
+        </div>
+        <div class="evamats-config-checkout__note-text">
+          {%- if trusted_line_1 != blank -%}
+            <p class="evamats-config-checkout__note-line">{{ trusted_line_1 | escape }}</p>
+          {%- endif -%}
+          {%- if trusted_line_2 != blank -%}
+            <p class="evamats-config-checkout__note-line">{{ trusted_line_2 | escape }}</p>
+          {%- endif -%}
+        </div>
+        {%- if trusted_logo != blank -%}
+          <div class="evamats-config-checkout__trusted-logo">
+            {{
+              trusted_logo
+              | image_url: width: 170
+              | image_tag: loading: 'lazy', widths: '85,170', alt: ''
+            }}
+          </div>
+        {%- else -%}
+          <div class="evamats-config-checkout__trusted-logo">
+            <img
+              src="{{ 'Trusted-shops-logo_1.webp' | file_url }}"
+              alt=""
+              loading="lazy"
+              width="85"
+              height="35"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

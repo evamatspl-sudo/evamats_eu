@@ -29,7 +29,7 @@
   endif
 -%}
 
-<article class="evamats-cart-item cart-item" id="CartItem-{{ line_index }}" role="listitem">
+<article class="evamats-cart-item cart-item" id="CartItem-{{ line_index }}" data-line-key="{{ item.key }}" role="listitem">
   <div class="evamats-cart-item__media cart-item__media">
     {% if item.image %}
       <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"></a>
@@ -42,6 +42,9 @@
           width="150"
           height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
         >
+        <button type="button" class="evamats-cart-item__restore" data-cart-restore>
+          {{ 'sections.cart.restore_item' | t }}
+        </button>
       </div>
     {% endif %}
   </div>
@@ -57,13 +60,15 @@
         {% render 'evamats-cart-item-price', item: item, has_discount: has_discount, discount_percent: discount_percent, mobile: true %}
       </div>
 
-      <cart-remove-button class="evamats-cart-item__remove-wrap large-up-hide" id="Remove-mobile-{{ line_index }}" data-index="{{ line_index }}">
+      <cart-remove-button class="evamats-cart-item__remove-wrap large-up-hide" id="Remove-mobile-{{ line_index }}" data-index="{{ line_index }}" data-key="{{ item.key }}">
         <a
           href="{{ item.url_to_remove }}"
-          class="evamats-cart-item__remove button button--tertiary"
+          class="evamats-cart-item__remove"
           aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
         >
-          {% render 'icon-close-small' %}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M11.6616 1.74198C11.5077 1.74562 11.3615 1.80991 11.2549 1.92086L7.00064 6.17509L2.74641 1.92086C2.69205 1.86498 2.62704 1.82056 2.55522 1.79023C2.4834 1.7599 2.40624 1.74427 2.32828 1.74426C2.21223 1.74429 2.09883 1.77893 2.00258 1.84375C1.90632 1.90856 1.83158 2.00061 1.78792 2.10813C1.74425 2.21564 1.73364 2.33374 1.75744 2.44732C1.78124 2.56089 1.83838 2.66479 1.92154 2.74573L6.17577 6.99996L1.92154 11.2542C1.86555 11.3079 1.82086 11.3723 1.79007 11.4436C1.75927 11.5148 1.74301 11.5915 1.74222 11.6691C1.74143 11.7467 1.75613 11.8237 1.78547 11.8955C1.8148 11.9674 1.85818 12.0327 1.91306 12.0875C1.96794 12.1424 2.03322 12.1858 2.10507 12.2151C2.17692 12.2445 2.25391 12.2592 2.33151 12.2584C2.40912 12.2576 2.48579 12.2413 2.55703 12.2105C2.62827 12.1797 2.69266 12.135 2.74641 12.0791L7.00064 7.82483L11.2549 12.0791C11.3086 12.135 11.373 12.1797 11.4442 12.2105C11.5155 12.2413 11.5922 12.2576 11.6698 12.2584C11.7474 12.2592 11.8244 12.2445 11.8962 12.2151C11.9681 12.1858 12.0333 12.1424 12.0882 12.0875C12.1431 12.0327 12.1865 11.9674 12.2158 11.8955C12.2451 11.8237 12.2599 11.7467 12.2591 11.6691C12.2583 11.5915 12.242 11.5148 12.2112 11.4436C12.1804 11.3723 12.1357 11.3079 12.0797 11.2542L7.82551 6.99996L12.0797 2.74573C12.1645 2.66426 12.2226 2.55911 12.2465 2.44405C12.2705 2.32898 12.2591 2.20937 12.2139 2.10087C12.1687 1.99238 12.0918 1.90007 11.9933 1.83603C11.8947 1.77199 11.7791 1.73921 11.6616 1.74198Z" fill="#8090A4"/>
+          </svg>
         </a>
       </cart-remove-button>
     </div>
@@ -74,12 +79,7 @@
           {%- for option in item.options_with_values -%}
             {%- if option.name == 'Title' -%}{%- continue -%}{%- endif -%}
             {%- unless option.value contains 'Default Title' -%}
-              <span class="evamats-cart-item__chip">
-                <span class="evamats-cart-item__chip-text">
-                  {%- assign words = option.value | split: '#MWS' -%}
-                  {{- words[0] -}}
-                </span>
-              </span>
+              {% render 'evamats-cart-option-chip', product: item.product, option_name: option.name, option_value: option.value %}
             {%- endunless -%}
           {%- endfor -%}
         {%- endif -%}
@@ -90,29 +90,26 @@
           {%- endif -%}
           {%- assign property_first_char = property.first | slice: 0 -%}
           {%- if property.last != blank and property_first_char != '_' -%}
-            {%- assign chip_label = property.last -%}
-            {%- if property.last contains '/uploads/' -%}
+            {%- assign prop_cell_shape = 'general.config.cell_shape' | t -%}
+            {%- assign prop_material_color = 'general.config.material_color' | t -%}
+            {%- assign prop_trim_color = 'general.config.trim_color' | t -%}
+            {%- if property.first == prop_cell_shape or property.first == prop_material_color or property.first == prop_trim_color -%}
+              {% render 'evamats-cart-property-chip', property_name: property.first, property_value: property.last %}
+            {%- elsif property.last contains '/uploads/' -%}
               {%- assign file_type = property.last | split: '.' | last | downcase -%}
               {%- assign file_types = 'jpg,jpeg,webp,gif,png,apng,avif,svg,bmp,ico,tiff' | split: ',' -%}
               {%- unless file_types contains file_type -%}
                 {%- continue -%}
               {%- endunless -%}
+              {% render 'evamats-cart-chip', chip_label: property.first, chip_image: property.last %}
+            {%- else -%}
+              {% render 'evamats-cart-chip', chip_label: property.last, chip_image: blank %}
             {%- endif -%}
-            <span class="evamats-cart-item__chip">
-              {%- if property.last contains '/uploads/' -%}
-                <span class="evamats-cart-item__chip-icon">
-                  <img src="{{ property.last }}" alt="" width="22" height="22" loading="lazy">
-                </span>
-              {%- endif -%}
-              <span class="evamats-cart-item__chip-text">{{ chip_label }}</span>
-            </span>
           {%- endif -%}
         {%- endfor -%}
 
         {%- if item.selling_plan_allocation != null -%}
-          <span class="evamats-cart-item__chip">
-            <span class="evamats-cart-item__chip-text">{{ item.selling_plan_allocation.selling_plan.name }}</span>
-          </span>
+          {% render 'evamats-cart-chip', chip_label: item.selling_plan_allocation.selling_plan.name, chip_image: blank %}
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -167,11 +164,14 @@
         </div>
 
         <p class="evamats-cart-item__unit-price small-hide">
-          {%- if item.original_price != item.final_price -%}
-            {{ 'sections.cart.unit_price_each_html' | t: price: item.final_price | money }}
-          {%- else -%}
-            {{ 'sections.cart.unit_price_each_html' | t: price: item.original_price | money }}
-          {%- endif -%}
+          {%- liquid
+            if item.original_price != item.final_price
+              assign unit_price_money = item.final_price | money
+            else
+              assign unit_price_money = item.original_price | money
+            endif
+          -%}
+          {{ 'sections.cart.unit_price_each_html' | t: price: unit_price_money }}
         </p>
       </div>
 
@@ -196,13 +196,15 @@
       </div>
     </div>
 
-    <cart-remove-button id="Remove-{{ line_index }}" data-index="{{ line_index }}">
+    <cart-remove-button id="Remove-{{ line_index }}" data-index="{{ line_index }}" data-key="{{ item.key }}">
       <a
         href="{{ item.url_to_remove }}"
-        class="evamats-cart-item__remove button button--tertiary"
+        class="evamats-cart-item__remove"
         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
       >
-        {% render 'icon-close-small' %}
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M11.6616 1.74198C11.5077 1.74562 11.3615 1.80991 11.2549 1.92086L7.00064 6.17509L2.74641 1.92086C2.69205 1.86498 2.62704 1.82056 2.55522 1.79023C2.4834 1.7599 2.40624 1.74427 2.32828 1.74426C2.21223 1.74429 2.09883 1.77893 2.00258 1.84375C1.90632 1.90856 1.83158 2.00061 1.78792 2.10813C1.74425 2.21564 1.73364 2.33374 1.75744 2.44732C1.78124 2.56089 1.83838 2.66479 1.92154 2.74573L6.17577 6.99996L1.92154 11.2542C1.86555 11.3079 1.82086 11.3723 1.79007 11.4436C1.75927 11.5148 1.74301 11.5915 1.74222 11.6691C1.74143 11.7467 1.75613 11.8237 1.78547 11.8955C1.8148 11.9674 1.85818 12.0327 1.91306 12.0875C1.96794 12.1424 2.03322 12.1858 2.10507 12.2151C2.17692 12.2445 2.25391 12.2592 2.33151 12.2584C2.40912 12.2576 2.48579 12.2413 2.55703 12.2105C2.62827 12.1797 2.69266 12.135 2.74641 12.0791L7.00064 7.82483L11.2549 12.0791C11.3086 12.135 11.373 12.1797 11.4442 12.2105C11.5155 12.2413 11.5922 12.2576 11.6698 12.2584C11.7474 12.2592 11.8244 12.2445 11.8962 12.2151C11.9681 12.1858 12.0333 12.1424 12.0882 12.0875C12.1431 12.0327 12.1865 11.9674 12.2158 11.8955C12.2451 11.8237 12.2599 11.7467 12.2591 11.6691C12.2583 11.5915 12.242 11.5148 12.2112 11.4436C12.1804 11.3723 12.1357 11.3079 12.0797 11.2542L7.82551 6.99996L12.0797 2.74573C12.1645 2.66426 12.2226 2.55911 12.2465 2.44405C12.2705 2.32898 12.2591 2.20937 12.2139 2.10087C12.1687 1.99238 12.0918 1.90007 11.9933 1.83603C11.8947 1.77199 11.7791 1.73921 11.6616 1.74198Z" fill="#8090A4"/>
+        </svg>
       </a>
     </cart-remove-button>
 

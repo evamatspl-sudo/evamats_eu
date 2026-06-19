@@ -61,7 +61,9 @@
       >
       <label for="body-type-{{ section.id }}-{{ forloop.index }}" class="default_option">
         {% if item.image %}
-          <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="400">
+          <span class="evamats-config-body-thumb">
+            <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="103" height="48">
+          </span>
         {% endif %}
         <span class="evamats-config-body-label">{{ item.title }}</span>
         <div class="label__tooltip">{{ item.title }}</div>

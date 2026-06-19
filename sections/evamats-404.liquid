@@ -1,0 +1,119 @@
+{{ 'section-evamats-404.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign home_url = section.settings.home_button_url
+  if home_url == blank
+    assign home_url = routes.root_url
+  endif
+
+  assign select_car_url = section.settings.select_car_button_url
+  if select_car_url == blank
+    assign select_car_url = '/pages/car-brands'
+  endif
+-%}
+
+<div class="evamats-404">
+  <div class="evamats-404__inner page-width">
+    {%- if section.settings.image != blank -%}
+      <div class="evamats-404__media">
+        {{
+          section.settings.image
+          | image_url: width: 844
+          | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'evamats-404__media-img',
+            widths: '194, 388, 422, 844',
+            sizes: '(min-width: 750px) 422px, min(100vw - 36px, 339px)',
+            alt: section.settings.image.alt | default: '404'
+        }}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank -%}
+      <div class="evamats-404__heading">
+        {%- if section.settings.heading_line_1 != blank -%}
+          <p class="evamats-404__heading-line">{{ section.settings.heading_line_1 | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading_line_2 != blank -%}
+          <p class="evamats-404__heading-line">{{ section.settings.heading_line_2 | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="evamats-404__actions">
+      {%- if section.settings.home_button_label != blank -%}
+        <a class="evamats-404__btn evamats-404__btn--secondary" href="{{ home_url }}">
+          {{- section.settings.home_button_label | escape -}}
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.select_car_button_label != blank -%}
+        <a class="evamats-404__btn evamats-404__btn--primary" href="{{ select_car_url }}">
+          <span class="evamats-404__btn-icon" aria-hidden="true">
+            <img
+              src="{{ 'car_button.webp' | asset_url }}"
+              class="evamats-header-drawer__car-cta-img"
+              width="54"
+              height="54"
+              loading="lazy"
+              alt=""
+            >
+          </span>
+          <span class="evamats-404__btn-label">{{ section.settings.select_car_button_label | escape }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404 page",
+  "tag": "section",
+  "class": "section-evamats-404",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Illustration"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "We couldn't find this page."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "Perhaps you chose the wrong car."
+    },
+    {
+      "type": "text",
+      "id": "home_button_label",
+      "label": "Home button label",
+      "default": "Home"
+    },
+    {
+      "type": "url",
+      "id": "home_button_url",
+      "label": "Home button link",
+      "info": "Leave empty for homepage."
+    },
+    {
+      "type": "text",
+      "id": "select_car_button_label",
+      "label": "Select vehicle button label",
+      "default": "Select vehicle"
+    },
+    {
+      "type": "url",
+      "id": "select_car_button_url",
+      "label": "Select vehicle button link",
+      "info": "Leave empty for /pages/car-brands."
+    }
+  ]
+}
+{% endschema %}

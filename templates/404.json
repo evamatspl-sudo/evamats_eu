@@ -1,8 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-404",
-      "settings": {}
+      "type": "evamats-404",
+      "settings": {
+        "image": "shopify://shop_images/Group_1948755308.webp",
+        "heading_line_1": "We couldn't find this page.",
+        "heading_line_2": "Perhaps you chose the wrong car.",
+        "home_button_label": "Home",
+        "home_button_url": "",
+        "select_car_button_label": "Select vehicle",
+        "select_car_button_url": "shopify://collections/all"
+      }
     }
   },
   "order": [

@@ -1,0 +1,55 @@
+{{ 'section-evamats-contact-map.css' | asset_url | stylesheet_tag }}
+
+{%- assign map_src = section.settings.map_embed_url | strip -%}
+
+{%- if section.settings.map_embed != blank or map_src != blank -%}
+  <div class="evamats-contact-map" id="EvamatsContactMap-{{ section.id }}">
+    <div class="evamats-contact-map__embed">
+      {%- if section.settings.map_embed != blank -%}
+        {{ section.settings.map_embed }}
+      {%- else -%}
+        <iframe
+          class="evamats-contact-map__frame"
+          src="{{ map_src | escape }}"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+          title="{{ section.settings.map_title | default: 'EVAMATS' | escape }}"
+        ></iframe>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Contact map",
+  "tag": "section",
+  "class": "section-evamats-contact-map",
+  "settings": [
+    {
+      "type": "text",
+      "id": "map_title",
+      "label": "Map iframe title",
+      "default": "EVAMATS"
+    },
+    {
+      "type": "text",
+      "id": "map_embed_url",
+      "label": "Google Maps embed URL",
+      "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.789253743468!2d18.452500941064276!3d54.41030689571039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd733dad1ee031%3A0x3e8ca62b780caa88!2sEVAMATS%20Car%20Mats!5e0!3m2!1sru!2sua!4v1781795719670!5m2!1sru!2sua"
+    },
+    {
+      "type": "html",
+      "id": "map_embed",
+      "label": "Map embed HTML (optional override)",
+      "info": "If filled, replaces the embed URL above."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact map"
+    }
+  ]
+}
+{% endschema %}

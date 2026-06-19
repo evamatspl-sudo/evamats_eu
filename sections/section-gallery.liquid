@@ -1,227 +1,181 @@
-<link
-    rel="stylesheet"
-    href="{{  'fancybox.css' | asset_url }}"
-  />
-<style>
-    .hidden {
-        display: none;
-    }
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{{ 'section-gallery.css' | asset_url | stylesheet_tag }}
+{{ 'section-gallery-fancybox.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'fancybox.css' | asset_url }}">
 
-    .gallery {
-        padding-top: 40px;
-    }
+{%- liquid
+  assign gallery_title = section.settings.title | strip
+  if gallery_title == blank and page != blank
+    assign gallery_title = page.title
+  endif
 
-    .gallery__container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-    }
+  assign breadcrumb_parent_label = section.settings.breadcrumb_parent_label | strip
+  if breadcrumb_parent_label == blank
+    assign breadcrumb_parent_label = 'Evamats'
+  endif
 
-    .gallery__container img {
-        display: block;
-        width: 100%;
-        border-radius: 4px;
-    }
+  assign breadcrumb_parent_url = section.settings.breadcrumb_parent_url | strip
+  if breadcrumb_parent_url == blank
+    assign breadcrumb_parent_url = routes.root_url
+  endif
 
-    .gallery__tabs {
-        margin-bottom: 20px;
-        border-radius: 8px;
-        padding: 16px;
-        color: #000;
-    }
+  assign breadcrumb_current_label = section.settings.breadcrumb_current_label | strip
+  if breadcrumb_current_label == blank
+    assign breadcrumb_current_label = 'Katalog'
+  endif
 
-    .gallery__tabs_item {
-        color: #000;
-    }
-
-    .gallery__tabs_edges  {
-        cursor: initial;
-    }
-
-    .gallery__tabs_edges .gallery__tabs_item.disabled {
-        opacity: 0.5;
-        pointer-events: none;
-    }
-    .gallery__image_wr {
-        width: calc((100% - 12px) / 4);
-        cursor: pointer;
-    }
-    /* Общий контейнер кастомного селекта */
-    .gallery__tabs_types.eva__tabs.custom-select,
-    .gallery__tabs_edges.custom-select {
-        position: relative;
-        display: block;
-        width: 250px; /* можно изменить под нужную ширину */
-        cursor: pointer;
-        margin: 0 auto 20px auto;
-    }
-
-    /* Заголовок селекта */
-    .custom-select .select-header {
-        padding: 10px;
-        border: 2px solid #ccc;
-        transition: .2s ease-in-out;
-        user-select: none;
-        border-radius: 8px;
-        color: rgb(var(--color-foreground));
-        text-align: center;
-        padding-right: 30px;
-        color: #000;
-    }
-
-
-    /* Контейнер с опциями */
-    .custom-select .select-options {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 0;
-        right: 0;
-        background-color: rgb(var(--color-foreground));
-        border: 1px solid #ccc;
-        z-index: 100;
-        display: none;
-        max-height: 300px; /* ограничиваем высоту, чтобы был скролл */
-        overflow-y: auto;
-        border-radius: 8px;
-    }
-
-    /* Отображаем контейнер с опциями, когда селект открыт */
-    .custom-select.open .select-options {
-        display: block;
-    }
-
-    /* Стилизация опций селекта */
-    .custom-select .select-options .eva__tabs_item.gallery__tabs_item {
-        padding: 10px;
-    }
-
-    .select-options .eva__tabs_item {
-        border: 0;
-        border-radius: 0;
-    }
-
-    /* Убираем нижнюю границу у последней опции */
-    .custom-select .select-options .eva__tabs_item.gallery__tabs_item:last-child {
-        border-bottom: none;
-    }
-
-    /* Hover и активное состояние опции */
-    .custom-select .select-options .eva__tabs_item.gallery__tabs_item:hover,
-    .custom-select .select-options .eva__tabs_item.gallery__tabs_item.active {
-        background-color: var(--color-1);
-        color: rgb(var(--color-foreground));
-        opacity: 0.8;
-    }
-
-    /* Если опция отключена (например, для типов без edges) */
-    .custom-select .select-options .eva__tabs_item.gallery__tabs_item.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-    }
-
-    .select-header_wr {
-        position: relative;
-    }
-
-    .select-header_wr svg {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: .2s ease-in-out;
-    }
-
-    .select-header_wr path {
-        fill: #000;
-    }
-
-    .custom-select.open .select-header_wr svg {
-        transform: translateY(-50%) rotate(180deg);
-    }
-
-    .gallery__reset {
-        cursor: pointer;
-        color: var(--color-1);
-        font-weight: 700;
-    }
-
-    .eva__tabs {
-        align-items: center;
-        cursor: pointer;    
-    }
-
-    .gallery__title {
-        text-align: center;
-        font-weight: 700;
-    }
-
-    .gallery__tabs_edges_title {
-        margin-bottom: 10px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    @media (max-width: 767px) {
-        .gallery__image_wr {
-            width: calc((100% - 8px) / 3);
-        }
-    }
-</style>
+  assign gallery_without_edges_thumb = '5os-classic-diamonds-black-red.webp' | file_url
+  assign gallery_with_edges_thumb = '5os-3d-diamonds-black-red.webp' | file_url
+-%}
 
 {% assign gallery_main = shop.metaobjects['gallery']['gallery-main'] %}
-{% assign types = "2os_edges,2os_noedges,5os_edges,5os_noedges,7os_edges,7os_noedges,minivan,bus,pickup_edges,pickup_noedges,tir,van_big,van_small_edges,van_small_noedges,tractors,excavators" | split: ',' %}
+{% assign types = '2os_edges,2os_noedges,5os_edges,5os_noedges,7os_edges,7os_noedges,minivan,bus,pickup_edges,pickup_noedges,tir,van_big,van_small_edges,van_small_noedges,tractors,excavators' | split: ',' %}
 
 <div class="gallery">
-    <div class="page-width">
-        <div class="gallery__tabs">
-            <div class="gallery__tabs_types eva__tabs custom-select">
-                <!-- Заголовок селекта -->
-                <div class="select-header_wr">
-                    <div class="select-header" data-text="{{ 'general.config.gallery_body_type' | t }}">{{ 'general.config.gallery_body_type' | t }}</div>
-                    {% render 'icon-caret' %}
-                </div>
-                
-                <!-- Контейнер с опциями -->
-                <div class="select-options">
-                  {% assign elements = 'general.config.bodyTypeElements' | t | remove: ",Other"  | split: ',' %}
-                  {% for item in elements %}
-                    <div class="eva__tabs_item gallery__tabs_item" data-type="{{ item }}">{{ item }}</div>
-                  {% endfor %}
-                </div>
-            </div>
-              
-            <div class="gallery__tabs_edges_title">{{ 'general.config.gallery_mats_type' | t }}</div>
-            <div class="gallery__tabs_edges eva__tabs">
-                <div class="eva__tabs_item gallery__tabs_item" data-type="withoutEdges">{{ 'general.config.without_edges' | t }}</div>
-                <div class="eva__tabs_item gallery__tabs_item" data-type="withEdges">{{ 'general.config.with_edges' | t }}</div>
-                <div class="gallery__reset">{{ 'general.config.reset' | t }}</div>
-            </div>
-    
-            
+  <div class="gallery__hero">
+    <div class="gallery__hero-inner page-width">
+      {% render 'evamats-breadcrumbs',
+        parent_label: breadcrumb_parent_label,
+        parent_url: breadcrumb_parent_url,
+        current_label: breadcrumb_current_label,
+        class: 'gallery__breadcrumbs'
+      %}
+
+      {%- if gallery_title != blank -%}
+        <h1 class="gallery__title">{{ gallery_title | escape }}</h1>
+      {%- endif -%}
+
+      <div class="gallery__filters">
+        <div class="gallery__tabs_edges eva__tabs">
+          <div class="eva__tabs_item gallery__tabs_item" data-type="withoutEdges" role="button" tabindex="0">
+            <span class="gallery__tabs_item-thumb">
+              <img src="{{ gallery_without_edges_thumb }}" alt="" loading="lazy" width="60" height="60">
+            </span>
+            <span>{{ 'general.config.without_edges' | t }}</span>
+          </div>
+          <div class="eva__tabs_item gallery__tabs_item" data-type="withEdges" role="button" tabindex="0">
+            <span class="gallery__tabs_item-thumb">
+              <img src="{{ gallery_with_edges_thumb }}" alt="" loading="lazy" width="60" height="60">
+            </span>
+            <span>{{ 'general.config.with_edges' | t }}</span>
+          </div>
         </div>
-        {% if gallery_main  %}
-            <div class="gallery__container">
-              {% for type in types %}
-                    {% for image in gallery_main[type].value %} 
-                        
-                        <div class="gallery__image_wr">
-                            <a href="{{ image | img_url: 'master' }}" data-fancybox="gallery">
-                                <img src="{{ image | img_url: '600x' }}" alt="Gallery Image" data-type="{{ type }}" class="gallery__image" loading='lazy'>
-                            </a>
-                            
-                        </div>
-                    {% endfor %}  
-              {% endfor %}
-            </div>
-          {% else %}
-            <p></p>
-          {% endif %}
-    
-          <div class="gallery__message hidden">{{ 'general.config.gallery_error_message' | t }}</div>
-          <div class="gallery__divider_text hidden">{{ 'general.config.gallery_divider_text' | t }}</div>
+
+        <div class="gallery__tabs_types eva__tabs custom-select">
+          <div class="select-header_wr">
+            <div class="select-header" data-text="{{ 'general.config.gallery_body_type' | t }}">{{ 'general.config.gallery_body_type' | t }}</div>
+            {% render 'icon-caret' %}
+          </div>
+          <div class="select-options">
+            {% assign elements = 'general.config.bodyTypeElements' | t | remove: ',Other' | split: ',' %}
+            {% for item in elements %}
+              <div class="eva__tabs_item gallery__tabs_item" data-type="{{ item }}">{{ item }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="gallery__reset">{{ 'general.config.reset' | t }}</div>
+      </div>
     </div>
+  </div>
+
+  <div class="gallery__body page-width">
+    {% if gallery_main %}
+      <div class="gallery__container">
+        {% for type in types %}
+          {% for image in gallery_main[type].value %}
+            <div class="gallery__image_wr">
+              <a
+                href="{{ image | img_url: 'master' }}"
+                data-fancybox="gallery"
+                data-thumb="{{ image | img_url: '160x' }}"
+              >
+                <img src="{{ image | img_url: '600x' }}" alt="Gallery Image" data-type="{{ type }}" class="gallery__image" loading="lazy">
+              </a>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p></p>
+    {% endif %}
+
+    <div class="gallery__message hidden">{{ 'general.config.gallery_error_message' | t }}</div>
+    <div class="gallery__divider_text hidden">{{ 'general.config.gallery_divider_text' | t }}</div>
+  </div>
 </div>
 
+{% render 'gallery-fancybox-panels' %}
+
+<div class="gallery__fancybox-assets" hidden aria-hidden="true">
+  <img data-gallery-fancybox-arrow-prev src="{{ 'gallery-fancybox-arrow-prev.svg' | asset_url }}" alt="" width="27" height="54">
+  <img data-gallery-fancybox-arrow-next src="{{ 'gallery-fancybox-arrow-next.svg' | asset_url }}" alt="" width="27" height="54">
+</div>
 
 <script src="{{ 'fancybox.js' | asset_url }}" defer></script>
 <script src="{{ 'gallery.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Galeria EVAMATS"
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_parent_label",
+      "label": "Breadcrumb — parent",
+      "default": "Evamats"
+    },
+    {
+      "type": "url",
+      "id": "breadcrumb_parent_url",
+      "label": "Breadcrumb — parent link",
+      "info": "Leave empty for homepage."
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_current_label",
+      "label": "Breadcrumb — current",
+      "default": "Katalog"
+    },
+    {
+      "type": "header",
+      "content": "Lightbox"
+    },
+    {
+      "type": "text",
+      "id": "lightbox_heading",
+      "label": "Lightbox heading",
+      "default": "Chcesz taki efekt w swoim aucie?"
+    },
+    {
+      "type": "text",
+      "id": "lightbox_cta_label",
+      "label": "Lightbox CTA label",
+      "default": "Poproś o pomoc"
+    },
+    {
+      "type": "url",
+      "id": "lightbox_cta_url",
+      "label": "Lightbox CTA link"
+    },
+    {
+      "type": "text",
+      "id": "lightbox_phone",
+      "label": "Lightbox phone",
+      "default": "+48 732 082 512"
+    },
+    {
+      "type": "text",
+      "id": "lightbox_email",
+      "label": "Lightbox email",
+      "default": "sklep@evamats.pl"
+    }
+  ]
+}
+{% endschema %}

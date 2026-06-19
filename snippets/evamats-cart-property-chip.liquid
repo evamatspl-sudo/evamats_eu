@@ -1,0 +1,122 @@
+{% comment %}
+  Cart line item property chip with icon (config colors / pattern)
+  Params: property_name, property_value
+{% endcomment %}
+{%- liquid
+  assign chip_label = property_value | strip
+  assign chip_image = blank
+  assign value_norm = chip_label | downcase | strip
+
+  assign prop_cell_shape = 'general.config.cell_shape' | t
+  assign prop_material_color = 'general.config.material_color' | t
+  assign prop_trim_color = 'general.config.trim_color' | t
+
+  assign diamonds_label = 'general.config.diamonds' | t | downcase
+  assign honeycomb_label = 'general.config.honeycomb' | t | downcase
+  assign drops_label = 'general.config.drops_property_value' | t | downcase
+  assign drops_title = 'general.config.mat_pattern_drops' | t | downcase
+
+  assign color_black = 'general.colors.black' | t
+  assign color_brown = 'general.colors.brown' | t
+  assign color_grey = 'general.colors.grey' | t
+  assign color_dark_blue = 'general.colors.dark_blue' | t
+  assign color_blue = 'general.colors.blue' | t
+  assign color_green = 'general.colors.green' | t
+  assign color_red = 'general.colors.red' | t
+  assign color_maroon = 'general.colors.maroon' | t
+  assign color_light_beige = 'general.colors.light_beige' | t
+  assign color_beige = 'general.colors.beige' | t
+  assign color_purple = 'general.colors.purple' | t
+  assign color_lime = 'general.colors.lime' | t
+  assign color_yellow = 'general.colors.yellow' | t
+  assign color_orange = 'general.colors.orange' | t
+  assign color_ivory = 'general.colors.ivory' | t
+  assign color_pink = 'general.colors.pink' | t
+  assign color_white = 'general.colors.white' | t
+  assign color_light_grey = 'general.colors.light_grey' | t
+-%}
+
+{%- if property_name == prop_cell_shape -%}
+  {%- liquid
+    if value_norm == diamonds_label or value_norm == 'diamonds'
+      assign chip_image = 'diamonds.webp' | file_url
+    elsif value_norm == honeycomb_label or value_norm == 'honeycomb' or value_norm == 'honey'
+      assign chip_image = 'honey.webp' | file_url
+    elsif value_norm == drops_label or value_norm == drops_title or value_norm contains 'droplet' or value_norm contains 'drops'
+      assign chip_image = 'drop.webp' | file_url
+    endif
+  -%}
+{%- elsif property_name == prop_material_color -%}
+  {%- liquid
+    if chip_label == color_black
+      assign chip_image = 'material-black.webp' | file_url
+    elsif chip_label == color_brown
+      assign chip_image = 'material-brown.webp' | file_url
+    elsif chip_label == color_grey
+      assign chip_image = 'material-darkgrey.webp' | file_url
+    elsif chip_label == color_dark_blue
+      assign chip_image = 'material-darkblue.webp' | file_url
+    elsif chip_label == color_blue
+      assign chip_image = 'material-blue.webp' | file_url
+    elsif chip_label == color_green
+      assign chip_image = 'material-green.webp' | file_url
+    elsif chip_label == color_red
+      assign chip_image = 'material-red.webp' | file_url
+    elsif chip_label == color_maroon
+      assign chip_image = 'material-maroon.webp' | file_url
+    elsif chip_label == color_light_beige
+      assign chip_image = 'material-lightbeige.webp' | file_url
+    elsif chip_label == color_beige
+      assign chip_image = 'material-beige.webp' | file_url
+    elsif chip_label == color_purple
+      assign chip_image = 'material-purple.webp' | file_url
+    elsif chip_label == color_lime
+      assign chip_image = 'material-lime.webp' | file_url
+    elsif chip_label == color_yellow
+      assign chip_image = 'material-yellow.webp' | file_url
+    elsif chip_label == color_orange
+      assign chip_image = 'material-orange.webp' | file_url
+    elsif chip_label == color_ivory
+      assign chip_image = 'material-ivory.webp' | file_url
+    elsif chip_label == color_pink
+      assign chip_image = 'material-pink.webp' | file_url
+    elsif chip_label == color_white
+      assign chip_image = 'material-white.webp' | file_url
+    endif
+  -%}
+{%- elsif property_name == prop_trim_color -%}
+  {%- liquid
+    if chip_label == color_black or value_norm == 'black'
+      assign chip_image = 'trim-black.webp' | file_url
+    elsif chip_label == color_red or value_norm == 'red'
+      assign chip_image = 'trim-red.webp' | file_url
+    elsif chip_label == color_light_grey or value_norm == 'light grey' or value_norm == 'lightgrey'
+      assign chip_image = 'trim-lightgrey.webp' | file_url
+    elsif chip_label == color_grey or value_norm == 'grey' or value_norm == 'gray'
+      assign chip_image = 'trim-grey.webp' | file_url
+    elsif chip_label == color_brown or value_norm == 'brown'
+      assign chip_image = 'trim-brown.webp' | file_url
+    elsif chip_label == color_beige or value_norm == 'beige'
+      assign chip_image = 'trim-beige.webp' | file_url
+    elsif chip_label == color_blue or value_norm == 'blue'
+      assign chip_image = 'trim-blue.webp' | file_url
+    elsif chip_label == color_dark_blue or value_norm == 'dark blue' or value_norm == 'darkblue'
+      assign chip_image = 'trim-darkblue.webp' | file_url
+    elsif chip_label == color_green or value_norm == 'green'
+      assign chip_image = 'trim-green.webp' | file_url
+    elsif chip_label == color_orange or value_norm == 'orange'
+      assign chip_image = 'trim-orange.webp' | file_url
+    elsif chip_label == color_yellow or value_norm == 'yellow'
+      assign chip_image = 'trim-yellow.webp' | file_url
+    elsif chip_label == color_maroon or value_norm == 'maroon'
+      assign chip_image = 'trim-maroon.webp' | file_url
+    elsif chip_label == color_purple or value_norm == 'purple'
+      assign chip_image = 'trim-purple.webp' | file_url
+    elsif chip_label == color_pink or value_norm == 'pink'
+      assign chip_image = 'trim-pink.webp' | file_url
+    endif
+    assign chip_label = prop_trim_color | append: ': ' | append: chip_label
+  -%}
+{%- endif -%}
+
+{% render 'evamats-cart-chip', chip_label: chip_label, chip_image: chip_image %}

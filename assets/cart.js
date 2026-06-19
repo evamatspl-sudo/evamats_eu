@@ -5,7 +5,16 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      cartItems.updateQuantity(this.dataset.index, 0);
+      if (!cartItems) return;
+
+      const line = this.dataset.index;
+      const lineKey = this.dataset.key;
+
+      if (cartItems.classList.contains('evamats-cart') && typeof cartItems.softRemoveLine === 'function') {
+        cartItems.softRemoveLine(line, lineKey);
+      } else {
+        cartItems.updateQuantity(line, 0);
+      }
     });
   }
 }
@@ -31,8 +40,22 @@ class CartItems extends HTMLElement {
       if (event.source === 'cart-items') {
         return;
       }
+      this._removedGhosts = new Map();
       this.onCartUpdate();
     });
+
+    if (!this._restoreClickBound) {
+      this._restoreClickBound = true;
+      this.addEventListener('click', (event) => {
+        const restoreButton = event.target.closest('[data-cart-restore]');
+        if (!restoreButton) return;
+        event.preventDefault();
+        const removedItem = restoreButton.closest('.evamats-cart-item--removed');
+        if (removedItem) {
+          this.restoreRemovedItem(removedItem);
+        }
+      });
+    }
   }
 
   disconnectedCallback() {
@@ -52,6 +75,7 @@ class CartItems extends HTMLElement {
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const sourceQty = html.querySelector('cart-items');
         this.innerHTML = sourceQty.innerHTML;
+        this.appendRemovedGhosts();
         this.afterCartContentsUpdate();
       })
       .catch(e => {
@@ -71,6 +95,127 @@ class CartItems extends HTMLElement {
         window.initDrawerProgressUpsell(upsellRoot);
       }
     });
+  }
+
+  buildRestorePayload(lineItem) {
+    const payload = {
+      id: lineItem.variant_id,
+      quantity: lineItem.quantity
+    };
+
+    if (lineItem.properties && typeof lineItem.properties === 'object') {
+      const properties = {};
+      Object.entries(lineItem.properties).forEach(([name, value]) => {
+        if (value !== null && value !== undefined && String(value).trim() !== '') {
+          properties[name] = value;
+        }
+      });
+      if (Object.keys(properties).length > 0) {
+        payload.properties = properties;
+      }
+    }
+
+    const sellingPlanId = lineItem.selling_plan_allocation?.selling_plan?.id;
+    if (sellingPlanId) {
+      payload.selling_plan = sellingPlanId;
+    }
+
+    return payload;
+  }
+
+  createRemovedGhost(itemEl, lineKey, payload) {
+    const ghost = itemEl.cloneNode(true);
+    ghost.classList.add('evamats-cart-item--removed');
+    ghost.dataset.restorePayload = JSON.stringify(payload);
+    ghost.dataset.lineKey = lineKey;
+    ghost.id = `CartItem-removed-${lineKey}`;
+    ghost.querySelectorAll('[id]').forEach((el) => el.removeAttribute('id'));
+    ghost.querySelectorAll('input, button.quantity__button').forEach((el) => {
+      el.disabled = true;
+    });
+    return ghost;
+  }
+
+  appendRemovedGhosts() {
+    const container = document.querySelector('.evamats-cart-items');
+    if (!container || !this._removedGhosts) return;
+
+    this._removedGhosts.forEach((ghost, lineKey) => {
+      if (!container.querySelector(`[data-line-key="${lineKey}"].evamats-cart-item--removed`)) {
+        container.appendChild(ghost);
+      }
+    });
+  }
+
+  async softRemoveLine(line, lineKey) {
+    const itemEl = document.getElementById(`CartItem-${line}`);
+    if (!itemEl) {
+      await this.updateQuantity(line, 0);
+      return;
+    }
+
+    let lineItem;
+    try {
+      const cart = await (await fetch('/cart.js')).json();
+      lineItem = cart.items.find((item) => item.key === lineKey);
+    } catch (err) {
+      console.error(err);
+      await this.updateQuantity(line, 0);
+      return;
+    }
+
+    if (!lineItem) {
+      await this.updateQuantity(line, 0);
+      return;
+    }
+
+    if (!this._removedGhosts) {
+      this._removedGhosts = new Map();
+    }
+
+    const payload = this.buildRestorePayload(lineItem);
+    const ghost = this.createRemovedGhost(itemEl, lineKey, payload);
+    this._removedGhosts.set(lineKey, ghost);
+
+    await this.updateQuantity(line, 0, null, { lineKey, softRemove: true });
+  }
+
+  async restoreRemovedItem(itemEl) {
+    let payload;
+    try {
+      payload = JSON.parse(itemEl.dataset.restorePayload || 'null');
+    } catch (err) {
+      payload = null;
+    }
+
+    if (!payload || !payload.id) return;
+
+    const lineKey = itemEl.dataset.lineKey;
+    itemEl.classList.add('is-restoring');
+
+    try {
+      const response = await fetch(`${routes.cart_add_url}.js`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({ items: [payload] })
+      });
+
+      if (!response.ok) {
+        throw new Error('restore failed');
+      }
+
+      if (lineKey && this._removedGhosts) {
+        this._removedGhosts.delete(lineKey);
+      }
+      itemEl.remove();
+      await this.onCartUpdate();
+    } catch (err) {
+      console.error(err);
+      itemEl.classList.remove('is-restoring');
+    }
   }
 
   getSectionsToRender() {
@@ -104,7 +249,7 @@ class CartItems extends HTMLElement {
     return sections;
   }
 
-  async updateQuantity(line, quantity, name) {
+  async updateQuantity(line, quantity, name, options = {}) {
   const TUNNEL_VARIANT_ID = 55239270302074;
   const DROP_CELL_SHAPE_VARIANT_ID = 51194860011798;
 
@@ -249,9 +394,12 @@ class CartItems extends HTMLElement {
 
   this.enableLoading(line);
 
+  const changePayload = options.lineKey
+    ? { id: options.lineKey, quantity: parseInt(quantity, 10) }
+    : { line, quantity: parseInt(quantity, 10) };
+
   const body = JSON.stringify({
-    line,
-    quantity,
+    ...changePayload,
     sections: this.getSectionsToRender().map((section) => section.section),
     sections_url: window.location.pathname
   });
@@ -283,12 +431,15 @@ class CartItems extends HTMLElement {
     const sectionsRes = await fetch(`${window.location.pathname}?sections=${this.getSectionsToRender().map(s => s.section).join(',')}`);
     const sectionsData = await sectionsRes.json();
 
-    this.classList.toggle('is-empty', freshCart.item_count === 0);
+    const hasRemovedGhosts = this._removedGhosts && this._removedGhosts.size > 0;
+    const cartIsEmpty = freshCart.item_count === 0 && !hasRemovedGhosts;
+
+    this.classList.toggle('is-empty', cartIsEmpty);
     const cartDrawerWrapper = document.querySelector('cart-drawer');
     const cartFooter = document.getElementById('main-cart-footer');
 
-    if (cartFooter) cartFooter.classList.toggle('is-empty', freshCart.item_count === 0);
-    if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', freshCart.item_count === 0);
+    if (cartFooter) cartFooter.classList.toggle('is-empty', cartIsEmpty);
+    if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', cartIsEmpty);
 
     this.getSectionsToRender().forEach(section => {
       const elementToReplace =
@@ -296,11 +447,16 @@ class CartItems extends HTMLElement {
       elementToReplace.innerHTML = this.getSectionInnerHTML(sectionsData[section.section], section.selector);
     });
 
+    this.appendRemovedGhosts();
+
     publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items' });
 
     this.afterCartContentsUpdate();
   } catch (err) {
     console.error(err);
+    if (options.softRemove && options.lineKey && this._removedGhosts) {
+      this._removedGhosts.delete(options.lineKey);
+    }
     this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
     const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
     errors.textContent = window.cartStrings.error;

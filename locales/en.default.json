@@ -84,6 +84,8 @@
       "select_size": "Select size",
       "select_mats_type_and_set": "Select mats type and set",
       "total": "Total",
+      "checkout_delivery_line_1": "Made to order product.",
+      "checkout_delivery_line_2": "Estimated production time: 14 days.",
       "checkout_delivery_individual_line_1": "Individual order",
       "checkout_delivery_individual_line_2": "Estimated delivery time: 14 days.",
       "checkout_trusted_line_1": "Order with confidence",
@@ -383,7 +385,11 @@
     },
     "404": {
       "title": "Page not found",
-      "subtext": "404"
+      "subtext": "404",
+      "heading_line_1": "We couldn't find this page.",
+      "heading_line_2": "Perhaps you chose the wrong car.",
+      "home_button": "Home",
+      "select_vehicle_button": "Select vehicle"
     }
   },
   "sections": {
@@ -460,9 +466,10 @@
       },
       "upsell_heading": "You might also need",
       "upsell_add_to_cart": "Add",
-      "unit_price_each_html": "{{ price }} each",
+      "unit_price_each_html": "{{ price }} per piece",
       "items_in_cart_html": "{{ count }} items in cart",
       "clear_cart": "Clear",
+      "restore_item": "Return to cart",
       "reservation_sidebar_text": "Due to high demand, we have reserved processing time for your order."
     },
     "evamats_related_products": {

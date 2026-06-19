@@ -9,7 +9,12 @@ class VariantSelects extends HTMLElement {
       this._priceSyncTimers = [];
 
       const scope = this.getProductPriceScope?.() || document;
-      const delays = this.hasDmixerDiscountedPrice?.(scope) ? [350, 900, 1600] : [750];
+      const isSimpleProduct = this.closest('.evamats-product-simple');
+      const delays = isSimpleProduct
+        ? [0]
+        : this.hasDmixerDiscountedPrice?.(scope)
+          ? [350, 900, 1600]
+          : [750];
 
       delays.forEach((delay) => {
         const id = setTimeout(() => this.updatePrices(), delay);
@@ -143,7 +148,33 @@ class VariantSelects extends HTMLElement {
     return scope.querySelector('dmixer-discounted-price') !== null;
   }
 
+  formatSimpleVariantMoney(cents, referenceHTML) {
+    if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+      return window.Shopify.formatMoney(cents);
+    }
+    return this.formatMoneyLikeDisplay(cents, referenceHTML);
+  }
+
   getDisplayedProductPrices() {
+    const simpleRoot = this.closest('.evamats-product-simple');
+    if (simpleRoot) {
+      if (!this.currentVariant) {
+        this.updateOptions();
+        this.updateMasterId();
+      }
+      if (this.currentVariant) {
+        const reference =
+          simpleRoot.querySelector('.evamats-product-checkout__price-current')?.textContent || '';
+        const saleHTML = this.formatSimpleVariantMoney(this.currentVariant.price, reference);
+        let compareHTML = null;
+        const compareAt = this.currentVariant.compare_at_price;
+        if (compareAt && compareAt > this.currentVariant.price) {
+          compareHTML = this.formatSimpleVariantMoney(compareAt, saleHTML);
+        }
+        return { saleHTML, compareHTML };
+      }
+    }
+
     const scope = this.getProductPriceScope();
 
     const dmixerPrices = this.getDmixerPricesFromShadow(scope);
@@ -324,6 +355,8 @@ class VariantSelects extends HTMLElement {
     const { saleHTML, compareHTML } = this.getDisplayedProductPrices();
     if (!saleHTML) return;
 
+    const simpleRoot = this.closest('.evamats-product-simple');
+
     const parsePriceFromHTML = (htmlString) => {
       const doc = document.createElement('div');
       doc.innerHTML = htmlString || '';
@@ -360,7 +393,8 @@ class VariantSelects extends HTMLElement {
       return `${formatted} ${currency}`.trim();
     };
 
-    const totalHTML = getSumHTML(saleHTML, upsellTotal);
+    const totalHTML =
+      simpleRoot && upsellTotal === 0 ? saleHTML : getSumHTML(saleHTML, upsellTotal);
     const buttonPrice = document.querySelectorAll('.product__info-wrapper .button_price');
     const optionPrice = document.querySelector('.option__price_regular');
     const optionPriceCompareEls = document.querySelectorAll('.option__price_compare');
@@ -375,6 +409,19 @@ class VariantSelects extends HTMLElement {
       button.innerHTML = totalHTML;
     });
 
+    if (simpleRoot) {
+      const simpleCompareEl = simpleRoot.querySelector('.evamats-product-checkout__price-old');
+      if (simpleCompareEl) {
+        if (compareHTML) {
+          simpleCompareEl.classList.remove('hidden');
+          simpleCompareEl.innerHTML = compareHTML;
+        } else {
+          simpleCompareEl.classList.add('hidden');
+          simpleCompareEl.innerHTML = '';
+        }
+      }
+    }
+
     if (optionPrice) {
       optionPrice.innerHTML = saleHTML;
     }
@@ -385,7 +432,16 @@ class VariantSelects extends HTMLElement {
         const saleNum = parsePriceFromHTML(saleHTML);
         const variantNum = this.currentVariant.price / 100;
         if (variantNum > saleNum) {
-          fullPriceHTML = this.formatMoneyLikeDisplay(this.currentVariant.price, saleHTML);
+          const candidateHTML = this.formatMoneyLikeDisplay(this.currentVariant.price, saleHTML);
+          const normalizePriceText = (html) =>
+            (html || '')
+              .replace(/<[^>]*>/g, '')
+              .replace(/\u00A0/g, ' ')
+              .replace(/\s/g, '')
+              .trim();
+          if (normalizePriceText(candidateHTML) !== normalizePriceText(saleHTML)) {
+            fullPriceHTML = candidateHTML;
+          }
         }
       }
 

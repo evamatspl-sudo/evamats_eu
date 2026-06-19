@@ -1,0 +1,247 @@
+/* Contact page — Figma 1710:31852 desktop / 1710:26814 mobile */
+
+.shopify-section:has(.evamats-contact) {
+  margin-top: 0;
+}
+
+.evamats-contact {
+  background: #fff;
+  color: #1b1d22;
+  overflow-x: clip;
+}
+
+/* --- Hero --- */
+
+.evamats-contact__hero {
+  --ec-side-pad: 1.5rem;
+  --ec-max: 1620px;
+}
+
+.evamats-contact__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.evamats-contact__info-col {
+  background: #fff;
+  min-width: 0;
+}
+
+.evamats-contact__info-inner {
+  box-sizing: border-box;
+  max-width: calc(var(--ec-max) / 2);
+  margin-left: max(var(--ec-side-pad), calc((100vw - var(--ec-max)) / 2 + var(--ec-side-pad)));
+  padding: 42px 31px 80px 0;
+}
+
+.evamats-contact__form-col {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: 56px max(var(--ec-side-pad), calc((100vw - var(--ec-max)) / 2 + var(--ec-side-pad))) 80px 32px;
+  background: #f6f6f6;
+}
+
+.evamats-contact__form-inner {
+  width: 100%;
+  max-width: 424px;
+  min-width: 0;
+}
+
+.evamats-contact__breadcrumbs {
+  margin-bottom: 23px;
+}
+
+.evamats-contact__title {
+  margin: 0 0 56px;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.92px;
+  color: #1b1d22;
+}
+
+.evamats-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.evamats-contact__phone {
+  margin: 0;
+}
+
+.evamats-contact__phone-link {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.52px;
+  color: #1b1d22;
+  text-decoration: none;
+}
+
+.evamats-contact__phone-link:hover {
+  color: #ff2741;
+}
+
+.evamats-contact__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.evamats-contact__detail-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.28px;
+  color: #8090a4;
+}
+
+.evamats-contact__detail-email {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.44px;
+  color: #ff2741;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.evamats-contact__detail-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.evamats-contact__detail-address {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  color: #1b1d22;
+}
+
+.evamats-contact__socials {
+  margin-top: 32px;
+}
+
+.evamats-contact__socials .video_reviews__socials {
+  gap: 6px;
+}
+
+.evamats-contact__socials .video_reviews__social-link--facebook {
+  width: 50px;
+  min-width: 50px;
+  padding: 0;
+  justify-content: center;
+}
+
+.evamats-contact__socials .video_reviews__social-fb-label,
+.evamats-contact__socials .video_reviews__social-fb-icon--external {
+  display: none;
+}
+
+.evamats-contact__form-col .mat-consult-form {
+  width: 100%;
+}
+
+.evamats-contact__form-col .mat-consult-form .mat-consult__title {
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+.evamats-contact__form-col .mat-consult-form .mat-consult__sub {
+  color: #1b1d22;
+}
+
+.evamats-contact__form-col .mat-consult-form .contact__button .button {
+  min-height: 60px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 750px) {
+  .evamats-contact__hero {
+    --ec-side-pad: 5rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-contact__hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evamats-contact__info-inner {
+    max-width: none;
+    margin-left: 0;
+    padding: 15px var(--ec-side-pad) 0;
+  }
+
+  .evamats-contact__breadcrumbs {
+    margin-bottom: 21px;
+  }
+
+  .evamats-contact__title {
+    margin-bottom: 31px;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.44px;
+  }
+
+  .evamats-contact__details {
+    gap: 26px;
+  }
+
+  .evamats-contact__phone-link {
+    font-size: 22px;
+    letter-spacing: -0.44px;
+  }
+
+  .evamats-contact__detail-label {
+    font-size: 12px;
+    letter-spacing: -0.24px;
+  }
+
+  .evamats-contact__detail-email {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .evamats-contact__detail-address {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: -0.28px;
+  }
+
+  .evamats-contact__socials {
+    margin-top: 26px;
+    margin-bottom: 32px;
+  }
+
+  .evamats-contact__form-col {
+    padding: 37px var(--ec-side-pad) 48px;
+  }
+
+  .evamats-contact__form-col .mat-consult-form .mat-consult__title {
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 26px;
+  }
+
+  .evamats-contact__form-col .mat-consult-form .mat-consult__sub {
+    margin-bottom: 26px;
+    font-size: 16px;
+  }
+
+  .evamats-contact__form-col .mat-consult-form .contact__button .button {
+    min-height: 50px;
+    font-size: 16px;
+  }
+}

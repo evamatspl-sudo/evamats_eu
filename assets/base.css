@@ -291,7 +291,7 @@ body{
     content:"−"
 }
 .product-faqs .faqs-all-question .faq-question .panel{
-    padding:0 18px;
+    padding:0 18px 0 0;
     max-height:0;
     overflow:hidden;
     transition:max-height .2s ease-out
@@ -3137,6 +3137,71 @@ body .popup_overlay {
     fill: #fff;
 }
 
+.popup-overlay--lip_comment__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 39px;
+    width: 100%;
+    max-width: 740px;
+}
+
+.popup-overlay--lip_comment .popup {
+    width: 100%;
+    max-width: 740px;
+    padding: 18px 22px;
+    border-radius: 16px;
+    box-shadow: 5px 5px 16px rgba(27, 29, 34, 0.1);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.popup-overlay--lip_comment .popup-content {
+    margin: 0;
+    color: #182a42;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    line-height: normal;
+    word-break: break-word;
+}
+
+.popup-overlay--lip_comment .popup-content p {
+    margin: 0;
+}
+
+.popup-overlay--lip_comment .popup-content p + p {
+    margin-top: 1em;
+}
+
+.popup-overlay--lip_comment .popup-content strong {
+    font-weight: 600;
+}
+
+.popup-overlay--lip_comment .popup_close_btn {
+    position: static;
+    width: 22px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.popup-overlay--lip_comment .popup_close_btn svg {
+    width: 22px;
+    height: 24px;
+}
+
+@media screen and (max-width: 749px) {
+    .popup-overlay--lip_comment__inner {
+        gap: 24px;
+    }
+
+    .popup-overlay--lip_comment .popup {
+        max-height: calc(100vh - 100px);
+    }
+}
+
 /* Customize the label (the container) */
 .checkbox-container {
     position: relative;
@@ -3504,7 +3569,7 @@ body .shopify-pc__banner__wrapper {
 .sticky_container {
   position: fixed;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   right: 15px;
   display: flex;
   flex-direction: column;

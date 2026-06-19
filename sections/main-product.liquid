@@ -5,6 +5,14 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
+  {%- liquid
+    assign is_simple_product = false
+    unless product.template_suffix contains 'config'
+      if product.metafields.custom.body_type == blank or product.metafields.custom.body_type == 'corners'
+        assign is_simple_product = true
+      endif
+    endunless
+  -%}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'section-evamats-product-gallery.css' | asset_url | stylesheet_tag }}
   {% if product.template_suffix == 'config' %}
@@ -12,6 +20,11 @@
     {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
     {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'evamats-config-step-bar.js' | asset_url }}" defer="defer"></script>
+  {% elsif is_simple_product %}
+    {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+    {{ 'section-evamats-product-simple.css' | asset_url | stylesheet_tag }}
+    {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'evamats-product-simple.js' | asset_url }}" defer="defer"></script>
   {% endif %}
   {% comment %} {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -88,13 +101,13 @@
     {% assign hasBitrixCollection = true %}
   {% endif %}
 
-  {%- if product.template_suffix == 'config' -%}
+  {%- if product.template_suffix == 'config' or is_simple_product -%}
     <div class="evamats-config-breadcrumbs">
       {%- render 'evamats-breadcrumbs', auto_product: true, class: 'evamats-config-breadcrumbs__nav' -%}
     </div>
   {%- endif -%}
 
-  <div class="product config_container{% if product.template_suffix == 'config' %} evamats-config{% endif %} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }}  {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %} product--mats{% endif %}{% if isOutlet %} product--outlet{% endif %}{% if hasBitrixCollection %} product--hasBitrixCollection{% endif %}" {% if product.metafields.custom.body_type %}data-type={{ product.metafields.custom.body_type }}{% endif %}>
+  <div class="product config_container{% if product.template_suffix == 'config' %} evamats-config{% endif %}{% if is_simple_product %} evamats-product-simple{% endif %} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }}  {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %} product--mats{% endif %}{% if isOutlet %} product--outlet{% endif %}{% if hasBitrixCollection %} product--hasBitrixCollection{% endif %}" {% if product.metafields.custom.body_type %}data-type={{ product.metafields.custom.body_type }}{% endif %}>
     <div class=" product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       <div class="product-media-gallery-wr evamats-product-gallery">
         {%- if section.settings.gallery_badge != blank -%}
@@ -525,7 +538,7 @@
           {% render 'product-media-gallery_without_edges', images: withoutEdgesImages %}
           {% render 'product-media-gallery_with_edges', images: withEdgesImages %}
 
-          {%- if section.settings.gallery_disclaimer != blank -%}
+          {%- if section.settings.gallery_disclaimer != blank and is_simple_product == false -%}
             <p class="evamats-product-gallery__disclaimer">
               <span class="evamats-product-gallery__disclaimer-mark" aria-hidden="true">*</span>
               <span class="evamats-product-gallery__disclaimer-text">{{ section.settings.gallery_disclaimer | escape }}</span>
@@ -590,7 +603,9 @@
                     </p>
                   {%- endif -%}
                   <h1 class="evamats-product-title__heading">{{ product_title }}</h1>
-                  {% render 'evamats-product-title-collection-link' %}
+                  {%- unless is_simple_product -%}
+                    {% render 'evamats-product-title-collection-link' %}
+                  {%- endunless -%}
                 </div>
               </div>
               <div class="price price--large price--show-badge" id="google_prices"></div>
@@ -803,7 +818,7 @@
               </p>
             {%- when 'description' -%}
               {%- if product.description != blank -%}
-                <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                <div class="product__description rte quick-add-hidden{% if is_simple_product %} evamats-product-simple__specs{% endif %}" {{ block.shopify_attributes }}>
                   {{ product.description }}
                 </div>
               {%- endif -%}
@@ -951,6 +966,13 @@
             {%- when 'buy_buttons' -%}
               {%- if product.template_suffix == 'config' -%}
                 {%- render 'evamats-config-checkout',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id
+                -%}
+              {%- elsif is_simple_product -%}
+                {%- render 'evamats-product-checkout',
                   block: block,
                   product: product,
                   product_form_id: product_form_id,
@@ -1142,7 +1164,9 @@
                           >
                           <label for="body-type-{{ forloop.index }}" class="default_option">
                             {% if item.image %}
-                              <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="400">
+                              <span class="evamats-config-body-thumb">
+                                <img src="{{ item.image | image_url: width: 400 }}" alt="" loading="lazy" width="103" height="48">
+                              </span>
                             {% endif %}
                             <span class="evamats-config-body-label">{{ item.title }}</span>
                             <div class="label__tooltip">{{ item.title }}</div>
@@ -1812,7 +1836,7 @@
         {% if product.template_suffix == 'config' %}
           {% render 'evamats-config-step-bar', product: product %}
         {% endif %}
-        {%- form 'contact', id: application_form_id, class: 'getContactsForm' -%}
+        {% comment %} {%- form 'contact', id: application_form_id, class: 'getContactsForm' -%}
           <div id="popupOverlayGetContacts" class=" popup_overlay popup-overlay--get_contacts">
             <div class="popup">  
               <div class="popup-content">
@@ -1900,7 +1924,7 @@
 
             <span class="popup_close_btn" >{% render 'icon-close' %}</span>
           </div>
-        {%- endform -%}
+        {%- endform -%} {% endcomment %}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}

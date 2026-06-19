@@ -1,0 +1,403 @@
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{{ 'section-video-reviews.css' | asset_url | stylesheet_tag }}
+{{ 'section-evamats-contact.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign mat_form_id = 'EvamatsContactForm-' | append: section.id
+  assign mat_form_wrapper_id = 'evamats-contact-form-' | append: section.id
+
+  assign breadcrumb_parent_label = section.settings.breadcrumb_parent_label | strip
+  if breadcrumb_parent_label == blank
+    assign breadcrumb_parent_label = 'Evamats'
+  endif
+
+  assign breadcrumb_parent_url = section.settings.breadcrumb_parent_url | strip
+  if breadcrumb_parent_url == blank
+    assign breadcrumb_parent_url = routes.root_url
+  endif
+
+  assign breadcrumb_current_label = section.settings.breadcrumb_current_label | strip
+  if breadcrumb_current_label == blank
+    assign breadcrumb_current_label = 'Kontakt'
+  endif
+
+  assign phone = section.settings.phone | strip
+  assign phone_href = phone | replace: ' ', '' | replace: '-', ''
+-%}
+
+<div class="evamats-contact" id="EvamatsContact-{{ section.id }}">
+  <div class="evamats-contact__hero">
+    <div class="evamats-contact__hero-grid">
+      <div class="evamats-contact__info-col">
+        <div class="evamats-contact__info-inner">
+          {% render 'evamats-breadcrumbs',
+            parent_label: breadcrumb_parent_label,
+            parent_url: breadcrumb_parent_url,
+            current_label: breadcrumb_current_label,
+            class: 'evamats-contact__breadcrumbs'
+          %}
+
+          {%- if section.settings.contact_heading != blank -%}
+            <h1 class="evamats-contact__title">{{ section.settings.contact_heading | escape }}</h1>
+          {%- endif -%}
+
+          <div class="evamats-contact__details">
+            {%- if phone != blank -%}
+              <p class="evamats-contact__phone">
+                <a class="evamats-contact__phone-link" href="tel:{{ phone_href | escape }}">{{ phone | escape }}</a>
+              </p>
+            {%- endif -%}
+
+            {%- if section.settings.email_general_label != blank and section.settings.email_general != blank -%}
+              <div class="evamats-contact__detail">
+                <p class="evamats-contact__detail-label">{{ section.settings.email_general_label | escape }}</p>
+                <a class="evamats-contact__detail-email" href="mailto:{{ section.settings.email_general | strip | escape }}">
+                  {{- section.settings.email_general | strip | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.email_claims_label != blank and section.settings.email_claims != blank -%}
+              <div class="evamats-contact__detail">
+                <p class="evamats-contact__detail-label">{{ section.settings.email_claims_label | escape }}</p>
+                <a class="evamats-contact__detail-email" href="mailto:{{ section.settings.email_claims | strip | escape }}">
+                  {{- section.settings.email_claims | strip | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.email_production_label != blank and section.settings.email_production != blank -%}
+              <div class="evamats-contact__detail">
+                <p class="evamats-contact__detail-label">{{ section.settings.email_production_label | escape }}</p>
+                <a class="evamats-contact__detail-email" href="mailto:{{ section.settings.email_production | strip | escape }}">
+                  {{- section.settings.email_production | strip | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.address_label != blank and section.settings.address != blank -%}
+              <div class="evamats-contact__detail">
+                <p class="evamats-contact__detail-label">{{ section.settings.address_label | escape }}</p>
+                <p class="evamats-contact__detail-address">{{ section.settings.address | newline_to_br }}</p>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.tin_label != blank and section.settings.tin != blank -%}
+              <div class="evamats-contact__detail">
+                <p class="evamats-contact__detail-label">{{ section.settings.tin_label | escape }}</p>
+                <p class="evamats-contact__detail-address">{{ section.settings.tin | escape }}</p>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="evamats-contact__socials">
+            {% render 'evamats-footer-socials', section: section %}
+          </div>
+        </div>
+      </div>
+
+      <div class="evamats-contact__form-col">
+        <div class="evamats-contact__form-inner">
+          {% render 'mat-consult-form',
+            form_section: section,
+            form_id: mat_form_id,
+            wrapper_id: mat_form_wrapper_id,
+            hidden_form_value: section.settings.hidden_form_tag | default: 'Kontakt — formularz (strona WWW)'
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "tag": "section",
+  "class": "section-evamats-contact",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_parent_label",
+      "label": "Parent breadcrumb label",
+      "default": "Evamats"
+    },
+    {
+      "type": "url",
+      "id": "breadcrumb_parent_url",
+      "label": "Parent breadcrumb URL"
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_current_label",
+      "label": "Current breadcrumb label",
+      "default": "Kontakt"
+    },
+    {
+      "type": "header",
+      "content": "Contact details"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Page heading",
+      "default": "Skontaktuj się"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+48 732 082 512"
+    },
+    {
+      "type": "text",
+      "id": "email_general_label",
+      "label": "General email label",
+      "default": "Informacje ogólne i obsługa klienta"
+    },
+    {
+      "type": "text",
+      "id": "email_general",
+      "label": "General email"
+    },
+    {
+      "type": "text",
+      "id": "email_claims_label",
+      "label": "Claims email label",
+      "default": "Zgłoszenia reklamacyjne i zwroty"
+    },
+    {
+      "type": "text",
+      "id": "email_claims",
+      "label": "Claims email"
+    },
+    {
+      "type": "text",
+      "id": "email_production_label",
+      "label": "Production email label",
+      "default": "Kontakt z działem produkcji"
+    },
+    {
+      "type": "text",
+      "id": "email_production",
+      "label": "Production email"
+    },
+    {
+      "type": "text",
+      "id": "address_label",
+      "label": "Address label",
+      "default": "Adres siedziby:"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "text",
+      "id": "tin_label",
+      "label": "TIN label",
+      "default": "NIP:"
+    },
+    {
+      "type": "text",
+      "id": "tin",
+      "label": "TIN"
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "threads_url",
+      "label": "Threads URL"
+    },
+    {
+      "type": "header",
+      "content": "Form (hidden tag)"
+    },
+    {
+      "type": "text",
+      "id": "hidden_form_tag",
+      "label": "Form source label (contact[Formularz])",
+      "default": "Kontakt — formularz (strona WWW)"
+    },
+    {
+      "type": "header",
+      "content": "Form content (Polish)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Form heading",
+      "default": "Uzyskaj bezpłatną konsultację!"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Form subheading",
+      "default": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie."
+    },
+    {
+      "type": "header",
+      "content": "Form labels"
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name field label",
+      "default": "Imię i nazwisko"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_name",
+      "label": "Name placeholder",
+      "default": "Jan Kowalski"
+    },
+    {
+      "type": "text",
+      "id": "label_phone",
+      "label": "Phone field label",
+      "default": "Telefon"
+    },
+    {
+      "type": "text",
+      "id": "phone_prefix",
+      "label": "Phone prefix (display only)",
+      "default": "+48"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_phone",
+      "label": "Phone placeholder",
+      "default": "000-000-000"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email field label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder",
+      "default": "jan@example.com"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message field label",
+      "default": "Komentarz (opcjonalnie)"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_message",
+      "label": "Message placeholder",
+      "default": "Twoja wiadomość…"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Zostaw zapytanie"
+    },
+    {
+      "type": "header",
+      "content": "Consent checkbox"
+    },
+    {
+      "type": "text",
+      "id": "consent_intro",
+      "label": "Consent line — start",
+      "default": "Zgadzam się z "
+    },
+    {
+      "type": "text",
+      "id": "terms_label",
+      "label": "Terms link label",
+      "default": "regulaminem"
+    },
+    {
+      "type": "url",
+      "id": "terms_url",
+      "label": "Terms page URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_mid",
+      "label": "Consent line — middle",
+      "default": " oraz "
+    },
+    {
+      "type": "text",
+      "id": "privacy_label",
+      "label": "Privacy link label",
+      "default": "Polityką prywatności"
+    },
+    {
+      "type": "url",
+      "id": "privacy_url",
+      "label": "Privacy policy URL"
+    },
+    {
+      "type": "text",
+      "id": "consent_end",
+      "label": "Consent line — end",
+      "default": "."
+    },
+    {
+      "type": "text",
+      "id": "consent_error_message",
+      "label": "Consent error message",
+      "default": "Musisz zaakceptować politykę prywatności i regulamin."
+    },
+    {
+      "type": "header",
+      "content": "Form messages"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Dziękujemy! Skontaktujemy się wkrótce."
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Generic error message",
+      "default": "Sprawdź pola i spróbuj ponownie."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact page"
+    }
+  ]
+}
+{% endschema %}

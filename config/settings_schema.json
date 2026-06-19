@@ -1615,9 +1615,108 @@
     "name": "Free shipping",
     "settings": [
       {
+        "type": "paragraph",
+        "content": "Minimum cart value for free shipping progress bar. Amounts are in the store currency unit (100 = 100 EUR, 2500 = 2500 CZK). Country is taken from the buyer's market; currency fields are used as fallback."
+      },
+      {
+        "type": "header",
+        "content": "Czech Republic"
+      },
+      {
+        "type": "text",
+        "id": "order_total_czk",
+        "label": "Order total (CZK)"
+      },
+      {
+        "type": "header",
+        "content": "Germany"
+      }, 
+      {
+        "type": "text",
+        "id": "order_total_eur_de",
+        "label": "Order total (EUR)"
+      },
+      {
+        "type": "header",
+        "content": "Europe (EUR)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_eur",
+        "label": "Order total (EUR)"
+      },
+      {
+        "type": "header",
+        "content": "Other currencies"
+      },
+      {
+        "type": "paragraph",
+        "content": "Used when the cart currency matches. Leave empty to use Fallback below."
+      },
+      {
+        "type": "text",
+        "id": "order_total_pln",
+        "label": "Order total (PLN)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_uah",
+        "label": "Order total (UAH)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_gbp",
+        "label": "Order total (GBP)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_chf",
+        "label": "Order total (CHF)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_huf",
+        "label": "Order total (HUF)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_ron",
+        "label": "Order total (RON)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_bgn",
+        "label": "Order total (BGN)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_sek",
+        "label": "Order total (SEK)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_dkk",
+        "label": "Order total (DKK)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_nok",
+        "label": "Order total (NOK)"
+      },
+      {
+        "type": "text",
+        "id": "order_total_try",
+        "label": "Order total (TRY)"
+      },
+      {
+        "type": "header",
+        "content": "Fallback"
+      },
+      {
         "type": "text",
         "id": "order_total",
-        "label": "Order total"
+        "label": "Order total (fallback)",
+        "info": "Used when no country or currency match above."
       },
       {
         "type": "product_list",
@@ -1655,6 +1754,12 @@
           }
         ],
         "default": "shipping"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_progress_gift_image",
+        "label": "Progress banner gift icon",
+        "info": "Optional. Replaces the default gift icon in the cart progress banner."
       }
     ]
   },
