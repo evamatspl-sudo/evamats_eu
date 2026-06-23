@@ -37,7 +37,7 @@
                     />
                   </svg>
                 </span>
-                <span class="video_reviews__social-fb-label">{{ section.settings.facebook_label | default: 'Więcej u nas na Facebooku' | escape }}</span>
+                <span class="video_reviews__social-fb-label">{{ section.settings.facebook_label | default: 'Více u nás na Facebooku' | escape }}</span>
                 <span class="video_reviews__social-fb-icon video_reviews__social-fb-icon--external" aria-hidden="true">
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -157,12 +157,12 @@
 </div>
  
 {% schema %}
+{
+  "name": "Video reviews",
+  "settings": [
     {
-        "name": "Video reviews",
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
+      "type": "text",
+      "id": "title",
       "label": "Title (first line)"
     },
     {
@@ -183,7 +183,7 @@
       "type": "text",
       "id": "facebook_label",
       "label": "Facebook button text",
-      "default": "Więcej u nas na Facebooku"
+      "default": "Více u nás na Facebooku"
     },
     {
       "type": "url",
@@ -247,31 +247,31 @@
       "step": 4,
       "unit": "px",
       "default": 28
-            }
-        ],
-        "blocks": [
-            {
-                "type": "item",
-                "name": "Item",
-                "settings": [
-                    {
-                        "type": "video",
-                        "id": "video",
-                        "label": "Video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
         },
         {
           "type": "image_picker",
           "id": "cover_image",
           "label": "Poster (optional)",
           "info": "If not set, video preview frame is used"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-            {
-                "name": "Video reviews"
-            }
-        ]
+        }
+      ]
     }
+  ],
+  "presets": [
+    {
+      "name": "Video reviews"
+    }
+  ]
+}
 {% endschema %}

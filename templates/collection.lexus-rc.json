@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/lexus"
       }
     },
-    "a2c34065-5aa0-40f9-8221-2c4254e425ed": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/lexus"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/lexus",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "a2c34065-5aa0-40f9-8221-2c4254e425ed",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

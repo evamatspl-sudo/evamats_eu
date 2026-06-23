@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/gmc"
       }
     },
-    "41ed3e1d-1273-4cb9-b73c-e01dbd01bd4c": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/gmc"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/gmc",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
@@ -70,7 +63,6 @@
   },
   "order": [
     "banner",
-    "41ed3e1d-1273-4cb9-b73c-e01dbd01bd4c",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -22,7 +22,7 @@
     assign privacy_url = '/policies/privacy-policy'
   endif
 
-  assign consent_gate_msg = fs.settings.consent_error_message | default: 'Musisz zaakceptować politykę prywatności i regulamin.'
+  assign consent_gate_msg = fs.settings.consent_error_message | default: 'You must accept the privacy policy and terms of service.'
 -%}
 
 <div
@@ -41,11 +41,11 @@
     <input type="hidden" name="contact[Formularz]" value="{{ hidden_form_value | escape }}">
     {%- if form.posted_successfully? -%}
       <p class="mat-consult__status mat-consult__status--ok" tabindex="-1" autofocus>
-        {{ fs.settings.success_message | default: 'Dziękujemy! Skontaktujemy się wkrótce.' | escape }}
+        {{ fs.settings.success_message | default: "Thank you! We'll be in touch soon." | escape }}
       </p>
     {%- elsif form.errors -%}
       <p class="mat-consult__status mat-consult__status--err" role="alert" tabindex="-1" autofocus>
-        {{ fs.settings.error_message | default: 'Sprawdź pola i spróbuj ponownie.' | escape }}
+        {{ fs.settings.error_message | default: 'Check the fields and try again.' | escape }}
       </p>
       {%- if form.errors contains 'email' -%}
         <p class="mat-consult__status mat-consult__status--err">{{ form.errors.messages.email }}</p>
@@ -236,15 +236,15 @@
           {%- if fs.settings.consent_intro != blank -%}
             {{ fs.settings.consent_intro | escape }}
           {%- else -%}
-            Zgadzam się z
+            I agree with
           {%- endif -%}
-          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'regulaminem' | escape }}</a>
+          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'the rules and regulations' | escape }}</a>
           {%- if fs.settings.consent_mid != blank -%}
-            {{ fs.settings.consent_mid | escape }}
+            <span class="mat-consult__consent-mid">{{ fs.settings.consent_mid | escape }}</span>
           {%- else -%}
-            oraz
+            <span class="mat-consult__consent-mid">and</span>
           {%- endif -%}
-          <a href="{{ privacy_url }}">{{ fs.settings.privacy_label | default: 'Polityką prywatności' | escape }}</a>{{ fs.settings.consent_end | default: '.' | escape }}
+          <a href="{{ privacy_url }}">{{ fs.settings.privacy_label | default: 'Privacy Policy' | escape }}</a>{{ fs.settings.consent_end | default: '.' | escape }}
         </p>
         <input type="checkbox" id="MatConsent-{{ sid }}" data-consent-gate-checkbox>
         <span class="checkmark"></span>
@@ -340,6 +340,10 @@
     font-size: 14px;
     line-height: 1.6;
     letter-spacing: -0.02em;
+  }
+
+  .mat-consult-form .mat-consult__consent-mid {
+    margin: 0 0.25em;
   }
 
   .mat-consult-form .checkbox-container p a {

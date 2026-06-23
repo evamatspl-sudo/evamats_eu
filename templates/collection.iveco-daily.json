@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/iveco"
       }
     },
-    "1380aac6-07df-42e9-9c68-dcc24ab0f457": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/iveco"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/iveco",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "1380aac6-07df-42e9-9c68-dcc24ab0f457",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/cupra"
       }
     },
-    "aac19321-3603-4920-b68a-ef53f4af4c03": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/cupra"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/cupra",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "18188f80-28e8-439c-bbd6-45a2b24c1347": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "aac19321-3603-4920-b68a-ef53f4af4c03",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

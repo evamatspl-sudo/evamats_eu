@@ -238,87 +238,86 @@
 </div>
  
 {% schema %}
-  {
-    "name": "Compare section",
-    "settings": [
+{
+  "name": "Compare section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Padding desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Block",
+      "type": "block",
+      "settings": [
         {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "Logo"
+          "type": "richtext",
+          "id": "header",
+          "label": "Title",
+          "default": "<h2>Dywaniki gumowe</h2>"
         },
         {
-            "type": "header",
-            "content": "Padding mobile"
-        },
-        {
-            "type": "range",
-            "id": "padding_top_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
-        },
-        {
-            "type": "header",
-            "content": "Padding desktop"
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 80
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
-    ],
-    "blocks": [
-        {
-            "name": "Block",
-            "type": "block",
-            "settings": [
-                {
-                    "type": "richtext",
-                    "id": "header",
-                    "label": "Title",
-                    "default": "<h2>Dywaniki gumowe</h2>"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-        
-                }
-            ]
-        }
-    ],
-    "presets": [
-      {
-        "name": "Compare section"
-      }
-    ]
-  }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare section"
+    }
+  ]
+}
 {% endschema %}

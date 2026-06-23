@@ -47,10 +47,10 @@
     <div class="evamats-careers-contact__panel-wrap page-width">
       <div class="evamats-careers-contact__panel">
         <div class="evamats-careers-contact__body">
-          {%- if settings.logo != blank -%}
+          {%- if settings.logo_inverse != blank -%}
             <div class="evamats-careers-contact__logo">
               {{
-                settings.logo
+                settings.logo_inverse
                 | image_url: width: 248
                 | image_tag:
                   loading: 'lazy',
@@ -125,7 +125,7 @@
       "type": "text",
       "id": "button_label",
       "label": "Button label",
-      "default": "Napisz do nas"
+      "default": "Napište nám"
     },
     {
       "type": "url",
@@ -137,7 +137,7 @@
       "type": "text",
       "id": "social_heading",
       "label": "Social heading",
-      "default": "Dowiedz się więcej o karierze w naszych mediach:"
+      "default": "Zjistěte více o kariéře v našich médiích:"
     },
     {
       "type": "header",

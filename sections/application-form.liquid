@@ -677,21 +677,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 {% schema %}
+{
+  "name": "Application form",
+  "class": "application_form_section",
+  "settings": [
     {
-        "name": "Application form",
-        "class": "application_form_section",
-        "settings": [
-            {
-                "type": "checkbox",
-                "id": "alternative_zestaw",
-                "label": "change zestaw and add pojazd",
-                "default": false
-            }
-        ],
-        "presets": [
-            {
-                "name": "Application form"
-            }
-        ]
+      "type": "checkbox",
+      "id": "alternative_zestaw",
+      "label": "change zestaw and add pojazd",
+      "default": false
     }
+  ],
+  "presets": [
+    {
+      "name": "Application form"
+    }
+  ]
+}
 {% endschema %}

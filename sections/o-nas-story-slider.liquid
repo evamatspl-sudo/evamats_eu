@@ -174,8 +174,8 @@
         <div class="o-nas-story__column">
           <div class="o-nas-story__brand">
             {%- liquid
-              assign story_logo = settings.logo
-              if section.settings.logo != blank
+              assign story_logo = settings.logo_inverse
+              if section.settings.logo_inverse != blank
                 assign story_logo = section.settings.logo
               endif
             -%}
@@ -600,9 +600,18 @@
       "id": "bg_media_type",
       "label": "Background",
       "options": [
-        { "value": "carousel", "label": "Image per slide" },
-        { "value": "banner", "label": "Static image" },
-        { "value": "video", "label": "Video (fixed)" }
+        {
+          "value": "carousel",
+          "label": "Image per slide"
+        },
+        {
+          "value": "banner",
+          "label": "Static image"
+        },
+        {
+          "value": "video",
+          "label": "Video (fixed)"
+        }
       ],
       "default": "carousel"
     },
@@ -677,13 +686,13 @@
           "type": "text",
           "id": "heading",
           "label": "Heading",
-          "default": "Jak powstają nasze dywaniki?"
+          "default": "Jak vznikají naše koberce?"
         },
         {
           "type": "richtext",
           "id": "body",
           "label": "Text",
-          "default": "<p>Każdy dywanik EVA przechodzi pełny cykl produkcyjny na nowoczesnym sprzęcie: od precyzyjnego cyfrowego cięcia po staranne wykończenie krawędzi.</p><p>Korzystamy z automatycznych maszyn, które zapewniają idealną geometrię oraz gładki, jednolity wzór powierzchni bez wad.</p>"
+          "default": "<p>Každý EVA koberec prochází celým výrobním cyklem na moderním vybavení: od přesného digitálního řezu po pečlivé dokončení hran.</p><p>Používáme automatické stroje, které zajišťují ideální geometrii a hladký jednotný povrch bez vad.</p>"
         }
       ]
     }
@@ -696,22 +705,22 @@
         {
           "type": "slide",
           "settings": {
-            "heading": "Jak powstają nasze dywaniki?",
-            "body": "<p>Każdy dywanik EVA przechodzi pełny cykl produkcyjny na nowoczesnym sprzęcie: od precyzyjnego cyfrowego cięcia po staranne wykończenie krawędzi.</p><p>Korzystamy z automatycznych maszyn, które zapewniają idealną geometrię oraz gładki, jednolity wzór powierzchni bez wad.</p>"
+            "heading": "Jak vznikají naše koberce?",
+            "body": "<p>Každý EVA koberec prochází celým výrobním cyklem na moderním vybavení: od přesného digitálního řezu po pečlivé dokončení hran.</p><p>Používáme automatické stroje, které zajišťují ideální geometrii a hladký jednotný povrch bez vad.</p>"
           }
         },
         {
           "type": "slide",
           "settings": {
-            "heading": "Jakość w detalach",
-            "body": "<p>Kontrolujemy każdy etap: materiał, cięcie, wykończenie i pakowanie — tak, aby zestaw był gotowy do lat codziennego użytku.</p>"
+            "heading": "Kvalita v detailech",
+            "body": "<p>Kontrolujeme každou fázi: materiál, řez, dokončení a balení — aby sada vydržela roky každodenního používání.</p>"
           }
         },
         {
           "type": "slide",
           "settings": {
             "heading": "Dopasowanie do auta",
-            "body": "<p>Projektujemy wzory pod konkretne modele, żeby dywanik leżał stabilnie i estetycznie wypełniał przestrzeń podłogi.</p>"
+            "body": "<p>Navrhujeme vzory pro konkrétní modely, aby koberec ležel stabilně a esteticky vyplnil prostor podlahy.</p>"
           }
         }
       ]

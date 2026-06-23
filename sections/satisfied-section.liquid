@@ -100,55 +100,55 @@
 
 {% schema %}
 {
-    "name": "Satisfied Section",
-    "settings": [
+  "name": "Satisfied Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
         {
-            "type": "text",
-            "id": "title",
-            "label": "Title"
+          "type": "checkbox",
+          "id": "use_mats_counter",
+          "label": "Use mats counter",
+          "default": false
         },
         {
-            "type": "text",
-            "id": "subtitle",
-            "label": "Subtitle"
+          "type": "text",
+          "id": "counter",
+          "label": "Counter",
+          "default": "100"
         },
         {
-            "type": "color",
-            "id": "background",
-            "label": "Background"
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Text"
         }
-    ],
-    "blocks": [
-        {
-            "type": "item",
-            "name": "Item",
-            "settings": [
-                {
-                    "type": "checkbox",
-                    "id": "use_mats_counter",
-                    "label": "Use mats counter",
-                    "default": false
-                },
-                {
-                    "type": "text",
-                    "id": "counter",
-                    "label": "Counter",
-                    "default": "100"
-                },
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Title",
-                    "default": "Text"
-                }
-            ]
-        }
-    ],    
-    "presets": [
-        {
-        "name": "Satisfied Section",
-        "category": "Custom Sections"
-        }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Satisfied Section",
+      "category": "Custom Sections"
+    }
+  ]
 }
 {% endschema %}

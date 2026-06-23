@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/honda"
       }
     },
-    "cde573f1-16c4-4549-befe-8f46a05b3b73": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/honda"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/honda",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "cde573f1-16c4-4549-befe-8f46a05b3b73",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

@@ -409,14 +409,103 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "All brands",
+        "btn_text": "Vše bras",
         "btn_url": "shopify://pages/realizacja"
+      }
+    },
+    "mat_hotspot_consult_3L48FT": {
+      "type": "mat-hotspot-consult",
+      "blocks": {
+        "hotspot_rbYw33": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 24,
+            "position_y": 12,
+            "tooltip_heading": "Struktura",
+            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
+          }
+        },
+        "hotspot_RNC7Qk": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 72,
+            "position_y": 35,
+            "tooltip_heading": "Padnutí",
+            "tooltip_text": "Přesné padnutí pro váš model auta"
+          }
+        },
+        "hotspot_jeU47d": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 38,
+            "position_y": 53,
+            "tooltip_heading": "Materiál",
+            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
+          }
+        },
+        "hotspot_VDBMAr": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 88,
+            "position_y": 78,
+            "tooltip_heading": "Lem",
+            "tooltip_text": "Zvýšený lem chrání interiér vozu"
+          }
+        },
+        "hotspot_BRznyB": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 21,
+            "position_y": 83,
+            "tooltip_heading": "Čištění",
+            "tooltip_text": "Snadné čištění během několika sekund"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_rbYw33",
+        "hotspot_RNC7Qk",
+        "hotspot_jeU47d",
+        "hotspot_VDBMAr",
+        "hotspot_BRznyB"
+      ],
+      "name": "Mat hotspot consultation",
+      "settings": {
+        "heading": "Získejte bezplatnou konzultaci!",
+        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "EVA koberec",
+        "label_name": "Jméno a příjmení",
+        "placeholder_name": "Jan Novák",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "E-mail",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Poznámka (volitelné)",
+        "placeholder_message": "Vaše zpráva…",
+        "submit_label": "Odeslat poptávku",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
+        "terms_url": "",
+        "consent_mid": "a",
+        "privacy_label": "zásadami ochrany osobních údajů",
+        "privacy_url": "",
+        "consent_end": ".",
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 48
       }
     }
   },
   "order": [
     "a4159d87-0702-46b5-8359-2750a493d775",
     "main",
-    "99b3672d-de84-453e-8957-ef49f9a258ee"
+    "99b3672d-de84-453e-8957-ef49f9a258ee",
+    "mat_hotspot_consult_3L48FT"
   ]
 }

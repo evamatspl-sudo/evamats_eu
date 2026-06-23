@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.querySelector('.main-blog__brands-dropdown');
     const button = document.querySelector('.main-blog__dropdown-toggle');
 
-    button.addEventListener('click', () => {
-        dropdown.classList.toggle('active');
+    button?.addEventListener('click', () => {
+        dropdown?.classList.toggle('active');
     });
 
     const input = document.querySelector('.main-blog__search-input');
@@ -71,4 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateResults('');
 
     });
+
+    updateResults('');
 });

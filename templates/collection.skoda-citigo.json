@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/skoda"
       }
     },
-    "1797b074-1fad-4e80-a6da-cae6ff76a9cd": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/skoda"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/skoda",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "2e03df84-43ad-435e-adb4-fd3f8c3a3084": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "1797b074-1fad-4e80-a6da-cae6ff76a9cd",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

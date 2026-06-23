@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/ds"
       }
     },
-    "c9abec01-a99b-4a97-941a-027572ebe0ea": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/ds"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/ds",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "c9abec01-a99b-4a97-941a-027572ebe0ea",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

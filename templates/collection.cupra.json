@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://pages/car-brands",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "240cbeac-725e-46eb-9ed1-5fc980857895": {
@@ -88,7 +88,7 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "Indywidualne zamówienie",
+        "btn_text": "Individuální objednávka",
         "btn_url": "shopify://products/custom-order"
       }
     }

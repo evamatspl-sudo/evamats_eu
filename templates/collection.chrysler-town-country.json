@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/chrysler"
       }
     },
-    "b306d0e9-f704-473c-89af-7d5b8b34fb91": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/chrysler"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/chrysler",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "b306d0e9-f704-473c-89af-7d5b8b34fb91",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

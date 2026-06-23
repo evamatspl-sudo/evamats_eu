@@ -54,10 +54,10 @@
                   {% comment %} <div id="discount-popup" class="discount-popup">
                     <div class="discount-popup__box">
                       <div class="discount-popup__box--content">
-                        {%- assign discountPopupTitle = settings.discount_popup_title | default: "Przedpłata za zamówienie" -%}
-                        {%- assign discountPopupSubtitle = settings.discount_popup_subtitles | default: "Płacąc część zamówienia, resztę płacisz przy odbiorze u kuriera" -%}
-                        {%- assign discountPopupDescription = settings.discount_popup_description | default: "Wybierz, jaką część płatności chcesz dokonać, kontynuacje uregulujesz odbierając dywaniki u kuriera." -%}
-                        {%- assign discountPopupPriceEentry = settings.discount_popup_priceentry | default: "Lub wprowadź kwotę ręcznie." -%}
+                        {%- assign discountPopupTitle = settings.discount_popup_title | default: "Záloha na objednávku" -%}
+                        {%- assign discountPopupSubtitle = settings.discount_popup_subtitles | default: "Zaplacením části objednávky zbytek uhradíte při převzetí od kurýra" -%}
+                        {%- assign discountPopupDescription = settings.discount_popup_description | default: "Vyberte, jakou část platby chcete uhradit, zbytek doplatíte při převzetí koberců od kurýra." -%}
+                        {%- assign discountPopupPriceEntry = settings.discount_popup_priceentry | default: "Nebo zadejte částku ručně." -%}
                         <h2>{{ discountPopupTitle }}</h2>
                         <p>{{ discountPopupSubtitle }}</p>
                         <div class="discount-popup__btn">
@@ -68,15 +68,15 @@
                         <h3>{{ discountPopupDescription }}</h3>
                         <div class="discount-popup__navig">
                           <div class="discount-popup__navig--input">
-                            <p>{{ discountPopupPriceEentry }}</p>
-                            {%- assign discountPopupPlaceholder = settings.discount_popup_placeholder | default: "Min. kwota płatności 100 zł" -%}
+                            <p>{{ discountPopupPriceEntry }}</p>
+                            {%- assign discountPopupPlaceholder = settings.discount_popup_placeholder | default: "Min. částka platby 100 Kč" -%}
                             <input
                               id="discount-popup__navig--input"
                               name="discount-popup__navig--input"
                               placeholder="{{ discountPopupPlaceholder }}" />
                             <div id="discount-popup__navig--input__error" style="color: red;"></div>
                           </div>
-                          {%- assign discountPopupConfirmButton = settings.discount_popup_confirmbtn | default: "Zapłać" -%}
+                          {%- assign discountPopupConfirmButton = settings.discount_popup_confirmbtn | default: "Zaplatit" -%}
                           {%- assign discountPopupCancelButton = settings.discount_popup_cancelbtn | default: "Z powrotem" -%}
                           <button id="discount-popup__navig--return" class="discount-popup__navig--return">{{ discountPopupCancelButton }}</button>
                           <button id="discount-popup__navig--apply" class="discount-popup__navig--apply">{{ discountPopupConfirmButton }}</button>
@@ -90,14 +90,14 @@
                     <div
                       <form id="discount-form">
                         <div style="display: none;">
-                          <label for="total_price">Cena całkowita:</label>
+                          <label for="total_price">Celková cena:</label>
                           <input id="total_price" name="total_price" />
                           <p class="js-error" style="color: red"></p>
                         </div>
                         <div style="display: none;">
-                          <label for="part_payment">Płatność częściowa:</label>
+                          <label for="part_payment">Částečná platba:</label>
                           <input id="part_payment" name="part_payment" />
-                          <button type="submit">Prześlij formularz</button>
+                          <button type="submit">Odeslat formulář</button>
                           <p class="js-error" style="color: red"></p>
                         </div>
                       </form>
@@ -107,7 +107,7 @@
                         <div class="js-loading" style="display: none">Ładowanie...</div>
                       </div>
                       <div id="discount-mail__message" style="display: none;">
-                        Opłatę należy uiścić na poczcie:
+                        Poplatek je třeba uhradit na poště:
                         <span style="font-weight: bold;">{{ cart.total_price | money_without_currency }}</span>
                       </div>
                     </div>
@@ -179,7 +179,7 @@
                   discount-checkout__open
                 {% endcomment %}
                 {% comment %} <div id="discount-checkout__open" class="discount-checkout__open">
-                  <button>Opłata za pobraniem</button>
+                  <button>Poplatek za dobírku</button>
                 </div> {% endcomment %}
 
                 {%- if additional_checkout_buttons -%}
@@ -222,40 +222,42 @@
 </script> {% endcomment %}
 
 {% schema %}
-  {
-    "name": "t:sections.main-cart-footer.name",
-    "class": "cart__footer-wrapper",
-    "blocks": [
-      {
-        "type": "subtotal",
-        "name": "t:sections.main-cart-footer.blocks.subtotal.name",
-        "limit": 1
-      }, {
-        "type": "buttons",
-        "name": "t:sections.main-cart-footer.blocks.buttons.name",
-        "limit": 1
-      }, {
-        "type": "@app"
-      }
-    ],
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "image_1",
-        "label": "Image 1"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_2",
-        "label": "Image 2"
-      },
-      {
-        "type": "url",
-        "id": "url",
-        "label": "Url"
-      }
-    ]
-  }
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    }
+  ]
+}
 {% endschema %}
 
 <!-- bcpo done -->

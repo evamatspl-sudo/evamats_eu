@@ -39,7 +39,7 @@
                 class="mat-consult__hotspot"
                 style="--mx: {{ block.settings.position_x }}%; --my: {{ block.settings.position_y }}%;"
                 {{ block.shopify_attributes }}
-                aria-label="{{ block.settings.tooltip_heading | default: 'Informacja' | escape }}"
+                aria-label="{{ block.settings.tooltip_heading | default: 'Information' | escape }}"
                 tabindex="0"
               >
                 <span class="mat-consult__pin" aria-hidden="true">
@@ -89,7 +89,7 @@
           form_section: section,
           form_id: mat_form_id,
           wrapper_id: mat_form_wrapper_id,
-          hidden_form_value: 'Mat — konsultacja (hotspot)'
+          hidden_form_value: 'Mat — consultation (hotspot)'
         %}
       </div>
     </div>
@@ -102,24 +102,27 @@
   "tag": "section",
   "class": "section-mat-hotspot-consult",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": [
+      "header",
+      "footer"
+    ]
   },
   "settings": [
     {
       "type": "header",
-      "content": "Content (Polish storefront copy)"
+      "content": "Content"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Uzyskaj bezpłatną konsultację!"
+      "default": "Get a free consultation!"
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie."
+      "default": "We'd be happy to help you choose the right solution."
     },
     {
       "type": "image_picker",
@@ -130,29 +133,29 @@
       "type": "text",
       "id": "mat_image_alt",
       "label": "Mat image alt text",
-      "default": "Dywanik EVA"
+      "default": "EVA mat"
     },
     {
       "type": "header",
-      "content": "Form labels (Polish)"
+      "content": "Form labels"
     },
     {
       "type": "text",
       "id": "label_name",
       "label": "Name field label",
-      "default": "Imię i nazwisko"
+      "default": "First and Last Name"
     },
     {
       "type": "text",
       "id": "placeholder_name",
       "label": "Name placeholder",
-      "default": "Jan Kowalski"
+      "default": "John Smith"
     },
     {
       "type": "text",
       "id": "label_phone",
       "label": "Phone field label",
-      "default": "Telefon"
+      "default": "Phone"
     },
     {
       "type": "text",
@@ -176,25 +179,25 @@
       "type": "text",
       "id": "placeholder_email",
       "label": "Email placeholder",
-      "default": "jan@example.com"
+      "default": "john@example.com"
     },
     {
       "type": "text",
       "id": "label_message",
       "label": "Message field label",
-      "default": "Komentarz (opcjonalnie)"
+      "default": "Comment (optional)"
     },
     {
       "type": "text",
       "id": "placeholder_message",
       "label": "Message placeholder",
-      "default": "Twoja wiadomość…"
+      "default": "Your message…"
     },
     {
       "type": "text",
       "id": "submit_label",
       "label": "Submit button label",
-      "default": "Zostaw zapytanie"
+      "default": "Submit a request"
     },
     {
       "type": "header",
@@ -204,13 +207,13 @@
       "type": "text",
       "id": "consent_intro",
       "label": "Consent line — start (before terms link)",
-      "default": "Zgadzam się z "
+      "default": "I agree with "
     },
     {
       "type": "text",
       "id": "terms_label",
       "label": "Terms link label",
-      "default": "regulaminem"
+      "default": "the rules and regulations"
     },
     {
       "type": "url",
@@ -221,13 +224,13 @@
       "type": "text",
       "id": "consent_mid",
       "label": "Consent line — middle (between links)",
-      "default": " oraz "
+      "default": " and "
     },
     {
       "type": "text",
       "id": "privacy_label",
       "label": "Privacy link label",
-      "default": "Polityką prywatności"
+      "default": "Privacy Policy"
     },
     {
       "type": "url",
@@ -241,6 +244,12 @@
       "default": "."
     },
     {
+      "type": "text",
+      "id": "consent_error_message",
+      "label": "Consent checkbox error message",
+      "default": "You must accept the privacy policy and terms of service."
+    },
+    {
       "type": "header",
       "content": "Messages"
     },
@@ -248,13 +257,13 @@
       "type": "text",
       "id": "success_message",
       "label": "Success message",
-      "default": "Dziękujemy! Skontaktujemy się wkrótce."
+      "default": "Thank you! We'll be in touch soon."
     },
     {
       "type": "text",
       "id": "error_message",
       "label": "Generic error message",
-      "default": "Sprawdź pola i spróbuj ponownie."
+      "default": "Check the fields and try again."
     },
     {
       "type": "header",
@@ -337,13 +346,13 @@
           "type": "text",
           "id": "tooltip_heading",
           "label": "Tooltip title",
-          "default": "Struktura"
+          "default": "Structure"
         },
         {
           "type": "textarea",
           "id": "tooltip_text",
           "label": "Tooltip text",
-          "default": "Dywaniki EVAMATS są dostępne w dwóch unikalnych strukturach – plastry miodu lub romby."
+          "default": "Grid structure that traps dirt and water"
         }
       ]
     }
@@ -354,19 +363,31 @@
       "blocks": [
         {
           "type": "hotspot",
-          "settings": { "position_x": 18, "position_y": 22 }
+          "settings": {
+            "position_x": 18,
+            "position_y": 22
+          }
         },
         {
           "type": "hotspot",
-          "settings": { "position_x": 72, "position_y": 35 }
+          "settings": {
+            "position_x": 72,
+            "position_y": 35
+          }
         },
         {
           "type": "hotspot",
-          "settings": { "position_x": 45, "position_y": 58 }
+          "settings": {
+            "position_x": 45,
+            "position_y": 58
+          }
         },
         {
           "type": "hotspot",
-          "settings": { "position_x": 88, "position_y": 78 }
+          "settings": {
+            "position_x": 88,
+            "position_y": 78
+          }
         }
       ]
     }

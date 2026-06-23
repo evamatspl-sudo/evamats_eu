@@ -6,11 +6,6 @@
   --eoo-radius-sm: 12px;
 }
 
-.evamats-our-offer__inner {
-  max-width: 1520px;
-  margin: 0 auto;
-}
-
 .evamats-our-offer__header {
   display: grid;
   grid-template-columns: minmax(0, 645px) minmax(0, 740px);
@@ -37,7 +32,7 @@
 .evamats-our-offer__heading {
   margin: 0;
   font-weight: 600;
-  font-size: 46px;
+  font-size: 38px;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--color-text-primary, #1b1d22);

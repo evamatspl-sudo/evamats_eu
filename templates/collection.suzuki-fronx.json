@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/suzuki"
       }
     },
-    "e3a82571-77bf-4648-9bc3-0871aedf2da1": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/suzuki"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/suzuki",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "e3a82571-77bf-4648-9bc3-0871aedf2da1",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

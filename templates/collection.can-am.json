@@ -21,14 +21,6 @@
         "brand_url": ""
       }
     },
-    "ec496fe3-5588-4e9b-9e34-63d4087b07aa": {
-      "type": "mobile-button",
-      "disabled": true,
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://pages/dywaniki-samochodowe-eva"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -36,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://pages/car-brands",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "64037693-cda5-4e0e-bc56-a7dabea78c79": {
@@ -71,7 +63,6 @@
   },
   "order": [
     "banner",
-    "ec496fe3-5588-4e9b-9e34-63d4087b07aa",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

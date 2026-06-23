@@ -6,6 +6,7 @@
   - product: {Object} Product liquid object
   - variant_images: {Array} Product images associated with a variant
   - is_duplicate: {Boolean} Prevents rendering uneeded elements and duplicate ids for subsequent instances
+  - images_only: {Boolean} Compact gallery — metaobject/product media list only, one active slide (eva-product-slider)
 
   Usage:
   {% render 'product-media-gallery', is_duplicate: true %}
@@ -49,6 +50,22 @@
     if is_duplicate
       assign id_append = '-duplicate'
     endif
+
+    if images_only
+      if images != blank and images.size > 0
+        assign gallery_media_list = images
+      else
+        assign gallery_media_list = gallery_product.media
+      endif
+      assign media_count = gallery_media_list.size
+      if media_count == 1
+        assign single_media_visible = true
+        assign single_media_visible_mobile = true
+      endif
+      if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+        assign hide_mobile_slider = true
+      endif
+    endif
   -%}
   
   <media-gallery
@@ -70,6 +87,33 @@
         class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
         role="list"
       >
+        {%- if images_only -%}
+          {%- for media in gallery_media_list -%}
+            <li
+              id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}_1"
+              class="product__media-item grid__item slider__slide{% if forloop.first %} is-active{% endif %}{% if single_media_visible %} product__media-item--single{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}"
+              data-media-id="{{ section.id }}-{{ media.id }}_1"
+            >
+              {% assign idModal = section.id | append: '_1' %}
+              {% render 'product-thumbnail',
+                media: media,
+                media_count: media_count,
+                position: forloop.index,
+                desktop_layout: section.settings.gallery_layout,
+                mobile_layout: section.settings.mobile_thumbnails,
+                loop: section.settings.enable_video_looping,
+                modal_id: idModal,
+                xr_button: true,
+                media_width: media_width,
+                media_fit: section.settings.media_fit,
+                constrain_to_viewport: section.settings.constrain_to_viewport,
+                lazy_load: forloop.index > 1,
+                hide_media_icon: true,
+                hide_media_toggle: true
+              %}
+            </li>
+          {%- endfor -%}
+        {%- else -%}
         {%- if gallery_product.selected_or_first_available_variant.featured_media != null -%}
           {%- assign featured_media = gallery_product.selected_or_first_available_variant.featured_media -%}
           <li
@@ -153,6 +197,7 @@
             </li>
           {%- endunless -%}
         {%- endfor -%}
+        {%- endif -%}
       </ul>
       {%- unless is_duplicate -%}
         {% render 'evamats-product-gallery-slider-controls', media_count: media_count, hide_mobile_slider: hide_mobile_slider %}
@@ -200,6 +245,57 @@
             (min-width: 750px) calc((100vw - 15rem) / 8),
             calc((100vw - 8rem) / 3)
           {%- endcapture -%}
+
+          {%- if images_only -%}
+            {%- for media in gallery_media_list -%}
+              {%- liquid
+                capture media_index
+                  if media.media_type == 'model'
+                    increment model_index
+                  elsif media.media_type == 'video' or media.media_type == 'external_video'
+                    increment video_index
+                  elsif media.media_type == 'image'
+                    increment image_index
+                  endif
+                endcapture
+                assign media_index = media_index | plus: 1
+              -%}
+              <li
+                id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}_1"
+                class="thumbnail-list__item slider__slide"
+                data-target="{{ section.id }}-{{ media.id }}_1"
+                data-media-position="{{ media_index }}"
+              >
+                {%- if media.media_type == 'model' -%}
+                  <span class="thumbnail__badge" aria-hidden="true">
+                    {%- render 'icon-3d-model' -%}
+                  </span>
+                {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
+                  <span class="thumbnail__badge" aria-hidden="true">
+                    {%- render 'icon-play' -%}
+                  </span>
+                {%- endif -%}
+                {%- capture thumbnail_id -%}
+                  Thumbnail-{{ section.id }}-{{ forloop.index }}{{ id_append }}_1
+                {%- endcapture -%}
+                <button
+                  class="thumbnail global-media-settings global-media-settings--no-shadow"
+                  aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
+                  {% if forloop.first %}aria-current="true"{% endif %}
+                  aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}_1"
+                  aria-describedby="{{ thumbnail_id }}"
+                >
+                  {{ media.preview_image | image_url: width: 416 | image_tag:
+                    loading: 'lazy',
+                    sizes: sizes,
+                    widths: '54, 74, 104, 162, 208, 324, 416',
+                    id: thumbnail_id,
+                    alt: media.alt | escape
+                  }}
+                </button>
+              </li>
+            {%- endfor -%}
+          {%- else -%}
   
           {%- if featured_media != null -%}
             {%- liquid
@@ -340,6 +436,7 @@
               </li>
             {%- endunless -%}
           {%- endfor -%}
+          {%- endif -%}
         </ul>
         <button
           type="button"

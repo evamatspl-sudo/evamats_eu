@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/aston-martin"
       }
     },
-    "2b60d2fb-3fa5-4605-a6d9-61b3232e633d": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/aston-martin"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/aston-martin",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "2b60d2fb-3fa5-4605-a6d9-61b3232e633d",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

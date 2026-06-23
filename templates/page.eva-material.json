@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -17,21 +26,21 @@
         "template--18380180521266__a61239f6-321c-441e-9478-15bf3ac40e2e-1685546315540cba49-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p><strong>EVA MATERIAL<\/strong><\/p>",
+            "heading": "<p><strong>EVA MATERIAL</strong></p>",
             "heading_size": "h1"
           }
         },
         "template--18380180521266__a61239f6-321c-441e-9478-15bf3ac40e2e-1685546315540cba49-1": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>STILL NOT SURE WHY EVA IS A GREAT CHOICE?<br\/>WE'LL TELL YOU WHY!<\/strong><\/h3>"
+            "text": "<h3><strong>STILL NOT SURE WHY EVA IS A GREAT CHOICE?<br/>WE'LL TELL YOU WHY!</strong></h3>"
           }
         },
         "template--18380180521266__a61239f6-321c-441e-9478-15bf3ac40e2e-1685546315540cba49-2": {
           "type": "button",
           "disabled": true,
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Text tlačítka",
             "button_link": "",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -61,16 +70,16 @@
       "type": "text-with-image-right",
       "disabled": true,
       "settings": {
-        "des": "<p>EVA material is <strong>a popular choice for car mats.<\/strong> It stands for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.<\/p><p>One of the most important advantages of EVA is its <strong>durability<\/strong>. It is a material <strong>with high resistance to abrasion and deformation<\/strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.<\/p>",
-        "img": "shopify:\/\/shop_images\/Group_184_eed00412-fc64-4df2-8337-6457204238c3.png"
+        "des": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
+        "img": "shopify://shop_images/Group_184_eed00412-fc64-4df2-8337-6457204238c3.png"
       }
     },
     "d3e3954c-8150-4885-9060-5f34c702cac6": {
       "type": "text-with-image-left",
       "disabled": true,
       "settings": {
-        "des": "<p>EVA material is <strong>a popular choice for car mats.<\/strong> It stands for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.<\/p><p>One of the most important advantages of EVA is its <strong>durability<\/strong>. It is a material <strong>with high resistance to abrasion and deformation<\/strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.<\/p>",
-        "img": "shopify:\/\/shop_images\/1231_30_1_737c5aeb-ab22-4a3e-919b-2782238e8448.png"
+        "des": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
+        "img": "shopify://shop_images/1231_30_1_737c5aeb-ab22-4a3e-919b-2782238e8448.png"
       }
     },
     "8a877dac-2490-4638-b3b3-c9236cb4d9c5": {
@@ -80,41 +89,23 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Obrázek with text"
           }
         },
         "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-1": {
           "type": "text",
           "settings": {
-            "text": "<p>EVA material is <strong>a popular choice for car mats.<\/strong> It stands for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.<\/p><p>One of the most important advantages of EVA is its <strong>durability<\/strong>. It is a material <strong>with high resistance to abrasion and deformation<\/strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-2": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "text": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
           }
         }
       },
       "block_order": [
         "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-0",
-        "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-1",
-        "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-2"
+        "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_184_eed00412-fc64-4df2-8337-6457204238c3.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
+        "image": "shopify://shop_images/Group_184_eed00412-fc64-4df2-8337-6457204238c3.png",
         "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -126,41 +117,23 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Obrázek with text"
           }
         },
         "33af872d-79ff-4edf-a82f-e46324d6fc91": {
           "type": "text",
           "settings": {
-            "text": "<p>EVA material is <strong>a popular choice for car mats.<\/strong> It stands for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.<\/p><p>One of the most important advantages of EVA is its <strong>durability<\/strong>. It is a material <strong>with high resistance to abrasion and deformation<\/strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "f1cf73b4-bf8d-44df-8505-308afba6d555": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "text": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
           }
         }
       },
       "block_order": [
         "c1f25a2a-1a09-484f-99de-c86f947da0da",
-        "33af872d-79ff-4edf-a82f-e46324d6fc91",
-        "f1cf73b4-bf8d-44df-8505-308afba6d555"
+        "33af872d-79ff-4edf-a82f-e46324d6fc91"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/1231_30_1_737c5aeb-ab22-4a3e-919b-2782238e8448.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
+        "image": "shopify://shop_images/1231_30_1_737c5aeb-ab22-4a3e-919b-2782238e8448.png",
         "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -171,7 +144,7 @@
         "template--18380180521266__175a34ed-4fb9-48b9-a1f5-f72a9f713974-1685547263d29e1e51-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/div.card.jpg",
+            "image": "shopify://shop_images/div.card.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -181,7 +154,7 @@
         "template--18380180521266__175a34ed-4fb9-48b9-a1f5-f72a9f713974-1685547263d29e1e51-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/div.card2.jpg",
+            "image": "shopify://shop_images/div.card2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -191,7 +164,7 @@
         "7562b465-b02b-4ff2-8e7e-959055f64e9f": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/div.card3.jpg",
+            "image": "shopify://shop_images/div.card3.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -201,7 +174,7 @@
         "f96fd4cc-6f38-438f-a14b-530433d78f94": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/div.card4.jpg",
+            "image": "shopify://shop_images/div.card4.jpg",
             "title": "",
             "text": "",
             "link_label": "",

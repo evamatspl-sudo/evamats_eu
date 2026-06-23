@@ -7,10 +7,13 @@
   @param label_work_mode {string}
   @param label_location {string}
   @param label_salary {string}
+  @param label_experience {string}
   @param icon_suffix {string}
 {%- endcomment -%}
 
 {%- liquid
+  assign label_experience = label_experience | default: 'Zkušenosti'
+
   capture v_contract
     render 'evamats-vacancy-field-value', field: vacancy.contract, fallback: vacancy.level
   endcapture
@@ -35,6 +38,11 @@
     render 'evamats-vacancy-field-value', field: vacancy.salary_text, fallback: vacancy.salary
   endcapture
   assign v_salary = v_salary | strip
+
+  capture v_experience
+    render 'evamats-vacancy-field-value', field: vacancy.experience
+  endcapture
+  assign v_experience = v_experience | strip
 -%}
 
 <ul class="evamats-vacancies-list__tags" role="list">
@@ -69,6 +77,12 @@
         <span class="evamats-vacancies-list__tag-label">{{ label_salary }}:</span>
         {{ v_salary | escape }}
       </span>
+    </li>
+  {%- endif -%}
+  {%- if v_experience != blank -%}
+    <li class="evamats-vacancies-list__tag">
+      <span class="evamats-vacancies-list__tag-icon">{% render 'evamats-vacancy-tag-icon', icon: 'experience', suffix: icon_suffix %}</span>
+      <span class="evamats-vacancies-list__tag-text">{{ label_experience }}: {{ v_experience | escape }}</span>
     </li>
   {%- endif -%}
 </ul>

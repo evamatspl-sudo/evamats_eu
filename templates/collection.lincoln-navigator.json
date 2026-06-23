@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/lincoln"
       }
     },
-    "e9e1ea32-097a-4802-84f5-5de0c78ef275": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/lincoln"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/lincoln",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "4f8483c2-24c7-4edb-b285-3f4b72057eaf": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "e9e1ea32-097a-4802-84f5-5de0c78ef275",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

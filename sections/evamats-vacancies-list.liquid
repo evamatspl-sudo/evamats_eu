@@ -1,7 +1,7 @@
 {%- liquid
   assign articles_per_page = section.settings.articles_per_page | default: 2
   assign label_contract = section.settings.label_contract | default: section.settings.label_level | default: 'Umowa'
-  assign label_languages = section.settings.label_languages | default: 'Język'
+  assign label_languages = section.settings.label_languages | default: 'Jazyk'
   assign label_work_mode = section.settings.label_work_mode | default: 'Tryb pracy'
   assign label_location = section.settings.label_location | default: 'Lokalizacja'
   assign label_salary = section.settings.label_salary | default: 'Wynagrodzenie'
@@ -32,7 +32,7 @@
   endfor
 
   assign category_order = 'sales,customer_service,finance,other' | split: ','
-  assign filter_all_label = section.settings.filter_all_label | default: 'Wszystko'
+  assign filter_all_label = section.settings.filter_all_label | default: 'Vše'
 -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-vacancies-list' %}
@@ -294,7 +294,7 @@
       "type": "text",
       "id": "filter_all_label",
       "label": "Filter: All",
-      "default": "Wszystko"
+      "default": "Vše"
     },
     {
       "type": "text",
@@ -306,7 +306,7 @@
       "type": "text",
       "id": "label_languages",
       "label": "Label: languages",
-      "default": "Język"
+      "default": "Jazyk"
     },
     {
       "type": "text",
@@ -330,25 +330,25 @@
       "type": "text",
       "id": "card_cta_label",
       "label": "Card CTA label",
-      "default": "Sprawdź szczegóły"
+      "default": "Zobrazit podrobnosti"
     },
     {
       "type": "text",
       "id": "load_more_label",
       "label": "Load more label",
-      "default": "Pokaż więcej"
+      "default": "Zobrazit více"
     },
     {
       "type": "text",
       "id": "empty_message",
       "label": "Empty filter message",
-      "default": "Brak ofert w tej kategorii."
+      "default": "V této kategorii nejsou žádné nabídky."
     },
     {
       "type": "range",
       "id": "articles_per_page",
       "label": "Visible count / load step",
-      "info": "How many vacancies show initially and per click on \"Pokaż więcej\".",
+      "info": "How many vacancies show initially and per click on \"Zobrazit více\".",
       "min": 1,
       "max": 24,
       "step": 1,

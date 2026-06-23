@@ -15,16 +15,16 @@
         "breadcrumb_parent_label": "Evamats",
         "breadcrumb_parent_url": "",
         "breadcrumb_current_label": "Contact",
-        "contact_heading": "Contact us",
+        "contact_heading": "Kontaktujte nás",
         "phone": "+48 732 082 512",
-        "email_general_label": "General Information and Customer Service",
+        "email_general_label": "General Information a Customer Service",
         "email_general": "info@evamats.store",
-        "email_claims_label": "Complaints and Returns",
+        "email_claims_label": "Complaints a Returns",
         "email_claims": "",
-        "email_production_label": "Contact the Production Department",
+        "email_production_label": "Contact the Produktion Department",
         "email_production": "",
         "address_label": "Registered office address:",
-        "address": "EVAMATS Sp. z o.o.\nSt. Strzelca 42, 80-299 Gdańsk, Poland",
+        "address": "EVAMATS Sp. z o.o.\nSt. Strzelca 42, 80-299 Gdańsk, Polsko",
         "tin_label": "NIP:",
         "tin": "5862378667",
         "facebook_url": "https://www.facebook.com/evamats.store",
@@ -33,28 +33,28 @@
         "youtube_url": "https://www.youtube.com/@evamats_store",
         "threads_url": "",
         "hidden_form_tag": "Contact — Form (Website)",
-        "heading": "Get a free consultation!",
-        "subheading": "We'd be happy to help you choose the right solution.",
-        "label_name": "First and Last Name",
+        "heading": "Získejte bezplatnou konzultaci!",
+        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
+        "label_name": "Jméno a příjmení",
         "placeholder_name": "Jan Kowalski",
-        "label_phone": "Phone",
+        "label_phone": "Telefon",
         "phone_prefix": "+48",
         "placeholder_phone": "000-000-000",
-        "label_email": "Email",
+        "label_email": "E-mail",
         "placeholder_email": "jan@example.com",
-        "label_message": "Comment (optional)",
-        "placeholder_message": "Your message…",
-        "submit_label": "Submit a request",
-        "consent_intro": "I agree with",
-        "terms_label": "the rules and regulations",
+        "label_message": "Poznámka (volitelné)",
+        "placeholder_message": "Vaše zpráva…",
+        "submit_label": "Odeslat poptávku",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
         "terms_url": "",
-        "consent_mid": "and",
-        "privacy_label": "Privacy Policy",
+        "consent_mid": "a",
+        "privacy_label": "zásadami ochrany osobních údajů",
         "privacy_url": "",
         "consent_end": ".",
-        "consent_error_message": "You must accept the privacy policy and terms of service.",
-        "success_message": "Thank you! We'll be in touch soon.",
-        "error_message": "Check the boxes and try again."
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Check the boxes a try again."
       }
     },
     "partners": {
@@ -64,7 +64,7 @@
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_136.webp",
-            "title": "Warszawa",
+            "title": "Varšava",
             "address": "al. „Solidarności” 163/lok.\nu010, 00-877"
           }
         },
@@ -72,7 +72,7 @@
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_137.webp",
-            "title": "Warszawa",
+            "title": "Varšava",
             "address": "ul. Jana Ostroroga 24C"
           }
         }
@@ -82,8 +82,8 @@
         "partner_2"
       ],
       "settings": {
-        "heading": "Where can you find our products?",
-        "subheading": "You can check out the quality of our products in person at our partners' locations"
+        "heading": "Kde najdete naše produkty?",
+        "subheading": "Kvalitu našich produktů si můžete ověřit osobně u našich partnerů"
       }
     },
     "map": {

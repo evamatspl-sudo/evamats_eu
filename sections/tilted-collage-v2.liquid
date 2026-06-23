@@ -6,7 +6,7 @@
   assign tc_daily_below = section.settings.daily_line_below_collage
 -%}
 
-<divclass="tilted-collage-v2">
+<div class="tilted-collage-v2">
   <div class="tilted-collage-v2__inner page-width">
     <h2 class="tilted-collage-v2__heading section_title">
       <span>{{ section.settings.heading_main | escape }}</span>
@@ -139,18 +139,72 @@
   "tag": "section",
   "class": "section_v2",
   "settings": [
-    { "type": "text", "id": "heading_main", "label": "Heading main", "default": "Brud nie znika." },
-    { "type": "text", "id": "heading_accent", "label": "Heading accent", "default": "On się kumuluje." },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>I nawet jeśli tego nie widzisz od razu - wnętrze stopniowo traci świeżość.</p>" },
-    { "type": "text", "id": "daily_text", "label": "Daily text", "default": "Codziennie." },
-    { "type": "image_picker", "id": "image_left", "label": "Left image" },
-    { "type": "image_picker", "id": "image_center", "label": "Center image" },
-    { "type": "image_picker", "id": "image_right", "label": "Right image" },
-    { "type": "checkbox", "id": "hide_pins", "label": "Hide corner pins", "default": false },
-    { "type": "richtext", "id": "caption_left", "label": "Left card caption (optional)" },
-    { "type": "richtext", "id": "caption_center", "label": "Center card caption (optional)" },
-    { "type": "richtext", "id": "caption_right", "label": "Right card caption (optional)" },
-    { "type": "checkbox", "id": "hide_daily_line", "label": "Hide line under collage", "default": false },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Heading main",
+      "default": "Brud nie znika."
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent",
+      "default": "Hromadí se."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>A i když to hned nevidíte — interiér postupně ztrácí svěžest.</p>"
+    },
+    {
+      "type": "text",
+      "id": "daily_text",
+      "label": "Daily text",
+      "default": "Codziennie."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_center",
+      "label": "Center image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Right image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_pins",
+      "label": "Hide corner pins",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "caption_left",
+      "label": "Left card caption (optional)"
+    },
+    {
+      "type": "richtext",
+      "id": "caption_center",
+      "label": "Center card caption (optional)"
+    },
+    {
+      "type": "richtext",
+      "id": "caption_right",
+      "label": "Right card caption (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_daily_line",
+      "label": "Hide line under collage",
+      "default": false
+    },
     {
       "type": "checkbox",
       "id": "daily_line_below_collage",
@@ -163,17 +217,42 @@
       "id": "daily_text_style",
       "label": "Line under collage",
       "options": [
-        { "value": "gradient", "label": "Gradient (uses Daily text)" },
-        { "value": "solid", "label": "Solid white (uses Daily text)" },
-        { "value": "split", "label": "Two colors like heading" }
+        {
+          "value": "gradient",
+          "label": "Gradient (uses Daily text)"
+        },
+        {
+          "value": "solid",
+          "label": "Solid white (uses Daily text)"
+        },
+        {
+          "value": "split",
+          "label": "Two colors like heading"
+        }
       ],
       "default": "gradient",
       "info": "For “Two colors”, fill Daily line main and Daily line accent below."
     },
-    { "type": "text", "id": "daily_text_main", "label": "Daily line main (two-color mode)" },
-    { "type": "text", "id": "daily_text_accent", "label": "Daily line accent (two-color mode)" },
-    { "type": "text", "id": "button_label", "label": "Button label (optional)" },
-    { "type": "url", "id": "button_link", "label": "Button link" }
+    {
+      "type": "text",
+      "id": "daily_text_main",
+      "label": "Daily line main (two-color mode)"
+    },
+    {
+      "type": "text",
+      "id": "daily_text_accent",
+      "label": "Daily line accent (two-color mode)"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label (optional)"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
   ],
   "presets": [
     {

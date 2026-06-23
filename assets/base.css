@@ -40,6 +40,333 @@ body{
     /* overflow-x:hidden; */
     background:#000101
 }
+
+  
+/* === ActionButton (Figma 1799:13246) — button_2 … button_6 === */
+.button, button {
+  font-family: var(--font-body-family, inherit);
+}
+.button-row-v2 {
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Large red + arrow — button_2 */
+.button.button_2 {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 498px;
+  min-width: auto !important;
+  min-height: 60px !important;
+  padding: 22px 56px 22px 28px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 18px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase !important;
+  text-decoration: none;
+  text-align: center;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_2:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_2:active {
+  background: #ce1534 !important;
+}
+
+.button.button_2:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_2::after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20d%3D%22M3%209%20L9%203%20M9%209%20L9%203%20L3%203%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+}
+
+.button.button_2:disabled,
+.button.button_2.disabled,
+.button.button_2[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Large red, no arrow — button_3 */
+.button.button_3 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 498px;
+  min-width: auto !important;
+  min-height: 60px !important;
+  padding: 22px 28px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 18px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase !important;
+  text-decoration: none;
+  text-align: center;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_3:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_3:active {
+  background: #ce1534 !important;
+}
+
+.button.button_3:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_3:disabled,
+.button.button_3.disabled,
+.button.button_3[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Medium red + inline arrow — button_4 */
+.button.button_4 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: auto !important;
+  min-height: 50px !important;
+  padding: 13px 61px !important;
+  margin: 0;
+  background: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  text-decoration: none;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_4:hover {
+  background: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_4:active {
+  background: #ce1534 !important;
+}
+
+.button.button_4:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_4 .button__arrow {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.button.button_4 .button__arrow svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.button.button_4:disabled,
+.button.button_4.disabled,
+.button.button_4[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Medium outline accent — button_5 (text) / button_6 (+ icon) Figma 1710:32889 & 1799:13323 */
+.button.button_5,
+.button.button_6 {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: auto !important;
+  min-height: 50px !important;
+  margin: 0;
+  background: #fff !important;
+  color: var(--color-text-primary, #1b1d22) !important;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--color-accent-red, #ff2741) !important;
+  border-radius: 16px !important;
+  box-shadow: none;
+  cursor: pointer;
+  overflow: visible;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button.button_5 {
+  padding: 13px 61px !important;
+  font-size: 16px !important;
+}
+
+.button.button_5.button_5--neutral {
+  border-color: #e9e9e9 !important;
+}
+
+.button.button_6 {
+  gap: 12px;
+  padding: 12px 56px !important;
+  font-size: 17px !important;
+}
+
+.button.button_5:hover,
+.button.button_6:hover {
+  background: var(--color-accent-red, #ff2741) !important;
+  border-color: var(--color-accent-red, #ff2741) !important;
+  color: #fff !important;
+}
+
+.button.button_5:active,
+.button.button_6:active {
+  background: #e6173a !important;
+  border-color: #e6173a !important;
+  color: #fff !important;
+}
+
+.button.button_5:focus-visible,
+.button.button_6:focus-visible {
+  outline: 2px solid var(--color-accent-red, #ff2741);
+  outline-offset: 2px;
+}
+
+.button.button_5:disabled,
+.button.button_5.disabled,
+.button.button_5[aria-disabled='true'],
+.button.button_6:disabled,
+.button.button_6.disabled,
+.button.button_6[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button.button_6 .button__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.button.button_6 .button__icon-svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+@media screen and (max-width: 749px) {
+  .button.button_2,
+  .button.button_3 {
+    min-height: 50px !important;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px !important;
+  }
+
+  .button.button_2 {
+    padding: 15px 48px 15px 24px !important;
+  }
+
+  .button.button_2::after {
+    right: 24px;
+  }
+
+  .button.button_3 {
+    padding: 15px 24px !important;
+  }
+
+  .button.button_4 {
+    min-height: 40px !important;
+    padding: 13px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+  }
+
+  .button.button_5,
+  .button.button_6 {
+    min-height: 44px !important;
+    padding: 10px 20px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+  }
+
+  .button.button_6 {
+    gap: 8px;
+  }
+
+  .button.button_6 .button__icon,
+  .button.button_6 .button__icon-svg {
+    width: 22px;
+    height: 22px;
+  }
+}
 .list-menu--inline{
     display:inline-flex;
     gap:3rem;
@@ -160,7 +487,7 @@ body{
         padding:0 2rem
     }
     .product-faqs .faqs-all-question .faqs-heading h2{
-        font-size:42px;
+        font-size:38px;
         line-height:56px
     }
 }
@@ -642,7 +969,7 @@ html.no-js .no-js-inline{
     display:inline-block!important
 }
 .page-width{
-    max-width:1620px;
+    max-width:1360px;
     margin:0 auto;
     padding:0 1.5rem
 }
@@ -3831,7 +4158,7 @@ fieldset {
 
 .section__title,
 .rich-text__heading.h1 {
-    font-size: clamp(36px, 2.4vw, 46px);
+    font-size: clamp(30px, 2.4vw, 38px);
 }
 
 .header__car_wr {
@@ -4074,6 +4401,8 @@ fieldset {
     --color-surface-card: #ffffff;
     --color-surface-inset: #f2f2f2;
     --color-accent-red: #ff2741;
+    --swiper-bullet-bg: #D9D9D9;
+    --swiper-bullet-bg-active: #EF022D;
     --color-light-gray: #f6f6f6;
     --color-border: #eeeeee;
     --color-border-light: #e9e9e9;
@@ -4130,13 +4459,6 @@ fieldset {
     }
   }
 
-  .evamats-v2 .page-width {
-    max-width: 1360px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: max(var(--grid-mobile-horizontal-spacing, 0px), 18px);
-    padding-right: max(var(--grid-mobile-horizontal-spacing, 0px), 18px);
-  }
 
   .text_center {
     text-align: center
@@ -4172,7 +4494,7 @@ fieldset {
   
   
    .section_title {
-    font-size: clamp(36px, 2.4vw, 46px);
+    font-size: clamp(30px, 2.4vw, 38px);
 
     @media screen and (max-width: 767px) {
       font-size: 26px;
@@ -5158,7 +5480,7 @@ fieldset {
   
   /* --- evamats-article-kariera-hero.liquid --- */
   .evamats-article-kariera-hero {
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
     }
   
@@ -5256,7 +5578,7 @@ fieldset {
       padding: 8px 16px;
       border-radius: 555px;
       border: 1px solid var(--color-border);
-      background: var(--color-surface-elevated);
+      background: #fff;
     }
   
     .evamats-article-kariera-hero .evamats-vacancies-list__tag-icon {
@@ -5307,7 +5629,7 @@ fieldset {
     .evamats-article-kariera-hero__aside-card {
       padding: 28px 24px 24px;
       border-radius: 16px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       border: 1px solid var(--color-border);
       box-shadow: 0 8px 32px rgba(27, 29, 34, 0.08);
       width: 100%;
@@ -5357,7 +5679,6 @@ fieldset {
       width: 22px;
       height: 22px;
       margin-top: 2px;
-      opacity: 0.5;
       align-items: center;
       justify-content: center;
     }
@@ -5371,7 +5692,6 @@ fieldset {
       font-size: 16px;
       line-height: 1.45;
       letter-spacing: -0.02em;
-      color: var(--color-text-secondary);
     }
   
     @media screen and (max-width: 749px) {
@@ -5507,12 +5827,11 @@ fieldset {
       padding: 32px 24px 40px;
       border-radius: 22px;
       border: 1px solid var(--color-border);
-      background: rgba(0, 0, 0, 0.86);
+      background: rgba(255,255, 250, 0.86);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 5px 5px 30px rgba(27, 29, 34, 0.1);
       text-align: center;
-      color: var(--color-text-on-dark);
     }
   
     .evamats-careers-contact__body {
@@ -5637,7 +5956,6 @@ fieldset {
         margin-top: -26px;
         padding: 20px 16px 32px;
         border-radius: 16px;
-        background: rgba(0, 0, 0, 0.96);
       }
   
       .evamats-careers-contact__body {
@@ -5771,7 +6089,7 @@ fieldset {
   
   /* --- evamats-icon-grid.liquid --- */
   .evamats-icon-grid {
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
     }
   
@@ -5994,7 +6312,7 @@ fieldset {
   
   /* --- evamats-kariera-benefits.liquid --- */
   .evamats-kariera-benefits {
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
     }
   
@@ -6043,7 +6361,6 @@ fieldset {
       flex-direction: column;
       min-width: 0;
       padding: 40px 50px;
-      background: var(--color-surface-elevated);
       border-radius: 16px;
       overflow: hidden;
     }
@@ -6088,7 +6405,7 @@ fieldset {
       font-size: 32px;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--color-text);
+      color: #fff;
     }
   
     .evamats-kariera-benefits__list {
@@ -6136,7 +6453,7 @@ fieldset {
       font-size: 16px;
       line-height: 1.6;
       letter-spacing: -0.02em;
-      color: var(--color-text);
+      color: #fff;
     }
   
     .evamats-kariera-benefits__panel-media--work {
@@ -6180,7 +6497,7 @@ fieldset {
       font-size: 16px;
       line-height: 1.6;
       letter-spacing: -0.02em;
-      color: var(--color-text);
+      color: #fff;
     }
   
     .evamats-kariera-benefits__panel-bg {
@@ -6202,14 +6519,12 @@ fieldset {
       display: flex;
       flex-direction: column;
       height: 100%;
-      background: linear-gradient(180deg, rgba(20, 20, 20, 0.55) 0%, rgba(20, 20, 20, 0.35) 45%, rgba(20, 20, 20, 0.65) 100%);
       padding: 40px 50px;
-      color: var(--color-text-on-dark);
     }
   
-    .evamats-kariera-benefits__panel-growth-inner .evamats-kariera-benefits__panel-title,
-    .evamats-kariera-benefits__panel-growth-inner .evamats-kariera-benefits__row-text {
-      color: var(--color-text-on-dark);
+    .evamats-kariera-benefits__panel--growth .evamats-kariera-benefits__panel-title,
+    .evamats-kariera-benefits__panel--growth .evamats-kariera-benefits__row-text {
+      color: #fff;
     }
   
     .evamats-kariera-benefits__panel-pay-inner {
@@ -6608,9 +6923,247 @@ fieldset {
       }
     }
   
+  /* --- evamats-vacancy-role-requirements.liquid --- */
+  .evamats-vacancy-role-reqs {
+      --evr-pt: 80px;
+      --evr-pb: 80px;
+      color: var(--color-text);
+      padding-top: var(--evr-pt);
+      padding-bottom: var(--evr-pb);
+    }
+  
+    .evamats-vacancy-role-reqs__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+  
+    .evamats-vacancy-role-reqs__heading {
+      margin: 0 auto 48px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #fff;
+    }
+  
+    .evamats-vacancy-role-reqs__tabs {
+      display: none;
+    }
+  
+    .evamats-vacancy-role-reqs__panels {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 800px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel {
+      box-sizing: border-box;
+      padding: 32px 28px 28px;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+    }
+  
+    .evamats-vacancy-role-reqs__panel-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 0 28px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      color: #ff2741;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-briefcase-icon,
+    .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-target-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancy-role-reqs__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 0;
+      border-top: 1px solid var(--color-border);
+    }
+  
+    .evamats-vacancy-role-reqs__item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item:last-child {
+      padding-bottom: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item-icon {
+      flex-shrink: 0;
+      display: flex;
+      margin-top: 2px;
+    }
+  
+    .evamats-vacancy-role-reqs__item-icon .evamats-vacancy-role-check-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  
+    .evamats-vacancy-role-check-icon__bg {
+      fill: var(--color-accent-red, #ff2741);
+    }
+  
+    .evamats-vacancy-role-check-icon__mark {
+      fill: #fff;
+    }
+  
+    .evamats-vacancy-role-reqs__item-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancy-role-reqs__item-label {
+      font-weight: 600;
+    }
+  
+    @media screen and (max-width: 1200px) {
+      .evamats-vacancy-role-reqs__panels {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+  
+    @media screen and (max-width: 989px) and (min-width: 750px) {
+      .evamats-vacancy-role-reqs__panels {
+        max-width: 100%;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-vacancy-role-reqs {
+        --evr-pt: 48px;
+        --evr-pb: 48px;
+      }
+  
+      .evamats-vacancy-role-reqs__heading {
+        margin-bottom: 24px;
+        font-size: 22px;
+        text-align: center;
+      }
+  
+      .evamats-vacancy-role-reqs__tabs {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        margin: 0 auto 16px;
+        max-width: 339px;
+        padding: 4px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+      }
+  
+      .evamats-vacancy-role-reqs__tab {
+        flex: 1 1 0;
+        margin: 0;
+        padding: 14px 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+  
+      .evamats-vacancy-role-reqs__tab.is-active {
+        background: var(--color-accent-red, #ff2741);
+        color: #fff;
+      }
+  
+      .evamats-vacancy-role-reqs__tab:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+  
+      .evamats-vacancy-role-reqs__panels {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 100%;
+      }
+  
+      .evamats-vacancy-role-reqs__panel {
+        padding: 24px 18px 20px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel:not(.is-active) {
+        display: none;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-head {
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-briefcase-icon,
+      .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-target-icon {
+        width: 24px;
+        height: 24px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-title {
+        font-size: 18px;
+      }
+  
+      .evamats-vacancy-role-reqs__item {
+        gap: 12px;
+        padding: 16px 0;
+      }
+  
+      .evamats-vacancy-role-reqs__item-text {
+        font-size: 14px;
+      }
+    }
+  
   /* --- evamats-partners-benefits-bento.liquid --- */
   .evamats-kariera-benefits {
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
     }
 
@@ -6650,7 +7203,6 @@ fieldset {
     .evamats-kariera-benefits__grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: 372px 392px;
       gap: 4px;
     }
   
@@ -6661,7 +7213,7 @@ fieldset {
       min-width: 0;
       min-height: 0;
       padding: 40px 50px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       border-radius: 16px;
       overflow: hidden;
     }
@@ -7474,6 +8026,107 @@ fieldset {
       }
     }
   
+    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [fill="white"] {
+      fill: #1b1d22;
+    }
+  
+    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [stroke="white"] {
+      stroke: #1b1d22;
+    }
+  
+  /* --- evamats-kariera-benefits.liquid (kariera panels — restore after partners-bento shared selectors) --- */
+
+  
+    .evamats-kariera-benefits__panel--work {
+      padding: 40px 50px;
+      padding-bottom: 0;
+      aspect-ratio: auto;
+    }
+  
+    .evamats-kariera-benefits__panel--culture {
+      padding: 40px 50px;
+      aspect-ratio: auto;
+    }
+  
+    .evamats-kariera-benefits__panel--growth {
+      padding: 0;
+      aspect-ratio: auto;
+      background: transparent;
+    }
+  
+    .evamats-kariera-benefits__panel--pay {
+      padding: 40px 50px;
+      padding-bottom: 0;
+      aspect-ratio: auto;
+    }
+
+    .evamats-kariera-benefits__panel-growth-inner {
+      padding: 40px 50px;
+    }
+  
+    @media screen and (min-width: 750px) and (max-width: 989px) {
+      .evamats-kariera-benefits__panel--work,
+      .evamats-kariera-benefits__panel--culture,
+      .evamats-kariera-benefits__panel--pay {
+        padding: 32px 28px;
+      }
+  
+      .evamats-kariera-benefits__panel--work {
+        padding-bottom: 0;
+      }
+  
+      .evamats-kariera-benefits__panel--growth {
+        padding: 0;
+      }
+  
+      .evamats-kariera-benefits__panel--pay {
+        padding-bottom: 28px;
+      }
+  
+      .evamats-kariera-benefits__panel-growth-inner {
+        padding: 32px 28px;
+      }
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-kariera-benefits__panel--work,
+      .evamats-kariera-benefits__panel--culture,
+      .evamats-kariera-benefits__panel--pay,
+      .evamats-kariera-benefits__panel--growth {
+        aspect-ratio: auto;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+  
+      .evamats-kariera-benefits__panel--work,
+      .evamats-kariera-benefits__panel--culture,
+      .evamats-kariera-benefits__panel--pay {
+        padding: 20px;
+      }
+  
+      .evamats-kariera-benefits__panel--work {
+        padding-bottom: 0;
+      }
+  
+      .evamats-kariera-benefits__panel--growth {
+        padding: 0;
+      }
+  
+      .evamats-kariera-benefits__panel--pay {
+        padding-bottom: 0;
+      }
+  
+      .evamats-kariera-benefits__panel-growth-inner {
+        padding: 28px 20px;
+      }
+    }
+  
   /* --- evamats-partners-consult-form-v2.liquid --- */
   .evamats-partners-consult-form-v2 {
       background: transparent;
@@ -7642,7 +8295,7 @@ fieldset {
     .evamats-partners-coop-v2__heading {
       margin: 0 auto 60px;
       font-weight: 600;
-      font-size: 46px;
+      font-size: 38px;
       line-height: 1;
       letter-spacing: -0.02em;
       text-align: center;
@@ -8008,7 +8661,7 @@ fieldset {
       padding: 18px 22px;
       border-radius: 16px;
       border: 1px solid var(--color-border);
-      background: var(--color-surface-elevated);
+      background: #fff;
       color: var(--color-text);
       font-weight: 600;
       font-size: 16px;
@@ -8042,7 +8695,7 @@ fieldset {
       gap: 24px 40px;
       padding: 47px 46px;
       border-radius: 16px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       border: 1px solid var(--color-border);
       box-shadow: 5px 5px 60px rgba(27, 29, 34, 0.07);
     }
@@ -8590,7 +9243,6 @@ fieldset {
   
     .o-nas-founder__wrap {
       width: 100%;
-      max-width: 100%;
     }
   
     .o-nas-founder__shell {
@@ -8733,12 +9385,6 @@ fieldset {
       width: 6px;
       height: 6px;
       margin: 0 !important;
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.35);
-    }
-  
-    .o-nas-founder__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
-      background: #ef022d;
     }
   
     .o-nas-founder__video-wrap {
@@ -8877,7 +9523,6 @@ fieldset {
   
     .o-nas-intro__wrap {
       width: 100%;
-      max-width: 100%;
     }
   
     .o-nas-intro__sr-only {
@@ -8917,6 +9562,7 @@ fieldset {
       letter-spacing: -0.02em;
       background: linear-gradient(90deg, var(--color-text-primary) 50.962%, #ff2741 100%);
       -webkit-background-clip: text;
+      padding-bottom: 3px;
       background-clip: text;
       color: transparent;
       -webkit-text-fill-color: transparent;
@@ -9141,17 +9787,20 @@ fieldset {
   
   /* --- o-nas-process-steps.liquid --- */
   .o-nas-process {
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
       --onp-pt: 48px;
       --onp-pb: 56px;
       padding-top: var(--onp-pt);
       padding-bottom: var(--onp-pb);
     }
+
+    .template_article .o-nas-process {
+      background-color: transparent;
+    }
   
     .o-nas-process__wrap {
       width: 100%;
-      max-width: 100%;
     }
   
     .o-nas-process__heading {
@@ -9235,7 +9884,6 @@ fieldset {
   
     .o-nas-process__title {
       margin: 0;
-      font-family: var(--font-heading-family);
       font-weight: 600;
       font-size: 26px;
       line-height: 1.25;
@@ -9245,12 +9893,10 @@ fieldset {
   
     .o-nas-process__text {
       margin: 12px 0 0;
-      font-family: var(--font-body-family);
       font-weight: 400;
       font-size: 15px;
       line-height: 1.55;
       letter-spacing: -0.02em;
-      color: var(--color-text-secondary);
     }
   
     .o-nas-process__text p {
@@ -9460,7 +10106,6 @@ fieldset {
       --ons-pt: 40px;
       --ons-pb: 40px;
       padding-top: var(--ons-pt);
-      padding-bottom: var(--ons-pb);
       min-height: var(--ons-stage-min, 520px);
     }
   
@@ -9484,7 +10129,6 @@ fieldset {
       z-index: 2;
       align-self: stretch;
       width: 100%;
-      max-width: 100%;
       pointer-events: none;
     }
   
@@ -9594,7 +10238,7 @@ fieldset {
       max-width: 520px;
       padding: 40px 44px 36px;
       border-radius: 24px;
-      background: rgba(17, 17, 17, 0.94);
+      background: #fff;
       pointer-events: auto;
       display: flex;
       flex-direction: column;
@@ -9608,7 +10252,7 @@ fieldset {
   
     .o-nas-story__logo-img {
       display: block;
-      width: var(--ons-logo-w, 220px);
+      width: var(--ons-logo-w, 110px);
       max-width: 100%;
       max-height: var(--ons-logo-w, 220px);
       height: auto;
@@ -10265,6 +10909,7 @@ fieldset {
       background: linear-gradient(90deg, var(--color-text-primary) 50.962%, #ff2741 100%);
       -webkit-background-clip: text;
       background-clip: text;
+      padding-bottom: 3px;
       color: transparent;
       -webkit-text-fill-color: transparent;
     }
@@ -10807,15 +11452,7 @@ fieldset {
       width: 6px;
       height: 6px;
       margin: 0 !important;
-      opacity: 1;
       border-radius: 50%;
-      background: rgba(27, 29, 34, 0.22);
-      background: color-mix(in srgb, var(--color-text) 22%, transparent);
-      transition: background 0.2s ease;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__pagination .swiper-pagination-bullet-active {
-      background: var(--color-accent-red);
     }
   
     .product-spotlight-v2 .product-spotlight-v2__overline {
@@ -11105,7 +11742,7 @@ fieldset {
   
   /* --- tilted-collage-v2.liquid --- */
   .tilted-collage-v2 {
-      padding: 92px 0 48px;
+      padding: 0 0 48px;
       background: var(--color-bg);
       color: var(--color-text);
     }
@@ -11116,6 +11753,7 @@ fieldset {
     }
   
     .tilted-collage-v2 .tilted-collage-v2__heading {
+      margin: 0;
       text-align: center;
       font-weight: 600;
     }
@@ -11190,6 +11828,7 @@ fieldset {
       );
       -webkit-background-clip: text;
       background-clip: text;
+      padding-bottom: 3px;
     }
   
     .tilted-collage-v2 .tilted-collage-v2__daily--solid {
@@ -11291,7 +11930,7 @@ fieldset {
       position: relative;
       z-index: 1;
       margin: 0;
-      color: var(--color-text);
+      color: #fff;
       font-weight: 600;
       font-size: 18px;
     }
@@ -11482,332 +12121,7 @@ fieldset {
         max-width: 100%;
       }
     }
-  
-/* === ActionButton (Figma 1799:13246) — button_2 … button_6 === */
-.button, button {
-  font-family: var(--font-body-family, inherit);
-}
-.button-row-v2 {
-  display: flex;
-  justify-content: center;
-  pointer-events: auto;
-}
 
-/* Large red + arrow — button_2 */
-.button.button_2 {
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 498px;
-  min-width: auto !important;
-  min-height: 60px !important;
-  padding: 22px 56px 22px 28px !important;
-  margin: 0;
-  background: var(--color-accent-red, #ff2741) !important;
-  color: #fff !important;
-  font-weight: 700;
-  font-size: 18px !important;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase !important;
-  text-decoration: none;
-  text-align: center;
-  border: 0 !important;
-  border-radius: 16px !important;
-  box-shadow: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.button.button_2:hover {
-  background: #e6173a !important;
-  color: #fff !important;
-}
-
-.button.button_2:active {
-  background: #ce1534 !important;
-}
-
-.button.button_2:focus-visible {
-  outline: 2px solid var(--color-accent-red, #ff2741);
-  outline-offset: 2px;
-}
-
-.button.button_2::after {
-  content: '';
-  position: absolute;
-  right: 28px;
-  top: 50%;
-  width: 14px;
-  height: 14px;
-  margin-top: -7px;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20d%3D%22M3%209%20L9%203%20M9%209%20L9%203%20L3%203%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
-}
-
-.button.button_2:disabled,
-.button.button_2.disabled,
-.button.button_2[aria-disabled='true'] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* Large red, no arrow — button_3 */
-.button.button_3 {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 498px;
-  min-width: auto !important;
-  min-height: 60px !important;
-  padding: 22px 28px !important;
-  margin: 0;
-  background: var(--color-accent-red, #ff2741) !important;
-  color: #fff !important;
-  font-weight: 700;
-  font-size: 18px !important;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase !important;
-  text-decoration: none;
-  text-align: center;
-  border: 0 !important;
-  border-radius: 16px !important;
-  box-shadow: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.button.button_3:hover {
-  background: #e6173a !important;
-  color: #fff !important;
-}
-
-.button.button_3:active {
-  background: #ce1534 !important;
-}
-
-.button.button_3:focus-visible {
-  outline: 2px solid var(--color-accent-red, #ff2741);
-  outline-offset: 2px;
-}
-
-.button.button_3:disabled,
-.button.button_3.disabled,
-.button.button_3[aria-disabled='true'] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* Medium red + inline arrow — button_4 */
-.button.button_4 {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: auto;
-  min-width: auto !important;
-  min-height: 50px !important;
-  padding: 13px 61px !important;
-  margin: 0;
-  background: var(--color-accent-red, #ff2741) !important;
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 16px !important;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: none !important;
-  text-decoration: none;
-  border: 0 !important;
-  border-radius: 16px !important;
-  box-shadow: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.button.button_4:hover {
-  background: #e6173a !important;
-  color: #fff !important;
-}
-
-.button.button_4:active {
-  background: #ce1534 !important;
-}
-
-.button.button_4:focus-visible {
-  outline: 2px solid var(--color-accent-red, #ff2741);
-  outline-offset: 2px;
-}
-
-.button.button_4 .button__arrow {
-  display: inline-flex;
-  flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-}
-
-.button.button_4 .button__arrow svg {
-  display: block;
-  width: 12px;
-  height: 12px;
-}
-
-.button.button_4:disabled,
-.button.button_4.disabled,
-.button.button_4[aria-disabled='true'] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* Medium outline accent — button_5 (text) / button_6 (+ icon) Figma 1710:32889 & 1799:13323 */
-.button.button_5,
-.button.button_6 {
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: auto !important;
-  min-height: 50px !important;
-  margin: 0;
-  background: #fff !important;
-  color: var(--color-text-primary, #1b1d22) !important;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: none !important;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid var(--color-accent-red, #ff2741) !important;
-  border-radius: 16px !important;
-  box-shadow: none;
-  cursor: pointer;
-  overflow: visible;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.button.button_5 {
-  padding: 13px 61px !important;
-  font-size: 16px !important;
-}
-
-.button.button_5.button_5--neutral {
-  border-color: #e9e9e9 !important;
-}
-
-.button.button_6 {
-  gap: 12px;
-  padding: 12px 56px !important;
-  font-size: 18px !important;
-}
-
-.button.button_5:hover,
-.button.button_6:hover {
-  background: var(--color-accent-red, #ff2741) !important;
-  border-color: var(--color-accent-red, #ff2741) !important;
-  color: #fff !important;
-}
-
-.button.button_5:active,
-.button.button_6:active {
-  background: #e6173a !important;
-  border-color: #e6173a !important;
-  color: #fff !important;
-}
-
-.button.button_5:focus-visible,
-.button.button_6:focus-visible {
-  outline: 2px solid var(--color-accent-red, #ff2741);
-  outline-offset: 2px;
-}
-
-.button.button_5:disabled,
-.button.button_5.disabled,
-.button.button_5[aria-disabled='true'],
-.button.button_6:disabled,
-.button.button_6.disabled,
-.button.button_6[aria-disabled='true'] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.button.button_6 .button__icon {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-}
-
-.button.button_6 .button__icon-svg {
-  display: block;
-  width: 26px;
-  height: 26px;
-}
-
-@media screen and (max-width: 749px) {
-  .button.button_2,
-  .button.button_3 {
-    min-height: 50px !important;
-    width: 100%;
-    max-width: 100%;
-    font-size: 16px !important;
-  }
-
-  .button.button_2 {
-    padding: 15px 48px 15px 24px !important;
-  }
-
-  .button.button_2::after {
-    right: 24px;
-  }
-
-  .button.button_3 {
-    padding: 15px 24px !important;
-  }
-
-  .button.button_4 {
-    min-height: 40px !important;
-    padding: 13px 24px !important;
-    border-radius: 12px !important;
-    font-size: 16px !important;
-  }
-
-  .button.button_5,
-  .button.button_6 {
-    min-height: 44px !important;
-    padding: 10px 20px !important;
-    border-radius: 12px !important;
-    font-size: 14px !important;
-  }
-
-  .button.button_6 {
-    gap: 8px;
-  }
-
-  .button.button_6 .button__icon,
-  .button.button_6 .button__icon-svg {
-    width: 22px;
-    height: 22px;
-  }
-}
 
 /* === home-faq-v2 (from evamats) === */
 .home-faq-v2 .faqs-all-question .faq-question {
@@ -11829,11 +12143,6 @@ fieldset {
   --home-faq-rule-desktop: #e9e9e9;
   --home-faq-rule-mobile: #3c3c3c;
   font-family: var(--font-body-family, inherit);
-}
-
-.home-faq-v2 .page-width {
-  max-width: 1520px;
-  margin: 0 auto;
 }
 
 .home-faq-v2__shell {

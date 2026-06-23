@@ -25,7 +25,7 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "All brands",
+        "btn_text": "Vše bras",
         "btn_url": "shopify://pages/dywaniki-samochodowe-eva"
       }
     },
@@ -36,7 +36,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://pages/car-brands",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "29604e9a-382a-4661-9e10-559f4ba6bfb4": {

@@ -227,29 +227,32 @@
 
 {% schema %}
 {
-  "name": "Featured collection",
+  "name": "t:sections.featured-collection.name",
   "tag": "section",
   "class": "section-evamats-featured-collection",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": [
+      "header",
+      "footer"
+    ]
   },
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
+      "label": "t:sections.featured-collection.settings.title.label",
       "default": "Bestsellers"
     },
     {
       "type": "text",
       "id": "view_all_label",
       "label": "View all button label",
-      "default": "View all"
+      "default": "Zobrazit vše"
     },
     {
       "type": "collection",
       "id": "collection",
-      "label": "Collection"
+      "label": "t:sections.featured-collection.settings.collection.label"
     },
     {
       "type": "range",
@@ -258,19 +261,19 @@
       "max": 25,
       "step": 1,
       "default": 8,
-      "label": "Maximum products to show"
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
     },
     {
       "type": "text",
       "id": "mobile_button_label",
       "label": "Mobile card button label",
-      "default": "Select"
+      "default": "Vybrat"
     },
     {
       "type": "checkbox",
       "id": "show_view_all",
       "default": true,
-      "label": "Show “View all” button"
+      "label": "t:sections.featured-collection.settings.show_view_all.label"
     },
     {
       "type": "header",
@@ -279,7 +282,7 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
+      "label": "t:sections.all.padding.padding_top",
       "min": 0,
       "max": 200,
       "step": 4,
@@ -289,7 +292,7 @@
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
+      "label": "t:sections.all.padding.padding_bottom",
       "min": 0,
       "max": 200,
       "step": 4,
@@ -323,10 +326,10 @@
   ],
   "presets": [
     {
-      "name": "Featured collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Bestsellers",
-        "view_all_label": "View all"
+        "view_all_label": "Zobrazit vše"
       }
     }
   ]

@@ -24,7 +24,7 @@
         "block_VXnbCG": {
           "type": "block",
           "settings": {
-            "header": "<h2>Rubber car mats</h2>",
+            "header": "<h2>Guma car mats</h2>",
             "image": "shopify://shop_images/IMG_8796_1.png"
           }
         },
@@ -77,9 +77,9 @@
     "collapsible_text_YPVYyd": {
       "type": "collapsible-text",
       "settings": {
-        "richtext": "<p>When considering the choice of suitable car mats, we take into account many different options. However, people who are not familiar with this may have trouble purchasing products that not only meet their expectations but also prove reliable in every situation. It is also difficult to choose the perfect mats for a specific car brand. Unfortunately, some sets do not fit quite well or do not meet our requirements regarding their use. Below, we will describe what car mats made of rubber are and compare them with our innovative EVA products. This way, you will see what a good product we offer, and surely EVA car mats will soon be in your car!</p>",
-        "collapsible_richtext": "<p>The phenomenon of rubber car mats arises from their relatively low maintenance cost and universality. They perform excellently in every car model and meet the expectations of most individuals. For many years, they were considered almost indestructible due to their exceptional resistance to mechanical damage. They perform well in almost any weather conditions. Whether it's raining outside or snowing, rubber mats don't soil the car. Moreover, they are highly resistant to various chemical substances used in detergents for vehicle interior maintenance. In practice, this means that maintaining them is simple and doesn't require too much time.</p>",
-        "button_text_more": "Read more",
+        "richtext": "<p>Při výběru vhodných koberců do auta zvažujeme mnoho možností. Kdo se v tom nevyzná, může mít problém koupit produkty, které splní očekávání a budou spolehlivé za každé situace. Také je těžké najít ideální koberce pro konkrétní značku vozu.</p><p>Některé sady bohužel nesedí dostatečně dobře nebo nesplňují požadavky na používání. Níže popíšeme gumové autokoberce a porovnáme je s našimi inovativními produkty EVA. Přesvědčíte se, jak kvalitní produkt nabízíme — a EVA koberce brzy budou ve vašem autě!</p>",
+        "collapsible_richtext": "<h3>Co jsou gumové koberce a odkud pochází jejich popularita?</h3><p>Fenomén gumových autokoberců pramení z toho, že jsou relativně levné na údržbu a univerzální. Osvědčují se v každém modelu auta a splňují očekávání většiny lidí. Po léta byly považovány téměř za nezničitelné díky mimořádné odolnosti vůči mechanickému poškození. Dobře fungují za téměř jakéhokoli počasí — ať prší nebo sněží, gumové koberce nešpiní interiér. Navíc jsou velmi odolné vůči chemikáliím v čisticích prostředcích. Údržba je proto jednoduchá a nezabere mnoho času.</p><p></p>",
+        "button_text_more": "Číst více",
         "button_text_less": "Read less",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
@@ -91,10 +91,10 @@
       "type": "image-with-collapsible-text",
       "settings": {
         "image": "shopify://shop_images/Frame_233.png",
-        "header": "<h2>What things should you <strong>pay attention</strong> to before choosing the right car floor mats?</h2>",
-        "richtext": "<p>If you are considering choosing new car floor mats and are unsure about what technical aspects to pay attention to, we're here to help. First and foremost, you should choose the material from which the product is made. Additionally, the method of installing car floor mats is also important. Some vehicle models do not have factory mounting points, so you should choose floor mats that come with a set of stoppers. It's important for the product to fit snugly to the floor and not shift during driving. The finish of the floor mats should also not be overlooked. If you care about the aesthetics of your vehicle, car floor mats should be chosen to match both in color and size to the overall interior, to create a cohesive look. The shape of the floor mats is also significant. Mats that are too small may easily slide around, while those that are too large may interfere with the pedals. This can be dangerous to the health and safety of all passengers.</p>",
-        "collapsible_richtext": "<h3><strong>What are the types of rubber floor mats?</strong></h3><p>First of all, car mats are divided into two types: trough products and standard products. How do they differ? Trough car mats additionally have a high edge, which is designed to block the overflow of water brought inside the vehicle. Driving is then safe, and getting rid of excess accumulated water is very easy. All you have to do is carefully remove the floor mat from inside the vehicle and pour out the liquid. Nowadays, trough floor mats with modern finishes are appearing on the market, which makes them even more versatile. Car mats made of rubber in the standard version have a specific pattern, which nullifies the movement of accumulated water or mud in the interior of the vehicle, preventing possible soiling of the original carpet.</p>",
-        "button_text_more": "Read more",
+        "header": "<p>Na co <strong>zwrócić uwagę</strong> <br/>przy wyborze dywaników?</p>",
+        "richtext": "<p>Uvažujete-li o nových autokobercích a nevíte, na jaké technické aspekty se zaměřit, pomůžeme vám. Nejprve zvolte materiál produktu. Důležitý je také způsob montáže — některé modely nemají tovární úchyty, proto volte koberce se sadou stoperů. Produkt musí dobře přiléhat k podlaze a nesmí se posouvat při jízdě. Dokončení by nemělo být náhodné — pokud záleží na estetice, koberce by měly barevně i velikostně ladit s interiérem. Tvar má velký význam: příliš malé se posouvají, příliš velké mohou zachytit pedály — to je nebezpečné pro všechny cestující.</p>",
+        "collapsible_richtext": "<h3>Jaké jsou druhy gumových autokoberců?</h3><p>Autokoberce dělíme na dva typy: korytové a standardní. Korytové mají vysoký lem, který zabraňuje přelití vody do interiéru. Jízda je bezpečná a přebytečnou vodu snadno vylejete — stačí koberec vyjmout. Na trhu jsou korytové koberce s moderním finišem, což je činí univerzálnějšími. Standardní gumové koberce mají specifický vzor, který omezuje pohyb vody nebo bláta v interiéru a chrání originální koberec.</p>",
+        "button_text_more": "Číst více",
         "button_text_less": "Read less",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
@@ -108,16 +108,16 @@
         "block_gAgXYW": {
           "type": "block",
           "settings": {
-            "header": "<p>Disadvantages of rubber mats</p>",
-            "unordered_list": "<ul><li>They slide around</li><li>They smell</li><li>Poorly fitted</li><li>All look the same</li><li>Not easy to clean (according to detailing)</li><li>Dirty shoes</li><li>Heavy</li><li>Sensitive for pets</li></ul>",
+            "header": "<h2>Nevýhody gumových koberců</h2>",
+            "unordered_list": "<ul><li>Przesuwają się</li><li>Smierdzą</li><li>Słabo dopasowane</li><li>Wszystkie są takie same</li><li>Nie są łatwe w czyszczeniu( informacja od detailingu),</li><li>Brudzą buty</li><li>Ciężkie</li><li>Wrażliwe dla zwierząt</li></ul><p></p><p></p>",
             "image": "shopify://shop_images/IMG_8796_1_dd858322-6657-4510-949a-af5db4d2c2ba.png"
           }
         },
         "block_YfT8nF": {
           "type": "block",
           "settings": {
-            "header": "<p><strong>Advantages</strong> of EVA Mats</p>",
-            "unordered_list": "<ul><li>Perfectly fitted</li><li>Ultra lightweight and easy to clean</li><li>Odorless ECO material, non-toxic</li><li>Waterproof</li><li>195 color combinations</li><li>Technological cells trap various types of pollutants</li></ul>",
+            "header": "<p><strong>Výhody</strong> EVA koberců</p>",
+            "unordered_list": "<ul><li>Idealnie dopasowane</li><li>Ultra lekkie i łatwe w czyszczeniu </li><li>Bezzapachowy ECO materiał, nietoksyczny</li><li>Wodoodporne</li><li>195 połączeń kolorystycznych</li><li>Technologiczne komórki utrzymują różnego rodzaju zanieczyszczenia</li></ul>",
             "image": "shopify://shop_images/IMG_8796_2_1.png"
           }
         }
@@ -137,8 +137,8 @@
       "type": "text-with-image",
       "settings": {
         "image": "shopify://shop_images/Rectangle_91_1.png",
-        "header": "<p><strong>How </strong>do EVA mats<strong> differ</strong> from traditional rubber mats?</p>",
-        "richtext": "<p>There are many similarities and differences that both connect and divide traditional rubber mats from EVA products. Let's take a closer look at their common features. </p><p>First of all, both rubber mats and EVA mats do not absorb water. Their special construction prevents leakage not only on rainy but also snowy days. </p><p>Furthermore, both products excel as floor protection against any kind of dirt. This is because the material they are made of does not allow any dirt or fluids to pass through. However, rubber car mats do not cover the entire floor. Therefore, they protect the vehicle's flooring from dirt by approximately 70-90%. </p><p>EVA mats are custom-made, which means they provide protection for the maximum area of the floor. <strong>This is even up to 99% coverage of the flooring!</strong> Additionally, EVA mats are odorless and non-toxic. Traditional rubber mats have an unpleasant odor, and they contain toxic substances. Dirt moves around on them because it is not absorbed into the material. </p><p>In EVA mats,<strong> pollutants are trapped in technological cells</strong>. They are also much lighter and, as a result, easier to remove from the car. They also do not require special cleaning.</p>",
+        "header": "<p><strong>Čím se liší</strong> koberce EVA od tradičních gumových koberců?</p>",
+        "richtext": "<p>Istnieje wiele podobieństw, jak i różnic, które z jednej strony łączą, a z drugiej dzielą tradycyjne dywaniki gumowe od produktów EVA. Przyjrzyjmy się bliżej och wspólnym cechom.</p><p>Przede wszystkim zarówno gumowe dywaniki, jak i dywaniki EVA nie wchłaniają wody. Ich specjalna budowa zapobiega więc przeciekaniu nie tylko w deszczowe, ale i śnieżne dni.</p><p>Co więcej, oba produkty spełniają się rewelacyjnie jako ochrona podłogi przez każdym rodzajem brudu. Dzieje się tak, ponieważ materiał, z jakiego są wyprodukowane, nie przepuszcza żadnych zabrudzeń i płynów. Gumowe dywaniki samochodowe nie pokrywają jednak podłoża w całości. Chronią więc wykładzinę pojazdu w około 70–90% przed brudem. </p><p>Dywaniki EVA są wykonywane na wymiar, co oznacza, że zapewniają ochronę maksymalnie dużej powierzchni podłoża. <strong>Jest to nawet 99% zakrycia wykładziny!</strong> Ponadto, dywaniki EVA są bezzapachowe i nietoksyczne. Tradycyjne dywaniki gumowe są nieprzyjemne w zapachu, a w ich składzie znajdują się toksyczne substancje. Brud przemieszcza się po nich, ponieważ nie jest on wchłaniany w materiał.</p><p>W dywanikach EVA zanieczyszczenia są <strong>zatrzymywane w technologicznych komórkach</strong>. Są też o wiele lżejsze, a co się z tym wiąże, łatwiejsze w wyciąganiu z samochodu. Nie wymagają też specjalnego czyszczenia.</p><p></p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -148,8 +148,8 @@
     "richtext_section_K7WAxg": {
       "type": "richtext-section",
       "settings": {
-        "header": "<h2>Why should you <strong>purchase mats in our store</strong>?</h2>",
-        "richtext": "<p>By purchasing EVA mats in our store, you not only have a guarantee of excellent product quality but also fantastic prices. These are Polish articles, handcrafted. Therefore, we are confident that you will be satisfied when choosing EVA mats!</p>",
+        "header": "<h2>Proč stojí za to <strong>koupit koberce v našem obchodě?</strong></h2>",
+        "richtext": "<p>Při nákupu EVA koberců v našem obchodě máte záruku vynikající kvality i skvělé ceny. Jsou to polské výrobky vyráběné ručně. Jsme přesvědčeni, že budete spokojeni s volbou EVA koberců!</p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 58,
@@ -227,8 +227,8 @@
         "image_BaMe8Q"
       ],
       "settings": {
-        "header": "REALIZATIONS OF EVA MATS",
-        "button_text": "SHOP NOW",
+        "header": "REALIZACJE DYWANIKÓW EVA",
+        "button_text": "OBJEDNAT",
         "button_link": "https://evamats-en.myshopify.com/pages/car-brands",
         "centered": false,
         "small": false,
@@ -263,7 +263,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Zobacz inne realizacje",
+        "title": "Zobrazit další realizace",
         "collection": "bestsellerss",
         "products_to_show": 14,
         "show_view_all": false,
@@ -308,64 +308,64 @@
         "text_DzQCYQ": {
           "type": "text",
           "settings": {
-            "hd": "<p>Are you sure the floor mats will fit?</p>",
-            "des": "<p>Of course. We make mats individually for each car model, taking into account the make, model, generation, year, gearbox type, and equipment data. Mats undergo manual processing, which means they are hand-cut, sewn, and manually profiled. Our designs are based solely on physically taken measurements from physical cars, so there is no question of any imperfections. The mats cover the entire floor, taking into account fine details and covering areas that rubber or velour mats can only dream of.</p>"
+            "hd": "<p>Czy dywaniki na pewno będą pasować?</p>",
+            "des": "<p>Oczywiście, że tak. Dywaniki wykonujemy indywidualnie pod dany model auta uwzględniając marke, model, generację, rocznik, skrzynie biegów oraz dane wyposażenie. Dywaniki poddajemy ręcznej obróbce czyli wycinamy je ręcznie, obszywamy i ręcznie profilujemy. Nasze projekty opierają się tylko i wyłącznie na naszych fizycznie pobieranych pomiarach z fizycznych samochodów, więc nie ma tu mowy o jakiś niedoskonałościach. Dywaniki pokrywają całą podłogę uwzględniając drobne szczegóły i zakrywają  miejsca, które dywaniki gumowe czy welurowe mogą tylko pomarzyć.</p>"
           }
         },
         "text_mX9qEM": {
           "type": "text",
           "settings": {
-            "hd": "<p>What do you clean it with?</p>",
-            "des": "<p>Thanks to its technology, the dirt that accumulates on the mat does not absorb and does not want to stick to it, so you just need to shake the mats and everything smoothly comes off them, or in case of heavy mud contamination, you can confidently wash the mats with a pressure washer and be on your way.</p>"
+            "hd": "<p>Czym to się czyści?</p>",
+            "des": "<p>Dzięki swojej technologii brud, który gromadzi się na dywaniku nie wchłania się oraz nie chce się go trzymać, więc dywaniki wystarczy wytrzepać i wszystko z nich gładko schodzi, ewentualnie przy dużych zabrudzeniach błota, dywaniki można śmiało umyć myjką ciśnieniowa i w drogę.</p>"
           }
         },
         "text_VPPPMN": {
           "type": "text",
           "settings": {
             "hd": "<p>Floor mat over the tunnel? What is it?</p>",
-            "des": "<p>Evamats mats cover up to 98% of the floor, so we take care of every detail, so the rear tunnel is also covered, ensuring that the floor is always clean.</p>"
+            "des": "<p>Dywaniki Evamats przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta</p>"
           }
         },
         "text_XjTUky": {
           "type": "text",
           "settings": {
-            "hd": "<p>How long will they last?</p>",
-            "des": "<p>EVA material is known for its durability and resistance to wear and tear. It is also used in gyms (as mats under machines) and in shoes (soles). Compared to alternatives, EVA mats handle wear exceptionally well, allowing them to be used for 5-7 years without any signs of wear.</p>"
+            "hd": "<p>Jak długo one posłużą?</p>",
+            "des": "<p>Materiał EVA jest znany ze swojej wytrzymałości i odporności na ścieranie. Używają go również na siłowniach (jako maty pod maszyny) i w butach (podeszwy). W porównaniu do alternatyw, dywaniki EVA radzą sobie fenomenalnie z problemem przecierania się, co pozwala używać je przez 5-7 lat bez śladów użytkowania.</p>"
           }
         },
         "text_e6APUk": {
           "type": "text",
           "settings": {
-            "hd": "<p>Classical and 3D, what's the difference?</p>",
-            "des": "<p>In both sets, we strive to cover the floor in the car as much as possible. Only in the 3D set do we also cover the side upholstery near the floor, and there are more 3D elements (floor profiles) that we consider and use in the production of such mats, making them fit perfectly.</p>"
+            "hd": "<p>Klasyczne i 3D, czym to się różni?</p>",
+            "des": "<p>W obu kompletach staramy się maksymalnie przykryć podłogę w samochodzie, jedynie w komplecie 3D również przykrywamy boczną tapicerkę przy podłodze oraz jest więcej elementów 3D (wyprofilowań na podłodze), które uwzględniamy i stosujemy przy produkcji takich dywaników, przez co przylegają idealnie.</p>"
           }
         },
         "text_exrU7q": {
           "type": "text",
           "settings": {
-            "hd": "<p>What is Eva material?</p>",
-            "des": "<p>It is a foam with a thickness of 10mm and cell depth of 7mm, which allows it to easily retain dirt and water in one place without the possibility of them getting under the mat until we shake it off.</p>"
+            "hd": "<p>Co to jest materiał Eva?</p>",
+            "des": "<p>Jest to pianka o grubości 10mm i głębokością komórek 7mm, co pozwala bez problemu zachować brud i wodę w jednym miejscu bez możliwości przedostawania się ich pod dywanik, aż nie wytrzepiemy go.</p>"
           }
         },
         "text_TqKDiD": {
           "type": "text",
           "settings": {
-            "hd": "<p>Are EVA mats for summer or winter?</p>",
-            "des": "<p>EVA mats are all-season. Practical to use both in winter (they are waterproof, easy to clean, and cover up to 98% of the floor) and in summer (they are odorless, pleasant to the touch, and resistant to deformation under temperature influence).</p>"
+            "hd": "<p>Czy dywaniki EVA są na lato czy na zimę?</p>",
+            "des": "<p>Dywaniki EVA są całoroczne. Praktyczne w użytkowaniu jak zimą (są wodoodporne, łatwe w czyszczeniu i przykrywają do 98% podłogi) tak i latem (są bezzapachowe, przyjemne w dotyku, nie poddają się deformacjom pod wpływem temperatury)</p>"
           }
         },
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
             "hd": "<p>What is the lead time?</p>",
-            "des": "<p>From the moment the order is placed, it takes approximately 2 weeks, as the mats are made to order for the customer. In the case of a very unique vehicle (such as a boat, helicopter, excavator, or tractor), the lead time may extend to 4-6 weeks.</p>"
+            "des": "<p>Od momentu złożenia zamówienia trwa to mniej więcej ok 2 tygodni, z uwagi na to, że dywaniki wykonywane są na bieżąco pod zamówienie klienta. W przypadku jeśli posiadasz bardzo wyjątkowy samochód lub inny pojazd (motorówka, helikopter, koparka lub ciągnik) czas realizacji może się wydłużyć nawet do 4-6 tygodni. </p>"
           }
         },
         "text_dUePyr": {
           "type": "text",
           "settings": {
-            "hd": "<p>What is the delivery method?</p>",
-            "des": "<p>We send the mats directly to the customer's specified address via courier. Due to the dimensions of the product, we do not ship mats to parcel lockers. We aim to ensure that the mats are delivered in the same condition as they were made and to avoid folding or bending them, which could affect their fit.</p>"
+            "hd": "<p>Jaki jest sposób dostawy?</p>",
+            "des": "<p>Dywaniki wysyłamy kurierem bezpośrednio pod wskazany adres klienta. Dywaników nie wysyłamy do paczkomatu ze względów gabarytów produktu. Zależy nam na tym aby dywaniki były dostarczone w takiej formie w jakiej zostały wykonane oraz nie poddać ich składaniu ani załamywaniu co może wpływać na dalsze losy dopasowania.</p>"
           }
         }
       },

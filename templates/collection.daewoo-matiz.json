@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/daewoo"
       }
     },
-    "bcaf9cb5-5087-4643-b420-96c87e0b7ac2": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/daewoo"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/daewoo",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "bcaf9cb5-5087-4643-b420-96c87e0b7ac2",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

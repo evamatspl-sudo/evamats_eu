@@ -22,14 +22,6 @@
         "brand_url": ""
       }
     },
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43": {
-      "type": "mobile-button",
-      "disabled": true,
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/hyundai"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -37,7 +29,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/hyundai",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -181,7 +173,7 @@
         "h3 {color: rgb(var(--color-foreground)); font-size: 3.2rem; letter-spacing: 2px;}"
       ],
       "settings": {
-        "heading_before": "Najpopularniejsze marki",
+        "heading_before": "Nejoblíbenější značky",
         "heading_accent": "",
         "heading_after": "",
         "catalog-header": "",
@@ -191,14 +183,14 @@
     "9f7a6f95-0ca2-45b2-acf7-8ef03ee8e4d0": {
       "type": "home-5",
       "settings": {
-        "btn_text": "All brands",
+        "btn_text": "Vše bras",
         "btn_url": "shopify://pages/dywaniki-samochodowe-eva"
       }
     },
     "a97e9c5e-4380-4363-864d-0f4bfc1c87e3": {
       "type": "featured-collection",
       "settings": {
-        "title": "Bestsellery",
+        "title": "Nejprodávanější",
         "collection": "bestsellerss",
         "products_to_show": 12,
         "show_view_all": true,
@@ -209,7 +201,7 @@
     "98f316f3-e1dc-4e02-a656-d60441148ba0": {
       "type": "featured-collection",
       "settings": {
-        "title": "Akcesoria",
+        "title": "Příslušenství",
         "collection": "akcesoria",
         "products_to_show": 12,
         "show_view_all": true,
@@ -239,7 +231,6 @@
   },
   "order": [
     "banner",
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid",
     "4d52a956-5672-414d-9ffe-0d909c3db8b0",

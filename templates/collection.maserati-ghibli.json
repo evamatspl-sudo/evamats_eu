@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/maserati"
       }
     },
-    "1210864e-2c3f-449a-bcb5-52e60091070c": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/maserati"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/maserati",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "f57ddb91-fa64-4002-b449-4972aeff00d3": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "1210864e-2c3f-449a-bcb5-52e60091070c",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

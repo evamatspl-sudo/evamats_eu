@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/mitsubishi"
       }
     },
-    "2f53063c-4538-4bac-b0a2-0c263d0e6d13": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/mitsubishi"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/mitsubishi",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "2f53063c-4538-4bac-b0a2-0c263d0e6d13",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

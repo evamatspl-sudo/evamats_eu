@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/rolls-royce"
       }
     },
-    "5c0d4053-bed9-4a5b-9d6d-19760d03a10f": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/rolls-royce"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/rolls-royce",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "5c0d4053-bed9-4a5b-9d6d-19760d03a10f",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -1,0 +1,39 @@
+{%- comment -%}
+  Renders list items from a vacancy metaobject single-line text list field.
+
+  @param field {object} e.g. vacancy.your_role_list
+  @param icon_suffix {string} unique suffix for check icon ids
+{%- endcomment -%}
+{%- liquid
+  assign list_items = field.value
+  if list_items == blank and field != blank
+    assign list_items = field
+  endif
+-%}
+{%- if list_items != blank -%}
+  <ul class="evamats-vacancy-role-reqs__list" role="list">
+    {%- for line in list_items -%}
+      {%- assign line_text = line | strip -%}
+      {%- if line_text != blank -%}
+        <li class="evamats-vacancy-role-reqs__item">
+          <span class="evamats-vacancy-role-reqs__item-icon" aria-hidden="true">
+            {% render 'evamats-vacancy-role-check-icon', suffix: icon_suffix | append: '-' | append: forloop.index %}
+          </span>
+          <span class="evamats-vacancy-role-reqs__item-text">
+            {%- if line_text contains ':' -%}
+              {%- assign label_parts = line_text | split: ':' -%}
+              {%- assign item_label = label_parts[0] | strip -%}
+              {%- assign item_body = label_parts | slice: 1 | join: ':' | strip -%}
+              <strong class="evamats-vacancy-role-reqs__item-label">{{ item_label }}:</strong>
+              {%- if item_body != blank -%}
+                {{ ' ' }}{{ item_body | escape }}
+              {%- endif -%}
+            {%- else -%}
+              {{ line_text | escape }}
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

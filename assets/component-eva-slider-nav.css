@@ -1,5 +1,14 @@
 /* Reusable Swiper round prev/next (video reviews, banner slider, o-nas story, etc.) */
 
+.swiper-pagination-bullet {
+  opacity: 1;
+  background: var(--swiper-bullet-bg);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--swiper-bullet-bg-active);
+}
+
 .eva-slider-controls {
   display: flex;
   align-items: center;
@@ -22,13 +31,10 @@
   width: 8px;
   height: 8px;
   margin: 0 !important;
-  opacity: 1;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
 }
 
 .eva-slider-controls__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
-  background: var(--color-accent-red, #ff2741);
   transform: scale(1.05);
 }
 

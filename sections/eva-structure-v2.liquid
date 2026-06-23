@@ -56,13 +56,13 @@
       "type": "text",
       "id": "heading_desktop",
       "label": "Heading (desktop)",
-      "default": "Jak działa struktura EVA — i dlaczego to robi różnicę"
+      "default": "Jak funguje struktura EVA — a proč to dělá rozdíl"
     },
     {
       "type": "text",
       "id": "heading_mobile",
       "label": "Heading (mobile)",
-      "default": "Dlaczego EVA to materiał, który zmienia komfort jazdy?"
+      "default": "Proč je EVA materiál, který mění komfort jízdy?"
     },
     {
       "type": "range",
@@ -90,12 +90,16 @@
       "type": "card",
       "name": "Card",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
         {
           "type": "text",
           "id": "caption",
           "label": "Caption",
-          "default": "Zatrzymuje brud w komórkach"
+          "default": "Zachytává nečistoty v buňkách"
         }
       ]
     }
@@ -105,9 +109,24 @@
       "name": "EVA structure v2",
       "category": "V2",
       "blocks": [
-        { "type": "card", "settings": { "caption": "Zatrzymuje brud w komórkach" } },
-        { "type": "card", "settings": { "caption": "Nie pozwala mu się rozprzestrzeniać" } },
-        { "type": "card", "settings": { "caption": "Nie chłonie wilgoci" } }
+        {
+          "type": "card",
+          "settings": {
+            "caption": "Zachytává nečistoty v buňkách"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "caption": "Nie pozwala mu się rozprzestrzeniać"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "caption": "Nie chłonie wilgoci"
+          }
+        }
       ]
     }
   ]

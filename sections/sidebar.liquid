@@ -51,56 +51,54 @@ function closeNav() {
 
 {% schema %}
 {
-"name": "Sidebar",
-"max_blocks": 50,
-"settings": [
-   {
-     "type": "text",
-     "id": "collection-color-table-header",
-     "label": "Heading"
-   },
-   {
-     "type": "text",
-     "id": "collection-catalog-header",
-     "label": "Heading Catalog"
-   },
-  {
-     "type": "text",
-     "id": "txt-buttons",
-     "label": "Text button",
-     "default":"Wybierz model"
-   },
-   {
-     "type": "checkbox",
-     "id": "collection-margin-bottom",
-     "label": "Bottom indent",
-     "default": false
-   }
-],
-"blocks" : [
+  "name": "Sidebar",
+  "max_blocks": 50,
+  "settings": [
     {
-    "type": "section",
-    "name": "Brand Auto",
-    "settings": [
-        
-      {
-           "type": "url",
-           "id": "product-link",
-           "label": "Marki Link"
-         },
-         {
-           "type": "text",
-           "id": "color-code",
-           "label": "Name"
-         }
-    ]
-  }
-],
+      "type": "text",
+      "id": "collection-color-table-header",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "collection-catalog-header",
+      "label": "Heading Catalog"
+    },
+    {
+      "type": "text",
+      "id": "txt-buttons",
+      "label": "Text button",
+      "default": "Wybierz model"
+    },
+    {
+      "type": "checkbox",
+      "id": "collection-margin-bottom",
+      "label": "Bottom indent",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "name": "Brand Auto",
+      "settings": [
+        {
+          "type": "url",
+          "id": "product-link",
+          "label": "Marki Link"
+        },
+        {
+          "type": "text",
+          "id": "color-code",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
   "presets": [
-  {
-    "name":  "Sidebar"
-  }
-]
+    {
+      "name": "Sidebar"
+    }
+  ]
 }
-
 {% endschema %}

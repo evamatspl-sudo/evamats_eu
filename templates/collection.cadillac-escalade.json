@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/cadillac"
       }
     },
-    "ec4408e2-c61a-4b40-a1d4-6da143a8a9fc": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/cadillac"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/cadillac",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "ec4408e2-c61a-4b40-a1d4-6da143a8a9fc",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

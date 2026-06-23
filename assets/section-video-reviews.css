@@ -16,7 +16,7 @@
 .video_reviews__title {
   max-width: 550px;
   margin: 0;
-  font-size: 46px;
+  font-size: 38px;
 }
 
 .video_reviews__title-accent {
@@ -236,6 +236,9 @@
 }
 
 @media screen and (max-width: 749px) {
+  .video_reviews .page-width {
+    padding: 0;
+  }
   .video_reviews__head {
     justify-content: center;
     margin-bottom: 34px;

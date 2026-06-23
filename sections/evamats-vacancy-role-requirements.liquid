@@ -1,0 +1,219 @@
+{%- assign vacancy = article.metafields.custom.vacancy.value -%}
+{%- if vacancy != blank -%}
+  {%- liquid
+    assign role_items = vacancy.your_role_list.value
+    if role_items == blank and vacancy.your_role_list != blank
+      assign role_items = vacancy.your_role_list
+    endif
+
+    assign req_items = vacancy.responsibilities_list.value
+    if req_items == blank and vacancy.responsibilities_list != blank
+      assign req_items = vacancy.responsibilities_list
+    endif
+
+    assign has_role = false
+    if role_items != blank
+      assign has_role = true
+    endif
+
+    assign has_req = false
+    if req_items != blank
+      assign has_req = true
+    endif
+
+    assign icon_suffix = article.id | append: '-' | append: section.id
+    assign panel_role_label = section.settings.role_panel_title | default: 'Čím se budete zabývat'
+    assign panel_req_label = section.settings.requirements_panel_title | default: 'Co očekáváme'
+    assign tab_role_label = section.settings.tab_role_label | default: 'Vaše role'
+    assign tab_req_label = section.settings.tab_requirements_label | default: 'Požadavky'
+  -%}
+
+  {%- if has_role or has_req -%}
+    <section
+      id="EvamatsVacancyRoleReqs-{{ section.id }}"
+      class="evamats-vacancy-role-reqs"
+      data-evamats-vacancy-role-reqs
+      data-active-panel="{% if has_role %}role{% else %}requirements{% endif %}"
+    >
+      <div class="evamats-vacancy-role-reqs__inner page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="evamats-vacancy-role-reqs__heading section_title">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if has_role and has_req -%}
+          <div
+            class="evamats-vacancy-role-reqs__tabs"
+            role="tablist"
+            aria-label="{{ section.settings.tabs_aria_label | escape }}"
+          >
+            <button
+              type="button"
+              class="evamats-vacancy-role-reqs__tab is-active"
+              role="tab"
+              id="EvamatsVacancyRoleReqs-tab-role-{{ section.id }}"
+              aria-selected="true"
+              aria-controls="EvamatsVacancyRoleReqs-panel-role-{{ section.id }}"
+              data-panel="role"
+            >
+              {{ tab_role_label | escape }}
+            </button>
+            <button
+              type="button"
+              class="evamats-vacancy-role-reqs__tab"
+              role="tab"
+              id="EvamatsVacancyRoleReqs-tab-req-{{ section.id }}"
+              aria-selected="false"
+              aria-controls="EvamatsVacancyRoleReqs-panel-req-{{ section.id }}"
+              data-panel="requirements"
+              tabindex="-1"
+            >
+              {{ tab_req_label | escape }}
+            </button>
+          </div>
+        {%- endif -%}
+
+        <div class="evamats-vacancy-role-reqs__panels">
+          {%- if has_role -%}
+            <article
+              class="evamats-vacancy-role-reqs__panel evamats-vacancy-role-reqs__panel--role is-active"
+              id="EvamatsVacancyRoleReqs-panel-role-{{ section.id }}"
+              role="tabpanel"
+              aria-labelledby="EvamatsVacancyRoleReqs-tab-role-{{ section.id }}"
+              data-panel="role"
+            >
+              <header class="evamats-vacancy-role-reqs__panel-head">
+                <span class="evamats-vacancy-role-reqs__panel-icon evamats-vacancy-role-reqs__panel-icon--briefcase" aria-hidden="true">
+                  {% render 'evamats-vacancy-briefcase-icon', suffix: icon_suffix | append: '-role-head' %}
+                </span>
+                <h3 class="evamats-vacancy-role-reqs__panel-title">{{ panel_role_label | escape }}</h3>
+              </header>
+              {% render 'evamats-vacancy-role-list-items', field: vacancy.your_role_list, icon_suffix: icon_suffix | append: '-role' %}
+            </article>
+          {%- endif -%}
+
+          {%- if has_req -%}
+            <article
+              class="evamats-vacancy-role-reqs__panel evamats-vacancy-role-reqs__panel--requirements{% unless has_role %} is-active{% endunless %}"
+              id="EvamatsVacancyRoleReqs-panel-req-{{ section.id }}"
+              role="tabpanel"
+              aria-labelledby="EvamatsVacancyRoleReqs-tab-req-{{ section.id }}"
+              data-panel="requirements"
+            >
+              <header class="evamats-vacancy-role-reqs__panel-head">
+                <span class="evamats-vacancy-role-reqs__panel-icon evamats-vacancy-role-reqs__panel-icon--target" aria-hidden="true">
+                  {% render 'evamats-vacancy-target-icon', suffix: icon_suffix | append: '-req-head' %}
+                </span>
+                <h3 class="evamats-vacancy-role-reqs__panel-title">{{ panel_req_label | escape }}</h3>
+              </header>
+              {% render 'evamats-vacancy-role-list-items', field: vacancy.responsibilities_list, icon_suffix: icon_suffix | append: '-req' %}
+            </article>
+          {%- endif -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endif -%}
+
+<script>
+  (function () {
+    var root = document.getElementById('EvamatsVacancyRoleReqs-{{ section.id }}');
+    if (!root) return;
+
+    var mq = window.matchMedia('(max-width: 749px)');
+    var tabs = root.querySelectorAll('.evamats-vacancy-role-reqs__tab');
+    var panels = root.querySelectorAll('.evamats-vacancy-role-reqs__panel');
+
+    if (!tabs.length) return;
+
+    function setPanel(name) {
+      root.setAttribute('data-active-panel', name);
+
+      tabs.forEach(function (tab) {
+        var on = tab.getAttribute('data-panel') === name;
+        tab.classList.toggle('is-active', on);
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+      });
+
+      panels.forEach(function (panel) {
+        var on = panel.getAttribute('data-panel') === name;
+        panel.classList.toggle('is-active', on);
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        setPanel(tab.getAttribute('data-panel') || 'role');
+      });
+    });
+
+    function onBreakpointChange() {
+      setPanel(root.getAttribute('data-active-panel') || 'role');
+    }
+
+    mq.addEventListener('change', onBreakpointChange);
+    onBreakpointChange();
+  })();
+</script>
+
+{% comment %} styles moved to assets/base.css (stylesheet) {% endcomment %}
+
+{% schema %}
+{
+  "name": "EVAMATS role & reqs",
+  "tag": "section",
+  "class": "section-evamats-vacancy-role-requirements",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Vaše role a naše požadavky"
+    },
+    {
+      "type": "text",
+      "id": "role_panel_title",
+      "label": "Role column title",
+      "default": "Čím se budete zabývat"
+    },
+    {
+      "type": "text",
+      "id": "requirements_panel_title",
+      "label": "Requirements column title",
+      "default": "Co očekáváme"
+    },
+    {
+      "type": "header",
+      "content": "Mobile tabs"
+    },
+    {
+      "type": "text",
+      "id": "tab_role_label",
+      "label": "Tab: role",
+      "default": "Vaše role"
+    },
+    {
+      "type": "text",
+      "id": "tab_requirements_label",
+      "label": "Tab: requirements",
+      "default": "Požadavky"
+    },
+    {
+      "type": "text",
+      "id": "tabs_aria_label",
+      "label": "Tabs aria label",
+      "default": "Vaše role a požadavky"
+    },
+    {
+      "type": "paragraph",
+      "content": "List items are read from the vacancy metaobject fields your_role_list and responsibilities_list (single-line text list). Each line may use “Label: description” — the part before the colon is shown bold."
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVAMATS role & reqs",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

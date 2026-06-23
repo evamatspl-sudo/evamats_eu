@@ -3,7 +3,7 @@
   assign image_2 = section.settings.image_2
 -%}
 
-<divclass="problem-points-v2">
+<div class="problem-points-v2">
   <div class="problem-points-v2__inner">
     <h2 class="problem-points-v2__title section_title">{{ section.settings.title }}</h2>
     <div class="problem-points-v2__subtitle body-m">{{ section.settings.subtitle }}</div>
@@ -54,11 +54,34 @@
   "name": "Problem Points v2",
   "tag": "section",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Dlaczego większość kierowców nigdy nie ma naprawdę czystego wnętrza?" },
-    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "default": "<p>Nie dlatego, że nie sprzątają. 👉 Tylko dlatego, że używają złego rozwiązania.</p>" },
-    { "type": "image_picker", "id": "image_1", "label": "Image 1" },
-    { "type": "image_picker", "id": "image_2", "label": "Image 2" },
-    { "type": "richtext", "id": "bottom_text", "label": "Bottom text", "default": "<p>Dlatego nawet po czyszczeniu auto nigdy nie jest naprawdę świeże.</p>" }
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Proč většina řidičů nikdy nemá opravdu čistý interiér?"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Ne proto, že by neuklízeli. 👉 Jen proto, že používají špatné řešení.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_text",
+      "label": "Bottom text",
+      "default": "<p>Proto ani po umytí auto nikdy není opravdu svěží.</p>"
+    }
   ],
   "blocks": [
     {
@@ -71,13 +94,27 @@
           "id": "icon",
           "label": "Icon",
           "options": [
-            { "value": "moisture", "label": "Moisture" },
-            { "value": "dirt", "label": "Dirt" },
-            { "value": "odor", "label": "Odor" }
+            {
+              "value": "moisture",
+              "label": "Moisture"
+            },
+            {
+              "value": "dirt",
+              "label": "Dirt"
+            },
+            {
+              "value": "odor",
+              "label": "Odor"
+            }
           ],
           "default": "moisture"
         },
-        { "type": "text", "id": "text", "label": "Text", "default": "Zatrzymują wilgoć w środku" }
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Zadržují vlhkost uvnitř"
+        }
       ]
     }
   ],
@@ -86,9 +123,27 @@
       "name": "Problem Points v2",
       "category": "V2",
       "blocks": [
-        { "type": "point", "settings": { "icon": "moisture", "text": "Zatrzymują wilgoć w środku" } },
-        { "type": "point", "settings": { "icon": "dirt", "text": "Wcierają brud głębiej w materiał" } },
-        { "type": "point", "settings": { "icon": "odor", "text": "Z czasem zaczynają wydzielać zapach" } }
+        {
+          "type": "point",
+          "settings": {
+            "icon": "moisture",
+            "text": "Zadržují vlhkost uvnitř"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "dirt",
+            "text": "Vtírají nečistoty hlouběji do materiálu"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "odor",
+            "text": "Časem začnou zapáchat"
+          }
+        }
       ]
     }
   ]

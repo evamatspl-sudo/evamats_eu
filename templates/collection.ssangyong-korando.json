@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/ssangyong"
       }
     },
-    "5a79498d-0d05-4168-9833-3b4039ac3cf9": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/ssangyong"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/ssangyong",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "9164e0a6-d9a9-47d2-b569-0ea018265944": {
@@ -43,7 +36,7 @@
           "disabled": true,
           "settings": {
             "product-link": "shopify://collections/ssangyong-korando",
-            "color-code": "Korando"
+            "color-code": "Korao"
           }
         }
       },
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "5a79498d-0d05-4168-9833-3b4039ac3cf9",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

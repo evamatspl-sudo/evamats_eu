@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/dacia"
       }
     },
-    "1f5b246c-3c7f-4ea2-b591-1700f6e49aea": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/dacia"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/dacia",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "b4a570b7-270a-4c7f-b5f2-dd247a69cafb": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "1f5b246c-3c7f-4ea2-b591-1700f6e49aea",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

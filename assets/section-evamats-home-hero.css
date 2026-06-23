@@ -59,8 +59,6 @@
 
 .evamats-home-hero {
   position: relative;
-  overflow: hidden;
-  height: 100vh;
   color: #fff;
 }
 
@@ -93,9 +91,9 @@
 }
 
 .evamats-home-hero__heading {
-  margin: 0 0 61px;
+  margin: 0 0 40px;
   max-width: 990px;
-  font-size: 72px;
+  font-size: 56px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;

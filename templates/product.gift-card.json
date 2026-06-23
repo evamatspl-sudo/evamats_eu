@@ -28,7 +28,7 @@
             "info_text_individual": "",
             "info_html": "",
             "info_html_individual": "",
-            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours and add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm and send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
+            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours a add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm a send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
             "auto_open_individual_welcome_popup": true
           }
         },
@@ -91,10 +91,10 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "trunk_message": "<p>Note – trunk mat:</p><p>Up to 140x240 cm – from one part ✅</p><p>Up to 150x250 cm – from two parts ✅</p><p>Above 280 cm in length – we do not make ❌</p><p>ℹ️ In case of doubt, please contact the sales department.</p>",
-        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br><br>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br><br></p>",
+        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br><br>In this vehicle model the trunk floor is flat a has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br><br></p>",
         "gallery_disclaimer": "The photo may differ from the final result. When ordering, you will receive mats that correspond to your car model.",
         "padding_top": 36,
         "padding_bottom": 12
@@ -106,7 +106,7 @@
         "tab_description": {
           "type": "tab",
           "settings": {
-            "title": "Description",
+            "title": "Popis",
             "id": "description",
             "html": ""
           }
@@ -114,17 +114,17 @@
         "tab_redeem": {
           "type": "tab",
           "settings": {
-            "title": "How to redeem",
+            "title": "Jak uplatnit",
             "id": "tech",
-            "html": "<h3><strong>Option 1: EVAMATS e-voucher</strong></h3>\n<ol>\n<li>\n<strong>Delivery:</strong> After your order is paid, we email you a PDF e-voucher.</li>\n<li>\n<strong>Gifting:</strong> Print it or send it digitally to the recipient. 📲</li>\n<li>\n<strong>Redemption:</strong> They configure products on the site and enter the unique code at checkout in the <strong>“Discount code”</strong> field.</li>\n</ol>\n<p><em>* The code is single-use and tied to one purchase.</em></p>\n\n<h3><strong>Option 2: Physical gift card</strong></h3>\n<ol>\n<li>\n<strong>Delivery:</strong> We ship the card by courier. Each card is pre-loaded with an active code.</li>\n<li>\n<strong>Ready to give:</strong> Packaged and ready—no activation needed. 🎀</li>\n<li>\n<strong>Redemption:</strong> Same as online—enter the code in the <strong>“Discount code”</strong> field to reduce the cart total.</li>\n</ol>\n<p><em>* The code is single-use.</em></p>"
+            "html": "<h3><strong>Varianta 1: EVAMATS e-voucher</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Po zaplacení objednávky vám zašleme PDF e-voucher e-mailem.</li>\n<li>\n<strong>Dárkové předání:</strong> Vytiskněte ho nebo pošlete příjemci digitálně. 📲</li>\n<li>\n<strong>Uplatnění:</strong> Na webu si nakonfiguruje produkty a při pokladně zadá unikátní kód do pole <strong>„Slevový kód“</strong>.</li>\n</ol>\n<p><em>* Kód je jednorázový a vázaný na jeden nákup.</em></p>\n\n<h3><strong>Varianta 2: Fyzická dárková karta</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Kartu odesíláme kurýrem. Každá karta má předem aktivovaný kód.</li>\n<li>\n<strong>Připraveno k darování:</strong> Zabalená a připravená — bez aktivace. 🎀</li>\n<li>\n<strong>Uplatnění:</strong> Stejně jako online — zadejte kód do pole <strong>„Slevový kód“</strong> a snížíte celkovou částku košíku.</li>\n</ol>\n<p><em>* Kód je jednorázový.</em></p>"
           }
         },
         "tab_delivery": {
           "type": "tab",
           "settings": {
-            "title": "Delivery & returns",
+            "title": "Doprava a vrácení",
             "id": "delivery",
-            "html": "<h2><strong>Delivery 🚚</strong></h2>\n<p><strong>EVAMATS e-voucher:</strong></p>\n<p>We send your e-voucher as soon as payment is confirmed. The digital format means you get it quickly—no waiting on shipping. ⚡</p>\n<p><strong>Physical gift card:</strong></p>\n<p>We prepare and dispatch physical cards within 24 hours (business days) after payment. Your parcel arrives ready to gift. 📨</p>\n\n<h2><strong>Validity 📅</strong></h2>\n<p>EVAMATS gift cards (e-vouchers and physical cards alike) are valid for <strong>12 months from the date of purchase</strong>. After this period, the unique code expires and cannot be redeemed. We recommend the recipient use it within the validity window to enjoy the full value.</p>\n\n<h2><strong>Returns &amp; conditions 🔄</strong></h2>\n<p>For both e-vouchers and physical cards, you may return within <strong>14 days</strong> of purchase, provided the unique code has not been used. Cards cannot be exchanged for cash and the value must be used in a single order.</p>"
+            "html": "<h2><strong>Doprava 🚚</strong></h2>\n<p><strong>EVAMATS e-voucher:</strong></p>\n<p>E-voucher odesíláme ihned po potvrzení platby. Digitální forma znamená rychlé doručení — bez čekání na zásilku. ⚡</p>\n<p><strong>Fyzická dárková karta:</strong></p>\n<p>Fyzické karty odesíláme do 24 hodin (pracovní dny) po platbě. Balíček dorazí připravený k darování. 📨</p>\n\n<h2><strong>Platnost 📅</strong></h2>\n<p>Dárkové karty EVAMATS (e-vouchery i fyzické karty) jsou platné <strong>12 měsíců od data nákupu</strong>. Po uplynutí této doby kód vyprší a nelze ho uplatnit. Doporučujeme příjemci využít hodnotu v rámci platnosti.</p>\n\n<h2><strong>Vrácení a podmínky 🔄</strong></h2>\n<p>U e-voucherů i fyzických karet můžete vrátit zboží do <strong>14 dnů</strong> od nákupu, pokud unikátní kód nebyl použit. Karty nelze vyměnit za hotovost a hodnotu je třeba uplatnit v jedné objednávce.</p>"
           }
         }
       },
@@ -133,29 +133,29 @@
         "tab_redeem",
         "tab_delivery"
       ],
-      "name": "Product tabs",
+      "name": "Produkt tabs",
       "settings": {
         "about_heading_before": "Original",
         "about_heading_brand": "EVAMATS",
         "about_heading_after": "car mats — modern interior protection",
-        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, and water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sand, water) deep within the material, keeping the surface around them dry and clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, and edging to perfectly match your car's interior.</p>",
-        "about_features_heading": "What makes our car mats stand out?",
+        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, a water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sa, water) deep within the material, keeping the surface around them dry a clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, a edging to perfectly match your car's interior.</p>",
+        "about_features_heading": "What makes our car mats sta out?",
         "about_feature_1_text": "100% waterproof — no leaks",
         "about_feature_2_text": "Covers up to 95% of the floor surface",
         "about_feature_3_text": "Easy to clean — simply shake out or rinse",
         "about_feature_4_text": "Suitable for all seasons: from −50°C to +50°C",
-        "about_feature_5_text": "Safe for health and the environment — toxin-free and recyclable",
+        "about_feature_5_text": "Safe for health a the environment — toxin-free a recyclable",
         "about_confidence_heading": "Shop with confidence",
         "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
         "about_confidence_2_text": "Security — encrypted payments, trusted couriers",
-        "about_confidence_3_text": "Made in Poland — local production, fast delivery",
+        "about_confidence_3_text": "Made in Polsko — local production, fast delivery",
         "gift_card_cta_label": "Buy card",
-        "gift_card_item_1_description": "A set of dedicated front mats without edges, complete with an EVA material heel pad. The perfect combination of functionality and elegance! 🏎️",
+        "gift_card_item_1_description": "A set of dedicated front mats without edges, complete with an EVA materiál EVA heel pad. The perfect combination of functionality a elegance! 🏎️",
         "gift_card_item_1_image": "shopify://shop_images/Group_1948754940.webp",
-        "gift_card_item_2_description": "Front and rear mats without edges, ensuring comfort and aesthetics in every detail. 🌟 (Front mats with edges are also available for this price!)",
-        "gift_card_item_3_description": "Front and rear mats without edges, enriched with additional accessories for full protection and style. 💼 (Front mats with edges are also available for this price!)",
-        "gift_card_item_4_description": "A full set of mats without edges, including trunk mats, ideal for a 5-seater car. (Possibility to buy front and rear mats with edges at the same price!)",
-        "gift_card_item_5_description": "A full set of 3D mats with edges for a 5-seater and accessories that will ensure excellent protection and interior appearance. ✨"
+        "gift_card_item_2_description": "Front a rear mats without edges, ensuring comfort a aesthetics in every detail. 🌟 (Front mats with edges are also available for this price!)",
+        "gift_card_item_3_description": "Front a rear mats without edges, enriched with additional accessories for full protection a style. 💼 (Front mats with edges are also available for this price!)",
+        "gift_card_item_4_description": "A full set of mats without edges, including trunk mats, ideal for a 5-seater car. (Possibility to buy front a rear mats with edges at the same price!)",
+        "gift_card_item_5_description": "A full set of 3D mats with edges for a 5-seater a accessories that will ensure excellent protection a interior appearance. ✨"
       }
     },
     "080cd113-d353-46cb-aa5d-cfdeee68c912": {

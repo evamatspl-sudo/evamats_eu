@@ -162,116 +162,116 @@
 </script>
 
 {% schema %}
+{
+  "name": "Custom Reviews",
+  "settings": [
     {
-        "name": "Custom Reviews",
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Title",
-                "default": "Title"
-            },
-            {
-                "type": "range",
-                "id": "rating",
-                "min": 4,
-                "max": 5,
-                "step": 0.1,
-                "label": "Rating",
-                "default": 4.7
-            },
-            {
-                "type": "text",
-                "id": "block_title",
-                "label": "Block Title",
-                "default": "EVAMATS Dywaniki samochodowe"
-            },
-            {
-                "type": "image_picker",
-                "id": "block_image",
-                "label": "Block Image"
-            },
-            {
-                "type": "text",
-                "id": "reviews_count",
-                "label": "Reviews Count",
-                "default": "2395 reviews on Google"
-            }
-        ],
-        "blocks": [
-            {
-                "type": "item",
-                "name": "Item",
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "name",
-                        "label": "Name",
-                        "default": "Name"
-                    },
-                    {
-                        "type": "text",
-                        "id": "date",
-                        "label": "Date",
-                        "default": "2 days ago"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "user_image",
-                        "label": "User image"
-                    },
-                    {
-                        "type": "range",
-                        "id": "rating",
-                        "min": 4,
-                        "max": 5,
-                        "step": 0.1,
-                        "label": "Rating",
-                        "default": 5
-                    },
-                    {
-                        "type": "textarea",
-                        "id": "text",
-                        "label": "Text"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image1",
-                        "label": "Image 1"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image2",
-                        "label": "Image 2"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image3",
-                        "label": "Image 3"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image4",
-                        "label": "Image 4"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image5",
-                        "label": "Image 5"
-                    },
-                    {
-                        "type": "image_picker",
-                        "id": "image6",
-                        "label": "Image 6"
-                    }
-                ]
-            },
-        ],
-        "presets": [
-            {
-                "name": "Custom Reviews",
-                "category": "Custom"
-            }
-        ]        
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Název"
+    },
+    {
+      "type": "range",
+      "id": "rating",
+      "min": 4,
+      "max": 5,
+      "step": 0.1,
+      "label": "Rating",
+      "default": 4.7
+    },
+    {
+      "type": "text",
+      "id": "block_title",
+      "label": "Block Title",
+      "default": "EVAMATS Dywaniki samochodowe"
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "Block Image"
+    },
+    {
+      "type": "text",
+      "id": "reviews_count",
+      "label": "Reviews Count",
+      "default": "2395 reviews on Google"
     }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "2 days ago"
+        },
+        {
+          "type": "image_picker",
+          "id": "user_image",
+          "label": "User image"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 4,
+          "max": 5,
+          "step": 0.1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image6",
+          "label": "Image 6"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Reviews",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}

@@ -1,4 +1,4 @@
-<divclass="mobile">
+<div class="mobile">
 {% if section.settings.back-to-top-button-enabled %}
 <button id="back-to-top-button" type="button" class="{{ section.settings.back-to-top-button-position }}" title="{{ section.settings.btn_text | escape }}">
   {% if section.settings.html != blank %}
@@ -98,68 +98,68 @@ backToTopFunction();
 
 {% schema %}
 {
-    "name": "Scroll To Top Button",
-    "settings": [
-        {
-            "type": "checkbox",
-            "id": "back-to-top-button-enabled",
-            "default": true,
-            "label": "Enable the back-to-top button"
-        },
-        {
-            "type":  "checkbox",
-            "id": "smooth-scroll-enabled",
-            "default": true,
-            "label": "Enable smooth scrolling for browsers that support it"
-        },
-      {
-            "type":"text",
-            "label":"Button Text",
-            "id":"btn_text",
-            "default":"Do góry"
-        },
-        {
-          "type": "html",
-          "id": "html",
-          "label": "Html"
-        },
-        {
-            "type": "color",
-            "id": "button-color",
-            "default": "#ffffff",
-            "label": "Button Color"
-            },
-        {
-            "type": "color",
-            "id": "text-color",
-            "default": "#000101",
-            "label": "Text / icon color"
-            },
+  "name": "Scroll To Top Button",
+  "settings": [
     {
-    "type": "select",
-    "id": "back-to-top-button-position",
-    "label": "Back-to-Top Button Position",
-    "options": [
-        {
-            "value": "bottom-left",
-            "label": "Bottom Left"
+      "type": "checkbox",
+      "id": "back-to-top-button-enabled",
+      "default": true,
+      "label": "Enable the back-to-top button"
     },
     {
-            "value": "bottom-center",
-            "label": "Bottom Center"
+      "type": "checkbox",
+      "id": "smooth-scroll-enabled",
+      "default": true,
+      "label": "Enable smooth scrolling for browsers that support it"
     },
     {
-            "value": "bottom-right",
-            "label": "Bottom Right"
-    }
-    ],
-    "default": "bottom-center"
-    }
-],
-  "presets":[
+      "type": "text",
+      "label": "Button Text",
+      "id": "btn_text",
+      "default": "Nahoru"
+    },
     {
-      "name":"Scroll to Top Button",
-      "category":"custom"
+      "type": "html",
+      "id": "html",
+      "label": "Html"
+    },
+    {
+      "type": "color",
+      "id": "button-color",
+      "default": "#ffffff",
+      "label": "Button Color"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "default": "#000101",
+      "label": "Text / icon color"
+    },
+    {
+      "type": "select",
+      "id": "back-to-top-button-position",
+      "label": "Back-to-Top Button Position",
+      "options": [
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "bottom-center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll to Top Button",
+      "category": "custom"
     }
   ]
 }

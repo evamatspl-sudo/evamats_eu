@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/dodge"
       }
     },
-    "2da49abd-b466-4942-a10c-fcd103129625": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/dodge"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/dodge",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "2da49abd-b466-4942-a10c-fcd103129625",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

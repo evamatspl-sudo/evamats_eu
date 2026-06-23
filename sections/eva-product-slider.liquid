@@ -70,7 +70,7 @@
 
                 <div class="eva-product__gallery{% if product_ref.metafields.custom.body_type != blank and product_ref.metafields.custom.body_type != 'corners' %} eva-product__gallery--mats{% endif %}">
                     {% if product_ref.metafields.custom.body_type != blank and product_ref.metafields.custom.body_type != 'corners' %}
-                        {% render 'evamats-product-mats-gallery', product: product_ref %}
+                        {% render 'evamats-product-mats-gallery', product: product_ref, section: section, single_gallery: true %}
                     {% else %}
                         <script src="{{ 'eva-product-slider.js' | asset_url }}" defer></script>
 
@@ -166,7 +166,7 @@
 
 {% schema %}
 {
-  "name": "EVA Product Slider",
+  "name": "EVA product slider",
   "settings": [
     {
       "type": "color",
@@ -200,7 +200,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button text",
-      "default": "ZOBACZ PRODUKT"
+      "default": "ZOBRAZIT PRODUKT"
     },
     {
       "type": "header",
@@ -211,10 +211,22 @@
       "id": "gallery_layout",
       "label": "Gallery layout",
       "options": [
-        { "value": "thumbnail_slider", "label": "Thumbnail slider" },
-        { "value": "thumbnail", "label": "Thumbnail" },
-        { "value": "stacked", "label": "Stacked" },
-        { "value": "columns", "label": "Columns" }
+        {
+          "value": "thumbnail_slider",
+          "label": "Thumbnail slider"
+        },
+        {
+          "value": "thumbnail",
+          "label": "Thumbnail"
+        },
+        {
+          "value": "stacked",
+          "label": "Stacked"
+        },
+        {
+          "value": "columns",
+          "label": "Columns"
+        }
       ],
       "default": "thumbnail_slider"
     },
@@ -223,9 +235,18 @@
       "id": "mobile_thumbnails",
       "label": "Mobile thumbnails",
       "options": [
-        { "value": "show", "label": "Show" },
-        { "value": "hide", "label": "Hide" },
-        { "value": "columns", "label": "Columns" }
+        {
+          "value": "show",
+          "label": "Show"
+        },
+        {
+          "value": "hide",
+          "label": "Hide"
+        },
+        {
+          "value": "columns",
+          "label": "Columns"
+        }
       ],
       "default": "show"
     },
@@ -234,9 +255,18 @@
       "id": "media_size",
       "label": "Media size",
       "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
       ],
       "default": "small"
     },
@@ -245,8 +275,14 @@
       "id": "media_fit",
       "label": "Media fit",
       "options": [
-        { "value": "contain", "label": "Contain" },
-        { "value": "cover", "label": "Cover" }
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
       ],
       "default": "contain"
     },
@@ -315,7 +351,7 @@
   ],
   "presets": [
     {
-      "name": "EVA Product Slider"
+      "name": "EVA product slider"
     }
   ]
 }

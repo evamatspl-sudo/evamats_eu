@@ -57,108 +57,108 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Image collage",
-    "settings": [
+{
+  "name": "Image collage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "OBJEDNAT"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "centered",
+      "label": "Centered",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "small",
+      "label": "Small",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Padding desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
         {
-            "type": "text",
-            "id": "header",
-            "label": "Header"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-            "type": "text",
-            "id": "button_text",
-            "label": "Button text",
-            "default": "ZAMÓW"
-        },
-        {
-            "type": "text",
-            "id": "button_link",
-            "label": "Button link"
-        },
-        {
-            "type": "checkbox",
-            "id": "centered",
-            "label": "Centered",
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "small",
-            "label": "Small",
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": "Padding mobile"
-        },
-        {
-            "type": "range",
-            "id": "padding_top_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
-        },
-        {
-            "type": "header",
-            "content": "Padding desktop"
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 80
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
+          "type": "url",
+          "id": "url",
+          "label": "Url"
         }
-    ],
-    "blocks": [
-        {
-            "name": "Image",
-            "type": "image",
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-                },
-                {
-                    "type": "url",
-                    "id": "url",
-                    "label": "Url"
-                }
-            ]
-        }
-    ],
-    "presets": [
-      {
-        "name": "Image collage"
-      }
-    ]
-  }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image collage"
+    }
+  ]
+}
 {% endschema %}

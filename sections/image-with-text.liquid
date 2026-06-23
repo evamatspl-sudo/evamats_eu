@@ -75,21 +75,24 @@
 
 {% schema %}
 {
-  "name": "Image with text",
+  "name": "t:sections.image-with-text.name",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": [
+      "header",
+      "footer"
+    ]
   },
   "settings": [
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "t:sections.image-with-text.settings.image.label"
     },
     {
       "type": "image_picker",
       "id": "image_2",
-      "label": "Second image"
+      "label": "t:sections.image-with-text.settings.image_2.label"
     },
     {
       "type": "select",
@@ -97,15 +100,15 @@
       "options": [
         {
           "value": "image_first",
-          "label": "Image first"
+          "label": "t:sections.image-with-text.settings.layout.options__1.label"
         },
         {
           "value": "text_first",
-          "label": "Text first"
+          "label": "t:sections.image-with-text.settings.layout.options__2.label"
         }
       ],
       "default": "image_first",
-      "label": "Layout"
+      "label": "t:sections.image-with-text.settings.layout.label"
     },
     {
       "type": "header",
@@ -142,7 +145,7 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "label": "Padding top",
+      "label": "t:sections.all.padding.padding_top",
       "default": 80
     },
     {
@@ -152,41 +155,41 @@
       "max": 120,
       "step": 4,
       "unit": "px",
-      "label": "Padding bottom",
+      "label": "t:sections.all.padding.padding_bottom",
       "default": 8
     }
   ],
   "blocks": [
     {
       "type": "heading",
-      "name": "Heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "heading",
-          "default": "1. Image with text",
-          "label": "Heading"
+          "default": "Obrázek s textem",
+          "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
         }
       ]
     },
     {
       "type": "text",
-      "name": "Text",
+      "name": "t:sections.image-with-text.blocks.text.name",
       "limit": 1,
       "settings": [
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.</p>",
-          "label": "Text"
+          "default": "<p>Spojte text s obrázkem a zdůrazněte vybraný produkt, kolekci nebo příspěvek na blogu.</p>",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Image with text",
+      "name": "t:sections.image-with-text.presets.name",
       "blocks": [
         {
           "type": "heading"

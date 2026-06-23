@@ -42,128 +42,126 @@
 
   
 {% schema %}
-  
 {
-"name": "Brand Car",
-"max_blocks": 50,
-"settings": [
-   {
-     "type": "text",
-     "id": "heading_before",
-     "label": "Heading — before accent",
-     "default": "Car mats designed to fit over "
-   },
-   {
-     "type": "text",
-     "id": "heading_accent",
-     "label": "Heading — accent (red)",
-     "default": "1,500"
-   },
-   {
-     "type": "text",
-     "id": "heading_after",
-     "label": "Heading — after accent",
-     "default": "car models"
-   },
-   {
-     "type": "text",
-     "id": "button_label",
-     "label": "Button label",
-     "default": "See all"
-   },
-   {
-     "type": "url",
-     "id": "button_link",
-     "label": "Button link"
-   },
-   {
-     "type": "text",
-     "id": "catalog-header",
-     "label": "Heading Catalog"
-   },
-   {
-     "type": "checkbox",
-     "id": "margin-bottom",
-     "label": "Bottom indent",
-     "default": false
-   },
-   {
-     "type": "header",
-     "content": "Section spacing (desktop)"
-   },
-   {
-     "type": "range",
-     "id": "padding_top",
-     "label": "Padding top",
-     "min": 0,
-     "max": 200,
-     "step": 4,
-     "unit": "px",
-     "default": 80
-   },
-   {
-     "type": "range",
-     "id": "padding_bottom",
-     "label": "Padding bottom",
-     "min": 0,
-     "max": 200,
-     "step": 4,
-     "unit": "px",
-     "default": 80
-   },
-   {
-     "type": "header",
-     "content": "Section spacing (mobile)"
-   },
-   {
-     "type": "range",
-     "id": "padding_top_mobile",
-     "label": "Padding top",
-     "min": 0,
-     "max": 200,
-     "step": 4,
-     "unit": "px",
-     "default": 48
-   },
-   {
-     "type": "range",
-     "id": "padding_bottom_mobile",
-     "label": "Padding bottom",
-     "min": 0,
-     "max": 200,
-     "step": 4,
-     "unit": "px",
-     "default": 48
-   }
-],
-"blocks" : [
+  "name": "Brand Car",
+  "max_blocks": 50,
+  "settings": [
     {
-    "type": "section",
-    "name": "Brand Auto",
-    "settings": [
-         {
-           "type": "image_picker",
-           "id": "table-img",
-           "label": "Image"
-         },
-      {
-           "type": "url",
-           "id": "product-link",
-           "label": "Marki Link"
-         },
-         {
-           "type": "text",
-           "id": "color-code",
-           "label": "Name"
-         }
-    ]
-  }
-],
+      "type": "text",
+      "id": "heading_before",
+      "label": "Heading — before accent",
+      "default": "Car mats designed to fit over "
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading — accent (red)",
+      "default": "1,500"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Heading — after accent",
+      "default": "car models"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "See all"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "catalog-header",
+      "label": "Heading Catalog"
+    },
+    {
+      "type": "checkbox",
+      "id": "margin-bottom",
+      "label": "Bottom indent",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Section spacing (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "name": "Brand Auto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "table-img",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "product-link",
+          "label": "Marki Link"
+        },
+        {
+          "type": "text",
+          "id": "color-code",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
   "presets": [
-  {
-    "name":  "Brand Car"
-  }
-]
+    {
+      "name": "Brand Car"
+    }
+  ]
 }
-
 {% endschema %}

@@ -178,9 +178,9 @@
   gap: 12px;
   width: 100%;
   min-height: 26px;
-  padding: 16px 26px;
+  padding: 12px 20px;
   color: #1b1d22;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -326,10 +326,9 @@
   align-items: center;
   gap: 18px;
   width: 100%;
-  min-height: 60px;
-  padding: 8px 28px 8px 0;
+  min-height: 48px;
+  padding: 8px 20px 8px 0;
   color: #8090a4;
-  font-size: 18px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -351,17 +350,17 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  min-width: 65px;
-  max-height: 65px;
+  width: 48px;
+  min-width: 48px;
+  max-height: 48px;
 }
 
 .evamats-header__catalog-l2-img {
   display: block;
   width: auto;
   height: auto;
-  max-width: 65px;
-  max-height: 65px;
+  max-width: 48px;
+  max-height: 48px;
   object-fit: contain;
   border-radius: 16px;
 }
@@ -450,7 +449,7 @@
 .evamats-header__catalog-l3-flyout {
   box-sizing: border-box;
   min-width: 220px;
-  padding: 20px;
+  padding: 16px;
   border-radius: 16px;
   background: #fff;
   color: #1b1d22;
@@ -819,6 +818,7 @@
   z-index: 1;
   flex: 1 1 auto;
   overflow-y: auto;
+  margin-bottom: 10px;
   padding: 12px 18px 32px;
 }
 

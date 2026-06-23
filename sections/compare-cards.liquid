@@ -120,133 +120,133 @@
 </div>
  
 {% schema %}
-  {
-    "name": "Compare cards",
-    "settings": [
-      {
-        "type": "color",
-        "id": "background",
-        "label": "Background",
-        "default": "#1B1D22"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_top_right",
-        "label": "Top right image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_bottom_left",
-        "label": "Bottom left image"
-      },
+{
+  "name": "Compare cards",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#1B1D22"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_top_right",
+      "label": "Top right image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom_left",
+      "label": "Bottom left image"
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Padding desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Block",
+      "type": "block",
+      "limit": 2,
+      "settings": [
         {
-            "type": "header",
-            "content": "Padding mobile"
+          "type": "richtext",
+          "id": "header",
+          "label": "Title",
+          "default": "<h2>Nevýhody gumových koberců</h2>"
         },
         {
-            "type": "range",
-            "id": "padding_top_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 0
+          "type": "richtext",
+          "id": "unordered_list",
+          "label": "Unordered List"
         },
         {
-            "type": "range",
-            "id": "padding_bottom_mobile",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-            "type": "header",
-            "content": "Padding desktop"
+          "type": "select",
+          "id": "button_visibility",
+          "label": "Show button on",
+          "default": "all",
+          "options": [
+            {
+              "value": "all",
+              "label": "Desktop and mobile"
+            },
+            {
+              "value": "desktop",
+              "label": "Desktop only"
+            },
+            {
+              "value": "mobile",
+              "label": "Mobile only"
+            }
+          ]
         },
         {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding top",
-            "default": 80
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
         },
         {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 80,
-            "step": 1,
-            "unit": "px",
-            "label": "Padding bottom",
-            "default": 80
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
         }
-    ],
-    "blocks": [
-        {
-            "name": "Block",
-            "type": "block",
-          "limit": 2,
-            "settings": [
-                {
-                    "type": "richtext",
-                    "id": "header",
-                    "label": "Title",
-                    "default": "<h2>Wady gumowych dywaników</h2>"
-                },
-                {
-                    "type": "richtext",
-                    "id": "unordered_list",
-                    "label": "Unordered List"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-                },
-              {
-                "type": "select",
-                "id": "button_visibility",
-                "label": "Show button on",
-                "default": "all",
-                "options": [
-                  {
-                    "value": "all",
-                    "label": "Desktop and mobile"
-                  },
-                  {
-                    "value": "desktop",
-                    "label": "Desktop only"
-                  },
-                  {
-                    "value": "mobile",
-                    "label": "Mobile only"
-                  }
-                ]
-              },
-              {
-                "type": "text",
-                "id": "button_label",
-                "label": "Button label"
-              },
-              {
-                "type": "url",
-                "id": "button_link",
-                "label": "Button link"
-              }
-            ]
-        }
-    ],
-    "presets": [
-      {
-        "name": "Compare cards"
-      }
-    ]
-  }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare cards"
+    }
+  ]
+}
 {% endschema %}

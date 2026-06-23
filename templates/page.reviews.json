@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,14 +23,14 @@
         "heading_ewzcbT": {
           "type": "heading",
           "settings": {
-            "heading": "<h1>Thank you for your purchase!<\/h1>",
+            "heading": "<h1>Thank you for your purchase!</h1>",
             "heading_size": "h1"
           }
         },
         "heading_rLYRYK": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>Share your opinion — it will help other customers. <\/h2>",
+            "heading": "<h2>Sdílet your opinion — it will help other customers. </h2>",
             "heading_size": "h1"
           }
         },
@@ -30,7 +39,7 @@
           "disabled": true,
           "settings": {
             "button_label": "Add a review on Google Maps",
-            "button_link": "https:\/\/search.google.com\/local\/writereview?placeid=ChIJMeAerT1z_UYRiKoMeCumjD4",
+            "button_link": "https://search.google.com/local/writereview?placeid=ChIJMeAerT1z_UYRiKoMeCumjD4",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -61,14 +70,14 @@
           "settings": {
             "name": "Maggie Newton",
             "date": "2 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_1.png",
+            "user_image": "shopify://shop_images/unnamed_1.png",
             "rating": 5,
-            "text": "At first glance, we’re very satisfied with the quality of the mats and how well they fit. I hope that during use and cleaning everything will be just as great. 🤗",
-            "image1": "shopify:\/\/shop_images\/image_-_2025-09-09T162623.807.webp",
-            "image2": "shopify:\/\/shop_images\/image_-_2025-09-09T162629.940.webp",
-            "image3": "shopify:\/\/shop_images\/image_-_2025-09-09T162633.892.webp",
-            "image4": "shopify:\/\/shop_images\/image_-_2025-09-09T162643.961.webp",
-            "image5": "shopify:\/\/shop_images\/image_-_2025-09-09T162638.726.webp"
+            "text": "At first glance, we’re very satisfied with the quality of the mats a how well they fit. I hope that during use a cleaning everything will be just as great. 🤗",
+            "image1": "shopify://shop_images/image_-_2025-09-09T162623.807.webp",
+            "image2": "shopify://shop_images/image_-_2025-09-09T162629.940.webp",
+            "image3": "shopify://shop_images/image_-_2025-09-09T162633.892.webp",
+            "image4": "shopify://shop_images/image_-_2025-09-09T162643.961.webp",
+            "image5": "shopify://shop_images/image_-_2025-09-09T162638.726.webp"
           }
         },
         "item_mxPqRm": {
@@ -77,11 +86,11 @@
           "settings": {
             "name": "Maggie Newton",
             "date": "2 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_1.png",
+            "user_image": "shopify://shop_images/unnamed_1.png",
             "rating": 4,
             "text": "WTF? This isn’t what I asked for. What the hell?",
-            "image1": "shopify:\/\/shop_images\/image.webp",
-            "image2": "shopify:\/\/shop_images\/image_c291f818-8828-409d-89e9-a6eb30ef2582.webp"
+            "image1": "shopify://shop_images/image.webp",
+            "image2": "shopify://shop_images/image_c291f818-8828-409d-89e9-a6eb30ef2582.webp"
           }
         },
         "item_CJjPqy": {
@@ -89,14 +98,14 @@
           "settings": {
             "name": "Stan G.",
             "date": "3 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_2.png",
+            "user_image": "shopify://shop_images/unnamed_2.png",
             "rating": 5,
-            "text": "Very nice and well-fitted — I recommend them. I’ll see how they perform in winter when there’s slush and mud, but for now I’m very satisfied. The mats are installed in an Opel Mokka X.",
-            "image1": "shopify:\/\/shop_images\/unnamed_1.webp",
-            "image2": "shopify:\/\/shop_images\/unnamed_4.webp",
-            "image3": "shopify:\/\/shop_images\/unnamed_1.webp",
-            "image4": "shopify:\/\/shop_images\/unnamed_2.webp",
-            "image5": "shopify:\/\/shop_images\/unnamed_3.webp"
+            "text": "Very nice a well-fitted — I recommend them. I’ll see how they perform in winter when there’s slush a mud, but for now I’m very satisfied. The mats are installed in an Opel Mokka X.",
+            "image1": "shopify://shop_images/unnamed_1.webp",
+            "image2": "shopify://shop_images/unnamed_4.webp",
+            "image3": "shopify://shop_images/unnamed_1.webp",
+            "image4": "shopify://shop_images/unnamed_2.webp",
+            "image5": "shopify://shop_images/unnamed_3.webp"
           }
         },
         "item_QCVDpD": {
@@ -104,12 +113,12 @@
           "settings": {
             "name": "Adrian Oswell",
             "date": "3 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_3.png",
+            "user_image": "shopify://shop_images/unnamed_3.png",
             "rating": 5,
-            "text": "The mats are great! A perfect fit, and the holes for the fasteners are exactly where they should be. The only minor downside is that the mat for the center tunnel has flaps that are about 0.5 cm too long — but that’s nothing to worry about! Excellent product! I’ll be recommending them and will definitely come back again more than once.",
-            "image1": "shopify:\/\/shop_images\/unnamed_5.webp",
-            "image2": "shopify:\/\/shop_images\/unnamed_7.webp",
-            "image3": "shopify:\/\/shop_images\/unnamed_6.webp"
+            "text": "The mats are great! A perfect fit, a the holes for the fasteners are exactly where they should be. The only minor downside is that the mat for the center tunnel has flaps that are about 0.5 cm too long — but that’s nothing to worry about! Excellent product! I’ll be recommending them a will definitely come back again more than once.",
+            "image1": "shopify://shop_images/unnamed_5.webp",
+            "image2": "shopify://shop_images/unnamed_7.webp",
+            "image3": "shopify://shop_images/unnamed_6.webp"
           }
         },
         "item_J8gqQe": {
@@ -117,14 +126,14 @@
           "settings": {
             "name": "Anetka",
             "date": "4 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_8.png",
+            "user_image": "shopify://shop_images/unnamed_8.png",
             "rating": 5,
-            "text": "The execution of a custom-made order has never been completed so quickly before. I’m very satisfied with the mats, even though at first I wanted to change the order and take only the front ones – luckily I didn’t. Dirt comes off easily, whereas with fabric mats you need to vacuum them. I also got a heel pad for free, though it’s a pity I didn’t know it wouldn’t be metal – I would have added one, as it looks nicer. The mats look solid, fit perfectly – after all, they’re custom-made. The communication during the order was great; the lady showed me photos of different colors, which made my decision much easier. I know that when I change my car, I’ll order again. I recommend it to everyone!",
-            "image1": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.34.52_PM.webp",
-            "image2": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.35.02_PM.webp",
-            "image3": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.35.36_PM.webp",
-            "image4": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.35.26_PM.webp",
-            "image5": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.35.17_PM.webp"
+            "text": "The execution of a custom-made order has never been completed so quickly before. I’m very satisfied with the mats, even though at first I wanted to change the order a take only the front ones – luckily I didn’t. Dirt comes off easily, whereas with fabric mats you need to vacuum them. I also got a heel pad for free, though it’s a pity I didn’t know it wouldn’t be metal – I would have added one, as it looks nicer. The mats look solid, fit perfectly – after all, they’re custom-made. The communication during the order was great; the lady showed me photos of different colors, which made my decision much easier. I know that when I change my car, I’ll order again. I recommend it to everyone!",
+            "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.34.52_PM.webp",
+            "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.02_PM.webp",
+            "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.36_PM.webp",
+            "image4": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.26_PM.webp",
+            "image5": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.17_PM.webp"
           }
         },
         "item_cW8yha": {
@@ -132,15 +141,15 @@
           "settings": {
             "name": "Slaviana Pabianice",
             "date": "4 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_9.png",
+            "user_image": "shopify://shop_images/unnamed_9.png",
             "rating": 5,
-            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. EVAMATS contacted me right away, and we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
-            "image1": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.39.37_PM.webp",
-            "image2": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.39.45_PM.webp",
-            "image3": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.40.07_PM.webp",
-            "image4": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.40.13_PM.webp",
-            "image5": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.40.01_PM.webp",
-            "image6": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.40.20_PM.webp"
+            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. EVAMATS contacted me right away, a we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
+            "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.37_PM.webp",
+            "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.45_PM.webp",
+            "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.07_PM.webp",
+            "image4": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.13_PM.webp",
+            "image5": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.01_PM.webp",
+            "image6": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.20_PM.webp"
           }
         },
         "item_ybLCmf": {
@@ -148,15 +157,15 @@
           "settings": {
             "name": "Patrick Glowacki",
             "date": "4 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_10.png",
+            "user_image": "shopify://shop_images/unnamed_10.png",
             "rating": 5,
-            "text": "The 3D mats fit perfectly in my Mazda 6 (2002). The mats are precisely measured and shaped to match the floor surface. Since the car doesn’t have any stoppers, Velcro was applied to the corners of each mat to prevent them from moving while driving. I ordered the full option along with a trunk mat that covers the entire surface. Every element of this order is very well made. I’m satisfied and recommend them 100%!",
-            "image1": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.30_PM.webp",
-            "image2": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.38_PM.webp",
-            "image3": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.46_PM.webp",
-            "image4": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.59_PM.webp",
-            "image5": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.17_PM.webp",
-            "image6": "shopify:\/\/shop_images\/Screenshot_2025-09-10_at_3.47.06_PM.webp"
+            "text": "The 3D mats fit perfectly in my Mazda 6 (2002). The mats are precisely measured a shaped to match the floor surface. Since the car doesn’t have any stoppers, Velcro was applied to the corners of each mat to prevent them from moving while driving. I ordered the full option along with a trunk mat that covers the entire surface. Every element of this order is very well made. I’m satisfied a recommend them 100%!",
+            "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.30_PM.webp",
+            "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.38_PM.webp",
+            "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.46_PM.webp",
+            "image4": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.59_PM.webp",
+            "image5": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.17_PM.webp",
+            "image6": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.06_PM.webp"
           }
         },
         "item_kiCAfh": {
@@ -164,11 +173,11 @@
           "settings": {
             "name": "Forni",
             "date": "5 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_4.png",
+            "user_image": "shopify://shop_images/unnamed_4.png",
             "rating": 5,
             "text": "Top-class mats. They’re a bit pricey, but you pay for quality. I might buy a trunk mat in the future as well.",
-            "image1": "shopify:\/\/shop_images\/unnamed_8.jpg",
-            "image2": "shopify:\/\/shop_images\/unnamed_9.jpg"
+            "image1": "shopify://shop_images/unnamed_8.jpg",
+            "image2": "shopify://shop_images/unnamed_9.jpg"
           }
         },
         "item_CwCHUK": {
@@ -176,14 +185,14 @@
           "settings": {
             "name": "Barbara Rose",
             "date": "5 days ago",
-            "user_image": "shopify:\/\/shop_images\/unnamed_5.png",
+            "user_image": "shopify://shop_images/unnamed_5.png",
             "rating": 5,
-            "text": "Highly recommend — very, very nice, comfortable, and they look great. I definitely recommend them!",
-            "image1": "shopify:\/\/shop_images\/unnamed_10.webp",
-            "image2": "shopify:\/\/shop_images\/unnamed_12.webp",
-            "image3": "shopify:\/\/shop_images\/unnamed_14.webp",
-            "image4": "shopify:\/\/shop_images\/unnamed_13.webp",
-            "image5": "shopify:\/\/shop_images\/unnamed_11.webp"
+            "text": "Highly recommend — very, very nice, comfortable, a they look great. I definitely recommend them!",
+            "image1": "shopify://shop_images/unnamed_10.webp",
+            "image2": "shopify://shop_images/unnamed_12.webp",
+            "image3": "shopify://shop_images/unnamed_14.webp",
+            "image4": "shopify://shop_images/unnamed_13.webp",
+            "image5": "shopify://shop_images/unnamed_11.webp"
           }
         },
         "item_RnVJDh": {
@@ -192,13 +201,13 @@
           "settings": {
             "name": "Name 2",
             "date": "4 days ago",
-            "user_image": "shopify:\/\/shop_images\/Maserati_Grecale_1_gen_2022-2023_rok_SUV.webp",
+            "user_image": "shopify://shop_images/Maserati_Grecale_1_gen_2022-2023_rok_SUV.webp",
             "rating": 5,
             "text": "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "image1": "shopify:\/\/shop_images\/Maserati_GranTurismo_1_gen_2007-2019_rok_Coupe.webp",
-            "image2": "shopify:\/\/shop_images\/Maserati_GranTurismo_2_gen_2022-2023_rok_Coupe.png",
-            "image3": "shopify:\/\/shop_images\/Maserati_GranTurismo_1_gen_2007-2019_rok_GranCabrio_ad913423-26d8-42ed-b77a-696322be446f.webp",
-            "image4": "shopify:\/\/shop_images\/Lancia_Ypsilon_Type843_2_gen_2003-2011_rok_Hatchback_3_drzwi_4e0ebb9c-6e16-4e6e-9dd5-7bc070dd4f65.png"
+            "image1": "shopify://shop_images/Maserati_GranTurismo_1_gen_2007-2019_rok_Coupe.webp",
+            "image2": "shopify://shop_images/Maserati_GranTurismo_2_gen_2022-2023_rok_Coupe.png",
+            "image3": "shopify://shop_images/Maserati_GranTurismo_1_gen_2007-2019_rok_GranCabrio_ad913423-26d8-42ed-b77a-696322be446f.webp",
+            "image4": "shopify://shop_images/Lancia_Ypsilon_Type843_2_gen_2003-2011_rok_Hatchback_3_drzwi_4e0ebb9c-6e16-4e6e-9dd5-7bc070dd4f65.png"
           }
         }
       },
@@ -219,7 +228,7 @@
         "title": "Reviews",
         "rating": 4.8,
         "block_title": "EVAMATS Car Mats",
-        "block_image": "shopify:\/\/shop_images\/image_-_2025-09-09T160608.635.png",
+        "block_image": "shopify://shop_images/image_-_2025-09-09T160608.635.png",
         "reviews_count": "2395 reviews on Google"
       }
     }

@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/volvo"
       }
     },
-    "aba1a445-2343-45f9-ae12-d437dd157485": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/volvo"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/volvo",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "5ff21f82-1a00-47f9-8cc4-122270bbb8f5": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "aba1a445-2343-45f9-ae12-d437dd157485",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

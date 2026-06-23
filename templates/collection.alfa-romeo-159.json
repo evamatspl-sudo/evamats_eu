@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/alfa-romeo"
       }
     },
-    "1df9e9f3-fcdf-47c5-9875-33e25d34bb9a": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/alfa-romeo"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/alfa-romeo",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "1df9e9f3-fcdf-47c5-9875-33e25d34bb9a",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

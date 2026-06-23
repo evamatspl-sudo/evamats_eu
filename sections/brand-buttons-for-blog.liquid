@@ -15,7 +15,9 @@
     assign active_block = section.blocks.first
 
     for block in section.blocks
-    if block.settings.blog.handle == blog.handle
+      if block.settings.page_link != blank and block.settings.page_link.url == page.url
+        assign active_block = block
+      elsif blog != blank and block.settings.blog != blank and block.settings.blog.handle == blog.handle
         assign active_block = block
       endif
     endfor
@@ -33,6 +35,18 @@
     assign catalog_label = section.settings.catalog_label | strip
     if catalog_label == blank
     assign catalog_label = 'Сatalog'
+    endif
+
+    assign articles_count = blog.articles.size
+    if articles_count == 0 and section.settings.posts_to_show != blank
+      assign count_handles = section.settings.posts_to_show | split: ','
+      assign articles_count = 0
+      for handle_part in count_handles
+        assign handle_trimmed = handle_part | strip
+        if handle_trimmed != blank and blogs[handle_trimmed] != blank
+          assign articles_count = articles_count | plus: blogs[handle_trimmed].articles.size
+        endif
+      endfor
     endif
 
     assign brand_collection = nil
@@ -68,7 +82,11 @@
     assign middle_url = ''
     assign breadcrumb_current = catalog_label
 
-    if brand_collection != blank
+    if request.page_type == 'page'
+      assign middle_label = catalog_label
+      assign middle_url = routes.blogs_url
+      assign breadcrumb_current = heading | default: page.title
+    elsif brand_collection != blank
     assign middle_label = brand_collection.title
     assign middle_url = brand_collection.url
     assign breadcrumb_current = collection.title
@@ -168,11 +186,11 @@
 
                 <div class="main-blog__count-result">
                   <span class="js-search-count">
-                    {{ blog.articles.size }}
+                    {{ articles_count }}
                   </span>
 
                     <span  class="js-search-label" data-singular="result" data-plural="results">
-                      {{ blog.articles.size | pluralize: 'result', 'results' }}
+                      {{ articles_count | pluralize: 'result', 'results' }}
                   </span>
                 </div>
             </div>
@@ -196,136 +214,140 @@
 
 {% schema %}
 {
-"name": "Brand Buttons for Blog",
-"max_blocks": 50,
-"settings": [
-      {
-        "type": "color",
-        "id": "background",
-        "label": "Background",
-        "default": "#f6f6f6"
-      },
-   {
-     "type": "text",
-     "id": "heading",
-     "label": "Heading",
-     "default": "Heading"
-   },
-  {
-    "type": "header",
-    "content": "Breadcrumbs"
-  },
-  {
-    "type": "checkbox",
-    "id": "show_breadcrumbs",
-    "label": "Show breadcrumbs",
-    "default": true
-  },
-  {
-    "type": "text",
-    "id": "parent_label",
-    "label": "Breadcrumb root label",
-    "default": "Evamats"
-  },
-  {
-    "type": "url",
-    "id": "parent_url",
-    "label": "Breadcrumb root link",
-    "info": "Defaults to homepage."
-  },
-  {
-    "type": "text",
-    "id": "catalog_label",
-    "label": "Catalog breadcrumb label",
-    "default": "Katalog",
-    "info": "Shown on brand and top-level collection pages."
-  },
-  {
-    "type": "url",
-    "id": "brand_url",
-    "label": "Parent brand collection",
-    "info": "Optional. Used for model pages when auto-detection is not enough."
-  },
-  {
-    "type": "header",
-    "content": "Section padding"
-  },
-  {
-    "type": "range",
-    "id": "padding_top",
-    "label": "Padding top",
-    "min": 0,
-    "max": 120,
-    "step": 4,
-    "unit": "px",
-    "default": 60
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "label": "Padding bottom",
-    "min": 0,
-    "max": 120,
-    "step": 4,
-    "unit": "px",
-    "default": 60
-  },
-  {
-    "type": "range",
-    "id": "padding_top_mobile",
-    "label": "Padding top mobile",
-    "min": 0,
-    "max": 80,
-    "step": 4,
-    "unit": "px",
-    "default": 20
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom_mobile",
-    "label": "Padding bottom mobile",
-    "min": 0,
-    "max": 80,
-    "step": 4,
-    "unit": "px",
-    "default": 20
-  }
-],
-"blocks" : [
+  "name": "Brand Buttons for Blog",
+  "max_blocks": 50,
+  "settings": [
     {
-    "type": "section",
-    "name": "Brand Auto",
-    "settings": [
-        
-      {
-      "type": "blog",
-      "id": "blog",
-      "label": "Blog"
-      },
-      {
-        "type": "page",
-        "id": "page_link",
-        "label": "Page link",
-        "info": "You can link to a page instead of a blog"
-      },
-      {
-        "type": "text",
-        "id": "brand_heading",
-         "label": "Brand heading"
-      },
-      {
-        "type": "image_picker",
-        "id": "brand_image",
-        "label": "Brand image"
-      }
-    ]
-  }
-],
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nadpis"
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "parent_label",
+      "label": "Breadcrumb root label",
+      "default": "Evamats"
+    },
+    {
+      "type": "url",
+      "id": "parent_url",
+      "label": "Breadcrumb root link",
+      "info": "Defaults to homepage."
+    },
+    {
+      "type": "text",
+      "id": "catalog_label",
+      "label": "Catalog breadcrumb label",
+      "default": "Katalog",
+      "info": "Shown on brand and top-level collection pages."
+    },
+    {
+      "type": "url",
+      "id": "brand_url",
+      "label": "Parent brand collection",
+      "info": "Optional. Used for model pages when auto-detection is not enough."
+    },
+    {
+      "type": "text",
+      "id": "posts_to_show",
+      "label": "Blogs to show (all-realizations page)",
+      "info": "Comma-separated blog handles. Used for article count on pages without a blog context, e.g. realizacja."
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "name": "Brand Auto",
+      "settings": [
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        },
+        {
+          "type": "page",
+          "id": "page_link",
+          "label": "Page link",
+          "info": "You can link to a page instead of a blog"
+        },
+        {
+          "type": "text",
+          "id": "brand_heading",
+          "label": "Brand heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Brand image"
+        }
+      ]
+    }
+  ],
   "presets": [
-  {
-    "name":  "Brand Buttons for Blog"
-  }
-]
+    {
+      "name": "Brand Buttons for Blog"
+    }
+  ]
 }
-
 {% endschema %}

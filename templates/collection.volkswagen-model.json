@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/volkswagen"
       }
     },
-    "835a771f-dea2-40d3-a51c-0ad245488a78": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/volkswagen"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/volkswagen",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "835a771f-dea2-40d3-a51c-0ad245488a78",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

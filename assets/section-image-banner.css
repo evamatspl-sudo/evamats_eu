@@ -163,13 +163,9 @@
 .hero-slider .swiper-pagination .swiper-pagination-bullet{
     width:16px;
     height:16px;
-    background-color:#DEDEDE;
     border-radius:50%;
     position:relative;
     transition: 0.2s ease-in-out;
-}
-.hero-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #ff002e;
 }
 .hero-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after{
     opacity:1

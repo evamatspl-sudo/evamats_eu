@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/mercedes-benz",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -36,13 +36,6 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c"
       ],
       "settings": {}
-    },
-    "d71d3329-ec77-442a-bb04-e02446d647ab": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/mercedes-benz"
-      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -63,7 +56,6 @@
   "order": [
     "banner",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
-    "d71d3329-ec77-442a-bb04-e02446d647ab",
     "product-grid"
   ]
 }

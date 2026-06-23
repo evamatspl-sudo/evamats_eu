@@ -1,6 +1,6 @@
-﻿{% comment %}
+{% comment %}
   Mats product gallery (without_edges / with_edges) for any product context.
-  Accepts: product
+  Accepts: product, section, single_gallery (bool — without_edges only, for eva-product-slider)
 {% endcomment %}
 <div class="product-media-gallery-wr evamats-product-gallery eva-product__gallery-inner">
 {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
@@ -414,7 +414,14 @@
  {% endif %}
 
  {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
- {% render 'product-media-gallery_without_edges', images: withoutEdgesImages, gallery_product: product, variant_images: variant_images %}
- {% render 'product-media-gallery_with_edges', images: withEdgesImages, gallery_product: product, variant_images: variant_images %}
+ {% render 'product-media-gallery_without_edges',
+   images: withoutEdgesImages,
+   gallery_product: product,
+   variant_images: variant_images,
+   images_only: single_gallery
+ %}
+ {% unless single_gallery %}
+   {% render 'product-media-gallery_with_edges', images: withEdgesImages, gallery_product: product, variant_images: variant_images %}
+ {% endunless %}
 {% endif %}
 </div>

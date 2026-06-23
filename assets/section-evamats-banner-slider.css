@@ -89,16 +89,13 @@
   width: 8px !important;
   height: 8px !important;
   margin: 0 !important;
-  opacity: 1;
   border-radius: 50% !important;
-  background: rgba(27, 29, 34, 0.2);
 }
 
 .evamats-banner-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
   width: 8px !important;
   height: 8px !important;
   border-radius: 50% !important;
-  background: var(--color-accent-red, #ff2741);
 }
 
 @media screen and (max-width: 1700px) {

@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/porsche"
       }
     },
-    "f6486a8f-a03c-47e2-9e05-108dd1e34639": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/porsche"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/porsche",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "f6486a8f-a03c-47e2-9e05-108dd1e34639",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/seat"
       }
     },
-    "974e2b04-5341-4d78-9775-5b96ff2e301f": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/seat"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/seat",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "974e2b04-5341-4d78-9775-5b96ff2e301f",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -1,7 +1,7 @@
 /* Figma 1710:29371 — Popular models row on collection pages */
 
 .evamats-popular-models {
-  --epm-card-width: 295px;
+  --epm-card-width: 245px;
   --epm-card-height: 193px;
   --epm-gap: 26px;
   --epm-heading-gap: 13px;

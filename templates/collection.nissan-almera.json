@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/nissan"
       }
     },
-    "5d6d2649-65f7-4eb7-b902-d226febb081d": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/nissan"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/nissan",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "12c5dd3c-2b50-46fb-ba4a-da5300abdf34": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "5d6d2649-65f7-4eb7-b902-d226febb081d",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -686,15 +686,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // image comparison
 (function () {
-    if (document.querySelector('.comparison')) {
-        let commonProgress = 0.5; // Глобальное значение прогресса для всех ползунков
+    const comparisonSection = document.querySelector('.comparison');
+
+    if (!comparisonSection) return;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                observer.unobserve(comparisonSection);
+                initComparison();
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(comparisonSection);
+
+    function initComparison() {
+        let commonProgress = 0.5;
         const blocks = document.querySelectorAll('.comparison__block');
-    
+
         const isElementInViewport = (el) => {
-          const rect = el.getBoundingClientRect();
-          return (rect.top < window.innerHeight && rect.bottom > 0);
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
         };
-    
+
         blocks.forEach(block => {
           const divisor = block.querySelector(".comparison__before"),
                 slider = block.querySelector(".comparison__range");
@@ -703,16 +718,14 @@ document.addEventListener('DOMContentLoaded', function () {
           let isInteracted = false;
           let progress = 0.5;
           let lastTime = performance.now();
-          const speed = 0.0004; // скорость анимации
-    
-          const easeInOut = (t) => {
-            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-          };
-    
+          const speed = 0.0004;
+
+          const easeInOut = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
           const moveDivisor = () => { 
             divisor.style.width = slider.value + "%";
           };
-    
+
           const animateSlider = (timestamp) => {
             if (isInteracted || !isElementInViewport(block)) {
               cancelAnimationFrame(animationFrame);
@@ -732,48 +745,47 @@ document.addEventListener('DOMContentLoaded', function () {
             const value = 10 + easeInOut(progress) * 80;
             slider.value = value;
             moveDivisor();
-            commonProgress = progress; // синхронизируем с глобальным значением
+            commonProgress = progress;
             animationFrame = requestAnimationFrame(animateSlider);
           };
-    
+
           slider.addEventListener('input', () => {
             isInteracted = true;
             moveDivisor();
             cancelAnimationFrame(animationFrame);
           });
-    
-          // При отпускании мыши/касания сбрасываем progress в общее значение
+
           slider.addEventListener('mouseup', () => {
             isInteracted = false;
             progress = commonProgress;
             lastTime = performance.now();
             animateSlider(lastTime);
           });
-    
+
           slider.addEventListener('touchend', () => {
             isInteracted = false;
             progress = commonProgress;
             lastTime = performance.now();
             animateSlider(lastTime);
           });
-    
+
           slider.addEventListener('touchstart', () => {
             isInteracted = true;
             cancelAnimationFrame(animationFrame);
           });
-    
+
           slider.addEventListener('touchmove', () => {
             isInteracted = true;
             cancelAnimationFrame(animationFrame);
           });
-    
+
           window.addEventListener('scroll', () => {
             if (!isInteracted && isElementInViewport(block) && !animationFrame) {
               lastTime = performance.now();
               animateSlider(lastTime);
             }
-          });
-    
+          }, { passive: true });
+
           animateSlider(lastTime);
         });
 
@@ -796,26 +808,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.dispatchEvent(event);
             });
         });
-        // скроллбар
+
         const container = document.querySelector(".comparison__wrapper");
         const scrollbar = document.querySelector(".comparison__scrollbar");
         const thumb = document.querySelector(".comparison__scrollbar-thumb");
 
         if (container && scrollbar && thumb) {
-        // Обновление позиции thumb в зависимости от scrollLeft контейнера
         const updateThumb = () => {
             const scrollableWidth = container.scrollWidth - container.clientWidth;
+            if (scrollableWidth <= 0) return;
             const scrollRatio = container.scrollLeft / scrollableWidth;
             const maxThumbMove = scrollbar.clientWidth - thumb.clientWidth;
             thumb.style.transform = `translateX(${scrollRatio * maxThumbMove}px)`;
         };
 
-        // Перемещение контейнера по клику по скроллбару
         const moveScrollbar = (clientX) => {
             const rect = scrollbar.getBoundingClientRect();
             const offsetX = clientX - rect.left;
             const clickRatio = offsetX / scrollbar.clientWidth;
             const scrollableWidth = container.scrollWidth - container.clientWidth;
+            if (scrollableWidth <= 0) return;
             container.scrollLeft = clickRatio * scrollableWidth;
             updateThumb();
         };
@@ -835,6 +847,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const deltaX = clientX - dragStartX;
             const scrollbarWidth = scrollbar.clientWidth - thumb.clientWidth;
             const scrollableWidth = container.scrollWidth - container.clientWidth;
+            if (scrollbarWidth <= 0 || scrollableWidth <= 0) return;
             const scrollDelta = deltaX * (scrollableWidth / scrollbarWidth);
             container.scrollLeft = initialScrollLeft + scrollDelta;
             updateThumb();
@@ -844,7 +857,6 @@ document.addEventListener('DOMContentLoaded', function () {
             isDragging = false;
         };
 
-        // Обработчики для мыши
         thumb.addEventListener("mousedown", (e) => {
             e.stopPropagation();
             thumb.style.cursor = "grabbing";
@@ -858,7 +870,6 @@ document.addEventListener('DOMContentLoaded', function () {
             endDrag();
         });
 
-        // Обработчики для touch
         thumb.addEventListener("touchstart", (e) => {
             e.stopPropagation();
             const touch = e.touches[0];
@@ -871,7 +882,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         thumb.addEventListener("touchend", endDrag);
 
-        // Обработка клика по пустому месту скроллбара (для мыши и touch)
         scrollbar.addEventListener("mousedown", (e) => {
             if (e.target !== thumb) {
             moveScrollbar(e.clientX);
@@ -884,14 +894,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Обновляем thumb при прокрутке контейнера
-        container.addEventListener("scroll", updateThumb);
+        container.addEventListener("scroll", updateThumb, { passive: true });
         updateThumb();
         }
-
-
-
-        // scroll comparison on mobile
     }
 })();
 

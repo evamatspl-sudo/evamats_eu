@@ -25,19 +25,19 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "text": "Produkt z realnym popytem"
+            "text": "Produkt s reálnou poptávkou"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "text": "Szybka produkcja"
+            "text": "Rychlá výroba"
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "text": "Gotowy model współpracy"
+            "text": "Hotový model spolupráce"
           }
         }
       },
@@ -48,15 +48,15 @@
       ],
       "settings": {
         "overline": "",
-        "heading": "Zostań partnerem EVAMATS i zarabiaj na sprzedaży dywaników premium",
+        "heading": "Staňte se partnerem EVAMATS a vydělávejte na prodeji prémiových koberců",
         "heading_gradient": true,
-        "subtitle_primary": "Produkujemy na zamówienie, Ty sprzedajesz.",
-        "subtitle_secondary": "Bez magazynu, bez ryzyka.",
+        "subtitle_primary": "Vyrábíme na zakázku, vy prodáváte.",
+        "subtitle_secondary": "Bez skladu, bez rizika.",
         "image_before": "shopify://shop_images/IMG_1394.webp",
         "image_after": "shopify://shop_images/IMG_7298_1.webp",
-        "label_before_accent": "Dywaniki EVAMATS",
-        "label_before_main": "vs. Inni wykonawcy",
-        "cta_label": "Wyślij zapytanie o współpracę",
+        "label_before_accent": "Koberce EVAMATS",
+        "label_before_main": "vs. jiní výrobci",
+        "cta_label": "Odeslat poptávku na spolupráci",
         "cta_url": "#partners_form",
         "margin_top": 0,
         "margin_bottom": 0
@@ -68,15 +68,15 @@
         "item_9G7KaT": {
           "type": "item",
           "settings": {
-            "title": "Dopasowanie do konkretnego auta",
-            "text_muted": "(nie uniwersalne)",
+            "title": "Přizpůsobení konkrétnímu vozu",
+            "text_muted": "(ne univerzální)",
             "text_highlight": ""
           }
         },
         "item_QiLc4D": {
           "type": "item",
           "settings": {
-            "title": "Widoczny efekt już po pierwszym użyciu",
+            "title": "Viditelný efekt už po prvním použití",
             "text_muted": "",
             "text_highlight": ""
           }
@@ -84,7 +84,7 @@
         "item_nLjPDh": {
           "type": "item",
           "settings": {
-            "title": "Segment premium = wyższy koszyk",
+            "title": "Prémiový segment = vyšší hodnota košíku",
             "text_muted": "",
             "text_highlight": ""
           }
@@ -92,7 +92,7 @@
         "item_meMWxW": {
           "type": "item",
           "settings": {
-            "title": "Niski poziom reklamacji",
+            "title": "Nízká míra reklamací",
             "text_muted": "",
             "text_highlight": "(~2%)"
           }
@@ -104,10 +104,10 @@
         "item_nLjPDh",
         "item_meMWxW"
       ],
-      "name": "Product benefits",
+      "name": "Výhody produktu",
       "settings": {
-        "heading": "Produkt, który klient naprawdę chce kupić",
-        "description": "<p>Dywaniki EVAMATS rozwiązują realny problem kierowców — brud, zużycie i brak dopasowania.<br/>To produkt, który klient rozumie od razu i kupuje bez długiego zastanowienia.</p>"
+        "heading": "Produkt, který zákazník opravdu chce koupit",
+        "description": "<p>Koberce EVAMATS řeší reálný problém řidičů — špínu, opotřebení a špatné přizpůsobení.<br/>Je to produkt, kterému zákazník hned rozumí a kupuje ho bez dlouhého rozmýšlení.</p>"
       }
     },
     "partners_audience_v2_TeeHEY": {
@@ -116,29 +116,29 @@
         "card_JHmEMF": {
           "type": "card",
           "settings": {
-            "title": "Sklepy motoryzacyjne",
-            "text": "Dodaj produkt premium do swojej oferty"
+            "title": "Prodejny autopříslušenství",
+            "text": "Přidejte prémiový produkt do své nabídky"
           }
         },
         "card_mYgMJG": {
           "type": "card",
           "settings": {
-            "title": "Dealerzy samochodowi",
-            "text": "Zwiększ wartość auta przy sprzedaży"
+            "title": "Autodealeři",
+            "text": "Zvyšte hodnotu vozu při prodeji"
           }
         },
         "card_Fg4TCb": {
           "type": "card",
           "settings": {
-            "title": "E-commerce / sklepy online",
-            "text": "Lekki produkt, łatwy w sprzedaży i wysyłce"
+            "title": "E-commerce / online obchody",
+            "text": "Lehký produkt, snadný na prodej i odeslání"
           }
         },
         "card_9jXjdU": {
           "type": "card",
           "settings": {
-            "title": "Studia detailingu i myjnie",
-            "text": "Podnieś standard usług i efekt końcowy"
+            "title": "Detailingová studia a myčky",
+            "text": "Zvyšte standard služeb i finální výsledek"
           }
         }
       },
@@ -148,14 +148,14 @@
         "card_Fg4TCb",
         "card_9jXjdU"
       ],
-      "name": "Partners audience",
+      "name": "Cílová skupina partnerů",
       "settings": {
-        "heading": "Dla kogo jest ta współpraca?",
+        "heading": "Pro koho je tato spolupráce?",
         "cta_url": "#partners_form",
-        "card_cta_label": "Wyślij zapytanie",
-        "mobile_cta_label": "Wyślij zapytanie",
-        "promo_title": "Chcesz rozpocząć własny biznes?",
-        "promo_text": "Zacznij sprzedaż bez własnej produkcji"
+        "card_cta_label": "Odeslat poptávku",
+        "mobile_cta_label": "Odeslat poptávku",
+        "promo_title": "Chcete rozjet vlastní podnikání?",
+        "promo_text": "Začněte prodávat bez vlastní výroby"
       }
     },
     "evamats_kariera_benefits_M8KGea": {
@@ -164,9 +164,9 @@
         "panel_a": {
           "type": "panel_left",
           "settings": {
-            "title": "Produkt premium z wysoką marżą",
+            "title": "Prémiový produkt s vysokou marží",
             "content_type": "text",
-            "description": "Zarabiasz na każdym zamówieniu — bez własnej produkcji",
+            "description": "Vyděláváte na každé objednávce — bez vlastní výroby",
             "item_1_text": "",
             "item_1_icon": "1",
             "item_2_text": "",
@@ -178,17 +178,17 @@
             "item_5_text": "",
             "item_5_icon": "5",
             "badge_value": "~45%",
-            "badge_label": "Średnia marża:"
+            "badge_label": "Průměrná marže:"
           }
         },
         "panel_b": {
           "type": "panel_center",
           "settings": {
-            "title": "Setki wariantów personalizacji",
+            "title": "Stovky variant personalizace",
             "content_type": "text",
             "tagline": "",
-            "description": "Więcej opcji = wyższa wartość zamówienia",
-            "badge_text": "700+ wariantów",
+            "description": "Více možností = vyšší hodnota objednávky",
+            "badge_text": "700+ variant",
             "item_1_text": "",
             "item_1_icon": "1",
             "item_2_text": "",
@@ -204,9 +204,9 @@
         "panel_c": {
           "type": "panel_right",
           "settings": {
-            "title": "Szybka realizacja zamówień (3–5 dni)",
+            "title": "Rychlé vyřízení objednávek (3–5 dní)",
             "content_type": "text",
-            "description": "Produkcja i logistyka po naszej stronie",
+            "description": "Výroba i logistika jsou na naší straně",
             "show_bg_overlay": false,
             "item_1_text": "",
             "item_1_icon": "5",
@@ -223,18 +223,18 @@
         "panel_d": {
           "type": "panel_bottom",
           "settings": {
-            "title": "Model gotowy do skalowania",
+            "title": "Model připravený na škálování",
             "content_type": "list",
-            "description": "Możesz rozwijać sprzedaż bez zwiększania kosztów",
-            "item_1_text": "Brak magazynu i inwestycji na start",
+            "description": "Prodej můžete rozvíjet bez navyšování nákladů",
+            "item_1_text": "Bez skladu a vstupních investic",
             "item_1_icon": "6",
-            "item_2_text": "Nie zamrażasz pieniędzy w towarze",
+            "item_2_text": "Nevážete peníze ve zboží",
             "item_2_icon": "1",
-            "item_3_text": "Wsparcie sprzedaży i gotowe materiały",
+            "item_3_text": "Podpora prodeje a hotové materiály",
             "item_3_icon": "5",
-            "item_4_text": "Zdjęcia, opisy i know-how od pierwszego dnia",
+            "item_4_text": "Fotky, popisy a know-how od prvního dne",
             "item_4_icon": "2",
-            "item_5_text": "Możesz rozwijać sprzedaż bez zwiększania kosztów",
+            "item_5_text": "Prodej můžete rozvíjet bez navyšování nákladů",
             "item_5_icon": "8"
           }
         }
@@ -245,10 +245,10 @@
         "panel_c",
         "panel_d"
       ],
-      "name": "EVAMATS benefits bento",
+      "name": "EVAMATS výhody bento",
       "settings": {
         "overline": "",
-        "heading": "Co zyskujesz, współpracując z EVAMATS?",
+        "heading": "Co získáte spoluprací s EVAMATS?",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -262,7 +262,7 @@
             "use_orders_counter": false,
             "value": "7 082",
             "show_plus": true,
-            "label": "Klientów poleca nas dalej"
+            "label": "Zákazníků doporučuje nás dál"
           }
         },
         "stat_2": {
@@ -271,7 +271,7 @@
             "use_orders_counter": false,
             "value": "1567",
             "show_plus": true,
-            "label": "Dostępnych modeli auta"
+            "label": "Dostupných modelů aut"
           }
         },
         "stat_3": {
@@ -280,7 +280,7 @@
             "use_orders_counter": true,
             "value": "56 732",
             "show_plus": true,
-            "label": "Zrealizowane komplety"
+            "label": "Realizovaných kompletů"
           }
         },
         "stat_4": {
@@ -289,7 +289,7 @@
             "use_orders_counter": false,
             "value": "27",
             "show_plus": true,
-            "label": "Dostawa do ponad 27 krajów"
+            "label": "Doručení do více než 27 zemí"
           }
         }
       },
@@ -300,8 +300,8 @@
         "stat_4"
       ],
       "settings": {
-        "heading": "Sprawdzony produkt, gotowy do skalowania",
-        "intro": "Produkt jest sprawdzony na rynku i gotowy do rozwoju w modelu B2B."
+        "heading": "Ověřený produkt připravený k růstu",
+        "intro": "Produkt je ověřený na trhu a připravený k rozvoji v modelu B2B."
       }
     },
     "o_nas_story_slider_qQxL9h": {
@@ -310,15 +310,15 @@
         "slide_bEtXM4": {
           "type": "slide",
           "settings": {
-            "heading": "Produkcja po naszej stronie",
-            "body": "<p>Każdy zestaw powstaje na zamówienie w Polsce, z kontrolą jakości na każdym etapie.  Ty skupiasz się na sprzedaży — my zajmujemy się resztą.</p>"
+            "heading": "Výroba na naší straně",
+            "body": "<p>Každá sada vzniká na zakázku v Polsku s kontrolou kvality v každé fázi.  Vy se soustředíte na prodej — o zbytek se postaráme my.</p>"
           }
         }
       },
       "block_order": [
         "slide_bEtXM4"
       ],
-      "name": "About — story slider",
+      "name": "O nás — příběhový slider",
       "settings": {
         "logo_max_width": 100,
         "logo_max_width_mobile": 100,
@@ -335,39 +335,39 @@
           "type": "card",
           "settings": {
             "card_variant": "dropshipping",
-            "label": "Model bez inwestycji (dropshipping / afiliacja)",
-            "subtitle": "Sprzedajesz — my produkujemy i wysyłamy",
-            "title": "Zarób nawet 2000 zł tygodniowo przy 10 zamówieniach",
-            "feature_1_text": "Do 25% prowizji od sprzedaży",
-            "feature_2_text": "Brak magazynu i kosztów startowych",
-            "feature_3_text": "Gotowe materiały marketingowe",
-            "feature_4_text": "Obsługa zamówień po naszej stronie"
+            "label": "Model bez investic (dropshipping / affiliate)",
+            "subtitle": "Prodáváte — my vyrábíme a odesíláme",
+            "title": "Vydělejte až 2000 PLN týdně při 10 objednávkách",
+            "feature_1_text": "Až 25 % provize z prodeje",
+            "feature_2_text": "Bez skladu a vstupních nákladů",
+            "feature_3_text": "Hotové marketingové materiály",
+            "feature_4_text": "Zpracování objednávek na naší straně"
           }
         },
         "card_bT7CxJ": {
           "type": "card",
           "settings": {
             "card_variant": "partner",
-            "label": "Model partnerski (zakup hurtowy)",
-            "subtitle": "Kupujesz taniej — sprzedajesz z własną marżą",
-            "title": "Im większa skala — tym wyższy zysk",
-            "feature_1_text": "Indywidualne ceny hurtowe",
-            "feature_2_text": "Wyższa marża przy większych wolumenach",
-            "feature_3_text": "Stała współpraca i dostępność",
-            "feature_4_text": "Możliwość budowy własnej Marki"
+            "label": "Partnerský model (velkoobchodní nákup)",
+            "subtitle": "Nakupujete levněji — prodáváte s vlastní marží",
+            "title": "Čím větší objem, tím vyšší zisk",
+            "feature_1_text": "Individuální velkoobchodní ceny",
+            "feature_2_text": "Vyšší marže při větších objemech",
+            "feature_3_text": "Stabilní spolupráce a dostupnost",
+            "feature_4_text": "Možnost budovat vlastní značku"
           }
         },
         "card_3YpgDU": {
           "type": "card",
           "settings": {
             "card_variant": "support",
-            "label": "Dla każdego partnera",
-            "subtitle": "Zawsze masz kogoś, kto pomoże Ci działać",
-            "title": "Niezależnie od modelu — zapewniamy pełne wsparcie:",
-            "feature_1_text": "Gotowe materiały sprzedażowe",
-            "feature_2_text": "Stały dostęp do produktu",
-            "feature_3_text": "Szybką realizację",
-            "feature_4_text": "Wsparcie opiekuna"
+            "label": "Pro každého partnera",
+            "subtitle": "Vždy máte někoho, kdo vám pomůže fungovat",
+            "title": "Bez ohledu na model — zajišťujeme plnou podporu:",
+            "feature_1_text": "Hotové prodejní materiály",
+            "feature_2_text": "Stálá dostupnost produktu",
+            "feature_3_text": "Rychlé vyřízení",
+            "feature_4_text": "Podpora konzultanta"
           }
         }
       },
@@ -376,47 +376,47 @@
         "card_bT7CxJ",
         "card_3YpgDU"
       ],
-      "name": "Partners coop models",
+      "name": "Modely partnerské spolupráce",
       "settings": {
-        "heading": "Jak wygląda współpraca z EVAMATS?"
+        "heading": "Jak vypadá spolupráce s EVAMATS?"
       }
     },
     "evamats_partners_consult_form_v2_gTXEFE": {
       "type": "evamats-partners-consult-form-v2",
-      "name": "Partners consult form",
+      "name": "Partnerský konzultační formulář",
       "settings": {
-        "hidden_form_tag": "Partnerzy — zapytanie (strona WWW)",
-        "heading": "Rozpocznij współpracę",
-        "subheading": "Otrzymasz ofertę dopasowaną do Twojego biznesu w ciągu 2 dni",
-        "label_first_name": "Imię",
-        "placeholder_first_name": "Imię",
-        "label_last_name": "Nazwisko",
-        "placeholder_last_name": "Nazwisko",
-        "label_business_sphere": "Sfera biznesu",
-        "placeholder_business_sphere": "Sfera biznesu",
-        "business_sphere_options": "It\nSales\nGovernment",
+        "hidden_form_tag": "Partneři — poptávka (webová stránka)",
+        "heading": "Začněte spolupráci",
+        "subheading": "Nabídku přizpůsobenou vašemu podnikání obdržíte do 2 dnů",
+        "label_first_name": "Jméno",
+        "placeholder_first_name": "Jméno",
+        "label_last_name": "Příjmení",
+        "placeholder_last_name": "Příjmení",
+        "label_business_sphere": "Oblast podnikání",
+        "placeholder_business_sphere": "Oblast podnikání",
+        "business_sphere_options": "IT\nProdej\nVeřejná správa",
         "label_phone": "Telefon",
         "phone_prefix": "+48",
         "placeholder_phone": "000-000-000",
-        "label_email": "Email",
+        "label_email": "E-mail",
         "placeholder_email": "jan@example.com",
-        "label_message": "Komentarz (opcjonalnie)",
-        "placeholder_message": "Komentarz (opcjonalnie)",
-        "submit_label": "Otrzymaj ofertę współpracy",
-        "consent_intro": "Zgadzam się z",
-        "terms_label": "regulaminem",
+        "label_message": "Komentář (volitelné)",
+        "placeholder_message": "Komentář (volitelné)",
+        "submit_label": "Získat nabídku spolupráce",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
         "terms_url": "",
-        "consent_mid": " oraz",
-        "privacy_label": "Polityką prywatności",
+        "consent_mid": " a",
+        "privacy_label": "zásadami ochrany osobních údajů",
         "privacy_url": "",
         "consent_end": ".",
-        "consent_error_message": "Musisz zaakceptować politykę prywatności i regulamin.",
-        "success_message": "Dziękujemy! Skontaktujemy się wkrótce.",
-        "error_message": "Sprawdź pola i spróbuj ponownie.",
-        "alt_divider_text": "lub",
-        "alt_title": "Stawiasz na dropshipping i afiliację?",
-        "alt_text": "Dołącz do programu partnerskiego EVAMATS i zarabiaj nawet 2000 zł tygodniowo — my produkujemy i wysyłamy, Ty tylko sprzedajesz.",
-        "alt_button_label": "ZAREJESTRUJ SIĘ W PROGRAMIE AFILIACYJNYM",
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "alt_divider_text": "nebo",
+        "alt_title": "Sázíte na dropshipping a affiliate?",
+        "alt_text": "Připojte se k partnerskému programu EVAMATS a vydělávejte až 2000 PLN týdně — my vyrábíme a odesíláme, vy jen prodáváte.",
+        "alt_button_label": "ZAREGISTRUJTE SE DO AFFILIATE PROGRAMU",
         "alt_button_url": "https://af.uppromote.com/evamats-poland/register"
       }
     }

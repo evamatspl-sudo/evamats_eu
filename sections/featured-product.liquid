@@ -56,7 +56,7 @@
   >
 {%- endif -%}
 
-<divclass="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
+<div class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
   <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
     <div class="featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
@@ -513,7 +513,10 @@
   "tag": "section",
   "class": "section section-featured-product",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": [
+      "header",
+      "footer"
+    ]
   },
   "blocks": [
     {
@@ -661,7 +664,7 @@
           "type": "text",
           "id": "share_label",
           "label": "t:sections.featured-product.blocks.share.settings.text.label",
-          "default": "Share"
+          "default": "Sdílet"
         },
         {
           "type": "paragraph",
@@ -912,7 +915,7 @@
         {
           "type": "text",
           "id": "heading_1",
-          "default": "Heading",
+          "default": "Nadpis",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_1.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         },
@@ -1108,7 +1111,7 @@
         {
           "type": "text",
           "id": "heading_2",
-          "default": "Heading",
+          "default": "Nadpis",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_2.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         },
@@ -1304,7 +1307,7 @@
         {
           "type": "text",
           "id": "heading_3",
-          "default": "Heading",
+          "default": "Nadpis",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }

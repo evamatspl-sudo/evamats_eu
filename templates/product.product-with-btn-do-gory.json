@@ -48,7 +48,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "*Zaznacz pole wyboru umowy, aby przyciski Kup były aktywne.",
+            "text": "*Zaškrtněte pole smlouvy, aby byla tlačítka Koupit aktivní.",
             "text_style": "body"
           }
         },
@@ -62,7 +62,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "Kliknij \"CUSTOM ORDER\" - jeśli nie znajdziesz odpowiedniej maty. <br>Wykonamy matę na zamówienie specjalnie dla Twojego samochodu, ze wszystkimi jej cechami.",
+            "text": "Klikněte na „CUSTOM ORDER“, pokud nenajdete vhodný koberec.<br>Vyrobíme koberec na míru speciálně pro váš automobil se všemi jeho vlastnostmi.",
             "text_style": "uppercase"
           }
         },
@@ -74,7 +74,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Sdílet"
           }
         }
       },
@@ -107,7 +107,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 56
@@ -117,7 +117,7 @@
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "Możesz także polubić",
+        "heading": "Mohlo by se vám také líbit",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -158,7 +158,7 @@
       ],
       "settings": {
         "show_related_posts": true,
-        "heading": "Our realizations",
+        "heading": "Naše realizace",
         "heading_size": "h1",
         "blog": "nasze-realizacje",
         "post_limit": 2,
@@ -175,7 +175,7 @@
     "2959ec46-bbb7-4260-b81d-7024c179ac2a": {
       "type": "home-5",
       "settings": {
-        "btn_text": "All posts",
+        "btn_text": "Vše posts",
         "btn_url": "shopify://pages/realizacja"
       }
     },
@@ -184,9 +184,9 @@
       "disabled": true,
       "custom_css": [],
       "settings": {
-        "hd": "Maty do łodzi!",
-        "des": "<p>Produkujemy maty na indywidualne zamówienia. Na przykład na łodzie, samoloty i inne rodzaje transportu według spersonalizowanych wymiarów. Napisz do nas, a spełnimy wszystkie Twoje życzenia!</p>",
-        "btn_text": "ZAMÓW MATĘ",
+        "hd": "Koberce do lodí!",
+        "des": "<p>Vyrábíme koberce na individuální zakázku — například do lodí, letadel a dalších dopravních prostředků podle personalizovaných rozměrů. Napište nám a splníme všechna vaše přání!</p>",
+        "btn_text": "OBJEDNAT KOBEREC",
         "btn_url": "shopify://pages/zamowienie-indywidualne"
       }
     },
@@ -195,18 +195,18 @@
       "disabled": true,
       "settings": {
         "img1": "shopify://shop_images/1.png",
-        "des1": "<p>Trwałe, nie tracą swojego wyglądu z upływem czasu</p>",
+        "des1": "<p>Odolné, neztrácejí svůj vzhled s časem</p>",
         "img2": "shopify://shop_images/High_Temperature_Meteorology_Symbol.I16_1.png",
         "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C</p>",
         "img3": "shopify://shop_images/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
-        "des3": "<p>Odporność na działanie detergentów</p>"
+        "des3": "<p>Odolnost vůči působení detergentů</p>"
       }
     },
     "ca715e5f-0884-4a81-ac3b-f6012a690383": {
       "type": "home-8",
       "settings": {
         "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Poland and abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form and we will realize individually tailored floor mats for your car.</p>",
+        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form a we will realize individually tailored floor mats for your car.</p>",
         "btn_text": "CUSTOM ORDER",
         "btn_url": "shopify://products/custom-order",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
@@ -263,45 +263,45 @@
         "template--18288166109490__c605d8f3-dc8c-4614-8c41-de8a728399a1-1679587212fe76a58e-0": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Co to jest materiał EVA?",
+            "heading": "Co je materiál EVA?",
             "icon": "none",
-            "row_content": "<p>EVA to etylen-octan winylu, lekki i elastyczny materiał o właściwościach wodoodpornych.<br/>Dzięki temu, że materiał jest hipoalergiczny, maty nie wydzielają żadnych zapachów, nawet w wysokich temperaturach.</p>",
+            "row_content": "<p>EVA je ethylen-vinylacetát, lehký a elastický materiál s voděodolnými vlastnostmi.<br/>Díky hypoalergennímu složení koberce nezapáchají ani při vysokých teplotách.</p>",
             "page": ""
           }
         },
         "template--18288166109490__c605d8f3-dc8c-4614-8c41-de8a728399a1-1679587212fe76a58e-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Jak prawidłowo zamontować maty z materiału EVA?",
+            "heading": "Jak správně namontovat koberce z materiálu EVA?",
             "icon": "none",
-            "row_content": "<p>Każdy zestaw ma określony rodzaj zapięcia, mamy ponad 30 rodzajów. Zapięcia montujemy w odpowiednich miejscach i dodatkowo wszywamy również rzepy po bokach, aby dywaniki się nie wierciły i trzymały na swoim miejscu.</p>",
+            "row_content": "<p>Každá sada má určený typ upevnění, máme více než 30 typů. Upevnění montujeme na správných místech a navíc přišíváme suché zipy po stranách, aby se koberce neposouvaly a držely na místě.</p>",
             "page": ""
           }
         },
         "template--18288166109490__c605d8f3-dc8c-4614-8c41-de8a728399a1-1679587212fe76a58e-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Jeśli potrzebuję wyjątkowego dywanu?",
+            "heading": "Potřebuji výjimečný koberec?",
             "icon": "none",
-            "row_content": "<p>Istnieje możliwość wykonania osobnej maty na butlę gazową jeśli wystaje w bagażniku lub zakrycia większej podłogi we wskazanych miejscach za pośrednictwem klienta.</p>",
+            "row_content": "<p>Je možné vyrobit samostatný koberec na plynovou lahev, pokud trčí v kufru, nebo zakrýt větší plochu podlahy na určených místech podle požadavků zákazníka.</p>",
             "page": ""
           }
         },
         "template--18288166109490__c605d8f3-dc8c-4614-8c41-de8a728399a1-1679587212fe76a58e-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Czy można prać maty wykonane z materiału EVA?",
+            "heading": "Lze prát koberce z materiálu EVA?",
             "icon": "none",
-            "row_content": "<p>Tak, dywaniki można prać miękką gąbką i detergentem. Nie zaleca się jednak stosowania agresywnych chemicznych środków czyszczących.</p>",
+            "row_content": "<p>Ano, koberce lze čistit měkkou houbičkou a detergentem. Nedoporučuje se však používat agresivní chemické čisticí prostředky.</p>",
             "page": ""
           }
         },
         "4585ff0f-b735-4703-9e3f-52b91d99c12d": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Czy dywany mają gwarancję?",
+            "heading": "Mají koberce záruku?",
             "icon": "none",
-            "row_content": "<p>Udzielamy gwarancji na rok od otrzymania mat, co daje możliwość wymiany zestawu na nowy w ciągu roku w przypadku odkształcenia maty lub wykrycia jakichkolwiek otarć. Ale dzięki dobrej jakości materiału maty wytrzymują od 5-7 lat.</p>",
+            "row_content": "<p>Poskytujeme záruku jeden rok od převzetí koberců, co umožňuje výměnu sady do jednoho roku v případě deformace nebo otěrů. Díky kvalitnímu materiálu však koberce vydrží 5–7 let.</p>",
             "page": ""
           }
         }
@@ -334,7 +334,7 @@
       "settings": {
         "back-to-top-button-enabled": true,
         "smooth-scroll-enabled": true,
-        "btn_text": "Do góry",
+        "btn_text": "Nahoru",
         "button-color": "#848282",
         "text-color": "#ffffff",
         "back-to-top-button-position": "bottom-right"

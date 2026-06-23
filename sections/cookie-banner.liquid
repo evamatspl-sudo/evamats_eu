@@ -44,20 +44,20 @@ document.getElementById('acceptCookies').onclick = function() {
 </script>
 
 {% schema %}
+{
+  "name": "Cookie banner",
+  "settings": [
     {
-        "name": "Cookie banner",
-        "settings": [
-            {
-                "type": "textarea",
-                "id": "text",
-                "label": "Text"
-            },
-            {
-                "type": "text",
-                "id": "button_text",
-                "label": "Button text",
-                "default": "Akceptuję"
-            }
-        ]
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Souhlasím"
     }
+  ]
+}
 {% endschema %}

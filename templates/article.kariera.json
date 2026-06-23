@@ -16,35 +16,52 @@
     "evamats_article_kariera_hero": {
       "type": "evamats-article-kariera-hero",
       "settings": {
-        "show_back_link": false,
-        "back_link_label": "← Wszystkie oferty",
+        "show_back_link": true,
+        "back_link_label": "← Všechny nabídky",
         "apply_label": "Aplikuj",
         "apply_link": "",
         "apply_email": "hr.team@evamats.pl",
         "show_sidebar_card": true,
-        "sidebar_aria_label": "Podsumowanie oferty",
-        "label_contract": "Forma współpracy",
-        "label_languages": "Język",
-        "label_work_mode": "Tryb pracy",
-        "label_location": "Lokalizacja",
-        "label_salary": "Wynagrodzenie",
+        "sidebar_aria_label": "Shrnutí nabídky",
+        "label_contract": "Forma spolupráce",
+        "label_languages": "Jazyk",
+        "label_work_mode": "Způsob práce",
+        "label_location": "Lokalizace",
+        "label_salary": "Mzda",
+        "label_experience": "Zkušenosti",
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "evamats_kariera_supervisor": {
       "type": "evamats-kariera-supervisor",
       "settings": {
-        "heading": "Poznaj swojego przyszłego przełożonego",
-        "text": "W naszym dziale liczy się zaangażowanie i chęć rozwoju. Szukamy osób, które chcą pracować w dynamicznym środowisku i mieć realny wpływ na wyniki",
-        "name": "Kacper Kowalski",
-        "role": "Kierownik Działu Sprzedaży",
-        "button_label": "O firmie",
+        "heading": "{{ article.metafields.custom.vacancy.value.supervisor_title.value }}",
+        "text": "{{ article.metafields.custom.vacancy.value.supervisor_description.value }}",
+        "name": "{{ article.metafields.custom.vacancy.value.supervisor_name.value }}",
+        "role": "{{ article.metafields.custom.vacancy.value.supervisor_position.value }}",
+        "button_label": "O firmě",
         "button_link": "shopify://pages/o-nas",
-        "image": "shopify://shop_images/Kacpr12.webp",
-        "image_mobile": "shopify://shop_images/Kacpr12_1.webp",
+        "image": "{{ article.metafields.custom.vacancy.value.supervisor_image_desk.value }}",
+        "image_mobile": "{{ article.metafields.custom.vacancy.value.supervisor_image_mob.value }}",
         "padding_top": 32,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "evamats_vacancy_role_requirements_UKGerR": {
+      "type": "evamats-vacancy-role-requirements",
+      "name": "EVAMATS role & reqs",
+      "settings": {
+        "heading": "Vaše role a naše požadavky",
+        "role_panel_title": "Čím se budete zabývat",
+        "requirements_panel_title": "Co očekáváme",
+        "tab_role_label": "Vaše role",
+        "tab_requirements_label": "Požadavky",
+        "tabs_aria_label": "Vaše role a požadavky"
       }
     },
     "evamats_icon_grid_fhB4HG": {
@@ -53,41 +70,41 @@
         "item_V89bMF": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755216.svg",
-            "heading": "Realny wpływ na rozwój firmy",
-            "text": "Twoje pomysły są wdrażane, a nie ignorowane"
+            "icon": "shopify://shop_images/Group_1948755148.svg",
+            "heading": "Skutečný vliv na rozvoj firmy",
+            "text": "Vaše nápady se realizují, ne ignorují"
           }
         },
         "item_eyGcVT": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148.svg",
-            "heading": "Szybki rozwój i nowe możliwości",
-            "text": "U nas możesz rosnąć razem z firmą"
+            "icon": "shopify://shop_images/Group_1948755148-1.svg",
+            "heading": "Rychlý rozvoj a nové příležitosti",
+            "text": "U nás můžete růst spolu s firmou"
           }
         },
         "item_fyx3Na": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-1.svg",
+            "icon": "shopify://shop_images/Group_1948755148-2.svg",
             "heading": "Jasne zasady i konkretne cele",
-            "text": "Wiesz, za co odpowiadasz i ile możesz zarobić"
+            "text": "Víte, za co odpovídáte a kolik můžete vydělat"
           }
         },
         "item_LbMDEF": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-2.svg",
-            "heading": "Zespół, który działa, a nie tylko rozmawia",
-            "text": "Stawiamy na efektywność i konkret"
+            "icon": "shopify://shop_images/Group_1948755148-3.svg",
+            "heading": "Tým, který jedná, nejen mluví",
+            "text": "Klademe důraz na efektivitu a konkrétní výsledky"
           }
         },
         "item_6tQVtR": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-3.svg",
-            "heading": "Nowoczesne podejście do pracy",
-            "text": "Automatyzacje, systemy i rozwój zamiast chaosu"
+            "icon": "shopify://shop_images/Group_1948755148-4.svg",
+            "heading": "Moderní přístup k práci",
+            "text": "Automatizace, systémy a rozvoj místo chaosu"
           }
         }
       },
@@ -101,10 +118,12 @@
       "name": "EVAMATS — Icon grid",
       "settings": {
         "layout_style": "rows",
-        "heading": "Dlaczego warto pracować w EVAMATS?",
+        "heading": "Proč stojí za to pracovat v EVAMATS?",
         "heading_alignment": "left",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "o_nas_process_steps_MVQik4": {
@@ -113,9 +132,9 @@
         "step_riJTMj": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755095.svg",
+            "icon": "shopify://shop_images/Group_1948755095_d8654f00-3aa9-48d5-822d-2cb24192ac02.svg",
             "title": "Rozmowa HR",
-            "text": "<p>Chcemy lepiej poznać Twoje doświadczenie zawodowe, cele oraz to, w jaki sposób nasze wartości i kultura pracy są zgodne z Twoim podejściem i oczekiwaniami.</p>"
+            "text": "<p>Chceme lépe poznat vaše pracovní zkušenosti, cíle a to, jak naše hodnoty a kultura práce odpovídají vašemu přístupu a očekáváním.</p>"
           }
         },
         "step_jW7c4g": {
@@ -123,7 +142,7 @@
           "settings": {
             "icon": "shopify://shop_images/Group_1948755095-1.svg",
             "title": "Zadanie / scenka",
-            "text": "<p>Sprawdzamy, jak podchodzisz do realnych sytuacji sprzedażowych. <br/>Nie szukamy gotowych<br/> odpowiedzi - zależy nam na Twoim sposobie myślenia.</p>"
+            "text": "<p>Zjišťujeme, jak přistupujete k reálným prodejním situacím.<br/>Nehledáme hotové<br/> odpovědi — záleží nám na vašem způsobu myšlení.</p>"
           }
         },
         "step_gEir9w": {
@@ -131,15 +150,15 @@
           "settings": {
             "icon": "shopify://shop_images/Group_1948755095-2.svg",
             "title": "Spotkanie z liderem",
-            "text": "<p>Rozmawiasz bezpośrednio z osobą, z którą będziesz współpracować. Omawiamy oczekiwania, styl pracy i warunki współpracy.</p>"
+            "text": "<p>Mluvíte přímo s osobou, se kterou budete spolupracovat. Probereme očekávání, styl práce a podmínky spolupráce.</p>"
           }
         },
         "step_GNCKDm": {
           "type": "step",
           "settings": {
             "icon": "shopify://shop_images/Group_1948755095-3.svg",
-            "title": "Start okresu próbnego",
-            "text": "<p>Zaczynamy wspólną pracę. Otrzymujesz pełne wdrożenie, wsparcie mentora i jasny plan na pierwsze tygodnie.</p>"
+            "title": "Začátek zkušební doby",
+            "text": "<p>Začínáme společnou práci. Získáte plné zaškolení, podporu mentora a jasný plán na první týdny.</p>"
           }
         }
       },
@@ -152,7 +171,7 @@
       "name": "About — process steps",
       "settings": {
         "layout": "stack",
-        "heading": "Jak wygląda proces?",
+        "heading": "Jak vypadá proces?",
         "step_prefix": "Krok",
         "subheading": "",
         "padding_top": 48,
@@ -175,7 +194,7 @@
           "settings": {
             "panel": "work",
             "icon_preset": "2",
-            "text": "Elastyczne podejście do pracy"
+            "text": "Flexibilní přístup k práci"
           }
         },
         "item_w3": {
@@ -183,7 +202,7 @@
           "settings": {
             "panel": "work",
             "icon_preset": "3",
-            "text": "Możliwość pracy zdalnej (wybrane role)"
+            "text": "Možnost práce na dálku (vybrané role)"
           }
         },
         "item_w4": {
@@ -199,7 +218,7 @@
           "settings": {
             "panel": "growth",
             "icon_preset": "5",
-            "text": "Jasna ścieżka awansu"
+            "text": "Jasná kariérní cesta"
           }
         },
         "item_g2": {
@@ -207,7 +226,7 @@
           "settings": {
             "panel": "growth",
             "icon_preset": "6",
-            "text": "Realny wpływ na decyzje"
+            "text": "Skutečný vliv na rozhodnutí"
           }
         },
         "item_g3": {
@@ -215,7 +234,7 @@
           "settings": {
             "panel": "growth",
             "icon_preset": "7",
-            "text": "Wsparcie liderów i zespołu"
+            "text": "Podpora vedoucích a týmu"
           }
         },
         "item_g4": {
@@ -223,7 +242,7 @@
           "settings": {
             "panel": "growth",
             "icon_preset": "8",
-            "text": "Rozwój kompetencji w praktyce"
+            "text": "Rozvoj kompetencí v praxi"
           }
         },
         "item_g5": {
@@ -231,7 +250,7 @@
           "settings": {
             "panel": "growth",
             "icon_preset": "9",
-            "text": "Możliwość wdrażania własnych pomysłów"
+            "text": "Možnost realizace vlastních nápadů"
           }
         },
         "item_p1": {
@@ -239,7 +258,7 @@
           "settings": {
             "panel": "pay",
             "icon_preset": "10",
-            "text": "Premie zależne od wyników"
+            "text": "Prémie závislé na výsledcích"
           }
         },
         "item_p2": {
@@ -247,7 +266,7 @@
           "settings": {
             "panel": "pay",
             "icon_preset": "11",
-            "text": "Zniżki na produkty EVAMATS"
+            "text": "Slevy na produkty EVAMATS"
           }
         },
         "item_p3": {
@@ -271,7 +290,7 @@
           "settings": {
             "panel": "pay",
             "icon_preset": "14",
-            "text": "Parking dla pracowników"
+            "text": "Parkování pro zaměstnance"
           }
         }
       },
@@ -293,17 +312,19 @@
       ],
       "settings": {
         "overline": "Benefity",
-        "heading": "Co zyskujesz, dołączając do EVAMATS?",
-        "work_title": "Praca, która ma sens i tempo",
+        "heading": "Co získáte, když se připojíte k EVAMATS?",
+        "work_title": "Práce, která má smysl a tempo",
         "work_image": "shopify://shop_images/googa_1.webp",
-        "culture_title": "Tworzymy firmę, w której chce się pracować i rozwijać",
-        "culture_tagline": "Nie szukamy wszystkich — szukamy zaangażowanych",
-        "growth_title": "Rozwój, który naprawdę przyspiesza",
-        "growth_image": "shopify://shop_images/Rectangle_4928.webp",
-        "pay_title": "Wynagrodzenie i dodatkowe korzyści",
-        "pay_image": "shopify://shop_images/Group_1948755168.webp",
+        "culture_title": "Budujeme firmu, ve které chcete pracovat a růst",
+        "culture_tagline": "Nehledáme všechny — hledáme angažované lidi",
+        "growth_title": "Rozvoj, který opravdu zrychluje",
+        "growth_image": "shopify://shop_images/Mask_group_ec85443f-dcff-4aa7-8fe4-60c35724413b.webp",
+        "pay_title": "Mzda a další výhody",
+        "pay_image": "shopify://shop_images/Group_1948755168_a26e92eb-9bb1-4ffe-ad88-61e04ecda6b8.webp",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "evamats_careers_contact_c9GyH8": {
@@ -311,17 +332,19 @@
       "settings": {
         "background_image": "shopify://shop_images/ag1_waifu2x_photo_scale.webp",
         "background_image_mobile": "shopify://shop_images/goga2.webp",
-        "heading": "Nie widzisz oferty dla siebie? Masz pytania?",
+        "heading": "Nevidíte nabídku pro sebe? Máte otázky?",
         "email": "hr.team@evamats.pl",
-        "button_label": "Napisz do nas",
+        "button_label": "Napište nám",
         "button_link": "",
-        "social_heading": "Dowiedz się więcej o karierze w naszych mediach:",
+        "social_heading": "Zjistěte více o kariéře v našich médiích:",
         "facebook_url": "https://www.facebook.com/evamatspl",
         "instagram_url": "https://www.instagram.com/evamats.pl/",
         "tiktok_url": "https://www.tiktok.com/@evamats.pl",
         "youtube_url": "https://www.youtube.com/@evamatspl",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     }
   },
@@ -329,6 +352,7 @@
     "main",
     "evamats_article_kariera_hero",
     "evamats_kariera_supervisor",
+    "evamats_vacancy_role_requirements_UKGerR",
     "evamats_icon_grid_fhB4HG",
     "o_nas_process_steps_MVQik4",
     "evamats_kariera_benefits",

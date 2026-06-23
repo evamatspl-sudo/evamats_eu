@@ -145,7 +145,7 @@
     "order_related_collection": "akcesoria",
     "progress_bar_type": "shipping",
     "cart_progress_gift_image": "shopify://shop_images/Group_180.webp",
-    "popup_info_text": "<p>Dokładny kolor to sztuka, nie nauka! Staramy się jak najwierniej odwzorować kolory naszych materiałów. Warto jednak wziąć pod uwagę kilka naukowych i technicznych faktów, które mogą wpływać na różnice w odcieniach:</p><p><strong>Specyfika ekranów.</strong><br/>Każdy ekran (telefon, tablet, monitor) ma swoje ustawienia kolorów, które zależą od technologii wyświetlacza, jasności, kontrastu i temperatury barwowej. To wszystko wpływa na odbiór kolorów. Na przykład ekrany OLED wyświetlają kolory bardziej intensywnie niż ekrany LCD.</p><p><strong>Oświetlenie i otoczenie.</strong><br/>Kolory są postrzegane inaczej w zależności od rodzaju oświetlenia (naturalnego lub sztucznego) oraz jego intensywności. Na przykład w świetle dziennym odcień może wydawać się jaśniejszy niż w świetle lampowym.</p><p><strong>Materiały i ich struktura.</strong><br/>Materiał EVA, z którego wykonane są nasze dywaniki, ma unikalną teksturę i relief. To może powodować dodatkowe efekty optyczne, przez co kolor wygląda inaczej pod różnym kątem widzenia.</p><p>Gwarantujemy, że każdy dywanik zostanie wykonany z najwyższą dbałością o szczegóły i jakość, której oczekujesz. Jeśli masz wątpliwości co do odcienia, z przyjemnością doradzimy i pomożemy dokonać najlepszego wyboru.</p>",
+    "popup_info_text": "<p>Přesná barva je umění, ne věda! Snažíme se co nejvěrněji zachytit barvy našich materiálů. Zároveň je však třeba zohlednit několik vědeckých a technických faktorů, které mohou ovlivnit rozdíly v odstínech:</p><p><strong>Specifika obrazovek.</strong><br/>Každá obrazovka (telefon, tablet, monitor) má vlastní nastavení barev podle technologie displeje, jasu, kontrastu a teploty. To vše ovlivňuje vnímání barev. Například OLED zobrazuje barvy intenzivněji než LCD.</p><p><strong>Osvětlení a prostředí.</strong><br/>Barvy vnímáme jinak podle typu osvětlení (denního nebo umělého) a jeho intenzity. Za denního světla může být odstín světlejší než pod lampou.</p><p><strong>Materiály a jejich struktura.</strong><br/>Materiál EVA, ze kterého jsou naše koberce vyrobeny, má jedinečnou texturu a reliéf. To může způsobovat optické efekty a barva vypadá jinak pod různým úhlem.</p><p>Garantujeme, že každý koberec bude vyroben s maximální péčí o detail a kvalitu, kterou očekáváte. Máte-li pochybnosti o odstínu, rádi poradíme a pomůžeme s výběrem.</p>",
     "product_upsell": [
       "rubber-heel-pad-1",
       "heel-pad-made-of-eva-material",
@@ -242,7 +242,7 @@
         "settings": {
           "color_scheme": "background-1",
           "newsletter_enable": false,
-          "newsletter_heading": "<p>Zapisz się na nasze emaile</p>",
+          "newsletter_heading": "<p>Přihlásit se na nasze emaile</p>",
           "show_social": true,
           "enable_country_selector": true,
           "enable_language_selector": true,

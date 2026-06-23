@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -12,29 +21,10 @@
     "74c5770f-36c8-4dc3-9a06-b4e5f01a4f3a": {
       "type": "featured-collection",
       "settings": {
-        "title": "Podpiętki",
-        "heading_size": "h1",
-        "custom_header_style": false,
-        "button_text": "",
-        "button_link": "",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
+        "title": "Podložky paty",
         "collection": "podpietki",
         "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -78,7 +68,7 @@
         "template--21561649266994__707131a4-1edd-414c-bcc0-2a6d94a62478-share-1": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Sdílet"
           }
         }
       },
@@ -149,7 +139,7 @@
         "76ec9577-ef11-4ed0-8c30-485e3ea4cf75": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Sdílet"
           }
         }
       },
@@ -214,28 +204,9 @@
       "type": "featured-collection",
       "settings": {
         "title": "People often buy this product",
-        "heading_size": "h2",
-        "custom_header_style": false,
-        "button_text": "",
-        "button_link": "",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
         "collection": "akcesoria-samochodowa",
         "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
         "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }

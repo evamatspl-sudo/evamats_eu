@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/land-rover-defender"
       }
     },
-    "d739c49e-d163-4803-9ae2-3f0fe78a3cf1": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/land-rover-defender"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/land-rover-defender",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "d80374f9-332f-460a-a5fe-244d27bd7a8d": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "d739c49e-d163-4803-9ae2-3f0fe78a3cf1",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

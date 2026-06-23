@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/jaguar"
       }
     },
-    "faa933fd-d2b0-4284-bc68-eea4229b4edc": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/jaguar"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/jaguar",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "80562a00-b4a8-4c6b-949c-6155176bdaeb": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "faa933fd-d2b0-4284-bc68-eea4229b4edc",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

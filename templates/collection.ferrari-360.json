@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/ferrari"
       }
     },
-    "4f430f89-2350-427c-8821-fc2910db44c0": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/ferrari"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/ferrari",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "e445c489-6376-47c9-b26e-eeb53fc8db08": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "4f430f89-2350-427c-8821-fc2910db44c0",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

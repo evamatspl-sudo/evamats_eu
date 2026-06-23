@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/tesla"
       }
     },
-    "ca521265-a726-45b9-9ed4-f80c896fffa0": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/tesla"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/tesla",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "448c076f-bf15-4f7a-a118-95096e0d55da": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "ca521265-a726-45b9-9ed4-f80c896fffa0",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

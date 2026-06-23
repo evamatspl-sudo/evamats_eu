@@ -28,7 +28,7 @@
             "info_text_individual": "",
             "info_html": "",
             "info_html_individual": "",
-            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours and add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm and send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
+            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours a add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm a send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
             "auto_open_individual_welcome_popup": true
           }
         },
@@ -91,10 +91,10 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "trunk_message": "<p>Note – trunk mat:</p><p>Up to 140x240 cm – from one part ✅</p><p>Up to 150x250 cm – from two parts ✅</p><p>Above 280 cm in length – we do not make ❌</p><p>ℹ️ In case of doubt, please contact the sales department.</p>",
-        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br/><br/>In this vehicle model the trunk floor is flat and has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br/><br/></p>",
+        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br/><br/>In this vehicle model the trunk floor is flat a has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br/><br/></p>",
         "gallery_disclaimer": "The photo may differ from the final result. When ordering, you will receive mats that correspond to your car model.",
         "padding_top": 36,
         "padding_bottom": 12
@@ -116,7 +116,7 @@
           "settings": {
             "title": "Specifications",
             "id": "tech",
-            "html": "<p><strong>🔧 Technical Specifications</strong></p>\n<ul>\n  <li>\n<strong>Material:</strong> High-quality EVA foam (Ethylene Vinyl Acetate)</li>\n  <li>\n<strong>Mat thickness:</strong> Approx. 10 mm — ideal balance between flexibility and durability</li>\n  <li>\n<strong>Cell structure:</strong> Diamond (7 mm) / Honeycomb (8 mm) — choose during purchase</li>\n  <li>\n<strong>Set weight:</strong> From 1.2 to 2.5 kg (depending on the version)</li>\n  <li>\n<strong>Number of pieces:</strong> 2–6 pieces (full set: front + rear + optional trunk)</li>\n  <li>\n<strong>Floor coverage:</strong> Up to 95% of the car’s floor surface</li>\n  <li>\n<strong>Seasonality:</strong> All-season — resistant to temperatures from -50°C to +50°C</li>\n  <li>\n<strong>Water resistance:</strong> 100% — does not absorb liquids, no staining</li>\n  <li>\n<strong>Fastening:</strong> Plastic stoppers (original) / Velcro strips — compatible with factory mounting points</li>\n  <li>\n<strong>Edging (trim):</strong> 14 color variants to choose from</li>\n  <li>\n<strong>Additional options:</strong> Reinforced heel pads</li>\n</ul>"
+            "html": "<p><strong>🔧 Technical Specifications</strong></p>\n<ul>\n  <li>\n<strong>Materiál:</strong> High-quality EVA foam (Ethylene Vinyl Acetate)</li>\n  <li>\n<strong>Mat thickness:</strong> Approx. 10 mm — ideal balance between flexibility a durability</li>\n  <li>\n<strong>Cell structure:</strong> Diamond (7 mm) / Honeycomb (8 mm) — choose during purchase</li>\n  <li>\n<strong>Set weight:</strong> From 1.2 to 2.5 kg (depending on the version)</li>\n  <li>\n<strong>Number of pieces:</strong> 2–6 pieces (full set: front + rear + optional trunk)</li>\n  <li>\n<strong>Floor coverage:</strong> Up to 95% of the car’s floor surface</li>\n  <li>\n<strong>Seasonality:</strong> Vše-season — resistant to temperatures from -50°C to +50°C</li>\n  <li>\n<strong>Water resistance:</strong> 100% — does not absorb liquids, no staining</li>\n  <li>\n<strong>Fastening:</strong> Plastic stoppers (original) / Velcro strips — compatible with factory mounting points</li>\n  <li>\n<strong>Edging (trim):</strong> 14 color variants to choose from</li>\n  <li>\n<strong>Additional options:</strong> Reinforced heel pads</li>\n</ul>"
           }
         },
         "tab_QjEwcm": {
@@ -130,9 +130,9 @@
         "tab_Eh7cBq": {
           "type": "tab",
           "settings": {
-            "title": "Delivery and payment",
+            "title": "Doprava a platba",
             "id": "delivery",
-            "html": "<p><strong>📦 Delivery and Payment</strong></p>\n\n<p>All EVA mats are made to order from scratch, with attention to detail and a perfect fit for your specific car model.</p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 The current standard order processing time is 14 business days.</p>\n\n<p>Choose the production speed of your order</p>\n\n<p>Each set of mats is made individually, so you can decide how quickly your order enters production.</p>\n\n<p>Available production options:</p>\n\n<p>🟢 Standard - 14 business days<br>\nProcessed in the standard production queue.</p>\n\n<p>🟠 Express - 7 business days<br>\nHigher priority in the production queue.</p>\n\n<p>Once production is completed, the mats are immediately prepared for shipment.</p>\n\n<p>You can choose the priority production option on the “Delivery and Payment” page when selecting the delivery method. The Express service is available at an additional cost.</p>\n\n<p>🚗 We do our best to process orders as quickly as possible. However, during periods of increased order volume, such as seasonal peaks, promotions, or holidays, processing times may be extended.</p>\n\n<p><strong>Delivery methods:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost Courier (online payment or cash on delivery)</li>\n    <li>InPost Parcel Locker (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD Courier (online payment or cash on delivery)</li>\n    <li>DPD Pickup Point (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS Courier (online payment or cash on delivery)</li>\n    <li>GLS Parcel Shop (online payment only)</li>\n  </ul>\n</div>\n\n<p><strong>Online payments:</strong></p>\n\n<ul class=\"evamats-footer__payment-list list-unstyled\">\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/przelewy24_logo_svg.svg?v=1754575627\" alt=\"Przelewy24\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/blik_9f0af63c-fe50-41e4-9eed-8eba66188150.svg?v=1754574036\" alt=\"BLIK\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/PayPo_logo_kolor.svg?v=1754574985\" alt=\"PayPo\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  </li>\n  <li class=\"evamats-footer__payment-item\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n  </li>\n<p></p>\n\n<p><strong>Safe shopping:</strong></p>\n<ul>\n  <li>Encrypted payments</li>\n  <li>Reliable logistics</li>\n  <li>Ongoing customer support</li>\n</ul>\n\n<p>Thank you for choosing a Polish-made product designed with quality and functionality in mind. Driver satisfaction is our top priority.</p>\n</ul>"
+            "html": "<p><strong>📦 Doprava a platba</strong></p>\n\n<p>Všechny EVA rohože vyrábíme na zakázku od začátku, s důrazem na detail a perfektní přizpůsobení vašemu konkrétnímu modelu vozu.</p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 Aktuální standardní doba zpracování objednávky je 14 pracovních dní.</p>\n\n<p>Zvolte si rychlost výroby své objednávky</p>\n\n<p>Každá sada rohoží se vyrábí individuálně, takže si můžete vybrat, jak rychle vaše objednávka vstoupí do výroby.</p>\n\n<p>Dostupné možnosti výroby:</p>\n\n<p>🟢 Standard - 14 pracovních dní<br>\nZpracování ve standardní výrobní frontě.</p>\n\n<p>🟠 Expres - 7 pracovních dní<br>\nVyšší priorita ve výrobní frontě.</p>\n\n<p>Jakmile je výroba dokončena, rohože jsou ihned připraveny k odeslání.</p>\n\n<p>Možnost prioritní výroby si můžete vybrat na stránce „Doprava a platba“ při výběru způsobu doručení. Služba Expres je dostupná za příplatek.</p>\n\n<p>🚗 Děláme maximum pro co nejrychlejší zpracování objednávek. V obdobích zvýšeného počtu objednávek, jako jsou sezónní špičky, promoakce nebo svátky, se však může doba zpracování prodloužit.</p>\n\n<p><strong>Způsoby doručení:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost kurýr (online platba nebo dobírka)</li>\n    <li>InPost výdejní box (pouze online platba)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD kurýr (online platba nebo dobírka)</li>\n    <li>DPD výdejní místo (pouze online platba)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS kurýr (online platba nebo dobírka)</li>\n    <li>GLS Parcel Shop (pouze online platba)</li>\n  </ul>\n</div>\n\n<p><strong>Online platby:</strong></p>\n\n<p>\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/przelewy24_logo_svg.svg?v=1754575627\" alt=\"Przelewy24\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/blik_9f0af63c-fe50-41e4-9eed-8eba66188150.svg?v=1754574036\" alt=\"BLIK\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/PayPo_logo_kolor.svg?v=1754574985\" alt=\"PayPo\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n</p>\n\n<p><strong>Bezpečný nákup:</strong></p>\n<ul>\n  <li>Šifrované platby</li>\n  <li>Spolehlivá logistika</li>\n  <li>Průběžná zákaznická podpora</li>\n</ul>\n\n<p>Děkujeme, že jste si vybrali produkt vyrobený v Polsku s důrazem na kvalitu a funkčnost. Spokojenost řidiče je pro nás nejvyšší prioritou.</p>"
           }
         }
       },
@@ -142,13 +142,13 @@
         "tab_QjEwcm",
         "tab_Eh7cBq"
       ],
-      "name": "Product tabs",
+      "name": "Produkt tabs",
       "settings": {
         "about_heading_before": "Original",
         "about_heading_brand": "EVAMATS",
         "about_heading_after": "car mats — modern interior protection",
-        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, and water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sand, water) deep within the material, keeping the surface around them dry and clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, and edging to perfectly match your car's interior.</p>",
-        "about_features_heading": "What makes our car mats stand out?",
+        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, a water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sa, water) deep within the material, keeping the surface around them dry a clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, a edging to perfectly match your car's interior.</p>",
+        "about_features_heading": "What makes our car mats sta out?",
         "about_feature_1_text": "100% waterproof — no leaks",
         "about_feature_1_image": "shopify://shop_images/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
         "about_feature_2_text": "Covers up to 95% of the floor surface",
@@ -157,19 +157,19 @@
         "about_feature_3_image": "shopify://shop_images/Frame_1632526597.webp",
         "about_feature_4_text": "Suitable for all seasons: from −50°C to +50°C",
         "about_feature_4_image": "shopify://shop_images/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
-        "about_feature_5_text": "Safe for health and the environment — toxin-free and recyclable",
+        "about_feature_5_text": "Safe for health a the environment — toxin-free a recyclable",
         "about_feature_5_image": "shopify://shop_images/Frame_1632526601.webp",
         "about_confidence_heading": "Shop with confidence",
         "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
         "about_confidence_2_text": "Security — encrypted payments, trusted couriers",
-        "about_confidence_3_text": "Made in Poland — local production, fast delivery"
+        "about_confidence_3_text": "Made in Polsko — local production, fast delivery"
       }
     },
     "related-products": {
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "Możesz także polubić",
+        "heading": "Mohlo by se vám také líbit",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -199,7 +199,7 @@
             "position_x": 24,
             "position_y": 12,
             "tooltip_heading": "Struktura",
-            "tooltip_text": "Struktura zatrzymująca brud i wodę"
+            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
           }
         },
         "hotspot_BkFpdP": {
@@ -207,8 +207,8 @@
           "settings": {
             "position_x": 72,
             "position_y": 35,
-            "tooltip_heading": "Dopasowanie",
-            "tooltip_text": "Precyzyjne dopasowanie do modelu auta"
+            "tooltip_heading": "Padnutí",
+            "tooltip_text": "Přesné padnutí pro váš model auta"
           }
         },
         "hotspot_iwgdyG": {
@@ -216,8 +216,8 @@
           "settings": {
             "position_x": 38,
             "position_y": 53,
-            "tooltip_heading": "Materiał",
-            "tooltip_text": "Wytrzymały materiał EVA odporny na zużycie"
+            "tooltip_heading": "Materiál",
+            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
           }
         },
         "hotspot_Wfp8fW": {
@@ -225,8 +225,8 @@
           "settings": {
             "position_x": 88,
             "position_y": 78,
-            "tooltip_heading": "Rant",
-            "tooltip_text": "Podwyższony rant chroni wnętrze auta"
+            "tooltip_heading": "Lem",
+            "tooltip_text": "Zvýšený lem chrání interiér vozu"
           }
         },
         "hotspot_iMWJNT": {
@@ -234,8 +234,8 @@
           "settings": {
             "position_x": 21,
             "position_y": 83,
-            "tooltip_heading": "Czyszczenie",
-            "tooltip_text": "Łatwe czyszczenie w kilka sekund"
+            "tooltip_heading": "Čištění",
+            "tooltip_text": "Snadné čištění během několika sekund"
           }
         }
       },
@@ -248,33 +248,34 @@
       ],
       "name": "Mat hotspot consultation",
       "settings": {
-        "heading": "Uzyskaj bezpłatną konsultację!",
-        "subheading": "Chętnie pomożemy Ci dobrać odpowiednie rozwiązanie.",
+        "heading": "Získejte bezplatnou konzultaci!",
+        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
         "mat_image": "shopify://shop_images/vacancy_375.webp",
-        "mat_image_alt": "Dywanik EVA",
-        "label_name": "Imię i nazwisko",
-        "placeholder_name": "Jan Kowalski",
+        "mat_image_alt": "EVA koberec",
+        "label_name": "Jméno a příjmení",
+        "placeholder_name": "Jan Novák",
         "label_phone": "Telefon",
         "phone_prefix": "+48",
         "placeholder_phone": "000-000-000",
-        "label_email": "Email",
+        "label_email": "E-mail",
         "placeholder_email": "jan@example.com",
-        "label_message": "Komentarz (opcjonalnie)",
-        "placeholder_message": "Twoja wiadomość…",
-        "submit_label": "Zostaw zapytanie",
-        "consent_intro": "Zgadzam się z",
-        "terms_label": "regulaminem",
+        "label_message": "Poznámka (volitelné)",
+        "placeholder_message": "Vaše zpráva…",
+        "submit_label": "Odeslat poptávku",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
         "terms_url": "",
-        "consent_mid": "oraz",
-        "privacy_label": "Polityką prywatności",
+        "consent_mid": "a",
+        "privacy_label": "zásadami ochrany osobních údajů",
         "privacy_url": "",
         "consent_end": ".",
-        "success_message": "Dziękujemy! Skontaktujemy się wkrótce.",
-        "error_message": "Sprawdź pola i spróbuj ponownie.",
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Zkontrolujte pole a zkuste to znovu.",
         "padding_top": 0,
         "padding_bottom": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 48
       }
     },
     "related_products_custom_GpbmYf": {
@@ -284,8 +285,8 @@
         "custom_collection": "akcesoria",
         "heading": "Other products",
         "products_to_show": 12,
-        "card_button_label": "View product",
-        "mobile_button_label": "Select",
+        "card_button_label": "Zobrazit produkt",
+        "mobile_button_label": "Vybrat",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,

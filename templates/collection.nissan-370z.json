@@ -21,13 +21,6 @@
         "brand_url": ""
       }
     },
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/nissan"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/nissan",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -178,7 +171,7 @@
         "h3 {color: rgb(var(--color-foreground)); font-size: 3.2rem; letter-spacing: 2px;}"
       ],
       "settings": {
-        "heading_before": "Najpopularniejsze marki",
+        "heading_before": "Nejoblíbenější značky",
         "heading_accent": "",
         "heading_after": "",
         "catalog-header": "",
@@ -189,7 +182,7 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "All brands",
+        "btn_text": "Vše bras",
         "btn_url": "shopify://pages/dywaniki-samochodowe-eva"
       }
     },
@@ -197,7 +190,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Bestsellery",
+        "title": "Nejprodávanější",
         "collection": "bestsellerss",
         "products_to_show": 12,
         "show_view_all": true,
@@ -209,7 +202,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Akcesoria",
+        "title": "Příslušenství",
         "collection": "akcesoria",
         "products_to_show": 12,
         "show_view_all": true,
@@ -240,7 +233,6 @@
   },
   "order": [
     "banner",
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid",
     "4d52a956-5672-414d-9ffe-0d909c3db8b0",

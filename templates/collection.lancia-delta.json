@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/lancia"
       }
     },
-    "0a2bb1d0-7143-4234-8036-47a25327806e": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/lancia"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/lancia",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "39754174-d26a-4361-904e-7f0b845e32ce": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "0a2bb1d0-7143-4234-8036-47a25327806e",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

@@ -172,11 +172,11 @@
               {% elsif form.posted_successfully? %}
                 aria-describedby="ContactFooter-success"
               {% endif %}
-              placeholder="{{ section.settings.newsletter_placeholder | default: 'Twój adres e-mail' }}"
+              placeholder="{{ section.settings.newsletter_placeholder | default: 'Váš e-mail' }}"
               required
             >
             <button type="submit" class="button button_3 evamats-footer__newsletter-btn" name="commit">
-              {{ section.settings.newsletter_button | default: 'Zapisz się' }}
+              {{ section.settings.newsletter_button | default: 'Přihlásit se' }}
             </button>
           </div>
           {%- if form.errors -%}
@@ -261,10 +261,10 @@
     <hr class="evamats-footer__divider" aria-hidden="true">
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
-        {%- if settings.logo != blank -%}
+        {%- if settings.logo_inverse != blank -%}
           <a href="{{ routes.root_url }}" class="evamats-footer__logo-link">
             {{
-              settings.logo
+              settings.logo_inverse
               | image_url: width: 228
               | image_tag:
                 loading: 'lazy',
@@ -386,7 +386,7 @@
           "type": "text",
           "id": "heading",
           "label": "Heading",
-          "default": "Skontaktuj się z nami"
+          "default": "Kontaktujte nás"
         },
         {
           "type": "richtext",
@@ -417,13 +417,13 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Heading",
+          "default": "Nadpis",
           "label": "t:sections.footer.blocks.text.settings.heading.label"
         },
         {
           "type": "richtext",
           "id": "subtext",
-          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "default": "<p>Sdílet contact information, store details, and brand content with your customers.</p>",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
         }
       ]
@@ -528,7 +528,7 @@
     {
       "type": "richtext",
       "id": "newsletter_heading",
-      "default": "<p>Zapisz się i odbierz rabat na pierwsze zamówienie</p>",
+      "default": "<p>Přihlaste se a získejte slevu na první objednávku</p>",
       "label": "Newsletter heading"
     },
     {
@@ -539,13 +539,13 @@
     {
       "type": "text",
       "id": "newsletter_placeholder",
-      "default": "Twój adres e-mail",
+      "default": "Váš e-mail",
       "label": "Email input placeholder"
     },
     {
       "type": "text",
       "id": "newsletter_button",
-      "default": "Zapisz się",
+      "default": "Přihlásit se",
       "label": "Button label"
     },
     {
@@ -651,7 +651,7 @@
     {
       "type": "text",
       "id": "payments_label",
-      "default": "AKCEPTUJEMY PŁATNOŚCI",
+      "default": "PŘIJÍMÁME PLATBY",
       "label": "Payments label"
     },
     {
@@ -732,7 +732,7 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
+      "label": "t:sections.all.padding.padding_top",
       "min": 0,
       "max": 200,
       "step": 4,
@@ -742,7 +742,7 @@
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
+      "label": "t:sections.all.padding.padding_bottom",
       "min": 0,
       "max": 200,
       "step": 4,

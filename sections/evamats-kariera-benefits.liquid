@@ -53,10 +53,10 @@
         {%- endif -%}
 
         <div class="evamats-kariera-benefits__culture-foot">
-          {%- if settings.logo != blank -%}
+          {%- if settings.logo_inverse != blank -%}
             <div class="evamats-kariera-benefits__culture-logo">
               {{
-                settings.logo
+                settings.logo_inverse
                 | image_url: width: 206
                 | image_tag:
                   loading: 'lazy',
@@ -147,7 +147,7 @@
   </div>
 </div>
 
-{% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
+{% comment %} styles moved to assets/base.css (stylesheet) {% endcomment %}
 
 {% schema %}
 {
@@ -166,7 +166,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Co zyskujesz, dołączając do EVAMATS?"
+      "default": "Co získáte, když se připojíte k EVAMATS?"
     },
     {
       "type": "header",
@@ -176,7 +176,7 @@
       "type": "text",
       "id": "work_title",
       "label": "Title",
-      "default": "Praca, która ma sens i tempo"
+      "default": "Práce, která má smysl a tempo"
     },
     {
       "type": "image_picker",
@@ -191,13 +191,13 @@
       "type": "text",
       "id": "culture_title",
       "label": "Title",
-      "default": "Tworzymy firmę, w której chce się pracować i rozwijać"
+      "default": "Budujeme firmu, ve které chcete pracovat a růst"
     },
     {
       "type": "text",
       "id": "culture_tagline",
       "label": "Tagline (logo from theme settings)",
-      "default": "Nie szukamy wszystkich — szukamy zaangażowanych"
+      "default": "Nehledáme všechny — hledáme angažované lidi"
     },
     {
       "type": "header",
@@ -207,7 +207,7 @@
       "type": "text",
       "id": "growth_title",
       "label": "Title",
-      "default": "Rozwój, który naprawdę przyspiesza"
+      "default": "Rozvoj, který opravdu zrychluje"
     },
     {
       "type": "image_picker",
@@ -222,7 +222,7 @@
       "type": "text",
       "id": "pay_title",
       "label": "Title",
-      "default": "Wynagrodzenie i dodatkowe korzyści"
+      "default": "Mzda a další výhody"
     },
     {
       "type": "image_picker",
@@ -288,9 +288,18 @@
           "id": "panel",
           "label": "Panel",
           "options": [
-            { "value": "work", "label": "Praca" },
-            { "value": "growth", "label": "Rozwój" },
-            { "value": "pay", "label": "Wynagrodzenie" }
+            {
+              "value": "work",
+              "label": "Praca"
+            },
+            {
+              "value": "growth",
+              "label": "Rozwój"
+            },
+            {
+              "value": "pay",
+              "label": "Wynagrodzenie"
+            }
           ],
           "default": "work"
         },
@@ -299,20 +308,62 @@
           "id": "icon_preset",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "1"
         },
@@ -330,20 +381,118 @@
       "name": "EVAMATS kariera benefits",
       "category": "V2",
       "blocks": [
-        { "type": "item", "settings": { "panel": "work", "icon_preset": "1", "text": "Stabilne zatrudnienie i jasne zasady" } },
-        { "type": "item", "settings": { "panel": "work", "icon_preset": "2", "text": "Elastyczne podejście do pracy" } },
-        { "type": "item", "settings": { "panel": "work", "icon_preset": "3", "text": "Możliwość pracy zdalnej (wybrane role)" } },
-        { "type": "item", "settings": { "panel": "work", "icon_preset": "4", "text": "Zorganizowany system zamiast chaosu" } },
-        { "type": "item", "settings": { "panel": "growth", "icon_preset": "5", "text": "Jasna ścieżka awansu" } },
-        { "type": "item", "settings": { "panel": "growth", "icon_preset": "6", "text": "Realny wpływ na decyzje" } },
-        { "type": "item", "settings": { "panel": "growth", "icon_preset": "7", "text": "Wsparcie liderów i zespołu" } },
-        { "type": "item", "settings": { "panel": "growth", "icon_preset": "8", "text": "Rozwój kompetencji w praktyce" } },
-        { "type": "item", "settings": { "panel": "growth", "icon_preset": "9", "text": "Możliwość wdrażania własnych pomysłów" } },
-        { "type": "item", "settings": { "panel": "pay", "icon_preset": "10", "text": "Premie zależne od wyników" } },
-        { "type": "item", "settings": { "panel": "pay", "icon_preset": "11", "text": "Zniżki na produkty EVAMATS" } },
-        { "type": "item", "settings": { "panel": "pay", "icon_preset": "12", "text": "Dodatkowe benefity (np. Multisport)" } },
-        { "type": "item", "settings": { "panel": "pay", "icon_preset": "13", "text": "Karty podarunkowe i bonusy" } },
-        { "type": "item", "settings": { "panel": "pay", "icon_preset": "14", "text": "Parking dla pracowników" } }
+        {
+          "type": "item",
+          "settings": {
+            "panel": "work",
+            "icon_preset": "1",
+            "text": "Stabilne zatrudnienie i jasne zasady"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "work",
+            "icon_preset": "2",
+            "text": "Flexibilní přístup k práci"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "work",
+            "icon_preset": "3",
+            "text": "Možnost práce na dálku (vybrané role)"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "work",
+            "icon_preset": "4",
+            "text": "Zorganizowany system zamiast chaosu"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "growth",
+            "icon_preset": "5",
+            "text": "Jasná kariérní cesta"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "growth",
+            "icon_preset": "6",
+            "text": "Skutečný vliv na rozhodnutí"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "growth",
+            "icon_preset": "7",
+            "text": "Podpora vedoucích a týmu"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "growth",
+            "icon_preset": "8",
+            "text": "Rozvoj kompetencí v praxi"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "growth",
+            "icon_preset": "9",
+            "text": "Možnost realizace vlastních nápadů"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "pay",
+            "icon_preset": "10",
+            "text": "Prémie závislé na výsledcích"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "pay",
+            "icon_preset": "11",
+            "text": "Slevy na produkty EVAMATS"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "pay",
+            "icon_preset": "12",
+            "text": "Dodatkowe benefity (np. Multisport)"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "pay",
+            "icon_preset": "13",
+            "text": "Karty podarunkowe i bonusy"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "panel": "pay",
+            "icon_preset": "14",
+            "text": "Parkování pro zaměstnance"
+          }
+        }
       ]
     }
   ]

@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/bentley"
       }
     },
-    "e99600f5-9070-42c2-8ccc-6b03cb70297c": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/bentley"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/bentley",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "6062b45c-eab7-4ef2-ac43-0030bdf928f7": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "e99600f5-9070-42c2-8ccc-6b03cb70297c",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

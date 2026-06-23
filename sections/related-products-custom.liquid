@@ -335,8 +335,8 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading",
-      "default": "You may also like"
+      "label": "t:sections.related-products.settings.heading.label",
+      "default": "Mohlo by se vám také líbit"
     },
     {
       "type": "range",
@@ -345,19 +345,19 @@
       "max": 12,
       "step": 1,
       "default": 12,
-      "label": "Maximum products to show"
+      "label": "t:sections.related-products.settings.products_to_show.label"
     },
     {
       "type": "text",
       "id": "card_button_label",
       "label": "Card button label",
-      "default": "View product"
+      "default": "Zobrazit produkt"
     },
     {
       "type": "text",
       "id": "mobile_button_label",
       "label": "Mobile card button label (legacy)",
-      "default": "Select"
+      "default": "Vybrat"
     },
     {
       "type": "header",
@@ -366,7 +366,7 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
+      "label": "t:sections.all.padding.padding_top",
       "min": 0,
       "max": 200,
       "step": 4,
@@ -376,7 +376,7 @@
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
+      "label": "t:sections.all.padding.padding_bottom",
       "min": 0,
       "max": 200,
       "step": 4,
@@ -412,9 +412,6 @@
     {
       "name": "Related products custom"
     }
-  ],
-  "enabled_on": {
-    "templates": ["cart", "product"]
-  }
+  ]
 }
 {% endschema %}

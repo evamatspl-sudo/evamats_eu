@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/subaru"
       }
     },
-    "38b846e4-7c5a-46c5-be23-e060c4448ff8": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/subaru"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/subaru",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "38b846e4-7c5a-46c5-be23-e060c4448ff8",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

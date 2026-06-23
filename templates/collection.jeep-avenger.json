@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/jeep"
       }
     },
-    "80fb98c5-3bf5-4c93-8f00-33b162ecc97d": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/jeep"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/jeep",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "80fb98c5-3bf5-4c93-8f00-33b162ecc97d",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

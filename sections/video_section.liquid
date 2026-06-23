@@ -20,39 +20,39 @@
 </div>
 
 {% schema %}
+{
+  "name": "Videos",
+  "settings": [
     {
-        "name": "Videos",
-        "settings": [
-            {
-                "type": "text",
-                "id": "title",
-                "label": "Title",
-                "default": "Videos"
-            }
-        ],
-        "blocks": [
-            {
-                "type": "video",
-                "name": "Video",
-                "settings": [
-                    {
-                        "type": "video",
-                        "id": "video",
-                        "label": "Video"
-                    },
-                    {
-                        "type": "text",
-                        "id": "title",
-                        "label": "Title",
-                        "default": "Title"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-            {
-                "name": "Videos"
-            }
-        ]
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Videos"
     }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Název"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Videos"
+    }
+  ]
+}
 {% endschema %}

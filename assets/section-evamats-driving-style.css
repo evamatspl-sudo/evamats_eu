@@ -1,9 +1,3 @@
-/* Figma 1710:33293 desktop / 1710:32276 mobile — Driving style */
-
-.evamats-driving-style__inner {
-  max-width: 1520px;
-  margin: 0 auto;
-}
 
 .evamats-driving-style__layout {
   display: grid;
@@ -54,7 +48,7 @@
   width: 100%;
   max-width: 559px;
   font-weight: 600;
-  font-size: clamp(28px, 3.4vw, 46px);
+  font-size: clamp(28px, 3.4vw, 38px);
   line-height: 1;
   letter-spacing: -0.02em;
   text-align: center;

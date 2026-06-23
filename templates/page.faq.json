@@ -24,8 +24,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>What is EVA material?</p>",
-            "des": "<p>EVA stands for ethylene vinyl acetate, a lightweight and flexible material with waterproof properties. Because the material is hypoallergenic, the mats do not emit any odors, even at high temperatures.</p>",
+            "hd": "<p>What is EVA materiál EVA?</p>",
+            "des": "<p>EVA stas for ethylene vinyl acetate, a lightweight a flexible material with waterproof properties. Because the material is hypoallergenic, the mats do not emit any odors, even at high temperatures.</p>",
             "des_html": ""
           }
         },
@@ -33,8 +33,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>What are the advantages of using EVA material in car mats?</p>",
-            "des": "<p>EVA material has many advantages, such as resistance to wear, durability, lightness, flexibility, and shape retention.</p>",
+            "hd": "<p>What are the advantages of using EVA materiál EVA in car mats?</p>",
+            "des": "<p>EVA materiál EVA has many advantages, such as resistance to wear, durability, lightness, flexibility, a shape retention.</p>",
             "des_html": ""
           }
         },
@@ -70,7 +70,7 @@
           "settings": {
             "category": "",
             "hd": "<p>What colors are available for the mats?</p>",
-            "des": "<p>Over 150 colors to choose from. Various colors of mats and edging are available, allowing you to stand out among other car owners.</p>",
+            "des": "<p>Over 150 colors to choose from. Various colors of mats a edging are available, allowing you to sta out among other car owners.</p>",
             "des_html": ""
           }
         },
@@ -78,8 +78,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>How to properly install mats made of EVA material?</p>",
-            "des": "<p>Each set has a specific type of fastening; we have over 30 types. Fastenings are attached in the appropriate places, and we also sew Velcro on the sides to prevent mats from shifting and ensure they stay in place.</p>",
+            "hd": "<p>How to properly install mats made of EVA materiál EVA?</p>",
+            "des": "<p>Each set has a specific type of fastening; we have over 30 types. Fastenings are attached in the appropriate places, a we also sew Velcro on the sides to prevent mats from shifting a ensure they stay in place.</p>",
             "des_html": ""
           }
         },
@@ -87,8 +87,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Can EVA mats be washed?</p>",
-            "des": "<p>Yes, mats can be washed with a soft sponge and detergent. However, aggressive chemical cleaners are not recommended.</p>",
+            "hd": "<p>Can EVA koberce be washed?</p>",
+            "des": "<p>Yes, mats can be washed with a soft sponge a detergent. However, aggressive chemical cleaners are not recommended.</p>",
             "des_html": ""
           }
         },
@@ -96,8 +96,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Can EVA mats be used in winter?</p>",
-            "des": "<p>Yes, the mats can be used in winter as they have properties that protect against cold and moisture.</p>",
+            "hd": "<p>Can EVA koberce be used in winter?</p>",
+            "des": "<p>Yes, the mats can be used in winter as they have properties that protect against cold a moisture.</p>",
             "des_html": ""
           }
         },
@@ -125,7 +125,7 @@
       ],
       "settings": {
         "design_variant": "page",
-        "hd": "Frequently Asked Questions to ",
+        "hd": "Frequently Asked Questions to",
         "heading_accent": "EVAMATS",
         "heading_mobile": "FAQ",
         "breadcrumb_parent_label": "Evamats",
@@ -139,10 +139,99 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
       }
+    },
+    "mat_hotspot_consult_PqbJAb": {
+      "type": "mat-hotspot-consult",
+      "blocks": {
+        "hotspot_r3mDRT": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 24,
+            "position_y": 12,
+            "tooltip_heading": "Struktura",
+            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
+          }
+        },
+        "hotspot_6EW6Pa": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 72,
+            "position_y": 35,
+            "tooltip_heading": "Padnutí",
+            "tooltip_text": "Přesné padnutí pro váš model auta"
+          }
+        },
+        "hotspot_HQdNRk": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 38,
+            "position_y": 53,
+            "tooltip_heading": "Materiál",
+            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
+          }
+        },
+        "hotspot_kJD8DY": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 88,
+            "position_y": 78,
+            "tooltip_heading": "Lem",
+            "tooltip_text": "Zvýšený lem chrání interiér vozu"
+          }
+        },
+        "hotspot_zQWhjr": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 21,
+            "position_y": 83,
+            "tooltip_heading": "Čištění",
+            "tooltip_text": "Snadné čištění během několika sekund"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_r3mDRT",
+        "hotspot_6EW6Pa",
+        "hotspot_HQdNRk",
+        "hotspot_kJD8DY",
+        "hotspot_zQWhjr"
+      ],
+      "name": "Mat hotspot consultation",
+      "settings": {
+        "heading": "Získejte bezplatnou konzultaci!",
+        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "EVA koberec",
+        "label_name": "Jméno a příjmení",
+        "placeholder_name": "Jan Novák",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "E-mail",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Poznámka (volitelné)",
+        "placeholder_message": "Vaše zpráva…",
+        "submit_label": "Odeslat poptávku",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
+        "terms_url": "",
+        "consent_mid": "a",
+        "privacy_label": "zásadami ochrany osobních údajů",
+        "privacy_url": "",
+        "consent_end": ".",
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 48
+      }
     }
   },
   "order": [
     "main",
-    "home_faq"
+    "home_faq",
+    "mat_hotspot_consult_PqbJAb"
   ]
 }

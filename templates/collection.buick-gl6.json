@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "14757a88-7785-4c86-813a-fc269c78ba04": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/buick"
-      }
-    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/buick",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -61,7 +54,6 @@
     }
   },
   "order": [
-    "14757a88-7785-4c86-813a-fc269c78ba04",
     "banner",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"

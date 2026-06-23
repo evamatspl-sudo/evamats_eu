@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/infiniti"
       }
     },
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/infiniti"
-      }
-    },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/infiniti",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         }
       },
@@ -62,7 +55,6 @@
   },
   "order": [
     "banner",
-    "ec1c0e7b-208d-4c6b-9355-ffc129c3ad43",
     "f573ba8e-312f-4893-91de-d3ed521114fa",
     "product-grid"
   ]

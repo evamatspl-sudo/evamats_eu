@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://pages/car-brands",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "d5710ce7-5715-4e76-87dc-a44fa2704fbd": {
@@ -349,7 +349,7 @@
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
-        "mobile_button_label": "Wybierz",
+        "mobile_button_label": "Vybrat",
         "image_ratio": "square",
         "show_secondary_image": true,
         "show_vendor": false,

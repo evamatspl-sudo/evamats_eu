@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/hummer"
       }
     },
-    "85be751c-3ce7-4dbc-a291-ec7ae3474e9e": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/hummer"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/hummer",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "85be751c-3ce7-4dbc-a291-ec7ae3474e9e",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

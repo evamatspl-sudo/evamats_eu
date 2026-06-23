@@ -21,13 +21,6 @@
         "brand_url": "shopify://collections/lamborghini"
       }
     },
-    "07bf2937-c6f5-4b92-bf18-48c19108ee2e": {
-      "type": "mobile-button",
-      "settings": {
-        "btn_text": "All models",
-        "btn_url": "shopify://collections/lamborghini"
-      }
-    },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
       "type": "Brand-Buttons",
       "blocks": {
@@ -35,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/lamborghini",
-            "color-code": "All"
+            "color-code": "Vše"
           }
         },
         "ca459050-821e-45a5-a5a7-e106c8498471": {
@@ -71,7 +64,6 @@
   },
   "order": [
     "banner",
-    "07bf2937-c6f5-4b92-bf18-48c19108ee2e",
     "9b281caf-6a64-4c48-bf02-d41f1b676502",
     "product-grid"
   ]

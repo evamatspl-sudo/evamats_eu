@@ -90,10 +90,10 @@
 
             {%- if ekb_ct == 'logo' -%}
               <div class="evamats-kariera-benefits__culture-foot">
-                {%- if settings.logo != blank -%}
+                {%- if settings.logo_inverse != blank -%}
                   <div class="evamats-kariera-benefits__culture-logo">
                     {{
-                      settings.logo
+                      settings.logo_inverse
                       | image_url: width: 206
                       | image_tag:
                         loading: 'lazy',
@@ -362,8 +362,14 @@
           "id": "content_type",
           "label": "Content type",
           "options": [
-            { "value": "list", "label": "Icon list" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "list",
+              "label": "Icon list"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "list"
         },
@@ -386,20 +392,62 @@
           "id": "item_1_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "1"
         },
@@ -417,20 +465,62 @@
           "id": "item_2_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "2"
         },
@@ -448,20 +538,62 @@
           "id": "item_3_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "3"
         },
@@ -479,20 +611,62 @@
           "id": "item_4_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "4"
         },
@@ -510,20 +684,62 @@
           "id": "item_5_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "5"
         },
@@ -563,9 +779,18 @@
           "id": "content_type",
           "label": "Content type",
           "options": [
-            { "value": "logo", "label": "Logo + tagline (career)" },
-            { "value": "text", "label": "Text + badge + image (optional)" },
-            { "value": "list", "label": "Icon list" }
+            {
+              "value": "logo",
+              "label": "Logo + tagline (career)"
+            },
+            {
+              "value": "text",
+              "label": "Text + badge + image (optional)"
+            },
+            {
+              "value": "list",
+              "label": "Icon list"
+            }
           ],
           "default": "logo"
         },
@@ -608,20 +833,62 @@
           "id": "item_1_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "1"
         },
@@ -639,20 +906,62 @@
           "id": "item_2_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "2"
         },
@@ -670,20 +979,62 @@
           "id": "item_3_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "3"
         },
@@ -701,20 +1052,62 @@
           "id": "item_4_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "4"
         },
@@ -732,20 +1125,62 @@
           "id": "item_5_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "5"
         }
@@ -766,8 +1201,14 @@
           "id": "content_type",
           "label": "Content type",
           "options": [
-            { "value": "list", "label": "Icon list" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "list",
+              "label": "Icon list"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "list"
         },
@@ -801,20 +1242,62 @@
           "id": "item_1_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "5"
         },
@@ -832,20 +1315,62 @@
           "id": "item_2_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "6"
         },
@@ -863,20 +1388,62 @@
           "id": "item_3_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "7"
         },
@@ -894,20 +1461,62 @@
           "id": "item_4_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "8"
         },
@@ -925,20 +1534,62 @@
           "id": "item_5_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "9"
         }
@@ -959,8 +1610,14 @@
           "id": "content_type",
           "label": "Content type",
           "options": [
-            { "value": "list", "label": "Icon list" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "list",
+              "label": "Icon list"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "list"
         },
@@ -983,20 +1640,62 @@
           "id": "item_1_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "10"
         },
@@ -1014,20 +1713,62 @@
           "id": "item_2_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "11"
         },
@@ -1045,20 +1786,62 @@
           "id": "item_3_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "12"
         },
@@ -1076,20 +1859,62 @@
           "id": "item_4_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "13"
         },
@@ -1107,20 +1932,62 @@
           "id": "item_5_icon",
           "label": "Icon",
           "options": [
-            { "value": "1", "label": "Shield" },
-            { "value": "2", "label": "Clock" },
-            { "value": "3", "label": "Checklist" },
-            { "value": "4", "label": "Network" },
-            { "value": "5", "label": "Career path" },
-            { "value": "6", "label": "Growth chart" },
-            { "value": "7", "label": "Team support" },
-            { "value": "8", "label": "Skills" },
-            { "value": "9", "label": "Ideas" },
-            { "value": "10", "label": "Bonus" },
-            { "value": "11", "label": "Discount" },
-            { "value": "12", "label": "Multisport" },
-            { "value": "13", "label": "Gift card" },
-            { "value": "14", "label": "Parking" }
+            {
+              "value": "1",
+              "label": "Shield"
+            },
+            {
+              "value": "2",
+              "label": "Clock"
+            },
+            {
+              "value": "3",
+              "label": "Checklist"
+            },
+            {
+              "value": "4",
+              "label": "Network"
+            },
+            {
+              "value": "5",
+              "label": "Career path"
+            },
+            {
+              "value": "6",
+              "label": "Growth chart"
+            },
+            {
+              "value": "7",
+              "label": "Team support"
+            },
+            {
+              "value": "8",
+              "label": "Skills"
+            },
+            {
+              "value": "9",
+              "label": "Ideas"
+            },
+            {
+              "value": "10",
+              "label": "Bonus"
+            },
+            {
+              "value": "11",
+              "label": "Discount"
+            },
+            {
+              "value": "12",
+              "label": "Multisport"
+            },
+            {
+              "value": "13",
+              "label": "Gift card"
+            },
+            {
+              "value": "14",
+              "label": "Parking"
+            }
           ],
           "default": "14"
         },
@@ -1142,19 +2009,19 @@
       "category": "V2",
       "settings": {
         "overline": "Benefity",
-        "heading": "Co zyskujesz, dołączając do EVAMATS?"
+        "heading": "Co získáte, když se připojíte k EVAMATS?"
       },
       "blocks": [
         {
           "type": "panel_left",
           "settings": {
-            "title": "Praca, która ma sens i tempo",
+            "title": "Práce, která má smysl a tempo",
             "content_type": "list",
             "item_1_text": "Stabilne zatrudnienie i jasne zasady",
             "item_1_icon": "1",
-            "item_2_text": "Elastyczne podejście do pracy",
+            "item_2_text": "Flexibilní přístup k práci",
             "item_2_icon": "2",
-            "item_3_text": "Możliwość pracy zdalnej (wybrane role)",
+            "item_3_text": "Možnost práce na dálku (vybrané role)",
             "item_3_icon": "3",
             "item_4_text": "Zorganizowany system zamiast chaosu",
             "item_4_icon": "4"
@@ -1163,42 +2030,42 @@
         {
           "type": "panel_center",
           "settings": {
-            "title": "Tworzymy firmę, w której chce się pracować i rozwijać",
+            "title": "Budujeme firmu, ve které chcete pracovat a růst",
             "content_type": "logo",
-            "tagline": "Nie szukamy wszystkich — szukamy zaangażowanych"
+            "tagline": "Nehledáme všechny — hledáme angažované lidi"
           }
         },
         {
           "type": "panel_right",
           "settings": {
-            "title": "Rozwój, który naprawdę przyspiesza",
+            "title": "Rozvoj, který opravdu zrychluje",
             "content_type": "list",
-            "item_1_text": "Jasna ścieżka awansu",
+            "item_1_text": "Jasná kariérní cesta",
             "item_1_icon": "5",
-            "item_2_text": "Realny wpływ na decyzje",
+            "item_2_text": "Skutečný vliv na rozhodnutí",
             "item_2_icon": "6",
-            "item_3_text": "Wsparcie liderów i zespołu",
+            "item_3_text": "Podpora vedoucích a týmu",
             "item_3_icon": "7",
-            "item_4_text": "Rozwój kompetencji w praktyce",
+            "item_4_text": "Rozvoj kompetencí v praxi",
             "item_4_icon": "8",
-            "item_5_text": "Możliwość wdrażania własnych pomysłów",
+            "item_5_text": "Možnost realizace vlastních nápadů",
             "item_5_icon": "9"
           }
         },
         {
           "type": "panel_bottom",
           "settings": {
-            "title": "Wynagrodzenie i dodatkowe korzyści",
+            "title": "Mzda a další výhody",
             "content_type": "list",
-            "item_1_text": "Premie zależne od wyników",
+            "item_1_text": "Prémie závislé na výsledcích",
             "item_1_icon": "10",
-            "item_2_text": "Zniżki na produkty EVAMATS",
+            "item_2_text": "Slevy na produkty EVAMATS",
             "item_2_icon": "11",
             "item_3_text": "Dodatkowe benefity (np. Multisport)",
             "item_3_icon": "12",
             "item_4_text": "Karty podarunkowe i bonusy",
             "item_4_icon": "13",
-            "item_5_text": "Parking dla pracowników",
+            "item_5_text": "Parkování pro zaměstnance",
             "item_5_icon": "14"
           }
         }
@@ -1208,31 +2075,31 @@
       "name": "Benefits — Partnerzy",
       "category": "V2",
       "settings": {
-        "heading": "Co zyskujesz, współpracując z EVAMATS?"
+        "heading": "Co získáte spoluprací s EVAMATS?"
       },
       "blocks": [
         {
           "type": "panel_left",
           "settings": {
-            "title": "Produkt premium z wysoką marżą",
+            "title": "Prémiový produkt s vysokou marží",
             "content_type": "text",
-            "description": "Zarabiasz na każdym zamówieniu — bez własnej produkcji"
+            "description": "Vyděláváte na každé objednávce — bez vlastní výroby"
           }
         },
         {
           "type": "panel_center",
           "settings": {
-            "title": "Setki wariantów personalizacji",
+            "title": "Stovky variant personalizace",
             "content_type": "text",
-            "description": "Więcej opcji = wyższa wartość zamówienia",
-            "badge_text": "700+ wariantów",
+            "description": "Více možností = vyšší hodnota objednávky",
+            "badge_text": "700+ variantů",
             "badge_faces_image": "shopify://shop_images/Group_1948755196.webp"
           }
         },
         {
           "type": "panel_right",
           "settings": {
-            "title": "Szybka realizacja zamówień (3–5 dni)",
+            "title": "Rychlá realizace objednávek (3–5 dní)",
             "content_type": "text",
             "description": "Produkcja i logistyka po naszej stronie",
             "show_bg_overlay": true
@@ -1243,7 +2110,7 @@
           "settings": {
             "title": "Model gotowy do skalowania",
             "content_type": "text",
-            "description": "Możesz rozwijać sprzedaż bez zwiększania kosztów"
+            "description": "Můžete rozvíjet prodej bez zvyšování nákladů"
           }
         }
       ]

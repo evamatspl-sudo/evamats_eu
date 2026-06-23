@@ -26,7 +26,7 @@
 {%- endunless -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-article-kariera-hero' %}
-<div
+<section
   id="EvamatsArticleKarieraHero-{{ section.id }}"
   class="evamats-article-kariera-hero"
   style="--akh-aside-top: calc(var(--header-height, 0px) + 24px);"
@@ -59,10 +59,11 @@
           {% render 'evamats-vacancy-tags',
             vacancy: vacancy,
             label_contract: section.settings.label_contract | default: section.settings.label_level | default: 'Umowa',
-            label_languages: section.settings.label_languages | default: 'Język',
+            label_languages: section.settings.label_languages | default: 'Jazyk',
             label_work_mode: section.settings.label_work_mode | default: 'Tryb pracy',
             label_location: section.settings.label_location | default: 'Lokalizacja',
             label_salary: section.settings.label_salary | default: 'Wynagrodzenie',
+            label_experience: section.settings.label_experience | default: 'Zkušenosti',
             icon_suffix: article.id | append: '-' | append: section.id
           %}
         {%- endif -%}
@@ -130,7 +131,7 @@
       {%- endif -%}
     </div>
   </div>
-</div>
+</section>
 
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
 
@@ -269,7 +270,7 @@
       "type": "text",
       "id": "back_link_label",
       "label": "Back link label",
-      "default": "← Wszystkie oferty"
+      "default": "← Všechny nabídky"
     },
     {
       "type": "header",
@@ -327,7 +328,7 @@
       "type": "text",
       "id": "label_languages",
       "label": "Label: languages",
-      "default": "Język"
+      "default": "Jazyk"
     },
     {
       "type": "text",
@@ -346,6 +347,12 @@
       "id": "label_salary",
       "label": "Label: salary",
       "default": "Wynagrodzenie"
+    },
+    {
+      "type": "text",
+      "id": "label_experience",
+      "label": "Label: experience",
+      "default": "Zkušenosti"
     },
     {
       "type": "header",

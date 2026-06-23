@@ -16,6 +16,7 @@
     - media_width: {Float} The width percentage that the media column occupies on desktop.
     - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
     - hide_media_icon: {Boolean} Hide zoom/play overlay icon (EvaMats gallery)
+    - hide_media_toggle: {Boolean} Hide modal zoom/toggle button (eva-product-slider)
 
     Usage:
     {% render 'product-thumbnail',
@@ -103,11 +104,13 @@
         title: media.alt
       }}
     </div>
+    {%- unless hide_media_toggle -%}
     <button class="product__media-toggle quick-add-hidden product__media-zoom-{% if hide_media_icon %}none{% else %}{{ section.settings.image_zoom }}{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
       <span class="visually-hidden">
         {{ 'products.product.media.open_media' | t: index: position }}
       </span>
     </button>
+    {%- endunless -%}
   </modal-opener>
 
   {%- if media.media_type != 'image' -%}

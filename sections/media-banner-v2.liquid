@@ -1,3 +1,5 @@
+{{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
+
 {%- liquid
   assign desktop_image = section.settings.image_desktop
   assign mobile_image = section.settings.image_mobile
@@ -120,8 +122,14 @@
       "id": "height_mode",
       "label": "Banner height mode",
       "options": [
-        { "value": "auto", "label": "Auto (image ratio)" },
-        { "value": "custom", "label": "Custom height" }
+        {
+          "value": "auto",
+          "label": "Auto (image ratio)"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
       ],
       "default": "auto"
     },

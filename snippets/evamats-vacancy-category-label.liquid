@@ -19,16 +19,16 @@
   if label == blank
     case category_id
       when 'sales'
-        assign label = 'Sprzedaż'
+        assign label = 'Prodej'
       when 'customer_service'
-        assign label = 'Obsługa klienta'
+        assign label = 'Zákaznický servis'
       when 'finance'
-        assign label = 'Finanse'
+        assign label = 'Finance'
       when 'other'
-        assign label = 'Inne'
+        assign label = 'Jiné'
       else
         assign label = category_id | replace: '_', ' '
     endcase
   endif
 -%}
-{{- label | escape -}}
+{{- label | capitalize | escape -}}
