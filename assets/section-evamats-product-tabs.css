@@ -330,6 +330,98 @@
   object-fit: contain;
 }
 
+/* ── FAQ tab dropdowns (native <details>, mirrors home-faq accordion) ── */
+.evamats-product-tabs__richtext .ept-faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.evamats-product-tabs__richtext .ept-faq__item {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.evamats-product-tabs__richtext .ept-faq__item:last-child {
+  border-bottom: 0;
+}
+
+.evamats-product-tabs__richtext .ept-faq__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.evamats-product-tabs__richtext .ept-faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.evamats-product-tabs__richtext .ept-faq__q {
+  flex: 1;
+  min-width: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  color: var(--ept-text);
+}
+
+.evamats-product-tabs__richtext .ept-faq__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--ept-red);
+}
+
+.evamats-product-tabs__richtext .ept-faq__icon::before,
+.evamats-product-tabs__richtext .ept-faq__icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+
+.evamats-product-tabs__richtext .ept-faq__icon::before {
+  width: 12px;
+  height: 2px;
+}
+
+.evamats-product-tabs__richtext .ept-faq__icon::after {
+  width: 2px;
+  height: 12px;
+}
+
+.evamats-product-tabs__richtext .ept-faq__item[open] .ept-faq__icon::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.evamats-product-tabs__richtext .ept-faq__panel {
+  padding: 0 0 26px;
+}
+
+.evamats-product-tabs__richtext .ept-faq__panel p {
+  margin: 0 0 0.75em;
+}
+
+.evamats-product-tabs__richtext .ept-faq__panel p:last-child {
+  margin-bottom: 0;
+}
+
+.evamats-product-tabs__richtext .ept-faq__panel p strong {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.36px;
+  line-height: 1.6;
+}
+
 @media screen and (max-width: 749px) {
   .evamats-product-tabs {
     padding-bottom: 48px;
@@ -360,6 +452,25 @@
 
   .evamats-product-tabs__panel.product_tabs__containers_item {
     padding-top: 24px;
+  }
+
+  .evamats-product-tabs__richtext .ept-faq__summary {
+    padding: 20px 0;
+  }
+
+  .evamats-product-tabs__richtext .ept-faq__q {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    line-height: 1.5;
+  }
+
+  .evamats-product-tabs__richtext .ept-faq__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .evamats-product-tabs__richtext .ept-faq__panel {
+    padding-bottom: 20px;
   }
 
   .evamats-product-tabs-about {

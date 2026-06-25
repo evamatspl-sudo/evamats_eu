@@ -1,4 +1,4 @@
-{% comment %}
+﻿{% comment %}
   Renders product variant options
 
   Accepts:
@@ -27,6 +27,25 @@
   if meta_body_type == '5os' or meta_body_type == '7os'
     assign trunk_tooltip_content = section.settings.trunk_message_5_7_os
   endif
+  capture body_type_slug
+    render 'evamats-body-type-slug', body_type: meta_body_type, product: product
+  endcapture
+  assign body_type_slug = body_type_slug | strip
+  assign z_al_dywanik = '|||dywanik kierowcy|||mata kierowcy|||only driver mat|||driver mat|||front driver mat|||pouze koberec řidiče|||'
+  assign z_al_przod = '|||przód|||przed|||front|||vorne|||přední|||'
+  assign z_al_tyl = '|||tył|||tyl|||rear|||hinten|||back row|||zadní|||'
+  assign z_al_przod_tyl = '|||przód + tył|||przod + tyl|||front + rear|||front+rear|||vorne + hinten|||přední + zadní|||přední a zadní|||'
+  assign z_al_mata_bag = '|||mata do bagażnika|||mata do bagaznika|||trunk mat|||boot mat|||trunk|||kufr|||'
+  assign z_al_przod_bag = '|||przód + tył + bagażnik|||przod + tyl + bagaznik|||front + rear + trunk|||přední + zadní + kufr|||'
+  assign z_al_3rzad = '|||przód + tył + 3 rząd|||przod + tyl + 3 rzad|||front + rear + 3rd row|||front + rear + third row|||'
+  assign z_al_3rz_maly = '|||przód + tył + 3 rząd + mały bagażnik|||przod + tyl + 3 rzad + maly bagaznik|||front + rear + third row + small trunk|||'
+  assign z_al_3rz_duzy = '|||przód + tył + 3 rząd + duży bagażnik|||przod + tyl + 3 rzad + duzy bagaznik|||front + rear + third row + huge trunk|||front + rear + third row + large trunk|||'
+  assign z_al_3r2b = '|||3 rzędy + 2 bagażniki (duży | mały)|||3 rzedu + 2 bagazniki|||3 rows 2 trunks|||'
+  assign z_al_przod_duzy_bag = '|||przód + tył + duży bagażnik|||przod + tyl + duzy bagaznik|||front + rear + large trunk|||'
+  assign zestaw_body_both_str = z_al_dywanik | append: z_al_przod | append: z_al_tyl | append: z_al_przod_tyl | append: z_al_mata_bag
+  assign zestaw_body_5os_str = z_al_przod_bag
+  assign zestaw_body_7os_str = z_al_3rzad | append: z_al_3rz_maly | append: z_al_3rz_duzy | append: z_al_3r2b | append: z_al_przod_duzy_bag
+
 -%}
 
 {%- for value in option.values -%}
@@ -67,11 +86,11 @@
       {% if option.name == optionMatsType or option.name == 'Mats type' %}
         {% assign isMatsTypeOption = true %}
       {% endif %}
-      {% if option.name == optionMatsSet or option.name == 'Mats set' %}
+      {% if option.name == optionMatsSet or option.name == 'Mats set' or option.name contains optionMatsSet %}
         {% assign isMatsSetOption = true %}
       {% endif %}
     {% endif %}
-    {% assign metaBodyType = product.metafields.custom.body_type %}
+    {% assign metaBodyType = body_type_slug %}
     
     {% comment %} Translated word for "Trunk" — used for icon + input_trunk class on all body types {% endcomment %}
     {% assign trunkWord = 'general.config.trunk' | t | downcase %}
@@ -83,6 +102,21 @@
     {% if forloop.index == 2 and isMatsTypeOption %}
       {% assign optionName = '3d' %}
     {% endif %}
+    {% assign body_types = '' %}
+    {% if isMatsSetOption %}
+      {% assign value_norm = value | downcase | strip %}
+      {% assign value_norm = value_norm | replace: '  ', ' ' %}
+      {% assign value_norm = value_norm | replace: '  ', ' ' %}
+      {% assign value_norm = value_norm | replace: '  ', ' ' %}
+      {% assign needle = '|||' | append: value_norm | append: '|||' %}
+      {% if zestaw_body_both_str contains needle %}
+        {% assign body_types = '5os 7os' %}
+      {% elsif zestaw_body_5os_str contains needle %}
+        {% assign body_types = '5os' %}
+      {% elsif zestaw_body_7os_str contains needle %}
+        {% assign body_types = '7os' %}
+      {% endif %}
+    {% endif %}
     <input
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -93,572 +127,25 @@
       form="{{ product_form_id }}"
       data-index="{{ forloop.index }}"
       class="{% if valueLowercase contains trunkWord %}input_trunk{% endif %}{% if option_disabled %} disabled{% endif %}"
+      {% if body_types != '' %}data-body-types="{{ body_types }}"{% endif %}
       {% if option.selected_value == value %}
         checked
       {% endif %}
     >
     {% if isMatsSetOption %}
-      {% if metaBodyType == '5os' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ '5os-mat-front-1.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ '5os-mat-front-2.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ '5os-mat-back-2.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 4 %}
-              <img src="{{ '5os-mat-front-back.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 5 %}
-              <img src="{{ '5os-mat-trunk.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ '5os-mat-set.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == '2os' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ '5os-mat-front-1.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ '5os-mat-front-2.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ '5os-mat-trunk.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 4 %}
-              <img src="{{ '5os-mat-front-trunk.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'electro' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ '5os-mat-front-1.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ '5os-mat-front-2.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ '5os-mat-back-2.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 4 %}
-              <img src="{{ '5os-mat-front-back.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 5 %}
-              <img src="{{ '5os-mat-trunk.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ '5os-mat-set.svg' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 7 %}
-              <img src="{{ '5os-mat-set-front.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'electro_7os'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ '7os-mat-front-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ '7os-mat-front-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ '7os-mat-back-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 4 %}
-              <img src="{{ '7os-mat-front-back.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 5 %}
-              <img src="{{ '7os-mat-trunk.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ '7os-mat-set-row.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 7 %}
-              <img src="{{ '7os-mat-set-row-trunk-sm.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 8 %}
-              <img src="{{ '7os-mat-set-row-trunk-l.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 9 %}
-              <img src="{{ '7os-mat-set-trunk-l.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 10 %}
-              <img src="{{ '7os-mat-set-trunk-sm-front.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 11 %}
-              <img src="{{ '7os-mat-set-trunk-l-front.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 12 %}
-              <img src="{{ '7os-mat-set-front-back-trunk-sm-front.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == '7os'   %}  
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ '7os-mat-front-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ '7os-mat-front-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ '7os-mat-back-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 4 %}
-              <img src="{{ '7os-mat-front-back.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 5 %}
-              <img src="{{ '7os-mat-trunk.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ '7os-mat-set-row.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 7 %}
-              <img src="{{ '7os-mat-set-row-trunk-sm.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 8 %}
-              <img src="{{ '7os-mat-set-row-trunk-l.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 9 %}
-              <img src="{{ '7os-mat-set-trunk-l.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'minivan'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'minivan-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'minivan-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ 'minivan-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'minivan-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 5 %}
-              <img src="{{ 'minivan-5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ 'minivan-6.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 7 %}
-              <img src="{{ 'minivan-7.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 8 %}
-              <img src="{{ 'minivan-8.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 9 %}
-              <img src="{{ 'minivan-9.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'bus'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'bus-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'bus-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'bus-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'bus-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 5 %}
-              <img src="{{ 'bus-6.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 6 %}
-              <img src="{{ 'bus-5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'bus_solid'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'bus_solid_1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'bus_solid_2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'bus_solid_3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'bus_solid_4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 5 %}
-              <img src="{{ 'bus_solid_5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-           
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'camper'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'bus-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'pickup'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'pickup-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'pickup-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ 'pickup-7.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 4 %}
-              <img src="{{ 'pickup-5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'pickup2kabina'   %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'pickup-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'pickup-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ 'pickup-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 4 %}
-              <img src="{{ 'pickup-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 5 %}
-              <img src="{{ 'pickup-5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ 'pickup-6.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-          {% endcase %}
-
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'tir' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'tir-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'tir-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'tir-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_duzy' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-duzy-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-duzy-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'van-duzy-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'van-duzy-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              
-          {% endcase %}
-
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_duzy_separate' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-duzy-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-duzy-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'van-duzy-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'van-duzy-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_duzy_separate_2_row' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-duzy-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-duzy-6.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'van-duzy-5.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'van-duzy-8.webp' | file_url}}" alt="" loading="lazy"> 
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 5 %}
-              <img src="{{ 'van-duzy-7.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 6 %}
-              <img src="{{ 'van-duzy-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_duzy_solid' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-duzy-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-duzy-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'van-duzy-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_duzy_solid_2_row' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-duzy-10.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-duzy-9.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-            {% when 3 %}
-              <img src="{{ 'van-duzy-12.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-15%</div>
-            {% when 4 %}
-              <img src="{{ 'van-duzy-11.webp' | file_url}}" alt="" loading="lazy"> 
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 5 %}
-              <img src="{{ 'van-duzy-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'van_maly' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'van-sm-1.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 2 %}
-              <img src="{{ 'van-sm-2.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-5%</div>
-            {% when 3 %}
-              <img src="{{ 'van-sm-3.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-            {% when 4 %}
-              <img src="{{ 'van-sm-4.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              <div class="label_badge">-10%</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% elsif metaBodyType == 'tractor' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-            {% when 1 %}
-              <img src="{{ 'tractor.webp' | file_url}}" alt="" loading="lazy">
-              <div class="label__tooltip">{{ value }}</div>
-              
-          {% endcase %}
-        </label>
-      {% elsif metaBodyType == 'custom' %}
-        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
-          {% assign optionValue = value | downcase %}
-          {% case forloop.index %}
-          {% when 1 %}
-            <img src="{{ '5os-mat-front-2.svg' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
-          {% when 2 %}
-            <img src="{{ '5os-mat-back-2.svg' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
-          {% when 3 %}
-            <img src="{{ '5os-mat-front-back.svg' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
-          {% when 4 %}
-            <img src="{{ '5os-mat-trunk.svg' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
-          {% when 5 %}
-            <img src="{{ '5os-mat-set.svg' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
-              
-          {% endcase %}
-          {% if valueLowercase contains trunkWord %}
-            {% render 'evamats-trunk-option-notice', trunk_content: trunk_tooltip_content %}
-          {% endif %}
-        </label>
-      {% endif %}
+      {% render 'evamats-mats-set-option-label',
+        product: product,
+        option: option,
+        section: section,
+        value: value,
+        index: forloop.index0,
+        value_norm: value_norm,
+        needle: needle,
+        body_types: body_types,
+        meta_body_type: metaBodyType,
+        trunk_word: trunkWord,
+        trunk_tooltip_content: trunk_tooltip_content
+      %}
     {% elsif isMatsTypeOption %}
       <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %} class="default_option">
         {% assign optionValue = value | downcase %}

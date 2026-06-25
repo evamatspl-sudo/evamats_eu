@@ -24,6 +24,16 @@
   width: 100%;
 }
 
+.evamats-collection-product-grid--no-filter .evamats-collection-product-grid__layout {
+  flex-direction: column;
+}
+
+.evamats-collection-product-grid--no-filter .evamats-collection-product-grid__main {
+  flex: none;
+  width: 100%;
+  max-width: none;
+}
+
 .evamats-collection-product-grid__list {
   list-style: none;
   margin: 0;

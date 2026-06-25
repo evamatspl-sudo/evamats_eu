@@ -1,22 +1,12 @@
-<button
-  type="button"
-  class="eva-slider-nav evamats-related-products__nav evamats-related-products__nav--prev swiper-button-prev"
-  aria-label="{{ 'general.slider.previous_slide' | t }}"
->
-  <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
-    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10054 4.39663e-05L0.356982 7.7436C-0.118202 8.21879 -0.118201 8.98921 0.356983 9.46439L8.10054 17.208L9.82133 15.4872L4.15495 9.82078L16.123 9.82078L16.123 7.38722L4.15495 7.38722L9.82133 1.72084L8.10054 4.39663e-05Z" fill="white"/>
-    </svg>
-  </span>
-</button>
-<button
-  type="button"
-  class="eva-slider-nav evamats-related-products__nav evamats-related-products__nav--next swiper-button-next"
-  aria-label="{{ 'general.slider.next_slide' | t }}"
->
-  <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
-    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.89946 4.39663e-05L16.643 7.7436C17.1182 8.21879 17.1182 8.98921 16.643 9.46439L8.89946 17.208L7.17867 15.4872L12.8451 9.82078H0.877005V7.38722H12.8451L7.17867 1.72084L8.89946 4.39663e-05Z" fill="white"/>
-    </svg>
-  </span>
-</button>
+{% render 'eva-slider-nav-button',
+  direction: 'prev',
+  size: 'small',
+  class: 'evamats-related-products__nav evamats-related-products__nav--prev',
+  label: prev_nav_label
+%}
+{% render 'eva-slider-nav-button',
+  direction: 'next',
+  size: 'small',
+  class: 'evamats-related-products__nav evamats-related-products__nav--next',
+  label: next_nav_label
+%}

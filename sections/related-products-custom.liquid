@@ -50,6 +50,9 @@
     assign erp_show_nav = true
   endif
 
+  assign prev_nav_label = 'general.slider.previous_slide' | t
+  assign next_nav_label = 'general.slider.next_slide' | t
+
   unless erp_has_products
     assign erp_skip_render = true
   endunless

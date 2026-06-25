@@ -149,6 +149,7 @@
       event.preventDefault();
       fetch(window.routes.cart_url + '/clear.js', { method: 'POST' })
         .then(function () {
+          sessionStorage.removeItem('evamatsCartTermsAccepted');
           window.location.reload();
         })
         .catch(function (err) {

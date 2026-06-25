@@ -38,7 +38,7 @@
           "type": "contact",
           "settings": {
             "heading": "Contact us!",
-            "intro": "<p>EVAMATS Sp. z o.o.<br/><br/>TIN: 5862378667</p>",
+            "intro": "<p>Carvion Sp. z o.o.<br/><br/>TIN: 5862378667</p>",
             "email": "info@evamats.store",
             "phone": "+48 732 082 512",
             "address": "st. Strzelca 42,\n80-299 Gdańsk, Poland"
@@ -60,11 +60,11 @@
         "newsletter_placeholder": "Your email address",
         "newsletter_button": "Sign up",
         "show_social": true,
-        "facebook_url": "",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
         "facebook_label": "",
-        "instagram_url": "",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
         "tiktok_url": "",
-        "youtube_url": "",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "threads_url": "",
         "nip_number": "",
         "regon_number": "",

@@ -14,9 +14,7 @@
     font-display: swap;
 }
 :root {
-    --font-ntc-somic-family: NTSomic, sans-serif;
-    --font-body-weight: 400;
-    --font-body-weight-bold: 600;
+    --font-ntc-somic-family: var(--font-body-family);
 }
 
 .fourth-main,.seven-main,.third-main{
@@ -273,7 +271,7 @@ body{
 .button.button_6 {
   gap: 12px;
   padding: 12px 56px !important;
-  font-size: 17px !important;
+  font-size: 16px !important;
 }
 
 .button.button_5:hover,
@@ -3548,6 +3546,14 @@ body .popup_overlay {
     color: var(--color-1) !important;
 }
 
+[data-consent-gate-output] {
+    display: none;
+    margin-top: 12px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #ff8a8a;
+}
+
 /* Hide the browser's default checkbox */
 .checkbox-container input {
 position: absolute;
@@ -4384,14 +4390,6 @@ fieldset {
 
 
 :root {
-    --font-body-family: NTSomic, sans-serif;
-    --font-body-style: normal;
-    --font-body-weight: 400;
-    --font-body-weight-bold: 600;
-    --font-heading-family: NTSomic, sans-serif;
-    --font-heading-style: normal;
-    --font-heading-weight: 600;
-  
     --color-bg: transparent;
     --color-text: #1b1d22;
     --color-text-primary: #1b1d22;
@@ -6365,6 +6363,12 @@ fieldset {
       overflow: hidden;
     }
   
+    .evamats-kariera-benefits__panel--work,
+    .evamats-kariera-benefits__panel--culture,
+    .evamats-kariera-benefits__panel--pay {
+      background: #282828;
+    }
+  
     .evamats-kariera-benefits__panel--work {
       grid-column: 1;
       grid-row: 1 / 3;
@@ -6397,7 +6401,10 @@ fieldset {
       padding-bottom: 0;
     }
   
-    .evamats-kariera-benefits__panel-title {
+    .evamats-kariera-benefits__panel--work .evamats-kariera-benefits__panel-title,
+    .evamats-kariera-benefits__panel--culture .evamats-kariera-benefits__panel-title,
+    .evamats-kariera-benefits__panel--growth .evamats-kariera-benefits__panel-title,
+    .evamats-kariera-benefits__panel--pay .evamats-kariera-benefits__panel-title {
       position: relative;
       z-index: 1;
       margin: 0;
@@ -6448,7 +6455,10 @@ fieldset {
       flex-shrink: 0;
     }
   
-    .evamats-kariera-benefits__row-text {
+    .evamats-kariera-benefits__panel--work .evamats-kariera-benefits__row-text,
+    .evamats-kariera-benefits__panel--culture .evamats-kariera-benefits__row-text,
+    .evamats-kariera-benefits__panel--growth .evamats-kariera-benefits__row-text,
+    .evamats-kariera-benefits__panel--pay .evamats-kariera-benefits__row-text {
       font-weight: 400;
       font-size: 16px;
       line-height: 1.6;
@@ -7161,52 +7171,13 @@ fieldset {
       }
     }
   
-  /* --- evamats-partners-benefits-bento.liquid --- */
-  .evamats-kariera-benefits {
-      background: #F6F6F6;
-      color: var(--color-text);
-    }
+        /* --- evamats-partners-benefits-bento.liquid --- */
+  .evamats-partners-benefits-bento.evamats-kariera-benefits {
+    background: #fff;
+    color: var(--color-text);
+  }
 
-    .evamats-kariera-benefits__inner {
-      max-width: 1520px;
-      margin: 0 auto;
-    }
-
-    .evamats-kariera-benefits__intro {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-bottom: 75px;
-    }
-
-    .evamats-kariera-benefits__overline {
-      grid-column: 2;
-      margin: 0;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      color: #ef022d;
-      text-align: center;
-    }
-
-    .evamats-kariera-benefits__heading {
-      grid-column: 1 / -1;
-      margin: 28px 0 0;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-align: center;
-      color: var(--color-text);
-    }
-  
-    .evamats-kariera-benefits__grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4px;
-    }
-  
-    .evamats-kariera-benefits__panel {
+.evamats-partners-benefits-bento .evamats-kariera-benefits__panel{
       position: relative;
       display: flex;
       flex-direction: column;
@@ -7216,41 +7187,49 @@ fieldset {
       background: #fff;
       border-radius: 16px;
       overflow: hidden;
+      border: 1px solid var(--color-border);
     }
   
-    /* Panel A — left tall */
-    .evamats-kariera-benefits__panel--a {
+    /* Panel A вЂ” left tall */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a{
       grid-column: 1;
       grid-row: 1 / 3;
       padding-bottom: 0;
     }
   
-    /* Panel B — center medium */
-    .evamats-kariera-benefits__panel--b {
+    /* Panel B вЂ” center medium */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b{
       grid-column: 2;
       grid-row: 1;
       justify-content: flex-start;
     }
   
-    .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__panel-title {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__panel-title{
       max-width: 276px;
     }
   
-    /* Panel C — right medium with bg */
-    .evamats-kariera-benefits__panel--c {
+    /* Panel C вЂ” right medium with bg */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c{
       grid-column: 3;
       grid-row: 1;
       padding: 0;
     }
+
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__panel-title,
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description {
+      color: #fff;
+    }
   
-    /* Panel D — bottom wide */
-    .evamats-kariera-benefits__panel--d {
+    /* Panel D вЂ” bottom wide */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d{
       grid-column: 2 / 4;
       grid-row: 2;
       padding: 40px 50px;
     }
   
-    .evamats-kariera-benefits__panel-title {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-title{
+      position: relative;
+      z-index: 1;
       margin: 0;
       font-weight: 600;
       font-size: 32px;
@@ -7259,7 +7238,7 @@ fieldset {
       color: var(--color-text);
     }
   
-    .evamats-kariera-benefits__description {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__description{
       position: relative;
       z-index: 1;
       margin: 28px 0 0;
@@ -7270,23 +7249,23 @@ fieldset {
       color: var(--color-text);
     }
   
-    .evamats-kariera-benefits__description--b {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__description--b{
       margin-top: 40px;
       max-width: 210px;
     }
   
-    .evamats-kariera-benefits__description--foot {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__description--foot{
       margin-top: auto;
       margin-bottom: 0;
     }
   
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description{
       margin-top: 40px;
       max-width: 305px;
     }
   
     /* List */
-    .evamats-kariera-benefits__list {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__list{
       list-style: none;
       margin: 40px 0 0;
       padding: 0;
@@ -7295,18 +7274,18 @@ fieldset {
       gap: 16px;
     }
   
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list{
       margin-top: 41px;
     }
   
-    .evamats-kariera-benefits__row {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__row{
       display: flex;
       align-items: center;
       gap: 12px;
       margin: 0;
     }
   
-    .evamats-kariera-benefits__row-icon {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__row-icon{
       flex-shrink: 0;
       display: flex;
       align-items: center;
@@ -7315,14 +7294,14 @@ fieldset {
       height: 24px;
     }
   
-    .evamats-kariera-benefits__svg {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__svg{
       display: block;
       width: 24px;
       height: 24px;
       flex-shrink: 0;
     }
   
-    .evamats-kariera-benefits__row-text {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__row-text{
       font-weight: 400;
       font-size: 16px;
       line-height: 1.6;
@@ -7330,15 +7309,15 @@ fieldset {
       color: var(--color-text);
     }
   
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__panel-title,
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description,
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__panel-title,
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description,
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list{
       position: relative;
       z-index: 2;
     }
   
-    /* Panel A media — pinned to card bottom (Figma) */
-    .evamats-kariera-benefits__panel-media--a {
+    /* Panel A media вЂ” pinned to card bottom (Figma) */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--a{
       position: absolute;
       bottom: 0;
       left: 0;
@@ -7349,7 +7328,7 @@ fieldset {
       pointer-events: none;
     }
   
-    .evamats-kariera-benefits__panel-img {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-img{
       display: block;
       width: 100%;
       height: auto;
@@ -7357,7 +7336,7 @@ fieldset {
     }
   
     /* Margin badge on panel A media (Figma) */
-    .evamats-kariera-benefits__margin-badge {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge{
       position: absolute;
       top: 123px;
       left: 50px;
@@ -7374,7 +7353,7 @@ fieldset {
       border: 1px solid #e8eaef;
     }
   
-    .evamats-kariera-benefits__margin-badge-value {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge-value{
       display: block;
       font-weight: 600;
       font-size: 18px;
@@ -7383,7 +7362,7 @@ fieldset {
       color: #ef022d;
     }
   
-    .evamats-kariera-benefits__margin-badge-label {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge-label{
       display: block;
       font-weight: 600;
       font-size: 18px;
@@ -7392,8 +7371,8 @@ fieldset {
       color: #1b1d22;
     }
   
-    /* Panel B — logo footer mode */
-    .evamats-kariera-benefits__culture-foot {
+    /* Panel B вЂ” logo footer mode */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-foot{
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -7401,17 +7380,17 @@ fieldset {
       margin-top: auto;
     }
   
-    .evamats-kariera-benefits__culture-logo {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-logo{
       flex-shrink: 0;
     }
   
-    .evamats-kariera-benefits__culture-logo-img {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-logo-img{
       display: block;
       width: 103px;
       height: auto;
     }
   
-    .evamats-kariera-benefits__culture-tagline {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-tagline{
       margin: 0;
       max-width: 226px;
       font-weight: 400;
@@ -7421,7 +7400,7 @@ fieldset {
       color: var(--color-text);
     }
   
-    .evamats-kariera-benefits__panel-b-foot {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-b-foot{
       position: relative;
       z-index: 2;
       margin-top: 70px;
@@ -7429,20 +7408,20 @@ fieldset {
     }
   
     @media screen and (min-width: 1261px) {
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge{
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(4px);
       }
     }
   
     @media screen and (max-width: 1260px) {
-      .evamats-kariera-benefits__panel-b-foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-b-foot{
         margin-top: auto;
         width: 100%;
         max-width: 251px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge{
         width: 100%;
         gap: 8px;
         min-height: 45px;
@@ -7452,30 +7431,30 @@ fieldset {
         backdrop-filter: none;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge__faces {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge__faces{
         padding-right: 6px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge__faces-img {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge__faces-img{
         height: 26px;
         max-width: 118px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge__avatar {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge__avatar{
         width: 26px;
         height: 26px;
         margin-right: -8px;
         border-width: 1.5px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge__text {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge__text{
         font-size: 14px;
         font-weight: 600;
         letter-spacing: -0.28px;
       }
     }
   
-    .evamats-kariera-benefits__panel-media--b {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--b{
       position: absolute;
       right: 0;
       z-index: 0;
@@ -7483,15 +7462,15 @@ fieldset {
     }
   
     @media screen and (min-width: 1261px) {
-      .evamats-kariera-benefits__panel-media--b {
-        top: 50px;
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--b{
+        bottom: 0;
         width: 222px;
         height: 322px;
       }
     }
   
     @media screen and (max-width: 1260px) {
-      .evamats-kariera-benefits__panel-media--b {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--b{
         top: auto;
         bottom: 0;
         width: 168px;
@@ -7500,7 +7479,7 @@ fieldset {
       }
     }
   
-    .evamats-kariera-benefits__panel-img--b {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-img--b{
       display: block;
       width: 100%;
       height: 100%;
@@ -7508,21 +7487,21 @@ fieldset {
       object-position: right top;
     }
   
-    /* Panel C — bg image */
-    .evamats-kariera-benefits__panel-bg {
+    /* Panel C вЂ” bg image */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-bg{
       position: absolute;
       inset: 0;
       z-index: 0;
     }
   
-    .evamats-kariera-benefits__panel-bg-img {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-bg-img{
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   
-    .evamats-kariera-benefits__panel-c-inner {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner{
       position: relative;
       z-index: 1;
       display: flex;
@@ -7532,28 +7511,28 @@ fieldset {
       padding: 40px 50px;
     }
   
-    .evamats-kariera-benefits__panel-c-inner.has-overlay {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner.has-overlay{
       background: linear-gradient(134.57deg, rgba(0, 0, 0, 0.74) 17.21%, rgba(27, 29, 34, 0) 77.92%);
       color: var(--color-text-on-dark);
     }
   
-    .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__panel-title,
-    .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__description,
-    .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__row-text {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__panel-title,
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__description,
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner.has-overlay .evamats-kariera-benefits__row-text{
       color: var(--color-text-on-dark);
     }
   
-    .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--c {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--c{
       margin-top: 40px;
       max-width: 305px;
     }
   
-    .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--foot {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--foot{
       max-width: 305px;
     }
   
-    /* Panel D — inner layout */
-    .evamats-kariera-benefits__panel-d-inner {
+    /* Panel D вЂ” inner layout */
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-inner{
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -7562,7 +7541,7 @@ fieldset {
       min-height: 0;
     }
   
-    .evamats-kariera-benefits__panel-d-copy {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-copy{
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
@@ -7572,16 +7551,16 @@ fieldset {
       min-height: 0;
     }
   
-    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__panel-title {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__panel-title{
       max-width: 411px;
     }
   
-    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__description--foot {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__description--foot{
       max-width: 452px;
       text-align: left;
     }
   
-    .evamats-kariera-benefits__panel-media--d {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--d{
       flex: 0 0 auto;
       align-self: flex-end;
       width: 382px;
@@ -7591,7 +7570,7 @@ fieldset {
       margin-right: -50px;
     }
   
-    .evamats-kariera-benefits__panel-img--d {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-img--d{
       display: block;
       width: 100%;
       height: auto;
@@ -7602,89 +7581,89 @@ fieldset {
   
     /* Tablet */
     @media screen and (min-width: 750px) and (max-width: 989px) {
-      .evamats-kariera-benefits__intro {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__intro{
         display: block;
         margin-bottom: 48px;
         text-align: center;
       }
   
-      .evamats-kariera-benefits__overline {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__overline{
         font-size: 18px;
       }
   
-      .evamats-kariera-benefits__heading {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__heading{
         margin-top: 20px;
         font-size: 36px;
       }
   
-      .evamats-kariera-benefits__grid {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: auto auto auto;
         gap: 20px;
       }
   
-      .evamats-kariera-benefits__panel {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel{
         min-height: 0;
         padding: 32px 28px;
         border-radius: 14px;
       }
   
-      .evamats-kariera-benefits__panel--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a{
         grid-column: 1;
         grid-row: 1 / 3;
         padding-bottom: 0;
       }
   
-      .evamats-kariera-benefits__panel--b {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b{
         grid-column: 2;
         grid-row: 1;
       }
   
-      .evamats-kariera-benefits__panel--c {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c{
         grid-column: 2;
         grid-row: 2;
         padding: 0;
       }
   
-      .evamats-kariera-benefits__panel--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d{
         grid-column: 1 / -1;
         grid-row: 3;
         padding-bottom: 28px;
       }
   
-      .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-title{
         font-size: 26px;
         text-wrap: balance;
       }
   
-      .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__list{
         margin-top: 28px;
       }
   
-      .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__list{
         margin-top: 28px;
       }
   
-      .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__list,
-      .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__list,
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__list{
         margin-top: 24px;
       }
   
-      .evamats-kariera-benefits__culture-foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-foot{
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
       }
   
-      .evamats-kariera-benefits__culture-tagline {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-tagline{
         max-width: none;
       }
   
-      .evamats-kariera-benefits__panel-c-inner {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner{
         padding: 32px 28px;
       }
   
-      .evamats-kariera-benefits__panel-media--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--a{
         left: 0;
         margin-left: 0;
         margin-right: 0;
@@ -7692,44 +7671,44 @@ fieldset {
         max-height: 320px;
       }
   
-      .evamats-kariera-benefits__panel-d-inner {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-inner{
         gap: 24px;
       }
   
-      .evamats-kariera-benefits__panel-d-copy {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-copy{
         max-width: 58%;
       }
   
-      .evamats-kariera-benefits__panel-media--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--d{
         width: min(280px, 38%);
         max-width: 38%;
       }
     }
   
-    /* Mobile — Figma 1948:10005 (339px card width) */
+    /* Mobile вЂ” Figma 1948:10005 (339px card width) */
     @media screen and (max-width: 749px) {
-      .evamats-kariera-benefits__intro {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__intro{
         display: block;
         margin-bottom: 30px;
       }
   
-      .evamats-kariera-benefits__overline {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__overline{
         margin-bottom: 21px;
         font-size: 14px;
       }
   
-      .evamats-kariera-benefits__heading {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__heading{
         margin: 0;
         font-size: 26px;
       }
   
-      .evamats-kariera-benefits__grid {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__grid{
         display: flex;
         flex-direction: column;
         gap: 4px;
       }
   
-      .evamats-kariera-benefits__panel {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel{
         width: 100%;
         min-height: 0;
         padding: 20px;
@@ -7737,51 +7716,51 @@ fieldset {
         aspect-ratio: var(--ekb-panel-ar);
       }
   
-      .evamats-kariera-benefits__panel--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a{
         --ekb-panel-ar: 339 / 454;
         padding-bottom: 0;
       }
   
-      .evamats-kariera-benefits__panel--b {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b{
         --ekb-panel-ar: 339 / 246;
       }
   
-      .evamats-kariera-benefits__panel--c {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c{
         --ekb-panel-ar: 339 / 282;
         padding: 0;
       }
   
-      .evamats-kariera-benefits__panel--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d{
         --ekb-panel-ar: 339 / 386;
         padding-bottom: 0;
       }
   
-      .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-title{
         font-size: 22px;
       }
   
-      .evamats-kariera-benefits__description {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__description{
         margin-top: 20px;
         font-size: 14px;
       }
   
-      .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__description{
         max-width: none;
       }
   
-      .evamats-kariera-benefits__description--b {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__description--b{
         display: none;
       }
   
-      .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__list{
         margin-top: 20px;
       }
   
-      .evamats-kariera-benefits__row-text {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__row-text{
         font-size: 14px;
       }
   
-      .evamats-kariera-benefits__panel-media--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--a{
         left: 50%;
         width: min(275px, 81.12%);
         max-height: 266px;
@@ -7790,12 +7769,12 @@ fieldset {
         transform: translateX(-50%);
       }
   
-      .evamats-kariera-benefits__panel-img--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-img--a{
         object-fit: contain;
         object-position: center bottom;
       }
   
-      .evamats-kariera-benefits__margin-badge {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge{
         top: 12px;
         left: 12px;
         min-width: 0;
@@ -7804,26 +7783,26 @@ fieldset {
         gap: 6px;
       }
   
-      .evamats-kariera-benefits__margin-badge-value,
-      .evamats-kariera-benefits__margin-badge-label {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge-value,
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__margin-badge-label{
         font-size: 14px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__panel-title{
         max-width: 168px;
       }
   
-      .evamats-kariera-benefits__panel-b-foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-b-foot{
         margin-top: auto;
         width: 100%;
         max-width: 251px;
       }
   
-      .evamats-kariera-benefits__panel--b .evamats-trust-badge {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-trust-badge{
         width: 100%;
       }
   
-      .evamats-kariera-benefits__panel-media--b {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--b{
         top: auto;
         right: 0;
         bottom: 0;
@@ -7832,7 +7811,7 @@ fieldset {
         max-height: none;
       }
   
-      .evamats-kariera-benefits__panel-c-inner {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner{
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -7840,51 +7819,51 @@ fieldset {
         padding: 20px;
       }
   
-      .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__panel-title{
         max-width: 209px;
       }
   
-      .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--c {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c .evamats-kariera-benefits__description--c{
         margin-top: auto;
         max-width: none;
       }
   
-      .evamats-kariera-benefits__culture-foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-foot{
         gap: 16px;
       }
   
-      .evamats-kariera-benefits__culture-logo-img {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-logo-img{
         width: 88px;
       }
   
-      .evamats-kariera-benefits__culture-tagline {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__culture-tagline{
         max-width: 167px;
         font-size: 14px;
       }
   
-      .evamats-kariera-benefits__panel-d-inner {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-inner{
         flex-direction: column;
         gap: 0;
         height: 100%;
         min-height: 0;
       }
   
-      .evamats-kariera-benefits__panel-d-copy {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-d-copy{
         flex: 1 1 auto;
         max-width: none;
         min-height: 0;
       }
   
-      .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__panel-title{
         max-width: none;
       }
   
-      .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__description--foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__description--foot{
         margin-top: 20px;
         max-width: none;
       }
   
-      .evamats-kariera-benefits__panel-media--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-media--d{
         flex: 0 0 auto;
         align-self: center;
         width: 234px;
@@ -7893,7 +7872,7 @@ fieldset {
         margin: auto auto 0;
       }
   
-      .evamats-kariera-benefits__panel-img--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-img--d{
         width: 100%;
         height: 100%;
         max-height: 184px;
@@ -7901,27 +7880,27 @@ fieldset {
         object-position: center bottom;
       }
   
-      /* Kariera mobile — Figma 1710:53802 (list / logo variants) */
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) {
+      /* Kariera mobile вЂ” Figma 1710:53802 (list / logo variants) */
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only){
         --ekb-panel-ar: 339 / 566;
         display: flex;
         flex-direction: column;
       }
   
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-title{
         max-width: 299px;
       }
   
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__list{
         margin-top: 24px;
         max-width: 299px;
       }
   
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__row-text {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__row-text{
         font-size: 16px;
       }
   
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-media--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-media--a{
         position: absolute;
         bottom: 0;
         left: 15px;
@@ -7933,7 +7912,7 @@ fieldset {
         transform: none;
       }
   
-      .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-img--a {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a:not(.evamats-kariera-benefits__panel--text-only) .evamats-kariera-benefits__panel-img--a{
         display: block;
         width: 100%;
         height: 100%;
@@ -7941,73 +7920,73 @@ fieldset {
         object-position: center bottom;
       }
   
-      .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo{
         --ekb-panel-ar: 339 / 195;
         display: flex;
         flex-direction: column;
       }
   
-      .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__panel-title{
         max-width: none;
       }
   
-      .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__culture-foot {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__culture-foot{
         margin-top: auto;
         align-items: flex-end;
       }
   
-      .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__culture-tagline {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b.evamats-kariera-benefits__panel--logo .evamats-kariera-benefits__culture-tagline{
         max-width: 167px;
         font-size: 16px;
         line-height: 1.6;
         text-align: right;
       }
   
-      .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list{
         --ekb-panel-ar: 339 / 354;
       }
   
-      .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-title{
         max-width: 173px;
       }
   
-      .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__list{
         margin-top: 24px;
       }
   
-      .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__row-text {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__row-text{
         font-size: 16px;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list{
         --ekb-panel-ar: 337 / 508;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-d-inner {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-d-inner{
         display: flex;
         flex-direction: column;
         height: 100%;
         min-height: 0;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-d-copy {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-d-copy{
         flex: 0 0 auto;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-title {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-title{
         max-width: 299px;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__list {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__list{
         margin-top: 24px;
         max-width: 297px;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__row-text {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__row-text{
         font-size: 16px;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-media--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-media--d{
         position: relative;
         flex: 0 0 auto;
         align-self: flex-start;
@@ -8017,7 +7996,7 @@ fieldset {
         margin: auto auto 0 40px;
       }
   
-      .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-img--d {
+      .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d.evamats-kariera-benefits__panel--has-list .evamats-kariera-benefits__panel-img--d{
         width: 100%;
         height: 100%;
         max-height: none;
@@ -8026,108 +8005,23 @@ fieldset {
       }
     }
   
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [fill="white"],
-    .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [fill="white"],
-    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [fill="white"],
-    .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [fill="white"] {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [fill="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [fill="white"]{
       fill: #1b1d22;
     }
   
-    .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [stroke="white"],
-    .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [stroke="white"],
-    .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [stroke="white"],
-    .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [stroke="white"] {
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--a .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--b .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--d .evamats-kariera-benefits__svg [stroke="white"],
+    .evamats-partners-benefits-bento .evamats-kariera-benefits__panel-c-inner:not(.has-overlay) .evamats-kariera-benefits__svg [stroke="white"]{
       stroke: #1b1d22;
     }
   
-  /* --- evamats-kariera-benefits.liquid (kariera panels — restore after partners-bento shared selectors) --- */
+  
 
-  
-    .evamats-kariera-benefits__panel--work {
-      padding: 40px 50px;
-      padding-bottom: 0;
-      aspect-ratio: auto;
-    }
-  
-    .evamats-kariera-benefits__panel--culture {
-      padding: 40px 50px;
-      aspect-ratio: auto;
-    }
-  
-    .evamats-kariera-benefits__panel--growth {
-      padding: 0;
-      aspect-ratio: auto;
-      background: transparent;
-    }
-  
-    .evamats-kariera-benefits__panel--pay {
-      padding: 40px 50px;
-      padding-bottom: 0;
-      aspect-ratio: auto;
-    }
-
-    .evamats-kariera-benefits__panel-growth-inner {
-      padding: 40px 50px;
-    }
-  
-    @media screen and (min-width: 750px) and (max-width: 989px) {
-      .evamats-kariera-benefits__panel--work,
-      .evamats-kariera-benefits__panel--culture,
-      .evamats-kariera-benefits__panel--pay {
-        padding: 32px 28px;
-      }
-  
-      .evamats-kariera-benefits__panel--work {
-        padding-bottom: 0;
-      }
-  
-      .evamats-kariera-benefits__panel--growth {
-        padding: 0;
-      }
-  
-      .evamats-kariera-benefits__panel--pay {
-        padding-bottom: 28px;
-      }
-  
-      .evamats-kariera-benefits__panel-growth-inner {
-        padding: 32px 28px;
-      }
-    }
-  
-    @media screen and (max-width: 749px) {
-      .evamats-kariera-benefits__panel--work,
-      .evamats-kariera-benefits__panel--culture,
-      .evamats-kariera-benefits__panel--pay,
-      .evamats-kariera-benefits__panel--growth {
-        aspect-ratio: auto;
-        max-width: 450px;
-        margin: 0 auto;
-      }
-  
-      .evamats-kariera-benefits__panel--work,
-      .evamats-kariera-benefits__panel--culture,
-      .evamats-kariera-benefits__panel--pay {
-        padding: 20px;
-      }
-  
-      .evamats-kariera-benefits__panel--work {
-        padding-bottom: 0;
-      }
-  
-      .evamats-kariera-benefits__panel--growth {
-        padding: 0;
-      }
-  
-      .evamats-kariera-benefits__panel--pay {
-        padding-bottom: 0;
-      }
-  
-      .evamats-kariera-benefits__panel-growth-inner {
-        padding: 28px 20px;
-      }
-    }
-  
-  /* --- evamats-partners-consult-form-v2.liquid --- */
+/* --- evamats-partners-consult-form-v2.liquid --- */
   .evamats-partners-consult-form-v2 {
       background: transparent;
       color: var(--color-text);
@@ -8241,7 +8135,7 @@ fieldset {
   .evamats-partners-coop-v2 {
       position: relative;
       overflow: hidden;
-      background: transparent;
+      background: #1B1D22;
       color: var(--color-text);
     }
   
@@ -8299,7 +8193,7 @@ fieldset {
       line-height: 1;
       letter-spacing: -0.02em;
       text-align: center;
-      color: var(--color-text);
+      color: #fff
     }
   
     .evamats-partners-coop-v2__grid {
@@ -8326,7 +8220,7 @@ fieldset {
       height: 100%;
       padding: 40px 20px;
       border-radius: 26px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       border: 1px solid var(--color-border);
     }
   
@@ -9144,8 +9038,8 @@ fieldset {
     .media-banner-v2 .media-banner-v2__overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      opacity: 1;
+      background: #000;
+      opacity: var(--media-banner-overlay-opacity);
       pointer-events: none;
     }
   
@@ -9163,8 +9057,15 @@ fieldset {
     .media-banner-v2 .media-banner-v2__breadcrumbs {
       align-self: flex-start;
       margin-bottom: auto;
-      padding-top: 48px;
+      padding-top: 120px;
+      --eb-link: rgba(255, 255, 255, 0.72);
+      --eb-current: #fff;
+      --eb-sep: rgba(255, 255, 255, 0.48);
       pointer-events: auto;
+    }
+
+    .media-banner-v2 .media-banner-v2__breadcrumbs .evamats-breadcrumbs__link:hover {
+      color: #fff;
     }
   
     .media-banner-v2 .media-banner-v2__content {
@@ -9179,6 +9080,7 @@ fieldset {
     .media-banner-v2 .media-banner-v2__heading {
       margin: 0 0 69px;
       font-weight: 600;
+      color: #fff;
     }
   
     .media-banner-v2 .media-banner-v2__text {
@@ -9209,7 +9111,7 @@ fieldset {
       }
   
       .media-banner-v2 .media-banner-v2__breadcrumbs {
-        padding-top: 28px;
+        padding-top: 84px;
       }
   
       .media-banner-v2 .media-banner-v2__content {
@@ -10484,7 +10386,7 @@ fieldset {
   .partners-audience-v2 {
       --pav-pt: 100px;
       --pav-pb: 100px;
-      background: transparent;
+      background: #F6F6F6;
       color: var(--color-text);
       padding-top: var(--pav-pt);
       padding-bottom: var(--pav-pb);
@@ -10527,8 +10429,9 @@ fieldset {
       justify-content: space-between;
       gap: 26px;
       width: 100%;
+      height: 100%;
       padding: 36px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       border-radius: 16px;
       overflow: hidden;
       color: inherit;
@@ -10617,7 +10520,7 @@ fieldset {
       padding: 28px 36px;
       border: 1px solid var(--color-border);
       border-radius: 16px;
-      background: var(--color-surface-elevated);
+      background: #fff;
       text-align: center;
     }
   
@@ -11192,7 +11095,7 @@ fieldset {
       min-width: 60px;
       border-radius: 50%;
       border: 1px solid var(--color-border-light);
-      background: var(--color-surface-muted);
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -11310,47 +11213,13 @@ fieldset {
       min-width: 0;
     }
   
-    .product-spotlight-v2 .product-spotlight-v2__nav {
+    .product-spotlight-v2 .product-spotlight-v2__nav.eva-slider-nav {
       flex-shrink: 0;
-      width: var(--ps-nav-btn);
-      height: var(--ps-nav-btn);
-      padding: 0;
-      margin: 0;
-      border: none;
-      border-radius: 0;
-      background: transparent;
-      color: var(--color-text);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: static;
       top: auto;
       left: auto;
       right: auto;
-      font-size: 0;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__nav::after {
-      display: none !important;
-      content: none !important;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__chev {
-      display: block;
-      width: var(--ps-nav-icon-w);
-      height: var(--ps-nav-icon-h);
-      flex-shrink: 0;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__nav:hover {
-      opacity: 0.75;
-    }
-  
-    .product-spotlight-v2 .product-spotlight-v2__nav.swiper-button-disabled {
-      opacity: 0.25;
-      cursor: default;
-      pointer-events: none;
+      transform: none;
     }
   
     .product-spotlight-v2 .product-spotlight-v2__swiper {
@@ -12649,6 +12518,7 @@ fieldset {
 
 /* ── Newsletter ── */
 .evamats-footer__newsletter-wrap {
+  margin-top: 20px;
   padding-bottom: 32px;
 }
 

@@ -615,52 +615,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // toggle popup
 (function () {
-    if (document.querySelector('.popup_overlay')) { 
-        document.addEventListener('DOMContentLoaded', function() {
-            const openPopupBtn = document.querySelectorAll('.openPopup');
-            const closePopupBtn = document.querySelectorAll('.popup_close_btn');
-            const popupOverlay = document.querySelectorAll('.popup_overlay');
-        
-            openPopupBtn.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    
-                    const targetId = btn.dataset.popup
-                    const popup = document.querySelector(`.popup_overlay#${targetId}`);
-                    if (!popup) return;
-                    popup.classList.add('show');
-                    document.querySelector('html').classList.add('overflow-hidden')
-                });
-            })
-        
-            closePopupBtn.forEach(el => {
-                el.addEventListener('click', function() {
-                    el.closest('.popup_overlay').classList.remove('show');
-                    document.querySelector('html').classList.remove('overflow-hidden')
-                });
-            })
-        
-            popupOverlay.forEach(element => {
-                element.addEventListener('click', function(event) {
-                    if (event.target === element) {
-                        popupOverlay.forEach(el => {
-                            el.classList.remove('show');
-                        })
-                        document.querySelector('html').classList.remove('overflow-hidden')
-                    }
-                });
-            });
+    function openPopupFromTrigger(btn) {
+        const targetId = btn.dataset.popup;
+        if (!targetId) return;
+        const popup = document.getElementById(targetId);
+        if (!popup || !popup.classList.contains('popup_overlay')) return;
+        popup.classList.add('show');
+        document.documentElement.classList.add('overflow-hidden');
+    }
 
-            const individualAutoPopup = document.querySelector('.popup_overlay[data-auto-open-individual]');
-            if (individualAutoPopup) {
-                const storageKey = individualAutoPopup.getAttribute('data-auto-open-key');
-                if (storageKey && !sessionStorage.getItem(storageKey)) {
-                    individualAutoPopup.classList.add('show');
-                    document.documentElement.classList.add('overflow-hidden');
-                    sessionStorage.setItem(storageKey, '1');
-                }
+    function closePopupOverlay(overlay) {
+        if (!overlay) return;
+        overlay.classList.remove('show');
+        if (!document.querySelector('.popup_overlay.show')) {
+            document.documentElement.classList.remove('overflow-hidden');
+        }
+    }
+
+    function initPopups() {
+        document.addEventListener('click', function (event) {
+            const openBtn = event.target.closest('.openPopup');
+            if (openBtn) {
+                event.stopPropagation();
+                openPopupFromTrigger(openBtn);
+                return;
+            }
+
+            const closeBtn = event.target.closest('.popup_close_btn');
+            if (closeBtn) {
+                closePopupOverlay(closeBtn.closest('.popup_overlay'));
+                return;
+            }
+
+            if (event.target.classList && event.target.classList.contains('popup_overlay')) {
+                closePopupOverlay(event.target);
             }
         });
-        
+
+        const individualAutoPopup = document.querySelector('.popup_overlay[data-auto-open-individual]');
+        if (individualAutoPopup) {
+            const storageKey = individualAutoPopup.getAttribute('data-auto-open-key');
+            if (storageKey && !sessionStorage.getItem(storageKey)) {
+                individualAutoPopup.classList.add('show');
+                document.documentElement.classList.add('overflow-hidden');
+                sessionStorage.setItem(storageKey, '1');
+            }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopups);
+    } else {
+        initPopups();
     }
 })();
 // toggle popup
@@ -1036,3 +1042,70 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })();
 // toggle header car dropdown
+
+/** Consent checkbox gate: mat-consult-form and other forms using data-consent-gate* */
+(function () {
+    var DEFAULT_MSG = 'You must accept the privacy policy and terms of service.';
+
+    function getGateRoot(el) {
+        var root = el.closest('[data-consent-gate]');
+        if (root) return root;
+        var form = el.closest('form');
+        return form ? form.querySelector('[data-consent-gate]') : null;
+    }
+
+    function validateConsentGate(root) {
+        var checkbox = root.querySelector('[data-consent-gate-checkbox]');
+        var output = root.querySelector('[data-consent-gate-output]');
+        if (!checkbox || !output) return true;
+
+        if (!checkbox.checked) {
+            var msg = root.getAttribute('data-consent-gate-msg');
+            output.textContent = msg && String(msg).trim() ? String(msg).trim() : DEFAULT_MSG;
+            output.style.display = 'block';
+            return false;
+        }
+
+        output.textContent = '';
+        output.style.display = 'none';
+        return true;
+    }
+
+    document.addEventListener(
+        'submit',
+        function (e) {
+            var form = e.target;
+            if (!form || form.tagName !== 'FORM') return;
+            var root = form.querySelector('[data-consent-gate]');
+            if (!root) return;
+            if (!validateConsentGate(root)) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        },
+        true
+    );
+
+    document.addEventListener(
+        'click',
+        function (e) {
+            var submitBtn = e.target.closest('[data-consent-gate-submit]');
+            if (!submitBtn) return;
+            var root = getGateRoot(submitBtn);
+            if (!root) return;
+            if (!validateConsentGate(root)) {
+                e.preventDefault();
+            }
+        },
+        true
+    );
+
+    document.addEventListener('change', function (e) {
+        if (!e.target.matches('[data-consent-gate-checkbox]')) return;
+        var root = getGateRoot(e.target);
+        if (!root) return;
+        if (e.target.checked) {
+            validateConsentGate(root);
+        }
+    });
+})();

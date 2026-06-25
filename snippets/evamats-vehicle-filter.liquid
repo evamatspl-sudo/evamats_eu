@@ -25,6 +25,10 @@
   data-label-brand="{{ 'general.config.brand' | t | escape }}"
   data-label-model="{{ 'general.config.model' | t | escape }}"
   data-label-generation="{{ 'general.config.generation' | t | escape }}"
+  {% if filter_ui == 'collection' and collection_handle != blank %}
+    data-auto-navigate="true"
+    data-collection-handle="{{ collection_handle | escape }}"
+  {% endif %}
 >
   <div class="evamats-vehicle-filter__fields">
     <div class="custom-select-wrapper">

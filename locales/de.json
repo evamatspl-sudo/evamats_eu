@@ -11,8 +11,8 @@
   "general": {
     "config": {
       "mats_size": "Größe",
-      "without_edges": "3D EVAMATS ohne Kanten",
-      "with_edges": "3D EVAMATS mit Kanten",
+      "without_edges": "3D Carvion ohne Kanten",
+      "with_edges": "3D Carvion mit Kanten",
       "only_driver_mat": "Nur Fahrermatte",
       "front": "Vorderseite",
       "rear": "Rückseite",

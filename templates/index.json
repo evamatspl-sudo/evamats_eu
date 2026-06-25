@@ -19,8 +19,9 @@
         "show_badges": true,
         "google_rating": "4.9",
         "google_review_count": "4481",
-        "secondary_rating": "4.9",
-        "secondary_review_count": "4481",
+        "secondary_rating": "4.63",
+        "secondary_review_count": "3539",
+        "secondary_icon": "shopify://shop_images/e-trusted.svg",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,
@@ -30,12 +31,28 @@
     "008dba1c-383b-4265-b396-2e70a5ca8cde": {
       "type": "brand",
       "blocks": {
-        "460dc6cd-7bd1-4999-a698-bf8ac5713b3b": {
+        "896c664a-a387-4033-a183-7391cd447e3d": {
           "type": "section",
           "settings": {
-            "table-img": "shopify://shop_images/mercedes.webp",
-            "product-link": "shopify://collections/mercedes-benz",
-            "color-code": "Mercedes-Benz"
+            "table-img": "shopify://shop_images/toyota.webp",
+            "product-link": "shopify://collections/toyota",
+            "color-code": "Toyota"
+          }
+        },
+        "44387e75-0210-4cfb-80fe-04f29726c296": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/vw.webp",
+            "product-link": "shopify://collections/volkswagen",
+            "color-code": "Volkswagen"
+          }
+        },
+        "b9fb9632-2688-4a75-8507-2bc37481d1e7": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/audi.webp",
+            "product-link": "shopify://collections/audi",
+            "color-code": "Audi"
           }
         },
         "56d1786f-461c-452f-9e17-ee77577c5cd2": {
@@ -54,38 +71,6 @@
             "color-code": "Škoda"
           }
         },
-        "4058aaf1-89fd-4a90-9df8-821a30aef249": {
-          "type": "section",
-          "settings": {
-            "table-img": "shopify://shop_images/Group_95.webp",
-            "product-link": "shopify://collections/lexus",
-            "color-code": "Lexus"
-          }
-        },
-        "c62f31ba-c12e-4eaf-808c-333deaa2458d": {
-          "type": "section",
-          "settings": {
-            "table-img": "shopify://shop_images/Group_226.webp",
-            "product-link": "shopify://collections/nissan",
-            "color-code": "Nissan"
-          }
-        },
-        "896c664a-a387-4033-a183-7391cd447e3d": {
-          "type": "section",
-          "settings": {
-            "table-img": "shopify://shop_images/toyota.webp",
-            "product-link": "shopify://collections/toyota",
-            "color-code": "Toyota"
-          }
-        },
-        "b9fb9632-2688-4a75-8507-2bc37481d1e7": {
-          "type": "section",
-          "settings": {
-            "table-img": "shopify://shop_images/audi.webp",
-            "product-link": "shopify://collections/audi",
-            "color-code": "Audi"
-          }
-        },
         "53e7843a-a0f5-4bda-adba-a8180f43e27f": {
           "type": "section",
           "settings": {
@@ -94,12 +79,28 @@
             "color-code": "Ford"
           }
         },
-        "d950882d-197d-4087-b42c-54192caf6b69": {
+        "460dc6cd-7bd1-4999-a698-bf8ac5713b3b": {
           "type": "section",
           "settings": {
-            "table-img": "shopify://shop_images/Group_77.webp",
-            "product-link": "shopify://collections/citroen",
-            "color-code": "Citroën"
+            "table-img": "shopify://shop_images/mercedes.webp",
+            "product-link": "shopify://collections/mercedes-benz",
+            "color-code": "Mercedes-Benz"
+          }
+        },
+        "9f707e47-7f53-4cad-b6e1-ddc30b75f18f": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/volvo.webp",
+            "product-link": "shopify://collections/volvo",
+            "color-code": "Volvo"
+          }
+        },
+        "section_fHxQUw": {
+          "type": "section",
+          "settings": {
+            "table-img": "shopify://shop_images/image_43.webp",
+            "product-link": "shopify://collections/opel",
+            "color-code": "Opel"
           }
         },
         "2daddfc2-2f53-468c-b23c-14bdc48d17e8": {
@@ -110,43 +111,43 @@
             "color-code": "Renault"
           }
         },
-        "44387e75-0210-4cfb-80fe-04f29726c296": {
+        "section_64AX8j": {
           "type": "section",
           "settings": {
-            "table-img": "shopify://shop_images/vw.webp",
-            "product-link": "shopify://collections/volkswagen",
-            "color-code": "Volkswagen"
+            "table-img": "shopify://shop_images/image_43_1.webp",
+            "product-link": "shopify://collections/kia",
+            "color-code": "Kia"
           }
         },
-        "9f707e47-7f53-4cad-b6e1-ddc30b75f18f": {
+        "section_hXkfBB": {
           "type": "section",
           "settings": {
-            "table-img": "shopify://shop_images/volvo.webp",
-            "product-link": "shopify://collections/volvo",
-            "color-code": "Volvo"
+            "table-img": "shopify://shop_images/image_43_2.webp",
+            "product-link": "shopify://collections/hyundai",
+            "color-code": "Hyundai"
           }
         }
       },
       "block_order": [
-        "460dc6cd-7bd1-4999-a698-bf8ac5713b3b",
+        "896c664a-a387-4033-a183-7391cd447e3d",
+        "44387e75-0210-4cfb-80fe-04f29726c296",
+        "b9fb9632-2688-4a75-8507-2bc37481d1e7",
         "56d1786f-461c-452f-9e17-ee77577c5cd2",
         "5436c390-44b5-4e0c-ba61-dc5b4d4e5019",
-        "4058aaf1-89fd-4a90-9df8-821a30aef249",
-        "c62f31ba-c12e-4eaf-808c-333deaa2458d",
-        "896c664a-a387-4033-a183-7391cd447e3d",
-        "b9fb9632-2688-4a75-8507-2bc37481d1e7",
         "53e7843a-a0f5-4bda-adba-a8180f43e27f",
-        "d950882d-197d-4087-b42c-54192caf6b69",
+        "460dc6cd-7bd1-4999-a698-bf8ac5713b3b",
+        "9f707e47-7f53-4cad-b6e1-ddc30b75f18f",
+        "section_fHxQUw",
         "2daddfc2-2f53-468c-b23c-14bdc48d17e8",
-        "44387e75-0210-4cfb-80fe-04f29726c296",
-        "9f707e47-7f53-4cad-b6e1-ddc30b75f18f"
+        "section_64AX8j",
+        "section_hXkfBB"
       ],
       "settings": {
         "heading_before": "Autokoberce navržené pro více než",
         "heading_accent": "1,500",
         "heading_after": "modelů aut",
         "button_label": "Zobrazit vše",
-        "button_link": "shopify://pages/car-brands",
+        "button_link": "shopify://collections/all-car-mats",
         "catalog-header": "",
         "margin-bottom": false,
         "padding_top": 64,
@@ -200,7 +201,7 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_4777.webp",
             "title": "Autokoberce",
-            "link": "shopify://pages/car-brands"
+            "link": "shopify://collections/all-car-mats"
           }
         },
         "offer_stack_1": {
@@ -519,11 +520,11 @@
           "settings": {
             "image_before": "shopify://shop_images/may_sd_1tiny.webp",
             "image_after": "shopify://shop_images/3D_evamats.webp",
-            "title": "Jiní výrobci EVA koberců vs EVAMATS 3D s lemy",
-            "label_before": "Ne EVAMATS",
+            "title": "Jiní výrobci EVA koberců vs Carvion 3D s lemy",
+            "label_before": "Ne Carvion",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         },
         "item_TiTPYb": {
@@ -531,11 +532,11 @@
           "settings": {
             "image_before": "shopify://shop_images/IMG_1394.webp",
             "image_after": "shopify://shop_images/IMG_7298_1.webp",
-            "title": "Guma vs EVAMATS 3D s lemy",
+            "title": "Guma vs Carvion 3D s lemy",
             "label_before": "Guma",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         },
         "item_GWeUKj": {
@@ -543,11 +544,11 @@
           "settings": {
             "image_before": "shopify://shop_images/IMG_1371.webp",
             "image_after": "shopify://shop_images/IMG_7298_1_1.webp",
-            "title": "Velur vs EVAMATS 3D s lemy",
+            "title": "Velur vs Carvion 3D s lemy",
             "label_before": "Velur",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         }
       },
@@ -560,7 +561,7 @@
       "settings": {
         "title": "",
         "heading_main": "Proč zvolit",
-        "heading_accent": "EVAMATS?",
+        "heading_accent": "Carvion?",
         "heading_line2": "Porovnejte sami",
         "button_label": "",
         "button_link": ""
@@ -614,15 +615,15 @@
       ],
       "settings": {
         "design_variant": "home",
-        "hd": "AUTOKOBERCE EVAMATS – FAQ",
+        "hd": "AUTOKOBERCE Carvion – FAQ",
         "heading_accent": "",
         "heading_mobile": "FAQ",
-        "breadcrumb_parent_label": "Evamats",
+        "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
         "breadcrumb_current_label": "FAQ",
         "eyebrow_link": "",
         "view_all_label": "Zobrazit vše",
-        "view_all_url": "",
+        "view_all_url": "shopify://pages/faq",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -795,12 +796,12 @@
       ],
       "settings": {
         "title": "Majitelé aut o kobercích",
-        "title_accent": "EVAMATS",
-        "facebook_url": "https://www.facebook.com/evamats.store",
+        "title_accent": "Carvion",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
         "facebook_label": "Sledujte nás na Facebooku",
-        "instagram_url": "https://www.instagram.com/theofficialevamats/",
-        "tiktok_url": "https://www.tiktok.com/@evamats.store",
-        "youtube_url": "https://www.youtube.com/@evamats_store",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 32,

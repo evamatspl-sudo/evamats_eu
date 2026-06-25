@@ -40,7 +40,7 @@
             {% endif %}
 
             {% if isMatsType %}
-              <fieldset class="js product-form__input lip__field" data-name="{{ fieldsetClass }}">
+              <fieldset class="js product-form__input lip__field" data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                 <legend class="form__label lip__title">
                   <span class="form__label_text">{{ option.name }}</span>
                   <div class="lip__title_value"></div>
@@ -85,7 +85,7 @@
               {% endif %}
 
               {% if isMatsSet or isMatsSize %}
-                <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}">
+                <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                   <legend class="form__label lip__title">
                     <span class="form__label_text">{{ option.name }}</span>
                     <div class="lip__title_value"></div>
@@ -287,7 +287,7 @@
                 %}
               </fieldset>
               {% else %}
-              <fieldset class="js product-form__input lip__field"{% if  option.name == "Title"%} style="display: none"{% endif %}{% if fieldsetClass != '' %} data-name="{{ fieldsetClass }}"{% endif %}>
+              <fieldset class="js product-form__input lip__field"{% if  option.name == "Title"%} style="display: none"{% endif %}{% if fieldsetClass != '' %} data-name="{{ fieldsetClass }}"{% endif %} data-option-position="{{ option.position }}">
                 <legend class="form__label lip__title">
                   <span class="form__label_text">{{ option.name }}</span>
                   <div class="lip__title_value"></div>

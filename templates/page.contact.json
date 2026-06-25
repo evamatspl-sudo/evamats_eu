@@ -12,7 +12,7 @@
     "main": {
       "type": "evamats-contact",
       "settings": {
-        "breadcrumb_parent_label": "Evamats",
+        "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
         "breadcrumb_current_label": "Contact",
         "contact_heading": "Kontaktujte nás",
@@ -24,13 +24,13 @@
         "email_production_label": "Contact the Produktion Department",
         "email_production": "",
         "address_label": "Registered office address:",
-        "address": "EVAMATS Sp. z o.o.\nSt. Strzelca 42, 80-299 Gdańsk, Polsko",
+        "address": "Carvion Sp. z o.o.\nSt. Strzelca 42, 80-299 Gdańsk, Polsko",
         "tin_label": "NIP:",
         "tin": "5862378667",
-        "facebook_url": "https://www.facebook.com/evamats.store",
-        "instagram_url": "https://www.instagram.com/theofficialevamats/",
-        "tiktok_url": "https://www.tiktok.com/@evamats.store",
-        "youtube_url": "https://www.youtube.com/@evamats_store",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "threads_url": "",
         "hidden_form_tag": "Contact — Form (Website)",
         "heading": "Získejte bezplatnou konzultaci!",
@@ -89,8 +89,8 @@
     "map": {
       "type": "evamats-contact-map",
       "settings": {
-        "map_title": "EVAMATS",
-        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.789253743468!2d18.452500941064276!3d54.41030689571039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd733dad1ee031%3A0x3e8ca62b780caa88!2sEVAMATS%20Car%20Mats!5e0!3m2!1sru!2sua!4v1781795719670!5m2!1sru!2sua"
+        "map_title": "Carvion",
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.789253743468!2d18.452500941064276!3d54.41030689571039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd733dad1ee031%3A0x3e8ca62b780caa88!2sCarvion%20Car%20Mats!5e0!3m2!1sru!2sua!4v1781795719670!5m2!1sru!2sua"
       }
     }
   },

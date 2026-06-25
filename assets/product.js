@@ -553,6 +553,153 @@ customElements.define('variant-selects', VariantSelects);
 class VariantRadios extends VariantSelects {
   constructor() {
     super();
+    this._onLabelCaptureClick = this._onLabelCaptureClick.bind(this);
+  }
+
+  connectedCallback() {
+    this.addEventListener('click', this._onLabelCaptureClick, true);
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this._onLabelCaptureClick, true);
+  }
+
+  _onLabelCaptureClick(event) {
+    const label = event.target.closest('label[for]');
+    if (!label || !this.contains(label)) return;
+    const forId = label.getAttribute('for');
+    if (!forId) return;
+    const input = document.getElementById(forId);
+    if (!input || input.type !== 'radio' || !this.contains(input) || input.disabled) return;
+
+    const ensure = () => {
+      if (input.checked) return;
+      input.checked = true;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    };
+    if (typeof queueMicrotask === 'function') {
+      queueMicrotask(ensure);
+    } else {
+      setTimeout(ensure, 0);
+    }
+  }
+
+  applyVariantToRadioInputs(variant) {
+    if (!variant || !variant.options || !variant.options.length) return;
+    this.querySelectorAll('fieldset[data-option-position]').forEach((fieldset) => {
+      const pos = parseInt(fieldset.dataset.optionPosition, 10);
+      if (!Number.isFinite(pos) || pos < 1 || pos > variant.options.length) return;
+      const target = variant.options[pos - 1];
+      if (target == null) return;
+      const radios = fieldset.querySelectorAll('input[type="radio"]');
+      let needsUpdate = false;
+      radios.forEach((radio) => {
+        const shouldCheck = radio.value === target;
+        if (shouldCheck !== radio.checked) needsUpdate = true;
+      });
+      if (!needsUpdate) return;
+      radios.forEach((radio) => {
+        radio.checked = radio.value === target;
+      });
+    });
+  }
+
+  updateVariantInput() {
+    super.updateVariantInput();
+    if (this.currentVariant) {
+      this.applyVariantToRadioInputs(this.currentVariant);
+    }
+  }
+
+  updateMasterId() {
+    const variantData = this.getVariantData();
+    if (!variantData.length) {
+      this.currentVariant = null;
+      return;
+    }
+    const numOpts = variantData[0].options.length;
+    const productForm = document.querySelector(`#product-form-${this.dataset.section}`);
+    const idInput = productForm
+      ? productForm.querySelector('input.product-variant-id[name="id"]') ||
+        productForm.querySelector('input[name="id"]')
+      : null;
+    const prevVariant = idInput
+      ? variantData.find((v) => String(v.id) === String(idInput.value))
+      : null;
+
+    const fieldsets = Array.from(this.querySelectorAll('fieldset[data-option-position]'));
+
+    const buildSelected = (fillGapsFromPrev) => {
+      const sel = new Array(numOpts).fill(undefined);
+      fieldsets.forEach((fieldset) => {
+        const pos = parseInt(fieldset.dataset.optionPosition, 10);
+        if (!Number.isFinite(pos) || pos < 1 || pos > numOpts) return;
+        const checked = fieldset.querySelector('input[type="radio"]:checked');
+        if (checked) sel[pos - 1] = checked.value;
+      });
+      if (fillGapsFromPrev) {
+        for (let i = 0; i < numOpts; i++) {
+          if (sel[i] === undefined && prevVariant && prevVariant.options[i] !== undefined) {
+            sel[i] = prevVariant.options[i];
+          }
+        }
+      }
+      return sel;
+    };
+
+    const match = (sel) =>
+      variantData.filter((variant) =>
+        variant.options.every((opt, i) => sel[i] === undefined || sel[i] === opt)
+      );
+
+    let candidates = match(buildSelected(true));
+    if (!candidates.length) {
+      candidates = match(buildSelected(false));
+    }
+    this.currentVariant =
+      candidates.find((v) => v.available) || candidates[0] || null;
+  }
+
+  updateVariantStatuses() {
+    const variantData = this.variantData || this.getVariantData();
+    if (!variantData.length) return;
+
+    const numOpts = variantData[0].options.length;
+    const positionFieldsets = Array.from(this.querySelectorAll('fieldset[data-option-position]'))
+      .map((fs) => ({
+        fs,
+        pos: parseInt(fs.dataset.optionPosition, 10),
+      }))
+      .filter((x) => Number.isFinite(x.pos) && x.pos >= 1 && x.pos <= numOpts)
+      .sort((a, b) => a.pos - b.pos);
+
+    if (!positionFieldsets.length) return;
+
+    const firstChecked = positionFieldsets[0].fs.querySelector('input[type="radio"]:checked');
+    if (!firstChecked) return;
+
+    const selectedOptionOneVariants = variantData.filter(
+      (variant) => firstChecked.value === variant.option1
+    );
+
+    for (let i = 1; i < positionFieldsets.length; i++) {
+      const { fs, pos } = positionFieldsets[i];
+      const prevFs = positionFieldsets[i - 1];
+      const prevChecked = prevFs.fs.querySelector('input[type="radio"]:checked');
+      if (!prevChecked) return;
+
+      const previousOptionSelected = prevChecked.value;
+      const prevPos = prevFs.pos;
+      const optionInputs = [...fs.querySelectorAll('input[type="radio"], option')];
+      const availableOptionInputsValue = selectedOptionOneVariants
+        .filter(
+          (variant) =>
+            variant.available && variant[`option${prevPos}`] === previousOptionSelected
+        )
+        .map((variant) => variant[`option${pos}`]);
+
+      this.setInputAvailability(optionInputs, availableOptionInputsValue);
+    }
   }
 
   setInputAvailability(listOfOptions, listOfAvailableOptions) {
@@ -566,13 +713,11 @@ class VariantRadios extends VariantSelects {
   }
 
   updateOptions() {
-    const fieldsets = Array.from(this.querySelectorAll('fieldset')).filter((fieldset) => {
-      return fieldset.querySelector('input[type="radio"]:not([name^="properties["])');
-    });
+    const fieldsets = Array.from(this.querySelectorAll('fieldset[data-option-position]'));
     this.options = fieldsets.map((fieldset) => {
-      const checked = Array.from(
-        fieldset.querySelectorAll('input[type="radio"]:not([name^="properties["])')
-      ).find((radio) => radio.checked);
+      const checked = Array.from(fieldset.querySelectorAll('input[type="radio"]')).find(
+        (radio) => radio.checked
+      );
       return checked ? checked.value : undefined;
     });
   }

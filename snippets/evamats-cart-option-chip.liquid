@@ -53,7 +53,7 @@
       assign mats_type_image = '5os-3d-diamonds-black-red.webp'
     endif
     assign chip_image = mats_type_image | file_url
-    assign chip_label = chip_label | replace: 'EVAMATS', '' | replace: '  ', ' ' | strip
+    assign chip_label = chip_label | replace: 'Carvion', '' | replace: '  ', ' ' | strip
   -%}
 {%- elsif is_mats_set_option -%}
   {%- liquid
@@ -71,7 +71,10 @@
     assign en_front_rear = 'general.config.front_rear' | t | downcase
     assign en_front_rear_trunk = 'general.config.front_rear_trunk' | t | downcase
 
-    assign zestaw_image_file = blank
+    capture chip_body_type_slug
+      render 'evamats-body-type-slug', body_type: meta_body_type, product: chip_product
+    endcapture
+    assign meta_body_type = chip_body_type_slug | strip
 
     if value_norm == en_only_driver or value_norm == 'dywanik kierowcy'
       if meta_body_type contains '7os' or meta_body_type == 'electro_7os'

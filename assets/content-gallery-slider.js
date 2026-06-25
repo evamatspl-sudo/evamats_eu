@@ -14,10 +14,10 @@ function initContentGallerySlider() {
 
             navigation: {
                 nextEl: section.querySelector(
-                    '.content-gallery-slider__arrow--next'
+                    '.content-gallery-slider__navigation .eva-slider-nav--next'
                 ),
                 prevEl: section.querySelector(
-                    '.content-gallery-slider__arrow--prev'
+                    '.content-gallery-slider__navigation .eva-slider-nav--prev'
                 ),
             },
 

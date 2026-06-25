@@ -254,13 +254,8 @@
   }
 
   .video_reviews .video_reviews__nav.eva-slider-nav {
-    width: 40px;
-    height: 40px;
-  }
-
-  .video_reviews .video_reviews__nav .eva-slider-nav__icon svg {
-    width: 12px;
-    height: 12px;
+    --eva-nav-size: 40px;
+    --eva-nav-icon: 11px;
   }
 
   .videos__item_title {

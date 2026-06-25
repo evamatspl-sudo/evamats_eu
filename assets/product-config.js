@@ -19,17 +19,28 @@ document.addEventListener('DOMContentLoaded', function () {
       drop: 'drop'
     };
 
-    // Базовый путь к изображениям 
-    const basePath = "https://cdn.shopify.com/s/files/1/0790/9218/7414/files/";
+    // Базовый путь к изображениям
+    function getFilesCdnBase() {
+      const productEl = document.querySelector('.product.config_container') || document.querySelector('.product');
+      const fromData = productEl?.dataset.filesCdn;
+      if (fromData) {
+        return fromData.endsWith('/') ? fromData : `${fromData}/`;
+      }
+      return 'https://cdn.shopify.com/s/files/1/0790/9218/7414/files/';
+    }
+    const basePath = getFilesCdnBase();
     const typeMapping = {
       '7os': '5os', 'pickup': '5os', 'pickup2kabina': '5os', '2os': '5os',
       'van_maly': '5os', 'electro': '5os', 'custom': '5os', 'electro_7os': '5os',
+      'elektrický': '5os', 'elektricky': '5os', 'electric': '5os',
       'van_duzy': 'VAN', 'camper': 'VAN', 'tractor': 'VAN', 'bus_solid': 'VAN',
       'van_duzy_solid': 'VAN', 'van_duzy_solid_2_row': 'VAN',
       'van_duzy_separate': 'bus', 'van_duzy_separate_2_row': 'bus',
       'minivan_mini': 'minivan'
     };
-    autoType = typeMapping[autoType] || autoType;
+    if (autoType) {
+      autoType = typeMapping[autoType.toLowerCase()] || autoType;
+    }
 
     function getEffectiveBodyTypeForImage() {
       const productEl = document.querySelector('.product');
@@ -678,7 +689,8 @@ if (window.innerWidth < 990) {
       }
   
       faqTitles.forEach(title => {
-        title.addEventListener('click', function () {
+        title.addEventListener('click', function (e) {
+          if (e.target.closest('.openPopup')) return;
           triggerFaq(this);
         });
       });

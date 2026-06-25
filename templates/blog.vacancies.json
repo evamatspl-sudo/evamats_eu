@@ -13,7 +13,7 @@
       "type": "evamats-hero-cta",
       "settings": {
         "eyebrow": "Pracovní nabídky",
-        "heading": "Připojte se k týmu EVAMATS",
+        "heading": "Připojte se k týmu Carvion",
         "description": "<p>Vytváříme místo, kde záleží na lidech, spolupráci a skutečném vlivu na rozvoj firmy.</p>",
         "button_label": "Zobrazit nabídky",
         "button_link": "",
@@ -81,7 +81,7 @@
       "name": "Produkt spotlight v2",
       "settings": {
         "overline": "",
-        "heading": "Poznejte lidi, kteří tvoří EVAMATS",
+        "heading": "Poznejte lidi, kteří tvoří Carvion",
         "cta_label": "",
         "cta_url": "",
         "media_type": "video",
@@ -150,7 +150,7 @@
         "item_gtYpV8",
         "item_aRmdzB"
       ],
-      "name": "EVAMATS — Icon grid",
+      "name": "Carvion — Icon grid",
       "settings": {
         "layout_style": "grid",
         "heading": "",
@@ -163,7 +163,7 @@
     },
     "evamats_vacancies_list_rY8DMT": {
       "type": "evamats-vacancies-list",
-      "name": "EVAMATS — Vacancies list",
+      "name": "Carvion — Vacancies list",
       "settings": {
         "heading": "Pracovní nabídky",
         "filters_aria_label": "Filtr kategorii",

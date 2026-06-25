@@ -44,8 +44,8 @@
     {% for item in bodyTypes %}
       {% assign title_lower = item.title | downcase %}
       {% assign body_type_norm = '' %}
-      {% if title_lower contains '7os' %}{% assign body_type_norm = '7os' %}
-      {% elsif title_lower contains '5os' %}{% assign body_type_norm = '5os' %}
+      {% if title_lower contains '7os' or title_lower contains '7 míst' or title_lower contains '7 miest' or title_lower contains '7-seat' or title_lower contains '7 seat' or title_lower contains '7 seater' or title_lower contains '7 osob' or title_lower contains '7-os' %}{% assign body_type_norm = '7os' %}
+      {% elsif title_lower contains '5os' or title_lower contains '5 míst' or title_lower contains '5 miest' or title_lower contains '5-seat' or title_lower contains '5 seat' or title_lower contains '5 seater' or title_lower contains '5 osob' or title_lower contains '5-os' %}{% assign body_type_norm = '5os' %}
       {% endif %}
       <input
         required

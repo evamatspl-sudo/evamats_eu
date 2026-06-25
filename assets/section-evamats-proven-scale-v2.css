@@ -98,7 +98,7 @@
   flex-direction: column;
   gap: 21px;
   padding: 22px 26px;
-  background: var(--color-surface-elevated);
+  background: #fff;
   border-radius: 20px;
 }
 

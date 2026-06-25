@@ -13,6 +13,8 @@ class SearchForm extends HTMLElement {
   }
 
   toggleResetButton() {
+    if (!this.resetButton || !this.input) return;
+
     const resetIsHidden = this.resetButton.classList.contains('hidden');
     if (this.input.value.length > 0 && resetIsHidden) {
       this.resetButton.classList.remove('hidden')
@@ -30,6 +32,7 @@ class SearchForm extends HTMLElement {
   }
 
   onFormReset(event) {
+    if (!this.input) return;
     // Prevent default so the form reset doesn't set the value gotten from the url on page load
     event.preventDefault();
     // Don't reset if the user has selected an element on the predictive search dropdown

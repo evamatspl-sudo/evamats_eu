@@ -44,8 +44,8 @@
 .evamats-header__logo {
   display: block;
   width: auto;
-  height: 70px;
-  max-width: 152px;
+  height: auto;
+  max-width: 120px;
   object-fit: contain;
 }
 
@@ -67,7 +67,6 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: 219px;
   height: 52px;
   padding: 0 18px 0 5px;
   border: 0;
@@ -1417,4 +1416,221 @@
 
 .template_index:has(.evamats-home-hero) .scrolled-past-header .header-wrapper .evamats-header {
   background-color: var(--eh-bg);
+}
+
+.evamats-header__logo--inverse {
+  display: none;
+}
+
+/* Promo page (adv-v2): transparent header over media banner */
+.template_page.template_adv-v2:has(.media-banner-v2) .section-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.template_page.template_adv-v2:has(.media-banner-v2) .header-wrapper,
+.template_page.template_adv-v2:has(.media-banner-v2) .header-wrapper.gradient,
+.template_page.template_adv-v2:has(.media-banner-v2) sticky-header:not([data-sticky-type='none']) .header-wrapper {
+  background: transparent;
+  background-color: transparent;
+}
+
+.template_page.template_adv-v2:has(.media-banner-v2) .header-wrapper .evamats-header {
+  background-color: transparent;
+}
+
+.template_page.template_adv-v2:has(.media-banner-v2) .scrolled-past-header .header-wrapper,
+.template_page.template_adv-v2:has(.media-banner-v2) .scrolled-past-header .header-wrapper .evamats-header {
+  background-color: var(--eh-bg);
+}
+
+.template_page.template_adv-v2 .shopify-section.section-main-page-v2:not(:has(.main-page-v2)) {
+  display: none;
+}
+
+/* Header search modal + predictive search — light panel (inverse header scheme) */
+.evamats-header__search-wrap {
+  --eh-search-bg: #fff;
+  --eh-search-text: #1b1d22;
+  --eh-search-muted: rgba(27, 29, 34, 0.55);
+  --eh-search-border: #e9e9e9;
+  --eh-search-hover: #f6f6f6;
+  --eh-search-shadow: 5px 5px 30px rgba(27, 29, 34, 0.1);
+  --eh-search-radius: 16px;
+}
+
+/* White search bar spans full viewport; field + dropdown constrained to page-width */
+.evamats-header__search-wrap .search-modal {
+  border-bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  margin-left: -50vw;
+}
+
+.evamats-header__search-wrap .search-modal__content {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  max-width: 800px; /* page-width container */
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* outer predictive-search / search-form wrapper grows to fill the row */
+.evamats-header__search-wrap .search-modal__content > .search-modal__form {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
+/* inner <form> fills the wrapper */
+.evamats-header__search-wrap form.search-modal__form {
+  width: 100%;
+  max-width: none;
+}
+
+/* close button sits inside the page-width container, after the field */
+.evamats-header__search-wrap .search-modal__close-button {
+  position: static;
+  flex-shrink: 0;
+  margin: 0;
+  transform: none;
+  color: var(--eh-search-text);
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-header__search-wrap .search-modal__content {
+    padding: 0 1rem;
+  }
+}
+
+.evamats-header__search-wrap .search-modal__close-button .icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.evamats-header__search-wrap .search__button {
+  color: var(--eh-search-muted);
+}
+
+.evamats-header__search-wrap .search__button:hover {
+  color: var(--eh-search-text);
+}
+
+.evamats-header__search-wrap predictive-search[open] .search__input.field__input,
+.evamats-header__search-wrap predictive-search[loading] .search__input.field__input {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.evamats-header__search-wrap .predictive-search {
+  background-color: var(--eh-search-bg);
+  border-color: var(--eh-search-border);
+  border-width: 1px;
+  border-top: 0;
+  border-bottom-right-radius: var(--eh-search-radius);
+  border-bottom-left-radius: var(--eh-search-radius);
+  box-shadow: var(--eh-search-shadow);
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.evamats-header__search-wrap .predictive-search__results-groups-wrapper {
+  border-bottom-color: var(--eh-search-border);
+  padding-bottom: 0.5rem;
+}
+
+.evamats-header__search-wrap .predictive-search__heading {
+  margin: 0 20px;
+  padding: 16px 0 8px;
+  border-bottom-color: var(--eh-search-border);
+  color: var(--eh-search-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.evamats-header__search-wrap .predictive-search__item.link {
+  text-decoration: none;
+  color: var(--eh-search-text);
+}
+
+.evamats-header__search-wrap .predictive-search__item {
+  padding: 10px 20px;
+}
+
+.evamats-header__search-wrap .predictive-search__item-heading {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--eh-search-text);
+}
+
+.evamats-header__search-wrap .predictive-search__list-item[aria-selected='true'] > *,
+.evamats-header__search-wrap .predictive-search__list-item:hover > *,
+.evamats-header__search-wrap .predictive-search__item[aria-selected='true'],
+.evamats-header__search-wrap .predictive-search__item:hover {
+  color: var(--eh-search-text);
+  background-color: var(--eh-search-hover);
+}
+
+.evamats-header__search-wrap .predictive-search__list-item[aria-selected='true'] .predictive-search__item-heading,
+.evamats-header__search-wrap .predictive-search__list-item:hover .predictive-search__item-heading {
+  text-decoration: none;
+}
+
+.evamats-header__search-wrap .predictive-search__item-query-result mark {
+  color: var(--eh-accent);
+  font-weight: 700;
+}
+
+.evamats-header__search-wrap .predictive-search__item .price {
+  color: var(--eh-search-muted);
+  font-size: 13px;
+}
+
+.evamats-header__search-wrap .predictive-search__item--term {
+  padding: 14px 20px;
+  color: var(--eh-search-text);
+  font-size: 15px;
+  font-weight: 600;
+  border-top: 1px solid var(--eh-search-border);
+}
+
+.evamats-header__search-wrap .predictive-search__item--term .icon-arrow {
+  color: var(--eh-accent);
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-header__search-wrap .predictive-search__heading {
+    margin: 0 16px;
+    padding-top: 12px;
+  }
+
+  .evamats-header__search-wrap .predictive-search__item {
+    padding: 10px 16px;
+  }
+
+  .evamats-header__search-wrap .predictive-search__item--term {
+    padding: 12px 16px;
+  }
+
+  .evamats-header__search-wrap .predictive-search__item-heading {
+    font-size: 14px;
+  }
 }

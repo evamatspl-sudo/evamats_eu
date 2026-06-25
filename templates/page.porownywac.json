@@ -31,7 +31,7 @@
         "block_K3qkTg": {
           "type": "block",
           "settings": {
-            "header": "<h2>Evamats car mats</h2>",
+            "header": "<h2>Carvion car mats</h2>",
             "image": "shopify://shop_images/IMG_8796_2.png"
           }
         }
@@ -229,7 +229,7 @@
       "settings": {
         "header": "REALIZACJE DYWANIKÓW EVA",
         "button_text": "OBJEDNAT",
-        "button_link": "https://evamats-en.myshopify.com/pages/car-brands",
+        "button_link": "shopify://collections/all-car-mats",
         "centered": false,
         "small": false,
         "padding_top_mobile": 40,
@@ -323,7 +323,7 @@
           "type": "text",
           "settings": {
             "hd": "<p>Floor mat over the tunnel? What is it?</p>",
-            "des": "<p>Dywaniki Evamats przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta</p>"
+            "des": "<p>Dywaniki Carvion przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta</p>"
           }
         },
         "text_XjTUky": {

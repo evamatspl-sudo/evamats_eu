@@ -1,0 +1,55 @@
+{% comment %}
+  Normalizes product body_type metafield to a canonical slug (electro, 5os, 7os, …).
+  Accepts: body_type (optional), product (optional)
+  Returns: body_type_slug
+{% endcomment %}
+{%- liquid
+  assign raw = body_type | default: product.metafields.custom.body_type | downcase | strip
+  assign body_type_slug = raw
+
+  if raw == 'electro' or raw == 'elektro' or raw contains 'elektrick' or raw contains 'electric'
+    assign body_type_slug = 'electro'
+  elsif raw == 'electro_7os'
+    assign body_type_slug = 'electro_7os'
+  elsif raw == '7os' or raw contains '7 míst' or raw contains '7 mist' or raw contains '7 miest'
+    assign body_type_slug = '7os'
+  elsif raw == '5os' or raw contains '5 míst' or raw contains '5 mist' or raw contains '5 miest'
+    assign body_type_slug = '5os'
+  elsif raw == '2os'
+    assign body_type_slug = '2os'
+  elsif raw == 'pickup2kabina' or raw contains 'pickup 2' or raw contains 'double cab'
+    assign body_type_slug = 'pickup2kabina'
+  elsif raw == 'pickup' or raw contains 'pick-up' or raw contains 'pickup'
+    assign body_type_slug = 'pickup'
+  elsif raw == 'minivan_mini'
+    assign body_type_slug = 'minivan_mini'
+  elsif raw == 'minivan' or raw contains 'minivan'
+    assign body_type_slug = 'minivan'
+  elsif raw == 'van_duzy_separate_2_row'
+    assign body_type_slug = 'van_duzy_separate_2_row'
+  elsif raw == 'van_duzy_separate'
+    assign body_type_slug = 'van_duzy_separate'
+  elsif raw == 'van_duzy_solid_2_row'
+    assign body_type_slug = 'van_duzy_solid_2_row'
+  elsif raw == 'van_duzy_solid'
+    assign body_type_slug = 'van_duzy_solid'
+  elsif raw == 'van_duzy' or raw contains 'van du'
+    assign body_type_slug = 'van_duzy'
+  elsif raw == 'van_maly' or raw contains 'van ma'
+    assign body_type_slug = 'van_maly'
+  elsif raw == 'bus_solid'
+    assign body_type_slug = 'bus_solid'
+  elsif raw == 'bus'
+    assign body_type_slug = 'bus'
+  elsif raw == 'camper'
+    assign body_type_slug = 'camper'
+  elsif raw == 'tractor'
+    assign body_type_slug = 'tractor'
+  elsif raw == 'tir'
+    assign body_type_slug = 'tir'
+  elsif raw == 'custom'
+    assign body_type_slug = 'custom'
+  elsif raw == 'corners'
+    assign body_type_slug = 'corners'
+  endif
+-%}{{- body_type_slug -}}

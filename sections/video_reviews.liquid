@@ -89,17 +89,11 @@
     </div>
 
     <div class="video_reviews__slider-bleed"> 
-        <button
-          type="button"
-          class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--prev swiper-button-prev video_reviews__nav video_reviews__nav--outset"
-          aria-label="Previous slide"
-        >
-          <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
-            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10054 4.39663e-05L0.356982 7.7436C-0.118202 8.21879 -0.118201 8.98921 0.356983 9.46439L8.10054 17.208L9.82133 15.4872L4.15495 9.82078L16.123 9.82078L16.123 7.38722L4.15495 7.38722L9.82133 1.72084L8.10054 4.39663e-05Z" fill="white"/>
-            </svg>
-          </span>
-        </button>
+        {% render 'eva-slider-nav-button',
+          direction: 'prev',
+          absolute: true,
+          class: 'video_reviews__nav video_reviews__nav--outset'
+        %}
 
       <div class="video_reviews__slider-grid__track">
                 <div class="video_reviews__container video_reviews__container_slider swiper">
@@ -123,17 +117,11 @@
         </div>
                 </div>
 
-        <button
-          type="button"
-          class="eva-slider-nav eva-slider-nav--absolute eva-slider-nav--next swiper-button-next video_reviews__nav video_reviews__nav--outset"
-          aria-label="Next slide"
-        >
-          <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
-            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.02446 4.39663e-05L15.768 7.7436C16.2432 8.21879 16.2432 8.98921 15.768 9.46439L8.02446 17.208L6.30367 15.4872L11.97 9.82078L0.00203078 9.82078L0.00203057 7.38722L11.97 7.38722L6.30367 1.72084L8.02446 4.39663e-05Z" fill="white"/>
-            </svg>
-          </span>
-        </button>
+        {% render 'eva-slider-nav-button',
+          direction: 'next',
+          absolute: true,
+          class: 'video_reviews__nav video_reviews__nav--outset'
+        %}
             </div>
         </div>
 

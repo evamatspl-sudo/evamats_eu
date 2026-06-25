@@ -106,42 +106,26 @@
     position: relative;
 }
 
-.content-gallery-slider__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 58px;
-    height: 58px;
-    background: #FF2741;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    cursor: pointer;
+.content-gallery-slider__navigation {
+    position: static;
 }
 
-.content-gallery-slider__arrow.swiper-button-disabled {
-    opacity: .9;
-    cursor: default;
-}
-
-.content-gallery-slider__arrow--prev {
+.content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
     left: -90px;
 }
 
-.content-gallery-slider__arrow--next {
+.content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
     right: -90px;
 }
 
-.content-gallery-slider__arrow svg{
-    width: 17px;
-    height: auto;
-}
+@media screen and (max-width: 1740px) {
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
+        left: -29px;
+    }
 
-.content-gallery-slider .swiper-button-prev::after,
-.content-gallery-slider .swiper-button-next::after {
-    display: none;
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
+        right: -29px;
+    }
 }
 
 .content-gallery-slider__button-wrapper {
@@ -174,11 +158,11 @@
 
 
 @media screen and (max-width: 1740px) {
-    .content-gallery-slider__arrow--prev {
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
         left: -29px;
     }
 
-    .content-gallery-slider__arrow--next {
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
         right: -29px;
     }
 }
@@ -228,21 +212,18 @@
 }
 
 @media screen and (max-width: 749px) {
-    .content-gallery-slider__arrow {
-        width: 40px;
-        height: 40px;
+    .content-gallery-slider__nav.eva-slider-nav--small,
+    .content-gallery-slider__nav {
+        --eva-nav-size: 40px;
+        --eva-nav-icon: 11px;
     }
 
-    .content-gallery-slider__arrow--prev {
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
         left: 5px;
     }
 
-    .content-gallery-slider__arrow--next {
+    .content-gallery-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
         right: 5px;
-    }
-
-    .content-gallery-slider__arrow svg {
-        width: 11px;
     }
 
     .content-gallery-slider__slider-wrapper, .content-gallery-slider__top,

@@ -48,11 +48,11 @@
   transform: translateY(-50%);
 }
 
-.evamats-featured-collection__nav--prev {
+.evamats-featured-collection__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
   left: 0;
 }
 
-.evamats-featured-collection__nav--next {
+.evamats-featured-collection__nav.eva-slider-nav--absolute.eva-slider-nav--next {
   right: 0;
 }
 
@@ -84,7 +84,6 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: var(--efc-radius-lg);
-  background: #f6f6f6;
   overflow: hidden;
 }
 
@@ -181,8 +180,8 @@
   width: 100%;
   max-width: 100%;
   min-height: 50px !important;
-  padding: 12px 16px !important;
-  gap: 12px;
+  padding: 12px 10px !important;
+  gap: 8px;
   background: transparent !important;
   color: var(--color-text-primary, #1b1d22) !important;
 }
@@ -209,16 +208,16 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   color: inherit;
 }
 
 .efc-card__actions .button .button__icon-svg,
 .efc-card__product-form .button .button__icon-svg {
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .efc-card__actions .button .button__icon-svg path,

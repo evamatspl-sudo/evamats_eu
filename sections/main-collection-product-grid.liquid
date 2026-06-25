@@ -14,14 +14,35 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- liquid
-  assign cols_tablet = section.settings.columns_desktop
-  if cols_tablet > 3
-    assign cols_tablet = 3
-  endif
+  capture no_filter_handles_csv
+    render 'evamats-collection-no-filter-handles'
+  endcapture
 
+  assign hide_vehicle_filter = false
+  assign no_filter_handles = no_filter_handles_csv | strip | split: ','
+  for handle_item in no_filter_handles
+    assign handle_item_trimmed = handle_item | strip
+    if handle_item_trimmed != blank and handle_item_trimmed == collection.handle
+      assign hide_vehicle_filter = true
+      break
+    endif
+  endfor
+
+  assign cols_tablet = section.settings.columns_desktop
   assign cols_desktop = section.settings.columns_desktop
-  if cols_desktop > 3
-    assign cols_desktop = 3
+
+  if hide_vehicle_filter
+    assign cols_desktop = 4
+    if cols_tablet > 3
+      assign cols_tablet = 3
+    endif
+  else
+    if cols_tablet > 3
+      assign cols_tablet = 3
+    endif
+    if cols_desktop > 3
+      assign cols_desktop = 3
+    endif
   endif
 -%}
 
@@ -42,11 +63,13 @@
   }
 {%- endstyle -%}
 
-<div class="evamats-collection-product-grid page-width">
+<div class="evamats-collection-product-grid page-width{% if hide_vehicle_filter %} evamats-collection-product-grid--no-filter{% endif %}">
   <div class="evamats-collection-product-grid__layout">
-    <aside class="evamats-collection-product-grid__filter" aria-label="{{ 'general.config.choose_your_mats' | t }}">
-      {% render 'evamats-vehicle-filter', filter_ui: 'collection' %}
-    </aside>
+    {%- unless hide_vehicle_filter -%}
+      <aside class="evamats-collection-product-grid__filter" aria-label="{{ 'general.config.choose_your_mats' | t }}">
+        {% render 'evamats-vehicle-filter', filter_ui: 'collection', collection_handle: collection.handle %}
+      </aside>
+    {%- endunless -%}
 
     <div class="evamats-collection-product-grid__main product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}

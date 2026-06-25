@@ -1,3 +1,7 @@
+(function () {
+if (window.__evamatsProductFormJsLoaded) return;
+window.__evamatsProductFormJsLoaded = true;
+
 const DROP_CELL_SHAPE_VARIANT_ID = 51194860011798;
 
 const addDropCellShape = async (id) => {
@@ -103,7 +107,7 @@ if (!customElements.get('product-form')) {
     }
 
     setLoadingState(isLoading) {
-      const addingText = window.variantStrings?.addingToCart || 'Adding...';
+      const addingText = window.variantStrings?.addingToCart || '';
       const buttons = [this.submitButton, ...this.getStickyCartButtons()].filter(Boolean);
 
       buttons.forEach((button) => {
@@ -123,7 +127,7 @@ if (!customElements.get('product-form')) {
             button.classList.add('loading');
           }
 
-          if (label) {
+          if (label && addingText) {
             if (!label.dataset.defaultLabel) {
               label.dataset.defaultLabel = label.textContent.trim();
             }
@@ -347,6 +351,63 @@ if (!customElements.get('product-form')) {
   });
 }
 
+function resetAddToCartButtonState(button) {
+  const label =
+    button.querySelector('[data-add-to-cart-label]') ||
+    button.querySelector('.evamats-config-checkout__cart-label');
+  const addingText = (window.variantStrings?.addingToCart || '').trim();
+  const defaultText = (label?.dataset.defaultLabel || window.variantStrings?.addToCart || '').trim();
+
+  button.classList.remove('loading', 'is-adding-to-cart');
+  button.removeAttribute('aria-busy');
+  if (!button.disabled) button.removeAttribute('aria-disabled');
+
+  if (label && defaultText) {
+    const current = label.textContent.trim();
+    if (!label.dataset.defaultLabel && current && current !== addingText) {
+      label.dataset.defaultLabel = current;
+    }
+    if (!addingText || current === addingText) {
+      label.textContent = defaultText;
+    }
+  }
+
+  const icon = button.querySelector(':scope > svg');
+  if (icon) icon.removeAttribute('aria-hidden');
+
+  const spinner = button.querySelector('.loading-overlay__spinner');
+  if (spinner) spinner.classList.add('hidden');
+}
+
+function resetStuckAddToCartButtons() {
+  const selectors = [
+    '.evamats-config-checkout__cart',
+    '.evamats-config-step-bar__cart',
+    '.sticky_add_to_cart',
+    'product-form .product-form__submit',
+  ];
+
+  document.querySelectorAll(selectors.join(', ')).forEach((button) => {
+    const label =
+      button.querySelector('[data-add-to-cart-label]') ||
+      button.querySelector('.evamats-config-checkout__cart-label');
+    const addingText = (window.variantStrings?.addingToCart || '').trim();
+    const isStuck =
+      button.classList.contains('is-adding-to-cart') ||
+      button.classList.contains('loading') ||
+      button.getAttribute('aria-busy') === 'true' ||
+      (label && addingText && label.textContent.trim() === addingText);
+
+    if (isStuck) resetAddToCartButtonState(button);
+  });
+}
+
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    resetStuckAddToCartButtons();
+  }
+});
+
 // Логика для кнопки "Купить сейчас"
 // const buyNowButton = document.getElementById('add-to-cart-and-checkout');
 // const productUpsell = document.querySelector('.product__upsell');
@@ -450,3 +511,5 @@ if (!customElements.get('product-form')) {
 //     await addToCart();
 //   });
 // }
+
+})();

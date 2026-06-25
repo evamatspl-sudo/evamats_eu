@@ -65,16 +65,16 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
+    const target = event.target;
+    if (!target || target.matches('[data-cart-terms-checkbox]') || !target.dataset.index) return;
+    this.updateQuantity(target.dataset.index, target.value, target.getAttribute('name'));
   }
 
   onCartUpdate() {
     fetch(`${routes.cart_url}?section_id=main-cart-items`)
       .then((response) => response.text())
       .then((responseText) => {
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const sourceQty = html.querySelector('cart-items');
-        this.innerHTML = sourceQty.innerHTML;
+        this.applyMainCartItemsSection(responseText);
         this.appendRemovedGhosts();
         this.afterCartContentsUpdate();
       })
@@ -83,7 +83,74 @@ class CartItems extends HTMLElement {
       });
   }
 
+  applyMainCartItemsSection(sectionHtml) {
+    const html = new DOMParser().parseFromString(sectionHtml, 'text/html');
+    const sourceCartItems = html.querySelector('cart-items');
+    if (!sourceCartItems) return;
+
+    const currentUpsell = this.querySelector(':scope > .evamats-cart-upsell');
+    const newUpsell = sourceCartItems.querySelector(':scope > .evamats-cart-upsell');
+    if (newUpsell) {
+      const importedUpsell = document.importNode(newUpsell, true);
+      if (currentUpsell) {
+        currentUpsell.replaceWith(importedUpsell);
+      } else {
+        const main = this.querySelector(':scope > .evamats-cart__main');
+        this.insertBefore(importedUpsell, main || null);
+      }
+    } else if (currentUpsell) {
+      currentUpsell.remove();
+    }
+
+    const sourceLayout = sourceCartItems.querySelector('.js-contents');
+    const targetLayout = this.querySelector('.js-contents');
+    if (!sourceLayout || !targetLayout) return;
+
+    const sourceCol = sourceLayout.querySelector('.evamats-cart__col-main');
+    const targetCol = targetLayout.querySelector('.evamats-cart__col-main');
+    if (sourceCol && targetCol) {
+      targetCol.innerHTML = sourceCol.innerHTML;
+    }
+
+    this.syncEvamatsCartSidebar(
+      sourceLayout.querySelector('.evamats-cart-sidebar'),
+      targetLayout.querySelector('.evamats-cart-sidebar')
+    );
+  }
+
+  syncEvamatsCartSidebar(sourceSidebar, targetSidebar) {
+    if (!sourceSidebar || !targetSidebar) return;
+
+    const termsCheckbox = targetSidebar.querySelector('[data-cart-terms-checkbox]');
+    const termsChecked = !!(termsCheckbox && termsCheckbox.checked);
+
+    const sourceCount = sourceSidebar.querySelector('.evamats-cart-sidebar__count');
+    const targetCount = targetSidebar.querySelector('.evamats-cart-sidebar__count');
+    if (sourceCount && targetCount) {
+      targetCount.textContent = sourceCount.textContent;
+    }
+
+    const sourceTotal = sourceSidebar.querySelector('.evamats-cart-sidebar__total-value');
+    const targetTotal = targetSidebar.querySelector('.evamats-cart-sidebar__total-value');
+    if (sourceTotal && targetTotal) {
+      targetTotal.innerHTML = sourceTotal.innerHTML;
+    }
+
+    const sourceDiscounts = sourceSidebar.querySelector('#discountMessage');
+    const targetDiscounts = targetSidebar.querySelector('#discountMessage');
+    if (sourceDiscounts && targetDiscounts) {
+      targetDiscounts.innerHTML = sourceDiscounts.innerHTML;
+    }
+
+    if (termsCheckbox && termsChecked) {
+      termsCheckbox.checked = true;
+    }
+  }
+
   afterCartContentsUpdate() {
+    if (window.restoreEvamatsCartTermsCheckbox) {
+      window.restoreEvamatsCartTermsCheckbox();
+    }
     if (window.initEvamatsCartReservationTimer) {
       window.initEvamatsCartReservationTimer();
     }
@@ -435,6 +502,9 @@ class CartItems extends HTMLElement {
     const cartIsEmpty = freshCart.item_count === 0 && !hasRemovedGhosts;
 
     this.classList.toggle('is-empty', cartIsEmpty);
+    if (cartIsEmpty && typeof sessionStorage !== 'undefined') {
+      sessionStorage.removeItem('evamatsCartTermsAccepted');
+    }
     const cartDrawerWrapper = document.querySelector('cart-drawer');
     const cartFooter = document.getElementById('main-cart-footer');
 
@@ -442,6 +512,11 @@ class CartItems extends HTMLElement {
     if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', cartIsEmpty);
 
     this.getSectionsToRender().forEach(section => {
+      if (section.id === 'main-cart-items') {
+        this.applyMainCartItemsSection(sectionsData[section.section]);
+        return;
+      }
+
       const elementToReplace =
         document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
       elementToReplace.innerHTML = this.getSectionInnerHTML(sectionsData[section.section], section.selector);

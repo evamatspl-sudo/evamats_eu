@@ -682,10 +682,7 @@
 /* --- Two-column body (Figma 1710:11107 / 1710:11244) --- */
 
 .evamats-cart__body {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   padding: 20px 0 42px;
-  width: 100vw;
 }
 
 .evamats-cart__layout {
@@ -854,6 +851,19 @@
 
 .evamats-cart-sidebar__dynamic-checkout {
   width: 100%;
+  position: relative;
+}
+
+.evamats-cart-sidebar__dynamic-checkout.is-terms-blocked {
+  opacity: 0.45;
+}
+
+.evamats-cart-sidebar__dynamic-checkout.is-terms-blocked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  cursor: not-allowed;
 }
 
 .evamats-cart-sidebar__dynamic-checkout .shopify-cleanslate ul,

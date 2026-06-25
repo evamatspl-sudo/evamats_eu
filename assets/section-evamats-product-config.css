@@ -581,13 +581,13 @@
 
 /* Pattern swatches: 70×70 */
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item {
-  width: 70px;
-  height: 70px;
+  width: 44px;
+  height: 44px;
 }
 
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item img {
-  width: 70px;
-  height: 70px;
+  width: 44px;
+  height: 44px;
   border-radius: 16px;
   object-fit: cover;
 }
@@ -607,14 +607,14 @@
 /* Color swatches: 32×32 */
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item,
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
 }
 
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item img,
 .evamats-config [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item img {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -1327,7 +1327,7 @@
 
 .evamats-config .product__dropdown_wr--heel .product__upsell_custom_checkbox input:checked + label::after {
   top: 18px;
-  left: 19px;
+  left: 23px;
   width: 8px;
   height: 14px;
   border: solid #0cba7a;
@@ -1358,7 +1358,6 @@
   letter-spacing: -0.24px;
   padding: 4px 8px;
   border-color: var(--evc-border);
-  border-radius: 8px;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__upsell_item_variant.active {
@@ -1778,6 +1777,11 @@
   padding: 13px 24px !important;
 }
 
+.evamats-config .evamats-config-step-bar__next.button_5.disabled-button {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
 .evamats-config .evamats-config-step-bar__cart {
   display: inline-flex;
   align-items: center;
@@ -1795,7 +1799,7 @@
   letter-spacing: -0.36px;
   line-height: 1;
   white-space: nowrap;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .evamats-config .evamats-config-step-bar__next.hidden,
@@ -1814,7 +1818,6 @@
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.36px;
-  text-transform: uppercase;
 }
 
 /* ── Config checkout card (Figma 1710:25692) ── */
@@ -1954,6 +1957,8 @@
 .evamats-config .evamats-config-checkout__cart.is-adding-to-cart,
 .evamats-config .evamats-config-step-bar__cart.is-adding-to-cart {
   pointer-events: none;
+  justify-content: center;
+  gap: 0;
 }
 
 .evamats-config .evamats-config-checkout__cart.is-adding-to-cart > svg,
@@ -1963,22 +1968,7 @@
 
 .evamats-config .evamats-config-checkout__cart.is-adding-to-cart > .loading-overlay__spinner,
 .evamats-config .evamats-config-step-bar__cart.is-adding-to-cart > .loading-overlay__spinner {
-  display: inline-flex !important;
-  position: static;
-  transform: none;
-  width: auto;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.evamats-config .evamats-config-checkout__cart.is-adding-to-cart .loader,
-.evamats-config .evamats-config-step-bar__cart.is-adding-to-cart .loader {
-  width: 22px;
-  height: 22px;
-  border-width: 2.5px;
-  border-color: #fff transparent;
+  display: none !important;
 }
 
 .evamats-config .evamats-config-checkout__cart.is-adding-to-cart .evamats-config-checkout__cart-label,

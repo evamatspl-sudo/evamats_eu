@@ -1,14 +1,6 @@
 
 
 .evamats-v2 {
-  --font-body-family: NTSomic, sans-serif;
-  --font-body-style: normal;
-  --font-body-weight: 400;
-  --font-body-weight-bold: 600;
-  --font-heading-family: NTSomic, sans-serif;
-  --font-heading-style: normal;
-  --font-heading-weight: 600;
-
   --color-bg: transparent;
   --color-text: #1b1d22;
   --color-text-primary: #1b1d22;
@@ -6822,47 +6814,13 @@
     min-width: 0;
   }
 
-  .product-spotlight-v2 .product-spotlight-v2__nav {
+  .product-spotlight-v2 .product-spotlight-v2__nav.eva-slider-nav {
     flex-shrink: 0;
-    width: var(--ps-nav-btn);
-    height: var(--ps-nav-btn);
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    color: var(--color-text);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: static;
     top: auto;
     left: auto;
     right: auto;
-    font-size: 0;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__nav::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__chev {
-    display: block;
-    width: var(--ps-nav-icon-w);
-    height: var(--ps-nav-icon-h);
-    flex-shrink: 0;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__nav:hover {
-    opacity: 0.75;
-  }
-
-  .product-spotlight-v2 .product-spotlight-v2__nav.swiper-button-disabled {
-    opacity: 0.25;
-    cursor: default;
-    pointer-events: none;
+    transform: none;
   }
 
   .product-spotlight-v2 .product-spotlight-v2__swiper {

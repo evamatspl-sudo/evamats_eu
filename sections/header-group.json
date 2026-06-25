@@ -60,14 +60,14 @@
         "catalog_l1_icon_eG3KdY": {
           "type": "catalog_l1_icon",
           "settings": {
-            "menu_item_handle": "car-brands",
+            "menu_item_handle": "all-car-mats",
             "icon": "shopify://shop_images/Car.svg"
           }
         },
         "catalog_drawer_icon_jhChxQ": {
           "type": "catalog_drawer_icon",
           "settings": {
-            "menu_item_handle": "car-brands",
+            "menu_item_handle": "all-car-mats",
             "icon": "shopify://shop_images/image_106.webp"
           }
         },

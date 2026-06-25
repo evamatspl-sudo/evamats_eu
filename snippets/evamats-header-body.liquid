@@ -21,12 +21,24 @@
           settings.logo
           | image_url: width: 304
           | image_tag:
-            class: 'evamats-header__logo',
+            class: 'evamats-header__logo evamats-header__logo--default',
             widths: '100, 152, 200, 304',
             sizes: '(min-width: 990px) 152px, 100px',
             alt: settings.logo.alt | default: shop.name
         }}
-      {%- else -%}
+      {%- endif -%}
+      {%- if settings.logo_inverse != blank -%}
+        {{
+          settings.logo_inverse
+          | image_url: width: 304
+          | image_tag:
+            class: 'evamats-header__logo evamats-header__logo--inverse',
+            widths: '100, 152, 200, 304',
+            sizes: '(min-width: 990px) 152px, 100px',
+            alt: settings.logo_inverse.alt | default: shop.name
+        }}
+      {%- endif -%}
+      {%- if settings.logo == blank -%}
         <span class="evamats-header__logo-text">{{ shop.name }}</span>
       {%- endif -%}
     </a>
@@ -148,13 +160,13 @@
     <div class="evamats-header__icon-actions">
       {% render 'evamats-header-search',
         section: section,
-        input_id: 'Search-In-Modal-Evamats-Desktop',
+        input_id: 'Search-In-Modal-Carvion-Desktop',
         summary_class: ' evamats-header__search-wrap--desktop small-hide medium-hide'
       %}
 
       {% render 'evamats-header-search',
         section: section,
-        input_id: 'Search-In-Modal-Evamats-Mobile',
+        input_id: 'Search-In-Modal-Carvion-Mobile',
         summary_class: ' evamats-header__search-wrap--mobile large-up-hide'
       %}
 

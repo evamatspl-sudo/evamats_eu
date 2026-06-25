@@ -1,24 +1,27 @@
+{%- comment -%}
+  Pair of round slider arrows — Figma RoundButton 2209:14169
+
+  @param size {string} large | medium | small
+  @param color {string} red | white
+  @param absolute {boolean}
+  @param class {string} extra class on wrapper
+  @param prev_label {string}
+  @param next_label {string}
+{%- endcomment -%}
+
 <div class="eva-slider-controls__arrows{% if class != blank %} {{ class }}{% endif %}">
-  <button
-    type="button"
-    class="eva-slider-nav eva-slider-nav--prev swiper-button-prev"
-    aria-label="{{ prev_label | default: 'Previous slide' }}"
-  >
-    <span class="eva-slider-nav__icon eva-slider-nav__icon--prev" aria-hidden="true">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.58631 0.000114521L0.245925 5.3405C-0.0817878 5.66821 -0.0817876 6.19954 0.245925 6.52725L5.58631 11.8676L6.77306 10.6809L2.86521 6.77304H11.119L11.119 5.09472L2.86521 5.09472L6.77306 1.18687L5.58631 0.000114521Z" fill="#fff"/>
-      </svg>
-    </span>
-  </button>
-  <button
-    type="button"
-    class="eva-slider-nav eva-slider-nav--next swiper-button-next"
-    aria-label="{{ next_label | default: 'Next slide' }}"
-  >
-    <span class="eva-slider-nav__icon eva-slider-nav__icon--next" aria-hidden="true">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.53088 0.000114521L10.8713 5.3405C11.199 5.66821 11.199 6.19954 10.8713 6.52725L5.53088 11.8676L4.34412 10.6809L8.25197 6.77304H-0.00183256L-0.00183269 5.09472L8.25197 5.09472L4.34412 1.18687L5.53088 0.000114521Z" fill="white"/>
-      </svg>
-    </span>
-  </button>
+  {% render 'eva-slider-nav-button',
+    direction: 'prev',
+    size: size,
+    color: color,
+    absolute: absolute,
+    label: prev_label
+  %}
+  {% render 'eva-slider-nav-button',
+    direction: 'next',
+    size: size,
+    color: color,
+    absolute: absolute,
+    label: next_label
+  %}
 </div>

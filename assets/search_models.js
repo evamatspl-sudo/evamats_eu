@@ -2,8 +2,16 @@
     const DEFAULT_FILES_CDN = 'https://cdn.shopify.com/s/files/1/0790/9218/7414/files/';
     const filterContainers = document.querySelectorAll('.filter-container-json');
 
+    // Catalog-wide collections that must show an empty vehicle filter (no brand/model preselected).
+    const EMPTY_FILTER_HANDLES = ['all', 'all-car-mats'];
+
     if (!filterContainers.length) {
         return;
+    }
+
+    function shouldStartEmpty(container) {
+        const handle = (container.dataset.collectionHandle || '').trim().toLowerCase();
+        return EMPTY_FILTER_HANDLES.includes(handle);
     }
 
     function getFilesCdn(container) {
@@ -60,6 +68,93 @@
         return null;
     }
 
+    function slugifyBrand(name) {
+        return String(name || '')
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, '-');
+    }
+
+    function extractCollectionHandle(url) {
+        return String(url || '')
+            .trim()
+            .replace(/^\/collections\//, '')
+            .split('?')[0]
+            .toLowerCase();
+    }
+
+    function resolveBrandCollectionUrl(brandKey, brandData) {
+        if (brandData && brandData.url) {
+            return String(brandData.url).trim();
+        }
+        return `/collections/${slugifyBrand(brandKey)}`;
+    }
+
+    function getYearsFilterFromUrl() {
+        return new URLSearchParams(window.location.search).get('filter.p.m.custom.filter_years') || '';
+    }
+
+    function buildFilterUrl(modelUrl, years) {
+        const path = String(modelUrl || '').trim();
+        if (!path) return '';
+        const url = new URL(path, window.location.origin);
+        const yearsValue = String(years || '').trim();
+        if (yearsValue) {
+            url.searchParams.set('filter.p.m.custom.filter_years', yearsValue);
+        }
+        return url.pathname + url.search;
+    }
+
+    function isSameFilterLocation(targetUrl) {
+        const target = new URL(String(targetUrl || '').trim(), window.location.origin);
+        const current = window.location;
+        return target.pathname === current.pathname && target.search === current.search;
+    }
+
+    function navigateIfNeeded(targetUrl) {
+        const url = String(targetUrl || '').trim();
+        if (!url || isSameFilterLocation(url)) return;
+        window.location.href = url;
+    }
+
+    function findCatalogMatch(catalog, handle) {
+        const normalizedHandle = String(handle || '').trim().toLowerCase();
+        if (!normalizedHandle || !catalog) return null;
+
+        let brandMatch = null;
+        let modelMatch = null;
+
+        Object.keys(catalog).forEach((brandKey) => {
+            const brandData = catalog[brandKey];
+            const brandHandle = extractCollectionHandle(resolveBrandCollectionUrl(brandKey, brandData));
+
+            if (brandHandle === normalizedHandle) {
+                brandMatch = { brandKey, brandData, level: 'brand' };
+            }
+
+            if (!brandData || !Array.isArray(brandData.models)) return;
+
+            brandData.models.forEach((model) => {
+                const modelHandle = extractCollectionHandle(model.url);
+                if (modelHandle !== normalizedHandle) return;
+
+                const candidate = { brandKey, brandData, model, modelUrl: model.url, level: 'model' };
+                if (
+                    !modelMatch ||
+                    modelHandle.length > extractCollectionHandle(modelMatch.model.url).length
+                ) {
+                    modelMatch = candidate;
+                }
+            });
+        });
+
+        return modelMatch || brandMatch;
+    }
+
+    function isAutoNavigate(container) {
+        return container.dataset.autoNavigate === 'true';
+    }
+
     filterContainers.forEach((container) => {
         const brandCustomSelect = container.querySelector('.brand-custom-select');
         const brandSelectOptions = container.querySelector('.brand-select-options');
@@ -75,6 +170,13 @@
         let localJson;
         let selectedBrandLogo = '';
         let selectedModelGenerations = null;
+        let suppressAutoNav = false;
+        const autoNavEnabled = isAutoNavigate(container);
+
+        function maybeNavigate(targetUrl) {
+            if (!autoNavEnabled || suppressAutoNav) return;
+            navigateIfNeeded(targetUrl);
+        }
 
         fetch(brandsModelsJsonUrl)
             .then((response) => {
@@ -102,7 +204,13 @@
 
                 localJson = data;
                 populateBrandDropdown(localJson);
-                await restoreSelectionsFromLocalStorage();
+                if (shouldStartEmpty(container)) {
+                    return;
+                }
+                const restoredFromPage = await restoreSelectionsFromPageContext();
+                if (!restoredFromPage) {
+                    await restoreSelectionsFromLocalStorage();
+                }
             })
             .catch((error) => console.error('Error loading JSON:', error));
 
@@ -165,6 +273,20 @@
                         div.dataset.logo = String(data[brand].logo).trim();
                     }
                     div.addEventListener('click', function () {
+                        const key = this.dataset.brand;
+                        const brandUrl = key && data[key] ? resolveBrandCollectionUrl(key, data[key]) : '';
+
+                        if (autoNavEnabled) {
+                            saveSelectionsToLocalStorage({
+                                brand: (this.textContent || '').trim(),
+                                model: '',
+                                modelUrl: '',
+                                years: ''
+                            });
+                            maybeNavigate(brandUrl);
+                            return;
+                        }
+
                         selectOption(this, brandCustomSelect, brandSelectOptions, true);
                         selectedBrandLogo = (this.dataset.logo || '').trim();
                         selectedModelGenerations = null;
@@ -172,7 +294,6 @@
                         resetYearsSelect();
                         setThumb(brandCustomSelect, selectedBrandLogo, 'brand');
                         setThumb(modelCustomSelect, '', 'generation');
-                        const key = this.dataset.brand;
                         if (key && data[key] && Array.isArray(data[key].models)) {
                             populateModelDropdown(data[key].models);
                         }
@@ -196,7 +317,20 @@
                         div.dataset.hasGenerations = '1';
                     }
                     div.addEventListener('click', function () {
+                        const url = (model.url || '').trim();
                         selectedModelGenerations = Array.isArray(model.generations) ? model.generations : null;
+
+                        if (autoNavEnabled) {
+                            saveSelectionsToLocalStorage({
+                                brand: (brandCustomSelect.querySelector('.select-selected').value || '').trim(),
+                                model: (model.name || '').trim(),
+                                modelUrl: url,
+                                years: ''
+                            });
+                            maybeNavigate(url);
+                            return;
+                        }
+
                         selectOption(this, modelCustomSelect, modelSelectOptions, true);
                         enableFilters();
                         fetchAndPopulateFilters(url);
@@ -205,7 +339,7 @@
                 });
         }
 
-        async function fetchAndPopulateFilters(collectionUrl) {
+        async function fetchAndPopulateFilters(collectionUrl, preferredYears) {
             const fetchPage = async (page) => {
                 const url = `${collectionUrl}?page=${page}&view=json`;
                 const response = await fetch(url);
@@ -235,19 +369,22 @@
 
                 populateYearsDropdown([...years]);
 
-                const saved = localStorage.getItem('carFilterSelections');
-                if (saved) {
-                    const { years: savedYears } = JSON.parse(saved);
-                    if (savedYears) {
-                        const yearDiv = Array.from(yearsSelectOptions.children).find(
-                            (div) => (div.dataset.years || div.textContent).trim() === (savedYears || '').trim()
-                        );
-                        if (yearDiv) {
-                            selectYearOption(yearDiv, false);
-                        } else {
-                            console.warn(`Saved year "${savedYears}" not found in available years:`, [...years]);
-                            resetYearsSelect();
-                        }
+                let yearsToSelect = String(preferredYears || '').trim();
+                if (!yearsToSelect) {
+                    const saved = localStorage.getItem('carFilterSelections');
+                    if (saved) {
+                        yearsToSelect = (JSON.parse(saved).years || '').trim();
+                    }
+                }
+
+                if (yearsToSelect) {
+                    const yearDiv = Array.from(yearsSelectOptions.children).find(
+                        (div) => (div.dataset.years || div.textContent).trim() === yearsToSelect
+                    );
+                    if (yearDiv) {
+                        selectYearOption(yearDiv, false);
+                    } else {
+                        console.warn(`Year "${yearsToSelect}" not found in available years:`, [...years]);
                     }
                 }
             } catch (error) {
@@ -313,6 +450,11 @@
 
             if (saveToLocalStorage) {
                 saveSelectionsToLocalStorage();
+            }
+
+            if (autoNavEnabled && !suppressAutoNav) {
+                const modelUrl = (modelCustomSelect.querySelector('.select-selected').dataset.url || '').trim();
+                maybeNavigate(buildFilterUrl(modelUrl, yearsValue));
             }
         }
 
@@ -456,15 +598,89 @@
             }
         }
 
-        function saveSelectionsToLocalStorage() {
+        function saveSelectionsToLocalStorage(override) {
             const yearsInput = yearsCustomSelect.querySelector('.select-selected');
-            const selections = {
+            const selections = override || {
                 brand: (brandCustomSelect.querySelector('.select-selected').value || '').trim(),
                 model: (modelCustomSelect.querySelector('.select-selected').value || '').trim(),
                 modelUrl: (modelCustomSelect.querySelector('.select-selected').dataset.url || '').trim(),
                 years: (yearsInput.dataset.years || yearsInput.value || '').trim()
             };
             localStorage.setItem('carFilterSelections', JSON.stringify(selections));
+        }
+
+        async function restoreBrandSelection(brandKey, brandData, saveToStorage) {
+            const brandDiv = Array.from(brandSelectOptions.children).find(
+                (div) => (div.dataset.brand || div.textContent || '').trim() === String(brandKey).trim()
+            );
+            if (!brandDiv) return false;
+
+            selectedBrandLogo = (brandDiv.dataset.logo || '').trim();
+            if (!selectedBrandLogo && brandData && brandData.logo) {
+                selectedBrandLogo = String(brandData.logo).trim();
+            }
+
+            selectOption(brandDiv, brandCustomSelect, brandSelectOptions, saveToStorage);
+            setThumb(brandCustomSelect, selectedBrandLogo, 'brand');
+            resetModelSelect();
+            resetYearsSelect();
+
+            if (brandData && Array.isArray(brandData.models)) {
+                populateModelDropdown(brandData.models);
+                enableModelSelect();
+            }
+
+            return true;
+        }
+
+        async function restoreModelSelection(brandKey, brandData, model, modelUrl, saveToStorage) {
+            const modelName = (model.name || '').trim();
+            const modelDiv = Array.from(modelSelectOptions.children).find(
+                (div) => (div.textContent || '').trim() === modelName
+            );
+            if (!modelDiv) return false;
+
+            modelDiv.dataset.url = String(modelUrl || model.url || '').trim();
+            const modelData = brandData && Array.isArray(brandData.models)
+                ? brandData.models.find((item) => (item.name || '').trim() === modelName)
+                : null;
+            selectedModelGenerations =
+                modelData && Array.isArray(modelData.generations) ? modelData.generations : null;
+
+            selectOption(modelDiv, modelCustomSelect, modelSelectOptions, saveToStorage);
+            enableFilters();
+            await fetchAndPopulateFilters(modelDiv.dataset.url, getYearsFilterFromUrl());
+            return true;
+        }
+
+        async function restoreSelectionsFromPageContext() {
+            const handle = (container.dataset.collectionHandle || '').trim();
+            if (!handle || !localJson) return false;
+
+            const match = findCatalogMatch(localJson, handle);
+            if (!match) return false;
+
+            suppressAutoNav = true;
+
+            const restoredBrand = await restoreBrandSelection(match.brandKey, match.brandData, false);
+            if (!restoredBrand) {
+                suppressAutoNav = false;
+                return false;
+            }
+
+            if (match.level === 'model' && match.model) {
+                await restoreModelSelection(
+                    match.brandKey,
+                    match.brandData,
+                    match.model,
+                    match.modelUrl,
+                    false
+                );
+            }
+
+            saveSelectionsToLocalStorage();
+            suppressAutoNav = false;
+            return true;
         }
 
         async function restoreSelectionsFromLocalStorage() {

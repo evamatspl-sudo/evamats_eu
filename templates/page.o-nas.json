@@ -13,7 +13,7 @@
       "type": "main-page-v2",
       "settings": {
         "show_breadcrumbs": true,
-        "parent_label": "EVAMATS",
+        "parent_label": "Carvion",
         "parent_url": "",
         "current_label": "",
         "show_page_content": false
@@ -56,7 +56,7 @@
       "settings": {
         "eyebrow": "O nás",
         "heading": "Na vašem komfortu záleží",
-        "body": "<p>EVAMATS nejsou jen autokoberce. Jsou to inovativní řešení, která spojují styl, odolnost a ekologické materiály. Náš materiál je šetrný k přírodě, takže pečujete nejen o své auto, ale i o životní prostředí.</p>",
+        "body": "<p>Carvion nejsou jen autokoberce. Jsou to inovativní řešení, která spojují styl, odolnost a ekologické materiály. Náš materiál je šetrný k přírodě, takže pečujete nejen o své auto, ale i o životní prostředí.</p>",
         "padding_top": 48,
         "padding_bottom": 56
       }
@@ -97,7 +97,7 @@
       ],
       "settings": {
         "media_type": "carousel",
-        "heading": "EVAMATS vznikl od nuly - od ruční práce a plného soustředění na každý detail až po propracovaný systém, který dnes udává standard kvality.",
+        "heading": "Carvion vznikl od nuly - od ruční práce a plného soustředění na každý detail až po propracovaný systém, který dnes udává standard kvality.",
         "body": "<p>Tato zkušenost nás naučila jednu věc: produkt má smysl jen tehdy, když funguje v každodenním provozu.</p><p>Proto vyrábíme autokoberce, které skutečně odpovídají konkrétnímu vozu i potřebám řidiče - se zohledněním konstrukčních rozdílů, podmínek používání a dlouhodobé odolnosti. Každý prvek má svůj účel a každý krok výroby je pod kontrolou, protože finální výsledek není náhoda.</p><p>Nejde jen o samotný produkt.<br/> Jde o to, jak mění každodenní zážitek z jízdy - více pořádku, více pohodlí, méně kompromisů.</p><p>Protože pro nás není komfort řidiče doplněk.<br/> <strong>Je to standard.</strong></p>",
         "trust_label": "50k+ řidičů",
         "badge_faces_image": "shopify://shop_images/Group_1632523139.webp",
@@ -271,7 +271,7 @@
         "daily_text_main": "Pokud EVA obstojí tam, kde rozhoduje odolnost a komfort -",
         "daily_text_accent": "obstojí i ve vašem autě.",
         "button_label": "Zobrazit produkt",
-        "button_link": "shopify://pages/dywaniki-samochodowe-eva"
+        "button_link": "shopify://collections/all-car-mats"
       }
     },
     "roman_value_icons_v2_jXAfQK": {
@@ -328,7 +328,7 @@
       "name": "Roman - ikony hodnoty",
       "settings": {
         "heading": "Co to znamená pro vás?",
-        "side_image": "shopify://shop_images/ChatGPT_Obrázek_May_19_2026_06_20_38_PM.webp",
+        "side_image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_20_38_PM.webp",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -341,11 +341,11 @@
           "settings": {
             "image_before": "shopify://shop_images/skoda_cde76e3e-101f-4468-adfd-93390c6a95cf.webp",
             "image_after": "shopify://shop_images/IMG_7298_1.webp",
-            "title": "Gumové vs. EVAMATS 3D s lemy",
+            "title": "Gumové vs. Carvion 3D s lemy",
             "label_before": "Gumové",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         },
         "item_rxcDyb": {
@@ -353,11 +353,11 @@
           "settings": {
             "image_before": "shopify://shop_images/IMG_1371.webp",
             "image_after": "shopify://shop_images/IMG_7298_1.webp",
-            "title": "Velurové vs. EVAMATS 3D s lemy",
+            "title": "Velurové vs. Carvion 3D s lemy",
             "label_before": "Velurové",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         },
         "item_kCeEQh": {
@@ -365,11 +365,11 @@
           "settings": {
             "image_before": "shopify://shop_images/may_sd_1tiny.webp",
             "image_after": "shopify://shop_images/3D_evamats.webp",
-            "title": "EVA koberce vs. EVAMATS 3D s lemy",
-            "label_before": "Koberce EVAMATS vs. ostatní výrobci",
-            "label_before_main": "Koberce EVAMATS",
+            "title": "EVA koberce vs. Carvion 3D s lemy",
+            "label_before": "Koberce Carvion vs. ostatní výrobci",
+            "label_before_main": "Koberce Carvion",
             "label_before_accent": "vs. ostatní výrobci",
-            "label_after": "EVAMATS 3D s lemy"
+            "label_after": "Carvion 3D s lemy"
           }
         }
       },
@@ -381,10 +381,10 @@
       "settings": {
         "title": "",
         "heading_main": "Proč zvolit",
-        "heading_accent": "EVAMATS?",
+        "heading_accent": "Carvion?",
         "heading_line2": "Porovnejte sami",
         "button_label": "Zobrazit produkt",
-        "button_link": "shopify://pages/dywaniki-samochodowe-eva"
+        "button_link": "shopify://collections/all-car-mats"
       }
     },
     "home_faq_rt7qWr": {
@@ -435,15 +435,15 @@
       ],
       "settings": {
         "design_variant": "home",
-        "hd": "EVAMATS - FAQ",
+        "hd": "Carvion - FAQ",
         "heading_accent": "",
         "heading_mobile": "FAQ",
-        "breadcrumb_parent_label": "EVAMATS",
+        "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
         "breadcrumb_current_label": "FAQ",
         "eyebrow_link": "",
         "view_all_label": "Zobrazit vše",
-        "view_all_url": "",
+        "view_all_url": "shopify://pages/faq",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 40,
@@ -616,12 +616,12 @@
       ],
       "settings": {
         "title": "Majitelé aut o kobercích",
-        "title_accent": "EVAMATS",
-        "facebook_url": "https://www.facebook.com/evamats.store",
+        "title_accent": "Carvion",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
         "facebook_label": "Sledujte nás na Facebooku",
-        "instagram_url": "https://www.instagram.com/theofficialevamats/",
-        "tiktok_url": "https://www.tiktok.com/@evamats.store",
-        "youtube_url": "https://www.youtube.com/@evamats_store",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 32,

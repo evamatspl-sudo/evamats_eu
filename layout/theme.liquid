@@ -17,18 +17,26 @@
       <link rel="canonical" href="{{ canonical_url }}">
     {% endif %}
 
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {%- unless settings.type_body_font.system? -%}
       <link
         rel="preload"
-        href="{{ 'NTSomic-Regular.woff2' | asset_url }}"
+        href="{{ settings.type_body_font | font_url }}"
         as="font"
         type="font/woff2"
         crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_header_font.system? -%}
       <link
         rel="preload"
-        href="{{ 'NTSomic-Medium.woff2' | asset_url }}"
+        href="{{ settings.type_header_font | font_url }}"
         as="font"
         type="font/woff2"
         crossorigin>
+    {%- endunless -%}
 
     {%- if settings.favicon != blank -%}
       <link
@@ -38,8 +46,8 @@
     {%- endif -%}
 
     <title>
-    {% if canonical_url == 'https://evamats.pl/' %}
-      Polski producent dywaników samochodowych - Evamats Poland
+    {% if canonical_url == 'https://carvion.cz/' %}
+      Polský výrobce autokoberců - Carvion Poland
     {% else %}
       {{ page_title }}
       {%- if current_tags %}
@@ -86,23 +94,6 @@
       as="script"
       href="{{'swiper-bundle.min.js' | asset_url}}"
     > {% endcomment %}
-    
-    {% comment %} {%- unless settings.type_body_font.system? -%}
-      <link
-        rel="preload"
-        as="font"
-        href="{{ settings.type_body_font | font_url }}"
-        type="font/woff2"
-        crossorigin>
-    {%- endunless -%}
-    {%- unless settings.type_header_font.system? -%}
-      <link
-        rel="preload"
-        as="font"
-        href="{{ settings.type_header_font | font_url }}"
-        type="font/woff2"
-        crossorigin>
-    {%- endunless -%} {% endcomment %}
 
     {%- if settings.predictive_search_enabled -%}
       <link
@@ -176,15 +167,21 @@
     %}
 
     {% style %}
-      {{ settings.type_body_font | font_face: font_display: 'swap' }}{{ body_font_bold | font_face: font_display: 'swap' }}{{ body_font_italic | font_face: font_display: 'swap' }}{{ body_font_bold_italic | font_face: font_display: 'swap' }}{{ settings.type_header_font | font_face: font_display: 'swap' }}:root {
-        --font-body-family: "NTSomic", sans-serif;
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+      :root {
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: 400;
+        --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: "NTSomic", sans-serif;
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: 500;
+        --font-heading-weight: {{ settings.type_header_font.weight }};
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
@@ -553,7 +550,7 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
           "postalCode": "81-469",
           "addressRegion": "pomorskie"
         },
-        "name": "Evamats Sp. z o. o.",
+        "name": "Carvion Sp. z o. o.",
         "email": "evamatsinfo@gmail.com",
         "telephone": "577771443",
         "vatID": "5862378667",

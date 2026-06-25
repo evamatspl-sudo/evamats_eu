@@ -12,8 +12,8 @@
     "main": {
       "type": "main-page-v2",
       "settings": {
-        "show_breadcrumbs": true,
-        "parent_label": "Evamats",
+        "show_breadcrumbs": false,
+        "parent_label": "Carvion",
         "parent_url": "",
         "current_label": "",
         "show_page_content": false
@@ -29,8 +29,8 @@
         "height_mobile": 420,
         "overlay_opacity": 0,
         "content_bottom_offset": 64,
-        "show_breadcrumbs": false,
-        "parent_label": "Evamats",
+        "show_breadcrumbs": true,
+        "parent_label": "Carvion",
         "parent_url": "",
         "current_label": "",
         "heading": "V autě je vše vidět. Nejvíc to, co nekontrolujete.",
@@ -306,15 +306,15 @@
         "image_visual_desktop": "shopify://shop_images/Group_1948755225.webp",
         "image_alt": "Akce na EVA koberce",
         "button_label": "Zobrazit dostupné modely",
-        "button_link": "shopify://pages/dywaniki-samochodowe-eva",
+        "button_link": "shopify://collections/all-car-mats",
         "margin_top": 0,
         "margin_bottom": 0
       }
     }
   },
   "order": [
-    "main",
     "banner_v2",
+    "main",
     "content_mosaic_v2",
     "problem_points_v2",
     "tilted_collage_v2",

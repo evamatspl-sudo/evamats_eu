@@ -1,0 +1,48 @@
+{%- comment -%}
+  Round slider nav button — Figma RoundButton 2209:14169
+
+  @param direction {string} prev | next (required)
+  @param size {string} large | medium | small
+  @param color {string} red | white
+  @param absolute {boolean}
+  @param class {string} extra BEM / section classes
+  @param label {string} aria-label
+{%- endcomment -%}
+
+{%- liquid
+  assign size_class = ''
+  if size == 'medium'
+    assign size_class = 'eva-slider-nav--medium'
+  elsif size == 'small'
+    assign size_class = 'eva-slider-nav--small'
+  endif
+
+  assign color_class = ''
+  if color == 'white'
+    assign color_class = 'eva-slider-nav--white'
+  endif
+
+  assign absolute_class = ''
+  if absolute
+    assign absolute_class = 'eva-slider-nav--absolute'
+  endif
+
+  assign dir_class = 'eva-slider-nav--' | append: direction
+  assign swiper_class = 'swiper-button-' | append: direction
+
+  if direction == 'prev'
+    assign default_label = 'Previous slide'
+  else
+    assign default_label = 'Next slide'
+  endif
+-%}
+
+<button
+  type="button"
+  class="eva-slider-nav {{ dir_class }} {{ size_class }} {{ color_class }} {{ absolute_class }} {{ swiper_class }}{% if class != blank %} {{ class }}{% endif %}"
+  aria-label="{{ label | default: default_label }}"
+>
+  <span class="eva-slider-nav__icon eva-slider-nav__icon--{{ direction }}" aria-hidden="true">
+    {% render 'eva-slider-nav-icon', direction: direction %}
+  </span>
+</button>

@@ -36,7 +36,10 @@
                 });
             }, { threshold: 0.5 });
 
-            observer.observe(document.querySelector('.videos__container'));
+            const videosContainer = document.querySelector('.videos__container');
+            if (videosContainer) {
+                observer.observe(videosContainer);
+            }
         }
     })
 })();
@@ -44,13 +47,13 @@
 
 // image section animation auto
 (function () {
-    const imageAuto = document.querySelector('.image-section__auto')
+    const imageAuto = document.querySelector('.image-section__auto');
+    if (!imageAuto) return;
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            isVisible = entry.isIntersecting;
-
-            if (isVisible) {
-                imageAuto.classList.add('active')
+            if (entry.isIntersecting) {
+                imageAuto.classList.add('active');
             }
         });
     }, { threshold: 0.5 });

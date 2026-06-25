@@ -12,6 +12,17 @@
         assign is_simple_product = true
       endif
     endunless
+
+    capture body_type_slug
+      render 'evamats-body-type-slug', product: product
+    endcapture
+    assign body_type_slug = body_type_slug | strip
+
+    assign shop_id_padded = shop.id | prepend: '000000000000' | slice: -12, 12
+    assign shop_id_part1 = shop_id_padded | slice: 0, 4
+    assign shop_id_part2 = shop_id_padded | slice: 4, 4
+    assign shop_id_part3 = shop_id_padded | slice: 8, 4
+    assign files_cdn = 'https://cdn.shopify.com/s/files/1/' | append: shop_id_part1 | append: '/' | append: shop_id_part2 | append: '/' | append: shop_id_part3 | append: '/files/'
   -%}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'section-evamats-product-gallery.css' | asset_url | stylesheet_tag }}
@@ -107,10 +118,10 @@
     </div>
   {%- endif -%}
 
-  <div class="product config_container{% if product.template_suffix == 'config' %} evamats-config{% endif %}{% if is_simple_product %} evamats-product-simple{% endif %} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }}  {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %} product--mats{% endif %}{% if isOutlet %} product--outlet{% endif %}{% if hasBitrixCollection %} product--hasBitrixCollection{% endif %}" {% if product.metafields.custom.body_type %}data-type={{ product.metafields.custom.body_type }}{% endif %}>
+  <div class="product config_container{% if product.template_suffix == 'config' %} evamats-config{% endif %}{% if is_simple_product %} evamats-product-simple{% endif %} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }}  {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %} product--mats{% endif %}{% if isOutlet %} product--outlet{% endif %}{% if hasBitrixCollection %} product--hasBitrixCollection{% endif %}" {% if body_type_slug != blank %}data-type="{{ body_type_slug | escape }}"{% endif %} data-files-cdn="{{ files_cdn | escape }}">
     <div class=" product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       <div class="product-media-gallery-wr evamats-product-gallery">
-        {%- if section.settings.gallery_badge != blank -%}
+        {% comment %} {%- if section.settings.gallery_badge != blank -%}
           <div class="evamats-product-gallery__badge">
             {{
               section.settings.gallery_badge
@@ -123,7 +134,7 @@
                 alt: section.settings.gallery_badge.alt | default: '' | escape
             }}
           </div>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
          {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
           {% assign withoutEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.without_edges.value  %}
           {% assign withEdgesImages = shop.metaobjects.product_mats_type_images.passenger_and_pickup.with_edges.value  %}
@@ -628,7 +639,7 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-              {% if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
+              {% if product.template_suffix == 'config' or product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners' %}
                 <div class="product__title_info openPopup" data-popup="popupOverlayPriceComment">
 
                   {% render 'icon-info' %}

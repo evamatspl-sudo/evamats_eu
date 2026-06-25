@@ -87,6 +87,32 @@
       }
     }
 
+    function getScrollTargetForStep(wrapper) {
+      if (!wrapper) return null;
+      if (wrapper.matches('[data-config-intro]')) {
+        return wrapper.querySelector('[data-name="mats_type"]') || wrapper;
+      }
+      return wrapper.querySelector('.product__dropdown_title') || wrapper;
+    }
+
+    function ensureStepVisible(wrapper) {
+      if (!wrapper || wrapper.matches('[data-config-intro]')) return;
+      if (!wrapper.classList.contains('open')) {
+        const title = wrapper.querySelector('.product__dropdown_title');
+        if (title) title.click();
+      }
+    }
+
+    function scrollToStep(wrapper) {
+      const target = getScrollTargetForStep(wrapper);
+      if (!target) return;
+      ensureStepVisible(wrapper);
+      requestAnimationFrame(function () {
+        const top = target.getBoundingClientRect().top + window.scrollY - 350;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+    }
+
     function updateBar() {
       if (updatingBar || !nextBtn || !cartBtn) return;
       updatingBar = true;
@@ -106,11 +132,7 @@
 
         if (hintEl) {
           hintEl.textContent = openStep && !done ? cleanStepTitle(openStep) : '';
-        }
-
-        const hintRow = root.querySelector('.evamats-config-step-bar__hint');
-        if (hintRow) {
-          hintRow.hidden = !hintEl || !hintEl.textContent.trim();
+          hintEl.hidden = !hintEl.textContent.trim();
         }
 
         const continueBtn = getCurrentContinueButton();
@@ -123,7 +145,7 @@
           nextBtn.classList.remove('hidden');
           cartBtn.classList.add('hidden');
           nextBtn.classList.toggle('disabled-button', !isValid);
-          nextBtn.setAttribute('aria-disabled', String(!isValid));
+          nextBtn.removeAttribute('aria-disabled');
         }
 
         updateThumb();
@@ -133,7 +155,19 @@
     }
 
     nextBtn.addEventListener('click', function () {
+      const openStep = getOpenStep();
       const continueBtn = getCurrentContinueButton();
+      const isValid = continueBtn && continueBtn.getAttribute('aria-disabled') !== 'true';
+
+      if (!isValid) {
+        if (openStep) {
+          scrollToStep(openStep);
+          if (continueBtn) continueBtn.click();
+        }
+        scheduleUpdateBar();
+        return;
+      }
+
       if (continueBtn) {
         continueBtn.click();
         scheduleUpdateBar();

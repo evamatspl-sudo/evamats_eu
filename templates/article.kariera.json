@@ -54,7 +54,7 @@
     },
     "evamats_vacancy_role_requirements_UKGerR": {
       "type": "evamats-vacancy-role-requirements",
-      "name": "EVAMATS role & reqs",
+      "name": "Carvion role & reqs",
       "settings": {
         "heading": "Vaše role a naše požadavky",
         "role_panel_title": "Čím se budete zabývat",
@@ -115,10 +115,10 @@
         "item_LbMDEF",
         "item_6tQVtR"
       ],
-      "name": "EVAMATS — Icon grid",
+      "name": "Carvion — Icon grid",
       "settings": {
         "layout_style": "rows",
-        "heading": "Proč stojí za to pracovat v EVAMATS?",
+        "heading": "Proč stojí za to pracovat v Carvion?",
         "heading_alignment": "left",
         "padding_top": 80,
         "padding_bottom": 80,
@@ -266,7 +266,7 @@
           "settings": {
             "panel": "pay",
             "icon_preset": "11",
-            "text": "Slevy na produkty EVAMATS"
+            "text": "Slevy na produkty Carvion"
           }
         },
         "item_p3": {
@@ -312,7 +312,7 @@
       ],
       "settings": {
         "overline": "Benefity",
-        "heading": "Co získáte, když se připojíte k EVAMATS?",
+        "heading": "Co získáte, když se připojíte k Carvion?",
         "work_title": "Práce, která má smysl a tempo",
         "work_image": "shopify://shop_images/googa_1.webp",
         "culture_title": "Budujeme firmu, ve které chcete pracovat a růst",
@@ -337,10 +337,10 @@
         "button_label": "Napište nám",
         "button_link": "",
         "social_heading": "Zjistěte více o kariéře v našich médiích:",
-        "facebook_url": "https://www.facebook.com/evamatspl",
-        "instagram_url": "https://www.instagram.com/evamats.pl/",
-        "tiktok_url": "https://www.tiktok.com/@evamats.pl",
-        "youtube_url": "https://www.youtube.com/@evamatspl",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,
