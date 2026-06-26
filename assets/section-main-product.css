@@ -2552,8 +2552,6 @@ slider-component.slider-component-full-width {
   .evamats-product-title__car-thumb {
     grid-column: 1;
     grid-row: 1;
-    width: 79px;
-    height: 38px;
     max-width: none;
     object-fit: cover;
     object-position: center;

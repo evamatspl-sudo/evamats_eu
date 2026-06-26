@@ -244,6 +244,11 @@
   background: #fff;
 }
 
+/* Hide the fixed mobile preview while the header drawer (mobile menu) is open */
+body.overflow-hidden .product__config_image.is-fixed {
+  display: none;
+}
+
 .product__config_image.is-fixed  {
   padding-top: 0;
 }

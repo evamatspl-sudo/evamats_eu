@@ -46,6 +46,10 @@
   assign zestaw_body_5os_str = z_al_przod_bag
   assign zestaw_body_7os_str = z_al_3rzad | append: z_al_3rz_maly | append: z_al_3rz_duzy | append: z_al_3r2b | append: z_al_przod_duzy_bag
 
+  assign has_body_type_choice = false
+  if product.metafields.custom.custom_list_body_type_in_config.value != blank
+    assign has_body_type_choice = true
+  endif
 -%}
 
 {%- for value in option.values -%}
@@ -117,6 +121,17 @@
         {% assign body_types = '7os' %}
       {% endif %}
     {% endif %}
+    {% comment %} data-body-types only needs both 5os/7os when the product offers a body-type choice; otherwise collapse to the product's own body type {% endcomment %}
+    {% assign body_types_attr = body_types %}
+    {% unless has_body_type_choice %}
+      {% if body_types_attr == '5os 7os' %}
+        {% if metaBodyType == '5os' or metaBodyType == '7os' %}
+          {% assign body_types_attr = metaBodyType %}
+        {% else %}
+          {% assign body_types_attr = '' %}
+        {% endif %}
+      {% endif %}
+    {% endunless %}
     <input
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -127,7 +142,7 @@
       form="{{ product_form_id }}"
       data-index="{{ forloop.index }}"
       class="{% if valueLowercase contains trunkWord %}input_trunk{% endif %}{% if option_disabled %} disabled{% endif %}"
-      {% if body_types != '' %}data-body-types="{{ body_types }}"{% endif %}
+      {% if body_types_attr != '' %}data-body-types="{{ body_types_attr }}"{% endif %}
       {% if option.selected_value == value %}
         checked
       {% endif %}

@@ -1202,6 +1202,132 @@
   text-decoration: none;
 }
 
+.evamats-header-drawer__lang {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+}
+
+.evamats-header-drawer__lang .localization-form,
+.evamats-header-drawer__lang .disclosure {
+  position: relative;
+}
+
+.evamats-header-drawer__lang-button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--eh-text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.evamats-header-drawer__lang-button:hover,
+.evamats-header-drawer__lang-button[aria-expanded='true'] {
+  border-color: var(--eh-accent);
+  background: rgba(227, 30, 41, 0.12);
+}
+
+.evamats-header-drawer__lang-icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--eh-accent);
+}
+
+.evamats-header-drawer__lang-current {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evamats-header-drawer__lang-chevron {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.evamats-header-drawer__lang-button[aria-expanded='true'] .evamats-header-drawer__lang-chevron {
+  transform: rotate(180deg);
+  color: var(--eh-text);
+}
+
+.evamats-header-drawer__lang .disclosure__list-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  z-index: 2;
+  margin: 0 0 8px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.evamats-header-drawer__lang-list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: #23262d;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.evamats-header-drawer__lang-item + .evamats-header-drawer__lang-item {
+  margin-top: 2px;
+}
+
+.evamats-header-drawer__lang-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  color: var(--eh-text);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.evamats-header-drawer__lang-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.evamats-header-drawer__lang-link.is-active {
+  color: var(--eh-accent);
+  font-weight: 600;
+}
+
+.evamats-header-drawer__lang-link.is-active::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  background: var(--eh-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5L6.5 12L13 4.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5L6.5 12L13 4.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 /* Override legacy header when evamats-header is active */
 .section-header .header.evamats-header {
   display: block;
