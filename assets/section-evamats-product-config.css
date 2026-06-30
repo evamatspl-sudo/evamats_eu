@@ -737,12 +737,6 @@
     --evc-mobile-pad: 18px;
   }
 
-  /* Step navigation via sticky step bar — hide inline Continue buttons */
-  .evamats-config .product__dropdown_button {
-    display: none !important;
-    margin: 0 !important;
-  }
-
   /* Desktop 2-col grid on .product breaks mobile — stack gallery then config */
   .evamats-config.config_container.product {
     grid-template-columns: minmax(0, 1fr);
@@ -818,7 +812,7 @@
   }
 
   .evamats-config fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
-    flex: 1 1 calc(50% - 3px);
+    flex: 1 1 calc(50% - 6px);
     width: auto;
     height: 46px;
     padding: 2px 18px 2px 2px;
@@ -1820,7 +1814,7 @@
   letter-spacing: -0.36px;
 }
 
-/* ── Config checkout card (Figma 1710:25692) ── */
+/* ── Config checkout card (Figma 1710:25692) — shared with simple product checkout ── */
 .evamats-config .evamats-config-checkout {
   display: flex;
   flex-direction: column;
@@ -1828,14 +1822,14 @@
   margin-top: 24px;
 }
 
-.evamats-config .evamats-config-checkout__card {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__card {
   padding: 28px 29px 23px;
   border-radius: 20px;
   background: #fff;
   box-shadow: 8px 8px 40px rgba(33, 33, 33, 0.1);
 }
 
-.evamats-config .evamats-config-checkout__total-row {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__total-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1843,16 +1837,16 @@
   margin-bottom: 22px;
 }
 
-.evamats-config .evamats-config-checkout__total-label {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__total-label {
   margin: 0;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.44px;
   line-height: 1;
-  color: var(--evc-text);
+  color: var(--evc-text, var(--eps-text));
 }
 
-.evamats-config .evamats-config-checkout__prices {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__prices {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1860,16 +1854,16 @@
   gap: 12px;
 }
 
-.evamats-config .evamats-config-checkout__price-old {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-old {
   position: relative;
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.52px;
   line-height: 1;
-  color: var(--evc-muted);
+  color: var(--evc-muted, var(--eps-muted));
 }
 
-.evamats-config .evamats-config-checkout__price-old::after {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-old::after {
   content: '';
   position: absolute;
   left: 0;
@@ -1877,26 +1871,26 @@
   top: 50%;
   height: 3px;
   margin-top: -1.5px;
-  background: var(--evc-red);
+  background: var(--evc-red, var(--eps-red));
 }
 
-.evamats-config .evamats-config-checkout__price-current {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-current {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.52px;
   line-height: 1;
-  color: var(--evc-text);
+  color: var(--evc-text, var(--eps-text));
   white-space: nowrap;
 }
 
-.evamats-config .evamats-config-checkout__discount {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__discount {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 18px;
   padding: 0 6px 0 8px;
   border-radius: 0 2px 2px 0;
-  background: var(--evc-red);
+  background: var(--evc-red, var(--eps-red));
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -1905,7 +1899,7 @@
   clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
 }
 
-.evamats-config .evamats-config-checkout__discount.hidden {
+:is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__discount.hidden {
   display: none;
 }
 
@@ -2278,28 +2272,28 @@
     margin-top: 16px;
   }
 
-  .evamats-config .evamats-config-checkout__card {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__card {
     padding: 17px 16px 16px;
     border-radius: 20px;
     box-shadow: 8px 8px 40px rgba(33, 33, 33, 0.1);
   }
 
-  .evamats-config .evamats-config-checkout__total-row {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__total-row {
     margin-bottom: 20px;
   }
 
-  .evamats-config .evamats-config-checkout__total-label {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__total-label {
     font-size: 18px;
     letter-spacing: -0.36px;
   }
 
-  .evamats-config .evamats-config-checkout__price-old,
-  .evamats-config .evamats-config-checkout__price-current {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-old,
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-current {
     font-size: 22px;
     letter-spacing: -0.44px;
   }
 
-  .evamats-config .evamats-config-checkout__price-old::after {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-old::after {
     height: 2px;
     margin-top: -1px;
   }
@@ -2454,8 +2448,8 @@
   }
 
   .evamats-config .product__dropdown_wr--heel .product__upsell_item > .product__upsell_custom_checkbox input:checked + label::after {
-    top: 16px;
-    left: 17px;
+    top: 15px;
+    left: 21px;
   }
 
   .evamats-config .product__dropdown_wr--heel .product__upsell_price_compare,
@@ -2536,8 +2530,8 @@
 
 .evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -2561,10 +2555,11 @@
 }
 
 .evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__panel {
-  padding: 22px 16px 0;
+  padding: 16px 16px 0;
 }
 
 .evamats-config .evamats-config-preview__title {
+  display: none;
   margin: 0 32px 10px 0;
   color: var(--evc-text);
   font-size: 16px;
@@ -2574,6 +2569,7 @@
 }
 
 .evamats-config .evamats-config-preview__chips {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -2628,6 +2624,8 @@
   column-gap: 10px;
   align-items: center;
   justify-items: end;
+  margin-top: -40px;
+  margin-bottom: -30px;
 }
 
 .evamats-config .evamats-config-preview__swatches {
@@ -2849,17 +2847,17 @@
     margin-top: 20px;
   }
 
-  .evamats-config .evamats-config-checkout__card {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__card {
     padding: 22px 20px 20px;
   }
 
-  .evamats-config .evamats-config-checkout__total-label {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__total-label {
     font-size: 20px;
     letter-spacing: -0.4px;
   }
 
-  .evamats-config .evamats-config-checkout__price-old,
-  .evamats-config .evamats-config-checkout__price-current {
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-old,
+  :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__price-current {
     font-size: 24px;
     letter-spacing: -0.48px;
   }

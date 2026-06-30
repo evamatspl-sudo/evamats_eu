@@ -39,7 +39,7 @@
   if needs_options or variant.available == false
     assign efc_cta_desktop = 'products.product.choose_color_and_mats_set' | t
   endif
-  assign efc_cta_mobile = mobile_button_label | default: 'Select'
+  assign efc_cta_mobile = mobile_button_label | default: 'Vybrat'
 
   if link_to_product
     if card_button_label != blank

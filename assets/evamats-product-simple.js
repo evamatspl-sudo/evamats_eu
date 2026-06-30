@@ -30,7 +30,7 @@
 
   function formatMoney(cents) {
     const reference =
-      root.querySelector('.evamats-product-checkout__price-current')?.textContent ||
+      root.querySelector('.evamats-config-checkout__price-current, .evamats-product-checkout__price-current')?.textContent ||
       root.querySelector('.price-item--regular')?.textContent ||
       '';
 

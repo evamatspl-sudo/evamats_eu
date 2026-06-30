@@ -119,7 +119,13 @@
           <button type="button" class="search-button button search-button-json" disabled aria-label="{{ 'general.config.search' | t }}">
             <span class="search-button__label">{{ 'general.config.search' | t }}</span>
           </button>
-          <span class="clear-filters">{{ 'general.config.reset' | t }}</span>
+          <span class="clear-filters">
+            {%- if section.settings.reset_label != blank -%}
+              {{ section.settings.reset_label | escape }}
+            {%- else -%}
+              {{ 'general.config.reset' | t }}
+            {%- endif -%}
+          </span>
         </div>
       </div>
     </div>
@@ -208,6 +214,12 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "Výroba na míru. Maximální ochrana. Bez kompromisů."
+    },
+    {
+      "type": "text",
+      "id": "reset_label",
+      "label": "Reset button label",
+      "info": "Optional. Uses the default translation when empty."
     },
     {
       "type": "header",

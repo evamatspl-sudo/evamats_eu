@@ -75,7 +75,7 @@
 
   function formatMoney(cents) {
     const reference =
-      productRoot?.querySelector('.evamats-product-checkout__price-current')?.textContent ||
+      productRoot?.querySelector('.evamats-config-checkout__price-current, .evamats-product-checkout__price-current')?.textContent ||
       productRoot?.querySelector('.price-item--regular')?.textContent ||
       '';
 

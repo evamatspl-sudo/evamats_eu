@@ -691,7 +691,7 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  width: min(100%, 375px);
+  width: 100%;
   height: 100%;
   background-color: var(--eh-bg);
   color: var(--eh-text);
@@ -810,6 +810,80 @@
 .evamats-header-drawer__close svg {
   width: 20px;
   height: 20px;
+}
+
+.evamats-header-drawer__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.evamats-header-drawer__top-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--eh-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.evamats-header-drawer__top-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.evamats-header-drawer__top-icon img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.evamats-header-drawer__top-actions .evamats-header-drawer__search {
+  display: inline-flex;
+}
+
+.evamats-header-drawer__top-actions .evamats-header-drawer__search .evamats-header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: var(--eh-text);
+}
+
+.evamats-header-drawer__top-actions .evamats-header-drawer__search .evamats-header__search-toggle svg {
+  width: 26px;
+  height: 26px;
+}
+
+.evamats-header-drawer__search .modal__toggle-close {
+  display: none;
+}
+
+.evamats-header-drawer__search details[open] .modal__toggle-open {
+  display: none;
+}
+
+.evamats-header-drawer__search details[open] .modal__toggle-close {
+  display: block;
+}
+
+.evamats-header-drawer__top-actions .evamats-header-drawer__search .evamats-header__search-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.evamats-header-drawer__cart .cart-count-bubble {
+  top: -2px;
+  right: -4px;
 }
 
 .evamats-header-drawer__scroll {
@@ -1205,7 +1279,7 @@
 .evamats-header-drawer__lang {
   position: relative;
   z-index: 1;
-  margin-top: 24px;
+  margin: 0 18px 16px;
 }
 
 .evamats-header-drawer__lang .localization-form,

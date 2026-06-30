@@ -4277,8 +4277,9 @@ fieldset {
 
  @media (max-width: 767px) {
      body .b24-widget-button-position-bottom-left {
-         left: 10px;
-         bottom: 10px;
+         left: 0px;
+         bottom: 70px;
+         z-index: 10;
     }
 
     :not(.header__car_dropdown) > .filter-container {
@@ -6042,7 +6043,6 @@ fieldset {
   
     .evamats-hero-cta__actions .button.button_3 {
       min-width: 242px;
-      max-width: none;
     }
   
     .evamats-hero-cta__media {

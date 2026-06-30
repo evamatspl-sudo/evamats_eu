@@ -3,15 +3,15 @@
 -%}
 
 <div class="evamats-product-checkout" {{ block.shopify_attributes }}>
-  <div class="evamats-product-checkout__card">
-    <div class="evamats-product-checkout__total-row">
-      <p class="evamats-product-checkout__total-label">{{ 'general.config.total' | t }}</p>
-      <div class="evamats-product-checkout__prices">
-        <span class="evamats-product-checkout__price-old sticky_config_price_compare hidden"></span>
-        <span class="evamats-product-checkout__price-current sticky_config_price_price">
+  <div class="evamats-config-checkout__card">
+    <div class="evamats-config-checkout__total-row">
+      <p class="evamats-config-checkout__total-label">{{ 'general.config.total' | t }}</p>
+      <div class="evamats-config-checkout__prices">
+        <span class="evamats-config-checkout__price-old sticky_config_price_compare hidden"></span>
+        <span class="evamats-config-checkout__price-current sticky_config_price_price">
           {{- checkout_variant.price | money_without_trailing_zeros -}}
         </span>
-        <span class="evamats-product-checkout__discount evamats-sticky-card__discount hidden"></span>
+        <span class="evamats-config-checkout__discount evamats-sticky-card__discount hidden"></span>
       </div>
     </div>
 

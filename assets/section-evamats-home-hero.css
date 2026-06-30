@@ -308,7 +308,12 @@
 }
 
 .evamats-home-hero .clear-filters {
-  display: none;
+  color: #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.evamats-home-hero .clear-filters::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.91634 4.0835L4.08301 9.91683M4.08301 4.0835L9.91634 9.91683' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .evamats-home-hero__badges {
@@ -658,6 +663,11 @@
     width: 30px;
     height: 30px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='white'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .evamats-home-hero .clear-filters {
+    top: calc(100% + 12px);
+    right: 0;
   }
 
   .evamats-home-hero__badges {

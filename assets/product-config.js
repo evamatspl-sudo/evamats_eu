@@ -537,8 +537,8 @@ function initConfigImage() {
   function toggleVisibility() {
     if (window.innerWidth < 990) {
       configImage.classList.add('is-fixed');
-      const isDropdownOpen = (matPatternsColors && matPatternsColors.classList.contains('open')) ||
-        (matPatternsColorsAdditional && matPatternsColorsAdditional.classList.contains('open') && !isFirst);
+      const isDropdownOpen = matPatternsColorsAdditional &&
+        matPatternsColorsAdditional.classList.contains('open') && !isFirst;
       configImage.classList.toggle('fixed_hidden', !isDropdownOpen);
     } else {
       configImage.classList.remove('is-fixed', 'fixed_hidden');

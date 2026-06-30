@@ -103,7 +103,8 @@
 
 @media screen and (max-width: 749px) {
   .evamats-collection-banner {
-    height: 193px;
+    height: auto;
+    min-height: 193px;
   }
 
   .evamats-collection-banner__media .evamats-collection-banner__image {
@@ -116,7 +117,7 @@
   }
 
   .evamats-collection-banner__ui {
-    padding-top: 64px;
+    padding-top: 84px;
     padding-bottom: 66px;
   }
 

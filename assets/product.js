@@ -164,7 +164,7 @@ class VariantSelects extends HTMLElement {
       }
       if (this.currentVariant) {
         const reference =
-          simpleRoot.querySelector('.evamats-product-checkout__price-current')?.textContent || '';
+          simpleRoot.querySelector('.evamats-config-checkout__price-current, .evamats-product-checkout__price-current')?.textContent || '';
         const saleHTML = this.formatSimpleVariantMoney(this.currentVariant.price, reference);
         let compareHTML = null;
         const compareAt = this.currentVariant.compare_at_price;
@@ -176,6 +176,36 @@ class VariantSelects extends HTMLElement {
     }
 
     const scope = this.getProductPriceScope();
+
+    const variantPriceFallback = () => {
+      if (!this.currentVariant) return { saleHTML: '', compareHTML: null };
+      const reference = (
+        document.querySelector('.sticky_config_price_price, .evamats-config-checkout__price-current, .evamats-product-checkout__price-current')?.textContent || ''
+      )
+        .replace(/\u00A0/g, ' ')
+        .trim();
+      const symbol = reference.replace(/[\d.,\s-]/g, '').trim();
+      const symbolFirst = symbol ? reference.indexOf(symbol) === 0 : false;
+      const hasDecimals = /[.,]\d{2}(?!\d)/.test(reference);
+      const locale = document.documentElement.lang || undefined;
+      const formatCents = (cents) => {
+        const amount = Number(cents) / 100;
+        if (!amount) return '';
+        const formatted = amount.toLocaleString(locale, {
+          minimumFractionDigits: hasDecimals ? 2 : 0,
+          maximumFractionDigits: hasDecimals ? 2 : 0,
+        });
+        if (!symbol) return formatted;
+        return symbolFirst ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
+      };
+      const saleHTML = formatCents(this.currentVariant.price);
+      let compareHTML = null;
+      const compareAt = this.currentVariant.compare_at_price;
+      if (compareAt && compareAt > this.currentVariant.price) {
+        compareHTML = formatCents(compareAt);
+      }
+      return { saleHTML, compareHTML };
+    };
 
     const dmixerPrices = this.getDmixerPricesFromShadow(scope);
     if (dmixerPrices) {
@@ -196,7 +226,7 @@ class VariantSelects extends HTMLElement {
 
     const mainPrice = scope.querySelector('.main_price') || scope.querySelector('#google_prices');
     if (!mainPrice) {
-      return { saleHTML: '', compareHTML: null };
+      return variantPriceFallback();
     }
 
     const mixerPrice = mainPrice.querySelector('.dmixer-price .price-item');
@@ -217,8 +247,12 @@ class VariantSelects extends HTMLElement {
       ? priceRoot.querySelector('.price__sale s.price-item--regular, .price__sale .price-item--regular')
       : null;
 
+    if (!saleEl || !saleEl.textContent.trim()) {
+      return variantPriceFallback();
+    }
+
     return {
-      saleHTML: saleEl ? saleEl.innerHTML : '',
+      saleHTML: saleEl.innerHTML,
       compareHTML: compareEl && compareEl.textContent.trim() ? compareEl.innerHTML : null,
     };
   }
@@ -343,7 +377,7 @@ class VariantSelects extends HTMLElement {
 
   updatePrices() {
     const stickyConfigPriceElement = document.querySelector('.sticky_container');
-    const stickyConfigPriceElementPrice = document.querySelector('.sticky_config_price_price');
+    const stickyConfigPriceElements = document.querySelectorAll('.sticky_config_price_price');
     const buttonsPrice = document.querySelectorAll('.button_price');
     const upsellItemsCheckboxes = document.querySelectorAll('.product__upsell_custom_checkbox input[type="checkbox"]:checked');
 
@@ -374,9 +408,19 @@ class VariantSelects extends HTMLElement {
       if (lastDot === -1 && lastComma === -1) {
         num = parseFloat(compact) || 0;
       } else if (lastDot > lastComma) {
-        num = parseFloat(compact.replace(/,/g, '')) || 0;
+        const afterSep = compact.slice(lastDot + 1);
+        if (afterSep.length === 3 && /^\d{3}$/.test(afterSep) && lastDot <= 3) {
+          num = parseFloat(compact.replace(/\./g, '')) || 0;
+        } else {
+          num = parseFloat(compact.replace(/,/g, '')) || 0;
+        }
       } else {
-        num = parseFloat(compact.replace(/\./g, '').replace(',', '.')) || 0;
+        const afterSep = compact.slice(lastComma + 1);
+        if (afterSep.length === 3 && /^\d{3}$/.test(afterSep)) {
+          num = parseFloat(compact.replace(/,/g, '')) || 0;
+        } else {
+          num = parseFloat(compact.replace(/\./g, '').replace(',', '.')) || 0;
+        }
       }
       return neg ? -num : num;
     };
@@ -393,15 +437,14 @@ class VariantSelects extends HTMLElement {
       return `${formatted} ${currency}`.trim();
     };
 
-    const totalHTML =
-      simpleRoot && upsellTotal === 0 ? saleHTML : getSumHTML(saleHTML, upsellTotal);
+    const totalHTML = upsellTotal === 0 ? saleHTML : getSumHTML(saleHTML, upsellTotal);
     const buttonPrice = document.querySelectorAll('.product__info-wrapper .button_price');
     const optionPrice = document.querySelector('.option__price_regular');
     const optionPriceCompareEls = document.querySelectorAll('.option__price_compare');
 
-    if (stickyConfigPriceElementPrice) {
-      stickyConfigPriceElementPrice.innerHTML = totalHTML;
-    }
+    stickyConfigPriceElements.forEach((priceEl) => {
+      priceEl.innerHTML = totalHTML;
+    });
     buttonPrice.forEach((button) => {
       button.innerHTML = totalHTML;
     });
@@ -410,7 +453,7 @@ class VariantSelects extends HTMLElement {
     });
 
     if (simpleRoot) {
-      const simpleCompareEl = simpleRoot.querySelector('.evamats-product-checkout__price-old');
+      const simpleCompareEl = simpleRoot.querySelector('.evamats-config-checkout__price-old, .evamats-product-checkout__price-old');
       if (simpleCompareEl) {
         if (compareHTML) {
           simpleCompareEl.classList.remove('hidden');

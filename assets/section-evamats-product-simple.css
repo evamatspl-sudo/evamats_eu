@@ -278,86 +278,6 @@
   pointer-events: none;
 }
 
-.evamats-product-simple .evamats-product-checkout__card {
-  padding: 28px 29px 23px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 8px 8px 40px rgba(33, 33, 33, 0.1);
-}
-
-.evamats-product-simple .evamats-product-checkout__total-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 22px;
-}
-
-.evamats-product-simple .evamats-product-checkout__total-label {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.44px;
-  line-height: 1;
-  color: var(--eps-text);
-}
-
-.evamats-product-simple .evamats-product-checkout__prices {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.evamats-product-simple .evamats-product-checkout__price-old {
-  position: relative;
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.52px;
-  line-height: 1;
-  color: var(--eps-muted);
-}
-
-.evamats-product-simple .evamats-product-checkout__price-old::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 3px;
-  margin-top: -1.5px;
-  background: var(--eps-red);
-}
-
-.evamats-product-simple .evamats-product-checkout__price-current {
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.52px;
-  line-height: 1;
-  color: var(--eps-text);
-  white-space: nowrap;
-}
-
-.evamats-product-simple .evamats-product-checkout__discount {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 18px;
-  padding: 0 6px 0 8px;
-  border-radius: 0 2px 2px 0;
-  background: var(--eps-red);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.28px;
-  line-height: 1;
-}
-
-.evamats-product-simple .evamats-product-checkout__discount.hidden {
-  display: none;
-}
-
 .evamats-product-simple .evamats-product-checkout__form-buttons,
 .evamats-product-simple .evamats-product-checkout .product-form__buttons {
   margin: 0;
@@ -556,21 +476,6 @@
   .evamats-product-simple .evamats-product-option__value {
     font-size: 14px;
     letter-spacing: -0.28px;
-  }
-
-  .evamats-product-simple .evamats-product-checkout__card {
-    padding: 17px 16px 16px;
-  }
-
-  .evamats-product-simple .evamats-product-checkout__total-label {
-    font-size: 18px;
-    letter-spacing: -0.36px;
-  }
-
-  .evamats-product-simple .evamats-product-checkout__price-old,
-  .evamats-product-simple .evamats-product-checkout__price-current {
-    font-size: 22px;
-    letter-spacing: -0.44px;
   }
 
   .evamats-product-simple .evamats-product-checkout .evamats-config-checkout__cart,
