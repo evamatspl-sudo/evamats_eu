@@ -1,4 +1,4 @@
-{% comment %} home-faq styles in assets/base.css; page variant in section-home-faq-page.css {% endcomment %}
+
 {%- liquid
   assign is_page_faq = false
   if section.settings.design_variant == 'page'
@@ -22,7 +22,6 @@
 -%}
 
 {%- if is_page_faq -%}
-  {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
   {{ 'section-home-faq-page.css' | asset_url | stylesheet_tag }}
 {%- else -%}
   {% render 'evamats-section-padding-style', section: section, target: '.home-faq-v2' %}

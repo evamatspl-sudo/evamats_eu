@@ -28,6 +28,19 @@
         {% endif %}
         {{ block.shopify_attributes }}
       >
+        {%- liquid
+          assign show_config_intro = true
+          if product.metafields.custom.body_type == 'corners'
+            assign show_config_intro = false
+            assign mats_type_label = 'general.config.mats_type' | t
+            for option in product.options_with_values
+              if option.name contains mats_type_label or option.name == 'Mats type'
+                assign show_config_intro = true
+              endif
+            endfor
+          endif
+        -%}
+        {%- if show_config_intro -%}
         <div class="evamats-config-intro" data-config-intro>
           {%- for option in product.options_with_values -%}
             {% assign optionMatsType = 'general.config.mats_type' | t %}
@@ -56,6 +69,7 @@
 
           <button type="button" class="product__dropdown_button button button_5">{{ 'general.config.continue' | t }}</button>
         </div>
+        {%- endif -%}
 
         <div class="product__dropdown_wr disabled" {% unless isHeelPad %}data-dropdown="mats_set_type"{% endunless %}>
           <div class="product__dropdown_title">
@@ -85,14 +99,37 @@
               {% endif %}
 
               {% if isMatsSet or isMatsSize %}
-                <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
-                  <legend class="form__label lip__title">
-                    <span class="form__label_text">{{ option.name }}</span>
-                    <div class="lip__title_value"></div>
-                  </legend>
-                  
-                  {% render 'product-variant-options', product: product, option: option, block: block %}
-                </fieldset>
+                {%- liquid
+                  assign use_corners_text_option = false
+                  if product.metafields.custom.body_type == 'corners' and isMatsSize
+                    assign use_corners_text_option = true
+                  endif
+                -%}
+                {% if use_corners_text_option %}
+                  <fieldset class="js product-form__input lip__field evamats-product-option evamats-product-option--text" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
+                    <legend class="form__label evamats-product-option__legend visually-hidden">
+                      <span class="evamats-product-option__label">{{ option.name }}</span>
+                      <span class="evamats-product-option__value lip__title_value">{{ option.selected_value }}</span>
+                    </legend>
+                    {% render 'product-variant-options',
+                      product: product,
+                      option: option,
+                      block: block,
+                      is_simple_product: true,
+                      option_has_swatch: false,
+                      option_is_gift_amount: false
+                    %}
+                  </fieldset>
+                {% else %}
+                  <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
+                    <legend class="form__label lip__title">
+                      <span class="form__label_text">{{ option.name }}</span>
+                      <div class="lip__title_value"></div>
+                    </legend>
+
+                    {% render 'product-variant-options', product: product, option: option, block: block %}
+                  </fieldset>
+                {% endif %}
                 {% if block.settings.show_discounts %}
                   {% if option.name == 'Zestaw' %}
                     <div class="table_options__wr">

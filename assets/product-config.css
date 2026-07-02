@@ -200,15 +200,14 @@
 .product-form__input input[type=radio]:checked+label.default_option img {
   box-shadow: 0 0 0 1.5px #ff002e;
 }
-.product__dropdown_inner .product-form__input input[type=radio]+label:not(.default_option) {
+.product__dropdown_inner .product-form__input input[type=radio]+label:not(.default_option):not(.evamats-product-option__pill) {
   border: 1px solid #000;
   color: #000;
 }
-.product__dropdown_inner.done .product-form__input input[type=radio]+label:not(.default_option) {
+.product__dropdown_inner.done .product-form__input input[type=radio]+label:not(.default_option):not(.evamats-product-option__pill) {
   border: 0;
 }
-.product__dropdown_inner .product-form__input input[type=radio]:checked+label {
-  background-color: var(--color-1);
+.product__dropdown_inner .product-form__input input[type=radio]:checked+label:not(.evamats-product-option__pill) {
   color: #fff;
   border-color: var(--color-1);
 }
@@ -766,6 +765,9 @@ variant-radios {
   gap: 10px;
 }
 
+variant-radios .product__dropdown_inner .product-form__input {
+  margin-bottom: 20px;
+} 
 .product__dropdown_wr {
   padding-bottom: 20px;
   background-color: #fff;
@@ -958,18 +960,6 @@ fieldset.product-form__input .form__label {
 }
 .sticky_config_price_title {
   color: rgb(var(--color-foreground));
-}
-/* Native fieldset uses class .variant-radios (not <variant-radios>); need both selectors */
-variant-radios .product-form__input,
-.variant-radios.product-form__input {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 10px;
-}
-
-variant-radios .product-form__input.body_type,
-.variant-radios.product-form__input.body_type {
-  grid-template-columns: repeat(6, 1fr);
 }
 
 variant-radios .product-form__input label,

@@ -615,11 +615,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // toggle popup
 (function () {
+    function ensureProductConfigLoaded() {
+        if (window.__evamatsProductConfigInitialized) {
+            return Promise.resolve();
+        }
+        if (document.querySelector('script[src*="product-config.js"]')) {
+            if (window.__evamatsProductConfigReady) {
+                return window.__evamatsProductConfigReady;
+            }
+            return Promise.resolve();
+        }
+        const url = window.evamatsAssets && window.evamatsAssets.productConfig;
+        if (!url) return Promise.resolve();
+
+        window.__evamatsProductConfigReady = new Promise(function (resolve, reject) {
+            const script = document.createElement('script');
+            script.src = url;
+            script.defer = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+        return window.__evamatsProductConfigReady;
+    }
+
     function openPopupFromTrigger(btn) {
         const targetId = btn.dataset.popup;
         if (!targetId) return;
         const popup = document.getElementById(targetId);
         if (!popup || !popup.classList.contains('popup_overlay')) return;
+
+        if (targetId === 'popupOverlayApplicationForm') {
+            ensureProductConfigLoaded().then(function () {
+                popup.classList.add('show');
+                document.documentElement.classList.add('overflow-hidden');
+            });
+            return;
+        }
+
         popup.classList.add('show');
         document.documentElement.classList.add('overflow-hidden');
     }

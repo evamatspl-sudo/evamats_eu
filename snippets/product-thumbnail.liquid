@@ -17,6 +17,7 @@
     - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
     - hide_media_icon: {Boolean} Hide zoom/play overlay icon (EvaMats gallery)
     - hide_media_toggle: {Boolean} Hide modal zoom/toggle button (eva-product-slider)
+    - fancybox: {String} Fancybox gallery group name — opens lightbox on image click
 
     Usage:
     {% render 'product-thumbnail',
@@ -95,16 +96,29 @@
       </span>
     {%- endunless -%}
     <div class="product__media media media--transparent">
-      {{ media.preview_image | image_url: width: 1946 | image_tag:
-        class: image_class,
-        loading: lazy,
-        sizes: sizes,
-        widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
-        alt: media.alt,
-        title: media.alt
-      }}
+      {%- if fancybox != blank -%}
+        <a href="{{ media.preview_image | image_url: width: 1946 }}" data-fancybox="{{ fancybox }}">
+          {{ media.preview_image | image_url: width: 1946 | image_tag:
+            class: image_class,
+            loading: lazy,
+            sizes: sizes,
+            widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+            alt: media.alt,
+            title: media.alt
+          }}
+        </a>
+      {%- else -%}
+        {{ media.preview_image | image_url: width: 1946 | image_tag:
+          class: image_class,
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+          alt: media.alt,
+          title: media.alt
+        }}
+      {%- endif -%}
     </div>
-    {%- unless hide_media_toggle -%}
+    {%- unless hide_media_toggle or fancybox != blank -%}
     <button class="product__media-toggle quick-add-hidden product__media-zoom-{% if hide_media_icon %}none{% else %}{{ section.settings.image_zoom }}{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
       <span class="visually-hidden">
         {{ 'products.product.media.open_media' | t: index: position }}

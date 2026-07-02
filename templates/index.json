@@ -14,6 +14,7 @@
       "settings": {
         "heading": "Autokoberce přesně padnoucí do vašeho auta",
         "subheading": "Výroba na míru. Maximální ochrana. Bez kompromisů.",
+        "reset_label": "",
         "image_desktop": "shopify://shop_images/Group_1948755269_2.webp",
         "image_mobile": "shopify://shop_images/Group_1632526278_1.webp",
         "show_badges": true,
@@ -209,7 +210,7 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_4778.webp",
             "title": "EVA do domácnosti",
-            "link": ""
+            "link": "shopify://collections/mats-for-home"
           }
         },
         "offer_stack_2": {
@@ -217,7 +218,7 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_4782.webp",
             "title": "Pro mazlíčky",
-            "link": ""
+            "link": "shopify://collections/mats-for-pets"
           }
         },
         "offer_compact_1": {
@@ -225,7 +226,7 @@
           "settings": {
             "image": "shopify://shop_images/image_90.webp",
             "title": "Organizéry",
-            "link": ""
+            "link": "shopify://collections/car-accessories-organizers"
           }
         },
         "offer_compact_2": {
@@ -233,7 +234,7 @@
           "settings": {
             "image": "shopify://shop_images/image_91.webp",
             "title": "Podložky paty / Opěrky",
-            "link": ""
+            "link": "shopify://collections/podpietki"
           }
         },
         "offer_compact_3": {
@@ -241,7 +242,7 @@
           "settings": {
             "image": "shopify://shop_images/image_92.webp",
             "title": "Příslušenství",
-            "link": ""
+            "link": "shopify://collections/akcesoria-samochodowa"
           }
         }
       },
@@ -279,6 +280,26 @@
         "products_to_show": 10,
         "mobile_button_label": "Vybrat",
         "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "evamats_driving_style_main": {
+      "type": "evamats-driving-style",
+      "settings": {
+        "heading": "Přizpůsobte koberce svému stylu jízdy",
+        "image_left": "shopify://shop_images/evamats-driving-style-left.png",
+        "image_left_label": "",
+        "image_right": "shopify://shop_images/evamats-driving-style-right.png",
+        "image_right_label": "",
+        "without_edges_title": "Bez lemů",
+        "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
+        "with_edges_title": "S lemy",
+        "with_edges_text": "Plná každodenní ochrana. Připraveno na jakékoli počasí",
+        "button_label": "Konfigurovat koberce",
+        "button_link": "",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -351,26 +372,6 @@
         "products_to_show": 10,
         "mobile_button_label": "Vybrat",
         "show_view_all": true,
-        "padding_top": 0,
-        "padding_bottom": 64,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 40
-      }
-    },
-    "evamats_driving_style_main": {
-      "type": "evamats-driving-style",
-      "settings": {
-        "heading": "Přizpůsobte koberce svému stylu jízdy",
-        "image_left": "shopify://shop_images/evamats-driving-style-left.png",
-        "image_left_label": "",
-        "image_right": "shopify://shop_images/evamats-driving-style-right.png",
-        "image_right_label": "",
-        "without_edges_title": "Bez lemů",
-        "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
-        "with_edges_title": "S lemy",
-        "with_edges_text": "Plná každodenní ochrana. Připraveno na jakékoli počasí",
-        "button_label": "Konfigurovat koberce",
-        "button_link": "",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -807,12 +808,6 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
-    },
-    "application_form_3ijhVh": {
-      "type": "application-form",
-      "settings": {
-        "alternative_zestaw": false
-      }
     }
   },
   "order": [
@@ -822,16 +817,15 @@
     "evamats_our_offer_main",
     "search_models_ftjkam",
     "featured_collection_kzRkDc",
+    "evamats_driving_style_main",
     "evamats_proven_scale_v2_ELnwQM",
     "featured_collection_RkA6Tq",
-    "evamats_driving_style_main",
     "1736771015a338e4f7",
     "evamats_rare_fit_cta_FaXbAH",
     "content_gallery_slider_WdMdUA",
     "before_after_yLkXTX",
     "71ff6538-4b35-41d3-a6c7-6412594d6409",
     "mat_hotspot_consult_DJGXzH",
-    "video_reviews_Q3EGYQ",
-    "application_form_3ijhVh"
+    "video_reviews_Q3EGYQ"
   ]
 }

@@ -39,7 +39,7 @@
 }
 
 .evamats-config variant-radios > .product__dropdown_wr {
-  border-top: 1px solid var(--evc-border) !important;
+  border-top: none !important ;
 }
 
 .evamats-config .evamats-config-intro .product__dropdown_button {
@@ -103,6 +103,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
+  width: 100%;
   margin-bottom: 28px;
   font-size: 16px;
   font-weight: 600;
@@ -258,6 +259,11 @@
   max-width: none;
   display: inline-flex;
   align-items: center;
+}
+
+/* Size step: dropdown title already says "Select size:" */
+.evamats-config .product__dropdown_wr fieldset[data-name="mats_size"] > legend {
+  display: none;
 }
 
 .evamats-config fieldset[data-name="mats_set"] input[type="radio"] + label.default_option {
@@ -890,27 +896,38 @@
   }
 
   .evamats-config fieldset[data-name="mats_set"] .trunk_message {
-    width: 19px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 
   .evamats-config fieldset[data-name="mats_set"] .evamats-trunk-attention-icon {
-    width: 19px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 
   .evamats-config fieldset[data-name="mats_set"] .trunk_message__tooltip {
-    right: -10px;
-    max-width: min(280px, calc(100vw - 40px));
+    right: auto;
+    width: min(280px, calc(100vw - 32px));
+    max-width: min(280px, calc(100vw - 32px));
     padding: 16px 20px;
     font-size: 13px;
     letter-spacing: -0.26px;
     line-height: 1.45;
   }
 
+  .evamats-config fieldset[data-name="mats_set"] .trunk_message:hover .trunk_message__tooltip,
+  .evamats-config fieldset[data-name="mats_set"] .trunk_message:focus-visible .trunk_message__tooltip,
+  .evamats-config fieldset[data-name="mats_set"] .trunk_message.is-tooltip-open .trunk_message__tooltip {
+    position: fixed;
+    top: var(--trunk-tooltip-top, auto);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+
   .evamats-config fieldset[data-name="mats_set"] input[type="radio"] + label.default_option {
-    flex: 0 0 calc((100% - 18px) / 4);
-    width: calc((100% - 18px) / 4);
+    flex: 0 0 calc((100% - 24px) / 4);
+    width: calc((100% - 24px) / 4);
     gap: 15px;
   }
 
@@ -2055,6 +2072,10 @@
   min-height: 52px;
 }
 
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown--no-dropdown > summary {
+  cursor: auto;
+}
+
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown > summary::-webkit-details-marker {
   display: none;
 }
@@ -2904,4 +2925,55 @@
     width: 22px;
     height: 22px;
   }
+}
+
+/* Corners config — text size pills (match gift card / simple product) */
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+}
+
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio'] + label.evamats-product-option__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 18px 22px;
+  border: 1px solid var(--evc-border-light);
+  border-radius: 16px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  line-height: 1;
+  color: var(--evc-text);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio']:checked + label.evamats-product-option__pill {
+  background: #fff;
+  color: var(--evc-text);
+  border: 2px solid var(--evc-red);
+  padding: 17px 21px;
+}
+
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio']:not(:disabled):not(.disabled) + label.evamats-product-option__pill:hover {
+  color: var(--evc-red);
+}
+
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio'].disabled + label.evamats-product-option__pill,
+.evamats-config[data-type='corners'] fieldset.evamats-product-option--text input[type='radio']:disabled + label.evamats-product-option__pill {
+  color: var(--evc-muted);
+  opacity: 0.5;
+  pointer-events: none;
 }

@@ -877,45 +877,5 @@ customElements.define('slideshow-component', SlideshowComponent);
 // customElements.define('product-recommendations', ProductRecommendations);
 
 
-function filterLinks() {
-  const keyword = document.getElementById('search_input').value.toLowerCase();
-  const links = document.getElementsByClassName('article');
-
-  for (var i = 0; i < links.length; i++) {
-    let link = links[i];
-    let content = link.innerHTML.toLowerCase();
-
-    if (content.indexOf(keyword) !== -1) {
-      link.classList.remove('hide');
-    } else {
-      link.classList.add('hide');
-    }
-  }
-}
-
-// Close the search and open the search
-document.addEventListener('DOMContentLoaded', function () {
-  const closeButton = document.getElementById('search-modal__close-button');
-  const modal = document.getElementById('search-modal');
-  const searchHeader = document.getElementById('header__search');
-  const modalOverlay = document.getElementById('modal-overlay');
-
-  if (closeButton && modal && searchHeader && modalOverlay) {
-
-    closeButton.addEventListener('click', function () {
-      modal.style.display = 'none';
-    });
-
-    searchHeader.addEventListener('click', function () {
-      modal.style.display = 'block';
-    });
-
-    modalOverlay.addEventListener('click', function () {
-      modal.style.display = 'none';
-    });
-  }
-});
-
-
 
 

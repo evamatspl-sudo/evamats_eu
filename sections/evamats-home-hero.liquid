@@ -1,4 +1,3 @@
-{{ 'section-evamats-home-hero.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'evamats-home-hero-google-badge.js' | asset_url }}" defer="defer"></script>
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-home-hero' %}
 
@@ -20,33 +19,29 @@
   class="evamats-home-hero shopify-section"
   data-evamats-home-hero
 >
-  <div class="evamats-home-hero__bg evamats-home-hero__bg--desktop" aria-hidden="true">
+  <div class="evamats-home-hero__bg" aria-hidden="true">
     {%- if bg_desktop != blank -%}
-      {{
-        bg_desktop
-        | image_url: width: 3840
-        | image_tag:
-          loading: 'eager',
-          fetchpriority: 'high',
-          class: 'evamats-home-hero__bg-image',
-          sizes: '100vw',
-          widths: '750, 1100, 1500, 1920, 2560, 3840'
-      }}
-    {%- endif -%}
-  </div>
-
-  <div class="evamats-home-hero__bg evamats-home-hero__bg--mobile" aria-hidden="true">
-    {%- if bg_mobile != blank -%}
-      {{
-        bg_mobile
-        | image_url: width: 1200
-        | image_tag:
-          loading: 'eager',
-          fetchpriority: 'high',
-          class: 'evamats-home-hero__bg-image',
-          sizes: '100vw',
-          widths: '375, 550, 750, 1100, 1200'
-      }}
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="
+            {{ bg_mobile | image_url: width: 375 }} 375w,
+            {{ bg_mobile | image_url: width: 550 }} 550w,
+            {{ bg_mobile | image_url: width: 750 }} 750w,
+            {{ bg_mobile | image_url: width: 1100 }} 1100w,
+            {{ bg_mobile | image_url: width: 1200 }} 1200w"
+          sizes="100vw">
+        {{
+          bg_desktop
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'evamats-home-hero__bg-image',
+            sizes: '100vw',
+            widths: '750, 1100, 1500, 1920, 2560, 3840'
+        }}
+      </picture>
     {%- endif -%}
   </div>
  

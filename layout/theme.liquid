@@ -162,15 +162,10 @@
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
-      {{ body_font_bold | font_face: font_display: 'swap' }}
-      {{ body_font_italic | font_face: font_display: 'swap' }}
-      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
@@ -384,13 +379,11 @@
       
     {% endstyle %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {%- if request.page_type == 'index' -%}
+      {{ 'index.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
     {%- if request.page_type == 'policy' -%}
       {{- 'section-evamats-policy.css' | asset_url | stylesheet_tag -}}
-    {%- endif -%}
-    {{ 'component-eva-input.css' | asset_url | stylesheet_tag }}
-    {{ 'component-eva-slider-nav.css' | asset_url | stylesheet_tag }}
-    {%- if evamats_is_v2_page -%}
-      {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
     <script>
@@ -402,7 +395,7 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
       <!-- Meta Pixel Code -->
-<script>
+{% comment %} <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -416,7 +409,7 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
-/></noscript>
+/></noscript> {% endcomment %}
 <!-- End Meta Pixel Code -->
   </head>
 
@@ -561,250 +554,86 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
       {% render 'evamats-video-fullscreen' %}
     {%- endif -%}
     <script src="{{'swiper-bundle.min.js' | asset_url}}" defer></script>
-    {% if template.name contains 'index' %}
-      <script defer>
-        const time = +document.querySelector('.hero-slider').dataset.time;
-
-        function heroSlider() {
-            const swiperHero = new Swiper('.hero-slider', {
-                spaceBetween: 30,
-                virtualTranslate: true,
-                effect: "fade",
-                centeredSlides: true,
-                fadeEffect: { crossFade: true },
-                slidesPerView: 1,
-                pagination: {
-                    el: ".hero-slider .swiper-pagination",
-                    clickable: true,
-                },
-                autoplay: {
-                    delay: time,
-                    disableOnInteraction: false,
-                },
-                on: {
-                    slideChange: function () {
-                        toggleAutoplay(this);
-                    }
-                }
-            });
-
-            function toggleAutoplay(swiper) {
-                const activeSlide = swiper.slides[swiper.activeIndex];
-                const desktopVideo = activeSlide.querySelector('.hero-slider__video_desktop');
-                const mobileVideo = activeSlide.querySelector('.hero-slider__video_mobile');
-    
-                // Определяем текущее видео (проверяем, какое из них отображается)
-                const video = window.innerWidth <= 768 ? mobileVideo : desktopVideo;
-                if (video) {
-                    swiper.autoplay.stop();
-                    video.play();
-
-                    video.addEventListener('ended', () => {
-                        swiper.autoplay.start();
-                    }, { once: true });
-                } else {
-                    swiper.autoplay.start();
-                }
-            }
-
-            toggleAutoplay(swiperHero);
-        }
-
-        if (Shopify.designMode) {
-            heroSlider();
-            document.addEventListener('shopify:section:load', function () {
-                heroSlider();
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            heroSlider();
-        });
-
-        {% comment %} document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('.hero-slider__video_full').forEach(button => {
-              button.addEventListener('click', function () {
-                  const slide = this.closest('.swiper-slide');
-                  const desktopVideo = slide.querySelector('.hero-slider__video_desktop');
-                  const mobileVideo = slide.querySelector('.hero-slider__video_mobile');
-      
-                  // Определяем текущее видео (проверяем, какое из них отображается)
-                  const video = window.innerWidth <= 768 ? mobileVideo : desktopVideo;
-      
-                  if (video) {
-                      video.muted = false;
-                      video.currentTime = 0.1;
-                      video.load();
-      
-                      // Отключаем playsinline перед полноэкранным режимом (для iOS)
-                      video.removeAttribute('playsinline');
-      
-                      if (video.requestFullscreen) {
-                          video.requestFullscreen();
-                      } else if (video.webkitRequestFullscreen) {
-                          video.webkitRequestFullscreen();
-                      } else if (video.msRequestFullscreen) {
-                          video.msRequestFullscreen();
-                      } else if (video.webkitEnterFullscreen) { // Для iOS Safari
-                          video.webkitEnterFullscreen();
-                      }
-      
-                      // Следим за выходом из fullscreen и возвращаем playsinline + mute
-                      const resetMuted = () => {
-                          if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                              video.muted = true;
-                              video.setAttribute('playsinline', 'true'); // Возвращаем playsinline
-                              document.removeEventListener('fullscreenchange', resetMuted);
-                              document.removeEventListener('webkitfullscreenchange', resetMuted);
-                              document.removeEventListener('msfullscreenchange', resetMuted);
-                          }
-                      };
-      
-                      document.addEventListener('fullscreenchange', resetMuted);
-                      document.addEventListener('webkitfullscreenchange', resetMuted);
-                      document.addEventListener('msfullscreenchange', resetMuted);
-                  }
-              });
-          });
-      }); {% endcomment %}
-      
-
-      </script>
-    {% endif %}
     <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
     {% if template contains 'index' %}
-      <script src="{{ 'index.js' | asset_url }}" defer></script>      
-      
-    {% endif %}
+      <script src="{{ 'index.js' | asset_url }}" defer></script>
       <script src="{{ 'search_models.js' | asset_url }}" defer></script>
+    {% endif %}
 
      {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {%- liquid
+      assign load_product_config = false
+      if template.name == 'page' and template.suffix == 'zamowienie-indywidualne'
+        assign load_product_config = true
+      elsif template contains 'product'
+        assign load_product_config = true
+        unless product.template_suffix contains 'config'
+          if product.metafields.custom.body_type == blank or product.metafields.custom.body_type == 'corners'
+            assign load_product_config = false
+          endif
+        endunless
+      endif
+    -%}
+    <script>
+      window.evamatsAssets = window.evamatsAssets || {};
+      window.evamatsAssets.productConfig = {{ 'product-config.js' | asset_url | json }};
+    </script>
     {% if template contains 'product' %}
+      <script src="{{ 'fancybox.js' | asset_url }}" defer></script>
       <script src="{{ 'product.js' | asset_url }}" defer></script>
-      <script>
-        (function() {
-          'use strict';
-
-          var lastSalePrice = '';
-          var lastOriginalPrice = '';
-          var isUpdating = false;
-
-          function getSalePrice() {
-            var sourceDmixer = document.querySelector('dmixer-discounted-price');
-            if (!sourceDmixer || !sourceDmixer.shadowRoot) return '';
-            var el = sourceDmixer.shadowRoot.querySelector('.dmixer-dp-price');
-            return el ? el.textContent.trim() : '';
-          }
-
-          function getOriginalPrice() {
-            var el = document.querySelector('.price-item--regular.dmixer-original-price');
-            return el ? el.textContent.trim() : '';
-          }
-
-          function applyToZestaw() {
-            if (isUpdating) return false;
-
-            var salePrice = getSalePrice();
-            if (!salePrice) return false;
-
-            var originalPrice = getOriginalPrice();
-
-            var targetCompare = document.querySelector('.option__price_compare');
-            var targetRegular = document.querySelector('.option__price_regular');
-            if (!targetCompare || !targetRegular) return false;
-
-            if (targetRegular.textContent.trim() === salePrice &&
-                targetCompare.textContent.trim() === originalPrice) {
-              return true;
-            }
-
-            isUpdating = true;
-
-            if (originalPrice) {
-              targetCompare.textContent = originalPrice;
-              targetCompare.classList.remove('hidden');
-            }
-            targetRegular.textContent = salePrice;
-
-            lastSalePrice = salePrice;
-            lastOriginalPrice = originalPrice;
-
-            setTimeout(function() { isUpdating = false; }, 50);
-            return true;
-          }
-
-          var attempts = 0;
-          var maxAttempts = 50;
-          var initialInterval = setInterval(function() {
-            attempts++;
-            if (applyToZestaw() || attempts >= maxAttempts) {
-              clearInterval(initialInterval);
-              startObservers();
-            }
-          }, 200);
-
-          function startObservers() {
-            var sourceDmixer = document.querySelector('dmixer-discounted-price');
-            if (sourceDmixer && sourceDmixer.shadowRoot) {
-              new MutationObserver(applyToZestaw).observe(sourceDmixer.shadowRoot, {
-                childList: true, subtree: true, characterData: true
-              });
-            }
-
-            var targetWrapper = document.querySelector('.option__price_wr');
-            if (targetWrapper) {
-              new MutationObserver(function() {
-                if (isUpdating) return;
-                applyToZestaw();
-              }).observe(targetWrapper, {
-                childList: true, subtree: true, characterData: true, attributes: true
-              });
-            }
-
-            var originalEl = document.querySelector('.price-item--regular.dmixer-original-price');
-            if (originalEl) {
-              new MutationObserver(applyToZestaw).observe(originalEl, {
-                childList: true, subtree: true, characterData: true
-              });
-            }
-
-            setInterval(applyToZestaw, 500);
-          }
-        })();
-      </script>
-
-      <script src="{{'estimated-delivery-bundle.min.js' | asset_url }}"></script>
-      <script src="{{'estimated-delivery.js' | asset_url}}" ></script>
+      {%- liquid
+        assign estimated_delivery_suffixes = 'accessories,new-torby-template,zamowienie-indywidualne,product-with-btn-do-gory,test' | split: ','
+        assign load_estimated_delivery = false
+        if template.name == 'product' and estimated_delivery_suffixes contains template.suffix
+          assign load_estimated_delivery = true
+        endif
+      -%}
+      {%- if load_estimated_delivery -%}
+        <script src="{{ 'estimated-delivery-bundle.min.js' | asset_url }}" defer></script>
+        <script src="{{ 'estimated-delivery.js' | asset_url }}" defer></script>
+      {%- endif -%}
     {% endif %}
     {% if template contains 'cart' %}
       <script src="{{ 'cart_custom.js' | asset_url }}" defer></script>      
-    {% endif %} 
-    <script src="{{'product-config.js' | asset_url}}" defer></script>
-    
-    <script>
-    </script>
-    
-   <!-- Bitrix chat -->
+    {% endif %}
+    {% if load_product_config %}
+      <script src="{{ 'product-config.js' | asset_url }}" defer></script>
+    {% endif %}
+
+   <!-- Bitrix chat: load a few seconds after full page load -->
    <script>
-    (function(w,d,u){
-            var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-            var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-    })(window,document,'https://cdn.bitrix24.pl/b21275625/crm/site_button/loader_6_xk524n.js');
-    
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:5275678,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-<!-- End Bitrix chat -->
+    (function () {
+      var BITRIX_DELAY_MS = 2500;
+      var bitrixLoaded = false;
+
+      function loadBitrixChat() {
+        if (bitrixLoaded) return;
+        bitrixLoaded = true;
+        (function (w, d, u) {
+          var s = d.createElement('script');
+          s.async = true;
+          s.src = u + '?' + (Date.now() / 60000 | 0);
+          var h = d.getElementsByTagName('script')[0];
+          h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn.bitrix24.pl/b21275625/crm/site_button/loader_6_xk524n.js');
+      }
+
+      function scheduleBitrixChat() {
+        window.setTimeout(loadBitrixChat, BITRIX_DELAY_MS);
+      }
+
+      if (document.readyState === 'complete') {
+        scheduleBitrixChat();
+      } else {
+        window.addEventListener('load', scheduleBitrixChat, { once: true });
+      }
+    })();
+   </script>
+   <!-- End Bitrix chat -->
   </body>
 </html>

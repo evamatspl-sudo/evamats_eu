@@ -1,4 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
+function initProductConfigCore() {
+    if (window.__evamatsProductConfigInitialized) return;
+    window.__evamatsProductConfigInitialized = true;
+
+    const productContainer = document.querySelector('.product.config_container');
+    const popupContainer = document.querySelector('.application_form__content.config_container');
+    if (!productContainer && !popupContainer) return;
+
     // Получение значений по умолчанию
     let initialautoType
     let autoType
@@ -9,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
       autoType = '5os'
     }
     
-    const productContainer = document.querySelector('.product.config_container')
-    const popupContainer = document.querySelector('.application_form__content.config_container')
     const lipFields = document.querySelectorAll('.lip__field')
 
     const patternClassMap = {
@@ -216,7 +221,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const swatch = container.querySelector(`.evamats-config-preview__swatch${displaySelector}`);
       if (!swatch) return;
 
-      const thumbSrc = getRadioOptionImage(input);
+      let thumbSrc = getRadioOptionImage(input);
+      if (displaySelector === '[data-type="matPattern"]') {
+        const matColorInput = container.querySelector('.lip__field[data-type="matColor"] input:checked');
+        thumbSrc = getRadioOptionImage(matColorInput);
+      }
+
       if (!input || !thumbSrc) {
         swatch.hidden = true;
         swatch.innerHTML = '';
@@ -229,56 +239,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateSelectedValueText(container) {
       if (window.innerWidth >= 990 || !container) return;
-
-      const usesPreviewChips = !!container.querySelector('.evamats-config-preview');
+      if (!container.querySelector('.evamats-config-preview')) return;
 
       const fields = [
-        { selector: '.product-form__input[data-name="mats_set"]', displaySelector: '[data-name="mats_set"]', type: 'input', swatch: false },
-        { selector: '.product-form__input[data-name="mats_type"]', displaySelector: '[data-name="mats_type"]', type: 'input', swatch: false },
-        { selector: '.lip__field[data-type="matPattern"]', displaySelector: '[data-type="matPattern"]', type: 'color', swatch: true },
-        { selector: '.lip__field[data-type="matColor"]', displaySelector: '[data-type="matColor"]', type: 'color', swatch: false },
-        { selector: '.lip__field[data-type="trimColor"]', displaySelector: '[data-type="trimColor"]', type: 'color', swatch: true }
+        { selector: '.product-form__input[data-name="mats_set"]', displaySelector: '[data-name="mats_set"]', swatch: false },
+        { selector: '.product-form__input[data-name="mats_type"]', displaySelector: '[data-name="mats_type"]', swatch: false },
+        { selector: '.lip__field[data-type="matPattern"]', displaySelector: '[data-type="matPattern"]', swatch: true },
+        { selector: '.lip__field[data-type="matColor"]', displaySelector: '[data-type="matColor"]', swatch: false },
+        { selector: '.lip__field[data-type="trimColor"]', displaySelector: '[data-type="trimColor"]', swatch: true }
       ];
 
-      fields.forEach(({ selector, displaySelector, type, swatch }) => {
+      fields.forEach(({ selector, displaySelector, swatch }) => {
         const input = container.querySelector(`${selector} input:checked`);
         if (!input) {
-          if (usesPreviewChips) {
-            updatePreviewChip(container, displaySelector, null);
-            if (swatch) updatePreviewSwatch(container, displaySelector, null);
-          }
+          updatePreviewChip(container, displaySelector, null);
+          if (swatch) updatePreviewSwatch(container, displaySelector, null);
           return;
         }
 
-        if (usesPreviewChips) {
-          updatePreviewChip(container, displaySelector, input);
-          if (swatch) updatePreviewSwatch(container, displaySelector, input);
-          return;
-        }
-
-        const value = input.dataset.title || input.value;
-        const fieldset = container.querySelector(selector);
-        const titleElement = fieldset && fieldset.querySelector('.lip__title');
-        let title = '';
-        if (titleElement) {
-          const labelText = titleElement.querySelector('.form__label_text');
-          if (labelText) {
-            title = labelText.textContent.trim();
-          } else {
-            const clone = titleElement.cloneNode(true);
-            clone.querySelectorAll('.lip__title_value, .option__price_wr').forEach((el) => el.remove());
-            title = clone.textContent.replace(/\s+/g, ' ').trim();
-          }
-        }
-        const display = container.querySelector(`.product__config_image_selected_value${displaySelector}`);
-
-        if (display) {
-          let html = title ? `${title}: <span>${value}</span>` : `<span>${value}</span>`;
-          if (type === 'color' && input.nextElementSibling && input.nextElementSibling.src) {
-            html += ` <img src="${input.nextElementSibling.src}" alt=""/>`;
-          }
-          display.innerHTML = html;
-        }
+        updatePreviewChip(container, displaySelector, input);
+        if (swatch) updatePreviewSwatch(container, displaySelector, input);
       });
     }
 
@@ -396,39 +376,36 @@ document.addEventListener('DOMContentLoaded', function () {
           if (field.querySelector('.lip__title_value')) {
             field.querySelector('.lip__title_value').textContent = value;
           }
-      
-          if (initialautoType === 'custom') {
-            const matsSetField = document.querySelector('fieldset[data-name="mats_set"]');
-            const selectedmatsSetInput = matsSetField?.querySelector('input:checked');
-            if (matsSetField && selectedMatsType && selectedmatsSetInput) {
-              const matsSetIndex = Array.from(selectedmatsSetInput.closest('fieldset').querySelectorAll('input')).indexOf(selectedmatsSetInput);
-              const matsTypeIndex = Array.from(selectedMatsType.closest('fieldset').querySelectorAll('input')).indexOf(selectedMatsType);
-
-              let price = null;
-              if (matsTypeIndex == 1) {
-                price = typeCustomPrices.noEdge[matsSetIndex];
-              } else if (matsTypeIndex == 2) {
-                price = typeCustomPrices.withEdge[matsSetIndex];
-              }
-            }
-          }          
         }
       });
     };
   
-    // Слушатели изменений для всех опций
-    document.querySelectorAll('.product-form__input input[type="radio"], .lip__field input[type="radio"]').forEach((input) => {
-      input.addEventListener('change', ()=> {
-        const parentContainer = input.closest('.config_container');
-        if (input.closest('.lip__field[data-type="matPattern"]')) {
-          handlePatternChange(input, parentContainer);
-        }
-        updateMatImage(parentContainer);
-        updateLipTitleValue();
-        updateMatsSetOptionPrices();
-        updateSelectedValueText(parentContainer);
-      });
-    });
+    function handleConfigRadioChange(input) {
+      const parentContainer = input.closest('.config_container');
+      if (!parentContainer) return;
+      if (input.closest('.lip__field[data-type="matPattern"]')) {
+        handlePatternChange(input, parentContainer);
+      }
+      updateMatImage(parentContainer);
+      updateLipTitleValue();
+      updateMatsSetOptionPrices();
+      updateSelectedValueText(parentContainer);
+    }
+
+    document.addEventListener('change', function (e) {
+      const input = e.target;
+      if (!input.matches('input[type="radio"]')) return;
+
+      if (input.matches('.js-config-body-type') && input.closest('[data-config-intro], [data-dropdown="year"]')) {
+        filterZestawByBodyType();
+        if (productContainer) updateMatImage(productContainer);
+        if (popupContainer) updateMatImage(popupContainer);
+        return;
+      }
+
+      if (!input.closest('.config_container .product-form__input, .config_container .lip__field')) return;
+      handleConfigRadioChange(input);
+    }, true);
   
     // Инициализация изображения при загрузке страницы
     if (productContainer) {
@@ -452,14 +429,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (popupContainer) restoreMatPattern(popupContainer);
     });
 
-    document.addEventListener('change', function (e) {
-      if (e.target.matches('.js-config-body-type') && e.target.closest('[data-config-intro], [data-dropdown="year"]')) {
-        filterZestawByBodyType();
-        if (productContainer) updateMatImage(productContainer);
-        if (popupContainer) updateMatImage(popupContainer);
-      }
-    }, true);
-  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initProductConfigCore);
+} else {
+  initProductConfigCore();
+}
 
 function filterZestawByBodyType() {
   const bodyScope = document.querySelector('[data-config-intro]') || document.querySelector('[data-dropdown="year"]');
@@ -593,46 +569,10 @@ if (window.innerWidth < 990) {
   if (target) observer.observe(target);
 }
 
-// product sticky price
-(function () {
-  const stepBar = document.querySelector('[data-evamats-config-step-bar]');
-  if (stepBar) return;
-
-  const mainPriceElement = document.querySelector('.main_price');
-  const stickyConfigPriceElement = document.querySelector('.sticky_container');
-
-  if (stickyConfigPriceElement && window.innerWidth > 767) {
-      // Создаем наблюдатель
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-              // Если элемент не виден, добавляем класс active
-              stickyConfigPriceElement.classList.add('active');
-          } else {
-              // Если элемент виден, убираем класс active
-              stickyConfigPriceElement.classList.remove('active');
-          }
-          });
-      });
-      
-      window.addEventListener('load', () => {
-          stickyConfigPriceElement.style.width = stickyConfigPriceElement.offsetWidth + 1 + 'px'
-      })
-      
-      // Начинаем наблюдение за основным элементом
-      if (mainPriceElement) {
-          observer.observe(mainPriceElement);
-      }
-  } else if (stickyConfigPriceElement) {
-    stickyConfigPriceElement.classList.add('active');
-  }
-
-})();
-// product sticky price
-
-
 // config steps
 (function () {
+  if (!document.querySelector('.config_container, .application_form__content.config_container')) return;
+
   const formContainers = document.querySelectorAll('.config_container');
 
   if (formContainers.length > 0) {
@@ -648,10 +588,6 @@ if (window.innerWidth < 990) {
         '.product__dropdown_wr > .product__dropdown_title, .product__dropdown_wr > [class*="product__dropdown_title--"]'
       );
       const faqWrappers = container.querySelectorAll('.product__dropdown_wr');
-  
-      function updateMaxHeight(inner) {
-        return;
-      }
   
       function triggerFaq(element) {
         const wrapper = element.closest('.product__dropdown_wr');
@@ -681,9 +617,6 @@ if (window.innerWidth < 990) {
         } else {
           wrapper.classList.add("open");
           inner.classList.add("open");
-          requestAnimationFrame(() => {
-            updateMaxHeight(inner);
-          });
           inner.classList.remove("done");
         }
       }
@@ -907,20 +840,6 @@ if (window.innerWidth < 990) {
         element.addEventListener('input', onFieldInteraction);
         element.addEventListener('change', onFieldInteraction);
       });
-      // update step height after input change
-      document.querySelectorAll('[data-name="mats_set"] input').forEach(element => {
-        element.addEventListener('change', function () {
-          const wrapper = this.closest('.product__dropdown_wr');
-          const inner = wrapper.querySelector('.product__dropdown_inner');
-          if (inner.classList.contains('open')) {
-            requestAnimationFrame(() => {
-              updateMaxHeight(inner);
-            });
-          }
-        });
-      })
-      // update step height after input change
-  
       function revalidate(e) {
         const wrapper = getStepWrapper(e.target);
         if (!wrapper) return;
@@ -972,19 +891,8 @@ if (window.innerWidth < 990) {
 
           const inner = wrapper.querySelector('.product__dropdown_inner');
 
-          if (inner) {
-            requestAnimationFrame(() => {
-              updateMaxHeight(inner);
-            });
-          }
-
           if (!validateStep(wrapper, true)) {
             updateContinueButton(wrapper);
-            if (inner) {
-              requestAnimationFrame(() => {
-                updateMaxHeight(inner);
-              });
-            }
             return;
           }
 
@@ -1027,18 +935,12 @@ if (window.innerWidth < 990) {
       });
   
       function updateNextButtonState(container) {
-        if (!container) {
-          console.error("Container not found!");
-          return;
-        }
-  
+        if (!container) return;
+
         const steps = container.querySelectorAll('.product__dropdown_wr');
         const nextButton = container.querySelector('.application_form__next_button');
-  
-        if (!steps || steps.length === 0) {
-          console.error("No steps found in the container!");
-          return;
-        }
+
+        if (!steps || steps.length === 0) return;
   
         let allCompleted = true;
         steps.forEach(step => {
@@ -1055,16 +957,14 @@ if (window.innerWidth < 990) {
           }
         });
   
-        if (nextButton) {
-          if (allCompleted) {
-            nextButton.disabled = false;
-            nextButton.classList.remove('disabled-button');
-          } else {
-            nextButton.disabled = true;
-            nextButton.classList.add('disabled-button');
-          }
+        if (!nextButton) return;
+
+        if (allCompleted) {
+          nextButton.disabled = false;
+          nextButton.classList.remove('disabled-button');
         } else {
-          console.error("Next button not found!");
+          nextButton.disabled = true;
+          nextButton.classList.add('disabled-button');
         }
       }
   
@@ -1120,6 +1020,25 @@ if (window.innerWidth < 990) {
     const matsSetInputs = document.querySelectorAll('[data-name="mats_set"] input');
     const matsSetInputChecked = document.querySelector('[data-name="mats_set"] input:checked');
 
+    const trunkTooltipMobileQuery = window.matchMedia('(max-width: 749px)');
+
+    const positionTrunkTooltip = (trigger) => {
+      const tooltip = trigger.querySelector('.trunk_message__tooltip');
+      if (!tooltip) return;
+
+      if (!trunkTooltipMobileQuery.matches) {
+        tooltip.style.removeProperty('--trunk-tooltip-top');
+        return;
+      }
+
+      const rect = trigger.getBoundingClientRect();
+      tooltip.style.setProperty('--trunk-tooltip-top', `${rect.bottom + 10}px`);
+    };
+
+    const resetTrunkTooltipPosition = (trigger) => {
+      trigger.querySelector('.trunk_message__tooltip')?.style.removeProperty('--trunk-tooltip-top');
+    };
+
     document.querySelectorAll('.trunk_message').forEach((trigger) => {
       trigger.addEventListener('click', (event) => {
         event.preventDefault();
@@ -1128,10 +1047,20 @@ if (window.innerWidth < 990) {
         const isOpen = trigger.classList.contains('is-tooltip-open');
         document.querySelectorAll('.trunk_message.is-tooltip-open').forEach((el) => {
           el.classList.remove('is-tooltip-open');
+          resetTrunkTooltipPosition(el);
         });
         if (!isOpen) {
+          positionTrunkTooltip(trigger);
           trigger.classList.add('is-tooltip-open');
         }
+      });
+
+      trigger.addEventListener('focusin', () => {
+        if (trunkTooltipMobileQuery.matches) positionTrunkTooltip(trigger);
+      });
+
+      trigger.addEventListener('focusout', () => {
+        resetTrunkTooltipPosition(trigger);
       });
     });
 
@@ -1139,6 +1068,7 @@ if (window.innerWidth < 990) {
       if (event.target.closest('.trunk_message')) return;
       document.querySelectorAll('.trunk_message.is-tooltip-open').forEach((el) => {
         el.classList.remove('is-tooltip-open');
+        resetTrunkTooltipPosition(el);
       });
     });
 
@@ -1175,11 +1105,9 @@ if (window.innerWidth < 990) {
         const groupName = normalize(group.getAttribute('data-group'));
         const isMountGroup = (
           groupName === 'montaz'
-          || groupName === 'montaz'
           || groupName === 'mount'
           || groupName === 'montage'
           || groupName === 'montovano'
-          || groupName === 'montaz'
         );
         if (!isMountGroup) return;
 
@@ -1258,6 +1186,10 @@ if (window.innerWidth < 990) {
             ? Array.from(checked).map((inp) => inp.getAttribute('data-title') || inp.value).join(', ')
             : '';
         }
+        const variantRadios = document.querySelector('variant-radios');
+        if (variantRadios && typeof variantRadios.updatePrices === 'function') {
+          variantRadios.updatePrices();
+        }
       }
     }, true);
 
@@ -1301,6 +1233,8 @@ if (window.innerWidth < 990) {
 
 
 (function () {
+  if (!document.querySelector('.config_container, .application_form__content.config_container, .lip__field')) return;
+
   function isGiftCardAmountField(field) {
     return (
       field &&
@@ -1336,24 +1270,20 @@ if (window.innerWidth < 990) {
 })();
 
 
-// toggle class in upsell item
+// toggle class in upsell item (product__extras handled above)
 (function () {
-  const inputs = document.querySelectorAll('input[name="product__upsell"], input[name="product__extras"]')
+  const inputs = document.querySelectorAll('input[name="product__upsell"]');
   if (!inputs.length) return;
 
-  inputs.forEach(input => {
+  inputs.forEach((input) => {
     input.addEventListener('change', () => {
-      const upsellItem = input.closest('.product__upsell_item')
-      if (input.checked) {
-        upsellItem.classList.add('active')
-      } else {
-        upsellItem.classList.remove('active')
-      }
+      const upsellItem = input.closest('.product__upsell_item');
+      if (!upsellItem) return;
+      upsellItem.classList.toggle('active', input.checked);
       const variantRadios = document.querySelector('variant-radios');
       if (variantRadios && typeof variantRadios.updatePrices === 'function') {
         variantRadios.updatePrices();
       }
-    })
-  })
+    });
+  });
 })();
-// toggle class in upsell item

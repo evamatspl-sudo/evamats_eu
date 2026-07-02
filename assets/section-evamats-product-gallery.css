@@ -179,6 +179,11 @@
   cursor: default;
 }
 
+.evamats-product-gallery .product__media > a[data-fancybox] {
+  display: block;
+  cursor: zoom-in;
+}
+
 @media screen and (max-width: 749px) {
   .evamats-product-gallery__disclaimer {
     display: none;

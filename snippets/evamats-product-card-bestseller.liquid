@@ -61,7 +61,7 @@
           | image_url: width: 800
           | image_tag:
             class: 'efc-card__image',
-            loading: image_loading,
+            loading: 'lazy',
             widths: '163, 339, 370, 533, 740, 800',
             sizes: '(min-width: 750px) calc((min(1520px, 100vw) - 45px) / 4), calc((100vw - 12px - 24px) / 2)',
             alt: efc_image_alt
@@ -77,6 +77,7 @@
 
     <div class="efc-card__prices">
       <div class="efc-card__price-line{% if on_sale %} efc-card__price-line--sale{% endif %}">
+        <span class="efc-card__price-from">{{ 'products.product.from' | t }}</span>
         {%- if on_sale -%}
           <span class="efc-card__price-old">
             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>

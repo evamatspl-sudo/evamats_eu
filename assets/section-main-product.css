@@ -722,7 +722,7 @@ a.product__text {
 }
 
 .product-media-modal {
-  background-color: rgb(var(--color-background));
+  background-color: #fff;
   height: 100%;
   position: fixed;
   top: 0;
@@ -1166,10 +1166,10 @@ a.product__text {
   cursor: zoom-in;
 }
 
-.product__modal-opener--image .product__media-zoom-none,
+/* .product__modal-opener--image .product__media-zoom-none,
 .product__media-icon--none {
   display: none;
-}
+} */
 
 @media (hover: hover) {
   .product__media-zoom-hover,
@@ -1945,7 +1945,6 @@ slider-component.slider-component-full-width {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-padding-left: 1.5rem;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
@@ -2520,8 +2519,6 @@ slider-component.slider-component-full-width {
     grid-template-rows: auto auto;
     column-gap: 12px;
     row-gap: 8px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--ept-border-color);
   }
 
   .evamats-product-title__sku {
@@ -2586,6 +2583,11 @@ slider-component.slider-component-full-width {
 
   .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__heading {
     grid-column: 1;
+  }
+
+  .product__title {
+    padding-bottom: 19px;
+    margin-bottom: 15px;
   }
 }
 

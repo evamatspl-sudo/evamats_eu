@@ -292,6 +292,7 @@
   border: 1px solid var(--ec-chip-border);
   border-radius: 15px;
   background: var(--ec-surface);
+  overflow: hidden;
 }
 
 .evamats-cart-item__quantity .quantity__button {

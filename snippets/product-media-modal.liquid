@@ -4,10 +4,19 @@
   Accepts:
   - product: {Object} Product liquid object
   - variant_images: {Array} Product images associated with a variant
+  - without_edges_images: {Array} Metaobject / metafield images for without-edges mats gallery
+  - with_edges_images: {Array} Metaobject / metafield images for with-edges mats gallery
 
   Usage:
-  {% render 'product-media-modal' %}
+  {% render 'product-media-modal', variant_images: variant_images, without_edges_images: withoutEdgesImages, with_edges_images: withEdgesImages %}
 {% endcomment %}
+
+{%- liquid
+  assign is_mats_gallery = false
+  if product.metafields.custom.body_type != blank and product.metafields.custom.body_type != 'corners'
+    assign is_mats_gallery = true
+  endif
+-%}
 
 <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
   <div
@@ -55,3 +64,109 @@
     </div>
   </div>
 </product-modal>
+
+{%- if is_mats_gallery -%}
+  <product-modal id="ProductModal-{{ section.id }}_1" class="product-media-modal media-modal">
+    <div
+      class="product-media-modal__dialog"
+      role="dialog"
+      aria-label="{{ 'products.modal.label' | t }}"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ section.id }}_1"
+        type="button"
+        class="product-media-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div
+        class="product-media-modal__content color-background-1 gradient"
+        role="document"
+        aria-label="{{ 'products.modal.label' | t }}"
+        tabindex="0"
+      >
+        {%- liquid
+          if product.selected_or_first_available_variant.featured_media != null
+            assign media = product.selected_or_first_available_variant.featured_media
+            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+          endif
+        -%}
+
+        {%- assign mediaItem = product.featured_media -%}
+        {%- if mediaItem != blank -%}
+          {%- render 'product-media', media: mediaItem, loop: section.settings.enable_video_looping, variant_image: false -%}
+        {%- endif -%}
+
+        {%- for media in without_edges_images -%}
+          {%- liquid
+            if section.settings.hide_variants and variant_images contains media.src or variant_images contains media.id
+              assign variant_image = true
+            else
+              assign variant_image = false
+            endif
+
+            unless media.id == product.selected_or_first_available_variant.featured_media.id
+              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+            endunless
+          -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </product-modal>
+
+  <product-modal id="ProductModal-{{ section.id }}_2" class="product-media-modal media-modal">
+    <div
+      class="product-media-modal__dialog"
+      role="dialog"
+      aria-label="{{ 'products.modal.label' | t }}"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ section.id }}_2"
+        type="button"
+        class="product-media-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div
+        class="product-media-modal__content color-background-1 gradient"
+        role="document"
+        aria-label="{{ 'products.modal.label' | t }}"
+        tabindex="0"
+      >
+        {%- liquid
+          if product.selected_or_first_available_variant.featured_media != null
+            assign media = product.selected_or_first_available_variant.featured_media
+            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+          endif
+        -%}
+
+        {%- assign mediaItem = product.featured_media -%}
+        {%- if mediaItem != blank -%}
+          {%- render 'product-media', media: mediaItem, loop: section.settings.enable_video_looping, variant_image: false -%}
+        {%- endif -%}
+
+        {%- for media in with_edges_images -%}
+          {%- liquid
+            if section.settings.hide_variants and variant_images contains media.src or variant_images contains media.id
+              assign variant_image = true
+            else
+              assign variant_image = false
+            endif
+
+            unless media.id == product.selected_or_first_available_variant.featured_media.id
+              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+            endunless
+          -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </product-modal>
+{%- endif -%}

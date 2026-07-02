@@ -287,7 +287,8 @@
       "inventory_out_of_stock_continue_selling": "Auf Lager",
       "sku": "SKU",
       "choose_color_and_mats_set": "Farbe und Matten-Set wählen",
-      "check_set": "Überprüfen Sie das Set"
+      "check_set": "Überprüfen Sie das Set",
+      "from": "Von"
     },
     "modal": {
       "label": "Medien-Galerie"

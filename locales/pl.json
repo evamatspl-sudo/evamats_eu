@@ -176,7 +176,8 @@
       "inventory_low_stock_show_count": "Niski poziom zapasów: pozostało {{ quantity }}",
       "inventory_out_of_stock": "Brak na stanie",
       "inventory_out_of_stock_continue_selling": "W magazynie",
-      "sku": "SKU"
+      "sku": "SKU",
+      "from": "Od"
     },
     "modal": {
       "label": "Galeria multimediów"

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "config": {
@@ -230,7 +239,8 @@
       "inventory_low_stock_show_count": "Scorte ridotte: ne restano {{ quantity }}",
       "inventory_out_of_stock": "Esaurito",
       "inventory_out_of_stock_continue_selling": "Disponibile",
-      "sku": "SKU"
+      "sku": "SKU",
+      "from": "Da"
     },
     "modal": {
       "label": "Galleria contenuti multimediali"

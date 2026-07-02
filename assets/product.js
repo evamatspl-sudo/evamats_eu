@@ -1028,3 +1028,7 @@ customElements.define('variant-radios', VariantRadios);
   });
 })();
 // product tabs
+
+if (typeof Fancybox !== 'undefined') {
+  Fancybox.bind('[data-fancybox]', {});
+}

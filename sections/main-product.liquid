@@ -26,13 +26,12 @@
   -%}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'section-evamats-product-gallery.css' | asset_url | stylesheet_tag }}
+  {{ 'fancybox.css' | asset_url | stylesheet_tag }}
   {% if product.template_suffix == 'config' %}
     {{ 'product-config.css' | asset_url | stylesheet_tag }}
     {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
-    {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'evamats-config-step-bar.js' | asset_url }}" defer="defer"></script>
   {% elsif is_simple_product %}
-    {{ 'evamats-breadcrumbs.css' | asset_url | stylesheet_tag }}
     {{ 'section-evamats-product-simple.css' | asset_url | stylesheet_tag }}
     {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'evamats-product-simple.js' | asset_url }}" defer="defer"></script>
@@ -619,7 +618,6 @@
                   {%- endunless -%}
                 </div>
               </div>
-              <div class="price price--large price--show-badge" id="google_prices"></div>
             {%- when 'price' -%}
               <div class="no-js-hidden main_price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -1950,7 +1948,7 @@
     {%- endif -%}
   </div>
 
-  {% render 'product-media-modal' variant_images: variant_images %}
+  {% render 'product-media-modal', variant_images: variant_images, without_edges_images: withoutEdgesImages, with_edges_images: withEdgesImages %}
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
@@ -2345,6 +2343,16 @@
           "type": "text",
           "id": "config_delivery_line_2",
           "label": "Delivery note line 2"
+        },
+        {
+          "type": "text",
+          "id": "config_delivery_line_1_accessory",
+          "label": "Delivery note line 1 (accessory)"
+        },
+        {
+          "type": "text",
+          "id": "config_delivery_line_2_accessory",
+          "label": "Delivery note line 2 (accessory)"
         },
         {
           "type": "image_picker",

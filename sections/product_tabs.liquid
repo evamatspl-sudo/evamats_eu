@@ -16,7 +16,17 @@
   <div class="page-width">
     <div class="evamats-product-tabs__shell">
       <div class="evamats-product-tabs__nav product_tabs__items" role="tablist">
+        {% assign accessories_handles = "akcesoria,akcesoria-samochodowa,akcesoria-samochodowa-chemia,car-accessories-organizers,organizers-to-trunk,podpietki,outlet,mats-for-home,mats-for-pets" %}
+        {% assign product_is_accessory = false %}
+        {% for collection in product.collections %}
+          {% if accessories_handles contains collection.handle %}
+            {% assign product_is_accessory = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
         {%- for block in section.blocks -%}
+          
+          {% unless block.settings.hide_on_accessories and product_is_accessory %}
           <button
             type="button"
             class="evamats-product-tabs__tab product_tabs__item{% if forloop.first %} active{% endif %}"
@@ -25,8 +35,9 @@
             aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
             {{ block.shopify_attributes }}
           >
-            {{ block.settings.title | escape }}
-          </button>
+              {{ block.settings.title | escape }}
+            </button>
+          {% endunless %}
         {%- endfor -%}
       </div>
 
@@ -280,6 +291,12 @@
           "id": "html",
           "label": "Html",
           "info": "Used for all tabs except About on config template. About tab uses product description on other templates."
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_on_accessories",
+          "label": "Hide on accessories template",
+          "default": false
         }
       ]
     }

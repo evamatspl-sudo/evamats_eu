@@ -14,6 +14,7 @@ config.yml
 *.code-workspace
 /.idea
 scripts/
+perf-baseline
 
 # Temporary theme pull compare folders
 _*_pull_check*/
