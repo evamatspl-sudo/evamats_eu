@@ -836,10 +836,12 @@ src="https://www.facebook.com/tr?id=7230783290363260&ev=PageView&noscript=1"
     });
 
     document.querySelectorAll('button, [role="button"]').forEach((button) => {
-      const label = (button.getAttribute('aria-label') || button.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      const label = (button.getAttribute('aria-label') || button.textContent || '').replace(/s+/g, ' ').trim().toLowerCase();
       const isShopButton = label === 'shop' || label === 'shop pay' || label.includes('shop pay');
       if (!isShopButton) return;
-      const wrapper = button.closest('li, .wallet-cart-button-container, .cart__dynamic-checkout-buttons, .additional-checkout-buttons') || button;
+      const walletContext = button.closest('shopify-accelerated-checkout-cart, shopify-accelerated-checkout, .cart__dynamic-checkout-buttons, .additional-checkout-buttons, .wallet-cart-grid, .wallet-cart-button-container, cart-drawer, .cart-drawer, [id*="cart" i], [class*="cart" i]');
+      if (!walletContext) return;
+      const wrapper = button.closest('li, .wallet-cart-button-container') || button;
       wrapper.style.display = 'none';
     });
   };
