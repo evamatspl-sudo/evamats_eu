@@ -292,9 +292,9 @@
       "type": "evamats-driving-style",
       "settings": {
         "heading": "Přizpůsobte koberce svému stylu jízdy",
-        "image_left": "shopify://shop_images/evamats-driving-style-left.png",
+        "video_left": "shopify://files/videos/czvidcomp.mp4",
         "image_left_label": "",
-        "image_right": "shopify://shop_images/evamats-driving-style-right.png",
+        "video_right": "shopify://files/videos/czvidcomp2.mp4",
         "image_right_label": "",
         "without_edges_title": "Bez lemů",
         "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
