@@ -24,3 +24,8 @@
 .list-payment__item img {
   width: 34px;
 }
+.list-payment__image--gopay {
+  width: 78px !important;
+  max-height: 24px;
+  object-fit: contain;
+}
