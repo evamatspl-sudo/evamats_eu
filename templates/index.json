@@ -163,19 +163,21 @@
         "slide_in7Xc7": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
+            "image_desktop": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
+            "image_mobile": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
             "link": ""
           }
         },
         "slide_qwUryy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
-            "link": ""
+            "image_desktop": "shopify://shop_images/Rectangle_2_5_1.webp",
+            "link": "shopify://pages/accessories"
           }
         },
         "slide_d6QVHP": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
             "link": ""
