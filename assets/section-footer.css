@@ -541,7 +541,7 @@
 }
 
 .evamats-footer__payment-image--gopay {
-  width: 78px;
-  max-height: 24px;
+  width: 58px !important;
+  max-height: 18px;
   object-fit: contain;
 }

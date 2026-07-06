@@ -25,7 +25,7 @@
   width: 34px;
 }
 .list-payment__image--gopay {
-  width: 78px !important;
-  max-height: 24px;
+  width: 58px !important;
+  max-height: 18px;
   object-fit: contain;
 }
