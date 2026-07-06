@@ -205,11 +205,15 @@
               <p class="evamats-footer__payments-label">{{ section.settings.payments_label | escape }}</p>
             {%- endif -%}
             <ul class="evamats-footer__payment-list list-unstyled" role="list">
-              {%- assign payment_gateways = 'visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik' | split: ',' -%}
+              {%- assign payment_gateways = 'visa,mc,ae,discover,jcb,dc,apay,gpay,gopay' | split: ',' -%}
               {%- for type in payment_gateways -%}
-                <li class="evamats-footer__payment-item">
-                  {%- assign typeSvg = type | append: '.svg' -%}
-                  <img src="{{ typeSvg | file_url }}" alt="{{ type }}" loading="lazy">
+                <li class="evamats-footer__payment-item evamats-footer__payment-item--{{ type }}">
+                  {%- if type == 'gopay' -%}
+                    <img class="evamats-footer__payment-image evamats-footer__payment-image--gopay" src="{{ 'gopay-payment.png' | asset_url }}" alt="GoPay" loading="lazy" width="78" height="24">
+                  {%- else -%}
+                    {%- assign typeSvg = type | append: '.svg' -%}
+                    <img src="{{ typeSvg | file_url }}" alt="{{ type }}" loading="lazy">
+                  {%- endif -%}
                 </li>
               {%- endfor -%}
             </ul>
