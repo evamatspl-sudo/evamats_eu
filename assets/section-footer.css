@@ -539,3 +539,9 @@
     }
   }
 }
+
+.evamats-footer__payment-image--gopay {
+  width: 58px !important;
+  max-height: 18px;
+  object-fit: contain;
+}
