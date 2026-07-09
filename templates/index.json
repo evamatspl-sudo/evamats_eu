@@ -163,29 +163,22 @@
         "slide_in7Xc7": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
+            "image_desktop": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
+            "image_mobile": "shopify://shop_images/1.1.webp",
             "link": ""
           }
         },
         "slide_qwUryy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
-            "link": ""
-          }
-        },
-        "slide_d6QVHP": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
+            "image_desktop": "shopify://shop_images/Rectangle_2_5_1.webp",
             "link": ""
           }
         }
       },
       "block_order": [
         "slide_in7Xc7",
-        "slide_qwUryy",
-        "slide_d6QVHP"
+        "slide_qwUryy"
       ],
       "settings": {
         "padding_top": 0,
@@ -290,9 +283,9 @@
       "type": "evamats-driving-style",
       "settings": {
         "heading": "Přizpůsobte koberce svému stylu jízdy",
-        "image_left": "shopify://shop_images/evamats-driving-style-left.png",
+        "video_left": "shopify://files/videos/czvidcomp.mp4",
         "image_left_label": "",
-        "image_right": "shopify://shop_images/evamats-driving-style-right.png",
+        "video_right": "shopify://files/videos/czvidcomp2.mp4",
         "image_right_label": "",
         "without_edges_title": "Bez lemů",
         "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
