@@ -948,21 +948,12 @@
         object-fit: contain;
     }
 
-    #popupOverlayApplicationForm .evamats-config-preview__note.lip__comment {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
+    #popupOverlayApplicationForm .evamats-config-preview__note {
+        display: block;
         margin: 10px 0 0;
-        justify-content: flex-start;
         color: #939393;
         font-size: 10px;
         line-height: 1.2;
-    }
-
-    #popupOverlayApplicationForm .evamats-config-preview__note .lip__comment_icon {
-        display: inline-flex;
-        width: 12px;
-        height: 12px;
     }
 
     #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden {

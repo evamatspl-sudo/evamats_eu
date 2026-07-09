@@ -785,14 +785,24 @@
 
 .evamats-banner-slider__stage {
   position: relative;
+  width: 100%;
+  min-width: 0;
   height: var(--ebs-banner-h);
   overflow: visible;
 }
 
 .evamats-banner-slider__swiper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border-radius: var(--ebs-banner-radius);
   height: 100%;
+}
+
+.evamats-banner-slider__swiper .swiper-slide {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .evamats-banner-slider__slide {
@@ -810,18 +820,40 @@
   color: inherit;
 }
 
+.evamats-banner-slider__slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .evamats-banner-slider__media {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--prev {
+.evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  margin-top: 0;
+  transform: translateY(-50%);
+  width: var(--eva-nav-size);
+  height: var(--eva-nav-size);
+}
+
+.evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.swiper-button-prev,
+.evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.swiper-button-next {
+  margin-top: 0;
+}
+
+.evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
   left: -95px;
 }
 
-.evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--next {
+.evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
   right: -95px;
 }
 
@@ -857,11 +889,11 @@
 }
 
 @media screen and (max-width: 1700px) {
-  .evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--prev {
+  .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
     left: 0;
   }
 
-  .evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--next {
+  .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
     right: 0;
   }
 }
@@ -883,16 +915,16 @@
     max-width: none;
   }
 
-  .evamats-banner-slider .eva-slider-nav--absolute {
+  .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute {
     --eva-nav-size: 40px;
     --eva-nav-icon: 11px;
   }
 
-  .evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--prev {
+  .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
     left: 8px;
   }
 
-  .evamats-banner-slider .eva-slider-nav--absolute.eva-slider-nav--next {
+  .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
     right: 8px;
   }
 

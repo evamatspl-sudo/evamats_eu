@@ -13,6 +13,13 @@
     endif
   endif
 
+  if delivery_line_1_accessory == blank
+    assign delivery_line_1_accessory = 'general.config.checkout_delivery_accessory_line_1' | t
+  endif
+  if delivery_line_2_accessory == blank
+    assign delivery_line_2_accessory = 'general.config.checkout_delivery_accessory_line_2' | t
+  endif
+
   assign trusted_line_1 = block.settings.config_trusted_line_1
   assign trusted_line_2 = block.settings.config_trusted_line_2
   if trusted_line_1 == blank
@@ -33,6 +40,17 @@
   if trusted_line_1 != blank
     assign show_trusted_note = true
   endif
+
+  assign body_type = product.metafields.custom.body_type
+  assign use_accessory_delivery = false
+
+  if product.template_suffix contains 'config'
+    assign use_accessory_delivery = false
+  elsif body_type == 'corners'
+    assign use_accessory_delivery = false
+  else
+    assign use_accessory_delivery = true
+  endif
 -%}
 {% assign delivery_note_is_dropdown = true %}
 {% assign accessories_handles = "akcesoria,akcesoria-samochodowa,akcesoria-samochodowa-chemia,car-accessories-organizers,organizers-to-trunk,podpietki,outlet,mats-for-home,mats-for-pets" %}
@@ -44,8 +62,11 @@
     {% break %}
   {% endif %}
 {% endfor %}
-{% if product_is_accessory %}
+{% if use_accessory_delivery or product_is_accessory %}
   {% assign delivery_note_is_dropdown = false %}
+  {% if delivery_line_1_accessory != blank %}
+    {% assign show_delivery_note = true %}
+  {% endif %}
 {% endif %}
 
 
@@ -156,10 +177,10 @@
 
             <span class="evamats-config-checkout__delivery-dropdown-text">
               {%- if delivery_line_1_accessory != blank -%}
-                <span class="evamats-config-checkout__delivery-dropdown-title">{{ delivery_line_1_accessory }}</span>
+                <span class="evamats-config-checkout__delivery-dropdown-title">{{ delivery_line_1_accessory | escape }}</span>
               {%- endif -%}
               {%- if delivery_line_2_accessory != blank -%}
-                <span class="evamats-config-checkout__delivery-dropdown-subtitle">{{ delivery_line_2_accessory }}</span>
+                <span class="evamats-config-checkout__delivery-dropdown-subtitle">{{ delivery_line_2_accessory | escape }}</span>
               {%- endif -%}
             </span>
           </summary>

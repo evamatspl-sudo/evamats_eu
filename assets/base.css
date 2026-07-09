@@ -14766,13 +14766,6 @@ textarea.field__input:-webkit-autofill:hover,
   color: var(--eh-search-text);
 }
 
-.evamats-header__search-wrap predictive-search[open] .search__input.field__input,
-.evamats-header__search-wrap predictive-search[loading] .search__input.field__input {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  border-bottom-color: transparent !important;
-  box-shadow: none !important;
-}
 
 .evamats-header__search-wrap .predictive-search {
   background-color: var(--eh-search-bg);
@@ -14859,12 +14852,12 @@ textarea.field__input:-webkit-autofill:hover,
 
 @media screen and (max-width: 749px) {
   .evamats-header__search-wrap .predictive-search__heading {
-    margin: 0 16px;
+    margin: 0 10px;
     padding-top: 12px;
   }
 
   .evamats-header__search-wrap .predictive-search__item {
-    padding: 10px 16px;
+    padding: 10px;
   }
 
   .evamats-header__search-wrap .predictive-search__item--term {

@@ -2649,8 +2649,12 @@
   column-gap: 10px;
   align-items: center;
   justify-items: end;
-  margin-top: -40px;
+  margin-top: -20px;
   margin-bottom: -30px;
+}
+
+.evamats-config[data-type='corners'] .evamats-config-preview__stage {
+  margin-top: 0;
 }
 
 .evamats-config .evamats-config-preview__swatches {
@@ -2684,21 +2688,12 @@
   object-fit: contain;
 }
 
-.evamats-config .evamats-config-preview__note.lip__comment {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+.evamats-config .evamats-config-preview__note {
+  display: block;
   margin: 10px 0 0;
-  justify-content: flex-start;
   color: var(--evc-muted);
   font-size: 10px;
   line-height: 1.2;
-}
-
-.evamats-config .evamats-config-preview__note .lip__comment_icon {
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
 }
 
 .evamats-config .evamats-config-preview.is-fixed.fixed_hidden {
@@ -2743,7 +2738,7 @@
 
 @media screen and (max-width: 749px) {
   .evamats-config .evamats-config-preview.is-fixed {
-    top: 54px;
+    top: 74px;
   }
 
   .evamats-config .evamats-config-preview.is-fixed.fixed_hidden {
@@ -2790,7 +2785,7 @@
   }
 
   .evamats-config .evamats-config-preview.is-fixed {
-    top: 54px;
+    top: 74px;
   }
 
   .evamats-config .evamats-config-preview.is-fixed.fixed_hidden {
