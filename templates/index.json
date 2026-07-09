@@ -725,61 +725,31 @@
         "item_d3RWUh": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/Untitled_5.mp4"
+            "video": "shopify://files/videos/cz1_1.mp4"
           }
         },
         "item_aH7QGA": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/Untitled_6.mp4"
+            "video": "shopify://files/videos/cz1_2.mp4"
           }
         },
         "item_mN6334": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/Untitled_3.mp4"
+            "video": "shopify://files/videos/cz1_3.mp4"
           }
         },
         "item_aAYNLB": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/Untitled_4.mp4"
+            "video": "shopify://files/videos/cz1_4.mp4"
           }
         },
         "item_JWUBwJ": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/Untitled_1.mp4"
-          }
-        },
-        "item_4nPTH6": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_5.mp4"
-          }
-        },
-        "item_hWeLBc": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_6.mp4"
-          }
-        },
-        "item_akGGpr": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_3.mp4"
-          }
-        },
-        "item_NpeXtX": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_4.mp4"
-          }
-        },
-        "item_Qh9ame": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_1.mp4"
+            "video": "shopify://files/videos/cz1_5.mp4"
           }
         }
       },
@@ -788,12 +758,7 @@
         "item_aH7QGA",
         "item_mN6334",
         "item_aAYNLB",
-        "item_JWUBwJ",
-        "item_4nPTH6",
-        "item_hWeLBc",
-        "item_akGGpr",
-        "item_NpeXtX",
-        "item_Qh9ame"
+        "item_JWUBwJ"
       ],
       "settings": {
         "title": "Majitelé aut o kobercích",
