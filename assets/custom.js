@@ -512,11 +512,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var mainOpts = {
             loop: true,
-            slidesPerView: 'auto',
-            spaceBetween: 0,
+            slidesPerView: 1.55,
+            spaceBetween: 4,
             speed: 480,
             watchOverflow: true,
-            centeredSlides: true,
+            centeredSlides: false,
+            breakpoints: {
+                750: {
+                    slidesPerView: 4.2,
+                    spaceBetween: 4,
+                },
+            },
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,

@@ -984,46 +984,173 @@ customElements.define('variant-radios', VariantRadios);
     const root = document.querySelector(".evamats-product-tabs");
     if (!root) return;
 
+    const mobileMq = window.matchMedia("(max-width: 749px)");
     const tabs = root.querySelectorAll(".product_tabs__item");
-    const containers = root.querySelectorAll(".product_tabs__containers_item");
+    const containers = Array.from(root.querySelectorAll(".product_tabs__containers_item"));
+    const panelsHost = root.querySelector("[data-tab-panels]");
+    const mobileTriggers = root.querySelectorAll(".evamats-product-tabs__mobile-trigger");
     const descriptionSections = document.querySelectorAll(".image-with-text--description");
+    const panelSlots = root.querySelectorAll("[data-mobile-panel-slot]");
+    const introRoots = root.querySelectorAll("[data-intro-collapse]");
 
-    function switchTab(activeId) {
-        tabs.forEach(tab => {
-          tab.classList.remove("active");
-          tab.setAttribute("aria-selected", "false");
-        });
-        containers.forEach(container => container.classList.remove("active"));
+    const panelHome = new Map();
 
-        const activeTab = root.querySelector(`.product_tabs__item[data-id="${activeId}"]`);
-        const activeContainer = root.querySelector(`.product_tabs__containers_item[data-id="${activeId}"]`);
-
-        if (activeTab) {
-          activeTab.classList.add("active");
-          activeTab.setAttribute("aria-selected", "true");
-        }
-        if (activeContainer) activeContainer.classList.add("active");
-
-        descriptionSections.forEach(section => {
-            if (activeId === "description") {
-                section.style.display = "";
-            } else {
-                section.style.display = "none";
-            }
-        });
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            const id = tab.getAttribute("data-id");
-            switchTab(id);
-        });
+    containers.forEach((panel, index) => {
+      panelHome.set(panel, {
+        parent: panelsHost,
+        index,
+      });
     });
 
-    const firstTab = tabs[0];
-    if (firstTab) {
-        const id = firstTab.getAttribute("data-id");
-        switchTab(id);
+    function isMobileLayout() {
+      return mobileMq.matches;
+    }
+
+    function restorePanelsToDesktop() {
+      [...containers]
+        .sort((a, b) => panelHome.get(a).index - panelHome.get(b).index)
+        .forEach((panel) => {
+          panel.classList.remove(
+            "evamats-product-tabs__panel--mobile-inline",
+            "evamats-product-tabs__panel--mobile-about",
+            "active"
+          );
+          panelsHost.appendChild(panel);
+        });
+
+      panelSlots.forEach((slot) => {
+        slot.hidden = true;
+        slot.innerHTML = "";
+      });
+    }
+
+    function layoutMobilePanels() {
+      restorePanelsToDesktop();
+
+      if (!isMobileLayout()) return;
+
+      const aboutPanel = root.querySelector('.product_tabs__containers_item[data-id="description"]');
+      if (aboutPanel) {
+        aboutPanel.classList.add("active", "evamats-product-tabs__panel--mobile-about");
+      }
+
+      containers.forEach((panel) => {
+        if (panel.dataset.id === "description") return;
+
+        const slot = root.querySelector(`[data-mobile-panel-slot="${panel.dataset.id}"]`);
+        if (!slot) return;
+
+        panel.classList.add("evamats-product-tabs__panel--mobile-inline");
+        slot.appendChild(panel);
+      });
+    }
+
+    function closeMobileAccordions() {
+      mobileTriggers.forEach((trigger) => {
+        trigger.classList.remove("is-open");
+        trigger.setAttribute("aria-expanded", "false");
+      });
+
+      containers.forEach((panel) => {
+        if (panel.dataset.id === "description") return;
+        panel.classList.remove("active");
+      });
+
+      panelSlots.forEach((slot) => {
+        slot.hidden = true;
+      });
+    }
+
+    function switchTab(activeId) {
+      if (isMobileLayout()) return;
+
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+        tab.setAttribute("aria-selected", "false");
+      });
+      containers.forEach((container) => container.classList.remove("active"));
+
+      const activeTab = root.querySelector(`.product_tabs__item[data-id="${activeId}"]`);
+      const activeContainer = root.querySelector(`.product_tabs__containers_item[data-id="${activeId}"]`);
+
+      if (activeTab) {
+        activeTab.classList.add("active");
+        activeTab.setAttribute("aria-selected", "true");
+      }
+      if (activeContainer) activeContainer.classList.add("active");
+
+      descriptionSections.forEach((section) => {
+        section.style.display = activeId === "description" ? "" : "none";
+      });
+    }
+
+    function toggleMobileAccordion(trigger) {
+      const activeId = trigger.getAttribute("data-id");
+      const isOpen = trigger.classList.contains("is-open");
+      closeMobileAccordions();
+
+      if (!isOpen) {
+        trigger.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+
+        const activeContainer = root.querySelector(`.product_tabs__containers_item[data-id="${activeId}"]`);
+        if (activeContainer) activeContainer.classList.add("active");
+
+        const activeSlot = root.querySelector(`[data-mobile-panel-slot="${activeId}"]`);
+        if (activeSlot) activeSlot.hidden = false;
+      }
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        switchTab(tab.getAttribute("data-id"));
+      });
+    });
+
+    mobileTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        toggleMobileAccordion(trigger);
+      });
+    });
+
+    introRoots.forEach((introRoot) => {
+      const toggle = introRoot.querySelector("[data-intro-toggle]");
+      const introText = introRoot.querySelector("[data-intro-text]");
+      if (!toggle || !introText) return;
+
+      const readMore = toggle.querySelector("span:first-child")?.textContent?.trim() || "Read more";
+      const readLess = toggle.getAttribute("data-read-less") || readMore;
+
+      toggle.addEventListener("click", () => {
+        const expanded = introRoot.classList.toggle("is-expanded");
+        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        const label = toggle.querySelector("span:first-child");
+        if (label) label.textContent = expanded ? readLess : readMore;
+      });
+    });
+
+    function syncLayout() {
+      layoutMobilePanels();
+
+      if (isMobileLayout()) {
+        closeMobileAccordions();
+        descriptionSections.forEach((section) => {
+          section.style.display = "";
+        });
+        return;
+      }
+
+      root.classList.remove("evamats-product-tabs--mobile");
+      const firstTab = tabs[0];
+      if (firstTab) switchTab(firstTab.getAttribute("data-id"));
+    }
+
+    syncLayout();
+
+    if (typeof mobileMq.addEventListener === "function") {
+      mobileMq.addEventListener("change", syncLayout);
+    } else if (typeof mobileMq.addListener === "function") {
+      mobileMq.addListener(syncLayout);
     }
   });
 })();

@@ -769,7 +769,7 @@
   .evamats-config .product__info-container {
     padding-left: var(--evc-mobile-pad);
     padding-right: var(--evc-mobile-pad);
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 0
   }
 
   .evamats-config .product__info-container > .product__text.caption-with-letter-spacing,
@@ -2291,6 +2291,7 @@
   .evamats-config .evamats-config-checkout {
     gap: 24px;
     margin-top: 16px;
+    margin-bottom: 0;
   }
 
   :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__card {
@@ -2776,7 +2777,7 @@
   .evamats-config .product__info-container {
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 88px;
+    padding-bottom: 0;
   }
 
   .evamats-config .product-media-gallery-wr {
@@ -2865,6 +2866,7 @@
   .evamats-config .evamats-config-checkout {
     gap: 28px;
     margin-top: 20px;
+    margin-bottom: 0;
   }
 
   :is(.evamats-config .evamats-config-checkout, .evamats-product-simple .evamats-product-checkout) .evamats-config-checkout__card {

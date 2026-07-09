@@ -10,23 +10,56 @@
   if template.suffix == 'gift-card'
     assign is_gift_card_template = true
   endif
+
+  assign accessories_handles = 'akcesoria,akcesoria-samochodowa,akcesoria-samochodowa-chemia,car-accessories-organizers,organizers-to-trunk,podpietki,outlet,mats-for-home,mats-for-pets'
+  assign product_is_accessory = false
+  for collection in product.collections
+    if accessories_handles contains collection.handle
+      assign product_is_accessory = true
+      break
+    endif
+  endfor
 -%}
 
 <div class="evamats-product-tabs product_tabs" id="product-tabs-{{ section.id }}">
   <div class="page-width">
     <div class="evamats-product-tabs__shell">
+      <div class="evamats-product-tabs__mobile-accordion" data-mobile-accordion>
+        <div class="evamats-product-tabs__mobile-accordion-divider" aria-hidden="true"></div>
+        <div class="evamats-product-tabs__mobile-accordion-list">
+          {%- for block in section.blocks -%}
+            {%- unless block.settings.id == 'description' -%}
+              {%- unless block.settings.hide_on_accessories and product_is_accessory -%}
+                <button
+                  type="button"
+                  class="evamats-product-tabs__mobile-trigger"
+                  data-id="{{ block.settings.id }}"
+                  aria-expanded="false"
+                  aria-controls="product-tab-panel-{{ block.settings.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <span class="evamats-product-tabs__mobile-trigger-icon" aria-hidden="true">
+                    {%- render 'evamats-product-tabs-mobile-icon', tab_id: block.settings.id -%}
+                  </span>
+                  <span class="evamats-product-tabs__mobile-trigger-label">{{ block.settings.title | escape }}</span>
+                  <span class="evamats-product-tabs__mobile-trigger-toggle" aria-hidden="true"></span>
+                </button>
+                <div
+                  class="evamats-product-tabs__mobile-panel-slot"
+                  data-mobile-panel-slot="{{ block.settings.id }}"
+                  id="product-tab-panel-{{ block.settings.id }}"
+                  hidden
+                ></div>
+              {%- endunless -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+        <div class="evamats-product-tabs__mobile-accordion-divider" aria-hidden="true"></div>
+      </div>
+
       <div class="evamats-product-tabs__nav product_tabs__items" role="tablist">
-        {% assign accessories_handles = "akcesoria,akcesoria-samochodowa,akcesoria-samochodowa-chemia,car-accessories-organizers,organizers-to-trunk,podpietki,outlet,mats-for-home,mats-for-pets" %}
-        {% assign product_is_accessory = false %}
-        {% for collection in product.collections %}
-          {% if accessories_handles contains collection.handle %}
-            {% assign product_is_accessory = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
         {%- for block in section.blocks -%}
-          
-          {% unless block.settings.hide_on_accessories and product_is_accessory %}
+          {%- unless block.settings.hide_on_accessories and product_is_accessory -%}
           <button
             type="button"
             class="evamats-product-tabs__tab product_tabs__item{% if forloop.first %} active{% endif %}"
@@ -37,14 +70,14 @@
           >
               {{ block.settings.title | escape }}
             </button>
-          {% endunless %}
+          {%- endunless -%}
         {%- endfor -%}
       </div>
 
-      <div class="evamats-product-tabs__body product_tabs__containers">
+      <div class="evamats-product-tabs__body product_tabs__containers" data-tab-panels>
         {%- for block in section.blocks -%}
           <div
-            class="evamats-product-tabs__panel product_tabs__containers_item{% if forloop.first %} active{% endif %}"
+            class="evamats-product-tabs__panel product_tabs__containers_item{% if block.settings.id == 'description' %} evamats-product-tabs__panel--about{% endif %}{% if forloop.first %} active{% endif %}"
             role="tabpanel"
             data-id="{{ block.settings.id }}"
           >

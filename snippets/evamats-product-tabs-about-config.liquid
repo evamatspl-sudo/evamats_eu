@@ -1,19 +1,31 @@
 {%- comment -%}
-  Config product — About tab content (Figma 2142:10449)
+  Config product — About tab content (Figma 2142:10449 / mobile 2393:10351)
   Accepts: section
 {%- endcomment -%}
 
 <div class="evamats-product-tabs-about">
-  <div class="evamats-product-tabs-about__intro">
+  <div class="evamats-product-tabs-about__intro" data-intro-collapse>
     <h2 class="evamats-product-tabs-about__heading">
       {{ section.settings.about_heading_before | escape }}
       <span class="evamats-product-tabs-about__heading-brand">{{ section.settings.about_heading_brand | escape }}</span>
       {{ section.settings.about_heading_after | escape }}
     </h2>
     {%- if section.settings.about_intro != blank -%}
-      <div class="evamats-product-tabs-about__intro-text rte">
+      <div class="evamats-product-tabs-about__intro-text rte" data-intro-text>
         {{ section.settings.about_intro }}
       </div>
+      <button
+        type="button"
+        class="evamats-product-tabs-about__intro-more"
+        data-intro-toggle
+        aria-expanded="false"
+        data-read-less="{{ 'sections.main_page.read_less' | t | escape }}"
+      >
+        <span>{{ 'sections.main_page.read_more' | t }}</span>
+        <span class="evamats-product-tabs-about__intro-more-icon" aria-hidden="true">
+          {%- render 'evamats-icon-forward' -%}
+        </span>
+      </button>
     {%- endif -%}
   </div>
 
@@ -23,17 +35,11 @@
     {%- endif -%}
 
     <div class="evamats-product-tabs-about__features-list">
-      <div class="evamats-product-tabs-about__features-row">
-        {%- render 'evamats-product-tabs-feature-item', section: section, index: 1, fallback_asset: 'product-tab-feature-water.png' -%}
-        {%- render 'evamats-product-tabs-feature-item', section: section, index: 2, fallback_asset: 'product-tab-feature-coverage.png' -%}
-      </div>
-      <div class="evamats-product-tabs-about__features-row">
-        {%- render 'evamats-product-tabs-feature-item', section: section, index: 3, fallback_asset: 'product-tab-feature-clean.png' -%}
-        {%- render 'evamats-product-tabs-feature-item', section: section, index: 4, fallback_asset: 'product-tab-feature-season.png' -%}
-      </div>
-      <div class="evamats-product-tabs-about__features-row evamats-product-tabs-about__features-row--single">
-        {%- render 'evamats-product-tabs-feature-item', section: section, index: 5, fallback_asset: 'product-tab-feature-eco.png' -%}
-      </div>
+      {%- render 'evamats-product-tabs-feature-item', section: section, index: 1, fallback_asset: 'product-tab-feature-water.png' -%}
+      {%- render 'evamats-product-tabs-feature-item', section: section, index: 2, fallback_asset: 'product-tab-feature-coverage.png' -%}
+      {%- render 'evamats-product-tabs-feature-item', section: section, index: 3, fallback_asset: 'product-tab-feature-clean.png' -%}
+      {%- render 'evamats-product-tabs-feature-item', section: section, index: 4, fallback_asset: 'product-tab-feature-season.png' -%}
+      {%- render 'evamats-product-tabs-feature-item', section: section, index: 5, fallback_asset: 'product-tab-feature-eco.png', modifier_class: 'evamats-product-tabs-about__feature--wide' -%}
     </div>
   </div>
 

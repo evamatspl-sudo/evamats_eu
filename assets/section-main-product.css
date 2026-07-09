@@ -2617,6 +2617,11 @@ slider-component.slider-component-full-width {
   .grid--peek.slider .grid__item:first-of-type {
     margin-left: 0;
   }
+
+  .section--product {
+    padding-bottom: 14px;
+    background-color: transparent;
+  }
 }
 
 @media screen and (min-width: 661px) and (max-width: 992px) {

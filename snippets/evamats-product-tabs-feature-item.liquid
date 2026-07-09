@@ -22,7 +22,7 @@
 {%- endcase -%}
 
 {%- if feature_text != blank -%}
-  <div class="evamats-product-tabs-about__feature">
+  <div class="evamats-product-tabs-about__feature{% if modifier_class != blank %} {{ modifier_class }}{% endif %}" data-feature-index="{{ index }}">
     <div class="evamats-product-tabs-about__feature-media">
       {%- if feature_image != blank -%}
         {{ feature_image | image_url: width: 192 | image_tag: loading: 'lazy', widths: '96, 192', sizes: '96px', alt: '' }}

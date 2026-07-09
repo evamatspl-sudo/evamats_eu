@@ -1,0 +1,13 @@
+{%- comment -%}
+  Mobile accordion icon by tab id.
+  Accepts: tab_id
+{%- endcomment -%}
+
+{%- case tab_id -%}
+  {%- when 'tech' -%}
+    {%- render 'icon-product-tab-specs' -%}
+  {%- when 'faq' -%}
+    {%- render 'icon-product-tab-faq' -%}
+  {%- when 'delivery' -%}
+    {%- render 'icon-product-tab-delivery' -%}
+{%- endcase -%}

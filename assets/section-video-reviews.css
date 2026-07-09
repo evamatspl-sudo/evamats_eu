@@ -144,9 +144,13 @@
   padding: 0 0 20px 0;
 }
 
+.video_reviews__container_slider {
+  overflow: hidden;
+}
+
 .video_reviews__container_slider .video_reviews__item {
-  width: 25%;
   padding: 0 2px;
+  box-sizing: border-box;
 }
 
 .video_reviews__item video,
@@ -250,7 +254,7 @@
   }
 
   .video_reviews__container_slider .video_reviews__item {
-    width: 62%;
+    padding: 0 2px;
   }
 
   .video_reviews .video_reviews__nav.eva-slider-nav {
