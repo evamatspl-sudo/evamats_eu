@@ -8,6 +8,10 @@
   assign variant = card_product.selected_or_first_available_variant
   assign compare_at_price = variant.compare_at_price
   assign price = variant.price
+  if card_product.price_varies
+    assign price = card_product.price_min
+    assign compare_at_price = card_product.compare_at_price_min
+  endif
   assign on_sale = false
   if compare_at_price > price and compare_at_price > 0
     assign on_sale = true
@@ -72,12 +76,14 @@
 
   <div class="efc-card__body">
     <h3 class="efc-card__title">
-      <a href="{{ card_product.url }}">{{ card_title | escape }}</a>
+      {% render 'evamats-efc-card-title', title: card_title, url: card_product.url %}
     </h3>
 
     <div class="efc-card__prices">
       <div class="efc-card__price-line{% if on_sale %} efc-card__price-line--sale{% endif %}">
-        <span class="efc-card__price-from">{{ 'products.product.from' | t }}</span>
+        {%- if card_product.price_varies -%}
+          <span class="efc-card__price-from">{{ 'products.product.from' | t }}</span>
+        {%- endif -%}
         {%- if on_sale -%}
           <span class="efc-card__price-old">
             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>

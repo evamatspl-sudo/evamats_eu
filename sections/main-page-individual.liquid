@@ -1,144 +1,135 @@
-<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- liquid
+  assign parent_label = section.settings.parent_label | strip
+  if parent_label == blank
+    assign parent_label = 'Carvion'
+  endif
 
+  assign parent_url = section.settings.parent_url | strip
+  if parent_url == blank
+    assign parent_url = routes.root_url
+  endif
 
+  assign current_label = section.settings.current_label | strip
+  if current_label == blank and page != blank
+    assign current_label = page.title
+  endif
+-%}
 
-<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<div
+  id="EvamatsIndividualOrder-{{ section.id }}"
+  class="evamats-individual-order"
+>
+  <div class="evamats-individual-order__inner page-width">
+    {% render 'evamats-breadcrumbs',
+      parent_label: parent_label,
+      parent_url: parent_url,
+      current_label: current_label,
+      class: 'evamats-individual-order__breadcrumbs'
+    %}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
-  .application_form_section .popup-overlay--application_form {
-    position: static;
-    display: flex;
-    opacity: 1;
-    pointer-events: all;
-    background: none;
-  }
-  .application_form_section .popup_close_btn {
-    display: none;
-  }
-
-  #popupOverlayApplicationForm .popup {
-    overflow: initial;
-    max-height: initial;
-    border: none;
-  }
-
-  @media (max-width: 767px) {
-    .application_form_section .popup {
-      overflow: initial;
-      padding: 0;
-    }
-  }
-{%- endstyle -%}
-
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0">
-    {{'general.config.custom_order_title' | t }}
-  </h1>
-  <div class="card-text-page rte">
-    {{'general.config.custom_order_subtitle' | t }}
+    <div class="evamats-individual-order__intro">
+      <h1 class="evamats-individual-order__heading section_title">
+        {{ 'general.config.custom_order_title' | t }}
+      </h1>
+      <p class="evamats-individual-order__subtitle">
+        {{ 'general.config.custom_order_subtitle' | t }}
+      </p>
+    </div>
   </div>
 </div>
 
-<style>
-  .rte{
-    font-size: 1.4rem;
+{% stylesheet %}
+  .evamats-individual-order {
+    --eio-pt: 48px;
+    --eio-pb: 32px;
+    padding-top: var(--eio-pt);
+    padding-bottom: var(--eio-pb);
+    background: #fff;
+    color: #1b1d22;
   }
-  .card-text-page {
-    overflow: hidden;
-    max-height: 87px; /* Adjust to your desired initial height */
-    transition: max-height 0.5s ease;
-    line-height: 1.5; /* Adjust line height as needed */
+
+  .evamats-individual-order__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .evamats-individual-order__breadcrumbs {
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .evamats-individual-order__intro {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .evamats-individual-order__heading {
+    margin: 0 auto 16px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #1b1d22 50.962%, #ff2741 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .evamats-individual-order__subtitle {
+    margin: 0;
+    font-size: 18px;
     font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    color: #1b1d22;
   }
 
-  
-  @media screen and (max-width: 767px) {
-      .card-text-page {
-        max-height: 48px; 
+  @media screen and (max-width: 749px) {
+    .evamats-individual-order {
+      --eio-pt: 28px;
+      --eio-pb: 24px;
+    }
+
+    .evamats-individual-order__breadcrumbs {
+      margin-bottom: 24px;
+    }
+
+    .evamats-individual-order__heading {
+      max-width: none;
+    }
+
+    .evamats-individual-order__subtitle {
+      font-size: 16px;
+    }
   }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var readMoreLabel = {{ 'sections.main_page.read_more' | t | json }};
-    var readLessLabel = {{ 'sections.main_page.read_less' | t | json }};
-    document.querySelectorAll('.card-text-page').forEach(function(element) {
-        var text = element.textContent;
-        var charCount = text.length;
-        var maxChars = 200; // Adjust to your desired maximum characters
-
-        if (charCount > maxChars) {
-            var small = text.substring(0, maxChars);
-            var button = document.createElement('button');
-            button.className = 'btn-read-more-page';
-            button.textContent = readMoreLabel;
-            element.after(button);
-
-            button.addEventListener('click', function() {
-                element.classList.toggle('expanded');
-                if (element.classList.contains('expanded')) {
-                    element.style.maxHeight = element.scrollHeight + 'px';
-                    button.textContent = readLessLabel;
-                } else {
-                    element.style.maxHeight = '87px'; // Adjust to your desired initial height
-                    button.textContent = readMoreLabel;
-                }
-            });
-        }
-    });
-
-    document.querySelector('.application_form__next_button').addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth" 
-      });
-    })
-  });
-</script>
+{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:sections.main-page.name",
+  "name": "Individual order intro",
   "tag": "section",
-  "class": "section",
+  "class": "section section-evamats-individual-order",
   "settings": [
     {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "type": "text",
+      "id": "parent_label",
+      "label": "Breadcrumb — parent",
+      "default": "Carvion"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "type": "url",
+      "id": "parent_url",
+      "label": "Breadcrumb — parent link",
+      "info": "Leave empty for homepage."
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "type": "text",
+      "id": "current_label",
+      "label": "Breadcrumb — current page",
+      "info": "Leave empty to use page title."
     }
   ]
 }

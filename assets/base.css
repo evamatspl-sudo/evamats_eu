@@ -715,8 +715,10 @@ html.no-js .no-js-inline{
 .disclosure-has-popup,.media,summary{
     position:relative
 }
-::selection{
-    background-color:rgba(var(--color-foreground),.2)
+::selection,
+::-moz-selection{
+    background-color:rgba(var(--color-base-text),.25);
+    color:inherit
 }
 .text-body{
     font-size:1.5rem;
@@ -1581,7 +1583,6 @@ input[type=checkbox]{
     align-items: center;
     gap: 10px;
     padding:0;
-    margin:2rem 0 4rem
 }
 .form-status-list li{
     list-style-position:inside
@@ -1721,7 +1722,7 @@ input[type=checkbox]{
 }
 .cart-count-bubble{
     position:absolute;
-    background-color:rgb(var(--color-button));
+    background-color:#fff;
     color:#000;
     border-radius:100%;
     display:flex;
@@ -3131,18 +3132,16 @@ body .popup_overlay {
 }
 
 .popup-overlay--lip_comment__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 39px;
+    position: relative;
     width: 100%;
     max-width: 740px;
 }
 
 .popup-overlay--lip_comment .popup {
+    position: relative;
     width: 100%;
     max-width: 740px;
-    padding: 18px 22px;
+    padding: 18px 52px 18px 22px;
     border-radius: 16px;
     box-shadow: 5px 5px 16px rgba(27, 29, 34, 0.1);
     max-height: calc(100vh - 120px);
@@ -3171,13 +3170,15 @@ body .popup_overlay {
 }
 
 .popup-overlay--lip_comment .popup_close_btn {
-    position: static;
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    z-index: 2;
     width: 22px;
     height: 24px;
     padding: 0;
     border: 0;
     background: transparent;
-    flex-shrink: 0;
 }
 
 .popup-overlay--lip_comment .popup_close_btn svg {
@@ -3185,13 +3186,19 @@ body .popup_overlay {
     height: 24px;
 }
 
-@media screen and (max-width: 749px) {
-    .popup-overlay--lip_comment__inner {
-        gap: 24px;
-    }
+.popup-overlay--lip_comment .popup_close_btn path {
+    fill: #182a42;
+}
 
+@media screen and (max-width: 749px) {
     .popup-overlay--lip_comment .popup {
         max-height: calc(100vh - 100px);
+        padding-right: 48px;
+    }
+
+    .popup-overlay--lip_comment .popup_close_btn {
+        top: 14px;
+        right: 16px;
     }
 }
 
@@ -13058,8 +13065,8 @@ textarea.field__input:-webkit-autofill:hover,
   display: block;
   width: auto;
   height: auto;
-  max-width: 120px;
-  object-fit: contain;
+  max-width: 130px;
+  object-fit: contain; 
 }
 
 .evamats-header__logo-text {
@@ -13606,6 +13613,27 @@ textarea.field__input:-webkit-autofill:hover,
 .evamats-header__lang .disclosure__list-wrapper {
   right: 0;
   left: auto;
+  top: calc(100% + 8px);
+  bottom: auto;
+  transform: none;
+  background-color: #fff;
+  border-color: #e5e5e5;
+  box-shadow: 5px 5px 16px rgba(27, 29, 34, 0.1);
+}
+
+.evamats-header__lang .disclosure__list {
+  min-height: 0;
+  max-height: none;
+  padding: 6px 0;
+}
+
+.evamats-header__lang .disclosure__link {
+  color: #1b1d22;
+}
+
+.evamats-header__lang .disclosure__link:hover,
+.evamats-header__lang .disclosure__link--active {
+  color: #ff2741;
 }
 
 .evamats-header__icon-actions {
@@ -14466,7 +14494,7 @@ textarea.field__input:-webkit-autofill:hover,
 }
 
 .section-header.shopify-section-header-sticky {
-  z-index: 5;
+  z-index: 10;
 }
 
 @media (max-width: 1260px) and (min-width: 990px) {

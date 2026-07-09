@@ -68,6 +68,13 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
+
+  {%- if request.page_type == 'index' and section.settings.home_header_shade_enable -%}
+    .template_index:has(.evamats-home-hero) .header-wrapper--home-hero-shade {
+      --eh-home-header-shade-height: {{ section.settings.home_header_shade_height }}px;
+      --eh-home-header-shade-opacity: calc({{ section.settings.home_header_shade_opacity }} / 100);
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 
@@ -93,7 +100,7 @@
     <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="#000">
   </symbol>
 </svg>
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if request.page_type == 'index' and section.settings.home_header_shade_enable %} header-wrapper--home-hero-shade{% endif %}">
   <header class="header evamats-header{% if section.settings.menu != blank or section.settings.catalog_menu != blank %} header--has-menu{% endif %}">
     {% render 'evamats-header-body', section: section %}
   </header>
@@ -661,6 +668,37 @@
       "type": "image_picker",
       "id": "icon_cart",
       "label": "Cart icon (optional)"
+    },
+    {
+      "type": "header",
+      "content": "Homepage hero"
+    },
+    {
+      "type": "checkbox",
+      "id": "home_header_shade_enable",
+      "label": "Header shade on homepage",
+      "info": "Smooth top gradient over the hero for better header contrast. Applies only on the homepage.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "home_header_shade_height",
+      "min": 60,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Shade height",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "home_header_shade_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Shade strength",
+      "default": 55
     },
     {
       "type": "checkbox",

@@ -46,6 +46,27 @@
   position: relative;
 }
 
+.evamats-product-gallery .product-media-container .media > a[data-fancybox] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.evamats-product-gallery .product-media-container .media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-product-gallery .product-media-container.media-fit-cover .media {
+    position: relative;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .evamats-product-gallery .product-media-container.constrain-height {
     --viewport-offset: 170px;
@@ -542,13 +563,6 @@
   .evamats-product-gallery .product-media-container .product__modal-opener,
   .evamats-product-gallery .product-media-container .media {
     width: 100%;
-  }
-
-  .evamats-product-gallery .product-media-container .media img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   .product--thumbnail_slider .evamats-product-gallery__disclaimer,

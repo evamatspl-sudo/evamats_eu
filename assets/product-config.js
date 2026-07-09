@@ -188,7 +188,12 @@ function initProductConfigCore() {
         return;
       }
 
-      const value = input.dataset.title || input.value;
+      const value = (input.dataset.title || input.value || '').trim();
+      if (!value) {
+        chip.hidden = true;
+        return;
+      }
+
       const thumbSrc = getRadioOptionImage(input);
       chip.hidden = false;
 
@@ -208,6 +213,11 @@ function initProductConfigCore() {
       let displayValue = value;
       if (chip.dataset.name === 'mats_type') {
         displayValue = displayValue.replace(/\s*EVAMATS\s*/gi, ' ').replace(/\s{2,}/g, ' ').trim();
+      }
+
+      if (!displayValue && !thumbSrc) {
+        chip.hidden = true;
+        return;
       }
 
       const text = document.createElement('span');
@@ -496,78 +506,145 @@ function filterZestawByBodyType() {
 }
 
 // Fixed config image (mobile) — same behavior as main theme
-let configImageInitialized = false;
+const configImagePreview = (() => {
+  let state = null;
+
+  function resolveConfigPreviewImage() {
+    const appPreview = document.querySelector(
+      '#popupOverlayApplicationForm .product__config_image--main.product__config_image--mobile'
+    );
+    const productPreview =
+      document.querySelector('.evamats-config .product__config_image--main.product__config_image--mobile') ||
+      document.querySelector('.product.config_container .product__config_image--main.product__config_image--mobile');
+
+    const isIndividualOrderPage = document.body.classList.contains('template_zamowienie-indywidualne');
+    if (isIndividualOrderPage && appPreview) return appPreview;
+    if (productPreview) return productPreview;
+    if (appPreview) return appPreview;
+    return document.querySelector('.product__config_image--main.product__config_image--mobile');
+  }
+
+  function refresh() {
+    if (!state) {
+      const configImage = resolveConfigPreviewImage();
+      if (!configImage) return;
+
+      const scope = configImage.closest('.config_container') || document;
+      const matsSetStep = scope.querySelector('[data-dropdown="mats_set_type"]');
+      const colorsStep = scope.querySelector('[data-dropdown="mat_patterns_colors"]');
+      if (!matsSetStep && !colorsStep) return;
+
+      const firstStep = scope.querySelector('.product__dropdown_wr');
+      state = {
+        configImage,
+        scope,
+        matsSetStep,
+        colorsStep,
+        isFirst: Boolean(colorsStep && colorsStep === firstStep)
+      };
+
+      window.addEventListener('resize', refresh, { passive: true });
+
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.product__dropdown_button')) {
+          setTimeout(refresh, 0);
+          setTimeout(refresh, 500);
+        }
+        if (e.target.closest('.product__config_image_remove_fixed')) {
+          state.configImage.classList.toggle('fixed_hidden');
+        }
+      }, true);
+
+      document.addEventListener('evamats:config-step-updated', refresh);
+
+      scope.querySelectorAll('.product__dropdown_wr[data-dropdown]').forEach((element) => {
+        new MutationObserver(refresh).observe(element, {
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      });
+
+      if (state.isFirst) {
+        let counter = 0;
+        window.addEventListener('scroll', () => {
+          if (counter > 0 || !state) return;
+          const anchor = state.matsSetStep || state.colorsStep;
+          const distance = anchor && anchor.getBoundingClientRect().top;
+          if (distance != null && distance <= 200) {
+            state.isFirst = false;
+            refresh();
+            counter++;
+          }
+        }, { passive: true });
+      }
+    }
+
+    if (!state) return;
+
+    const { configImage, colorsStep } = state;
+    if (window.innerWidth >= 990) {
+      configImage.classList.remove('is-fixed', 'fixed_hidden');
+      return;
+    }
+
+    configImage.classList.add('is-fixed');
+    const colorsOpen = Boolean(colorsStep && colorsStep.classList.contains('open') && !state.isFirst);
+    configImage.classList.toggle('fixed_hidden', !colorsOpen);
+  }
+
+  return { refresh };
+})();
+
+window.__evamatsRefreshConfigImagePreview = configImagePreview.refresh;
 
 function initConfigImage() {
-  if (configImageInitialized) return;
-  configImageInitialized = true;
+  configImagePreview.refresh();
+}
 
-  const configImage = document.querySelector('.product__config_image--main.product__config_image--mobile');
-  const matPatternsColors = document.querySelector('[data-dropdown="mats_set_type"]');
-  const matPatternsColorsAdditional = document.querySelector('[data-dropdown="mat_patterns_colors"]');
+function scheduleConfigImageInit() {
+  const isIndividualOrderPage = document.body.classList.contains('template_zamowienie-indywidualne');
+  const productTarget =
+    document.querySelector('.evamats-config .product__config_image--main') ||
+    document.querySelector('.product.config_container .product__config_image--main');
+  const appTarget = document.querySelector('#popupOverlayApplicationForm .product__config_image--main');
 
-  if (!configImage || (!matPatternsColors && !matPatternsColorsAdditional)) return;
-
-  let isFirst = matPatternsColorsAdditional && matPatternsColorsAdditional.closest('.product__dropdown_wr') === document.querySelector('.product__dropdown_wr');
-
-  function toggleVisibility() {
-    if (window.innerWidth < 990) {
-      configImage.classList.add('is-fixed');
-      const isDropdownOpen = matPatternsColorsAdditional &&
-        matPatternsColorsAdditional.classList.contains('open') && !isFirst;
-      configImage.classList.toggle('fixed_hidden', !isDropdownOpen);
-    } else {
-      configImage.classList.remove('is-fixed', 'fixed_hidden');
-    }
+  if (isIndividualOrderPage && appTarget) {
+    initConfigImage();
+    return;
   }
 
-  toggleVisibility();
+  if (window.innerWidth >= 990) return;
 
-  if (isFirst) {
-    let counter = 0;
-    window.addEventListener('scroll', () => {
-      if (counter > 0) return;
-      const anchor = matPatternsColors || matPatternsColorsAdditional;
-      const distance = anchor && anchor.getBoundingClientRect().top;
-      if (distance != null && distance <= 200) {
-        isFirst = false;
-        toggleVisibility();
-        counter++;
+  const target = productTarget || appTarget;
+  if (!target) return;
+
+  if (productTarget) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        initConfigImage();
+        observer.disconnect();
       }
-    }, { passive: true });
+    }, { rootMargin: '100px' });
+    observer.observe(productTarget);
+    return;
   }
 
-  window.addEventListener('resize', toggleVisibility, { passive: true });
-
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('.product__dropdown_button')) {
-      setTimeout(toggleVisibility, 500);
-    }
-    if (e.target.closest('.product__config_image_remove_fixed')) {
-      configImage.classList.toggle('fixed_hidden');
-    }
-  }, true);
-
-  [matPatternsColors, matPatternsColorsAdditional].forEach((element) => {
-    if (!element) return;
-    new MutationObserver(toggleVisibility).observe(element, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-  });
+  initConfigImage();
 }
 
-if (window.innerWidth < 990) {
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      initConfigImage();
-      observer.disconnect();
-    }
-  }, { rootMargin: '100px' });
-
-  const target = document.querySelector('.product__config_image--main');
-  if (target) observer.observe(target);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', scheduleConfigImageInit);
+} else {
+  scheduleConfigImageInit();
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 990) {
+    initConfigImage();
+  } else if (typeof window.__evamatsRefreshConfigImagePreview === 'function') {
+    window.__evamatsRefreshConfigImagePreview();
+  }
+}, { passive: true });
 
 // config steps
 (function () {
@@ -618,7 +695,9 @@ if (window.innerWidth < 990) {
           wrapper.classList.add("open");
           inner.classList.add("open");
           inner.classList.remove("done");
+          updateContinueButton(wrapper);
         }
+        window.__evamatsRefreshConfigImagePreview?.();
       }
   
       faqTitles.forEach(title => {
@@ -627,6 +706,11 @@ if (window.innerWidth < 990) {
           triggerFaq(this);
         });
       });
+
+      function getFieldErrorContainer(element) {
+        if (!element) return null;
+        return element.closest('fieldset') || element.closest('.line-item-property__field');
+      }
 
       function fieldsetIsValid(fieldset) {
         if (!fieldset) return true;
@@ -655,10 +739,10 @@ if (window.innerWidth < 990) {
         return true;
       }
 
-      function hideFieldsetErrorIfValid(fieldset) {
-        if (!fieldset) return;
-        if (fieldsetIsValid(fieldset)) {
-          const errorMessage = fieldset.querySelector('.error-message');
+      function hideFieldsetErrorIfValid(container) {
+        if (!container) return;
+        if (fieldsetIsValid(container)) {
+          const errorMessage = container.querySelector('.error-message');
           if (errorMessage) errorMessage.style.display = 'none';
         }
       }
@@ -685,18 +769,18 @@ if (window.innerWidth < 990) {
           } else {
             valid = element.value.trim() !== '';
           }
-          const fieldset = element.closest('fieldset');
+          const errorContainer = getFieldErrorContainer(element);
           if (!valid) {
             stepValid = false;
-            if (showErrors && fieldset) {
-              const errorMessage = fieldset.querySelector('.error-message');
+            if (showErrors && errorContainer) {
+              const errorMessage = errorContainer.querySelector('.error-message');
               if (errorMessage) {
                 errorMessage.style.display = 'block';
               }
             }
           } else {
-            if (showErrors && fieldset) {
-              const errorMessage = fieldset.querySelector('.error-message');
+            if (showErrors && errorContainer) {
+              const errorMessage = errorContainer.querySelector('.error-message');
               if (errorMessage) {
                 errorMessage.style.display = 'none';
               }
@@ -790,6 +874,8 @@ if (window.innerWidth < 990) {
           filterZestawByBodyType();
         }
 
+        updateContinueButton(nextWrapper);
+
         if (nextWrapper.classList.contains('product__dropdown_wr--heel')) {
           const extrasWr = nextWrapper.nextElementSibling;
           if (extrasWr && extrasWr.classList.contains('product__dropdown_wr--extras')) {
@@ -816,9 +902,26 @@ if (window.innerWidth < 990) {
             }
           }
         }, 500);
+
+        window.__evamatsRefreshConfigImagePreview?.();
+        setTimeout(window.__evamatsRefreshConfigImagePreview, 550);
       }
 
       const configIntro = container.querySelector('[data-config-intro]');
+      const stepWrappers = Array.from(faqWrappers).filter(wrapper => !wrapper.classList.contains('product__dropdown_wr--heel') && !wrapper.classList.contains('product__dropdown_wr--extras'));
+      const hasConfigIntro = container.querySelector('[data-config-intro]');
+      stepWrappers.forEach((wrapper, i) => {
+        const title = wrapper.querySelector('.product__dropdown_title');
+        if (title && !document.querySelector('.evamats-config')) {
+          title.innerHTML = `${i + 1}. ${title.innerHTML}`;
+        }
+        if (i === 0 && !hasConfigIntro) {
+          wrapper.classList.add('open');
+          wrapper.querySelector('.product__dropdown_inner').classList.add('open');
+          wrapper.classList.remove('disabled');
+        }
+      });
+
       if (configIntro) {
         updateContinueButton(configIntro);
       }
@@ -831,11 +934,15 @@ if (window.innerWidth < 990) {
         updateContinueButton(wrapper);
       });
 
+      if (container.querySelector('.application_form__next_button')) {
+        updateNextButtonState(container);
+      }
+
       document.querySelectorAll('.product__dropdown_inner input, .product__dropdown_inner select, .product__dropdown_inner textarea, [data-config-intro] input, [data-config-intro] select, [data-config-intro] textarea').forEach(element => {
         function onFieldInteraction() {
           const wrapper = getStepWrapper(this);
           if (wrapper) updateContinueButton(wrapper);
-          hideFieldsetErrorIfValid(this.closest('fieldset'));
+          hideFieldsetErrorIfValid(getFieldErrorContainer(this));
         }
         element.addEventListener('input', onFieldInteraction);
         element.addEventListener('change', onFieldInteraction);
@@ -857,7 +964,7 @@ if (window.innerWidth < 990) {
         }
 
         updateContinueButton(wrapper);
-        hideFieldsetErrorIfValid(e.target.closest('fieldset'));
+        hideFieldsetErrorIfValid(getFieldErrorContainer(e.target));
         if (container.querySelector('.application_form__next_button')) {
           updateNextButtonState(container);
         }
@@ -918,20 +1025,6 @@ if (window.innerWidth < 990) {
           goToNextStep();
           document.dispatchEvent(new CustomEvent('evamats:config-step-updated'));
         });
-      });
-  
-      const stepWrappers = Array.from(faqWrappers).filter(wrapper => !wrapper.classList.contains('product__dropdown_wr--heel') && !wrapper.classList.contains('product__dropdown_wr--extras'));
-      const hasConfigIntro = container.querySelector('[data-config-intro]');
-      stepWrappers.forEach((wrapper, i) => {
-        const title = wrapper.querySelector('.product__dropdown_title');
-        if (title && !document.querySelector('.evamats-config')) {
-          title.innerHTML = `${i + 1}. ${title.innerHTML}`;
-        }
-        if (i === 0 && !hasConfigIntro) {
-          wrapper.classList.add('open');
-          wrapper.querySelector('.product__dropdown_inner').classList.add('open');
-          wrapper.classList.remove('disabled');
-        }
       });
   
       function updateNextButtonState(container) {

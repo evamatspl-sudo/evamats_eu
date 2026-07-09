@@ -163,21 +163,19 @@
         "slide_in7Xc7": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
-            "image_mobile": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
+            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
             "link": ""
           }
         },
         "slide_qwUryy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Rectangle_2_5_1.webp",
-            "link": "shopify://pages/accessories"
+            "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
+            "link": ""
           }
         },
         "slide_d6QVHP": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/compare-cards-bg.webp",
             "link": ""
@@ -292,9 +290,9 @@
       "type": "evamats-driving-style",
       "settings": {
         "heading": "Přizpůsobte koberce svému stylu jízdy",
-        "video_left": "shopify://files/videos/czvidcomp.mp4",
+        "image_left": "shopify://shop_images/evamats-driving-style-left.png",
         "image_left_label": "",
-        "video_right": "shopify://files/videos/czvidcomp2.mp4",
+        "image_right": "shopify://shop_images/evamats-driving-style-right.png",
         "image_right_label": "",
         "without_edges_title": "Bez lemů",
         "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
@@ -727,31 +725,61 @@
         "item_d3RWUh": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/cz1_1.mp4"
+            "video": "shopify://files/videos/Untitled_5.mp4"
           }
         },
         "item_aH7QGA": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/cz1_2.mp4"
+            "video": "shopify://files/videos/Untitled_6.mp4"
           }
         },
         "item_mN6334": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/cz1_3.mp4"
+            "video": "shopify://files/videos/Untitled_3.mp4"
           }
         },
         "item_aAYNLB": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/cz1_4.mp4"
+            "video": "shopify://files/videos/Untitled_4.mp4"
           }
         },
         "item_JWUBwJ": {
           "type": "item",
           "settings": {
-            "video": "shopify://files/videos/cz1_5.mp4"
+            "video": "shopify://files/videos/Untitled_1.mp4"
+          }
+        },
+        "item_4nPTH6": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_5.mp4"
+          }
+        },
+        "item_hWeLBc": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_6.mp4"
+          }
+        },
+        "item_akGGpr": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_3.mp4"
+          }
+        },
+        "item_NpeXtX": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_4.mp4"
+          }
+        },
+        "item_Qh9ame": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_1.mp4"
           }
         }
       },
@@ -760,7 +788,12 @@
         "item_aH7QGA",
         "item_mN6334",
         "item_aAYNLB",
-        "item_JWUBwJ"
+        "item_JWUBwJ",
+        "item_4nPTH6",
+        "item_hWeLBc",
+        "item_akGGpr",
+        "item_NpeXtX",
+        "item_Qh9ame"
       ],
       "settings": {
         "title": "Majitelé aut o kobercích",

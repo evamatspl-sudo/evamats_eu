@@ -2546,7 +2546,7 @@
 }
 
 .scrolled-past-header ~ #MainContent .evamats-config .evamats-config-preview.is-fixed {
-  top: 54px;
+  top: 74px;
 }
 
 .evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle {
@@ -2611,6 +2611,10 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.26px;
+}
+
+.evamats-config .evamats-config-preview__chip[hidden] {
+  display: none !important;
 }
 
 .evamats-config .evamats-config-preview__chip[data-name="mats_set"] {

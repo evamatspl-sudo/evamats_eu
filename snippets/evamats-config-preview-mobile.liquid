@@ -2,13 +2,17 @@
   Mobile mat preview popup — Figma 1710:26297 (Selector-popup)
 {%- endcomment -%}
 {%- liquid
-  assign option_mats_type = 'general.config.mats_type' | t
   assign has_mats_type = false
-  for product_option in product.options_with_values
-    if product_option.name == option_mats_type or product_option.name == 'Mats type' or product_option.name contains option_mats_type
-      assign has_mats_type = true
-    endif
-  endfor
+  if show_mats_type_chip
+    assign has_mats_type = true
+  elsif product
+    assign option_mats_type = 'general.config.mats_type' | t
+    for product_option in product.options_with_values
+      if product_option.name == option_mats_type or product_option.name == 'Mats type' or product_option.name contains option_mats_type
+        assign has_mats_type = true
+      endif
+    endfor
+  endif
 -%}
 <div class="product__config_image product__config_image--main product__config_image--mobile evamats-config-preview">
   <button type="button" class="product__config_image_remove_fixed evamats-config-preview__toggle" aria-label="{{ 'accessibility.close' | t }}">
@@ -25,7 +29,9 @@
     {%- endif -%}
 
     <div class="evamats-config-preview__chips">
-      <div class="evamats-config-preview__chip" data-name="mats_set" hidden></div>
+      {%- unless show_mats_set_chip == false -%}
+        <div class="evamats-config-preview__chip" data-name="mats_set" hidden></div>
+      {%- endunless -%}
       {%- if has_mats_type -%}
         <div class="evamats-config-preview__chip" data-name="mats_type" hidden></div>
       {%- endif -%}

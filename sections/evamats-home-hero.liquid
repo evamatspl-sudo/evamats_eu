@@ -158,27 +158,32 @@
 
         {%- if section.settings.secondary_rating != blank -%}
           <div class="evamats-home-hero__badge evamats-home-hero__badge--secondary">
-            <span class="evamats-home-hero__badge-rating">
-              {%- if section.settings.secondary_icon != blank -%}
-                {{
-                  section.settings.secondary_icon
-                  | image_url: width: 48
-                  | image_tag: loading: 'lazy', class: 'evamats-home-hero__badge-icon evamats-home-hero__badge-icon--trust', widths: '23, 46'
-                }}
-              {%- else -%}
-                <img
-                  class="evamats-home-hero__badge-icon evamats-home-hero__badge-icon--trust"
-                  src="{{ 'evamats-home-hero-badge-trust.png' | asset_url }}"
-                  alt=""
-                  width="23"
-                  height="22"
-                  loading="lazy"
-                >
+            <span class="evamats-home-hero__badge-data">
+              <span class="evamats-home-hero__badge-rating">
+                <svg class="evamats-home-hero__badge-star" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 1.5L12.3175 6.1825L17.5 6.9525L13.75 10.6175L14.635 15.7775L10 13.3275L5.365 15.7775L6.25 10.6175L2.5 6.9525L7.6825 6.1825L10 1.5Z" fill="#FBB000"/>
+                </svg>
+                {{ section.settings.secondary_rating | escape }}
+              </span>
+              {%- if section.settings.secondary_review_count != blank -%}
+                <span class="evamats-home-hero__badge-count">{{ section.settings.secondary_review_count | escape }}</span>
               {%- endif -%}
-              {{ section.settings.secondary_rating | escape }}
             </span>
-            {%- if section.settings.secondary_review_count != blank -%}
-              <span class="evamats-home-hero__badge-count">{{ section.settings.secondary_review_count | escape }}</span>
+            {%- if section.settings.secondary_icon != blank -%}
+              {{
+                section.settings.secondary_icon
+                | image_url: width: 48
+                | image_tag: loading: 'lazy', class: 'evamats-home-hero__badge-icon evamats-home-hero__badge-icon--trust', widths: '23, 46'
+              }}
+            {%- else -%}
+              <img
+                class="evamats-home-hero__badge-icon evamats-home-hero__badge-icon--trust"
+                src="{{ 'evamats-home-hero-badge-trust.png' | asset_url }}"
+                alt=""
+                width="23"
+                height="22"
+                loading="lazy"
+              >
             {%- endif -%}
           </div>
         {%- endif -%}

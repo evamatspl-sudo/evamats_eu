@@ -288,6 +288,7 @@
                         }
 
                         selectOption(this, brandCustomSelect, brandSelectOptions, true);
+                        brandCustomSelect.querySelector('.select-selected').dataset.url = brandUrl;
                         selectedBrandLogo = (this.dataset.logo || '').trim();
                         selectedModelGenerations = null;
                         resetModelSelect();
@@ -298,6 +299,7 @@
                             populateModelDropdown(data[key].models);
                         }
                         enableModelSelect();
+                        checkIfSearchEnabled();
                     });
                     brandSelectOptions.appendChild(div);
                 });
@@ -475,8 +477,11 @@
         }
 
         function buildUrl() {
+            const brandElement = brandCustomSelect.querySelector('.select-selected');
             const modelElement = modelCustomSelect.querySelector('.select-selected');
-            const modelUrl = modelElement.dataset.url;
+            const brandUrl = (brandElement.dataset.url || '').trim();
+            const modelUrl = (modelElement.dataset.url || '').trim();
+            const baseUrl = modelUrl || brandUrl;
             const urlParams = new URLSearchParams();
             const yearsInput = yearsCustomSelect.querySelector('.select-selected');
             const years = (yearsInput.dataset.years || yearsInput.value || '').trim();
@@ -486,11 +491,13 @@
             }
 
             const queryString = urlParams.toString();
-            return modelUrl + (queryString ? '?' + queryString : '');
+            return baseUrl + (queryString ? '?' + queryString : '');
         }
 
         function resetModelSelect() {
-            modelCustomSelect.querySelector('.select-selected').value = '';
+            const modelInput = modelCustomSelect.querySelector('.select-selected');
+            modelInput.value = '';
+            delete modelInput.dataset.url;
             modelSelectOptions.innerHTML = '';
             modelCustomSelect.classList.remove('selected');
         }
@@ -533,7 +540,9 @@
         });
 
         clearFilters.addEventListener('click', () => {
-            brandCustomSelect.querySelector('.select-selected').value = '';
+            const brandInput = brandCustomSelect.querySelector('.select-selected');
+            brandInput.value = '';
+            delete brandInput.dataset.url;
             modelCustomSelect.querySelector('.select-selected').value = '';
             resetYearsSelect();
             selectedBrandLogo = '';
@@ -552,8 +561,8 @@
 
         function checkIfSearchEnabled() {
             const selectedBrand = (brandCustomSelect.querySelector('.select-selected').value || '').trim();
-            const selectedModel = (modelCustomSelect.querySelector('.select-selected').value || '').trim();
-            searchButton.disabled = !(selectedBrand && selectedModel);
+            const brandUrl = (brandCustomSelect.querySelector('.select-selected').dataset.url || '').trim();
+            searchButton.disabled = !(selectedBrand && brandUrl);
         }
 
         container.querySelector('.brand-input').addEventListener('input', () => filterSelectOptions('.brand-input', '.brand-select-options'));
@@ -621,6 +630,10 @@
             }
 
             selectOption(brandDiv, brandCustomSelect, brandSelectOptions, saveToStorage);
+            brandCustomSelect.querySelector('.select-selected').dataset.url = resolveBrandCollectionUrl(
+                brandKey,
+                brandData
+            );
             setThumb(brandCustomSelect, selectedBrandLogo, 'brand');
             resetModelSelect();
             resetYearsSelect();
@@ -630,6 +643,7 @@
                 enableModelSelect();
             }
 
+            checkIfSearchEnabled();
             return true;
         }
 
@@ -703,6 +717,12 @@
                         selectedBrandLogo = String(localJson[restoredBrandKey].logo).trim();
                     }
                     selectOption(brandDiv, brandCustomSelect, brandSelectOptions, false);
+                    if (restoredBrandKey && localJson[restoredBrandKey]) {
+                        brandCustomSelect.querySelector('.select-selected').dataset.url = resolveBrandCollectionUrl(
+                            restoredBrandKey,
+                            localJson[restoredBrandKey]
+                        );
+                    }
                     setThumb(brandCustomSelect, selectedBrandLogo, 'brand');
                     resetModelSelect();
                     if (restoredBrandKey && localJson[restoredBrandKey] && Array.isArray(localJson[restoredBrandKey].models)) {
@@ -736,6 +756,8 @@
                     await fetchAndPopulateFilters(modelUrl);
                 }
             }
+
+            checkIfSearchEnabled();
         }
     });
 })();

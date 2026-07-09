@@ -377,8 +377,8 @@ body .config-image-placeholder {
   width: 45px;
 }
 .scrolled-past-header ~ #MainContent .product__config_image.is-fixed {
-  top: 54px;
-}
+  top: 74px;
+} 
 
 .sticky_config_price {
   position: relative;
@@ -1097,6 +1097,7 @@ variant-radios .lip__item:nth-child(8n+1) .label__tooltip {
 @media (max-width: 1023px) {
   .product__config_image--mobile {
     display: block;
+    margin: 0 !important;
   }
   .product__config_image--desktop {
     display: none;

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "config": {
@@ -31,7 +40,8 @@
       "comment": "ILLUSTRATION rug for color selection",
       "heel": "don't forget about additional protection - choose the type of heel pad",
       "order_notes": "Order notes",
-      "error_message": "Please select an option",
+      "error_message": "Izberite možnost",
+      "error_message_field": "Prosimo, izpolnite to polje",
       "warning_message": "You must accept the privacy policy and terms and conditions.",
       "please_select": "Please select",
       "estimated_delivery": "Estimated time to receive order",

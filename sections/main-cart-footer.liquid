@@ -183,54 +183,9 @@
                 </div> {% endcomment %}
 
                 {%- if additional_checkout_buttons -%}
-                  <div class="cart__dynamic-checkout-buttons cart__dynamic-checkout-buttons--hide-shop-pay additional-checkout-buttons">
-                    {% capture additional_checkout_buttons_html %}{{ content_for_additional_checkout_buttons }}{% endcapture %}
-                    {% assign shop_pay_wallet_config = '{&quot;supports_subs&quot;:true,&quot;supports_def_opts&quot;:false,&quot;name&quot;:&quot;shop_pay&quot;,&quot;wallet_params&quot;:{&quot;shopId&quot;:79092187414,&quot;merchantName&quot;:&quot;Carvion&quot;,&quot;personalized&quot;:false}},' %}
-                    {{ additional_checkout_buttons_html | replace: shop_pay_wallet_config, '' }}
+                  <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                    {{ content_for_additional_checkout_buttons }}
                   </div>
-                  <script>
-                    (() => {
-                      const stripShopPayWalletConfig = () => {
-                        document.querySelectorAll('shopify-accelerated-checkout-cart[wallet-configs]').forEach((wallet) => {
-                          const raw = wallet.getAttribute('wallet-configs');
-                          if (!raw || !raw.includes('shop_pay')) return;
-                          try {
-                            const configs = JSON.parse(raw);
-                            const filtered = configs.filter((config) => config && config.name !== 'shop_pay');
-                            wallet.setAttribute('wallet-configs', JSON.stringify(filtered));
-                          } catch (error) {
-                            wallet.style.display = 'none';
-                          }
-                        });
-                      };
-                      const selectors = [
-                        'shop-pay-wallet-button',
-                        'shopify-accelerated-checkout-wallet[wallet="shop_pay"]',
-                        'shopify-accelerated-checkout-wallet[name="shop_pay"]',
-                        '[data-testid*="shop-pay" i]',
-                        'iframe[title*="Shop Pay" i]',
-                        'iframe[src*="shop_pay" i]'
-                      ];
-                      const hideShopPay = () => {
-                        stripShopPayWalletConfig();
-                        selectors.forEach((selector) => {
-                          document.querySelectorAll(selector).forEach((element) => {
-                            const wrapper = element.closest('li, shopify-accelerated-checkout-wallet, shop-pay-wallet-button') || element;
-                            wrapper.style.display = 'none';
-                          });
-                        });
-                        document.querySelectorAll('.cart__dynamic-checkout-buttons button, .cart__dynamic-checkout-buttons [role="button"]').forEach((button) => {
-                          const label = (button.getAttribute('aria-label') || button.textContent || '').trim().toLowerCase();
-                          if (label === 'shop' || label.includes('shop pay')) {
-                            const wrapper = button.closest('li') || button;
-                            wrapper.style.display = 'none';
-                          }
-                        });
-                      };
-                      hideShopPay();
-                      new MutationObserver(hideShopPay).observe(document.documentElement, { childList: true, subtree: true });
-                    })();
-                  </script>
                 {%- endif -%}
             {%- endcase -%}
           {% endfor %}

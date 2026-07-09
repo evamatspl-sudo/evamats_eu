@@ -1,0 +1,37 @@
+{%- comment -%}
+  Product card title — centered wrap without 1–4 char orphans on the last line.
+  Accepts: title (string), url (string)
+{%- endcomment -%}
+{%- liquid
+  assign title_text = title | strip
+  assign title_parts = title_text | split: ' '
+  assign word_count = title_parts.size
+  assign tail_count = 0
+
+  if word_count > 1
+    assign reversed_parts = title_parts | reverse
+    assign last_word = reversed_parts | first
+    assign penultimate_word = reversed_parts | slice: 1, 1 | first
+
+    if last_word.size <= 4
+      assign tail_count = 2
+    elsif penultimate_word != blank and penultimate_word.size <= 4
+      assign tail_count = 2
+    endif
+  endif
+
+  if tail_count > 1
+    assign head_count = word_count | minus: tail_count
+    assign head_parts = title_parts | slice: 0, head_count
+    assign tail_parts = title_parts | slice: head_count, tail_count
+    assign title_head = head_parts | join: ' '
+    assign title_tail = tail_parts | join: ' '
+  endif
+-%}
+<a href="{{ url }}">
+  {%- if tail_count > 1 -%}
+    {%- if title_head != blank -%}{{ title_head | escape }} {%- endif -%}<span class="efc-card__title-nowrap">{{ title_tail | escape }}</span>
+  {%- else -%}
+    {{ title_text | escape }}
+  {%- endif -%}
+</a>

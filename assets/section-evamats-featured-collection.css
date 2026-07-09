@@ -108,11 +108,17 @@
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: pretty;
 }
 
 .efc-card__title a {
   color: var(--color-text-primary, #1b1d22);
   text-decoration: none;
+}
+
+.efc-card__title-nowrap {
+  white-space: nowrap;
 }
 
 .efc-card__prices {
@@ -286,6 +292,24 @@
   .efc-card__actions .button.button_6,
   .efc-card__product-form .button.button_6 {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1279px) {
+  .efc-card__price-from,
+  .efc-card__price-old,
+  .efc-card__price-current {
+    font-size: 22px;
+  }
+
+  .efc-card__price-line--sale {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .efc-card__price-line--sale .efc-card__price-current {
+    flex: 0 0 100%;
+    text-align: center;
   }
 }
 

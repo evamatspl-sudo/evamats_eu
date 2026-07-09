@@ -68,6 +68,7 @@
     font-size: 16px;
   }
 
+  .evamats-collection-product-grid .efc-card__price-from,
   .evamats-collection-product-grid .efc-card__price-old,
   .evamats-collection-product-grid .efc-card__price-current {
     font-size: 22px;

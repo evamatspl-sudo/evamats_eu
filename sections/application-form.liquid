@@ -1,9 +1,5 @@
 {{ 'product-config.css' | asset_url | stylesheet_tag }}
-<link
-    rel="stylesheet"
-    href="{{ 'application-form.css' | asset_url }}"
-    media="print"
-    onload="this.media='all'">
+{{ 'application-form.css' | asset_url | stylesheet_tag }}
 
 {% assign application_form_id = 'application_form_id' %}
 {%- form 'contact', id: application_form_id, class: 'isolate' -%}
@@ -56,20 +52,20 @@
                 <div class="application_form__config ">
                     {% if section.settings.alternative_zestaw  %}
                         <div class="product__dropdown_wr disabled">
-                            <div class="product__dropdown_title">{{'general.config.vehicle_text' | t}} <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                            <div class="product__dropdown_title">{{'general.config.vehicle_text' | t}} <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                             <div class="product__dropdown_inner">
-                                <p class="line-item-property__field">
+                                <div class="line-item-property__field">
                                     <textarea id="pojazd"  name="contact[{{'general.config.vehicle' | t}}]" required></textarea>
-                                    <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
-                                </p>  
+                                    <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
+                                </div>  
 
-                                <button type="button" class="product__dropdown_button button">{{ 'general.config.continue' | t }}</button>
+                                <button type="button" class="product__dropdown_button button button_5" disabled>{{ 'general.config.continue' | t }}</button>
                             </div>
                         </div>
                     {% endif %}
                     {% unless section.settings.alternative_zestaw %}
                         <div class="product__dropdown_wr open" data-dropdown="year">
-                            <div class="product__dropdown_title">{{ 'general.config.select_year' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                            <div class="product__dropdown_title">{{ 'general.config.select_year' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                             <div class="product__dropdown_inner open">
                             <fieldset class="product-form__input product-form__input--dropdown">
                                 {% assign productionYears = '' %}
@@ -112,13 +108,13 @@
                                 <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
                             </fieldset>
             
-                            <button  type="button" class="product__dropdown_button button" disabled>{{ 'general.config.continue' | t }}</button>
+                            <button type="button" class="product__dropdown_button button button_5" disabled>{{ 'general.config.continue' | t }}</button>
                             </div>
                         </div>
                     {% endunless %}
 
-                    <div class="product__dropdown_wr disabled">
-                        <div class="product__dropdown_title">{{ 'general.config.select_mats_type_and_set' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                    <div class="product__dropdown_wr disabled" data-dropdown="mats_set_type">
+                        <div class="product__dropdown_title">{{ 'general.config.select_mats_type_and_set' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                         <div class="product__dropdown_inner">
                             <variant-radios>
                             {% comment %} Mats type {% endcomment %}
@@ -130,14 +126,15 @@
                                     <input type="radio" id="mats_type-1-0" data-name="classic" name="{{'general.config.mats_type' | t}}" data-title="{{'general.config.without_edges' | t}}" value="{{'general.config.without_edges' | t}}"  checked="">
                                     <label for="mats_type-1-0" class="default_option">
                                         <img src="{{ '5os-classic-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-                                    <div class="label__tooltip">{{'general.config.without_edges' | t}}</div><span class="visually-hidden">{{'products.product.variant_sold_out_or_unavailable' | t}}</span>
+                                        <div class="label__tooltip">{{'general.config.without_edges' | t}}</div>
+                                        <span class="evamats-config-option-label">{{ 'general.config.without_edges' | t | remove: 'Carvion' | remove: 'EVAMATS' | strip | replace: '  ', ' ' }}</span>
+                                        <span class="visually-hidden">{{'products.product.variant_sold_out_or_unavailable' | t}}</span>
                                     </label>
                                     <input type="radio" id="mats_type-1-1" data-name="3d" name="{{'general.config.mats_type' | t}}" data-title="{{'general.config.with_edges' | t}}" value="{{'general.config.with_edges' | t}}" >
                                     <label for="mats_type-1-1" class="default_option">
                                         <img src="{{ '5os-3d-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-                                        <div class="label__tooltip">
-                                            {{'general.config.with_edges' | t}}
-                                        </div>
+                                        <div class="label__tooltip">{{'general.config.with_edges' | t }}</div>
+                                        <span class="evamats-config-option-label">{{ 'general.config.with_edges' | t | remove: 'Carvion' | remove: 'EVAMATS' | strip | replace: '  ', ' ' }}</span>
                                         <span class="visually-hidden">{{'products.product.variant_sold_out_or_unavailable' | t}}</span>
                                     </label>
                                 </fieldset>
@@ -145,10 +142,11 @@
 
                                 {% comment %} Mats set  {% endcomment %}
                                 {% if section.settings.alternative_zestaw %}
-                                    <p class="line-item-property__field">
-                                        <label for="mats_set">{{'general.config.mats_set' | t}}</label>
-                                        <textarea id="mats_set"  name="contact[{{'general.config.mats_set' | t}}]" required></textarea>
-                                    </p>  
+                                    <div class="line-item-property__field">
+                                        <label for="mats_set">{{ 'general.config.mats_set' | t }}</label>
+                                        <textarea id="mats_set" name="contact[{{ 'general.config.mats_set' | t }}]" required></textarea>
+                                        <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
+                                    </div>
                                 {% else %}
                                     <fieldset class="js product-form__input lip__field" data-name="mats_set">
                                         <legend class="form__label lip__title">
@@ -200,31 +198,31 @@
                                 {% comment %} Mats set  {% endcomment %}
                             </variant-radios>
 
-                            <button type="button" class="product__dropdown_button button">{{ 'general.config.continue' | t }}</button>
+                            <button type="button" class="product__dropdown_button button button_5" disabled>{{ 'general.config.continue' | t }}</button>
                         </div>
                     </div>
 
                       {% comment %} matPattern {% endcomment %}
-                    <div class="product__dropdown_wr disabled">
-                        <div class="product__dropdown_title">{{ 'general.config.select_shape_and_colors' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                    <div class="product__dropdown_wr disabled" data-dropdown="mat_patterns_colors">
+                        <div class="product__dropdown_title">{{ 'general.config.select_shape_and_colors' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                         <div class="product__dropdown_inner">
                             <div class="product__config_main">
                             <fieldset  class="lip__field" data-type="matPattern">
                                 <div class='lip__title'>{{ 'general.config.cell_shape' | t }}: <div class="lip__title_value"></div></div>
                                 <div class="lip__grid">
                                     <label class="lip__item">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="diamonds" value="diamonds" data-title="{{ 'general.config.diamonds' | t }}" checked> 
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="diamonds" value="diamonds" data-title="{{ 'general.config.diamonds' | t }}" checked> 
                                     <img src="{{ 'diamonds.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.config.diamonds' | t }}</div>
                                     </label>
                                     <label class="lip__item">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="honey" value="honeycomb" data-title="{{ 'general.config.honeycomb' | t }}" > 
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="honey" value="honeycomb" data-title="{{ 'general.config.honeycomb' | t }}" > 
                                     <img src="{{ 'honey.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.config.honeycomb' | t }}</div>
                                     </label>
                                     {% if product.metafields.custom.body_type == '5os' or product.metafields.custom.body_type == 'custom' or product.metafields.custom.body_type == '7os' or product.metafields.custom.body_type == '2os' or product.metafields.custom.body_type == 'pickup' or product.metafields.custom.body_type == 'van_maly' or product.metafields.custom.body_type == 'pickup2kabina' or product.metafields.custom.body_type == 'electro' %}
                                       <label class="lip__item">
-                                        <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ 'general.config.mat_pattern_drops' | t }}">
+                                        <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ 'general.config.mat_pattern_drops' | t }}">
                                         <img src="{{ 'drop.webp' | file_url }}" alt="{{ 'general.config.mat_pattern_drops' | t }}" loading="lazy">
                                         <div class="label__tooltip">{{ 'general.config.mat_pattern_drops' | t }}</div>
                                       </label>
@@ -237,87 +235,87 @@
                                 <div class='lip__title'>{{ 'general.config.material_color' | t }}: <div class="lip__title_value"></div></div>
                                 <div class="lip__grid">
                                   <label class="lip__item honey diamonds drop">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="black" value="{{ 'general.colors.black' | t }}" data-title="{{ 'general.colors.black' | t }}" checked>
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="black" value="{{ 'general.colors.black' | t }}" data-title="{{ 'general.colors.black' | t }}" checked>
                                     <img src="{{ 'material-black.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.black' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds drop">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="brown" value="{{ 'general.colors.brown' | t }}" data-title="{{ 'general.colors.brown' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="brown" value="{{ 'general.colors.brown' | t }}" data-title="{{ 'general.colors.brown' | t }}">
                                     <img src="{{ 'material-brown.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.brown' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds drop">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkgrey" value="{{ 'general.colors.grey' | t }}" data-title="{{ 'general.colors.grey' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkgrey" value="{{ 'general.colors.grey' | t }}" data-title="{{ 'general.colors.grey' | t }}">
                                     <img src="{{ 'material-darkgrey.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.grey' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkblue" value="{{ 'general.colors.dark_blue' | t }}" data-title="{{ 'general.colors.dark_blue' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkblue" value="{{ 'general.colors.dark_blue' | t }}" data-title="{{ 'general.colors.dark_blue' | t }}">
                                     <img src="{{ 'material-darkblue.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.dark_blue' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="blue" value="{{ 'general.colors.blue' | t }}" data-title="{{ 'general.colors.blue' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="blue" value="{{ 'general.colors.blue' | t }}" data-title="{{ 'general.colors.blue' | t }}">
                                     <img src="{{ 'material-blue.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.blue' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkgreen" value="{{ 'general.colors.green' | t }}" data-title="{{ 'general.colors.green' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="darkgreen" value="{{ 'general.colors.green' | t }}" data-title="{{ 'general.colors.green' | t }}">
                                     <img src="{{ 'material-green.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.green' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="red" value="{{ 'general.colors.red' | t }}" data-title="{{ 'general.colors.red' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="red" value="{{ 'general.colors.red' | t }}" data-title="{{ 'general.colors.red' | t }}">
                                     <img src="{{ 'material-red.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.red' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="maroon" value="{{ 'general.colors.maroon' | t }}" data-title="{{ 'general.colors.maroon' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="maroon" value="{{ 'general.colors.maroon' | t }}" data-title="{{ 'general.colors.maroon' | t }}">
                                     <img src="{{ 'material-maroon.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.maroon' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds drop">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="lightbeige" value="{{ 'general.colors.light_beige' | t }}" data-title="{{ 'general.colors.light_beige' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="lightbeige" value="{{ 'general.colors.light_beige' | t }}" data-title="{{ 'general.colors.light_beige' | t }}">
                                     <img src="{{ 'material-lightbeige.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.light_beige' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="beige" value="{{ 'general.colors.beige' | t }}" data-title="{{ 'general.colors.beige' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="beige" value="{{ 'general.colors.beige' | t }}" data-title="{{ 'general.colors.beige' | t }}">
                                     <img src="{{ 'material-beige.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.beige' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="purple" value="{{ 'general.colors.purple' | t }}" data-title="{{ 'general.colors.purple' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="purple" value="{{ 'general.colors.purple' | t }}" data-title="{{ 'general.colors.purple' | t }}">
                                     <img src="{{ 'material-purple.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.purple' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="lime" value="{{ 'general.colors.lime' | t }}" data-title="{{ 'general.colors.lime' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="lime" value="{{ 'general.colors.lime' | t }}" data-title="{{ 'general.colors.lime' | t }}">
                                     <img src="{{ 'material-lime.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.lime' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="yellow" value="{{ 'general.colors.yellow' | t }}" data-title="{{ 'general.colors.yellow' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="yellow" value="{{ 'general.colors.yellow' | t }}" data-title="{{ 'general.colors.yellow' | t }}">
                                     <img src="{{ 'material-yellow.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.yellow' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="orange" value="{{ 'general.colors.orange' | t }}" data-title="{{ 'general.colors.orange' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="orange" value="{{ 'general.colors.orange' | t }}" data-title="{{ 'general.colors.orange' | t }}">
                                     <img src="{{ 'material-orange.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.orange' | t }}</div>
                                   </label>
                                   <label class="lip__item honey diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="ivory" value="{{ 'general.colors.ivory' | t }}" data-title="{{ 'general.colors.ivory' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="ivory" value="{{ 'general.colors.ivory' | t }}" data-title="{{ 'general.colors.ivory' | t }}">
                                     <img src="{{ 'material-ivory.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.ivory' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="pink" value="{{ 'general.colors.pink' | t }}" data-title="{{ 'general.colors.pink' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="pink" value="{{ 'general.colors.pink' | t }}" data-title="{{ 'general.colors.pink' | t }}">
                                     <img src="{{ 'material-pink.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.pink' | t }}</div>
                                   </label>
                                   <label class="lip__item only_diamonds diamonds">
-                                    <input type="radio" form="{{ product_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="white" value="{{ 'general.colors.white' | t }}" data-title="{{ 'general.colors.white' | t }}">
+                                    <input type="radio" form="{{ application_form_id }}" name="contact[{{ 'general.config.material_color' | t }}]" data-value="white" value="{{ 'general.colors.white' | t }}" data-title="{{ 'general.colors.white' | t }}">
                                     <img src="{{ 'material-white.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.white' | t }}</div>
                                   </label>
@@ -337,72 +335,72 @@
                                 <div class='lip__title'>{{ 'general.config.trim_color' | t }}: <div class="lip__title_value"></div></div>
                                 <div class="lip__grid">
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="black" value="{{ 'general.colors.black' | t }}"  data-title="{{ 'general.colors.black' | t }}" checked>
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="black" value="{{ 'general.colors.black' | t }}"  data-title="{{ 'general.colors.black' | t }}" checked>
                                     <img src="{{ 'trim-black.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.black' | t }}</div>
                                   </label>                  
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="red" value="{{ 'general.colors.red' | t }}" data-title="{{ 'general.colors.red' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="red" value="{{ 'general.colors.red' | t }}" data-title="{{ 'general.colors.red' | t }}">
                                     <img src="{{ 'trim-red.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.red' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="lightgrey" value="{{ 'general.colors.light_grey' | t }}" data-title="{{ 'general.colors.light_grey' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="lightgrey" value="{{ 'general.colors.light_grey' | t }}" data-title="{{ 'general.colors.light_grey' | t }}">
                                     <img src="{{ 'trim-lightgrey.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.light_grey' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="darkgrey" value="{{ 'general.colors.grey' | t }}" data-title="{{ 'general.colors.grey' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="darkgrey" value="{{ 'general.colors.grey' | t }}" data-title="{{ 'general.colors.grey' | t }}">
                                     <img src="{{ 'trim-grey.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.grey' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="brown" value="{{ 'general.colors.brown' | t }}" data-title="{{ 'general.colors.brown' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="brown" value="{{ 'general.colors.brown' | t }}" data-title="{{ 'general.colors.brown' | t }}">
                                     <img src="{{ 'trim-brown.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.brown' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="beige" value="{{ 'general.colors.beige' | t }}" data-title="{{ 'general.colors.beige' | t }}"> 
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="beige" value="{{ 'general.colors.beige' | t }}" data-title="{{ 'general.colors.beige' | t }}"> 
                                     <img src="{{ 'trim-beige.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.beige' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="blue" value="{{ 'general.colors.blue' | t }}" data-title="{{ 'general.colors.blue' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="blue" value="{{ 'general.colors.blue' | t }}" data-title="{{ 'general.colors.blue' | t }}">
                                     <img src="{{ 'trim-blue.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.blue' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="darkblue" value="{{ 'general.colors.dark_blue' | t }}" data-title="{{ 'general.colors.dark_blue' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="darkblue" value="{{ 'general.colors.dark_blue' | t }}" data-title="{{ 'general.colors.dark_blue' | t }}">
                                     <img src="{{ 'trim-darkblue.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.dark_blue' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="green" value="{{ 'general.colors.green' | t }}" data-title="{{ 'general.colors.green' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="green" value="{{ 'general.colors.green' | t }}" data-title="{{ 'general.colors.green' | t }}">
                                     <img src="{{ 'trim-green.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.green' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="orange" value="{{ 'general.colors.orange' | t }}" data-title="{{ 'general.colors.orange' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="orange" value="{{ 'general.colors.orange' | t }}" data-title="{{ 'general.colors.orange' | t }}">
                                     <img src="{{ 'trim-orange.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.orange' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="yellow" value="{{ 'general.colors.yellow' | t }}" data-title="{{ 'general.colors.yellow' | t }}"> 
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="yellow" value="{{ 'general.colors.yellow' | t }}" data-title="{{ 'general.colors.yellow' | t }}"> 
                                     <img src="{{ 'trim-yellow.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.yellow' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="maroon" value="{{ 'general.colors.maroon' | t }}" data-title="{{ 'general.colors.maroon' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="maroon" value="{{ 'general.colors.maroon' | t }}" data-title="{{ 'general.colors.maroon' | t }}">
                                     <img src="{{ 'trim-maroon.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.maroon' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="purple" value="{{ 'general.colors.purple' | t }}" data-title="{{ 'general.colors.purple' | t }}">
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="purple" value="{{ 'general.colors.purple' | t }}" data-title="{{ 'general.colors.purple' | t }}">
                                     <img src="{{ 'trim-purple.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.purple' | t }}</div>
                                   </label>
                                   <label class="lip__item">
-                                    <input type="radio"  form="{{ product_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="pink" value="{{ 'general.colors.pink' | t }}" data-title="{{ 'general.colors.pink' | t }}"> 
+                                    <input type="radio"  form="{{ application_form_id }}" name="contact[{{ 'general.config.trim_color' | t }}]" data-value="pink" value="{{ 'general.colors.pink' | t }}" data-title="{{ 'general.colors.pink' | t }}"> 
                                     <img src="{{ 'trim-pink.webp' | file_url }}" alt="" loading="lazy">
                                     <div class="label__tooltip">{{ 'general.colors.pink' | t }}</div>
                                   </label>
@@ -411,28 +409,25 @@
 
                             {% comment %} trimColor {% endcomment %}
                              </div>
-                             <button type="button" class="product__dropdown_button button">{{ 'general.config.continue' | t }}</button>
+                             <button type="button" class="product__dropdown_button button button_5">{{ 'general.config.continue' | t }}</button>
                         </div>
   
                         
                     </div>
-                    <div class="product__config_image product__config_image--mobile">
-                        <img src="{{ "1x1_FFFFFF.jpg" | file_url }}" alt="" loading='lazy'>
-                    </div>
                     {% unless section.settings.alternative_zestaw %}
                         <div class="product__dropdown_wr disabled">
-                            <div class="product__dropdown_title">{{ 'general.config.select_brand_model_and_body_type' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                            <div class="product__dropdown_title">{{ 'general.config.select_brand_model_and_body_type' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                             <div class="product__dropdown_inner">
                             <fieldset class="line-item-property__field product-form__input lip__field">
                                 <div class="lip__title" for="brand">{{ 'general.config.brand' | t }}: * <div class="lip__title_value"></div></div>
                                 <input type="text" required id="brand" form="{{ application_form_id }}" name="contact[Brand: *]" placeholder='Text'>
-                                <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+                                <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
                             </fieldset>  
                             
                             <fieldset class="line-item-property__field product-form__input lip__field ">
                                 <div class="lip__title" for="model">{{ 'general.config.model' | t }}: * <div class="lip__title_value"></div></div>
                                 <input type="text" required id="model" form="{{ application_form_id }}" name="contact[Model: *]" placeholder='Text'>
-                                <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
+                                <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
                             </fieldset>  
         
                             <fieldset class="product-form__input lip__field body_type">
@@ -447,12 +442,12 @@
                                 <div class="error-message" style="display: none;">{{ 'general.config.error_message' | t }}</div>
                             </fieldset>
         
-                            <button type="button" class="product__dropdown_button button ">{{ 'general.config.continue' | t }}</button>
+                            <button type="button" class="product__dropdown_button button button_5">{{ 'general.config.continue' | t }}</button>
                             </div>
                         </div>
 
                         <div class="product__dropdown_wr product__dropdown_wr--heel disabled">
-                            <div class="product__dropdown_title">{{ 'general.config.select_heels' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                            <div class="product__dropdown_title">{{ 'general.config.select_heels' | t }}: <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                             <div class="product__dropdown_inner">
                                 <div class="product__upsell">
                                     {% for item in settings.product_upsell %}
@@ -493,39 +488,46 @@
 
                     {% if section.settings.alternative_zestaw  %}
                         <div class="product__dropdown_wr disabled">
-                            <div class="product__dropdown_title">{{ 'general.config.order_notes_title' | t }} <span class="product__dropdown_value"></span>  {% render 'icon-caret' %}</div>
+                            <div class="product__dropdown_title">{{ 'general.config.order_notes_title' | t }} <span class="product__dropdown_value"></span>  {% render 'icon-caret' %} {% render 'icon-edit' %}</div>
                             <div class="product__dropdown_inner">
                                 <p class="line-item-property__field">
-                                    <textarea id="uwagi-do-zamowienia"  name="contact[{{ 'general.config.order_notes' | t }}]"></textarea>
-                                </p>  
+                                    <textarea id="uwagi-do-zamowienia" name="contact[{{ 'general.config.order_notes' | t }}]" required aria-required="true"></textarea>
+                                    <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
+                                </p>
+                                <button type="button" class="product__dropdown_button button button_5" disabled>{{ 'general.config.continue' | t }}</button>
                             </div>
                         </div>
                     {% else %}
                         <p class="line-item-property__field">
                             <label for="uwagi-do-zamowienia">{{ 'general.config.order_notes' | t }}</label>
-                            <textarea id="uwagi-do-zamowienia"  name="contact[{{ 'general.config.order_notes' | t }}]"></textarea>
-                        </p>  
+                            <textarea id="uwagi-do-zamowienia" name="contact[{{ 'general.config.order_notes' | t }}]" required aria-required="true"></textarea>
+                            <div class="error-message" style="display: none;">{{ 'general.config.error_message_field' | t }}</div>
+                        </p>
                     {% endif %} 
 
-                    <button type='button'  class="button application_form__next_button" disabled>{{'sections.application_form.next_button' | t}}</button>
+                    <button type="button" class="button button_5 application_form__next_button" disabled>{{ 'sections.application_form.next_button' | t }}</button>
                 </div>
+                {% render 'evamats-config-preview-mobile', show_mats_type_chip: true, show_mats_set_chip: section.settings.alternative_zestaw == false %}
             </div>
             <div class="application_form__form hidden">
                 <div class="form_return">{% render 'icon-arrow' %}</div>
-                    <div class="field">
+                <div class="application_form__contact-fields">
+                    <div class="application_form__contact-field">
+                    <label class="visually-hidden" for="ContactForm-name">{{ 'sections.application_form.name_and_surname' | t }}</label>
                     <input
                         class="field__input"
                         autocomplete="name"
                         type="text"
                         id="ContactForm-name"
-                        name="contact[{{'sections.application_form.name_and_surname' | t}}]"
+                        name="contact[{{ 'sections.application_form.name_and_surname' | t }}]"
                         value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                        placeholder="{{'sections.application_form.name_and_surname' | t}}"
+                        placeholder="{{ 'sections.application_form.name_and_surname' | t }} *"
+                        required
                     >
-                    <label class="field__label" for="ContactForm-name">{{'sections.application_form.name_and_surname' | t}}</label>
-                    </div>   
-                    
-                    <div class="field field--with-error">
+                    </div>
+
+                    <div class="application_form__contact-field{% if form.errors contains 'email' %} application_form__contact-field--error{% endif %}">
+                    <label class="visually-hidden" for="ContactForm-email">{{ 'templates.contact.form.email' | t }}</label>
                     <input
                         autocomplete="email"
                         type="email"
@@ -536,15 +538,12 @@
                         autocapitalize="off"
                         value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
                         aria-required="true"
+                        required
                         {% if form.errors contains 'email' %}
                         aria-invalid="true"
                         aria-describedby="ContactForm-email-error"
                         {% endif %}
-                        placeholder="{{ 'templates.contact.form.email' | t }}"
-                    >
-                    <label class="field__label" for="ContactForm-email">
-                        {{- 'templates.contact.form.email' | t }}
-                        <span aria-hidden="true">*</span></label
+                        placeholder="{{ 'templates.contact.form.email' | t }} *"
                     >
                     {%- if form.errors contains 'email' -%}
                         <small class="contact__field-error" id="ContactForm-email-error">
@@ -557,29 +556,29 @@
                         </small>
                     {%- endif -%}
                     </div>
-                    <div class="field">
+
+                    <div class="application_form__contact-field">
+                      <label class="visually-hidden" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
                       <input
                         type="tel"
                         id="ContactForm-phone"
                         class="field__input"
                         autocomplete="tel"
                         name="contact[{{ 'templates.contact.form.phone' | t }}]"
-                        pattern="[0-9\-]*"
                         aria-required="true"
                         required
                         value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                        placeholder="{{ 'templates.contact.form.phone' | t }}*"
+                        placeholder="{{ 'templates.contact.form.phone' | t }} *"
                       >
-                      <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }} *</label>
                     </div>
-                    <label class="checkbox-container">{{'sections.application_form.privacy_text_html' | t}}
+                </div>
+
+                    <label class="checkbox-container application_form__consent">{{ 'sections.application_form.privacy_text_html' | t }}
                       <input type="checkbox" id="application_newsletter-checkbox" checked required>
                       <span class="checkmark"></span>
-                    </label> 
-                    <div id="message" style="color: red; display: none;"></div>
-                
-                  
-                    <div class="contact__button">
+                    </label>
+
+                    <div class="contact__button application_form__submit">
                       <button type="submit" class="button" id="submit-btn">
                         {{ 'templates.contact.form.send' | t }}
                       </button>
@@ -594,47 +593,6 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", (event) => {
-    const warningMessageEmail = '{{ 'general.config.error_email' | t }}';
-    const warningMessagePhone = '{{ 'general.config.error_phone' | t }}';
-    const warningMessageCheckbox = '{{ 'general.config.error_checkbox' | t }}';
-
-   
-    const form = document.querySelector('#{{application_form_id }}');
-    const submitBtn = document.querySelector('#popupOverlayApplicationForm #submit-btn');
-    const message = document.querySelector('#popupOverlayApplicationForm #message');
-    submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    validate()
-    })
-    
-    function validate(){
-        const checkbox = document.querySelector('#popupOverlayApplicationForm #application_newsletter-checkbox');
-        const emailField = document.querySelector('#popupOverlayApplicationForm #ContactForm-email');
-        const phoneField = document.querySelector('#popupOverlayApplicationForm #ContactForm-phone');
-        console.log
-        if (!checkbox.checked){
-            message.innerText = warningMessageCheckbox;
-            message.style.display = 'block';
-            return false;
-        } 
-        if (emailField.value === ''){
-            message.innerText = warningMessageEmail;
-            message.style.display = 'block';
-            return false;
-        }
-        if (phoneField.value === ''){
-            message.innerText = warningMessagePhone;
-            message.style.display = 'block';
-            return false;
-        }
-        else {
-            message.style.display = 'none';
-            form.submit();
-        }
-    }
-});
-
 // application form
 (function () {
     const applicationForm = document.querySelector('#popupOverlayApplicationForm')
@@ -646,9 +604,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
     if (applicationForm) {
       const nextFormButton = document.querySelector('.application_form__next_button')
-      nextFormButton.addEventListener('click', () => {
+
+      nextFormButton?.addEventListener('click', () => {
+        if (!nextFormButton || nextFormButton.disabled || nextFormButton.classList.contains('disabled-button')) {
+          return
+        }
+
+        const dropdowns = applicationFormConfig?.querySelectorAll(
+          '.product__dropdown_wr:not(.product__dropdown_wr--heel):not(.product__dropdown_wr--extras)'
+        )
+        const lastStep = dropdowns?.[dropdowns.length - 1]
+
+        if (lastStep) {
+          lastStep.classList.add('complete')
+          lastStep.classList.remove('open')
+          const inner = lastStep.querySelector('.product__dropdown_inner')
+          if (inner) {
+            inner.classList.remove('open')
+            inner.classList.add('done', 'super_done')
+          }
+        }
+
         applicationFormConfig.classList.add('hidden')
         applicationFormContactForm.classList.remove('hidden')
+
+        if (document.body.classList.contains('template_zamowienie-indywidualne')) {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
       })
     }
   

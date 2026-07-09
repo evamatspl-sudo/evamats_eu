@@ -46,7 +46,7 @@
         "catalog_l1_icon_G6yrKc": {
           "type": "catalog_l1_icon",
           "settings": {
-            "menu_item_handle": "dog-bowl-mat",
+            "menu_item_handle": "mats-for-pets",
             "icon": "shopify://shop_images/Cat_Footprint.svg"
           }
         },
@@ -74,7 +74,7 @@
         "catalog_drawer_icon_6Lzwmx": {
           "type": "catalog_drawer_icon",
           "settings": {
-            "menu_item_handle": "organizers-to-trunk",
+            "menu_item_handle": "car-accessories-organizers",
             "icon": "shopify://shop_images/image_90_c8545f80-aa0f-4234-b472-2896a77c80ba.webp"
           }
         },
@@ -91,6 +91,13 @@
             "menu_item_handle": "akcesoria-samochodowa",
             "icon": "shopify://shop_images/image_92_ae3621df-f040-4652-9031-662583d182b7.webp"
           }
+        },
+        "catalog_drawer_icon_GMznEV": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "e-gift-card",
+            "icon": "shopify://shop_images/Group1948754932.webp"
+          }
         }
       },
       "block_order": [
@@ -101,7 +108,8 @@
         "catalog_drawer_icon_jhChxQ",
         "catalog_drawer_icon_6Lzwmx",
         "catalog_drawer_icon_NmkmV7",
-        "catalog_drawer_icon_xwCwyy"
+        "catalog_drawer_icon_xwCwyy",
+        "catalog_drawer_icon_GMznEV"
       ],
       "custom_css": [],
       "settings": {
@@ -116,10 +124,13 @@
         "drawer_car_cta_label": "Vyberte si auto",
         "drawer_car_cta_url": "shopify://collections/all-car-mats",
         "mobile_car_link_url": "",
-        "drawer_phone_1": "+48 510 339 471",
-        "drawer_phone_2": "+48 577 771 443",
-        "drawer_email": "evamatsinfo@gmail.com",
+        "drawer_phone_1": "+420 292 333 695",
+        "drawer_phone_2": "",
+        "drawer_email": "info@carvionauto.cz",
         "catalog_view_all_label": "Zobrazit celou kategorii",
+        "home_header_shade_enable": true,
+        "home_header_shade_height": 128,
+        "home_header_shade_opacity": 55,
         "enable_language_selector": true,
         "header-tel": "",
         "menu_type_desktop": "dropdown",

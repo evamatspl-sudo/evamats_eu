@@ -3,6 +3,50 @@
     border: 1px solid #000;
 }
 
+.template_zamowienie-indywidualne .application_form_section {
+    padding-bottom: 48px;
+    background: #fff;
+}
+
+.template_zamowienie-indywidualne .application_form_section .popup-overlay--application_form {
+    position: static;
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    background: none;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.template_zamowienie-indywidualne .application_form_section .popup_close_btn {
+    display: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm .popup {
+    overflow: visible;
+    max-height: none;
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    max-width: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm .popup-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.template_zamowienie-indywidualne .application_form__content {
+    gap: 33px;
+    width: 100%;
+}
+
 #popupOverlayApplicationForm .product__config_image--desktop {
     position: sticky;
     top: 50px;
@@ -77,13 +121,897 @@
         padding: 0 6px;
     }
 
-    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.open {
+    body:not(.template_zamowienie-indywidualne) #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.open {
         padding: 0 10px;
     }
-    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.done {
+    body:not(.template_zamowienie-indywidualne) #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.done {
         padding: 0 10px;
     }
     #popupOverlayApplicationForm .product__dropdown_title {
         padding: 10px;
       }
+}
+
+/* Individual order page — steps, swatches, text fields */
+#popupOverlayApplicationForm .application_form__config {
+    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#popupOverlayApplicationForm .application_form__config > * + * {
+    margin: 0;
+}
+
+#popupOverlayApplicationForm .product__dropdown_wr {
+    margin: 0 0 12px;
+    padding-bottom: 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 5px 5px 30px rgba(27, 29, 34, 0.06);
+    overflow: hidden;
+}
+
+#popupOverlayApplicationForm .product__dropdown_wr.disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+#popupOverlayApplicationForm .product__dropdown_wr.open {
+    padding-bottom: 0;
+    overflow: visible;
+}
+
+#popupOverlayApplicationForm .product__dropdown_title {
+    padding: 20px 48px 20px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #1b1d22;
+}
+
+#popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.open,
+#popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.done {
+    padding: 0 20px 20px;
+}
+
+#popupOverlayApplicationForm .product__dropdown_button.button_5 {
+    width: 100%;
+    min-width: 0 !important;
+    margin-top: 28px;
+    border-radius: 16px !important;
+}
+
+#popupOverlayApplicationForm .application_form__next_button.button_5 {
+    width: 100%;
+    min-width: 0 !important;
+    margin-top: 8px;
+    border-radius: 16px !important;
+}
+
+#popupOverlayApplicationForm .application_form__next_button.disabled-button,
+#popupOverlayApplicationForm .application_form__next_button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#popupOverlayApplicationForm .line-item-property__field {
+    margin: 0;
+}
+
+#popupOverlayApplicationForm .line-item-property__field label {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #1b1d22;
+}
+
+#popupOverlayApplicationForm .line-item-property__field textarea,
+#popupOverlayApplicationForm .line-item-property__field input[type="text"] {
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    padding: 14px 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+    color: #1b1d22;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#popupOverlayApplicationForm .line-item-property__field input[type="text"] {
+    min-height: 52px;
+    resize: none;
+}
+
+#popupOverlayApplicationForm .line-item-property__field textarea:focus,
+#popupOverlayApplicationForm .line-item-property__field input[type="text"]:focus {
+    outline: none;
+    border-color: #ff2741;
+}
+
+#popupOverlayApplicationForm .error-message {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-1, #ff2741);
+}
+
+#popupOverlayApplicationForm .product__dropdown_button[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 24px;
+    padding: 0;
+    border: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] > legend {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 14px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    line-height: 1.2;
+    color: #1b1d22;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] > legend .form__label_text {
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] > legend .lip__title_value {
+    flex: 0 0 auto;
+    max-width: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.32px;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
+    display: inline-flex;
+    flex: 1 1 calc(50% - 5px);
+    width: auto;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 2px 18px 2px 2px;
+    border: 1.5px solid #e9e9e9;
+    border-radius: 16px;
+    background: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] input[type="radio"]:not(:checked) + label.default_option:hover .evamats-config-option-label {
+    color: #ff2741;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] input[type="radio"]:checked + label.default_option {
+    border-color: #ff2741;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] label.default_option img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    border: none;
+    border-radius: 16px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    box-shadow: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] input[type="radio"]:checked + label.default_option img {
+    border: none;
+    box-shadow: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] .label__tooltip {
+    display: none;
+}
+
+#popupOverlayApplicationForm .evamats-config-option-label {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    line-height: 1;
+    color: #1b1d22;
+    transition: color 0.3s ease-in-out;
+}
+
+#popupOverlayApplicationForm .product__config_main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+}
+
+#popupOverlayApplicationForm .lip__field {
+    max-width: 100%;
+    min-width: 0;
+}
+
+#popupOverlayApplicationForm .lip__title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1b1d22;
+}
+
+#popupOverlayApplicationForm .lip__title_value {
+    padding: 2px 8px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    color: #1b1d22;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-transform: none;
+}
+
+/* Shape & color step — match product config */
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"].open {
+    overflow: visible;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__config_main {
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.open,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.done {
+    padding: 20px 20px 20px;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-inline-size: 0;
+    overflow: visible;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__title {
+    gap: 14px;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+    white-space: normal;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    line-height: 1.2;
+    color: #1b1d22;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__title .form__label_text {
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__title_value {
+    flex-shrink: 0;
+    background: #f1f1f1;
+    color: #1b1d22;
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.32px;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.open,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.done,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.open.done {
+    overflow: visible;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__config_main,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__grid {
+    overflow: visible;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.open .lip__grid,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px;
+    grid-template-columns: none !important;
+    height: auto !important;
+    margin-top: 14px;
+    padding: 0 2px;
+    max-width: 100%;
+    overflow: visible !important;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: 0;
+    vertical-align: top;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__item img {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    box-shadow: none !important;
+    aspect-ratio: auto;
+    transition: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__item input {
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field .lip__item input:checked ~ img {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item {
+    width: 44px;
+    height: 44px;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matPattern"] .lip__item:has(input:checked)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: 16px;
+    box-shadow:
+        0 0 0 1.5px #ff2741,
+        inset 0 0 0 3px #fff;
+    pointer-events: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item {
+    width: 44px;
+    height: 44px;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item img,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item {
+    display: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"].diamonds_active .lip__item.diamonds {
+    display: inline-block;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"].honey_active .lip__item.honey {
+    display: inline-block;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"].drop_active .lip__item.drop {
+    display: inline-block;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="matColor"] .lip__item:has(input:checked)::after,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__field[data-type="trimColor"] .lip__item:has(input:checked)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: 12px;
+    box-shadow:
+        0 0 0 1.5px #ff2741,
+        inset 0 0 0 3px #fff;
+    pointer-events: none;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .label__tooltip {
+    display: none !important;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__comment {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 1.2;
+    color: rgba(27, 29, 34, 0.6);
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__comment.openPopup {
+    cursor: pointer;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .lip__item:hover img,
+#popupOverlayApplicationForm .product__config_main .lip__item:hover img,
+#popupOverlayApplicationForm .product__config_main .lip__item img.tapped {
+    transform: none !important;
+    z-index: auto;
+}
+
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open .lip__grid,
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open .lip__field,
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open .product__config_main,
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open.done .lip__grid,
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open.done .lip__field,
+#popupOverlayApplicationForm .product__dropdown_wr.open .product__dropdown_inner.open.done .product__config_main {
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_wr.open .product__dropdown_inner.open .lip__grid,
+.template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_wr.open .product__dropdown_inner.open.done .lip__grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    grid-template-columns: none !important;
+    padding: 0 2px !important;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_set"] input[type="radio"] + label.default_option img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+}
+
+.template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_set"] input[type="radio"]:checked + label.default_option img {
+    border: 2px solid #ff2741;
+    box-shadow: none;
+}
+
+@media screen and (min-width: 750px) {
+    .template_zamowienie-indywidualne .application_form_section .popup-overlay--application_form {
+        padding: 0 5rem;
+    }
+
+    .template_zamowienie-indywidualne .application_form__content {
+        display: grid;
+        grid-template-columns: minmax(0, 57.4fr) minmax(0, 42.6fr);
+        gap: 33px;
+        align-items: start;
+    }
+
+    #popupOverlayApplicationForm .application_form__config,
+    #popupOverlayApplicationForm .product__config_image--desktop {
+        width: auto;
+        flex: none;
+        max-width: none;
+        min-width: 0;
+    }
+
+    #popupOverlayApplicationForm .product__dropdown_title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.open,
+    #popupOverlayApplicationForm .product__dropdown_wr .product__dropdown_inner.done {
+        padding: 0 16px 16px;
+    }
+
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.open,
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm [data-dropdown="mat_patterns_colors"] .product__dropdown_inner.done {
+        padding: 20px 16px 16px;
+    }
+
+    #popupOverlayApplicationForm .product__dropdown_title {
+        padding: 16px 44px 16px 16px;
+        font-size: 15px;
+    }
+
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] {
+        gap: 6px;
+    }
+
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] > legend {
+        margin-bottom: 12px;
+    }
+
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
+        flex: 1 1 calc(50% - 6px);
+        width: auto;
+        height: 46px;
+        padding: 2px 18px 2px 2px;
+        border-radius: 12px;
+    }
+
+    .template_zamowienie-indywidualne #popupOverlayApplicationForm fieldset[data-name="mats_type"] label.default_option img {
+        width: 41px;
+        height: 42px;
+        flex: 0 0 41px;
+        border-radius: 6px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-option-label {
+        font-size: 14px;
+        letter-spacing: -0.28px;
+        line-height: 1.1;
+    }
+}
+
+/* Contact step — normal inputs (no Dawn floating labels) */
+#popupOverlayApplicationForm .application_form__form {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 0 4px;
+}
+
+#popupOverlayApplicationForm .application_form__contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#popupOverlayApplicationForm .application_form__contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+#popupOverlayApplicationForm .application_form__contact-field .field__input,
+#popupOverlayApplicationForm .application_form__contact-field .field__input:focus,
+#popupOverlayApplicationForm .application_form__contact-field .field__input:not(:placeholder-shown) {
+    width: 100%;
+    min-height: 52px;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 12px !important;
+    background: #fff !important;
+    color: #1b1d22 !important;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    box-shadow: none !important;
+}
+
+#popupOverlayApplicationForm .application_form__contact-field .field__input::placeholder {
+    opacity: 1 !important;
+    color: #939393;
+}
+
+#popupOverlayApplicationForm .application_form__contact-field .field__input:focus {
+    outline: none;
+    border-color: #ff2741 !important;
+}
+
+#popupOverlayApplicationForm .application_form__contact-field .field__input:user-invalid {
+    border-color: #ff2741 !important;
+}
+
+#popupOverlayApplicationForm .application_form__consent {
+    display: block;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1b1d22;
+}
+
+#popupOverlayApplicationForm .application_form__submit {
+    margin: 0;
+}
+
+#popupOverlayApplicationForm .application_form__submit .button {
+    width: 100%;
+    min-height: 52px;
+    border-radius: 12px;
+}
+
+#popupOverlayApplicationForm .application_form__form .form_return {
+    margin-bottom: 16px;
+}
+
+/* Mobile mat preview popup — same as product config (Figma 1710:26297) */
+@media screen and (max-width: 989px) {
+    #popupOverlayApplicationForm .product__config_image--desktop {
+        display: none;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.product__config_image--main {
+        display: none;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        border-radius: 0;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.product__config_image--main.is-fixed {
+        display: block !important;
+        height: auto !important;
+        opacity: 1 !important;
+        overflow: visible;
+        pointer-events: auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 200;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed {
+        top: 74px;
+        padding: 0 0 16px;
+        background: #fff;
+        box-shadow: 0 8px 40px rgba(33, 33, 33, 0.1);
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed .evamats-config-preview__toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed .evamats-config-preview__toggle .icon-close {
+        display: block;
+        width: 10px;
+        height: 10px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed .evamats-config-preview__toggle .hidden_state {
+        display: none;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed .evamats-config-preview__panel {
+        padding: 16px 16px 0;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chips {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        min-height: 27px;
+        padding: 2px 8px 2px 2px;
+        border: 1px solid #e5e5e5;
+        border-radius: 999px;
+        background: #fff;
+        color: #1b1d22;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.26px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip[hidden] {
+        display: none !important;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip[data-name="mats_set"] {
+        gap: 10px;
+        padding: 2px 8px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip-thumb {
+        display: block;
+        flex: 0 0 22px;
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        overflow: hidden;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__chip-text {
+        white-space: nowrap;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__stage {
+        display: grid;
+        grid-template-columns: 46px minmax(0, 1fr);
+        column-gap: 10px;
+        align-items: center;
+        justify-items: end;
+        margin-top: -40px;
+        margin-bottom: -30px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__swatches {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        justify-self: start;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__swatch {
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        overflow: hidden;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__swatch img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__image {
+        display: block;
+        width: min(100%, 240px);
+        height: auto;
+        max-height: 240px;
+        margin: 0;
+        object-fit: contain;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__note.lip__comment {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin: 10px 0 0;
+        justify-content: flex-start;
+        color: #939393;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview__note .lip__comment_icon {
+        display: inline-flex;
+        width: 12px;
+        height: 12px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden {
+        width: auto;
+        height: 32px;
+        top: 90px;
+        right: 15px;
+        left: auto;
+        padding: 0;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__panel {
+        display: none;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle {
+        position: static;
+        width: 100px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .icon-close {
+        display: none;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .hidden_state {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        color: #1b1d22;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .icon--eye {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed {
+        top: 74px;
+    }
+
+    #popupOverlayApplicationForm .evamats-config-preview.is-fixed.fixed_hidden {
+        top: 90px;
+    }
 }
