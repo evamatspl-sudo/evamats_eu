@@ -75,9 +75,9 @@
     <div class="evamats-footer__main">
       {%- if settings.logo_inverse != blank or section.settings.brand_description != blank -%}
         <div class="evamats-footer__brand-col">
-          {%- if settings.logo_inverse != blank -%}
+          {%- if settings.logo != blank -%}
             <a href="{{ routes.root_url }}" class="evamats-footer__brand-logo-link">
-              {{ settings.logo_inverse | image_url: width: 280 | image_tag: loading: 'lazy', class: 'evamats-footer__brand-logo', widths: '140, 210, 280', alt: shop.name }}
+              {{ settings.logo | image_url: width: 280 | image_tag: loading: 'lazy', class: 'evamats-footer__brand-logo', widths: '140, 210, 280', alt: shop.name }}
             </a>
           {%- endif -%}
           {%- if section.settings.brand_description != blank -%}
@@ -287,9 +287,6 @@
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
         <div class="evamats-footer__copyright-wrap">
-          <p class="evamats-footer__copyright">
-            <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}</small>
-          </p>
           {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
             <p class="evamats-footer__legal">
               {%- if section.settings.nip_number != blank -%}
