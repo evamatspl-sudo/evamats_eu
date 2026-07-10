@@ -1,3 +1,8 @@
+{%- comment -%} Hide duplicate first heading of a tab on mobile (accordion) — the tab title already shows it {%- endcomment -%}
+{%- style -%}
+  .evamats-product-tabs__mobile-panel-slot .evamats-tab-dup-title { display: none !important; }
+{%- endstyle -%}
+
 {{ 'section-evamats-product-tabs.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
