@@ -102,7 +102,14 @@
       "sold_out": "Vyprodáno",
       "additional_options": "Další možnosti:",
       "color": "Barva",
-      "mount": "Uchycení"
+      "mount": "Uchycení",
+      "generation": "Generace",
+      "steps_progress": "Vybráno {{ current }} z {{ total }}",
+      "total": "Celkem",
+      "checkout_delivery_line_1": "Vyrábíme na míru.",
+      "checkout_delivery_line_2": "Předpokládaná doba výroby: 14 dní.",
+      "checkout_delivery_individual_line_1": "Individuální objednávka",
+      "checkout_delivery_individual_line_2": "Předpokládaná doba dodání: 14 dní."
     },
     "colors": {
       "black": "Černá",
@@ -133,7 +140,7 @@
       "login_form_password_placeholder": "Vaše heslo",
       "login_form_error": "Heslo není správné!",
       "login_form_submit": "Zadat",
-      "admin_link_html": "Jste majitelem obchodu? <a href=\"\/admin\" class=\"link underlined-link\">Přihlaste se zde<\/a>",
+      "admin_link_html": "Jste majitelem obchodu? <a href=\"/admin\" class=\"link underlined-link\">Přihlaste se zde</a>",
       "powered_by_shopify_html": "Obchod bude využívat platformu {{ shopify }}"
     },
     "social": {
@@ -206,7 +213,8 @@
     "total_reviews": "celkový počet recenzí",
     "star_reviews_info": "{{ rating_value }} z {{ rating_max }} hvězdiček",
     "collapsible_content_title": "Sbalitelný obsah",
-    "complementary_products": "Doplňkové produkty"
+    "complementary_products": "Doplňkové produkty",
+    "back": "Zpět"
   },
   "blogs": {
     "article": {
@@ -256,7 +264,7 @@
         "minimum_of": "Minimum: {{ quantity }}",
         "maximum_of": "Maximum: {{ quantity }}",
         "multiples_of": "Přírůstky: {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> v košíku"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> v košíku"
       },
       "price": {
         "from_price_html": "Od {{ price }}",
@@ -268,8 +276,8 @@
         "view_store_info": "Zobrazit informace o obchodě",
         "check_other_stores": "Zkontrolovat dostupnost v ostatních obchodech",
         "pick_up_available": "Vyzvednutí k dispozici",
-        "pick_up_available_at_html": "Vyzvednutí je k dispozici v lokalitě <span class=\"color-foreground\">{{ location_name }}<\/span>",
-        "pick_up_unavailable_at_html": "Vyzvednutí není momentálně v lokalitě <span class=\"color-foreground\">{{ location_name }}<\/span> k dispozici",
+        "pick_up_available_at_html": "Vyzvednutí je k dispozici v lokalitě <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Vyzvednutí není momentálně v lokalitě <span class=\"color-foreground\">{{ location_name }}</span> k dispozici",
         "unavailable": "Dostupnost vyzvednutí nebylo možné načíst",
         "refresh": "Aktualizovat"
       },
@@ -285,7 +293,7 @@
       },
       "view_full_details": "Zobrazit veškeré podrobnosti",
       "include_taxes": "Včetně daní.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Poštovné<\/a> se vypočítá na pokladně.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Poštovné</a> se vypočítá na pokladně.",
       "choose_options": "Výběr možností",
       "choose_product_options": "Zvolte možnosti pro: {{ product_name }}",
       "value_unavailable": "{{ option_value }} – není k dispozici",
@@ -399,7 +407,11 @@
     },
     "404": {
       "title": "Stránka nebyla nalezena",
-      "subtext": "404"
+      "subtext": "404",
+      "heading_line_1": "Tuto stránku se nepodařilo najít.",
+      "heading_line_2": "Možná jste zvolili nesprávné auto.",
+      "home_button": "Domů",
+      "select_vehicle_button": "Vybrat vozidlo"
     }
   },
   "sections": {
@@ -424,7 +436,9 @@
     "brand_buttons": {
       "back": "Vše",
       "collection_title_prefix": "Autokoberce EVA pro ",
-      "all_brands_path": "\/pages\/car-brands"
+      "all_brands_path": "/pages/car-brands",
+      "popular_models_heading": "Populární modely",
+      "products_count": "{{ count }} položek"
     },
     "cart": {
       "title": "Váš košík",
@@ -437,9 +451,9 @@
       "empty": "Košík je prázdný",
       "cart_error": "Při aktualizaci vašeho košíku došlo k chybě. Zkuste to prosím znovu.",
       "cart_quantity_error_html": "Do košíku můžete přidat jen následující množství dané položky: {{ quantity }}.",
-      "taxes_and_shipping_policy_at_checkout_html": "Daně a <a href=\"{{ link }}\">poštovné<\/a> se vypočítají na pokladně",
+      "taxes_and_shipping_policy_at_checkout_html": "Daně a <a href=\"{{ link }}\">poštovné</a> se vypočítají na pokladně",
       "taxes_included_but_shipping_at_checkout": "Příslušná daň a poštovné se vypočítají na pokladně",
-      "taxes_included_and_shipping_policy_html": "Včetně daně. <a href=\"{{ link }}\">Poštovné<\/a> se vypočítá na pokladně.",
+      "taxes_included_and_shipping_policy_html": "Včetně daně. <a href=\"{{ link }}\">Poštovné</a> se vypočítá na pokladně.",
       "taxes_and_shipping_at_checkout": "Daně a poštovné se vypočítají na pokladně",
       "update": "Aktualizovat",
       "headings": {
@@ -451,13 +465,23 @@
       },
       "login": {
         "title": "Máte účet?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Přihlaste se<\/a>, abyste si urychlili proces pokladny."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Přihlaste se</a>, abyste si urychlili proces pokladny."
       },
       "progress_text_order_value": "Vaše auto si zaslouží víc! Přidejte koberce za {{value}} a získejte dopravu zdarma!",
       "progress_text_discount": "Vaše auto si zaslouží víc! Přidejte koberce za {{ value }} a získejte slevu {{ nextDiscount }}!",
-      "reservation_html": "Z důvodu vysoké poptávky a přetížení výroby jsme pro vás rezervovali místo, abychom vaši objednávku vyřídili rychleji. Rezervace platí následujících <span class=\"cart__time\"><span id=\"countdown-timer\"><\/span> minut.<\/span>",
+      "reservation_html": "Z důvodu vysoké poptávky a přetížení výroby jsme pro vás rezervovali místo, abychom vaši objednávku vyřídili rychleji. Rezervace platí následujících <span class=\"cart__time\"><span id=\"countdown-timer\"></span> minut.</span>",
       "reservation_button": "Prodlužte svou rezervaci",
-      "progress_free_shipping": "Máte nárok na dopravu zdarma!"
+      "progress_free_shipping": "Máte nárok na dopravu zdarma!",
+      "progress_max_discount": "Dosažena maximální sleva!",
+      "cart_upsell_variant_error": "Vyberte variantu produktu nebo obnovte stránku.",
+      "upsell_eva_note": "Barva a plástev ladí s vašimi koberci",
+      "upsell_heading": "Mohlo by se vám hodit",
+      "upsell_add_to_cart": "Přidat",
+      "unit_price_each_html": "{{ price }} za kus",
+      "items_in_cart_html": "{{ count }} položek v košíku",
+      "clear_cart": "Vymazat",
+      "restore_item": "Vrátit do košíku",
+      "reservation_sidebar_text": "Kvůli vysoké poptávce jsme vám rezervovali čas na zpracování objednávky."
     },
     "footer": {
       "payment": "Platební metody"
@@ -477,7 +501,7 @@
     "collection_template": {
       "title": "Kolekce",
       "empty": "Nenalezeny žádné produkty",
-      "use_fewer_filters_html": "Můžete použít méně filtrů nebo <a class=\"{{ class }}\" href=\"{{ link }}\">všechny odebrat<\/a>"
+      "use_fewer_filters_html": "Můžete použít méně filtrů nebo <a class=\"{{ class }}\" href=\"{{ link }}\">všechny odebrat</a>"
     },
     "video": {
       "load_video": "Načíst video: {{ description }}"
@@ -496,7 +520,7 @@
     },
     "application_form": {
       "next_button": "Další",
-      "privacy_text_html": "<p>Souhlasím se <a href=\"\/policies\/privacy-policy\">zásadami ochrany osobních údajů<\/a> a obchodními <a href=\"\/policies\/terms-of-service\">podmínkami<\/a>.<\/p>",
+      "privacy_text_html": "<p>Souhlasím se <a href=\"/policies/privacy-policy\">zásadami ochrany osobních údajů</a> a obchodními <a href=\"/policies/terms-of-service\">podmínkami</a>.</p>",
       "name_and_surname": "Jméno a příjmení",
       "brand": "Značka"
     },
@@ -506,13 +530,16 @@
       "carousel": "Karusel",
       "announcement": "Oznámení",
       "announcement_bar": "Oznamovací lišta"
+    },
+    "evamats_related_products": {
+      "view_product": "Zobrazit produkt"
     }
   },
   "localization": {
-    "country_label": "Země\/oblast",
+    "country_label": "Země/oblast",
     "language_label": "Jazyk",
     "update_language": "Aktualizovat jazyk",
-    "update_country": "Aktualizovat zemi\/oblast"
+    "update_country": "Aktualizovat zemi/oblast"
   },
   "customer": {
     "account": {
@@ -543,7 +570,7 @@
       "address1": "Adresa 1",
       "address2": "Adresa 2",
       "city": "Město",
-      "country": "Země\/oblast",
+      "country": "Země/oblast",
       "province": "Provincie",
       "zip": "PSČ",
       "phone": "Telefon",
@@ -658,7 +685,29 @@
   },
   "customer_accounts": {
     "shop_policies": {
-      "terms_of_service": "Obchodní podmínky"
+      "terms_of_service": "Obchodní podmínky",
+      "refund_policy": "Zásady vrácení a reklamací"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "marketing": {
+        "disclaimer": {
+          "terms_of_service": "Obchodní podmínky"
+        },
+        "sms": {
+          "disclaimer": {
+            "terms_of_service": "Obchodní podmínky"
+          }
+        }
+      },
+      "shop_policies": {
+        "terms_of_service": "Obchodní podmínky",
+        "refund_policy": "Zásady vrácení a reklamací"
+      },
+      "contact": {
+        "optional_address2_label": "DIČ"
+      }
     }
   }
 }
