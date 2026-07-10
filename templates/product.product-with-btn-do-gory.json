@@ -62,7 +62,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "Klikněte na „CUSTOM ORDER“, pokud nenajdete vhodný koberec.<br>Vyrobíme koberec na míru speciálně pro váš automobil se všemi jeho vlastnostmi.",
+            "text": "Klikněte na „INDIVIDUÁLNÍ OBJEDNÁVKA“, pokud nenajdete vhodný koberec.<br>Vyrobíme koberec na míru speciálně pro váš automobil se všemi jeho vlastnostmi.",
             "text_style": "uppercase"
           }
         },
@@ -107,7 +107,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>Souhlasím s the  <a href=\"\/policies\/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy<\/a> a <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">regulations<\/a>.<\/p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 56
@@ -135,7 +135,7 @@
       "type": "apps",
       "blocks": {
         "d1ceee4b-4505-4d93-a432-68f731c49bf3": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "themeId": "light",
             "autoscroll": true,
@@ -176,7 +176,7 @@
       "type": "home-5",
       "settings": {
         "btn_text": "Vše posts",
-        "btn_url": "shopify://pages/realizacja"
+        "btn_url": "shopify:\/\/pages\/realizacja"
       }
     },
     "0801e0f0-d696-4558-b05e-3648c986e943": {
@@ -185,31 +185,31 @@
       "custom_css": [],
       "settings": {
         "hd": "Koberce do lodí!",
-        "des": "<p>Vyrábíme koberce na individuální zakázku — například do lodí, letadel a dalších dopravních prostředků podle personalizovaných rozměrů. Napište nám a splníme všechna vaše přání!</p>",
+        "des": "<p>Vyrábíme koberce na individuální zakázku — například do lodí, letadel a dalších dopravních prostředků podle personalizovaných rozměrů. Napište nám a splníme všechna vaše přání!<\/p>",
         "btn_text": "OBJEDNAT KOBEREC",
-        "btn_url": "shopify://pages/zamowienie-indywidualne"
+        "btn_url": "shopify:\/\/pages\/zamowienie-indywidualne"
       }
     },
     "1f13addc-5ac5-4bf9-a9f1-de28ec681035": {
       "type": "advantages-home-2",
       "disabled": true,
       "settings": {
-        "img1": "shopify://shop_images/1.png",
-        "des1": "<p>Odolné, neztrácejí svůj vzhled s časem</p>",
-        "img2": "shopify://shop_images/High_Temperature_Meteorology_Symbol.I16_1.png",
-        "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C</p>",
-        "img3": "shopify://shop_images/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
-        "des3": "<p>Odolnost vůči působení detergentů</p>"
+        "img1": "shopify:\/\/shop_images\/1.png",
+        "des1": "<p>Odolné, neztrácejí svůj vzhled s časem<\/p>",
+        "img2": "shopify:\/\/shop_images\/High_Temperature_Meteorology_Symbol.I16_1.png",
+        "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C<\/p>",
+        "img3": "shopify:\/\/shop_images\/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
+        "des3": "<p>Odolnost vůči působení detergentů<\/p>"
       }
     },
     "ca715e5f-0884-4a81-ac3b-f6012a690383": {
       "type": "home-8",
       "settings": {
-        "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form a we will realize individually tailored floor mats for your car.</p>",
-        "btn_text": "CUSTOM ORDER",
-        "btn_url": "shopify://products/custom-order",
-        "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
+        "hd": "“Máte vzácné auto?“",
+        "des": "<p>Can't find floor mats for your unique car? <br\/><br\/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br\/><br\/>Fill out this form a we will realize individually tailored floor mats for your car.<\/p>",
+        "btn_text": "INDIVIDUÁLNÍ OBJEDNÁVKA",
+        "btn_url": "shopify:\/\/products\/custom-order",
+        "img": "shopify:\/\/shop_images\/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
     },
     "12ac53a2-bdfa-4d96-9f33-6ebe49699bd1": {
@@ -219,32 +219,32 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "7d20225c-8a01-42af-b63d-fa98977ceb43": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "64e15df8-e64d-4dd6-b63c-ac6979238a0c": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "320d035d-bcbf-4e5c-bc8c-71963f4285c5": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         }
       },
@@ -265,7 +265,7 @@
           "settings": {
             "heading": "Co je materiál EVA?",
             "icon": "none",
-            "row_content": "<p>EVA je ethylen-vinylacetát, lehký a elastický materiál s voděodolnými vlastnostmi.<br/>Díky hypoalergennímu složení koberce nezapáchají ani při vysokých teplotách.</p>",
+            "row_content": "<p>EVA je ethylen-vinylacetát, lehký a elastický materiál s voděodolnými vlastnostmi.<br\/>Díky hypoalergennímu složení koberce nezapáchají ani při vysokých teplotách.<\/p>",
             "page": ""
           }
         },
@@ -274,7 +274,7 @@
           "settings": {
             "heading": "Jak správně namontovat koberce z materiálu EVA?",
             "icon": "none",
-            "row_content": "<p>Každá sada má určený typ upevnění, máme více než 30 typů. Upevnění montujeme na správných místech a navíc přišíváme suché zipy po stranách, aby se koberce neposouvaly a držely na místě.</p>",
+            "row_content": "<p>Každá sada má určený typ upevnění, máme více než 30 typů. Upevnění montujeme na správných místech a navíc přišíváme suché zipy po stranách, aby se koberce neposouvaly a držely na místě.<\/p>",
             "page": ""
           }
         },
@@ -283,7 +283,7 @@
           "settings": {
             "heading": "Potřebuji výjimečný koberec?",
             "icon": "none",
-            "row_content": "<p>Je možné vyrobit samostatný koberec na plynovou lahev, pokud trčí v kufru, nebo zakrýt větší plochu podlahy na určených místech podle požadavků zákazníka.</p>",
+            "row_content": "<p>Je možné vyrobit samostatný koberec na plynovou lahev, pokud trčí v kufru, nebo zakrýt větší plochu podlahy na určených místech podle požadavků zákazníka.<\/p>",
             "page": ""
           }
         },
@@ -292,7 +292,7 @@
           "settings": {
             "heading": "Lze prát koberce z materiálu EVA?",
             "icon": "none",
-            "row_content": "<p>Ano, koberce lze čistit měkkou houbičkou a detergentem. Nedoporučuje se však používat agresivní chemické čisticí prostředky.</p>",
+            "row_content": "<p>Ano, koberce lze čistit měkkou houbičkou a detergentem. Nedoporučuje se však používat agresivní chemické čisticí prostředky.<\/p>",
             "page": ""
           }
         },
@@ -301,7 +301,7 @@
           "settings": {
             "heading": "Mají koberce záruku?",
             "icon": "none",
-            "row_content": "<p>Poskytujeme záruku jeden rok od převzetí koberců, co umožňuje výměnu sady do jednoho roku v případě deformace nebo otěrů. Díky kvalitnímu materiálu však koberce vydrží 5–7 let.</p>",
+            "row_content": "<p>Poskytujeme záruku jeden rok od převzetí koberců, co umožňuje výměnu sady do jednoho roku v případě deformace nebo otěrů. Díky kvalitnímu materiálu však koberce vydrží 5–7 let.<\/p>",
             "page": ""
           }
         }
