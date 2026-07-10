@@ -98,20 +98,14 @@
   </script>
 
   <div class="evamats-gift-card-description__intro">
-    <h2 class="evamats-gift-card-description__heading">
-      The Carvion gift card is an elegant way to give a loved one complete freedom of choice.
-    </h2>
+    <h2 class="evamats-gift-card-description__heading">{{ 'gift_card_desc.heading' | t }}</h2>
     <div class="evamats-gift-card-description__intro-text">
-      <p>
-        The Carvion gift card is an elegant way to give a loved one complete freedom of choice. 🎁 Instead of risking a mistake when specifying the technical details of the car, you give the driver the opportunity to independently configure the perfect mats for their vehicle. Every detail – from the car model to the color of the trim – matters, so a gift card is a guarantee of satisfaction and a perfect fit.
-      </p>
-      <p>
-        By choosing Carvion, you give the joy of personalizing the car interior, combining aesthetics with the highest functionality. 🚗🎨
-      </p>
-    </div>
+        <p>{{ 'gift_card_desc.intro_p1' | t }}</p>
+        <p>{{ 'gift_card_desc.intro_p2' | t }}</p>
+      </div>
   </div>
 
-  <h3 class="evamats-gift-card-description__section-title">What can be financed with the card?</h3>
+  <h3 class="evamats-gift-card-description__section-title">{{ 'gift_card_desc.financed_title' | t }}</h3>
 
   {%- if gift_amount_option -%}
     <div class="evamats-gift-card-description__grid">

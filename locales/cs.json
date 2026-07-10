@@ -709,5 +709,11 @@
         "optional_address2_label": "DIČ"
       }
     }
+  },
+  "gift_card_desc": {
+    "heading": "Dárková karta Carvion je elegantní způsob, jak blízkému člověku darovat naprostou svobodu výběru.",
+    "intro_p1": "Dárková karta Carvion je elegantní způsob, jak blízkému člověku darovat naprostou svobodu výběru. 🎁 Místo rizika chyby při zadávání technických údajů vozu dáte řidiči možnost, aby si perfektní koberce pro své auto nakonfiguroval sám. Záleží na každém detailu – od modelu vozu až po barvu lemování – proto je dárková karta zárukou spokojenosti a dokonalého padnutí.",
+    "intro_p2": "Volbou Carvion darujete radost z personalizace interiéru vozu, spojující estetiku s nejvyšší funkčností. 🚗🎨",
+    "financed_title": "Co lze kartou financovat?"
   }
 }
