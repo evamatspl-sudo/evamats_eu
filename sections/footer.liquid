@@ -25,6 +25,9 @@
       margin-top: {{ section.settings.margin_top }}px;
     }
   }
+
+  .evamats-footer__brand { display: flex; flex-direction: column; gap: 8px; }
+  .evamats-footer__brand-desc { margin: 0; max-width: 320px; font-size: 1.3rem; line-height: 1.45; opacity: 0.72; }
 {%- endstyle -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-footer' %}
@@ -265,6 +268,7 @@
     <hr class="evamats-footer__divider" aria-hidden="true">
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
+        <div class="evamats-footer__brand">
         {%- if settings.logo_inverse != blank -%}
           <a href="{{ routes.root_url }}" class="evamats-footer__logo-link">
             {{
@@ -279,6 +283,10 @@
             }}
           </a>
         {%- endif -%}
+        {%- if section.settings.brand_description != blank -%}
+          <p class="evamats-footer__brand-desc">{{ section.settings.brand_description }}</p>
+        {%- endif -%}
+        </div>
         <div class="evamats-footer__copyright-wrap">
           <p class="evamats-footer__copyright">
             <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}</small>
@@ -600,6 +608,12 @@
     {
       "type": "header",
       "content": "Legal info (bottom bar)"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Brand description (under logo)",
+      "default": "Carvion je evropská značka specializující se na výrobu autokoberců."
     },
     {
       "type": "text",
