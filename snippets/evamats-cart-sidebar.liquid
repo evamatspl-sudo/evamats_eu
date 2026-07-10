@@ -68,11 +68,13 @@
       {{ 'sections.cart.checkout' | t }}
     </button>
 
+    {%- comment -%} Express-wallet buttons (Shop Pay / PayPal / GPay) hidden in cart drawer per owner request (2026-07) — kept only the standard checkout button above.
     {%- if additional_checkout_buttons -%}
       <div class="evamats-cart-sidebar__dynamic-checkout cart__dynamic-checkout-buttons additional-checkout-buttons">
         {{ content_for_additional_checkout_buttons }}
       </div>
     {%- endif -%}
+    {%- endcomment -%}
   </div>
 
   <div id="cart-errors" class="evamats-cart-sidebar__errors"></div>
