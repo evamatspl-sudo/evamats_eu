@@ -283,7 +283,7 @@
 
   {%- comment -%} ── 4. Bottom bar: logo + copyright + NIP/REGON | partners ── {%- endcomment -%}
   <div class="evamats-footer__bar-wrap page-width">
-    <hr class="evamats-footer__divider" aria-hidden="true">
+    {%- if show_partners -%}<hr class="evamats-footer__divider" aria-hidden="true">{%- endif -%}
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
         <div class="evamats-footer__copyright-wrap">
