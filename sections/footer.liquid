@@ -27,7 +27,10 @@
   }
 
   .evamats-footer__brand-col { flex: 0 0 250px; max-width: 250px; }
-  .evamats-footer__brand-logo { max-width: 120px; height: auto; margin-bottom: 16px; }
+  .evamats-footer__brand-logo { max-width: 150px; height: auto; margin-bottom: 16px; }
+  .evamats-footer__contact-body { gap: 14px; }
+  .evamats-footer__contact-line { margin: 0; line-height: 1.45; }
+  .evamats-footer__contact-note { font-size: 0.85em; color: #9a9a9a; line-height: 1.35; }
   .evamats-footer__brand-desc { margin: 0; max-width: 240px; font-size: 1.3rem; line-height: 1.55; color: #6b6b6b; }
   .evamats-footer__menu-heading { text-transform: none; }
   @media screen and (max-width: 989px) {
@@ -75,11 +78,9 @@
     <div class="evamats-footer__main">
       {%- if settings.logo_inverse != blank or section.settings.brand_description != blank -%}
         <div class="evamats-footer__brand-col">
-          {%- if settings.logo != blank -%}
-            <a href="{{ routes.root_url }}" class="evamats-footer__brand-logo-link">
-              {{ settings.logo | image_url: width: 280 | image_tag: loading: 'lazy', class: 'evamats-footer__brand-logo', widths: '140, 210, 280', alt: shop.name }}
-            </a>
-          {%- endif -%}
+          <a href="{{ routes.root_url }}" class="evamats-footer__brand-logo-link">
+            <img src="{{ 'logo_CARVION_colored.svg' | file_url }}" class="evamats-footer__brand-logo" alt="{{ shop.name | escape }}" width="150" loading="lazy">
+          </a>
           {%- if section.settings.brand_description != blank -%}
             <p class="evamats-footer__brand-desc">{{ section.settings.brand_description }}</p>
           {%- endif -%}

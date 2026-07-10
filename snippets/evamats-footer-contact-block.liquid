@@ -21,17 +21,15 @@
         <div class="evamats-footer__contact-intro rte">{{ block.settings.intro }}</div>
       {%- endif -%}
       {%- if contact_email != blank -%}
-        <p class="evamats-footer__contact-row">✉️ <strong>E-mail:</strong><br>
-          <a href="mailto:{{ contact_email | escape }}">{{- contact_email | escape -}}</a></p>
+        <p class="evamats-footer__contact-line">✉️ <strong>E-mail:</strong> <a href="mailto:{{ contact_email | escape }}">{{- contact_email | escape -}}</a></p>
       {%- endif -%}
       {%- if contact_phone != blank -%}
-        <p class="evamats-footer__contact-row">📞 <strong>Telefon:</strong><br>
-          <a href="tel:{{ phone_href | escape }}">{{- contact_phone | escape -}}</a></p>
+        <p class="evamats-footer__contact-line">📞 <strong>Telefon:</strong> <a href="tel:{{ phone_href | escape }}">{{- contact_phone | escape -}}</a></p>
       {%- endif -%}
       {%- if contact_address != blank -%}
-        <p class="evamats-footer__contact-row">📍 <strong>Adresa:</strong><br>
-          {{ contact_address | newline_to_br }}</p>
+        {%- assign addr_parts = contact_address | strip | split: '
+' -%}
+        <p class="evamats-footer__contact-line">📍 <strong>Adresa:</strong><br>{{ addr_parts[0] | strip }}{%- if addr_parts.size > 1 -%}<br><span class="evamats-footer__contact-note">{%- for part in addr_parts offset: 1 -%}{{ part | strip }}{%- unless forloop.last -%}<br>{%- endunless -%}{%- endfor -%}</span>{%- endif -%}</p>
       {%- endif -%}
-    </div>
   {%- endif -%}
 </div>
