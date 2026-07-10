@@ -20,41 +20,33 @@
             "show_social": true
           }
         },
-        "link_list_8zmyBj": {
-          "type": "link_list",
-          "settings": {
-            "heading": "OBCHOD",
-            "menu": "shop-footer"
-          }
-        },
         "6965d6e4-8bbe-498b-90bb-cf4439521adc": {
           "type": "link_list",
           "settings": {
-            "heading": "O NÁS",
-            "menu": "about-footer"
+            "heading": "O nás",
+            "menu": "about-us"
           }
         },
         "2e7efd78-a00e-44e8-a6c6-056b4923ad0f": {
           "type": "link_list",
           "settings": {
-            "heading": "INFORMACE",
-            "menu": "info-footer"
+            "heading": "Informace",
+            "menu": "footer"
           }
         },
         "5105da44-6739-4d06-87ba-89d3f01ee03e": {
           "type": "contact",
           "settings": {
-            "heading": "Kontaktujte nás!",
-            "intro": "<p>Carvion Sp. z o.o.<br/><br/>TIN: 5862378667</p>",
+            "heading": "Kontaktujte nás",
+            "intro": "",
             "email": "info@carvionauto.cz",
             "phone": "+420 292 333 695",
-            "address": "Pobřežní 249/46, \n186 00 Praha 8 — Karlín\n\nKorespondenční adresa — zboží zasíláme pouze přepravní službou."
+            "address": "Pobřežní 249/46, 186 00 Praha 8 — Karlín\nKorespondenční adresa — zboží zasíláme pouze přepravní službou."
           }
         }
       },
       "block_order": [
         "6aaeb45e-acdd-44f4-9a5c-3e71077873c3",
-        "link_list_8zmyBj",
         "6965d6e4-8bbe-498b-90bb-cf4439521adc",
         "2e7efd78-a00e-44e8-a6c6-056b4923ad0f",
         "5105da44-6739-4d06-87ba-89d3f01ee03e"
@@ -63,15 +55,15 @@
       "settings": {
         "color_scheme": "background-1",
         "newsletter_enable": true,
-        "newsletter_heading": "<p>Subscribe and get a <strong>discount</strong> on your first order</p>",
+        "newsletter_heading": "<p>Přihlaste se k odběru a získejte <strong>slevu</strong> na první objednávku</p>",
         "newsletter_subtext": "",
-        "newsletter_placeholder": "Your email address",
-        "newsletter_button": "Sign up",
+        "newsletter_placeholder": "Váš e-mail",
+        "newsletter_button": "Přihlásit se",
         "show_social": true,
         "facebook_url": "https://www.facebook.com/carvion.cz",
         "facebook_label": "",
         "instagram_url": "https://www.instagram.com/carvion_cz",
-        "tiktok_url": "https://www.tiktok.com/@carvion_cz",
+        "tiktok_url": "",
         "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "threads_url": "",
         "nip_number": "",
@@ -80,8 +72,8 @@
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
-        "payments_label": "WE ACCEPT PAYMENTS",
-        "delivery_label": "DELIVERY",
+        "payments_label": "Přijímáme platby",
+        "delivery_label": "Doprava",
         "delivery_link_1": "",
         "delivery_link_2": "",
         "delivery_link_3": "",
