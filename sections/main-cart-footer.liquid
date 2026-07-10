@@ -182,11 +182,14 @@
                   <button>Poplatek za dobírku</button>
                 </div> {% endcomment %}
 
-                {%- if additional_checkout_buttons -%}
+                {%- comment -%} Shop Pay / express wallet buttons hidden in cart per owner request (2026-07) — restore: remove this comment wrapper {%- endcomment -%}
+{%- comment -%}
+{%- if additional_checkout_buttons -%}
                   <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
                     {{ content_for_additional_checkout_buttons }}
                   </div>
                 {%- endif -%}
+{%- endcomment -%}
             {%- endcase -%}
           {% endfor %}
           <div id="cart-errors"></div>
