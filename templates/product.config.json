@@ -1,6 +1,5 @@
 /*
  * ------------------------------------------------------------
- *
  * IMPORTANT: The contents of this file are auto-generated.
  *
  * This file may be updated by the Shopify admin theme editor
@@ -43,9 +42,9 @@
             "show_badge": false,
             "info_text": "Sleva až 25 % se automaticky uplatní při placení. Záleží na sadě - podrobnosti najdete zde.",
             "info_text_individual": "Sleva až 25 % na zakázkové objednávky! Záleží na vybrané sadě - podrobnosti najdete zde.",
-            "info_html": "<h2>Jak sleva funguje?</h2> <p>Sleva se automaticky uplatní při placení, ale platí pouze pro sady od 60 € výše.</p> <h3>Tabulka slev:</h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Hodnota objednávky</th> <th>Typ sady</th> <th>Sleva</th> </tr> </thead> <tbody> <tr> <td>od 60 € do 219 €</td> <td> – EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – EVAMATS 3D s lemy: FRONT </td> <td>-20%</td> </tr> <tr> <td>od 220 € <br>\nvýše</td> <td> – EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sady pro VANS, BUSES, MINIVANS </td> <td>-25%</td> </tr> </tbody> </table> <h3>Příklady:</h3> <ul> <li>Bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%</strong>\n</li> <li>S lemy FRONT+REAR (225.33 €) → sleva <strong>-25%</strong>\n</li> </ul> <p><strong>Nemusíte dělat nic - sleva se zobrazí automaticky v košíku!</strong></p>",
-            "info_html_individual": "<h2>Jak sleva funguje?</h2>\n<p>Sleva se automaticky uplatní při odeslání zakázkové objednávky, ale platí pouze pro objednávky od 44 € výše.</p>\n\n<h3>Tabulka slev:</h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Hodnota objednávky</th>\n         <th>Typ sady</th>\n         <th>Sleva</th>\n      </tr>\n   </thead>\n   <tbody>\n      <tr>\n         <td>od 44 € do 219 €</td>\n         <td>\n         – Zakázkové sady EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT\n         </td>\n         <td>-20%</td>\n      </tr>\n      <tr>\n         <td>od 220 € výše</td>\n         <td>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady pro VANS, BUSES, MINIVANS\n         </td>\n         <td>-25%</td>\n      </tr>\n   </tbody>\n</table>\n\n<h3>Příklady:</h3>\n<ul>\n   <li>Zakázková sada bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%</strong>\n</li>\n   <li>Zakázková sada s lemy FRONT+REAR (225.33 €) → sleva <strong>-25%</strong>\n</li>\n</ul>\n\n<p><strong>Sleva se automaticky uplatní po odeslání zakázkové objednávky autokoberců.<br></strong> Po odeslání objednávky vás náš konzultant kontaktuje, potvrdí detaily, sdělí finální cenu a zodpoví případné dotazy ke slevě.</p>",
-            "individual_welcome_html": "<p><strong>Jak funguje individuální objednávka?</strong></p>\n<ol>\n<li>Nakonfigurujte si sadu: zadejte údaje o vozidle, vyberte barvy a doplňky.</li>\n<li>Zaplaťte zálohu: předem hradíte pouze malou zálohu (plus všechny doplňky v plné výši).</li>\n<li>Potvrďte detaily: náš konzultant vám zavolá, vše potvrdí a předá objednávku do výroby.</li>\n<li>Doplaťte zbytek: zbývající částku uhraďte bankovním převodem předem nebo na dobírku.</li>\n</ol>",
+            "info_html": "<h2>Jak sleva funguje?<\/h2> <p>Sleva se automaticky uplatní při placení, ale platí pouze pro sady od 60 € výše.<\/p> <h3>Tabulka slev:<\/h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Hodnota objednávky<\/th> <th>Typ sady<\/th> <th>Sleva<\/th> <\/tr> <\/thead> <tbody> <tr> <td>od 60 € do 219 €<\/td> <td> – EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – EVAMATS 3D s lemy: FRONT <\/td> <td>-20%<\/td> <\/tr> <tr> <td>od 220 € <br>\nvýše<\/td> <td> – EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sady pro VANS, BUSES, MINIVANS <\/td> <td>-25%<\/td> <\/tr> <\/tbody> <\/table> <h3>Příklady:<\/h3> <ul> <li>Bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li> <li>S lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li> <\/ul> <p><strong>Nemusíte dělat nic - sleva se zobrazí automaticky v košíku!<\/strong><\/p>",
+            "info_html_individual": "<h2>Jak sleva funguje?<\/h2>\n<p>Sleva se automaticky uplatní při odeslání zakázkové objednávky, ale platí pouze pro objednávky od 44 € výše.<\/p>\n\n<h3>Tabulka slev:<\/h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Hodnota objednávky<\/th>\n         <th>Typ sady<\/th>\n         <th>Sleva<\/th>\n      <\/tr>\n   <\/thead>\n   <tbody>\n      <tr>\n         <td>od 44 € do 219 €<\/td>\n         <td>\n         – Zakázkové sady EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT\n         <\/td>\n         <td>-20%<\/td>\n      <\/tr>\n      <tr>\n         <td>od 220 € výše<\/td>\n         <td>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady pro VANS, BUSES, MINIVANS\n         <\/td>\n         <td>-25%<\/td>\n      <\/tr>\n   <\/tbody>\n<\/table>\n\n<h3>Příklady:<\/h3>\n<ul>\n   <li>Zakázková sada bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li>\n   <li>Zakázková sada s lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li>\n<\/ul>\n\n<p><strong>Sleva se automaticky uplatní po odeslání zakázkové objednávky autokoberců.<br><\/strong> Po odeslání objednávky vás náš konzultant kontaktuje, potvrdí detaily, sdělí finální cenu a zodpoví případné dotazy ke slevě.<\/p>",
+            "individual_welcome_html": "<p><strong>Jak funguje individuální objednávka?<\/strong><\/p>\n<ol>\n<li>Nakonfigurujte si sadu: zadejte údaje o vozidle, vyberte barvy a doplňky.<\/li>\n<li>Zaplaťte zálohu: předem hradíte pouze malou zálohu (plus všechny doplňky v plné výši).<\/li>\n<li>Potvrďte detaily: náš konzultant vám zavolá, vše potvrdí a předá objednávku do výroby.<\/li>\n<li>Doplaťte zbytek: zbývající částku uhraďte bankovním převodem předem nebo na dobírku.<\/li>\n<\/ol>",
             "auto_open_individual_welcome_popup": true
           }
         },
@@ -100,27 +99,27 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "config_delivery_icon": "shopify://shop_images/Group_1948755301.webp",
+            "config_delivery_icon": "shopify:\/\/shop_images\/Group_1948755301.webp",
             "config_delivery_line_1": "Produkt vyráběný na zakázku.",
             "config_delivery_line_2": "Odhadovaná doba výroby: 14 dní.",
-            "config_trusted_seal": "shopify://shop_images/6f13a48de7783505c9cd_1.svg",
+            "config_trusted_seal": "shopify:\/\/shop_images\/6f13a48de7783505c9cd_1.svg",
             "config_trusted_line_1": "",
             "config_trusted_line_2": "",
-            "config_trusted_logo": "shopify://shop_images/Trusted-shops-logo_1.webp"
+            "config_trusted_logo": "shopify:\/\/shop_images\/Trusted-shops-logo_1.webp"
           }
         },
         "custom_liquid_DYEEU9": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<ul class=\"list list-payment\" role=\"list\" style='justify-content:center'>\n              {% assign payment_gateways = \"visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik\" | split: \",\" %}\n\n              {%- for type in payment_gateways -%}\n                <li class=\"list-payment__item\">\n                  {% assign typeSvg = type | append: '.svg' %}\n                  <img src=\"{{ typeSvg | file_url }}\" alt=\"\" loading='lazy'>                  \n                </li>\n              {%- endfor -%}\n            </ul>"
+            "custom_liquid": "<ul class=\"list list-payment\" role=\"list\" style='justify-content:center'>\n              {% assign payment_gateways = \"visa,mc,ae,discover,jcb,dc,apay,gpay\" | split: \",\" %}\n\n              {%- for type in payment_gateways -%}\n                <li class=\"list-payment__item\">\n                  {% assign typeSvg = type | append: '.svg' %}\n                  <img src=\"{{ typeSvg | file_url }}\" alt=\"\" loading='lazy'>                  \n                <\/li>\n              {%- endfor -%}\n                <li class=\"list-payment__item\"><img src=\"{{ 'image_6.png' | file_url }}\" alt=\"GoPay\" style=\"height:24px;width:auto;\" loading='lazy'><\/li>\n            <\/ul>"
           }
         },
         "custom_liquid_NWr7hx": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<p style=\"font-size: 14px; color: #999; font-weight: bold; text-align: center; line-height: 1.4;\">\n  {% if request.locale.iso_code == 'cs' %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% elsif request.locale.iso_code == 'de' %}\n    Produkt auf Bestellung.<br>\n    Voraussichtliche Produktionszeit: 14 Tage.\n  {% else %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% endif %}\n</p>"
+            "custom_liquid": "<p style=\"font-size: 14px; color: #999; font-weight: bold; text-align: center; line-height: 1.4;\">\n  {% if request.locale.iso_code == 'cs' %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% elsif request.locale.iso_code == 'de' %}\n    Produkt auf Bestellung.<br>\n    Voraussichtliche Produktionszeit: 14 Tage.\n  {% else %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% endif %}\n<\/p>"
           }
         },
         "8e40f620-351d-4afc-918e-c1bc9f2744b3": {
@@ -176,11 +175,11 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>Souhlasím se <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">zásadami ochrany osobních údajů</a> a <a href=\"/policies/terms-of-service\" title=\"Obchodní podmínky\">obchodními podmínkami</a>.</p>",
+        "check-newsletter": "<p>Souhlasím se <a href=\"\/policies\/privacy-policy\" title=\"zásadami ochrany osobních údajů\">zásadami ochrany osobních údajů<\/a> a <a href=\"\/policies\/terms-of-service\" title=\"Obchodní podmínky\">obchodními podmínkami<\/a>.<\/p>",
         "enable_video_looping": false,
-        "trunk_message": "<p>Poznámka - rohož do kufru:</p><p>Do 140x240 cm - z jednoho dílu ✅</p><p>Do 150x250 cm - ze dvou dílů ✅</p><p>Nad 280 cm délky - nevyrábíme ❌</p><p>ℹ️ V případě pochybností kontaktujte prosím obchodní oddělení.</p>",
-        "trunk_message_5_7_os": "<p><strong>Poznámka - rohož do kufru:</strong></p><p>Kufr nemá zvýšené boční hrany - to platí pro 3D rohože s lemy.<br/><br/>U tohoto modelu vozidla je podlaha kufru rovná a nemá tovární boční hrany. 3D rohože s lemy na podlahu pasují, ale v kufru nevytvoří dodatečné zvýšené okraje.<br/><br/></p>",
-        "gallery_badge": "shopify://shop_images/Frame_1948755221.webp",
+        "trunk_message": "<p>Poznámka - rohož do kufru:<\/p><p>Do 140x240 cm - z jednoho dílu ✅<\/p><p>Do 150x250 cm - ze dvou dílů ✅<\/p><p>Nad 280 cm délky - nevyrábíme ❌<\/p><p>ℹ️ V případě pochybností kontaktujte prosím obchodní oddělení.<\/p>",
+        "trunk_message_5_7_os": "<p><strong>Poznámka - rohož do kufru:<\/strong><\/p><p>Kufr nemá zvýšené boční hrany - to platí pro 3D rohože s lemy.<br\/><br\/>U tohoto modelu vozidla je podlaha kufru rovná a nemá tovární boční hrany. 3D rohože s lemy na podlahu pasují, ale v kufru nevytvoří dodatečné zvýšené okraje.<br\/><br\/><\/p>",
+        "gallery_badge": "shopify:\/\/shop_images\/Frame_1948755221.webp",
         "gallery_disclaimer": "Fotografie se může lišit od finálního výsledku. Při objednávce obdržíte rohože odpovídající modelu vašeho vozu.",
         "padding_top": 16,
         "padding_bottom": 0
@@ -202,7 +201,7 @@
           "settings": {
             "title": "Specifikace",
             "id": "tech",
-            "html": "<p><strong>🔧 Technická specifikace</strong></p>\n<ul>\n  <li>\n<strong>Materiál:</strong> Vysoce kvalitní EVA pěna (Ethylene Vinyl Acetate)</li>\n  <li>\n<strong>Tloušťka rohože:</strong> Přibližně 10 mm - ideální rovnováha mezi pružností a odolností</li>\n  <li>\n<strong>Struktura buněk:</strong> Diamond (7 mm) / Honeycomb (8 mm) - vyberte při nákupu</li>\n  <li>\n<strong>Hmotnost sady:</strong> Od 1,2 do 2,5 kg (v závislosti na verzi)</li>\n  <li>\n<strong>Počet dílů:</strong> 2-6 dílů (plná sada: přední + zadní + volitelně kufr)</li>\n  <li>\n<strong>Pokrytí podlahy:</strong> Až 95 % plochy podlahy vozu</li>\n  <li>\n<strong>Sezónnost:</strong> Celoroční - odolné vůči teplotám od -50°C do +50°C</li>\n  <li>\n<strong>Odolnost vůči vodě:</strong> 100 % - neabsorbuje kapaliny, netvoří skvrny</li>\n  <li>\n<strong>Uchycení:</strong> Plastové úchyty (originální) / suché zipy - kompatibilní s továrními body uchycení</li>\n  <li>\n<strong>Lemování:</strong> 14 barevných variant na výběr</li>\n  <li>\n<strong>Další možnosti:</strong> Zesílené patní opěrky</li>\n</ul>"
+            "html": "<p><strong>🔧 Technická specifikace<\/strong><\/p>\n<ul>\n  <li>\n<strong>Materiál:<\/strong> Vysoce kvalitní EVA pěna (Ethylene Vinyl Acetate)<\/li>\n  <li>\n<strong>Tloušťka rohože:<\/strong> Přibližně 10 mm - ideální rovnováha mezi pružností a odolností<\/li>\n  <li>\n<strong>Struktura buněk:<\/strong> Diamond (7 mm) \/ Honeycomb (8 mm) - vyberte při nákupu<\/li>\n  <li>\n<strong>Hmotnost sady:<\/strong> Od 1,2 do 2,5 kg (v závislosti na verzi)<\/li>\n  <li>\n<strong>Počet dílů:<\/strong> 2-6 dílů (plná sada: přední + zadní + volitelně kufr)<\/li>\n  <li>\n<strong>Pokrytí podlahy:<\/strong> Až 95 % plochy podlahy vozu<\/li>\n  <li>\n<strong>Sezónnost:<\/strong> Celoroční - odolné vůči teplotám od -50°C do +50°C<\/li>\n  <li>\n<strong>Odolnost vůči vodě:<\/strong> 100 % - neabsorbuje kapaliny, netvoří skvrny<\/li>\n  <li>\n<strong>Uchycení:<\/strong> Plastové úchyty (originální) \/ suché zipy - kompatibilní s továrními body uchycení<\/li>\n  <li>\n<strong>Lemování:<\/strong> 14 barevných variant na výběr<\/li>\n  <li>\n<strong>Další možnosti:<\/strong> Zesílené patní opěrky<\/li>\n<\/ul>"
           }
         },
         "tab_faq_config": {
@@ -210,7 +209,7 @@
           "settings": {
             "title": "Otázky a odpovědi",
             "id": "faq",
-            "html": "<div class=\"ept-faq\">\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Pokrytí podlahy a padnutí</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Budou koberce určitě pasovat?</strong><br/>Ano, naše EVA koberce jsou navrženy speciálně pro každou značku, model a verzi vozu a pokrývají celou podlahovou plochu včetně míst, která nechrání gumové ani velurové koberce.</p><p><strong>– Co je koberec na tunel?</strong><br/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu a zajišťují maximální ochranu.</p><p><strong>– Je podložka paty namontována na koberci řidiče?</strong><br/>Ne, podložka paty je dodávána samostatně, abyste si ji mohli nastavit podle svých preferencí.</p></div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Vlastnosti materiálu a odolnost</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Co je materiál EVA?</strong><br/>Je to 10 mm silná pěna, která zachytává nečistoty a vodu na povrchu koberce a brání jejich průniku pod něj.</p><p><strong>– Jaký je rozdíl mezi sadou 3D a sadou 3D s lemy?</strong><br/>Sada 3D s lemy poskytuje dodatečnou ochranu bočního čalounění podlahy a zajišťuje lepší padnutí.</p><p><strong>– Jak dlouho koberce vydrží?</strong><br/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.</p></div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Používání a údržba</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Jak čistit EVA koberce?</strong><br/>Nečistoty na povrchu koberce neulpívají. Stačí je vyklepat, nebo při větším znečištění opláchnout vysokotlakým čističem.</p><p><strong>– Jsou EVA koberce vhodné na léto i zimu?</strong><br/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.</p></div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Objednávka a doručení</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Jaká je doba dodání?</strong><br/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, například motorových člunů nebo traktorů, se může doba prodloužit na 4–6 týdnů.</p><p><strong>– Jak probíhá doručení?</strong><br/>Koberce odesíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu neposíláme koberce do výdejních boxů. Dbáme na to, aby koberce dorazily ve stejné podobě, v jaké byly vyrobeny — bez skládání nebo ohýbání, které by mohlo ovlivnit jejich padnutí.</p></div>\n  </details>\n</div>"
+            "html": "<div class=\"ept-faq\">\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Pokrytí podlahy a padnutí<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Budou koberce určitě pasovat?<\/strong><br\/>Ano, naše EVA koberce jsou navrženy speciálně pro každou značku, model a verzi vozu a pokrývají celou podlahovou plochu včetně míst, která nechrání gumové ani velurové koberce.<\/p><p><strong>– Co je koberec na tunel?<\/strong><br\/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu a zajišťují maximální ochranu.<\/p><p><strong>– Je podložka paty namontována na koberci řidiče?<\/strong><br\/>Ne, podložka paty je dodávána samostatně, abyste si ji mohli nastavit podle svých preferencí.<\/p><\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Vlastnosti materiálu a odolnost<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Co je materiál EVA?<\/strong><br\/>Je to 10 mm silná pěna, která zachytává nečistoty a vodu na povrchu koberce a brání jejich průniku pod něj.<\/p><p><strong>– Jaký je rozdíl mezi sadou 3D a sadou 3D s lemy?<\/strong><br\/>Sada 3D s lemy poskytuje dodatečnou ochranu bočního čalounění podlahy a zajišťuje lepší padnutí.<\/p><p><strong>– Jak dlouho koberce vydrží?<\/strong><br\/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.<\/p><\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Používání a údržba<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Jak čistit EVA koberce?<\/strong><br\/>Nečistoty na povrchu koberce neulpívají. Stačí je vyklepat, nebo při větším znečištění opláchnout vysokotlakým čističem.<\/p><p><strong>– Jsou EVA koberce vhodné na léto i zimu?<\/strong><br\/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.<\/p><\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Objednávka a doručení<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\"><p><strong>– Jaká je doba dodání?<\/strong><br\/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, například motorových člunů nebo traktorů, se může doba prodloužit na 4–6 týdnů.<\/p><p><strong>– Jak probíhá doručení?<\/strong><br\/>Koberce odesíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu neposíláme koberce do výdejních boxů. Dbáme na to, aby koberce dorazily ve stejné podobě, v jaké byly vyrobeny — bez skládání nebo ohýbání, které by mohlo ovlivnit jejich padnutí.<\/p><\/div>\n  <\/details>\n<\/div>"
           }
         },
         "tab_hiraMx": {
@@ -218,7 +217,7 @@
           "settings": {
             "title": "Doprava a platba",
             "id": "delivery",
-            "html": "<p><strong>📦 Doprava a platba</strong></p>\n\n<p>Všechny EVA rohože vyrábíme na zakázku od začátku, s důrazem na detail a perfektní přizpůsobení vašemu konkrétnímu modelu vozu.</p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 Aktuální standardní doba zpracování objednávky je 14 pracovních dní.</p>\n\n<p>Zvolte si rychlost výroby své objednávky</p>\n\n<p>Každá sada rohoží se vyrábí individuálně, takže si můžete vybrat, jak rychle vaše objednávka vstoupí do výroby.</p>\n\n<p>Dostupné možnosti výroby:</p>\n\n<p>🟢 Standard - 14 pracovních dní<br>\nZpracování ve standardní výrobní frontě.</p>\n\n<p>🟠 Expres - 7 pracovních dní<br>\nVyšší priorita ve výrobní frontě.</p>\n\n<p>Jakmile je výroba dokončena, rohože jsou ihned připraveny k odeslání.</p>\n\n<p>Možnost prioritní výroby si můžete vybrat na stránce „Doprava a platba“ při výběru způsobu doručení. Služba Expres je dostupná za příplatek.</p>\n\n<p>🚗 Děláme maximum pro co nejrychlejší zpracování objednávek. V obdobích zvýšeného počtu objednávek, jako jsou sezónní špičky, promoakce nebo svátky, se však může doba zpracování prodloužit.</p>\n\n<p><strong>Způsoby doručení:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost kurýr (online platba nebo dobírka)</li>\n    <li>InPost výdejní box (pouze online platba)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD kurýr (online platba nebo dobírka)</li>\n    <li>DPD výdejní místo (pouze online platba)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS kurýr (online platba nebo dobírka)</li>\n    <li>GLS Parcel Shop (pouze online platba)</li>\n  </ul>\n</div>\n\n<p><strong>Online platby:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\" style=\"display: flex; gap: 10px; flex-wrap: wrap;\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/przelewy24_logo_svg.svg?v=1754575627\" alt=\"Przelewy24\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/blik_9f0af63c-fe50-41e4-9eed-8eba66188150.svg?v=1754574036\" alt=\"BLIK\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/PayPo_logo_kolor.svg?v=1754574985\" alt=\"PayPo\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n</div>\n\n<p><strong>Bezpečný nákup:</strong></p>\n<ul>\n  <li>Šifrované platby</li>\n  <li>Spolehlivá logistika</li>\n  <li>Průběžná zákaznická podpora</li>\n</ul>\n\n<p>Děkujeme, že jste si vybrali produkt vyrobený v Polsku s důrazem na kvalitu a funkčnost. Spokojenost řidiče je pro nás nejvyšší prioritou.</p>"
+            "html": "<p><strong>📦 Doprava a platba<\/strong><\/p>\n\n<p>Všechny EVA rohože vyrábíme na zakázku od začátku, s důrazem na detail a perfektní přizpůsobení vašemu konkrétnímu modelu vozu.<\/p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 Aktuální standardní doba zpracování objednávky je 14 pracovních dní.<\/p>\n\n<p>Zvolte si rychlost výroby své objednávky<\/p>\n\n<p>Každá sada rohoží se vyrábí individuálně, takže si můžete vybrat, jak rychle vaše objednávka vstoupí do výroby.<\/p>\n\n<p>Dostupné možnosti výroby:<\/p>\n\n<p>🟢 Standard - 14 pracovních dní<br>\nZpracování ve standardní výrobní frontě.<\/p>\n\n<p>🟠 Expres - 7 pracovních dní<br>\nVyšší priorita ve výrobní frontě.<\/p>\n\n<p>Jakmile je výroba dokončena, rohože jsou ihned připraveny k odeslání.<\/p>\n\n<p>Možnost prioritní výroby si můžete vybrat na stránce „Doprava a platba“ při výběru způsobu doručení. Služba Expres je dostupná za příplatek.<\/p>\n\n<p>🚗 Děláme maximum pro co nejrychlejší zpracování objednávek. V obdobích zvýšeného počtu objednávek, jako jsou sezónní špičky, promoakce nebo svátky, se však může doba zpracování prodloužit.<\/p>\n\n<p><strong>Způsoby doručení:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost kurýr (online platba nebo dobírka)<\/li>\n    <li>InPost výdejní box (pouze online platba)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD kurýr (online platba nebo dobírka)<\/li>\n    <li>DPD výdejní místo (pouze online platba)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS kurýr (online platba nebo dobírka)<\/li>\n    <li>GLS Parcel Shop (pouze online platba)<\/li>\n  <\/ul>\n<\/div>\n\n<p><strong>Online platby:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\" style=\"display: flex; gap: 10px; flex-wrap: wrap;\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/image_6.png\" alt=\"GoPay\" style=\"height:40px;width:auto;object-fit:contain;\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/PayPo_logo_kolor.svg?v=1754574985\" alt=\"PayPo\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n<\/div>\n\n<p><strong>Bezpečný nákup:<\/strong><\/p>\n<ul>\n  <li>Šifrované platby<\/li>\n  <li>Spolehlivá logistika<\/li>\n  <li>Průběžná zákaznická podpora<\/li>\n<\/ul>\n\n<p>Děkujeme, že jste si vybrali produkt vyrobený v Polsku s důrazem na kvalitu a funkčnost. Spokojenost řidiče je pro nás nejvyšší prioritou.<\/p>"
           }
         }
       },
@@ -233,18 +232,18 @@
         "about_heading_before": "Originální",
         "about_heading_brand": "EVAMATS",
         "about_heading_after": "autokoberce - moderní ochrana interiéru",
-        "about_intro": "<p>Naše EVA autokoberce představují novou generaci automobilových doplňků - jsou lehké, odolné a voděodolné. Díky jedinečné buněčné struktuře zachytí nečistoty (bláto, písek, vodu) hluboko v materiálu, takže povrch zůstává suchý a čistý.</p><p>Každou sadu vyrábíme na míru konkrétnímu modelu vozu a přesně ji přizpůsobujeme tvaru podlahy. Můžete si vybrat barvu, vzor buněk i lemování tak, aby dokonale ladily s interiérem vašeho auta.</p>",
+        "about_intro": "<p>Naše EVA autokoberce představují novou generaci automobilových doplňků - jsou lehké, odolné a voděodolné. Díky jedinečné buněčné struktuře zachytí nečistoty (bláto, písek, vodu) hluboko v materiálu, takže povrch zůstává suchý a čistý.<\/p><p>Každou sadu vyrábíme na míru konkrétnímu modelu vozu a přesně ji přizpůsobujeme tvaru podlahy. Můžete si vybrat barvu, vzor buněk i lemování tak, aby dokonale ladily s interiérem vašeho auta.<\/p>",
         "about_features_heading": "Čím naše autokoberce vynikají?",
         "about_feature_1_text": "100% voděodolné - bez protečení",
-        "about_feature_1_image": "shopify://shop_images/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
+        "about_feature_1_image": "shopify:\/\/shop_images\/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
         "about_feature_2_text": "Pokrývají až 95 % plochy podlahy",
-        "about_feature_2_image": "shopify://shop_images/Frame_1632526598_1.webp",
+        "about_feature_2_image": "shopify:\/\/shop_images\/Frame_1632526598_1.webp",
         "about_feature_3_text": "Snadné čištění - stačí vyklepat nebo opláchnout",
-        "about_feature_3_image": "shopify://shop_images/Frame_1632526597.webp",
+        "about_feature_3_image": "shopify:\/\/shop_images\/Frame_1632526597.webp",
         "about_feature_4_text": "Vhodné pro všechna roční období: od -50°C do +50°C",
-        "about_feature_4_image": "shopify://shop_images/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
+        "about_feature_4_image": "shopify:\/\/shop_images\/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
         "about_feature_5_text": "Bezpečné pro zdraví i životní prostředí - bez toxinů a recyklovatelné",
-        "about_feature_5_image": "shopify://shop_images/Frame_1632526601.webp",
+        "about_feature_5_image": "shopify:\/\/shop_images\/Frame_1632526601.webp",
         "about_confidence_heading": "Nakupujte s jistotou",
         "about_confidence_1_text": "Odborné poradenství - pomůžeme vám vybrat správnou sadu",
         "about_confidence_2_text": "Bezpečnost - šifrované platby, ověření kurýři",
@@ -269,7 +268,7 @@
         "text_6WLmiq": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Speciálně navržený jazyk účinně chrání místa nejvíce vystavená opotřebení, například oblast levé opěrky nohy.</p><p>✔ Díky přesnému přizpůsobení tvaru vozu zvyšuje komfort jízdy i estetiku interiéru.</p>"
+            "text": "<p>✔ Speciálně navržený jazyk účinně chrání místa nejvíce vystavená opotřebení, například oblast levé opěrky nohy.<\/p><p>✔ Díky přesnému přizpůsobení tvaru vozu zvyšuje komfort jízdy i estetiku interiéru.<\/p>"
           }
         }
       },
@@ -278,8 +277,8 @@
         "text_6WLmiq"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_footrest.webp",
-        "image_2": "shopify://shop_images/eng_3dfootrest.webp",
+        "image": "shopify:\/\/shop_images\/eng_footrest.webp",
+        "image_2": "shopify:\/\/shop_images\/eng_3dfootrest.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -299,7 +298,7 @@
         "text_GbADCg": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou mistrovským dílem přesnosti - dokonale kopírují každý okraj a zajišťují maximální ochranu podlahy.<br/><br/>✔ Matná černá barva v kombinaci s elegantním lemováním podtrhuje moderní vzhled interiéru.<br/></p>"
+            "text": "<p>✔ Rohože EVAMATS jsou mistrovským dílem přesnosti - dokonale kopírují každý okraj a zajišťují maximální ochranu podlahy.<br\/><br\/>✔ Matná černá barva v kombinaci s elegantním lemováním podtrhuje moderní vzhled interiéru.<br\/><\/p>"
           }
         }
       },
@@ -308,7 +307,7 @@
         "text_GbADCg"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_pefect.webp",
+        "image": "shopify:\/\/shop_images\/eng_pefect.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -328,7 +327,7 @@
         "text_g6mHVp": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Vysoké lemy až 7 centimetrů účinně zachycují nečistoty, vodu i bláto.<br/><br/>✔ Voštinový vzor brání rozlévání kapalin, takže je snazší udržet auto čisté.<br/></p>"
+            "text": "<p>✔ Vysoké lemy až 7 centimetrů účinně zachycují nečistoty, vodu i bláto.<br\/><br\/>✔ Voštinový vzor brání rozlévání kapalin, takže je snazší udržet auto čisté.<br\/><\/p>"
           }
         }
       },
@@ -337,7 +336,7 @@
         "text_g6mHVp"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_upto7cm.webp",
+        "image": "shopify:\/\/shop_images\/eng_upto7cm.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -357,7 +356,7 @@
         "text_ydwWe6": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou vybaveny speciálním upevňovacím systémem, který zabraňuje jejich posouvání.<br/><br/>✔ Nabízíme úchyty kompatibilní s různými značkami aut - od klasických klipů až po suché zipy ve stylu BMW.<br/></p>"
+            "text": "<p>✔ Rohože EVAMATS jsou vybaveny speciálním upevňovacím systémem, který zabraňuje jejich posouvání.<br\/><br\/>✔ Nabízíme úchyty kompatibilní s různými značkami aut - od klasických klipů až po suché zipy ve stylu BMW.<br\/><\/p>"
           }
         }
       },
@@ -366,7 +365,7 @@
         "text_ydwWe6"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_mounts_forallbrands.webp",
+        "image": "shopify:\/\/shop_images\/eng_mounts_forallbrands.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -386,7 +385,7 @@
         "text_nfDAxc": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Speciální konstrukce tunelu se suchým zipem zajišťuje, že rohož pevně drží na místě a při jízdě se neposouvá.<br/><br/>✔ Toto řešení chrání střední část podlahy před znečištěním.</p>"
+            "text": "<p>✔ Speciální konstrukce tunelu se suchým zipem zajišťuje, že rohož pevně drží na místě a při jízdě se neposouvá.<br\/><br\/>✔ Toto řešení chrání střední část podlahy před znečištěním.<\/p>"
           }
         }
       },
@@ -395,8 +394,8 @@
         "text_nfDAxc"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_tunnel.webp",
-        "image_2": "shopify://shop_images/eng_tunnel_copy.webp",
+        "image": "shopify:\/\/shop_images\/eng_tunnel.webp",
+        "image_2": "shopify:\/\/shop_images\/eng_tunnel_copy.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -416,7 +415,7 @@
         "text_J4bFnF": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Dodatečné suché zipy v rozích drží rohože na místě a eliminují jejich klouzání.<br/><br/>✔ To zvyšuje bezpečnost jízdy a prodlužuje životnost produktu.</p>"
+            "text": "<p>✔ Dodatečné suché zipy v rozích drží rohože na místě a eliminují jejich klouzání.<br\/><br\/>✔ To zvyšuje bezpečnost jízdy a prodlužuje životnost produktu.<\/p>"
           }
         }
       },
@@ -425,7 +424,7 @@
         "text_J4bFnF"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_velcroCORNer.webp",
+        "image": "shopify:\/\/shop_images\/eng_velcroCORNer.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -445,7 +444,7 @@
         "text_TfEkhH": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Pečlivě zpracované lemování z kvalitního materiálu zajišťuje odolnost proti opotřebení a dlouhodobě elegantní vzhled.<br/><br/>✔ Zesílené nitě garantují trvanlivost i při nejnáročnějším používání.</p>"
+            "text": "<p>✔ Pečlivě zpracované lemování z kvalitního materiálu zajišťuje odolnost proti opotřebení a dlouhodobě elegantní vzhled.<br\/><br\/>✔ Zesílené nitě garantují trvanlivost i při nejnáročnějším používání.<\/p>"
           }
         }
       },
@@ -454,7 +453,7 @@
         "text_TfEkhH"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_stitching.webp",
+        "image": "shopify:\/\/shop_images\/eng_stitching.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -474,7 +473,7 @@
         "text_aVDWpY": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS mají tloušťku 10 mm, což zvyšuje komfort jízdy díky omezení hluku a vibrací.<br/><br/>✔ Měkká, ale odolná struktura zajišťuje pohodlí pro řidiče i spolujezdce.</p>"
+            "text": "<p>✔ Rohože EVAMATS mají tloušťku 10 mm, což zvyšuje komfort jízdy díky omezení hluku a vibrací.<br\/><br\/>✔ Měkká, ale odolná struktura zajišťuje pohodlí pro řidiče i spolujezdce.<\/p>"
           }
         }
       },
@@ -483,7 +482,7 @@
         "text_aVDWpY"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_matThick.webp",
+        "image": "shopify:\/\/shop_images\/eng_matThick.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -503,7 +502,7 @@
         "text_U3ExRK": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou dostupné ve dvou jedinečných vzorech - honeycomb nebo diamond.<br/><br/>✔ Hloubka 7 mm účinně zachytává vodu, bláto i další nečistoty, takže interiér vašeho auta zůstává stále čistý.</p>"
+            "text": "<p>✔ Rohože EVAMATS jsou dostupné ve dvou jedinečných vzorech - honeycomb nebo diamond.<br\/><br\/>✔ Hloubka 7 mm účinně zachytává vodu, bláto i další nečistoty, takže interiér vašeho auta zůstává stále čistý.<\/p>"
           }
         }
       },
@@ -512,8 +511,8 @@
         "text_U3ExRK"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_7mmcells.webp",
-        "image_2": "shopify://shop_images/7mm.webp",
+        "image": "shopify:\/\/shop_images\/eng_7mmcells.webp",
+        "image_2": "shopify:\/\/shop_images\/7mm.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -525,7 +524,7 @@
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}</button>",
+        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}<\/button>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -537,20 +536,20 @@
         "heading_EUBWBb": {
           "type": "heading",
           "settings": {
-            "heading": "<p>VYBERTE SI NEJLEPŠÍ OCHRANU PRO SVÉ AUTO S EVAMATS!</p>",
+            "heading": "<p>VYBERTE SI NEJLEPŠÍ OCHRANU PRO SVÉ AUTO S EVAMATS!<\/p>",
             "heading_size": "h1"
           }
         },
         "text_3VQ8yY": {
           "type": "text",
           "settings": {
-            "text": "<p>Rohože EVAMATS jsou navrženy s důrazem na odolnost, estetiku a funkčnost. Každou jízdu dělají pohodlnější a udržují interiér vašeho auta jako nový!</p>"
+            "text": "<p>Rohože EVAMATS jsou navrženy s důrazem na odolnost, estetiku a funkčnost. Každou jízdu dělají pohodlnější a udržují interiér vašeho auta jako nový!<\/p>"
           }
         },
         "text_jqh9iU": {
           "type": "text",
           "settings": {
-            "text": "<p>🛒 Objednejte nyní a objevte, jak výjimečné mohou být autokoberce EVAMATS!</p>"
+            "text": "<p>🛒 Objednejte nyní a objevte, jak výjimečné mohou být autokoberce EVAMATS!<\/p>"
           }
         }
       },
@@ -629,7 +628,7 @@
       "settings": {
         "heading": "Získejte bezplatnou konzultaci!",
         "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
-        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image": "shopify:\/\/shop_images\/vacancy_375.webp",
         "mat_image_alt": "EVA koberec",
         "label_name": "Jméno a příjmení",
         "placeholder_name": "Jan Novák",
