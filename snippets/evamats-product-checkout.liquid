@@ -26,5 +26,8 @@
     -%}
   </div>
 
-  {%- render 'evamats-config-checkout-notes', block: block, product: product -%}
+  <div class="evamats-config-checkout__below">
+    {%- render 'evamats-config-checkout-payments' -%}
+    {%- render 'evamats-config-checkout-notes', block: block, product: product -%}
+  </div>
 </div>

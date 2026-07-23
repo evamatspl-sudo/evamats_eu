@@ -205,7 +205,7 @@
               <p class="evamats-footer__payments-label">{{ section.settings.payments_label | escape }}</p>
             {%- endif -%}
             <ul class="evamats-footer__payment-list list-unstyled" role="list">
-              {%- assign payment_gateways = 'visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik' | split: ',' -%}
+              {%- assign payment_gateways = 'visa,mc,ae,discover,jcb,dc,apay,gpay,go_pay' | split: ',' -%}
               {%- for type in payment_gateways -%}
                 <li class="evamats-footer__payment-item">
                   {%- assign typeSvg = type | append: '.svg' -%}

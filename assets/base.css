@@ -13065,7 +13065,7 @@ textarea.field__input:-webkit-autofill:hover,
   display: block;
   width: auto;
   height: auto;
-  max-width: 130px;
+  max-width: 150px;
   object-fit: contain; 
 }
 

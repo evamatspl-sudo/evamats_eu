@@ -2276,6 +2276,35 @@
   width: auto;
 }
 
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__below {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__payment-item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__payment-item img {
+  display: block;
+  height: 26px;
+  width: auto;
+}
+
 @media screen and (max-width: 749px) {
   .evamats-config .product__dropdown_title {
     font-size: 18px;
