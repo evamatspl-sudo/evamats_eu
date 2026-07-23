@@ -28,7 +28,7 @@
             "info_text_individual": "",
             "info_html": "",
             "info_html_individual": "",
-            "individual_welcome_html": "<p><strong>How does an individual order work?</strong></p>\n<ol>\n<li>Configure your set: enter your vehicle details, choose colours a add-ons.</li>\n<li>Pay a deposit: you only pay a small deposit upfront (plus any add-ons in full).</li>\n<li>Confirm details: our consultant will call you to confirm a send the order to production.</li>\n<li>Pay the balance: settle the remainder by bank transfer in advance or on delivery.</li>\n</ol>",
+            "individual_welcome_html": "<p><strong>Jak funguje individuální objednávka?</strong></p>\n<ol>\n<li>Nakonfigurujte si sadu: zadejte údaje o vozidle, vyberte barvy a doplňky.</li>\n<li>Zaplaťte zálohu: předem hradíte pouze malou zálohu (plus všechny doplňky v plné výši).</li>\n<li>Potvrďte detaily: náš konzultant vám zavolá, vše potvrdí a předá objednávku do výroby.</li>\n<li>Doplaťte zbytek: zbývající částku uhraďte bankovním převodem předem nebo na dobírku.</li>\n</ol>",
             "auto_open_individual_welcome_popup": true
           }
         },
@@ -93,9 +93,9 @@
         "hide_variants": true,
         "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
-        "trunk_message": "<p>Note – trunk mat:</p><p>Up to 140x240 cm – from one part ✅</p><p>Up to 150x250 cm – from two parts ✅</p><p>Above 280 cm in length – we do not make ❌</p><p>ℹ️ In case of doubt, please contact the sales department.</p>",
-        "trunk_message_5_7_os": "<p><strong>Note – trunk mat:</strong></p><p>The trunk has no raised edges – this applies to 3D mats with edges.<br><br>In this vehicle model the trunk floor is flat a has no factory side edges. 3D mats with edges will fit the floor but will not create additional raised edges in the trunk.<br><br></p>",
-        "gallery_disclaimer": "The photo may differ from the final result. When ordering, you will receive mats that correspond to your car model.",
+        "trunk_message": "<p>Poznámka - rohož do kufru:</p><p>Do 140x240 cm - z jednoho dílu ✅</p><p>Do 150x250 cm - ze dvou dílů ✅</p><p>Nad 280 cm délky - nevyrábíme ❌</p><p>ℹ️ V případě pochybností kontaktujte prosím obchodní oddělení.</p>",
+        "trunk_message_5_7_os": "<p><strong>Poznámka - rohož do kufru:</strong></p><p>Kufr nemá zvýšené boční hrany - to platí pro 3D rohože s okraji.<br/><br/>U tohoto modelu vozidla je podlaha kufru rovná a nemá tovární boční hrany. 3D rohože s okraji na podlahu pasují, ale v kufru nevytvoří dodatečné zvýšené okraje.<br/><br/></p>",
+        "gallery_disclaimer": "Fotografie se může lišit od výsledného produktu. Při objednávce obdržíte koberce odpovídající modelu vašeho vozu.",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -137,25 +137,25 @@
       "settings": {
         "about_heading_before": "Original",
         "about_heading_brand": "EVAMATS",
-        "about_heading_after": "car mats — modern interior protection",
-        "about_intro": "<p>Our EVA car mats represent a new generation of automotive accessories — lightweight, durable, a water-resistant. Thanks to their unique cellular structure, they trap dirt (mud, sa, water) deep within the material, keeping the surface around them dry a clean.</p><p>Each set is custom-made for a specific car model, precisely tailored to the shape of the floor. You can choose the color, cell pattern, a edging to perfectly match your car's interior.</p>",
-        "about_features_heading": "What makes our car mats sta out?",
-        "about_feature_1_text": "100% waterproof — no leaks",
-        "about_feature_2_text": "Covers up to 95% of the floor surface",
-        "about_feature_3_text": "Easy to clean — simply shake out or rinse",
-        "about_feature_4_text": "Suitable for all seasons: from −50°C to +50°C",
-        "about_feature_5_text": "Safe for health a the environment — toxin-free a recyclable",
-        "about_confidence_heading": "Shop with confidence",
-        "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
-        "about_confidence_2_text": "Security — encrypted payments, trusted couriers",
-        "about_confidence_3_text": "Made in Polsko — local production, fast delivery",
-        "gift_card_cta_label": "Buy card",
+        "about_heading_after": "autokoberce — moderní ochrana interiéru",
+        "about_intro": "<p>Naše EVA autokoberce představují novou generaci automobilových doplňků — lehké, odolné a voděodolné. Díky své jedinečné buněčné struktuře zachycují nečistoty (bláto, písek, vodu) hluboko v materiálu a udržují okolní povrch suchý a čistý.</p><p>Každá sada se vyrábí na míru pro konkrétní model vozu, přesně podle tvaru podlahy. Můžete si vybrat barvu, vzor buněk a lemování tak, aby dokonale ladilo s interiérem vašeho vozu.</p>",
+        "about_features_heading": "Čím vynikají naše autokoberce?",
+        "about_feature_1_text": "100% voděodolné — nic neprotéká",
+        "about_feature_2_text": "Pokrývají až 95 % plochy podlahy",
+        "about_feature_3_text": "Snadné čištění — stačí vytřepat nebo opláchnout",
+        "about_feature_4_text": "Vhodné pro všechna roční období: od −50 °C do +50 °C",
+        "about_feature_5_text": "Bezpečné pro zdraví i životní prostředí — bez toxinů a recyklovatelné",
+        "about_confidence_heading": "Nakupujte s jistotou",
+        "about_confidence_1_text": "Odborné poradenství — pomůžeme vám vybrat správnou sadu",
+        "about_confidence_2_text": "Bezpečnost — šifrované platby, spolehliví dopravci",
+        "about_confidence_3_text": "Vyrobeno v Polsku — vlastní výroba, rychlé dodání",
+        "gift_card_cta_label": "Koupit kartu",
         "gift_card_item_1_description": "A set of dedicated front mats without edges, complete with an EVA materiál EVA heel pad. The perfect combination of functionality a elegance! 🏎️",
         "gift_card_item_1_image": "shopify://shop_images/Group_1948754940.webp",
-        "gift_card_item_2_description": "Front a rear mats without edges, ensuring comfort a aesthetics in every detail. 🌟 (Front mats with edges are also available for this price!)",
-        "gift_card_item_3_description": "Front a rear mats without edges, enriched with additional accessories for full protection a style. 💼 (Front mats with edges are also available for this price!)",
-        "gift_card_item_4_description": "A full set of mats without edges, including trunk mats, ideal for a 5-seater car. (Possibility to buy front a rear mats with edges at the same price!)",
-        "gift_card_item_5_description": "A full set of 3D mats with edges for a 5-seater a accessories that will ensure excellent protection a interior appearance. ✨"
+        "gift_card_item_2_description": "Přední a zadní koberce bez okrajů, zajišťující pohodlí a estetiku v každém detailu. 🌟 (Za tuto cenu jsou k dispozici i přední koberce s okraji!)",
+        "gift_card_item_3_description": "Přední a zadní koberce bez okrajů, doplněné o další příslušenství pro plnou ochranu a styl. 💼 (Za tuto cenu jsou k dispozici i přední koberce s okraji!)",
+        "gift_card_item_4_description": "Kompletní sada koberců bez okrajů včetně koberce do kufru, ideální pro pětimístné vozy. (Možnost zakoupit přední a zadní koberce s okraji za stejnou cenu!)",
+        "gift_card_item_5_description": "Kompletní sada 3D koberců s okraji pro pětimístné vozy a doplňky, které zajistí dokonalou ochranu i vzhled interiéru. ✨"
       }
     },
     "080cd113-d353-46cb-aa5d-cfdeee68c912": {
@@ -163,7 +163,7 @@
       "settings": {
         "back-to-top-button-enabled": true,
         "smooth-scroll-enabled": true,
-        "btn_text": "Back to top",
+        "btn_text": "Nahoru",
         "html": "",
         "button-color": "#848282",
         "text-color": "#ffffff",

@@ -25,6 +25,18 @@
       margin-top: {{ section.settings.margin_top }}px;
     }
   }
+
+  .evamats-footer__brand-col { flex: 0 0 250px; max-width: 250px; }
+  .evamats-footer__brand-logo { max-width: 150px; height: auto; margin-bottom: 16px; }
+  .evamats-footer__contact-body { gap: 14px; }
+  .evamats-footer__contact-line { margin: 0; line-height: 1.45; }
+  .evamats-footer__contact-note { font-size: 0.85em; color: #9a9a9a; line-height: 1.35; }
+  .evamats-footer__brand-desc { margin: 0; max-width: 240px; font-size: 1.3rem; line-height: 1.55; color: #6b6b6b; }
+  .evamats-footer__menu-heading { text-transform: none; }
+  @media screen and (max-width: 989px) {
+    .evamats-footer__main { flex-wrap: wrap; }
+    .evamats-footer__brand-col { flex-basis: 100%; max-width: 100%; }
+  }
 {%- endstyle -%}
 
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-footer' %}
@@ -64,6 +76,16 @@
   {%- comment -%} ── 1. Top: menus + contacts ── {%- endcomment -%}
   <div class="evamats-footer__content-top page-width">
     <div class="evamats-footer__main">
+      {%- if settings.logo_inverse != blank or section.settings.brand_description != blank -%}
+        <div class="evamats-footer__brand-col">
+          <a href="{{ routes.root_url }}" class="evamats-footer__brand-logo-link">
+            <img src="{{ 'logo_CARVION_colored.svg' | file_url }}" class="evamats-footer__brand-logo" alt="{{ shop.name | escape }}" width="150" loading="lazy">
+          </a>
+          {%- if section.settings.brand_description != blank -%}
+            <p class="evamats-footer__brand-desc">{{ section.settings.brand_description }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
       <div class="evamats-footer__menus">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -212,6 +234,10 @@
                   <img src="{{ typeSvg | file_url }}" alt="{{ type }}" loading="lazy">
                 </li>
               {%- endfor -%}
+                {%- comment -%} GoPay (CZ) — заменяет p24/blik {%- endcomment -%}
+                <li class="evamats-footer__payment-item evamats-footer__payment-item--gopay">
+                  <img src="{{ 'image_6.png' | file_url }}" alt="GoPay" loading="lazy">
+                </li>
             </ul>
           </div>
         {%- endif -%}
@@ -258,27 +284,10 @@
 
   {%- comment -%} ── 4. Bottom bar: logo + copyright + NIP/REGON | partners ── {%- endcomment -%}
   <div class="evamats-footer__bar-wrap page-width">
-    <hr class="evamats-footer__divider" aria-hidden="true">
+    {%- if show_partners -%}<hr class="evamats-footer__divider" aria-hidden="true">{%- endif -%}
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
-        {%- if settings.logo_inverse != blank -%}
-          <a href="{{ routes.root_url }}" class="evamats-footer__logo-link">
-            {{
-              settings.logo_inverse
-              | image_url: width: 228
-              | image_tag:
-                loading: 'lazy',
-                class: 'evamats-footer__logo',
-                widths: '91, 114, 182, 228',
-                sizes: '114px',
-                alt: shop.name
-            }}
-          </a>
-        {%- endif -%}
         <div class="evamats-footer__copyright-wrap">
-          <p class="evamats-footer__copyright">
-            <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}</small>
-          </p>
           {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
             <p class="evamats-footer__legal">
               {%- if section.settings.nip_number != blank -%}
@@ -596,6 +605,12 @@
     {
       "type": "header",
       "content": "Legal info (bottom bar)"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_description",
+      "label": "Brand description (under logo)",
+      "default": "Carvion je evropská značka specializující se na výrobu autokoberců."
     },
     {
       "type": "text",

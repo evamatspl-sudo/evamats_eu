@@ -79,7 +79,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "Klikněte na „CUSTOM ORDER“, pokud nenajdete vhodný koberec.<br>Vyrobíme koberec na míru speciálně pro váš automobil se všemi jeho vlastnostmi.",
+            "text": "Klikněte na „INDIVIDUÁLNÍ OBJEDNÁVKA“, pokud nenajdete vhodný koberec.<br>Vyrobíme koberec na míru speciálně pro váš automobil se všemi jeho vlastnostmi.",
             "text_style": "uppercase"
           }
         },
@@ -151,7 +151,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "People often buy this product",
+        "title": "Tento produkt často kupují",
         "collection": "ludzie-rowniez-czesto-kupuja",
         "products_to_show": 4,
         "show_view_all": false,
@@ -247,7 +247,7 @@
         "img1": "shopify://shop_images/1.png",
         "des1": "<p>Odolné, neztrácejí svůj vzhled s časem</p>",
         "img2": "shopify://shop_images/High_Temperature_Meteorology_Symbol.I16_1.png",
-        "des2": "<p>Wytrzymuje temperaturyod -50 °C do +50 °C</p>",
+        "des2": "<p>Odolá teplotám od −50 °C do +50 °C</p>",
         "img3": "shopify://shop_images/1_3853e075-6a50-4722-aa6e-3fdfd4d9847a.png",
         "des3": "<p>Odolnost vůči působení detergentů</p>"
       }
@@ -256,9 +256,9 @@
       "type": "home-8",
       "disabled": true,
       "settings": {
-        "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form a we will realize individually tailored floor mats for your car.</p>",
-        "btn_text": "CUSTOM ORDER",
+        "hd": "“Máte vzácné auto?“",
+        "des": "<p>Nenajdete koberce pro své jedinečné auto? <br/><br/>Máme kontakty po celém Polsku i v zahraničí u různých autosalonů, kde vám vozidlo změříme, pokud nemůžete přijet k nám. Ke každému měření přistupujeme s precizností, s jakou hodinář skládá hodinky.<br/><br/>Vyplňte tento formulář a my pro vaše auto vyrobíme koberce na míru.</p>",
+        "btn_text": "INDIVIDUÁLNÍ OBJEDNÁVKA",
         "btn_url": "shopify://products/custom-order",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
@@ -270,32 +270,32 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "7d20225c-8a01-42af-b63d-fa98977ceb43": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "64e15df8-e64d-4dd6-b63c-ac6979238a0c": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         },
         "320d035d-bcbf-4e5c-bc8c-71963f4285c5": {
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "4 days ago",
-            "des": "Great show, keep it up"
+            "rt_txt": "před 4 dny",
+            "des": "Skvělá práce, jen tak dál"
           }
         }
       },
@@ -394,7 +394,7 @@
     "featured_collection_GyPM4A": {
       "type": "featured-collection",
       "settings": {
-        "title": "PRODUKTY W ZESTAWIE:",
+        "title": "PRODUKTY V SADĚ:",
         "collection": "torby-pojedyncze",
         "products_to_show": 4,
         "show_view_all": false,
@@ -407,9 +407,9 @@
       "custom_css": [],
       "settings": {
         "img1": "shopify://shop_images/trolley_cart_icon_177366.svg",
-        "des1": "<p>Gwaracja <br/>door-to-door<br/> przez 3 lata</p>",
+        "des1": "<p>Záruka <br/>door-to-door<br/> po dobu 3 let</p>",
         "img2": "shopify://shop_images/shipping_icon_177395.svg",
-        "des2": "<p>Wysylka i zwroty<br/>zawsze graits</p>",
+        "des2": "<p>Doprava a vrácení<br/>vždy zdarma</p>",
         "img3": "shopify://shop_images/shopping_cart_icon_177373.svg",
         "des3": "<p>99 % spokojených<br/>zákazníků</p>"
       }

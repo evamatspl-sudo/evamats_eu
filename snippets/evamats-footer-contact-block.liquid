@@ -16,45 +16,20 @@
   {%- endif -%}
 
   {%- if block.settings.intro != blank or contact_email != blank or contact_phone != blank or contact_address != blank -%}
-    <div class="evamats-footer__contact-body">
+    <div class="evamats-footer__contact-body rte">
       {%- if block.settings.intro != blank -%}
-        <div class="evamats-footer__contact-intro rte">
-          {{ block.settings.intro }}
-        </div>
+        <div class="evamats-footer__contact-intro rte">{{ block.settings.intro }}</div>
       {%- endif -%}
-
       {%- if contact_email != blank -%}
-        <div class="evamats-footer__contact-row evamats-footer__contact-row--email">
-          <span class="evamats-footer__contact-icon" aria-hidden="true">
-            {% render 'evamats-footer-contact-icon', icon: 'email' %}
-          </span>
-          <a class="evamats-footer__contact-value evamats-footer__contact-value--email" href="mailto:{{ contact_email | escape }}">
-            {{- contact_email | escape -}}
-          </a>
-        </div>
+        <p class="evamats-footer__contact-line">✉️ <strong>E-mail:</strong> <a href="mailto:{{ contact_email | escape }}">{{- contact_email | escape -}}</a></p>
       {%- endif -%}
-
       {%- if contact_phone != blank -%}
-        <div class="evamats-footer__contact-row evamats-footer__contact-row--phone">
-          <span class="evamats-footer__contact-icon" aria-hidden="true">
-            {% render 'evamats-footer-contact-icon', icon: 'phone' %}
-          </span>
-          <a class="evamats-footer__contact-value evamats-footer__contact-value--phone" href="tel:{{ phone_href | escape }}">
-            {{- contact_phone | escape -}}
-          </a>
-        </div>
+        <p class="evamats-footer__contact-line">📞 <strong>Telefon:</strong> <a href="tel:{{ phone_href | escape }}">{{- contact_phone | escape -}}</a></p>
       {%- endif -%}
-
       {%- if contact_address != blank -%}
-        <div class="evamats-footer__contact-row evamats-footer__contact-row--address">
-          <span class="evamats-footer__contact-icon" aria-hidden="true">
-            {% render 'evamats-footer-contact-icon', icon: 'address' %}
-          </span>
-          <p class="evamats-footer__contact-value evamats-footer__contact-value--address">
-            {{ contact_address | newline_to_br }}
-          </p>
-        </div>
+        {%- assign addr_parts = contact_address | strip | split: '
+' -%}
+        <p class="evamats-footer__contact-line">📍 <strong>Adresa:</strong><br>{{ addr_parts[0] | strip }}{%- if addr_parts.size > 1 -%}<br><span class="evamats-footer__contact-note">{%- for part in addr_parts offset: 1 -%}{{ part | strip }}{%- unless forloop.last -%}<br>{%- endunless -%}{%- endfor -%}</span>{%- endif -%}</p>
       {%- endif -%}
-    </div>
   {%- endif -%}
 </div>
