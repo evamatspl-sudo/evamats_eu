@@ -51,16 +51,105 @@
 }
 
 .evamats-config .product__dropdown_wr.disabled {
-  opacity: 0.45;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.evamats-config .product__dropdown_wr.disabled .product__dropdown_inner {
+  opacity: 0.55;
+}
+
+.evamats-config .product__dropdown_wr.disabled .product__dropdown_title {
+  opacity: 1;
+}
+
+.evamats-config .product__dropdown_wr.is-incomplete:not(.disabled):not(.open) .product__dropdown_caret {
+  background: #ffe8eb;
+  color: var(--evc-red);
 }
 
 .evamats-config .product__dropdown_title {
-  padding: 20px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.44px;
   line-height: 1.2;
   color: var(--evc-text);
+  cursor: pointer;
+}
+
+.evamats-config .product__dropdown_title_main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.evamats-config .product__dropdown_title_row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.evamats-config .product__dropdown_step-num {
+  flex-shrink: 0;
+  color: var(--evc-red);
+  font-weight: 600;
+}
+
+.evamats-config .product__dropdown_title_text {
+  min-width: 0;
+}
+
+.evamats-config .product__dropdown_title .product__dropdown_value,
+.evamats-config .product__dropdown_title [data-step-status] {
+  display: block;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  line-height: 1.3;
+  color: var(--evc-muted);
+}
+
+.evamats-config .product__dropdown_title .product__dropdown_value.is-filled,
+.evamats-config .product__dropdown_title [data-step-status].is-filled {
+  color: var(--evc-text);
+  font-weight: 500;
+}
+
+.evamats-config .product__dropdown_title .product__dropdown_value:empty,
+.evamats-config .product__dropdown_title [data-step-status]:empty {
+  display: none;
+}
+
+.evamats-config .product__dropdown_title_actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.evamats-config .product__dropdown_caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--evc-pill);
+  color: var(--evc-text);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .evamats-config .product__dropdown_title .icon-edit {
@@ -72,18 +161,29 @@
   display: block !important;
 }
 
-.evamats-config .product__dropdown_title svg {
-  right: 0;
-  width: 20px;
-  height: 20px;
+.evamats-config .product__dropdown_title svg,
+.evamats-config .product__dropdown_title .icon-config-caret {
+  position: static;
+  top: auto;
+  right: auto;
+  width: 18px;
+  height: 18px;
+  transform: none;
+  transition: transform 0.2s ease;
 }
 
-.evamats-config .product__dropdown_wr:not(.open) .product__dropdown_title .icon-config-caret {
-  transform: translateY(-50%);
+.evamats-config .product__dropdown_wr:not(.open) .product__dropdown_title .product__dropdown_caret .icon-config-caret {
+  transform: none;
 }
 
+.evamats-config .product__dropdown_wr.open .product__dropdown_title .product__dropdown_caret {
+  background: #ffe8eb;
+  color: var(--evc-red);
+}
+
+.evamats-config .product__dropdown_wr.open .product__dropdown_title .product__dropdown_caret .icon-config-caret,
 .evamats-config .product__dropdown_wr.open .product__dropdown_title .icon-config-caret {
-  transform: translateY(-50%) rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .evamats-config .product__dropdown_wr .product__dropdown_inner.open,
@@ -1013,16 +1113,16 @@
 /* ── Heel pads header row Figma 1710:25739 ── */
 .evamats-config .product__dropdown_wr--heel .product__dropdown_title--heel {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   width: 100%;
-  padding: 20px 0 0;
+  padding: 16px 0;
   min-height: 0;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__dropdown_title_text {
-  flex-shrink: 0;
+  flex-shrink: 1;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.44px;
@@ -1035,6 +1135,7 @@
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+  flex: 1;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__dropdown_title_optional {
@@ -1045,15 +1146,16 @@
   color: var(--evc-muted);
 }
 
-.evamats-config .product__dropdown_wr--heel .product__dropdown_value:empty {
-  display: none;
+.evamats-config .product__dropdown_wr--heel .product__dropdown_title .product__dropdown_value,
+.evamats-config .product__dropdown_wr--extras .product__dropdown_title .product__dropdown_value {
+  display: none !important;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__dropdown_title_actions {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 12px;
   flex-shrink: 0;
   margin-left: auto;
 }
@@ -1090,18 +1192,19 @@
   position: static !important;
   top: auto !important;
   right: auto !important;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   transform: none !important;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__dropdown_title--heel .icon-config-caret {
-  width: 20px;
-  height: 20px;
-  color: var(--evc-text);
+  width: 18px;
+  height: 18px;
+  color: inherit;
 }
 
+.evamats-config .product__dropdown_wr--heel.open .product__dropdown_title--heel .product__dropdown_caret .icon-config-caret,
 .evamats-config .product__dropdown_wr--heel.open .product__dropdown_title--heel .icon-config-caret {
   transform: rotate(180deg) !important;
   transform-origin: center center;
@@ -1244,43 +1347,38 @@
 .evamats-config .product__dropdown_wr--heel .product__upsell_discount,
 .evamats-config .product__dropdown_wr--extras .product__upsell_discount {
   display: inline-flex;
-  align-items: stretch;
+  align-items: center;
   flex-shrink: 0;
-  height: 18px;
 }
 
 .evamats-config .product__upsell_discount__inner {
   display: inline-flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
   height: 18px;
+  padding: 0 8px 0 10px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  background: #ff2741;
+  border-radius: 0 2px 2px 0;
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
 }
 
 .evamats-config .product__upsell_discount__cap {
-  display: block;
-  flex-shrink: 0;
-  height: 18px;
-}
-
-.evamats-config .product__upsell_discount__cap--start {
-  width: 9px;
-}
-
-.evamats-config .product__upsell_discount__cap--end {
-  width: 3px;
+  display: none;
 }
 
 .evamats-config .product__upsell_discount__value {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  padding: 0 4px;
-  background: var(--evc-red);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.28px;
-  line-height: 1;
+  display: inline;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
 }
 
 .evamats-config .product__dropdown_wr--heel .product__upsell_discount.hidden,
@@ -1379,10 +1477,11 @@
 /* ── Extras (product__dropdown_wr--extras) Figma 1710:25817 ── */
 .evamats-config .product__dropdown_wr--extras .product__dropdown_title--extras {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   width: 100%;
+  padding: 16px 0;
   padding-right: 0;
 }
 
@@ -1404,18 +1503,20 @@
   position: static;
   top: auto;
   right: auto;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   transform: none;
   transform-origin: center center;
   transition: transform 0.2s ease-in-out;
+  color: inherit;
 }
 
 .evamats-config .product__dropdown_wr--extras:not(.open) .product__dropdown_title .icon-config-caret {
   transform: none;
 }
 
+.evamats-config .product__dropdown_wr--extras.open .product__dropdown_title .product__dropdown_caret .icon-config-caret,
 .evamats-config .product__dropdown_wr--extras.open .product__dropdown_title .icon-config-caret {
   transform: rotate(180deg);
 }
@@ -2057,9 +2158,13 @@
   margin-top: 0;
 }
 
-/* --- Checkout: Delivery rules dropdown (Figma 2209:15231) --- */
+/* --- Checkout: Delivery rules dropdown --- */
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown {
   margin: 0;
+  border: 1px solid var(--evc-border);
+  border-radius: 16px;
+  background: #f6f6f6;
+  overflow: hidden;
 }
 
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown > summary {
@@ -2070,10 +2175,31 @@
   cursor: pointer;
   list-style: none;
   min-height: 52px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown--no-dropdown {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
 }
 
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown--no-dropdown > summary {
   cursor: auto;
+  padding: 0;
+  border-radius: 0;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown:not(.evamats-config-checkout__delivery-dropdown--no-dropdown) > summary:hover {
+  background: #efefef;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown:not(.evamats-config-checkout__delivery-dropdown--no-dropdown) > summary:focus-visible {
+  outline: 2px solid var(--evc-red);
+  outline-offset: 2px;
 }
 
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown > summary::-webkit-details-marker {
@@ -2128,33 +2254,75 @@
   font-weight: 400;
 }
 
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-toggle-label {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  line-height: 1.4;
+  color: var(--evc-muted);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-toggle-less {
+  display: none;
+}
+
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown[open]
+  .evamats-config-checkout__delivery-dropdown-toggle-more {
+  display: none;
+}
+
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown[open]
+  .evamats-config-checkout__delivery-dropdown-toggle-less {
+  display: inline;
+}
+
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border-radius: 999px;
+  border: 1px solid var(--evc-border);
+  background: #fff;
   color: var(--evc-text);
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret svg,
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret .icon-config-caret {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   transition: transform 0.2s ease;
 }
 
-:is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret-dot {
-  position: absolute;
-  right: -4px;
-  top: -2px;
-  width: 4px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--evc-red);
-  pointer-events: none;
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown:not(.evamats-config-checkout__delivery-dropdown--no-dropdown)
+  > summary:hover
+  .evamats-config-checkout__delivery-dropdown-toggle-label {
+  color: var(--evc-text);
+}
+
+:is(.evamats-config, .evamats-product-simple)
+  .evamats-config-checkout__delivery-dropdown:not(.evamats-config-checkout__delivery-dropdown--no-dropdown)
+  > summary:hover
+  .evamats-config-checkout__delivery-dropdown-caret {
+  border-color: var(--evc-text);
+  color: var(--evc-red);
 }
 
 :is(.evamats-config, .evamats-product-simple)
@@ -2166,7 +2334,7 @@
 
 :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-body {
   display: none;
-  padding: 7px 0 0 79px;
+  padding: 4px 14px 16px 78px;
   flex-direction: column;
   gap: 26px;
 }
@@ -2309,7 +2477,19 @@
   .evamats-config .product__dropdown_title {
     font-size: 18px;
     letter-spacing: -0.4px;
-    padding-top: 15px;
+    padding: 14px 0;
+    gap: 10px;
+  }
+
+  .evamats-config .product__dropdown_title .product__dropdown_value,
+  .evamats-config .product__dropdown_title [data-step-status] {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+  }
+
+  .evamats-config .product__dropdown_caret {
+    width: 44px;
+    height: 44px;
   }
 
   .evamats-config .product__dropdown_wr .product__dropdown_inner.open,
@@ -2427,8 +2607,23 @@
   }
 
   /* Delivery rules dropdown (mobile) */
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown:not(.evamats-config-checkout__delivery-dropdown--no-dropdown) > summary {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-toggle-label {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+  }
+
+  :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-caret {
+    width: 28px;
+    height: 28px;
+  }
+
   :is(.evamats-config, .evamats-product-simple) .evamats-config-checkout__delivery-dropdown-body {
-    padding-left: 62px;
+    padding: 2px 12px 14px 62px;
     gap: 20px;
   }
 
@@ -2509,6 +2704,13 @@
     letter-spacing: -0.36px;
   }
 
+  .evamats-config .product__upsell_discount__inner {
+    height: 14px;
+    padding: 0 6px 0 8px;
+    font-size: 10px;
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 6px 100%, 0 50%);
+  }
+
   .evamats-config .product__dropdown_wr--extras .product__dropdown_title--extras {
     flex-wrap: wrap;
     row-gap: 8px;
@@ -2579,11 +2781,46 @@
   top: 74px;
 }
 
-.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle {
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__panel {
+  position: relative;
+  padding: 16px 16px 0;
+}
+
+.evamats-config .evamats-config-preview__reopen {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+  height: 32px;
+  padding: 4px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  color: var(--evc-text);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.evamats-config .evamats-config-preview__reopen .icon--eye {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.evamats-config .evamats-config-preview__close,
+.evamats-config .evamats-config-preview__toggle {
+  display: none;
+}
+
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__close {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2595,23 +2832,78 @@
   cursor: pointer;
 }
 
-.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle .icon-close {
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__close svg {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 
-.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle .hidden_state {
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__close path {
+  fill: var(--evc-text);
+}
+
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__toggle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 72px;
+  height: 36px;
+  padding: 8px 14px;
+  border: 1px solid var(--evc-border);
+  border-radius: 999px;
+  background: #f3f3f3;
+  color: var(--evc-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__hide-label {
+  display: block;
+}
+
+.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__show-label {
   display: none;
 }
 
-.evamats-config .evamats-config-preview.is-fixed .evamats-config-preview__panel {
-  padding: 16px 16px 0;
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__media,
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__enlarge,
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__note {
+  display: none !important;
+}
+
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__media-row {
+  min-height: 36px;
+  justify-content: flex-start;
+}
+
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__toggle {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__hide-label {
+  display: none;
+}
+
+.evamats-config .evamats-config-preview.is-mat-hidden:not(.fixed_hidden) .evamats-config-preview__show-label {
+  display: block;
 }
 
 .evamats-config .evamats-config-preview__title {
   display: none;
-  margin: 0 32px 10px 0;
+  margin: 0 0 10px;
   color: var(--evc-text);
   font-size: 16px;
   font-weight: 600;
@@ -2674,48 +2966,128 @@
 }
 
 .evamats-config .evamats-config-preview__stage {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr);
-  column-gap: 10px;
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-items: end;
-  margin-top: -20px;
-  margin-bottom: -30px;
+  justify-content: center;
+  width: 100%;
+  margin: 4px 0 0;
 }
 
 .evamats-config[data-type='corners'] .evamats-config-preview__stage {
   margin-top: 0;
 }
 
+.evamats-config .evamats-config-preview__media-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 140px;
+}
+
 .evamats-config .evamats-config-preview__swatches {
+  display: none;
+}
+
+.evamats-config .evamats-config-preview__media-col {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  justify-self: start;
-}
-
-.evamats-config .evamats-config-preview__swatch {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.evamats-config .evamats-config-preview__swatch img {
-  display: block;
+  align-items: center;
+  gap: 10px;
   width: 100%;
-  height: 100%;
-  margin: 0;
-  object-fit: cover;
+  max-width: none;
+}
+
+.evamats-config .evamats-config-preview__media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.evamats-config .evamats-config-preview__enlarge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: min(100%, 220px);
+  min-height: 40px;
+  padding: 10px 16px;
+  border: 1px solid var(--evc-red);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--evc-red);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.evamats-config .evamats-config-preview.is-enlarged .evamats-config-preview__enlarge {
+  width: min(100%, 280px);
 }
 
 .evamats-config .evamats-config-preview__image {
   display: block;
-  width: min(100%, 240px);
+  width: min(100%, 140px);
   height: auto;
-  max-height: 240px;
-  margin: 0;
+  max-height: 140px;
+  margin: 0 auto;
   object-fit: contain;
+  transition: width 0.2s ease, max-height 0.2s ease;
+}
+
+.evamats-config .evamats-config-preview.is-enlarged .evamats-config-preview__image {
+  width: min(100%, 260px);
+  max-height: 260px;
+}
+
+.evamats-config .evamats-config-preview.is-enlarged .evamats-config-preview__media-col {
+  max-width: 100%;
+}
+
+.evamats-config .evamats-config-preview__zoom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(27, 29, 34, 0.72);
+  color: #fff;
+  cursor: pointer;
+}
+
+.evamats-config .evamats-config-preview__zoom .icon,
+.evamats-config .evamats-config-preview__zoom svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.evamats-config .evamats-config-preview__enlarge .icon-caret,
+.evamats-config .evamats-config-preview__enlarge svg {
+  display: block;
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+  color: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.evamats-config .evamats-config-preview.is-enlarged .evamats-config-preview__enlarge .icon-caret,
+.evamats-config .evamats-config-preview.is-enlarged .evamats-config-preview__enlarge svg {
+  transform: rotate(180deg);
 }
 
 .evamats-config .evamats-config-preview__note {
@@ -2734,36 +3106,16 @@
   left: auto;
   padding: 0;
   border-radius: 4px;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  box-shadow: none;
 }
 
 .evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__panel {
   display: none;
 }
 
-.evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle {
-  position: static;
-  width: 100px;
-  height: 32px;
-  padding: 4px;
-}
-
-.evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .icon-close {
-  display: none;
-}
-
-.evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .hidden_state {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--evc-text);
-}
-
-.evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__toggle .icon--eye {
-  display: block;
-  width: 24px;
-  height: 24px;
+.evamats-config .evamats-config-preview.is-fixed.fixed_hidden .evamats-config-preview__reopen {
+  display: inline-flex;
 }
 
 @media screen and (max-width: 749px) {
@@ -2830,7 +3182,7 @@
   .evamats-config .product__dropdown_title {
     font-size: 20px;
     letter-spacing: -0.4px;
-    padding-top: 18px;
+    padding: 18px 0;
   }
 
   .evamats-config .product__dropdown_wr .product__dropdown_inner.open,

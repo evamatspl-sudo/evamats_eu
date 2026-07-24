@@ -24,6 +24,16 @@ function initProductConfigCore() {
       drop: 'drop'
     };
 
+    function stripBrandFromOptionLabel(value) {
+      if (typeof window.evamatsStripBrandLabel === 'function') {
+        return window.evamatsStripBrandLabel(value);
+      }
+      return String(value || '')
+        .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
+    }
+
     // Базовый путь к изображениям
     function getFilesCdnBase() {
       const productEl = document.querySelector('.product.config_container') || document.querySelector('.product');
@@ -212,7 +222,7 @@ function initProductConfigCore() {
 
       let displayValue = value;
       if (chip.dataset.name === 'mats_type') {
-        displayValue = displayValue.replace(/\s*EVAMATS\s*/gi, ' ').replace(/\s{2,}/g, ' ').trim();
+        displayValue = stripBrandFromOptionLabel(displayValue);
       }
 
       if (!displayValue && !thumbSrc) {
@@ -384,7 +394,7 @@ function initProductConfigCore() {
             sizeProperty.value = selectedSize.value        
           }
           if (field.querySelector('.lip__title_value')) {
-            field.querySelector('.lip__title_value').textContent = value;
+            field.querySelector('.lip__title_value').textContent = stripBrandFromOptionLabel(value);
           }
         }
       });
@@ -509,6 +519,43 @@ function filterZestawByBodyType() {
 const configImagePreview = (() => {
   let state = null;
 
+  function syncPreviewEnlargeLabel(preview) {
+    if (!preview) return;
+    const btn = preview.querySelector('[data-preview-enlarge]');
+    if (!btn) return;
+    const label = btn.querySelector('[data-preview-enlarge-label]');
+    const enlarged = preview.classList.contains('is-enlarged');
+    const text = enlarged
+      ? btn.getAttribute('data-label-shrink')
+      : btn.getAttribute('data-label-enlarge');
+    if (label && text) label.textContent = text;
+    btn.setAttribute('aria-expanded', enlarged ? 'true' : 'false');
+  }
+
+  function syncPreviewHideLabel(preview) {
+    if (!preview) return;
+    const btn = preview.querySelector('[data-preview-mat-toggle]');
+    if (!btn) return;
+    const matHidden = preview.classList.contains('is-mat-hidden');
+    const hideLabel = btn.getAttribute('data-label-hide');
+    const showLabel = btn.getAttribute('data-label-show');
+    btn.setAttribute('aria-label', matHidden && showLabel ? showLabel : hideLabel || '');
+    btn.setAttribute('aria-pressed', matHidden ? 'true' : 'false');
+  }
+
+  function openPreviewZoom(preview) {
+    const img = preview.querySelector('.evamats-config-preview__image, .product__config_image--mobile_image');
+    const src = img && (img.currentSrc || img.src);
+    if (!src || src.includes('1x1')) return;
+
+    if (typeof Fancybox !== 'undefined' && typeof Fancybox.show === 'function') {
+      Fancybox.show([{ src: src, type: 'image' }]);
+      return;
+    }
+
+    window.open(src, '_blank', 'noopener');
+  }
+
   function resolveConfigPreviewImage() {
     const appPreview = document.querySelector(
       '#popupOverlayApplicationForm .product__config_image--main.product__config_image--mobile'
@@ -550,8 +597,52 @@ const configImagePreview = (() => {
           setTimeout(refresh, 0);
           setTimeout(refresh, 500);
         }
-        if (e.target.closest('.product__config_image_remove_fixed')) {
-          state.configImage.classList.toggle('fixed_hidden');
+        if (e.target.closest('[data-preview-mat-toggle]')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const preview = e.target.closest('.evamats-config-preview') || state.configImage;
+          if (!preview) return;
+          preview.classList.toggle('is-mat-hidden');
+          if (preview.classList.contains('is-mat-hidden')) {
+            preview.classList.remove('is-enlarged');
+            syncPreviewEnlargeLabel(preview);
+          }
+          syncPreviewHideLabel(preview);
+          return;
+        }
+
+        if (e.target.closest('[data-preview-close]')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const preview = e.target.closest('.evamats-config-preview') || state.configImage;
+          if (!preview) return;
+          preview.classList.add('fixed_hidden', 'is-user-collapsed');
+          preview.classList.remove('is-enlarged', 'is-mat-hidden');
+          syncPreviewEnlargeLabel(preview);
+          syncPreviewHideLabel(preview);
+          return;
+        }
+
+        if (e.target.closest('[data-preview-reopen]')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const preview = e.target.closest('.evamats-config-preview') || state.configImage;
+          if (!preview) return;
+          preview.classList.remove('fixed_hidden', 'is-user-collapsed');
+          syncPreviewHideLabel(preview);
+          return;
+        }
+
+        const enlargeBtn = e.target.closest('[data-preview-enlarge]');
+        if (enlargeBtn && state.configImage.contains(enlargeBtn)) {
+          state.configImage.classList.toggle('is-enlarged');
+          syncPreviewEnlargeLabel(state.configImage);
+          return;
+        }
+
+        const zoomBtn = e.target.closest('[data-preview-zoom]');
+        if (zoomBtn && state.configImage.contains(zoomBtn)) {
+          openPreviewZoom(state.configImage);
         }
       }, true);
 
@@ -589,7 +680,14 @@ const configImagePreview = (() => {
 
     configImage.classList.add('is-fixed');
     const colorsOpen = Boolean(colorsStep && colorsStep.classList.contains('open') && !state.isFirst);
-    configImage.classList.toggle('fixed_hidden', !colorsOpen);
+    if (!colorsOpen) {
+      configImage.classList.add('fixed_hidden');
+      configImage.classList.remove('is-user-collapsed', 'is-mat-hidden', 'is-enlarged');
+      syncPreviewEnlargeLabel(configImage);
+    } else if (!configImage.classList.contains('is-user-collapsed')) {
+      configImage.classList.remove('fixed_hidden');
+    }
+    syncPreviewHideLabel(configImage);
   }
 
   return { refresh };
@@ -697,6 +795,7 @@ window.addEventListener('resize', () => {
           inner.classList.remove("done");
           updateContinueButton(wrapper);
         }
+        if (typeof updateConfigStepStatuses === 'function') updateConfigStepStatuses();
         window.__evamatsRefreshConfigImagePreview?.();
       }
   
@@ -907,12 +1006,227 @@ window.addEventListener('resize', () => {
         setTimeout(window.__evamatsRefreshConfigImagePreview, 550);
       }
 
+      function stripBrandLabelLocal(value) {
+        if (typeof window.evamatsStripBrandLabel === 'function') {
+          return window.evamatsStripBrandLabel(value);
+        }
+        return String(value || '')
+          .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+          .replace(/\s{2,}/g, ' ')
+          .trim();
+      }
+
+      function getConfigStepLabels() {
+        return {
+          notSelected: container.dataset.stepNotSelected || '',
+          tapToSelect: container.dataset.stepTapToSelect || ''
+        };
+      }
+
+      function ensureConfigStepTitle(title, index) {
+        if (!title) return null;
+
+        let numEl = title.querySelector('.product__dropdown_step-num');
+        if (!numEl) {
+          numEl = document.createElement('span');
+          numEl.className = 'product__dropdown_step-num';
+          numEl.setAttribute('aria-hidden', 'true');
+        }
+        numEl.textContent = `${index + 1}.`;
+
+        const isComplex =
+          title.classList.contains('product__dropdown_title--heel') ||
+          title.classList.contains('product__dropdown_title--extras');
+
+        if (!title.dataset.stepEnhanced) {
+          title.dataset.stepEnhanced = '1';
+
+          if (isComplex) {
+            const textEl = title.querySelector('.product__dropdown_title_text');
+            if (textEl && !textEl.parentElement?.classList.contains('product__dropdown_title_row')) {
+              const row = document.createElement('span');
+              row.className = 'product__dropdown_title_row';
+              textEl.parentNode.insertBefore(row, textEl);
+              row.appendChild(numEl);
+              row.appendChild(textEl);
+            } else if (textEl) {
+              textEl.parentNode.insertBefore(numEl, textEl);
+            }
+
+            let statusEl = title.querySelector('.product__dropdown_value');
+            if (!statusEl) {
+              statusEl = document.createElement('span');
+              statusEl.className = 'product__dropdown_value';
+              const heading = title.querySelector('.product__dropdown_title_heading');
+              if (heading) heading.appendChild(statusEl);
+              else title.insertBefore(statusEl, title.querySelector('.product__dropdown_title_actions'));
+            }
+            statusEl.setAttribute('data-step-status', '');
+
+            let actions = title.querySelector('.product__dropdown_title_actions');
+            if (!actions) {
+              actions = document.createElement('span');
+              actions.className = 'product__dropdown_title_actions';
+              title.appendChild(actions);
+            }
+            const caret = title.querySelector('.icon-config-caret');
+            if (caret && !caret.closest('.product__dropdown_caret')) {
+              const wrap = document.createElement('span');
+              wrap.className = 'product__dropdown_caret';
+              wrap.setAttribute('aria-hidden', 'true');
+              caret.parentNode.insertBefore(wrap, caret);
+              wrap.appendChild(caret);
+            }
+          } else {
+            const caret = title.querySelector('.icon-config-caret');
+            const edit = title.querySelector('.icon-edit');
+            let statusEl = title.querySelector('.product__dropdown_value');
+            const clone = title.cloneNode(true);
+            clone.querySelectorAll('svg, .icon-edit, .product__dropdown_value, .product__dropdown_step-num, .product__dropdown_caret').forEach((el) => el.remove());
+            const labelText = clone.textContent.replace(/:\s*$/, '').replace(/\s+/g, ' ').trim();
+
+            const main = document.createElement('span');
+            main.className = 'product__dropdown_title_main';
+            const row = document.createElement('span');
+            row.className = 'product__dropdown_title_row';
+            const textEl = document.createElement('span');
+            textEl.className = 'product__dropdown_title_text';
+            textEl.textContent = labelText ? `${labelText}:` : '';
+            row.appendChild(numEl);
+            row.appendChild(textEl);
+
+            if (!statusEl) {
+              statusEl = document.createElement('span');
+              statusEl.className = 'product__dropdown_value';
+            }
+            statusEl.setAttribute('data-step-status', '');
+            main.appendChild(row);
+            main.appendChild(statusEl);
+
+            const actions = document.createElement('span');
+            actions.className = 'product__dropdown_title_actions';
+            const caretWrap = document.createElement('span');
+            caretWrap.className = 'product__dropdown_caret';
+            caretWrap.setAttribute('aria-hidden', 'true');
+            if (caret) caretWrap.appendChild(caret);
+            actions.appendChild(caretWrap);
+            if (edit) actions.appendChild(edit);
+
+            title.replaceChildren(main, actions);
+          }
+        } else if (!numEl.isConnected) {
+          const row = title.querySelector('.product__dropdown_title_row');
+          const textEl = title.querySelector('.product__dropdown_title_text');
+          if (row) row.insertBefore(numEl, row.firstChild);
+          else if (textEl) textEl.parentNode.insertBefore(numEl, textEl);
+        } else {
+          numEl.textContent = `${index + 1}.`;
+        }
+
+        return title.querySelector('[data-step-status], .product__dropdown_value');
+      }
+
+      function collectStepSummary(wrapper) {
+        const parts = [];
+        const seen = new Set();
+
+        const pushPart = (raw) => {
+          const text = stripBrandLabelLocal(String(raw || '').replace(/#MWS.*$/, '').trim());
+          if (!text || seen.has(text)) return;
+          seen.add(text);
+          parts.push(text);
+        };
+
+        wrapper.querySelectorAll('.lip__title_value').forEach((el) => pushPart(el.textContent));
+
+        wrapper.querySelectorAll('.lip__field input:checked, fieldset input[type="radio"]:checked').forEach((input) => {
+          const title = input.getAttribute('data-title') || input.value;
+          const label = input.closest('label') || (input.id ? document.querySelector(`label[for="${input.id}"]`) : null);
+          const labelText = label?.querySelector('.evamats-config-option-label, .evamats-product-option__label')?.textContent;
+          pushPart(labelText || title);
+        });
+
+        const activeUpsell = wrapper.querySelector('.product__upsell_item.active .product__upsell_item_title');
+        if (activeUpsell) pushPart(activeUpsell.textContent);
+
+        const extrasChecked = wrapper.querySelectorAll('input[name="product__extras"]:checked');
+        extrasChecked.forEach((input) => pushPart(input.getAttribute('data-title') || input.value));
+
+        return parts.join(', ');
+      }
+
+      function updateConfigStepStatuses() {
+        if (!container.classList.contains('evamats-config')) return;
+        const labels = getConfigStepLabels();
+
+        Array.from(faqWrappers).forEach((wrapper, index) => {
+          const title = wrapper.querySelector(':scope > .product__dropdown_title, :scope > [class*="product__dropdown_title--"]');
+          const statusEl = ensureConfigStepTitle(title, index);
+          if (!statusEl) return;
+
+          const isOptional =
+            wrapper.classList.contains('product__dropdown_wr--heel') ||
+            wrapper.classList.contains('product__dropdown_wr--extras');
+          const inner = wrapper.querySelector('.product__dropdown_inner');
+          const isComplete =
+            wrapper.classList.contains('complete') ||
+            (inner && inner.classList.contains('super_done') && !isOptional) ||
+            (isOptional && Boolean(collectStepSummary(wrapper)));
+          const summary = isOptional ? '' : collectStepSummary(wrapper);
+          const isDisabled = wrapper.classList.contains('disabled');
+
+          const canShowSummary =
+            Boolean(summary) &&
+            (!isDisabled || isComplete || wrapper.classList.contains('open'));
+
+          statusEl.classList.toggle('is-filled', canShowSummary);
+
+          if (isOptional) {
+            statusEl.textContent = '';
+            statusEl.classList.remove('is-filled');
+          } else if (canShowSummary) {
+            statusEl.textContent = summary;
+          } else if (isDisabled) {
+            statusEl.textContent = labels.notSelected;
+            statusEl.classList.remove('is-filled');
+          } else {
+            statusEl.textContent = labels.tapToSelect || labels.notSelected;
+            statusEl.classList.remove('is-filled');
+          }
+
+          const isCurrent =
+            !isDisabled &&
+            wrapper.classList.contains('open') &&
+            !isOptional &&
+            !wrapper.classList.contains('complete') &&
+            !(inner && inner.classList.contains('super_done'));
+          wrapper.classList.toggle('is-current-step', isCurrent);
+          wrapper.classList.toggle('is-incomplete', !isOptional && !isComplete && !isDisabled);
+        });
+      }
+
+      function openFirstConfigStepDemo() {
+        if (!container.classList.contains('evamats-config')) return;
+        const first = Array.from(faqWrappers).find((wrapper) => {
+          if (wrapper.classList.contains('product__dropdown_wr--heel')) return false;
+          if (wrapper.classList.contains('product__dropdown_wr--extras')) return false;
+          return Boolean(wrapper.querySelector('.product__dropdown_button'));
+        });
+        if (!first || first.classList.contains('open')) return;
+        first.classList.add('open');
+        const inner = first.querySelector('.product__dropdown_inner');
+        if (inner) {
+          inner.classList.add('open');
+          inner.classList.remove('done');
+        }
+      }
+
       const configIntro = container.querySelector('[data-config-intro]');
       const stepWrappers = Array.from(faqWrappers).filter(wrapper => !wrapper.classList.contains('product__dropdown_wr--heel') && !wrapper.classList.contains('product__dropdown_wr--extras'));
       const hasConfigIntro = container.querySelector('[data-config-intro]');
       stepWrappers.forEach((wrapper, i) => {
         const title = wrapper.querySelector('.product__dropdown_title');
-        if (title && !document.querySelector('.evamats-config')) {
+        if (title && !container.classList.contains('evamats-config')) {
           title.innerHTML = `${i + 1}. ${title.innerHTML}`;
         }
         if (i === 0 && !hasConfigIntro) {
@@ -921,6 +1235,13 @@ window.addEventListener('resize', () => {
           wrapper.classList.remove('disabled');
         }
       });
+
+      if (container.classList.contains('evamats-config')) {
+        updateConfigStepStatuses();
+        container.addEventListener('change', updateConfigStepStatuses, true);
+        container.addEventListener('input', updateConfigStepStatuses, true);
+        document.addEventListener('evamats:config-step-updated', updateConfigStepStatuses);
+      }
 
       if (configIntro) {
         updateContinueButton(configIntro);
@@ -947,9 +1268,18 @@ window.addEventListener('resize', () => {
         element.addEventListener('input', onFieldInteraction);
         element.addEventListener('change', onFieldInteraction);
       });
+      let isRestoringConfig = false;
+
       function revalidate(e) {
         const wrapper = getStepWrapper(e.target);
         if (!wrapper) return;
+
+        if (isRestoringConfig) {
+          updateContinueButton(wrapper);
+          hideFieldsetErrorIfValid(getFieldErrorContainer(e.target));
+          return;
+        }
+
         const inner = wrapper.querySelector('.product__dropdown_inner');
 
         const isValid = validateStep(wrapper, false);
@@ -1024,8 +1354,475 @@ window.addEventListener('resize', () => {
           }
           goToNextStep();
           document.dispatchEvent(new CustomEvent('evamats:config-step-updated'));
+          if (typeof saveConfigState === 'function') saveConfigState();
         });
       });
+
+      const CONFIG_STORAGE_KEY = 'evamats_product_config';
+      let saveConfigTimer;
+
+      function getConfigProductIdentity() {
+        return {
+          handle: container.dataset.productHandle || '',
+          id: container.dataset.productId || ''
+        };
+      }
+
+      function getStepKey(wrapper) {
+        if (!wrapper) return '';
+        if (wrapper.matches('[data-config-intro]')) return 'intro';
+        if (wrapper.classList.contains('product__dropdown_wr--heel')) return 'heel';
+        if (wrapper.classList.contains('product__dropdown_wr--extras')) return 'extras';
+        const dropdown = wrapper.getAttribute('data-dropdown');
+        if (dropdown) return dropdown;
+        const steps = Array.from(container.querySelectorAll('.product__dropdown_wr'));
+        return `step-${steps.indexOf(wrapper)}`;
+      }
+
+      function isOptionalConfigStep(wrapper) {
+        return (
+          wrapper.classList.contains('product__dropdown_wr--heel') ||
+          wrapper.classList.contains('product__dropdown_wr--extras')
+        );
+      }
+
+      function collectConfigFields() {
+        const fields = {};
+        container.querySelectorAll('input[name], select[name], textarea[name]').forEach((el) => {
+          if (!el.name || el.disabled) return;
+          if (el.type === 'file' || el.type === 'submit' || el.type === 'button') return;
+          if (el.name === 'quantity' || el.name === 'form_type' || el.name === 'utf8') return;
+
+          if (el.type === 'radio') {
+            if (el.checked) fields[el.name] = el.value;
+            return;
+          }
+          if (el.type === 'checkbox') {
+            if (!Array.isArray(fields[el.name])) fields[el.name] = [];
+            if (!el.checked) return;
+            let value = el.value;
+            if (!value && (el.name === 'product__upsell' || el.name === 'product__extras')) {
+              const item = el.closest('.product__upsell_item');
+              const variants = parseUpsellVariants(item);
+              if (variants.length) {
+                const selectedOptions = {};
+                item?.querySelectorAll('.option-group').forEach((group) => {
+                  const idx = parseInt(group.dataset.optionIndex, 10) + 1;
+                  const active = group.querySelector('.product__upsell_item_variant.active');
+                  if (active) selectedOptions[`option${idx}`] = active.dataset.value;
+                });
+                const matched = variants.find((variant) =>
+                  Object.keys(selectedOptions).every((key) => variant[key] === selectedOptions[key])
+                );
+                value = String((matched || variants[0]).id);
+                el.value = value;
+              }
+            }
+            if (value !== '') fields[el.name].push(String(value));
+            return;
+          }
+          fields[el.name] = el.value;
+        });
+        return fields;
+      }
+
+      function parseUpsellVariants(item) {
+        try {
+          const raw = item?.dataset?.variants;
+          if (!raw) return [];
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function syncUpsellItemToVariant(item, variant) {
+        if (!item || !variant) return;
+        const checkbox = item.querySelector('input[name="product__upsell"], input[name="product__extras"]');
+        if (!checkbox) return;
+
+        item.querySelectorAll('.option-group').forEach((group) => {
+          const idx = parseInt(group.dataset.optionIndex, 10) + 1;
+          const optVal = variant[`option${idx}`];
+          if (optVal == null) return;
+          group.querySelectorAll('.product__upsell_item_variant').forEach((btn) => {
+            const match = String(btn.dataset.value || '') === String(optVal);
+            btn.classList.toggle('active', match);
+            if (match) {
+              const optionValueDiv = group.querySelector('.option_value');
+              if (optionValueDiv) {
+                optionValueDiv.textContent = (btn.dataset.label || '').trim() || btn.dataset.value || '';
+              }
+            }
+          });
+        });
+
+        checkbox.value = String(variant.id);
+        if (variant.price != null) checkbox.dataset.price = variant.price;
+      }
+
+      function applyUpsellExtrasSelections(fields) {
+        if (!fields || typeof fields !== 'object') return;
+
+        ['product__upsell', 'product__extras'].forEach((name) => {
+          const selectedIds = Array.isArray(fields[name])
+            ? fields[name].map(String).filter((id) => id !== '')
+            : [];
+
+          container.querySelectorAll(`input[name="${name}"]`).forEach((checkbox) => {
+            checkbox.checked = false;
+            const item = checkbox.closest('.product__upsell_item');
+            if (item) item.classList.remove('active');
+          });
+
+          selectedIds.forEach((variantId) => {
+            const items = container.querySelectorAll('.product__upsell_item');
+            for (const item of items) {
+              const checkbox = item.querySelector(`input[name="${name}"]`);
+              if (!checkbox) continue;
+
+              const variants = parseUpsellVariants(item);
+              const matchedVariant = variants.find((v) => String(v.id) === String(variantId));
+              if (!matchedVariant && String(checkbox.value) !== String(variantId)) continue;
+
+              if (matchedVariant) {
+                syncUpsellItemToVariant(item, matchedVariant);
+              } else {
+                checkbox.value = String(variantId);
+              }
+
+              checkbox.checked = true;
+              item.classList.add('active');
+              break;
+            }
+          });
+        });
+
+        const variantRadios = document.querySelector('variant-radios');
+        if (variantRadios && typeof variantRadios.updatePrices === 'function') {
+          variantRadios.updatePrices();
+        }
+      }
+
+      function collectCompletedStepKeys() {
+        const keys = [];
+        if (configIntro && configIntro.classList.contains('complete')) keys.push('intro');
+        faqWrappers.forEach((wrapper) => {
+          // Heel/extras ship with super_done in markup — only track explicit .complete
+          if (isOptionalConfigStep(wrapper)) {
+            if (wrapper.classList.contains('complete')) keys.push(getStepKey(wrapper));
+            return;
+          }
+          const inner = wrapper.querySelector('.product__dropdown_inner');
+          if (wrapper.classList.contains('complete') || (inner && inner.classList.contains('super_done'))) {
+            keys.push(getStepKey(wrapper));
+          }
+        });
+        return keys;
+      }
+
+      function getOpenStepKey() {
+        const open = container.querySelector('.product__dropdown_wr.open');
+        return open ? getStepKey(open) : null;
+      }
+
+      function saveConfigState() {
+        if (!container.classList.contains('evamats-config')) return;
+        const identity = getConfigProductIdentity();
+        if (!identity.handle) return;
+        const payload = {
+          productHandle: identity.handle,
+          productId: identity.id,
+          fields: collectConfigFields(),
+          completedSteps: collectCompletedStepKeys(),
+          openStep: getOpenStepKey(),
+          savedAt: Date.now()
+        };
+        try {
+          localStorage.setItem(CONFIG_STORAGE_KEY, JSON.stringify(payload));
+        } catch (e) {
+          /* ignore quota */
+        }
+      }
+
+      function scheduleSaveConfigState() {
+        clearTimeout(saveConfigTimer);
+        saveConfigTimer = setTimeout(saveConfigState, 200);
+      }
+
+      function clearConfigState() {
+        try {
+          localStorage.removeItem(CONFIG_STORAGE_KEY);
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      function readConfigState() {
+        try {
+          const raw = localStorage.getItem(CONFIG_STORAGE_KEY);
+          if (!raw) return null;
+          return JSON.parse(raw);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function applyConfigFields(fields) {
+        if (!fields || typeof fields !== 'object') return;
+        container.querySelectorAll('input[name], select[name], textarea[name]').forEach((el) => {
+          if (!el.name || !(el.name in fields)) return;
+          if (el.name === 'product__upsell' || el.name === 'product__extras') return;
+          const value = fields[el.name];
+          if (el.type === 'radio') {
+            el.checked = String(el.value) === String(value);
+            return;
+          }
+          if (el.type === 'checkbox') {
+            const list = Array.isArray(value) ? value.map(String) : [String(value)];
+            el.checked = list.includes(String(el.value));
+            return;
+          }
+          el.value = value == null ? '' : value;
+        });
+        applyUpsellExtrasSelections(fields);
+      }
+
+      function markConfigStepComplete(wrapper) {
+        if (!wrapper) return;
+        if (isIntroStep(wrapper)) {
+          wrapper.classList.add('complete');
+          return;
+        }
+        wrapper.classList.remove('disabled', 'open');
+        wrapper.classList.add('complete');
+        const inner = wrapper.querySelector('.product__dropdown_inner');
+        if (inner) {
+          inner.classList.add('done', 'super_done');
+          inner.classList.remove('open');
+        }
+      }
+
+      function findStepByKey(key) {
+        if (key === 'intro') return configIntro;
+        return Array.from(faqWrappers).find((wrapper) => getStepKey(wrapper) === key) || null;
+      }
+
+      function restoreConfigSteps(completedSteps, openStepKey) {
+        const completed = Array.isArray(completedSteps)
+          ? completedSteps.filter((key) => key !== 'heel' && key !== 'extras')
+          : [];
+        const mainSteps = getAllMainDropdowns(container);
+
+        faqWrappers.forEach((wrapper) => {
+          wrapper.classList.remove('open', 'complete');
+          const inner = wrapper.querySelector('.product__dropdown_inner');
+          if (inner && !isOptionalConfigStep(wrapper)) {
+            inner.classList.remove('open', 'done', 'super_done');
+          }
+          if (!isOptionalConfigStep(wrapper)) {
+            wrapper.classList.add('disabled');
+          } else {
+            wrapper.classList.add('disabled');
+          }
+        });
+
+        if (configIntro) {
+          configIntro.classList.remove('complete');
+        }
+
+        let unlocked = !configIntro;
+        if (configIntro && completed.includes('intro') && validateStep(configIntro, false)) {
+          markConfigStepComplete(configIntro);
+          unlocked = true;
+        }
+
+        mainSteps.forEach((step) => {
+          const key = getStepKey(step);
+          if (isOptionalConfigStep(step)) return;
+
+          if (unlocked) step.classList.remove('disabled');
+
+          if (completed.includes(key) && validateStep(step, false)) {
+            markConfigStepComplete(step);
+            unlocked = true;
+          } else {
+            unlocked = false;
+          }
+        });
+
+        // Heel / extras unlock only after all required steps with Continue are done
+        const requiredDone = mainSteps
+          .filter((step) => !isOptionalConfigStep(step) && step.querySelector('.product__dropdown_button'))
+          .every((step) => {
+            const inner = step.querySelector('.product__dropdown_inner');
+            return step.classList.contains('complete') || (inner && inner.classList.contains('super_done'));
+          });
+        if (requiredDone) {
+          faqWrappers.forEach((wrapper) => {
+            if (isOptionalConfigStep(wrapper)) wrapper.classList.remove('disabled');
+          });
+        }
+
+        faqWrappers.forEach((wrapper) => {
+          wrapper.classList.remove('open');
+          const inner = wrapper.querySelector('.product__dropdown_inner');
+          if (inner && !isOptionalConfigStep(wrapper) && !inner.classList.contains('super_done')) {
+            inner.classList.remove('open');
+          }
+        });
+
+        let toOpen = openStepKey ? findStepByKey(openStepKey) : null;
+        if (toOpen && (toOpen.classList.contains('disabled') || isOptionalConfigStep(toOpen))) {
+          toOpen = null;
+        }
+
+        if (!toOpen) {
+          const incomplete = mainSteps.find((step) => {
+            if (isOptionalConfigStep(step)) return false;
+            if (step.classList.contains('disabled')) return false;
+            const inner = step.querySelector('.product__dropdown_inner');
+            return !(step.classList.contains('complete') || (inner && inner.classList.contains('super_done')));
+          });
+          toOpen = incomplete || null;
+        }
+
+        if (toOpen && !isIntroStep(toOpen)) {
+          toOpen.classList.remove('disabled');
+          toOpen.classList.add('open');
+          const inner = toOpen.querySelector('.product__dropdown_inner');
+          if (inner) {
+            inner.classList.add('open');
+            inner.classList.remove('done');
+          }
+        } else if ((!configIntro || configIntro.classList.contains('complete')) && requiredDone) {
+          const heel = container.querySelector('.product__dropdown_wr--heel');
+          if (heel && !heel.classList.contains('disabled')) {
+            heel.classList.add('open');
+            const heelInner = heel.querySelector('.product__dropdown_inner');
+            if (heelInner) heelInner.classList.add('open');
+          }
+        } else if (!configIntro || configIntro.classList.contains('complete')) {
+          openFirstConfigStepDemo();
+        }
+      }
+
+      function restoreConfigState() {
+        if (!container.classList.contains('evamats-config')) return false;
+        const identity = getConfigProductIdentity();
+        const saved = readConfigState();
+        if (!saved || !identity.handle) {
+          return false;
+        }
+        if (saved.productHandle !== identity.handle) {
+          clearConfigState();
+          return false;
+        }
+
+        isRestoringConfig = true;
+        try {
+          applyConfigFields(saved.fields || {});
+          if (typeof filterZestawByBodyType === 'function') filterZestawByBodyType();
+          applyConfigFields(saved.fields || {});
+
+          restoreConfigSteps(saved.completedSteps || [], saved.openStep || null);
+
+          container.querySelectorAll('input:checked, select, textarea').forEach((el) => {
+            if (el.matches('input[type="radio"]:checked, input[type="checkbox"]:checked, select, textarea')) {
+              el.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+
+          // Re-apply step open/complete after change handlers (filters, titles)
+          restoreConfigSteps(saved.completedSteps || [], saved.openStep || null);
+
+          window.__evamatsRefreshConfigImagePreview?.();
+          if (typeof updateConfigStepStatuses === 'function') updateConfigStepStatuses();
+
+          container.querySelectorAll('.product-form__input--dropdown select').forEach((select) => {
+            const titleValue = select.closest('fieldset')?.querySelector('.lip__title_value');
+            if (titleValue) titleValue.textContent = select.value || '';
+          });
+          container.querySelectorAll('.lip__field input:checked').forEach((input) => {
+            const titleValue = input.closest('.lip__field')?.querySelector('.lip__title_value');
+            if (titleValue && input.dataset.title) {
+              titleValue.textContent =
+                typeof window.evamatsStripBrandLabel === 'function'
+                  ? window.evamatsStripBrandLabel(input.dataset.title)
+                  : input.dataset.title;
+            }
+          });
+
+          if (configIntro) updateContinueButton(configIntro);
+          faqWrappers.forEach((wrapper) => updateContinueButton(wrapper));
+          if (container.querySelector('.application_form__next_button')) {
+            updateNextButtonState(container);
+          }
+        } finally {
+          isRestoringConfig = false;
+        }
+
+        // Year select is reversed on DOMContentLoaded in product.js — re-apply after that queue
+        const savedFields = saved.fields || {};
+        const savedSteps = saved.completedSteps || [];
+        const savedOpen = saved.openStep || null;
+        const reapplySavedUpsells = () => {
+          isRestoringConfig = true;
+          try {
+            applyUpsellExtrasSelections(savedFields);
+            if (typeof updateConfigStepStatuses === 'function') updateConfigStepStatuses();
+          } finally {
+            isRestoringConfig = false;
+          }
+        };
+
+        setTimeout(() => {
+          isRestoringConfig = true;
+          try {
+            applyConfigFields(savedFields);
+            restoreConfigSteps(savedSteps, savedOpen);
+            const yearSelect = container.querySelector('#rok-produkcji, select[name*="Year"], select[name*="year"], select[name*="Rok"], select[name*="rok"]');
+            if (yearSelect && yearSelect.value) {
+              const titleValue = yearSelect.closest('fieldset')?.querySelector('.lip__title_value');
+              if (titleValue) titleValue.textContent = yearSelect.value;
+              const yearScope = yearSelect.closest('[data-config-intro]') || yearSelect.closest('.product__dropdown_wr');
+              const yearProperty = yearScope?.querySelector('.product__dropdown_value');
+              if (yearProperty) yearProperty.textContent = yearSelect.value;
+            }
+            if (configIntro) updateContinueButton(configIntro);
+            faqWrappers.forEach((wrapper) => updateContinueButton(wrapper));
+            if (typeof updateConfigStepStatuses === 'function') updateConfigStepStatuses();
+          } finally {
+            isRestoringConfig = false;
+          }
+          saveConfigState();
+          document.dispatchEvent(new CustomEvent('evamats:config-step-updated'));
+        }, 0);
+
+        // Upsell variant init (IntersectionObserver in custom.js) may overwrite values later
+        setTimeout(reapplySavedUpsells, 400);
+        setTimeout(reapplySavedUpsells, 1200);
+
+        return true;
+      }
+
+      const restored = restoreConfigState();
+      if (!restored) {
+        if (!configIntro) openFirstConfigStepDemo();
+        if (typeof updateConfigStepStatuses === 'function') updateConfigStepStatuses();
+      }
+
+      container.addEventListener('change', scheduleSaveConfigState, true);
+      container.addEventListener('input', scheduleSaveConfigState, true);
+      container.addEventListener(
+        'click',
+        (e) => {
+          if (e.target.closest('.product__upsell_item_variant')) scheduleSaveConfigState();
+        },
+        true
+      );
+      document.addEventListener('evamats:config-step-updated', scheduleSaveConfigState);
   
       function updateNextButtonState(container) {
         if (!container) return;
@@ -1257,7 +2054,7 @@ window.addEventListener('resize', () => {
         compareEl.textContent = formatExtrasMoney(compareCents, compareEl);
         compareEl.classList.remove('hidden');
         const discountValueEl = discountEl.querySelector('.product__upsell_discount__value');
-        (discountValueEl || discountEl).textContent = `${Math.round(((compareCents - variant.price) / compareCents) * 100)}%`;
+        (discountValueEl || discountEl).textContent = `-${Math.round(((compareCents - variant.price) / compareCents) * 100)}%`;
         discountEl.classList.remove('hidden');
       } else {
         compareEl.classList.add('hidden');
@@ -1271,13 +2068,6 @@ window.addEventListener('resize', () => {
         const item = e.target.closest('.product__upsell_item');
         if (item) {
           item.classList.toggle('active', e.target.checked);
-        }
-        const valueEl = extrasWrapper.querySelector('.product__dropdown_value');
-        if (valueEl) {
-          const checked = extrasWrapper.querySelectorAll('input[name="product__extras"]:checked');
-          valueEl.textContent = checked.length
-            ? Array.from(checked).map((inp) => inp.getAttribute('data-title') || inp.value).join(', ')
-            : '';
         }
         const variantRadios = document.querySelector('variant-radios');
         if (variantRadios && typeof variantRadios.updatePrices === 'function') {

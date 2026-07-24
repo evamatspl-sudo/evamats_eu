@@ -358,7 +358,6 @@
           <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
             <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>
           </div>
-          {% render 'evamats-cart-gift-banner-icon' %}
         </div>
       </div>
     {% endif %}
@@ -415,7 +414,6 @@
           <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
             <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>
           </div>
-          {% render 'evamats-cart-gift-banner-icon' %}
         </div>
       </div>
     {% elsif total != 0 %}

@@ -109,7 +109,7 @@
                   <fieldset class="js product-form__input lip__field evamats-product-option evamats-product-option--text" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                     <legend class="form__label evamats-product-option__legend visually-hidden">
                       <span class="evamats-product-option__label">{{ option.name }}</span>
-                      <span class="evamats-product-option__value lip__title_value">{{ option.selected_value }}</span>
+                      <span class="evamats-product-option__value lip__title_value">{% render 'evamats-strip-brand-label', text: option.selected_value %}</span>
                     </legend>
                     {% render 'product-variant-options',
                       product: product,
@@ -310,7 +310,7 @@
                     {%- if option_is_gift_amount -%}
                       {{- product.selected_or_first_available_variant.price | money -}}
                     {%- else -%}
-                      {{- option.selected_value -}}
+                      {%- render 'evamats-strip-brand-label', text: option.selected_value -%}
                     {%- endif -%}
                   </span>
                 </legend>

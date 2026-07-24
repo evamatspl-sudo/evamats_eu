@@ -170,6 +170,13 @@
   height: 100%;
   padding: 0 40px 0 16px;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.evamats-home-hero .filter-field:has(.select-selected:disabled) .filter-field__body,
+.evamats-home-hero .filter-field:has(.select-selected[disabled]) .filter-field__body,
+.evamats-home-hero .filter-field:has(.select-selected.disabled) .filter-field__body {
+  cursor: not-allowed;
 }
 
 .evamats-home-hero .filter-field__media {
@@ -289,6 +296,13 @@
   letter-spacing: -0.02em;
   color: #1b1d22;
   border-radius: 0;
+  cursor: pointer;
+}
+
+.evamats-home-hero .select-selected:disabled,
+.evamats-home-hero .select-selected[disabled],
+.evamats-home-hero .select-selected.disabled {
+  cursor: not-allowed;
 }
 
 .evamats-home-hero .filter-field:not(.selected) .filter-field__content {
@@ -314,13 +328,13 @@
 
 .evamats-home-hero .custom-select svg {
   position: static;
-  flex: 0 0 8px;
-  width: 8px;
-  height: 5px;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
   margin-left: 4px;
   transform: none;
   display: block;
-  color: #1b1d22;
+  color: #5d6967;
   pointer-events: none;
   transition: transform 0.2s ease-in-out;
 }
@@ -666,10 +680,10 @@
     z-index: 2;
     display: block;
     flex: none;
-    width: 8px;
-    height: 5px;
+    width: 16px;
+    height: 16px;
     margin: 0;
-    color: #1b1d22;
+    color: #5d6967;
     transform: translateY(-50%);
     pointer-events: none;
     transition: transform 0.2s ease-in-out;
@@ -756,7 +770,7 @@
    Banner slider — section-evamats-banner-slider.css
    ============================================================ */
 
-/* Figma: desktop slide 1520×460 / mobile 375×200, nav outside track (video_reviews pattern) */
+/* Banner slider — desktop 1520×460; mobile: native mobile image ratio (no top crop) */
 
 .shopify-section:has(.evamats-banner-slider) {
   overflow: visible;
@@ -832,6 +846,7 @@
   max-width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute {
@@ -900,8 +915,9 @@
 
 @media screen and (max-width: 749px) {
   .evamats-banner-slider {
-    --ebs-banner-h: 200px;
+    --ebs-banner-h: auto;
     --ebs-banner-radius: 0;
+    --ebs-mobile-controls-h: 40px;
   }
 
   .evamats-banner-slider__slider-bleed {
@@ -913,23 +929,63 @@
 
   .evamats-banner-slider__track {
     max-width: none;
+    padding-bottom: 0;
   }
 
+  .evamats-banner-slider__stage {
+    height: auto;
+  }
+
+  .evamats-banner-slider__swiper {
+    height: auto;
+    border-radius: 0;
+  }
+
+  .evamats-banner-slider__swiper .swiper-slide {
+    height: auto;
+  }
+
+  .evamats-banner-slider__slide {
+    height: auto;
+    border-radius: 0;
+  }
+
+  .evamats-banner-slider__slide-link {
+    height: auto;
+  }
+
+  .evamats-banner-slider__slide picture {
+    height: auto;
+  }
+
+  .evamats-banner-slider__media {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+    aspect-ratio: auto;
+  }
+
+  /* Arrows under the banner, beside pagination dots */
   .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute {
-    --eva-nav-size: 40px;
-    --eva-nav-icon: 11px;
+    --eva-nav-size: 32px;
+    --eva-nav-icon: 9px;
+    top: auto;
+    bottom: calc(-1 * (var(--ebs-mobile-controls-h) + 15px));
+    transform: none;
   }
 
   .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
-    left: 8px;
+    left: 16px;
   }
 
   .evamats-banner-slider .evamats-banner-slider__nav.eva-slider-nav--absolute.eva-slider-nav--next {
-    right: 8px;
+    right: 16px;
   }
 
   .evamats-banner-slider__pagination.swiper-pagination {
     margin-top: 15px;
+    min-height: var(--ebs-mobile-controls-h);
     gap: 6px;
   }
 }

@@ -773,6 +773,7 @@ customElements.define('variant-radios', VariantRadios);
   document.addEventListener("DOMContentLoaded", function() {
     const select = document.getElementById("rok-produkcji");
     if (select) {
+        const preservedValue = select.value;
         // Берём все option, кроме первого
         const firstOption = select.options[0];
         const options = Array.from(select.options).slice(1);
@@ -787,8 +788,11 @@ customElements.define('variant-radios', VariantRadios);
         // Добавляем обратно перевёрнутые года
         options.forEach(option => select.appendChild(option));
 
-        // Гарантируем, что выбран "Please select"
-        firstOption.selected = true;
+        if (preservedValue && Array.from(select.options).some((opt) => opt.value === preservedValue)) {
+          select.value = preservedValue;
+        } else {
+          firstOption.selected = true;
+        }
     }
   });
 })();

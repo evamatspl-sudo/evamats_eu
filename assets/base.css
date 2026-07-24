@@ -3014,8 +3014,29 @@ body #add-to-cart-and-checkout {
     width: 100%;
     box-sizing: border-box;
     max-height: 328px;
+    overflow-x: hidden;
     overflow-y: auto;
     border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(128, 144, 164, 0.45) transparent;
+}
+
+.select-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+.select-items::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 6px 0;
+}
+
+.select-items::-webkit-scrollbar-thumb {
+    background: rgba(128, 144, 164, 0.45);
+    border-radius: 4px;
+}
+
+.select-items::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 144, 164, 0.7);
 }
 
 .select-hide {
@@ -3097,6 +3118,11 @@ body .popup_overlay {
 .popup_overlay.show {
     opacity: 1;
     display: flex;
+}
+
+#popupOverlayUpsellVideo.popup_overlay,
+.popup_overlay.popup-overlay--upsell_video {
+    background: rgba(0, 0, 0, 0.75);
 }
 
 .popup {
@@ -13063,7 +13089,6 @@ textarea.field__input:-webkit-autofill:hover,
 
 .evamats-header__logo {
   display: block;
-  width: auto;
   height: auto;
   max-width: 150px;
   object-fit: contain; 
@@ -14585,13 +14610,26 @@ textarea.field__input:-webkit-autofill:hover,
     text-align: center;
     text-transform: capitalize;
     color: #fff;
-    text-decoration: none;
+    cursor: pointer;
   }
 
-  .evamats-header__car-link .header__car--mobile svg {
+  .evamats-header__car-link .header__car--mobile > svg {
     width: 40px;
     height: auto;
     flex-shrink: 0;
+  }
+
+  .evamats-header__car-link .header__car_dropdown .custom-select svg {
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #5d6967;
+  }
+
+  .evamats-header__car-link .header__car_dropdown .active.custom-select svg {
+    transform: translateY(-50%) rotate(-180deg);
   }
 
   .evamats-header__car-link .header__car_info_text {
@@ -14603,6 +14641,25 @@ textarea.field__input:-webkit-autofill:hover,
   .evamats-header__car-link .header__car_info_text span:last-child,
   .evamats-header__car-link .header__car_info_car {
     display: none;
+  }
+
+  .evamats-header__car-link .header__car.active .header__car_info_text span:last-child,
+  .evamats-header__car-link .header__car.active .header__car_info_car {
+    display: block;
+  }
+
+  .evamats-header__car-link .header__car.active .header__car_info_text span:first-child {
+    display: none;
+  }
+
+  .evamats-header__car-link .header__car_dropdown {
+    position: fixed;
+    top: 74px;
+    left: 15px;
+    right: 15px;
+    width: auto;
+    max-width: 300px;
+    z-index: 120;
   }
 
   .evamats-header__icon-actions {

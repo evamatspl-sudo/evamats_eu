@@ -8,7 +8,7 @@
 
   assign select_car_url = section.settings.select_car_button_url
   if select_car_url == blank
-    assign select_car_url = '/pages/car-brands'
+    assign select_car_url = '/collections/all-car-mats'
   endif
 -%}
 
@@ -112,7 +112,7 @@
       "type": "url",
       "id": "select_car_button_url",
       "label": "Select vehicle button link",
-      "info": "Leave empty for /pages/car-brands."
+      "info": "Leave empty for /collections/all-car-mats."
     }
   ]
 }

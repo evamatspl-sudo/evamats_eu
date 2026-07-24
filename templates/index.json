@@ -15,14 +15,14 @@
         "heading": "Autokoberce přesně padnoucí do vašeho auta",
         "subheading": "Výroba na míru. Maximální ochrana. Bez kompromisů.",
         "reset_label": "",
-        "image_desktop": "shopify:\/\/shop_images\/Group_1948755269_2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/Group_1632526278_1.webp",
+        "image_desktop": "shopify://shop_images/Group_1948755269_2.webp",
+        "image_mobile": "shopify://shop_images/Group_1632526278_1.webp",
         "show_badges": true,
         "google_rating": "4.9",
         "google_review_count": "4481",
         "secondary_rating": "4.63",
         "secondary_review_count": "3539",
-        "secondary_icon": "shopify:\/\/shop_images\/e-trusted.svg",
+        "secondary_icon": "shopify://shop_images/e-trusted.svg",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,
@@ -35,96 +35,96 @@
         "896c664a-a387-4033-a183-7391cd447e3d": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/toyota.webp",
-            "product-link": "shopify:\/\/collections\/toyota",
+            "table-img": "shopify://shop_images/toyota.webp",
+            "product-link": "shopify://collections/toyota",
             "color-code": "Toyota"
           }
         },
         "44387e75-0210-4cfb-80fe-04f29726c296": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/vw.webp",
-            "product-link": "shopify:\/\/collections\/volkswagen",
+            "table-img": "shopify://shop_images/vw.webp",
+            "product-link": "shopify://collections/volkswagen",
             "color-code": "Volkswagen"
           }
         },
         "b9fb9632-2688-4a75-8507-2bc37481d1e7": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/audi.webp",
-            "product-link": "shopify:\/\/collections\/audi",
+            "table-img": "shopify://shop_images/audi.webp",
+            "product-link": "shopify://collections/audi",
             "color-code": "Audi"
           }
         },
         "56d1786f-461c-452f-9e17-ee77577c5cd2": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/bmw.webp",
-            "product-link": "shopify:\/\/collections\/bmw",
+            "table-img": "shopify://shop_images/bmw.webp",
+            "product-link": "shopify://collections/bmw",
             "color-code": "BMW"
           }
         },
         "5436c390-44b5-4e0c-ba61-dc5b4d4e5019": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/skoda.webp",
-            "product-link": "shopify:\/\/collections\/skoda",
+            "table-img": "shopify://shop_images/skoda.webp",
+            "product-link": "shopify://collections/skoda",
             "color-code": "Škoda"
           }
         },
         "53e7843a-a0f5-4bda-adba-a8180f43e27f": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/ford.webp",
-            "product-link": "shopify:\/\/collections\/ford",
+            "table-img": "shopify://shop_images/ford.webp",
+            "product-link": "shopify://collections/ford",
             "color-code": "Ford"
           }
         },
         "460dc6cd-7bd1-4999-a698-bf8ac5713b3b": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/mercedes.webp",
-            "product-link": "shopify:\/\/collections\/mercedes-benz",
+            "table-img": "shopify://shop_images/mercedes.webp",
+            "product-link": "shopify://collections/mercedes-benz",
             "color-code": "Mercedes-Benz"
           }
         },
         "9f707e47-7f53-4cad-b6e1-ddc30b75f18f": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/volvo.webp",
-            "product-link": "shopify:\/\/collections\/volvo",
+            "table-img": "shopify://shop_images/volvo.webp",
+            "product-link": "shopify://collections/volvo",
             "color-code": "Volvo"
           }
         },
         "section_fHxQUw": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/image_43.webp",
-            "product-link": "shopify:\/\/collections\/opel",
+            "table-img": "shopify://shop_images/image_43.webp",
+            "product-link": "shopify://collections/opel",
             "color-code": "Opel"
           }
         },
         "2daddfc2-2f53-468c-b23c-14bdc48d17e8": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/renault.webp",
-            "product-link": "shopify:\/\/collections\/renault",
+            "table-img": "shopify://shop_images/renault.webp",
+            "product-link": "shopify://collections/renault",
             "color-code": "Renault"
           }
         },
         "section_64AX8j": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/image_43_1.webp",
-            "product-link": "shopify:\/\/collections\/kia",
+            "table-img": "shopify://shop_images/image_43_1.webp",
+            "product-link": "shopify://collections/kia",
             "color-code": "Kia"
           }
         },
         "section_hXkfBB": {
           "type": "section",
           "settings": {
-            "table-img": "shopify:\/\/shop_images\/image_43_2.webp",
-            "product-link": "shopify:\/\/collections\/hyundai",
+            "table-img": "shopify://shop_images/image_43_2.webp",
+            "product-link": "shopify://collections/hyundai",
             "color-code": "Hyundai"
           }
         }
@@ -148,7 +148,7 @@
         "heading_accent": "1,500",
         "heading_after": "modelů aut",
         "button_label": "Zobrazit vše",
-        "button_link": "shopify:\/\/collections\/all-car-mats",
+        "button_link": "shopify://collections/all-car-mats",
         "catalog-header": "",
         "margin-bottom": false,
         "padding_top": 64,
@@ -163,16 +163,16 @@
         "slide_in7Xc7": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
-            "image_mobile": "shopify:\/\/shop_images\/1.1.webp",
-            "link": ""
+            "image_desktop": "shopify://shop_images/2_4171cce6-8ae6-483a-8495-3529af721fbb.webp",
+            "image_mobile": "shopify://shop_images/1.1.webp",
+            "link": "shopify://collections/all-car-mats"
           }
         },
         "slide_qwUryy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Rectangle_2_5_1.webp",
-            "link": ""
+            "image_desktop": "shopify://shop_images/Rectangle_2_5_1.webp",
+            "link": "shopify://collections/all-car-mats"
           }
         }
       },
@@ -193,49 +193,49 @@
         "offer_tall": {
           "type": "featured_tall",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4777.webp",
-            "title": "Autokoberce",
-            "link": "shopify:\/\/collections\/all-car-mats"
+            "image": "shopify://shop_images/Rectangle_4777.webp",
+            "title": "Autokoberce EVA",
+            "link": "shopify://collections/all-car-mats"
           }
         },
         "offer_stack_1": {
           "type": "featured_stack",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4778.webp",
-            "title": "EVA do domácnosti",
-            "link": "shopify:\/\/collections\/mats-for-home"
+            "image": "shopify://shop_images/Rectangle_4778.webp",
+            "title": "Potahy a polštáře",
+            "link": "shopify://collections/mats-for-home"
           }
         },
         "offer_stack_2": {
           "type": "featured_stack",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4782.webp",
+            "image": "shopify://shop_images/Rectangle_4782.webp",
             "title": "Pro mazlíčky",
-            "link": "shopify:\/\/collections\/mats-for-pets"
+            "link": "shopify://collections/mats-for-pets"
           }
         },
         "offer_compact_1": {
           "type": "compact",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_90.webp",
+            "image": "shopify://shop_images/image_90.webp",
             "title": "Organizéry",
-            "link": "shopify:\/\/collections\/car-accessories-organizers"
+            "link": "shopify://collections/car-accessories-organizers"
           }
         },
         "offer_compact_2": {
           "type": "compact",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_91.webp",
-            "title": "Podložky paty \/ Opěrky",
-            "link": "shopify:\/\/collections\/podpietki"
+            "image": "shopify://shop_images/image_91.webp",
+            "title": "Podložky paty / Opěrky",
+            "link": "shopify://collections/podpietki"
           }
         },
         "offer_compact_3": {
           "type": "compact",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_92.webp",
+            "image": "shopify://shop_images/image_92.webp",
             "title": "Příslušenství",
-            "link": "shopify:\/\/collections\/akcesoria-samochodowa"
+            "link": "shopify://collections/akcesoria-samochodowa"
           }
         }
       },
@@ -251,7 +251,7 @@
         "overline": "NAŠE NABÍDKA",
         "heading_line_1": "Kvalita, přesné padnutí",
         "heading_line_2": "a pohodlí výběru",
-        "description": "<p>Nabízíme široký výběr produktů EVA přizpůsobených různým modelům aut.<\/p><p>Vše je navrženo tak, abyste rychle našli ideální řešení — bez zbytečných kroků.<\/p>",
+        "description": "<p>Nabízíme široký výběr produktů EVA přizpůsobených různým modelům aut.</p><p>Vše je navrženo tak, abyste rychle našli ideální řešení — bez zbytečných kroků.</p>",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -283,16 +283,16 @@
       "type": "evamats-driving-style",
       "settings": {
         "heading": "Přizpůsobte koberce svému stylu jízdy",
-        "video_left": "shopify:\/\/files\/videos\/czvidcomp.mp4",
+        "video_left": "shopify://files/videos/czvidcomp.mp4",
         "image_left_label": "",
-        "video_right": "shopify:\/\/files\/videos\/czvidcomp2.mp4",
+        "video_right": "shopify://files/videos/czvidcomp2.mp4",
         "image_right_label": "",
         "without_edges_title": "Bez okrajů",
         "without_edges_text": "Lehkost a minimalismus. Čistý vzhled interiéru",
         "with_edges_title": "S okraji",
         "with_edges_text": "Plná každodenní ochrana. Připraveno na jakékoli počasí",
         "button_label": "Konfigurovat koberce",
-        "button_link": "",
+        "button_link": "shopify://collections/all-car-mats",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -348,7 +348,7 @@
       "settings": {
         "heading": "Ověřený produkt připravený k růstu",
         "intro": "Produkt je ověřený na trhu a připravený k rozvoji v modelu B2B.",
-        "image_desktop": "shopify:\/\/shop_images\/Rectangle_4789_1.webp",
+        "image_desktop": "shopify://shop_images/Rectangle_4789_1.webp",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -375,7 +375,7 @@
       "type": "apps",
       "blocks": {
         "google_reviews_carousel_widget_block_rAym7D": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "contentIndex": "1",
             "variant": "carousel",
@@ -414,12 +414,12 @@
       "type": "evamats-rare-fit-cta",
       "name": "Rare fit CTA",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/Mask_group_1_6cc2736c-4926-42eb-ad34-4db4aca3cf3a.webp",
-        "image_mobile": "shopify:\/\/shop_images\/Mask_group_1_1.webp",
+        "image_desktop": "shopify://shop_images/Mask_group_1_6cc2736c-4926-42eb-ad34-4db4aca3cf3a.webp",
+        "image_mobile": "shopify://shop_images/Mask_group_1_1.webp",
         "heading": "Padnutí tam, kde jiní nemají řešení",
         "text": "Vyrábíme koberce na zakázku — i pro vzácné modely aut",
         "button_label": "Ověřte možnost výroby",
-        "button_link": "",
+        "button_link": "shopify://collections/all-car-mats",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 40,
@@ -432,55 +432,55 @@
         "icon_CpKLNa": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-for-gallery-1.png"
+            "icon": "shopify://shop_images/icon-for-gallery-1.png"
           }
         },
         "icon_qeVKmT": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-for-gallery-2.png"
+            "icon": "shopify://shop_images/icon-for-gallery-2.png"
           }
         },
         "icon_TDXxXt": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-for-gallery-3.png"
+            "icon": "shopify://shop_images/icon-for-gallery-3.png"
           }
         },
         "slide_wV4exz": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2881.webp"
+            "image": "shopify://shop_images/IMG_2881.webp"
           }
         },
         "slide_btC6VU": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2899.webp"
+            "image": "shopify://shop_images/IMG_2899.webp"
           }
         },
         "slide_cgm4Em": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2888.webp"
+            "image": "shopify://shop_images/IMG_2888.webp"
           }
         },
         "slide_acEaxf": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2866.webp"
+            "image": "shopify://shop_images/IMG_2866.webp"
           }
         },
         "slide_efLGhM": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2900.webp"
+            "image": "shopify://shop_images/IMG_2900.webp"
           }
         },
         "slide_LwVzp6": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2886_483e5603-3188-4488-9bec-f1a32e27f654.webp"
+            "image": "shopify://shop_images/IMG_2886_483e5603-3188-4488-9bec-f1a32e27f654.webp"
           }
         }
       },
@@ -497,10 +497,10 @@
       ],
       "name": "Content Gallery Slider",
       "settings": {
-        "heading": "<p>Naším cílem je <strong>maximální<\/strong> <\/p><p><strong>pohodlí<\/strong> vaší jízdy<\/p>",
-        "text": "<p>Přesné střihy, odolné materiály a promyšlené detaily dělají používání maximálně pohodlným každý den.<\/p>",
+        "heading": "<p>Naším cílem je <strong>maximální</strong> </p><p><strong>pohodlí</strong> vaší jízdy</p>",
+        "text": "<p>Přesné střihy, odolné materiály a promyšlené detaily dělají používání maximálně pohodlným každý den.</p>",
         "button_label": "Nakonfigurujte koberce",
-        "button_link": "#",
+        "button_link": "shopify://collections/all-car-mats",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -513,8 +513,8 @@
         "item_yeeemp": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/may_sd_1tiny.webp",
-            "image_after": "shopify:\/\/shop_images\/3D_evamats.webp",
+            "image_before": "shopify://shop_images/may_sd_1tiny.webp",
+            "image_after": "shopify://shop_images/3D_evamats.webp",
             "title": "Jiní výrobci EVA koberců vs Carvion 3D s lemy",
             "label_before": "Ne Carvion",
             "label_before_main": "",
@@ -525,8 +525,8 @@
         "item_TiTPYb": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/IMG_1394.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
+            "image_before": "shopify://shop_images/IMG_1394.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
             "title": "Guma vs Carvion 3D s lemy",
             "label_before": "Guma",
             "label_before_main": "",
@@ -537,8 +537,8 @@
         "item_GWeUKj": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/IMG_1371.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1_1.webp",
+            "image_before": "shopify://shop_images/IMG_1371.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1_1.webp",
             "title": "Velur vs Carvion 3D s lemy",
             "label_before": "Velur",
             "label_before_main": "",
@@ -569,8 +569,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Pokrytí podlahy a padnutí<\/p>",
-            "des": "<p><strong>– Budou koberce určitě pasovat?<\/strong><br\/>Ano, naše EVA koberce jsou navrženy speciálně pro každou značku, model a verzi vozu a pokrývají celou podlahovou plochu včetně míst, která nechrání gumové ani velurové koberce.<\/p><p><strong>– Co je koberec na tunel?<\/strong><br\/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu a zajišťují maximální ochranu.<\/p><p><strong>– Je podložka paty namontována na koberci řidiče?<\/strong><br\/>Ne, podložka paty je dodávána samostatně, abyste si ji mohli nastavit podle svých preferencí.<\/p>",
+            "hd": "<p>Pokrytí podlahy a padnutí</p>",
+            "des": "<p><strong>– Budou koberce určitě pasovat?</strong><br/>Ano, naše EVA koberce jsou navrženy speciálně pro každou značku, model a verzi vozu a pokrývají celou podlahovou plochu včetně míst, která nechrání gumové ani velurové koberce.</p><p><strong>– Co je koberec na tunel?</strong><br/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu a zajišťují maximální ochranu.</p><p><strong>– Je podložka paty namontována na koberci řidiče?</strong><br/>Ne, podložka paty je dodávána samostatně, abyste si ji mohli nastavit podle svých preferencí.</p>",
             "des_html": ""
           }
         },
@@ -578,8 +578,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Vlastnosti materiálu a odolnost<\/p>",
-            "des": "<p><strong>– Co je materiál EVA?<\/strong><br\/>Je to 10 mm silná pěna, která zachytává nečistoty a vodu na povrchu koberce a brání jejich průniku pod něj.<\/p><p><strong>– Jaký je rozdíl mezi sadou 3D a sadou 3D s lemy?<\/strong><br\/>Sada 3D s lemy poskytuje dodatečnou ochranu bočního čalounění podlahy a zajišťuje lepší padnutí.<\/p><p><strong>– Jak dlouho koberce vydrží?<\/strong><br\/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.<\/p>",
+            "hd": "<p>Vlastnosti materiálu a odolnost</p>",
+            "des": "<p><strong>– Co je materiál EVA?</strong><br/>Je to 10 mm silná pěna, která zachytává nečistoty a vodu na povrchu koberce a brání jejich průniku pod něj.</p><p><strong>– Jaký je rozdíl mezi sadou 3D a sadou 3D s lemy?</strong><br/>Sada 3D s lemy poskytuje dodatečnou ochranu bočního čalounění podlahy a zajišťuje lepší padnutí.</p><p><strong>– Jak dlouho koberce vydrží?</strong><br/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.</p>",
             "des_html": ""
           }
         },
@@ -587,8 +587,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Používání a údržba<\/p>",
-            "des": "<p><strong>– Jak čistit EVA koberce?<\/strong><br\/>Nečistoty na povrchu koberce neulpívají. Stačí je vyklepat, nebo při větším znečištění opláchnout vysokotlakým čističem.<\/p><p><strong>– Jsou EVA koberce vhodné na léto i zimu?<\/strong><br\/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.<\/p>",
+            "hd": "<p>Používání a údržba</p>",
+            "des": "<p><strong>– Jak čistit EVA koberce?</strong><br/>Nečistoty na povrchu koberce neulpívají. Stačí je vyklepat, nebo při větším znečištění opláchnout vysokotlakým čističem.</p><p><strong>– Jsou EVA koberce vhodné na léto i zimu?</strong><br/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.</p>",
             "des_html": ""
           }
         },
@@ -596,8 +596,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Objednávka a doručení<\/p>",
-            "des": "<p><strong>– Jaká je doba dodání?<\/strong><br\/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, například motorových člunů nebo traktorů, se může doba prodloužit na 4–6 týdnů.<\/p><p><strong>– Jak probíhá doručení?<\/strong><br\/>Koberce odesíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu neposíláme koberce do výdejních boxů. Dbáme na to, aby koberce dorazily ve stejné podobě, v jaké byly vyrobeny — bez skládání nebo ohýbání, které by mohlo ovlivnit jejich padnutí.<\/p>",
+            "hd": "<p>Objednávka a doručení</p>",
+            "des": "<p><strong>– Jaká je doba dodání?</strong><br/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, například motorových člunů nebo traktorů, se může doba prodloužit na 4–6 týdnů.</p><p><strong>– Jak probíhá doručení?</strong><br/>Koberce odesíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu neposíláme koberce do výdejních boxů. Dbáme na to, aby koberce dorazily ve stejné podobě, v jaké byly vyrobeny — bez skládání nebo ohýbání, které by mohlo ovlivnit jejich padnutí.</p>",
             "des_html": ""
           }
         }
@@ -618,7 +618,7 @@
         "breadcrumb_current_label": "FAQ",
         "eyebrow_link": "",
         "view_all_label": "Zobrazit vše",
-        "view_all_url": "shopify:\/\/pages\/faq",
+        "view_all_url": "shopify://pages/faq",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 0,
@@ -685,7 +685,7 @@
       "settings": {
         "heading": "Získejte bezplatnou konzultaci!",
         "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
-        "mat_image": "shopify:\/\/shop_images\/vacancy_375.webp",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
         "mat_image_alt": "EVA koberec",
         "label_name": "Jméno a příjmení",
         "placeholder_name": "Jan Novák",
@@ -719,31 +719,31 @@
         "item_d3RWUh": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cz1_1.mp4"
+            "video": "shopify://files/videos/cz1_1.mp4"
           }
         },
         "item_aH7QGA": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cz1_2.mp4"
+            "video": "shopify://files/videos/cz1_2.mp4"
           }
         },
         "item_mN6334": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cz1_3.mp4"
+            "video": "shopify://files/videos/cz1_3.mp4"
           }
         },
         "item_aAYNLB": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cz1_4.mp4"
+            "video": "shopify://files/videos/cz1_4.mp4"
           }
         },
         "item_JWUBwJ": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cz1_5.mp4"
+            "video": "shopify://files/videos/cz1_5.mp4"
           }
         }
       },
@@ -757,11 +757,11 @@
       "settings": {
         "title": "Majitelé aut o kobercích",
         "title_accent": "Carvion",
-        "facebook_url": "https:\/\/www.facebook.com\/carvion.cz",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
         "facebook_label": "Sledujte nás na Facebooku",
-        "instagram_url": "https:\/\/www.instagram.com\/carvion_cz",
-        "tiktok_url": "https:\/\/www.tiktok.com\/@carvion_cz",
-        "youtube_url": "https:\/\/www.youtube.com\/@autokoberceeva",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "https://www.tiktok.com/@carvion_cz",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 32,

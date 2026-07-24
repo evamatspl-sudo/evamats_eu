@@ -89,7 +89,7 @@
       "disabled": true,
       "settings": {
         "btn_text": "Individuální objednávka",
-        "btn_url": "shopify://products/custom-order"
+        "btn_url": "shopify://collections/all-car-mats"
       }
     }
   },

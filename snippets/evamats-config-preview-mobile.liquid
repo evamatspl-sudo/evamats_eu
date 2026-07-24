@@ -15,15 +15,26 @@
   endif
 -%}
 <div class="product__config_image product__config_image--main product__config_image--mobile evamats-config-preview">
-  <button type="button" class="product__config_image_remove_fixed evamats-config-preview__toggle" aria-label="{{ 'accessibility.close' | t }}">
-    {% render 'icon-close' %}
-    <div class="hidden_state">
-      {{ 'general.config.preview_badge' | t }}
-      {% render 'icon-eye' %}
-    </div>
+  <button
+    type="button"
+    class="evamats-config-preview__reopen"
+    data-preview-reopen
+    aria-label="{{ 'general.config.preview_badge' | t }}"
+  >
+    {{ 'general.config.preview_badge' | t }}
+    {% render 'icon-eye' %}
   </button>
 
   <div class="evamats-config-preview__panel">
+    <button
+      type="button"
+      class="evamats-config-preview__close"
+      data-preview-close
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+
     {%- if product_title != blank -%}
       <p class="evamats-config-preview__title">{{ product_title }}</p>
     {%- endif -%}
@@ -45,14 +56,54 @@
         <div class="evamats-config-preview__swatch" data-type="matPattern" hidden></div>
         <div class="evamats-config-preview__swatch" data-type="trimColor" hidden></div>
       </div>
-      <img
-        src="{{ '1x1_000000.webp' | file_url }}"
-        alt=""
-        class="product__config_image--mobile_image evamats-config-preview__image"
-        width="600"
-        height="600"
-        loading="lazy"
-      >
+
+      <div class="evamats-config-preview__media-col">
+        <div class="evamats-config-preview__media-row">
+          <button
+            type="button"
+            class="evamats-config-preview__toggle"
+            data-preview-mat-toggle
+            aria-label="{{ 'general.config.preview_hide' | t }}"
+            aria-pressed="false"
+            data-label-hide="{{ 'general.config.preview_hide' | t | escape }}"
+            data-label-show="{{ 'general.config.preview_badge' | t | escape }}"
+          >
+            <span class="evamats-config-preview__hide-label">{{ 'general.config.preview_hide' | t }}</span>
+            <span class="evamats-config-preview__show-label">{{ 'general.config.preview_badge' | t }}</span>
+          </button>
+
+          <div class="evamats-config-preview__media">
+            <img
+              src="{{ '1x1_000000.webp' | file_url }}"
+              alt=""
+              class="product__config_image--mobile_image evamats-config-preview__image"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+            <button
+              type="button"
+              class="evamats-config-preview__zoom"
+              data-preview-zoom
+              aria-label="{{ 'general.config.preview_zoom' | t }}"
+            >
+              {% render 'icon-zoom' %}
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="evamats-config-preview__enlarge"
+          data-preview-enlarge
+          aria-expanded="false"
+          data-label-enlarge="{{ 'general.config.preview_enlarge' | t | escape }}"
+          data-label-shrink="{{ 'general.config.preview_shrink' | t | escape }}"
+        >
+          <span data-preview-enlarge-label>{{ 'general.config.preview_enlarge' | t }}</span>
+          {% render 'icon-caret' %}
+        </button>
+      </div>
     </div>
 
     <p class="evamats-config-preview__note">*{{ 'general.config.comment' | t }}</p>

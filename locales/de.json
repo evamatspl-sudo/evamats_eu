@@ -63,6 +63,10 @@
       "read_more": "Mehr lesen",
       "read_less": "Weniger lesen",
       "continue": "Weiter",
+      "preview_hide": "Ausblenden",
+      "preview_zoom": "Vorschau im Vollbild öffnen",
+      "preview_enlarge": "Vorschau vergrößern",
+      "preview_shrink": "Vorschau verkleinern",
       "vehicle_text": "Fahrzeug (Gib den Fahrzeugtyp ein, z. B. Motorboot, Ultraleichtflugzeug, Quad, Gabelstapler…)",
       "choose_your_mats": "Wählen Sie Ihre Matten in 15 Sekunden",
       "select_year": "Jahr auswählen",
@@ -94,8 +98,12 @@
       "right_hand_message_long": "🚗 Rechtslenkerfahrzeug? Lesen Sie dies vor der Bestellung! Unsere Autofußmatten sind standardmäßig für Linkslenkerfahrzeuge gefertigt. Wenn Ihr Fahrzeug das Lenkrad auf der rechten Seite hat (z.B. Großbritannien, Japan, Australien), kontaktieren Sie uns bitte zuerst – wir prüfen, ob ein maßgeschneidertes Set für Ihr Modell möglich ist.",
       "select_vehicle": "Fahrzeug auswählen",
       "additional_options": "Zusatzoptionen:",
+      "step_not_selected": "Nicht ausgewählt",
+      "step_tap_to_select": "Tippen zum Auswählen",
       "color": "Farbe",
-      "mount": "Montage"
+      "mount": "Montage",
+      "delivery_show_more": "Mehr anzeigen",
+      "delivery_show_less": "Ausblenden"
     },
     "password_page": {
       "login_form_heading": "Shop mit Passwort betreten:",
@@ -395,7 +403,7 @@
     "brand_buttons": {
       "back": "Alle",
       "collection_title_prefix": "Automatten EVA für ",
-      "all_brands_path": "\/pages\/car-brands"
+      "all_brands_path": "\/collections\/all-car-mats"
     },
     "cart": {
       "title": "Dein Warenkorb",

@@ -46,21 +46,29 @@
                     {%- if slide_link != blank -%}
                       <a class="evamats-banner-slider__slide-link" href="{{ slide_link }}">
                     {%- endif -%}
-                    {%- if slide_image_desktop != blank -%}
+                    {%- if slide_image_desktop != blank or slide_image_mobile != blank -%}
                       <picture>
-                        {%- if block.settings.image_mobile != blank -%}
-                          <source media="(max-width: 749px)" srcset="{{ slide_image_mobile | image_url: width: 900 }}">
-                        {%- elsif slide_image_desktop != blank -%}
-                          <source media="(max-width: 749px)" srcset="{{ slide_image_desktop | image_url: width: 900 }}">
+                        {%- if slide_image_desktop != blank -%}
+                          <source
+                            media="(min-width: 750px)"
+                            srcset="
+                              {{ slide_image_desktop | image_url: width: 750 }} 750w,
+                              {{ slide_image_desktop | image_url: width: 1100 }} 1100w,
+                              {{ slide_image_desktop | image_url: width: 1520 }} 1520w,
+                              {{ slide_image_desktop | image_url: width: 2000 }} 2000w,
+                              {{ slide_image_desktop | image_url: width: 3040 }} 3040w
+                            "
+                            sizes="(min-width: 750px) min(1520px, 100vw), 100vw"
+                          >
                         {%- endif -%}
                         {{
-                          slide_image_desktop
-                          | image_url: width: 3040
+                          slide_image_mobile
+                          | image_url: width: 900
                           | image_tag:
                             class: 'evamats-banner-slider__media',
                             loading: 'lazy',
-                            widths: '375, 750, 1100, 1500, 1520, 2000, 3040',
-                            sizes: '(min-width: 750px) 1520px, 100vw'
+                            widths: '375, 550, 750, 900, 1125',
+                            sizes: '100vw'
                         }}
                       </picture>
                     {%- endif -%}
@@ -139,6 +147,7 @@
           loop: slides.length > 1,
           observer: true,
           observeParents: true,
+          autoHeight: window.matchMedia('(max-width: 749px)').matches,
         };
 
         if (slides.length > 1) {

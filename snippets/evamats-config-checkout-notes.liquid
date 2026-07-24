@@ -103,9 +103,14 @@
               {%- endif -%}
             </span>
 
-            <span class="evamats-config-checkout__delivery-dropdown-caret" aria-hidden="true">
-              {% render 'icon-config-caret' %}
-              <span class="evamats-config-checkout__delivery-dropdown-caret-dot"></span>
+            <span class="evamats-config-checkout__delivery-dropdown-toggle" aria-hidden="true">
+              <span class="evamats-config-checkout__delivery-dropdown-toggle-label">
+                <span class="evamats-config-checkout__delivery-dropdown-toggle-more">{{ 'general.config.delivery_show_more' | t }}</span>
+                <span class="evamats-config-checkout__delivery-dropdown-toggle-less">{{ 'general.config.delivery_show_less' | t }}</span>
+              </span>
+              <span class="evamats-config-checkout__delivery-dropdown-caret">
+                {% render 'icon-config-caret' %}
+              </span>
             </span>
           </summary>
 

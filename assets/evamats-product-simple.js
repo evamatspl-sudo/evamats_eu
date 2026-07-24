@@ -135,7 +135,13 @@
     if (!valueEl) return;
 
     const title = input.getAttribute('data-title') || input.value;
-    valueEl.textContent = title;
+    valueEl.textContent =
+      typeof window.evamatsStripBrandLabel === 'function'
+        ? window.evamatsStripBrandLabel(title)
+        : String(title || '')
+            .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+            .replace(/\s{2,}/g, ' ')
+            .trim();
   }
 
   if (amountFieldset) {

@@ -43,6 +43,10 @@
       "trim_color": "Trim color",
       "comment": "ILLUSTRATION rug for color selection",
       "preview_badge": "Preview",
+      "preview_hide": "Hide",
+      "preview_zoom": "Open preview fullscreen",
+      "preview_enlarge": "Enlarge preview",
+      "preview_shrink": "Shrink preview",
       "heel": "Heel pads",
       "order_notes": "Order notes",
       "order_notes_title": "Notes (Describe the dimensions, floor shape or attach a photo of the vehicle's interior - this will help us make a perfect fit.)",
@@ -68,6 +72,8 @@
       "gallery_divider_text": "We have even more for you to discover",
       "continue": "Continue",
       "steps_progress": "{{ current }} of {{ total }} selected",
+      "step_not_selected": "Not selected",
+      "step_tap_to_select": "Tap to select",
       "custom_order_title": "Order mats for an unusual vehicle",
       "custom_order_subtitle": "Boat, plane, quad? Order custom-made rugs here",
       "super_offer": "Super offer",
@@ -109,7 +115,9 @@
       "sold_out": "Sold out",
       "additional_options": "Additional options:",
       "color": "Color",
-      "mount": "Mount"
+      "mount": "Mount",
+      "delivery_show_more": "Show more",
+      "delivery_show_less": "Hide"
     },
     "colors": {
       "black": "Black",
@@ -429,7 +437,7 @@
     "brand_buttons": {
       "back": "All",
       "collection_title_prefix": "Car mats EVA for ",
-      "all_brands_path": "/pages/car-brands",
+      "all_brands_path": "/collections/all-car-mats",
       "popular_models_heading": "Popular models",
       "products_count": "{{ count }} items"
     },
@@ -497,7 +505,7 @@
     "collection_template": {
       "empty": "We are in the process of developing our website, we have already completed more than 5000 projects, also for your vehicle we have measurements.",
       "title": "Collection",
-      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"https://evamats-en.myshopify.com/products/custom-order\">Place your order here</a>"
+      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"/collections/all-car-mats\">Place your order here</a>"
     },
     "video": {
       "load_video": "Load video: {{ description }}"

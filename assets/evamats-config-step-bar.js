@@ -65,10 +65,10 @@
       const title = wrapper && wrapper.querySelector('.product__dropdown_title');
       if (!title) return '';
       const clone = title.cloneNode(true);
-      clone.querySelectorAll('svg, .icon-edit, .product__dropdown_value').forEach(function (el) {
+      clone.querySelectorAll('svg, .icon-edit, .product__dropdown_value, .product__dropdown_step-num, .product__dropdown_caret').forEach(function (el) {
         el.remove();
       });
-      return clone.textContent.replace(/:\s*$/, '').trim();
+      return clone.textContent.replace(/^\d+\.\s*/, '').replace(/:\s*$/, '').trim();
     }
 
     function allMainStepsDone() {

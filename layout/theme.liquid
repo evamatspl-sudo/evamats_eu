@@ -527,9 +527,8 @@
     {% if template contains 'index' %}
       <script src="{{ 'index.js' | asset_url }}" defer></script>
     {% endif %}
-    {% if template contains 'index' or template contains 'collection' %}
-      <script src="{{ 'search_models.js' | asset_url }}" defer></script>
-    {% endif %}
+    {%- comment -%} Header vehicle dropdown is global — load filter JS on every page. {%- endcomment -%}
+    <script src="{{ 'search_models.js' | asset_url }}" defer></script>
 
     {%- liquid
       assign load_product_config = false

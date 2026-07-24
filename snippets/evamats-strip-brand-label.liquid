@@ -1,0 +1,16 @@
+{% comment %}
+  Display-only: strip EVAMATS / Carvion from option labels.
+  Does not change Shopify option values used for variant matching.
+  Params: text
+{% endcomment %}
+{%- assign _evamats_brand_label = text
+  | default: ''
+  | replace: 'EVAMATS', ''
+  | replace: 'Evamats', ''
+  | replace: 'evamats', ''
+  | replace: 'Carvion', ''
+  | replace: 'carvion', ''
+  | replace: '  ', ' '
+  | strip
+-%}
+{{- _evamats_brand_label -}}

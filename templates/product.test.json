@@ -185,7 +185,7 @@
         "hd": "Koberce do lodí!",
         "des": "<p>Vyrábíme koberce na individuální zakázku — například do lodí, letadel a dalších dopravních prostředků podle personalizovaných rozměrů. Napište nám a splníme všechna vaše přání!</p>",
         "btn_text": "OBJEDNAT KOBEREC",
-        "btn_url": "shopify://pages/zamowienie-indywidualne"
+        "btn_url": "shopify://collections/all-car-mats"
       }
     },
     "1f13addc-5ac5-4bf9-a9f1-de28ec681035": {
@@ -206,7 +206,7 @@
         "hd": "“Do you own a rare car?“",
         "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form a we will realize individually tailored floor mats for your car.</p>",
         "btn_text": "CUSTOM ORDER",
-        "btn_url": "shopify://products/custom-order",
+        "btn_url": "shopify://collections/all-car-mats",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
     },

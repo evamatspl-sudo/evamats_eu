@@ -53,8 +53,11 @@
       assign mats_type_image = '5os-3d-diamonds-black-red.webp'
     endif
     assign chip_image = mats_type_image | file_url
-    assign chip_label = chip_label | replace: 'Carvion', '' | replace: '  ', ' ' | strip
   -%}
+  {%- capture chip_label -%}
+    {%- render 'evamats-strip-brand-label', text: chip_label -%}
+  {%- endcapture -%}
+  {%- assign chip_label = chip_label | strip -%}
 {%- elsif is_mats_set_option -%}
   {%- liquid
     assign needle = '|||' | append: value_norm | append: '|||'

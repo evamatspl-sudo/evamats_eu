@@ -1,3 +1,11 @@
+/** Display-only: strip brand tokens from variant option labels (catalog values stay unchanged). */
+window.evamatsStripBrandLabel = function (value) {
+  return String(value || '')
+    .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     
     var metaRobots = document.querySelector('meta[name="robots"][content="noindex, follow"]');
@@ -193,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
           compareEl.textContent = formatUpsellPrice(compareCents);
           compareEl.classList.remove('hidden');
           const discountValueEl = discountEl.querySelector('.product__upsell_discount__value');
-          (discountValueEl || discountEl).textContent = `${Math.round(((compareCents - cents) / compareCents) * 100)}%`;
+          (discountValueEl || discountEl).textContent = `-${Math.round(((compareCents - cents) / compareCents) * 100)}%`;
           discountEl.classList.remove('hidden');
         } else {
           compareEl.classList.add('hidden');
@@ -313,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       : otherCompareEl.textContent;
                     otherCompareEl.classList.remove('hidden');
                     const otherDiscountValueEl = otherDiscountEl.querySelector('.product__upsell_discount__value');
-                    (otherDiscountValueEl || otherDiscountEl).textContent = `${Math.round(((compareCents - otherMatch.price) / compareCents) * 100)}%`;
+                    (otherDiscountValueEl || otherDiscountEl).textContent = `-${Math.round(((compareCents - otherMatch.price) / compareCents) * 100)}%`;
                     otherDiscountEl.classList.remove('hidden');
                   } else {
                     otherCompareEl.classList.add('hidden');
@@ -621,6 +629,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // toggle popup
 (function () {
+    var POPUP_HISTORY_KEY = 'evamatsPopupOverlay';
+
     function ensureProductConfigLoaded() {
         if (window.__evamatsProductConfigInitialized) {
             return Promise.resolve();
@@ -645,30 +655,116 @@ document.addEventListener('DOMContentLoaded', function () {
         return window.__evamatsProductConfigReady;
     }
 
+    function stopMediaInOverlay(overlay) {
+        if (!overlay) return;
+
+        overlay.querySelectorAll('video, audio').forEach(function (media) {
+            try {
+                media.pause();
+            } catch (e) {}
+            try {
+                if (media.readyState > 0) {
+                    media.currentTime = 0;
+                }
+            } catch (e) {}
+            try {
+                // Abort current playback buffer / network fetch
+                media.load();
+            } catch (e) {}
+        });
+
+        // YouTube / Vimeo / generic embeds: blank src to stop playback and loading
+        overlay.querySelectorAll('iframe').forEach(function (iframe) {
+            var src = iframe.getAttribute('src');
+            if (!src || src === 'about:blank') return;
+            if (!iframe.dataset.evamatsSrc) {
+                iframe.dataset.evamatsSrc = src;
+            }
+            iframe.setAttribute('src', 'about:blank');
+        });
+    }
+
+    function restoreMediaInOverlay(overlay) {
+        if (!overlay) return;
+        overlay.querySelectorAll('iframe').forEach(function (iframe) {
+            if (iframe.dataset.evamatsSrc && (!iframe.getAttribute('src') || iframe.getAttribute('src') === 'about:blank')) {
+                iframe.setAttribute('src', iframe.dataset.evamatsSrc);
+            }
+        });
+    }
+
+    function rememberMediaSources(overlay) {
+        if (!overlay) return;
+        overlay.querySelectorAll('iframe').forEach(function (iframe) {
+            var src = iframe.getAttribute('src');
+            if (src && src !== 'about:blank' && !iframe.dataset.evamatsSrc) {
+                iframe.dataset.evamatsSrc = src;
+            }
+        });
+    }
+
+    function pushPopupHistory(overlay) {
+        if (!overlay || !window.history || !window.history.pushState) return;
+        if (overlay.dataset.evamatsHistory === '1') return;
+        try {
+            window.history.pushState({ [POPUP_HISTORY_KEY]: overlay.id || true }, '');
+            overlay.dataset.evamatsHistory = '1';
+        } catch (e) {}
+    }
+
+    function clearPopupHistoryFlag(overlay) {
+        if (overlay) overlay.dataset.evamatsHistory = '';
+    }
+
     function openPopupFromTrigger(btn) {
         const targetId = btn.dataset.popup;
         if (!targetId) return;
         const popup = document.getElementById(targetId);
         if (!popup || !popup.classList.contains('popup_overlay')) return;
 
+        rememberMediaSources(popup);
+        restoreMediaInOverlay(popup);
+
         if (targetId === 'popupOverlayApplicationForm') {
             ensureProductConfigLoaded().then(function () {
                 popup.classList.add('show');
                 document.documentElement.classList.add('overflow-hidden');
+                pushPopupHistory(popup);
             });
             return;
         }
 
         popup.classList.add('show');
         document.documentElement.classList.add('overflow-hidden');
+        pushPopupHistory(popup);
     }
 
-    function closePopupOverlay(overlay) {
+    function closePopupOverlay(overlay, options) {
         if (!overlay) return;
+        var opts = options || {};
+        stopMediaInOverlay(overlay);
         overlay.classList.remove('show');
+        clearPopupHistoryFlag(overlay);
         if (!document.querySelector('.popup_overlay.show')) {
             document.documentElement.classList.remove('overflow-hidden');
         }
+        // Browser back already consumed the history entry — don't call history.back()
+        if (!opts.fromPopstate && opts.useHistoryBack !== false) {
+            // no-op: we leave the extra history entry; next back goes to previous page.
+            // Prefer replacing so back doesn't re-open nothing: if we pushed, go back once.
+            if (window.history.state && window.history.state[POPUP_HISTORY_KEY]) {
+                try {
+                    window.history.back();
+                } catch (e) {}
+            }
+        }
+    }
+
+    function closeTopmostPopup(options) {
+        var open = document.querySelectorAll('.popup_overlay.show');
+        if (!open.length) return false;
+        closePopupOverlay(open[open.length - 1], options);
+        return true;
     }
 
     function initPopups() {
@@ -691,12 +787,62 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== 'Escape' && event.code !== 'Escape') return;
+            if (closeTopmostPopup()) {
+                event.preventDefault();
+            }
+        });
+
+        window.addEventListener('popstate', function () {
+            var open = document.querySelector('.popup_overlay.show[data-evamats-history="1"]');
+            if (open) {
+                closePopupOverlay(open, { fromPopstate: true });
+            }
+        });
+
+        // Mobile swipe-down on backdrop / popup shell (upsell video and similar overlays)
+        var touchStartY = null;
+        var touchTarget = null;
+        document.addEventListener(
+            'touchstart',
+            function (event) {
+                var overlay = event.target.closest('.popup_overlay.show');
+                if (!overlay) return;
+                // Only start swipe-close from overlay backdrop or close-adjacent chrome, not deep scrollable content mid-scroll
+                if (event.target !== overlay && !event.target.classList.contains('popup_close_btn')) {
+                    var scrollable = event.target.closest('.popup, .popup-content');
+                    if (scrollable && scrollable.scrollTop > 0) return;
+                }
+                touchStartY = event.touches[0].clientY;
+                touchTarget = overlay;
+            },
+            { passive: true }
+        );
+        document.addEventListener(
+            'touchend',
+            function (event) {
+                if (touchStartY == null || !touchTarget) return;
+                var endY = event.changedTouches[0].clientY;
+                var delta = endY - touchStartY;
+                var overlay = touchTarget;
+                touchStartY = null;
+                touchTarget = null;
+                if (delta > 80 && overlay.classList.contains('show')) {
+                    closePopupOverlay(overlay);
+                }
+            },
+            { passive: true }
+        );
+
         const individualAutoPopup = document.querySelector('.popup_overlay[data-auto-open-individual]');
         if (individualAutoPopup) {
             const storageKey = individualAutoPopup.getAttribute('data-auto-open-key');
             if (storageKey && !sessionStorage.getItem(storageKey)) {
+                rememberMediaSources(individualAutoPopup);
                 individualAutoPopup.classList.add('show');
                 document.documentElement.classList.add('overflow-hidden');
+                pushPopupHistory(individualAutoPopup);
                 sessionStorage.setItem(storageKey, '1');
             }
         }
@@ -1053,30 +1199,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // toggle header car dropdown
 (function () {
-    document.addEventListener("click", function(e) {
-        const trigger = e.target.closest(".header__car");
-        const allDropdowns = document.querySelectorAll(".header__car_dropdown");
+    function syncHeaderCarFromStorage() {
+        var headerCars = document.querySelectorAll('.header__car');
+        if (!headerCars.length) return;
 
-        // Клик по кнопке (открыть/закрыть)
+        var brand = '';
+        var model = '';
+        var years = '';
+        var hasData = false;
+
+        try {
+            var saved = localStorage.getItem('carFilterSelections');
+            if (saved) {
+                var data = JSON.parse(saved);
+                brand = (data.brand || '').trim();
+                model = (data.model || '').trim();
+                years = (data.years || '').trim();
+                hasData = !!(brand || model || years);
+            }
+        } catch (error) {
+            console.error('Error parsing localStorage for header__car:', error);
+        }
+
+        headerCars.forEach(function (headerCar) {
+            var brandEl = headerCar.querySelector('.header__car_info_brand');
+            var modelEl = headerCar.querySelector('.header__car_info_model');
+            var yearEl = headerCar.querySelector('.header__car_info_year');
+            if (!brandEl || !modelEl || !yearEl) return;
+            brandEl.textContent = brand;
+            modelEl.textContent = model;
+            yearEl.textContent = years;
+            headerCar.classList.toggle('active', hasData);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncHeaderCarFromStorage);
+    } else {
+        syncHeaderCarFromStorage();
+    }
+
+    document.addEventListener('click', function (e) {
+        const trigger = e.target.closest('.header__car');
+        const allDropdowns = document.querySelectorAll('.header__car_dropdown');
+
         if (trigger) {
+            e.preventDefault();
             const dropdown = trigger.nextElementSibling;
             if (!dropdown || !dropdown.classList.contains('header__car_dropdown')) {
                 return;
             }
 
-            // Закрываем все остальные
-            allDropdowns.forEach(d => {
-                if (d !== dropdown) d.classList.remove("active");
+            allDropdowns.forEach(function (d) {
+                if (d !== dropdown) d.classList.remove('active');
             });
 
-            // Тогглим текущий
-            dropdown.classList.toggle("active");
+            dropdown.classList.toggle('active');
             return;
         }
 
-        // Клик вне любых дропдаунов (закрыть всё)
-        if (!e.target.closest(".header__car_dropdown")) {
-            allDropdowns.forEach(d => d.classList.remove("active"));
+        if (!e.target.closest('.header__car_dropdown')) {
+            allDropdowns.forEach(function (d) {
+                d.classList.remove('active');
+            });
         }
     });
 })();
@@ -1147,4 +1332,78 @@ document.addEventListener('DOMContentLoaded', function () {
             validateConsentGate(root);
         }
     });
+})();
+
+(function () {
+  var COOKIE_NAME = 'evamats_cart_ttl';
+  var TTL_DAYS = 3;
+
+  function getCookie(name) {
+    var match = document.cookie.match(
+      new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + '=([^;]*)')
+    );
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function setCookie(name, value, days) {
+    var maxAge = days * 24 * 60 * 60;
+    var expires = new Date(Date.now() + maxAge * 1000).toUTCString();
+    document.cookie =
+      name +
+      '=' +
+      encodeURIComponent(value) +
+      '; path=/; max-age=' +
+      maxAge +
+      '; expires=' +
+      expires +
+      '; SameSite=Lax';
+  }
+
+  function cartClearUrl() {
+    var base = (window.routes && window.routes.cart_url) || '/cart';
+    return base + '/clear.js';
+  }
+
+  function cartJsonUrl() {
+    var base = (window.routes && window.routes.cart_url) || '/cart';
+    return base + '.js';
+  }
+
+  function clearExpiredCart() {
+    if (getCookie(COOKIE_NAME)) return;
+
+    fetch(cartJsonUrl(), { credentials: 'same-origin' })
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (cart) {
+        var hadItems = cart && cart.item_count > 0;
+
+        if (!hadItems) {
+          setCookie(COOKIE_NAME, '1', TTL_DAYS);
+          return;
+        }
+
+        return fetch(cartClearUrl(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+        }).then(function () {
+          setCookie(COOKIE_NAME, '1', TTL_DAYS);
+          try {
+            sessionStorage.removeItem('evamatsCartTermsAccepted');
+          } catch (e) {}
+          window.location.reload();
+        });
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', clearExpiredCart);
+  } else {
+    clearExpiredCart();
+  }
 })();

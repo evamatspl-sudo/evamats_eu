@@ -205,6 +205,7 @@
                 localJson = data;
                 populateBrandDropdown(localJson);
                 if (shouldStartEmpty(container)) {
+                    localStorage.removeItem('carFilterSelections');
                     return;
                 }
                 const restoredFromPage = await restoreSelectionsFromPageContext();
@@ -426,9 +427,22 @@
 
         function populateYearsDropdown(years) {
             yearsSelectOptions.innerHTML = '';
-            years.sort(sortLocale).forEach((year) => {
-                yearsSelectOptions.appendChild(buildYearOptionElement(String(year).trim()));
-            });
+            years
+                .slice()
+                .sort((a, b) => {
+                    const rangeA = parseYearRangeForVehicleFilter(a);
+                    const rangeB = parseYearRangeForVehicleFilter(b);
+                    const startA = rangeA ? rangeA.start : Number.NEGATIVE_INFINITY;
+                    const startB = rangeB ? rangeB.start : Number.NEGATIVE_INFINITY;
+                    if (startB !== startA) return startB - startA;
+                    const endA = rangeA ? rangeA.end : Number.NEGATIVE_INFINITY;
+                    const endB = rangeB ? rangeB.end : Number.NEGATIVE_INFINITY;
+                    if (endB !== endA) return endB - endA;
+                    return sortLocale(String(b), String(a));
+                })
+                .forEach((year) => {
+                    yearsSelectOptions.appendChild(buildYearOptionElement(String(year).trim()));
+                });
         }
 
         function selectYearOption(element, saveToLocalStorage) {
@@ -528,9 +542,24 @@
             }
         }
 
-        container.querySelector('.brand-input').addEventListener('click', () => toggleSelectOptions(brandSelectOptions, brandCustomSelect));
-        container.querySelector('.model-input').addEventListener('click', () => toggleSelectOptions(modelSelectOptions, modelCustomSelect));
-        container.querySelector('.years-input').addEventListener('click', () => toggleSelectOptions(yearsSelectOptions, yearsCustomSelect));
+        function bindSelectToggle(customSelect, selectOptions) {
+            const trigger = customSelect.querySelector('.filter-field__body') || customSelect;
+            trigger.addEventListener('click', (event) => {
+                if (event.target.closest('.select-items')) return;
+
+                const input = customSelect.querySelector('.select-selected');
+                if (!input || input.disabled || input.classList.contains('disabled')) return;
+
+                toggleSelectOptions(selectOptions, customSelect);
+                if (document.activeElement !== input) {
+                    input.focus({ preventScroll: true });
+                }
+            });
+        }
+
+        bindSelectToggle(brandCustomSelect, brandSelectOptions);
+        bindSelectToggle(modelCustomSelect, modelSelectOptions);
+        bindSelectToggle(yearsCustomSelect, yearsSelectOptions);
 
         document.addEventListener('click', (event) => {
             const wrapper = event.target.closest('.custom-select-wrapper');

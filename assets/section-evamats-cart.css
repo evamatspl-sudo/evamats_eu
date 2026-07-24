@@ -29,7 +29,7 @@
 
 .evamats-cart__surface {
   border-radius: var(--ec-radius-lg);
-  padding: 24px 18px;
+  padding: 24px 0;
 }
 
 .evamats-cart-items {
@@ -415,66 +415,32 @@
   display: none;
 }
 
-/* --- Gift / progress banner (1710:10691 / 11229) --- */
+/* --- Gift / progress banner --- */
 
 .evamats-cart-gift-banner {
-  --ec-gift-card-border: linear-gradient(
-    135deg,
-    #ffece3 0%,
-    #ffb897 18%,
-    #ffef93 38%,
-    #dd93ff 59%,
-    #ffd7c4 79%,
-    #fff4b4 92%
-  );
-  --ec-gift-card-tint: linear-gradient(
-    174.24deg,
-    rgba(255, 236, 227, 0.1) 0%,
-    rgba(255, 184, 151, 0.1) 18.27%,
-    rgba(255, 239, 147, 0.1) 38.46%,
-    rgba(221, 147, 255, 0.1) 58.65%,
-    rgba(255, 215, 196, 0.1) 78.85%,
-    rgba(255, 244, 180, 0.1) 92.31%
-  );
   position: relative;
-  margin: 0 0 32px;
-  padding: 25px 98px 27px 33px;
-  min-height: 97px;
-  border: 1px solid transparent;
-  border-radius: 16px;
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    var(--ec-gift-card-border) border-box;
+  margin: 0 0 24px;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--ec-chip-border);
+  border-radius: var(--ec-radius-lg);
+  background: var(--ec-surface);
   box-sizing: border-box;
 }
 
-.evamats-cart-gift-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--ec-gift-card-tint);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .evamats-cart-gift-banner__text-row {
-  position: relative;
-  z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  max-width: calc(100% - 8px);
-  margin-bottom: 21px;
+  margin-bottom: 14px;
 }
 
 .evamats-cart-gift-banner__text {
   margin: 0;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--ec-text, #1b1d22);
+  color: var(--ec-text);
 }
 
 .evamats-cart-gift-banner__info {
@@ -482,8 +448,8 @@
   display: flex;
   width: 16px;
   height: 16px;
-  margin-top: 0;
-  color: var(--ec-muted, #8090a4);
+  margin-top: 2px;
+  color: var(--ec-muted);
 }
 
 .evamats-cart-gift-banner__info svg {
@@ -493,11 +459,10 @@
 
 .evamats-cart-gift-banner__bar {
   position: relative;
-  z-index: 1;
   width: 100%;
   height: 4px;
   border-radius: 30px;
-  background: rgba(168, 107, 255, 0.16);
+  background: #e9e9e9;
   overflow: hidden;
 }
 
@@ -509,7 +474,7 @@
   height: 100%;
   min-width: 0;
   border-radius: 30px;
-  background: linear-gradient(90deg, #5266ea 0%, #7852ea 55%, #a86bff 100%);
+  background: #ff2741;
   max-width: 100%;
   transition: width 0.3s ease;
 }
@@ -524,52 +489,12 @@
   transform: translate(50%, -50%);
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px #ff2741;
   opacity: 0;
 }
 
 .evamats-cart-gift-banner__bar-fill--tip::after {
   opacity: 1;
-}
-
-.evamats-cart-gift-banner__gift {
-  position: absolute;
-  z-index: 1;
-  top: 5px;
-  right: 11px;
-  width: 87px;
-  height: 87px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.evamats-cart-gift-banner__gift::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: url('evamats-cart-gift-glow.svg') center / contain no-repeat;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.evamats-cart-gift-banner__gift svg {
-  position: relative;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-}
-
-.evamats-cart-gift-banner__gift-image {
-  position: relative;
-  z-index: 1;
-  display: block;
-  flex-shrink: 0;
-  width: 87px;
-  height: 87px;
-  object-fit: cover;
 }
 
 .drawer__progress.evamats-cart-gift-banner-wrap {
@@ -579,52 +504,16 @@
 
 @media screen and (max-width: 749px) {
   .evamats-cart-gift-banner {
-    --ec-gift-card-tint: linear-gradient(
-      164.03deg,
-      rgba(255, 236, 227, 0.1) 0%,
-      rgba(255, 184, 151, 0.1) 18.27%,
-      rgba(255, 239, 147, 0.1) 38.46%,
-      rgba(221, 147, 255, 0.1) 58.65%,
-      rgba(255, 215, 196, 0.1) 78.85%,
-      rgba(255, 244, 180, 0.1) 92.31%
-    );
-    padding: 16px 70px 21px 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    padding: 14px 16px 16px;
   }
 
   .evamats-cart-gift-banner__text-row {
-    align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   .evamats-cart-gift-banner__text {
-    font-size: 16px;
-  }
-
-  .evamats-cart-gift-banner__info {
-    margin-top: 2px;
-  }
-
-  .evamats-cart-gift-banner__gift {
-    top: 10px;
-    right: 17px;
-    width: 53px;
-    height: 53px;
-  }
-
-  .evamats-cart-gift-banner__gift::before {
-    content: none;
-  }
-
-  .evamats-cart-gift-banner__gift svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .evamats-cart-gift-banner__gift-image {
-    width: 53px;
-    height: 53px;
-    mix-blend-mode: darken;
+    font-size: 14px;
   }
 
   .evamats-cart-sidebar__reservation {

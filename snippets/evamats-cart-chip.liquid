@@ -2,6 +2,10 @@
   Cart chip — Figma 1710:11136 / config preview chip markup
   Params: chip_label, chip_image (optional)
 {% endcomment %}
+{%- capture chip_label -%}
+  {%- render 'evamats-strip-brand-label', text: chip_label -%}
+{%- endcapture -%}
+{%- assign chip_label = chip_label | strip -%}
 <span class="evamats-cart-item__chip">
   {%- if chip_image != blank -%}
     <span class="evamats-cart-item__chip-icon">

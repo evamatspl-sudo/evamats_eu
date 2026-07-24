@@ -182,7 +182,7 @@
             "image": "shopify://shop_images/IMG_8796_1_1.png",
             "button_visibility": "mobile",
             "button_label": "Zobrazit produkt",
-            "button_link": "#"
+            "button_link": "shopify://collections/all-car-mats"
           }
         },
         "block_YfT8nF": {
@@ -193,7 +193,7 @@
             "image": "shopify://shop_images/IMG_8796_2_1.png",
             "button_visibility": "all",
             "button_label": "Zobrazit produkt",
-            "button_link": "#"
+            "button_link": "shopify://collections/all-car-mats"
           }
         }
       },
@@ -429,7 +429,7 @@
         "heading": "<p><p>Naším cílem je <strong>maximální</strong> </p><p><strong>pohodlí</strong> vaší jízdy</p>",
         "text": "<p>Přesné leštění, odolné materiály a produkované detaily dělají používání maximálně pohodlné každý den.</p>",
         "button_label": "Nakonfigurujte koberce",
-        "button_link": "#",
+        "button_link": "shopify://collections/all-car-mats",
         "padding_top": 80,
         "padding_bottom": 120,
         "padding_top_mobile": 20,

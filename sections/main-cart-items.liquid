@@ -29,12 +29,12 @@
   <div class="evamats-cart__main page-width{% unless cart == empty %} section-{{ section.id }}-padding{% endunless %}">
     {% comment %} <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="/pages/car-brands" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+      <a href="/collections/all-car-mats" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
     </div> {% endcomment %}
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="/pages/car-brands" class="button">
+      <a href="/collections/all-car-mats" class="button">
         {{ 'general.continue_shopping' | t }}
       </a>
 
@@ -48,7 +48,7 @@
 
     {%- if cart != empty -%}
       <div class="evamats-cart__body">
-        <div class="evamats-cart__body-inner page-width">
+        <div class="evamats-cart__body-inner">
           <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
             <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
               <div class="js-contents evamats-cart__layout">

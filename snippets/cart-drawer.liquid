@@ -172,8 +172,8 @@
                             <dt>{{ option.name }}:</dt>
                             <dd>
                             {% comment %} {{ option.value}} {% endcomment %} 
-                            {% assign words = option.value | split: "#MWS" %}          
-                            {{ words[0] }}
+                            {% assign words = option.value | split: "#MWS" %}
+                            {% render 'evamats-strip-brand-label', text: words[0] %}
                                      {%- unless forloop.last %}, {% endunless %}
                             </dd>
                           {%- endunless -%}

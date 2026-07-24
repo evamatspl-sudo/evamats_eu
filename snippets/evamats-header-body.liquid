@@ -7,7 +7,6 @@
   assign catalog_menu = section.settings.catalog_menu
   assign nav_menu = section.settings.menu
   assign catalog_label = section.settings.catalog_button_label | default: 'Catalog'
-  assign mobile_car_url = section.settings.mobile_car_link_url | default: section.settings.drawer_car_cta_url
 -%}
 
 <div class="evamats-header__inner page-width">
@@ -46,11 +45,9 @@
       </h1>
     {%- endif -%}
 
-    {%- if mobile_car_url != blank -%}
-      <div class="evamats-header__car-link large-up-hide">
-        {% render 'evamats-header-car-link', url: mobile_car_url %}
-      </div>
-    {%- endif -%}
+    <div class="evamats-header__car-link large-up-hide">
+      {% render 'header_car_dropdown', class: 'header__car--mobile' %}
+    </div>
 
     {%- if catalog_menu != blank and catalog_menu.links.size > 0 -%}
       <div class="evamats-header__catalog small-hide medium-hide">

@@ -167,12 +167,12 @@
         {% case forloop.index %}
           {% when 1 %}
             <img src="{{ '5os-classic-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
+            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: value %}</div>
           {% when 2 %}
             <img src="{{ '5os-3d-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{{ value }}</div>
+            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: value %}</div>
         {% endcase %}
-        <span class="evamats-config-option-label">{{ value | remove: 'EVAMATS' }}</span>
+        <span class="evamats-config-option-label">{% render 'evamats-strip-brand-label', text: value %}</span>
 
       </label>
     {% elsif is_simple_product %}

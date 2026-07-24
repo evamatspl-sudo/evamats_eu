@@ -578,21 +578,28 @@ cart-items {
 .cart-upsell-strip__discount .product__upsell_discount__inner {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: 14px;
-}
-
-.cart-upsell-strip__discount .product__upsell_discount__value {
+  padding: 0 6px 0 8px;
   font-weight: 700;
   font-size: 10px;
   line-height: 1;
+  letter-spacing: -0.02em;
   color: #fff;
   background: #ff2741;
-  padding: 1px 4px 1px 2px;
+  border-radius: 0 2px 2px 0;
+  clip-path: polygon(6px 0, 100% 0, 100% 100%, 6px 100%, 0 50%);
+}
+
+.cart-upsell-strip__discount .product__upsell_discount__value {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
 }
 
 .cart-upsell-strip__discount .product__upsell_discount__cap {
-  width: auto;
-  height: 14px;
+  display: none;
 }
 
 .cart-upsell-strip__price {
@@ -710,14 +717,6 @@ cart-items {
 }
 
 @media screen and (max-width: 749px) {
-  .evamats-cart > .evamats-cart-upsell {
-    order: 3;
-  }
-
-  .evamats-cart__main {
-    order: 1;
-  }
-
   .drawer__progress_products .swiper-slide {
     height: auto !important;
   }

@@ -210,7 +210,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Objednat na míru",
-            "button_link_1": "shopify:\/\/pages\/dywaniki-samochodowe-eva",
+            "button_link_1": "shopify:\/\/collections\/all-car-mats",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -246,7 +246,7 @@
         "hd": "<h1>Do jakiego <span>transportu? <\/span>\n<\/h1>",
         "des": "<p>Vyrábíme stylové EVA koberce pro všechny druhy dopravy: auta, lodě, letadla atd. Nabízíme řešení přizpůsobená přesným rozměrům vašeho vozidla. Různé vzory a nejvyšší kvalita za dostupnou cenu.<\/p>",
         "btn_text": "OBJEDNAT KOBEREC",
-        "btn_url": "shopify:\/\/pages\/zamowienie-indywidualne"
+        "btn_url": "shopify:\/\/collections\/all-car-mats"
       }
     },
     "c605d8f3-dc8c-4614-8c41-de8a728399a1": {

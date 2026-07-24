@@ -65,6 +65,13 @@
   min-height: 69px;
   padding: 0 40px 0 16px;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.evamats-collection-product-grid .filter-container--collection .filter-field:has(.select-selected:disabled) .filter-field__body,
+.evamats-collection-product-grid .filter-container--collection .filter-field:has(.select-selected[disabled]) .filter-field__body,
+.evamats-collection-product-grid .filter-container--collection .filter-field:has(.select-selected.disabled) .filter-field__body {
+  cursor: not-allowed;
 }
 
 .evamats-collection-product-grid .filter-container--collection .filter-field__media {

@@ -237,7 +237,7 @@
         "hd": "Koberce do lodí!",
         "des": "<p>Vyrábíme koberce na individuální zakázku — například do lodí, letadel a dalších dopravních prostředků podle personalizovaných rozměrů. Napište nám a splníme všechna vaše přání!</p>",
         "btn_text": "OBJEDNAT KOBEREC",
-        "btn_url": "shopify://pages/zamowienie-indywidualne"
+        "btn_url": "shopify://collections/all-car-mats"
       }
     },
     "1f13addc-5ac5-4bf9-a9f1-de28ec681035": {
@@ -259,7 +259,7 @@
         "hd": "“Máte vzácné auto?“",
         "des": "<p>Nenajdete koberce pro své jedinečné auto? <br/><br/>Máme kontakty po celém Polsku i v zahraničí u různých autosalonů, kde vám vozidlo změříme, pokud nemůžete přijet k nám. Ke každému měření přistupujeme s precizností, s jakou hodinář skládá hodinky.<br/><br/>Vyplňte tento formulář a my pro vaše auto vyrobíme koberce na míru.</p>",
         "btn_text": "INDIVIDUÁLNÍ OBJEDNÁVKA",
-        "btn_url": "shopify://products/custom-order",
+        "btn_url": "shopify://collections/all-car-mats",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
     },
