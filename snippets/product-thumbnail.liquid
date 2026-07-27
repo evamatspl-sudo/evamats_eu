@@ -1,3 +1,16 @@
+{%- assign product_media_preview_image = media.preview_image -%}
+{%- capture localized_media_filename -%}
+  {%- render 'localized-product-media-filename', media: media -%}
+{%- endcapture -%}
+{%- liquid
+  assign localized_media_filename = localized_media_filename | strip
+  if localized_media_filename != blank
+    assign localized_media_image = images[localized_media_filename]
+    if localized_media_image != blank
+      assign product_media_preview_image = localized_media_image
+    endif
+  endif
+-%}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {% comment %}
     Renders a product thumbnail with a modal-opener
@@ -60,7 +73,7 @@
     {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
       <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
       <div class="product__media media">
-        {{ media.preview_image | image_url: width: 1946 | image_tag:
+        {{ product_media_preview_image | image_url: width: 1946 | image_tag:
           loading: lazy,
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
@@ -71,7 +84,7 @@
       </a>
     {%- else -%}
       <div class="product__media media">
-        {{ media.preview_image | image_url: width: 1946 | image_tag:
+        {{ product_media_preview_image | image_url: width: 1946 | image_tag:
           loading: lazy,
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
@@ -97,8 +110,8 @@
     {%- endunless -%}
     <div class="product__media media media--transparent">
       {%- if fancybox != blank -%}
-        <a href="{{ media.preview_image | image_url: width: 1946 }}" data-fancybox="{{ fancybox }}">
-          {{ media.preview_image | image_url: width: 1946 | image_tag:
+        <a href="{{ product_media_preview_image | image_url: width: 1946 }}" data-fancybox="{{ fancybox }}">
+          {{ product_media_preview_image | image_url: width: 1946 | image_tag:
             class: image_class,
             loading: lazy,
             sizes: sizes,
@@ -108,7 +121,7 @@
           }}
         </a>
       {%- else -%}
-        {{ media.preview_image | image_url: width: 1946 | image_tag:
+        {{ product_media_preview_image | image_url: width: 1946 | image_tag:
           class: image_class,
           loading: lazy,
           sizes: sizes,
@@ -143,7 +156,7 @@
           {%- render 'icon-play' -%}
         {%- endif -%}
       </span>
-      {{ media.preview_image | image_url: width: 1946 | image_tag:
+      {{ product_media_preview_image | image_url: width: 1946 | image_tag:
         loading: lazy,
         sizes: sizes,
         widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
