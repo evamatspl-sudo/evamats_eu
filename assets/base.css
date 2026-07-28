@@ -3894,12 +3894,13 @@ fieldset {
 .header__car--desktop .header__car_info_text {
     font-size: 10px;
 }
-.header__car_info_text span:last-child,
-.header__car_info_text .header__car_info_car {
+.header__car_info_car {
     display: none;
 }
-.header__car.active .header__car_info_text span:last-child,
-.header__car.active .header__car_info_text .header__car_info_car {
+.header__car_info_text span:last-child {
+    display: none;
+}
+.header__car.active .header__car_info_text span:last-child {
     display: block;
 }
 .header__car.active .header__car_info_text span:first-child {
@@ -3907,9 +3908,6 @@ fieldset {
 }
 .header__car.header__car--desktop {
     text-align: left;
-}
-.header__car_info_car {
-    margin-bottom: 6px;
 }
 .header-drawer_wr {
     display: flex;
@@ -8904,7 +8902,27 @@ fieldset {
       position: relative;
       padding: 0 0 28px;
     }
-  
+
+    .o-nas-founder__nav.eva-slider-nav--absolute {
+      z-index: 12;
+      width: var(--eva-nav-size);
+      height: var(--eva-nav-size);
+      margin-top: 0;
+    }
+
+    .o-nas-founder__nav.eva-slider-nav--absolute.swiper-button-prev,
+    .o-nas-founder__nav.eva-slider-nav--absolute.swiper-button-next {
+      margin-top: 0;
+    }
+
+    .o-nas-founder__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
+      left: 12px;
+    }
+
+    .o-nas-founder__nav.eva-slider-nav--absolute.eva-slider-nav--next {
+      right: 12px;
+    }
+
     .o-nas-founder__swiper {
       overflow: hidden;
       border-radius: 16px;
@@ -9104,6 +9122,19 @@ fieldset {
       .o-nas-founder__heading {
         font-size: 18px;
         line-height: normal
+      }
+
+      .o-nas-founder__nav.eva-slider-nav--absolute {
+        --eva-nav-size: 40px;
+        --eva-nav-icon: 10px;
+      }
+
+      .o-nas-founder__nav.eva-slider-nav--absolute.eva-slider-nav--prev {
+        left: 8px;
+      }
+
+      .o-nas-founder__nav.eva-slider-nav--absolute.eva-slider-nav--next {
+        right: 8px;
       }
     }
   
@@ -12822,6 +12853,42 @@ textarea.field__input:-webkit-autofill:hover,
   white-space: nowrap;
 }
 
+.field--prefixed__code {
+  flex: 0 0 auto;
+  align-self: stretch;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 4px 0 var(--eva-input-pad-x);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: var(--eva-input-text);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  max-width: 5.5em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1.25L5 5.25L9 1.25' stroke='%231b1d22' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+  background-size: 10px 6px;
+  padding-right: 16px;
+}
+
+.field--prefixed__code:focus,
+.field--prefixed__code:focus-visible {
+  outline: none;
+}
+
+.field--prefixed [data-phone-full] {
+  display: none;
+}
+
 .field--prefixed .field__input,
 .field--prefixed > input.field__input {
   flex: 1 1 auto;
@@ -14638,13 +14705,15 @@ textarea.field__input:-webkit-autofill:hover,
     line-height: 8px;
   }
 
-  .evamats-header__car-link .header__car_info_text span:last-child,
   .evamats-header__car-link .header__car_info_car {
     display: none;
   }
 
-  .evamats-header__car-link .header__car.active .header__car_info_text span:last-child,
-  .evamats-header__car-link .header__car.active .header__car_info_car {
+  .evamats-header__car-link .header__car_info_text span:last-child {
+    display: none;
+  }
+
+  .evamats-header__car-link .header__car.active .header__car_info_text span:last-child {
     display: block;
   }
 

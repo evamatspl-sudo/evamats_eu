@@ -1203,32 +1203,23 @@ document.addEventListener('DOMContentLoaded', function () {
         var headerCars = document.querySelectorAll('.header__car');
         if (!headerCars.length) return;
 
-        var brand = '';
-        var model = '';
-        var years = '';
         var hasData = false;
 
         try {
             var saved = localStorage.getItem('carFilterSelections');
             if (saved) {
                 var data = JSON.parse(saved);
-                brand = (data.brand || '').trim();
-                model = (data.model || '').trim();
-                years = (data.years || '').trim();
-                hasData = !!(brand || model || years);
+                hasData = !!(
+                    (data.brand || '').trim() ||
+                    (data.model || '').trim() ||
+                    (data.years || '').trim()
+                );
             }
         } catch (error) {
             console.error('Error parsing localStorage for header__car:', error);
         }
 
         headerCars.forEach(function (headerCar) {
-            var brandEl = headerCar.querySelector('.header__car_info_brand');
-            var modelEl = headerCar.querySelector('.header__car_info_model');
-            var yearEl = headerCar.querySelector('.header__car_info_year');
-            if (!brandEl || !modelEl || !yearEl) return;
-            brandEl.textContent = brand;
-            modelEl.textContent = model;
-            yearEl.textContent = years;
             headerCar.classList.toggle('active', hasData);
         });
     }
@@ -1295,11 +1286,26 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 
+    function syncPhoneFields(form) {
+        if (!form) return;
+        form.querySelectorAll('[data-phone-field]').forEach(function (field) {
+            var codeEl = field.querySelector('[data-phone-code]');
+            var localEl = field.querySelector('[data-phone-local]');
+            var fullEl = field.querySelector('[data-phone-full]');
+            if (!codeEl || !localEl || !fullEl) return;
+
+            var code = String(codeEl.value || '').trim();
+            var local = String(localEl.value || '').replace(/\D/g, '');
+            fullEl.value = local ? code + local : '';
+        });
+    }
+
     document.addEventListener(
         'submit',
         function (e) {
             var form = e.target;
             if (!form || form.tagName !== 'FORM') return;
+            syncPhoneFields(form);
             var root = form.querySelector('[data-consent-gate]');
             if (!root) return;
             if (!validateConsentGate(root)) {
@@ -1315,6 +1321,8 @@ document.addEventListener('DOMContentLoaded', function () {
         function (e) {
             var submitBtn = e.target.closest('[data-consent-gate-submit]');
             if (!submitBtn) return;
+            var form = submitBtn.closest('form');
+            if (form) syncPhoneFields(form);
             var root = getGateRoot(submitBtn);
             if (!root) return;
             if (!validateConsentGate(root)) {

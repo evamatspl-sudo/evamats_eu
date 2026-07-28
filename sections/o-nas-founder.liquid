@@ -21,6 +21,9 @@
       assign video_mobile_src = video_desktop_src
     endif
   endif
+
+  assign prev_nav_label = 'general.slider.previous_slide' | t
+  assign next_nav_label = 'general.slider.next_slide' | t
 -%}
 
 <div
@@ -76,6 +79,16 @@
     {%- elsif slide_count > 0 -%}
       <div class="o-nas-founder__media-bleed">
         <div class="o-nas-founder__slider" data-of-root>
+          {%- if slide_count > 1 -%}
+            {% render 'eva-slider-nav-button',
+              direction: 'prev',
+              size: 'medium',
+              absolute: true,
+              class: 'o-nas-founder__nav',
+              label: prev_nav_label
+            %}
+          {%- endif -%}
+
           <div class="swiper o-nas-founder__swiper" data-of-swiper>
             <div class="swiper-wrapper">
               {%- for block in section.blocks -%}
@@ -116,7 +129,15 @@
               {%- endfor -%}
             </div>
           </div>
+
           {%- if slide_count > 1 -%}
+            {% render 'eva-slider-nav-button',
+              direction: 'next',
+              size: 'medium',
+              absolute: true,
+              class: 'o-nas-founder__nav',
+              label: next_nav_label
+            %}
             <div class="o-nas-founder__pagination swiper-pagination" data-of-pagination></div>
           {%- endif -%}
         </div>
@@ -192,6 +213,8 @@
       if (!count) return;
 
       var paginationEl = root.querySelector('[data-of-pagination]');
+      var prevEl = root.querySelector('.o-nas-founder__nav.eva-slider-nav--prev');
+      var nextEl = root.querySelector('.o-nas-founder__nav.eva-slider-nav--next');
 
       function run() {
         if (typeof window.Swiper === 'undefined') return;
@@ -221,6 +244,10 @@
 
         if (paginationEl && count > 1) {
           opts.pagination = { el: paginationEl, clickable: true };
+        }
+
+        if (prevEl && nextEl && count > 1) {
+          opts.navigation = { prevEl: prevEl, nextEl: nextEl };
         }
 
         root._ofSwiper = new window.Swiper(swiperEl, opts);

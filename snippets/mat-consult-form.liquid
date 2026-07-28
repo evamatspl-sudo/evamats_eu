@@ -23,6 +23,7 @@
   endif
 
   assign consent_gate_msg = fs.settings.consent_error_message | default: 'You must accept the privacy policy and terms of service.'
+  assign phone_default_code = fs.settings.phone_prefix | default: '+42' | strip
 -%}
 
 <div
@@ -132,19 +133,27 @@
         <div class="mat-consult__fields-duo">
           <div class="mat-consult__field">
             <span class="visually-hidden" id="MatPhone-desc-{{ sid }}">{{ fs.settings.label_phone | escape }}</span>
-            <div class="field field--prefixed" role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
-              <span class="field--prefixed__prefix" aria-hidden="true">{{ fs.settings.phone_prefix | escape }}</span>
+            <div class="field field--prefixed" data-phone-field role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
+              <label class="visually-hidden" for="MatPhoneCode-{{ sid }}">{{ fs.settings.label_phone | escape }}</label>
+              <select
+                id="MatPhoneCode-{{ sid }}"
+                class="field--prefixed__code"
+                data-phone-code
+                autocomplete="tel-country-code"
+              >
+                {% render 'phone-country-code-options', selected: phone_default_code %}
+              </select>
               <input
                 type="tel"
                 id="MatPhone-{{ sid }}"
                 class="field__input"
-                name="contact[Telefon]"
-                autocomplete="tel"
+                data-phone-local
+                autocomplete="tel-national"
                 inputmode="tel"
-                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
                 placeholder="{{ fs.settings.placeholder_phone | escape }}"
                 required
               >
+              <input type="hidden" name="contact[Telefon]" data-phone-full value="">
             </div>
           </div>
 
@@ -170,19 +179,27 @@
       {%- else -%}
         <div class="mat-consult__field">
           <span class="visually-hidden" id="MatPhone-desc-{{ sid }}">{{ fs.settings.label_phone | escape }}</span>
-          <div class="field field--prefixed" role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
-            <span class="field--prefixed__prefix" aria-hidden="true">{{ fs.settings.phone_prefix | escape }}</span>
+          <div class="field field--prefixed" data-phone-field role="group" aria-labelledby="MatPhone-desc-{{ sid }}">
+            <label class="visually-hidden" for="MatPhoneCode-{{ sid }}">{{ fs.settings.label_phone | escape }}</label>
+            <select
+              id="MatPhoneCode-{{ sid }}"
+              class="field--prefixed__code"
+              data-phone-code
+              autocomplete="tel-country-code"
+            >
+              {% render 'phone-country-code-options', selected: phone_default_code %}
+            </select>
             <input
               type="tel"
               id="MatPhone-{{ sid }}"
               class="field__input"
-              name="contact[Telefon]"
-              autocomplete="tel"
+              data-phone-local
+              autocomplete="tel-national"
               inputmode="tel"
-              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
               placeholder="{{ fs.settings.placeholder_phone | escape }}"
               required
             >
+            <input type="hidden" name="contact[Telefon]" data-phone-full value="">
           </div>
         </div>
 
@@ -307,7 +324,7 @@
   }
 
   .mat-consult-form .mat-consult__status--ok {
-    color: #7dffb1;
+    color: #81C784;
   }
 
   .mat-consult-form .mat-consult__status--err {

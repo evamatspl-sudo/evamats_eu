@@ -131,20 +131,6 @@
     },
     "168388306052a62d59": {
       "type": "apps",
-      "blocks": {
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "settings": {
-            "themeId": "light",
-            "autoscroll": true,
-            "writeReview": true,
-            "fixedReviewsHeight": false
-          }
-        }
-      },
-      "block_order": [
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -204,7 +190,7 @@
       "type": "home-8",
       "settings": {
         "hd": "“Do you own a rare car?“",
-        "des": "<p>Can't find floor mats for your unique car? <br/><br/>We have contacts all over Polsko a abroad with various car dealerships where we take measurements when you are unable to come to us. We approach each measurement with the perfection with which a watchmaker assembles a watch.<br/><br/>Fill out this form a we will realize individually tailored floor mats for your car.</p>",
+        "des": "<p>Nemůžete najít koberce pro své unikátní auto? <br/><br/>Máme kontakty po celé České republice i v zahraničí u různých autodealerů, kde provádíme měření, pokud k nám nemůžete přijet. Ke každému měření přistupujeme s pečlivostí hodináře.<br/><br/>Vyplňte formulář a vyrobíme autokoberce na míru přesně pro váš vůz.</p>",
         "btn_text": "CUSTOM ORDER",
         "btn_url": "shopify://collections/all-car-mats",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"

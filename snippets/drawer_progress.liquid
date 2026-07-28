@@ -347,13 +347,13 @@
                 {{ 'sections.cart.progress_text_order_value' | t: value: value }}
               {% endif %}
             </p>
-            <span class="evamats-cart-gift-banner__info" aria-hidden="true">
+            {% comment %} <span class="evamats-cart-gift-banner__info" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
                 <path d="M8 7.2V11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                 <circle cx="8" cy="5.1" r="0.9" fill="currentColor"/>
               </svg>
-            </span>
+            </span> {% endcomment %}
           </div>
           <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
             <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>
@@ -403,13 +403,13 @@
               {% assign value_money = value | money %}
               {{ 'sections.cart.progress_text_discount' | t: value: value_money, nextDiscount: nextDiscount }}
             </p>
-            <span class="evamats-cart-gift-banner__info" aria-hidden="true">
+            {% comment %} <span class="evamats-cart-gift-banner__info" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
                 <path d="M8 7.2V11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                 <circle cx="8" cy="5.1" r="0.9" fill="currentColor"/>
               </svg>
-            </span>
+            </span> {% endcomment %}
           </div>
           <div class="evamats-cart-gift-banner__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress_percent | round }}">
             <div class="evamats-cart-gift-banner__bar-fill{% if progress_percent > 0 and progress_percent < 100 %} evamats-cart-gift-banner__bar-fill--tip{% endif %}" style="width: {{ progress_percent }}%;"></div>

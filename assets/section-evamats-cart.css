@@ -489,7 +489,7 @@
   transform: translate(50%, -50%);
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 0 2px #ff2741;
+  /* box-shadow: 0 0 0 2px #ff2741; */
   opacity: 0;
 }
 

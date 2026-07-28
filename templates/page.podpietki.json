@@ -175,7 +175,7 @@
       "type": "featured-collection-video",
       "disabled": true,
       "settings": {
-        "title": "BESTSELLERY",
+        "title": "Nejprodávanější",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -203,7 +203,7 @@
     "featured_collection_GP4tDH": {
       "type": "featured-collection",
       "settings": {
-        "title": "People often buy this product",
+        "title": "Zákazníci často kupují",
         "collection": "akcesoria-samochodowa",
         "products_to_show": 4,
         "show_view_all": false,

@@ -1,5 +1,5 @@
 <ul class="evamats-config-checkout__payment-list list-unstyled" role="list">
-  {%- assign payment_gateways = 'go_pay,visa,mc,ae,discover,apay,gpay' | split: ',' -%}
+  {%- assign payment_gateways = 'go_pay,visa,mc,apay,gpay' | split: ',' -%}
   {%- for type in payment_gateways -%}
     <li class="evamats-config-checkout__payment-item">
       {%- assign typeSvg = type | append: '.svg' -%}

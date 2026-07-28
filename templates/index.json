@@ -371,45 +371,6 @@
         "padding_bottom_mobile": 40
       }
     },
-    "1736771015a338e4f7": {
-      "type": "apps",
-      "blocks": {
-        "google_reviews_carousel_widget_block_rAym7D": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "settings": {
-            "contentIndex": "1",
-            "variant": "carousel",
-            "headerType_rotator": "top",
-            "headerType_carousel": "top",
-            "navigationType": "arrows",
-            "customContentIndex": 31,
-            "font": "theme",
-            "themeId": "light",
-            "ratingType": "stars",
-            "emojiType": "0",
-            "cardColor": "#f3f6f9",
-            "starsColor": "#fbb000",
-            "textColor": "#404040",
-            "transparent": 1,
-            "solidShadow": false,
-            "hasShadow": false,
-            "autoscroll": true,
-            "fluidScrolling": false,
-            "delay": 5,
-            "reviewPhotosType_carousel": "small",
-            "reviewPhotosType_rotator": "small",
-            "writeReview": true,
-            "fixedReviewsHeight": true
-          }
-        }
-      },
-      "block_order": [
-        "google_reviews_carousel_widget_block_rAym7D"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
     "evamats_rare_fit_cta_FaXbAH": {
       "type": "evamats-rare-fit-cta",
       "name": "Rare fit CTA",
@@ -610,12 +571,12 @@
       ],
       "settings": {
         "design_variant": "home",
-        "hd": "AUTOKOBERCE Carvion – FAQ",
+        "hd": "Autokoberce Carvion – časté otázky",
         "heading_accent": "",
-        "heading_mobile": "FAQ",
+        "heading_mobile": "Časté otázky",
         "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
-        "breadcrumb_current_label": "FAQ",
+        "breadcrumb_current_label": "Časté otázky",
         "eyebrow_link": "",
         "view_all_label": "Zobrazit vše",
         "view_all_url": "shopify://pages/faq",
@@ -690,10 +651,10 @@
         "label_name": "Jméno a příjmení",
         "placeholder_name": "Jan Novák",
         "label_phone": "Telefon",
-        "phone_prefix": "+48",
+        "phone_prefix": "+42",
         "placeholder_phone": "000-000-000",
         "label_email": "E-mail",
-        "placeholder_email": "jan@example.com",
+        "placeholder_email": "jan@example.cz",
         "label_message": "Poznámka (volitelné)",
         "placeholder_message": "Vaše zpráva…",
         "submit_label": "Odeslat poptávku",
@@ -779,7 +740,6 @@
     "evamats_driving_style_main",
     "evamats_proven_scale_v2_ELnwQM",
     "featured_collection_RkA6Tq",
-    "1736771015a338e4f7",
     "evamats_rare_fit_cta_FaXbAH",
     "content_gallery_slider_WdMdUA",
     "before_after_yLkXTX",

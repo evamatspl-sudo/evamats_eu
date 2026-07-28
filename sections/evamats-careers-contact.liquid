@@ -5,7 +5,7 @@
     assign bg_image_mobile = bg_image
   endif
 
-  assign email = section.settings.email | default: 'hr.team@evamats.pl'
+  assign email = section.settings.email | default: 'info@carvionauto.cz'
   assign button_link = section.settings.button_link
   if button_link == blank
     assign button_link = 'mailto:' | append: email
@@ -119,7 +119,7 @@
       "type": "text",
       "id": "email",
       "label": "Email",
-      "default": "hr.team@evamats.pl"
+      "default": "info@carvionauto.cz"
     },
     {
       "type": "text",

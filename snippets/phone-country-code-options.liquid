@@ -1,0 +1,34 @@
+{%- comment -%}
+  European dialing codes for phone prefix select.
+  Optional: selected (e.g. '+42')
+{%- endcomment -%}
+{%- liquid
+  assign selected_code = selected | default: '+42' | strip
+-%}
+<option value="+30"{% if selected_code == '+30' %} selected{% endif %}>+30</option>
+<option value="+31"{% if selected_code == '+31' %} selected{% endif %}>+31</option>
+<option value="+32"{% if selected_code == '+32' %} selected{% endif %}>+32</option>
+<option value="+33"{% if selected_code == '+33' %} selected{% endif %}>+33</option>
+<option value="+34"{% if selected_code == '+34' %} selected{% endif %}>+34</option>
+<option value="+36"{% if selected_code == '+36' %} selected{% endif %}>+36</option>
+<option value="+39"{% if selected_code == '+39' %} selected{% endif %}>+39</option>
+<option value="+40"{% if selected_code == '+40' %} selected{% endif %}>+40</option>
+<option value="+41"{% if selected_code == '+41' %} selected{% endif %}>+41</option>
+<option value="+42"{% if selected_code == '+42' %} selected{% endif %}>+42</option>
+<option value="+43"{% if selected_code == '+43' %} selected{% endif %}>+43</option>
+<option value="+44"{% if selected_code == '+44' %} selected{% endif %}>+44</option>
+<option value="+45"{% if selected_code == '+45' %} selected{% endif %}>+45</option>
+<option value="+46"{% if selected_code == '+46' %} selected{% endif %}>+46</option>
+<option value="+47"{% if selected_code == '+47' %} selected{% endif %}>+47</option>
+<option value="+48"{% if selected_code == '+48' %} selected{% endif %}>+48</option>
+<option value="+49"{% if selected_code == '+49' %} selected{% endif %}>+49</option>
+<option value="+351"{% if selected_code == '+351' %} selected{% endif %}>+351</option>
+<option value="+358"{% if selected_code == '+358' %} selected{% endif %}>+358</option>
+<option value="+359"{% if selected_code == '+359' %} selected{% endif %}>+359</option>
+<option value="+370"{% if selected_code == '+370' %} selected{% endif %}>+370</option>
+<option value="+371"{% if selected_code == '+371' %} selected{% endif %}>+371</option>
+<option value="+372"{% if selected_code == '+372' %} selected{% endif %}>+372</option>
+<option value="+385"{% if selected_code == '+385' %} selected{% endif %}>+385</option>
+<option value="+386"{% if selected_code == '+386' %} selected{% endif %}>+386</option>
+<option value="+421"{% if selected_code == '+421' %} selected{% endif %}>+421</option>
+<option value="+423"{% if selected_code == '+423' %} selected{% endif %}>+423</option>

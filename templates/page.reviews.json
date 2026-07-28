@@ -23,14 +23,14 @@
         "heading_ewzcbT": {
           "type": "heading",
           "settings": {
-            "heading": "<h1>Thank you for your purchase!</h1>",
+            "heading": "<h1>Děkujeme za nákup!</h1>",
             "heading_size": "h1"
           }
         },
         "heading_rLYRYK": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>Sdílet your opinion — it will help other customers. </h2>",
+            "heading": "<h2>Sdílejte svůj názor — pomůže to ostatním zákazníkům.</h2>",
             "heading_size": "h1"
           }
         },
@@ -38,7 +38,7 @@
           "type": "button",
           "disabled": true,
           "settings": {
-            "button_label": "Add a review on Google Maps",
+            "button_label": "Přidat recenzi na Google Maps",
             "button_link": "https://search.google.com/local/writereview?placeid=ChIJMeAerT1z_UYRiKoMeCumjD4",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -143,7 +143,7 @@
             "date": "4 days ago",
             "user_image": "shopify://shop_images/unnamed_9.png",
             "rating": 5,
-            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. EVAMATS contacted me right away, a we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
+            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. Carvion contacted me right away, a we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
             "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.37_PM.webp",
             "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.45_PM.webp",
             "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.07_PM.webp",
@@ -225,11 +225,11 @@
       ],
       "name": "Custom Reviews",
       "settings": {
-        "title": "Reviews",
+        "title": "Recenze",
         "rating": 4.8,
-        "block_title": "EVAMATS Car Mats",
+        "block_title": "Carvion Car Mats",
         "block_image": "shopify://shop_images/image_-_2025-09-09T160608.635.png",
-        "reviews_count": "2395 reviews on Google"
+        "reviews_count": "2395 recenzí na Google"
       }
     }
   },

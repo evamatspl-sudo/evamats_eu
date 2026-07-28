@@ -42,8 +42,8 @@
             "show_badge": false,
             "info_text": "Sleva až 25 % se automaticky uplatní při placení. Záleží na sadě - podrobnosti najdete zde.",
             "info_text_individual": "Sleva až 25 % na zakázkové objednávky! Záleží na vybrané sadě - podrobnosti najdete zde.",
-            "info_html": "<h2>Jak sleva funguje?<\/h2> <p>Sleva se automaticky uplatní při placení, ale platí pouze pro sady od 60 € výše.<\/p> <h3>Tabulka slev:<\/h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Hodnota objednávky<\/th> <th>Typ sady<\/th> <th>Sleva<\/th> <\/tr> <\/thead> <tbody> <tr> <td>od 60 € do 219 €<\/td> <td> – EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – EVAMATS 3D s lemy: FRONT <\/td> <td>-20%<\/td> <\/tr> <tr> <td>od 220 € <br>\nvýše<\/td> <td> – EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sady pro VANS, BUSES, MINIVANS <\/td> <td>-25%<\/td> <\/tr> <\/tbody> <\/table> <h3>Příklady:<\/h3> <ul> <li>Bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li> <li>S lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li> <\/ul> <p><strong>Nemusíte dělat nic - sleva se zobrazí automaticky v košíku!<\/strong><\/p>",
-            "info_html_individual": "<h2>Jak sleva funguje?<\/h2>\n<p>Sleva se automaticky uplatní při odeslání zakázkové objednávky, ale platí pouze pro objednávky od 44 € výše.<\/p>\n\n<h3>Tabulka slev:<\/h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Hodnota objednávky<\/th>\n         <th>Typ sady<\/th>\n         <th>Sleva<\/th>\n      <\/tr>\n   <\/thead>\n   <tbody>\n      <tr>\n         <td>od 44 € do 219 €<\/td>\n         <td>\n         – Zakázkové sady EVAMATS bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT\n         <\/td>\n         <td>-20%<\/td>\n      <\/tr>\n      <tr>\n         <td>od 220 € výše<\/td>\n         <td>\n         – Zakázkové sady EVAMATS 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady pro VANS, BUSES, MINIVANS\n         <\/td>\n         <td>-25%<\/td>\n      <\/tr>\n   <\/tbody>\n<\/table>\n\n<h3>Příklady:<\/h3>\n<ul>\n   <li>Zakázková sada bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li>\n   <li>Zakázková sada s lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li>\n<\/ul>\n\n<p><strong>Sleva se automaticky uplatní po odeslání zakázkové objednávky autokoberců.<br><\/strong> Po odeslání objednávky vás náš konzultant kontaktuje, potvrdí detaily, sdělí finální cenu a zodpoví případné dotazy ke slevě.<\/p>",
+            "info_html": "<h2>Jak sleva funguje?<\/h2> <p>Sleva se automaticky uplatní při placení, ale platí pouze pro sady od 60 € výše.<\/p> <h3>Tabulka slev:<\/h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Hodnota objednávky<\/th> <th>Typ sady<\/th> <th>Sleva<\/th> <\/tr> <\/thead> <tbody> <tr> <td>od 60 € do 219 €<\/td> <td> – Carvion bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – Carvion 3D s lemy: FRONT <\/td> <td>-20%<\/td> <\/tr> <tr> <td>od 220 € <br>\nvýše<\/td> <td> – Carvion 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sady pro VANS, BUSES, MINIVANS <\/td> <td>-25%<\/td> <\/tr> <\/tbody> <\/table> <h3>Příklady:<\/h3> <ul> <li>Bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li> <li>S lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li> <\/ul> <p><strong>Nemusíte dělat nic - sleva se zobrazí automaticky v košíku!<\/strong><\/p>",
+            "info_html_individual": "<h2>Jak sleva funguje?<\/h2>\n<p>Sleva se automaticky uplatní při odeslání zakázkové objednávky, ale platí pouze pro objednávky od 44 € výše.<\/p>\n\n<h3>Tabulka slev:<\/h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Hodnota objednávky<\/th>\n         <th>Typ sady<\/th>\n         <th>Sleva<\/th>\n      <\/tr>\n   <\/thead>\n   <tbody>\n      <tr>\n         <td>od 44 € do 219 €<\/td>\n         <td>\n         – Zakázkové sady Carvion bez lemů: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady Carvion 3D s lemy: FRONT\n         <\/td>\n         <td>-20%<\/td>\n      <\/tr>\n      <tr>\n         <td>od 220 € výše<\/td>\n         <td>\n         – Zakázkové sady Carvion 3D s lemy: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Zakázkové sady pro VANS, BUSES, MINIVANS\n         <\/td>\n         <td>-25%<\/td>\n      <\/tr>\n   <\/tbody>\n<\/table>\n\n<h3>Příklady:<\/h3>\n<ul>\n   <li>Zakázková sada bez lemů FRONT+REAR+TRUNK (141.74 €) → sleva <strong>-20%<\/strong>\n<\/li>\n   <li>Zakázková sada s lemy FRONT+REAR (225.33 €) → sleva <strong>-25%<\/strong>\n<\/li>\n<\/ul>\n\n<p><strong>Sleva se automaticky uplatní po odeslání zakázkové objednávky autokoberců.<br><\/strong> Po odeslání objednávky vás náš konzultant kontaktuje, potvrdí detaily, sdělí finální cenu a zodpoví případné dotazy ke slevě.<\/p>",
             "individual_welcome_html": "<p><strong>Jak funguje individuální objednávka?<\/strong><\/p>\n<ol>\n<li>Nakonfigurujte si sadu: zadejte údaje o vozidle, vyberte barvy a doplňky.<\/li>\n<li>Zaplaťte zálohu: předem hradíte pouze malou zálohu (plus všechny doplňky v plné výši).<\/li>\n<li>Potvrďte detaily: náš konzultant vám zavolá, vše potvrdí a předá objednávku do výroby.<\/li>\n<li>Doplaťte zbytek: zbývající částku uhraďte bankovním převodem předem nebo na dobírku.<\/li>\n<\/ol>",
             "auto_open_individual_welcome_popup": true
           }
@@ -236,7 +236,7 @@
       "name": "Karty produktu",
       "settings": {
         "about_heading_before": "Originální",
-        "about_heading_brand": "EVAMATS",
+        "about_heading_brand": "Carvion",
         "about_heading_after": "autokoberce - moderní ochrana interiéru",
         "about_intro": "<p>Naše EVA autokoberce představují novou generaci automobilových doplňků - jsou lehké, odolné a voděodolné. Díky jedinečné buněčné struktuře zachytí nečistoty (bláto, písek, vodu) hluboko v materiálu, takže povrch zůstává suchý a čistý.<\/p><p>Každou sadu vyrábíme na míru konkrétnímu modelu vozu a přesně ji přizpůsobujeme tvaru podlahy. Můžete si vybrat barvu, vzor buněk i lemování tak, aby dokonale ladily s interiérem vašeho auta.<\/p>",
         "about_features_heading": "Čím naše autokoberce vynikají?",
@@ -304,7 +304,7 @@
         "text_GbADCg": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou mistrovským dílem přesnosti - dokonale kopírují každý okraj a zajišťují maximální ochranu podlahy.<br\/><br\/>✔ Matná černá barva v kombinaci s elegantním lemováním podtrhuje moderní vzhled interiéru.<br\/><\/p>"
+            "text": "<p>✔ Rohože Carvion jsou mistrovským dílem přesnosti - dokonale kopírují každý okraj a zajišťují maximální ochranu podlahy.<br\/><br\/>✔ Matná černá barva v kombinaci s elegantním lemováním podtrhuje moderní vzhled interiéru.<br\/><\/p>"
           }
         }
       },
@@ -362,7 +362,7 @@
         "text_ydwWe6": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou vybaveny speciálním upevňovacím systémem, který zabraňuje jejich posouvání.<br\/><br\/>✔ Nabízíme úchyty kompatibilní s různými značkami aut - od klasických klipů až po suché zipy ve stylu BMW.<br\/><\/p>"
+            "text": "<p>✔ Rohože Carvion jsou vybaveny speciálním upevňovacím systémem, který zabraňuje jejich posouvání.<br\/><br\/>✔ Nabízíme úchyty kompatibilní s různými značkami aut - od klasických klipů až po suché zipy ve stylu BMW.<br\/><\/p>"
           }
         }
       },
@@ -479,7 +479,7 @@
         "text_aVDWpY": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS mají tloušťku 10 mm, což zvyšuje komfort jízdy díky omezení hluku a vibrací.<br\/><br\/>✔ Měkká, ale odolná struktura zajišťuje pohodlí pro řidiče i spolujezdce.<\/p>"
+            "text": "<p>✔ Rohože Carvion mají tloušťku 10 mm, což zvyšuje komfort jízdy díky omezení hluku a vibrací.<br\/><br\/>✔ Měkká, ale odolná struktura zajišťuje pohodlí pro řidiče i spolujezdce.<\/p>"
           }
         }
       },
@@ -508,7 +508,7 @@
         "text_U3ExRK": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Rohože EVAMATS jsou dostupné ve dvou jedinečných vzorech - honeycomb nebo diamond.<br\/><br\/>✔ Hloubka 7 mm účinně zachytává vodu, bláto i další nečistoty, takže interiér vašeho auta zůstává stále čistý.<\/p>"
+            "text": "<p>✔ Rohože Carvion jsou dostupné ve dvou jedinečných vzorech - honeycomb nebo diamond.<br\/><br\/>✔ Hloubka 7 mm účinně zachytává vodu, bláto i další nečistoty, takže interiér vašeho auta zůstává stále čistý.<\/p>"
           }
         }
       },
@@ -542,20 +542,20 @@
         "heading_EUBWBb": {
           "type": "heading",
           "settings": {
-            "heading": "<p>VYBERTE SI NEJLEPŠÍ OCHRANU PRO SVÉ AUTO S EVAMATS!<\/p>",
+            "heading": "<p>VYBERTE SI NEJLEPŠÍ OCHRANU PRO SVÉ AUTO S Carvion!<\/p>",
             "heading_size": "h1"
           }
         },
         "text_3VQ8yY": {
           "type": "text",
           "settings": {
-            "text": "<p>Rohože EVAMATS jsou navrženy s důrazem na odolnost, estetiku a funkčnost. Každou jízdu dělají pohodlnější a udržují interiér vašeho auta jako nový!<\/p>"
+            "text": "<p>Rohože Carvion jsou navrženy s důrazem na odolnost, estetiku a funkčnost. Každou jízdu dělají pohodlnější a udržují interiér vašeho auta jako nový!<\/p>"
           }
         },
         "text_jqh9iU": {
           "type": "text",
           "settings": {
-            "text": "<p>🛒 Objednejte nyní a objevte, jak výjimečné mohou být autokoberce EVAMATS!<\/p>"
+            "text": "<p>🛒 Objednejte nyní a objevte, jak výjimečné mohou být autokoberce Carvion!<\/p>"
           }
         }
       },

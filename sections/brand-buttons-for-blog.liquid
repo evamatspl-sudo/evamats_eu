@@ -143,7 +143,7 @@
                     {% endif %}
 
                     <div class="main-blog__toggle-content">
-                      <span class="main-blog__toggle-label">Марка</span>
+                      <span class="main-blog__toggle-label">{{ 'general.config.brand' | t }}</span>
                       <span class="main-blog__toggle-title">{{ active_block.settings.brand_heading }}</span>
 
                         <span class="main-blog__arrow-mobile">
@@ -189,8 +189,12 @@
                     {{ articles_count }}
                   </span>
 
-                    <span  class="js-search-label" data-singular="result" data-plural="results">
-                      {{ articles_count | pluralize: 'result', 'results' }}
+                    {%- liquid
+                      assign result_one = 'general.config.result' | t
+                      assign result_other = 'general.config.results' | t
+                    -%}
+                    <span class="js-search-label" data-singular="{{ result_one }}" data-plural="{{ result_other }}">
+                      {{ articles_count | pluralize: result_one, result_other }}
                   </span>
                 </div>
             </div>
@@ -204,7 +208,7 @@
                 <input
                         type="text"
                         class="main-blog__search-input"
-                        placeholder="Szukaj"
+                        placeholder="{{ 'general.config.search' | t }}"
                         autocomplete="off"
                 >
             </div>

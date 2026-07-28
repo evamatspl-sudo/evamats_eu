@@ -24,14 +24,14 @@
         "block_VXnbCG": {
           "type": "block",
           "settings": {
-            "header": "<h2>Guma car mats</h2>",
+            "header": "<h2>Gumové autokoberce</h2>",
             "image": "shopify://shop_images/IMG_8796_1.png"
           }
         },
         "block_K3qkTg": {
           "type": "block",
           "settings": {
-            "header": "<h2>Carvion car mats</h2>",
+            "header": "<h2>Autokoberce Carvion</h2>",
             "image": "shopify://shop_images/IMG_8796_2.png"
           }
         }
@@ -80,7 +80,7 @@
         "richtext": "<p>Při výběru vhodných koberců do auta zvažujeme mnoho možností. Kdo se v tom nevyzná, může mít problém koupit produkty, které splní očekávání a budou spolehlivé za každé situace. Také je těžké najít ideální koberce pro konkrétní značku vozu.</p><p>Některé sady bohužel nesedí dostatečně dobře nebo nesplňují požadavky na používání. Níže popíšeme gumové autokoberce a porovnáme je s našimi inovativními produkty EVA. Přesvědčíte se, jak kvalitní produkt nabízíme — a EVA koberce brzy budou ve vašem autě!</p>",
         "collapsible_richtext": "<h3>Co jsou gumové koberce a odkud pochází jejich popularita?</h3><p>Fenomén gumových autokoberců pramení z toho, že jsou relativně levné na údržbu a univerzální. Osvědčují se v každém modelu auta a splňují očekávání většiny lidí. Po léta byly považovány téměř za nezničitelné díky mimořádné odolnosti vůči mechanickému poškození. Dobře fungují za téměř jakéhokoli počasí — ať prší nebo sněží, gumové koberce nešpiní interiér. Navíc jsou velmi odolné vůči chemikáliím v čisticích prostředcích. Údržba je proto jednoduchá a nezabere mnoho času.</p><p></p>",
         "button_text_more": "Číst více",
-        "button_text_less": "Read less",
+        "button_text_less": "Číst méně",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 50,
@@ -95,7 +95,7 @@
         "richtext": "<p>Uvažujete-li o nových autokobercích a nevíte, na jaké technické aspekty se zaměřit, pomůžeme vám. Nejprve zvolte materiál produktu. Důležitý je také způsob montáže — některé modely nemají tovární úchyty, proto volte koberce se sadou stoperů. Produkt musí dobře přiléhat k podlaze a nesmí se posouvat při jízdě. Dokončení by nemělo být náhodné — pokud záleží na estetice, koberce by měly barevně i velikostně ladit s interiérem. Tvar má velký význam: příliš malé se posouvají, příliš velké mohou zachytit pedály — to je nebezpečné pro všechny cestující.</p>",
         "collapsible_richtext": "<h3>Jaké jsou druhy gumových autokoberců?</h3><p>Autokoberce dělíme na dva typy: korytové a standardní. Korytové mají vysoký lem, který zabraňuje přelití vody do interiéru. Jízda je bezpečná a přebytečnou vodu snadno vylejete — stačí koberec vyjmout. Na trhu jsou korytové koberce s moderním finišem, což je činí univerzálnějšími. Standardní gumové koberce mají specifický vzor, který omezuje pohyb vody nebo bláta v interiéru a chrání originální koberec.</p>",
         "button_text_more": "Číst více",
-        "button_text_less": "Read less",
+        "button_text_less": "Číst méně",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -240,21 +240,6 @@
     },
     "1705771170e85f6114": {
       "type": "apps",
-      "blocks": {
-        "google_reviews_carousel_widget_block_Nf7AWT": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "settings": {
-            "contentIndex": "1",
-            "themeId": "light",
-            "autoscroll": true,
-            "writeReview": true,
-            "fixedReviewsHeight": true
-          }
-        }
-      },
-      "block_order": [
-        "google_reviews_carousel_widget_block_Nf7AWT"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -277,7 +262,7 @@
         "h2 {text-align: center;}"
       ],
       "settings": {
-        "title": "SEE OTHER REALISATIONS",
+        "title": "Zobrazit další realizace",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -322,7 +307,7 @@
         "text_VPPPMN": {
           "type": "text",
           "settings": {
-            "hd": "<p>Floor mat over the tunnel? What is it?</p>",
+            "hd": "<p>Koberec na tunel? Co to je?</p>",
             "des": "<p>Dywaniki Carvion przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta</p>"
           }
         },
@@ -357,7 +342,7 @@
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
-            "hd": "<p>What is the lead time?</p>",
+            "hd": "<p>Jaká je dodací lhůta?</p>",
             "des": "<p>Od momentu złożenia zamówienia trwa to mniej więcej ok 2 tygodni, z uwagi na to, że dywaniki wykonywane są na bieżąco pod zamówienie klienta. W przypadku jeśli posiadasz bardzo wyjątkowy samochód lub inny pojazd (motorówka, helikopter, koparka lub ciągnik) czas realizacji może się wydłużyć nawet do 4-6 tygodni. </p>"
           }
         },
@@ -381,7 +366,7 @@
         "text_dUePyr"
       ],
       "settings": {
-        "hd": "EVAMATS car mats - FAQ"
+        "hd": "Autokoberce Carvion – časté otázky"
       }
     }
   },

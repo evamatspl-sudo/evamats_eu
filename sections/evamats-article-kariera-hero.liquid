@@ -8,7 +8,7 @@
   {%- elsif section.settings.apply_link != blank -%}
     {{ section.settings.apply_link }}
   {%- else -%}
-    mailto:{{ section.settings.apply_email | default: 'hr.team@evamats.pl' }}
+    mailto:{{ section.settings.apply_email | default: 'info@carvionauto.cz' }}
   {%- endif -%}
 {%- endcapture -%}
 {%- assign apply_button_href = apply_button_href | strip -%}
@@ -292,7 +292,7 @@
       "type": "text",
       "id": "apply_email",
       "label": "Apply mailto email",
-      "default": "hr.team@evamats.pl"
+      "default": "info@carvionauto.cz"
     },
     {
       "type": "header",
