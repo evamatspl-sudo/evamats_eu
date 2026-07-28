@@ -147,15 +147,23 @@
                 <div class="swiper-slide o-nas-story__bg-slide">
                   <div class="o-nas-story__bg-fill">
                     {%- if block.settings.image != blank -%}
-                      {{
-                        block.settings.image
-                        | image_url: width: 2400
-                        | image_tag:
-                          loading: ons_ld,
-                          class: 'o-nas-story__bg-img',
-                          sizes: '100vw',
-                          widths: '400, 600, 800, 1200, 1600, 2000, 2400'
-                      }}
+                      <picture>
+                        {%- if ons_i == 0 -%}
+                          <source
+                            media="(max-width: 749px)"
+                            srcset="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/carvion-about-01-mobile-test_e2f40ae4-3696-4069-9272-b4bb8bfb8f1b.webp?v=1785248629"
+                          >
+                        {%- endif -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 2400
+                          | image_tag:
+                            loading: ons_ld,
+                            class: 'o-nas-story__bg-img',
+                            sizes: '100vw',
+                            widths: '400, 600, 800, 1200, 1600, 2000, 2400'
+                        }}
+                      </picture>
                     {%- else -%}
                       {{ 'lifestyle-2' | placeholder_svg_tag: 'o-nas-story__bg-img o-nas-story__bg-img--ph' }}
                     {%- endif -%}
@@ -258,6 +266,67 @@
     z-index: 2;
     pointer-events: none;
     background: linear-gradient(90deg, rgba(13, 14, 17, 0.16) 0%, rgba(13, 14, 17, 0.04) 48%, rgba(13, 14, 17, 0) 76%);
+  }
+
+  @media screen and (max-width: 749px) {
+    #ONasStory-{{ section.id }} {
+      min-height: 0;
+      overflow: hidden;
+      background: #0d0e11;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-bleed {
+      height: clamp(270px, 76vw, 310px);
+      min-height: 0;
+      overflow: hidden;
+      background: #0d0e11;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-swiper,
+    #ONasStory-{{ section.id }} .o-nas-story__bg-swiper .swiper-wrapper,
+    #ONasStory-{{ section.id }} .o-nas-story__bg-slide,
+    #ONasStory-{{ section.id }} .o-nas-story__bg-fill {
+      height: 100%;
+      min-height: 0;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-fill {
+      background: #0d0e11;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-img {
+      min-height: 0;
+      object-fit: cover;
+      object-position: 72% center;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-slide:nth-child(3) .o-nas-story__bg-img {
+      object-position: 60% center;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__stage {
+      margin-top: -30px;
+      padding: 0 14px;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__stage-inner {
+      min-height: 0;
+      margin-top: 0;
+      padding: 0 0 22px;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__column {
+      padding: 24px 22px 26px;
+      border-radius: 20px;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__brand {
+      margin-bottom: 18px;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__heading {
+      margin-bottom: 12px;
+    }
   }
 
   @media screen and (min-width: 750px) {
