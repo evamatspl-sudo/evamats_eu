@@ -260,6 +260,17 @@
     background: linear-gradient(90deg, rgba(13, 14, 17, 0.16) 0%, rgba(13, 14, 17, 0.04) 48%, rgba(13, 14, 17, 0) 76%);
   }
 
+  @media screen and (min-width: 750px) {
+    #ONasStory-{{ section.id }} .o-nas-story__bg-fill {
+      background: #0d0e11;
+    }
+
+    #ONasStory-{{ section.id }} .o-nas-story__bg-img {
+      object-fit: contain;
+      object-position: right center;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     #ONasStory-{{ section.id }} .o-nas-story__bg-slide .o-nas-story__bg-img {
       transition: none;
