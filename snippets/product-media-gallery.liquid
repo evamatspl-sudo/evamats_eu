@@ -200,7 +200,20 @@
               aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
               aria-describedby="{{ thumbnail_id }}"
             >
-              {{ featured_media.preview_image | image_url: width: 416 | image_tag:
+              {%- assign thumbnail_preview_image = featured_media.preview_image -%}
+              {%- capture localized_media_filename -%}
+                {%- render 'localized-product-media-filename', media: featured_media -%}
+              {%- endcapture -%}
+              {%- liquid
+                assign localized_media_filename = localized_media_filename | strip
+                if localized_media_filename != blank
+                  assign localized_media_image = images[localized_media_filename]
+                  if localized_media_image != blank
+                    assign thumbnail_preview_image = localized_media_image
+                  endif
+                endif
+              -%}
+              {{ thumbnail_preview_image | image_url: width: 416 | image_tag:
                 loading: 'lazy',
                 sizes: sizes,
                 widths: '54, 74, 104, 162, 208, 324, 416',
@@ -254,7 +267,20 @@
                 aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
                 aria-describedby="{{ thumbnail_id }}"
               >
-                {{ media.preview_image | image_url: width: 416 | image_tag:
+                {%- assign thumbnail_preview_image = media.preview_image -%}
+              {%- capture localized_media_filename -%}
+                {%- render 'localized-product-media-filename', media: media -%}
+              {%- endcapture -%}
+              {%- liquid
+                assign localized_media_filename = localized_media_filename | strip
+                if localized_media_filename != blank
+                  assign localized_media_image = images[localized_media_filename]
+                  if localized_media_image != blank
+                    assign thumbnail_preview_image = localized_media_image
+                  endif
+                endif
+              -%}
+              {{ thumbnail_preview_image | image_url: width: 416 | image_tag:
                   loading: 'lazy',
                   sizes: sizes,
                   widths: '54, 74, 104, 162, 208, 324, 416',

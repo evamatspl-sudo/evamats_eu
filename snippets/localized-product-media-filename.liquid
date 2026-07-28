@@ -1,0 +1,64 @@
+{% comment %}
+  Returns a Shopify Files filename only for the localized seat-cover infographics.
+  All other product media return blank and keep their original source.
+{% endcomment %}
+{%- liquid
+  assign localized_media_id = media.id | append: ''
+  assign localized_media_base = blank
+  case localized_media_id
+    when '45749982658838'
+      assign localized_media_base = 'carvion-seat-p01-i02'
+    when '45749982691606'
+      assign localized_media_base = 'carvion-seat-p01-i03'
+    when '45749983314198'
+      assign localized_media_base = 'carvion-seat-p02-i02'
+    when '45749983346966'
+      assign localized_media_base = 'carvion-seat-p02-i03'
+    when '45749983641878'
+      assign localized_media_base = 'carvion-seat-p03-i02'
+    when '45749983674646'
+      assign localized_media_base = 'carvion-seat-p03-i03'
+    when '45749984100630'
+      assign localized_media_base = 'carvion-seat-p04-i02'
+    when '45749984264470'
+      assign localized_media_base = 'carvion-seat-p04-i07'
+    when '45749984395542'
+      assign localized_media_base = 'carvion-seat-p05-i02'
+    when '45749984559382'
+      assign localized_media_base = 'carvion-seat-p05-i07'
+    when '45749984690454'
+      assign localized_media_base = 'carvion-seat-p06-i02'
+    when '45749984723222'
+      assign localized_media_base = 'carvion-seat-p06-i03'
+    when '45749985181974'
+      assign localized_media_base = 'carvion-seat-p06-i17'
+    when '45749985444118'
+      assign localized_media_base = 'carvion-seat-p07-i02'
+    when '45749985509654'
+      assign localized_media_base = 'carvion-seat-p07-i04'
+    when '45749985575190'
+      assign localized_media_base = 'carvion-seat-p07-i06'
+    when '45749985640726'
+      assign localized_media_base = 'carvion-seat-p07-i08'
+    when '45749985706262'
+      assign localized_media_base = 'carvion-seat-p07-i10'
+    when '45749985739030'
+      assign localized_media_base = 'carvion-seat-p07-i11'
+    when '45749986001174'
+      assign localized_media_base = 'carvion-seat-p08-i03'
+    when '45749986099478'
+      assign localized_media_base = 'carvion-seat-p08-i06'
+    when '45749986132246'
+      assign localized_media_base = 'carvion-seat-p08-i07'
+    when '45749986197782'
+      assign localized_media_base = 'carvion-seat-p08-i09'
+  endcase
+
+  if localized_media_base != blank
+    assign localized_media_locale = request.locale.iso_code | slice: 0, 2
+    unless localized_media_locale == 'cs' or localized_media_locale == 'de'
+      assign localized_media_locale = 'en'
+    endunless
+    echo localized_media_base | append: '-' | append: localized_media_locale | append: '.webp'
+  endif
+-%}

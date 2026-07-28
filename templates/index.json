@@ -201,9 +201,9 @@
         "offer_stack_1": {
           "type": "featured_stack",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_4778.webp",
-            "title": "Potahy a polštáře",
-            "link": "shopify://collections/mats-for-home"
+            "image": "shopify://shop_images/gopa.webp",
+            "title": "Autopotahy a polštáře",
+            "link": "shopify://collections/seat-covers-cushions"
           }
         },
         "offer_stack_2": {
@@ -269,7 +269,7 @@
       "settings": {
         "title": "Nejprodávanější",
         "view_all_label": "Zobrazit vše",
-        "collection": "bmw",
+        "collection": "top-10-bestsellers",
         "products_to_show": 10,
         "mobile_button_label": "Vybrat",
         "show_view_all": true,
@@ -361,7 +361,7 @@
       "settings": {
         "title": "EVA koberce skladem",
         "view_all_label": "Zobrazit vše",
-        "collection": "bmw",
+        "collection": "outlet",
         "products_to_show": 10,
         "mobile_button_label": "Vybrat",
         "show_view_all": true,

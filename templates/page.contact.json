@@ -67,19 +67,10 @@
             "title": "Varšava",
             "address": "al. „Solidarności” 163/lok.\nu010, 00-877"
           }
-        },
-        "partner_2": {
-          "type": "partner",
-          "settings": {
-            "logo": "shopify://shop_images/image_137.webp",
-            "title": "Varšava",
-            "address": "ul. Jana Ostroroga 24C"
-          }
         }
       },
       "block_order": [
-        "partner_1",
-        "partner_2"
+        "partner_1"
       ],
       "settings": {
         "heading": "Kde najdete naše produkty?",
