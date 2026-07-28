@@ -232,6 +232,42 @@
   {%- endif -%}
 </div>
 
+{% style %}
+  #ONasStory-{{ section.id }} .o-nas-story__bg-slide {
+    background: #111;
+  }
+
+  #ONasStory-{{ section.id }} .o-nas-story__bg-slide .o-nas-story__bg-img {
+    transform: scale(1.035);
+    filter: brightness(0.88);
+    transition:
+      transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 900ms ease;
+    will-change: transform, filter;
+  }
+
+  #ONasStory-{{ section.id }} .o-nas-story__bg-slide.swiper-slide-active .o-nas-story__bg-img {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  #ONasStory-{{ section.id }} .o-nas-story__bg-swiper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(13, 14, 17, 0.16) 0%, rgba(13, 14, 17, 0.04) 48%, rgba(13, 14, 17, 0) 76%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #ONasStory-{{ section.id }} .o-nas-story__bg-slide .o-nas-story__bg-img {
+      transition: none;
+      transform: none;
+    }
+  }
+{% endstyle %}
+
 {% comment %} styles moved to assets/base_v2.css (stylesheet) {% endcomment %}
 
 {% javascript %}
@@ -327,7 +363,7 @@
         section.dataset.onsSwiperInit = '1';
 
         var baseOpts = {
-          speed: 520,
+          speed: 880,
           watchOverflow: true,
           slidesPerView: 1,
           spaceBetween: 0,
