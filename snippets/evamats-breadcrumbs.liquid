@@ -15,8 +15,6 @@
   assign bc_middle_label = middle_label
   assign bc_middle_url = middle_url
   assign bc_current_label = current_label
-  assign bc_model_label = model_label
-  assign bc_model_url = model_url
 
   if auto_product and product != blank
     if bc_parent_label == blank
@@ -60,18 +58,6 @@
     else
       assign bc_middle_url = routes.all_products_collection_url
     endif
-
-    if product.handle == 'car-mats-evamats-for-audi-a28z-1-gen-1999-2007-year-hatchback-5-door'
-      assign bc_middle_label = 'Audi'
-      assign bc_model_label = 'Audi A2'
-      for product_collection in product.collections
-        if product_collection.handle == 'audi'
-          assign bc_middle_url = product_collection.url
-        elsif product_collection.handle == 'audi-a2'
-          assign bc_model_url = product_collection.url
-        endif
-      endfor
-    endif
   endif
 -%}
 
@@ -87,12 +73,6 @@
       {%- if bc_middle_label != blank -%}
         <li class="evamats-breadcrumbs__item">
           <a class="evamats-breadcrumbs__link" href="{{ bc_middle_url }}">{{ bc_middle_label | escape }}</a>
-        </li>
-        <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
-      {%- endif -%}
-      {%- if bc_model_label != blank and bc_model_url != blank -%}
-        <li class="evamats-breadcrumbs__item">
-          <a class="evamats-breadcrumbs__link" href="{{ bc_model_url }}">{{ bc_model_label | escape }}</a>
         </li>
         <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
       {%- endif -%}
