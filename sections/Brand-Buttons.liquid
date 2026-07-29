@@ -22,11 +22,33 @@
 
   assign title_prefix = 'sections.brand_buttons.collection_title_prefix' | t
   assign card_image_placeholder = 'bmw_x5m_e70.webp' | asset_url
+  assign brand_featured_collections = collection.metafields.custom.featured_model_collections.value
+  assign is_brand_collection = false
+  assign hide_models_section = false
 
-  assign featured_collections = collection.metafields.custom.featured_model_collections.value
+  if brand_featured_collections != blank and brand_featured_collections.size > 0
+    assign is_brand_collection = true
+    case request.locale.iso_code
+      when 'cs'
+        assign heading = 'Modelové řady'
+      when 'de'
+        assign heading = 'Modellreihen'
+      else
+        assign heading = 'Model ranges'
+    endcase
+  endif
 
-  if featured_collections == blank or featured_collections.size == 0
+  if collection.handle == 'outlet' or collection.handle == 'akcesoria' or collection.handle == 'akcesoria-samochodowa'
+    assign hide_models_section = true
+  endif
+
+  assign featured_collections = brand_featured_collections
+  if hide_models_section == false and featured_collections == blank or featured_collections.size == 0
     assign featured_collections = settings.collection_featured_models
+  endif
+
+  if hide_models_section
+    assign featured_collections = blank
   endif
 
   assign visible_collections_count = 0
