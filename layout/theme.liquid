@@ -553,6 +553,46 @@
       <script src="{{ 'product-config.js' | asset_url }}" defer></script>
     {% endif %}
 
+   <!-- Mobile chat visibility: keep content controls unobstructed -->
+   <style>
+    @media screen and (max-width: 749px) {
+      html.evamats-chat-temporarily-hidden .b24-widget-button-wrapper,
+      html.evamats-chat-temporarily-hidden .b24-widget-button-shadow,
+      html.evamats-chat-temporarily-hidden #bx-cycb-wrap,
+      body:has(cart-drawer.active, #CartDrawer.active, .drawer.active, dialog[open], .modal[open], .fancybox__container, .popup-overlay.active) .b24-widget-button-wrapper,
+      body:has(cart-drawer.active, #CartDrawer.active, .drawer.active, dialog[open], .modal[open], .fancybox__container, .popup-overlay.active) .b24-widget-button-shadow,
+      body:has(cart-drawer.active, #CartDrawer.active, .drawer.active, dialog[open], .modal[open], .fancybox__container, .popup-overlay.active) #bx-cycb-wrap {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateY(16px) !important;
+      }
+
+      .b24-widget-button-wrapper,
+      .b24-widget-button-shadow,
+      #bx-cycb-wrap {
+        transition: opacity 180ms ease, transform 180ms ease !important;
+      }
+    }
+   </style>
+   <script>
+    (function () {
+      if (!window.matchMedia('(max-width: 749px)').matches) return;
+      var root = document.documentElement;
+      var revealTimer;
+
+      function temporarilyHideChat() {
+        root.classList.add('evamats-chat-temporarily-hidden');
+        window.clearTimeout(revealTimer);
+        revealTimer = window.setTimeout(function () {
+          root.classList.remove('evamats-chat-temporarily-hidden');
+        }, 550);
+      }
+
+      window.addEventListener('scroll', temporarilyHideChat, { passive: true });
+    })();
+   </script>
+   <!-- End mobile chat visibility -->
+
    <!-- Bitrix chat: load a few seconds after full page load -->
    <script>
     (function () {

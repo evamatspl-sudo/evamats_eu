@@ -1262,7 +1262,7 @@
                           <img src="{{ 'honey.webp' | file_url }}" alt="" loading="lazy">
                           <div class="label__tooltip">{{ 'general.config.honeycomb' | t }}</div>
                         </label>
-                        {% if product.metafields.custom.body_type == '5os' or product.metafields.custom.body_type == 'custom' or product.metafields.custom.body_type == '7os' or product.metafields.custom.body_type == '2os' or product.metafields.custom.body_type == 'pickup' or product.metafields.custom.body_type == 'van_maly' or product.metafields.custom.body_type == 'pickup2kabina' or product.metafields.custom.body_type == 'electro' %}
+                        {% if product.metafields.custom.body_type == 'corners' or product.metafields.custom.body_type == '5os' or product.metafields.custom.body_type == 'custom' or product.metafields.custom.body_type == '7os' or product.metafields.custom.body_type == '2os' or product.metafields.custom.body_type == 'pickup' or product.metafields.custom.body_type == 'van_maly' or product.metafields.custom.body_type == 'pickup2kabina' or product.metafields.custom.body_type == 'electro' %}
                           <label class="lip__item">
                             <input type="radio" form="{{ product_form_id }}" name="properties[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ 'general.config.mat_pattern_drops' | t }}">
                             <img src="{{ 'drop.webp' | file_url }}" alt="{{ 'general.config.mat_pattern_drops' | t }}" loading="lazy">

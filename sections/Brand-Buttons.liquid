@@ -75,7 +75,10 @@
               assign card_title = featured_item.title
             endif
 
-            assign card_image = featured_item.image 
+            assign card_image = featured_item.image
+            if card_image == blank
+              assign card_image = featured_item.products.first.featured_image
+            endif
           -%}
 
           <div class="evamats-popular-models__group" role="listitem">
