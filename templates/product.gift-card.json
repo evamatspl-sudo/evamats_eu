@@ -91,7 +91,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>Souhlasím se <a href=\"/policies/privacy-policy\">zásadami ochrany osobních údajů</a> a <a href=\"/policies/terms-of-service\">obchodními podmínkami</a>.</p>",
         "enable_video_looping": false,
         "trunk_message": "<p>Poznámka - rohož do kufru:</p><p>Do 140x240 cm - z jednoho dílu ✅</p><p>Do 150x250 cm - ze dvou dílů ✅</p><p>Nad 280 cm délky - nevyrábíme ❌</p><p>ℹ️ V případě pochybností kontaktujte prosím obchodní oddělení.</p>",
         "trunk_message_5_7_os": "<p><strong>Poznámka - rohož do kufru:</strong></p><p>Kufr nemá zvýšené boční hrany - to platí pro 3D rohože s okraji.<br/><br/>U tohoto modelu vozidla je podlaha kufru rovná a nemá tovární boční hrany. 3D rohože s okraji na podlahu pasují, ale v kufru nevytvoří dodatečné zvýšené okraje.<br/><br/></p>",
@@ -106,7 +106,7 @@
         "tab_description": {
           "type": "tab",
           "settings": {
-            "title": "Popis",
+            "title": "O produktu",
             "id": "description",
             "html": ""
           }
@@ -116,7 +116,7 @@
           "settings": {
             "title": "Jak uplatnit",
             "id": "tech",
-            "html": "<h3><strong>Varianta 1: Carvion e-voucher</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Po zaplacení objednávky vám zašleme PDF e-voucher e-mailem.</li>\n<li>\n<strong>Dárkové předání:</strong> Vytiskněte ho nebo pošlete příjemci digitálně. 📲</li>\n<li>\n<strong>Uplatnění:</strong> Na webu si nakonfiguruje produkty a při pokladně zadá unikátní kód do pole <strong>„Slevový kód“</strong>.</li>\n</ol>\n<p><em>* Kód je jednorázový a vázaný na jeden nákup.</em></p>\n\n<h3><strong>Varianta 2: Fyzická dárková karta</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Kartu odesíláme kurýrem. Každá karta má předem aktivovaný kód.</li>\n<li>\n<strong>Připraveno k darování:</strong> Zabalená a připravená — bez aktivace. 🎀</li>\n<li>\n<strong>Uplatnění:</strong> Stejně jako online — zadejte kód do pole <strong>„Slevový kód“</strong> a snížíte celkovou částku košíku.</li>\n</ol>\n<p><em>* Kód je jednorázový.</em></p>"
+            "html": "<h3><strong>Varianta 1: Carvion e-voucher</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Po zaplacení objednávky vám zašleme PDF e-voucher e-mailem.</li>\n<li>\n<strong>Dárkové předání:</strong> Vytiskněte ho nebo pošlete příjemci digitálně.</li>\n<li>\n<strong>Uplatnění:</strong> Na webu si nakonfiguruje produkty a při pokladně zadá unikátní kód do pole <strong>„Slevový kód“</strong>.</li>\n</ol>\n<p><em>* Kód je jednorázový a vázaný na jeden nákup.</em></p>\n\n<h3><strong>Varianta 2: Fyzická dárková karta</strong></h3>\n<ol>\n<li>\n<strong>Doručení:</strong> Kartu odesíláme kurýrem. Každá karta má předem aktivovaný kód.</li>\n<li>\n<strong>Připraveno k darování:</strong> Zabalená a připravená — bez aktivace.</li>\n<li>\n<strong>Uplatnění:</strong> Stejně jako online — zadejte kód do pole <strong>„Slevový kód“</strong> a snížíte celkovou částku košíku.</li>\n</ol>\n<p><em>* Kód je jednorázový.</em></p>"
           }
         },
         "tab_delivery": {
@@ -124,7 +124,7 @@
           "settings": {
             "title": "Doprava a vrácení",
             "id": "delivery",
-            "html": "<h2><strong>Doprava 🚚</strong></h2>\n<p><strong>Carvion e-voucher:</strong></p>\n<p>E-voucher odesíláme ihned po potvrzení platby. Digitální forma znamená rychlé doručení — bez čekání na zásilku. ⚡</p>\n<p><strong>Fyzická dárková karta:</strong></p>\n<p>Fyzické karty odesíláme do 24 hodin (pracovní dny) po platbě. Balíček dorazí připravený k darování. 📨</p>\n\n<h2><strong>Platnost 📅</strong></h2>\n<p>Dárkové karty Carvion (e-vouchery i fyzické karty) jsou platné <strong>12 měsíců od data nákupu</strong>. Po uplynutí této doby kód vyprší a nelze ho uplatnit. Doporučujeme příjemci využít hodnotu v rámci platnosti.</p>\n\n<h2><strong>Vrácení a podmínky 🔄</strong></h2>\n<p>U e-voucherů i fyzických karet můžete vrátit zboží do <strong>14 dnů</strong> od nákupu, pokud unikátní kód nebyl použit. Karty nelze vyměnit za hotovost a hodnotu je třeba uplatnit v jedné objednávce.</p>"
+            "html": "<h2><strong>Doprava</strong></h2>\n<p><strong>Carvion e-voucher:</strong></p>\n<p>E-voucher odesíláme ihned po potvrzení platby. Digitální forma znamená rychlé doručení — bez čekání na zásilku.</p>\n<p><strong>Fyzická dárková karta:</strong></p>\n<p>Fyzické karty odesíláme do 24 hodin (pracovní dny) po platbě. Balíček dorazí připravený k darování.</p>\n\n<h2><strong>Platnost</strong></h2>\n<p>Dárkové karty Carvion (e-vouchery i fyzické karty) jsou platné <strong>12 měsíců od data nákupu</strong>. Po uplynutí této doby kód vyprší a nelze ho uplatnit. Doporučujeme příjemci využít hodnotu v rámci platnosti.</p>\n\n<h2><strong>Vrácení a podmínky</strong></h2>\n<p>U e-voucherů i fyzických karet můžete vrátit zboží do <strong>14 dnů</strong> od nákupu, pokud unikátní kód nebyl použit. Karty nelze vyměnit za hotovost a hodnotu je třeba uplatnit v jedné objednávce.</p>"
           }
         }
       },
@@ -150,12 +150,12 @@
         "about_confidence_2_text": "Bezpečnost — šifrované platby, spolehliví dopravci",
         "about_confidence_3_text": "Vyrobeno v Polsku — vlastní výroba, rychlé dodání",
         "gift_card_cta_label": "Koupit kartu",
-        "gift_card_item_1_description": "A set of dedicated front mats without edges, complete with an EVA materiál EVA heel pad. The perfect combination of functionality a elegance! 🏎️",
+        "gift_card_item_1_description": "Sada předních autokoberců bez okrajů s nášlapem z materiálu EVA. Praktická ochrana pro každodenní použití.",
         "gift_card_item_1_image": "shopify://shop_images/Group_1948754940.webp",
-        "gift_card_item_2_description": "Přední a zadní koberce bez okrajů, zajišťující pohodlí a estetiku v každém detailu. 🌟 (Za tuto cenu jsou k dispozici i přední koberce s okraji!)",
-        "gift_card_item_3_description": "Přední a zadní koberce bez okrajů, doplněné o další příslušenství pro plnou ochranu a styl. 💼 (Za tuto cenu jsou k dispozici i přední koberce s okraji!)",
-        "gift_card_item_4_description": "Kompletní sada koberců bez okrajů včetně koberce do kufru, ideální pro pětimístné vozy. (Možnost zakoupit přední a zadní koberce s okraji za stejnou cenu!)",
-        "gift_card_item_5_description": "Kompletní sada 3D koberců s okraji pro pětimístné vozy a doplňky, které zajistí dokonalou ochranu i vzhled interiéru. ✨"
+        "gift_card_item_2_description": "Přední a zadní autokoberce bez okrajů pro pohodlnou a čistou jízdu. Za stejnou cenu lze zvolit také přední autokoberce s okraji.",
+        "gift_card_item_3_description": "Přední a zadní autokoberce bez okrajů s doplňky pro kompletní ochranu interiéru. Za stejnou cenu lze zvolit také přední autokoberce s okraji.",
+        "gift_card_item_4_description": "Kompletní sada autokoberců bez okrajů včetně koberce do kufru pro pětimístný vůz. Za stejnou cenu lze zvolit přední a zadní autokoberce s okraji.",
+        "gift_card_item_5_description": "Kompletní sada 3D autokoberců s okraji pro pětimístný vůz včetně doplňků pro důkladnou ochranu interiéru."
       }
     },
     "080cd113-d353-46cb-aa5d-cfdeee68c912": {

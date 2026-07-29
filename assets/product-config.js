@@ -165,7 +165,9 @@ function initProductConfigCore() {
         const effective = getEffectiveBodyTypeForImage();
         typeForImage = effective ? (typeMapping[effective] || effective) : autoType;
       }
-      if (typeForImage == 'tir' || typeForImage == 'bus') {
+      if (typeForImage == 'corners' && matPattern == 'drop') {
+        matPattern = 'krople';
+      } else if (typeForImage == 'tir' || typeForImage == 'bus') {
         matPattern = 'diamonds'
       }
       

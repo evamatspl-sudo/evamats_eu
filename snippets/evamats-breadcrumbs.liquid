@@ -1,62 +1,226 @@
 {%- comment -%}
-  Breadcrumbs — Figma 1710:17901 (product), 1710:63132 / 1710:28869 (collection).
-
-  Explicit mode — pass labels/urls:
-  @param parent_label, parent_url, middle_label, middle_url, current_label, class
-
-  Product mode — pass auto_product: true (uses global product + optional overrides):
-  @param auto_product {boolean}
-  @param catalog_label {string} middle link label, default Catalog
+  Shared breadcrumbs for collections, automotive products and accessory families.
+  Vehicle hierarchy is driven by collection metafield custom.brand_group.
 {%- endcomment -%}
 
 {%- liquid
   assign bc_parent_label = parent_label
   assign bc_parent_url = parent_url
+  assign bc_catalog_label = blank
+  assign bc_catalog_url = blank
   assign bc_middle_label = middle_label
   assign bc_middle_url = middle_url
+  assign bc_brand_label = blank
+  assign bc_brand_url = blank
+  assign bc_model_label = blank
+  assign bc_model_url = blank
   assign bc_current_label = current_label
 
-  if auto_product and product != blank
-    if bc_parent_label == blank
+  if auto_collection and collection != blank
+    assign collection_brand_group = collection.metafields.custom.brand_group.value
+    if collection_brand_group != blank
+      assign collection_brand_name = collection_brand_group.title.value | strip
+      assign collection_brand_main = collection_brand_group.main_collection.value
       assign bc_parent_label = 'Carvion'
-    endif
-    if bc_parent_url == blank
       assign bc_parent_url = routes.root_url
-    endif
+      case request.locale.iso_code
+        when 'cs'
+          assign bc_catalog_label = 'Katalog'
+        when 'de'
+          assign bc_catalog_label = 'Katalog'
+        else
+          assign bc_catalog_label = 'Catalog'
+      endcase
+      assign bc_catalog_url = pages['car-brands'].url
+      if bc_catalog_url == blank
+        assign bc_catalog_url = routes.all_products_collection_url
+      endif
 
-    assign bc_catalog_label = catalog_label | default: 'Catalog'
+      if collection_brand_main != blank and collection.id == collection_brand_main.id
+        assign bc_middle_label = blank
+        assign bc_brand_label = blank
+        assign bc_current_label = collection_brand_name
+      else
+        assign bc_middle_label = blank
+        assign bc_brand_label = collection_brand_name
+        assign bc_brand_url = collection_brand_main.url
+    assign bc_current_label = collection.title
+    assign bc_current_label = bc_current_label | remove: 'Car mats EVA for '
+    assign bc_current_label = bc_current_label | remove: 'Car floor mats EVA for '
+    assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA pro '
+    assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA '
+    assign bc_current_label = bc_current_label | remove: 'EVA-Automatten für '
+    assign bc_current_label = bc_current_label | remove: 'Automatten EVA für '
+    assign bc_current_label = bc_current_label | strip
+      endif
+    endif
+  endif
+
+  if auto_product and product != blank
+    assign bc_parent_label = 'Carvion'
+    assign bc_parent_url = routes.root_url
     assign bc_current_label = product.title
+    assign breadcrumb_model_collection = blank
+    assign breadcrumb_brand_group = blank
+    assign breadcrumb_category_collection = blank
+    assign breadcrumb_kind = blank
 
-    assign breadcrumb_collection = collection
+    for product_collection in product.collections
+      assign candidate_brand_group = product_collection.metafields.custom.brand_group.value
+      assign candidate_brand_main = candidate_brand_group.main_collection.value
+      if breadcrumb_model_collection == blank and candidate_brand_group != blank and candidate_brand_main != blank and product_collection.id != candidate_brand_main.id
+        assign breadcrumb_model_collection = product_collection
+        assign breadcrumb_brand_group = candidate_brand_group
+      endif
 
-    if breadcrumb_collection == blank
-      for tag in product.tags
-        for product_collection in product.collections
-          if product_collection.title contains tag
-            assign breadcrumb_collection = product_collection
-            break
+      case product_collection.handle
+        when 'car-accessories-organizers', 'organizers-to-trunk'
+          assign breadcrumb_kind = 'organizers'
+          assign breadcrumb_category_collection = product_collection
+        when 'podpietki'
+          assign breadcrumb_kind = 'heel-pads'
+          assign breadcrumb_category_collection = product_collection
+        when 'seat-covers-cushions'
+          assign breadcrumb_kind = 'seat-covers'
+          assign breadcrumb_category_collection = product_collection
+        when 'mats-for-home'
+          assign breadcrumb_kind = 'home'
+          assign breadcrumb_category_collection = product_collection
+        when 'mats-for-pets'
+          assign breadcrumb_kind = 'pets'
+          assign breadcrumb_category_collection = product_collection
+        when 'outlet'
+          if breadcrumb_kind == blank
+            assign breadcrumb_kind = 'outlet'
+            assign breadcrumb_category_collection = product_collection
           endif
-        endfor
-        if breadcrumb_collection != blank
-          break
-        endif
-      endfor
-    endif
+        when 'akcesoria', 'akcesoria-samochodowa'
+          if breadcrumb_kind == blank
+            assign breadcrumb_kind = 'accessories'
+            assign breadcrumb_category_collection = product_collection
+          endif
+      endcase
+    endfor
 
-    if breadcrumb_collection == blank
-      for product_collection in product.collections
-        unless product_collection.handle == 'outlet' or product_collection.handle == 'all'
-          assign breadcrumb_collection = product_collection
-          break
-        endunless
-      endfor
-    endif
+    if breadcrumb_model_collection != blank and breadcrumb_brand_group != blank
+      case request.locale.iso_code
+        when 'cs'
+          assign bc_catalog_label = 'Katalog'
+        when 'de'
+          assign bc_catalog_label = 'Katalog'
+        else
+          assign bc_catalog_label = 'Catalog'
+      endcase
+      assign bc_catalog_url = pages['car-brands'].url
+      if bc_catalog_url == blank
+        assign bc_catalog_url = routes.all_products_collection_url
+      endif
 
-    assign bc_middle_label = bc_catalog_label
-    if breadcrumb_collection != blank
-      assign bc_middle_url = breadcrumb_collection.url
+      assign bc_brand_label = breadcrumb_brand_group.title.value | strip
+      assign breadcrumb_brand_collection = breadcrumb_brand_group.main_collection.value
+      assign bc_brand_url = breadcrumb_brand_collection.url
+      assign bc_model_label = breadcrumb_model_collection.title
+      assign bc_model_label = bc_model_label | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
+      assign bc_model_url = breadcrumb_model_collection.url
+    elsif product.handle == 'e-gift-card'
+      assign bc_catalog_label = blank
+      assign bc_middle_label = blank
     else
-      assign bc_middle_url = routes.all_products_collection_url
+      case breadcrumb_kind
+        when 'organizers'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Příslušenství'
+              assign bc_middle_label = 'Organizéry do kufru'
+            when 'de'
+              assign bc_catalog_label = 'Zubehör'
+              assign bc_middle_label = 'Kofferraum-Organizer'
+            else
+              assign bc_catalog_label = 'Accessories'
+              assign bc_middle_label = 'Trunk organizers'
+          endcase
+        when 'heel-pads'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Příslušenství'
+              assign bc_middle_label = 'Podložky pod patu'
+            when 'de'
+              assign bc_catalog_label = 'Zubehör'
+              assign bc_middle_label = 'Fersenmatten'
+            else
+              assign bc_catalog_label = 'Accessories'
+              assign bc_middle_label = 'Heel pads'
+          endcase
+        when 'seat-covers'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Příslušenství'
+              assign bc_middle_label = 'Potahy na sedadla a polštáře'
+            when 'de'
+              assign bc_catalog_label = 'Zubehör'
+              assign bc_middle_label = 'Sitzbezüge und Kissen'
+            else
+              assign bc_catalog_label = 'Accessories'
+              assign bc_middle_label = 'Seat covers and cushions'
+          endcase
+        when 'home'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'EVA do domácnosti'
+            when 'de'
+              assign bc_catalog_label = 'EVA für Zuhause'
+            else
+              assign bc_catalog_label = 'EVA for home'
+          endcase
+        when 'pets'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Pro mazlíčky'
+            when 'de'
+              assign bc_catalog_label = 'Für Haustiere'
+            else
+              assign bc_catalog_label = 'For pets'
+          endcase
+        when 'outlet'
+          assign bc_catalog_label = 'Outlet'
+        when 'accessories'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Příslušenství'
+              assign bc_middle_label = 'Autodoplňky'
+            when 'de'
+              assign bc_catalog_label = 'Zubehör'
+              assign bc_middle_label = 'Autozubehör'
+            else
+              assign bc_catalog_label = 'Accessories'
+              assign bc_middle_label = 'Car accessories'
+          endcase
+        else
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Katalog'
+            when 'de'
+              assign bc_catalog_label = 'Katalog'
+            else
+              assign bc_catalog_label = 'Catalog'
+          endcase
+      endcase
+
+      if breadcrumb_kind == 'home'
+        assign bc_catalog_url = collections['mats-for-home'].url
+      elsif breadcrumb_kind == 'pets'
+        assign bc_catalog_url = collections['mats-for-pets'].url
+      elsif breadcrumb_kind == 'outlet'
+        assign bc_catalog_url = collections['outlet'].url
+      else
+        assign bc_catalog_url = collections['akcesoria'].url
+      endif
+      if bc_catalog_url == blank
+        assign bc_catalog_url = pages['accessories'].url
+      endif
+      if bc_middle_label != blank and breadcrumb_category_collection != blank
+        assign bc_middle_url = breadcrumb_category_collection.url
+      endif
     endif
   endif
 -%}
@@ -65,20 +229,26 @@
   <nav class="evamats-breadcrumbs{% if class != blank %} {{ class }}{% endif %}" aria-label="Breadcrumb">
     <ol class="evamats-breadcrumbs__list">
       {%- if bc_parent_label != blank -%}
-        <li class="evamats-breadcrumbs__item">
-          <a class="evamats-breadcrumbs__link" href="{{ bc_parent_url }}">{{ bc_parent_label | escape }}</a>
-        </li>
+        <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_parent_url }}">{{ bc_parent_label | escape }}</a></li>
+        <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
+      {%- endif -%}
+      {%- if bc_catalog_label != blank -%}
+        <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_catalog_url }}">{{ bc_catalog_label | escape }}</a></li>
         <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
       {%- endif -%}
       {%- if bc_middle_label != blank -%}
-        <li class="evamats-breadcrumbs__item">
-          <a class="evamats-breadcrumbs__link" href="{{ bc_middle_url }}">{{ bc_middle_label | escape }}</a>
-        </li>
+        <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_middle_url }}">{{ bc_middle_label | escape }}</a></li>
         <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
       {%- endif -%}
-      <li class="evamats-breadcrumbs__item">
-        <span class="evamats-breadcrumbs__current" aria-current="page">{{ bc_current_label | escape }}</span>
-      </li>
+      {%- if bc_brand_label != blank -%}
+        <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_brand_url }}">{{ bc_brand_label | escape }}</a></li>
+        <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
+      {%- endif -%}
+      {%- if bc_model_label != blank -%}
+        <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_model_url }}">{{ bc_model_label | escape }}</a></li>
+        <li class="evamats-breadcrumbs__item evamats-breadcrumbs__item--sep" aria-hidden="true"></li>
+      {%- endif -%}
+      <li class="evamats-breadcrumbs__item"><span class="evamats-breadcrumbs__current" aria-current="page">{{ bc_current_label | escape }}</span></li>
     </ol>
   </nav>
 {%- endif -%}

@@ -15,6 +15,21 @@
     assign shop_id_part3 = shop_id_padded | slice: 8, 4
     assign files_cdn = 'https://cdn.shopify.com/s/files/1/' | append: shop_id_part1 | append: '/' | append: shop_id_part2 | append: '/' | append: shop_id_part3 | append: '/files/'
   endif
+
+  assign vehicle_brand_group = collection.metafields.custom.brand_group.value
+  assign vehicle_brand_name = vehicle_brand_group.title.value | strip
+  assign vehicle_main_collection = vehicle_brand_group.main_collection.value
+  assign vehicle_model_name = ''
+  if vehicle_brand_group != blank and vehicle_main_collection != blank and collection.id != vehicle_main_collection.id
+    assign vehicle_model_name = collection.title
+    assign vehicle_model_name = vehicle_model_name | remove: 'Car mats EVA for '
+    assign vehicle_model_name = vehicle_model_name | remove: 'Car floor mats EVA for '
+    assign vehicle_model_name = vehicle_model_name | remove: 'Autokoberce EVA pro '
+    assign vehicle_model_name = vehicle_model_name | remove: 'Autokoberce EVA '
+    assign vehicle_model_name = vehicle_model_name | remove: 'EVA-Automatten für '
+    assign vehicle_model_name = vehicle_model_name | remove: 'Automatten EVA für '
+    assign vehicle_model_name = vehicle_model_name | remove_first: vehicle_brand_name | strip
+  endif
 -%}
 
 <div
@@ -25,6 +40,12 @@
   data-label-brand="{{ 'general.config.brand' | t | escape }}"
   data-label-model="{{ 'general.config.model' | t | escape }}"
   data-label-generation="{{ 'general.config.generation' | t | escape }}"
+  {% if vehicle_brand_name != blank %}
+    data-page-brand="{{ vehicle_brand_name | escape }}"
+  {% endif %}
+  {% if vehicle_model_name != blank %}
+    data-page-model="{{ vehicle_model_name | escape }}"
+  {% endif %}
   {% if filter_ui == 'collection' and collection_handle != blank %}
     data-auto-navigate="true"
     data-collection-handle="{{ collection_handle | escape }}"

@@ -9,7 +9,6 @@
   if desktop_image == blank
     assign desktop_image = collection.image
   endif
-
   if mobile_image == blank
     assign mobile_image = desktop_image
   endif
@@ -18,55 +17,18 @@
   if root_label == blank
     assign root_label = 'Carvion'
   endif
-
   assign root_url = section.settings.parent_url | strip
   if root_url == blank
     assign root_url = routes.root_url
   endif
-
   assign catalog_label = section.settings.catalog_label | strip
   if catalog_label == blank
-    assign catalog_label = 'Сatalog'
-  endif
-
-  assign brand_collection = nil
-  assign brand_url_setting = section.settings.brand_url | strip
-
-  if brand_url_setting != blank
-    assign brand_handle = brand_url_setting | split: '/collections/' | last | split: '?' | first
-    if brand_handle != blank
-      assign brand_collection = collections[brand_handle]
-    endif
-  endif
-
-  if brand_collection == blank
-    assign candidate = ''
-    assign handle_parts = collection.handle | split: '-'
-    for part in handle_parts
-      if candidate == blank
-        assign candidate = part
-      else
-        assign candidate = candidate | append: '-' | append: part
-      endif
-      if candidate != collection.handle
-        assign test_col = collections[candidate]
-        if test_col != blank
-          assign brand_collection = test_col
-          break
-        endif
-      endif
-    endfor
+    assign catalog_label = 'Catalog'
   endif
 
   assign middle_label = ''
   assign middle_url = ''
-  assign breadcrumb_current = catalog_label
-
-  if brand_collection != blank
-    assign middle_label = brand_collection.title
-    assign middle_url = brand_collection.url
-    assign breadcrumb_current = collection.title
-  endif
+  assign breadcrumb_current = collection.title
 -%}
 
 <div
@@ -97,6 +59,7 @@
   <div class="evamats-collection-banner__ui page-width">
     {%- if section.settings.show_breadcrumbs -%}
       {% render 'evamats-breadcrumbs',
+        auto_collection: true,
         parent_label: root_label,
         parent_url: root_url,
         middle_label: middle_label,

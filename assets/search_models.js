@@ -117,38 +117,73 @@
         window.location.href = url;
     }
 
-    function findCatalogMatch(catalog, handle) {
+    function normalizeCatalogLabel(value) {
+        return String(value || '')
+            .trim()
+            .toLocaleLowerCase()
+            .replace(/\s+/g, ' ');
+    }
+
+    function findCatalogMatch(catalog, handle, brandHint, modelHint) {
         const normalizedHandle = String(handle || '').trim().toLowerCase();
-        if (!normalizedHandle || !catalog) return null;
+        const normalizedBrandHint = normalizeCatalogLabel(brandHint);
+        const normalizedModelHint = normalizeCatalogLabel(modelHint);
+        if (!catalog) return null;
 
         let brandMatch = null;
         let modelMatch = null;
+        let hintedBrandMatch = null;
+        let hintedModelMatch = null;
 
         Object.keys(catalog).forEach((brandKey) => {
             const brandData = catalog[brandKey];
-            const brandHandle = extractCollectionHandle(resolveBrandCollectionUrl(brandKey, brandData));
+            const cleanBrandKey = String(brandKey || '').trim();
+            const brandHandle = extractCollectionHandle(resolveBrandCollectionUrl(cleanBrandKey, brandData));
+            const brandCandidate = { brandKey, brandData, level: 'brand' };
 
             if (brandHandle === normalizedHandle) {
-                brandMatch = { brandKey, brandData, level: 'brand' };
+                brandMatch = brandCandidate;
+            }
+            if (
+                normalizedBrandHint &&
+                normalizeCatalogLabel(cleanBrandKey) === normalizedBrandHint
+            ) {
+                hintedBrandMatch = brandCandidate;
             }
 
             if (!brandData || !Array.isArray(brandData.models)) return;
 
             brandData.models.forEach((model) => {
                 const modelHandle = extractCollectionHandle(model.url);
-                if (modelHandle !== normalizedHandle) return;
+                const candidate = {
+                    brandKey,
+                    brandData,
+                    model,
+                    modelUrl: model.url,
+                    level: 'model'
+                };
 
-                const candidate = { brandKey, brandData, model, modelUrl: model.url, level: 'model' };
+                if (modelHandle === normalizedHandle) {
+                    if (
+                        !modelMatch ||
+                        modelHandle.length > extractCollectionHandle(modelMatch.model.url).length
+                    ) {
+                        modelMatch = candidate;
+                    }
+                }
+
                 if (
-                    !modelMatch ||
-                    modelHandle.length > extractCollectionHandle(modelMatch.model.url).length
+                    normalizedBrandHint &&
+                    normalizedModelHint &&
+                    normalizeCatalogLabel(cleanBrandKey) === normalizedBrandHint &&
+                    normalizeCatalogLabel(model.name) === normalizedModelHint
                 ) {
-                    modelMatch = candidate;
+                    hintedModelMatch = candidate;
                 }
             });
         });
 
-        return modelMatch || brandMatch;
+        return modelMatch || brandMatch || hintedModelMatch || hintedBrandMatch;
     }
 
     function isAutoNavigate(container) {
@@ -700,7 +735,12 @@
             const handle = (container.dataset.collectionHandle || '').trim();
             if (!handle || !localJson) return false;
 
-            const match = findCatalogMatch(localJson, handle);
+            const match = findCatalogMatch(
+                localJson,
+                handle,
+                container.dataset.pageBrand,
+                container.dataset.pageModel
+            );
             if (!match) return false;
 
             suppressAutoNav = true;
