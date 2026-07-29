@@ -31,7 +31,7 @@
         else
           assign bc_catalog_label = 'Catalog'
       endcase
-      assign bc_catalog_url = pages['car-brands'].url
+      assign bc_catalog_url = collections['all-car-mats'].url
       if bc_catalog_url == blank
         assign bc_catalog_url = routes.all_products_collection_url
       endif
@@ -111,7 +111,7 @@
         else
           assign bc_catalog_label = 'Catalog'
       endcase
-      assign bc_catalog_url = pages['car-brands'].url
+      assign bc_catalog_url = collections['all-car-mats'].url
       if bc_catalog_url == blank
         assign bc_catalog_url = routes.all_products_collection_url
       endif

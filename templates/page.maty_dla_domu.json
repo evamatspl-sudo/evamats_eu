@@ -27,11 +27,19 @@
       ],
       "settings": {
         "title": "Mats for home",
+        "view_all_label": "Zobrazit vše",
         "collection": "mats-for-home",
         "products_to_show": 12,
+        "mobile_button_label": "Vybrat",
         "show_view_all": false,
+        "show_view_all_mobile": true,
+        "show_catalog_button": false,
+        "catalog_button_label": "Zobrazit celý katalog",
+        "catalog_button_link": "",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "3c619e31-b568-4ad7-85be-94d6bdda6712": {
@@ -42,11 +50,19 @@
       ],
       "settings": {
         "title": "Nejprodávanější",
+        "view_all_label": "Zobrazit vše",
         "collection": "bestsellerss",
         "products_to_show": 7,
+        "mobile_button_label": "Vybrat",
         "show_view_all": true,
+        "show_view_all_mobile": true,
+        "show_catalog_button": false,
+        "catalog_button_label": "Zobrazit celý katalog",
+        "catalog_button_link": "",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "170895475627845482": {
@@ -55,35 +71,24 @@
         "include_margins": true
       }
     },
-    "6b02f571-942a-4ee2-8c58-8013281e5686": {
-      "type": "featured-collection-video",
-      "custom_css": [
-        "h2 {font-weight: 600;}"
-      ],
+    "featured_collection_EfqXN4": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Nejprodávanější",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "bestsellerss",
-        "video-title": "OBEJRZYJ WIDEO:",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
+        "view_all_label": "Zobrazit vše",
+        "collection": "top-10-bestsellers",
+        "products_to_show": 8,
+        "mobile_button_label": "Vybrat",
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_view_all_mobile": false,
+        "show_catalog_button": true,
+        "catalog_button_label": "Zobrazit celý katalog",
+        "catalog_button_link": "shopify://collections/all-car-mats",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     }
   },
@@ -92,6 +97,6 @@
     "4e297f76-e441-4a29-a157-83cf9dbf887b",
     "3c619e31-b568-4ad7-85be-94d6bdda6712",
     "170895475627845482",
-    "6b02f571-942a-4ee2-8c58-8013281e5686"
+    "featured_collection_EfqXN4"
   ]
 }

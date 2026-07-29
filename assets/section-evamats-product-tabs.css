@@ -287,13 +287,16 @@
   padding-left: 20px;
 }
 
-.evamats-product-tabs__richtext p strong,
 .evamats-product-tabs__richtext h2,
 .evamats-product-tabs__richtext h3 {
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.52px;
   line-height: 1.1;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .evamats-product-tabs__richtext .product_tabs__containers_item_block {
@@ -550,6 +553,11 @@
   .evamats-product-tabs__panel.product_tabs__containers_item {
     display: none;
     padding-top: 0;
+  }
+
+  .evamats-product-tabs__panel.product_tabs__containers_item.evamats-product-tabs__panel--mobile-inline.active {
+    display: block;
+    padding-top: 20px;
   }
 
   .evamats-product-tabs__panel.product_tabs__containers_item.evamats-product-tabs__panel--mobile-about {

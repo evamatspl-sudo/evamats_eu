@@ -104,12 +104,22 @@
   padding: 20px 0;
   box-sizing: border-box;
   background: #fff;
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+.gallery-fancybox .fancybox__slide.has-image,
+.gallery-fancybox .fancybox__slide.has-image.is-selected,
+.gallery-fancybox .fancybox__slide.has-image.is-animating {
+  overflow: hidden !important;
 }
 
 .gallery-fancybox .fancybox__content {
   border-radius: 16px;
   overflow: hidden;
   background: transparent;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .gallery-fancybox .fancybox__image,
@@ -117,12 +127,21 @@
   border-radius: 16px;
 }
 
-/* Nav arrows */
+/* Nav arrows — box is pinned to the photo in gallery.js */
 .gallery-fancybox .fancybox__nav {
   position: absolute;
   inset: 0;
+  overflow: visible;
+  border-radius: 0;
   pointer-events: none;
   z-index: 25;
+  opacity: 1 !important;
+}
+
+/* Fancybox hides nav on idle — keep arrows always visible */
+.gallery-fancybox.is-idle .fancybox__nav {
+  animation: none !important;
+  opacity: 1 !important;
 }
 
 .gallery-fancybox .fancybox__nav .f-button.is-prev,
@@ -140,11 +159,37 @@
   border: 0;
 }
 
+/* Desktop: chevrons sit in the gutters beside the photo (as on Evamats) */
+.gallery-fancybox .fancybox__nav .f-button.is-prev {
+  left: -48px;
+  right: auto;
+}
+
+.gallery-fancybox .fancybox__nav .f-button.is-next {
+  right: -48px;
+  left: auto;
+}
+
 .gallery-fancybox .fancybox__nav .f-button.is-prev svg,
 .gallery-fancybox .fancybox__nav .f-button.is-next svg {
   width: 30px;
   height: 30px;
   filter: none;
+  /* Fancybox .f-button svg adds stroke — makes filled arrows look fat */
+  stroke: none;
+  stroke-width: 0;
+  fill: none;
+}
+
+.gallery-fancybox .fancybox__nav .f-button.is-prev svg path,
+.gallery-fancybox .fancybox__nav .f-button.is-next svg path {
+  fill: #151515;
+  stroke: none;
+  stroke-width: 0;
+}
+
+.gallery-fancybox .fancybox__nav .gallery-fancybox__nav-img {
+  display: none;
 }
 
 /* Custom thumbnails */
@@ -340,13 +385,6 @@
     height: 80px;
   }
 
-  .gallery-fancybox .fancybox__nav .f-button.is-prev {
-    left: calc(50% - 402px);
-  }
-
-  .gallery-fancybox .fancybox__nav .f-button.is-next {
-    right: calc(50% - 402px);
-  }
   .gallery-fancybox__aside {
     display: block;
     position: absolute;
@@ -360,7 +398,63 @@
 /* Mobile layout */
 @media screen and (max-width: 749px) {
   .gallery-fancybox .fancybox__slide {
-    padding: 56px 4px 200px;
+    /* Space for close + contacts above, thumbs + CTA below */
+    padding: 100px 4px 210px;
+    overflow: hidden !important;
+    touch-action: none;
+  }
+
+  .gallery-fancybox .fancybox__content {
+    align-self: center;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .gallery-fancybox .fancybox__image,
+  .gallery-fancybox .f-panzoom__content img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-fancybox .f-panzoom,
+  .gallery-fancybox .f-panzoom__viewport,
+  .gallery-fancybox .f-panzoom__content {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* One shared nav — fallback band; JS pins to the photo when ready */
+  .gallery-fancybox .fancybox__nav {
+    position: absolute;
+    top: 100px;
+    right: 4px;
+    bottom: 210px;
+    left: 4px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev,
+  .gallery-fancybox .fancybox__nav .f-button.is-next {
+    --f-button-prev-pos: 0;
+    --f-button-next-pos: 0;
+    top: 50%;
+    left: auto;
+    right: auto;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-prev {
+    left: 0;
+  }
+
+  .gallery-fancybox .fancybox__nav .f-button.is-next {
+    right: 0;
   }
 
   .gallery-fancybox__mobile-top {
@@ -368,7 +462,8 @@
     position: fixed;
     top: 56px;
     left: 18px;
-    z-index: 35;
+    right: 80px;
+    z-index: 50;
     pointer-events: auto;
   }
 
@@ -394,6 +489,7 @@
     right: 4px;
     bottom: 118px;
     width: auto;
+    z-index: 40;
   }
 
   .gallery-fancybox__thumbs-track {
@@ -425,7 +521,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 35;
+    z-index: 50;
     pointer-events: auto;
     padding: 18px 18px 24px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 28%);
@@ -486,11 +582,13 @@
   }
 
   .gallery-fancybox .fancybox__nav .f-button.is-prev {
-    left: 4px;
+    left: 0;
+    right: auto;
   }
 
   .gallery-fancybox .fancybox__nav .f-button.is-next {
-    right: 4px;
+    right: 0;
+    left: auto;
   }
 
   .gallery-fancybox .fancybox__nav .f-button.is-prev svg,

@@ -74,6 +74,25 @@
   pointer-events: auto;
 }
 
+.evamats-collection-banner__back {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 14px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.evamats-collection-banner__back:hover {
+  color: #fff;
+  opacity: 0.85;
+}
+
 .evamats-collection-banner .evamats-breadcrumbs__link {
   color: #8090a4;
 }
@@ -123,6 +142,11 @@
 
   .evamats-collection-banner__breadcrumbs {
     margin-bottom: 12px;
+  }
+
+  .evamats-collection-banner__back {
+    margin-bottom: 10px;
+    font-size: 14px;
   }
 
   .evamats-collection-banner__title {

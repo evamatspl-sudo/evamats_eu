@@ -484,8 +484,29 @@ document.addEventListener('DOMContentLoaded', function () {
             slider.el.querySelectorAll('video').forEach(function (video) {
                 video.pause();
             });
-            var slide = slider.slides[slider.activeIndex];
+
+            var slide = null;
+            if (full) {
+                slide = slider.slides[slider.activeIndex];
+            } else {
+                var containerRect = slider.el.getBoundingClientRect();
+                var midX = containerRect.left + containerRect.width / 2;
+                var bestDist = Infinity;
+                slider.slides.forEach(function (candidate) {
+                    if (candidate.classList.contains('swiper-slide-duplicate-invisible')) return;
+                    var rect = candidate.getBoundingClientRect();
+                    if (rect.width < 1) return;
+                    var centerX = rect.left + rect.width / 2;
+                    var dist = Math.abs(centerX - midX);
+                    if (dist < bestDist) {
+                        bestDist = dist;
+                        slide = candidate;
+                    }
+                });
+                if (!slide) slide = slider.slides[slider.activeIndex];
+            }
             if (!slide) return;
+
             var video = slide.querySelector('video');
             if (video) {
                 hydrateVideoSource(video);
@@ -518,13 +539,38 @@ document.addEventListener('DOMContentLoaded', function () {
         var prevBtn = root.querySelector('.video_reviews__slider-bleed .eva-slider-nav--prev');
         var nextBtn = root.querySelector('.video_reviews__slider-bleed .eva-slider-nav--next');
 
+        // Few slides + high slidesPerView breaks Swiper loop (empty gaps / shuffle).
+        // Duplicate slides in DOM and use rewind instead of loop.
+        var mainWrapper = mainEl.querySelector('.swiper-wrapper');
+        var originalSlides = mainWrapper
+            ? Array.prototype.slice.call(mainWrapper.children)
+            : [];
+        var originalCount = originalSlides.length;
+        if (mainWrapper && originalCount > 0) {
+            originalSlides.forEach(function (slide, index) {
+                slide.setAttribute('data-video-index', String(index));
+            });
+            var minSlides = Math.max(12, Math.ceil(4.2 * 3));
+            var pass = 0;
+            while (mainWrapper.children.length < minSlides && pass < 4) {
+                originalSlides.forEach(function (slide) {
+                    if (mainWrapper.children.length >= minSlides) return;
+                    var clone = slide.cloneNode(true);
+                    clone.removeAttribute('id');
+                    mainWrapper.appendChild(clone);
+                });
+                pass += 1;
+            }
+        }
+
         var mainOpts = {
-            loop: true,
+            loop: false,
+            rewind: originalCount > 1,
             slidesPerView: 1.55,
             spaceBetween: 4,
             speed: 480,
             watchOverflow: true,
-            centeredSlides: true,
+            centeredSlides: false,
             breakpoints: {
                 750: {
                     slidesPerView: 4.2,
@@ -535,9 +581,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 delay: 5000,
                 disableOnInteraction: false,
             },
-            thumbs: {
-                swiper: swiper2,
-            },
             on: {
                 transitionEnd: function () {
                     videoPlay(this);
@@ -545,17 +588,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 click: function () {
                     var clicked = this.clickedSlide;
                     if (!clicked) return;
-                    var idxAttr = clicked.getAttribute('data-swiper-slide-index');
+                    var videoIndexAttr = clicked.getAttribute('data-video-index');
                     var slideRealIndex =
-                        idxAttr !== null && idxAttr !== ''
-                            ? parseInt(idxAttr, 10)
+                        videoIndexAttr !== null && videoIndexAttr !== ''
+                            ? parseInt(videoIndexAttr, 10)
                             : NaN;
                     if (isNaN(slideRealIndex)) {
-                        slideRealIndex =
-                            typeof this.getSlideIndex === 'function'
-                                ? this.getSlideIndex(clicked)
-                                : this.clickedIndex;
+                        slideRealIndex = typeof this.realIndex === 'number' ? this.realIndex : 0;
                     }
+                    slideRealIndex = slideRealIndex % Math.max(originalCount, 1);
+
                     var active = this.slides[this.activeIndex];
                     if (clicked !== active) {
                         this.slideToClickedSlide();

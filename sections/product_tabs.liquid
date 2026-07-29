@@ -26,14 +26,20 @@
   endfor
 -%}
 
-<div class="evamats-product-tabs product_tabs" id="product-tabs-{{ section.id }}">
+<div class="evamats-product-tabs product_tabs" id="product-tabs-{{ section.id }}"{% if is_gift_card_template %} data-gift-card-tabs{% endif %}>
   <div class="page-width">
     <div class="evamats-product-tabs__shell">
       <div class="evamats-product-tabs__mobile-accordion" data-mobile-accordion>
         <div class="evamats-product-tabs__mobile-accordion-divider" aria-hidden="true"></div>
         <div class="evamats-product-tabs__mobile-accordion-list">
           {%- for block in section.blocks -%}
-            {%- unless block.settings.id == 'description' -%}
+            {%- liquid
+              assign skip_mobile_accordion = false
+              if block.settings.id == 'description' and is_gift_card_template == false
+                assign skip_mobile_accordion = true
+              endif
+            -%}
+            {%- unless skip_mobile_accordion -%}
               {%- unless block.settings.hide_on_accessories and product_is_accessory -%}
                 <button
                   type="button"
@@ -64,13 +70,23 @@
 
       <div class="evamats-product-tabs__nav product_tabs__items" role="tablist">
         {%- for block in section.blocks -%}
+          {%- liquid
+            assign is_default_tab = false
+            if is_gift_card_template
+              if block.settings.id == 'description'
+                assign is_default_tab = true
+              endif
+            elsif forloop.first
+              assign is_default_tab = true
+            endif
+          -%}
           {%- unless block.settings.hide_on_accessories and product_is_accessory -%}
           <button
             type="button"
-            class="evamats-product-tabs__tab product_tabs__item{% if forloop.first %} active{% endif %}"
+            class="evamats-product-tabs__tab product_tabs__item{% if is_default_tab %} active{% endif %}"
             role="tab"
             data-id="{{ block.settings.id }}"
-            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-selected="{% if is_default_tab %}true{% else %}false{% endif %}"
             {{ block.shopify_attributes }}
           >
               {{ block.settings.title | escape }}
@@ -81,8 +97,18 @@
 
       <div class="evamats-product-tabs__body product_tabs__containers" data-tab-panels>
         {%- for block in section.blocks -%}
+          {%- liquid
+            assign is_default_tab = false
+            if is_gift_card_template
+              if block.settings.id == 'description'
+                assign is_default_tab = true
+              endif
+            elsif forloop.first
+              assign is_default_tab = true
+            endif
+          -%}
           <div
-            class="evamats-product-tabs__panel product_tabs__containers_item{% if block.settings.id == 'description' %} evamats-product-tabs__panel--about{% endif %}{% if forloop.first %} active{% endif %}"
+            class="evamats-product-tabs__panel product_tabs__containers_item{% if block.settings.id == 'description' %} evamats-product-tabs__panel--about{% endif %}{% if is_default_tab %} active{% endif %}"
             role="tabpanel"
             data-id="{{ block.settings.id }}"
           >

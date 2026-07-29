@@ -996,6 +996,7 @@ customElements.define('variant-radios', VariantRadios);
     const descriptionSections = document.querySelectorAll(".image-with-text--description");
     const panelSlots = root.querySelectorAll("[data-mobile-panel-slot]");
     const introRoots = root.querySelectorAll("[data-intro-collapse]");
+    const isGiftCardTabs = root.hasAttribute("data-gift-card-tabs");
 
     const panelHome = new Map();
 
@@ -1008,6 +1009,10 @@ customElements.define('variant-radios', VariantRadios);
 
     function isMobileLayout() {
       return mobileMq.matches;
+    }
+
+    function isAlwaysOpenAboutPanel(panel) {
+      return panel && panel.dataset.id === "description" && !isGiftCardTabs;
     }
 
     function restorePanelsToDesktop() {
@@ -1034,12 +1039,12 @@ customElements.define('variant-radios', VariantRadios);
       if (!isMobileLayout()) return;
 
       const aboutPanel = root.querySelector('.product_tabs__containers_item[data-id="description"]');
-      if (aboutPanel) {
+      if (isAlwaysOpenAboutPanel(aboutPanel)) {
         aboutPanel.classList.add("active", "evamats-product-tabs__panel--mobile-about");
       }
 
       containers.forEach((panel) => {
-        if (panel.dataset.id === "description") return;
+        if (isAlwaysOpenAboutPanel(panel)) return;
 
         const slot = root.querySelector(`[data-mobile-panel-slot="${panel.dataset.id}"]`);
         if (!slot) return;
@@ -1056,7 +1061,7 @@ customElements.define('variant-radios', VariantRadios);
       });
 
       containers.forEach((panel) => {
-        if (panel.dataset.id === "description") return;
+        if (isAlwaysOpenAboutPanel(panel)) return;
         panel.classList.remove("active");
       });
 
@@ -1105,6 +1110,15 @@ customElements.define('variant-radios', VariantRadios);
       }
     }
 
+    function openGiftCardDescriptionAccordion() {
+      if (!isGiftCardTabs) return;
+      const descTrigger = root.querySelector(
+        '.evamats-product-tabs__mobile-trigger[data-id="description"]'
+      );
+      if (!descTrigger || descTrigger.classList.contains("is-open")) return;
+      toggleMobileAccordion(descTrigger);
+    }
+
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         switchTab(tab.getAttribute("data-id"));
@@ -1138,6 +1152,7 @@ customElements.define('variant-radios', VariantRadios);
 
       if (isMobileLayout()) {
         closeMobileAccordions();
+        openGiftCardDescriptionAccordion();
         descriptionSections.forEach((section) => {
           section.style.display = "";
         });
@@ -1145,8 +1160,12 @@ customElements.define('variant-radios', VariantRadios);
       }
 
       root.classList.remove("evamats-product-tabs--mobile");
-      const firstTab = tabs[0];
-      if (firstTab) switchTab(firstTab.getAttribute("data-id"));
+      if (isGiftCardTabs) {
+        switchTab("description");
+      } else {
+        const firstTab = tabs[0];
+        if (firstTab) switchTab(firstTab.getAttribute("data-id"));
+      }
     }
 
     syncLayout();

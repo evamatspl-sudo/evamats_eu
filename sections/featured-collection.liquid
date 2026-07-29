@@ -21,6 +21,11 @@
     assign show_view_all = true
   endif
 
+  assign show_view_all_mobile = false
+  if show_view_all and section.settings.show_view_all_mobile
+    assign show_view_all_mobile = true
+  endif
+
   assign prev_nav_label = 'general.slider.previous_slide' | t
   assign next_nav_label = 'general.slider.next_slide' | t
 -%}
@@ -97,11 +102,27 @@
       </div>
     </div>
 
-    {%- if show_view_all -%}
+    {%- if show_view_all_mobile -%}
       <div class="evamats-featured-collection__inner page-width">
         <div class="evamats-featured-collection__view-all--footer">
           <a href="{{ collection.url }}" class="button button_5 button_5--neutral">
             {{ section.settings.view_all_label | escape }}
+          </a>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_catalog_button
+      and section.settings.catalog_button_label != blank
+      and section.settings.catalog_button_link != blank
+    -%}
+      <div class="evamats-featured-collection__inner page-width">
+        <div class="evamats-featured-collection__catalog-cta">
+          <a
+            href="{{ section.settings.catalog_button_link }}"
+            class="button button_5 button_5--neutral"
+          >
+            {{ section.settings.catalog_button_label | escape }}
           </a>
         </div>
       </div>
@@ -267,6 +288,33 @@
       "id": "show_view_all",
       "default": true,
       "label": "t:sections.featured-collection.settings.show_view_all.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all_mobile",
+      "default": true,
+      "label": "Show View all button on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Mobile catalog button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_catalog_button",
+      "default": false,
+      "label": "Show extra catalog button on mobile"
+    },
+    {
+      "type": "text",
+      "id": "catalog_button_label",
+      "label": "Catalog button label",
+      "default": "Zobrazit celý katalog"
+    },
+    {
+      "type": "url",
+      "id": "catalog_button_link",
+      "label": "Catalog button link"
     },
     {
       "type": "header",

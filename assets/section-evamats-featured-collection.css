@@ -33,6 +33,10 @@
   display: none;
 }
 
+.evamats-featured-collection__catalog-cta {
+  display: none;
+}
+
 .evamats-featured-collection__slider-bleed {
   position: relative;
 }
@@ -341,6 +345,23 @@
   .evamats-featured-collection__view-all--footer .button.button_5 {
     width: 100%;
     max-width: 339px;
+  }
+
+  .evamats-featured-collection__catalog-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .evamats-featured-collection__catalog-cta .button.button_5 {
+    width: 100%;
+    max-width: 339px;
+  }
+
+  .evamats-featured-collection__inner:has(.evamats-featured-collection__view-all--footer)
+    + .evamats-featured-collection__inner
+    .evamats-featured-collection__catalog-cta {
+    margin-top: 12px;
   }
 
   .evamats-featured-collection {

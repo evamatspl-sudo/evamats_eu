@@ -1,4 +1,3 @@
-
 {{ 'section-evamats-collection-banner.css' | asset_url | stylesheet_tag }}
 {{ 'section-evamats-collection-mobile.css' | asset_url | stylesheet_tag }}
 
@@ -29,6 +28,36 @@
   assign middle_label = ''
   assign middle_url = ''
   assign breadcrumb_current = collection.title
+
+  assign show_back = false
+  assign back_url = blank
+  assign collection_brand_group = collection.metafields.custom.brand_group.value
+
+  if collection_brand_group != blank
+    assign collection_brand_main = collection_brand_group.main_collection.value
+    if collection_brand_main != blank and collection.id == collection_brand_main.id
+      assign back_url = collections['all-car-mats'].url
+      if back_url == blank
+        assign back_url = routes.all_products_collection_url
+      endif
+      assign show_back = true
+    elsif collection_brand_main != blank
+      assign back_url = collection_brand_main.url
+      assign show_back = true
+    endif
+  elsif section.settings.brand_url != blank
+    assign back_url = section.settings.brand_url
+    assign show_back = true
+  endif
+
+  if section.settings.show_back_button == false
+    assign show_back = false
+  endif
+
+  assign back_label = section.settings.back_label | strip
+  if back_label == blank
+    assign back_label = '← Zpět'
+  endif
 -%}
 
 <div
@@ -67,6 +96,12 @@
         current_label: breadcrumb_current,
         class: 'evamats-collection-banner__breadcrumbs'
       %}
+    {%- endif -%}
+
+    {%- if show_back and back_url != blank -%}
+      <a class="evamats-collection-banner__back" href="{{ back_url }}">
+        {{ back_label | escape }}
+      </a>
     {%- endif -%}
 
     <h1 class="evamats-collection-banner__title">
@@ -127,10 +162,26 @@
       "info": "Shown on brand and top-level collection pages."
     },
     {
+      "type": "header",
+      "content": "Back button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_back_button",
+      "label": "Show back button on brand and model pages",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "Back button label",
+      "default": "← Zpět"
+    },
+    {
       "type": "url",
       "id": "brand_url",
       "label": "Parent brand collection",
-      "info": "Optional. Used for model pages when auto-detection is not enough."
+      "info": "Fallback for model pages when brand_group metafield is missing."
     }
   ]
 }
