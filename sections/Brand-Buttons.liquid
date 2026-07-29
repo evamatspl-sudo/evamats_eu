@@ -16,38 +16,70 @@
 
 {%- liquid
   assign heading = section.settings.heading | strip
-  if heading == blank
+  if heading == blank or heading == 'Popular models'
     assign heading = 'sections.brand_buttons.popular_models_heading' | t
   endif
 
   assign title_prefix = 'sections.brand_buttons.collection_title_prefix' | t
   assign card_image_placeholder = 'bmw_x5m_e70.webp' | asset_url
-  assign brand_featured_collections = collection.metafields.custom.featured_model_collections.value
+  assign scoped_featured_collections = collection.metafields.custom.featured_model_collections.value
+  assign brand_group = collection.metafields.custom.brand_group.value
+  assign brand_name = brand_group.title.value | strip
+  assign brand_main_collection = brand_group.main_collection.value
   assign is_brand_collection = false
+  assign is_model_collection = false
   assign hide_models_section = false
 
-  if brand_featured_collections != blank and brand_featured_collections.size > 0
-    assign is_brand_collection = true
-    case request.locale.iso_code
-      when 'cs'
-        assign heading = 'Modelové řady'
-      when 'de'
-        assign heading = 'Modellreihen'
-      else
-        assign heading = 'Model ranges'
-    endcase
+  if brand_group != blank and brand_main_collection != blank
+    if collection.id == brand_main_collection.id
+      assign is_brand_collection = true
+    else
+      assign is_model_collection = true
+    endif
+
+    if is_brand_collection
+      case request.locale.iso_code
+        when 'cs'
+          assign heading = 'Modelové řady ' | append: brand_name
+        when 'de'
+          assign heading = brand_name | append: ' Modellreihen'
+        else
+          assign heading = brand_name | append: ' model ranges'
+      endcase
+    else
+      case request.locale.iso_code
+        when 'cs'
+          assign heading = 'Další modely ' | append: brand_name
+        when 'de'
+          assign heading = 'Weitere ' | append: brand_name | append: ' Modelle'
+        else
+          assign heading = 'Other ' | append: brand_name | append: ' models'
+      endcase
+    endif
+  elsif collection.template_suffix contains '-model'
+    assign is_model_collection = true
   endif
 
   if collection.handle == 'outlet' or collection.handle == 'akcesoria' or collection.handle == 'akcesoria-samochodowa'
     assign hide_models_section = true
   endif
-
-  assign featured_collections = brand_featured_collections
-  if hide_models_section == false and featured_collections == blank or featured_collections.size == 0
-    assign featured_collections = settings.collection_featured_models
+  if collection.handle == 'car-accessories-organizers' or collection.handle == 'organizers-to-trunk' or collection.handle == 'podpietki'
+    assign hide_models_section = true
+  endif
+  if collection.handle == 'seat-covers-cushions' or collection.handle == 'mats-for-home' or collection.handle == 'mats-for-pets'
+    assign hide_models_section = true
   endif
 
-  if hide_models_section
+  if brand_group != blank
+    assign featured_collections = brand_group.subcollections.value
+  else
+    assign featured_collections = scoped_featured_collections
+  endif
+  if hide_models_section == false
+    if featured_collections == blank or featured_collections.size == 0
+      assign featured_collections = settings.collection_featured_models
+    endif
+  else
     assign featured_collections = blank
   endif
 
@@ -92,7 +124,13 @@
           {%- endif -%}
 
           {%- liquid
-            assign card_title = featured_item.title | remove: title_prefix | strip
+            assign card_title = featured_item.title
+            assign card_title = card_title | remove: title_prefix
+            assign card_title = card_title | remove: 'Car mats EVA for '
+            assign card_title = card_title | remove: 'Autokoberce EVA pro '
+            assign card_title = card_title | remove: 'Autokoberce EVA '
+            assign card_title = card_title | remove: 'EVA-Automatten für '
+            assign card_title = card_title | strip
             if card_title == blank
               assign card_title = featured_item.title
             endif
