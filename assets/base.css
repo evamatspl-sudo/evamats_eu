@@ -13782,9 +13782,12 @@ textarea.field__input:-webkit-autofill:hover,
 
 /* Drawer */
 .evamats-header-drawer {
-  --eh-bg: #1b1d22;
+  --eh-bg: #191b20;
   --eh-text: #fff;
-  --eh-accent: #ff2741;
+  --eh-muted: #a9adb7;
+  --eh-line: rgba(255, 255, 255, 0.11);
+  --eh-accent: #ff2943;
+  --eh-soft: #202228;
   position: fixed;
   inset: 0;
   z-index: 10001;
@@ -13893,11 +13896,12 @@ textarea.field__input:-webkit-autofill:hover,
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 2;
-  height: 290px;
+  bottom: -8px;
+  z-index: 0;
+  height: 324px;
   pointer-events: none;
   overflow: hidden;
+  opacity: 0.28;
   transition: opacity 0.28s ease;
 }
 
@@ -13905,44 +13909,53 @@ textarea.field__input:-webkit-autofill:hover,
   display: block;
   width: 100%;
   height: 100%;
-  z-index: 2;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: right bottom;
 }
 
 .evamats-header-drawer__top {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 18px 0 18px;
+  gap: 8px;
+  min-height: 82px;
+  padding: 10px 18px 8px;
+  border-bottom: 1px solid var(--eh-line);
+  background: var(--eh-bg);
 }
 
 .evamats-header-drawer__logo {
   display: block;
   width: auto;
-  height: 46px;
-  max-width: 100px;
+  height: 58px;
+  max-width: 148px;
   object-fit: contain;
+  object-position: left center;
 }
 
 .evamats-header-drawer__close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
+  border-radius: 6px;
   background: none;
   color: var(--eh-text);
   cursor: pointer;
 }
 
+.evamats-header-drawer__close:hover,
+.evamats-header-drawer__close:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .evamats-header-drawer__close svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .evamats-header-drawer__top-actions {
@@ -14024,38 +14037,87 @@ textarea.field__input:-webkit-autofill:hover,
   z-index: 1;
   flex: 1 1 auto;
   overflow-y: auto;
-  margin-bottom: 10px;
-  padding: 12px 18px 32px;
+  overscroll-behavior: contain;
+  padding: 16px 18px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.evamats-header-drawer__scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.evamats-header-drawer__scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.evamats-header-drawer__section-label {
+  margin: 0 12px 6px;
+  color: var(--eh-muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .evamats-header-drawer__catalog {
   display: flex;
   flex-direction: column;
-  margin-bottom: 9px;
 }
 
-.evamats-header-drawer__catalog-item {
-  display: flex;
+.evamats-header-drawer__catalog-item,
+.evamats-header-drawer__nav-row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 22px;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   width: 100%;
+  min-height: 54px;
   margin: 0;
-  padding: 16px 0;
+  padding: 0 12px;
   border: 0;
+  border-radius: 6px;
   background: none;
   color: inherit;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: 0;
   text-decoration: none;
   text-align: left;
   list-style: none;
   cursor: pointer;
 }
 
+.evamats-header-drawer__catalog-item + .evamats-header-drawer__catalog-item,
+.evamats-header-drawer__nav-row + .evamats-header-drawer__nav-row,
+.evamats-header-drawer__nav-group + .evamats-header-drawer__nav-row,
+.evamats-header-drawer__nav-row + .evamats-header-drawer__nav-group,
+.evamats-header-drawer__nav-group + .evamats-header-drawer__nav-group {
+  margin-top: 2px;
+}
+
+.evamats-header-drawer__catalog-item:hover,
+.evamats-header-drawer__nav-row:hover {
+  background: rgba(255, 255, 255, 0.055);
+}
+
 .evamats-header-drawer__catalog-item--trigger {
   appearance: none;
+}
+
+.evamats-header-drawer__row-chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--eh-muted);
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.evamats-header-drawer__nav-row.is-open .evamats-header-drawer__row-chevron {
+  transform: rotate(90deg);
+  color: var(--eh-text);
 }
 
 .evamats-header-drawer__catalog-chevron--right {
@@ -14069,30 +14131,36 @@ textarea.field__input:-webkit-autofill:hover,
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 32px 1fr 32px;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
   gap: 8px;
-  min-height: 62px;
-  padding: 11px 18px;
-  border-bottom: 1px solid #26282d;
+  min-height: 82px;
+  padding: 10px 18px 8px;
+  border-bottom: 1px solid var(--eh-line);
+  background: var(--eh-bg);
 }
 
 .evamats-header-drawer__sub-back {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
+  border-radius: 6px;
   background: none;
   color: var(--eh-text);
   cursor: pointer;
 }
 
+.evamats-header-drawer__sub-back:hover,
+.evamats-header-drawer__sub-back:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .evamats-header-drawer__sub-back svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .evamats-header-drawer__sub-title {
@@ -14100,21 +14168,21 @@ textarea.field__input:-webkit-autofill:hover,
   color: var(--eh-text);
   font-size: 16px;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: 0;
   text-align: center;
 }
 
 .evamats-header-drawer__sub-scroll {
   flex: 1 1 auto;
   overflow-y: auto;
-  padding: 37px 18px 24px;
+  padding: 18px 18px 24px;
 }
 
 .evamats-header-drawer__sub-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 49px 7px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14127,76 +14195,85 @@ textarea.field__input:-webkit-autofill:hover,
 .evamats-header-drawer__sub-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  align-items: stretch;
+  min-height: 190px;
   width: 100%;
   margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
+  padding: 9px;
+  border: 1px solid var(--eh-line);
+  border-radius: 8px;
+  background: var(--eh-soft);
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
 .evamats-header-drawer__sub-card-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
-  background: #fff;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 122px;
+  border-radius: 6px;
+  background: #f4f4f5;
   overflow: hidden;
 }
 
 .evamats-header-drawer__sub-card-media .evamats-header-drawer__catalog-icon {
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .evamats-header-drawer__sub-card-media .evamats-header-drawer__catalog-icon--placeholder {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.12);
 }
 
 .evamats-header-drawer__sub-card-label {
-  width: 100%;
-  max-width: 166px;
+  min-width: 0;
+  padding: 11px 5px 5px;
   color: var(--eh-text);
   font-size: 14px;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-align: center;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: left;
 }
 
 .evamats-header-drawer__sub-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .evamats-header-drawer__sub-list-link {
-  color: var(--eh-text);
+  display: block;
+  min-height: 42px;
+  padding: 11px 12px;
+  color: #d8dae0;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: 0;
   text-decoration: none;
+}
+
+.evamats-header-drawer__sub-list-link:hover {
+  color: var(--eh-text);
 }
 
 .evamats-header-drawer__sub-footer {
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  padding: 0 18px 32px;
+  padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--eh-line);
 }
 
 .evamats-header-drawer__sub-cta {
@@ -14205,29 +14282,37 @@ textarea.field__input:-webkit-autofill:hover,
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 52px;
+  min-height: 58px;
   padding: 0 18px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--eh-accent);
   color: var(--eh-text);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
 .evamats-header-drawer__catalog-icon {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
   object-fit: contain;
+}
+
+.evamats-header-drawer__catalog-icon--inline {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--eh-text);
 }
 
 .evamats-header-drawer__catalog-icon--inline svg {
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 23px;
+  height: 23px;
 }
 
 .evamats-header-drawer__catalog-icon--placeholder {
@@ -14244,9 +14329,11 @@ textarea.field__input:-webkit-autofill:hover,
   opacity: 0.85;
 }
 
-.evamats-header-drawer__catalog-label {
+.evamats-header-drawer__catalog-label,
+.evamats-header-drawer__nav-label {
   flex: 1 1 auto;
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .evamats-header-drawer__catalog-chevron {
@@ -14260,104 +14347,109 @@ textarea.field__input:-webkit-autofill:hover,
 .evamats-header-drawer__nav {
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
+  padding-bottom: 8px;
 }
 
-.evamats-header-drawer__nav > .evamats-header-drawer__nav-group,
-.evamats-header-drawer__nav > .evamats-header-drawer__nav-link {
-  padding: 11px 0;
-}
-
-.evamats-header-drawer__nav > :first-child {
-  padding-top: 0;
-}
-
-.evamats-header-drawer__nav > :last-child {
-  padding-bottom: 0;
-}
-
-.evamats-header-drawer__nav-link {
-  display: block;
+.evamats-header-drawer__nav-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
   color: var(--eh-text);
+}
+
+.evamats-header-drawer__nav-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.evamats-header-drawer__nav-row--accent .evamats-header-drawer__nav-icon {
+  color: var(--eh-accent);
+}
+
+.evamats-header-drawer__nav-meta {
+  display: block;
+  margin-top: 3px;
+  color: var(--eh-muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.evamats-header-drawer__nav-accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin: 0 12px;
+  transition: grid-template-rows 0.18s ease;
+}
+
+.evamats-header-drawer__nav-accordion.is-open {
+  grid-template-rows: 1fr;
+}
+
+.evamats-header-drawer__nav-accordion-inner {
+  display: grid;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.evamats-header-drawer__nav-sublink {
+  min-height: 42px;
+  padding: 11px 12px 11px 42px;
+  color: #d8dae0;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
   text-decoration: none;
 }
 
-.evamats-header-drawer__nav-link--top {
-  font-weight: 600;
-}
-
-.evamats-header-drawer__nav-group-title {
-  margin: 0 0 22px;
+.evamats-header-drawer__nav-sublink:hover {
   color: var(--eh-text);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.evamats-header-drawer__nav-sub {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 22px;
-  padding: 0;
-  list-style: none;
-}
-
-.evamats-header-drawer__nav-sub .evamats-header-drawer__nav-link {
-  padding: 11px 0;
-}
-
-.evamats-header-drawer__nav-sub > li:first-child .evamats-header-drawer__nav-link {
-  padding-top: 0;
-}
-
-.evamats-header-drawer__nav-sub > li:last-child .evamats-header-drawer__nav-link {
-  padding-bottom: 0;
 }
 
 .evamats-header-drawer__divider {
   height: 1px;
-  margin: 0 0 20px;
+  margin: 8px 30px;
   border: 0;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--eh-line);
+}
+
+.evamats-header-drawer__dock {
+  position: relative;
+  z-index: 4;
+  flex-shrink: 0;
+  padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--eh-line);
+  background: transparent;
 }
 
 .evamats-header-drawer__car-cta {
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  display: flex;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 28px;
   align-items: center;
   gap: 8px;
-  margin: 0 18px 24px;
-  min-height: 52px;
-  padding: 0 14px 0 calc(17px + 54px + 8px);
-  border: 1.5px solid #e31e29;
-  border-radius: 16px;
-  background: rgba(227, 30, 41, 0.12);
+  width: 100%;
+  min-height: 66px;
+  margin: 0;
+  padding: 0 15px 0 8px;
+  overflow: hidden;
+  border: 1.5px solid var(--eh-accent);
+  border-radius: 8px;
+  background: rgba(77, 20, 31, 0.78);
   color: var(--eh-text);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
 .evamats-header-drawer__car-cta-icon {
-  position: absolute;
-  left: 17px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
 }
 
 .evamats-header-drawer__car-cta-img {
@@ -14367,57 +14459,104 @@ textarea.field__input:-webkit-autofill:hover,
   object-fit: contain;
 }
 
-.evamats-header-drawer__car-cta-label {
-  flex: 1 1 auto;
+.evamats-header-drawer__car-cta-copy {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
+.evamats-header-drawer__car-cta-label {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.evamats-header-drawer__car-cta-hint {
+  display: block;
+  margin-top: 4px;
+  color: #d4d6dc;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
 .evamats-header-drawer__car-cta-arrow {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
 }
 
 .evamats-header-drawer__contact {
+  display: none;
+}
+
+.evamats-header-drawer__utility {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0 19px 32px;
-}
-
-.evamats-header-drawer__contact-phone {
-  color: var(--eh-text);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.409;
-  letter-spacing: -0.44px;
-  text-decoration: none;
-}
-
-.evamats-header-drawer__contact-phone + .evamats-header-drawer__contact-phone {
-  margin-top: 0;
-}
-
-.evamats-header-drawer__contact-email {
-  color: #ff2741;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.36px;
-  text-decoration: none;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-top: auto;
+  padding: 16px 18px 22px;
+  border-top: 1px solid var(--eh-line);
+  background: transparent;
 }
 
 .evamats-header-drawer__lang {
   position: relative;
-  z-index: 1;
-  margin: 0 18px 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 190px;
+}
+
+.evamats-header-drawer__utility-btn:not(.evamats-header-drawer__utility-btn--lang) {
+  flex: 0 0 48px;
+  width: 48px;
+  padding: 0;
 }
 
 .evamats-header-drawer__lang .localization-form,
 .evamats-header-drawer__lang .disclosure {
   position: relative;
+}
+
+.evamats-header-drawer__utility-btn {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid var(--eh-line);
+  border-radius: 6px;
+  background: var(--eh-soft);
+  color: var(--eh-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.evamats-header-drawer__utility-btn--lang {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.evamats-header-drawer__utility-icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--eh-accent);
 }
 
 .evamats-header-drawer__lang-button {
@@ -14464,10 +14603,11 @@ textarea.field__input:-webkit-autofill:hover,
 
 .evamats-header-drawer__lang-chevron {
   flex: 0 0 auto;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--eh-accent);
   transition: transform 0.2s ease;
 }
 
+.evamats-header-drawer__utility-btn--lang[aria-expanded='true'] .evamats-header-drawer__lang-chevron,
 .evamats-header-drawer__lang-button[aria-expanded='true'] .evamats-header-drawer__lang-chevron {
   transform: rotate(180deg);
   color: var(--eh-text);

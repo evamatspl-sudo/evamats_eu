@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Rectangle_4786.webp",
-        "image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
+        "image_desktop": "shopify://shop_images/image-1784989173099.webp",
+        "image_mobile": "shopify://shop_images/image-1784989181653.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -35,13 +35,17 @@
       "block_order": [
         "37f49a36-c9f0-4209-a441-c60995efa21c"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "Popular models",
+        "margin_bottom": true
+      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "mobile_button_label": "Vybrat",
         "image_ratio": "square",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -173,8 +177,14 @@
         "heading_before": "Nejoblíbenější značky",
         "heading_accent": "",
         "heading_after": "",
+        "button_label": "See all",
+        "button_link": "",
         "catalog-header": "",
-        "margin-bottom": false
+        "margin-bottom": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "9f7a6f95-0ca2-45b2-acf7-8ef03ee8e4d0": {
@@ -190,11 +200,15 @@
       "disabled": true,
       "settings": {
         "title": "Nejprodávanější",
+        "view_all_label": "Zobrazit vše",
         "collection": "bestsellerss",
         "products_to_show": 12,
+        "mobile_button_label": "Vybrat",
         "show_view_all": true,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "98f316f3-e1dc-4e02-a656-d60441148ba0": {
@@ -202,31 +216,19 @@
       "disabled": true,
       "settings": {
         "title": "Příslušenství",
+        "view_all_label": "Zobrazit vše",
         "collection": "akcesoria",
         "products_to_show": 12,
+        "mobile_button_label": "Vybrat",
         "show_view_all": true,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "17001239790dcf8d9f": {
       "type": "apps",
-      "blocks": {
-        "d6550e17-f320-45e4-b373-f7a6bf75ebfb": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "disabled": true,
-          "settings": {
-            "contentIndex": "1",
-            "themeId": "light",
-            "autoscroll": true,
-            "writeReview": true,
-            "fixedReviewsHeight": true
-          }
-        }
-      },
-      "block_order": [
-        "d6550e17-f320-45e4-b373-f7a6bf75ebfb"
-      ],
       "disabled": true,
       "settings": {
         "include_margins": true

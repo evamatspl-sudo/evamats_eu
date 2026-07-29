@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carvion mobile navigation concept</title>
+  <style>
+    /* Hallmark · component: mobile navigation drawer · genre: modern-minimal
+     * critique: P5 H5 E4 S5 R5 V4
+     */
+    @font-face {
+      font-family: "Montserrat";
+      src: url("https://carvionauto.cz/cdn/fonts/montserrat/montserrat_n6.1326b3e84230700ef15b3a29fb520639977513e0.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --color-canvas: #eef0f3;
+      --color-panel: #191b20;
+      --color-panel-raised: #23262d;
+      --color-panel-soft: #202228;
+      --color-line: rgba(255, 255, 255, 0.11);
+      --color-text: #ffffff;
+      --color-muted: #a9adb7;
+      --color-accent: #ff2943;
+      --color-accent-soft: rgba(255, 41, 67, 0.12);
+      --color-focus: #ffffff;
+      --font-ui: "Montserrat", Arial, sans-serif;
+      --panel-width: 430px;
+      --header-height: 82px;
+      --dock-height: 104px;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      overflow-x: clip;
+    }
+
+    body {
+      display: grid;
+      min-height: 100svh;
+      place-items: stretch center;
+      background: var(--color-canvas);
+      color: var(--color-text);
+      font-family: var(--font-ui);
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      appearance: none;
+    }
+
+    .prototype {
+      position: relative;
+      width: min(100%, var(--panel-width));
+      min-height: 100svh;
+      overflow: hidden;
+      background: var(--color-panel);
+      box-shadow: 0 0 40px rgba(12, 14, 18, 0.16);
+    }
+
+    .drawer {
+      display: grid;
+      min-height: 100svh;
+      grid-template-rows: var(--header-height) minmax(0, 1fr) var(--dock-height);
+    }
+
+    .drawer__header {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr) 40px;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px 8px;
+      border-bottom: 1px solid var(--color-line);
+      background: var(--color-panel);
+    }
+
+    .drawer__header--root {
+      grid-template-columns: minmax(0, 1fr) 40px;
+    }
+
+    .drawer__logo {
+      display: block;
+      width: 148px;
+      height: 58px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .drawer__title {
+      min-width: 0;
+      margin: 0;
+      overflow-wrap: anywhere;
+      color: var(--color-text);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .icon-button {
+      display: inline-grid;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      place-items: center;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    .icon-button:hover,
+    .icon-button:focus-visible {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .icon-button:focus-visible,
+    .menu-row:focus-visible,
+    .utility-button:focus-visible,
+    .car-cta:focus-visible {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 2px;
+    }
+
+    .icon-button svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.8;
+    }
+
+    .drawer__viewport {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .drawer__view {
+      position: absolute;
+      inset: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+      transition: transform 220ms ease, opacity 180ms ease;
+    }
+
+    .drawer__view::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .drawer__view::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .drawer__view--main {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .drawer__view--main > *:not(.drawer__texture) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .drawer__texture {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 324px;
+      object-fit: cover;
+      object-position: right bottom;
+      opacity: 0.28;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .drawer__view--sub {
+      transform: translateX(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .prototype.is-sub-open .drawer__view--main {
+      transform: translateX(-18%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .prototype.is-sub-open .drawer__view--sub {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .menu-section {
+      padding: 16px 18px 8px;
+    }
+
+    .menu-section + .menu-section {
+      padding-top: 8px;
+    }
+
+    .section-label {
+      margin: 0 12px 6px;
+      color: var(--color-muted);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .menu-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .menu-row {
+      display: grid;
+      width: 100%;
+      min-height: 54px;
+      grid-template-columns: 30px minmax(0, 1fr) 22px;
+      align-items: center;
+      gap: 12px;
+      padding: 0 12px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--color-text);
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .menu-row:hover {
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .menu-row + .menu-row {
+      margin-top: 2px;
+    }
+
+    .menu-row__icon {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      color: var(--color-text);
+    }
+
+    .menu-row__icon img {
+      display: block;
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .menu-row__icon svg {
+      width: 23px;
+      height: 23px;
+      stroke-width: 1.75;
+    }
+
+    .menu-row__label {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .menu-row__meta {
+      display: block;
+      margin-top: 3px;
+      color: var(--color-muted);
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .menu-row__chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--color-muted);
+      transition: transform 180ms ease;
+    }
+
+    .menu-row.is-open .menu-row__chevron {
+      transform: rotate(90deg);
+      color: var(--color-text);
+    }
+
+    .menu-row--accent .menu-row__icon,
+    .menu-row--accent .menu-row__meta {
+      color: var(--color-accent);
+    }
+
+    .menu-divider {
+      height: 1px;
+      margin: 8px 30px;
+      border: 0;
+      background: var(--color-line);
+    }
+
+    .info-links {
+      display: grid;
+      grid-template-rows: 0fr;
+      margin: 0 12px;
+      transition: grid-template-rows 180ms ease;
+    }
+
+    .info-links.is-open {
+      grid-template-rows: 1fr;
+    }
+
+    .info-links__inner {
+      display: grid;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .info-links a {
+      min-height: 42px;
+      padding: 11px 12px 11px 42px;
+      color: #d8dae0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .info-links a:hover {
+      color: var(--color-text);
+    }
+
+    .utility-bar {
+      display: grid;
+      grid-template-columns: minmax(128px, 190px) 48px 48px;
+      gap: 8px;
+      justify-content: start;
+      margin-top: 8px;
+      padding: 16px 18px 22px;
+      border-top: 1px solid var(--color-line);
+    }
+
+    .utility-button {
+      display: flex;
+      min-width: 0;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 13px;
+      border: 1px solid var(--color-line);
+      border-radius: 6px;
+      background: var(--color-panel-soft);
+      color: var(--color-text);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .utility-button--language {
+      justify-content: flex-start;
+    }
+
+    .utility-button svg {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent);
+      stroke-width: 1.8;
+    }
+
+    .utility-button span {
+      min-width: 0;
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .drawer__dock {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--color-line);
+      background: var(--color-panel);
+    }
+
+    .drawer__dock::before {
+      position: absolute;
+      inset: 0;
+      background-image: url("https://cdn.shopify.com/s/files/1/0790/9218/7414/files/Group_1948754924_1.webp");
+      background-position: right 42%;
+      background-size: 420px auto;
+      content: "";
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .car-cta {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 100%;
+      min-height: 66px;
+      grid-template-columns: 58px minmax(0, 1fr) 28px;
+      align-items: center;
+      gap: 8px;
+      padding: 0 15px 0 8px;
+      overflow: hidden;
+      border: 1.5px solid var(--color-accent);
+      border-radius: 8px;
+      background: rgba(77, 20, 31, 0.78);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .car-cta__image {
+      display: block;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .car-cta__copy {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .car-cta__title {
+      display: block;
+      overflow-wrap: anywhere;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .car-cta__hint {
+      display: block;
+      margin-top: 4px;
+      color: #d4d6dc;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .car-cta svg {
+      position: relative;
+      z-index: 1;
+      width: 22px;
+      height: 22px;
+      stroke-width: 1.8;
+    }
+
+    .sub-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 18px 18px 24px;
+    }
+
+    .sub-link {
+      display: flex;
+      min-width: 0;
+      min-height: 190px;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 9px;
+      border: 1px solid var(--color-line);
+      border-radius: 8px;
+      background: var(--color-panel-soft);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .sub-link__media {
+      display: grid;
+      width: 100%;
+      height: 122px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #f4f4f5;
+    }
+
+    .sub-link__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .sub-link__title {
+      min-width: 0;
+      padding: 11px 5px 5px;
+      overflow-wrap: anywhere;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .sub-dock-link {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 100%;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--color-accent);
+      color: var(--color-text);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    @media (min-width: 431px) {
+      .prototype {
+        min-height: min(900px, 100svh);
+      }
+
+      .drawer {
+        min-height: min(900px, 100svh);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="prototype" id="prototype">
+    <section class="drawer" aria-label="Návrh mobilní navigace Carvion">
+      <header class="drawer__header drawer__header--root" id="root-header">
+        <img
+          class="drawer__logo"
+          src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/logo_CARVION_colored_white.png?v=1781014998"
+          alt="CARVION"
+        >
+        <button class="icon-button" type="button" aria-label="Zavřít nabídku">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+
+      <header class="drawer__header" id="sub-header" hidden>
+        <button class="icon-button" type="button" aria-label="Zpět" data-back>
+          <i data-lucide="arrow-left"></i>
+        </button>
+        <h1 class="drawer__title">Pro automobily</h1>
+        <button class="icon-button" type="button" aria-label="Zavřít nabídku">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+
+      <div class="drawer__viewport">
+        <div class="drawer__view drawer__view--main">
+          <img
+            class="drawer__texture"
+            src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/Group_1948754924_1.webp"
+            alt=""
+          >
+          <section class="menu-section">
+            <p class="section-label">Nakupovat</p>
+            <nav class="menu-list" aria-label="Kategorie">
+              <button class="menu-row" type="button" data-open-sub>
+                <span class="menu-row__icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/t/29/assets/Car.svg?v=1780941406" alt="">
+                </span>
+                <span class="menu-row__label">Pro automobily</span>
+                <i class="menu-row__chevron" data-lucide="chevron-right"></i>
+              </button>
+
+              <a class="menu-row" href="#">
+                <span class="menu-row__icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/t/29/assets/Home.svg?v=1780941407" alt="">
+                </span>
+                <span class="menu-row__label">EVA do domácnosti</span>
+                <i class="menu-row__chevron" data-lucide="arrow-up-right"></i>
+              </a>
+
+              <a class="menu-row" href="#">
+                <span class="menu-row__icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/t/29/assets/Cat%20Footprint.svg?v=1780941407" alt="">
+                </span>
+                <span class="menu-row__label">Zvířata</span>
+                <i class="menu-row__chevron" data-lucide="arrow-up-right"></i>
+              </a>
+
+              <a class="menu-row" href="#">
+                <span class="menu-row__icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/t/29/assets/Medium%20Icons.svg?v=1780941407" alt="">
+                </span>
+                <span class="menu-row__label">Příslušenství</span>
+                <i class="menu-row__chevron" data-lucide="chevron-right"></i>
+              </a>
+            </nav>
+          </section>
+
+          <hr class="menu-divider">
+
+          <section class="menu-section">
+            <nav class="menu-list" aria-label="Další nabídka">
+              <a class="menu-row menu-row--accent" href="#">
+                <span class="menu-row__icon"><i data-lucide="badge-percent"></i></span>
+                <span class="menu-row__label">Outlet</span>
+                <i class="menu-row__chevron" data-lucide="arrow-up-right"></i>
+              </a>
+
+              <a class="menu-row" href="#">
+                <span class="menu-row__icon"><i data-lucide="ruler"></i></span>
+                <span class="menu-row__label">
+                  Na míru
+                  <span class="menu-row__meta">Autokoberce a koberce pro lodě</span>
+                </span>
+                <i class="menu-row__chevron" data-lucide="chevron-right"></i>
+              </a>
+
+              <button class="menu-row" type="button" id="info-toggle" aria-expanded="false" aria-controls="info-links">
+                <span class="menu-row__icon"><i data-lucide="circle-help"></i></span>
+                <span class="menu-row__label">Více o Carvion</span>
+                <i class="menu-row__chevron" data-lucide="chevron-right"></i>
+              </button>
+              <div class="info-links" id="info-links">
+                <div class="info-links__inner">
+                  <a href="#">O nás</a>
+                  <a href="#">FAQ</a>
+                  <a href="#">Výhody přípravku Carvion</a>
+                  <a href="#">Fotografie autokoberečků</a>
+                  <a href="#">Realizace</a>
+                  <a href="#">Partnerský program</a>
+                  <a href="#">Kontakt</a>
+                </div>
+              </div>
+            </nav>
+          </section>
+
+          <div class="utility-bar">
+            <button class="utility-button utility-button--language" type="button">
+              <i data-lucide="globe-2"></i>
+              <span>Čeština (CZ)</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <a class="utility-button" href="tel:+420292333695" aria-label="Zavolat na +420 292 333 695" title="Zavolat">
+              <i data-lucide="phone"></i>
+            </a>
+            <a class="utility-button" href="mailto:info@carvionauto.cz" aria-label="Napsat na info@carvionauto.cz" title="Napsat e-mail">
+              <i data-lucide="mail"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="drawer__view drawer__view--sub" aria-hidden="true">
+          <nav class="sub-links" aria-label="Kategorie pro automobily">
+            <a class="sub-link" href="#">
+              <span class="sub-link__media">
+                <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/image_106.webp" alt="">
+              </span>
+              <span class="sub-link__title">Autodoplňky</span>
+            </a>
+
+            <a class="sub-link" href="#">
+              <span class="sub-link__media">
+                <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/image_90_c8545f80-aa0f-4234-b472-2896a77c80ba.webp" alt="">
+              </span>
+              <span class="sub-link__title">Organizéry do kufru</span>
+            </a>
+
+            <a class="sub-link" href="#">
+              <span class="sub-link__media">
+                <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/image_91_dd1c4b12-b256-496e-93af-547a634bc1ca.webp" alt="">
+              </span>
+              <span class="sub-link__title">Podložky pod patu</span>
+            </a>
+
+            <a class="sub-link" href="#">
+              <span class="sub-link__media">
+                <img src="https://cdn.shopify.com/s/files/1/0790/9218/7414/files/image_92_ae3621df-f040-4652-9031-662583d182b7.webp" alt="">
+              </span>
+              <span class="sub-link__title">Další příslušenství</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <footer class="drawer__dock" id="root-dock">
+        <a class="car-cta" href="#">
+          <img
+            class="car-cta__image"
+            src="https://cdn.shopify.com/s/files/1/0790/9218/7414/t/29/assets/car_button.webp?v=1780941407"
+            alt=""
+          >
+          <span class="car-cta__copy">
+            <span class="car-cta__title">Vyberte si auto</span>
+            <span class="car-cta__hint">Najdeme přesně padnoucí autokoberce</span>
+          </span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </footer>
+
+      <footer class="drawer__dock" id="sub-dock" hidden>
+        <a class="sub-dock-link" href="#">Zobrazit všechny autodoplňky</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    const prototype = document.getElementById("prototype");
+    const rootHeader = document.getElementById("root-header");
+    const subHeader = document.getElementById("sub-header");
+    const rootDock = document.getElementById("root-dock");
+    const subDock = document.getElementById("sub-dock");
+    const subView = document.querySelector(".drawer__view--sub");
+    const infoToggle = document.getElementById("info-toggle");
+    const infoLinks = document.getElementById("info-links");
+
+    function setSubView(open) {
+      prototype.classList.toggle("is-sub-open", open);
+      rootHeader.hidden = open;
+      subHeader.hidden = !open;
+      rootDock.hidden = open;
+      subDock.hidden = !open;
+      subView.setAttribute("aria-hidden", String(!open));
+    }
+
+    document.querySelector("[data-open-sub]").addEventListener("click", () => setSubView(true));
+    document.querySelector("[data-back]").addEventListener("click", () => setSubView(false));
+
+    infoToggle.addEventListener("click", () => {
+      const open = infoToggle.getAttribute("aria-expanded") !== "true";
+      infoToggle.setAttribute("aria-expanded", String(open));
+      infoToggle.classList.toggle("is-open", open);
+      infoLinks.classList.toggle("is-open", open);
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>

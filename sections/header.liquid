@@ -371,6 +371,16 @@
       btn.addEventListener('click', goBack);
     });
 
+    drawer.querySelectorAll('[data-drawer-accordion]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        btn.classList.toggle('is-open', open);
+        const panel = drawer.querySelector(`#${btn.getAttribute('aria-controls')}`);
+        if (panel) panel.classList.toggle('is-open', open);
+      });
+    });
+
     document.addEventListener('keydown', (event) => {
       if (!drawer.classList.contains('is-open') || drawer.classList.contains('is-closing')) return;
       if (event.key === 'Escape') {
@@ -624,8 +634,33 @@
     },
     {
       "type": "text",
+      "id": "drawer_catalog_label",
+      "label": "Catalog section label",
+      "default": "Nakupovat"
+    },
+    {
+      "type": "text",
+      "id": "drawer_more_label",
+      "label": "More about accordion label",
+      "default": "Více o Carvion",
+      "info": "Wraps remaining mobile-menu links into one accordion. Leave empty to list them separately."
+    },
+    {
+      "type": "text",
+      "id": "drawer_custom_meta",
+      "label": "Custom-order row subtitle",
+      "default": "Autokoberce a koberce pro lodě"
+    },
+    {
+      "type": "text",
       "id": "drawer_car_cta_label",
       "label": "Select car button label"
+    },
+    {
+      "type": "text",
+      "id": "drawer_car_cta_hint",
+      "label": "Select car button hint",
+      "default": "Najdeme přesně padnoucí autokoberce"
     },
     {
       "type": "url",

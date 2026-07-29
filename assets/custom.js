@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function () {
             spaceBetween: 4,
             speed: 480,
             watchOverflow: true,
-            centeredSlides: false,
+            centeredSlides: true,
             breakpoints: {
                 750: {
                     slidesPerView: 4.2,
