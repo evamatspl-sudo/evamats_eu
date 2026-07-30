@@ -98,6 +98,20 @@
             "menu_item_handle": "e-gift-card",
             "icon": "shopify://shop_images/carvion-menu-tile-gift-card.webp"
           }
+        },
+        "catalog_drawer_icon_HyWfKX": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "rubber-car-mats-new",
+            "icon": "shopify://shop_images/evamats-rubber-mats-mobile-sidebar.webp"
+          }
+        },
+        "catalog_drawer_icon_MPPP8V": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "velour-car-mats",
+            "icon": "shopify://shop_images/evamats-velour-mats-mobile-sidebar.webp"
+          }
         }
       },
       "block_order": [
@@ -109,7 +123,9 @@
         "catalog_drawer_icon_6Lzwmx",
         "catalog_drawer_icon_NmkmV7",
         "catalog_drawer_icon_xwCwyy",
-        "catalog_drawer_icon_GMznEV"
+        "catalog_drawer_icon_GMznEV",
+        "catalog_drawer_icon_HyWfKX",
+        "catalog_drawer_icon_MPPP8V"
       ],
       "custom_css": [],
       "settings": {
@@ -121,7 +137,11 @@
         "catalog_button_image": "shopify://shop_images/Group_1632526272.webp",
         "catalog_button_label": "Katalog",
         "drawer_background_image": "shopify://shop_images/Group_1948754924_1.webp",
+        "drawer_catalog_label": "Nakupovat",
+        "drawer_more_label": "Více o Carvion",
+        "drawer_custom_meta": "Autokoberce a koberce pro lodě",
         "drawer_car_cta_label": "Vyberte si auto",
+        "drawer_car_cta_hint": "Najdeme přesně padnoucí autokoberce",
         "drawer_car_cta_url": "shopify://collections/all-car-mats",
         "mobile_car_link_url": "",
         "drawer_phone_1": "+420 292 333 695",
