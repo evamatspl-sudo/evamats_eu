@@ -46,7 +46,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* Кадр слота ~4.7:1, картинка ~2.4:1 → видно только середину по высоте.
+     Смещаем вниз, чтобы бирка и красный кант попадали в кадр целиком. */
+  object-position: center 80%;
   display: block;
 }
 
