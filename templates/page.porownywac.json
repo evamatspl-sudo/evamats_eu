@@ -640,7 +640,7 @@
       "settings": {
         "image": "shopify://shop_images/Rectangle_91_1.png",
         "header": "<p><strong>Čím se liší</strong> koberce EVA od tradičních gumových koberců?</p>",
-        "richtext": "<p>Istnieje wiele podobieństw, jak i różnic, które z jednej strony łączą, a z drugiej dzielą tradycyjne dywaniki gumowe od produktów EVA. Przyjrzyjmy się bliżej och wspólnym cechom.</p><p>Przede wszystkim zarówno gumowe dywaniki, jak i dywaniki EVA nie wchłaniają wody. Ich specjalna budowa zapobiega więc przeciekaniu nie tylko w deszczowe, ale i śnieżne dni.</p><p>Co więcej, oba produkty spełniają się rewelacyjnie jako ochrona podłogi przez każdym rodzajem brudu. Dzieje się tak, ponieważ materiał, z jakiego są wyprodukowane, nie przepuszcza żadnych zabrudzeń i płynów. Gumowe dywaniki samochodowe nie pokrywają jednak podłoża w całości. Chronią więc wykładzinę pojazdu w około 70–90% przed brudem. </p><p>Dywaniki EVA są wykonywane na wymiar, co oznacza, że zapewniają ochronę maksymalnie dużej powierzchni podłoża. <strong>Jest to nawet 99% zakrycia wykładziny!</strong> Ponadto, dywaniki EVA są bezzapachowe i nietoksyczne. Tradycyjne dywaniki gumowe są nieprzyjemne w zapachu, a w ich składzie znajdują się toksyczne substancje. Brud przemieszcza się po nich, ponieważ nie jest on wchłaniany w materiał.</p><p>W dywanikach EVA zanieczyszczenia są <strong>zatrzymywane w technologicznych komórkach</strong>. Są też o wiele lżejsze, a co się z tym wiąże, łatwiejsze w wyciąganiu z samochodu. Nie wymagają też specjalnego czyszczenia.</p><p></p>",
+        "richtext": "<p>Mezi tradičními gumovými koberci a produkty EVA je řada podobností i rozdílů. Podívejme se nejprve na to, co mají společného.</p><p>Především gumové i EVA koberce nevsakují vodu. Jejich konstrukce tak zabraňuje protékání nejen v deštivých, ale i ve sněhových dnech.</p><p>Oba produkty navíc výborně chrání podlahu před jakýmkoli druhem nečistot. Materiál, ze kterého jsou vyrobeny, nepropouští žádné nečistoty ani kapaliny. Gumové autokoberce však nepokrývají podlahu celou — chrání koberec vozu přibližně ze 70–90 %.</p><p>Koberce EVA se vyrábějí na míru, takže chrání maximální možnou plochu podlahy. <strong>Jde až o 99 % pokrytí!</strong> Navíc jsou bez zápachu a netoxické. Tradiční gumové koberce nepříjemně zapáchají a v jejich složení se nacházejí toxické látky. Nečistoty se po nich přesouvají, protože se do materiálu nevsáknou.</p><p>U koberců EVA jsou nečistoty <strong>zachyceny v technologických buňkách</strong>. Jsou také mnohem lehčí, a tedy se snadněji vyndávají z auta. Nevyžadují ani žádné speciální čištění.</p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -795,64 +795,64 @@
         "text_DzQCYQ": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czy dywaniki na pewno będą pasować?</p>",
-            "des": "<p>Oczywiście, że tak. Dywaniki wykonujemy indywidualnie pod dany model auta uwzględniając marke, model, generację, rocznik, skrzynie biegów oraz dane wyposażenie. Dywaniki poddajemy ręcznej obróbce czyli wycinamy je ręcznie, obszywamy i ręcznie profilujemy. Nasze projekty opierają się tylko i wyłącznie na naszych fizycznie pobieranych pomiarach z fizycznych samochodów, więc nie ma tu mowy o jakiś niedoskonałościach. Dywaniki pokrywają całą podłogę uwzględniając drobne szczegóły i zakrywają  miejsca, które dywaniki gumowe czy welurowe mogą tylko pomarzyć.</p>"
+            "hd": "<p>Budou koberce určitě pasovat?</p>",
+            "des": "<p>Samozřejmě. Koberce vyrábíme individuálně pro každý model auta — zohledňujeme značku, model, generaci, rok výroby, převodovku i konkrétní výbavu. Zpracováváme je ručně: ručně vyřezáváme, obšíváme a profilujeme. Naše návrhy vycházejí výhradně z měření, která sami odebíráme z fyzických vozů, takže o nepřesnostech nemůže být řeč. Koberce pokrývají celou podlahu včetně drobných detailů a zakryjí i místa, o kterých se gumovým nebo velurovým kobercům může jen zdát.</p>"
           }
         },
         "text_mX9qEM": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czym to się czyści?</p>",
-            "des": "<p>Dzięki swojej technologii brud, który gromadzi się na dywaniku nie wchłania się oraz nie chce się go trzymać, więc dywaniki wystarczy wytrzepać i wszystko z nich gładko schodzi, ewentualnie przy dużych zabrudzeniach błota, dywaniki można śmiało umyć myjką ciśnieniowa i w drogę.</p>"
+            "hd": "<p>Čím se čistí?</p>",
+            "des": "<p>Díky použité technologii se nečistoty do koberce nevsakují ani na něm nedrží — stačí koberec vyklepat a vše z něj hladce spadne. Při větším znečištění blátem jej můžete klidně umýt tlakovou myčkou a hned pokračovat v jízdě.</p>"
           }
         },
         "text_VPPPMN": {
           "type": "text",
           "settings": {
             "hd": "<p>Koberec na tunel? Co to je?</p>",
-            "des": "<p>Dywaniki Carvion przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta</p>"
+            "des": "<p>Koberce Carvion pokrývají až 98 % podlahy, proto dbáme na každý detail — zakrytý je i tunel vzadu, díky čemuž je podlaha vždy čistá.</p>"
           }
         },
         "text_XjTUky": {
           "type": "text",
           "settings": {
-            "hd": "<p>Jak długo one posłużą?</p>",
-            "des": "<p>Materiał EVA jest znany ze swojej wytrzymałości i odporności na ścieranie. Używają go również na siłowniach (jako maty pod maszyny) i w butach (podeszwy). W porównaniu do alternatyw, dywaniki EVA radzą sobie fenomenalnie z problemem przecierania się, co pozwala używać je przez 5-7 lat bez śladów użytkowania.</p>"
+            "hd": "<p>Jak dlouho vydrží?</p>",
+            "des": "<p>Materiál EVA je známý svou pevností a odolností proti oděru. Používá se i v posilovnách (jako podložky pod stroje) a v obuvi (podrážky). Ve srovnání s alternativami si koberce EVA s prodíráním poradí skvěle, takže je lze používat 5–7 let bez známek opotřebení.</p>"
           }
         },
         "text_e6APUk": {
           "type": "text",
           "settings": {
-            "hd": "<p>Klasyczne i 3D, czym to się różni?</p>",
-            "des": "<p>W obu kompletach staramy się maksymalnie przykryć podłogę w samochodzie, jedynie w komplecie 3D również przykrywamy boczną tapicerkę przy podłodze oraz jest więcej elementów 3D (wyprofilowań na podłodze), które uwzględniamy i stosujemy przy produkcji takich dywaników, przez co przylegają idealnie.</p>"
+            "hd": "<p>Klasické a 3D — jaký je rozdíl?</p>",
+            "des": "<p>U obou sad se snažíme pokrýt podlahu auta co nejvíce. U sady 3D navíc zakrýváme i boční čalounění u podlahy a zohledňujeme více 3D prvků (vyprofilování podlahy), díky čemuž koberce doléhají dokonale.</p>"
           }
         },
         "text_exrU7q": {
           "type": "text",
           "settings": {
-            "hd": "<p>Co to jest materiał Eva?</p>",
-            "des": "<p>Jest to pianka o grubości 10mm i głębokością komórek 7mm, co pozwala bez problemu zachować brud i wodę w jednym miejscu bez możliwości przedostawania się ich pod dywanik, aż nie wytrzepiemy go.</p>"
+            "hd": "<p>Co je materiál EVA?</p>",
+            "des": "<p>Je to pěna o tloušťce 10 mm s hloubkou buněk 7 mm, která bez problému udrží nečistoty a vodu na jednom místě — pod koberec se nedostanou, dokud jej nevyklepete.</p>"
           }
         },
         "text_TqKDiD": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czy dywaniki EVA są na lato czy na zimę?</p>",
-            "des": "<p>Dywaniki EVA są całoroczne. Praktyczne w użytkowaniu jak zimą (są wodoodporne, łatwe w czyszczeniu i przykrywają do 98% podłogi) tak i latem (są bezzapachowe, przyjemne w dotyku, nie poddają się deformacjom pod wpływem temperatury)</p>"
+            "hd": "<p>Jsou koberce EVA na léto, nebo na zimu?</p>",
+            "des": "<p>Koberce EVA jsou celoroční. Praktické jsou v zimě (jsou voděodolné, snadno se čistí a pokrývají až 98 % podlahy) i v létě (jsou bez zápachu, příjemné na dotek a nedeformují se vlivem teploty).</p>"
           }
         },
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
             "hd": "<p>Jaká je dodací lhůta?</p>",
-            "des": "<p>Od momentu złożenia zamówienia trwa to mniej więcej ok 2 tygodni, z uwagi na to, że dywaniki wykonywane są na bieżąco pod zamówienie klienta. W przypadku jeśli posiadasz bardzo wyjątkowy samochód lub inny pojazd (motorówka, helikopter, koparka lub ciągnik) czas realizacji może się wydłużyć nawet do 4-6 tygodni. </p>"
+            "des": "<p>Od odeslání objednávky to trvá zhruba 2 týdny, protože koberce vyrábíme průběžně na míru zákaznické objednávky. Pokud vlastníte velmi neobvyklé auto nebo jiný stroj (motorový člun, vrtulník, bagr nebo traktor), může se dodací lhůta prodloužit až na 4–6 týdnů.</p>"
           }
         },
         "text_dUePyr": {
           "type": "text",
           "settings": {
-            "hd": "<p>Jaki jest sposób dostawy?</p>",
-            "des": "<p>Dywaniki wysyłamy kurierem bezpośrednio pod wskazany adres klienta. Dywaników nie wysyłamy do paczkomatu ze względów gabarytów produktu. Zależy nam na tym aby dywaniki były dostarczone w takiej formie w jakiej zostały wykonane oraz nie poddać ich składaniu ani załamywaniu co może wpływać na dalsze losy dopasowania.</p>"
+            "hd": "<p>Jakým způsobem probíhá doručení?</p>",
+            "des": "<p>Koberce posíláme kurýrem přímo na adresu zákazníka. Do výdejních boxů je kvůli rozměrům produktu neposíláme. Záleží nám na tom, aby koberce dorazily přesně v té podobě, v jaké byly vyrobeny — neskládáme je ani nelámeme, což by mohlo ovlivnit jejich pozdější padnutí.</p>"
           }
         }
       },
