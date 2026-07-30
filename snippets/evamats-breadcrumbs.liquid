@@ -44,15 +44,35 @@
         assign bc_middle_label = blank
         assign bc_brand_label = collection_brand_name
         assign bc_brand_url = collection_brand_main.url
-    assign bc_current_label = collection.title
-    assign bc_current_label = bc_current_label | remove: 'Car mats EVA for '
-    assign bc_current_label = bc_current_label | remove: 'Car floor mats EVA for '
-    assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA pro '
-    assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA '
-    assign bc_current_label = bc_current_label | remove: 'EVA-Automatten für '
-    assign bc_current_label = bc_current_label | remove: 'Automatten EVA für '
-    assign bc_current_label = bc_current_label | strip
+        assign bc_current_label = collection.title
+        assign bc_current_label = bc_current_label | remove: 'Car mats EVA for '
+        assign bc_current_label = bc_current_label | remove: 'Car floor mats EVA for '
+        assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA pro '
+        assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA '
+        assign bc_current_label = bc_current_label | remove: 'EVA-Automatten für '
+        assign bc_current_label = bc_current_label | remove: 'Automatten EVA für '
+        assign bc_current_label = bc_current_label | strip
       endif
+    else
+      assign bc_parent_label = 'Carvion'
+      assign bc_parent_url = routes.root_url
+      assign bc_current_label = collection.title
+
+      case collection.handle
+        when 'car-accessories-organizers', 'organizers-to-trunk', 'podpietki', 'seat-covers-cushions'
+          case request.locale.iso_code
+            when 'cs'
+              assign bc_catalog_label = 'Příslušenství'
+            when 'de'
+              assign bc_catalog_label = 'Zubehör'
+            else
+              assign bc_catalog_label = 'Accessories'
+          endcase
+          assign bc_catalog_url = collections['akcesoria'].url
+          if bc_catalog_url == blank
+            assign bc_catalog_url = pages['accessories'].url
+          endif
+      endcase
     endif
   endif
 
@@ -64,45 +84,58 @@
     assign breadcrumb_brand_group = blank
     assign breadcrumb_category_collection = blank
     assign breadcrumb_kind = blank
+    assign is_gift_card_breadcrumb = false
+    if product.gift_card? or product.template_suffix == 'gift-card' or product.handle == 'e-gift-card'
+      assign is_gift_card_breadcrumb = true
+    endif
 
-    for product_collection in product.collections
-      assign candidate_brand_group = product_collection.metafields.custom.brand_group.value
-      assign candidate_brand_main = candidate_brand_group.main_collection.value
-      if breadcrumb_model_collection == blank and candidate_brand_group != blank and candidate_brand_main != blank and product_collection.id != candidate_brand_main.id
-        assign breadcrumb_model_collection = product_collection
-        assign breadcrumb_brand_group = candidate_brand_group
-      endif
+    unless is_gift_card_breadcrumb
+      for product_collection in product.collections
+        assign candidate_brand_group = product_collection.metafields.custom.brand_group.value
+        assign candidate_brand_main = candidate_brand_group.main_collection.value
+        if breadcrumb_model_collection == blank and candidate_brand_group != blank and candidate_brand_main != blank and product_collection.id != candidate_brand_main.id
+          assign breadcrumb_model_collection = product_collection
+          assign breadcrumb_brand_group = candidate_brand_group
+        endif
 
-      case product_collection.handle
-        when 'car-accessories-organizers', 'organizers-to-trunk'
-          assign breadcrumb_kind = 'organizers'
-          assign breadcrumb_category_collection = product_collection
-        when 'podpietki'
-          assign breadcrumb_kind = 'heel-pads'
-          assign breadcrumb_category_collection = product_collection
-        when 'seat-covers-cushions'
-          assign breadcrumb_kind = 'seat-covers'
-          assign breadcrumb_category_collection = product_collection
-        when 'mats-for-home'
-          assign breadcrumb_kind = 'home'
-          assign breadcrumb_category_collection = product_collection
-        when 'mats-for-pets'
-          assign breadcrumb_kind = 'pets'
-          assign breadcrumb_category_collection = product_collection
-        when 'outlet'
-          if breadcrumb_kind == blank
-            assign breadcrumb_kind = 'outlet'
+        case product_collection.handle
+          when 'car-accessories-organizers', 'organizers-to-trunk'
+            assign breadcrumb_kind = 'organizers'
             assign breadcrumb_category_collection = product_collection
-          endif
-        when 'akcesoria', 'akcesoria-samochodowa'
-          if breadcrumb_kind == blank
-            assign breadcrumb_kind = 'accessories'
+          when 'podpietki'
+            assign breadcrumb_kind = 'heel-pads'
             assign breadcrumb_category_collection = product_collection
-          endif
-      endcase
-    endfor
+          when 'seat-covers-cushions'
+            assign breadcrumb_kind = 'seat-covers'
+            assign breadcrumb_category_collection = product_collection
+          when 'mats-for-home'
+            assign breadcrumb_kind = 'home'
+            assign breadcrumb_category_collection = product_collection
+          when 'mats-for-pets'
+            assign breadcrumb_kind = 'pets'
+            assign breadcrumb_category_collection = product_collection
+          when 'outlet'
+            if breadcrumb_kind == blank
+              assign breadcrumb_kind = 'outlet'
+              assign breadcrumb_category_collection = product_collection
+            endif
+          when 'akcesoria', 'akcesoria-samochodowa'
+            if breadcrumb_kind == blank
+              assign breadcrumb_kind = 'accessories'
+              assign breadcrumb_category_collection = product_collection
+            endif
+        endcase
+      endfor
+    endunless
 
-    if breadcrumb_model_collection != blank and breadcrumb_brand_group != blank
+    if is_gift_card_breadcrumb
+      assign bc_catalog_label = blank
+      assign bc_catalog_url = blank
+      assign bc_middle_label = blank
+      assign bc_middle_url = blank
+      assign bc_brand_label = blank
+      assign bc_model_label = blank
+    elsif breadcrumb_model_collection != blank and breadcrumb_brand_group != blank
       case request.locale.iso_code
         when 'cs'
           assign bc_catalog_label = 'Katalog'
@@ -122,9 +155,6 @@
       assign bc_model_label = breadcrumb_model_collection.title
       assign bc_model_label = bc_model_label | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
       assign bc_model_url = breadcrumb_model_collection.url
-    elsif product.handle == 'e-gift-card'
-      assign bc_catalog_label = blank
-      assign bc_middle_label = blank
     else
       case breadcrumb_kind
         when 'organizers'
@@ -212,10 +242,15 @@
         assign bc_catalog_url = collections['mats-for-pets'].url
       elsif breadcrumb_kind == 'outlet'
         assign bc_catalog_url = collections['outlet'].url
+      elsif breadcrumb_kind == blank
+        assign bc_catalog_url = collections['all-car-mats'].url
+        if bc_catalog_url == blank
+          assign bc_catalog_url = routes.all_products_collection_url
+        endif
       else
         assign bc_catalog_url = collections['akcesoria'].url
       endif
-      if bc_catalog_url == blank
+      if bc_catalog_url == blank and breadcrumb_kind != blank and breadcrumb_kind != 'home' and breadcrumb_kind != 'pets' and breadcrumb_kind != 'outlet'
         assign bc_catalog_url = pages['accessories'].url
       endif
       if bc_middle_label != blank and breadcrumb_category_collection != blank

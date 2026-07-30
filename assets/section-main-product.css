@@ -2515,27 +2515,20 @@ slider-component.slider-component-full-width {
   }
   .evamats-product-title__inner {
     display: grid;
-    grid-template-columns: auto 1fr 20px;
-    grid-template-rows: auto auto;
+    grid-template-columns: 48px minmax(0, 1fr) 20px;
+    grid-template-rows: auto;
     column-gap: 12px;
-    row-gap: 8px;
+    row-gap: 0;
+    align-items: start;
   }
 
   .evamats-product-title__sku {
-    grid-column: 2 / 4;
-    grid-row: 1;
-    align-self: center;
-    margin: 0;
-    color: #8090a4;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: -0.28px;
+    display: none;
   }
 
   .evamats-product-title .evamats-product-title__heading {
-    grid-column: 1 / 3;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1;
     max-width: none;
     font-size: 20px;
     letter-spacing: -0.4px;
@@ -2546,17 +2539,21 @@ slider-component.slider-component-full-width {
     margin-top: 0;
   }
 
+  /* Brand/car image tucked left of the title (not a lone block under gallery) */
   .evamats-product-title__car-thumb {
     grid-column: 1;
     grid-row: 1;
-    max-width: none;
-    object-fit: cover;
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    object-fit: contain;
     object-position: center;
+    align-self: start;
   }
 
   .evamats-product-title__chevron {
     grid-column: 3;
-    grid-row: 2;
+    grid-row: 1;
     align-self: center;
     justify-self: end;
   }
@@ -2568,21 +2565,17 @@ slider-component.slider-component-full-width {
 
   .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) {
     grid-template-columns: 1fr 20px;
-    grid-template-rows: auto auto;
-  }
-
-  .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__sku {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-
-  .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__heading,
-  .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__chevron {
-    grid-row: 2;
+    grid-template-rows: auto;
   }
 
   .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__heading {
     grid-column: 1;
+    grid-row: 1;
+  }
+
+  .evamats-product-title__inner:not(:has(.evamats-product-title__car-thumb)) .evamats-product-title__chevron {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .product__title {

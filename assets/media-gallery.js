@@ -156,73 +156,37 @@ if (!customElements.get('media-gallery')) {
       const viewer = this.elements.viewer;
       if (!viewer) return;
 
-      const dotsContainer = viewer.querySelector('.evamats-product-gallery__dots');
-      if (!dotsContainer) return;
+      const counter = viewer.querySelector('[data-gallery-counter], .evamats-product-gallery__dots');
+      if (!counter) return;
 
-      if (!this.mql.matches) {
-        const slides = this.getEvamatsViewerSlides();
-        dotsContainer.replaceChildren();
-
-        if (slides.length <= 1) {
-          dotsContainer.hidden = true;
-          this.evamatsDots = [];
-          return;
-        }
-
-        dotsContainer.hidden = false;
-        slides.forEach((slide, index) => {
-          const button = document.createElement('button');
-          button.type = 'button';
-          button.className = `slider-counter__link slider-counter__link--dots${index === 0 ? ' slider-counter__link--active' : ''}`;
-          button.setAttribute('aria-label', `Slide ${index + 1} of ${slides.length}`);
-          button.setAttribute('aria-current', index === 0 ? 'true' : 'false');
-          button.innerHTML = '<span class="dot"></span>';
-          dotsContainer.appendChild(button);
-        });
-      }
-
-      this.evamatsDots = [...dotsContainer.querySelectorAll('.slider-counter__link')];
-      this.evamatsDots.forEach((dot, index) => {
-        dot.addEventListener('click', (event) => this.onEvamatsDotClick(event, index));
-      });
+      this.evamatsCounter = counter;
+      this.evamatsCounterCurrent = counter.querySelector('[data-gallery-counter-current]');
+      this.evamatsCounterTotal = counter.querySelector('[data-gallery-counter-total]');
+      this.evamatsDots = [];
 
       this.updateEvamatsGalleryDots();
     }
 
-    onEvamatsDotClick(event, index) {
-      event.preventDefault();
+    updateEvamatsGalleryDots() {
+      if (!this.evamatsCounter) return;
 
-      if (this.usesEvamatsSingleSlideNav()) {
-        const items = this.getEvamatsNavItems();
-        if (!items[index]) return;
-        this.setActiveMedia(items[index].mediaId, false);
+      const items = this.getEvamatsNavItems();
+      const total = items.length;
+      if (total <= 1) {
+        this.evamatsCounter.hidden = true;
         return;
       }
 
-      const viewer = this.elements.viewer;
-      const slider = viewer.querySelector('[id^="Slider-"]');
-      const slides = this.getEvamatsScrollSlides();
-      if (!slider || !slides[index]) return;
-
-      slider.scrollTo({ left: slides[index].offsetLeft, behavior: 'smooth' });
-      window.setTimeout(() => {
-        this.syncEvamatsSlideFromScroll();
-        this.updateEvamatsArrowButtons();
-      }, 300);
-    }
-
-    updateEvamatsGalleryDots() {
-      if (!this.evamatsDots?.length) return;
+      this.evamatsCounter.hidden = false;
 
       const activeIndex = this.usesEvamatsSingleSlideNav()
         ? this.getEvamatsActiveNavIndex()
         : this.getEvamatsScrollIndex();
+      const current = Math.min(total, Math.max(1, activeIndex + 1));
 
-      this.evamatsDots.forEach((dot, index) => {
-        const isActive = index === activeIndex;
-        dot.classList.toggle('slider-counter__link--active', isActive);
-        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
-      });
+      if (this.evamatsCounterCurrent) this.evamatsCounterCurrent.textContent = String(current);
+      if (this.evamatsCounterTotal) this.evamatsCounterTotal.textContent = String(total);
+      this.evamatsCounter.setAttribute('aria-label', `${current} / ${total}`);
     }
 
     replaceEvamatsArrowButton(button) {

@@ -261,12 +261,13 @@
   color: var(--evc-muted);
 }
 
-/* ── Mats type pills ── */
+/* ── Mats type squares ── */
 .evamats-config fieldset[data-name="mats_type"] {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+  gap: 12px;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .evamats-config fieldset[data-name="mats_type"] > legend,
@@ -276,14 +277,20 @@
 
 .evamats-config fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
   margin: 0;
-  padding: 2px 18px 2px 2px;
+  padding: 12px 10px;
   border: 1.5px solid var(--evc-border-light);
   border-radius: 16px;
   background: #fff;
+  gap: 10px;
+  text-align: center;
 }
 
 .evamats-config fieldset[data-name="mats_type"] input[type="radio"]:not(:checked) + label.default_option:hover .evamats-config-option-label {
@@ -295,10 +302,11 @@
 }
 
 .evamats-config fieldset[data-name="mats_type"] label.default_option img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
   aspect-ratio: 1;
   object-fit: cover;
   box-shadow: none;
@@ -309,11 +317,12 @@
 }
 
 .evamats-config .evamats-config-option-label {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: -0.32px;
-  line-height: 1;
+  letter-spacing: -0.28px;
+  line-height: 1.2;
   color: var(--evc-text);
+  text-align: center;
   transition: color 0.3s ease-in-out;
 }
 
@@ -914,28 +923,30 @@
 
   .evamats-config fieldset[data-name="mats_type"] {
     flex-direction: row;
-    gap: 6px;
-  }
-
-  .evamats-config fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
-    flex: 1 1 calc(50% - 6px);
-    width: auto;
-    height: 46px;
-    padding: 2px 18px 2px 2px;
-    border-radius: 12px;
+    justify-content: center;
     gap: 10px;
   }
 
+  .evamats-config fieldset[data-name="mats_type"] input[type="radio"] + label.default_option {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    padding: 10px 8px;
+    border-radius: 14px;
+    gap: 8px;
+  }
+
   .evamats-config fieldset[data-name="mats_type"] label.default_option img {
-    width: 41px;
-    height: 42px;
-    border-radius: 6px;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 10px;
   }
 
   .evamats-config .evamats-config-option-label {
-    font-size: 14px;
-    letter-spacing: -0.28px;
-    line-height: 1.1;
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    line-height: 1.15;
   }
 
   .evamats-config .body_type.variant-radios {
@@ -3204,8 +3215,9 @@
   }
 
   .evamats-config fieldset[data-name="mats_type"] label.default_option img {
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
   }
 
   .evamats-config fieldset[data-name="mats_set"] input[type="radio"] + label.default_option {

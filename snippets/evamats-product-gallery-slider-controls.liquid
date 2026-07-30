@@ -16,17 +16,14 @@
     {% render 'evamats-slider-arrow', direction: 'prev' %}
   </button>
   {%- if media_count > 1 -%}
-    <div class="slider-counter slider-counter--dots evamats-product-gallery__dots caption">
-      {%- for i in (1..media_count) -%}
-        <button
-          type="button"
-          class="slider-counter__link slider-counter__link--dots{% if forloop.first %} slider-counter__link--active{% endif %}"
-          aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ media_count }}"
-          aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
-        >
-          <span class="dot"></span>
-        </button>
-      {%- endfor -%}
+    <div
+      class="slider-counter slider-counter--counter evamats-product-gallery__dots evamats-product-gallery__counter caption"
+      data-gallery-counter
+      aria-live="polite"
+    >
+      <span class="evamats-product-gallery__counter-current" data-gallery-counter-current>1</span>
+      <span class="evamats-product-gallery__counter-sep" aria-hidden="true">/</span>
+      <span class="evamats-product-gallery__counter-total" data-gallery-counter-total>{{ media_count }}</span>
     </div>
   {%- endif -%}
   <button
