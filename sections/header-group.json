@@ -68,35 +68,35 @@
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "all-car-mats",
-            "icon": "shopify://shop_images/image_106.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-eva-mats.webp"
           }
         },
         "catalog_drawer_icon_6Lzwmx": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "car-accessories-organizers",
-            "icon": "shopify://shop_images/image_90_c8545f80-aa0f-4234-b472-2896a77c80ba.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-organizers.webp"
           }
         },
         "catalog_drawer_icon_NmkmV7": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "podpietki",
-            "icon": "shopify://shop_images/image_91_dd1c4b12-b256-496e-93af-547a634bc1ca.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-heel-pads.webp"
           }
         },
         "catalog_drawer_icon_xwCwyy": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "akcesoria-samochodowa",
-            "icon": "shopify://shop_images/image_92_ae3621df-f040-4652-9031-662583d182b7.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-accessories.webp"
           }
         },
         "catalog_drawer_icon_GMznEV": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "e-gift-card",
-            "icon": "shopify://shop_images/Group1948754932.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-gift-card.webp"
           }
         }
       },
