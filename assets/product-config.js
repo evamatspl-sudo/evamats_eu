@@ -167,6 +167,12 @@ function initProductConfigCore() {
       }
       if (typeForImage == 'corners' && matPattern == 'drop') {
         matPattern = 'krople';
+      } else if (matPattern == 'drop' && typeForImage != '5os') {
+        // Рендеры узора krople/drop на CDN есть ТОЛЬКО для базы 5os
+        // (5os-classic-drop-…). Для minivan / VAN / camper и прочих их нет,
+        // поэтому переиспользуем 5os — иначе превью уходит в 404.
+        typeForImage = '5os';
+        matType = 'classic';
       } else if (typeForImage == 'tir' || typeForImage == 'bus') {
         matPattern = 'diamonds'
       }
