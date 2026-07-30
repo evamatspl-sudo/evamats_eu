@@ -1,4 +1,17 @@
 {%- liquid
+  case request.locale.iso_code
+    when 'cs'
+      assign extra_rubber_label = 'Gumové autokoberce'
+      assign extra_velour_label = 'Velurové autokoberce'
+    when 'de'
+      assign extra_rubber_label = 'Gummi-Autofußmatten'
+      assign extra_velour_label = 'Velours-Autofußmatten'
+    else
+      assign extra_rubber_label = 'Rubber car mats'
+      assign extra_velour_label = 'Velour car mats'
+  endcase
+-%}
+{%- liquid
   assign catalog_menu = section.settings.catalog_menu
   assign nav_menu = section.settings.mobile_menu
   if nav_menu == blank
@@ -370,7 +383,7 @@
                             alt=""
                           >
                         </span>
-                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">Gumové autokoberce</span></span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ extra_rubber_label }}</span></span>
                       </a>
                     </li>
                     <li class="evamats-header-drawer__sub-grid-item">
@@ -386,7 +399,7 @@
                             alt=""
                           >
                         </span>
-                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">Velurové autokoberce</span></span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ extra_velour_label }}</span></span>
                       </a>
                     </li>
                   {%- endif -%}
