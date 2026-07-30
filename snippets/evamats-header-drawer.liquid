@@ -1,4 +1,17 @@
 {%- liquid
+  case request.locale.iso_code
+    when 'cs'
+      assign extra_rubber_label = 'Gumové autokoberce'
+      assign extra_velour_label = 'Velurové autokoberce'
+    when 'de'
+      assign extra_rubber_label = 'Gummi-Autofußmatten'
+      assign extra_velour_label = 'Velours-Autofußmatten'
+    else
+      assign extra_rubber_label = 'Rubber car mats'
+      assign extra_velour_label = 'Velour car mats'
+  endcase
+-%}
+{%- liquid
   assign catalog_menu = section.settings.catalog_menu
   assign nav_menu = section.settings.mobile_menu
   if nav_menu == blank
@@ -309,6 +322,7 @@
       {%- if catalog_menu != blank -%}
         {%- for link in catalog_menu.links -%}
           {%- if link.links != blank -%}
+            {%- capture catalog_parent_handle -%}{%- render 'evamats-menu-link-handle', link: link -%}{%- endcapture -%}
             <div
               class="evamats-header-drawer__view evamats-header-drawer__view--sub"
               data-drawer-view="catalog-l1-{{ forloop.index }}"
@@ -342,18 +356,53 @@
                           <span class="evamats-header-drawer__sub-card-media">
                             {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
                           </span>
-                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                          <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span><svg class="evamats-header-drawer__sub-card-chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </button>
                       {%- else -%}
                         <a href="{{ childlink.url }}" class="evamats-header-drawer__sub-card">
                           <span class="evamats-header-drawer__sub-card-media">
                             {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
                           </span>
-                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                          <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span></span>
                         </a>
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+
+                  {%- if catalog_parent_handle == 'car-brands' -%}
+                    <li class="evamats-header-drawer__sub-grid-item">
+                      <a href="{{ routes.root_url }}pages/rubber-car-mats" class="evamats-header-drawer__sub-card">
+                        <span class="evamats-header-drawer__sub-card-media">
+                          <img
+                            src="{{ 'evamats-rubber-mats-mobile-sidebar.webp' | asset_url }}"
+                            class="evamats-header-drawer__catalog-icon"
+                            width="1000"
+                            height="750"
+                            loading="lazy"
+                            decoding="async"
+                            alt=""
+                          >
+                        </span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ extra_rubber_label }}</span></span>
+                      </a>
+                    </li>
+                    <li class="evamats-header-drawer__sub-grid-item">
+                      <a href="{{ routes.root_url }}pages/velour-car-mats" class="evamats-header-drawer__sub-card">
+                        <span class="evamats-header-drawer__sub-card-media">
+                          <img
+                            src="{{ 'evamats-velour-mats-mobile-sidebar.webp' | asset_url }}"
+                            class="evamats-header-drawer__catalog-icon"
+                            width="1000"
+                            height="750"
+                            loading="lazy"
+                            decoding="async"
+                            alt=""
+                          >
+                        </span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ extra_velour_label }}</span></span>
+                      </a>
+                    </li>
+                  {%- endif -%}
                 </ul>
               </div>
 

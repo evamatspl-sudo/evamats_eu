@@ -31,12 +31,14 @@
 
   assign show_back = false
   assign back_url = blank
+  assign is_brand_main_page = false
   assign collection_brand_group = collection.metafields.custom.brand_group.value
   assign collection_brand_name = collection_brand_group.title.value | strip
 
   if collection_brand_group != blank
     assign collection_brand_main = collection_brand_group.main_collection.value
     if collection_brand_main != blank and collection.id == collection_brand_main.id
+      assign is_brand_main_page = true
       assign back_url = collections['all-car-mats'].url
       if back_url == blank
         assign back_url = routes.all_products_collection_url
@@ -58,8 +60,13 @@
     when 'de'
       assign mobile_catalog_label = 'Katalog'
   endcase
+  comment
+    Мобильная стрелка «назад» подписывается тем, КУДА она ведёт.
+    Со страницы марки (Volvo) она ведёт в каталог → «Katalog».
+    Со страницы модели она ведёт на марку → «Katalog Volvo».
+  endcomment
   assign mobile_back_label = mobile_catalog_label
-  if collection_brand_name != blank
+  if collection_brand_name != blank and is_brand_main_page == false
     assign mobile_back_label = mobile_back_label | append: ' ' | append: collection_brand_name
   endif
 

@@ -14193,32 +14193,42 @@ textarea.field__input:-webkit-autofill:hover,
 }
 
 .evamats-header-drawer__sub-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-height: 190px;
   width: 100%;
   margin: 0;
-  padding: 9px;
+  padding: 6px 6px 0;
   border: 1px solid var(--eh-line);
-  border-radius: 8px;
-  background: var(--eh-soft);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  transition: border-color 0.16s ease, transform 0.16s ease;
 }
 
+.evamats-header-drawer__sub-card:active {
+  transform: scale(0.985);
+  border-color: #e11d2e;
+}
+
+/* Пропорция плитки 3:2 совпадает с холстом картинок (600x400) — сюжет
+   вписан в файл с одинаковыми полями, поэтому все товары одного размера. */
 .evamats-header-drawer__sub-card-media {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: block;
   width: 100%;
-  height: 122px;
-  border-radius: 6px;
-  background: #f4f4f5;
+  aspect-ratio: 3 / 2;
+  border-radius: 8px;
+  background: radial-gradient(120% 100% at 50% 0%, #fff 0%, #eceef0 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
 .evamats-header-drawer__sub-card-media .evamats-header-drawer__catalog-icon {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -14232,15 +14242,35 @@ textarea.field__input:-webkit-autofill:hover,
   background: rgba(255, 255, 255, 0.12);
 }
 
+.evamats-header-drawer__sub-card-foot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 4px 11px;
+}
+
 .evamats-header-drawer__sub-card-label {
+  flex: 1 1 auto;
   min-width: 0;
-  padding: 11px 5px 5px;
   color: var(--eh-text);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0;
+  line-height: 1.28;
+  letter-spacing: -0.005em;
   text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Красная стрелка только там, где плитка открывает ещё один уровень,
+   а не ведёт сразу в каталог. */
+.evamats-header-drawer__sub-card-chev {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: #e11d2e;
 }
 
 .evamats-header-drawer__sub-list {

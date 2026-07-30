@@ -1,3 +1,16 @@
+{%- liquid
+  case request.locale.iso_code
+    when 'cs'
+      assign extra_rubber_label = 'Gumové autokoberce'
+      assign extra_velour_label = 'Velurové autokoberce'
+    when 'de'
+      assign extra_rubber_label = 'Gummi-Autofußmatten'
+      assign extra_velour_label = 'Velours-Autofußmatten'
+    else
+      assign extra_rubber_label = 'Rubber car mats'
+      assign extra_velour_label = 'Velour car mats'
+  endcase
+-%}
 {%- comment -%}
   Desktop Katalog dropdown — Figma 1799:13047 (L1) + 1799:13077 (L2 flyout).
   @param catalog_menu {linklist}
@@ -37,6 +50,7 @@
 
 {%- for link in catalog_menu.links -%}
   {%- if link.links != blank -%}
+    {%- capture catalog_parent_handle -%}{%- render 'evamats-menu-link-handle', link: link -%}{%- endcapture -%}
     <div
       class="evamats-header__catalog-l2-slot evamats-header__catalog-l2-slot--{{ forloop.index }}"
       data-catalog-flyout="{{ forloop.index }}"
@@ -76,6 +90,31 @@
               {%- endif -%}
             </li>
           {%- endfor -%}
+
+          {%- comment -%}
+            Gumové / Velurové — отдельные страницы, их нет в меню Shopify.
+            Тот же набор, что и в мобильном сайдбаре, чтобы ПК и телефон совпадали.
+          {%- endcomment -%}
+          {%- if catalog_parent_handle == 'car-brands' -%}
+            <li class="evamats-header__catalog-l2-item">
+              <a href="{{ routes.root_url }}pages/rubber-car-mats" class="evamats-header__catalog-l2-row evamats-header__catalog-l2-row--link">
+                <span class="evamats-header__catalog-l2-media">
+                  <img src="{{ 'evamats-rubber-mats-mobile-sidebar.webp' | asset_url }}" class="evamats-header__catalog-l2-img" width="600" height="400" loading="lazy" decoding="async" alt="">
+                </span>
+                <span class="evamats-header__catalog-l2-label">{{ extra_rubber_label }}</span>
+                {% render 'evamats-header-catalog-l2-arrow' %}
+              </a>
+            </li>
+            <li class="evamats-header__catalog-l2-item">
+              <a href="{{ routes.root_url }}pages/velour-car-mats" class="evamats-header__catalog-l2-row evamats-header__catalog-l2-row--link">
+                <span class="evamats-header__catalog-l2-media">
+                  <img src="{{ 'evamats-velour-mats-mobile-sidebar.webp' | asset_url }}" class="evamats-header__catalog-l2-img" width="600" height="400" loading="lazy" decoding="async" alt="">
+                </span>
+                <span class="evamats-header__catalog-l2-label">{{ extra_velour_label }}</span>
+                {% render 'evamats-header-catalog-l2-arrow' %}
+              </a>
+            </li>
+          {%- endif -%}
         </ul>
       </div>
     </div>

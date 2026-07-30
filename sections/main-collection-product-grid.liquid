@@ -28,20 +28,6 @@
     endif
   endfor
 
-  assign mobile_vehicle_title = 'Your vehicle'
-  assign mobile_vehicle_steps = '3 quick steps'
-  assign mobile_vehicle_submit = 'View car mats'
-  case localization.language.iso_code
-    when 'cs'
-      assign mobile_vehicle_title = 'Vaše vozidlo'
-      assign mobile_vehicle_steps = '3 rychlé kroky'
-      assign mobile_vehicle_submit = 'Zobrazit autokoberce'
-    when 'de'
-      assign mobile_vehicle_title = 'Ihr Fahrzeug'
-      assign mobile_vehicle_steps = '3 schnelle Schritte'
-      assign mobile_vehicle_submit = 'Autofußmatten anzeigen'
-  endcase
-
   assign cols_tablet = section.settings.columns_desktop
   assign cols_desktop = section.settings.columns_desktop
 
@@ -80,15 +66,7 @@
 <div class="evamats-collection-product-grid page-width{% if hide_vehicle_filter %} evamats-collection-product-grid--no-filter{% endif %}">
   <div class="evamats-collection-product-grid__layout">
     {%- unless hide_vehicle_filter -%}
-      <aside
-        class="evamats-collection-product-grid__filter"
-        aria-label="{{ 'general.config.choose_your_mats' | t }}"
-        style="--evamats-mobile-submit-label: '{{ mobile_vehicle_submit | escape }}';"
-      >
-        <div class="evamats-collection-filter__mobile-heading">
-          <h2>{{ mobile_vehicle_title | escape }}</h2>
-          <span>{{ mobile_vehicle_steps | escape }}</span>
-        </div>
+      <aside class="evamats-collection-product-grid__filter" aria-label="{{ 'general.config.choose_your_mats' | t }}">
         {% render 'evamats-vehicle-filter', filter_ui: 'collection', collection_handle: collection.handle %}
       </aside>
     {%- endunless -%}
