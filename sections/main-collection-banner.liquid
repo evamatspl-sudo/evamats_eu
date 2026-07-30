@@ -70,16 +70,21 @@
         {%- if mobile_image != blank -%}
           <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 1200 }}">
         {%- endif -%}
-        {{
-          desktop_image
-          | image_url: width: 3840
-          | image_tag:
-            loading: 'eager',
-            fetchpriority: 'high',
-            class: 'evamats-collection-banner__image',
-            sizes: '100vw',
-            widths: '750, 1100, 1500, 1920, 2560, 3840'
-        }}
+        {%- comment -%}
+          ПК-баннер задаётся здесь ОДИН раз для всех коллекций (было: в каждом
+          шаблоне отдельно, 554 файла). Картинка выровнена по канту и уменьшена
+          до 95%. Мобильная версия по-прежнему берётся из настройки секции.
+        {%- endcomment -%}
+        <img
+          src="{{ 'carvion-banner-desktop-v2.webp' | file_url }}"
+          class="evamats-collection-banner__image"
+          width="1450"
+          height="600"
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          alt=""
+        >
       </picture>
     {%- endif -%}
     <div class="evamats-collection-banner__overlay"></div>
