@@ -343,14 +343,14 @@
                           <span class="evamats-header-drawer__sub-card-media">
                             {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
                           </span>
-                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                          <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span><svg class="evamats-header-drawer__sub-card-chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </button>
                       {%- else -%}
                         <a href="{{ childlink.url }}" class="evamats-header-drawer__sub-card">
                           <span class="evamats-header-drawer__sub-card-media">
                             {% render 'evamats-header-catalog-icon', section: section, menu_item_handle: menu_item_handle %}
                           </span>
-                          <span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span>
+                          <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">{{ childlink.title | escape }}</span></span>
                         </a>
                       {%- endif -%}
                     </li>
@@ -370,7 +370,7 @@
                             alt=""
                           >
                         </span>
-                        <span class="evamats-header-drawer__sub-card-label">Gumové autokoberce</span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">Gumové autokoberce</span></span>
                       </a>
                     </li>
                     <li class="evamats-header-drawer__sub-grid-item">
@@ -386,7 +386,7 @@
                             alt=""
                           >
                         </span>
-                        <span class="evamats-header-drawer__sub-card-label">Velurové autokoberce</span>
+                        <span class="evamats-header-drawer__sub-card-foot"><span class="evamats-header-drawer__sub-card-label">Velurové autokoberce</span></span>
                       </a>
                     </li>
                   {%- endif -%}
