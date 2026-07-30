@@ -1262,7 +1262,18 @@
                           <img src="{{ 'honey.webp' | asset_url }}" alt="" loading="lazy">
                           <div class="label__tooltip">{{ 'general.config.honeycomb' | t }}</div>
                         </label>
-                        {% if product.metafields.custom.body_type == 'corners' or product.metafields.custom.body_type == '5os' or product.metafields.custom.body_type == 'custom' or product.metafields.custom.body_type == '7os' or product.metafields.custom.body_type == '2os' or product.metafields.custom.body_type == 'pickup' or product.metafields.custom.body_type == 'van_maly' or product.metafields.custom.body_type == 'pickup2kabina' or product.metafields.custom.body_type == 'electro' %}
+                        {%- liquid
+                          comment
+                            Krople (drop): реальные krople-рендеры на CDN есть только для базы
+                            5os, а product-config.js переиспользует их для остальных кузовов,
+                            поэтому узор можно предлагать и им. Логика перенесена с PL:
+                            вместо цепочки сравнений — whitelist, который корректно
+                            обрабатывает многозначный body_type и регистр. Добавлен minivan.
+                          endcomment
+                          assign evm_krople_bt = product.metafields.custom.body_type | default: '' | split: ',' | first | strip | downcase
+                          assign evm_krople_types = 'corners,5os,custom,7os,2os,pickup,pickup2kabina,van_maly,electro,minivan,minivan_mini' | split: ','
+                        -%}
+                        {% if evm_krople_types contains evm_krople_bt %}
                           <label class="lip__item">
                             <input type="radio" form="{{ product_form_id }}" name="properties[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ 'general.config.mat_pattern_drops' | t }}">
                             <img src="{{ 'drop.webp' | asset_url }}" alt="{{ 'general.config.mat_pattern_drops' | t }}" loading="lazy">
