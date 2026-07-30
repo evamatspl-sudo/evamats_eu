@@ -32,6 +32,7 @@
   assign show_back = false
   assign back_url = blank
   assign collection_brand_group = collection.metafields.custom.brand_group.value
+  assign collection_brand_name = collection_brand_group.title.value | strip
 
   if collection_brand_group != blank
     assign collection_brand_main = collection_brand_group.main_collection.value
@@ -50,6 +51,18 @@
     assign show_back = true
   endif
 
+  assign mobile_catalog_label = 'Catalog'
+  case localization.language.iso_code
+    when 'cs'
+      assign mobile_catalog_label = 'Katalog'
+    when 'de'
+      assign mobile_catalog_label = 'Katalog'
+  endcase
+  assign mobile_back_label = mobile_catalog_label
+  if collection_brand_name != blank
+    assign mobile_back_label = mobile_back_label | append: ' ' | append: collection_brand_name
+  endif
+
   if section.settings.show_back_button == false
     assign show_back = false
   endif
@@ -65,10 +78,14 @@
   class="evamats-collection-banner shopify-section"
 >
   <div class="evamats-collection-banner__media{% if desktop_image == blank %} evamats-collection-banner__media--fallback{% endif %}" aria-hidden="true">
+    <div
+      class="evamats-collection-banner__mobile-texture-fill"
+      style="background-image: url('{{ 'carvion-collection-hero-mobile.webp' | asset_url }}');"
+    ></div>
     {%- if desktop_image != blank -%}
       <picture>
         {%- if mobile_image != blank -%}
-          <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 1200 }}">
+          <source media="(max-width: 749px)" srcset="{{ 'carvion-collection-hero-mobile.webp' | asset_url }}">
         {%- endif -%}
         {%- comment -%}
           ПК-баннер задаётся здесь ОДИН раз для всех коллекций (было: в каждом
@@ -106,6 +123,12 @@
     {%- if show_back and back_url != blank -%}
       <a class="evamats-collection-banner__back" href="{{ back_url }}">
         {{ back_label | escape }}
+      </a>
+      <a class="evamats-collection-banner__mobile-back" href="{{ back_url }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M19 12H5M11 18L5 12L11 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>{{ mobile_back_label | escape }}</span>
       </a>
     {%- endif -%}
 

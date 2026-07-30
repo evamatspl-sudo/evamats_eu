@@ -276,3 +276,115 @@
     min-width: 38px;
   }
 }
+
+.evamats-collection-banner__mobile-texture-fill,
+.evamats-collection-banner__mobile-back {
+  display: none;
+}
+
+/* Approved mobile collection composition. Desktop remains unchanged. */
+@media screen and (max-width: 749px) {
+  .evamats-collection-banner {
+    height: 252px;
+    min-height: 252px;
+    background: #090b0d;
+  }
+
+  .evamats-collection-banner__media {
+    overflow: hidden;
+    background: #090b0d;
+  }
+
+  .evamats-collection-banner__mobile-texture-fill {
+    position: absolute;
+    z-index: 0;
+    top: -4px;
+    right: -4px;
+    left: -4px;
+    display: block;
+    height: 88px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 102% auto;
+    filter: blur(0.35px);
+    opacity: 0.18;
+    transform: scale(1.02);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.82) 52%, rgba(0, 0, 0, 0.34) 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.82) 52%, rgba(0, 0, 0, 0.34) 78%, transparent 100%);
+  }
+
+  .evamats-collection-banner__media picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .evamats-collection-banner__media .evamats-collection-banner__image {
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: initial;
+    object-position: initial;
+    transform: translateX(-50%);
+  }
+
+  .evamats-collection-banner__overlay {
+    background:
+      linear-gradient(90deg, rgba(6, 8, 10, 0.54), rgba(6, 8, 10, 0.04) 78%),
+      linear-gradient(180deg, rgba(6, 8, 10, 0.24), rgba(6, 8, 10, 0) 62%, rgba(6, 8, 10, 0.06));
+  }
+
+  .evamats-collection-banner__ui {
+    position: absolute;
+    top: 104px;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .evamats-collection-banner__breadcrumbs,
+  .evamats-collection-banner__back {
+    display: none;
+  }
+
+  .evamats-collection-banner__mobile-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    margin: 0 0 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.25;
+    text-decoration: none;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+    pointer-events: auto;
+  }
+
+  .evamats-collection-banner__mobile-back svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+  }
+
+  .evamats-collection-banner__title {
+    max-width: 380px;
+    margin: 0;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 760;
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-wrap: balance;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.78);
+  }
+}
