@@ -126,6 +126,14 @@
           {%- liquid
             assign card_title = featured_item.title
             assign card_title = card_title | remove: title_prefix
+            comment
+              Новые названия каталога (30.07.2026): EN «EVA Car Mats for …»,
+              DE «EVA-Autofußmatten für …». Старые префиксы оставлены — часть
+              коллекций вне метаобъектов их ещё носит.
+            endcomment
+            assign card_title = card_title | remove: 'EVA Car Mats for '
+            assign card_title = card_title | remove: 'EVA-Autofußmatten für '
+            assign card_title = card_title | remove: 'Car floor mats EVA for '
             assign card_title = card_title | remove: 'Car mats EVA for '
             assign card_title = card_title | remove: 'Autokoberce EVA pro '
             assign card_title = card_title | remove: 'Autokoberce EVA '

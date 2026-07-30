@@ -45,6 +45,8 @@
         assign bc_brand_label = collection_brand_name
         assign bc_brand_url = collection_brand_main.url
     assign bc_current_label = collection.title
+    assign bc_current_label = bc_current_label | remove: 'EVA Car Mats for '
+    assign bc_current_label = bc_current_label | remove: 'EVA-Autofußmatten für '
     assign bc_current_label = bc_current_label | remove: 'Car mats EVA for '
     assign bc_current_label = bc_current_label | remove: 'Car floor mats EVA for '
     assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA pro '
@@ -120,7 +122,7 @@
       assign breadcrumb_brand_collection = breadcrumb_brand_group.main_collection.value
       assign bc_brand_url = breadcrumb_brand_collection.url
       assign bc_model_label = breadcrumb_model_collection.title
-      assign bc_model_label = bc_model_label | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
+      assign bc_model_label = bc_model_label | remove: 'EVA Car Mats for ' | remove: 'EVA-Autofußmatten für ' | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
       assign bc_model_url = breadcrumb_model_collection.url
     elsif product.handle == 'e-gift-card'
       assign bc_catalog_label = blank
