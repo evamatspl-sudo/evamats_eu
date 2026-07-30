@@ -178,7 +178,11 @@ function initProductConfigCore() {
       }
       
       // Построение URL изображения
-      let imageUrl = `${basePath}${typeForImage}-${matType ? matType + '-' : ''}${matPattern}-${matColor}-${edgeColor}.webp`;
+      // Сегмент типа мата (classic-) в именах на CDN есть ТОЛЬКО у базы 5os
+      // (5os-classic-diamonds-…). У minivan / VAN / bus / tir / corners его нет
+      // (minivan-diamonds-…) — иначе превью уходит в 404.
+      const matTypeSeg = typeForImage === '5os' && matType ? matType + '-' : '';
+      let imageUrl = `${basePath}${typeForImage}-${matTypeSeg}${matPattern}-${matColor}-${edgeColor}.webp`;
 
       const selector = window.innerWidth > 1023
         ? '.product__config_image--desktop img'
