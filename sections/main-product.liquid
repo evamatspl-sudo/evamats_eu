@@ -1271,7 +1271,7 @@
                             обрабатывает многозначный body_type и регистр. Добавлен minivan.
                           endcomment
                           assign evm_krople_bt = product.metafields.custom.body_type | default: '' | split: ',' | first | strip | downcase
-                          assign evm_krople_types = 'corners,5os,custom,7os,2os,pickup,pickup2kabina,van_maly,electro,minivan,minivan_mini' | split: ','
+                          assign evm_krople_types = '5os,7os,2os,custom,pickup,pickup2kabina,van_maly,electro,electro_7os,van_duzy,van_duzy_solid,van_duzy_solid_2_row,van_duzy_separate,van_duzy_separate_2_row,bus,bus_solid,minivan,minivan_mini,camper,tractor,tir,corners' | split: ','
                         -%}
                         {% if evm_krople_types contains evm_krople_bt %}
                           <label class="lip__item">
