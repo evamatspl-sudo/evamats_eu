@@ -24,15 +24,15 @@
         "block_VXnbCG": {
           "type": "block",
           "settings": {
-            "header": "<h2>Rubber car mats</h2>",
-            "image": "shopify://shop_images/IMG_8796_1.png"
+            "header": "<h2>Gumové autokoberce<\/h2>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_1.png"
           }
         },
         "block_K3qkTg": {
           "type": "block",
           "settings": {
-            "header": "<h2>Carvion car mats</h2>",
-            "image": "shopify://shop_images/IMG_8796_2.png"
+            "header": "<h2>Autokoberce Carvion<\/h2>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_2.png"
           }
         }
       },
@@ -41,136 +41,66 @@
         "block_K3qkTg"
       ],
       "settings": {
-        "logo": "shopify://shop_images/Group_271.png",
+        "logo": "shopify:\/\/shop_images\/Group_271.png",
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "padding_top": 43,
         "padding_bottom": 52
       }
     },
-    "hero_before_after_6Jpync": {
-      "type": "hero-before-after",
-      "name": "Hero Before/After",
+    "video_azQNFQ": {
+      "type": "video",
+      "disabled": true,
       "settings": {
-        "layout": "full",
-        "text_color": "#ffffff",
-        "text_color_mobile": "#1b1d22",
-        "divider_background": "#ffffff",
-        "highlight_text_color": "#ffffff",
-        "highlight_background": "#ff2741",
-        "badge_text_color": "#ef022d",
-        "badge_background": "#ffffff",
-        "center_text": "VS.",
-        "left_title": "<p>Rubber mats</p>",
-        "left_image": "shopify://shop_images/velour-img.webp",
-        "right_title": "<p><strong>Carvion</strong> mats</p>",
-        "right_image": "shopify://shop_images/hero-evamats-after.webp",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
-      },
-      "disabled": true
-    },
-    "video_with_text_EbL7W9": {
-      "type": "video-with-text",
-      "name": "Video With Text",
-      "settings": {
-        "background": "#ffffff",
-        "text_color": "#1b1d22",
-        "subtitle_color": "#ef022d",
-        "subtitle": "Carvion material",
-        "heading": "Looking for high-quality car mats?",
-        "text": "<p>Thinking about buying a rubber set? Or would you rather choose professional car mats made of durable EVA material? Take a look at its advantages over rubber.<br/><br/>In our online and physical store you will find unique car mats that highlight the style of every car, keep your drive safe, are comfortable to use and easy to clean. Below we explain the basic properties of rubber mats and compare them with our EVA products.</p>",
-        "video_url": "",
-        "video_embed": "<iframe width=\"50%\" height=\"450\" src=\"https://www.youtube.com/embed/ZqkazBsFL44?si=ykobXf4aOykZnGeg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"></iframe>",
-        "padding_top": 80,
-        "padding_bottom": 100,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 30
+        "heading": "",
+        "heading_size": "h1",
+        "video_url": "https:\/\/youtu.be\/FcYcIp0mGXk",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "benefits_comparison_HEGYmW": {
-      "type": "benefits-comparison",
-      "blocks": {
-        "item_DY8nxE": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/benefits-icon-1.webp",
-            "title": "<p>Water</p><p>resistance</p>",
-            "text": "<p>Rubber and EVA mats do not absorb moisture. They protect the interior from water, snow and mud.</p>"
-          }
-        },
-        "item_7pHDep": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/benefits-icon-2.webp",
-            "title": "<p>Protection <br/>from dirt</p>",
-            "text": "<p>Both types protect the floor from dirt and liquids. The difference is in how much area they cover.</p>"
-          }
-        },
-        "item_y78bxy": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/benefits-icon-3.webp",
-            "title": "<p>Better <br/>EVA fit</p>",
-            "text": "<p>EVA mats are made to measure and cover up to 99% of the floor. Rubber ones protect roughly 70–90%.</p>"
-          }
-        },
-        "item_fc6iip": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/benefits-icon-4.webp",
-            "title": "<p>Comfort <br/>and safety</p>",
-            "text": "<p>EVA is light, odourless and non-toxic. It also traps dirt inside its cell structure so it is not spread around.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_DY8nxE",
-        "item_7pHDep",
-        "item_y78bxy",
-        "item_fc6iip"
+    "custom_liquid_34XwTK": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".video_compareguma {position: relative; text-align: center;}"
       ],
-      "name": "Benefits Comparison",
       "settings": {
-        "background": "#f6f6f6",
-        "text_color": "#1b1d22",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 24,
-        "padding_bottom_mobile": 36
+        "custom_liquid": "<div class=\"video_compareguma\">\n<iframe src=\"https:\/\/www.youtube.com\/embed\/T0jnyernB24?si=lxLzzJ4O_Rgyd7X_\"\nwidth=\"55%\" height=\"450\"title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen><\/iframe>\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "mat_comparison_Vt8DWM": {
-      "type": "mat-comparison",
-      "blocks": {
-        "item_tBJhkf": {
-          "type": "item",
-          "settings": {
-            "image_before": "shopify://shop_images/hero-evamats-after.webp",
-            "image_after": "shopify://shop_images/velour-img.webp"
-          }
-        }
-      },
-      "block_order": [
-        "item_tBJhkf"
-      ],
-      "name": "Mat Comparison",
+    "collapsible_text_YPVYyd": {
+      "type": "collapsible-text",
       "settings": {
-        "background": "#ffffff",
-        "text_color": "#1b1d22",
-        "subheading_color": "#ef022d",
-        "left_label": "Rubber",
-        "subheading": "WHAT IS THE DIFFERENCE?",
-        "heading": "<p>What to look for <br/>when choosing mats?</p>",
-        "description": "<ul><li>Above all, the products in our store are made by hand.</li><li>That is why they fit the floor of your vehicle precisely. We care about the quality of our mats and aim for maximum production accuracy.</li><li>We use high-grade materials. Thanks to our mats, the standard of your car will never be the same again!</li><li>Our goal is to improve not only comfort, but also how clean your car stays.</li></ul>",
-        "padding_top": 100,
-        "padding_bottom": 100,
+        "richtext": "<p>Při výběru vhodných koberců do auta zvažujeme mnoho možností. Kdo se v tom nevyzná, může mít problém koupit produkty, které splní očekávání a budou spolehlivé za každé situace. Také je těžké najít ideální koberce pro konkrétní značku vozu.<\/p><p>Některé sady bohužel nesedí dostatečně dobře nebo nesplňují požadavky na používání. Níže popíšeme gumové autokoberce a porovnáme je s našimi inovativními produkty EVA. Přesvědčíte se, jak kvalitní produkt nabízíme — a EVA koberce brzy budou ve vašem autě!<\/p>",
+        "collapsible_richtext": "<h3>Co jsou gumové koberce a odkud pochází jejich popularita?<\/h3><p>Fenomén gumových autokoberců pramení z toho, že jsou relativně levné na údržbu a univerzální. Osvědčují se v každém modelu auta a splňují očekávání většiny lidí. Po léta byly považovány téměř za nezničitelné díky mimořádné odolnosti vůči mechanickému poškození. Dobře fungují za téměř jakéhokoli počasí — ať prší nebo sněží, gumové koberce nešpiní interiér. Navíc jsou velmi odolné vůči chemikáliím v čisticích prostředcích. Údržba je proto jednoduchá a nezabere mnoho času.<\/p><p><\/p>",
+        "button_text_more": "Číst více",
+        "button_text_less": "Číst méně",
         "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
-      },
-      "disabled": true
+        "padding_bottom_mobile": 40,
+        "padding_top": 50,
+        "padding_bottom": 57
+      }
+    },
+    "image_with_collapsible_text_XCLeBp": {
+      "type": "image-with-collapsible-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_233.png",
+        "header": "<p>Na co <strong>zwrócić uwagę<\/strong> <br\/>przy wyborze dywaników?<\/p>",
+        "richtext": "<p>Uvažujete-li o nových autokobercích a nevíte, na jaké technické aspekty se zaměřit, pomůžeme vám. Nejprve zvolte materiál produktu. Důležitý je také způsob montáže — některé modely nemají tovární úchyty, proto volte koberce se sadou stoperů. Produkt musí dobře přiléhat k podlaze a nesmí se posouvat při jízdě. Dokončení by nemělo být náhodné — pokud záleží na estetice, koberce by měly barevně i velikostně ladit s interiérem. Tvar má velký význam: příliš malé se posouvají, příliš velké mohou zachytit pedály — to je nebezpečné pro všechny cestující.<\/p>",
+        "collapsible_richtext": "<h3>Jaké jsou druhy gumových autokoberců?<\/h3><p>Autokoberce dělíme na dva typy: korytové a standardní. Korytové mají vysoký lem, který zabraňuje přelití vody do interiéru. Jízda je bezpečná a přebytečnou vodu snadno vylejete — stačí koberec vyjmout. Na trhu jsou korytové koberce s moderním finišem, což je činí univerzálnějšími. Standardní gumové koberce mají specifický vzor, který omezuje pohyb vody nebo bláta v interiéru a chrání originální koberec.<\/p>",
+        "button_text_more": "Číst více",
+        "button_text_less": "Číst méně",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     },
     "compare_cards_M6itiE": {
       "type": "compare-cards",
@@ -178,17 +108,17 @@
         "block_gAgXYW": {
           "type": "block",
           "settings": {
-            "header": "<h2>Disadvantages of rubber mats</h2>",
-            "unordered_list": "<ul><li>They slide around</li><li>They smell</li><li>Poor fit</li><li>All of them look the same</li><li>Not easy to clean</li><li>They dirty your shoes</li><li>Heavy</li><li>Not suitable for pets</li></ul>",
-            "image": "shopify://shop_images/IMG_8796_1_dd858322-6657-4510-949a-af5db4d2c2ba.png"
+            "header": "<h2>Nevýhody gumových koberců<\/h2>",
+            "unordered_list": "<ul><li>Przesuwają się<\/li><li>Smierdzą<\/li><li>Słabo dopasowane<\/li><li>Wszystkie są takie same<\/li><li>Nie są łatwe w czyszczeniu( informacja od detailingu),<\/li><li>Brudzą buty<\/li><li>Ciężkie<\/li><li>Wrażliwe dla zwierząt<\/li><\/ul><p><\/p><p><\/p>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_1_dd858322-6657-4510-949a-af5db4d2c2ba.png"
           }
         },
         "block_YfT8nF": {
           "type": "block",
           "settings": {
-            "header": "<p><strong>Advantages</strong> of EVA mats</p>",
-            "unordered_list": "<ul><li>Perfect fit</li><li>Ultra light and easy to clean</li><li>Odourless ECO material, non-toxic</li><li>Waterproof</li><li>195 colour combinations</li><li>Technological cells trap the dirt</li></ul>",
-            "image": "shopify://shop_images/IMG_8796_2_1.png"
+            "header": "<p><strong>Výhody<\/strong> EVA koberců<\/p>",
+            "unordered_list": "<ul><li>Idealnie dopasowane<\/li><li>Ultra lekkie i łatwe w czyszczeniu <\/li><li>Bezzapachowy ECO materiał, nietoksyczny<\/li><li>Wodoodporne<\/li><li>195 połączeń kolorystycznych<\/li><li>Technologiczne komórki utrzymują różnego rodzaju zanieczyszczenia<\/li><\/ul>",
+            "image": "shopify:\/\/shop_images\/IMG_8796_2_1.png"
           }
         }
       },
@@ -203,444 +133,12 @@
         "padding_bottom": 80
       }
     },
-    "feature_comparison_cGAWVU": {
-      "type": "feature-comparison",
-      "blocks": {
-        "item_B4DzkP": {
-          "type": "item",
-          "settings": {
-            "title": "Cleaning",
-            "left_text": "Not easy to clean",
-            "right_text": "Quick and simple"
-          }
-        },
-        "item_8GcpfL": {
-          "type": "item",
-          "settings": {
-            "title": "Resistance to dirt",
-            "left_text": "Dirt stays on top and soils your shoes",
-            "right_text": "Trapped in the cell structure"
-          }
-        },
-        "item_HdnHYV": {
-          "type": "item",
-          "settings": {
-            "title": "Fit",
-            "left_text": "Universal, poorer fit",
-            "right_text": "Made to measure for your car"
-          }
-        },
-        "item_deETxA": {
-          "type": "item",
-          "settings": {
-            "title": "Everyday use",
-            "left_text": "Heavy, they slide and smell",
-            "right_text": "Practical, light and odourless"
-          }
-        }
-      },
-      "block_order": [
-        "item_B4DzkP",
-        "item_8GcpfL",
-        "item_HdnHYV",
-        "item_deETxA"
-      ],
-      "name": "Feature comparison",
-      "settings": {
-        "background": "#ffffff",
-        "text_color": "#1b1d22",
-        "highlight_background": "#f6f6f6",
-        "heading": "<h2>How does cleaning EVA and rubber mats differ?</h2>",
-        "left_title": "Rubber",
-        "right_title": "EVA",
-        "padding_top": 100,
-        "padding_bottom": 80,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 10
-      }
-    },
-    "mat_hotspot_consult_rEEBBj": {
-      "type": "mat-hotspot-consult",
-      "blocks": {
-        "hotspot_JPAJPy": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 24,
-            "position_y": 12,
-            "tooltip_heading": "Structure",
-            "tooltip_text": "A cell structure that traps dirt and water"
-          }
-        },
-        "hotspot_NeaL3g": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 72,
-            "position_y": 35,
-            "tooltip_heading": "Fit",
-            "tooltip_text": "An exact fit for your car model"
-          }
-        },
-        "hotspot_YFiQ9R": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 38,
-            "position_y": 53,
-            "tooltip_heading": "Material",
-            "tooltip_text": "Durable, wear-resistant EVA material"
-          }
-        },
-        "hotspot_mxwPyR": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 88,
-            "position_y": 78,
-            "tooltip_heading": "Edge",
-            "tooltip_text": "A raised edge protects the interior"
-          }
-        },
-        "hotspot_abnNzi": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 21,
-            "position_y": 83,
-            "tooltip_heading": "Cleaning",
-            "tooltip_text": "Easy to clean in a few seconds"
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_JPAJPy",
-        "hotspot_NeaL3g",
-        "hotspot_YFiQ9R",
-        "hotspot_mxwPyR",
-        "hotspot_abnNzi"
-      ],
-      "name": "Mat hotspot consultation",
-      "settings": {
-        "heading": "Get a free consultation!",
-        "subheading": "We will gladly help you choose the right solution.",
-        "mat_image": "shopify://shop_images/vacancy_375.webp",
-        "mat_image_alt": "EVA car mat",
-        "label_name": "Full name",
-        "placeholder_name": "John Smith",
-        "label_phone": "Phone",
-        "phone_prefix": "+48",
-        "placeholder_phone": "000-000-000",
-        "label_email": "E-mail",
-        "placeholder_email": "john@example.com",
-        "label_message": "Message (optional)",
-        "placeholder_message": "Your message…",
-        "submit_label": "Send enquiry",
-        "consent_intro": "I agree to the",
-        "terms_label": "terms and conditions",
-        "terms_url": "",
-        "consent_mid": "a",
-        "privacy_label": "privacy policy",
-        "privacy_url": "",
-        "consent_end": ".",
-        "consent_error_message": "You must accept the privacy policy and the terms and conditions.",
-        "success_message": "Thank you! We will get back to you shortly.",
-        "error_message": "Please check the fields and try again.",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 48
-      }
-    },
-    "content_gallery_slider_VjTdgA": {
-      "type": "content-gallery-slider",
-      "blocks": {
-        "icon_fbft33": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/icon-for-gallery-1.png"
-          }
-        },
-        "icon_eRmMYH": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/icon-for-gallery-2.png"
-          }
-        },
-        "icon_kP9Qyh": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/icon-for-gallery-3.png"
-          }
-        },
-        "slide_6cJXDB": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2881.webp"
-          }
-        },
-        "slide_UNEPXX": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2899.webp"
-          }
-        },
-        "slide_rqa3AK": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2888.webp"
-          }
-        },
-        "slide_ymjCMQ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2866.webp"
-          }
-        },
-        "slide_aJqic9": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2900.webp"
-          }
-        },
-        "slide_XmAGt8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2886_483e5603-3188-4488-9bec-f1a32e27f654.webp"
-          }
-        }
-      },
-      "block_order": [
-        "icon_fbft33",
-        "icon_eRmMYH",
-        "icon_kP9Qyh",
-        "slide_6cJXDB",
-        "slide_UNEPXX",
-        "slide_rqa3AK",
-        "slide_ymjCMQ",
-        "slide_aJqic9",
-        "slide_XmAGt8"
-      ],
-      "name": "Content Gallery Slider",
-      "settings": {
-        "heading": "<p><p>Our goal is <strong>maximum</strong> </p><p><strong>comfort</strong> on every drive</p>",
-        "text": "<p>Precise finishing, durable materials and carefully made details keep everyday use as comfortable as possible.</p>",
-        "button_label": "Configure your mats",
-        "button_link": "shopify://collections/all-car-mats",
-        "padding_top": 80,
-        "padding_bottom": 120,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 40
-      }
-    },
-    "home_faq_xK3HGp": {
-      "type": "home-faq",
-      "blocks": {
-        "text_qyG8py": {
-          "type": "text",
-          "settings": {
-            "category": "",
-            "hd": "<p>Floor coverage and fit</p>",
-            "des": "<p><strong>– Will the mats definitely fit?</strong><br/>Yes. Our EVA mats are designed specifically for every brand, model and version of a car and cover the whole floor area, including the places rubber and velour mats leave unprotected.</p><p><strong>– What is a tunnel mat?</strong><br/>EVA mats cover up to 98% of the floor including the centre tunnel, giving maximum protection.</p><p><strong>– Is the heel pad fitted to the driver's mat?</strong><br/>No, the heel pad is supplied separately so you can position it to your own preference.</p>",
-            "des_html": ""
-          }
-        },
-        "text_eNMPaU": {
-          "type": "text",
-          "settings": {
-            "category": "",
-            "hd": "<p>Material properties and durability</p>",
-            "des": "<p><strong>– What is EVA material?</strong><br/>It is a 10 mm thick foam that keeps dirt and water on the surface of the mat and stops them getting underneath.</p><p><strong>– What is the difference between the 3D set and the 3D set with edges?</strong><br/>The 3D set with edges gives additional protection to the side trim by the floor and fits even better.</p><p><strong>– How long will the mats last?</strong><br/>Thanks to the durable EVA material the mats last 5 to 7 years with no signs of wear.</p>",
-            "des_html": ""
-          }
-        },
-        "text_fUwAtz": {
-          "type": "text",
-          "settings": {
-            "category": "",
-            "hd": "<p>Use and care</p>",
-            "des": "<p><strong>– How do I clean EVA mats?</strong><br/>Dirt does not stick to the surface. Simply shake it out, or rinse the mat with a pressure washer when it is heavily soiled.</p><p><strong>– Are EVA mats suitable for summer and winter?</strong><br/>Yes. They are waterproof, odourless, temperature-resistant and ideal for year-round use.</p>",
-            "des_html": ""
-          }
-        },
-        "text_imjMCm": {
-          "type": "text",
-          "settings": {
-            "category": "",
-            "hd": "<p>Ordering and delivery</p>",
-            "des": "<p><strong>– What is the delivery time?</strong><br/>We usually complete orders within 2 weeks. For special vehicles such as motorboats or tractors it can extend to 4–6 weeks.</p><p><strong>– How is delivery handled?</strong><br/>We ship the mats by courier straight to the customer's address. Because of the product size we do not send them to parcel lockers. We make sure the mats arrive exactly as they were made — without folding or bending, which could affect the fit.</p>",
-            "des_html": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_qyG8py",
-        "text_eNMPaU",
-        "text_fUwAtz",
-        "text_imjMCm"
-      ],
-      "settings": {
-        "design_variant": "home",
-        "hd": "CARVION CAR MATS – FAQ",
-        "heading_accent": "",
-        "heading_mobile": "FAQ",
-        "breadcrumb_parent_label": "Carvion",
-        "breadcrumb_parent_url": "",
-        "breadcrumb_current_label": "FAQ",
-        "eyebrow_link": "",
-        "view_all_label": "View all",
-        "view_all_url": "shopify://pages/faq",
-        "padding_top": 0,
-        "padding_bottom": 64,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 40
-      }
-    },
-    "video_reviews_dVUgd6": {
-      "type": "video_reviews",
-      "blocks": {
-        "item_z4D4nJ": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_5.mp4"
-          }
-        },
-        "item_ncAC47": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_6.mp4"
-          }
-        },
-        "item_xAPTY9": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_3.mp4"
-          }
-        },
-        "item_7BQtRL": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_4.mp4"
-          }
-        },
-        "item_9wU4cz": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_1.mp4"
-          }
-        },
-        "item_gzFzfa": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_5.mp4"
-          }
-        },
-        "item_fL6YAh": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_6.mp4"
-          }
-        },
-        "item_3xUKqR": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_3.mp4"
-          }
-        },
-        "item_3pTnex": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_4.mp4"
-          }
-        },
-        "item_8ecXUP": {
-          "type": "item",
-          "settings": {
-            "video": "shopify://files/videos/Untitled_1.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "item_z4D4nJ",
-        "item_ncAC47",
-        "item_xAPTY9",
-        "item_7BQtRL",
-        "item_9wU4cz",
-        "item_gzFzfa",
-        "item_fL6YAh",
-        "item_3xUKqR",
-        "item_3pTnex",
-        "item_8ecXUP"
-      ],
-      "settings": {
-        "title": "Car owners on our mats",
-        "title_accent": "Carvion",
-        "facebook_url": "https://www.facebook.com/carvion.cz",
-        "facebook_label": "Follow us on Facebook",
-        "instagram_url": "https://www.instagram.com/carvion_cz",
-        "tiktok_url": "https://www.tiktok.com/@carvion_cz",
-        "youtube_url": "https://www.youtube.com/@autokoberceeva",
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
-    "video_azQNFQ": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "video_url": "https://youtu.be/FcYcIp0mGXk",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "custom_liquid_34XwTK": {
-      "type": "custom-liquid",
-      "custom_css": [
-        ".video_compareguma {position: relative; text-align: center;}"
-      ],
-      "settings": {
-        "custom_liquid": "<div class=\"video_compareguma\">\n<iframe src=\"https://www.youtube.com/embed/T0jnyernB24?si=lxLzzJ4O_Rgyd7X_\"\nwidth=\"55%\" height=\"450\"title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "collapsible_text_YPVYyd": {
-      "type": "collapsible-text",
-      "settings": {
-        "richtext": "<p>When choosing the right mats for a car there is a lot to weigh up. Anyone unfamiliar with the subject may struggle to buy products that meet expectations and stay reliable in every situation. Finding the ideal mats for a specific make of car is hard too.</p><p>Unfortunately, some sets do not fit well enough or fall short in everyday use. Below we describe rubber car mats and compare them with our innovative EVA products. You will see for yourself how good our product is — and EVA mats will soon be in your car!</p>",
-        "collapsible_richtext": "<h3>What are rubber mats and where does their popularity come from?</h3><p>The popularity of rubber car mats comes from the fact that they are relatively cheap to maintain and universal. They work in every car model and meet most people's expectations. For years they were considered almost indestructible thanks to their exceptional resistance to mechanical damage. They perform well in almost any weather — whether it rains or snows, rubber mats keep the interior clean. They are also very resistant to the chemicals in cleaning products, so looking after them is simple and does not take much time.</p><p></p>",
-        "button_text_more": "Read more",
-        "button_text_less": "Read less",
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top": 50,
-        "padding_bottom": 57
-      }
-    },
-    "image_with_collapsible_text_XCLeBp": {
-      "type": "image-with-collapsible-text",
-      "settings": {
-        "image": "shopify://shop_images/Frame_233.png",
-        "header": "<p><strong>What to look for</strong> when choosing mats?</p>",
-        "richtext": "<p>If you are considering new car mats and do not know which technical aspects to focus on, we will help. First choose the material. The way they are fixed matters too — some models have no factory fasteners, so pick mats with a set of stoppers. The product must sit tight against the floor and must not slide while driving. The finish should not be an afterthought — if looks matter to you, the mats should match the interior in colour and size. Shape is important as well: mats that are too small slide around, and mats that are too large can catch the pedals — which is dangerous for everyone on board.</p>",
-        "collapsible_richtext": "<h3>What types of rubber car mats are there?</h3><p>Car mats fall into two types: tray mats and standard mats. Tray mats have a high edge that stops water spilling into the interior. The drive is safe and you can pour the excess water out easily — just take the mat out. Tray mats with a modern finish are available on the market, which makes them more versatile. Standard rubber mats have a specific pattern that limits the movement of water or mud inside the car and protects the original carpet.</p>",
-        "button_text_more": "Read more",
-        "button_text_less": "Read less",
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "text_with_image_zBPL3c": {
       "type": "text-with-image",
       "settings": {
-        "image": "shopify://shop_images/Rectangle_91_1.png",
-        "header": "<p><strong>How do EVA mats differ</strong> from traditional rubber mats?</p>",
-        "richtext": "<p>There are many similarities and differences between traditional rubber mats and EVA products. Let us start with what they have in common.</p><p>Above all, both rubber and EVA mats do not absorb water. Their construction prevents leaking not only on rainy days, but on snowy ones too.</p><p>Both products also work excellently as protection against every kind of dirt, because the material they are made of lets no dirt or liquid through. Rubber car mats, however, do not cover the whole floor — they protect roughly 70–90% of the car's carpet.</p><p>EVA mats are made to measure, which means they protect the largest possible area of the floor. <strong>That is up to 99% coverage!</strong> On top of that, EVA mats are odourless and non-toxic. Traditional rubber mats smell unpleasant and contain toxic substances. Dirt travels across them because it is not absorbed into the material.</p><p>In EVA mats dirt is <strong>trapped in technological cells</strong>. They are also far lighter and therefore easier to take out of the car. They need no special cleaning either.</p>",
+        "image": "shopify:\/\/shop_images\/Rectangle_91_1.png",
+        "header": "<p><strong>Čím se liší<\/strong> koberce EVA od tradičních gumových koberců?<\/p>",
+        "richtext": "<p>Istnieje wiele podobieństw, jak i różnic, które z jednej strony łączą, a z drugiej dzielą tradycyjne dywaniki gumowe od produktów EVA. Przyjrzyjmy się bliżej och wspólnym cechom.<\/p><p>Przede wszystkim zarówno gumowe dywaniki, jak i dywaniki EVA nie wchłaniają wody. Ich specjalna budowa zapobiega więc przeciekaniu nie tylko w deszczowe, ale i śnieżne dni.<\/p><p>Co więcej, oba produkty spełniają się rewelacyjnie jako ochrona podłogi przez każdym rodzajem brudu. Dzieje się tak, ponieważ materiał, z jakiego są wyprodukowane, nie przepuszcza żadnych zabrudzeń i płynów. Gumowe dywaniki samochodowe nie pokrywają jednak podłoża w całości. Chronią więc wykładzinę pojazdu w około 70–90% przed brudem. <\/p><p>Dywaniki EVA są wykonywane na wymiar, co oznacza, że zapewniają ochronę maksymalnie dużej powierzchni podłoża. <strong>Jest to nawet 99% zakrycia wykładziny!<\/strong> Ponadto, dywaniki EVA są bezzapachowe i nietoksyczne. Tradycyjne dywaniki gumowe są nieprzyjemne w zapachu, a w ich składzie znajdują się toksyczne substancje. Brud przemieszcza się po nich, ponieważ nie jest on wchłaniany w materiał.<\/p><p>W dywanikach EVA zanieczyszczenia są <strong>zatrzymywane w technologicznych komórkach<\/strong>. Są też o wiele lżejsze, a co się z tym wiąże, łatwiejsze w wyciąganiu z samochodu. Nie wymagają też specjalnego czyszczenia.<\/p><p><\/p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -650,8 +148,8 @@
     "richtext_section_K7WAxg": {
       "type": "richtext-section",
       "settings": {
-        "header": "<h2>Why is it worth <strong>buying mats in our store?</strong></h2>",
-        "richtext": "<p>When you buy EVA mats in our store you get a guarantee of excellent quality at a great price. They are handmade products. We are confident you will be happy with your choice of EVA mats!</p>",
+        "header": "<h2>Proč stojí za to <strong>koupit koberce v našem obchodě?<\/strong><\/h2>",
+        "richtext": "<p>Při nákupu EVA koberců v našem obchodě máte záruku vynikající kvality i skvělé ceny. Jsou to polské výrobky vyráběné ručně. Jsme přesvědčeni, že budete spokojeni s volbou EVA koberců!<\/p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 58,
@@ -664,56 +162,56 @@
         "image_XJcn3n": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_92_1.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_92_1.png",
             "url": ""
           }
         },
         "image_rQw3A3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_93.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_93.png",
             "url": ""
           }
         },
         "image_B9BrA4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_94.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_94.png",
             "url": ""
           }
         },
         "image_Lg49WV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_95.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_95.png",
             "url": ""
           }
         },
         "image_eztgda": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_96.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_96.png",
             "url": ""
           }
         },
         "image_cDLJnw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_97.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_97.png",
             "url": ""
           }
         },
         "image_qtHaMc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_98.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_98.png",
             "url": ""
           }
         },
         "image_BaMe8Q": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_99.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_99.png",
             "url": ""
           }
         }
@@ -729,9 +227,9 @@
         "image_BaMe8Q"
       ],
       "settings": {
-        "header": "EVA MAT PROJECTS",
-        "button_text": "ORDER",
-        "button_link": "shopify://collections/all-car-mats",
+        "header": "REALIZACJE DYWANIKÓW EVA",
+        "button_text": "OBJEDNAT",
+        "button_link": "shopify:\/\/collections\/all-car-mats",
         "centered": false,
         "small": false,
         "padding_top_mobile": 40,
@@ -750,7 +248,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "See more projects",
+        "title": "Zobrazit další realizace",
         "collection": "bestsellerss",
         "products_to_show": 14,
         "show_view_all": false,
@@ -764,13 +262,13 @@
         "h2 {text-align: center;}"
       ],
       "settings": {
-        "title": "See more projects",
+        "title": "Zobrazit další realizace",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "bestsellerss",
-        "video-title": "View projects:",
+        "video-title": "View realizations:",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -795,64 +293,64 @@
         "text_DzQCYQ": {
           "type": "text",
           "settings": {
-            "hd": "<p>Will the mats definitely fit?</p>",
-            "des": "<p>Absolutely. We make the mats individually for each car model — taking into account the brand, model, generation, year, gearbox and the specific equipment. They are processed by hand: cut, edged and profiled manually. Our patterns are based solely on measurements we take from physical cars, so there is no room for inaccuracy. The mats cover the whole floor including the small details, reaching places rubber or velour mats can only dream of.</p>"
+            "hd": "<p>Czy dywaniki na pewno będą pasować?<\/p>",
+            "des": "<p>Oczywiście, że tak. Dywaniki wykonujemy indywidualnie pod dany model auta uwzględniając marke, model, generację, rocznik, skrzynie biegów oraz dane wyposażenie. Dywaniki poddajemy ręcznej obróbce czyli wycinamy je ręcznie, obszywamy i ręcznie profilujemy. Nasze projekty opierają się tylko i wyłącznie na naszych fizycznie pobieranych pomiarach z fizycznych samochodów, więc nie ma tu mowy o jakiś niedoskonałościach. Dywaniki pokrywają całą podłogę uwzględniając drobne szczegóły i zakrywają  miejsca, które dywaniki gumowe czy welurowe mogą tylko pomarzyć.<\/p>"
           }
         },
         "text_mX9qEM": {
           "type": "text",
           "settings": {
-            "hd": "<p>How do I clean them?</p>",
-            "des": "<p>Thanks to the technology used, dirt does not soak into the mat and does not stick to it — simply shake the mat out and everything comes off. With heavier mud you can safely wash it with a pressure washer and drive on.</p>"
+            "hd": "<p>Czym to się czyści?<\/p>",
+            "des": "<p>Dzięki swojej technologii brud, który gromadzi się na dywaniku nie wchłania się oraz nie chce się go trzymać, więc dywaniki wystarczy wytrzepać i wszystko z nich gładko schodzi, ewentualnie przy dużych zabrudzeniach błota, dywaniki można śmiało umyć myjką ciśnieniowa i w drogę.<\/p>"
           }
         },
         "text_VPPPMN": {
           "type": "text",
           "settings": {
-            "hd": "<p>A mat for the tunnel? What is that?</p>",
-            "des": "<p>Carvion mats cover up to 98% of the floor, so we take care of every detail — the rear tunnel is covered too, which keeps the floor clean at all times.</p>"
+            "hd": "<p>Koberec na tunel? Co to je?<\/p>",
+            "des": "<p>Dywaniki Carvion przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta<\/p>"
           }
         },
         "text_XjTUky": {
           "type": "text",
           "settings": {
-            "hd": "<p>How long will they last?</p>",
-            "des": "<p>EVA material is known for its strength and abrasion resistance. It is also used in gyms (as mats under machines) and in footwear (soles). Compared with the alternatives, EVA mats handle wear extremely well, which lets you use them for 5–7 years with no signs of use.</p>"
+            "hd": "<p>Jak długo one posłużą?<\/p>",
+            "des": "<p>Materiał EVA jest znany ze swojej wytrzymałości i odporności na ścieranie. Używają go również na siłowniach (jako maty pod maszyny) i w butach (podeszwy). W porównaniu do alternatyw, dywaniki EVA radzą sobie fenomenalnie z problemem przecierania się, co pozwala używać je przez 5-7 lat bez śladów użytkowania.<\/p>"
           }
         },
         "text_e6APUk": {
           "type": "text",
           "settings": {
-            "hd": "<p>Classic and 3D — what is the difference?</p>",
-            "des": "<p>With both sets we cover as much of the car floor as possible. The 3D set additionally covers the side trim next to the floor and includes more 3D elements (floor contours), which we account for during production so the mats sit perfectly.</p>"
+            "hd": "<p>Klasyczne i 3D, czym to się różni?<\/p>",
+            "des": "<p>W obu kompletach staramy się maksymalnie przykryć podłogę w samochodzie, jedynie w komplecie 3D również przykrywamy boczną tapicerkę przy podłodze oraz jest więcej elementów 3D (wyprofilowań na podłodze), które uwzględniamy i stosujemy przy produkcji takich dywaników, przez co przylegają idealnie.<\/p>"
           }
         },
         "text_exrU7q": {
           "type": "text",
           "settings": {
-            "hd": "<p>What is EVA material?</p>",
-            "des": "<p>It is a 10 mm thick foam with 7 mm deep cells, which easily keeps dirt and water in one place — nothing gets under the mat until you shake it out.</p>"
+            "hd": "<p>Co to jest materiał Eva?<\/p>",
+            "des": "<p>Jest to pianka o grubości 10mm i głębokością komórek 7mm, co pozwala bez problemu zachować brud i wodę w jednym miejscu bez możliwości przedostawania się ich pod dywanik, aż nie wytrzepiemy go.<\/p>"
           }
         },
         "text_TqKDiD": {
           "type": "text",
           "settings": {
-            "hd": "<p>Are EVA mats for summer or for winter?</p>",
-            "des": "<p>EVA mats are all-season. They are practical in winter (waterproof, easy to clean, covering up to 98% of the floor) and in summer (odourless, pleasant to the touch, they do not deform in the heat).</p>"
+            "hd": "<p>Czy dywaniki EVA są na lato czy na zimę?<\/p>",
+            "des": "<p>Dywaniki EVA są całoroczne. Praktyczne w użytkowaniu jak zimą (są wodoodporne, łatwe w czyszczeniu i przykrywają do 98% podłogi) tak i latem (są bezzapachowe, przyjemne w dotyku, nie poddają się deformacjom pod wpływem temperatury)<\/p>"
           }
         },
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
-            "hd": "<p>What is the delivery time?</p>",
-            "des": "<p>It takes roughly 2 weeks from placing the order, because we make the mats to order as they come in. If you own a very unusual car or another vehicle (a motorboat, helicopter, excavator or tractor), the lead time can extend to 4–6 weeks.</p>"
+            "hd": "<p>Jaká je dodací lhůta?<\/p>",
+            "des": "<p>Od momentu złożenia zamówienia trwa to mniej więcej ok 2 tygodni, z uwagi na to, że dywaniki wykonywane są na bieżąco pod zamówienie klienta. W przypadku jeśli posiadasz bardzo wyjątkowy samochód lub inny pojazd (motorówka, helikopter, koparka lub ciągnik) czas realizacji może się wydłużyć nawet do 4-6 tygodni. <\/p>"
           }
         },
         "text_dUePyr": {
           "type": "text",
           "settings": {
-            "hd": "<p>How is the delivery handled?</p>",
-            "des": "<p>We ship the mats by courier straight to the customer's address. We do not send them to parcel lockers because of the product size. We want the mats to arrive exactly as they were made — we do not fold or bend them, as that could affect how they fit later on.</p>"
+            "hd": "<p>Jaki jest sposób dostawy?<\/p>",
+            "des": "<p>Dywaniki wysyłamy kurierem bezpośrednio pod wskazany adres klienta. Dywaników nie wysyłamy do paczkomatu ze względów gabarytów produktu. Zależy nam na tym aby dywaniki były dostarczone w takiej formie w jakiej zostały wykonane oraz nie poddać ich składaniu ani załamywaniu co może wpływać na dalsze losy dopasowania.<\/p>"
           }
         }
       },
@@ -868,27 +366,18 @@
         "text_dUePyr"
       ],
       "settings": {
-        "hd": "Carvion car mats – FAQ"
+        "hd": "Autokoberce Carvion – časté otázky"
       }
     }
   },
   "order": [
     "main",
     "compare_section_WDwBNU",
-    "hero_before_after_6Jpync",
-    "video_with_text_EbL7W9",
-    "benefits_comparison_HEGYmW",
-    "mat_comparison_Vt8DWM",
-    "compare_cards_M6itiE",
-    "feature_comparison_cGAWVU",
-    "mat_hotspot_consult_rEEBBj",
-    "content_gallery_slider_VjTdgA",
-    "home_faq_xK3HGp",
-    "video_reviews_dVUgd6",
     "video_azQNFQ",
     "custom_liquid_34XwTK",
     "collapsible_text_YPVYyd",
     "image_with_collapsible_text_XCLeBp",
+    "compare_cards_M6itiE",
     "text_with_image_zBPL3c",
     "richtext_section_K7WAxg",
     "image_collage_x9c9fK",
