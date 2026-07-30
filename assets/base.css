@@ -14182,7 +14182,7 @@ textarea.field__input:-webkit-autofill:hover,
 .evamats-header-drawer__sub-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14196,10 +14196,10 @@ textarea.field__input:-webkit-autofill:hover,
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-height: 190px;
+  min-height: 152px;
   width: 100%;
   margin: 0;
-  padding: 9px;
+  padding: 7px;
   border: 1px solid var(--eh-line);
   border-radius: 8px;
   background: var(--eh-soft);
@@ -14212,8 +14212,8 @@ textarea.field__input:-webkit-autofill:hover,
   display: grid;
   place-items: center;
   width: 100%;
-  height: 122px;
-  border-radius: 6px;
+  height: 98px;
+  border-radius: 5px;
   background: #f4f4f5;
   overflow: hidden;
 }
@@ -14225,6 +14225,12 @@ textarea.field__input:-webkit-autofill:hover,
   mix-blend-mode: multiply;
 }
 
+.evamats-header-drawer__sub-card[href*='/collections/all-car-mats'] .evamats-header-drawer__catalog-icon,
+.evamats-header-drawer__sub-card[href*='/collections/akcesoria-samochodowa'] .evamats-header-drawer__catalog-icon {
+  width: 84%;
+  height: 84%;
+}
+
 .evamats-header-drawer__sub-card-media .evamats-header-drawer__catalog-icon--placeholder {
   width: 100%;
   height: 100%;
@@ -14234,7 +14240,7 @@ textarea.field__input:-webkit-autofill:hover,
 
 .evamats-header-drawer__sub-card-label {
   min-width: 0;
-  padding: 11px 5px 5px;
+  padding: 9px 4px 4px;
   color: var(--eh-text);
   font-size: 14px;
   font-weight: 600;
