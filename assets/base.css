@@ -14262,7 +14262,6 @@ textarea.field__input:-webkit-autofill:hover,
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 2.56em;
 }
 
 /* Красная стрелка только там, где плитка открывает ещё один уровень,
