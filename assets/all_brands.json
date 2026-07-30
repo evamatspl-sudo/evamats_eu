@@ -744,71 +744,6 @@
     "logo": "016_BYD.png",
     "url": "/collections/byd"
   },
-  "Cadilac": {
-    "models": [
-      {
-        "name": "CT4",
-        "url": "/collections/cadillac-ct4"
-      },
-      {
-        "name": "CT5",
-        "url": "/collections/cadillac-ct5"
-      },
-      {
-        "name": "CT6",
-        "url": "/collections/cadillac-ct6"
-      },
-      {
-        "name": "CTS",
-        "url": "/collections/cadillac-cts"
-      },
-      {
-        "name": "DeVille",
-        "url": "/collections/cadillac-deville"
-      },
-      {
-        "name": "Eldorado",
-        "url": "/collections/dywaniki-samochodowe-eva-do-cadillac-eldorado"
-      },
-      {
-        "name": "Escalade",
-        "url": "/collections/dywaniki-samochodowe-eva-do-cadillac-escalade"
-      },
-      {
-        "name": "Escalade ESV",
-        "url": "/collections/dywaniki-samochodowe-eva-do-cadillac-escalade-esv"
-      },
-      {
-        "name": "GT4",
-        "url": "/collections/cadillac-gt4"
-      },
-      {
-        "name": "Lyriq",
-        "url": "/collections/cadillac-lyriq"
-      },
-      {
-        "name": "SRX",
-        "url": "/collections/dywaniki-samochodowe-eva-do-cadillac-srx"
-      },
-      {
-        "name": "XT4",
-        "url": "/collections/cadillac-xt4"
-      },
-      {
-        "name": "XT5",
-        "url": "/collections/cadillac-xt5"
-      },
-      {
-        "name": "XT6",
-        "url": "/collections/cadillac-xt6"
-      },
-      {
-        "name": "XTS",
-        "url": "/collections/dywaniki-samochodowe-eva-do-cadillac-xts"
-      }
-    ],
-    "logo": "017_Cadillac.png"
-  },
   "Can-Am": {
     "models": [
       {
@@ -4470,35 +4405,6 @@
     "logo": "091_Renault.png",
     "url": "/collections/renault"
   },
-  "Rolls Royce": {
-    "models": [
-      {
-        "name": "Dawn",
-        "url": "/collections/rolls-royce-dawn"
-      },
-      {
-        "name": "Ghost",
-        "url": "/collections/dywaniki-samochodowe-eva-do-rolls-royce-ghost"
-      },
-      {
-        "name": "Wraith",
-        "url": "/collections/dywaniki-samochodowe-eva-do-rolls-royce-wraith"
-      },
-      {
-        "name": "Phantom",
-        "url": "/collections/dywaniki-samochodowe-eva-do-rolls-royce-phantom"
-      },
-      {
-        "name": "Spectre",
-        "url": "/collections/dywaniki-samochodowe-eva-do-rolls-royce-spectre"
-      },
-      {
-        "name": "Cullinan",
-        "url": "/collections/dywaniki-samochodowe-eva-do-rolls-royce-cullinan"
-      }
-    ],
-    "logo": "093_Rolls-Royce.png"
-  },
   "Rover": {
     "models": [
       {
@@ -4648,87 +4554,6 @@
     ],
     "logo": "099_Seres.png",
     "url": "/collections/seres-3"
-  },
-  "Škoda": {
-    "models": [
-      {
-        "name": "100series",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-100series"
-      },
-      {
-        "name": "Citigo",
-        "url": "/collections/skoda-citigo"
-      },
-      {
-        "name": "Enyaq",
-        "url": "/collections/skoda-enyaq"
-      },
-      {
-        "name": "Elroq",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-elroq"
-      },
-      {
-        "name": "Enyaq Coupe",
-        "url": "/collections/skoda-enyaq-coupe"
-      },
-      {
-        "name": "Fabia",
-        "url": "/collections/skoda-fabia"
-      },
-      {
-        "name": "Fabia RS",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-fabia-rs"
-      },
-      {
-        "name": "Kamiq",
-        "url": "/collections/skoda-kamiq"
-      },
-      {
-        "name": "Karoq",
-        "url": "/collections/skoda-karoq"
-      },
-      {
-        "name": "Kodiaq",
-        "url": "/collections/skoda-kodiaq"
-      },
-      {
-        "name": "Kodiaq RS",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-kodiaq-rs"
-      },
-      {
-        "name": "Kodiaq GT",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-kodiaq-gt"
-      },
-      {
-        "name": "Octavia",
-        "url": "/collections/skoda-octavia"
-      },
-      {
-        "name": "Octavia RS",
-        "url": "/collections/dywaniki-samochodowe-eva-do-skoda-octavia-rs"
-      },
-      {
-        "name": "Rapid",
-        "url": "/collections/skoda-rapid"
-      },
-      {
-        "name": "Roomster",
-        "url": "/collections/skoda-roomster"
-      },
-      {
-        "name": "Scala",
-        "url": "/collections/skoda-scala"
-      },
-      {
-        "name": "Superb",
-        "url": "/collections/skoda-superb"
-      },
-      {
-        "name": "Yeti",
-        "url": "/collections/skoda-yeti"
-      }
-    ],
-    "logo": "100_Skoda.png"
   },
   "Skywell": {
     "models": [
@@ -5741,7 +5566,7 @@
     "url": "/collections/car-mats-eva-for-ligier",
     "logo": "Frame_307.png"
   },
-  "Skoda": {
+  "Škoda": {
     "models": [
       {
         "name": "Elroq",
@@ -5821,7 +5646,7 @@
       }
     ],
     "url": "/collections/skoda",
-    "logo": "Group_199.webp"
+    "logo": "100_Skoda.png"
   },
   "Rolls-Royce": {
     "models": [
@@ -5851,7 +5676,7 @@
       }
     ],
     "url": "/collections/rolls-royce",
-    "logo": "Group_188.webp"
+    "logo": "093_Rolls-Royce.png"
   },
   "Nysa": {
     "models": [],
@@ -5921,7 +5746,7 @@
       }
     ],
     "url": "/collections/cadillac",
-    "logo": "Frame_290.webp"
+    "logo": "017_Cadillac.png"
   },
   "Aito": {
     "models": [
