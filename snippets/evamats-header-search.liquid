@@ -14,7 +14,12 @@
       aria-label="{{ 'general.search.search' | t }}"
     >
       <span class="evamats-header__search-toggle">
-        {%- if section.settings.icon_search != blank -%}
+        {%- if summary_class contains 'evamats-header__search-wrap--mobile' -%}
+          <svg class="modal__toggle-open icon evamats-header__mobile-action-icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.9"/>
+            <path d="M16.25 16.25L21 21" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+        {%- elsif section.settings.icon_search != blank -%}
           {{
             section.settings.icon_search
             | image_url: width: 64
