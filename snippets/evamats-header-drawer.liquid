@@ -309,6 +309,7 @@
       {%- if catalog_menu != blank -%}
         {%- for link in catalog_menu.links -%}
           {%- if link.links != blank -%}
+            {%- capture catalog_parent_handle -%}{%- render 'evamats-menu-link-handle', link: link -%}{%- endcapture -%}
             <div
               class="evamats-header-drawer__view evamats-header-drawer__view--sub"
               data-drawer-view="catalog-l1-{{ forloop.index }}"
@@ -354,6 +355,41 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+
+                  {%- if catalog_parent_handle == 'car-brands' -%}
+                    <li class="evamats-header-drawer__sub-grid-item">
+                      <a href="{{ routes.root_url }}pages/rubber-car-mats" class="evamats-header-drawer__sub-card">
+                        <span class="evamats-header-drawer__sub-card-media">
+                          <img
+                            src="{{ 'evamats-rubber-mats-mobile-sidebar.webp' | asset_url }}"
+                            class="evamats-header-drawer__catalog-icon"
+                            width="1000"
+                            height="750"
+                            loading="lazy"
+                            decoding="async"
+                            alt=""
+                          >
+                        </span>
+                        <span class="evamats-header-drawer__sub-card-label">Gumové autokoberce</span>
+                      </a>
+                    </li>
+                    <li class="evamats-header-drawer__sub-grid-item">
+                      <a href="{{ routes.root_url }}pages/velour-car-mats" class="evamats-header-drawer__sub-card">
+                        <span class="evamats-header-drawer__sub-card-media">
+                          <img
+                            src="{{ 'evamats-velour-mats-mobile-sidebar.webp' | asset_url }}"
+                            class="evamats-header-drawer__catalog-icon"
+                            width="1000"
+                            height="750"
+                            loading="lazy"
+                            decoding="async"
+                            alt=""
+                          >
+                        </span>
+                        <span class="evamats-header-drawer__sub-card-label">Velurové autokoberce</span>
+                      </a>
+                    </li>
+                  {%- endif -%}
                 </ul>
               </div>
 
