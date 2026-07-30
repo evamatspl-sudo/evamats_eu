@@ -130,7 +130,9 @@
 
   .evamats-collection-banner__media .evamats-collection-banner__image {
     max-width: none;
-    object-position: center top;
+    /* На мобильном кадр режется по ГОРИЗОНТАЛИ (видно ~65% ширины).
+       Смещаем правее, чтобы бирка не упиралась в край. */
+    object-position: 65% top;
   }
 
   .evamats-collection-banner__overlay {
