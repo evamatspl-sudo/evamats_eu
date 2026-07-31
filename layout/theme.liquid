@@ -106,28 +106,36 @@
     {% if canonical_url == 'https://carvionauto.cz/' %}
       <meta name="description" content="{{ page_description | escape }}">
 
-    {% else if page_description %}
+    {% elsif page_description %}
       {% assign description_length = page_description | size %}
       {% if description_length < 120 or description_length > 220 %}
         {% if collection %}
-          
+          {%- assign collection_meta = '' -%}
+
             {% if request.locale.iso_code == 'en' %}
               {% assign title_parts = collection.title | split: ' for ' %}
               {% assign car_model = title_parts.last %}
               {% if title_parts[1] %}
-                <meta name="description" content="Buy high-quality EVA car mats for {{car_model}}. These all-weather, heavy-duty rubber mats provide luxury protection for your vehicle against dirt, water, and snow. Precisely fitted for {{car_model}}.">
+                {%- capture collection_meta -%}Buy high-quality EVA car mats for {{ car_model }}. These all-weather, heavy-duty rubber mats provide luxury protection for your vehicle against dirt, water, and snow. Precisely fitted for {{ car_model }}.{%- endcapture -%}
               {% endif %}
-            {% endif %}  
-          
-            {% if request.locale.iso_code == 'cz' %}
-              {% assign title_parts = collection.title | split: ' do ' %}
+            {% endif %}
+
+            {% if request.locale.iso_code == 'cs' %}
+              {% assign title_parts = collection.title | split: ' pro ' %}
               {% assign car_model = title_parts.last %}
               {% if title_parts[1] %}
-                <meta name="description" content="Kup kvalitní gumové koberce pro automobil EVA do {{car_model}}. Tyto luxusní, všeobecné, zesílené koberce zajišťují ochranu vašeho vozidla před prachem, vodou a sněhem. Přesně vyvážené pro {{car_model}}.">
+                {%- capture collection_meta -%}Autokoberce EVA na míru pro {{ car_model }} od CARVION. Voděodolné, celoroční koberce přesně podle modelu vozu — chrání interiér před vodou, blátem i sněhem. Vyberte si sadu, barvu a lemování.{%- endcapture -%}
               {% endif %}
-            {% endif %} 
+            {% endif %}
 
-        {% else %} 
+            {%- comment -%} Fallback: jazyk bez vlastní šablony nebo název kolekce bez oddělovače {%- endcomment -%}
+            {%- if collection_meta == blank -%}
+              {%- assign collection_meta = page_description -%}
+            {%- endif -%}
+
+            <meta name="description" content="{{ collection_meta | strip | escape }}">
+
+        {% else %}
           <meta name="description" content="{{ page_description | escape }}">
         {% endif %}
       {% else %}
