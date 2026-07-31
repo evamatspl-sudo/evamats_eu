@@ -15175,18 +15175,28 @@ textarea.field__input:-webkit-autofill:hover,
   --eb-ls: -0.28px;
 }
 
+/* Крошки держим в одну строку: последний пункт — название товара — раньше
+   переносился, и в конце строки оставался висячий разделитель с пустотой. */
 .evamats-breadcrumbs__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: var(--eb-gap);
+  min-width: 0;
 }
 
 .evamats-breadcrumbs__item {
   list-style: none;
+  flex: 0 0 auto;
+}
+
+.evamats-breadcrumbs__item:last-child {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .evamats-breadcrumbs__link,
@@ -15208,7 +15218,11 @@ textarea.field__input:-webkit-autofill:hover,
 }
 
 .evamats-breadcrumbs__current {
+  display: block;
   color: var(--eb-current);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .evamats-breadcrumbs__item--sep {
