@@ -41,14 +41,14 @@
         "7e1d01e0-43ee-478d-b534-bf8aaab35ad3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-1",
+            "product-link": "shopify://collections/land-rover-discovery-1",
             "color-code": "Discovery 1"
           }
         },
         "26ce33b3-d37f-481b-958c-af503c522e32": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-discovery-3",
+            "product-link": "shopify://collections/land-rover-discovery-3",
             "color-code": "Discovery 3"
           }
         },
@@ -83,7 +83,7 @@
         "fd313483-ff49-4aef-9240-321a5f120058": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-land-rover-range-rover",
+            "product-link": "shopify://collections/land-rover-range-rover",
             "color-code": "Range Rover"
           }
         },
