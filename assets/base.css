@@ -7230,8 +7230,10 @@ textarea.field__input:-webkit-autofill:hover,
   border-bottom: 0;
 }
 
+/* Липкий хедер должен перекрывать контент страницы. Было 10 — ниже, чем
+   z-index: 12 у круглых стрелок слайдера, и они налезали на меню. */
 .section-header.shopify-section-header-sticky {
-  z-index: 10;
+  z-index: 101;
 }
 
 @media (max-width: 1260px) and (min-width: 990px) {
