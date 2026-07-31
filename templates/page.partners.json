@@ -25,21 +25,21 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "icon": "shopify://shop_images/Group_1632526626.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1632526626.svg",
             "text": "Produkt s reálnou poptávkou"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948754850.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948754850.svg",
             "text": "Rychlá výroba"
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948754850-1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948754850-1.svg",
             "text": "Hotový model spolupráce"
           }
         }
@@ -55,8 +55,8 @@
         "heading_gradient": true,
         "subtitle_primary": "Vyrábíme na zakázku, vy prodáváte.",
         "subtitle_secondary": "Bez skladu, bez rizika.",
-        "image_before": "shopify://shop_images/IMG_1394.webp",
-        "image_after": "shopify://shop_images/IMG_7298_1.webp",
+        "image_before": "shopify:\/\/shop_images\/IMG_1394.webp",
+        "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
         "label_before_accent": "Koberce Carvion",
         "label_before_main": "vs. jiní výrobci",
         "cta_label": "Odeslat poptávku na spolupráci",
@@ -71,7 +71,7 @@
         "item_9G7KaT": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526600_514fbfb2-4533-43ee-83de-36a29e04760b.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526600_514fbfb2-4533-43ee-83de-36a29e04760b.webp",
             "title": "Přizpůsobení konkrétnímu vozu",
             "text_muted": "(ne univerzální)",
             "text_highlight": ""
@@ -80,7 +80,7 @@
         "item_QiLc4D": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526600-1.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526600-1.webp",
             "title": "Viditelný efekt už po prvním použití",
             "text_muted": "",
             "text_highlight": ""
@@ -89,7 +89,7 @@
         "item_nLjPDh": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526600-2.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526600-2.webp",
             "title": "Prémiový segment = vyšší hodnota košíku",
             "text_muted": "",
             "text_highlight": ""
@@ -98,7 +98,7 @@
         "item_meMWxW": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526600-3.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526600-3.webp",
             "title": "Nízká míra reklamací",
             "text_muted": "",
             "text_highlight": "(~2%)"
@@ -114,7 +114,7 @@
       "name": "Výhody produktu",
       "settings": {
         "heading": "Produkt, který zákazník opravdu chce koupit",
-        "description": "<p>Koberce Carvion řeší reálný problém řidičů — špínu, opotřebení a špatné přizpůsobení.<br/>Je to produkt, kterému zákazník hned rozumí a kupuje ho bez dlouhého rozmýšlení.</p>",
+        "description": "<p>Koberce Carvion řeší reálný problém řidičů — špínu, opotřebení a špatné přizpůsobení.<br\/>Je to produkt, kterému zákazník hned rozumí a kupuje ho bez dlouhého rozmýšlení.<\/p>",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
@@ -127,7 +127,7 @@
         "card_JHmEMF": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_30_._2026_._09_33_06_1.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1.webp",
             "title": "Prodejny autopříslušenství",
             "text": "Přidejte prémiový produkt do své nabídky"
           }
@@ -135,7 +135,7 @@
         "card_mYgMJG": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_30_._2026_._09_33_06_1-1.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-1.webp",
             "title": "Autodealeři",
             "text": "Zvyšte hodnotu vozu při prodeji"
           }
@@ -143,15 +143,15 @@
         "card_Fg4TCb": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_30_._2026_._09_33_06_1-2.webp",
-            "title": "E-commerce / online obchody",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-2.webp",
+            "title": "E-commerce \/ online obchody",
             "text": "Lehký produkt, snadný na prodej i odeslání"
           }
         },
         "card_9jXjdU": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_30_._2026_._09_33_06_1-3.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-3.webp",
             "title": "Detailingová studia a myčky",
             "text": "Zvyšte standard služeb i finální výsledek"
           }
@@ -192,7 +192,7 @@
             "item_4_icon": "4",
             "item_5_text": "",
             "item_5_icon": "5",
-            "image": "shopify://shop_images/freepik.webp",
+            "image": "shopify:\/\/shop_images\/freepik.webp",
             "badge_value": "~45%",
             "badge_label": "Průměrná marže:"
           }
@@ -205,8 +205,8 @@
             "tagline": "",
             "description": "Více možností = vyšší hodnota objednávky",
             "badge_text": "700+ variant",
-            "badge_faces_image": "shopify://shop_images/Group_1948755196.webp",
-            "image": "shopify://shop_images/dywanik_kierowcy_1.webp",
+            "badge_faces_image": "shopify:\/\/shop_images\/Group_1948755196.webp",
+            "image": "shopify:\/\/shop_images\/dywanik_kierowcy_1.webp",
             "item_1_text": "",
             "item_1_icon": "1",
             "item_2_text": "",
@@ -225,7 +225,7 @@
             "title": "Rychlé vyřízení objednávek (3–5 dní)",
             "content_type": "text",
             "description": "Výroba i logistika jsou na naší straně",
-            "bg_image": "shopify://shop_images/Group_1948755290.webp",
+            "bg_image": "shopify:\/\/shop_images\/Group_1948755290.webp",
             "show_bg_overlay": false,
             "item_1_text": "",
             "item_1_icon": "5",
@@ -255,7 +255,7 @@
             "item_4_icon": "2",
             "item_5_text": "Prodej můžete rozvíjet bez navyšování nákladů",
             "item_5_icon": "8",
-            "image": "shopify://shop_images/image_181.webp"
+            "image": "shopify:\/\/shop_images\/image_181.webp"
           }
         }
       },
@@ -324,7 +324,7 @@
       "settings": {
         "heading": "Ověřený produkt připravený k růstu",
         "intro": "Produkt je ověřený na trhu a připravený k rozvoji v modelu B2B.",
-        "image_desktop": "shopify://shop_images/Mask_group_1_1_3bb5e8f1-95d1-4f1c-8bb2-97eabd43aff8.webp",
+        "image_desktop": "shopify:\/\/shop_images\/Mask_group_1_1_3bb5e8f1-95d1-4f1c-8bb2-97eabd43aff8.webp",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 32,
@@ -338,7 +338,7 @@
           "type": "slide",
           "settings": {
             "heading": "Výroba na naší straně",
-            "body": "<p>Každá sada vzniká na zakázku v Polsku s kontrolou kvality v každé fázi.  Vy se soustředíte na prodej — o zbytek se postaráme my.</p>"
+            "body": "<p>Každá sada vzniká na zakázku v Polsku s kontrolou kvality v každé fázi.\u2028 Vy se soustředíte na prodej — o zbytek se postaráme my.<\/p>"
           }
         }
       },
@@ -347,11 +347,11 @@
       ],
       "name": "O nás — příběhový slider",
       "settings": {
-        "logo": "shopify://shop_images/Frame_1948755221_1_c64a58fc-aef3-4c24-b8e2-af79b4eb8fb9.webp",
+        "logo": "shopify:\/\/shop_images\/Frame_1948755221_1_c64a58fc-aef3-4c24-b8e2-af79b4eb8fb9.webp",
         "logo_max_width": 100,
         "logo_max_width_mobile": 100,
         "bg_media_type": "banner",
-        "bg_image_desktop": "shopify://shop_images/Rectangle_4908.webp",
+        "bg_image_desktop": "shopify:\/\/shop_images\/Rectangle_4908.webp",
         "stage_min_height": 560,
         "padding_top": 0,
         "padding_bottom": 0
@@ -364,7 +364,7 @@
           "type": "card",
           "settings": {
             "card_variant": "dropshipping",
-            "label": "Model bez investic (dropshipping / affiliate)",
+            "label": "Model bez investic (dropshipping \/ affiliate)",
             "subtitle": "Prodáváte — my vyrábíme a odesíláme",
             "title": "Vydělejte až 2000 PLN týdně při 10 objednávkách",
             "feature_1_text": "Až 25 % provize z prodeje",
@@ -408,8 +408,8 @@
       "name": "Modely partnerské spolupráce",
       "settings": {
         "heading": "Jak vypadá spolupráce s Carvion?",
-        "bg_image_top_right": "shopify://shop_images/Mask_group_1_3e2c1a08-117d-4b62-9faf-24332984a9da.webp",
-        "bg_image_bottom_left": "shopify://shop_images/Mask_group_2.webp",
+        "bg_image_top_right": "shopify:\/\/shop_images\/Mask_group_1_3e2c1a08-117d-4b62-9faf-24332984a9da.webp",
+        "bg_image_bottom_left": "shopify:\/\/shop_images\/Mask_group_2.webp",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 32,
@@ -452,7 +452,7 @@
         "alt_title": "Sázíte na dropshipping a affiliate?",
         "alt_text": "Připojte se k partnerskému programu Carvion a vydělávejte až 2000 PLN týdně — my vyrábíme a odesíláme, vy jen prodáváte.",
         "alt_button_label": "ZAREGISTRUJTE SE DO AFFILIATE PROGRAMU",
-        "alt_button_url": "https://af.uppromote.com/evamats-poland/register",
+        "alt_button_url": "https:\/\/af.uppromote.com\/evamats-poland\/register",
         "padding_top": 76,
         "padding_bottom": 88,
         "padding_top_mobile": 32,
