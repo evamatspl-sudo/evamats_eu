@@ -26,21 +26,21 @@
           "type": "point",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Group_1632526626.svg",
-            "text": "Produkt s reálnou poptávkou"
+            "text": "A product with proven demand"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Group_1948754850.svg",
-            "text": "Rychlá výroba"
+            "text": "Fast production"
           }
         },
         "point_3": {
           "type": "point",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Group_1948754850-1.svg",
-            "text": "Hotový model spolupráce"
+            "text": "Ready-made partnership model"
           }
         }
       },
@@ -51,15 +51,15 @@
       ],
       "settings": {
         "overline": "",
-        "heading": "Staňte se partnerem Carvion a vydělávejte na prodeji prémiových koberců",
+        "heading": "Become a Carvion partner and earn by selling premium car mats",
         "heading_gradient": true,
-        "subtitle_primary": "Vyrábíme na zakázku, vy prodáváte.",
-        "subtitle_secondary": "Bez skladu, bez rizika.",
+        "subtitle_primary": "We manufacture to order. You sell.",
+        "subtitle_secondary": "No stock, no risk.",
         "image_before": "shopify:\/\/shop_images\/IMG_1394.webp",
         "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
-        "label_before_accent": "Koberce Carvion",
-        "label_before_main": "vs. jiní výrobci",
-        "cta_label": "Odeslat poptávku na spolupráci",
+        "label_before_accent": "Carvion mats",
+        "label_before_main": "vs. other manufacturers",
+        "cta_label": "Request a partnership offer",
         "cta_url": "#partners_form",
         "margin_top": 0,
         "margin_bottom": 0
@@ -72,8 +72,8 @@
           "type": "item",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Frame_1632526600_514fbfb2-4533-43ee-83de-36a29e04760b.webp",
-            "title": "Přizpůsobení konkrétnímu vozu",
-            "text_muted": "(ne univerzální)",
+            "title": "Tailored to a specific vehicle",
+            "text_muted": "(not universal)",
             "text_highlight": ""
           }
         },
@@ -81,7 +81,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Frame_1632526600-1.webp",
-            "title": "Viditelný efekt už po prvním použití",
+            "title": "Visible results from the first use",
             "text_muted": "",
             "text_highlight": ""
           }
@@ -90,7 +90,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Frame_1632526600-2.webp",
-            "title": "Prémiový segment = vyšší hodnota košíku",
+            "title": "Premium segment = higher order value",
             "text_muted": "",
             "text_highlight": ""
           }
@@ -99,7 +99,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Frame_1632526600-3.webp",
-            "title": "Nízká míra reklamací",
+            "title": "Low complaint rate",
             "text_muted": "",
             "text_highlight": "(~2%)"
           }
@@ -113,8 +113,8 @@
       ],
       "name": "Výhody produktu",
       "settings": {
-        "heading": "Produkt, který zákazník opravdu chce koupit",
-        "description": "<p>Koberce Carvion řeší reálný problém řidičů — špínu, opotřebení a špatné přizpůsobení.<br\/>Je to produkt, kterému zákazník hned rozumí a kupuje ho bez dlouhého rozmýšlení.<\/p>",
+        "heading": "A product customers genuinely want to buy",
+        "description": "<p>Carvion mats solve real problems for drivers — dirt, wear and poor fit.<br/>It is a product customers immediately understand and buy without lengthy consideration.</p>",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
@@ -128,32 +128,32 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1.webp",
-            "title": "Prodejny autopříslušenství",
-            "text": "Přidejte prémiový produkt do své nabídky"
+            "title": "Automotive accessory stores",
+            "text": "Add a premium product to your range"
           }
         },
         "card_mYgMJG": {
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-1.webp",
-            "title": "Autodealeři",
-            "text": "Zvyšte hodnotu vozu při prodeji"
+            "title": "Car dealerships",
+            "text": "Increase the vehicle's value at the point of sale"
           }
         },
         "card_Fg4TCb": {
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-2.webp",
-            "title": "E-commerce \/ online obchody",
-            "text": "Lehký produkt, snadný na prodej i odeslání"
+            "title": "E-commerce / online stores",
+            "text": "A lightweight product that is easy to sell and ship"
           }
         },
         "card_9jXjdU": {
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/ChatGPT_Image_30_._2026_._09_33_06_1-3.webp",
-            "title": "Detailingová studia a myčky",
-            "text": "Zvyšte standard služeb i finální výsledek"
+            "title": "Detailing studios and car washes",
+            "text": "Raise your service standards and the quality of the final result"
           }
         }
       },
@@ -165,12 +165,12 @@
       ],
       "name": "Cílová skupina partnerů",
       "settings": {
-        "heading": "Pro koho je tato spolupráce?",
+        "heading": "Who is this partnership for?",
         "cta_url": "#partners_form",
-        "card_cta_label": "Odeslat poptávku",
-        "mobile_cta_label": "Odeslat poptávku",
-        "promo_title": "Chcete rozjet vlastní podnikání?",
-        "promo_text": "Začněte prodávat bez vlastní výroby"
+        "card_cta_label": "Send an enquiry",
+        "mobile_cta_label": "Send an enquiry",
+        "promo_title": "Want to start your own business?",
+        "promo_text": "Start selling without your own production"
       }
     },
     "evamats_kariera_benefits_M8KGea": {
@@ -179,9 +179,9 @@
         "panel_a": {
           "type": "panel_left",
           "settings": {
-            "title": "Prémiový produkt s vysokou marží",
+            "title": "Premium product with a high margin",
             "content_type": "text",
-            "description": "Vyděláváte na každé objednávce — bez vlastní výroby",
+            "description": "Earn on every order — without your own production",
             "item_1_text": "",
             "item_1_icon": "1",
             "item_2_text": "",
@@ -194,17 +194,17 @@
             "item_5_icon": "5",
             "image": "shopify:\/\/shop_images\/freepik.webp",
             "badge_value": "~45%",
-            "badge_label": "Průměrná marže:"
+            "badge_label": "Average margin:"
           }
         },
         "panel_b": {
           "type": "panel_center",
           "settings": {
-            "title": "Stovky variant personalizace",
+            "title": "Hundreds of customisation options",
             "content_type": "text",
             "tagline": "",
-            "description": "Více možností = vyšší hodnota objednávky",
-            "badge_text": "700+ variant",
+            "description": "More options = higher order value",
+            "badge_text": "700+ variants",
             "badge_faces_image": "shopify:\/\/shop_images\/Group_1948755196.webp",
             "image": "shopify:\/\/shop_images\/dywanik_kierowcy_1.webp",
             "item_1_text": "",
@@ -222,9 +222,9 @@
         "panel_c": {
           "type": "panel_right",
           "settings": {
-            "title": "Rychlé vyřízení objednávek (3–5 dní)",
+            "title": "Fast order fulfilment (3–5 days)",
             "content_type": "text",
-            "description": "Výroba i logistika jsou na naší straně",
+            "description": "We handle production and logistics",
             "bg_image": "shopify:\/\/shop_images\/Group_1948755290.webp",
             "show_bg_overlay": false,
             "item_1_text": "",
@@ -242,18 +242,18 @@
         "panel_d": {
           "type": "panel_bottom",
           "settings": {
-            "title": "Model připravený na škálování",
+            "title": "A model built to scale",
             "content_type": "list",
-            "description": "Prodej můžete rozvíjet bez navyšování nákladů",
-            "item_1_text": "Bez skladu a vstupních investic",
+            "description": "Grow your sales without increasing costs",
+            "item_1_text": "No stock or upfront investment",
             "item_1_icon": "6",
-            "item_2_text": "Nevážete peníze ve zboží",
+            "item_2_text": "No capital tied up in inventory",
             "item_2_icon": "1",
-            "item_3_text": "Podpora prodeje a hotové materiály",
+            "item_3_text": "Sales support and ready-made materials",
             "item_3_icon": "5",
-            "item_4_text": "Fotky, popisy a know-how od prvního dne",
+            "item_4_text": "Photos, descriptions and know-how from day one",
             "item_4_icon": "2",
-            "item_5_text": "Prodej můžete rozvíjet bez navyšování nákladů",
+            "item_5_text": "Grow your sales without increasing costs",
             "item_5_icon": "8",
             "image": "shopify:\/\/shop_images\/image_181.webp"
           }
@@ -268,7 +268,7 @@
       "name": "Carvion výhody bento",
       "settings": {
         "overline": "",
-        "heading": "Co získáte spoluprací s Carvion?",
+        "heading": "What do you gain by partnering with Carvion?",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 32,
@@ -284,7 +284,7 @@
             "use_orders_counter": false,
             "value": "7 082",
             "show_plus": true,
-            "label": "Zákazníků doporučuje nás dál"
+            "label": "Customers recommend us"
           }
         },
         "stat_2": {
@@ -293,7 +293,7 @@
             "use_orders_counter": false,
             "value": "1567",
             "show_plus": true,
-            "label": "Dostupných modelů aut"
+            "label": "Available vehicle models"
           }
         },
         "stat_3": {
@@ -302,7 +302,7 @@
             "use_orders_counter": true,
             "value": "56 732",
             "show_plus": true,
-            "label": "Realizovaných kompletů"
+            "label": "Completed sets"
           }
         },
         "stat_4": {
@@ -311,7 +311,7 @@
             "use_orders_counter": false,
             "value": "27",
             "show_plus": true,
-            "label": "Doručení do více než 27 zemí"
+            "label": "Delivered to more than 27 countries"
           }
         }
       },
@@ -322,8 +322,8 @@
         "stat_4"
       ],
       "settings": {
-        "heading": "Ověřený produkt připravený k růstu",
-        "intro": "Produkt je ověřený na trhu a připravený k rozvoji v modelu B2B.",
+        "heading": "A proven product ready to grow",
+        "intro": "The product is proven in the market and ready to grow in a B2B model.",
         "image_desktop": "shopify:\/\/shop_images\/Mask_group_1_1_3bb5e8f1-95d1-4f1c-8bb2-97eabd43aff8.webp",
         "padding_top": 80,
         "padding_bottom": 80,
@@ -337,8 +337,8 @@
         "slide_bEtXM4": {
           "type": "slide",
           "settings": {
-            "heading": "Výroba na naší straně",
-            "body": "<p>Každá sada vzniká na zakázku v Polsku s kontrolou kvality v každé fázi.\u2028 Vy se soustředíte na prodej — o zbytek se postaráme my.<\/p>"
+            "heading": "We handle the manufacturing",
+            "body": "<p>Every set is made to order in Poland, with quality control at every stage.<br/>You focus on sales — we take care of the rest.</p>"
           }
         }
       },
@@ -364,39 +364,39 @@
           "type": "card",
           "settings": {
             "card_variant": "dropshipping",
-            "label": "Model bez investic (dropshipping \/ affiliate)",
-            "subtitle": "Prodáváte — my vyrábíme a odesíláme",
-            "title": "Vydělejte až 2000 PLN týdně při 10 objednávkách",
-            "feature_1_text": "Až 25 % provize z prodeje",
-            "feature_2_text": "Bez skladu a vstupních nákladů",
-            "feature_3_text": "Hotové marketingové materiály",
-            "feature_4_text": "Zpracování objednávek na naší straně"
+            "label": "No-investment model (dropshipping / affiliate)",
+            "subtitle": "You sell — we manufacture and ship",
+            "title": "Earn up to PLN 2,000 per week with 10 orders",
+            "feature_1_text": "Up to 25% sales commission",
+            "feature_2_text": "No stock or upfront costs",
+            "feature_3_text": "Ready-to-use marketing materials",
+            "feature_4_text": "Order processing handled by us"
           }
         },
         "card_bT7CxJ": {
           "type": "card",
           "settings": {
             "card_variant": "partner",
-            "label": "Partnerský model (velkoobchodní nákup)",
-            "subtitle": "Nakupujete levněji — prodáváte s vlastní marží",
-            "title": "Čím větší objem, tím vyšší zisk",
-            "feature_1_text": "Individuální velkoobchodní ceny",
-            "feature_2_text": "Vyšší marže při větších objemech",
-            "feature_3_text": "Stabilní spolupráce a dostupnost",
-            "feature_4_text": "Možnost budovat vlastní značku"
+            "label": "Partnership model (wholesale purchasing)",
+            "subtitle": "Buy at a lower price — sell at your own margin",
+            "title": "The greater the volume, the higher the profit",
+            "feature_1_text": "Dedicated wholesale pricing",
+            "feature_2_text": "Higher margins at larger volumes",
+            "feature_3_text": "Stable cooperation and availability",
+            "feature_4_text": "Opportunity to build your own brand"
           }
         },
         "card_3YpgDU": {
           "type": "card",
           "settings": {
             "card_variant": "support",
-            "label": "Pro každého partnera",
-            "subtitle": "Vždy máte někoho, kdo vám pomůže fungovat",
-            "title": "Bez ohledu na model — zajišťujeme plnou podporu:",
-            "feature_1_text": "Hotové prodejní materiály",
-            "feature_2_text": "Stálá dostupnost produktu",
-            "feature_3_text": "Rychlé vyřízení",
-            "feature_4_text": "Podpora konzultanta"
+            "label": "For every partner",
+            "subtitle": "You always have someone to support you",
+            "title": "Whatever the model, we provide full support:",
+            "feature_1_text": "Ready-to-use sales materials",
+            "feature_2_text": "Consistent product availability",
+            "feature_3_text": "Fast fulfilment",
+            "feature_4_text": "Consultant support"
           }
         }
       },
@@ -407,7 +407,7 @@
       ],
       "name": "Modely partnerské spolupráce",
       "settings": {
-        "heading": "Jak vypadá spolupráce s Carvion?",
+        "heading": "What does partnering with Carvion look like?",
         "bg_image_top_right": "shopify:\/\/shop_images\/Mask_group_1_3e2c1a08-117d-4b62-9faf-24332984a9da.webp",
         "bg_image_bottom_left": "shopify:\/\/shop_images\/Mask_group_2.webp",
         "padding_top": 80,
@@ -420,39 +420,39 @@
       "type": "evamats-partners-consult-form-v2",
       "name": "Partnerský konzultační formulář",
       "settings": {
-        "hidden_form_tag": "Partneři — poptávka (webová stránka)",
-        "heading": "Začněte spolupráci",
-        "subheading": "Nabídku přizpůsobenou vašemu podnikání obdržíte do 2 dnů",
-        "label_first_name": "Jméno",
-        "placeholder_first_name": "Jméno",
-        "label_last_name": "Příjmení",
-        "placeholder_last_name": "Příjmení",
-        "label_business_sphere": "Oblast podnikání",
-        "placeholder_business_sphere": "Oblast podnikání",
-        "business_sphere_options": "IT\nProdej\nVeřejná správa",
-        "label_phone": "Telefon",
+        "hidden_form_tag": "Partners — enquiry (website)",
+        "heading": "Start a partnership",
+        "subheading": "Receive an offer tailored to your business within 2 days",
+        "label_first_name": "First name",
+        "placeholder_first_name": "First name",
+        "label_last_name": "Last name",
+        "placeholder_last_name": "Last name",
+        "label_business_sphere": "Business area",
+        "placeholder_business_sphere": "Business area",
+        "business_sphere_options": "IT\nSales\nPublic administration",
+        "label_phone": "Phone",
         "phone_prefix": "+48",
         "placeholder_phone": "000-000-000",
-        "label_email": "E-mail",
-        "placeholder_email": "jan@example.com",
-        "label_message": "Komentář (volitelné)",
-        "placeholder_message": "Komentář (volitelné)",
-        "submit_label": "Získat nabídku spolupráce",
-        "consent_intro": "Souhlasím s",
-        "terms_label": "obchodními podmínkami",
+        "label_email": "Email",
+        "placeholder_email": "john@example.com",
+        "label_message": "Comment (optional)",
+        "placeholder_message": "Comment (optional)",
+        "submit_label": "Get a partnership offer",
+        "consent_intro": "I agree to the",
+        "terms_label": "Terms and Conditions",
         "terms_url": "",
-        "consent_mid": "a",
-        "privacy_label": "zásadami ochrany osobních údajů",
+        "consent_mid": "and",
+        "privacy_label": "Privacy Policy",
         "privacy_url": "",
         "consent_end": ".",
-        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
-        "success_message": "Děkujeme! Brzy se vám ozveme.",
-        "error_message": "Zkontrolujte pole a zkuste to znovu.",
-        "alt_divider_text": "nebo",
-        "alt_title": "Sázíte na dropshipping a affiliate?",
-        "alt_text": "Připojte se k partnerskému programu Carvion a vydělávejte až 2000 PLN týdně — my vyrábíme a odesíláme, vy jen prodáváte.",
-        "alt_button_label": "ZAREGISTRUJTE SE DO AFFILIATE PROGRAMU",
-        "alt_button_url": "https:\/\/af.uppromote.com\/evamats-poland\/register",
+        "consent_error_message": "You must accept the Privacy Policy and the Terms and Conditions.",
+        "success_message": "Thank you! We will be in touch shortly.",
+        "error_message": "Check the fields and try again.",
+        "alt_divider_text": "or",
+        "alt_title": "Interested in dropshipping and affiliate sales?",
+        "alt_text": "Join the Carvion partner programme and earn up to PLN 2,000 per week — we manufacture and ship, you simply sell.",
+        "alt_button_label": "JOIN THE AFFILIATE PROGRAM",
+        "alt_button_url": "https://af.uppromote.com/evamats-en/register",
         "padding_top": 76,
         "padding_bottom": 88,
         "padding_top_mobile": 32,
