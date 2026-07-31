@@ -1,7 +1,7 @@
 /** Display-only: strip brand tokens from variant option labels (catalog values stay unchanged). */
 window.evamatsStripBrandLabel = function (value) {
   return String(value || '')
-    .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+    .replace(/\s*EVAMATS\s*/gi, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim();
 };

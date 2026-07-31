@@ -32,7 +32,7 @@ function initProductConfigCore() {
         return window.evamatsStripBrandLabel(value);
       }
       return String(value || '')
-        .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+        .replace(/\s*EVAMATS\s*/gi, ' ')
         .replace(/\s{2,}/g, ' ')
         .trim();
     }
@@ -1026,7 +1026,7 @@ window.addEventListener('resize', () => {
           return window.evamatsStripBrandLabel(value);
         }
         return String(value || '')
-          .replace(/\s*(?:EVAMATS|Carvion)\s*/gi, ' ')
+          .replace(/\s*EVAMATS\s*/gi, ' ')
           .replace(/\s{2,}/g, ' ')
           .trim();
       }
