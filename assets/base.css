@@ -15239,4 +15239,11 @@ textarea.field__input:-webkit-autofill:hover,
     --eb-lh: 1.6;
     --eb-ls: -0.28px;
   }
+
+  /* На узком экране название сжималось до пары букв. Прячем последний пункт
+     и разделитель перед ним — заголовок страницы всё равно стоит сразу ниже. */
+  .evamats-breadcrumbs__item:last-child,
+  .evamats-breadcrumbs__item:nth-last-child(2) {
+    display: none;
+  }
 }
