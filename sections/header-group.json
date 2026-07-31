@@ -112,6 +112,27 @@
             "menu_item_handle": "velour-car-mats",
             "icon": "shopify://shop_images/carvion-menu-tile-velour-mats.webp"
           }
+        },
+        "catalog_drawer_icon_seatcov": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "seat-covers-cushions",
+            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+          }
+        },
+        "catalog_drawer_icon_seatcov_cs": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "autopotahy-a-polstare",
+            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+          }
+        },
+        "catalog_drawer_icon_seatcov_de": {
+          "type": "catalog_drawer_icon",
+          "settings": {
+            "menu_item_handle": "sitzbezuege-und-kissen",
+            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+          }
         }
       },
       "block_order": [
@@ -125,7 +146,10 @@
         "catalog_drawer_icon_xwCwyy",
         "catalog_drawer_icon_GMznEV",
         "catalog_drawer_icon_HyWfKX",
-        "catalog_drawer_icon_MPPP8V"
+        "catalog_drawer_icon_MPPP8V",
+        "catalog_drawer_icon_seatcov",
+        "catalog_drawer_icon_seatcov_cs",
+        "catalog_drawer_icon_seatcov_de"
       ],
       "custom_css": [],
       "settings": {
