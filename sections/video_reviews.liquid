@@ -104,12 +104,12 @@
                 <video
                   data-src="{{ block.settings.video.sources[1].url }}"
                   {% if poster_url %}
-                    poster="{{ poster_url | image_url: width: 320 }}"
+                    data-poster="{{ poster_url | image_url: width: 320 }}"
                   {% endif %}
                   loop
                   muted
                   playsinline
-                  preload="metadata"
+                  preload="none"
                 ></video>
                             </div>                        
                         {% endfor %}
@@ -134,7 +134,7 @@
               controls
               loop
               playsinline
-              preload="metadata"
+              preload="none"
             ></video>
                     </div>                        
                 {% endfor %}

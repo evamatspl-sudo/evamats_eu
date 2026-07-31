@@ -1,7 +1,17 @@
 // video reviews
 (function () {
+    function hydrateVideoPoster(video) {
+        if (!video) return;
+        var poster = video.getAttribute('data-poster');
+        if (!poster || video.getAttribute('poster')) return;
+        video.setAttribute('poster', poster);
+        video.removeAttribute('data-poster');
+    }
+
     function hydrateVideoSource(video) {
-        if (!video || video.src) return;
+        if (!video) return;
+        hydrateVideoPoster(video);
+        if (video.src) return;
         var src = video.getAttribute('data-src');
         if (!src) return;
         video.src = src;
@@ -10,8 +20,11 @@
 
     function hydrateSliderVideos(container) {
         if (!container) return;
-        container.querySelectorAll('video[data-src]').forEach(function (video) {
-            hydrateVideoSource(video);
+        container.querySelectorAll('video').forEach(function (video) {
+            hydrateVideoPoster(video);
+            if (video.getAttribute('data-src')) {
+                hydrateVideoSource(video);
+            }
             if (video.src) {
                 video.load();
             }
