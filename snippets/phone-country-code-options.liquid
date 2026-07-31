@@ -1,34 +1,45 @@
 {%- comment -%}
   European dialing codes for phone prefix select.
-  Optional: selected (e.g. '+42')
+
+  Default prefix follows the storefront language:
+    cs → +420 (CZ)   de → +49 (DE)   sk → +421 (SK)
+    pl → +48 (PL)    fr → +33 (FR)   it → +39 (IT)   es → +34 (ES)
+    everything else  → +420
+
+  Optional param: selected (e.g. '+420').
+  Legacy/stale values ('+42' — the defunct Czechoslovak code — and a blank value)
+  are ignored and replaced by the language default.
 {%- endcomment -%}
 {%- liquid
-  assign selected_code = selected | default: '+42' | strip
+  assign locale_code = request.locale.iso_code
+
+  case locale_code
+    when 'cs'
+      assign default_code = '+420'
+    when 'de'
+      assign default_code = '+49'
+    when 'sk'
+      assign default_code = '+421'
+    when 'pl'
+      assign default_code = '+48'
+    when 'fr'
+      assign default_code = '+33'
+    when 'it'
+      assign default_code = '+39'
+    when 'es'
+      assign default_code = '+34'
+    else
+      assign default_code = '+420'
+  endcase
+
+  assign selected_code = selected | default: '' | strip
+
+  if selected_code == blank or selected_code == '+42'
+    assign selected_code = default_code
+  endif
+
+  assign dial_codes = '+30,+31,+32,+33,+34,+36,+39,+40,+41,+43,+44,+45,+46,+47,+48,+49,+351,+358,+359,+370,+371,+372,+385,+386,+420,+421,+423' | split: ','
 -%}
-<option value="+30"{% if selected_code == '+30' %} selected{% endif %}>+30</option>
-<option value="+31"{% if selected_code == '+31' %} selected{% endif %}>+31</option>
-<option value="+32"{% if selected_code == '+32' %} selected{% endif %}>+32</option>
-<option value="+33"{% if selected_code == '+33' %} selected{% endif %}>+33</option>
-<option value="+34"{% if selected_code == '+34' %} selected{% endif %}>+34</option>
-<option value="+36"{% if selected_code == '+36' %} selected{% endif %}>+36</option>
-<option value="+39"{% if selected_code == '+39' %} selected{% endif %}>+39</option>
-<option value="+40"{% if selected_code == '+40' %} selected{% endif %}>+40</option>
-<option value="+41"{% if selected_code == '+41' %} selected{% endif %}>+41</option>
-<option value="+42"{% if selected_code == '+42' %} selected{% endif %}>+42</option>
-<option value="+43"{% if selected_code == '+43' %} selected{% endif %}>+43</option>
-<option value="+44"{% if selected_code == '+44' %} selected{% endif %}>+44</option>
-<option value="+45"{% if selected_code == '+45' %} selected{% endif %}>+45</option>
-<option value="+46"{% if selected_code == '+46' %} selected{% endif %}>+46</option>
-<option value="+47"{% if selected_code == '+47' %} selected{% endif %}>+47</option>
-<option value="+48"{% if selected_code == '+48' %} selected{% endif %}>+48</option>
-<option value="+49"{% if selected_code == '+49' %} selected{% endif %}>+49</option>
-<option value="+351"{% if selected_code == '+351' %} selected{% endif %}>+351</option>
-<option value="+358"{% if selected_code == '+358' %} selected{% endif %}>+358</option>
-<option value="+359"{% if selected_code == '+359' %} selected{% endif %}>+359</option>
-<option value="+370"{% if selected_code == '+370' %} selected{% endif %}>+370</option>
-<option value="+371"{% if selected_code == '+371' %} selected{% endif %}>+371</option>
-<option value="+372"{% if selected_code == '+372' %} selected{% endif %}>+372</option>
-<option value="+385"{% if selected_code == '+385' %} selected{% endif %}>+385</option>
-<option value="+386"{% if selected_code == '+386' %} selected{% endif %}>+386</option>
-<option value="+421"{% if selected_code == '+421' %} selected{% endif %}>+421</option>
-<option value="+423"{% if selected_code == '+423' %} selected{% endif %}>+423</option>
+{%- for dial_code in dial_codes -%}
+<option value="{{ dial_code }}"{% if selected_code == dial_code %} selected{% endif %}>{{ dial_code }}</option>
+{%- endfor -%}
