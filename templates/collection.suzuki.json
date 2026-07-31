@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -27,140 +27,140 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/all-car-mats",
+            "product-link": "shopify://collections/all-car-mats",
             "color-code": "Vše"
           }
         },
         "287e8adf-1764-46c4-8f80-26a7b1e1e574": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-across",
+            "product-link": "shopify://collections/suzuki-across",
             "color-code": "Across"
           }
         },
         "section_d9NyJD": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-alto",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-alto",
             "color-code": "Alto"
           }
         },
         "27fe61e4-9799-42fb-ab50-799cb0ad8e9f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-baleno",
+            "product-link": "shopify://collections/suzuki-baleno",
             "color-code": "Baleno"
           }
         },
         "ea9cb36c-c5f0-4474-984e-22c150dd4018": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-celerio",
+            "product-link": "shopify://collections/suzuki-celerio",
             "color-code": "Celerio"
           }
         },
         "19d03aab-e720-4a01-9e9e-5fb207c69c24": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-ciaz",
+            "product-link": "shopify://collections/suzuki-ciaz",
             "color-code": "Ciaz"
           }
         },
         "da1928db-19d3-4f47-8a05-ba7f1645bcda": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-dzire",
+            "product-link": "shopify://collections/suzuki-dzire",
             "color-code": "DZire"
           }
         },
         "93b59677-70aa-48f2-bb5f-df554ca1ec84": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-fronx",
+            "product-link": "shopify://collections/suzuki-fronx",
             "color-code": "Fronx"
           }
         },
         "2be710d3-d742-4823-bc4a-05b922453179": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-grand-vitara",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-grand-vitara",
             "color-code": "Gra Vitara"
           }
         },
         "2cd4ef43-c530-47ea-a3a0-11d47802d09b": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-ignis",
+            "product-link": "shopify://collections/suzuki-ignis",
             "color-code": "Ignis"
           }
         },
         "b7b51924-fa5b-495f-9db5-16fdbc7d30c1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-jimny",
+            "product-link": "shopify://collections/suzuki-jimny",
             "color-code": "Jimny"
           }
         },
         "5b27215a-0013-4e6c-b0c3-8db9f1d91062": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-liana",
+            "product-link": "shopify://collections/suzuki-liana",
             "color-code": "Liana"
           }
         },
         "5206a88b-402a-4da6-9bfc-a0e4973c56e0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-reno",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-reno",
             "color-code": "Reno"
           }
         },
         "87f8afa1-8083-44aa-b9aa-6d0dcb013aaa": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-splash",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-splash",
             "color-code": "Splash"
           }
         },
         "bf8adad0-40b4-4382-b987-8794b548a39e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swace",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-swace",
             "color-code": "Swace"
           }
         },
         "217051b2-01c0-4bf0-bc4a-fc05938f1d0d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-swift",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-swift",
             "color-code": "Swift"
           }
         },
         "63e45f93-f2b3-403a-babe-6c035972d2f2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4",
+            "product-link": "shopify://collections/suzuki-sx4",
             "color-code": "SX4"
           }
         },
         "7c7653e4-ae62-4ddc-b999-1ace9f0694c4": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-sx4-s-cross",
+            "product-link": "shopify://collections/suzuki-sx4-s-cross",
             "color-code": "SX4 S-cross"
           }
         },
         "d78b8aa2-4a43-46c1-a658-5a79c19d185c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-suzuki-vitara",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-suzuki-vitara",
             "color-code": "Vitara"
           }
         },
         "c5fb47d0-1613-4139-b03a-420ae5808183": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/suzuki-xl7",
+            "product-link": "shopify://collections/suzuki-xl7",
             "color-code": "XL7"
           }
         }
