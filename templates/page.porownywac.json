@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -63,7 +63,7 @@
         "badge_background": "#ffffff",
         "center_text": "VS.",
         "left_title": "<p>Velurové koberce</p>",
-        "left_image": "shopify://shop_images/velour-img.webp",
+        "left_image": "shopify://shop_images/carvion-rubber-comparison-slider-20260731.webp",
         "right_title": "<p>Koberce <strong>Carvion</strong></p>",
         "right_image": "shopify://shop_images/hero-evamats-after.webp",
         "padding_top": 0,
@@ -149,7 +149,7 @@
           "type": "item",
           "settings": {
             "image_before": "shopify://shop_images/hero-evamats-after.webp",
-            "image_after": "shopify://shop_images/velour-img.webp"
+            "image_after": "shopify://shop_images/carvion-rubber-comparison-slider-20260731.webp"
           }
         }
       },
@@ -179,7 +179,7 @@
           "settings": {
             "header": "<p><strong>Nevýhody</strong> velurových koberců</p>",
             "unordered_list": "<ul><li>Absorbují vodu a nečistoty hluboko ve struktuře látky</li><li>Náročné na čištění</li><li>Rychle ztrácejí původní vzhled</li><li>Místo pod pravou nohou se velmi rychle opotřebovává</li><li>Pokrývají 60–70 % dostupné plochy podlahy</li><li>Nejsou odolné vůči chemikáliím</li><li>Nabízejí základní personalizaci</li></ul>",
-            "image": "shopify://shop_images/IMG_8796_1_1.png",
+            "image": "shopify://shop_images/carvion-rubber-comparison-card-20260731.webp",
             "button_visibility": "mobile",
             "button_label": "Zobrazit produkt",
             "button_link": "shopify://collections/all-car-mats"
