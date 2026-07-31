@@ -7377,15 +7377,13 @@ textarea.field__input:-webkit-autofill:hover,
   }
 
   .evamats-header__icon-actions {
-    gap: 16px;
+    gap: 6px;
   }
 
   .evamats-header__search-wrap--mobile .evamats-header__search-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
   }
 
   .evamats-header__search-wrap--mobile .modal__toggle-close {
@@ -7401,8 +7399,8 @@ textarea.field__input:-webkit-autofill:hover,
   }
 
   .evamats-header__search-wrap--mobile .evamats-header__search-icon-img {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
   }
 }
@@ -7461,10 +7459,14 @@ textarea.field__input:-webkit-autofill:hover,
   background-color: var(--eh-bg);
 }
 
-/* Collection banner: mobile header action buttons */
+/* Mobile header action buttons (all pages) */
 @media screen and (max-width: 749px) {
-  .template_collection:has(.evamats-collection-banner) .evamats-header__icon-btn,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__drawer-toggle {
+  .evamats-header__icon-actions {
+    gap: 6px;
+  }
+
+  .evamats-header__icon-btn,
+  .evamats-header__drawer-toggle {
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -7476,25 +7478,25 @@ textarea.field__input:-webkit-autofill:hover,
     color: #fff;
   }
 
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-toggle,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile > details,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile > details > summary {
+  .evamats-header__search-toggle,
+  .evamats-header__search-wrap--mobile,
+  .evamats-header__search-wrap--mobile > details,
+  .evamats-header__search-wrap--mobile > details > summary {
     width: 40px;
     height: 40px;
   }
 
-  .template_collection:has(.evamats-collection-banner) .evamats-header__mobile-action-icon {
+  .evamats-header__mobile-action-icon {
     display: block;
     width: 24px;
     height: 24px;
   }
 
-  .template_collection:has(.evamats-collection-banner) .evamats-header__cart-icon--mobile {
+  .evamats-header__cart-icon--mobile {
     margin: auto;
   }
 
-  .template_collection:has(.evamats-collection-banner) .header__icon--cart .cart-count-bubble {
+  .evamats-header .header__icon--cart .cart-count-bubble {
     top: 1px;
     right: 1px;
     min-width: 18px;
@@ -7507,12 +7509,12 @@ textarea.field__input:-webkit-autofill:hover,
 }
 
 @media screen and (max-width: 370px) {
-  .template_collection:has(.evamats-collection-banner) .evamats-header__icon-btn,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__drawer-toggle,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-toggle,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile > details,
-  .template_collection:has(.evamats-collection-banner) .evamats-header__search-wrap--mobile > details > summary {
+  .evamats-header__icon-btn,
+  .evamats-header__drawer-toggle,
+  .evamats-header__search-toggle,
+  .evamats-header__search-wrap--mobile,
+  .evamats-header__search-wrap--mobile > details,
+  .evamats-header__search-wrap--mobile > details > summary {
     width: 38px;
     height: 38px;
     min-width: 38px;

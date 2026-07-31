@@ -307,13 +307,8 @@
   }
 
   .efc-card__price-line--sale {
-    flex-wrap: wrap;
-    row-gap: 4px;
-  }
-
-  .efc-card__price-line--sale .efc-card__price-current {
-    flex: 0 0 100%;
-    text-align: center;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 }
 
@@ -409,9 +404,16 @@
     line-height: 1.4;
   }
 
+  .efc-card__price-line {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
   .efc-card__price-from,
-  .efc-card__price-old {
+  .efc-card__price-old,
+  .efc-card__price-current {
     font-size: 15px;
+    white-space: nowrap;
   }
 
   .efc-card__price-old-line {
@@ -423,17 +425,7 @@
     padding: 0 5px 0 7px;
     font-size: 12px;
     clip-path: polygon(7px 0, 100% 0, 100% 100%, 7px 100%, 0 50%);
-  }
-
-  .efc-card__price-line--sale {
-    flex-wrap: wrap;
-    row-gap: 4px;
-  }
-
-  .efc-card__price-line--sale .efc-card__price-current {
-    flex: 0 0 100%;
-    font-size: 20px;
-    text-align: center;
+    flex-shrink: 0;
   }
 
   .efc-card__price-line:not(.efc-card__price-line--sale) .efc-card__price-from,

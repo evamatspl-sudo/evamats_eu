@@ -87,7 +87,7 @@
         {%- if on_sale -%}
           <span class="efc-card__price-old">
             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-            {{ compare_at_price | money_without_trailing_zeros }}
+            {{ compare_at_price | money }}
             <span class="efc-card__price-old-line" aria-hidden="true"></span>
           </span>
           <span class="efc-card__price-current">
