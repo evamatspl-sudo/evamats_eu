@@ -61,7 +61,7 @@
       assign bc_current_label = collection.title
 
       case collection.handle
-        when 'car-accessories-organizers', 'organizers-to-trunk', 'podpietki', 'autopotahy-a-polstare'
+        when 'car-accessories-organizers', 'organizers-to-trunk', 'podpietki', 'seat-covers-cushions'
           case request.locale.iso_code
             when 'cs'
               assign bc_catalog_label = 'Příslušenství'
@@ -107,7 +107,7 @@
           when 'podpietki'
             assign breadcrumb_kind = 'heel-pads'
             assign breadcrumb_category_collection = product_collection
-          when 'autopotahy-a-polstare'
+          when 'seat-covers-cushions'
             assign breadcrumb_kind = 'seat-covers'
             assign breadcrumb_category_collection = product_collection
           when 'mats-for-home'
