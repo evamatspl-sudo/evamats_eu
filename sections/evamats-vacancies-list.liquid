@@ -1,3 +1,4 @@
+{{ 'section-evamats-vacancies-list.css' | asset_url | stylesheet_tag }}
 {%- liquid
   assign articles_per_page = section.settings.articles_per_page | default: 2
   assign label_contract = section.settings.label_contract | default: section.settings.label_level | default: 'Umowa'

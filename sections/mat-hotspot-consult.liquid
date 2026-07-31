@@ -1,3 +1,5 @@
+{{ 'section-mat-hotspot-consult.css' | asset_url | stylesheet_tag }}
+{{ 'section-mat-consult-form.css' | asset_url | stylesheet_tag }}
 {%- liquid
   assign mat_form_id = 'MatConsultForm-' | append: section.id
   assign mat_form_wrapper_id = 'mat-consult-form-' | append: section.id

@@ -1,0 +1,158 @@
+/* --- evamats-kariera-supervisor.liquid --- */
+  .evamats-kariera-supervisor {
+      background: transparent;
+      color: var(--color-text);
+      min-height: 517px;
+      overflow: hidden;
+    }
+  
+    .evamats-kariera-supervisor__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+  
+    .evamats-kariera-supervisor__heading {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-kariera-supervisor__heading--mobile {
+      display: none;
+    }
+  
+    .evamats-kariera-supervisor__heading--desktop {
+      line-height: 1.1;
+      margin-bottom: 51px;
+    }
+  
+    .evamats-kariera-supervisor__layout {
+      display: grid;
+      grid-template-columns: 325px minmax(0, 1fr);
+      gap: 59px;
+      align-items: start;
+    }
+  
+    .evamats-kariera-supervisor__media {
+      width: 325px;
+      height: 488px;
+    }
+  
+    .evamats-kariera-supervisor__photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: right bottom;
+    }
+  
+    .evamats-kariera-supervisor__photo--placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .evamats-kariera-supervisor__content {
+      padding-top: 45px;
+      max-width: 520px;
+    }
+  
+    .evamats-kariera-supervisor__text {
+      margin: 0 0 17px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-kariera-supervisor__person {
+      margin-bottom: 52px;
+    }
+  
+    .evamats-kariera-supervisor__name {
+      margin: 0 0 15px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-kariera-supervisor__role {
+      margin: 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #ef022d;
+    }
+  
+    .evamats-kariera-supervisor__cta {
+      min-width: 214px;
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-kariera-supervisor {
+        min-height: 470px;
+      }
+
+      .evamats-kariera-supervisor__heading--desktop {
+        display: none;
+      }
+  
+      .evamats-kariera-supervisor__heading--mobile {
+        display: block;
+        margin: 0 auto 34px;
+        font-size: 22px;
+        line-height: 1;
+        text-align: center;
+      }
+  
+      .evamats-kariera-supervisor__layout {
+        position: relative;
+        display: block;
+        min-height: 343px;
+      }
+  
+      .evamats-kariera-supervisor__media {
+        position: absolute;
+        right: -18px;
+        bottom: -37px;
+        width: 229px;
+        height: 343px;
+        z-index: 0;
+        pointer-events: none;
+      }
+  
+      .evamats-kariera-supervisor__content {
+        position: relative;
+        z-index: 1;
+        padding-top: 0;
+        max-width: 202px;
+      }
+  
+      .evamats-kariera-supervisor__text {
+        margin-bottom: 34px;
+        font-size: 16px;
+      }
+  
+      .evamats-kariera-supervisor__person {
+        margin-bottom: 26px;
+      }
+  
+      .evamats-kariera-supervisor__name {
+        margin-bottom: 11px;
+        font-size: 18px;
+      }
+  
+      .evamats-kariera-supervisor__role {
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+  
+      .evamats-kariera-supervisor__cta {
+        min-width: 168px;
+      }
+    }

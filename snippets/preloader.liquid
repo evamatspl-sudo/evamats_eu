@@ -1,94 +1,128 @@
-<div id="preloader">
+{%- liquid
+  assign show_preloader = false
+  if template.name == 'product'
+    assign show_preloader = true
+  endif
+-%}
+{%- if show_preloader -%}
+<div id="preloader" class="evamats-preloader" aria-hidden="true">
   <div id="loader"></div>
 </div>
-  
-<style>
-    body {
-      background-color: #000101;
-      margin: 0;
-    }
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000101;
-      z-index: 999999999999;
-    }
-    #loader {
-      display: block;
-      position: relative;
-      left: 50%;
-      top: 50%;
-      width: 150px;
-      height: 150px;
-      margin: -75px 0 0 -75px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      border-top-color: #FF002E;
-      -webkit-animation: spin 2s linear infinite;
-      animation: spin 2s linear infinite;
-    }
-    #loader:before {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      right: 5px;
-      bottom: 5px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      border-top-color: #BFBFBF;
-      -webkit-animation: spin 3s linear infinite;
-      animation: spin 3s linear infinite;
-    }
-    #loader:after {
-      content: "";
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      bottom: 15px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      border-top-color: #FF002E;
-      -webkit-animation: spin 1.5s linear infinite;
-      animation: spin 1.5s linear infinite;
-    }
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-    @keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const preloader = document.querySelector('#preloader');
-      preloader.style.display = 'block';
 
-      // Set a timer to hide the preloader after a certain time (e.g., 10 seconds)
+<style>
+  #preloader.evamats-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000101;
+    z-index: 999999999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
+  }
+  #preloader.evamats-preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF002E;
+    animation: evamats-preloader-spin 2s linear infinite;
+  }
+  #loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BFBFBF;
+    animation: evamats-preloader-spin 3s linear infinite;
+  }
+  #loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF002E;
+    animation: evamats-preloader-spin 1.5s linear infinite;
+  }
+  @keyframes evamats-preloader-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+<script>
+  (function () {
+    var SESSION_KEY = 'evamats_preloader_seen';
+    var MAX_MS = 1500;
+    var preloader = document.getElementById('preloader');
+    if (!preloader) return;
+
+    var hidden = false;
+    function hidePreloader() {
+      if (hidden) return;
+      hidden = true;
+      preloader.classList.add('is-hidden');
+      try {
+        sessionStorage.setItem(SESSION_KEY, '1');
+      } catch (e) {}
       setTimeout(function () {
-        preloader.style.display = 'none';
-      }, 6000); // Adjust the time as needed (in milliseconds)
-    });
-  </script>
+        if (preloader && preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, 300);
+    }
+
+    try {
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        hidePreloader();
+        return;
+      }
+    } catch (e) {}
+
+    function maybeReady() {
+      if (window.__evamatsProductConfigInitialized) {
+        hidePreloader();
+      }
+    }
+
+    document.addEventListener('evamats:product-config-ready', hidePreloader, { once: true });
+    window.addEventListener('load', hidePreloader, { once: true });
+    setTimeout(hidePreloader, MAX_MS);
+
+    if (document.readyState === 'complete') {
+      hidePreloader();
+    } else {
+      maybeReady();
+      var poll = setInterval(function () {
+        if (hidden) {
+          clearInterval(poll);
+          return;
+        }
+        maybeReady();
+      }, 100);
+      setTimeout(function () {
+        clearInterval(poll);
+      }, MAX_MS + 50);
+    }
+  })();
+</script>
+{%- endif -%}

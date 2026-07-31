@@ -1,0 +1,381 @@
+/* --- tilted-collage-v2.liquid --- */
+  .tilted-collage-v2 {
+      padding: 0 0 48px;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__inner {
+      width: min(100%, 920px);
+      margin: 0 auto;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__heading {
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__heading-accent {
+      color: var(--color-accent-red);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__text {
+      margin-top: 28px;
+      text-align: center;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__text p {
+      margin: 0;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__stage {
+      position: relative;
+      width: 100%;
+      max-width: 870px;
+      height: 430px;
+      margin: 78px auto 0;
+      isolation: isolate;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: -50px;
+      pointer-events: none;
+      text-align: center;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below {
+      margin-top: 70px;
+      max-width: 100%;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below .tilted-collage-v2__daily--split,
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below .tilted-collage-v2__daily--solid,
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below .tilted-collage-v2__daily--gradient {
+      max-width: 100%;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below .tilted-collage-v2__daily--gradient {
+      white-space: normal;
+      line-height: 1.2;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily {
+      margin: 0;
+      padding-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily--gradient {
+      line-height: 1;
+      white-space: nowrap;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(
+        90deg,
+        var(--color-text-primary) 0%,
+        var(--color-text-primary) 50.962%,
+        var(--color-accent-red) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      padding-bottom: 3px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily--solid {
+      line-height: 1.25;
+      color: var(--color-text);
+      white-space: normal;
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily--split {
+      line-height: 1.25;
+      color: var(--color-text);
+      white-space: normal;
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily--split .tilted-collage-v2__daily-main {
+      color: var(--color-text);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__daily-split-accent {
+      color: var(--color-accent-red);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__cta-wrap {
+      margin-top: 28px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__stage + .tilted-collage-v2__cta-wrap {
+      margin-top: 56px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card {
+      position: absolute;
+      background: transparent;
+      box-shadow: none;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-rot {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.45));
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-surface {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 58px 20px 22px 20px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-caption::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 0 0 16px 16px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.08) 55%, transparent 100%);
+      -webkit-mask-image: linear-gradient(
+        to top,
+        #000 0%,
+        #000 10%,
+        rgba(0, 0, 0, 0.75) 38%,
+        rgba(0, 0, 0, 0.2) 72%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to top,
+        #000 0%,
+        #000 10%,
+        rgba(0, 0, 0, 0.75) 38%,
+        rgba(0, 0, 0, 0.2) 72%,
+        transparent 100%
+      );
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-caption-text {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #fff;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-caption-text p {
+      margin: 0;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-rot--left {
+      transform: rotate(8.83deg);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-rot--right {
+      transform: rotate(-6.59deg);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card-rot--center {
+      transform: rotate(2.9deg);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card--left {
+      left: 0;
+      bottom: 19px;
+      width: 292px;
+      height: 292px;
+      z-index: 2;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card--right {
+      right: 0;
+      bottom: 40px;
+      width: 292px;
+      height: 292px;
+      z-index: 2;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card--center {
+      left: 50%;
+      top: 0;
+      width: 354px;
+      height: 354px;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__card--center .tilted-collage-v2__card-rot {
+      filter: drop-shadow(0 22px 48px rgba(0, 0, 0, 0.55));
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__image,
+    .tilted-collage-v2 .tilted-collage-v2__placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__pin {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8090a4;
+      z-index: 4;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__pin--tr {
+      left: auto;
+      right: 16px;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__pin-icon {
+      display: block;
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__pin--x {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+  
+    .tilted-collage-v2 .tilted-collage-v2__pin--check {
+      background: #0cba7a;
+      color: var(--color-text);
+    }
+  
+    @media screen and (max-width: 749px) {
+      .tilted-collage-v2 {
+        padding-top: 44px;
+        padding-bottom: 32px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__heading {
+        font-size: var(--font-h5-size);
+        line-height: var(--font-h5-line);
+        letter-spacing: -0.52px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__text {
+        margin-top: 18px;
+        font-size: var(--font-body-s-size);
+        line-height: var(--font-body-s-line);
+        letter-spacing: -0.32px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__stage {
+        height: 328px;
+        margin-top: 28px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__daily {
+        padding-bottom: 4px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card-caption {
+        padding: 6px 6px 8px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card-caption-text {
+        font-size: 10px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__cta-wrap {
+        margin-top: 22px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__stage + .tilted-collage-v2__cta-wrap {
+        margin-top: 40px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card--left {
+        left: 0;
+        bottom: 36px;
+        width: 136px;
+        height: 136px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card-rot--left {
+        transform: rotate(-5deg);
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card--right {
+        right: 0;
+        bottom: 36px;
+        width: 136px;
+        height: 162px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card-rot--right {
+        transform: rotate(5deg);
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card--center {
+        width: 203px;
+        height: 203px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__card-rot--center {
+        transform: rotate(3.7deg);
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__pin {
+        top: 8px;
+        left: 8px;
+        width: 24px;
+        height: 24px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__pin--tr {
+        right: 8px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__pin-icon {
+        width: 12px;
+        height: 12px;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__daily-wrap {
+        margin-top: 0;
+      }
+  
+      .tilted-collage-v2 .tilted-collage-v2__daily-wrap--below {
+        margin-top: 70px;
+        max-width: 100%;
+      }
+    }

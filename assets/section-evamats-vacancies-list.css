@@ -1,0 +1,260 @@
+/* --- evamats-vacancies-list.liquid --- */
+  .evamats-vacancies-list {
+      background: transparent;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancies-list__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+  
+    .evamats-vacancies-list__heading {
+      margin: 0 auto 36px;
+      max-width: 38.25rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancies-list__filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin: 0 auto 40px;
+      max-width: 1520px;
+    }
+  
+    .evamats-vacancies-list__filter {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 18px 22px;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      color: var(--color-text);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  
+    .evamats-vacancies-list__filter.is-active {
+      border-width: 2px;
+      border-color: var(--color-accent-red, #ff2741);
+    }
+  
+    .evamats-vacancies-list__filter:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+  
+    .evamats-vacancies-list__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .evamats-vacancies-list__card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px 40px;
+      padding: 47px 46px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      box-shadow: 5px 5px 60px rgba(27, 29, 34, 0.07);
+    }
+  
+    .evamats-vacancies-list__card--hidden {
+      display: none;
+    }
+  
+    .evamats-vacancies-list__card-main {
+      min-width: 0;
+    }
+  
+    .evamats-vacancies-list__card-title {
+      margin: 0 0 35px;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+  
+    .evamats-vacancies-list__card-title a {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+  
+    .evamats-vacancies-list__card-title a:hover {
+      opacity: 0.85;
+    }
+  
+    .evamats-vacancies-list__tags {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .evamats-vacancies-list__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 555px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-elevated);
+    }
+  
+    .evamats-vacancies-list__tag-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+  
+    .evamats-vacancies-list__tag-icon .evamats-vacancy-tag-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  
+    .evamats-vacancies-list__tag-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+  
+    .evamats-vacancies-list__tag--salary .evamats-vacancies-list__tag-label {
+      font-weight: 700;
+    }
+  
+    .evamats-vacancies-list__cta.button_3 {
+      flex-shrink: 0;
+      min-width: 299px;
+      max-width: none;
+    }
+  
+    .evamats-vacancies-list__empty {
+      margin: 24px 0 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+  
+    .evamats-vacancies-list__more.button_5 {
+      width: 100%;
+      max-width: 1520px;
+      margin: 40px auto 0;
+    }
+  
+    @media screen and (min-width: 750px) and (max-width: 989px) {
+      .evamats-vacancies-list__card {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        gap: 24px;
+        padding: 32px 28px;
+      }
+  
+      .evamats-vacancies-list__card-title {
+        margin-bottom: 24px;
+      }
+  
+      .evamats-vacancies-list__cta.button_3 {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-vacancies-list__heading {
+        margin-bottom: 30px;
+        font-size: 26px;
+      }
+  
+      .evamats-vacancies-list__filters {
+        justify-content: flex-start;
+        gap: 8px 12px;
+        margin-bottom: 24px;
+        max-width: 339px;
+      }
+  
+      .evamats-vacancies-list__filter {
+        padding: 12px 14px;
+        border-radius: 12px;
+        font-size: 16px;
+      }
+  
+      .evamats-vacancies-list__cards {
+        max-width: 339px;
+        margin: 0 auto;
+      }
+  
+      .evamats-vacancies-list__card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 16px 16px;
+      }
+  
+      .evamats-vacancies-list__card-title {
+        margin-bottom: 12px;
+        font-size: 20px;
+      }
+  
+      .evamats-vacancies-list__tags {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+  
+      .evamats-vacancies-list__tag {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        border-radius: 0;
+      }
+  
+      .evamats-vacancies-list__tag-icon {
+        width: 20px;
+        height: 20px;
+      }
+  
+      .evamats-vacancies-list__tag-icon .evamats-vacancy-tag-icon {
+        width: 20px;
+        height: 20px;
+      }
+  
+      .evamats-vacancies-list__tag-text {
+        font-size: 14px;
+        white-space: normal;
+      }
+  
+      .evamats-vacancies-list__cta.button_3 {
+        width: 100%;
+        min-width: 0;
+      }
+  
+      .evamats-vacancies-list__more.button_5 {
+        max-width: 339px;
+        margin-top: 24px;
+      }
+    }

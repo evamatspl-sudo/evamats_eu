@@ -1,6 +1,9 @@
 function initProductConfigCore() {
     if (window.__evamatsProductConfigInitialized) return;
     window.__evamatsProductConfigInitialized = true;
+    try {
+      document.dispatchEvent(new CustomEvent('evamats:product-config-ready'));
+    } catch (e) {}
 
     const productContainer = document.querySelector('.product.config_container');
     const popupContainer = document.querySelector('.application_form__content.config_container');

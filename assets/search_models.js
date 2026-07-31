@@ -4,9 +4,97 @@
 
     // Catalog-wide collections that must show an empty vehicle filter (no brand/model preselected).
     const EMPTY_FILTER_HANDLES = ['all', 'all-car-mats'];
+    const brandsJsonPromises = window.__evamatsAllBrandsJsonPromises || (window.__evamatsAllBrandsJsonPromises = {});
 
     if (!filterContainers.length) {
         return;
+    }
+
+    function loadBrandsJson(url) {
+        if (!url) {
+            return Promise.reject(new Error('Missing all_brands.json URL'));
+        }
+        if (!brandsJsonPromises[url]) {
+            brandsJsonPromises[url] = fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status} while loading ${url}`);
+                    }
+                    return response.text();
+                })
+                .then((rawText) => {
+                    try {
+                        return JSON.parse(rawText);
+                    } catch (parseError) {
+                        const match = String(parseError && parseError.message || '').match(/position\s+(\d+)/i);
+                        const position = match ? parseInt(match[1], 10) : -1;
+                        if (position >= 0) {
+                            const start = Math.max(0, position - 120);
+                            const end = Math.min(rawText.length, position + 120);
+                            console.error('Error parsing JSON at position:', position);
+                            console.error('JSON fragment before error:', rawText.slice(start, position));
+                            console.error('JSON fragment after error:', rawText.slice(position, end));
+                        }
+                        throw parseError;
+                    }
+                });
+        }
+        return brandsJsonPromises[url];
+    }
+
+    function needsEagerBrandsLoad(container) {
+        return (
+            container.dataset.filterUi === 'hero' ||
+            container.dataset.filterUi === 'collection' ||
+            container.dataset.autoNavigate === 'true' ||
+            Boolean((container.dataset.collectionHandle || '').trim())
+        );
+    }
+
+    function scheduleBrandsLoad(startLoad) {
+        let started = false;
+        const run = () => {
+            if (started) return;
+            started = true;
+            startLoad();
+        };
+
+        const hasEager = Array.from(filterContainers).some(needsEagerBrandsLoad);
+        if (hasEager) {
+            run();
+            return run;
+        }
+
+        if (typeof requestIdleCallback === 'function') {
+            requestIdleCallback(run, { timeout: 2000 });
+        } else {
+            window.addEventListener('load', run, { once: true });
+            setTimeout(run, 2000);
+        }
+
+        document.addEventListener(
+            'click',
+            (event) => {
+                if (
+                    event.target.closest('.header__car') ||
+                    event.target.closest('.filter-container-json')
+                ) {
+                    run();
+                }
+            },
+            true
+        );
+        document.addEventListener(
+            'focusin',
+            (event) => {
+                if (event.target.closest('.filter-container-json .brand-input')) {
+                    run();
+                }
+            },
+            true
+        );
+
+        return run;
     }
 
     function shouldStartEmpty(container) {
@@ -213,42 +301,53 @@
             navigateIfNeeded(targetUrl);
         }
 
-        fetch(brandsModelsJsonUrl)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status} while loading ${brandsModelsJsonUrl}`);
-                }
-                return response.text();
-            })
-            .then(async (rawText) => {
-                let data;
-                try {
-                    data = JSON.parse(rawText);
-                } catch (parseError) {
-                    const match = String(parseError && parseError.message || '').match(/position\s+(\d+)/i);
-                    const position = match ? parseInt(match[1], 10) : -1;
-                    if (position >= 0) {
-                        const start = Math.max(0, position - 120);
-                        const end = Math.min(rawText.length, position + 120);
-                        console.error('Error parsing JSON at position:', position);
-                        console.error('JSON fragment before error:', rawText.slice(start, position));
-                        console.error('JSON fragment after error:', rawText.slice(position, end));
-                    }
-                    throw parseError;
-                }
+        let brandsLoadStarted = false;
+        let brandsDataApplied = false;
 
-                localJson = data;
-                populateBrandDropdown(localJson);
-                if (shouldStartEmpty(container)) {
-                    localStorage.removeItem('carFilterSelections');
-                    return;
-                }
-                const restoredFromPage = await restoreSelectionsFromPageContext();
-                if (!restoredFromPage) {
-                    await restoreSelectionsFromLocalStorage();
-                }
-            })
-            .catch((error) => console.error('Error loading JSON:', error));
+        function setBrandOptionsLoading(isLoading) {
+            if (!brandSelectOptions) return;
+            const existing = brandSelectOptions.querySelector('.brand-select-loading');
+            if (isLoading) {
+                if (existing || brandSelectOptions.children.length) return;
+                const loading = document.createElement('div');
+                loading.className = 'brand-select-loading';
+                loading.setAttribute('aria-busy', 'true');
+                loading.textContent = '…';
+                brandSelectOptions.appendChild(loading);
+                return;
+            }
+            if (existing) existing.remove();
+        }
+
+        async function applyBrandsData(data) {
+            if (brandsDataApplied) return;
+            brandsDataApplied = true;
+            setBrandOptionsLoading(false);
+            localJson = data;
+            populateBrandDropdown(localJson);
+            if (shouldStartEmpty(container)) {
+                localStorage.removeItem('carFilterSelections');
+                return;
+            }
+            const restoredFromPage = await restoreSelectionsFromPageContext();
+            if (!restoredFromPage) {
+                await restoreSelectionsFromLocalStorage();
+            }
+        }
+
+        function startBrandsLoad() {
+            if (brandsLoadStarted) return;
+            brandsLoadStarted = true;
+            setBrandOptionsLoading(true);
+            loadBrandsJson(brandsModelsJsonUrl)
+                .then(applyBrandsData)
+                .catch((error) => {
+                    setBrandOptionsLoading(false);
+                    console.error('Error loading JSON:', error);
+                });
+        }
+
+        container.__evamatsStartBrandsLoad = startBrandsLoad;
 
         function sortLocale(a, b) {
             return String(a).trim().localeCompare(String(b).trim(), undefined, { sensitivity: 'base', numeric: true });
@@ -585,6 +684,7 @@
                 const input = customSelect.querySelector('.select-selected');
                 if (!input || input.disabled || input.classList.contains('disabled')) return;
 
+                startBrandsLoad();
                 toggleSelectOptions(selectOptions, customSelect);
                 if (document.activeElement !== input) {
                     input.focus({ preventScroll: true });
@@ -828,5 +928,13 @@
 
             checkIfSearchEnabled();
         }
+    });
+
+    scheduleBrandsLoad(() => {
+        filterContainers.forEach((container) => {
+            if (typeof container.__evamatsStartBrandsLoad === 'function') {
+                container.__evamatsStartBrandsLoad();
+            }
+        });
     });
 })();

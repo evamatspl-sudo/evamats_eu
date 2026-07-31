@@ -1,0 +1,273 @@
+/* --- o-nas-intro.liquid --- */
+  .o-nas-intro {
+      background: transparent;
+      color: var(--color-text);
+      --oni-pt: 48px;
+      --oni-pb: 56px;
+      padding-top: var(--oni-pt);
+      padding-bottom: var(--oni-pb);
+    }
+  
+    .o-nas-intro__wrap {
+      width: 100%;
+    }
+  
+    .o-nas-intro__sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  
+    .o-nas-intro__inner {
+      text-align: center;
+    }
+  
+    .o-nas-intro__eyebrow {
+      margin: 0 0 12px;
+      font-family: var(--font-heading-family);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #ef022d;
+    }
+  
+    .o-nas-intro__heading {
+      margin: 0 auto 20px;
+      max-width: 360px;
+      font-family: var(--font-heading-family);
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--color-text-primary) 50.962%, #ff2741 100%);
+      -webkit-background-clip: text;
+      padding-bottom: 3px;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    .o-nas-intro__body {
+      margin: 0 auto 40px;
+      max-width: 42rem;
+      font-family: var(--font-body-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .o-nas-intro__body p {
+      margin: 0;
+    }
+  
+    .o-nas-intro__gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: none;
+      overflow: hidden;
+    }
+  
+    .o-nas-intro__gallery-bleed .o-nas-intro__figure {
+      margin: 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    .o-nas-intro__img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      vertical-align: middle;
+    }
+  
+    .o-nas-intro__img--placeholder {
+      background: var(--color-surface-elevated);
+    }
+  
+    @media screen and (max-width: 749px) {
+      .o-nas-intro__gallery-bleed  {
+        width: calc(100% + 36px);
+        margin-left: -18px;
+      }
+      .o-nas-intro--photos-1 .o-nas-intro__gallery {
+        justify-content: center;
+      }
+  
+      .o-nas-intro__gallery {
+        overflow: hidden;
+      }
+  
+      .o-nas-intro__figure:nth-child(n + 4) {
+        display: none;
+      }
+  
+      .o-nas-intro--photos-1 .o-nas-intro__figure:nth-child(1) {
+        flex: 0 1 auto;
+        width: min(88vw, 320px);
+        max-width: 320px;
+      }
+  
+      .o-nas-intro--photos-1 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img {
+        aspect-ratio: 173 / 237;
+      }
+  
+      .o-nas-intro--photos-2 .o-nas-intro__figure:nth-child(1),
+      .o-nas-intro--photos-2 .o-nas-intro__figure:nth-child(2) {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: none;
+      }
+  
+      .o-nas-intro--photos-2 .o-nas-intro__figure .o-nas-intro__img {
+        aspect-ratio: 173 / 237;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__gallery,
+      .o-nas-intro--photos-4 .o-nas-intro__gallery,
+      .o-nas-intro--photos-5 .o-nas-intro__gallery,
+      .o-nas-intro--photos-6 .o-nas-intro__gallery {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(142px, min(52vw, 200px)) minmax(0, 1fr);
+        gap: 8px;
+        align-items: center;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(1),
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(3),
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(1),
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(3),
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(1),
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(3),
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(1),
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(3) {
+        width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        height: calc(100% - 30px);
+        align-self: end;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img {
+        width: 200%;
+        height: 100%;
+        max-width: none;
+        aspect-ratio: auto;
+        min-height: 100%;
+        object-fit: cover;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img,
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(1) .o-nas-intro__img {
+        transform: translateX(-50%);
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img,
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(3) .o-nas-intro__img {
+        transform: none;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(2),
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(2),
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(2),
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(2) {
+        width: 100%;
+        max-width: min(52vw, 200px);
+        justify-self: center;
+        margin-top: 0;
+        z-index: 2;
+        position: relative;
+        align-self: start;
+        margin-bottom: 30px;
+      }
+  
+      .o-nas-intro--photos-3 .o-nas-intro__figure:nth-child(2) .o-nas-intro__img,
+      .o-nas-intro--photos-4 .o-nas-intro__figure:nth-child(2) .o-nas-intro__img,
+      .o-nas-intro--photos-5 .o-nas-intro__figure:nth-child(2) .o-nas-intro__img,
+      .o-nas-intro--photos-6 .o-nas-intro__figure:nth-child(2) .o-nas-intro__img {
+        width: 100%;
+        aspect-ratio: 173 / 237;
+        margin-left: 0;
+        transform: none;
+      }
+    }
+  
+    @media screen and (max-width: 749px) {
+      .o-nas-intro__heading {
+        font-size: 26px;
+      }
+    }
+  
+    @media screen and (min-width: 750px) {
+  
+      .o-nas-intro__eyebrow {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+  
+      .o-nas-intro__heading {
+        max-width: none;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+      }
+  
+      .o-nas-intro__body {
+        max-width: 990px;
+        font-size: 18px;
+        margin-bottom: 48px;
+      }
+  
+      .o-nas-intro__gallery {
+        justify-content: center;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+  
+      .o-nas-intro__figure {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: none;
+        margin-top: 0;
+      }
+  
+      .o-nas-intro__gallery .o-nas-intro__figure:nth-child(even) {
+        margin-top: 40px;
+      }
+  
+      .o-nas-intro__img {
+        aspect-ratio: 368 / 505;
+      }
+  
+      .o-nas-intro__img--placeholder {
+        aspect-ratio: 368 / 505;
+      }
+    }

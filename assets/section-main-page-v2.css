@@ -1,0 +1,27 @@
+/* --- main-page-v2.liquid --- */
+  .main-page-v2 {
+      --mpv2-pt: 48px;
+      --mpv2-pb: 0;
+      background: transparent;
+      color: var(--color-text);
+      padding-top: var(--mpv2-pt);
+      padding-bottom: var(--mpv2-pb);
+    }
+  
+    .main-page-v2__content {
+      margin-top: 32px;
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+    }
+  
+    @media screen and (max-width: 749px) {
+      .main-page-v2 {
+        --mpv2-pt: 28px;
+      }
+  
+      .main-page-v2__content {
+        margin-top: 24px;
+        font-size: 16px;
+      }
+    }

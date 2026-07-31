@@ -1,4 +1,3 @@
-{{ 'fancybox.css' | asset_url | stylesheet_tag }}
 {{ 'custom_reviews.css' | asset_url | stylesheet_tag }}
 
 {% capture full_star %}
@@ -134,31 +133,64 @@
         </div>
     </div>
 </div>
-<script src="{{ 'fancybox.js' | asset_url }}" ></script>
-<script src="{{ 'masonry.pkgd.min.js' | asset_url }}" ></script>   
+<script src="{{ 'masonry.pkgd.min.js' | asset_url }}" defer></script>
 <script defer>
-    Fancybox.bind("[data-fancybox]", {
-      animated: false
-    });
-    //  masonry
-    (function () {
-    if (document.querySelector('.custom_reviews__list')) {
-        var grid = document.querySelector('.custom_reviews__list');
+  (function () {
+    var reviewsBound = false;
+    var opening = false;
 
-        var msnry = new Masonry( grid, {
-            itemSelector: '.custom_reviews__list_item',
-            columnWidth: '.custom_reviews__list_item',
-            percentPosition: true
-        });
- 
-        {% comment %} imagesLoaded( grid ).on( 'progress', function() {
-        // layout Masonry after each image loads
-        
-        }); {% endcomment %}
-        msnry.layout();
+    document.addEventListener(
+      'click',
+      function (event) {
+        var link = event.target.closest('.custom_reviews a[data-fancybox]');
+        if (!link) return;
+        if (reviewsBound && typeof Fancybox !== 'undefined') return;
+        if (opening) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        opening = true;
+
+        var loader =
+          typeof window.ensureFancyboxLoaded === 'function'
+            ? window.ensureFancyboxLoaded()
+            : Promise.reject(new Error('ensureFancyboxLoaded missing'));
+
+        loader
+          .then(function () {
+            if (!reviewsBound) {
+              Fancybox.bind('.custom_reviews [data-fancybox]', { animated: false });
+              reviewsBound = true;
+            }
+            opening = false;
+            link.click();
+          })
+          .catch(function (err) {
+            opening = false;
+            console.error(err);
+            window.location.href = link.href;
+          });
+      },
+      true
+    );
+
+    function initMasonry() {
+      if (!document.querySelector('.custom_reviews__list') || typeof Masonry === 'undefined') return;
+      var grid = document.querySelector('.custom_reviews__list');
+      var msnry = new Masonry(grid, {
+        itemSelector: '.custom_reviews__list_item',
+        columnWidth: '.custom_reviews__list_item',
+        percentPosition: true,
+      });
+      msnry.layout();
     }
-    })();
-    //  masonry
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMasonry);
+    } else {
+      initMasonry();
+    }
+  })();
 </script>
 
 {% schema %}

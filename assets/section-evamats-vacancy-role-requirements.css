@@ -1,0 +1,237 @@
+/* --- evamats-vacancy-role-requirements.liquid --- */
+  .evamats-vacancy-role-reqs {
+      --evr-pt: 80px;
+      --evr-pb: 80px;
+      color: var(--color-text);
+      padding-top: var(--evr-pt);
+      padding-bottom: var(--evr-pb);
+    }
+  
+    .evamats-vacancy-role-reqs__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+  
+    .evamats-vacancy-role-reqs__heading {
+      margin: 0 auto 48px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #fff;
+    }
+  
+    .evamats-vacancy-role-reqs__tabs {
+      display: none;
+    }
+  
+    .evamats-vacancy-role-reqs__panels {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 800px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel {
+      box-sizing: border-box;
+      padding: 32px 28px 28px;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+    }
+  
+    .evamats-vacancy-role-reqs__panel-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 0 28px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      color: #ff2741;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-briefcase-icon,
+    .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-target-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  
+    .evamats-vacancy-role-reqs__panel-title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancy-role-reqs__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 0;
+      border-top: 1px solid var(--color-border);
+    }
+  
+    .evamats-vacancy-role-reqs__item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item:last-child {
+      padding-bottom: 0;
+    }
+  
+    .evamats-vacancy-role-reqs__item-icon {
+      flex-shrink: 0;
+      display: flex;
+      margin-top: 2px;
+    }
+  
+    .evamats-vacancy-role-reqs__item-icon .evamats-vacancy-role-check-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  
+    .evamats-vacancy-role-check-icon__bg {
+      fill: var(--color-accent-red, #ff2741);
+    }
+  
+    .evamats-vacancy-role-check-icon__mark {
+      fill: #fff;
+    }
+  
+    .evamats-vacancy-role-reqs__item-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-vacancy-role-reqs__item-label {
+      font-weight: 600;
+    }
+  
+    @media screen and (max-width: 1200px) {
+      .evamats-vacancy-role-reqs__panels {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+  
+    @media screen and (max-width: 989px) and (min-width: 750px) {
+      .evamats-vacancy-role-reqs__panels {
+        max-width: 100%;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-vacancy-role-reqs {
+        --evr-pt: 48px;
+        --evr-pb: 48px;
+      }
+  
+      .evamats-vacancy-role-reqs__heading {
+        margin-bottom: 24px;
+        font-size: 22px;
+        text-align: center;
+      }
+  
+      .evamats-vacancy-role-reqs__tabs {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        margin: 0 auto 16px;
+        max-width: 339px;
+        padding: 4px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+      }
+  
+      .evamats-vacancy-role-reqs__tab {
+        flex: 1 1 0;
+        margin: 0;
+        padding: 14px 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+  
+      .evamats-vacancy-role-reqs__tab.is-active {
+        background: var(--color-accent-red, #ff2741);
+        color: #fff;
+      }
+  
+      .evamats-vacancy-role-reqs__tab:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+  
+      .evamats-vacancy-role-reqs__panels {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 100%;
+      }
+  
+      .evamats-vacancy-role-reqs__panel {
+        padding: 24px 18px 20px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel:not(.is-active) {
+        display: none;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-head {
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-briefcase-icon,
+      .evamats-vacancy-role-reqs__panel-icon .evamats-vacancy-target-icon {
+        width: 24px;
+        height: 24px;
+      }
+  
+      .evamats-vacancy-role-reqs__panel-title {
+        font-size: 18px;
+      }
+  
+      .evamats-vacancy-role-reqs__item {
+        gap: 12px;
+        padding: 16px 0;
+      }
+  
+      .evamats-vacancy-role-reqs__item-text {
+        font-size: 14px;
+      }
+    }

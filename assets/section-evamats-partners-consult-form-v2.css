@@ -1,0 +1,109 @@
+/* --- evamats-partners-consult-form-v2.liquid --- */
+  .evamats-partners-consult-form-v2 {
+      background: transparent;
+      color: var(--color-text);
+    }
+  
+    .evamats-partners-consult-form-v2__inner {
+      max-width: 676px;
+      margin: 0 auto;
+    }
+  
+    .epcf-alt-cta {
+      width: 100%;
+      max-width: 510px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+  
+    .epcf-alt-cta__divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+  
+    .epcf-alt-cta__divider-line {
+      flex: 1 1 0;
+      height: 1px;
+      background: var(--color-border);
+    }
+  
+    .epcf-alt-cta__divider-text {
+      flex-shrink: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+    }
+  
+    .epcf-alt-cta__title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--color-text);
+    }
+  
+    .epcf-alt-cta__text {
+      margin: 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--color-text-secondary);
+    }
+  
+    .epcf-alt-cta__btn.button {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 60px;
+      padding: 18px 28px;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      background: transparent;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+  
+    .epcf-alt-cta__btn.button:hover {
+      border-color: var(--color-text-secondary);
+      background: var(--color-surface-elevated);
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-partners-consult-form-v2__inner {
+        max-width: none;
+      }
+  
+      .epcf-alt-cta {
+        max-width: none;
+        margin-top: 30px;
+      }
+  
+      .epcf-alt-cta__title {
+        font-size: 18px;
+      }
+  
+      .epcf-alt-cta__btn.button {
+        min-height: 50px;
+        font-size: 16px;
+      }
+    }

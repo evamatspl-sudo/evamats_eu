@@ -1,5 +1,6 @@
 {{ 'comparison.css' | asset_url | stylesheet_tag }}
 {{ 'mat-comparison.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-comparison.js' | asset_url }}" defer></script>
 
 {% liquid
     assign text_color = section.settings.text_color

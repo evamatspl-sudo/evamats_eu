@@ -1,0 +1,125 @@
+/* --- problem-points-v2.liquid --- */
+  .problem-points-v2 {
+      padding: 92px 0 40px;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+    .problem-points-v2__inner {
+      width: min(1264px, calc(100% - 30px));
+      margin: 0 auto;
+    }
+    .problem-points-v2__title {
+      margin: 0;
+      font-weight: 600;
+      text-align: center;
+    }
+    .problem-points-v2__subtitle {
+      margin-top: 64px;
+      text-align: center;
+    }
+    .problem-points-v2__subtitle p,
+    .problem-points-v2__bottom-text p {
+      margin: 0;
+    }
+    .problem-points-v2__images {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .problem-points-v2__image-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 625 / 385;
+    }
+    .problem-points-v2__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .problem-points-v2__points {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .problem-points-v2__point {
+      min-height: 112px;
+      border-radius: 16px;
+      background: var(--color-surface-elevated);
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 20px 36px;
+    }
+    .problem-points-v2__icon-wrap {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-light);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-primary);
+    }
+    .problem-points-v2__icon {
+      width: 26px;
+      height: 26px;
+    }
+    .problem-points-v2__point-text {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .problem-points-v2__bottom-text {
+      margin-top: 64px;
+      text-align: center;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--color-text) 50.962%, var(--color-accent-red) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding-bottom: 3px;
+    }
+    @media screen and (max-width: 749px) {
+      .problem-points-v2 {
+        padding-top: 44px;
+      }
+      .problem-points-v2__inner {
+        width: calc(100% - 30px);
+      }
+      .problem-points-v2__title {
+        font-size: var(--font-h4-size);
+      }
+      .problem-points-v2__subtitle {
+        margin-top: 30px;
+        font-size: var(--font-label-s-size);
+        line-height: var(--font-body-m-line);
+        text-align: center;
+      }
+      .problem-points-v2__images {
+        margin-top: 30px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .problem-points-v2__points {
+        margin-top: 12px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .problem-points-v2__point {
+        min-height: 92px;
+        padding: 16px 20px;
+      }
+      .problem-points-v2__point-text {
+        font-size: var(--font-label-l-size);
+        line-height: var(--font-h4-line);
+        letter-spacing: -0.4px;
+      }
+      .problem-points-v2__bottom-text {
+        margin-top: 27px;
+        font-size: var(--font-label-s-size);
+      }
+    }

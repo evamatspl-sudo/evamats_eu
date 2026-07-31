@@ -1179,6 +1179,71 @@ customElements.define('variant-radios', VariantRadios);
 })();
 // product tabs
 
-if (typeof Fancybox !== 'undefined') {
-  Fancybox.bind('[data-fancybox]', {});
-}
+// product gallery Fancybox — load on first click
+(function () {
+  var PRODUCT_GROUPS = {
+    main: true,
+    with_edges: true,
+    without_edges: true,
+  };
+  var bound = false;
+  var opening = false;
+
+  function bindProductGroups() {
+    if (bound || typeof Fancybox === 'undefined') return;
+    Fancybox.bind('[data-fancybox="main"]', {});
+    Fancybox.bind('[data-fancybox="with_edges"]', {});
+    Fancybox.bind('[data-fancybox="without_edges"]', {});
+    bound = true;
+  }
+
+  function openGroup(link) {
+    var group = link.getAttribute('data-fancybox');
+    var items = Array.prototype.slice.call(
+      document.querySelectorAll('a[data-fancybox="' + group + '"]')
+    );
+    var startIndex = Math.max(0, items.indexOf(link));
+    var slides = items.map(function (el) {
+      return { src: el.getAttribute('href'), type: 'image' };
+    });
+    Fancybox.show(slides, { startIndex: startIndex });
+  }
+
+  document.addEventListener(
+    'click',
+    function (event) {
+      var link = event.target.closest('a[data-fancybox]');
+      if (!link) return;
+      var group = link.getAttribute('data-fancybox');
+      if (!PRODUCT_GROUPS[group]) return;
+      if (opening) return;
+
+      if (bound && typeof Fancybox !== 'undefined') {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      opening = true;
+
+      var loader =
+        typeof window.ensureFancyboxLoaded === 'function'
+          ? window.ensureFancyboxLoaded()
+          : Promise.reject(new Error('ensureFancyboxLoaded missing'));
+
+      loader
+        .then(function () {
+          bindProductGroups();
+          openGroup(link);
+        })
+        .catch(function (err) {
+          console.error(err);
+          window.location.href = link.href;
+        })
+        .finally(function () {
+          opening = false;
+        });
+    },
+    true
+  );
+})();

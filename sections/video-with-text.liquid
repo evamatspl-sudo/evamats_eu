@@ -1,4 +1,5 @@
 {{ 'section-video-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
 {% liquid
     assign text_color = section.settings.text_color
@@ -10,6 +11,20 @@
     assign padding_bottom = section.settings.padding_bottom | append: 'px'
     assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
 
+    assign yt_id = ''
+    assign vimeo_id = ''
+    if section.settings.video_embed != blank
+      if section.settings.video_embed contains 'youtube.com/embed/'
+        assign yt_chunk = section.settings.video_embed | split: 'youtube.com/embed/' | last
+        assign yt_id = yt_chunk | split: '?' | first | split: '"' | first | split: "'" | first | split: '/' | first
+      elsif section.settings.video_embed contains 'youtu.be/'
+        assign yt_chunk = section.settings.video_embed | split: 'youtu.be/' | last
+        assign yt_id = yt_chunk | split: '?' | first | split: '"' | first | split: "'" | first | split: '/' | first
+      elsif section.settings.video_embed contains 'player.vimeo.com/video/'
+        assign vimeo_chunk = section.settings.video_embed | split: 'player.vimeo.com/video/' | last
+        assign vimeo_id = vimeo_chunk | split: '?' | first | split: '"' | first | split: "'" | first | split: '/' | first
+      endif
+    endif
 %}
 
 <div class="video-with-text" style="
@@ -71,6 +86,70 @@
           >
             <source src="{{ section.settings.video_url }}" type="video/mp4">
           </video>
+
+          {% elsif yt_id != blank or vimeo_id != blank %}
+
+          {%- assign media_id = yt_id | default: vimeo_id -%}
+          <div class="video-with-text__iframe">
+            <deferred-media
+              class="video-with-text__deferred deferred-media no-js-hidden"
+              data-media-id="{{ media_id | escape }}"
+            >
+              <button
+                id="Deferred-Poster-VWT-{{ section.id }}-{{ media_id }}"
+                class="video-with-text__poster deferred-media__poster media"
+                type="button"
+                aria-label="{{ 'sections.video.load_video' | t: description: section.settings.heading | escape }}"
+              >
+                {%- if section.settings.cover_image != blank -%}
+                  {%- assign vwt_cover_alt = section.settings.heading | escape -%}
+                  {{
+                    section.settings.cover_image
+                    | image_url: width: 900
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '335, 670, 900',
+                      sizes: '(max-width: 749px) 100vw, 335px',
+                      class: 'video-with-text__poster-img',
+                      alt: vwt_cover_alt
+                  }}
+                {%- elsif yt_id != blank -%}
+                  <img
+                    class="video-with-text__poster-img"
+                    src="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg"
+                    alt="{{ section.settings.heading | escape }}"
+                    loading="lazy"
+                    width="480"
+                    height="360"
+                  >
+                {%- else -%}
+                  {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                {%- endif -%}
+                <span class="deferred-media__poster-button motion-reduce">
+                  {%- render 'icon-play' -%}
+                </span>
+              </button>
+              <template>
+                {%- if yt_id != blank -%}
+                  <iframe
+                    src="https://www.youtube.com/embed/{{ yt_id }}?enablejsapi=1&autoplay=1"
+                    class="js-youtube"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="{{ section.settings.heading | escape }}"
+                  ></iframe>
+                {%- else -%}
+                  <iframe
+                    src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1"
+                    class="js-vimeo"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="{{ section.settings.heading | escape }}"
+                  ></iframe>
+                {%- endif -%}
+              </template>
+            </deferred-media>
+          </div>
 
           {% elsif section.settings.video_embed != blank %}
 
@@ -139,6 +218,11 @@
       "type": "html",
       "id": "video_embed",
       "label": "YouTube/Vimeo iframe"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Video cover image"
     },
     {
       "type": "header",

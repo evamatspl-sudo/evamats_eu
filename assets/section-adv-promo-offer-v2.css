@@ -1,0 +1,297 @@
+/* --- adv-promo-offer-v2.liquid --- */
+  .adv-promo-offer-v2 {
+      --apo-margin-top: 0;
+      --apo-margin-bottom: 0;
+      margin-top: var(--apo-margin-top);
+      margin-bottom: var(--apo-margin-bottom);
+      padding: 40px 0 48px;
+      background: transparent;
+      color: var(--color-text);
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__layout--no-visual {
+      width: 100%;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__visual {
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--desktop {
+      display: none;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--mobile {
+      display: block;
+      width: 100%;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--single {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin-inline: auto;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__hero-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__copy {
+      width: 100%;
+      max-width: 640px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__heading {
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.44px;
+      color: var(--color-text);
+      text-align: center;
+      max-width: 22em;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__sub {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: -0.3px;
+      color: var(--color-text);
+      text-align: center;
+      max-width: 28em;
+      opacity: 0.92;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__card {
+      width: 100%;
+      max-width: 339px;
+      margin-inline: auto;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__card-inner {
+      position: relative;
+      padding: 16px 16px 18px;
+      background: var(--color-surface-elevated);
+      border-radius: 12px;
+      box-shadow: 8px 8px 40px rgba(33, 33, 33, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__card-top-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__offer-label {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.28px;
+      color: var(--color-text);
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__discount-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px 12px;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 6px;
+      border-radius: 6px;
+      background: #ddf039;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.32px;
+      text-transform: uppercase;
+      color: #1d4508;
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__suffix {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.32px;
+      text-transform: uppercase;
+      color: var(--color-text);
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__timer {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.52px;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-accent-red, #ff2741);
+    }
+  
+    .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
+      width: 100%;
+      max-width: none;
+    }
+  
+    @media screen and (max-width: 989px) {
+      .adv-promo-offer-v2 .adv-promo-offer-v2__heading {
+        font-size: 22px;
+      }
+    }
+  
+    @media screen and (min-width: 990px) {
+      .adv-promo-offer-v2 {
+        padding: 72px 0 80px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(32px, 5vw, 80px);
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__layout--no-visual {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 720px;
+        margin-inline: auto;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__visual {
+        grid-column: 2;
+        grid-row: 1;
+        max-width: min(746px, 100%);
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--desktop {
+        display: block;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--mobile {
+        display: none;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__visual-slot--single {
+        max-width: 640px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__copy {
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 625px;
+        width: 100%;
+        margin-inline: auto;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__heading {
+        line-height: var(--font-h3-line, 1.1);
+        letter-spacing: -0.84px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__sub {
+        font-size: var(--font-body-m-size, 18px);
+        line-height: var(--font-body-m-line, 1.6);
+        letter-spacing: -0.36px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__card {
+        max-width: 627px;
+        width: 100%;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__card-inner {
+        padding: 28px 36px 32px;
+        border-radius: 16px;
+        align-items: stretch;
+        gap: 20px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__card-top {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__card-top-left {
+        align-items: flex-start;
+        gap: 12px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__offer-label {
+        font-size: var(--font-body-m-size, 18px);
+        letter-spacing: -0.36px;
+        text-align: left;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__discount-row {
+        justify-content: flex-start;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__pill {
+        font-size: var(--font-label-l-size, 20px);
+        letter-spacing: -0.4px;
+        padding: 6px 10px;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__suffix {
+        font-size: var(--font-label-l-size, 20px);
+        letter-spacing: -0.4px;
+        text-transform: none;
+        font-weight: 600;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__timer {
+        font-size: var(--font-h4-size, 32px);
+        letter-spacing: -0.64px;
+        flex-shrink: 0;
+        text-align: right;
+      }
+  
+      .adv-promo-offer-v2 .adv-promo-offer-v2__cta.button_3 {
+        max-width: none;
+      }
+    }

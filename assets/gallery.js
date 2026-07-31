@@ -184,8 +184,47 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   filterImages();
-  initGalleryFancybox();
+  bindGalleryFancyboxOnClick();
 });
+
+function bindGalleryFancyboxOnClick() {
+  if (window.__evamatsGalleryFancyboxClickBound) return;
+  window.__evamatsGalleryFancyboxClickBound = true;
+  var opening = false;
+
+  document.addEventListener(
+    'click',
+    function (event) {
+      var link = event.target.closest('a[data-fancybox="gallery"]');
+      if (!link || !document.querySelector('.gallery')) return;
+      if (window.__evamatsGalleryFancyboxReady) return;
+      if (opening) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      opening = true;
+
+      var loader =
+        typeof window.ensureFancyboxLoaded === 'function'
+          ? window.ensureFancyboxLoaded()
+          : Promise.reject(new Error('ensureFancyboxLoaded missing'));
+
+      loader
+        .then(function () {
+          initGalleryFancybox();
+          window.__evamatsGalleryFancyboxReady = true;
+          opening = false;
+          link.click();
+        })
+        .catch(function (err) {
+          opening = false;
+          console.error(err);
+          window.location.href = link.href;
+        });
+    },
+    true
+  );
+}
 
 function getGalleryFancyboxInstance(ref) {
   if (ref && typeof ref.getSlide === 'function') return ref;

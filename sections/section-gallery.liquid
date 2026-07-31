@@ -1,6 +1,5 @@
 {{ 'section-gallery.css' | asset_url | stylesheet_tag }}
 {{ 'section-gallery-fancybox.css' | asset_url | stylesheet_tag }}
-<link rel="stylesheet" href="{{ 'fancybox.css' | asset_url }}">
 
 {%- liquid
   assign gallery_title = section.settings.title | strip
@@ -111,7 +110,6 @@
   <img data-gallery-fancybox-arrow-next src="{{ 'gallery-fancybox-arrow-next.svg' | asset_url }}" alt="" width="27" height="54">
 </div>
 
-<script src="{{ 'fancybox.js' | asset_url }}" defer></script>
 <script src="{{ 'gallery.js' | asset_url }}" defer></script>
 
 {% schema %}

@@ -53,6 +53,45 @@
     display: block;
 }
 
+.video-with-text__deferred {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.video-with-text__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: #111;
+}
+
+.video-with-text__poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-with-text__deferred[loaded] .video-with-text__poster {
+    display: none;
+}
+
+.video-with-text__deferred iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+}
+
 .video-with-text__subtitle {
     font-size: 2rem;
     line-height: 1;

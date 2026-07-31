@@ -1,0 +1,222 @@
+/* --- evamats-icon-grid.liquid --- */
+  .evamats-icon-grid {
+      background: #F6F6F6;
+      color: var(--color-text);
+    }
+  
+    .evamats-icon-grid__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+  
+    .evamats-icon-grid__heading {
+      margin: 0 auto 48px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--color-text);
+    }
+  
+    .evamats-icon-grid--heading-left .evamats-icon-grid__heading {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+  
+    .evamats-icon-grid__grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 30px;
+      row-gap: 46px;
+    }
+  
+    .evamats-icon-grid__item {
+      flex: 0 0 calc((100% - 60px) / 3);
+      max-width: calc((100% - 60px) / 3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin: 0;
+      text-align: center;
+    }
+  
+    .evamats-icon-grid__icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+    }
+  
+    .evamats-icon-grid__icon-img {
+      display: block;
+      width: 100%;
+    }
+  
+    .evamats-icon-grid__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      width: 100%;
+      max-width: 280px;
+    }
+  
+    .evamats-icon-grid__title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-icon-grid__text {
+      margin: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__heading {
+      margin-bottom: 36px;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__grid {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      column-gap: 0;
+      row-gap: 36px;
+      max-width: none;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__item {
+      flex: none;
+      width: 100%;
+      max-width: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 25px;
+      text-align: left;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__icon {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__body {
+      align-items: flex-start;
+      gap: 12px;
+      max-width: none;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__title {
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+    }
+  
+    .evamats-icon-grid--rows .evamats-icon-grid__text {
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: -0.36px;
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-icon-grid__heading {
+        margin-bottom: 32px;
+        font-size: 26px;
+      }
+  
+      .evamats-icon-grid--heading-left .evamats-icon-grid__heading {
+        text-align: left;
+      }
+  
+      .evamats-icon-grid__grid {
+        column-gap: 12px;
+        row-gap: 44px;
+        max-width: 339px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .evamats-icon-grid__item {
+        flex: 0 0 calc((100% - 12px) / 2);
+        max-width: calc((100% - 12px) / 2);
+        gap: 25px;
+      }
+  
+      .evamats-icon-grid__icon {
+        width: 60px;
+        height: 60px;
+      }
+  
+      .evamats-icon-grid__body {
+        max-width: none;
+        gap: 16px;
+      }
+  
+      .evamats-icon-grid__title {
+        font-size: 16px;
+        line-height: 1;
+      }
+  
+      .evamats-icon-grid__text {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__heading {
+        margin-bottom: 30px;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__grid {
+        row-gap: 30px;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__item {
+        gap: 25px;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__icon {
+        width: 46px;
+        height: 46px;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__body {
+        gap: 0;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__title {
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -0.32px;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__text {
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -0.32px;
+      }
+  
+      .evamats-icon-grid--rows .evamats-icon-grid__title + .evamats-icon-grid__text {
+        margin-top: 0;
+      }
+    }

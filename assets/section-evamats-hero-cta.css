@@ -1,0 +1,93 @@
+/* --- evamats-hero-cta.liquid --- */
+  .evamats-hero-cta {
+      background: transparent;
+      color: var(--color-text);
+    }
+  
+    .evamats-hero-cta__inner {
+      max-width: 1520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .evamats-hero-cta__eyebrow {
+      margin: 0 0 16px;
+      
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #ef022d;
+    }
+  
+    .evamats-hero-cta__heading {
+      margin: 0 auto 31px;
+      
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-hero-cta__description {
+      margin: 0 auto 32px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+  
+    .evamats-hero-cta__description p {
+      margin: 0;
+    }
+  
+    .evamats-hero-cta__actions {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .evamats-hero-cta__actions .button.button_3 {
+      min-width: 242px;
+    }
+  
+    .evamats-hero-cta__media {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    .evamats-hero-cta__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    .evamats-hero-cta__image--placeholder {
+      background: var(--color-surface-elevated);
+    }
+  
+    @media screen and (max-width: 749px) {
+      .evamats-hero-cta__eyebrow {
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+  
+      .evamats-hero-cta__heading {
+        margin-bottom: 27px;
+        font-size: 26px;
+      }
+  
+      .evamats-hero-cta__description {
+        margin-bottom: 27px;
+        font-size: 16px;
+      }
+  
+      .evamats-hero-cta__actions .button.button_3 {
+        min-width: 0;
+        width: 100%;
+      }
+    }

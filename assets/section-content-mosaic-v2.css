@@ -1,0 +1,162 @@
+/* --- content-mosaic-v2.liquid --- */
+  .content-mosaic-v2 {
+      padding: 92px 0 0;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+  
+  
+    .content-mosaic-v2 .content-mosaic-v2__text-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 103px;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__heading {
+      margin: 0;
+      max-width: 496px;
+      font-weight: 600;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__heading-main,
+    .content-mosaic-v2 .content-mosaic-v2__heading-accent {
+      display: block;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__heading-accent {
+      color: var(--color-accent-red);
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__text {
+      max-width: 751px;
+      font-weight: 400;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__text p {
+      margin: 0;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--mosaic-gap);
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__cell {
+      aspect-ratio: 376 / 518;
+      border-radius: var(--mosaic-radius);
+      overflow: hidden;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__badge-wrap {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__badge {
+      position: relative;
+      width: 192px;
+      height: 31px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__badge-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__badge-text {
+      position: relative;
+      z-index: 1;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--color-text-primary) 50.962%, var(--color-accent-red) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding-bottom: 3px;
+    }
+  
+    .content-mosaic-v2 .content-mosaic-v2__img,
+    .content-mosaic-v2 .content-mosaic-v2__placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  
+    @media screen and (max-width: 1023px) {
+      .content-mosaic-v2 .content-mosaic-v2__inner {
+        width: calc(100% - 36px);
+        max-width: none;
+      }
+  
+      .content-mosaic-v2 {
+        padding-top: 40px;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__text-row {
+        display: block;
+        margin-bottom: 20px;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__heading {
+        max-width: none;
+        font-size: var(--font-h5-size);
+        line-height: var(--font-h5-line);
+        letter-spacing: -0.52px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__text {
+        max-width: none;
+        font-size: var(--font-body-s-size);
+        line-height: var(--font-body-s-line);
+        letter-spacing: -0.32px;
+        text-align: center;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--mosaic-gap);
+        margin-top: 24px;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__cell {
+        aspect-ratio: 167 / 232;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__cell:nth-child(3) {
+        grid-column: 1 / -1;
+        aspect-ratio: 338 / 232;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__cell:nth-child(4) {
+        display: none;
+      }
+  
+  
+      .content-mosaic-v2 .content-mosaic-v2__badge {
+        width: 160px;
+        height: 24px;
+      }
+  
+      .content-mosaic-v2 .content-mosaic-v2__badge-text {
+        font-size: var(--font-body-xs-size);
+        line-height: var(--font-body-xs-line);
+        letter-spacing: -0.28px;
+      }
+    }

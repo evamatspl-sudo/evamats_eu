@@ -508,6 +508,9 @@
     {%- endif -%}
     <script src="{{'swiper-bundle.min.js' | asset_url}}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    {% if template contains 'product' or template.suffix == 'zamowienie-indywidualne' %}
+      <script src="{{ 'custom-product.js' | asset_url }}" defer></script>
+    {% endif %}
     {% if template contains 'index' %}
       <script src="{{ 'index.js' | asset_url }}" defer></script>
     {% endif %}
@@ -530,9 +533,10 @@
     <script>
       window.evamatsAssets = window.evamatsAssets || {};
       window.evamatsAssets.productConfig = {{ 'product-config.js' | asset_url | json }};
+      window.evamatsAssets.fancyboxJs = {{ 'fancybox.js' | asset_url | json }};
+      window.evamatsAssets.fancyboxCss = {{ 'fancybox.css' | asset_url | json }};
     </script>
     {% if template contains 'product' %}
-      <script src="{{ 'fancybox.js' | asset_url }}" defer></script>
       <script src="{{ 'product.js' | asset_url }}" defer></script>
       {%- liquid
         assign estimated_delivery_suffixes = 'accessories,new-torby-template,zamowienie-indywidualne,product-with-btn-do-gory,test' | split: ','
