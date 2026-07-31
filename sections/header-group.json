@@ -103,14 +103,14 @@
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "rubber-car-mats",
-            "icon": "shopify://shop_images/evamats-rubber-mats-mobile-sidebar.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-rubber-mats.webp"
           }
         },
         "catalog_drawer_icon_MPPP8V": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "velour-car-mats",
-            "icon": "shopify://shop_images/evamats-velour-mats-mobile-sidebar.webp"
+            "icon": "shopify://shop_images/carvion-menu-tile-velour-mats.webp"
           }
         }
       },

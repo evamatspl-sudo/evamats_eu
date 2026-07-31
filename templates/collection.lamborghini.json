@@ -34,7 +34,7 @@
         "33e61f00-7959-4cff-8de2-156a9909c235": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-aventador",
+            "product-link": "shopify://collections/lamborgini-aventador",
             "color-code": "Aventador"
           }
         },
@@ -55,21 +55,21 @@
         "8c663dca-5053-4568-b315-68e831de406a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-murcielago",
+            "product-link": "shopify://collections/lamborgini-murcielago",
             "color-code": "Murcielago"
           }
         },
         "b698ba3a-3e2f-43b6-a989-4d15556bd85c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-huracan",
+            "product-link": "shopify://collections/lamborgini-huracan",
             "color-code": "Huracán"
           }
         },
         "b65af34f-80d9-4874-84e5-52afdb1d7555": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-lamborgini-revuelto",
+            "product-link": "shopify://collections/lamborgini-revuelto",
             "color-code": "Revuelto"
           }
         }

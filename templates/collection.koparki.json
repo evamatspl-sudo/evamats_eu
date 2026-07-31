@@ -34,7 +34,7 @@
         "section_cYNaHW": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cat",
+            "product-link": "shopify://collections/cat",
             "color-code": "CAT"
           }
         },
@@ -55,7 +55,7 @@
         "section_bVJB9x": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-ciagniki-kubota",
+            "product-link": "shopify://collections/ciagniki-kubota",
             "color-code": "Kubota"
           }
         },
@@ -69,14 +69,14 @@
         "section_PaCYUX": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-new-holland",
+            "product-link": "shopify://collections/new-holland",
             "color-code": "New Holla"
           }
         },
         "section_cAfre3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-volvo",
+            "product-link": "shopify://collections/volvo-diggers",
             "color-code": "Volvo"
           }
         }
