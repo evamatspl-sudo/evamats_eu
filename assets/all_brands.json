@@ -72,7 +72,8 @@
         "url": "/collections/aixam-crossover"
       }
     ],
-    "url": "/collections/aixam"
+    "url": "/collections/aixam",
+    "logo": "201_Aixam.png"
   },
   "Alfa Romeo": {
     "models": [
@@ -371,7 +372,8 @@
         "url": "/collections/bestune-t90"
       }
     ],
-    "url": "/collections/bestune"
+    "url": "/collections/bestune",
+    "logo": "202_Bestune.png"
   },
   "Bentley": {
     "models": [
@@ -1269,7 +1271,8 @@
         "url": "/collections/daf-lf"
       }
     ],
-    "url": "/collections/daf"
+    "url": "/collections/daf",
+    "logo": "204_DAF.png"
   },
   "Dodge": {
     "models": [
@@ -1368,7 +1371,8 @@
         "url": "/collections/ds-9"
       }
     ],
-    "url": "/collections/ds"
+    "url": "/collections/ds",
+    "logo": "206_DS.png"
   },
   "Daihatsu": {
     "models": [
@@ -2348,7 +2352,8 @@
         "name": "Wszystkie",
         "url": "/collections/ineos"
       }
-    ]
+    ],
+    "logo": "207_Ineos.png"
   },
   "Jaecoo": {
     "models": [
@@ -2897,7 +2902,8 @@
         "url": "/collections/man-tgx"
       }
     ],
-    "url": "/collections/man"
+    "url": "/collections/man",
+    "logo": "209_MAN.png"
   },
   "Maserati": {
     "models": [
@@ -5553,7 +5559,8 @@
         "url": "/collections/ligier-js50-sport"
       }
     ],
-    "url": "/collections/ligier"
+    "url": "/collections/ligier",
+    "logo": "208_Ligier.png"
   },
   "Škoda": {
     "models": [
@@ -5744,7 +5751,8 @@
         "url": "/collections/aito-m9"
       }
     ],
-    "url": "/collections/aito"
+    "url": "/collections/aito",
+    "logo": "200_Aito.png"
   },
   "DR": {
     "models": [
@@ -5777,7 +5785,8 @@
         "url": "/collections/dr-5"
       }
     ],
-    "url": "/collections/do-dr"
+    "url": "/collections/do-dr",
+    "logo": "205_DR.png"
   },
   "Zhidou": {
     "models": [],
@@ -5785,7 +5794,8 @@
   },
   "Microcar": {
     "models": [],
-    "url": "/collections/microcar"
+    "url": "/collections/microcar",
+    "logo": "210_Microcar.png"
   },
   "Changan": {
     "models": [
@@ -5794,6 +5804,7 @@
         "url": "/collections/changan-cs55-plus"
       }
     ],
-    "url": "/collections/changan"
+    "url": "/collections/changan",
+    "logo": "203_Changan.png"
   }
 }
