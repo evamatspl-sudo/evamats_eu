@@ -21,8 +21,11 @@
     data-preview-reopen
     aria-label="{{ 'general.config.preview_badge' | t }}"
   >
-    {{ 'general.config.preview_badge' | t }}
-    {% render 'icon-eye' %}
+    {%- comment -%}
+      Без переносов строк: кнопка — flex с gap, и пробельные текстовые узлы
+      становились отдельными элементами, добавляя лишний зазор справа от иконки.
+    {%- endcomment -%}
+    <span class="evamats-config-preview__reopen-label">{{- 'general.config.preview_badge' | t -}}</span>{%- render 'icon-eye' -%}
   </button>
 
   <div class="evamats-config-preview__panel">

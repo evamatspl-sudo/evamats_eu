@@ -2801,7 +2801,8 @@
   display: none;
   align-items: center;
   gap: 4px;
-  width: 100px;
+  width: auto;
+  justify-content: center;
   height: 32px;
   padding: 4px;
   border: 0;
