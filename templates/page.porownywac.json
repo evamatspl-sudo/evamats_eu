@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "main": {
       "type": "main-page",
@@ -24,15 +24,15 @@
         "block_VXnbCG": {
           "type": "block",
           "settings": {
-            "header": "<h2>Gumové autokoberce<\/h2>",
-            "image": "shopify:\/\/shop_images\/IMG_8796_1.png"
+            "header": "<h2>Velur Autokoberce</h2>",
+            "image": "shopify://shop_images/IMG_1621_1.png"
           }
         },
         "block_K3qkTg": {
           "type": "block",
           "settings": {
-            "header": "<h2>Autokoberce Carvion<\/h2>",
-            "image": "shopify:\/\/shop_images\/IMG_8796_2.png"
+            "header": "<h2><strong>Carvion</strong> car mats</h2>",
+            "image": "shopify://shop_images/IMG_8796_2.png"
           }
         }
       },
@@ -40,12 +40,553 @@
         "block_VXnbCG",
         "block_K3qkTg"
       ],
+      "disabled": true,
       "settings": {
-        "logo": "shopify:\/\/shop_images\/Group_271.png",
+        "logo": "shopify://shop_images/Group_271.png",
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 30,
         "padding_top": 43,
         "padding_bottom": 52
+      }
+    },
+    "hero_before_after_6Jpync": {
+      "type": "hero-before-after",
+      "name": "Hero Before/After",
+      "settings": {
+        "layout": "full",
+        "text_color": "#ffffff",
+        "text_color_mobile": "#1b1d22",
+        "divider_background": "#ffffff",
+        "highlight_text_color": "#ffffff",
+        "highlight_background": "#ff2741",
+        "badge_text_color": "#ef022d",
+        "badge_background": "#ffffff",
+        "center_text": "VS.",
+        "left_title": "<p>Velurové koberce</p>",
+        "left_image": "shopify://shop_images/velour-img.webp",
+        "right_title": "<p>Koberce <strong>Carvion</strong></p>",
+        "right_image": "shopify://shop_images/hero-evamats-after.webp",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "video_with_text_EbL7W9": {
+      "type": "video-with-text",
+      "name": "Video With Text",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "subtitle_color": "#ef022d",
+        "subtitle": "Materiál Carvion",
+        "heading": "Hledáte vysoce kvalitní autokoberce?",
+        "text": "<p>Uvažujete o nákupu velurové verze? Nebo se rozhodnete pro profesionální autokoberce z odolného materiálu EVA? Podívejte se na jeho výhody a převahu nad velurem.<br/><br/>V našem internetovém i kamenném obchodě najdete unikátní autokoberce, které zdůrazní styl každého vozu, zajistí bezpečnost jízdy, pohodlí používání a snadné čištění. Níže představíme základní vlastnosti velurových koberců a porovnáme je s našimi jedinečnými produkty EVA.</p>",
+        "video_url": "",
+        "video_embed": "<iframe width=\"50%\" height=\"450\" src=\"https://www.youtube.com/embed/ZqkazBsFL44?si=ykobXf4aOykZnGeg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"></iframe>",
+        "padding_top": 80,
+        "padding_bottom": 100,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 30
+      }
+    },
+    "benefits_comparison_HEGYmW": {
+      "type": "benefits-comparison",
+      "blocks": {
+        "item_DY8nxE": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-1.webp",
+            "title": "<p>Odolnost</p><p>vůči vodě</p>",
+            "text": "<p>Gumové i EVA koberce neabsorbují vlhkost. Chrání interiér auta před vodou, sněhem a blátem.</p>"
+          }
+        },
+        "item_7pHDep": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-2.webp",
+            "title": "<p>Ochrona <br/>przed zabrudzeniami</p>",
+            "text": "<p>Oba typy účinně chrání podlahu před nečistotami a kapalinami. Rozdíl je v pokrytí plochy.</p>"
+          }
+        },
+        "item_y78bxy": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-3.webp",
+            "title": "<p>Lepsze <br/>dopasowanie EVA</p>",
+            "text": "<p>EVA koberce se vyrábějí na míru a pokrývají až 99 % podlahy. Gumové zajistí přibližně 70–90 % ochrany.</p>"
+          }
+        },
+        "item_fc6iip": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/benefits-icon-4.webp",
+            "title": "<p>Komfort <br/>a bezpečnost</p>",
+            "text": "<p>EVA jsou lehké, bez zápachu a netoxické. Navíc zachytávají nečistoty v buněčné struktuře a zabraňují jejich roznášení.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_DY8nxE",
+        "item_7pHDep",
+        "item_y78bxy",
+        "item_fc6iip"
+      ],
+      "name": "Benefits Comparison",
+      "settings": {
+        "background": "#f6f6f6",
+        "text_color": "#1b1d22",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "mat_comparison_Vt8DWM": {
+      "type": "mat-comparison",
+      "blocks": {
+        "item_tBJhkf": {
+          "type": "item",
+          "settings": {
+            "image_before": "shopify://shop_images/hero-evamats-after.webp",
+            "image_after": "shopify://shop_images/velour-img.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_tBJhkf"
+      ],
+      "name": "Mat Comparison",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "subheading_color": "#ef022d",
+        "left_label": "Welurowe",
+        "subheading": "JAKÝ JE ROZDÍL?",
+        "heading": "<p>Na co si dát pozor <br/>při výběru koberců?</p>",
+        "description": "<ul><li>Především produkty dostupné v našem obchodě vyrábíme ručně.</li><li>Jsou proto ideálně přizpůsobeny rozměrům podlahy ve vašem vozidle. Klademe důraz na kvalitu našich koberců a snažíme se o maximální přesnost výroby.</li><li>Používáme velmi kvalitní materiály. Díky našim kobercům standard vašeho auta už nikdy nebude stejný!</li><li>Naším cílem je zlepšit nejen pohodlí, ale i udržení auta v čistotě.</li></ul>",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "compare_cards_M6itiE": {
+      "type": "compare-cards",
+      "blocks": {
+        "block_gAgXYW": {
+          "type": "block",
+          "settings": {
+            "header": "<p><strong>Nevýhody</strong> velurových koberců</p>",
+            "unordered_list": "<ul><li>Absorbují vodu a nečistoty hluboko ve struktuře látky</li><li>Náročné na čištění</li><li>Rychle ztrácejí původní vzhled</li><li>Místo pod pravou nohou se velmi rychle opotřebovává</li><li>Pokrývají 60–70 % dostupné plochy podlahy</li><li>Nejsou odolné vůči chemikáliím</li><li>Nabízejí základní personalizaci</li></ul>",
+            "image": "shopify://shop_images/IMG_8796_1_1.png",
+            "button_visibility": "mobile",
+            "button_label": "Zobrazit produkt",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "block_YfT8nF": {
+          "type": "block",
+          "settings": {
+            "header": "<p><strong>Výhody</strong> EVA koberců</p>",
+            "unordered_list": "<ul><li>Idealnie dopasowane</li><li>Ultra lekkie i łatwe w czyszczeniu</li><li>Bezzapachowy ECO materiał, nietoksyczny</li><li>Wodoodporne</li><li>195 połączeń kolorystycznych</li><li>Technologiczne komórki utrzymują różnego rodzaju zanieczyszczenia</li></ul>",
+            "image": "shopify://shop_images/IMG_8796_2_1.png",
+            "button_visibility": "all",
+            "button_label": "Zobrazit produkt",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        }
+      },
+      "block_order": [
+        "block_gAgXYW",
+        "block_YfT8nF"
+      ],
+      "settings": {
+        "background": "#1b1d22",
+        "image_top_right": "shopify://shop_images/compare-cards-top-image.webp",
+        "image_bottom_left": "shopify://shop_images/compare-cards-bottom-image.webp",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "feature_comparison_cGAWVU": {
+      "type": "feature-comparison",
+      "blocks": {
+        "item_B4DzkP": {
+          "type": "item",
+          "settings": {
+            "title": "Czyszczenie",
+            "left_text": "Časově náročnější",
+            "right_text": "Szybkie i proste"
+          }
+        },
+        "item_8GcpfL": {
+          "type": "item",
+          "settings": {
+            "title": "Odolnost vůči nečistotám",
+            "left_text": "Pohlcuje vlhkost a nečistoty",
+            "right_text": "Neabsorbují"
+          }
+        },
+        "item_HdnHYV": {
+          "type": "item",
+          "settings": {
+            "title": "Odolnost",
+            "left_text": "Rychleji se opotřebovává",
+            "right_text": "Dlouho si zachovávají vzhled"
+          }
+        },
+        "item_deETxA": {
+          "type": "item",
+          "settings": {
+            "title": "Používání",
+            "left_text": "Bardziej dekoracyjne",
+            "right_text": "Praktyczne i lekkie"
+          }
+        }
+      },
+      "block_order": [
+        "item_B4DzkP",
+        "item_8GcpfL",
+        "item_HdnHYV",
+        "item_deETxA"
+      ],
+      "name": "Feature comparison",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#1b1d22",
+        "highlight_background": "#f6f6f6",
+        "heading": "<h2>Jaké jsou rozdíly v čištění koberců EVA a velurových?</h2>",
+        "left_title": "Welur",
+        "right_title": "EVA",
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 10
+      }
+    },
+    "mat_hotspot_consult_rEEBBj": {
+      "type": "mat-hotspot-consult",
+      "blocks": {
+        "hotspot_JPAJPy": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 24,
+            "position_y": 12,
+            "tooltip_heading": "Struktura",
+            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
+          }
+        },
+        "hotspot_NeaL3g": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 72,
+            "position_y": 35,
+            "tooltip_heading": "Padnutí",
+            "tooltip_text": "Přesné padnutí pro váš model auta"
+          }
+        },
+        "hotspot_YFiQ9R": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 38,
+            "position_y": 53,
+            "tooltip_heading": "Materiál",
+            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
+          }
+        },
+        "hotspot_mxwPyR": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 88,
+            "position_y": 78,
+            "tooltip_heading": "Lem",
+            "tooltip_text": "Zvýšený lem chrání interiér vozu"
+          }
+        },
+        "hotspot_abnNzi": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 21,
+            "position_y": 83,
+            "tooltip_heading": "Čištění",
+            "tooltip_text": "Snadné čištění během několika sekund"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_JPAJPy",
+        "hotspot_NeaL3g",
+        "hotspot_YFiQ9R",
+        "hotspot_mxwPyR",
+        "hotspot_abnNzi"
+      ],
+      "name": "Mat hotspot consultation",
+      "settings": {
+        "heading": "Získejte bezplatnou konzultaci!",
+        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "EVA koberec",
+        "label_name": "Jméno a příjmení",
+        "placeholder_name": "Jan Novák",
+        "label_phone": "Telefon",
+        "phone_prefix": "+48",
+        "placeholder_phone": "000-000-000",
+        "label_email": "E-mail",
+        "placeholder_email": "jan@example.com",
+        "label_message": "Poznámka (volitelné)",
+        "placeholder_message": "Vaše zpráva…",
+        "submit_label": "Odeslat poptávku",
+        "consent_intro": "Souhlasím s",
+        "terms_label": "obchodními podmínkami",
+        "terms_url": "",
+        "consent_mid": "a",
+        "privacy_label": "zásadami ochrany osobních údajů",
+        "privacy_url": "",
+        "consent_end": ".",
+        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
+        "success_message": "Děkujeme! Brzy se vám ozveme.",
+        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "content_gallery_slider_VjTdgA": {
+      "type": "content-gallery-slider",
+      "blocks": {
+        "icon_fbft33": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-1.png"
+          }
+        },
+        "icon_eRmMYH": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-2.png"
+          }
+        },
+        "icon_kP9Qyh": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/icon-for-gallery-3.png"
+          }
+        },
+        "slide_6cJXDB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2881.webp"
+          }
+        },
+        "slide_UNEPXX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2899.webp"
+          }
+        },
+        "slide_rqa3AK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2888.webp"
+          }
+        },
+        "slide_ymjCMQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2866.webp"
+          }
+        },
+        "slide_aJqic9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2900.webp"
+          }
+        },
+        "slide_XmAGt8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2886_483e5603-3188-4488-9bec-f1a32e27f654.webp"
+          }
+        }
+      },
+      "block_order": [
+        "icon_fbft33",
+        "icon_eRmMYH",
+        "icon_kP9Qyh",
+        "slide_6cJXDB",
+        "slide_UNEPXX",
+        "slide_rqa3AK",
+        "slide_ymjCMQ",
+        "slide_aJqic9",
+        "slide_XmAGt8"
+      ],
+      "name": "Content Gallery Slider",
+      "settings": {
+        "heading": "<p><p>Naším cílem je <strong>maximální</strong> </p><p><strong>pohodlí</strong> vaší jízdy</p>",
+        "text": "<p>Přesné leštění, odolné materiály a produkované detaily dělají používání maximálně pohodlné každý den.</p>",
+        "button_label": "Nakonfigurujte koberce",
+        "button_link": "shopify://collections/all-car-mats",
+        "padding_top": 80,
+        "padding_bottom": 120,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "home_faq_xK3HGp": {
+      "type": "home-faq",
+      "blocks": {
+        "text_qyG8py": {
+          "type": "text",
+          "settings": {
+            "category": "",
+            "hd": "<p>Pokrytí podlahy a padnutí</p>",
+            "des": "<p><strong>– Budou koberce určitě pasovat?</strong><br/>Ano, naše EVA koberce jsou navrženy speciálně pro každou značku, model a verzi vozu a pokrývají celou podlahovou plochu včetně míst, která nechrání gumové ani velurové koberce.</p><p><strong>– Co je koberec na tunel?</strong><br/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu a zajišťují maximální ochranu.</p><p><strong>– Je podložka paty namontována na koberci řidiče?</strong><br/>Ne, podložka paty je dodávána samostatně, abyste si ji mohli nastavit podle svých preferencí.</p>",
+            "des_html": ""
+          }
+        },
+        "text_eNMPaU": {
+          "type": "text",
+          "settings": {
+            "category": "",
+            "hd": "<p>Vlastnosti materiálu a odolnost</p>",
+            "des": "<p><strong>– Co je materiál EVA?</strong><br/>Je to 10 mm silná pěna, která zachytává nečistoty a vodu na povrchu koberce a brání jejich průniku pod něj.</p><p><strong>– Jaký je rozdíl mezi sadou 3D a sadou 3D s lemy?</strong><br/>Sada 3D s lemy poskytuje dodatečnou ochranu bočního čalounění podlahy a zajišťuje lepší padnutí.</p><p><strong>– Jak dlouho koberce vydrží?</strong><br/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.</p>",
+            "des_html": ""
+          }
+        },
+        "text_fUwAtz": {
+          "type": "text",
+          "settings": {
+            "category": "",
+            "hd": "<p>Používání a údržba</p>",
+            "des": "<p><strong>– Jak čistit EVA koberce?</strong><br/>Nečistoty na povrchu koberce neulpívají. Stačí je vyklepat, nebo při větším znečištění opláchnout vysokotlakým čističem.</p><p><strong>– Jsou EVA koberce vhodné na léto i zimu?</strong><br/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.</p>",
+            "des_html": ""
+          }
+        },
+        "text_imjMCm": {
+          "type": "text",
+          "settings": {
+            "category": "",
+            "hd": "<p>Objednávka a doručení</p>",
+            "des": "<p><strong>– Jaká je doba dodání?</strong><br/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, například motorových člunů nebo traktorů, se může doba prodloužit na 4–6 týdnů.</p><p><strong>– Jak probíhá doručení?</strong><br/>Koberce odesíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu neposíláme koberce do výdejních boxů. Dbáme na to, aby koberce dorazily ve stejné podobě, v jaké byly vyrobeny — bez skládání nebo ohýbání, které by mohlo ovlivnit jejich padnutí.</p>",
+            "des_html": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_qyG8py",
+        "text_eNMPaU",
+        "text_fUwAtz",
+        "text_imjMCm"
+      ],
+      "settings": {
+        "design_variant": "home",
+        "hd": "AUTOKOBERCE Carvion – FAQ",
+        "heading_accent": "",
+        "heading_mobile": "Časté otázky",
+        "breadcrumb_parent_label": "Carvion",
+        "breadcrumb_parent_url": "",
+        "breadcrumb_current_label": "Časté otázky",
+        "eyebrow_link": "",
+        "view_all_label": "Zobrazit vše",
+        "view_all_url": "shopify://pages/faq",
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "video_reviews_dVUgd6": {
+      "type": "video_reviews",
+      "blocks": {
+        "item_z4D4nJ": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_5.mp4"
+          }
+        },
+        "item_ncAC47": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_6.mp4"
+          }
+        },
+        "item_xAPTY9": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_3.mp4"
+          }
+        },
+        "item_7BQtRL": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_4.mp4"
+          }
+        },
+        "item_9wU4cz": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_1.mp4"
+          }
+        },
+        "item_gzFzfa": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_5.mp4"
+          }
+        },
+        "item_fL6YAh": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_6.mp4"
+          }
+        },
+        "item_3xUKqR": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_3.mp4"
+          }
+        },
+        "item_3pTnex": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_4.mp4"
+          }
+        },
+        "item_8ecXUP": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/Untitled_1.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "item_z4D4nJ",
+        "item_ncAC47",
+        "item_xAPTY9",
+        "item_7BQtRL",
+        "item_9wU4cz",
+        "item_gzFzfa",
+        "item_fL6YAh",
+        "item_3xUKqR",
+        "item_3pTnex",
+        "item_8ecXUP"
+      ],
+      "settings": {
+        "title": "Majitelé aut o kobercích",
+        "title_accent": "Carvion",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "facebook_label": "Sledujte nás na Facebooku",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "https://www.tiktok.com/@carvion_cz",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "video_azQNFQ": {
@@ -54,7 +595,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "video_url": "https:\/\/youtu.be\/FcYcIp0mGXk",
+        "video_url": "https://youtu.be/CMkryGczI1I",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -62,13 +603,15 @@
         "padding_bottom": 36
       }
     },
-    "custom_liquid_34XwTK": {
+    "custom_liquid_AiqcVi": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
-        ".video_compareguma {position: relative; text-align: center;}"
+        ".video_compare {position: relative; text-align: center;}",
+        "@media only screen {.video_compare {}}"
       ],
       "settings": {
-        "custom_liquid": "<div class=\"video_compareguma\">\n<iframe src=\"https:\/\/www.youtube.com\/embed\/T0jnyernB24?si=lxLzzJ4O_Rgyd7X_\"\nwidth=\"55%\" height=\"450\"title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen><\/iframe>\n<\/div>",
+        "custom_liquid": "<div class=\"video_compare\">\n<iframe\nwidth=\"50%\" height=\"450\"\nsrc=\"https://www.youtube.com/embed/ZqkazBsFL44?si=ykobXf4aOykZnGeg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -76,9 +619,10 @@
     },
     "collapsible_text_YPVYyd": {
       "type": "collapsible-text",
+      "disabled": true,
       "settings": {
-        "richtext": "<p>Při výběru vhodných koberců do auta zvažujeme mnoho možností. Kdo se v tom nevyzná, může mít problém koupit produkty, které splní očekávání a budou spolehlivé za každé situace. Také je těžké najít ideální koberce pro konkrétní značku vozu.<\/p><p>Některé sady bohužel nesedí dostatečně dobře nebo nesplňují požadavky na používání. Níže popíšeme gumové autokoberce a porovnáme je s našimi inovativními produkty EVA. Přesvědčíte se, jak kvalitní produkt nabízíme — a EVA koberce brzy budou ve vašem autě!<\/p>",
-        "collapsible_richtext": "<h3>Co jsou gumové koberce a odkud pochází jejich popularita?<\/h3><p>Fenomén gumových autokoberců pramení z toho, že jsou relativně levné na údržbu a univerzální. Osvědčují se v každém modelu auta a splňují očekávání většiny lidí. Po léta byly považovány téměř za nezničitelné díky mimořádné odolnosti vůči mechanickému poškození. Dobře fungují za téměř jakéhokoli počasí — ať prší nebo sněží, gumové koberce nešpiní interiér. Navíc jsou velmi odolné vůči chemikáliím v čisticích prostředcích. Údržba je proto jednoduchá a nezabere mnoho času.<\/p><p><\/p>",
+        "richtext": "<p>Hledáte kvalitní autokoberce? Zvažujete velurovou variantu? Nebo zvolíte profesionální autokoberce z odolného materiálu EVA? Podívejte se na jejich výhody oproti veluru. V našem online i kamenném obchodě najdete unikátní autokoberce, které nejen podtrhnou styl vozu, ale také zajistí bezpečnost, komfort a snadné čištění. Níže shrnujeme základní vlastnosti velurových koberců a srovnáváme tradiční koberce s našimi produkty EVA.</p>",
+        "collapsible_richtext": "<p>Velur as a Materiál for Autokoberce<br/>Velur is a material that has been used for manufacturing car mats for many years. It is suitable for both cars with richer equipment a vehicles with traditional interiors. Drivers opt for velour mats especially because they are very easy to keep clean a they also look nice. To ensure that car mats made of velour last as long as possible, it is important to remember to care for them properly. Velur should not be exposed to sunlight as it can fade. Soft-bristled brushes should be used for cleaning. Traditional velour tolerates mild detergents well, but strong chemicals can cause it to discolor or deteriorate.</p>",
         "button_text_more": "Číst více",
         "button_text_less": "Číst méně",
         "padding_top_mobile": 40,
@@ -89,11 +633,12 @@
     },
     "image_with_collapsible_text_XCLeBp": {
       "type": "image-with-collapsible-text",
+      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_233.png",
-        "header": "<p>Na co <strong>zwrócić uwagę<\/strong> <br\/>przy wyborze dywaników?<\/p>",
-        "richtext": "<p>Uvažujete-li o nových autokobercích a nevíte, na jaké technické aspekty se zaměřit, pomůžeme vám. Nejprve zvolte materiál produktu. Důležitý je také způsob montáže — některé modely nemají tovární úchyty, proto volte koberce se sadou stoperů. Produkt musí dobře přiléhat k podlaze a nesmí se posouvat při jízdě. Dokončení by nemělo být náhodné — pokud záleží na estetice, koberce by měly barevně i velikostně ladit s interiérem. Tvar má velký význam: příliš malé se posouvají, příliš velké mohou zachytit pedály — to je nebezpečné pro všechny cestující.<\/p>",
-        "collapsible_richtext": "<h3>Jaké jsou druhy gumových autokoberců?<\/h3><p>Autokoberce dělíme na dva typy: korytové a standardní. Korytové mají vysoký lem, který zabraňuje přelití vody do interiéru. Jízda je bezpečná a přebytečnou vodu snadno vylejete — stačí koberec vyjmout. Na trhu jsou korytové koberce s moderním finišem, což je činí univerzálnějšími. Standardní gumové koberce mají specifický vzor, který omezuje pohyb vody nebo bláta v interiéru a chrání originální koberec.<\/p>",
+        "image": "shopify://shop_images/Frame_234.png",
+        "header": "<h2>What things <strong>should you pay attention to </strong>before choosing the right car mats?</h2>",
+        "richtext": "<p>Čím se tradiční velur liší od produktů EVA?<br/>Především produkty v našem obchodě vyrábíme ručně. Jsou proto ideálně přizpůsobeny rozměrům podlahy ve vašem vozidle. Klademe důraz na kvalitu a maximální přesnost. Používáme velmi kvalitní materiály. Díky našim kobercům standard vašeho auta už nikdy nebude stejný! Naším cílem je zlepšit pohodlí i udržení auta v čistotě.</p>",
+        "collapsible_richtext": "<h3>Jaké výhody mají autokoberce EVA oproti tradičním velurovým produktům?</h3><p>Autokoberce EVA jsou lehké a snadno se vyjímají z vozu. Další výhodou je, že jsou bez zápachu. Produkty EVA v našem obchodě jsou inovativní a kvalitou předčí tradiční velur. Běžné velurové koberce nepokrývají podlahu přesně — produkty EVA vyrábíme ručně po přesném změření podlahy konkrétní značky, což zajišťuje padnutí a pokrytí až 99 % plochy. EVA neabsorbuje vodu a nečistoty zůstávají stabilně na místě. U velurových koberců voda a špína pronikají do materiálu — vstup do auta v blátivé obuvi může ušpinit i interiér.</p>",
         "button_text_more": "Číst více",
         "button_text_less": "Číst méně",
         "padding_top_mobile": 40,
@@ -102,43 +647,13 @@
         "padding_bottom": 80
       }
     },
-    "compare_cards_M6itiE": {
-      "type": "compare-cards",
-      "blocks": {
-        "block_gAgXYW": {
-          "type": "block",
-          "settings": {
-            "header": "<h2>Nevýhody gumových koberců<\/h2>",
-            "unordered_list": "<ul><li>Przesuwają się<\/li><li>Smierdzą<\/li><li>Słabo dopasowane<\/li><li>Wszystkie są takie same<\/li><li>Nie są łatwe w czyszczeniu( informacja od detailingu),<\/li><li>Brudzą buty<\/li><li>Ciężkie<\/li><li>Wrażliwe dla zwierząt<\/li><\/ul><p><\/p><p><\/p>",
-            "image": "shopify:\/\/shop_images\/IMG_8796_1_dd858322-6657-4510-949a-af5db4d2c2ba.png"
-          }
-        },
-        "block_YfT8nF": {
-          "type": "block",
-          "settings": {
-            "header": "<p><strong>Výhody<\/strong> EVA koberců<\/p>",
-            "unordered_list": "<ul><li>Idealnie dopasowane<\/li><li>Ultra lekkie i łatwe w czyszczeniu <\/li><li>Bezzapachowy ECO materiał, nietoksyczny<\/li><li>Wodoodporne<\/li><li>195 połączeń kolorystycznych<\/li><li>Technologiczne komórki utrzymują różnego rodzaju zanieczyszczenia<\/li><\/ul>",
-            "image": "shopify:\/\/shop_images\/IMG_8796_2_1.png"
-          }
-        }
-      },
-      "block_order": [
-        "block_gAgXYW",
-        "block_YfT8nF"
-      ],
-      "settings": {
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "text_with_image_zBPL3c": {
       "type": "text-with-image",
+      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rectangle_91_1.png",
-        "header": "<p><strong>Čím se liší<\/strong> koberce EVA od tradičních gumových koberců?<\/p>",
-        "richtext": "<p>Istnieje wiele podobieństw, jak i różnic, które z jednej strony łączą, a z drugiej dzielą tradycyjne dywaniki gumowe od produktów EVA. Przyjrzyjmy się bliżej och wspólnym cechom.<\/p><p>Przede wszystkim zarówno gumowe dywaniki, jak i dywaniki EVA nie wchłaniają wody. Ich specjalna budowa zapobiega więc przeciekaniu nie tylko w deszczowe, ale i śnieżne dni.<\/p><p>Co więcej, oba produkty spełniają się rewelacyjnie jako ochrona podłogi przez każdym rodzajem brudu. Dzieje się tak, ponieważ materiał, z jakiego są wyprodukowane, nie przepuszcza żadnych zabrudzeń i płynów. Gumowe dywaniki samochodowe nie pokrywają jednak podłoża w całości. Chronią więc wykładzinę pojazdu w około 70–90% przed brudem. <\/p><p>Dywaniki EVA są wykonywane na wymiar, co oznacza, że zapewniają ochronę maksymalnie dużej powierzchni podłoża. <strong>Jest to nawet 99% zakrycia wykładziny!<\/strong> Ponadto, dywaniki EVA są bezzapachowe i nietoksyczne. Tradycyjne dywaniki gumowe są nieprzyjemne w zapachu, a w ich składzie znajdują się toksyczne substancje. Brud przemieszcza się po nich, ponieważ nie jest on wchłaniany w materiał.<\/p><p>W dywanikach EVA zanieczyszczenia są <strong>zatrzymywane w technologicznych komórkach<\/strong>. Są też o wiele lżejsze, a co się z tym wiąże, łatwiejsze w wyciąganiu z samochodu. Nie wymagają też specjalnego czyszczenia.<\/p><p><\/p>",
+        "image": "shopify://shop_images/Rectangle_91_1.png",
+        "header": "<p><strong>Jaké jsou rozdíly</strong> v čištění produktů EVA a velurových koberců?</p>",
+        "richtext": "<p>Velurové koberce jsou náročné na čištění. EVA autokoberce se čistí snadno — snášejí i silné detergenty a nevyžadují speciální péči. Slouží mnoho let bez ztráty vzhledu. Tradiční velur se může deformovat a blednout. S EVA přizpůsobíte interiér své osobnosti — nabízíme mnoho barevných variant. Naše produkty dodají šarm každé značce vozu — potvrzují to pozitivní recenze zákazníků.</p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
@@ -147,9 +662,10 @@
     },
     "richtext_section_K7WAxg": {
       "type": "richtext-section",
+      "disabled": true,
       "settings": {
-        "header": "<h2>Proč stojí za to <strong>koupit koberce v našem obchodě?<\/strong><\/h2>",
-        "richtext": "<p>Při nákupu EVA koberců v našem obchodě máte záruku vynikající kvality i skvělé ceny. Jsou to polské výrobky vyráběné ručně. Jsme přesvědčeni, že budete spokojeni s volbou EVA koberců!<\/p>",
+        "header": "<p>Proč byste měli <strong>koupit koberce v našem obchodě?</strong></p>",
+        "richtext": "<p>Při nákupu EVA koberců v našem obchodě máte záruku vynikající kvality i skvělé ceny. Jsou to polské výrobky vyráběné ručně. Jsme přesvědčeni, že budete spokojeni s volbou EVA koberců!</p>",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top": 58,
@@ -162,56 +678,56 @@
         "image_XJcn3n": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92_1.png",
+            "image": "shopify://shop_images/Rectangle_92_1.png",
             "url": ""
           }
         },
         "image_rQw3A3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_93.png",
+            "image": "shopify://shop_images/Rectangle_93.png",
             "url": ""
           }
         },
         "image_B9BrA4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_94.png",
+            "image": "shopify://shop_images/Rectangle_94.png",
             "url": ""
           }
         },
         "image_Lg49WV": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_95.png",
+            "image": "shopify://shop_images/Rectangle_95.png",
             "url": ""
           }
         },
         "image_eztgda": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_96.png",
+            "image": "shopify://shop_images/Rectangle_96.png",
             "url": ""
           }
         },
         "image_cDLJnw": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_97.png",
+            "image": "shopify://shop_images/Rectangle_97.png",
             "url": ""
           }
         },
         "image_qtHaMc": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_98.png",
+            "image": "shopify://shop_images/Rectangle_98.png",
             "url": ""
           }
         },
         "image_BaMe8Q": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_99.png",
+            "image": "shopify://shop_images/Rectangle_99.png",
             "url": ""
           }
         }
@@ -226,10 +742,11 @@
         "image_qtHaMc",
         "image_BaMe8Q"
       ],
+      "disabled": true,
       "settings": {
-        "header": "REALIZACJE DYWANIKÓW EVA",
-        "button_text": "OBJEDNAT",
-        "button_link": "shopify:\/\/collections\/all-car-mats",
+        "header": "REALIZATIONS OF EVA MATS",
+        "button_text": "Nakoupit",
+        "button_link": "shopify://collections/all-car-mats",
         "centered": false,
         "small": false,
         "padding_top_mobile": 40,
@@ -240,6 +757,7 @@
     },
     "1705771170e85f6114": {
       "type": "apps",
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -249,15 +767,20 @@
       "disabled": true,
       "settings": {
         "title": "Zobrazit další realizace",
+        "view_all_label": "Zobrazit vše",
         "collection": "bestsellerss",
-        "products_to_show": 14,
+        "products_to_show": 12,
+        "mobile_button_label": "Vybrat",
         "show_view_all": false,
         "padding_top": 52,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
       }
     },
     "featured_collection_video_GjKn3e": {
       "type": "featured-collection-video",
+      "disabled": true,
       "custom_css": [
         "h2 {text-align: center;}"
       ],
@@ -268,7 +791,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "bestsellerss",
-        "video-title": "View realizations:",
+        "video-title": "Zobrazit realizace:",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -293,64 +816,82 @@
         "text_DzQCYQ": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czy dywaniki na pewno będą pasować?<\/p>",
-            "des": "<p>Oczywiście, że tak. Dywaniki wykonujemy indywidualnie pod dany model auta uwzględniając marke, model, generację, rocznik, skrzynie biegów oraz dane wyposażenie. Dywaniki poddajemy ręcznej obróbce czyli wycinamy je ręcznie, obszywamy i ręcznie profilujemy. Nasze projekty opierają się tylko i wyłącznie na naszych fizycznie pobieranych pomiarach z fizycznych samochodów, więc nie ma tu mowy o jakiś niedoskonałościach. Dywaniki pokrywają całą podłogę uwzględniając drobne szczegóły i zakrywają  miejsca, które dywaniki gumowe czy welurowe mogą tylko pomarzyć.<\/p>"
+            "category": "",
+            "hd": "<p>Budou koberce určitě pasovat?</p>",
+            "des": "<p>Samozřejmě. Koberce vyrábíme individuálně pro každý model vozu s ohledem na značku, model, generaci, rok, typ převodovky a výbavu. Koberce procházejí ručním zpracováním — jsou ručně řezané, šité a profilované. Naše návrhy vycházejí výhradně z fyzických měření na reálných autech, takže o nepřesnostech nemůže být řeč. Koberce pokrývají celou podlahu včetně detailů a oblastí, které gumové nebo velurové koberce nepokryjí.</p>",
+            "des_html": ""
           }
         },
         "text_mX9qEM": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czym to się czyści?<\/p>",
-            "des": "<p>Dzięki swojej technologii brud, który gromadzi się na dywaniku nie wchłania się oraz nie chce się go trzymać, więc dywaniki wystarczy wytrzepać i wszystko z nich gładko schodzi, ewentualnie przy dużych zabrudzeniach błota, dywaniki można śmiało umyć myjką ciśnieniowa i w drogę.<\/p>"
+            "category": "",
+            "hd": "<p>WHAT DO YOU CLEAN IT WITH?</p>",
+            "des": "<p>Thanks to its technology, the dirt that accumulates on the mat does not absorb a does not want to stick to it, so you just need to shake the mats a everything smoothly comes off them, or in case of heavy mud contamination, you can confidently wash the mats with a pressure washer a be on your way.</p>",
+            "des_html": ""
           }
         },
         "text_VPPPMN": {
           "type": "text",
           "settings": {
-            "hd": "<p>Koberec na tunel? Co to je?<\/p>",
-            "des": "<p>Dywaniki Carvion przykrywają do 98% podłogi, dlatego dbamy o każdy szczegół, więc tunel z tyłu również jest przykryty przez co podłoga jest zawsze czysta<\/p>"
+            "category": "",
+            "hd": "<p>FLOOR MAT OVER THE TUNNEL? WHAT IS IT?</p>",
+            "des": "<p>Carvion mats cover up to 98% of the floor, so we take care of every detail, so the rear tunnel is also covered, ensuring that the floor is always clean.</p>",
+            "des_html": ""
           }
         },
         "text_XjTUky": {
           "type": "text",
           "settings": {
-            "hd": "<p>Jak długo one posłużą?<\/p>",
-            "des": "<p>Materiał EVA jest znany ze swojej wytrzymałości i odporności na ścieranie. Używają go również na siłowniach (jako maty pod maszyny) i w butach (podeszwy). W porównaniu do alternatyw, dywaniki EVA radzą sobie fenomenalnie z problemem przecierania się, co pozwala używać je przez 5-7 lat bez śladów użytkowania.<\/p>"
+            "category": "",
+            "hd": "<p>HOW LONG WILL THEY LAST?</p>",
+            "des": "<p>EVA materiál EVA is known for its durability a resistance to wear a tear. It is also used in gyms (as mats under machines) a in shoes (soles). Compared to alternatives, EVA koberce hale wear exceptionally well, allowing them to be used for 5-7 years without any signs of wear.</p>",
+            "des_html": ""
           }
         },
         "text_e6APUk": {
           "type": "text",
           "settings": {
-            "hd": "<p>Klasyczne i 3D, czym to się różni?<\/p>",
-            "des": "<p>W obu kompletach staramy się maksymalnie przykryć podłogę w samochodzie, jedynie w komplecie 3D również przykrywamy boczną tapicerkę przy podłodze oraz jest więcej elementów 3D (wyprofilowań na podłodze), które uwzględniamy i stosujemy przy produkcji takich dywaników, przez co przylegają idealnie.<\/p>"
+            "category": "",
+            "hd": "<p>CLASSICAL AND 3D, WHAT'S THE DIFFERENCE?</p>",
+            "des": "<p>In both sets, we strive to cover the floor in the car as much as possible. Only in the 3D set do we also cover the side upholstery near the floor, a there are more 3D elements (floor profiles) that we consider a use in the production of such mats, making them fit perfectly.</p>",
+            "des_html": ""
           }
         },
         "text_exrU7q": {
           "type": "text",
           "settings": {
-            "hd": "<p>Co to jest materiał Eva?<\/p>",
-            "des": "<p>Jest to pianka o grubości 10mm i głębokością komórek 7mm, co pozwala bez problemu zachować brud i wodę w jednym miejscu bez możliwości przedostawania się ich pod dywanik, aż nie wytrzepiemy go.<\/p>"
+            "category": "",
+            "hd": "<p>WHAT IS EVA MATERIAL?</p>",
+            "des": "<p>It is a foam with a thickness of 10mm a cell depth of 7mm, which allows it to easily retain dirt a water in one place without the possibility of them getting under the mat until we shake it off.</p>",
+            "des_html": ""
           }
         },
         "text_TqKDiD": {
           "type": "text",
           "settings": {
-            "hd": "<p>Czy dywaniki EVA są na lato czy na zimę?<\/p>",
-            "des": "<p>Dywaniki EVA są całoroczne. Praktyczne w użytkowaniu jak zimą (są wodoodporne, łatwe w czyszczeniu i przykrywają do 98% podłogi) tak i latem (są bezzapachowe, przyjemne w dotyku, nie poddają się deformacjom pod wpływem temperatury)<\/p>"
+            "category": "",
+            "hd": "<p>ARE EVA MATS FOR SUMMER OR WINTER?</p>",
+            "des": "<p>EVA koberce are all-season. Practical to use both in winter (they are waterproof, easy to clean, a cover up to 98% of the floor) a in summer (they are odorless, pleasant to the touch, a resistant to deformation under temperature influence).</p>",
+            "des_html": ""
           }
         },
         "text_mqJ6Qk": {
           "type": "text",
           "settings": {
-            "hd": "<p>Jaká je dodací lhůta?<\/p>",
-            "des": "<p>Od momentu złożenia zamówienia trwa to mniej więcej ok 2 tygodni, z uwagi na to, że dywaniki wykonywane są na bieżąco pod zamówienie klienta. W przypadku jeśli posiadasz bardzo wyjątkowy samochód lub inny pojazd (motorówka, helikopter, koparka lub ciągnik) czas realizacji może się wydłużyć nawet do 4-6 tygodni. <\/p>"
+            "category": "",
+            "hd": "<p>WHAT IS THE LEAD TIME?</p>",
+            "des": "<p>Od zadání objednávky trvá výroba přibližně 2 týdny, protože koberce vyrábíme na míru. U velmi specifických vozidel (např. člun, vrtulník, bagr nebo traktor) se může dodací lhůta prodloužit na 4–6 týdnů.</p>",
+            "des_html": ""
           }
         },
         "text_dUePyr": {
           "type": "text",
           "settings": {
-            "hd": "<p>Jaki jest sposób dostawy?<\/p>",
-            "des": "<p>Dywaniki wysyłamy kurierem bezpośrednio pod wskazany adres klienta. Dywaników nie wysyłamy do paczkomatu ze względów gabarytów produktu. Zależy nam na tym aby dywaniki były dostarczone w takiej formie w jakiej zostały wykonane oraz nie poddać ich składaniu ani załamywaniu co może wpływać na dalsze losy dopasowania.<\/p>"
+            "category": "",
+            "hd": "<p>WHAT IS THE DELIVERY METHOD?</p>",
+            "des": "<p>We send the mats directly to the customer's specified address via courier. Due to the dimensions of the product, we do not ship mats to parcel lockers. We aim to ensure that the mats are delivered in the same condition as they were made a to avoid folding or bending them, which could affect their fit.</p>",
+            "des_html": ""
           }
         }
       },
@@ -365,19 +906,42 @@
         "text_mqJ6Qk",
         "text_dUePyr"
       ],
+      "disabled": true,
       "settings": {
-        "hd": "Autokoberce Carvion – časté otázky"
+        "design_variant": "home",
+        "hd": "Carvion CAR MATS - FAQ",
+        "heading_accent": "",
+        "heading_mobile": "Časté otázky",
+        "breadcrumb_parent_label": "Carvion",
+        "breadcrumb_parent_url": "",
+        "breadcrumb_current_label": "Časté otázky",
+        "eyebrow_link": "",
+        "view_all_label": "Zobacz wszystko",
+        "view_all_url": "shopify://pages/faq",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 48
       }
     }
   },
   "order": [
     "main",
     "compare_section_WDwBNU",
+    "hero_before_after_6Jpync",
+    "video_with_text_EbL7W9",
+    "benefits_comparison_HEGYmW",
+    "mat_comparison_Vt8DWM",
+    "compare_cards_M6itiE",
+    "feature_comparison_cGAWVU",
+    "mat_hotspot_consult_rEEBBj",
+    "content_gallery_slider_VjTdgA",
+    "home_faq_xK3HGp",
+    "video_reviews_dVUgd6",
     "video_azQNFQ",
-    "custom_liquid_34XwTK",
+    "custom_liquid_AiqcVi",
     "collapsible_text_YPVYyd",
     "image_with_collapsible_text_XCLeBp",
-    "compare_cards_M6itiE",
     "text_with_image_zBPL3c",
     "richtext_section_K7WAxg",
     "image_collage_x9c9fK",
