@@ -3670,14 +3670,6 @@
     "logo": "082_Nissan.png",
     "url": "/collections/nissan"
   },
-  "Nysa 522T": {
-    "models": [
-      {
-        "name": "Wszystkie",
-        "url": "/collections/nysa-522t-1959-1994"
-      }
-    ]
-  },
   "Lada": {
     "models": [
       {
@@ -4484,7 +4476,8 @@
         "url": "/collections/scania-p450"
       }
     ],
-    "url": "/collections/scania"
+    "url": "/collections/scania",
+    "logo": "212_Scania.png"
   },
   "Seat": {
     "models": [
@@ -4920,14 +4913,6 @@
     ],
     "logo": "097_Scion.png",
     "url": "/collections/scion"
-  },
-  "Liger": {
-    "models": [
-      {
-        "name": "JS50 Sport",
-        "url": "/collections/ligier-js50-sport"
-      }
-    ]
   },
   "Toyota": {
     "models": [
@@ -5445,7 +5430,8 @@
         "name": "Wszystkie",
         "url": "/collections/xev"
       }
-    ]
+    ],
+    "logo": "211_Xev.png"
   },
   "GAZ": {
     "models": [
@@ -5675,7 +5661,12 @@
     "logo": "093_Rolls-Royce.png"
   },
   "Nysa": {
-    "models": [],
+    "models": [
+      {
+        "name": "Wszystkie",
+        "url": "/collections/nysa-522t-1959-1994"
+      }
+    ],
     "url": "/collections/nysa-522t-1959-1994"
   },
   "Cadillac": {
