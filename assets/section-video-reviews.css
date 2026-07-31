@@ -179,19 +179,28 @@
   pointer-events: all;
 }
 
-.video_reviews__container_full video {
-  height: fit-content;
-  max-height: 100%;
-  object-fit: contain;
-  width: fit-content;
-  max-width: 100%;
-  margin: auto;
+.video_reviews__container_full .swiper-wrapper {
+  height: 100%;
 }
 
-.video_reviews__container_full .video_reviews__item {
+.video_reviews__container_full .video_reviews__item,
+.video_reviews__container_full .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.video_reviews__container_full video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 100vw);
+  max-height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 0;
 }
 
 .video_reviews__container_full .close {

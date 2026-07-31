@@ -564,17 +564,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var mainOpts = {
-            loop: false,
-            rewind: originalCount > 1,
+            loop: originalCount > 1,
+            rewind: false,
             slidesPerView: 1.55,
             spaceBetween: 4,
             speed: 480,
             watchOverflow: true,
-            centeredSlides: false,
+            centeredSlides: true,
+            loopAdditionalSlides: 2,
             breakpoints: {
                 750: {
                     slidesPerView: 4.2,
                     spaceBetween: 4,
+                    centeredSlides: true,
                 },
             },
             autoplay: {

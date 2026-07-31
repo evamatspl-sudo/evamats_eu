@@ -69,14 +69,14 @@
         "ced8730a-8e09-47c2-a896-02457eb1a72a": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-eldorado",
+            "product-link": "shopify://collections/cadillac-eldorado",
             "color-code": "Eldorado"
           }
         },
         "b2f353fe-a192-47e3-95ed-2156f058de18": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-escalade",
+            "product-link": "shopify://collections/cadillac-escalade",
             "color-code": "Escalade"
           }
         },
@@ -104,7 +104,7 @@
         "8bc0ebe8-c143-4213-a488-8032244cbe48": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-srx",
+            "product-link": "shopify://collections/cadillac-srx",
             "color-code": "SRX"
           }
         },
@@ -132,7 +132,7 @@
         "8baae353-24d4-4d4d-878a-5b5b52d7ffd3": {
           "type": "section",
           "settings": {
-            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-cadillac-xts",
+            "product-link": "shopify://collections/cadillac-xts",
             "color-code": "XTS"
           }
         }
