@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -27,63 +27,63 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/all-car-mats",
+            "product-link": "shopify://collections/all-car-mats",
             "color-code": "Vše"
           }
         },
         "26e5c236-fba5-4001-8871-ecc28ecd64ef": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-db11",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-db11",
             "color-code": "DB11"
           }
         },
         "b3811e20-59ca-4f43-937d-927ade679a85": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-dbs",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-dbs",
             "color-code": "DBS"
           }
         },
         "4ca64ab6-2379-463d-8628-ed071e85bc1d": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-dbx",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-dbx",
             "color-code": "DBX"
           }
         },
         "86c4e26c-fa76-42e2-aa17-a51949e307cd": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-valhalla",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-valhalla",
             "color-code": "Valhalla"
           }
         },
         "04b6239b-18e2-42cf-a674-0f06e2b58bf8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-valkyrie",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-valkyrie",
             "color-code": "Valkyrie"
           }
         },
         "ac425e5f-e6c6-454a-b82c-e75b0445ae81": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-valour",
+            "product-link": "shopify://collections/aston-martin-valour",
             "color-code": "Valour"
           }
         },
         "030263ad-dcc8-4b97-8e1d-f06225425c93": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/aston-martin-vantage",
+            "product-link": "shopify://collections/aston-martin-vantage",
             "color-code": "Vantage"
           }
         },
         "section_iNg9eW": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/dywaniki-samochodowe-eva-do-aston-martin-vanquish",
+            "product-link": "shopify://collections/dywaniki-samochodowe-eva-do-aston-martin-vanquish",
             "color-code": "Vanquish"
           }
         }
