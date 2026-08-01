@@ -22,8 +22,8 @@
     "banner_v2": {
       "type": "media-banner-v2",
       "settings": {
-        "image_desktop": "shopify://shop_images/Group_1948755201.webp",
-        "image_mobile": "shopify://shop_images/Mask_group.webp",
+        "image_desktop": "shopify:\/\/shop_images\/Group_1948755201.webp",
+        "image_mobile": "shopify:\/\/shop_images\/Mask_group.webp",
         "height_desktop": 900,
         "height_mode": "auto",
         "height_mobile": 420,
@@ -34,7 +34,7 @@
         "parent_url": "",
         "current_label": "",
         "heading": "V autě je vše vidět. Nejvíc to, co nekontrolujete.",
-        "text": "<p>Čistota uvnitř není náhoda. Je to systém.</p>",
+        "text": "<p>Čistota uvnitř není náhoda. Je to systém.<\/p>",
         "margin_top": 0,
         "margin_bottom": 0
       }
@@ -44,12 +44,12 @@
       "settings": {
         "heading": "Trh se změnil.",
         "heading_accent": "Řidiči také.",
-        "text": "<p>Dnes dbáme na detaily. Povlaky, ochrany, detailing. Podlaha ale často zůstává náhodou. Přitom je to jeden z nejvíce namáhaných prvků v autě.</p>",
+        "text": "<p>Dnes dbáme na detaily. Povlaky, ochrany, detailing. Podlaha ale často zůstává náhodou. Přitom je to jeden z nejvíce namáhaných prvků v autě.<\/p>",
         "badge_text": "To už je standard",
-        "desktop_image_1": "shopify://shop_images/Rectangle_4876.webp",
-        "desktop_image_2": "shopify://shop_images/Rectangle_4877.webp",
-        "desktop_image_3": "shopify://shop_images/Rectangle_4879.webp",
-        "desktop_image_4": "shopify://shop_images/Rectangle_4878.webp",
+        "desktop_image_1": "shopify:\/\/shop_images\/Rectangle_4876.webp",
+        "desktop_image_2": "shopify:\/\/shop_images\/Rectangle_4877.webp",
+        "desktop_image_3": "shopify:\/\/shop_images\/Rectangle_4879.webp",
+        "desktop_image_4": "shopify:\/\/shop_images\/Rectangle_4878.webp",
         "background_color": "#ffffff",
         "image_radius": 12,
         "grid_gap": 4
@@ -87,10 +87,10 @@
       ],
       "settings": {
         "title": "Proč většina řidičů nikdy nemá opravdu čistý interiér?",
-        "subtitle": "<p>Ne proto, že by neuklízeli. 👉 Jen proto, že používají špatné řešení.</p>",
-        "image_1": "shopify://shop_images/image_144.webp",
-        "image_2": "shopify://shop_images/image_145.webp",
-        "bottom_text": "<p>Proto ani po umytí auto nikdy není opravdu svěží.</p>"
+        "subtitle": "<p>Ne proto, že by neuklízeli. 👉 Jen proto, že používají špatné řešení.<\/p>",
+        "image_1": "shopify:\/\/shop_images\/image_144.webp",
+        "image_2": "shopify:\/\/shop_images\/image_145.webp",
+        "bottom_text": "<p>Proto ani po umytí auto nikdy není opravdu svěží.<\/p>"
       }
     },
     "tilted_collage_v2": {
@@ -98,11 +98,11 @@
       "settings": {
         "heading_main": "Špína nezmizí.",
         "heading_accent": "Hromadí se.",
-        "text": "<p>A i když to hned nevidíte — interiér postupně ztrácí svěžest.</p>",
+        "text": "<p>A i když to hned nevidíte — interiér postupně ztrácí svěžest.<\/p>",
         "daily_text": "Každý den.",
-        "image_left": "shopify://shop_images/image_177_1.webp",
-        "image_center": "shopify://shop_images/image_176.webp",
-        "image_right": "shopify://shop_images/image_175.webp",
+        "image_left": "shopify:\/\/shop_images\/image_177_1.webp",
+        "image_center": "shopify:\/\/shop_images\/image_176.webp",
+        "image_right": "shopify:\/\/shop_images\/image_175.webp",
         "hide_pins": false,
         "caption_left": "",
         "caption_center": "",
@@ -122,19 +122,19 @@
         "ps_slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+            "image": "shopify:\/\/shop_images\/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
           }
         },
         "slide_fwaByB": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+            "image": "shopify:\/\/shop_images\/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
           }
         },
         "slide_z3BNmq": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
+            "image": "shopify:\/\/shop_images\/ee8253a1bb7c9af35df10e2a65728173595aa73f.webp"
           }
         },
         "ps_point_1": {
@@ -161,7 +161,7 @@
         "overline": "Není to detail. Je to součást systému.",
         "heading": "Stále více řidičů přestává brát koberce jako doplněk.",
         "cta_label": "Zobrazit produkt",
-        "cta_url": "shopify://collections/all-car-mats",
+        "cta_url": "shopify:\/\/collections\/all-car-mats",
         "media_type": "carousel",
         "margin_top": 0,
         "margin_bottom": 0
@@ -173,21 +173,21 @@
         "es_card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
+            "image": "shopify:\/\/shop_images\/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
             "caption": "Zachytává nečistoty v buňkách"
           }
         },
         "es_card_2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Mask_group_1.webp",
+            "image": "shopify:\/\/shop_images\/Mask_group_1.webp",
             "caption": "Neumožňuje jim se šířit"
           }
         },
         "es_card_3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Group_1948755126.webp",
+            "image": "shopify:\/\/shop_images\/Group_1948755126.webp",
             "caption": "Nepohlcuje vlhkost"
           }
         }
@@ -199,7 +199,7 @@
       ],
       "settings": {
         "heading_desktop": "Jak funguje struktura EVA — a proč to dělá rozdíl",
-        "heading_mobile": "Proč je EVA materiál EVA, který mění komfort jízdy?",
+        "heading_mobile": "Proč EVA zlepšuje komfort jízdy?",
         "margin_top": 0,
         "margin_bottom": 0
       }
@@ -210,21 +210,21 @@
         "feature_hkdfhn": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526600.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526600.webp",
             "text": "Struktura, která zachytává nečistoty"
           }
         },
         "feature_WhHyjw": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526599.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526599.webp",
             "text": "Povrch, který nepohlcuje vlhkost"
           }
         },
         "feature_kJaCYX": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1632526598.webp",
+            "icon": "shopify:\/\/shop_images\/Frame_1632526598.webp",
             "text": "Padnutí, které se neposouvá pod nohama"
           }
         }
@@ -238,11 +238,11 @@
       "settings": {
         "heading": "Nový způsob, jak udržet čistotu v autě — bez každodenního úklidu",
         "badge_text": "50k+ řidičů",
-        "badge_faces_image": "shopify://shop_images/Group_1632523139.webp",
+        "badge_faces_image": "shopify:\/\/shop_images\/Group_1632523139.webp",
         "tagline": "Jednoduše. Účinně. Bez kompromisů.",
         "cta_label": "Zobrazit produkt",
-        "cta_url": "shopify://collections/all-car-mats",
-        "image_desktop": "shopify://shop_images/freepik_0001_2_1.webp",
+        "cta_url": "shopify:\/\/collections\/all-car-mats",
+        "image_desktop": "shopify:\/\/shop_images\/freepik_0001_2_1.webp",
         "image_text_gap": 140,
         "margin_top": 0,
         "margin_bottom": 0
@@ -303,10 +303,10 @@
         "offer_label": "Omezená nabídka",
         "badge_text": "Až 30 %",
         "discount_suffix": "levněji",
-        "image_visual_desktop": "shopify://shop_images/Group_1948755225.webp",
+        "image_visual_desktop": "shopify:\/\/shop_images\/Group_1948755225.webp",
         "image_alt": "Akce na EVA koberce",
         "button_label": "Zobrazit dostupné modely",
-        "button_link": "shopify://collections/all-car-mats",
+        "button_link": "shopify:\/\/collections\/all-car-mats",
         "margin_top": 0,
         "margin_bottom": 0
       }

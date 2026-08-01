@@ -18,19 +18,6 @@
         video.removeAttribute('data-src');
     }
 
-    function hydrateSliderVideos(container) {
-        if (!container) return;
-        container.querySelectorAll('video').forEach(function (video) {
-            hydrateVideoPoster(video);
-            if (video.getAttribute('data-src')) {
-                hydrateVideoSource(video);
-            }
-            if (video.src) {
-                video.load();
-            }
-        });
-    }
-
     var root = document.querySelector('.video_reviews');
     if (!root) return;
     var runVideoReviews = function () {
@@ -216,14 +203,7 @@
                         videoPlay(swiper2, true);
                     }, 0);
                 },
-                init: function () {
-                    hydrateSliderVideos(this.el);
-                    this.slides.forEach(function (element) {
-                        element.querySelectorAll('video').forEach(function (video) {
-                            video.currentTime = 0.2;
-                        });
-                    });
-                },
+                init: function () {},
             },
         };
         if (prevBtn && nextBtn) {
@@ -231,9 +211,6 @@
         }
 
         swiper = new Swiper(mainEl, mainOpts);
-        hydrateSliderVideos(mainEl);
-        hydrateSliderVideos(videoFullScreenContainer);
-
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 isVisible = entry.isIntersecting;

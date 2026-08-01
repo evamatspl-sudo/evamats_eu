@@ -9,7 +9,7 @@
               {%- if section.settings.heading_main != blank or section.settings.heading_accent != blank -%}
                 <h2 class="comparison__heading-h2">
                   {%- if section.settings.heading_main != blank -%}
-                    <span class="comparison__heading-main">{{ section.settings.heading_main | escape }}</span>
+                    <span class="comparison__heading-main">{{ section.settings.heading_main | escape }}</span>{{ ' ' }}
                   {%- endif -%}
                   {%- if section.settings.heading_accent != blank -%}
                     <span class="comparison__heading-accent">{{ section.settings.heading_accent | escape }}</span>
@@ -41,7 +41,7 @@
                                       {%- if block.settings.label_before_main != blank or block.settings.label_before_accent != blank -%}
                                         <span class="comparison_label__inner">
                                           {%- if block.settings.label_before_main != blank -%}
-                                            <span class="comparison_label__text comparison_label__text--main">{{ block.settings.label_before_main | escape }}</span>
+                                            <span class="comparison_label__text comparison_label__text--main">{{ block.settings.label_before_main | escape }}</span>{{ ' ' }}
                                           {%- endif -%}
                                           {%- if block.settings.label_before_accent != blank -%}
                                             <span class="comparison_label__text comparison_label__text--accent">{{ block.settings.label_before_accent | escape }}</span>
