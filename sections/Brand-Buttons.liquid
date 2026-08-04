@@ -75,6 +75,13 @@
   else
     assign featured_collections = scoped_featured_collections
   endif
+  capture body_ribbon_visible
+    render 'evamats-body-ribbon-visible'
+  endcapture
+  if body_ribbon_visible == '1'
+    assign hide_models_section = true
+  endif
+
   if hide_models_section == false
     if featured_collections == blank or featured_collections.size == 0
       assign featured_collections = settings.collection_featured_models

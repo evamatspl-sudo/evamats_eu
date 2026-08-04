@@ -39,10 +39,27 @@
     "body_type_ribbon": {
       "type": "evamats-body-type-ribbon",
       "settings": {}
+    },
+    "brand_buttons": {
+      "type": "Brand-Buttons",
+      "blocks": {
+        "b1": {
+          "type": "section",
+          "settings": {
+            "product-link": "shopify://collections/audi",
+            "color-code": "Vše"
+          }
+        }
+      },
+      "block_order": [
+        "b1"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "banner",
+    "brand_buttons",
     "body_type_ribbon",
     "product-grid"
   ]

@@ -1,0 +1,27 @@
+{%- comment -%}
+  Печатает '1', если в коллекции есть ДВА и более разных кузова — только тогда
+  фильтр по кузову имеет смысл. Иначе печатает пустоту, и вместо ленты кузовов
+  показывается обычная лента моделей (Brand-Buttons).
+{%- endcomment -%}
+{%- liquid
+  assign seen_keys = ''
+  assign distinct = 0
+  for product in collection.products limit: 50
+    capture product_keys
+      render 'evamats-body-type-keys', product: product
+    endcapture
+    assign key_list = product_keys | strip | split: ','
+    for k in key_list
+      assign key = k | strip
+      if key != ''
+        assign probe = ',' | append: key | append: ','
+        assign haystack = ',' | append: seen_keys | append: ','
+        unless haystack contains probe
+          assign seen_keys = seen_keys | append: key | append: ','
+          assign distinct = distinct | plus: 1
+        endunless
+      endif
+    endfor
+  endfor
+-%}
+{%- if distinct > 1 -%}1{%- endif -%}

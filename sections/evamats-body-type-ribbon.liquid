@@ -8,6 +8,8 @@
   из метаобъекта body_types.
 {%- endcomment -%}
 
+{%- capture body_ribbon_visible -%}{%- render 'evamats-body-ribbon-visible' -%}{%- endcapture -%}
+{%- if body_ribbon_visible == '1' -%}
 {{ 'section-evamats-body-type-ribbon.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'section-evamats-body-type-ribbon.js' | asset_url }}" defer></script>
 
@@ -186,6 +188,7 @@
   {%- endcapture -%}
   <script type="application/json" data-eva-body-map>{{ body_map | strip }}</script>
 </section>
+{%- endif -%}
 
 {% schema %}
 {

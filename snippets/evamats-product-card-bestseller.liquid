@@ -71,6 +71,7 @@
             alt: efc_image_alt
         }}
       {%- endif -%}
+      {% render 'evamats-card-notes', card_product: card_product %}
     </div>
   </a>
 
@@ -78,8 +79,6 @@
     <h3 class="efc-card__title">
       {% render 'evamats-efc-card-title', title: card_title, url: card_product.url %}
     </h3>
-
-    {% render 'evamats-card-notes', card_product: card_product %}
 
     <div class="efc-card__prices">
       <div class="efc-card__price-line{% if on_sale %} efc-card__price-line--sale{% endif %}">
