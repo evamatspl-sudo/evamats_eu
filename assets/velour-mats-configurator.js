@@ -38,14 +38,18 @@
     var discountBadgeEl = root.querySelector('[data-ecm-discount-badge]');
     var colorName = root.querySelector('[data-ecm-color-name]');
 
-    // ---- colors ----
-    var colors = [];
-    try { colors = JSON.parse(root.querySelector('[data-ecm-colors-json]').textContent); } catch (e) {}
-    colors.forEach(function (c, i) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'ecm-color' + (i === 0 ? ' is-active' : '');
-      b.innerHTML = '<img src="' + c.swatch + '" alt="' + c.label + '">';
+    // ---- colors (rendered in Liquid so choices remain visible without JavaScript) ----
+    var colorButtons = [].slice.call(root.querySelectorAll('[data-ecm-color]'));
+    var colors = colorButtons.map(function (b) {
+      return {
+        label: b.getAttribute('data-label') || '',
+        badge: b.getAttribute('data-badge') || '',
+        caption: b.getAttribute('data-caption') || '',
+        preview: b.getAttribute('data-preview') || ''
+      };
+    });
+    colorButtons.forEach(function (b, i) {
+      var c = colors[i];
       b.addEventListener('click', function () {
         colorWrap.querySelectorAll('.ecm-color').forEach(function (x) { x.classList.remove('is-active'); });
         b.classList.add('is-active');
@@ -56,7 +60,6 @@
         if (colorName) colorName.textContent = badgeText;
         if (colorProp) colorProp.value = c.label;
       });
-      colorWrap.appendChild(b);
     });
 
     // preload all colour previews so switching a colour is instant (no network delay on tap)

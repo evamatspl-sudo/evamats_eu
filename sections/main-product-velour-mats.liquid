@@ -313,7 +313,46 @@
             <span class="ecm-step-caret" aria-hidden="true"></span>
           </div>
           <div class="ecm-step-body">
-            <div class="ecm-colors" data-ecm-colors></div>
+            {%- liquid
+              assign ecm_color_codes = 'black|red|lightgrey|darkgrey|brown|beige|blue|darkblue|green|orange|yellow|maroon|purple|pink|copper' | split: '|'
+              assign ecm_color_swatches = 'velour-swatch-black.webp|velour-swatch-red.webp|velour-swatch-lightgrey.webp|velour-swatch-darkgrey.webp|velour-swatch-brown.webp|velour-swatch-beige.webp|velour-swatch-blue.webp|velour-swatch-darkblue.webp|velour-swatch-green.webp|velour-swatch-orange.webp|velour-swatch-yellow.webp|velour-swatch-maroon.webp|velour-swatch-purple.webp|velour-swatch-pink.webp|Miedziany.webp' | split: '|'
+              assign ecm_color_previews = 'velour-preview-black.webp|velour-preview-red.webp|velour-preview-lightgrey.webp|velour-preview-darkgrey.webp|velour-preview-brown.webp|velour-preview-beige.webp|velour-preview-blue.webp|velour-preview-darkblue.webp|velour-preview-green.webp|velour-preview-orange.webp|velour-preview-yellow.webp|velour-preview-maroon.webp|velour-preview-purple.webp|velour-preview-pink.webp|velour-preview-coopper.webp' | split: '|'
+              case ecm_locale
+                when 'cs'
+                  assign ecm_color_labels = 'Černá|Červená|Světle šedá|Tmavě šedá|Hnědá|Béžová|Modrá|Tmavě modrá|Zelená|Oranžová|Žlutá|Vínová|Fialová|Růžová|Měděná' | split: '|'
+                  assign ecm_color_badges = 'ČERNÁ|ČERVENÁ|SVĚTLE ŠEDÁ|TMAVĚ ŠEDÁ|HNĚDÁ|BÉŽOVÁ|MODRÁ|TMAVĚ MODRÁ|ZELENÁ|ORANŽOVÁ|ŽLUTÁ|VÍNOVÁ|FIALOVÁ|RŮŽOVÁ|MĚDĚNÁ' | split: '|'
+                  assign ecm_color_captions = 'Černý velur · černé lemování|Černý velur · červené lemování|Černý velur · světle šedé lemování|Černý velur · tmavě šedé lemování|Černý velur · hnědé lemování|Černý velur · béžové lemování|Černý velur · modré lemování|Černý velur · tmavě modré lemování|Černý velur · zelené lemování|Černý velur · oranžové lemování|Černý velur · žluté lemování|Černý velur · vínové lemování|Černý velur · fialové lemování|Černý velur · růžové lemování|Černý velur · měděné lemování' | split: '|'
+                when 'de'
+                  assign ecm_color_labels = 'Schwarz|Rot|Hellgrau|Dunkelgrau|Braun|Beige|Blau|Dunkelblau|Grün|Orange|Gelb|Bordeaux|Violett|Pink|Kupfer' | split: '|'
+                  assign ecm_color_badges = 'SCHWARZ|ROT|HELLGRAU|DUNKELGRAU|BRAUN|BEIGE|BLAU|DUNKELBLAU|GRÜN|ORANGE|GELB|BORDEAUX|VIOLETT|PINK|KUPFER' | split: '|'
+                  assign ecm_color_captions = 'Schwarzer Velours · schwarze Einfassung|Schwarzer Velours · rote Einfassung|Schwarzer Velours · hellgraue Einfassung|Schwarzer Velours · dunkelgraue Einfassung|Schwarzer Velours · braune Einfassung|Schwarzer Velours · beige Einfassung|Schwarzer Velours · blaue Einfassung|Schwarzer Velours · dunkelblaue Einfassung|Schwarzer Velours · grüne Einfassung|Schwarzer Velours · orange Einfassung|Schwarzer Velours · gelbe Einfassung|Schwarzer Velours · bordeauxrote Einfassung|Schwarzer Velours · violette Einfassung|Schwarzer Velours · pinke Einfassung|Schwarzer Velours · kupferfarbene Einfassung' | split: '|'
+                else
+                  assign ecm_color_labels = 'Black|Red|Light grey|Dark grey|Brown|Beige|Blue|Dark blue|Green|Orange|Yellow|Burgundy|Purple|Pink|Copper' | split: '|'
+                  assign ecm_color_badges = 'BLACK|RED|LIGHT GREY|DARK GREY|BROWN|BEIGE|BLUE|DARK BLUE|GREEN|ORANGE|YELLOW|BURGUNDY|PURPLE|PINK|COPPER' | split: '|'
+                  assign ecm_color_captions = 'Black velour · black trim|Black velour · red trim|Black velour · light grey trim|Black velour · dark grey trim|Black velour · brown trim|Black velour · beige trim|Black velour · blue trim|Black velour · dark blue trim|Black velour · green trim|Black velour · orange trim|Black velour · yellow trim|Black velour · burgundy trim|Black velour · purple trim|Black velour · pink trim|Black velour · copper trim' | split: '|'
+              endcase
+            -%}
+            <div class="ecm-colors" data-ecm-colors>
+              {%- for color_code in ecm_color_codes -%}
+                {%- assign color_index = forloop.index0 -%}
+                <button
+                  type="button"
+                  class="ecm-color{% if forloop.first %} is-active{% endif %}"
+                  data-ecm-color
+                  data-label="{{ ecm_color_labels[color_index] | escape }}"
+                  data-badge="{{ ecm_color_badges[color_index] | escape }}"
+                  data-caption="{{ ecm_color_captions[color_index] | escape }}"
+                  data-preview="{{ ecm_color_previews[color_index] | asset_url }}"
+                  aria-label="{{ ecm_color_labels[color_index] | escape }}"
+                >
+                  {%- if color_code == 'copper' -%}
+                    <img src="{{ ecm_color_swatches[color_index] | file_url }}" alt="" loading="lazy">
+                  {%- else -%}
+                    <img src="{{ ecm_color_swatches[color_index] | asset_url }}" alt="" loading="lazy">
+                  {%- endif -%}
+                </button>
+              {%- endfor -%}
+            </div>
             <input type="hidden" name="properties[{{ prop_trim | escape }}]" data-ecm-color-prop value="{{ txt_black | escape }}">
             <div class="ecm-preview-card ecm-preview-card--mobile">
               <img class="ecm-preview-img" data-ecm-preview src="{{ 'velour-preview-black.webp' | asset_url }}" alt="{{ txt_preview_alt | escape }}">
@@ -330,21 +369,20 @@
 
         <button type="submit" class="ecm-submit">{{ txt_add }} — <span data-ecm-submit-price>{{ product.selected_or_first_available_variant.price | money }}</span></button>
 
-        <div class="ecm-checkout-widgets" aria-label="Bezpieczne płatności">
+        <div class="ecm-checkout-widgets" aria-label="Secure payments">
           <div class="ecm-trust-widget">
             <etrusted-widget data-etrusted-widget-id="wdg-72c723c3-1f83-44e9-89c0-48433e3244a7"></etrusted-widget>
           </div>
-          <div class="ecm-payment-strip" aria-label="Obsługiwane metody płatności">
-            <img src="//evamats.pl/cdn/shop/files/visa.svg?v=16041805416899576183" alt="Visa">
-            <img src="//evamats.pl/cdn/shop/files/mc.svg?v=958221531624973740" alt="Mastercard">
-            <img src="//evamats.pl/cdn/shop/files/ae.svg?v=11463340212238954342" alt="American Express">
-            <img src="//evamats.pl/cdn/shop/files/discover.svg?v=12189669757758525881" alt="Discover">
-            <img src="//evamats.pl/cdn/shop/files/jcb.svg?v=12112035107271114096" alt="JCB">
-            <img src="//evamats.pl/cdn/shop/files/dc.svg?v=741589216691534981" alt="Diners Club">
-            <img src="//evamats.pl/cdn/shop/files/apay.svg?v=13535909208516897673" alt="Apple Pay">
-            <img src="//evamats.pl/cdn/shop/files/gpay.svg?v=1292367989840229906" alt="Google Pay">
-            <img src="//evamats.pl/cdn/shop/files/p24.svg?v=8919396927708048335" alt="Przelewy24">
-            <img src="//evamats.pl/cdn/shop/files/blik.svg?v=1690822377707387874" alt="BLIK">
+          <div class="ecm-payment-strip" aria-label="Supported payment methods">
+            <img src="{{ 'visa.svg' | file_url }}" alt="Visa">
+            <img src="{{ 'mc.svg' | file_url }}" alt="Mastercard">
+            <img src="{{ 'ae.svg' | file_url }}" alt="American Express">
+            <img src="{{ 'discover.svg' | file_url }}" alt="Discover">
+            <img src="{{ 'jcb.svg' | file_url }}" alt="JCB">
+            <img src="{{ 'dc.svg' | file_url }}" alt="Diners Club">
+            <img src="{{ 'apay.svg' | file_url }}" alt="Apple Pay">
+            <img src="{{ 'gpay.svg' | file_url }}" alt="Google Pay">
+            <img class="ecm-payment-gopay" src="{{ 'image_6.png' | file_url }}" alt="GoPay">
           </div>
         </div>
       </form>
