@@ -1,12 +1,30 @@
 (function () {
-  function money(cents) {
-    var z = (Number(cents) || 0) / 100;
-    return z.toLocaleString('pl-PL', {
-      minimumFractionDigits: Number.isInteger(z) ? 0 : 2,
-      maximumFractionDigits: 2
-    }) + ' zł';
-  }
   document.querySelectorAll('[data-ecm]').forEach(function (root) {
+    var locale = root.getAttribute('data-locale') || document.documentElement.lang || 'en';
+    var currency = root.getAttribute('data-currency') || 'EUR';
+    var text = {
+      noResults: root.getAttribute('data-no-results') || 'No results',
+      noData: root.getAttribute('data-no-data') || 'No data available',
+      chooseModel: root.getAttribute('data-choose-model') || 'Choose a model…',
+      chooseGeneration: root.getAttribute('data-choose-generation') || 'Choose a generation…',
+      chooseBody: root.getAttribute('data-choose-body') || 'Choose a body style…',
+      modelFirst: root.getAttribute('data-model-first') || 'Choose a make first',
+      generationFirst: root.getAttribute('data-generation-first') || 'Choose a model first',
+      bodyFirst: root.getAttribute('data-body-first') || 'Choose a generation first'
+    };
+    function money(cents) {
+      var amount = (Number(cents) || 0) / 100;
+      try {
+        return new Intl.NumberFormat(locale, {
+          style: 'currency',
+          currency: currency,
+          minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+          maximumFractionDigits: 2
+        }).format(amount);
+      } catch (e) {
+        return amount.toFixed(2) + ' ' + currency;
+      }
+    }
     var previews = [].slice.call(root.querySelectorAll('[data-ecm-preview]'));
     var captions = [].slice.call(root.querySelectorAll('[data-ecm-preview-caption]'));
     var colorWrap = root.querySelector('[data-ecm-colors]');
@@ -48,10 +66,10 @@
     })();
 
     // ---- sets (filtered by seat-count of the chosen body) ----
-    var SET_5OS = ['Dywanik Kierowcy','Przód','Tył','Przód + tył','Mata do bagażnika','Przód + tył + bagażnik'];
-    // two-seaters have no rear row, so those sets must not be offered
-    var SET_2OS = ['Dywanik Kierowcy','Przód','Mata do bagażnika','Przód + bagażnik'];
-    var SET_7OS = ['Dywanik Kierowcy','Przód','Tył','Przód + tył','Mata do bagażnika','Przód + tył + 3 rząd','Przód + tył + 3 rząd + Mały bagażnik','Przód + tył + 3 rząd + Duży bagażnik','3 rzędy + 2 Bagażniki (Duży | Mały)','Przód + tył + Duży bagażnik'];
+    var SET_5OS = ['front', 'front_rear', 'front_rear_boot', 'rear', 'boot'];
+    var SET_2OS = ['front', 'front_rear_boot', 'boot'];
+    var SET_7OS = ['front', 'front_rear', 'front_rear_boot', 'front_rear_third', 'front_rear_third_small_boot', 'front_rear_third_large_boot', 'three_rows_two_boots', 'front_rear_large_boot', 'rear', 'boot'];
+    var currentSeat = '5os';
     function selectSet(btn) {
       root.querySelectorAll('[data-ecm-set]').forEach(function (x) { x.classList.remove('is-active'); });
       btn.classList.add('is-active');
@@ -63,7 +81,8 @@
       var saleTxt = money(sale);
       if (priceEl) priceEl.textContent = saleTxt;
       if (submitPrice) submitPrice.textContent = saleTxt;
-      if (setName) setName.textContent = btn.getAttribute('data-name');
+      var displayName = currentSeat === '2os' ? btn.getAttribute('data-name-2os') : btn.getAttribute('data-name');
+      if (setName) setName.textContent = displayName || btn.getAttribute('data-name');
       if (comparePriceEl) { comparePriceEl.textContent = money(comp); comparePriceEl.hidden = !hasDisc; }
       if (discountBadgeEl) { discountBadgeEl.textContent = '-' + pct + '%'; discountBadgeEl.hidden = !hasDisc; }
       if (setPricePill) {
@@ -73,11 +92,21 @@
       }
     }
     function filterSetsBySeat(seat) {
+      currentSeat = seat === '7os' || seat === '2os' ? seat : '5os';
       var allow = seat === '7os' ? SET_7OS : (seat === '2os' ? SET_2OS : SET_5OS);
       var firstVisible = null;
       root.querySelectorAll('[data-ecm-set]').forEach(function (b) {
-        var ok = allow.indexOf(b.getAttribute('data-name')) >= 0;
+        var code = b.getAttribute('data-set-code');
+        var image = b.getAttribute('data-image-' + currentSeat);
+        var ok = allow.indexOf(code) >= 0 && !!image;
         b.style.display = ok ? '' : 'none';
+        var img = b.querySelector('img');
+        if (img && image) img.src = image;
+        var title = currentSeat === '2os' ? b.getAttribute('data-name-2os') : b.getAttribute('data-name');
+        if (title) {
+          b.title = title;
+          if (img) img.alt = title;
+        }
         if (ok && !firstVisible) firstVisible = b;
       });
       if (firstVisible) selectSet(firstVisible);
@@ -114,18 +143,29 @@
         generation: cleanVehicleText(match[2] + (genText ? ' ' + genText : ''))
       };
     }
+    function bodySeatMarker(body) {
+      var value = cleanVehicleText(body).toLowerCase();
+      if (/\b2\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '2os';
+      if (/\b7\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '7os';
+      return '5os';
+    }
+    function seatLabel(seat) {
+      var count = seat === '2os' ? '2' : (seat === '7os' ? '7' : '5');
+      if (String(locale).toLowerCase().indexOf('cs') === 0) return count + ' míst';
+      if (String(locale).toLowerCase().indexOf('de') === 0) return count + ' Sitze';
+      return count + ' seats';
+    }
     function normalizeBodyLabel(body) {
       var text = cleanVehicleText(body);
-      var lower = text.toLowerCase();
+      var seat = bodySeatMarker(text);
+      var hasSeatMarker = /\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(text);
       var base = text
-        .replace(/\b(?:5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa)\b/ig, '')
+        .replace(/\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz(?:e)?|seat(?:s)?)\b/ig, '')
         .replace(/\s+/g, ' ')
         .trim();
       if (/^suv$/i.test(base)) base = 'SUV';
       if (!base) base = text;
-      if (/\b7\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa)\b/i.test(lower)) return base + ' 7 osobowy';
-      if (/\b5\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa)\b/i.test(lower)) return base + ' 5 osobowy';
-      return /^suv$/i.test(text) ? 'SUV' : text;
+      return hasSeatMarker ? base + ' · ' + seatLabel(seat) : base;
     }
     function uniqueList(items) {
       var seen = {};
@@ -144,13 +184,20 @@
             var split = splitVehicleModel(modelKey, entry.generation);
             var model = split.model;
             var generation = split.generation || cleanVehicleText(entry.generation);
-            var bodies = uniqueList((entry.bodies || []).map(normalizeBodyLabel));
+            var bodies = [];
+            var seatByBody = {};
+            (entry.bodies || []).forEach(function (rawBody) {
+              var normalizedBody = normalizeBodyLabel(rawBody);
+              if (bodies.indexOf(normalizedBody) < 0) bodies.push(normalizedBody);
+              seatByBody[normalizedBody] = (entry.seatByBody && entry.seatByBody[rawBody]) || bodySeatMarker(rawBody);
+            });
             if (!normalized[brand][model]) normalized[brand][model] = [];
             var existing = normalized[brand][model].filter(function (item) { return item.generation === generation; })[0];
             if (existing) {
               existing.bodies = uniqueList(existing.bodies.concat(bodies));
+              existing.seatByBody = Object.assign(existing.seatByBody || {}, seatByBody);
             } else {
-              normalized[brand][model].push({ generation: generation, bodies: bodies });
+              normalized[brand][model].push({ generation: generation, bodies: bodies, seatByBody: seatByBody });
             }
           });
         });
@@ -166,7 +213,7 @@
         var f = showAll ? '' : input.value.toLowerCase();
         list.innerHTML = '';
         var matched = items.filter(function (t) { return t.toLowerCase().indexOf(f) >= 0; });
-        if (!matched.length) { list.innerHTML = '<li class="ecm-combo-empty">Brak wyników</li>'; list.hidden = false; return; }
+        if (!matched.length) { list.innerHTML = '<li class="ecm-combo-empty"></li>'; list.firstChild.textContent = text.noResults; list.hidden = false; return; }
         matched.slice(0, 200).forEach(function (t) {
           var li = document.createElement('li');
           li.className = 'ecm-combo-opt' + (t === selected ? ' is-selected' : '');
@@ -209,31 +256,31 @@
       bodySeat = {};
       var labels = bodies.map(function (b) {
         // prefer the seat marker stored in the dataset; the label text is a fallback
-        var seat = (entry.seatByBody && entry.seatByBody[b]) || (/7/.test(b) ? '7os' : '5os');
-        var label = single ? b.replace(/\s*\d\s*-?\s*osobow\w*/i, '').replace(/\s+/g, ' ').trim() : b;
+        var seat = (entry.seatByBody && entry.seatByBody[b]) || bodySeatMarker(b);
+        var label = single ? b.replace(/\s*·\s*(?:2|5|7)\s*(?:míst|Sitze|seats)/i, '').replace(/\s+/g, ' ').trim() : b;
         if (!label) label = b;
         bodySeat[label] = seat;
         return label;
       });
       bodyCombo.setItems(labels);
-      bodyCombo.reset(labels.length ? 'Wybierz nadwozie…' : 'Brak danych', labels.length > 0);
+      bodyCombo.reset(labels.length ? text.chooseBody : text.noData, labels.length > 0);
       syncProp();
     });
     var modelCombo = combo(root.querySelector('[data-ecm-combo="model"]'), function (model) {
       st.model = model; st.gen = ''; st.body = '';
       var gens = (DATA[st.brand] && DATA[st.brand][model] ? DATA[st.brand][model] : []).map(function (g) { return g.generation; });
       genCombo.setItems(gens);
-      genCombo.reset(gens.length ? 'Wybierz generację…' : 'Brak danych', gens.length > 0);
-      bodyCombo.setItems([]); bodyCombo.reset('Najpierw wybierz generację', false);
+      genCombo.reset(gens.length ? text.chooseGeneration : text.noData, gens.length > 0);
+      bodyCombo.setItems([]); bodyCombo.reset(text.bodyFirst, false);
       syncProp();
     });
     var brandCombo = combo(root.querySelector('[data-ecm-combo="brand"]'), function (brand) {
       st.brand = brand; st.model = ''; st.gen = ''; st.body = '';
       var models = DATA[brand] ? Object.keys(DATA[brand]).sort() : [];
       modelCombo.setItems(models);
-      modelCombo.reset(models.length ? 'Wpisz model…' : 'Brak modeli', models.length > 0);
-      genCombo.setItems([]); genCombo.reset('Najpierw wybierz model', false);
-      bodyCombo.setItems([]); bodyCombo.reset('Najpierw wybierz generację', false);
+      modelCombo.reset(models.length ? text.chooseModel : text.noData, models.length > 0);
+      genCombo.setItems([]); genCombo.reset(text.generationFirst, false);
+      bodyCombo.setItems([]); bodyCombo.reset(text.bodyFirst, false);
       syncProp();
     });
 
@@ -312,7 +359,7 @@
         mainImg.src = it.src; mainImg.alt = it.alt || '';
         var btn = thumbsWrap && thumbsWrap.querySelector('[data-ecm-gindex="' + gActive + '"]');
         if (thumbsWrap) thumbsWrap.querySelectorAll('.ecm-thumb').forEach(function (x) { x.classList.toggle('is-active', x === btn); });
-        if (btn && thumbsWrap) thumbsWrap.scrollTo({ left: btn.offsetLeft - thumbsWrap.offsetLeft, behavior: 'smooth' });
+        if (btn && btn.scrollIntoView) btn.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
         if (gprev) gprev.disabled = gActive === 0;
         if (gnext) gnext.disabled = gActive === gitems.length - 1;
       }
