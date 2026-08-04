@@ -239,7 +239,7 @@
 .ecm--velour .ecm-desc-panel p{font-size:15px!important;line-height:1.55!important;font-weight:500!important;margin:0 0 13px!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel li{font-size:15px!important;line-height:1.5!important;font-weight:500!important;margin:5px 0!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel strong{font-weight:800!important}
-.ecm--velour .ecm-checkout{margin-top:18px;color:#111}
+.ecm--velour .ecm-checkout{margin-top:18px;color:#111;gap:0}
 .ecm--velour .ecm-checkout .evamats-config-checkout__card{border:1px solid #eceef1;box-shadow:0 18px 44px rgba(24,29,38,.1)}
 .ecm--velour .ecm-checkout .evamats-config-checkout__prices{gap:8px}
 .ecm--velour .ecm-checkout .evamats-config-checkout__discount{position:static}
@@ -247,8 +247,8 @@
 .ecm--velour .evamats-config-checkout__submit:hover{background:#ee1e37}
 .ecm--velour .ecm-submit-cart{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center}
 .ecm--velour .ecm-submit-cart svg{display:block;width:26px;height:26px}
-.ecm--velour .evamats-config-checkout__below{padding:22px 4px 0}
-.ecm--velour .evamats-config-checkout__payment-list{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 22px;padding:0}
+.ecm--velour .evamats-config-checkout__below{padding:8px 4px 0;gap:10px}
+.ecm--velour .evamats-config-checkout__payment-list{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:0;padding:0}
 .ecm--velour .evamats-config-checkout__payment-item{display:flex;align-items:center;justify-content:center;min-width:46px;height:30px}
 .ecm--velour .evamats-config-checkout__payment-item img{display:block;max-width:64px;max-height:30px;width:auto;height:auto;object-fit:contain}
 .ecm--velour .ecm-purchase-notes{display:flex;flex-direction:column;gap:14px}
