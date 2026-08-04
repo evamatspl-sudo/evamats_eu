@@ -210,7 +210,9 @@
 .ecm-combo-check,.ecm-pill-current,.ecm-pill-sale,.ecm-combo-opt.is-selected{ font-weight:700 !important; }
 
 /* EU velour v2: Polish configurator proportions with EU checkout content intact. */
-.ecm--velour .ecm-title-card{border-color:rgba(255,255,255,.16);border-radius:18px;background:linear-gradient(135deg,#171719,#0d0d0f);box-shadow:0 12px 30px rgba(0,0,0,.18);padding:18px 22px}
+.ecm--velour .ecm-title-card{position:relative;overflow:hidden;border-color:rgba(255,255,255,.18);border-radius:16px;background:linear-gradient(115deg,#19191c 0%,#0d0e11 68%,#15161a 100%);box-shadow:0 14px 34px rgba(0,0,0,.2);padding:22px 24px}
+.ecm--velour .ecm-title-card::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#f52235}
+.ecm--velour .ecm-title-card::after{content:"";position:absolute;width:190px;height:190px;right:-95px;top:-120px;border-radius:50%;border:1px solid rgba(245,34,53,.2);pointer-events:none}
 .ecm--velour .ecm-title-card .ecm-title{font-size:24px;line-height:1.12;font-weight:800!important;letter-spacing:0}
 .ecm--velour .ecm-price-stack{gap:7px}
 .ecm--velour .ecm-price{font-size:25px;font-weight:850!important;padding:9px 24px}
@@ -224,7 +226,7 @@
 .ecm--velour .ecm-submit{min-height:60px;font-size:19px}
 .ecm--velour .ecm-gallery-rail{grid-template-rows:34px 324px 34px;gap:8px;align-self:start}
 .ecm--velour .ecm-gallery-rail .ecm-gallery-arrow{width:34px;height:34px}
-.ecm--velour .ecm-thumbs{height:324px;max-height:324px;gap:8px}
+.ecm--velour .ecm-thumbs{height:324px;max-height:324px;gap:8px;overflow:hidden}
 .ecm--velour .ecm-thumb{height:75px;flex:0 0 75px;padding:4px}
 .ecm--velour .ecm-payment-strip{gap:10px 13px}
 .ecm--velour .ecm-payment-strip img{height:22px;max-width:72px;padding:2px 4px}
@@ -236,9 +238,28 @@
 .ecm--velour .ecm-desc-panel p{font-size:15px!important;line-height:1.55!important;font-weight:500!important;margin:0 0 13px!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel li{font-size:15px!important;line-height:1.5!important;font-weight:500!important;margin:5px 0!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel strong{font-weight:800!important}
+.ecm--velour .ecm-checkout{margin-top:18px;color:#111}
+.ecm--velour .ecm-checkout .evamats-config-checkout__card{border:1px solid #eceef1;box-shadow:0 18px 44px rgba(24,29,38,.1)}
+.ecm--velour .ecm-checkout .evamats-config-checkout__prices{gap:8px}
+.ecm--velour .ecm-checkout .evamats-config-checkout__discount{position:static}
+.ecm--velour .evamats-config-checkout__submit{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:62px;margin:18px 0 0;border:0;border-radius:16px;background:#ff2941;color:#fff;font-size:18px;font-weight:800;box-shadow:0 10px 24px rgba(255,41,65,.16);cursor:pointer}
+.ecm--velour .evamats-config-checkout__submit:hover{background:#ee1e37}
+.ecm--velour .ecm-submit-cart{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center}
+.ecm--velour .ecm-submit-cart svg{display:block;width:26px;height:26px}
+.ecm--velour .evamats-config-checkout__below{padding:22px 4px 0}
+.ecm--velour .evamats-config-checkout__payment-list{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 22px;padding:0}
+.ecm--velour .evamats-config-checkout__payment-item{display:flex;align-items:center;justify-content:center;min-width:46px;height:30px}
+.ecm--velour .evamats-config-checkout__payment-item img{display:block;max-width:64px;max-height:30px;width:auto;height:auto;object-fit:contain}
+.ecm--velour .ecm-purchase-notes{display:flex;flex-direction:column;gap:14px}
+.ecm--velour .ecm-purchase-notes .evamats-config-checkout__note{display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:14px;padding:15px 17px;border:1px solid #e1e3e7;border-radius:16px;background:#f8f8f9;color:#17181c}
+.ecm--velour .ecm-purchase-notes .ecm-trusted-note{grid-template-columns:58px minmax(0,1fr) auto;background:#fff}
+.ecm--velour .ecm-purchase-notes img{display:block;max-width:100%;height:auto}
+.ecm--velour .ecm-purchase-notes strong{display:block;font-size:15px;line-height:1.25;font-weight:800}
+.ecm--velour .ecm-purchase-notes p{margin:2px 0 0;font-size:14px;line-height:1.35;color:#34363c}
+.ecm--velour .ecm-trusted-logo{width:104px}
 @media(max-width:989px){
   .ecm--velour .ecm-gallery-rail{grid-template-columns:40px minmax(0,1fr) 40px;grid-template-rows:auto;align-self:stretch}
-  .ecm--velour .ecm-thumbs{height:auto;max-height:none}
+  .ecm--velour .ecm-thumbs{height:auto;max-height:none;overflow-x:auto;overflow-y:hidden}
   .ecm--velour .ecm-thumb{height:74px;flex-basis:74px}
 }
 @media(max-width:560px){
@@ -248,4 +269,9 @@
   .ecm--velour .ecm-desc-panel h2{font-size:20px!important}
   .ecm--velour .ecm-desc-panel h3{font-size:17px!important;margin-top:18px!important}
   .ecm--velour .ecm-desc-panel p,.ecm--velour .ecm-desc-panel li{font-size:14px!important}
+  .ecm--velour .ecm-checkout .evamats-config-checkout__card{padding:22px 18px}
+  .ecm--velour .ecm-checkout .evamats-config-checkout__total-label,
+  .ecm--velour .ecm-checkout .evamats-config-checkout__price-current{font-size:22px}
+  .ecm--velour .ecm-purchase-notes .ecm-trusted-note{grid-template-columns:48px minmax(0,1fr)}
+  .ecm--velour .ecm-trusted-logo{grid-column:2;width:92px;margin-top:5px}
 }

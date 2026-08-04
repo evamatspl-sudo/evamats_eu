@@ -29,13 +29,12 @@
     var captions = [].slice.call(root.querySelectorAll('[data-ecm-preview-caption]'));
     var colorWrap = root.querySelector('[data-ecm-colors]');
     var colorProp = root.querySelector('[data-ecm-color-prop]');
-    var priceEl = root.querySelector('[data-ecm-price]');
-    var submitPrice = root.querySelector('[data-ecm-submit-price]');
+    var priceEls = [].slice.call(root.querySelectorAll('[data-ecm-price]'));
     var variantInput = root.querySelector('[data-ecm-variant-id]');
     var setName = root.querySelector('[data-ecm-set-name]');
     var setPricePill = root.querySelector('[data-ecm-set-pricepill]');
-    var comparePriceEl = root.querySelector('[data-ecm-compare-price]');
-    var discountBadgeEl = root.querySelector('[data-ecm-discount-badge]');
+    var comparePriceEls = [].slice.call(root.querySelectorAll('[data-ecm-compare-price]'));
+    var discountBadgeEls = [].slice.call(root.querySelectorAll('[data-ecm-discount-badge]'));
     var colorName = root.querySelector('[data-ecm-color-name]');
 
     // ---- colors (rendered in Liquid so choices remain visible without JavaScript) ----
@@ -82,12 +81,11 @@
       var hasDisc = comp > sale + 1;
       var pct = hasDisc ? Math.max(1, Math.round((1 - sale / comp) * 100)) : 0;
       var saleTxt = money(sale);
-      if (priceEl) priceEl.textContent = saleTxt;
-      if (submitPrice) submitPrice.textContent = saleTxt;
+      priceEls.forEach(function (el) { el.textContent = saleTxt; });
       var displayName = currentSeat === '2os' ? btn.getAttribute('data-name-2os') : btn.getAttribute('data-name');
       if (setName) setName.textContent = displayName || btn.getAttribute('data-name');
-      if (comparePriceEl) { comparePriceEl.textContent = money(comp); comparePriceEl.hidden = !hasDisc; }
-      if (discountBadgeEl) { discountBadgeEl.textContent = '-' + pct + '%'; discountBadgeEl.hidden = !hasDisc; }
+      comparePriceEls.forEach(function (el) { el.textContent = money(comp); el.hidden = !hasDisc; });
+      discountBadgeEls.forEach(function (el) { el.textContent = '-' + pct + '%'; el.hidden = !hasDisc; });
       if (setPricePill) {
         setPricePill.innerHTML = hasDisc
           ? '<s class="ecm-pill-compare">' + money(comp) + '</s><span class="ecm-pill-current">' + saleTxt + '</span><span class="ecm-pill-sale">-' + pct + '%</span>'
@@ -161,14 +159,38 @@
     function normalizeBodyLabel(body) {
       var text = cleanVehicleText(body);
       var seat = bodySeatMarker(text);
+      var doorMatch = text.match(/\b(\d+)\s*(?:drzwi|dve(?:ř|r)e|t(?:ü|u)ren?|doors?)\b/i);
+      var doorCount = doorMatch ? doorMatch[1] : '';
       var hasSeatMarker = /\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(text);
       var base = text
         .replace(/\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz(?:e)?|seat(?:s)?)\b/ig, '')
+        .replace(/\b\d+\s*(?:drzwi|dve(?:ř|r)e|t(?:ü|u)ren?|doors?)\b/ig, '')
         .replace(/\s+/g, ' ')
         .trim();
       if (/^suv$/i.test(base)) base = 'SUV';
+      if (/^hatchback$/i.test(base)) {
+        if (String(locale).toLowerCase().indexOf('cs') === 0) base = 'Hatchback';
+        else if (String(locale).toLowerCase().indexOf('de') === 0) base = 'Schrägheck';
+        else base = 'Hatchback';
+      }
+      if (doorCount) {
+        if (String(locale).toLowerCase().indexOf('cs') === 0) base += ', ' + doorCount + ' dveře';
+        else if (String(locale).toLowerCase().indexOf('de') === 0) base += ', ' + doorCount + ' Türen';
+        else base = doorCount + '-door ' + base.toLowerCase();
+      }
       if (!base) base = text;
       return hasSeatMarker ? base + ' · ' + seatLabel(seat) : base;
+    }
+    function removeGenericBodyDuplicates(bodies) {
+      return bodies.filter(function (body) {
+        var plain = cleanVehicleText(body).toLowerCase();
+        var isGenericHatch = plain === 'hatchback' || plain === 'schrägheck';
+        if (!isGenericHatch) return true;
+        return !bodies.some(function (candidate) {
+          var value = cleanVehicleText(candidate).toLowerCase();
+          return candidate !== body && (/hatchback|schrägheck/.test(value)) && /\b\d+[- ]?(?:door|dveře|türen)/.test(value);
+        });
+      });
     }
     function uniqueList(items) {
       var seen = {};
@@ -194,10 +216,11 @@
               if (bodies.indexOf(normalizedBody) < 0) bodies.push(normalizedBody);
               seatByBody[normalizedBody] = (entry.seatByBody && entry.seatByBody[rawBody]) || bodySeatMarker(rawBody);
             });
+            bodies = removeGenericBodyDuplicates(bodies);
             if (!normalized[brand][model]) normalized[brand][model] = [];
             var existing = normalized[brand][model].filter(function (item) { return item.generation === generation; })[0];
             if (existing) {
-              existing.bodies = uniqueList(existing.bodies.concat(bodies));
+              existing.bodies = removeGenericBodyDuplicates(uniqueList(existing.bodies.concat(bodies)));
               existing.seatByBody = Object.assign(existing.seatByBody || {}, seatByBody);
             } else {
               normalized[brand][model].push({ generation: generation, bodies: bodies, seatByBody: seatByBody });
