@@ -1,7 +1,8 @@
 /* ---- Пометка на карточке товара: кузов выбирается в конфигураторе ---- */
 .eva-body-choice-note {
   /* родитель .evamats-product-title__inner — CSS grid, иначе блок сжимается в колонку */
-  grid-column: 1 / -1;
+  grid-column: 1 / -1;   /* если родитель — grid */
+  flex: 1 1 100%;        /* если родитель — flex-строка */
   width: 100%;
   box-sizing: border-box;
   display: flex;
