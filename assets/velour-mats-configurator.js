@@ -146,8 +146,8 @@
     }
     function bodySeatMarker(body) {
       var value = cleanVehicleText(body).toLowerCase();
-      if (/\b2\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '2os';
-      if (/\b7\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '7os';
+      if (/\b2\s*[-–—]?\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '2os';
+      if (/\b7\s*[-–—]?\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(value)) return '7os';
       return '5os';
     }
     function seatLabel(seat) {
@@ -161,10 +161,11 @@
       var seat = bodySeatMarker(text);
       var doorMatch = text.match(/\b(\d+)\s*(?:drzwi|dve(?:ř|r)e|t(?:ü|u)ren?|doors?)\b/i);
       var doorCount = doorMatch ? doorMatch[1] : '';
-      var hasSeatMarker = /\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(text);
+      var hasSeatMarker = /\b(?:2|5|7)\s*[-–—]?\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz|seat)/i.test(text);
       var base = text
-        .replace(/\b(?:2|5|7)\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz(?:e)?|seat(?:s)?)\b/ig, '')
+        .replace(/\b(?:2|5|7)\s*[-–—]?\s*(?:os|os\.|osobowy|osobowa|miejscowy|miejscowa|míst|sitz(?:e)?|seat(?:s)?)\b/ig, '')
         .replace(/\b\d+\s*(?:drzwi|dve(?:ř|r)e|t(?:ü|u)ren?|doors?)\b/ig, '')
+        .replace(/\s*[·,]\s*$/, '')
         .replace(/\s+/g, ' ')
         .trim();
       if (/^suv$/i.test(base)) base = 'SUV';
