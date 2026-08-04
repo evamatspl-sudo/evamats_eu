@@ -125,15 +125,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 74px;
+  height: 62px;
+  overflow: hidden;
 }
 
+/* Силуэты лежат в квадрате 1280×1280 с большими пустыми полями сверху и снизу,
+   поэтому кропим по вертикали — машина занимает всю ширину карточки. */
 .eva-body-chip__img {
-  max-width: 100%;
-  max-height: 74px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   mix-blend-mode: multiply;
 }
 
@@ -142,7 +144,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 74px;
+  height: 62px;
   color: var(--eva-bt-muted);
 }
 
@@ -182,8 +184,7 @@
   .eva-body-ribbon__title { font-size: 26px; }
   .eva-body-chip { width: 200px; padding: 16px 14px 14px; }
   .eva-body-chip__media,
-  .eva-body-chip__all-mark { height: 105px; }
-  .eva-body-chip__img { max-height: 105px; }
+  .eva-body-chip__all-mark { height: 86px; }
   .eva-body-chip__all-mark svg { width: 44px; height: 44px; }
   .eva-body-chip__label { font-size: 15px; }
 }
