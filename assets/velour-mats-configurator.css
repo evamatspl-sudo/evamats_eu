@@ -239,7 +239,7 @@
 .ecm--velour .ecm-desc-panel p{font-size:15px!important;line-height:1.55!important;font-weight:500!important;margin:0 0 13px!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel li{font-size:15px!important;line-height:1.5!important;font-weight:500!important;margin:5px 0!important;letter-spacing:0!important}
 .ecm--velour .ecm-desc-panel strong{font-weight:800!important}
-.ecm--velour .ecm-checkout{margin-top:18px;color:#111;gap:0}
+.ecm--velour .ecm-checkout{margin-top:18px;color:#111;gap:0!important;row-gap:0!important}
 .ecm--velour .ecm-checkout .evamats-config-checkout__card{border:1px solid #eceef1;box-shadow:0 18px 44px rgba(24,29,38,.1)}
 .ecm--velour .ecm-checkout .evamats-config-checkout__prices{gap:8px}
 .ecm--velour .ecm-checkout .evamats-config-checkout__discount{position:static}
