@@ -1,0 +1,55 @@
+/* ---- Пометка на карточке товара: кузов выбирается в конфигураторе ---- */
+.eva-body-choice-note {
+  /* родитель .evamats-product-title__inner — CSS grid, иначе блок сжимается в колонку */
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: #f6f7f9;
+  border: 1px solid #e6e8ec;
+  border-left: 3px solid #ef022d;
+  border-radius: 10px;
+}
+
+.eva-body-choice-note__icon {
+  flex: 0 0 auto;
+  color: #ef022d;
+  margin-top: 1px;
+}
+
+.eva-body-choice-note__icon svg { width: 20px; height: 20px; display: block; }
+
+.eva-body-choice-note__body { min-width: 0; }
+
+.eva-body-choice-note__text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #1b1d22;
+}
+
+.eva-body-choice-note__list {
+  margin: 6px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.eva-body-choice-note__label { color: #6b7280; }
+
+.eva-body-choice-note__chip {
+  background: #fff;
+  border: 1px solid #e6e8ec;
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: #1b1d22;
+  white-space: nowrap;
+}
