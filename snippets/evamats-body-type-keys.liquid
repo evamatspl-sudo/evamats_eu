@@ -4,6 +4,9 @@
     1) custom.filter_body_type — одиночное значение, переведено по локалям (Kombi / Station Wagon / Limousine…)
     2) custom.custom_list_body_type_in_config — список метаобъектов body_types (выбор кузова внутри конфигуратора)
   Параметр: product
+  Приоритет: если задан filter_body_type — он единственный источник (у товара один
+  основной кузов). Список из конфигуратора берётся только когда основной не задан —
+  тогда товар попадает во все кузова, которые предлагает конфигуратор.
   Печатает ключи через запятую (ничего больше, без пробелов).
 {%- endcomment -%}
 
@@ -38,6 +41,7 @@
     assign body_type_keys = single_key
   endif
 
+  unless single_key != ''
   for body_object in product.metafields.custom.custom_list_body_type_in_config.value
     assign handle = body_object.system.handle | downcase
     assign mapped = ''
@@ -73,5 +77,6 @@
       endunless
     endif
   endfor
+  endunless
 -%}
 {{- body_type_keys -}}
