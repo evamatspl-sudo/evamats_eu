@@ -1,4 +1,5 @@
 {{ 'velour-mats-configurator.css' | asset_url | stylesheet_tag }}
+{{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
 
 {%- assign ecm_locale = request.locale.iso_code | split: '-' | first -%}
 {%- case ecm_locale -%}
@@ -18,6 +19,17 @@
   {%- assign _t = _t[1] | split: '<!-- EVAMATS_TECH_END -->' -%}
   {%- assign ecm_tech = _t[0] | strip -%}
 {%- endif -%}
+{%- case ecm_locale -%}
+  {%- when 'cs' -%}
+    {%- assign ecm_opis = ecm_opis | replace: '<strong>Měkký a hustý prémiový velur</strong>', '🧶 <strong>Měkký a hustý prémiový velur</strong>' | replace: '<strong>Účinná ochrana podlahy</strong>', '🛡️ <strong>Účinná ochrana podlahy</strong>' | replace: '<strong>Textilní lemování v několika barvách</strong>', '🎨 <strong>Textilní lemování v několika barvách</strong>' | replace: '<strong>Výroba na míru</strong>', '📐 <strong>Výroba na míru</strong>' | replace: '<strong>Stabilní upevnění</strong>', '🧲 <strong>Stabilní upevnění</strong>' | replace: '<strong>Snadná údržba</strong>', '🧹 <strong>Snadná údržba</strong>' | replace: '<strong>Vyrobeno v Polsku</strong>', '🇵🇱 <strong>Vyrobeno v Polsku</strong>' -%}
+    {%- assign ecm_tech = ecm_tech | replace: '<h2>Technické údaje</h2>', '<h2>Technické údaje 🔧</h2>' -%}
+  {%- when 'de' -%}
+    {%- assign ecm_opis = ecm_opis | replace: '<strong>Weicher, dichter Premium-Velours</strong>', '🧶 <strong>Weicher, dichter Premium-Velours</strong>' | replace: '<strong>Zuverlässiger Bodenschutz</strong>', '🛡️ <strong>Zuverlässiger Bodenschutz</strong>' | replace: '<strong>Textile Einfassung in mehreren Farben</strong>', '🎨 <strong>Textile Einfassung in mehreren Farben</strong>' | replace: '<strong>Maßanfertigung</strong>', '📐 <strong>Maßanfertigung</strong>' | replace: '<strong>Sicherer Halt</strong>', '🧲 <strong>Sicherer Halt</strong>' | replace: '<strong>Pflegeleicht</strong>', '🧹 <strong>Pflegeleicht</strong>' | replace: '<strong>Hergestellt in Polen</strong>', '🇵🇱 <strong>Hergestellt in Polen</strong>' -%}
+    {%- assign ecm_tech = ecm_tech | replace: '<h2>Technische Daten</h2>', '<h2>Technische Daten 🔧</h2>' -%}
+  {%- else -%}
+    {%- assign ecm_opis = ecm_opis | replace: '<strong>Soft, dense premium velour</strong>', '🧶 <strong>Soft, dense premium velour</strong>' | replace: '<strong>Effective floor protection</strong>', '🛡️ <strong>Effective floor protection</strong>' | replace: '<strong>Fabric edging in a choice of colours</strong>', '🎨 <strong>Fabric edging in a choice of colours</strong>' | replace: '<strong>Made to measure</strong>', '📐 <strong>Made to measure</strong>' | replace: '<strong>Secure positioning</strong>', '🧲 <strong>Secure positioning</strong>' | replace: '<strong>Easy care</strong>', '🧹 <strong>Easy care</strong>' | replace: '<strong>Made in Poland</strong>', '🇵🇱 <strong>Made in Poland</strong>' -%}
+    {%- assign ecm_tech = ecm_tech | replace: '<h2>Technical specifications</h2>', '<h2>Technical specifications 🔧</h2>' -%}
+{%- endcase -%}
 
 {%- case ecm_locale -%}
   {%- when 'cs' -%}
@@ -47,6 +59,11 @@
     {%- assign txt_notes = 'Poznámky k objednávce' -%}
     {%- assign txt_notes_ph = 'Např. doplňující informace pro výrobu…' -%}
     {%- assign txt_add = 'Přidat do košíku' -%}
+    {%- assign txt_total = 'Celkem' -%}
+    {%- assign txt_made_to_order = 'Produkt vyráběný na zakázku' -%}
+    {%- assign txt_production_time = 'Odhadovaná doba výroby: 14 dní.' -%}
+    {%- assign txt_order_confidence = 'Objednejte s jistotou' -%}
+    {%- assign txt_buyer_protection = 'Ochrana kupujících je k dispozici v dalších krocích' -%}
     {%- assign txt_tab_about = 'O produktu' -%}
     {%- assign txt_tab_specs = 'Technické údaje' -%}
     {%- assign txt_tab_faq = 'Otázky a odpovědi' -%}
@@ -86,6 +103,11 @@
     {%- assign txt_notes = 'Hinweise zur Bestellung' -%}
     {%- assign txt_notes_ph = 'Z. B. zusätzliche Angaben für die Fertigung…' -%}
     {%- assign txt_add = 'In den Warenkorb' -%}
+    {%- assign txt_total = 'Gesamt' -%}
+    {%- assign txt_made_to_order = 'Produkt nach Maß gefertigt' -%}
+    {%- assign txt_production_time = 'Voraussichtliche Produktionszeit: 14 Tage.' -%}
+    {%- assign txt_order_confidence = 'Sicher bestellen' -%}
+    {%- assign txt_buyer_protection = 'Käuferschutz ist in den nächsten Schritten verfügbar' -%}
     {%- assign txt_tab_about = 'Produktdetails' -%}
     {%- assign txt_tab_specs = 'Technische Daten' -%}
     {%- assign txt_tab_faq = 'Fragen und Antworten' -%}
@@ -125,6 +147,11 @@
     {%- assign txt_notes = 'Order notes' -%}
     {%- assign txt_notes_ph = 'For example, additional information for production…' -%}
     {%- assign txt_add = 'Add to cart' -%}
+    {%- assign txt_total = 'Total' -%}
+    {%- assign txt_made_to_order = 'Made-to-order product' -%}
+    {%- assign txt_production_time = 'Estimated production time: 14 days.' -%}
+    {%- assign txt_order_confidence = 'Order with confidence' -%}
+    {%- assign txt_buyer_protection = 'Buyer protection is available in the next steps' -%}
     {%- assign txt_tab_about = 'About the product' -%}
     {%- assign txt_tab_specs = 'Technical data' -%}
     {%- assign txt_tab_faq = 'Questions and answers' -%}
@@ -140,7 +167,7 @@
 {%- endcase -%}
 
 <section
-  class="ecm ecm--velour"
+  class="ecm ecm--velour evamats-config"
   data-ecm
   data-vehicles="{{ 'velour-vehicles.json' | asset_url }}"
   data-locale="{{ request.locale.iso_code }}"
@@ -315,7 +342,7 @@
           <div class="ecm-step-body">
             {%- liquid
               assign ecm_color_codes = 'black|red|lightgrey|darkgrey|brown|beige|blue|darkblue|green|orange|yellow|maroon|purple|pink|copper' | split: '|'
-              assign ecm_color_swatches = 'velour-swatch-black.webp|velour-swatch-red.webp|velour-swatch-lightgrey.webp|velour-swatch-darkgrey.webp|velour-swatch-brown.webp|velour-swatch-beige.webp|velour-swatch-blue.webp|velour-swatch-darkblue.webp|velour-swatch-green.webp|velour-swatch-orange.webp|velour-swatch-yellow.webp|velour-swatch-maroon.webp|velour-swatch-purple.webp|velour-swatch-pink.webp|Miedziany.webp' | split: '|'
+              assign ecm_color_swatches = 'velour-swatch-black.webp|velour-swatch-red.webp|velour-swatch-lightgrey.webp|velour-swatch-darkgrey.webp|velour-swatch-brown.webp|velour-swatch-beige.webp|velour-swatch-blue.webp|velour-swatch-darkblue.webp|velour-swatch-green.webp|velour-swatch-orange.webp|velour-swatch-yellow.webp|velour-swatch-maroon.webp|velour-swatch-purple.webp|velour-swatch-pink.webp|velour-swatch-copper.webp' | split: '|'
               assign ecm_color_previews = 'velour-preview-black.webp|velour-preview-red.webp|velour-preview-lightgrey.webp|velour-preview-darkgrey.webp|velour-preview-brown.webp|velour-preview-beige.webp|velour-preview-blue.webp|velour-preview-darkblue.webp|velour-preview-green.webp|velour-preview-orange.webp|velour-preview-yellow.webp|velour-preview-maroon.webp|velour-preview-purple.webp|velour-preview-pink.webp|velour-preview-coopper.webp' | split: '|'
               case ecm_locale
                 when 'cs'
@@ -345,11 +372,7 @@
                   data-preview="{{ ecm_color_previews[color_index] | asset_url }}"
                   aria-label="{{ ecm_color_labels[color_index] | escape }}"
                 >
-                  {%- if color_code == 'copper' -%}
-                    <img src="{{ ecm_color_swatches[color_index] | file_url }}" alt="" loading="lazy">
-                  {%- else -%}
-                    <img src="{{ ecm_color_swatches[color_index] | asset_url }}" alt="" loading="lazy">
-                  {%- endif -%}
+                  <img src="{{ ecm_color_swatches[color_index] | asset_url }}" alt="" loading="lazy">
                 </button>
               {%- endfor -%}
             </div>
@@ -367,22 +390,50 @@
           <textarea id="ecm-uwagi" class="ecm-uwagi" name="properties[{{ prop_notes | escape }}]" placeholder="{{ txt_notes_ph | escape }}"></textarea>
         </div>
 
-        <button type="submit" class="ecm-submit">{{ txt_add }} — <span data-ecm-submit-price>{{ product.selected_or_first_available_variant.price | money }}</span></button>
-
-        <div class="ecm-checkout-widgets" aria-label="Secure payments">
-          <div class="ecm-trust-widget">
-            <etrusted-widget data-etrusted-widget-id="wdg-72c723c3-1f83-44e9-89c0-48433e3244a7"></etrusted-widget>
+        <div class="evamats-config-checkout ecm-checkout" aria-label="{{ txt_total | escape }}">
+          <div class="evamats-config-checkout__card">
+            <div class="evamats-config-checkout__total-row">
+              <p class="evamats-config-checkout__total-label">{{ txt_total }}</p>
+              <div class="evamats-config-checkout__prices">
+                <span class="evamats-config-checkout__price-old ecm-compare-price" data-ecm-compare-price hidden></span>
+                <span class="evamats-config-checkout__price-current" data-ecm-price>{{ product.selected_or_first_available_variant.price | money }}</span>
+                <span class="evamats-config-checkout__discount ecm-discount-badge" data-ecm-discount-badge hidden></span>
+              </div>
+            </div>
+            <button type="submit" class="button button--full-width evamats-config-checkout__submit ecm-submit">
+              <span class="ecm-submit-cart" aria-hidden="true">{% render 'icon-cart' %}</span>
+              <span>{{ txt_add }}</span>
+            </button>
           </div>
-          <div class="ecm-payment-strip" aria-label="Supported payment methods">
-            <img src="{{ 'visa.svg' | file_url }}" alt="Visa">
-            <img src="{{ 'mc.svg' | file_url }}" alt="Mastercard">
-            <img src="{{ 'ae.svg' | file_url }}" alt="American Express">
-            <img src="{{ 'discover.svg' | file_url }}" alt="Discover">
-            <img src="{{ 'jcb.svg' | file_url }}" alt="JCB">
-            <img src="{{ 'dc.svg' | file_url }}" alt="Diners Club">
-            <img src="{{ 'apay.svg' | file_url }}" alt="Apple Pay">
-            <img src="{{ 'gpay.svg' | file_url }}" alt="Google Pay">
-            <img class="ecm-payment-gopay" src="{{ 'image_6.png' | file_url }}" alt="GoPay">
+
+          <div class="evamats-config-checkout__below">
+            <ul class="evamats-config-checkout__payment-list list-unstyled" role="list" aria-label="Supported payment methods">
+              {%- assign ecm_payment_gateways = 'go_pay,visa,mc,apay,gpay' | split: ',' -%}
+              {%- for type in ecm_payment_gateways -%}
+                <li class="evamats-config-checkout__payment-item">
+                  {%- assign type_svg = type | append: '.svg' -%}
+                  <img src="{{ type_svg | file_url }}" alt="{{ type | escape }}" loading="lazy" width="54" height="32">
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            <div class="evamats-config-checkout__notes ecm-purchase-notes">
+              <div class="evamats-config-checkout__note ecm-production-note">
+                <img src="{{ 'Group_1948755301.webp' | file_url }}" alt="" loading="lazy" width="56" height="56">
+                <div>
+                  <strong>{{ txt_made_to_order }}</strong>
+                  <p>{{ txt_production_time }}</p>
+                </div>
+              </div>
+              <div class="evamats-config-checkout__note ecm-trusted-note">
+                <img src="{{ '6f13a48de7783505c9cd_1.svg' | file_url }}" alt="Trusted Shops" loading="lazy" width="58" height="58">
+                <div>
+                  <strong>{{ txt_order_confidence }}</strong>
+                  <p>{{ txt_buyer_protection }}</p>
+                </div>
+                <img class="ecm-trusted-logo" src="{{ 'Trusted-shops-logo_1.webp' | file_url }}" alt="Trusted Shops" loading="lazy" width="104" height="48">
+              </div>
+            </div>
           </div>
         </div>
       </form>
@@ -407,7 +458,22 @@
         <script type="application/json" data-ecm-gallery-json>
         [
           {%- for image in product.images -%}
-            {"src":{{ image | image_url: width: 1800 | json }},"thumb":{{ image | image_url: width: 360 | json }},"alt":{{ image.alt | default: product.title | json }}}{%- unless forloop.last -%},{%- endunless -%}
+            {%- assign gallery_src = image | image_url: width: 1800 -%}
+            {%- assign gallery_thumb = image | image_url: width: 360 -%}
+            {%- if forloop.index == 3 -%}
+              {%- assign localized_gallery_asset = 'velour-gallery-3-' | append: ecm_locale | append: '.webp' -%}
+              {%- assign gallery_src = localized_gallery_asset | asset_url -%}
+              {%- assign gallery_thumb = gallery_src -%}
+            {%- elsif forloop.index == 4 -%}
+              {%- assign localized_gallery_asset = 'velour-gallery-4-' | append: ecm_locale | append: '.webp' -%}
+              {%- assign gallery_src = localized_gallery_asset | asset_url -%}
+              {%- assign gallery_thumb = gallery_src -%}
+            {%- elsif forloop.index == 6 -%}
+              {%- assign localized_gallery_asset = 'velour-gallery-6-' | append: ecm_locale | append: '.webp' -%}
+              {%- assign gallery_src = localized_gallery_asset | asset_url -%}
+              {%- assign gallery_thumb = gallery_src -%}
+            {%- endif -%}
+            {"src":{{ gallery_src | json }},"thumb":{{ gallery_thumb | json }},"alt":{{ image.alt | default: product.title | json }}}{%- unless forloop.last -%},{%- endunless -%}
           {%- endfor -%}
         ]
         </script>
@@ -428,17 +494,17 @@
       <div class="ecm-desc-panel" data-ecm-desc-panel="faq">
         {%- case ecm_locale -%}
           {%- when 'cs' -%}
-            <h2>Často kladené otázky</h2>
+            <h2>Často kladené otázky ❓</h2>
             <h3>Budou autokoberce pasovat do mého vozu?</h3><p>Ano. Každou sadu vyrábíme podle zvolené značky, modelu, generace a karoserie.</p>
             <h3>Jak autokoberce čistit?</h3><p>Stačí je vysát nebo jemně vyklepat. Při silnějším znečištění použijte šetrný prostředek na textilie a nechte je volně uschnout.</p>
             <h3>Jak dlouho trvá výroba?</h3><p>Aktuální předpokládanou dobu výroby a dostupné možnosti dopravy uvidíte před dokončením objednávky.</p>
           {%- when 'de' -%}
-            <h2>Häufige Fragen</h2>
+            <h2>Häufige Fragen ❓</h2>
             <h3>Passen die Fußmatten in mein Fahrzeug?</h3><p>Ja. Jedes Set wird passend zur ausgewählten Marke, zum Modell, zur Generation und zur Karosserie gefertigt.</p>
             <h3>Wie werden die Fußmatten gereinigt?</h3><p>Absaugen oder vorsichtig ausklopfen genügt meist. Bei stärkeren Verschmutzungen ein mildes Textilreinigungsmittel verwenden und an der Luft trocknen lassen.</p>
             <h3>Wie lange dauert die Fertigung?</h3><p>Die aktuelle voraussichtliche Fertigungszeit und die verfügbaren Versandarten werden vor Abschluss der Bestellung angezeigt.</p>
           {%- else -%}
-            <h2>Frequently asked questions</h2>
+            <h2>Frequently asked questions ❓</h2>
             <h3>Will the mats fit my vehicle?</h3><p>Yes. Every set is made for the selected make, model, generation and body style.</p>
             <h3>How should I clean the mats?</h3><p>Vacuum or gently shake them out. For heavier dirt, use a mild textile cleaner and allow the mats to air-dry.</p>
             <h3>How long does production take?</h3><p>The current estimated production time and available delivery methods are shown before the order is completed.</p>
@@ -447,11 +513,11 @@
       <div class="ecm-desc-panel" data-ecm-desc-panel="shipping">
         {%- case ecm_locale -%}
           {%- when 'cs' -%}
-            <h2>Doprava a platba</h2><p>Každou sadu vyrábíme na objednávku pro konkrétní vozidlo. Před dokončením nákupu uvidíte aktuální předpokládanou dobu výroby, cenu dopravy i dostupné přepravce.</p><p>Platba probíhá prostřednictvím zabezpečené pokladny Shopify. Dostupné platební metody se zobrazí podle země doručení.</p>
+            <h2>Doprava a platba 📦</h2><p>Každou sadu vyrábíme na objednávku pro konkrétní vozidlo. Před dokončením nákupu uvidíte aktuální předpokládanou dobu výroby, cenu dopravy i dostupné přepravce.</p><p>Platba probíhá prostřednictvím zabezpečené pokladny Shopify. Dostupné platební metody se zobrazí podle země doručení.</p>
           {%- when 'de' -%}
-            <h2>Versand und Zahlung</h2><p>Jedes Set wird für das ausgewählte Fahrzeug auf Bestellung gefertigt. Vor Abschluss des Kaufs sehen Sie die aktuelle voraussichtliche Fertigungszeit, die Versandkosten und die verfügbaren Versanddienstleister.</p><p>Die Zahlung erfolgt über den sicheren Shopify-Checkout. Die verfügbaren Zahlungsarten richten sich nach dem Lieferland.</p>
+            <h2>Versand und Zahlung 📦</h2><p>Jedes Set wird für das ausgewählte Fahrzeug auf Bestellung gefertigt. Vor Abschluss des Kaufs sehen Sie die aktuelle voraussichtliche Fertigungszeit, die Versandkosten und die verfügbaren Versanddienstleister.</p><p>Die Zahlung erfolgt über den sicheren Shopify-Checkout. Die verfügbaren Zahlungsarten richten sich nach dem Lieferland.</p>
           {%- else -%}
-            <h2>Delivery and payment</h2><p>Every set is made to order for the selected vehicle. Before checkout is completed, you will see the current estimated production time, delivery cost and available carriers.</p><p>Payment is handled through Shopify's secure checkout. Available payment methods are shown according to the delivery country.</p>
+            <h2>Delivery and payment 📦</h2><p>Every set is made to order for the selected vehicle. Before checkout is completed, you will see the current estimated production time, delivery cost and available carriers.</p><p>Payment is handled through Shopify's secure checkout. Available payment methods are shown according to the delivery country.</p>
         {%- endcase -%}
       </div>
     </div>
@@ -462,11 +528,11 @@
   <script type="application/json" data-ecm-colors-json>
   {%- case ecm_locale -%}
     {%- when 'cs' -%}
-      [{"code":"black","label":"Černá","badge":"ČERNÁ","caption":"Černý velur · černé lemování","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Červená","badge":"ČERVENÁ","caption":"Černý velur · červené lemování","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Světle šedá","badge":"SVĚTLE ŠEDÁ","caption":"Černý velur · světle šedé lemování","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Tmavě šedá","badge":"TMAVĚ ŠEDÁ","caption":"Černý velur · tmavě šedé lemování","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Hnědá","badge":"HNĚDÁ","caption":"Černý velur · hnědé lemování","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Béžová","badge":"BÉŽOVÁ","caption":"Černý velur · béžové lemování","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Modrá","badge":"MODRÁ","caption":"Černý velur · modré lemování","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Tmavě modrá","badge":"TMAVĚ MODRÁ","caption":"Černý velur · tmavě modré lemování","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Zelená","badge":"ZELENÁ","caption":"Černý velur · zelené lemování","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Oranžová","badge":"ORANŽOVÁ","caption":"Černý velur · oranžové lemování","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Žlutá","badge":"ŽLUTÁ","caption":"Černý velur · žluté lemování","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Vínová","badge":"VÍNOVÁ","caption":"Černý velur · vínové lemování","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Fialová","badge":"FIALOVÁ","caption":"Černý velur · fialové lemování","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Růžová","badge":"RŮŽOVÁ","caption":"Černý velur · růžové lemování","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Měděná","badge":"MĚDĚNÁ","caption":"Černý velur · měděné lemování","swatch":{{ 'Miedziany.webp' | file_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
+      [{"code":"black","label":"Černá","badge":"ČERNÁ","caption":"Černý velur · černé lemování","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Červená","badge":"ČERVENÁ","caption":"Černý velur · červené lemování","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Světle šedá","badge":"SVĚTLE ŠEDÁ","caption":"Černý velur · světle šedé lemování","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Tmavě šedá","badge":"TMAVĚ ŠEDÁ","caption":"Černý velur · tmavě šedé lemování","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Hnědá","badge":"HNĚDÁ","caption":"Černý velur · hnědé lemování","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Béžová","badge":"BÉŽOVÁ","caption":"Černý velur · béžové lemování","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Modrá","badge":"MODRÁ","caption":"Černý velur · modré lemování","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Tmavě modrá","badge":"TMAVĚ MODRÁ","caption":"Černý velur · tmavě modré lemování","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Zelená","badge":"ZELENÁ","caption":"Černý velur · zelené lemování","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Oranžová","badge":"ORANŽOVÁ","caption":"Černý velur · oranžové lemování","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Žlutá","badge":"ŽLUTÁ","caption":"Černý velur · žluté lemování","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Vínová","badge":"VÍNOVÁ","caption":"Černý velur · vínové lemování","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Fialová","badge":"FIALOVÁ","caption":"Černý velur · fialové lemování","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Růžová","badge":"RŮŽOVÁ","caption":"Černý velur · růžové lemování","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Měděná","badge":"MĚDĚNÁ","caption":"Černý velur · měděné lemování","swatch":{{ 'velour-swatch-copper.webp' | asset_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
     {%- when 'de' -%}
-      [{"code":"black","label":"Schwarz","badge":"SCHWARZ","caption":"Schwarzer Velours · schwarze Einfassung","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Rot","badge":"ROT","caption":"Schwarzer Velours · rote Einfassung","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Hellgrau","badge":"HELLGRAU","caption":"Schwarzer Velours · hellgraue Einfassung","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Dunkelgrau","badge":"DUNKELGRAU","caption":"Schwarzer Velours · dunkelgraue Einfassung","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Braun","badge":"BRAUN","caption":"Schwarzer Velours · braune Einfassung","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Beige","badge":"BEIGE","caption":"Schwarzer Velours · beige Einfassung","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Blau","badge":"BLAU","caption":"Schwarzer Velours · blaue Einfassung","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Dunkelblau","badge":"DUNKELBLAU","caption":"Schwarzer Velours · dunkelblaue Einfassung","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Grün","badge":"GRÜN","caption":"Schwarzer Velours · grüne Einfassung","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Orange","badge":"ORANGE","caption":"Schwarzer Velours · orange Einfassung","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Gelb","badge":"GELB","caption":"Schwarzer Velours · gelbe Einfassung","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Bordeaux","badge":"BORDEAUX","caption":"Schwarzer Velours · bordeauxrote Einfassung","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Violett","badge":"VIOLETT","caption":"Schwarzer Velours · violette Einfassung","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Pink","badge":"PINK","caption":"Schwarzer Velours · pinke Einfassung","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Kupfer","badge":"KUPFER","caption":"Schwarzer Velours · kupferfarbene Einfassung","swatch":{{ 'Miedziany.webp' | file_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
+      [{"code":"black","label":"Schwarz","badge":"SCHWARZ","caption":"Schwarzer Velours · schwarze Einfassung","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Rot","badge":"ROT","caption":"Schwarzer Velours · rote Einfassung","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Hellgrau","badge":"HELLGRAU","caption":"Schwarzer Velours · hellgraue Einfassung","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Dunkelgrau","badge":"DUNKELGRAU","caption":"Schwarzer Velours · dunkelgraue Einfassung","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Braun","badge":"BRAUN","caption":"Schwarzer Velours · braune Einfassung","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Beige","badge":"BEIGE","caption":"Schwarzer Velours · beige Einfassung","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Blau","badge":"BLAU","caption":"Schwarzer Velours · blaue Einfassung","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Dunkelblau","badge":"DUNKELBLAU","caption":"Schwarzer Velours · dunkelblaue Einfassung","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Grün","badge":"GRÜN","caption":"Schwarzer Velours · grüne Einfassung","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Orange","badge":"ORANGE","caption":"Schwarzer Velours · orange Einfassung","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Gelb","badge":"GELB","caption":"Schwarzer Velours · gelbe Einfassung","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Bordeaux","badge":"BORDEAUX","caption":"Schwarzer Velours · bordeauxrote Einfassung","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Violett","badge":"VIOLETT","caption":"Schwarzer Velours · violette Einfassung","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Pink","badge":"PINK","caption":"Schwarzer Velours · pinke Einfassung","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Kupfer","badge":"KUPFER","caption":"Schwarzer Velours · kupferfarbene Einfassung","swatch":{{ 'velour-swatch-copper.webp' | asset_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
     {%- else -%}
-      [{"code":"black","label":"Black","badge":"BLACK","caption":"Black velour · black trim","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Red","badge":"RED","caption":"Black velour · red trim","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Light grey","badge":"LIGHT GREY","caption":"Black velour · light grey trim","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Dark grey","badge":"DARK GREY","caption":"Black velour · dark grey trim","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Brown","badge":"BROWN","caption":"Black velour · brown trim","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Beige","badge":"BEIGE","caption":"Black velour · beige trim","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Blue","badge":"BLUE","caption":"Black velour · blue trim","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Dark blue","badge":"DARK BLUE","caption":"Black velour · dark blue trim","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Green","badge":"GREEN","caption":"Black velour · green trim","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Orange","badge":"ORANGE","caption":"Black velour · orange trim","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Yellow","badge":"YELLOW","caption":"Black velour · yellow trim","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Burgundy","badge":"BURGUNDY","caption":"Black velour · burgundy trim","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Purple","badge":"PURPLE","caption":"Black velour · purple trim","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Pink","badge":"PINK","caption":"Black velour · pink trim","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Copper","badge":"COPPER","caption":"Black velour · copper trim","swatch":{{ 'Miedziany.webp' | file_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
+      [{"code":"black","label":"Black","badge":"BLACK","caption":"Black velour · black trim","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},{"code":"red","label":"Red","badge":"RED","caption":"Black velour · red trim","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},{"code":"lightgrey","label":"Light grey","badge":"LIGHT GREY","caption":"Black velour · light grey trim","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},{"code":"darkgrey","label":"Dark grey","badge":"DARK GREY","caption":"Black velour · dark grey trim","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},{"code":"brown","label":"Brown","badge":"BROWN","caption":"Black velour · brown trim","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},{"code":"beige","label":"Beige","badge":"BEIGE","caption":"Black velour · beige trim","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},{"code":"blue","label":"Blue","badge":"BLUE","caption":"Black velour · blue trim","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},{"code":"darkblue","label":"Dark blue","badge":"DARK BLUE","caption":"Black velour · dark blue trim","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},{"code":"green","label":"Green","badge":"GREEN","caption":"Black velour · green trim","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},{"code":"orange","label":"Orange","badge":"ORANGE","caption":"Black velour · orange trim","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},{"code":"yellow","label":"Yellow","badge":"YELLOW","caption":"Black velour · yellow trim","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},{"code":"maroon","label":"Burgundy","badge":"BURGUNDY","caption":"Black velour · burgundy trim","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},{"code":"purple","label":"Purple","badge":"PURPLE","caption":"Black velour · purple trim","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},{"code":"pink","label":"Pink","badge":"PINK","caption":"Black velour · pink trim","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},{"code":"copper","label":"Copper","badge":"COPPER","caption":"Black velour · copper trim","swatch":{{ 'velour-swatch-copper.webp' | asset_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}]
   {%- endcase -%}
   </script>
 </section>
