@@ -1,0 +1,305 @@
+{{ 'velour-mats-configurator.css' | asset_url | stylesheet_tag }}
+{%- assign ecm_opis = '' -%}{%- assign ecm_tech = '' -%}
+{%- if product.description contains '<!-- EVAMATS_OPIS_START -->' and product.description contains '<!-- EVAMATS_OPIS_END -->' -%}
+  {%- assign _o = product.description | split: '<!-- EVAMATS_OPIS_START -->' -%}{%- assign _o = _o[1] | split: '<!-- EVAMATS_OPIS_END -->' -%}{%- assign ecm_opis = _o[0] | strip -%}
+{%- endif -%}
+{%- if product.description contains '<!-- EVAMATS_TECH_START -->' and product.description contains '<!-- EVAMATS_TECH_END -->' -%}
+  {%- assign _t = product.description | split: '<!-- EVAMATS_TECH_START -->' -%}{%- assign _t = _t[1] | split: '<!-- EVAMATS_TECH_END -->' -%}{%- assign ecm_tech = _t[0] | strip -%}
+{%- endif -%}
+<section class="ecm ecm--velour" data-ecm data-vehicles="{{ 'velour-vehicles.json' | asset_url }}">
+  <div class="ecm-wrap">
+
+    <div class="ecm-left">
+      <div class="ecm-title-card">
+        <h1 class="ecm-title">{{ product.title | escape }}</h1>
+        <div class="ecm-price-stack" data-ecm-price-stack>
+          <s class="ecm-compare-price" data-ecm-compare-price hidden></s>
+          <div class="ecm-price-line">
+            <div class="ecm-price" data-ecm-price>{{ product.selected_or_first_available_variant.price | money }}</div>
+            <span class="ecm-discount-badge" data-ecm-discount-badge hidden></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ecm-preview-card">
+        <img class="ecm-preview-img" data-ecm-preview src="{{ 'velour-preview-black.webp' | asset_url }}" alt="Podgląd konfiguracji">
+        <p class="ecm-preview-caption" data-ecm-preview-caption>Czarny welur · obszycie czarne</p>
+        <p class="ecm-preview-note">Podgląd Wyświetlany dywanik służy wyłącznie do podglądu konfiguracji — nie jest zdjęciem gotowego produktu.</p>
+      </div>
+    </div>
+
+    <div class="ecm-right">
+      <form method="post" action="/cart/add" id="ecm-form" data-ecm-form>
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-ecm-variant-id>
+
+        <div class="ecm-step is-open" data-ecm-step>
+          <div class="ecm-step-head">
+            <span class="ecm-step-num">1</span>
+            <span class="ecm-step-title">Wybierz pojazd</span>
+            <span class="ecm-step-value" data-ecm-step-value></span>
+            <span class="ecm-step-caret" aria-hidden="true"></span>
+          </div>
+          <div class="ecm-step-body">
+            <div class="ecm-field"><label>Marka</label>
+              <div class="ecm-combo" data-ecm-combo="brand">
+                <input type="text" class="ecm-combo-input" placeholder="Wpisz markę…" autocomplete="off" data-ecm-brand>
+                <ul class="ecm-combo-list" hidden></ul>
+              </div></div>
+            <div class="ecm-field"><label>Model</label>
+              <div class="ecm-combo" data-ecm-combo="model">
+                <input type="text" class="ecm-combo-input" placeholder="Najpierw wybierz markę" autocomplete="off" disabled data-ecm-model>
+                <ul class="ecm-combo-list" hidden></ul>
+              </div></div>
+            <div class="ecm-field"><label>Generacja</label>
+              <div class="ecm-combo" data-ecm-combo="gen">
+                <input type="text" class="ecm-combo-input" placeholder="Najpierw wybierz model" autocomplete="off" readonly disabled data-ecm-gen>
+                <ul class="ecm-combo-list" hidden></ul>
+              </div></div>
+            <div class="ecm-field"><label>Nadwozie</label>
+              <div class="ecm-combo" data-ecm-combo="body">
+                <input type="text" class="ecm-combo-input" placeholder="Najpierw wybierz generację" autocomplete="off" readonly disabled data-ecm-body>
+                <ul class="ecm-combo-list" hidden></ul>
+              </div></div>
+            <input type="hidden" name="properties[Pojazd]" data-ecm-vehicle-prop>
+            <p class="ecm-step-error" data-ecm-step-error hidden>Wybierz markę, model, generację i nadwozie.</p>
+            <button type="button" class="ecm-step-next">Dalej</button>
+          </div>
+        </div>
+
+        <div class="ecm-step is-disabled" data-ecm-step>
+          <div class="ecm-step-head">
+            <span class="ecm-step-num">2</span>
+            <span class="ecm-step-title">Wybierz zestaw</span>
+            <span class="ecm-set-name" data-ecm-set-name></span>
+            <span class="ecm-set-pricepill" data-ecm-set-pricepill></span>
+            <span class="ecm-step-caret" aria-hidden="true"></span>
+          </div>
+          <div class="ecm-step-body">
+            <div class="ecm-sets" data-ecm-sets>
+              {%- for v in product.variants -%}
+                {%- liquid
+                  case v.title
+                    when 'Dywanik Kierowcy'
+                      assign simg = '5os-mat-front-1.webp'
+                    when 'Przód'
+                      assign simg = '5os-mat-front-2.webp'
+                    when 'Tył'
+                      assign simg = '5os-mat-back-2.webp'
+                    when 'Przód + tył'
+                      assign simg = '5os-mat-front-back.webp'
+                    when 'Mata do bagażnika'
+                      assign simg = '5os-mat-trunk.webp'
+                    when 'Przód + tył + bagażnik'
+                      assign simg = '5os-mat-set.webp'
+                    when 'Przód + tył + 3 rząd'
+                      assign simg = '7os-mat-set-row.webp'
+                    when 'Przód + tył + 3 rząd + Mały bagażnik'
+                      assign simg = '7os-mat-set-row-trunk-sm.webp'
+                    when 'Przód + tył + 3 rząd + Duży bagażnik'
+                      assign simg = '7os-mat-set-row-trunk-l.webp'
+                    when '3 rzędy + 2 Bagażniki (Duży | Mały)'
+                      assign simg = '7os-mat-set-trunk-2.webp'
+                    when 'Przód + tył + Duży bagażnik'
+                      assign simg = '5os-mat-set.webp'
+                    else
+                      assign simg = '5os-mat-front-back.webp'
+                  endcase
+                -%}
+                <button type="button" class="ecm-set{% if forloop.first %} is-active{% endif %}" data-ecm-set data-variant-id="{{ v.id }}" data-price="{{ v.price }}" data-compare="{{ v.compare_at_price }}" data-name="{{ v.title | escape }}" title="{{ v.title | escape }}">
+                  <img src="{{ simg | file_url }}" alt="{{ v.title | escape }}" loading="lazy">
+                </button>
+              {%- endfor -%}
+            </div>
+            <p class="ecm-hint">Kup zestaw powyżej 600 zł — wysyłka gratis</p>
+            <button type="button" class="ecm-step-next">Dalej</button>
+          </div>
+        </div>
+
+        <div class="ecm-step is-disabled" data-ecm-step>
+          <div class="ecm-step-head">
+            <span class="ecm-step-num">3</span>
+            <span class="ecm-step-title">Kolor obszycia</span>
+            <span class="ecm-set-name" data-ecm-color-name>CZARNY</span>
+            <span class="ecm-step-caret" aria-hidden="true"></span>
+          </div>
+          <div class="ecm-step-body">
+            <div class="ecm-colors" data-ecm-colors></div>
+            <input type="hidden" name="properties[Kolor obszycia]" data-ecm-color-prop value="Czarne">
+            <div class="ecm-preview-card ecm-preview-card--mobile">
+              <img class="ecm-preview-img" data-ecm-preview src="{{ 'velour-preview-black.webp' | asset_url }}" alt="Podgląd konfiguracji">
+              <p class="ecm-preview-caption" data-ecm-preview-caption>Czarny welur · obszycie czarne</p>
+              <p class="ecm-preview-note">Podgląd Wyświetlany dywanik służy wyłącznie do podglądu konfiguracji — nie jest zdjęciem gotowego produktu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecm-flat">
+          <label class="ecm-card-title" for="ecm-uwagi">Uwagi do zamówienia</label>
+          <textarea id="ecm-uwagi" class="ecm-uwagi" name="properties[Uwagi]" placeholder="Np. dodatkowe informacje dla produkcji…"></textarea>
+        </div>
+
+        <button type="submit" class="ecm-submit">Dodaj do koszyka — <span data-ecm-submit-price>{{ product.selected_or_first_available_variant.price | money }}</span></button>
+
+        <div class="ecm-checkout-widgets" aria-label="Bezpieczne płatności">
+          <div class="ecm-trust-widget">
+            <etrusted-widget data-etrusted-widget-id="wdg-72c723c3-1f83-44e9-89c0-48433e3244a7"></etrusted-widget>
+          </div>
+          <div class="ecm-payment-strip" aria-label="Obsługiwane metody płatności">
+            <img src="//evamats.pl/cdn/shop/files/visa.svg?v=16041805416899576183" alt="Visa">
+            <img src="//evamats.pl/cdn/shop/files/mc.svg?v=958221531624973740" alt="Mastercard">
+            <img src="//evamats.pl/cdn/shop/files/ae.svg?v=11463340212238954342" alt="American Express">
+            <img src="//evamats.pl/cdn/shop/files/discover.svg?v=12189669757758525881" alt="Discover">
+            <img src="//evamats.pl/cdn/shop/files/jcb.svg?v=12112035107271114096" alt="JCB">
+            <img src="//evamats.pl/cdn/shop/files/dc.svg?v=741589216691534981" alt="Diners Club">
+            <img src="//evamats.pl/cdn/shop/files/apay.svg?v=13535909208516897673" alt="Apple Pay">
+            <img src="//evamats.pl/cdn/shop/files/gpay.svg?v=1292367989840229906" alt="Google Pay">
+            <img src="//evamats.pl/cdn/shop/files/p24.svg?v=8919396927708048335" alt="Przelewy24">
+            <img src="//evamats.pl/cdn/shop/files/blik.svg?v=1690822377707387874" alt="BLIK">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="ecm-body">
+    <div class="ecm-body-gallery">
+      {%- if product.images.size > 0 -%}
+        <div class="ecm-gallery" data-ecm-gallery>
+          <div class="ecm-gallery-main" data-ecm-gallery-main>
+            <img src="{{ product.images.first | image_url: width: 1200 }}" alt="{{ product.title | escape }}" data-ecm-main-img>
+          </div>
+          <div class="ecm-gallery-strip">
+            <button type="button" class="ecm-gallery-arrow ecm-gallery-arrow--prev" data-ecm-gallery-prev aria-label="Poprzednie zdjęcie">‹</button>
+            <div class="ecm-thumbs" data-ecm-thumbs></div>
+            <button type="button" class="ecm-gallery-arrow ecm-gallery-arrow--next" data-ecm-gallery-next aria-label="Następne zdjęcie">›</button>
+          </div>
+        </div>
+        <script type="application/json" data-ecm-gallery-json>
+        [
+          {%- for image in product.images -%}
+            {"src":{{ image | image_url: width: 1200 | json }},"thumb":{{ image | image_url: width: 320 | json }},"alt":{{ product.title | json }}}{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+        </script>
+      {%- else -%}
+        <div class="ecm-gallery-main ecm-gallery-empty"><span>Galeria — wkrótce</span></div>
+      {%- endif -%}
+    </div>
+
+    <div class="ecm-desc" data-ecm-desc>
+      <div class="ecm-desc-tabs">
+        <button type="button" class="ecm-desc-tab is-active" data-ecm-desc-tab="opis">OPIS</button>
+        <button type="button" class="ecm-desc-tab" data-ecm-desc-tab="dane">DANE TECHNICZNE</button>
+        <button type="button" class="ecm-desc-tab" data-ecm-desc-tab="dostawa">DOSTAWA I PŁATNOŚĆ</button>
+      </div>
+      <div class="ecm-desc-panel is-active" data-ecm-desc-panel="opis">{% if ecm_opis != blank %}{{ ecm_opis }}{% else %}{{ product.description }}{% endif %}</div>
+      <div class="ecm-desc-panel" data-ecm-desc-panel="dane">{{ ecm_tech }}</div>
+      <div class="ecm-desc-panel" data-ecm-desc-panel="dostawa">
+<p><strong>📦 Dostawa i płatność</strong></p>
+
+<p>Wszystkie dywaniki welurowe tworzymy na indywidualne zamówienie – od zera, z dbałością o detale i idealne dopasowanie do konkretnego modelu auta.</p>
+<p style="border:1px solid #ef022d; padding:10px; border-radius:8px;">💡 Standardowy czas realizacji zamówienia wynosi obecnie 14 dni roboczych.</p><p>
+Wybierz tempo realizacji swojego zamówienia
+</p>
+<p>
+Każdy komplet dywaników wykonujemy indywidualnie, dlatego możesz zdecydować, jak szybko Twoje zamówienie trafi na produkcję.</p>
+
+
+<p>Dostępne opcje realizacji:</p>
+<p>🟢 Standard – 14 dni roboczych
+Realizacja w standardowej kolejności produkcyjnej.</p>
+<p>🟠 Express – 7 dni roboczych
+Podwyższony priorytet w kolejce produkcyjnej.
+</p>
+<p>🔴 Premium – 3 dni roboczych
+Najwyższy priorytet – Twoje zamówienie trafia na produkcję w pierwszej kolejności.
+</p>
+
+<p>Po zakończeniu produkcji dywaniki są niezwłocznie przekazywane do wysyłki.
+</p>
+
+<p>Opcję priorytetowej realizacji możesz wybrać na stronie „Dostawa i płatność” podczas wyboru metody dostawy.
+Usługi Express i Premium są dodatkowo płatne.
+</p>
+
+<p>🚗 Dokładamy wszelkich starań, aby zamówienia były realizowane możliwie najszybciej, jednak w przypadku zwiększonej liczby zamówień (sezon, promocje, okresy świąteczne) czas realizacji może ulec wydłużeniu.
+</p>
+
+
+
+<p><strong>Formy dostawy:</strong></p>
+<div class="product_tabs__containers_item_block">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315" alt="InPost"> 
+  <ul>
+    <li>Kurier InPost (płatność online lub za pobraniem)</li>
+  </ul>
+</div>
+<div class="product_tabs__containers_item_block">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037" alt="DPD"> 
+  <ul>
+    <li>Kurier DPD (płatność online lub za pobraniem)</li>
+  </ul>
+</div>
+<div class="product_tabs__containers_item_block">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gls_kurier_logo.svg?v=1783098204" alt="GLS">
+  <ul>
+    <li>Kurier GLS (przedpłata lub za pobraniem)</li>
+  </ul>
+</div>
+
+
+<p><strong>Płatności online:</strong></p>
+<p>
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/przelewy24_logo_svg.svg?v=1754575627" alt="Przelewy24">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/blik_9f0af63c-fe50-41e4-9eed-8eba66188150.svg?v=1754574036" alt="BLIK">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/PayPo_logo_kolor.svg?v=1754574985" alt="PayPo">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037" alt="Visa">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036" alt="Mastercard">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856" alt="Apple Pay">
+  <img src="https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037" alt="Google Pay">
+</p>
+
+<p><strong>Bezpieczny zakup:</strong></p>
+<ul>
+  <li>Szyfrowane płatności</li>
+  <li>Sprawdzona logistyka</li>
+  <li>Stały kontakt z klientem</li>
+</ul>
+
+<p>Dziękujemy, że wybierasz polski produkt tworzony z myślą o jakości i funkcjonalności. Zadowolenie kierowców to nasz największy priorytet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ecm-lightbox" data-ecm-lightbox hidden><img data-ecm-lightbox-img src="" alt=""><button type="button" class="ecm-lightbox-close" data-ecm-lightbox-close aria-label="Zamknij">×</button></div>
+
+  <script type="application/json" data-ecm-colors-json>
+  [
+    {"code":"black","label":"Czarne","badge":"CZARNY","caption":"Czarny welur · obszycie czarne","swatch":{{ 'velour-swatch-black.webp' | asset_url | json }},"preview":{{ 'velour-preview-black.webp' | asset_url | json }}},
+    {"code":"red","label":"Czerwone","badge":"CZERWONY","caption":"Czarny welur · obszycie czerwone","swatch":{{ 'velour-swatch-red.webp' | asset_url | json }},"preview":{{ 'velour-preview-red.webp' | asset_url | json }}},
+    {"code":"lightgrey","label":"Jasnoszare","badge":"JASNOSZARY","caption":"Czarny welur · obszycie jasnoszare","swatch":{{ 'velour-swatch-lightgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-lightgrey.webp' | asset_url | json }}},
+    {"code":"darkgrey","label":"Ciemnoszare","badge":"CIEMNOSZARY","caption":"Czarny welur · obszycie ciemnoszare","swatch":{{ 'velour-swatch-darkgrey.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkgrey.webp' | asset_url | json }}},
+    {"code":"brown","label":"Brązowe","badge":"BRĄZOWY","caption":"Czarny welur · obszycie brązowe","swatch":{{ 'velour-swatch-brown.webp' | asset_url | json }},"preview":{{ 'velour-preview-brown.webp' | asset_url | json }}},
+    {"code":"beige","label":"Beżowe","badge":"BEŻOWY","caption":"Czarny welur · obszycie beżowe","swatch":{{ 'velour-swatch-beige.webp' | asset_url | json }},"preview":{{ 'velour-preview-beige.webp' | asset_url | json }}},
+    {"code":"blue","label":"Niebieskie","badge":"NIEBIESKI","caption":"Czarny welur · obszycie niebieskie","swatch":{{ 'velour-swatch-blue.webp' | asset_url | json }},"preview":{{ 'velour-preview-blue.webp' | asset_url | json }}},
+    {"code":"darkblue","label":"Granatowe","badge":"GRANATOWY","caption":"Czarny welur · obszycie granatowe","swatch":{{ 'velour-swatch-darkblue.webp' | asset_url | json }},"preview":{{ 'velour-preview-darkblue.webp' | asset_url | json }}},
+    {"code":"green","label":"Zielone","badge":"ZIELONY","caption":"Czarny welur · obszycie zielone","swatch":{{ 'velour-swatch-green.webp' | asset_url | json }},"preview":{{ 'velour-preview-green.webp' | asset_url | json }}},
+    {"code":"orange","label":"Pomarańczowe","badge":"POMARAŃCZOWY","caption":"Czarny welur · obszycie pomarańczowe","swatch":{{ 'velour-swatch-orange.webp' | asset_url | json }},"preview":{{ 'velour-preview-orange.webp' | asset_url | json }}},
+    {"code":"yellow","label":"Żółte","badge":"ŻÓŁTY","caption":"Czarny welur · obszycie żółte","swatch":{{ 'velour-swatch-yellow.webp' | asset_url | json }},"preview":{{ 'velour-preview-yellow.webp' | asset_url | json }}},
+    {"code":"maroon","label":"Malinowe","badge":"MALINOWY","caption":"Czarny welur · obszycie malinowe","swatch":{{ 'velour-swatch-maroon.webp' | asset_url | json }},"preview":{{ 'velour-preview-maroon.webp' | asset_url | json }}},
+    {"code":"purple","label":"Fioletowe","badge":"FIOLETOWY","caption":"Czarny welur · obszycie fioletowe","swatch":{{ 'velour-swatch-purple.webp' | asset_url | json }},"preview":{{ 'velour-preview-purple.webp' | asset_url | json }}},
+    {"code":"pink","label":"Różowe","badge":"RÓŻOWY","caption":"Czarny welur · obszycie różowe","swatch":{{ 'velour-swatch-pink.webp' | asset_url | json }},"preview":{{ 'velour-preview-pink.webp' | asset_url | json }}},
+    {"code":"coopper","label":"Miedziane","badge":"MIEDZIANY","caption":"Czarny welur · obszycie miedziane","swatch":{{ 'Miedziany.webp' | file_url | json }},"preview":{{ 'velour-preview-coopper.webp' | asset_url | json }}}
+  ]
+  </script>
+</section>
+<script src="{{ 'velour-mats-configurator.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Velour mats configurator",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}
