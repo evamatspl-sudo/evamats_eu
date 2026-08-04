@@ -51,10 +51,13 @@
         </svg>
         <span class="eva-card-note__text">
           {{ t_body }}
-          {%- for body_object in body_list -%}
+          {%- assign shown_limit = 2 -%}
+          {%- for body_object in body_list limit: shown_limit -%}
             {%- unless forloop.first %} · {% endunless -%}
             <b>{%- render 'evamats-body-label', handle: body_object.system.handle -%}</b>
           {%- endfor -%}
+          {%- assign rest = body_list.size | minus: shown_limit -%}
+          {%- if rest > 0 %} <b>+{{ rest }}</b>{% endif -%}
         </span>
       </span>
     {%- endif -%}
