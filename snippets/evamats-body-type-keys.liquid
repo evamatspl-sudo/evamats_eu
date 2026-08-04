@@ -1,0 +1,77 @@
+{%- comment -%}
+  Возвращает список ключей кузова для товара через запятую (например "hatchback,sedan,cabrio").
+  Источники:
+    1) custom.filter_body_type — одиночное значение, переведено по локалям (Kombi / Station Wagon / Limousine…)
+    2) custom.custom_list_body_type_in_config — список метаобъектов body_types (выбор кузова внутри конфигуратора)
+  Параметр: product
+  Печатает ключи через запятую (ничего больше, без пробелов).
+{%- endcomment -%}
+
+{%- liquid
+  assign body_type_keys = ''
+
+  assign raw = product.metafields.custom.filter_body_type.value | strip | downcase
+  assign single_key = ''
+  if raw contains 'suv'
+    assign single_key = 'suv'
+  elsif raw contains 'kombi' or raw contains 'station' or raw contains 'avant' or raw contains 'estate'
+    assign single_key = 'station-wagon'
+  elsif raw contains 'liftback' or raw contains 'sportback' or raw contains 'heck'
+    assign single_key = 'liftback'
+  elsif raw contains 'hatchback' or raw contains 'kompakt'
+    assign single_key = 'hatchback'
+  elsif raw contains 'cabrio' or raw contains 'kabriolet' or raw contains 'roadster'
+    assign single_key = 'cabrio'
+  elsif raw contains 'coupe' or raw contains 'coupé' or raw contains 'kupé'
+    assign single_key = 'coupe'
+  elsif raw contains 'minivan'
+    assign single_key = 'minivan'
+  elsif raw contains 'pickup' or raw contains 'cabin'
+    assign single_key = 'pickup'
+  elsif raw contains 'van' or raw contains 'bus'
+    assign single_key = 'van'
+  elsif raw contains 'sedan' or raw contains 'limousine' or raw contains 'limuz'
+    assign single_key = 'sedan'
+  endif
+
+  if single_key != ''
+    assign body_type_keys = single_key
+  endif
+
+  for body_object in product.metafields.custom.custom_list_body_type_in_config.value
+    assign handle = body_object.system.handle | downcase
+    assign mapped = ''
+    if handle contains 'suv'
+      assign mapped = 'suv'
+    elsif handle contains 'station-wagon'
+      assign mapped = 'station-wagon'
+    elsif handle contains 'liftback'
+      assign mapped = 'liftback'
+    elsif handle contains 'hatchback'
+      assign mapped = 'hatchback'
+    elsif handle contains 'cabrio'
+      assign mapped = 'cabrio'
+    elsif handle contains 'coupe'
+      assign mapped = 'coupe'
+    elsif handle contains 'minivan'
+      assign mapped = 'minivan'
+    elsif handle contains 'cabin'
+      assign mapped = 'pickup'
+    elsif handle contains 'van' or handle contains 'bus'
+      assign mapped = 'van'
+    elsif handle contains 'sedan'
+      assign mapped = 'sedan'
+    endif
+
+    if mapped != ''
+      unless body_type_keys contains mapped
+        if body_type_keys == ''
+          assign body_type_keys = mapped
+        else
+          assign body_type_keys = body_type_keys | append: ',' | append: mapped
+        endif
+      endunless
+    endif
+  endfor
+-%}
+{{- body_type_keys -}}

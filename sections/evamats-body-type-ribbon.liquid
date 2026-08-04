@@ -13,7 +13,7 @@
 
 {%- liquid
   assign locale = request.locale.iso_code
-  assign canonical = 'sedan,station-wagon,liftback,hatchback,suv,coupe,cabrio,minivan' | split: ','
+  assign canonical = 'sedan,station-wagon,liftback,hatchback,suv,coupe,cabrio,minivan,van,pickup' | split: ','
 
   case locale
     when 'cs'
@@ -40,26 +40,7 @@
 {%- comment -%} один проход: handle~ключ_кузова {%- endcomment -%}
 {%- capture pairs -%}
   {%- for product in collection.products limit: 50 -%}
-    {%- assign raw = product.metafields.custom.filter_body_type.value | strip | downcase -%}
-    {%- assign key = '' -%}
-    {%- if raw contains 'suv' -%}
-      {%- assign key = 'suv' -%}
-    {%- elsif raw contains 'kombi' or raw contains 'station' or raw contains 'avant' or raw contains 'estate' -%}
-      {%- assign key = 'station-wagon' -%}
-    {%- elsif raw contains 'liftback' or raw contains 'sportback' or raw contains 'heck' -%}
-      {%- assign key = 'liftback' -%}
-    {%- elsif raw contains 'hatchback' or raw contains 'kompakt' -%}
-      {%- assign key = 'hatchback' -%}
-    {%- elsif raw contains 'cabrio' or raw contains 'kabriolet' or raw contains 'roadster' -%}
-      {%- assign key = 'cabrio' -%}
-    {%- elsif raw contains 'coupe' or raw contains 'coupé' or raw contains 'kupé' -%}
-      {%- assign key = 'coupe' -%}
-    {%- elsif raw contains 'minivan' or raw contains 'van' -%}
-      {%- assign key = 'minivan' -%}
-    {%- elsif raw contains 'sedan' or raw contains 'limousine' or raw contains 'limuz' -%}
-      {%- assign key = 'sedan' -%}
-    {%- endif -%}
-    {{ product.handle }}~{{ key }}|
+    {{- product.handle -}}~{%- render 'evamats-body-type-keys', product: product -%}|
   {%- endfor -%}
 {%- endcapture -%}
 
@@ -93,7 +74,8 @@
           {%- assign body_count = 0 -%}
           {%- for pair in pair_list -%}
             {%- assign parts = pair | strip | split: '~' -%}
-            {%- if parts[1] == body_key -%}
+            {%- assign item_keys = parts[1] | split: ',' -%}
+            {%- if item_keys contains body_key -%}
               {%- assign body_count = body_count | plus: 1 -%}
             {%- endif -%}
           {%- endfor -%}
@@ -141,6 +123,16 @@
                   assign label_cs = 'Minivan'
                   assign label_de = 'Minivan'
                   assign label_en = 'Minivan'
+                when 'van'
+                  assign mo_handle = 'big-van'
+                  assign label_cs = 'Van'
+                  assign label_de = 'Van'
+                  assign label_en = 'Van'
+                when 'pickup'
+                  assign mo_handle = 'double-cabin'
+                  assign label_cs = 'Pick-up'
+                  assign label_de = 'Pick-up'
+                  assign label_en = 'Pickup'
                 else
                   assign mo_handle = ''
                   assign label_cs = body_key

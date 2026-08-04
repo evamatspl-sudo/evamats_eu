@@ -615,6 +615,7 @@
                   {%- unless is_simple_product -%}
                     {% render 'evamats-product-title-collection-link' %}
                   {%- endunless -%}
+                  {% render 'evamats-body-choice-note', product: product %}
                 </div>
               </div>
             {%- when 'price' -%}
