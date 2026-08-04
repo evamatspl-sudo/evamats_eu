@@ -1,0 +1,169 @@
+{%- comment -%}
+  Лента выбора КУЗОВА на уровне модели (сейчас подключена только к шаблону collection.audi-model).
+  Не переход на другую модель — фильтрует товары текущей модели по custom.filter_body_type.
+  Картинки — универсальные силуэты из метаобъекта body_types.
+{%- endcomment -%}
+
+{{ 'section-evamats-body-type-ribbon.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-evamats-body-type-ribbon.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign locale = request.locale.iso_code
+  assign canonical = 'Sedan,Station Wagon,Liftback,Hatchback,Suv,Coupe,Cabrio,Minivan' | split: ','
+
+  case locale
+    when 'cs'
+      assign t_eyebrow  = 'Filtr'
+      assign t_heading  = 'Vyberte karosérii'
+      assign t_note     = 'Vyberte tvar karoserie svého vozu — nabídka níže se ihned přizpůsobí. Nejde o přechod na jiný model.'
+      assign t_all      = 'Vše'
+      assign t_empty    = 'Pro tuto karosérii zatím nemáme žádný produkt.'
+    when 'de'
+      assign t_eyebrow  = 'Filter'
+      assign t_heading  = 'Karosserie wählen'
+      assign t_note     = 'Wählen Sie die Karosserieform Ihres Fahrzeugs — die Auswahl unten passt sich sofort an. Kein Wechsel zu einem anderen Modell.'
+      assign t_all      = 'Alle'
+      assign t_empty    = 'Für diese Karosserie haben wir noch kein Produkt.'
+    else
+      assign t_eyebrow  = 'Filter'
+      assign t_heading  = 'Choose body type'
+      assign t_note     = 'Pick your car body shape — the list below adapts instantly. This is not a switch to another model.'
+      assign t_all      = 'All'
+      assign t_empty    = 'No product for this body type yet.'
+  endcase
+-%}
+
+{%- comment -%} собираем карту handle → кузов и считаем количество {%- endcomment -%}
+{%- capture product_map -%}
+  {%- assign first = true -%}
+  {
+  {%- for product in collection.products limit: 50 -%}
+    {%- assign bt = product.metafields.custom.filter_body_type.value | strip -%}
+    {%- unless first %},{% endunless -%}
+    "{{ product.handle }}": "{{ bt | escape }}"
+    {%- assign first = false -%}
+  {%- endfor -%}
+  }
+{%- endcapture -%}
+
+{%- assign total_products = 0 -%}
+{%- for product in collection.products limit: 50 -%}
+  {%- assign total_products = total_products | plus: 1 -%}
+{%- endfor -%}
+
+<section class="eva-body-ribbon" data-eva-body-ribbon>
+  <div class="page-width">
+    <div class="eva-body-ribbon__head">
+      <span class="eva-body-ribbon__eyebrow">{{ t_eyebrow }}</span>
+      <h2 class="eva-body-ribbon__title">{{ t_heading }}</h2>
+      <p class="eva-body-ribbon__note">{{ t_note }}</p>
+    </div>
+
+    <div class="eva-body-ribbon__scroller">
+      <ul class="eva-body-ribbon__list" role="list">
+        <li>
+          <button type="button" class="eva-body-chip eva-body-chip--all is-active" data-body="" aria-pressed="true">
+            <span class="eva-body-chip__all-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M4 7h16M4 12h16M4 17h10"/>
+              </svg>
+            </span>
+            <span class="eva-body-chip__label">{{ t_all }}</span>
+            <span class="eva-body-chip__count">{{ total_products }}</span>
+          </button>
+        </li>
+
+        {%- for body in canonical -%}
+          {%- assign body_name = body | strip -%}
+          {%- assign body_count = 0 -%}
+          {%- for product in collection.products limit: 50 -%}
+            {%- assign pbt = product.metafields.custom.filter_body_type.value | strip -%}
+            {%- if pbt == body_name -%}
+              {%- assign body_count = body_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if body_count > 0 -%}
+            {%- liquid
+              case body_name
+                when 'Sedan'
+                  assign mo_handle = 'sedan'
+                  assign label_cs = 'Sedan'
+                  assign label_de = 'Limousine'
+                when 'Station Wagon'
+                  assign mo_handle = 'station-wagon'
+                  assign label_cs = 'Kombi'
+                  assign label_de = 'Kombi'
+                when 'Liftback'
+                  assign mo_handle = 'liftback'
+                  assign label_cs = 'Liftback'
+                  assign label_de = 'Schrägheck'
+                when 'Hatchback'
+                  assign mo_handle = 'hatchback-5-door'
+                  assign label_cs = 'Hatchback'
+                  assign label_de = 'Kompakt'
+                when 'Suv'
+                  assign mo_handle = 'usual-suv'
+                  assign label_cs = 'SUV'
+                  assign label_de = 'SUV'
+                when 'Coupe'
+                  assign mo_handle = 'coupe'
+                  assign label_cs = 'Kupé'
+                  assign label_de = 'Coupé'
+                when 'Cabrio'
+                  assign mo_handle = 'cabrio'
+                  assign label_cs = 'Kabriolet'
+                  assign label_de = 'Cabrio'
+                when 'Minivan'
+                  assign mo_handle = 'minivan-5-seater'
+                  assign label_cs = 'Minivan'
+                  assign label_de = 'Minivan'
+                else
+                  assign mo_handle = ''
+                  assign label_cs = body_name
+                  assign label_de = body_name
+              endcase
+
+              case locale
+                when 'cs'
+                  assign label = label_cs
+                when 'de'
+                  assign label = label_de
+                else
+                  assign label = body_name
+              endcase
+
+              assign body_object = shop.metaobjects.body_types[mo_handle]
+            -%}
+
+            <li>
+              <button type="button" class="eva-body-chip" data-body="{{ body_name | escape }}" aria-pressed="false">
+                <span class="eva-body-chip__media">
+                  {%- if body_object.image.value != blank -%}
+                    {{ body_object.image.value | image_url: width: 240 | image_tag: loading: 'lazy', alt: label, class: 'eva-body-chip__img' }}
+                  {%- endif -%}
+                </span>
+                <span class="eva-body-chip__label">{{ label }}</span>
+                <span class="eva-body-chip__count">{{ body_count }}</span>
+              </button>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <p class="eva-body-ribbon__empty" data-eva-body-empty hidden>{{ t_empty }}</p>
+  </div>
+
+  <script type="application/json" data-eva-body-map>{{ product_map | strip }}</script>
+</section>
+
+{% schema %}
+{
+  "name": "Body type ribbon",
+  "tag": "section",
+  "class": "eva-body-ribbon-section",
+  "settings": [],
+  "presets": [{ "name": "Body type ribbon" }]
+}
+{% endschema %}
