@@ -1,0 +1,62 @@
+{%- comment -%}
+  Скромные пометки на карточке товара в каталоге:
+    1) Outlet — если у товара есть тег Outlet (умная коллекция «Outlet» собрана по нему)
+    2) Выбор кузова — если заполнено custom.custom_list_body_type_in_config
+  Параметр: card_product
+{%- endcomment -%}
+
+{%- liquid
+  assign is_outlet = false
+  if card_product.tags contains 'Outlet'
+    assign is_outlet = true
+  endif
+  assign body_list = card_product.metafields.custom.custom_list_body_type_in_config.value
+  assign has_body_choice = false
+  if body_list != blank and body_list.size > 0
+    assign has_body_choice = true
+  endif
+-%}
+
+{%- if is_outlet or has_body_choice -%}
+  {{ 'component-evamats-card-notes.css' | asset_url | stylesheet_tag }}
+
+  {%- liquid
+    case request.locale.iso_code
+      when 'cs'
+        assign t_outlet = 'Zboží z Outletu'
+        assign t_body = 'Karoserie na výběr:'
+      when 'de'
+        assign t_outlet = 'Outlet-Ware'
+        assign t_body = 'Karosserie zur Wahl:'
+      else
+        assign t_outlet = 'Outlet item'
+        assign t_body = 'Body types available:'
+    endcase
+  -%}
+
+  <div class="eva-card-notes">
+    {%- if is_outlet -%}
+      <span class="eva-card-note eva-card-note--outlet">
+        <span class="eva-card-note__dot" aria-hidden="true"></span>
+        {{ t_outlet }}
+      </span>
+    {%- endif -%}
+
+    {%- if has_body_choice -%}
+      <span class="eva-card-note eva-card-note--body">
+        <svg class="eva-card-note__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 16v2M19 16v2"/>
+          <path d="M3 16v-3.2a2 2 0 0 1 .2-.9l2-4A2 2 0 0 1 7 6.8h10a2 2 0 0 1 1.8 1.1l2 4c.13.28.2.58.2.9V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+          <path d="M6.5 13h11"/>
+        </svg>
+        <span class="eva-card-note__text">
+          {{ t_body }}
+          {%- for body_object in body_list -%}
+            {%- unless forloop.first %} · {% endunless -%}
+            <b>{%- render 'evamats-body-label', handle: body_object.system.handle -%}</b>
+          {%- endfor -%}
+        </span>
+      </span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

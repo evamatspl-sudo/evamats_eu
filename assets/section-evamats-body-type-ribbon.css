@@ -1,0 +1,189 @@
+/* Лента выбора кузова (уровень модели). Визуально отличается от карточек моделей:
+   компактные чипы-фильтры с силуэтом, а не большие фото-карточки с переходом. */
+
+.eva-body-ribbon {
+  --eva-bt-accent: #ef022d;
+  --eva-bt-line: #e6e8ec;
+  --eva-bt-ink: #1b1d22;
+  --eva-bt-muted: #6b7280;
+  padding: 28px 0 8px;
+}
+
+.eva-body-ribbon__head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.eva-body-ribbon__eyebrow {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--eva-bt-accent);
+  background: rgba(239, 2, 45, 0.08);
+  border-radius: 999px;
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+.eva-body-ribbon__title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--eva-bt-ink);
+}
+
+.eva-body-ribbon__note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--eva-bt-muted);
+  max-width: 62ch;
+}
+
+/* горизонтальная прокрутка на узких экранах */
+.eva-body-ribbon__scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 144, 164, 0.45) transparent;
+  margin: 0 -4px;
+  padding: 4px;
+}
+
+.eva-body-ribbon__scroller::-webkit-scrollbar { height: 4px; }
+.eva-body-ribbon__scroller::-webkit-scrollbar-track { background: transparent; }
+.eva-body-ribbon__scroller::-webkit-scrollbar-thumb {
+  background: rgba(128, 144, 164, 0.45);
+  border-radius: 999px;
+}
+
+.eva-body-ribbon__list {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-snap-type: x proximity;
+}
+
+.eva-body-ribbon__list > li { flex: 0 0 auto; scroll-snap-align: start; }
+
+/* сам чип */
+.eva-body-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 150px;
+  padding: 14px 12px 12px;
+  background: #fff;
+  border: 1.5px solid var(--eva-bt-line);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  font: inherit;
+  color: var(--eva-bt-ink);
+  position: relative;
+}
+
+.eva-body-chip:hover {
+  border-color: #c9ced6;
+  box-shadow: 0 2px 10px rgba(27, 29, 34, 0.07);
+}
+
+.eva-body-chip:focus-visible {
+  outline: 2px solid var(--eva-bt-accent);
+  outline-offset: 2px;
+}
+
+.eva-body-chip.is-active {
+  border-color: var(--eva-bt-accent);
+  background: rgba(239, 2, 45, 0.04);
+  box-shadow: 0 2px 12px rgba(239, 2, 45, 0.12);
+}
+
+/* галочка на активном — сразу видно, что это выбор, а не ссылка */
+.eva-body-chip.is-active::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--eva-bt-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center / 9px 9px no-repeat;
+}
+
+.eva-body-chip__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 74px;
+}
+
+.eva-body-chip__img {
+  max-width: 100%;
+  max-height: 74px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.eva-body-chip__all-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 74px;
+  color: var(--eva-bt-muted);
+}
+
+.eva-body-chip__all-mark svg { width: 34px; height: 34px; }
+
+.eva-body-chip.is-active .eva-body-chip__all-mark { color: var(--eva-bt-accent); }
+
+.eva-body-chip__label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.eva-body-chip__count {
+  font-size: 11px;
+  line-height: 1;
+  color: var(--eva-bt-muted);
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.eva-body-chip.is-active .eva-body-chip__count {
+  background: rgba(239, 2, 45, 0.1);
+  color: var(--eva-bt-accent);
+}
+
+.eva-body-ribbon__empty {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--eva-bt-muted);
+}
+
+@media (min-width: 750px) {
+  .eva-body-ribbon { padding: 36px 0 10px; }
+  .eva-body-ribbon__title { font-size: 26px; }
+  .eva-body-chip { width: 200px; padding: 16px 14px 14px; }
+  .eva-body-chip__media,
+  .eva-body-chip__all-mark { height: 105px; }
+  .eva-body-chip__img { max-height: 105px; }
+  .eva-body-chip__all-mark svg { width: 44px; height: 44px; }
+  .eva-body-chip__label { font-size: 15px; }
+}

@@ -184,6 +184,7 @@
                 {% endif %}
             </a>
           </h3>
+          {% render 'evamats-card-notes', card_product: card_product %}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
