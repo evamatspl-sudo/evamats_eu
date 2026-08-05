@@ -1,43 +1,80 @@
-/* Плашки поверх фото товара в каталоге: Outlet и «есть выбор кузова».
-   Наложение справа сверху — не влияет на поток текста и не ломает высоту карточек. */
+/* Пометки на карточке товара в каталоге.
+   Полоса «доступные кузова» — во всю ширину сверху фото (как на польском сайте),
+   плашка Outlet — под ней справа. Обе позиционируются поверх картинки,
+   поэтому не влияют на поток текста и высоту карточек в ряду. */
 
 .eva-card-notes {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 4px;
-  max-width: calc(100% - 16px);
+  gap: 6px;
   pointer-events: none;
 }
 
+/* ---- полоса «Dostupné karoserie» ---- */
+.eva-card-bodybar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #1f2126 0%, #14161a 100%);
+  color: #fff;
+  font-size: 11.5px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 1px 6px rgba(20, 22, 26, 0.18);
+}
+
+.eva-card-bodybar__icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  color: #ff4d6d;
+}
+
+.eva-card-bodybar__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.eva-card-bodybar__text b {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ---- плашка Outlet ---- */
 .eva-card-note {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  max-width: 100%;
+  margin-right: 8px;
   font-size: 11px;
   line-height: 1.2;
   padding: 4px 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(253, 246, 231, 0.95);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  box-shadow: 0 1px 4px rgba(27, 29, 34, 0.14);
-  color: #4b5563;
+  box-shadow: 0 1px 4px rgba(138, 99, 22, 0.2);
+  color: #8a6316;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-/* Outlet — приглушённый янтарный */
-.eva-card-note--outlet {
-  color: #8a6316;
-  background: rgba(253, 246, 231, 0.95);
-  box-shadow: 0 1px 4px rgba(138, 99, 22, 0.2);
-  font-weight: 600;
-}
+/* если полосы кузовов нет — отодвигаем Outlet от края */
+.eva-card-notes > .eva-card-note:first-child { margin-top: 8px; }
 
 .eva-card-note__dot {
   width: 5px;
@@ -47,36 +84,21 @@
   flex: 0 0 auto;
 }
 
-/* выбор кузова */
-.eva-card-note__icon {
-  width: 13px;
-  height: 13px;
-  flex: 0 0 auto;
-  color: #ef022d;
-}
-
-.eva-card-note__text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.eva-card-note__text b {
-  font-weight: 600;
-  color: #1b1d22;
-}
-
 @media (max-width: 749px) {
-  .eva-card-notes {
-    top: 6px;
-    right: 6px;
-    gap: 3px;
-    max-width: calc(100% - 12px);
+  .eva-card-bodybar {
+    padding: 5px 8px;
+    font-size: 10px;
+    gap: 5px;
+    border-radius: 10px 10px 0 0;
   }
+
+  .eva-card-bodybar__icon { width: 12px; height: 12px; }
 
   .eva-card-note {
     font-size: 10px;
     padding: 3px 7px;
+    margin-right: 6px;
   }
 
-  .eva-card-note__icon { width: 11px; height: 11px; }
+  .eva-card-notes > .eva-card-note:first-child { margin-top: 6px; }
 }
