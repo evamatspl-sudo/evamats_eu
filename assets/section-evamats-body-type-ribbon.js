@@ -52,6 +52,12 @@
 
       if (emptyEl) emptyEl.hidden = shown !== 0;
 
+      // Полоса «Máme na všechny typy karoserie» осмысленна только без фильтра:
+      // когда кузов уже выбран, она сбивает с толку — прячем.
+      document.querySelectorAll('[data-eva-bodybar]').forEach(function (bar) {
+        bar.style.display = body ? 'none' : '';
+      });
+
       try {
         var url = new URL(window.location.href);
         if (body) url.searchParams.set('body', body);

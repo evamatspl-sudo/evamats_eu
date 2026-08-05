@@ -28,13 +28,13 @@
     case request.locale.iso_code
       when 'cs'
         assign t_outlet = 'Outlet'
-        assign t_body = 'Dostupné karoserie:'
+        assign t_body = 'Máme na všechny typy karoserie'
       when 'de'
         assign t_outlet = 'Outlet'
-        assign t_body = 'Verfügbare Karosserien:'
+        assign t_body = 'Für alle Karosserieformen verfügbar'
       else
         assign t_outlet = 'Outlet'
-        assign t_body = 'Available body types:'
+        assign t_body = 'Available for all body types'
     endcase
   -%}
 
@@ -46,22 +46,13 @@
           {%- render 'evamats-body-label', handle: body_object.system.handle -%}
         {%- endfor -%}
       {%- endcapture -%}
-      <div class="eva-card-bodybar" title="{{ t_body }} {{ body_titles | strip | escape }}">
+      <div class="eva-card-bodybar" data-eva-bodybar title="{{ t_body }} {{ body_titles | strip | escape }}">
         <svg class="eva-card-bodybar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M5 16v2M19 16v2"/>
           <path d="M3 16v-3.2a2 2 0 0 1 .2-.9l2-4A2 2 0 0 1 7 6.8h10a2 2 0 0 1 1.8 1.1l2 4c.13.28.2.58.2.9V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
           <path d="M6.5 13h11"/>
         </svg>
-        <span class="eva-card-bodybar__text">
-          {{ t_body }}
-          {%- assign shown_limit = 2 -%}
-          {%- for body_object in body_list limit: shown_limit -%}
-            {%- unless forloop.first %} · {% endunless -%}
-            <b>{%- render 'evamats-body-label', handle: body_object.system.handle -%}</b>
-          {%- endfor -%}
-          {%- assign rest = total_bodies | minus: shown_limit -%}
-          {%- if rest > 0 %} <b>+{{ rest }}</b>{% endif -%}
-        </span>
+        <span class="eva-card-bodybar__text">{{ t_body }}</span>
       </div>
     {%- endif -%}
 

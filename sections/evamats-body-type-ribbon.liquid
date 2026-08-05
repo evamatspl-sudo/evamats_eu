@@ -15,7 +15,7 @@
 
 {%- liquid
   assign locale = request.locale.iso_code
-  assign canonical = 'sedan,station-wagon,liftback,hatchback,suv,coupe,cabrio,minivan,van,pickup' | split: ','
+  assign canonical = 'sedan,station-wagon,liftback,hatchback,suv,suv-coupe,coupe,cabrio,minivan,van,pickup' | split: ','
 
   case locale
     when 'cs'
@@ -110,6 +110,11 @@
                   assign label_cs = 'SUV'
                   assign label_de = 'SUV'
                   assign label_en = 'SUV'
+                when 'suv-coupe'
+                  assign mo_handle = 'suv-coupe'
+                  assign label_cs = 'SUV Kupé'
+                  assign label_de = 'SUV Coupé'
+                  assign label_en = 'SUV Coupe'
                 when 'coupe'
                   assign mo_handle = 'coupe'
                   assign label_cs = 'Kupé'

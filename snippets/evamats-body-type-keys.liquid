@@ -15,7 +15,9 @@
 
   assign raw = product.metafields.custom.filter_body_type.value | strip | downcase
   assign single_key = ''
-  if raw contains 'suv'
+  if raw contains 'suv coupe' or raw contains 'suv kupé' or raw contains 'suv coupé'
+    assign single_key = 'suv-coupe'
+  elsif raw contains 'suv'
     assign single_key = 'suv'
   elsif raw contains 'kombi' or raw contains 'station' or raw contains 'avant' or raw contains 'estate'
     assign single_key = 'station-wagon'
@@ -45,7 +47,9 @@
   for body_object in product.metafields.custom.custom_list_body_type_in_config.value
     assign handle = body_object.system.handle | downcase
     assign mapped = ''
-    if handle contains 'suv'
+    if handle contains 'suv-coupe'
+      assign mapped = 'suv-coupe'
+    elsif handle contains 'suv'
       assign mapped = 'suv'
     elsif handle contains 'station-wagon'
       assign mapped = 'station-wagon'
