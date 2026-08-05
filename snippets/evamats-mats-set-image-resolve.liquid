@@ -18,56 +18,95 @@
     assign meta_body_type = meta_body_type_normalized | strip
   endif
 
-  assign z_al_dywanik = '|||dywanik kierowcy|||mata kierowcy|||only driver mat|||driver mat|||front driver mat|||pouze koberec řidiče|||'
-  assign z_al_przod = '|||przód|||przed|||front|||vorne|||přední|||'
-  assign z_al_tyl = '|||tył|||tyl|||rear|||hinten|||back row|||zadní|||'
-  assign z_al_przod_tyl = '|||przód + tył|||przod + tyl|||front + rear|||front+rear|||vorne + hinten|||přední + zadní|||přední a zadní|||'
-  assign z_al_mata_bag = '|||mata do bagażnika|||mata do bagaznika|||trunk mat|||boot mat|||trunk|||kufr|||'
-  assign z_al_przod_bag = '|||przód + tył + bagażnik|||przod + tyl + bagaznik|||front + rear + trunk|||přední + zadní + kufr|||'
-  assign z_al_3rzad = '|||przód + tył + 3 rząd|||przod + tyl + 3 rzad|||front + rear + 3rd row|||front + rear + third row|||'
-  assign z_al_3rz_maly = '|||przód + tył + 3 rząd + mały bagażnik|||przod + tyl + 3 rzad + maly bagaznik|||front + rear + third row + small trunk|||'
-  assign z_al_3rz_duzy = '|||przód + tył + 3 rząd + duży bagażnik|||przod + tyl + 3 rzad + duzy bagaznik|||front + rear + third row + huge trunk|||front + rear + third row + large trunk|||'
-  assign z_al_3r2b = '|||3 rzędy + 2 bagażniki (duży | mały)|||3 rzedu + 2 bagazniki|||3 rows 2 trunks|||'
-  assign z_al_przod_duzy_bag = '|||przód + tył + duży bagażnik|||przod + tyl + duzy bagaznik|||front + rear + large trunk|||'
+  comment
+    Подбор картинки комплекта по КЛЮЧЕВЫМ СЛОВАМ, а не по точному совпадению строки.
+    Названия комплектов переводятся по-разному (Kufr / zavazadlovy prostor,
+    Treti rada / Tri rady), и точное сравнение промахивалось — тогда картинка
+    бралась по порядковому номеру и съезжала. Ключевые слова работают на любом языке.
+  endcomment
+  assign n = needle | downcase
+
+  assign has_driver = false
+  if n contains 'řidiče' or n contains 'ridice' or n contains 'kierowcy' or n contains 'driver' or n contains 'fahrer'
+    assign has_driver = true
+  endif
+
+  assign has_front = false
+  if n contains 'přední' or n contains 'predni' or n contains 'przód' or n contains 'przod' or n contains 'front' or n contains 'vorne'
+    assign has_front = true
+  endif
+
+  assign has_rear = false
+  if n contains 'zadní' or n contains 'zadni' or n contains 'tył' or n contains 'tyl' or n contains 'rear' or n contains 'hinten'
+    assign has_rear = true
+  endif
+
+  assign has_trunk = false
+  if n contains 'kufr' or n contains 'zavazadl' or n contains 'bagażnik' or n contains 'bagaznik' or n contains 'trunk' or n contains 'boot' or n contains 'kofferraum'
+    assign has_trunk = true
+  endif
+
+  assign has_row3 = false
+  if n contains 'třetí řad' or n contains 'treti rad' or n contains 'tři řady' or n contains 'tri rady' or n contains '3 rz' or n contains 'third row' or n contains '3rd row' or n contains 'dritte reihe' or n contains '3 rows'
+    assign has_row3 = true
+  endif
+
+  assign is_big = false
+  if n contains 'velký' or n contains 'velky' or n contains 'duży' or n contains 'duzy' or n contains 'huge' or n contains 'large' or n contains 'groß' or n contains 'gross'
+    assign is_big = true
+  endif
+
+  assign is_small = false
+  if n contains 'malý' or n contains 'maly' or n contains 'mały' or n contains 'small' or n contains 'klein'
+    assign is_small = true
+  endif
+
+  assign two_trunks = false
+  if n contains '2 autokoberce' or n contains '2 bagażnik' or n contains '2 bagaznik' or n contains '2 trunks' or n contains '2 kufry' or n contains '2 koberce'
+    assign two_trunks = true
+  endif
+  if is_big and is_small
+    assign two_trunks = true
+  endif
 
   assign zestaw_img_5os = ''
   assign zestaw_img_7os = ''
   assign zestaw_badge = ''
 
-  if value_norm == '3 rzędy + 2 bagażniki (duży | mały)' or z_al_3r2b contains needle
+  if has_driver
+    assign zestaw_img_5os = '5os-mat-front-1.svg'
+    assign zestaw_img_7os = '7os-mat-front-1.svg'
+  elsif has_row3 and two_trunks
     assign zestaw_img_7os = '7os-mat-set-trunk-2.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'przód + tył + 3 rząd + duży bagażnik' or z_al_3rz_duzy contains needle
+  elsif has_row3 and is_big
     assign zestaw_img_7os = '7os-mat-set-row-trunk-l.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'przód + tył + 3 rząd + mały bagażnik' or z_al_3rz_maly contains needle
+  elsif has_row3 and is_small
     assign zestaw_img_7os = '7os-mat-set-row-trunk-sm.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'przód + tył + 3 rząd' or z_al_3rzad contains needle
+  elsif has_row3
     assign zestaw_img_7os = '7os-mat-set-row.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'przód + tył + duży bagażnik' or z_al_przod_duzy_bag contains needle
+  elsif has_front and has_rear and has_trunk and is_big
     assign zestaw_img_7os = '7os-mat-set-trunk-l.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'przód + tył + bagażnik' or z_al_przod_bag contains needle
+  elsif has_front and has_rear and has_trunk
     assign zestaw_img_5os = '5os-mat-set.svg'
     assign zestaw_img_7os = '7os-mat-front-back-trunk.svg'
     assign zestaw_badge = '-15%'
-  elsif value_norm == 'mata do bagażnika' or z_al_mata_bag contains needle
+  elsif has_trunk
     assign zestaw_img_5os = '5os-mat-trunk.svg'
     assign zestaw_img_7os = '7os-mat-trunk.svg'
-  elsif value_norm == 'przód + tył' or z_al_przod_tyl contains needle
+  elsif has_front and has_rear
     assign zestaw_img_5os = '5os-mat-front-back.svg'
     assign zestaw_img_7os = '7os-mat-front-back.svg'
-  elsif value_norm == 'tył' or z_al_tyl contains needle
+  elsif has_rear
     assign zestaw_img_5os = '5os-mat-back-2.svg'
     assign zestaw_img_7os = '7os-mat-back-2.svg'
-  elsif value_norm == 'przód' or z_al_przod contains needle
+  elsif has_front
     assign zestaw_img_5os = '5os-mat-front-2.svg'
     assign zestaw_img_7os = '7os-mat-front-2.svg'
-  elsif value_norm == 'dywanik kierowcy' or z_al_dywanik contains needle
-    assign zestaw_img_5os = '5os-mat-front-1.svg'
-    assign zestaw_img_7os = '7os-mat-front-1.svg'
   endif
 
   if prefer_webp
