@@ -718,6 +718,8 @@
             event.preventDefault();
             event.stopPropagation();
 
+            try { localStorage.removeItem('carFilterSelections'); } catch (e) { /* приватный режим */ }
+
             if (kind === 'years') {
               const modelUrl = ((fieldInput(modelCustomSelect) || {}).dataset || {}).url || '';
               resetYearsSelect();
