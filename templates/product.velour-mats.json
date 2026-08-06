@@ -12,9 +12,98 @@
     "main": {
       "type": "main-product-velour-mats",
       "settings": {}
+    },
+    "related_products_custom_velour": {
+      "type": "related-products-custom",
+      "name": "Related products custom",
+      "settings": {
+        "custom_collection": "akcesoria",
+        "heading": "Další produkty",
+        "products_to_show": 12,
+        "card_button_label": "Zobrazit produkt",
+        "mobile_button_label": "Vybrat",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "video_reviews_velour": {
+      "type": "video_reviews",
+      "blocks": {
+        "item_vel1": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/cz1_1.mp4"
+          }
+        },
+        "item_vel2": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/cz1_2.mp4"
+          }
+        },
+        "item_vel3": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/cz1_3.mp4"
+          }
+        },
+        "item_vel4": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/cz1_4.mp4"
+          }
+        },
+        "item_vel5": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/cz1_5.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "item_vel1",
+        "item_vel2",
+        "item_vel3",
+        "item_vel4",
+        "item_vel5"
+      ],
+      "settings": {
+        "title": "Majitelé aut o kobercích",
+        "title_accent": "Carvion",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "facebook_label": "Sledujte nás na Facebooku",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "tiktok_url": "https://www.tiktok.com/@carvion_cz",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "evamats_rare_fit_cta_velour": {
+      "type": "evamats-rare-fit-cta",
+      "name": "Rare fit CTA",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Mask_group_1_6cc2736c-4926-42eb-ad34-4db4aca3cf3a.webp",
+        "image_mobile": "shopify://shop_images/Mask_group_1_1.webp",
+        "heading": "Padnutí tam, kde jiní nemají řešení",
+        "text": "Vyrábíme koberce na zakázku — i pro vzácné modely aut",
+        "button_label": "Ověřte možnost výroby",
+        "button_link": "shopify://collections/all-car-mats",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "related_products_custom_velour",
+    "video_reviews_velour",
+    "evamats_rare_fit_cta_velour"
   ]
 }
