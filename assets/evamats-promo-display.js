@@ -42,9 +42,11 @@
   }
 
   function money(cents, sample) {
+    /* формат берём с самой витрины: если цены показаны без копеек — округляем так же */
+    var showsDecimals = /[.,]\d/.test(String(sample || ''));
     var num = (Number(cents) / 100).toLocaleString(locale, {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2
+      minimumFractionDigits: showsDecimals ? 2 : 0,
+      maximumFractionDigits: showsDecimals ? 2 : 0
     });
     var cur = currencyOf(sample);
     return cur ? num + ' ' + cur : num;
