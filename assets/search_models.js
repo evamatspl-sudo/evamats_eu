@@ -696,6 +696,64 @@
         bindSelectToggle(modelCustomSelect, modelSelectOptions);
         bindSelectToggle(yearsCustomSelect, yearsSelectOptions);
 
+        /* --- Крестик очистки поля: стереть значение и сразу вернуться на шаг назад --- */
+        function fieldInput(customSelect) {
+          return customSelect.querySelector('.select-selected');
+        }
+
+        function updateClearButtons() {
+          [brandCustomSelect, modelCustomSelect, yearsCustomSelect].forEach((customSelect) => {
+            const btn = customSelect.querySelector('[data-filter-clear]');
+            if (!btn) return;
+            const input = fieldInput(customSelect);
+            btn.hidden = !(input && (input.value || '').trim());
+          });
+        }
+
+        function bindFieldClear(customSelect, kind) {
+          const btn = customSelect.querySelector('[data-filter-clear]');
+          if (!btn) return;
+
+          btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (kind === 'years') {
+              const modelUrl = ((fieldInput(modelCustomSelect) || {}).dataset || {}).url || '';
+              resetYearsSelect();
+              closeAllSelects();
+              checkIfSearchEnabled();
+              updateClearButtons();
+              if (autoNavEnabled && modelUrl.trim()) window.location.href = modelUrl.trim();
+              return;
+            }
+
+            if (kind === 'model') {
+              const brandUrl = ((fieldInput(brandCustomSelect) || {}).dataset || {}).url || '';
+              resetModelSelect();
+              resetYearsSelect();
+              setThumb(modelCustomSelect, '', 'generation');
+              closeAllSelects();
+              checkIfSearchEnabled();
+              updateClearButtons();
+              if (autoNavEnabled && brandUrl.trim()) window.location.href = brandUrl.trim();
+              return;
+            }
+
+            clearFilters.click();
+            updateClearButtons();
+          });
+        }
+
+        bindFieldClear(brandCustomSelect, 'brand');
+        bindFieldClear(modelCustomSelect, 'model');
+        bindFieldClear(yearsCustomSelect, 'years');
+
+        container.addEventListener('click', () => setTimeout(updateClearButtons, 60));
+        container.addEventListener('input', () => setTimeout(updateClearButtons, 60));
+        setTimeout(updateClearButtons, 300);
+        setTimeout(updateClearButtons, 1200);
+
         document.addEventListener('click', (event) => {
             const wrapper = event.target.closest('.custom-select-wrapper');
             if (!wrapper || !container.contains(wrapper)) {

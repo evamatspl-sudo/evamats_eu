@@ -62,6 +62,11 @@
             <span class="filter-field__label">{{ 'general.config.brand' | t }}</span>
             <input type="text" class="select-selected brand-input" placeholder="{{ 'general.config.brand' | t }}" autocomplete="off">
           </div>
+          <button type="button" class="filter-field__clear" data-filter-clear="brand" hidden aria-label="{{ 'general.config.reset' | t }}" title="{{ 'general.config.reset' | t }}">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           {% render 'arrow-down' %}
         </div>
         <div class="select-items select-hide brand-select-options"></div>
@@ -75,6 +80,11 @@
             <span class="filter-field__label">{{ 'general.config.model' | t }}</span>
             <input type="text" class="select-selected disabled model-input" placeholder="{{ 'general.config.model' | t }}" disabled autocomplete="off">
           </div>
+          <button type="button" class="filter-field__clear" data-filter-clear="model" hidden aria-label="{{ 'general.config.reset' | t }}" title="{{ 'general.config.reset' | t }}">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           {% render 'arrow-down' %}
         </div>
         <div class="select-items select-hide model-select-options"></div>
@@ -91,6 +101,11 @@
             <span class="filter-field__label">{{ 'general.config.generation' | t }}</span>
             <input type="text" class="select-selected disabled years-input" placeholder="{{ 'general.config.generation' | t }}" autocomplete="off">
           </div>
+          <button type="button" class="filter-field__clear" data-filter-clear="years" hidden aria-label="{{ 'general.config.reset' | t }}" title="{{ 'general.config.reset' | t }}">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
           {% render 'arrow-down' %}
         </div>
         <div class="select-items select-hide years-select-options"></div>

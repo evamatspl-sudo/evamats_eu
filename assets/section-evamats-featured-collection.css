@@ -459,3 +459,34 @@
     display: inline;
   }
 }
+
+/* --- Цена в тысячах не должна ломаться на две строки (карточки аутлета) --- */
+.efc-card__price-from,
+.efc-card__price-old,
+.efc-card__price-current,
+.efc-card__discount-badge {
+  white-space: nowrap;
+}
+
+.efc-card__price-line {
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* распродажная строка: старая цена + новая + бейдж — кегль меньше, чтобы всё влезло в карточку */
+.efc-card__price-line--sale {
+  gap: 6px;
+}
+
+.efc-card__price-line--sale .efc-card__price-old,
+.efc-card__price-line--sale .efc-card__price-current {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 749px) {
+  .efc-card__price-line--sale .efc-card__price-old,
+  .efc-card__price-line--sale .efc-card__price-current {
+    font-size: 14px;
+  }
+}
