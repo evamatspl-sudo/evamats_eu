@@ -1,0 +1,48 @@
+{%- comment -%}
+  Источник акции для витрины.
+
+  Пороги больше НЕ живут в теме. Они лежат в метаобъекте `carvion_promo_band`:
+  Админка → Content → Metaobjects → «Carvion — akční pásmo / promo band».
+  Одна запись = одна полоса. Правится без выкладки темы.
+
+  Поля записи:
+    label     — название скидки (EVASPRING20), показывается в корзине и чекауте
+    percent   — процент
+    min_eur   — от какой суммы, ВСЕГДА В ЕВРО, включительно
+    max_eur   — до какой суммы включительно; пусто = без верхней границы
+    active    — выключатель полосы
+    starts_at / ends_at — окно показа; пусто = без ограничения
+
+  Почему пороги в евро, а покупатель платит кронами: скрипт делит цену покупателя
+  на Shopify.currency.rate и сравнивает в евро. Проверено на живой корзине 07.08.2026 —
+  105 € → 20 %, 198 € → 25 %, при оплате в CZK попадание верное.
+
+  ВАЖНО: значения обязаны совпадать с настоящей скидкой в Shopify. Метаобъект только
+  РИСУЕТ обещание на карточке — списывает деньги скидка, а не он. Разойдутся —
+  карточка начнёт врать.
+{%- endcomment -%}
+
+{%- assign promo_bands = shop.metaobjects.carvion_promo_band.values -%}
+<script type="application/json" id="evamats-promo-config">
+{
+  "source": "metaobject:carvion_promo_band",
+  "active": true,
+  "bands": [
+    {%- assign need_comma = false -%}
+    {%- for band in promo_bands -%}
+      {%- if band.active.value != true -%}{%- continue -%}{%- endif -%}
+      {%- if band.percent.value == blank or band.min_eur.value == blank -%}{%- continue -%}{%- endif -%}
+      {%- if need_comma -%},{%- endif -%}
+      {%- assign need_comma = true -%}
+      {
+        "label": {{ band.label.value | default: '' | json }},
+        "percent": {{ band.percent.value }},
+        "min": {{ band.min_eur.value }},
+        "max": {% if band.max_eur.value == blank %}null{% else %}{{ band.max_eur.value }}{% endif %},
+        "starts_at": {% if band.starts_at.value == blank %}null{% else %}{{ band.starts_at.value | date: '%Y-%m-%dT%H:%M:%SZ' | json }}{% endif %},
+        "ends_at": {% if band.ends_at.value == blank %}null{% else %}{{ band.ends_at.value | date: '%Y-%m-%dT%H:%M:%SZ' | json }}{% endif %}
+      }
+    {%- endfor -%}
+  ]
+}
+</script>

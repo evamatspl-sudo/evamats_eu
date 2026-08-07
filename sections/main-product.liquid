@@ -29,7 +29,10 @@
   {% if product.template_suffix == 'config' %}
     {{ 'product-config.css' | asset_url | stylesheet_tag }}
     {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}
+    {{ 'evamats-promo-display.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'evamats-config-step-bar.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'evamats-promo-display.js' | asset_url }}" defer="defer"></script>
+    {% render 'evamats-promo-config' %}
   {% elsif is_simple_product %}
     {{ 'section-evamats-product-simple.css' | asset_url | stylesheet_tag }}
     {{ 'section-evamats-product-config.css' | asset_url | stylesheet_tag }}

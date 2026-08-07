@@ -1,0 +1,102 @@
+/* Отображение акции в конфигураторе: старая цена зачёркнута, рядом новая и бейдж «−N %» */
+
+/* --- цена под иконкой набора --- */
+.evamats-config fieldset[data-name='mats_set'] label.eva-promo-on .label__tooltip {
+  position: relative;
+  color: #8090a4;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: rgba(239, 2, 45, 0.85);
+  text-decoration-thickness: 2px;
+}
+
+.eva-promo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+  line-height: 1.1;
+}
+
+.eva-promo__new {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1b1d22;
+  white-space: nowrap;
+}
+
+.eva-promo__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #ef022d;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .eva-promo__new {
+    font-size: 13px;
+  }
+
+  .eva-promo__badge {
+    font-size: 10px;
+    padding: 1px 5px;
+  }
+}
+
+/* --- нижняя липкая панель --- */
+.evamats-config-step-bar__price-row.eva-promo-on .sticky_config_price_price {
+  position: relative;
+  color: #8090a4;
+  font-weight: 500;
+  font-size: 0.85em;
+  text-decoration: line-through;
+  text-decoration-color: rgba(239, 2, 45, 0.85);
+  text-decoration-thickness: 2px;
+  white-space: nowrap;
+}
+
+.eva-promo-sticky {
+  font-weight: 700;
+  color: #1b1d22;
+  white-space: nowrap;
+}
+
+.evamats-config-step-bar__price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.evamats-config-step-bar__price-row .evamats-sticky-card__discount:not(.hidden) {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #ef022d;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-config-step-bar__price-row {
+    gap: 6px;
+  }
+
+  .evamats-config-step-bar__price-row .evamats-sticky-card__discount:not(.hidden) {
+    font-size: 11px;
+    padding: 1px 6px;
+  }
+}
