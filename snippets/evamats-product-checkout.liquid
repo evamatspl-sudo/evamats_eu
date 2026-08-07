@@ -1,5 +1,17 @@
 {%- liquid
   assign checkout_variant = product.selected_or_first_available_variant
+
+  comment
+    Собственная уценка товара (compare_at_price), а НЕ акционная скидка.
+    Акция сюда не приходит: слой показа акции подключается только на шаблоне config,
+    а аутлет и простые товары идут на обычном. Здесь всегда своя цена товара.
+  endcomment
+  assign has_markdown = false
+  if checkout_variant.compare_at_price > checkout_variant.price
+    assign has_markdown = true
+    assign saved_amount = checkout_variant.compare_at_price | minus: checkout_variant.price
+    assign markdown_percent = saved_amount | times: 100.0 | divided_by: checkout_variant.compare_at_price | round
+  endif
 -%}
 
 <div class="evamats-product-checkout" {{ block.shopify_attributes }}>
@@ -7,11 +19,20 @@
     <div class="evamats-config-checkout__total-row">
       <p class="evamats-config-checkout__total-label">{{ 'general.config.total' | t }}</p>
       <div class="evamats-config-checkout__prices">
-        <span class="evamats-config-checkout__price-old sticky_config_price_compare hidden"></span>
+        <span class="evamats-config-checkout__price-old sticky_config_price_compare{% unless has_markdown %} hidden{% endunless %}">
+          {%- if has_markdown -%}
+            {{- checkout_variant.compare_at_price | money_without_trailing_zeros -}}
+          {%- endif -%}
+        </span>
         <span class="evamats-config-checkout__price-current sticky_config_price_price">
           {{- checkout_variant.price | money_without_trailing_zeros -}}
         </span>
-        <span class="evamats-config-checkout__discount evamats-sticky-card__discount hidden"></span>
+        <span
+          class="evamats-config-checkout__discount evamats-sticky-card__discount{% unless has_markdown %} hidden{% endunless %}"
+          data-markdown-badge
+        >
+          {%- if has_markdown -%}&minus;{{ markdown_percent }}&nbsp;%{%- endif -%}
+        </span>
       </div>
     </div>
 
@@ -31,3 +52,53 @@
     {%- render 'evamats-config-checkout-notes', block: block, product: product -%}
   </div>
 </div>
+
+<script>
+  /* Цены в этой карточке переписывает JS при смене варианта, а процент он не трогает —
+     поэтому считаем его сами из того, что реально показано на экране. */
+  (function () {
+    var card = document.currentScript.previousElementSibling;
+    while (card && !card.classList.contains('evamats-product-checkout')) card = card.previousElementSibling;
+    if (!card) return;
+
+    var oldEl = card.querySelector('.sticky_config_price_compare');
+    var newEl = card.querySelector('.sticky_config_price_price');
+    var badge = card.querySelector('[data-markdown-badge]');
+    if (!oldEl || !newEl || !badge) return;
+
+    function amount(el) {
+      var raw = String(el.textContent || '').replace(/[^\d.,]/g, '');
+      /* последний разделитель с 1–2 цифрами после — десятичный, остальные разрядные */
+      var dec = raw.match(/[.,](\d{1,2})$/);
+      var value = dec ? raw.slice(0, dec.index).replace(/[.,]/g, '') + '.' + dec[1] : raw.replace(/[.,]/g, '');
+      return parseFloat(value) || 0;
+    }
+
+    function paint() {
+      var was = amount(oldEl);
+      var now = amount(newEl);
+      if (!was || !now || was <= now || oldEl.classList.contains('hidden')) {
+        badge.textContent = '';
+        badge.classList.add('hidden');
+        return;
+      }
+      badge.textContent = '−' + Math.round((was - now) / was * 100) + ' %';
+      badge.classList.remove('hidden');
+    }
+
+    paint();
+
+    if (window.MutationObserver) {
+      var observer = new MutationObserver(paint);
+      [oldEl, newEl].forEach(function (el) {
+        observer.observe(el, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      });
+    }
+  })();
+</script>
