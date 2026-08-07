@@ -1,31 +1,48 @@
 {%- comment -%}
-  ЕДИНСТВЕННОЕ МЕСТО, где настраивается показ акции на витрине.
+  Источник акции для витрины.
 
-  Автоматическая скидка Shopify существует только для позиций в корзине — на странице
-  товара её посчитать неоткуда, поэтому пороги дублируются здесь. Значения обязаны
-  совпадать с настройками скидки в админке, иначе витрина будет показывать неправду.
+  Пороги больше НЕ живут в теме. Они лежат в метаобъекте `carvion_promo_band`:
+  Админка → Content → Metaobjects → «Carvion — akční pásmo / promo band».
+  Одна запись = одна полоса. Правится без выкладки темы.
 
-  active   — включить/выключить показ (акция кончилась → false)
-  ends_at  — дата окончания в ISO (после неё блок сам перестаёт рисоваться); null = без срока
-  bands    — пороги в ВАЛЮТЕ МАГАЗИНА (EUR), min/max включительно, max null = без верхней границы
-             percent — процент скидки, label — название скидки в админке (для сверки)
+  Поля записи:
+    label     — название скидки (EVASPRING20), показывается в корзине и чекауте
+    percent   — процент
+    min_eur   — от какой суммы, ВСЕГДА В ЕВРО, включительно
+    max_eur   — до какой суммы включительно; пусто = без верхней границы
+    active    — выключатель полосы
+    starts_at / ends_at — окно показа; пусто = без ограничения
 
-  Замерено на живой корзине 2026-08-06 (после правки порогов в Discount Mixer):
-  67,68–161,29 € → 20 % (EVASPRING20), от 165,62 € → 25 % (EVASPRING25).
-  Точная граница между полосами лежит в промежутке 161,29–165,62 € — реальных наборов
-  с такой ценой в каталоге нет, поэтому взято 164 €. Ниже ~60 € скидки нет
-  (58,35 € → 0 %, 67,68 € → 20 %).
+  Почему пороги в евро, а покупатель платит кронами: скрипт делит цену покупателя
+  на Shopify.currency.rate и сравнивает в евро. Проверено на живой корзине 07.08.2026 —
+  105 € → 20 %, 198 € → 25 %, при оплате в CZK попадание верное.
 
-  Перепроверить пороги можно так: сложить в корзину все варианты одного товара
-  и посмотреть /cart.js — Shopify сам покажет, что он насчитал по каждой позиции.
+  ВАЖНО: значения обязаны совпадать с настоящей скидкой в Shopify. Метаобъект только
+  РИСУЕТ обещание на карточке — списывает деньги скидка, а не он. Разойдутся —
+  карточка начнёт врать.
 {%- endcomment -%}
+
+{%- assign promo_bands = shop.metaobjects.carvion_promo_band.values -%}
 <script type="application/json" id="evamats-promo-config">
-  {
-    "active": true,
-    "ends_at": null,
-    "bands": [
-      { "min": 60, "max": 164, "percent": 20, "label": "EVASPRING20" },
-      { "min": 164, "max": null, "percent": 25, "label": "EVASPRING25" }
-    ]
-  }
+{
+  "source": "metaobject:carvion_promo_band",
+  "active": true,
+  "bands": [
+    {%- assign need_comma = false -%}
+    {%- for band in promo_bands -%}
+      {%- if band.active.value != true -%}{%- continue -%}{%- endif -%}
+      {%- if band.percent.value == blank or band.min_eur.value == blank -%}{%- continue -%}{%- endif -%}
+      {%- if need_comma -%},{%- endif -%}
+      {%- assign need_comma = true -%}
+      {
+        "label": {{ band.label.value | default: '' | json }},
+        "percent": {{ band.percent.value }},
+        "min": {{ band.min_eur.value }},
+        "max": {% if band.max_eur.value == blank %}null{% else %}{{ band.max_eur.value }}{% endif %},
+        "starts_at": {% if band.starts_at.value == blank %}null{% else %}{{ band.starts_at.value | date: '%Y-%m-%dT%H:%M:%SZ' | json }}{% endif %},
+        "ends_at": {% if band.ends_at.value == blank %}null{% else %}{{ band.ends_at.value | date: '%Y-%m-%dT%H:%M:%SZ' | json }}{% endif %}
+      }
+    {%- endfor -%}
+  ]
+}
 </script>

@@ -4,9 +4,11 @@
   Зачем отдельный модуль: скидка в Shopify автоматическая, она существует только для позиций
   в корзине. На странице товара Shopify про неё ничего не знает, поэтому её приходится
   считать на стороне витрины — ровно так же это делают и приложения скидок.
-  Пороги задаются в snippets/evamats-promo-config.liquid и должны совпадать с настройками
-  скидки в админке. Если акция закончилась — выставить active: false (или ends_at в прошлом),
-  и блок сам перестанет рисоваться.
+
+  Пороги приходят из метаобъекта `carvion_promo_band` через snippets/evamats-promo-config.liquid.
+  Правятся в админке, без выкладки темы. Они обязаны совпадать с настоящей скидкой в Shopify:
+  здесь рисуется только обещание, деньги списывает скидка. Полосу выключить — снять `active`
+  у записи метаобъекта, и блок сам перестанет рисоваться.
 */
 (function () {
   'use strict';
@@ -27,18 +29,33 @@
   var locale = document.documentElement.lang || undefined;
   var busy = false;
 
-  /* цена варианта приходит в валюте витрины, пороги заданы в валюте магазина */
+  /* цены со всеми ценниками показа: липкая панель снизу И карточка итога у кнопки «в корзину».
+     У обеих внутри лежат .sticky_config_price_price и .evamats-sticky-card__discount —
+     разметка одинаковая, отличается только имя строки-обёртки. */
+  var PRICE_ROWS = '.evamats-config-step-bar__price-row, .evamats-config-checkout__total-row';
+
+  /* цена варианта приходит в валюте витрины, пороги заданы в евро */
   function bandFor(cents) {
     var base = cents / 100 / rate;
+    var now = Date.now();
+    var best = null;
+
     for (var i = 0; i < cfg.bands.length; i++) {
       var b = cfg.bands[i];
-      if (base >= b.min && (b.max == null || base <= b.max)) return b;
+      if (base < b.min) continue;
+      if (b.max != null && base > b.max) continue;
+      if (b.starts_at && now < Date.parse(b.starts_at)) continue;
+      if (b.ends_at && now > Date.parse(b.ends_at)) continue;
+      /* если полосы пересекаются — выигрывает большая скидка.
+         Так же поступает и сам Shopify: проверено 07.08.2026, на 198 € подходили
+         обе полосы (20 % и 25 %), применилась 25 %, а не сумма. */
+      if (!best || b.percent > best.percent) best = b;
     }
-    return null;
+    return best;
   }
 
   function currencyOf(sample) {
-    return String(sample || '').replace(/[\d.,\s  -]/g, '').trim();
+    return String(sample || '').replace(/[\d.,\s  -]/g, '').trim();
   }
 
   function money(cents, sample) {
@@ -49,7 +66,7 @@
       maximumFractionDigits: showsDecimals ? 2 : 0
     });
     var cur = currencyOf(sample);
-    return cur ? num + ' ' + cur : num;
+    return cur ? num + ' ' + cur : num;
   }
 
   function discounted(cents, band) {
@@ -57,7 +74,7 @@
   }
 
   function badgeText(band) {
-    return '−' + band.percent + ' %';
+    return '−' + band.percent + ' %';
   }
 
   /* ---------- варианты ---------- */
@@ -140,12 +157,12 @@
     });
   }
 
-  /* ---------- нижняя липкая панель ---------- */
+  /* ---------- ценники: липкая панель снизу и карточка итога ---------- */
 
   function renderStickyBars(ctx) {
     var current = findVariant(ctx, ctx.selected);
 
-    document.querySelectorAll('.evamats-config-step-bar__price-row').forEach(function (row) {
+    document.querySelectorAll(PRICE_ROWS).forEach(function (row) {
       var priceEl = row.querySelector('.sticky_config_price_price');
       if (!priceEl) return;
 
