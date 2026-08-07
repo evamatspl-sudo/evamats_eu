@@ -318,7 +318,10 @@
       "check_set": "Zkontrolujte nastavení",
       "choose_color_and_mats_set": "Vyberte barvu a sadu podložek",
       "on_sale_2": "Ve slevě",
-      "from": "Od"
+      "from": "Od",
+      "outlet_material_color": "Barva materiálu",
+      "outlet_trim_color": "Barva lemu",
+      "outlet_cell_shape": "Tvar buněk"
     },
     "modal": {
       "label": "Galerie multimédií"
