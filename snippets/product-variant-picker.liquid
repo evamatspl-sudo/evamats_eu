@@ -176,15 +176,15 @@
         </div>
 
         {% if product.metafields.custom.outlet_options %}
-          {% assign optionName = '' %}
+          {% assign optionName = '' %}{% assign optionKey = '' %}
           {% for item in product.metafields.custom.outlet_options.value %}
             {% case forloop.index %}
               {% when 1 %}
-                {% assign optionName = 'Kolor materialu' %}
+                {% assign optionKey = 'Kolor materialu' %}{% assign optionName = 'products.product.outlet_material_color' | t %}
               {% when 2 %}
-                {% assign optionName = 'Trim Color' %}
+                {% assign optionKey = 'Trim Color' %}{% assign optionName = 'products.product.outlet_trim_color' | t %}
               {% when 3 %}
-                {% assign optionName = 'Ksztalt komórek' %}
+                {% assign optionKey = 'Ksztalt komórek' %}{% assign optionName = 'products.product.outlet_cell_shape' | t %}
             {% endcase %}
             <fieldset class="js product-form__input">
               <legend class="form__label lip__title">
@@ -192,14 +192,14 @@
               </legend>
               <input
                 type="radio"
-                id="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}"
-                name="properties[{{ optionName }}]"
+                id="{{ section.id }}-{{ optionKey | handle }}-{{ forloop.index0 }}"
+                name="properties[{{ optionKey }}]"
                 data-title="{{ item }}"
                 value="{{ item | escape }}"
                 form="{{ product_form_id }}"
                 checked
               >
-              <label for="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}">
+              <label for="{{ section.id }}-{{ optionKey | handle }}-{{ forloop.index0 }}">
                 {{ item -}}
                 <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
               </label>
@@ -373,15 +373,15 @@
             {%- endfor -%}
 
             {% if product.metafields.custom.outlet_options %}
-              {% assign optionName = '' %}
+              {% assign optionName = '' %}{% assign optionKey = '' %}
               {% for item in product.metafields.custom.outlet_options.value %}
                 {% case forloop.index %}
                   {% when 1 %}
-                    {% assign optionName = 'Kolor materialu' %}
+                    {% assign optionKey = 'Kolor materialu' %}{% assign optionName = 'products.product.outlet_material_color' | t %}
                   {% when 2 %}
-                    {% assign optionName = 'Trim Color' %}
+                    {% assign optionKey = 'Trim Color' %}{% assign optionName = 'products.product.outlet_trim_color' | t %}
                   {% when 3 %}
-                    {% assign optionName = 'Ksztalt komórek' %}
+                    {% assign optionKey = 'Ksztalt komórek' %}{% assign optionName = 'products.product.outlet_cell_shape' | t %}
                   {% else %}
 
                 {% endcase %}
@@ -391,15 +391,15 @@
                 </legend>
                 <input
                   type="radio"
-                  id="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}"
-                  name="properties[{{ optionName }}]"
+                  id="{{ section.id }}-{{ optionKey | handle }}-{{ forloop.index0 }}"
+                  name="properties[{{ optionKey }}]"
                   data-title="{{ item }}"
                   value="{{ item | escape }}"
                   form="{{ product_form_id }}"
 
                     checked
                 >
-                <label for="{{ section.id }}-{{ optionName }}-{{ forloop.index0 }}">
+                <label for="{{ section.id }}-{{ optionKey | handle }}-{{ forloop.index0 }}">
                   {{ item -}}
                   <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
                 </label>
