@@ -276,3 +276,14 @@
   .ecm--velour .ecm-purchase-notes .ecm-trusted-note{grid-template-columns:48px minmax(0,1fr)}
   .ecm--velour .ecm-trusted-logo{grid-column:2;width:92px;margin-top:5px}
 }
+
+/* Выпадающий список марки/модели лежит внутри .ecm-step, а у шага overflow:hidden —
+   он нужен для скруглённых углов, но заодно срезал низ списка: у поля «модель» на 27px,
+   у «поколения» на 108px, у «кузова» на 189px. Прокрутка доходила до конца, но последние
+   пункты оказывались в отрезанной зоне и увидеть их было нельзя.
+   Пока хоть один список открыт — разрешаем шагу выпускать содержимое наружу.
+   Углы при этом не страдают: у .ecm-step-head и .ecm-step-body своего фона нет,
+   скругление рисует сам .ecm-step. Замерено 07.08.2026. */
+.ecm-step:has(.ecm-combo-list:not([hidden])) {
+  overflow: visible;
+}
