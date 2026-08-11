@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing_hero": {
+      "type": "landing-hero-v2",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_chip",
+          "settings": {
+            "text": "59 620 zrealizowanych kompletów"
+          }
+        },
+        "stat_2": {
+          "type": "stat_chip",
+          "settings": {
+            "text": "wysyłka do 27+ krajów"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2"
+      ],
+      "settings": {
+        "image_desktop": "shopify://shop_images/Background_Image.webp",
+        "image_mobile": "shopify://shop_images/Hero_photo.webp",
+        "height_desktop": 900,
+        "height_mobile": 744,
+        "overlay_opacity": 40,
+        "show_top_fade": true,
+        "show_breadcrumbs": false,
+        "breadcrumb_parent": "Evamats",
+        "breadcrumb_parent_url": "",
+        "breadcrumb_current": "Katalog",
+        "breadcrumb_current_url": "",
+        "heading": "Twój dywanik fabryczny nie zakrywa nawet 70% podłogi.",
+        "heading_gradient": true,
+        "subheading": "Sprawdź, ile pokrywa dywanik EVA szyty pod Twój dokładny model auta",
+        "cta_label": "Zobacz dostępne modele",
+        "cta_url": "shopify://collections/all-car-mats"
+      }
+    },
+    "landing_antagonist": {
+      "type": "landing-antagonist-v2",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_54_49_1.webp",
+            "text": "Tanie zamienniki są cięte z jednego szablonu — niezależnie od modelu Twojego auta"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_52_52_1.webp",
+            "text": "Uniwersalny dywanik nie zakrywa całej podłogi — zostają odsłonięte krawędzie i tunel środkowy"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_57_38_1.webp",
+            "text": "Welur wchłania wodę i błoto, traci wygląd już po jednym sezonie"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "Twój dywanik fabryczny został zaprojektowany pod minimalny standard — nie pod Twoje auto",
+        "subheading": "Antagonistą nie jest konkretna marka, a cała kategoria uniwersalnych produktów: fabryczne i tanie zamienniki zakrywają tylko część podłogi, zostawiają odsłonięty tunel środkowy, a welur wchłania wodę i traci wygląd już po jednym sezonie.",
+        "background_color": "#f6f6f6",
+        "padding_top": 98,
+        "padding_bottom": 168
+      }
+    },
+    "landing_benefits": {
+      "type": "evamats-partners-benefits-bento",
+      "blocks": {
+        "panel_a": {
+          "type": "panel_left",
+          "settings": {
+            "title": "3D pošyt pod dokładny model",
+            "content_type": "text",
+            "description": "Do 98% podłogi zakryte, włącznie z tunelem środkowym — bez luk, w które wsiąka błoto i woda",
+            "item_1_text": "",
+            "item_1_icon": "1",
+            "item_2_text": "",
+            "item_2_icon": "2",
+            "item_3_text": "",
+            "item_3_icon": "3",
+            "item_4_text": "",
+            "item_4_icon": "4",
+            "item_5_text": "",
+            "item_5_icon": "5",
+            "image": "shopify://shop_images/Mask_group_2c6a1d69-f89f-438f-aff5-da5a145cc2db.webp",
+            "badge_value": "",
+            "badge_label": ""
+          }
+        },
+        "panel_b": {
+          "type": "panel_center",
+          "settings": {
+            "title": "Pianka EVA 10 mm, plaster miodu",
+            "content_type": "text",
+            "tagline": "",
+            "description": "Cała wilgoć i brud zostają w komórkach na powierzchni, nie rozmazują się po dywaniku i wnętrzu",
+            "badge_text": "",
+            "image": "shopify://shop_images/ChatGPT_Image_4_._2026_._14_31_31_1.webp",
+            "item_1_text": "",
+            "item_1_icon": "1",
+            "item_2_text": "",
+            "item_2_icon": "2",
+            "item_3_text": "",
+            "item_3_icon": "3",
+            "item_4_text": "",
+            "item_4_icon": "4",
+            "item_5_text": "",
+            "item_5_icon": "5"
+          }
+        },
+        "panel_c": {
+          "type": "panel_right",
+          "settings": {
+            "title": "Rozwój, który naprawdę przyspiesza",
+            "content_type": "text",
+            "description": "Dywanik dobrany pod charakter właściciela i wnętrze konkretnego auta — nie „jak u wszystkich”",
+            "bg_image": "shopify://shop_images/Mask_group_1_a0edf38f-11a8-4c7d-bfce-a5c7ce3ecbae.webp",
+            "show_bg_overlay": false,
+            "item_1_text": "",
+            "item_1_icon": "5",
+            "item_2_text": "",
+            "item_2_icon": "6",
+            "item_3_text": "",
+            "item_3_icon": "7",
+            "item_4_text": "",
+            "item_4_icon": "8",
+            "item_5_text": "",
+            "item_5_icon": "9"
+          }
+        },
+        "panel_d": {
+          "type": "panel_bottom",
+          "settings": {
+            "title": "Ranty (borty ochronne)",
+            "content_type": "text",
+            "description": "Dodatkowa ochrona bocznej tapicerki + dywanik się nie przesuwa pod nogami",
+            "item_1_text": "",
+            "item_1_icon": "10",
+            "item_2_text": "",
+            "item_2_icon": "11",
+            "item_3_text": "",
+            "item_3_icon": "12",
+            "item_4_text": "",
+            "item_4_icon": "13",
+            "item_5_text": "",
+            "item_5_icon": "14",
+            "image": "shopify://shop_images/Group_1948755321.webp"
+          }
+        },
+        "panel_e": {
+          "type": "panel_bottom_right",
+          "settings": {
+            "title": "Podpiętka pod prawą piętą",
+            "description": "Lokalne wzmocnienie w najbardziej obciążonym miejscu — cały komplet służy dłużej",
+            "image": "shopify://shop_images/ChatGPT_Image_5_._2026_._12_41_33_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "panel_a",
+        "panel_b",
+        "panel_c",
+        "panel_d",
+        "panel_e"
+      ],
+      "settings": {
+        "overline": "Value Proposition",
+        "heading": "Dywaniki EVA szyte 3D pod Twój dokładny model auta",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    }
+  },
+  "order": [
+    "landing_hero",
+    "landing_antagonist",
+    "landing_benefits"
+  ]
+}

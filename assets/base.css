@@ -7461,6 +7461,33 @@ textarea.field__input:-webkit-autofill:hover,
   background-color: var(--eh-bg);
 }
 
+/* Landing hero: transparent header over banner + top fade darkening */
+body:has(.landing-hero-v2) .section-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+body:has(.landing-hero-v2) .header-wrapper,
+body:has(.landing-hero-v2) .header-wrapper.gradient,
+body:has(.landing-hero-v2) sticky-header:not([data-sticky-type='none']) .header-wrapper {
+  background: transparent;
+  background-color: transparent;
+}
+
+body:has(.landing-hero-v2) .header-wrapper .evamats-header {
+  background-color: transparent;
+}
+
+body:has(.landing-hero-v2) .scrolled-past-header .header-wrapper,
+body:has(.landing-hero-v2) .scrolled-past-header .header-wrapper .evamats-header {
+  background-color: var(--eh-bg);
+}
+
 /* Mobile header action buttons (all pages) */
 @media screen and (max-width: 749px) {
   .evamats-header__icon-actions {

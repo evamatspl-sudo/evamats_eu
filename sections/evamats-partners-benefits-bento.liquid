@@ -1,8 +1,16 @@
 {{ 'section-evamats-partners-benefits-bento.css' | asset_url | stylesheet_tag }}
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-partners-benefits-bento' %}
+{%- liquid
+  assign has_panel_e = false
+  for block in section.blocks
+    if block.type == 'panel_bottom_right'
+      assign has_panel_e = true
+    endif
+  endfor
+-%}
 <div
   id="EvamatsPartnersBenefitsBento-{{ section.id }}"
-  class="evamats-kariera-benefits evamats-partners-benefits-bento"
+  class="evamats-kariera-benefits evamats-partners-benefits-bento{% if has_panel_e %} evamats-partners-benefits-bento--five{% endif %}"
 >
   <div class="evamats-kariera-benefits__inner page-width">
     {%- if section.settings.overline != blank or section.settings.heading != blank -%}
@@ -16,7 +24,7 @@
       </div>
     {%- endif -%}
 
-    <div class="evamats-kariera-benefits__grid">
+    <div class="evamats-kariera-benefits__grid{% if has_panel_e %} evamats-kariera-benefits__grid--five{% endif %}">
       {%- for block in section.blocks -%}
 
         {%- if block.type == 'panel_left' -%}
@@ -273,6 +281,27 @@
             </div>
           </article>
 
+        {%- elsif block.type == 'panel_bottom_right' -%}
+          <article class="evamats-kariera-benefits__panel evamats-kariera-benefits__panel--e" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h3 class="evamats-kariera-benefits__panel-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="evamats-kariera-benefits__description">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              <div class="evamats-kariera-benefits__panel-media evamats-kariera-benefits__panel-media--e" aria-hidden="true">
+                {{
+                  block.settings.image
+                  | image_url: width: 800
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'evamats-kariera-benefits__panel-img evamats-kariera-benefits__panel-img--e'
+                }}
+              </div>
+            {%- endif -%}
+          </article>
+
         {%- endif -%}
       {%- endfor -%}
     </div>
@@ -286,7 +315,7 @@
   "name": "Partners benefits bento",
   "tag": "section",
   "class": "section-evamats-partners-benefits-bento",
-  "max_blocks": 4,
+  "max_blocks": 5,
   "settings": [
     {
       "type": "text",
@@ -2002,6 +2031,28 @@
           "label": "Image (right side)"
         }
       ]
+    },
+    {
+      "type": "panel_bottom_right",
+      "name": "Panel E — bottom right",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
     }
   ],
   "presets": [
@@ -2112,6 +2163,60 @@
             "title": "Model gotowy do skalowania",
             "content_type": "text",
             "description": "Muzete rozvijet prodej bez zvysovani nakladu"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Benefits — Landing 5",
+      "category": "V2",
+      "settings": {
+        "overline": "Value Proposition",
+        "heading": "Dywaniki EVA szyte 3D pod Twój dokładny model auta",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      },
+      "blocks": [
+        {
+          "type": "panel_left",
+          "settings": {
+            "title": "3D pošyt pod dokładny model",
+            "content_type": "text",
+            "description": "Do 98% podłogi zakryte, włącznie z tunelem środkowym — bez luk, w które wsiąka błoto i woda"
+          }
+        },
+        {
+          "type": "panel_center",
+          "settings": {
+            "title": "Pianka EVA 10 mm, plaster miodu",
+            "content_type": "text",
+            "description": "Cała wilgoć i brud zostają w komórkach na powierzchni, nie rozmazują się po dywaniku i wnętrzu"
+          }
+        },
+        {
+          "type": "panel_right",
+          "settings": {
+            "title": "Rozwój, który naprawdę przyspiesza",
+            "content_type": "text",
+            "description": "Dywanik dobrany pod charakter właściciela i wnętrze konkretnego auta — nie „jak u wszystkich”",
+            "show_bg_overlay": true
+          }
+        },
+        {
+          "type": "panel_bottom",
+          "settings": {
+            "title": "Ranty (borty ochronne)",
+            "content_type": "text",
+            "description": "Dodatkowa ochrona bocznej tapicerki + dywanik się nie przesuwa pod nogami"
+          }
+        },
+        {
+          "type": "panel_bottom_right",
+          "settings": {
+            "title": "Podpiętka pod prawą piętą",
+            "description": "Lokalne wzmocnienie w najbardziej obciążonym miejscu — cały komplet służy dłużej"
           }
         }
       ]

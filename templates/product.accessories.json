@@ -134,19 +134,6 @@
     },
     "168388306052a62d59": {
       "type": "apps",
-      "blocks": {
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "settings": {
-            "themeId": "light",
-            "autoscroll": true,
-            "writeReview": true
-          }
-        }
-      },
-      "block_order": [
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3"
-      ],
       "settings": {
         "include_margins": true
       }
