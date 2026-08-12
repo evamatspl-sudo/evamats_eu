@@ -4,9 +4,6 @@
   text-decoration: none;
 }
 
-.card-wrapper .dmixer-price-wrapper {
-  display: none !important; 
-}
 
 .card-wrapper .price__sale {
   display: block;
