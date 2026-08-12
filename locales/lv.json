@@ -293,7 +293,43 @@
     "cart": {
       "view": "Skatīt grozu ({{ count }})",
       "view_empty_cart": "Skatīt grozu",
-      "item_added": "Prece pievienota grozam"
+      "item_added": "Prece pievienota grozam",
+      "opportunity": "Nepalaidiet garām šo iespēju!",
+      "to_checkout": "Pabeigt pirkumu"
+    },
+    "share": {
+      "close": "Aizvērt kopīgošanu",
+      "copy_to_clipboard": "Kopēt saiti",
+      "share_url": "Saite",
+      "success_message": "Saite nokopēta starpliktuvē"
+    },
+    "slider": {
+      "of": "no",
+      "next_slide": "Bīdīt pa labi",
+      "previous_slide": "Bīdīt pa kreisi",
+      "name": "Slīdnis"
     }
+  },
+  "newsletter": {
+    "label": "E-pasts",
+    "success": "Paldies par pieteikšanos",
+    "button_label": "Pieteikties"
+  },
+  "accessibility": {
+    "skip_to_text": "Pāriet uz saturu",
+    "skip_to_product_info": "Pāriet uz preces informāciju",
+    "close": "Aizvērt",
+    "back": "Atpakaļ",
+    "unit_price_separator": "par",
+    "vendor": "Pārdevējs:",
+    "error": "Kļūda",
+    "refresh_page": "Izvēles veikšana pilnībā pārlādē lapu.",
+    "link_messages": {
+      "new_window": "Atveras jaunā logā.",
+      "external": "Atveras ārēja vietne."
+    },
+    "loading": "Notiek ielāde...",
+    "total_reviews": "atsauksmes kopā",
+    "star_reviews_info": "{{ rating_value }} no {{ rating_max }} zvaigznēm"
   }
 }
