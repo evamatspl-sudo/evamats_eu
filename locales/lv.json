@@ -12,5 +12,149 @@
     "callback": {
       "try_again": "Mēģināt vēlreiz"
     }
+  },
+  "sections": {
+    "application_form": {
+      "next_button": "Tālāk",
+      "name_and_surname": "Vārds un uzvārds",
+      "brand": "Marka",
+      "privacy_text_html": "Es piekrītu <a href=\"/policies/privacy-policy\" title=\"Privātuma politika\">privātuma politikai</a>"
+    },
+    "announcements": {
+      "previous_announcement": "Iepriekšējais paziņojums",
+      "next_announcement": "Nākamais paziņojums",
+      "carousel": "Karuselis",
+      "announcement": "Paziņojums",
+      "announcement_bar": "Paziņojumu josla"
+    },
+    "header": {
+      "announcement": "Paziņojums",
+      "menu": "Izvēlne",
+      "cart_count": {
+        "one": "{{ count }} prece",
+        "other": "{{ count }} preces"
+      }
+    },
+    "home_8": {
+      "read_more": "Lasīt vairāk",
+      "read_less": "Lasīt mazāk"
+    },
+    "main_page": {
+      "read_more": "Lasīt vairāk",
+      "read_less": "Lasīt mazāk"
+    },
+    "brand_buttons": {
+      "back": "Visas",
+      "collection_title_prefix": "EVA auto paklāji ",
+      "all_brands_path": "/collections/all-car-mats",
+      "popular_models_heading": "Populārie modeļi",
+      "products_count": "{{ count }} preces"
+    },
+    "cart": {
+      "title": "Jūsu grozs",
+      "caption": "Groza saturs",
+      "remove_title": "Noņemt {{ title }}",
+      "subtotal": "Starpsumma",
+      "new_subtotal": "Jaunā starpsumma",
+      "note": "Īpaši norādījumi pasūtījumam",
+      "checkout": "Noformēt pasūtījumu",
+      "empty": "Jūsu grozs ir tukšs",
+      "cart_error": "Atjauninot grozu, radās kļūda. Lūdzu, mēģiniet vēlreiz.",
+      "cart_quantity_error_html": "Grozam varat pievienot tikai {{ quantity }} šīs preces.",
+      "taxes_and_shipping_policy_at_checkout_html": "Nodokļi un <a href=\"{{ link }}\">piegāde</a> tiek aprēķināti pasūtījuma noformēšanā",
+      "taxes_included_but_shipping_at_checkout": "Nodoklis iekļauts, piegāde tiek aprēķināta pasūtījuma noformēšanā",
+      "taxes_included_and_shipping_policy_html": "Nodoklis iekļauts. <a href=\"{{ link }}\">Piegāde</a> tiek aprēķināta pasūtījuma noformēšanā.",
+      "taxes_and_shipping_at_checkout": "Nodokļi un piegāde tiek aprēķināti pasūtījuma noformēšanā",
+      "reservation_button": "Pagarināt rezervāciju",
+      "progress_free_shipping": "Jums pienākas bezmaksas piegāde!",
+      "progress_text_order_value": "Jūsu auto ir pelnījis vairāk! Pievienojiet paklājus par {{value}} un saņemiet bezmaksas piegādi!",
+      "progress_text_discount": "Jūsu auto ir pelnījis vairāk! Pievienojiet paklājus par {{ value }} un saņemiet {{ nextDiscount }} atlaidi!",
+      "progress_max_discount": "Sasniegta maksimālā atlaide!",
+      "cart_upsell_variant_error": "Izvēlieties preces variantu vai atsvaidziniet lapu.",
+      "upsell_eva_note": "Krāsa un šūnas atbilst jūsu paklājiem",
+      "headings": {
+        "product": "Prece",
+        "price": "Cena",
+        "total": "Kopā",
+        "quantity": "Daudzums",
+        "image": "Preces attēls"
+      },
+      "update": "Atjaunināt",
+      "login": {
+        "title": "Vai jums ir konts?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Pieslēdzieties</a>, lai noformētu pasūtījumu ātrāk."
+      },
+      "upsell_heading": "Jums varētu noderēt arī",
+      "upsell_add_to_cart": "Pievienot",
+      "unit_price_each_html": "{{ price }} par gabalu",
+      "items_in_cart_html": "{{ count }} preces grozā",
+      "clear_cart": "Notīrīt",
+      "restore_item": "Atgriezt grozā",
+      "reservation_sidebar_text": "Lielā pieprasījuma dēļ esam rezervējuši laiku jūsu pasūtījuma apstrādei."
+    },
+    "evamats_related_products": {
+      "view_product": "Skatīt preci"
+    },
+    "footer": {
+      "payment": "Maksājumu veidi"
+    },
+    "featured_blog": {
+      "view_all": "Skatīt visu",
+      "onboarding_title": "Bloga ieraksts",
+      "onboarding_content": "Sniedziet klientiem sava bloga ieraksta kopsavilkumu"
+    },
+    "featured_collection": {
+      "view_all": "Skatīt visu",
+      "view_all_label": "Skatīt visas preces kolekcijā {{ collection_name }}"
+    },
+    "collection_list": {
+      "view_all": "Skatīt visu"
+    },
+    "collection_template": {
+      "title": "Kolekcija",
+      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"/collections/all-car-mats\">Noformējiet pasūtījumu šeit</a>"
+    },
+    "video": {
+      "load_video": "Ielādēt video: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Ielādēt slaidu",
+      "previous_slideshow": "Iepriekšējais slaids",
+      "next_slideshow": "Nākamais slaids",
+      "pause_slideshow": "Apturēt slaidrādi",
+      "play_slideshow": "Atskaņot slaidrādi",
+      "carousel": "Karuselis",
+      "slide": "Slaids"
+    },
+    "page": {
+      "title": "Lapas virsraksts"
+    }
+  },
+  "general": {
+    "config": {
+      "mats_type": "Paklāju veids",
+      "mats_set": "Paklāju komplekts",
+      "mats_size": "Izmērs",
+      "without_edges": "3D CARVION bez malām",
+      "with_edges": "3D CARVION ar malām",
+      "only_driver_mat": "Tikai vadītāja paklājs",
+      "front": "Priekšā",
+      "rear": "Aizmugurē",
+      "trunk": "Bagāžnieks",
+      "front_rear": "Priekšā un aizmugurē",
+      "front_rear_trunk": "Priekšā + aizmugurē + bagāžnieks",
+      "year_production": "Izlaiduma gads",
+      "generation": "Paaudze",
+      "number_seats": "Sēdvietu skaits",
+      "number_doors": "Durvju skaits",
+      "drivetrain": "Piedziņa",
+      "drivetrainElements": "Aizmugures piedziņa,Priekšpiedziņa,Pilnpiedziņa,Nezinu",
+      "engine": "Dzinējs",
+      "engineElements": "Benzīns,Dīzelis,HEV,MHEV,PHEV,Elektro,Hibrīds",
+      "gearbox": "Pārnesumkārba",
+      "gearboxElements": "Manuālā,Automātiskā",
+      "bodyType": "Virsbūves tips",
+      "cell_shape": "Šūnu forma"
+    }
   }
 }
