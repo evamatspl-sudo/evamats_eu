@@ -8,13 +8,8 @@ class VariantSelects extends HTMLElement {
       this._priceSyncTimers.forEach((id) => clearTimeout(id));
       this._priceSyncTimers = [];
 
-      const scope = this.getProductPriceScope?.() || document;
       const isSimpleProduct = this.closest('.evamats-product-simple');
-      const delays = isSimpleProduct
-        ? [0]
-        : this.hasDmixerDiscountedPrice?.(scope)
-          ? [350, 900, 1600]
-          : [750];
+      const delays = isSimpleProduct ? [0] : [0, 750];
 
       delays.forEach((delay) => {
         const id = setTimeout(() => this.updatePrices(), delay);
@@ -56,96 +51,6 @@ class VariantSelects extends HTMLElement {
     const locale = document.documentElement.lang || undefined;
     const formatted = Number(amount.toFixed(2)).toLocaleString(locale, { maximumFractionDigits: 2 });
     return `${formatted} ${currency}`.trim();
-  }
-
-  findDmixerCompareElement(host, shadowRoot, wrapper, saleText) {
-    const saleNormalized = (saleText || '').replace(/\s+/g, ' ').trim();
-
-    const shadowSelectors = [
-      '.dmixer-dp-original-price',
-      '.dmixer-dp-compare',
-      '.dmixer-dp-original',
-      '[class*="original"]',
-      's',
-      'del',
-    ];
-    for (const selector of shadowSelectors) {
-      const el = shadowRoot.querySelector(selector);
-      if (el && el.textContent.trim() && el.textContent.replace(/\s+/g, ' ').trim() !== saleNormalized) {
-        return el;
-      }
-    }
-
-    for (const el of shadowRoot.querySelectorAll('*')) {
-      if (!el.textContent.trim() || el === shadowRoot.querySelector('.dmixer-dp-price')) continue;
-      const decoration = window.getComputedStyle(el).textDecorationLine;
-      if (decoration.includes('line-through') && el.textContent.replace(/\s+/g, ' ').trim() !== saleNormalized) {
-        return el;
-      }
-    }
-
-    if (!wrapper) return null;
-
-    const lightSelectors = [
-      '.dmixer-original-price',
-      '.dmixer-dp-original-price',
-      '[class*="original"]',
-      's',
-      'del',
-      '.price-item--regular',
-    ];
-    for (const selector of lightSelectors) {
-      const el = wrapper.querySelector(selector);
-      if (el && !el.closest('dmixer-discounted-price') && el.textContent.trim()) {
-        const text = el.textContent.replace(/\s+/g, ' ').trim();
-        if (text !== saleNormalized) return el;
-      }
-    }
-
-    const priceBox = host.closest('.dmixer-price') || wrapper.querySelector('.dmixer-price');
-    if (priceBox) {
-      for (const child of priceBox.children) {
-        if (child.tagName === 'DMIXER-DISCOUNTED-PRICE' || child.contains(host)) continue;
-        const text = child.textContent.replace(/\s+/g, ' ').trim();
-        if (text && text !== saleNormalized) return child;
-      }
-    }
-
-    return null;
-  }
-
-  getDmixerPricesFromShadow(scope) {
-    const hosts = scope.querySelectorAll('dmixer-discounted-price');
-    for (const host of hosts) {
-      const shadowRoot = host.shadowRoot;
-      if (!shadowRoot) continue;
-
-      const saleEl = shadowRoot.querySelector('.dmixer-dp-price');
-      if (!saleEl || !saleEl.textContent.trim()) continue;
-
-      const saleHTML = saleEl.innerHTML.trim() || saleEl.textContent.trim();
-      const wrapper =
-        host.closest('.dmixer-price-wrapper, .dmixer-price') ||
-        scope.querySelector('.dmixer-price-wrapper, .dmixer-price, #google_prices, .main_price');
-
-      const compareEl = this.findDmixerCompareElement(host, shadowRoot, wrapper, saleHTML);
-      let compareHTML =
-        compareEl && compareEl.textContent.trim()
-          ? compareEl.innerHTML.trim() || compareEl.textContent.trim()
-          : null;
-
-      if (!compareHTML && this.currentVariant?.price) {
-        compareHTML = this.formatMoneyLikeDisplay(this.currentVariant.price, saleHTML);
-      }
-
-      return { saleHTML, compareHTML };
-    }
-
-    return null;
-  }
-
-  hasDmixerDiscountedPrice(scope) {
-    return scope.querySelector('dmixer-discounted-price') !== null;
   }
 
   formatSimpleVariantMoney(cents, referenceHTML) {
@@ -207,11 +112,6 @@ class VariantSelects extends HTMLElement {
       return { saleHTML, compareHTML };
     };
 
-    const dmixerPrices = this.getDmixerPricesFromShadow(scope);
-    if (dmixerPrices) {
-      return dmixerPrices;
-    }
-
     const evamatsRoot = scope.querySelector('[data-evamats-discount]:not([hidden])');
     if (evamatsRoot) {
       const saleEl = evamatsRoot.querySelector('[data-evamats-sale]');
@@ -227,15 +127,6 @@ class VariantSelects extends HTMLElement {
     const mainPrice = scope.querySelector('.main_price') || scope.querySelector('#google_prices');
     if (!mainPrice) {
       return variantPriceFallback();
-    }
-
-    const mixerPrice = mainPrice.querySelector('.dmixer-price .price-item');
-    const mixerCompare = mainPrice.querySelector('.dmixer-original-price');
-    if (mixerPrice && mixerPrice.textContent.trim()) {
-      return {
-        saleHTML: mixerPrice.innerHTML,
-        compareHTML: mixerCompare && mixerCompare.textContent.trim() ? mixerCompare.innerHTML : null,
-      };
     }
 
     const priceRoot = mainPrice.querySelector('.price') || mainPrice;
