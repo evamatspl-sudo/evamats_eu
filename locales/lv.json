@@ -154,7 +154,32 @@
       "gearbox": "Pārnesumkārba",
       "gearboxElements": "Manuālā,Automātiskā",
       "bodyType": "Virsbūves tips",
-      "cell_shape": "Šūnu forma"
+      "cell_shape": "Šūnu forma",
+      "diamonds": "Rombi",
+      "honeycomb": "Bišu šūnas",
+      "drops_with_surcharge": "Pilieni (+25 €)",
+      "mat_pattern_drops": "Pilienu šūnu raksts (+25 €)",
+      "drops_property_value": "Pilieni",
+      "material_color": "Materiāla krāsa",
+      "trim_color": "Apmales krāsa",
+      "comment": "ILUSTRĀCIJA paklājam krāsas izvēlei",
+      "preview_badge": "Priekšskatījums",
+      "preview_hide": "Paslēpt",
+      "preview_zoom": "Atvērt priekšskatījumu pilnekrānā",
+      "preview_enlarge": "Palielināt priekšskatījumu",
+      "preview_shrink": "Samazināt priekšskatījumu",
+      "heel": "Papēža paliktņi",
+      "order_notes": "Piezīmes pasūtījumam",
+      "error_message": "Lūdzu, izvēlieties variantu",
+      "error_message_field": "Lūdzu, aizpildiet šo lauku",
+      "warning_message": "Jums jāpiekrīt privātuma politikai un lietošanas noteikumiem.",
+      "please_select": "Lūdzu, izvēlieties",
+      "estimated_delivery": "Aptuvenais pasūtījuma saņemšanas laiks",
+      "color_and_cells_like_rug": "Krāsa un šūnas kā paklājam",
+      "error_email": "Nederīgs e-pasts",
+      "error_phone": "Nederīgs tālruņa numurs",
+      "error_checkbox": "Jums jāpiekrīt privātuma politikai un lietošanas noteikumiem.",
+      "vehicle": "Transportlīdzeklis"
     }
   }
 }
