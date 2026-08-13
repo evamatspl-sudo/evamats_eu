@@ -219,9 +219,9 @@
   }
 
   var pending = null;
-  function schedule() {
+  function schedule(delay) {
     clearTimeout(pending);
-    pending = setTimeout(render, 60);
+    pending = setTimeout(render, typeof delay === 'number' ? delay : 60);
   }
 
   function boot() {
@@ -231,6 +231,9 @@
       if (event.target && event.target.closest && event.target.closest('variant-radios')) schedule();
     });
     document.addEventListener('variant:change', schedule);
+    document.addEventListener('evamats:price-updated', function () {
+      schedule(0);
+    });
 
     /* цены наборов перерисовывает product-config.js — подхватываем и дополняем */
     var field = document.querySelector('.evamats-config fieldset[data-name="mats_set"]');

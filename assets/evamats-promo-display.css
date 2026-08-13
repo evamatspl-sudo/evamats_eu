@@ -69,6 +69,33 @@
   white-space: nowrap;
 }
 
+.evamats-config-checkout__total-row.eva-promo-on .sticky_config_price_price {
+  color: #8090a4;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: line-through;
+  text-decoration-color: rgba(239, 2, 45, 0.85);
+  text-decoration-thickness: 2px;
+  white-space: nowrap;
+}
+
+.evamats-config-checkout__total-row.eva-promo-on .eva-promo-sticky {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 749px) {
+  .evamats-config-checkout__total-row.eva-promo-on .sticky_config_price_price {
+    font-size: 16px;
+  }
+
+  .evamats-config-checkout__total-row.eva-promo-on .eva-promo-sticky {
+    font-size: 22px;
+  }
+}
+
 .evamats-config-step-bar__price-row {
   display: flex;
   align-items: center;
