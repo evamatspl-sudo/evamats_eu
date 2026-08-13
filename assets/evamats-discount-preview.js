@@ -178,6 +178,7 @@
       formatMoney(basePrice, currency, locale),
     );
     root.dataset.hasDiscount = "true";
+    dispatchDiscountUpdated();
   }
 
   function updateRoot(root) {
