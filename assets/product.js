@@ -9,7 +9,7 @@ class VariantSelects extends HTMLElement {
       this._priceSyncTimers = [];
 
       const isSimpleProduct = this.closest('.evamats-product-simple');
-      const delays = isSimpleProduct ? [0] : [0, 750];
+      const delays = isSimpleProduct ? [0] : [0, 120];
 
       delays.forEach((delay) => {
         const id = setTimeout(() => this.updatePrices(), delay);
@@ -392,7 +392,7 @@ class VariantSelects extends HTMLElement {
       });
     }
 
-    document.dispatchEvent(new CustomEvent('evamats:discount-updated'));
+    document.dispatchEvent(new CustomEvent('evamats:price-updated'));
 
     if (stickyConfigPriceElement && !stickyConfigPriceElement.closest('.evamats-config')) {
       stickyConfigPriceElement.removeAttribute('style');
