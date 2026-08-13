@@ -1,0 +1,118 @@
+{{ 'section-landing-quote-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_desktop = section.settings.image_desktop
+  assign image_mobile = section.settings.image_mobile
+  if image_mobile == blank
+    assign image_mobile = image_desktop
+  endif
+
+  assign overlay_opacity = section.settings.overlay_opacity | default: 0 | divided_by: 100.0
+  assign has_image = false
+  if image_desktop != blank
+    assign has_image = true
+  endif
+-%}
+
+<div
+  id="LandingQuote-{{ section.id }}"
+  class="landing-quote-v2{% if has_image %} landing-quote-v2--has-image{% endif %}"
+  style="--lq-overlay-opacity: {{ overlay_opacity }};"
+>
+  <div class="landing-quote-v2__card">
+    {%- if has_image -%}
+      <div class="landing-quote-v2__media" aria-hidden="true">
+        <picture>
+          {%- if section.settings.image_mobile != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ image_mobile | image_url: width: 750 }} 750w,
+                {{ image_mobile | image_url: width: 1100 }} 1100w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            image_desktop
+            | image_url: width: 2400
+            | image_tag:
+              loading: 'lazy',
+              class: 'landing-quote-v2__image',
+              widths: '800, 1200, 1600, 2000, 2400',
+              sizes: '100vw'
+          }}
+        </picture>
+        <div class="landing-quote-v2__overlay"></div>
+      </div>
+    {%- endif -%}
+
+    <div class="landing-quote-v2__content">
+      <span class="landing-quote-v2__mark" aria-hidden="true">“</span>
+
+      {%- if section.settings.heading != blank -%}
+        <p class="landing-quote-v2__heading">{{ section.settings.heading | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="landing-quote-v2__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing quote v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-quote-v2",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Jeśli Twoje auto ma czarne, uniwersalne dywaniki mimo koloru nadwozia czy tapicerki — to nie przez brak opcji. To dlatego, że nikt Ci wcześniej nie pokazał, że wybór należy do Ciebie."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Dlatego coraz więcej kierowców traktuje dywaniki jak część stylizacji wnętrza, a nie doraźne zabezpieczenie."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing quote v2",
+      "category": "V2"
+    }
+  ]
+}
+{% endschema %}

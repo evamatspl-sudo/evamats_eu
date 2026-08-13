@@ -7,9 +7,30 @@
     assign image_mobile = image_desktop
   endif
 
+  assign breadcrumb_parent = section.settings.breadcrumb_parent | default: 'Carvion' | strip
+  if breadcrumb_parent == blank
+    assign breadcrumb_parent = 'Carvion'
+  endif
+
+  assign breadcrumb_current = section.settings.breadcrumb_current | strip
+  if breadcrumb_current == blank
+    if page != blank and page.title != blank
+      assign breadcrumb_current = page.title
+    elsif collection != blank and collection.title != blank
+      assign breadcrumb_current = collection.title
+    elsif article != blank and article.title != blank
+      assign breadcrumb_current = article.title
+    endif
+  endif
+
+  assign breadcrumb_parent_url = section.settings.breadcrumb_parent_url
+  if breadcrumb_parent_url == blank
+    assign breadcrumb_parent_url = routes.root_url
+  endif
+
   assign show_breadcrumbs = false
   if section.settings.show_breadcrumbs
-    if section.settings.breadcrumb_parent != blank or section.settings.breadcrumb_current != blank
+    if breadcrumb_parent != blank or breadcrumb_current != blank
       assign show_breadcrumbs = true
     endif
   endif
@@ -72,28 +93,24 @@
   <div class="landing-hero-v2__ui">
     {%- if show_breadcrumbs -%}
       <nav class="landing-hero-v2__breadcrumbs" aria-label="Breadcrumb">
-        {%- if section.settings.breadcrumb_parent != blank -%}
-          {%- if section.settings.breadcrumb_parent_url != blank -%}
-            <a class="landing-hero-v2__breadcrumb-link" href="{{ section.settings.breadcrumb_parent_url }}">
-              {{- section.settings.breadcrumb_parent | escape -}}
-            </a>
-          {%- else -%}
-            <span class="landing-hero-v2__breadcrumb-link">{{ section.settings.breadcrumb_parent | escape }}</span>
-          {%- endif -%}
+        {%- if breadcrumb_parent != blank -%}
+          <a class="landing-hero-v2__breadcrumb-link" href="{{ breadcrumb_parent_url }}">
+            {{- breadcrumb_parent | escape -}}
+          </a>
         {%- endif -%}
 
-        {%- if section.settings.breadcrumb_parent != blank and section.settings.breadcrumb_current != blank -%}
+        {%- if breadcrumb_parent != blank and breadcrumb_current != blank -%}
           <span class="landing-hero-v2__breadcrumb-sep" aria-hidden="true"></span>
         {%- endif -%}
 
-        {%- if section.settings.breadcrumb_current != blank -%}
+        {%- if breadcrumb_current != blank -%}
           {%- if section.settings.breadcrumb_current_url != blank -%}
             <a class="landing-hero-v2__breadcrumb-current" href="{{ section.settings.breadcrumb_current_url }}">
-              {{- section.settings.breadcrumb_current | escape -}}
+              {{- breadcrumb_current | escape -}}
             </a>
           {%- else -%}
             <span class="landing-hero-v2__breadcrumb-current" aria-current="page">
-              {{- section.settings.breadcrumb_current | escape -}}
+              {{- breadcrumb_current | escape -}}
             </span>
           {%- endif -%}
         {%- endif -%}
@@ -225,7 +242,7 @@
       "type": "text",
       "id": "breadcrumb_parent",
       "label": "Parent label",
-      "default": "Evamats"
+      "default": "Carvion"
     },
     {
       "type": "url",
@@ -236,7 +253,7 @@
       "type": "text",
       "id": "breadcrumb_current",
       "label": "Current label",
-      "default": "Katalog"
+      "info": "Leave empty to use the page title"
     },
     {
       "type": "url",

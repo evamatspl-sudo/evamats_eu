@@ -221,6 +221,7 @@
         "eyebrow": "Sprawdzone doświadczenie",
         "heading": "Nie obietnice — konkretne liczby",
         "image": "shopify://shop_images/Main_Image.webp",
+        "show_section_background": true,
         "background_color": "#f6f6f6",
         "card_background_color": "#ffffff",
         "padding_top": 80,
@@ -236,36 +237,36 @@
           "type": "stat",
           "settings": {
             "use_orders_counter": false,
-            "value": "7 082",
+            "value": "1567",
             "show_plus": true,
-            "label": "Zákazníků doporučuje nás dál"
+            "label": "dostępnych modeli aut"
           }
         },
         "stat_KrQirX": {
           "type": "stat",
           "settings": {
             "use_orders_counter": false,
-            "value": "1567",
+            "value": "59 620",
             "show_plus": true,
-            "label": "Dostupných modelů aut"
+            "label": "zrealizowanych kompletów"
           }
         },
         "stat_8KFkmJ": {
           "type": "stat",
           "settings": {
-            "use_orders_counter": true,
-            "value": "56 732",
+            "use_orders_counter": false,
+            "value": "27",
             "show_plus": true,
-            "label": "Realizovaných kompletů"
+            "label": "krajów wysyłki"
           }
         },
         "stat_mmUG6R": {
           "type": "stat",
           "settings": {
             "use_orders_counter": false,
-            "value": "27",
+            "value": "195",
             "show_plus": true,
-            "label": "Doručení do více než 27 zemí"
+            "label": "kombinacji kolorystycznych"
           }
         }
       },
@@ -364,81 +365,65 @@
     "landing_compare": {
       "type": "landing-compare-v2",
       "blocks": {
-        "card_coverage": {
-          "type": "card",
+        "row_coverage": {
+          "type": "row",
           "settings": {
-            "icon_preset": "coverage",
-            "title": "Pokrycie podłogi",
-            "positive_label": "EVA",
-            "positive_text": "do 98%, w tym tunel",
-            "option_a_label": "Guma",
-            "option_a_text": "częściowe",
-            "option_b_label": "Welur",
-            "option_b_text": "częściowe"
+            "label": "Pokrycie podłogi",
+            "value_1": "do 98%, w tym tunel",
+            "value_2": "częściowe",
+            "value_3": "częściowe"
           }
         },
-        "card_smell": {
-          "type": "card",
+        "row_smell": {
+          "type": "row",
           "settings": {
-            "icon_preset": "smell",
-            "title": "Zapach",
-            "positive_label": "EVA",
-            "positive_text": "brak",
-            "option_a_label": "Guma",
-            "option_a_text": "częsty przy upale",
-            "option_b_label": "Welur",
-            "option_b_text": "brak"
+            "label": "Zapach",
+            "value_1": "brak",
+            "value_2": "częsty przy upale",
+            "value_3": "brak"
           }
         },
-        "card_cleaning": {
-          "type": "card",
+        "row_cleaning": {
+          "type": "row",
           "settings": {
-            "icon_preset": "cleaning",
-            "title": "Czyszczenie",
-            "positive_label": "EVA",
-            "positive_text": "wytrzepać / myjka ciśnieniowa",
-            "option_a_label": "Guma",
-            "option_a_text": "wytrzepać",
-            "option_b_label": "Welur",
-            "option_b_text": "pranie, dłużej schnie"
+            "label": "Czyszczenie",
+            "value_1": "wytrzepać / myjka ciśnieniowa",
+            "value_2": "wytrzepać",
+            "value_3": "pranie, dłużej schnie"
           }
         },
-        "card_durability": {
-          "type": "card",
+        "row_durability": {
+          "type": "row",
           "settings": {
-            "icon_preset": "durability",
-            "title": "Trwałość",
-            "positive_label": "EVA",
-            "positive_text": "5–7 lat bez śladu zużycia",
-            "option_a_label": "Guma",
-            "option_a_text": "pęka, twardnieje",
-            "option_b_label": "Welur",
-            "option_b_text": "traci wygląd"
+            "label": "Trwałość",
+            "value_1": "5–7 lat bez śladu zużycia",
+            "value_2": "pęka, twardnieje",
+            "value_3": "traci wygląd"
           }
         },
-        "card_fit": {
-          "type": "card",
+        "row_fit": {
+          "type": "row",
           "settings": {
-            "icon_preset": "fit",
-            "title": "Dopasowanie",
-            "positive_label": "EVA",
-            "positive_text": "3D pod dokładny model",
-            "option_a_label": "Guma",
-            "option_a_text": "uniwersalne",
-            "option_b_label": "Welur",
-            "option_b_text": "uniwersalne"
+            "label": "Dopasowanie",
+            "value_1": "3D pod dokładny model",
+            "value_2": "uniwersalne",
+            "value_3": "uniwersalne"
           }
         }
       },
       "block_order": [
-        "card_coverage",
-        "card_smell",
-        "card_cleaning",
-        "card_durability",
-        "card_fit"
+        "row_coverage",
+        "row_smell",
+        "row_cleaning",
+        "row_durability",
+        "row_fit"
       ],
       "settings": {
         "heading": "EVA vs guma vs welur",
+        "col_1_label": "EVA",
+        "col_2_label": "Guma",
+        "col_3_label": "Welur",
+        "highlight_column": "1",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,

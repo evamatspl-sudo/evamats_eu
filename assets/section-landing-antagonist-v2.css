@@ -104,6 +104,39 @@
   text-align: left;
 }
 
+.landing-antagonist-v2--card-center-bold .landing-antagonist-v2__card-text {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .landing-antagonist-v2 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .landing-antagonist-v2__cards {
+    flex-wrap: wrap;
+  }
+
+  .landing-antagonist-v2__card {
+    flex: 1 1 calc(50% - 8px);
+    height: auto;
+    min-height: 420px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .landing-antagonist-v2__heading {
+    font-size: 32px;
+  }
+
+  .landing-antagonist-v2__card {
+    flex: 1 1 100%;
+    min-height: 0;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .landing-antagonist-v2 {
     margin: 0;

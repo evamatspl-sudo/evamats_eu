@@ -7,11 +7,17 @@
       assign card_count = card_count | plus: 1
     endif
   endfor
+
+  assign card_text_style = section.settings.card_text_style | default: 'left'
+  assign section_class = 'landing-antagonist-v2'
+  if card_text_style == 'center_bold'
+    assign section_class = section_class | append: ' landing-antagonist-v2--card-center-bold'
+  endif
 -%}
 
 <div
   id="LandingAntagonist-{{ section.id }}"
-  class="landing-antagonist-v2"
+  class="{{ section_class }}"
   style="
     --la-bg: {{ section.settings.background_color }};
     --la-padding-top: {{ section.settings.padding_top }}px;
@@ -86,6 +92,22 @@
       "id": "background_color",
       "label": "Background",
       "default": "#f6f6f6"
+    },
+    {
+      "type": "select",
+      "id": "card_text_style",
+      "label": "Card text style",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left regular"
+        },
+        {
+          "value": "center_bold",
+          "label": "Center bold"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "range",

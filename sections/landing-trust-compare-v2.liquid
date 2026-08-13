@@ -1,0 +1,231 @@
+{{ 'section-landing-trust-compare-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign col_1 = section.settings.col_1_label | default: 'Carvion'
+  assign col_2 = section.settings.col_2_label | default: 'Anonymní e-shop'
+  assign col_2_mobile = section.settings.col_2_label_mobile | default: col_2
+
+  assign row_count = 0
+  for block in section.blocks
+    if block.type == 'row'
+      assign row_count = row_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingTrustCompare-{{ section.id }}"
+  class="landing-trust-compare-v2"
+  style="
+    --ltc-padding-top: {{ section.settings.padding_top }}px;
+    --ltc-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --ltc-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --ltc-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-trust-compare-v2__inner">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="landing-trust-compare-v2__intro">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="landing-trust-compare-v2__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="landing-trust-compare-v2__subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if row_count > 0 -%}
+      <div
+        class="landing-trust-compare-v2__table"
+        role="table"
+        aria-label="{{ section.settings.heading | escape }}"
+      >
+        <div class="landing-trust-compare-v2__head" role="row">
+          <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--label" role="columnheader">
+            <span class="visually-hidden">Criterion</span>
+          </div>
+          <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--col" role="columnheader">
+            <span class="landing-trust-compare-v2__col-title">{{ col_1 | escape }}</span>
+          </div>
+          <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--col" role="columnheader">
+            <span class="landing-trust-compare-v2__col-title">{{ col_2 | escape }}</span>
+          </div>
+        </div>
+
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'row' -%}
+            <div class="landing-trust-compare-v2__row" role="row" {{ block.shopify_attributes }}>
+              <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--label" role="rowheader">
+                {%- if block.settings.label != blank -%}
+                  <span class="landing-trust-compare-v2__row-label">{{ block.settings.label | escape }}</span>
+                {%- endif -%}
+              </div>
+
+              <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--highlight" role="cell">
+                {%- if block.settings.value_1 != blank -%}
+                  <span class="landing-trust-compare-v2__pill">
+                    <span class="landing-trust-compare-v2__pill-name">{{ col_1 | escape }}</span>
+                    <span class="landing-trust-compare-v2__pill-value">{{ block.settings.value_1 | escape }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+
+              <div class="landing-trust-compare-v2__cell landing-trust-compare-v2__cell--muted" role="cell">
+                {%- if block.settings.value_2 != blank -%}
+                  <span class="landing-trust-compare-v2__pair">
+                    <span class="landing-trust-compare-v2__pair-name">{{ col_2_mobile | escape }}</span>
+                    <span class="landing-trust-compare-v2__pair-value">{{ block.settings.value_2 | escape }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing trust compare v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-trust-compare-v2",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Carvion vs anonymní e-shopy"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "col_1_label",
+      "label": "Column 1 (highlight)",
+      "default": "Carvion"
+    },
+    {
+      "type": "text",
+      "id": "col_2_label",
+      "label": "Column 2",
+      "default": "Anonymní e-shop"
+    },
+    {
+      "type": "textarea",
+      "id": "col_2_label_mobile",
+      "label": "Column 2 (mobile)",
+      "info": "Optional. Use a line break for two lines.",
+      "default": "Anonymní e-shop"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Row label",
+          "default": "Veřejná adresa firmy"
+        },
+        {
+          "type": "text",
+          "id": "value_1",
+          "label": "Column 1 value (highlight)",
+          "default": "ano"
+        },
+        {
+          "type": "text",
+          "id": "value_2",
+          "label": "Column 2 value",
+          "default": "často ne"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing trust compare v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "label": "Veřejná adresa firmy",
+            "value_1": "ano",
+            "value_2": "často ne"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Uvedená tloušťka materiálu",
+            "value_1": "10 mm, ověřitelné",
+            "value_2": "často neuvedeno"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Kontakt na reklamace",
+            "value_1": "ano, veřejně",
+            "value_2": "často nejasný"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

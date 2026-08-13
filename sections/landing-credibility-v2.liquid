@@ -7,6 +7,7 @@
     assign image_mobile = image_desktop
   endif
 
+  assign show_surface = section.settings.show_section_background
   assign card_count = 0
   for block in section.blocks
     if block.type == 'card'
@@ -17,7 +18,7 @@
 
 <div
   id="LandingCredibility-{{ section.id }}"
-  class="landing-credibility-v2"
+  class="landing-credibility-v2{% if show_surface %} landing-credibility-v2--surface{% endif %}"
   style="
     --lc-bg: {{ section.settings.background_color }};
     --lc-card-bg: {{ section.settings.card_background_color }};
@@ -42,13 +43,57 @@
           <div class="landing-credibility-v2__cards">
             {%- for block in section.blocks -%}
               {%- if block.type == 'card' -%}
-                {%- if block.settings.title != blank or block.settings.text != blank -%}
+                {%- liquid
+                  assign has_stat_1 = false
+                  assign has_stat_2 = false
+                  if block.settings.stat_1_value != blank or block.settings.stat_1_label != blank
+                    assign has_stat_1 = true
+                  endif
+                  if block.settings.stat_2_value != blank or block.settings.stat_2_label != blank
+                    assign has_stat_2 = true
+                  endif
+                -%}
+                {%- if block.settings.title != blank or block.settings.text != blank or has_stat_1 or has_stat_2 -%}
                   <article class="landing-credibility-v2__card" {{ block.shopify_attributes }}>
                     {%- if block.settings.title != blank -%}
                       <h3 class="landing-credibility-v2__card-title">{{ block.settings.title | escape }}</h3>
                     {%- endif -%}
                     {%- if block.settings.text != blank -%}
                       <p class="landing-credibility-v2__card-text">{{ block.settings.text | escape }}</p>
+                    {%- endif -%}
+                    {%- if has_stat_1 or has_stat_2 -%}
+                      <div class="landing-credibility-v2__stats">
+                        {%- if has_stat_1 -%}
+                          <div class="landing-credibility-v2__stat">
+                            {%- if block.settings.stat_1_value != blank -%}
+                              <p class="landing-credibility-v2__stat-value">
+                                {{- block.settings.stat_1_value | escape -}}
+                                {%- if block.settings.stat_1_show_plus -%}
+                                  <span class="landing-credibility-v2__stat-plus">+</span>
+                                {%- endif -%}
+                              </p>
+                            {%- endif -%}
+                            {%- if block.settings.stat_1_label != blank -%}
+                              <p class="landing-credibility-v2__stat-label">{{ block.settings.stat_1_label | escape }}</p>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                        {%- if has_stat_2 -%}
+                          <div class="landing-credibility-v2__stat">
+                            {%- if block.settings.stat_2_value != blank -%}
+                              <p class="landing-credibility-v2__stat-value">
+                                {{- block.settings.stat_2_value | escape -}}
+                                {%- if block.settings.stat_2_show_plus -%}
+                                  <span class="landing-credibility-v2__stat-plus">+</span>
+                                {%- endif -%}
+                              </p>
+                            {%- endif -%}
+                            {%- if block.settings.stat_2_label != blank -%}
+                              <p class="landing-credibility-v2__stat-label">{{ block.settings.stat_2_label | escape }}</p>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      </div>
                     {%- endif -%}
                   </article>
                 {%- endif -%}
@@ -119,16 +164,30 @@
       "label": "Image (mobile)"
     },
     {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section_background",
+      "label": "Show section background",
+      "default": false
+    },
+    {
       "type": "color",
       "id": "background_color",
-      "label": "Background",
+      "label": "Section background",
       "default": "#f6f6f6"
     },
     {
       "type": "color",
       "id": "card_background_color",
       "label": "Card background",
-      "default": "#ffffff"
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -186,7 +245,47 @@
           "type": "textarea",
           "id": "text",
           "label": "Text",
-          "default": "EVAMATS to polski producent — nie pośrednik. „Od ręcznej pracy do standardu jakości” to nie slogan, a opis codziennej pracy: 1567 dostępnych modeli i 59 620+ zrealizowanych kompletów, wysyłka do ponad 27 krajów. Do nietypowych aut firma organizuje pomiar na miejscu — osobiście lub przez sieć kontaktów w salonach samochodowych w całej Polsce i za granicą."
+          "default": "EVAMATS — polski producent, 1567 modeli, 59 620+ zrealizowanych kompletów. Ręczna produkcja — każdy komplet szyty indywidualnie, nie cięty z jednego uniwersalnego szablonu."
+        },
+        {
+          "type": "header",
+          "content": "Stat 1"
+        },
+        {
+          "type": "text",
+          "id": "stat_1_value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "stat_1_show_plus",
+          "label": "Show +",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stat_1_label",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Stat 2"
+        },
+        {
+          "type": "text",
+          "id": "stat_2_value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "stat_2_show_plus",
+          "label": "Show +",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stat_2_label",
+          "label": "Label"
         }
       ]
     }
@@ -195,19 +294,29 @@
     {
       "name": "Landing credibility v2",
       "category": "V2",
+      "settings": {
+        "show_section_background": false,
+        "card_background_color": "#f6f6f6"
+      },
       "blocks": [
         {
           "type": "card",
           "settings": {
             "title": "Historia",
-            "text": "EVAMATS to polski producent — nie pośrednik. „Od ręcznej pracy do standardu jakości” to nie slogan, a opis codziennej pracy: 1567 dostępnych modeli i 59 620+ zrealizowanych kompletów, wysyłka do ponad 27 krajów. Do nietypowych aut firma organizuje pomiar na miejscu — osobiście lub przez sieć kontaktów w salonach samochodowych w całej Polsce i za granicą."
+            "text": "EVAMATS — polski producent, 1567 modeli, 59 620+ zrealizowanych kompletów. Ręczna produkcja — każdy komplet szyty indywidualnie, nie cięty z jednego uniwersalnego szablonu.",
+            "stat_1_value": "1567",
+            "stat_1_show_plus": true,
+            "stat_1_label": "dostępnych modeli aut",
+            "stat_2_value": "59 620",
+            "stat_2_show_plus": true,
+            "stat_2_label": "zrealizowanych kompletów"
           }
         },
         {
           "type": "card",
           "settings": {
             "title": "Głos eksperta",
-            "text": "Specjaliści od wykończeń wnętrz samochodowych zwracają uwagę, że o realnej ochronie podłogi decyduje dokładność przylegania do każdej krawędzi — nie sam materiał, a precyzja wykonania pod konkretny model."
+            "text": "Detailerzy zwracają uwagę, że dobrze dobrany kolorystycznie dywanik potrafi zmienić odbiór całego wnętrza bardziej niż niejedna droższa modyfikacja."
           }
         }
       ]

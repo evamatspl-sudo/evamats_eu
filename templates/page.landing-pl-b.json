@@ -1,0 +1,477 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing_hero": {
+      "type": "landing-hero-v2",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_chip",
+          "settings": {
+            "text": "195 wariantów kolorystycznych"
+          }
+        },
+        "stat_2": {
+          "type": "stat_chip",
+          "settings": {
+            "text": "59 620+ zrealizowanych kompletów"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2"
+      ],
+      "settings": {
+        "image_desktop": "shopify://shop_images/freepik_0001_1_1.webp",
+        "image_mobile": "shopify://shop_images/Hero_Scrim2.webp",
+        "height_desktop": 900,
+        "height_mobile": 744,
+        "overlay_opacity": 40,
+        "show_top_fade": true,
+        "show_breadcrumbs": true,
+        "breadcrumb_parent": "Carvion",
+        "breadcrumb_parent_url": "/",
+        "breadcrumb_current": "",
+        "breadcrumb_current_url": "",
+        "heading": "Czarny, uniwersalny dywanik w kolorowym wnętrzu Twojego auta?",
+        "heading_gradient": true,
+        "subheading": "Sprawdź, dlaczego coraz więcej kierowców traktuje dywanik jak część stylizacji wnętrza",
+        "cta_label": "Zaprojektuj swój komplet",
+        "cta_url": "shopify://collections/all-car-mats"
+      }
+    },
+    "landing_quote": {
+      "type": "landing-quote-v2",
+      "settings": {
+        "overlay_opacity": 0,
+        "heading": "Jeśli Twoje auto ma czarne, uniwersalne dywaniki mimo koloru nadwozia czy tapicerki — to nie przez brak opcji. To dlatego, że nikt Ci wcześniej nie pokazał, że wybór należy do Ciebie.",
+        "subheading": "Dlatego coraz więcej kierowców traktuje dywaniki jak część stylizacji wnętrza, a nie doraźne zabezpieczenie."
+      }
+    },
+    "landing_value_prop": {
+      "type": "landing-value-prop-v2",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon": "dopasowanie",
+            "label": "Dopasowanie"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon": "charakter",
+            "label": "Charakter wnętrza"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon": "ochrona",
+            "label": "Ochrona"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon": "wartosc",
+            "label": "Wartość odsprzedażowa"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "icon": "sprzatanie",
+            "label": "Wygoda sprzątania"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ],
+      "settings": {
+        "text": "Przez lata przemysł motoryzacyjny traktował podłogę wnętrza jako czysto funkcjonalny element — czarną, uniwersalną, bez charakteru. To się zmienia wraz z modą na detailing i personalizację."
+      }
+    },
+    "landing_credibility": {
+      "type": "landing-credibility-v2",
+      "blocks": {
+        "card_historia": {
+          "type": "card",
+          "settings": {
+            "title": "Historia",
+            "text": "EVAMATS — polski producent, 1567 modeli, 59 620+ zrealizowanych kompletów. Ręczna produkcja — każdy komplet szyty indywidualnie, nie cięty z jednego uniwersalnego szablonu.",
+            "stat_1_value": "1567",
+            "stat_1_show_plus": true,
+            "stat_1_label": "dostępnych modeli aut",
+            "stat_2_value": "59 620",
+            "stat_2_show_plus": true,
+            "stat_2_label": "zrealizowanych kompletów"
+          }
+        },
+        "card_expert": {
+          "type": "card",
+          "settings": {
+            "title": "Głos eksperta",
+            "text": "Detailerzy zwracają uwagę, że dobrze dobrany kolorystycznie dywanik potrafi zmienić odbiór całego wnętrza bardziej niż niejedna droższa modyfikacja.",
+            "stat_1_value": "",
+            "stat_1_show_plus": true,
+            "stat_1_label": "",
+            "stat_2_value": "",
+            "stat_2_show_plus": true,
+            "stat_2_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_historia",
+        "card_expert"
+      ],
+      "settings": {
+        "eyebrow": "Sprawdzone doświadczenie",
+        "heading": "Nie obietnice — konkretne liczby",
+        "image": "shopify://shop_images/Main_Content_Frame.webp",
+        "show_section_background": false,
+        "background_color": "#f6f6f6",
+        "card_background_color": "#f6f6f6",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_compare": {
+      "type": "landing-compare-v2",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Personalizacja koloru",
+            "value_1": "195 wariantów",
+            "value_2": "zwykle 1–2 kolory",
+            "value_3": "ograniczona"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Wygląd po roku",
+            "value_1": "bez zmian",
+            "value_2": "matowieje, twardnieje",
+            "value_3": "traci fakturę"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "Dopasowanie do wnętrza",
+            "value_1": "materiał + obszycie",
+            "value_2": "ograniczone",
+            "value_3": "częściowe"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3"
+      ],
+      "settings": {
+        "heading": "EVA vs guma vs welur",
+        "col_1_label": "EVA",
+        "col_2_label": "Guma",
+        "col_3_label": "Welur",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_choose_kit": {
+      "type": "landing-choose-kit-v2",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "Marka i model",
+            "label_mobile": "Marka i model"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "Kształt komórek",
+            "label_mobile": "Kształt"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "Kolor materiału",
+            "label_mobile": "Kolor mat."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "label": "Kolor obszycia",
+            "label_mobile": "Obszycie"
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "label": "Gotowy komplet",
+            "label_mobile": "Gotowe"
+          }
+        },
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył",
+            "subtitle": "pełna ochrona kabiny",
+            "price": "−10%",
+            "button_label": "Wybieram",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył + mata do bagażnika",
+            "subtitle": "komplet kompletny · WYBÓR KIEROWCÓW",
+            "price": "−15%",
+            "button_label": "Wybieram",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "offer_1",
+        "offer_2"
+      ],
+      "settings": {
+        "heading": "Zaprojektuj swój komplet",
+        "note_1": "Ręczna produkcja = ograniczona liczba kompletów realizowanych w tym tygodniu. Zapisz się na newsletter i odbierz 27 zł rabatu na pierwsze zamówienie.",
+        "note_2": "Zwroty i reklamacje rozpatrujemy indywidualnie i w kolejności zgłoszeń — Twoja sprawa zawsze ma u nas pełną uwagę. Kontakt:",
+        "contact_email": "reklamacje@evamats.pl",
+        "note_3": "Produkcja: do 10 dni. Dostawa: do 4 dni. Płatność m.in. BLIK i Przelewy24.",
+        "cta_label": "Zaprojektuj swój komplet",
+        "cta_link": "shopify://collections/all-car-mats",
+        "trust_text": "59 620 zrealizowanych kompletów",
+        "background_color": "#14161a",
+        "padding_top": 88,
+        "padding_bottom": 88,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_testimonials_v2_c4Rp8A": {
+      "type": "landing-testimonials-v2",
+      "blocks": {
+        "review_DzHLCR": {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        "review_FY6FTW": {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        "review_dpBPUy": {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        },
+        "review_6RAHL7": {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        "review_GdUDd7": {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        "review_HHMgTD": {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        }
+      },
+      "block_order": [
+        "review_DzHLCR",
+        "review_FY6FTW",
+        "review_dpBPUy",
+        "review_6RAHL7",
+        "review_GdUDd7",
+        "review_HHMgTD"
+      ],
+      "settings": {
+        "heading": "Prawdziwe opinie kierowców",
+        "more_label": "Więcej informacji",
+        "background_color": "#f6f6f6",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_faq_v2_LjbKcT": {
+      "type": "landing-faq-v2",
+      "blocks": {
+        "item_xCKdcQ": {
+          "type": "item",
+          "settings": {
+            "question": "Czy dywaniki na pewno będą pasować do mojego auta?",
+            "answer": ""
+          }
+        },
+        "item_4PYgYh": {
+          "type": "item",
+          "settings": {
+            "question": "Co to jest dywanik na tunel i dlaczego to ważne?",
+            "answer": ""
+          }
+        },
+        "item_Y6TF4Y": {
+          "type": "item",
+          "settings": {
+            "question": "Czym różni się komplet 3D od 3D z rantami?",
+            "answer": ""
+          }
+        },
+        "item_3pRJ4a": {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo wytrzymują dywaniki EVA?",
+            "answer": ""
+          }
+        },
+        "item_WniKrP": {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo maty EVA wytrzymują w porównaniu do gumy?",
+            "answer": "Tak, maty EVA są produkowane indywidualnie dla konkretnego modelu samochodu, dlatego dokładnie odwzorowują kształt podłogi i uwzględniają wszystkie cechy wnętrza. Dzięki temu ściśle przylegają i zakrywają całą główną strefę pokrycia, w tym skomplikowane obszary, zapewniając maksymalną ochronę przed brudem i wilgocią."
+          }
+        },
+        "item_6MFk3e": {
+          "type": "item",
+          "settings": {
+            "question": "Czy nadają się na lato i zimę jednocześnie?",
+            "answer": ""
+          }
+        },
+        "item_edj9Fd": {
+          "type": "item",
+          "settings": {
+            "question": "Czy podpiętka jest już zamontowana, czy trzeba dokupić osobno?",
+            "answer": ""
+          }
+        },
+        "item_e6q7RR": {
+          "type": "item",
+          "settings": {
+            "question": "Co jeśli nie mogę znaleźć swojego rzadkiego modelu auta w katalogu?",
+            "answer": ""
+          }
+        },
+        "item_F98rg8": {
+          "type": "item",
+          "settings": {
+            "question": "Jak dokładnie odwzorowany będzie kolor względem zdjęcia na stronie?",
+            "answer": ""
+          }
+        },
+        "item_YQDnCk": {
+          "type": "item",
+          "settings": {
+            "question": "Jaki jest sposób dostawy i czy wysyłacie za granicę?",
+            "answer": ""
+          }
+        },
+        "item_zfWUQx": {
+          "type": "item",
+          "settings": {
+            "question": "Co zrobić, jeśli dywanik nie pasuje idealnie po dostawie?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_xCKdcQ",
+        "item_4PYgYh",
+        "item_Y6TF4Y",
+        "item_3pRJ4a",
+        "item_WniKrP",
+        "item_6MFk3e",
+        "item_edj9Fd",
+        "item_e6q7RR",
+        "item_F98rg8",
+        "item_YQDnCk",
+        "item_zfWUQx"
+      ],
+      "settings": {
+        "heading": "Najczęściej zadawane pytania",
+        "background_color": "#f6f6f6",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    }
+  },
+  "order": [
+    "landing_hero",
+    "landing_quote",
+    "landing_value_prop",
+    "landing_credibility",
+    "landing_testimonials_v2_c4Rp8A",
+    "landing_compare",
+    "landing_choose_kit",
+    "landing_faq_v2_LjbKcT"
+  ]
+}

@@ -1,0 +1,335 @@
+/* --- landing-founder-spotlight-v2.liquid — desktop-first --- */
+.landing-founder-spotlight-v2 {
+  margin: 26px 26px 0;
+  padding: var(--lfs-padding-top, 72px) 160px var(--lfs-padding-bottom, 0);
+  background: var(--lfs-bg, #f6f6f6);
+  color: #1b1d22;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.landing-founder-spotlight-v2__inner {
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.landing-founder-spotlight-v2__media {
+  position: relative;
+  flex: 0 1 700px;
+  width: 100%;
+  max-width: 700px;
+  min-width: 0;
+  aspect-ratio: 700 / 716;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.landing-founder-spotlight-v2__media picture {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-founder-spotlight-v2__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.landing-founder-spotlight-v2__placeholder {
+  background: #e9e9e9;
+}
+
+.landing-founder-spotlight-v2__content {
+  flex: 1 1 360px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 72px;
+  box-sizing: border-box;
+}
+
+.landing-founder-spotlight-v2__eyebrow {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ef022d;
+}
+
+.landing-founder-spotlight-v2__mark {
+  display: block;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ef022d;
+}
+
+.landing-founder-spotlight-v2__quote {
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #1b1d22;
+}
+
+.landing-founder-spotlight-v2__divider {
+  width: 100%;
+  height: 1px;
+  background: #e9e9e9;
+}
+
+.landing-founder-spotlight-v2__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing-founder-spotlight-v2__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.landing-founder-spotlight-v2__check {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ef022d;
+}
+
+.landing-founder-spotlight-v2__item-text {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #1b1d22;
+  overflow-wrap: anywhere;
+}
+
+.landing-founder-spotlight-v2__expert {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.landing-founder-spotlight-v2__expert-bar {
+  flex-shrink: 0;
+  width: 3px;
+  border-radius: 2px;
+  background: #ef022d;
+}
+
+.landing-founder-spotlight-v2__expert-body {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.landing-founder-spotlight-v2__expert-label {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ef022d;
+}
+
+.landing-founder-spotlight-v2__expert-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #1b1d22;
+  overflow-wrap: anywhere;
+}
+
+/* Below Figma 1600 content width: shrink side padding so text keeps room */
+@media screen and (max-width: 1599px) {
+  .landing-founder-spotlight-v2 {
+    padding: 64px 80px 0;
+  }
+
+  .landing-founder-spotlight-v2__inner {
+    gap: 48px;
+  }
+
+  .landing-founder-spotlight-v2__media {
+    flex-basis: 560px;
+    max-width: 560px;
+  }
+}
+
+/* Mid desktop: still side-by-side, image yields to copy */
+@media screen and (max-width: 1439px) {
+  .landing-founder-spotlight-v2 {
+    padding: 56px 48px 0;
+  }
+
+  .landing-founder-spotlight-v2__inner {
+    gap: 36px;
+  }
+
+  .landing-founder-spotlight-v2__media {
+    flex: 0 1 42%;
+    max-width: 42%;
+  }
+
+  .landing-founder-spotlight-v2__content {
+    flex: 1 1 52%;
+    padding-bottom: 56px;
+  }
+
+  .landing-founder-spotlight-v2__quote {
+    font-size: 22px;
+  }
+}
+
+/* Stack before text column collapses */
+@media screen and (max-width: 1199px) {
+  .landing-founder-spotlight-v2 {
+    padding: 48px 40px 0;
+  }
+
+  .landing-founder-spotlight-v2__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .landing-founder-spotlight-v2__media {
+    flex: none;
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .landing-founder-spotlight-v2__content {
+    flex: none;
+    width: 100%;
+    padding: 32px 0 48px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .landing-founder-spotlight-v2 {
+    padding: 40px 32px 0;
+  }
+
+  .landing-founder-spotlight-v2__media {
+    max-width: 420px;
+  }
+
+  .landing-founder-spotlight-v2__content {
+    padding: 28px 0 40px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .landing-founder-spotlight-v2 {
+    margin: 0;
+    padding: var(--lfs-padding-top-mobile, 0) 0 var(--lfs-padding-bottom-mobile, 0);
+    border-radius: 0;
+  }
+
+  .landing-founder-spotlight-v2__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-width: none;
+  }
+
+  .landing-founder-spotlight-v2__media {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    border-radius: 20px;
+  }
+
+  .landing-founder-spotlight-v2__content {
+    gap: 24px;
+    padding: 32px 24px 40px;
+  }
+
+  .landing-founder-spotlight-v2__eyebrow {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .landing-founder-spotlight-v2__mark {
+    display: none;
+  }
+
+  .landing-founder-spotlight-v2__quote {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .landing-founder-spotlight-v2__quote::before {
+    content: '„';
+  }
+
+  .landing-founder-spotlight-v2__divider {
+    background: #e5e5e8;
+  }
+
+  .landing-founder-spotlight-v2__list {
+    gap: 10px;
+  }
+
+  .landing-founder-spotlight-v2__check,
+  .landing-founder-spotlight-v2__item-text {
+    font-size: 14px;
+  }
+
+  .landing-founder-spotlight-v2__expert {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .landing-founder-spotlight-v2__expert-bar {
+    width: 2px;
+    background: #d42933;
+  }
+
+  .landing-founder-spotlight-v2__expert-label,
+  .landing-founder-spotlight-v2__expert-text {
+    font-size: 14px;
+  }
+}

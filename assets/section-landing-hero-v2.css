@@ -74,7 +74,7 @@
 
 .landing-hero-v2__breadcrumbs {
   position: absolute;
-  top: 36px;
+  top: calc(var(--header-height, 102px) + 24px);
   left: 40px;
   z-index: 4;
   display: flex;
@@ -276,7 +276,7 @@
   }
 
   .landing-hero-v2__breadcrumbs {
-    top: 16px;
+    top: calc(var(--header-height, 64px) + 12px);
     left: 24px;
     right: 24px;
     font-size: 14px;
@@ -285,7 +285,7 @@
 
   .landing-hero-v2__content {
     align-items: flex-start;
-    gap: 16px;
+    gap: 14px;
     max-width: none;
     padding: 0;
     text-align: left;
@@ -308,20 +308,32 @@
   }
 
   .landing-hero-v2__chip--fact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     gap: 8px;
-    padding: 10px 14px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     font-size: 14px;
     white-space: normal;
   }
 
-  .landing-hero-v2__chip-label,
+  .landing-hero-v2__chip-label {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
   .landing-hero-v2__chip-text {
+    font-size: 14px;
     white-space: normal;
   }
 
   .landing-hero-v2__heading {
     max-width: none;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0;
