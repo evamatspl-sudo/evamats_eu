@@ -112,7 +112,8 @@
     },
     "collection_template": {
       "title": "Kolekcija",
-      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"/collections/all-car-mats\">Noformējiet pasūtījumu šeit</a>"
+      "use_fewer_filters_html": "<a class=\"{{ class }}\" href=\"/collections/all-car-mats\">Noformējiet pasūtījumu šeit</a>",
+      "empty": "Mēs turpinām attīstīt savu vietni — jau esam pabeiguši vairāk nekā 5000 produktu. Ja neatradāt savu modeli, sazinieties ar mums, un mēs to izgatavosim."
     },
     "video": {
       "load_video": "Ielādēt video: {{ description }}"
@@ -238,7 +239,9 @@
       "color": "Krāsa",
       "mount": "Stiprinājums",
       "delivery_show_more": "Rādīt vairāk",
-      "delivery_show_less": "Paslēpt"
+      "delivery_show_less": "Paslēpt",
+      "order_notes_title": "Piezīmes (aprakstiet izmērus, grīdas formu vai pievienojiet salona foto — tas palīdzēs izgatavot precīzāk)",
+      "vehicle_text": "Transportlīdzeklis (ievadiet veidu, piem., motorlaiva, ultravieglā lidmašīna, kvadricikls, autoiekrāvējs…)"
     },
     "colors": {
       "black": "Melns",
@@ -330,6 +333,133 @@
     },
     "loading": "Notiek ielāde...",
     "total_reviews": "atsauksmes kopā",
-    "star_reviews_info": "{{ rating_value }} no {{ rating_max }} zvaigznēm"
+    "star_reviews_info": "{{ rating_value }} no {{ rating_max }} zvaigznēm",
+    "collapsible_content_title": "Izvēršams saturs",
+    "complementary_products": "Papildinošas preces"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blogs",
+      "read_more_title": "Lasīt vairāk: {{ title }}",
+      "comments": {
+        "one": "{{ count }} komentārs",
+        "other": "{{ count }} komentāri"
+      },
+      "moderated": "Ņemiet vērā, ka komentāri pirms publicēšanas tiek apstiprināti.",
+      "comment_form_title": "Atstājiet komentāru",
+      "name": "Vārds",
+      "email": "E-pasts",
+      "message": "Komentārs",
+      "post": "Publicēt komentāru",
+      "back_to_blog": "Atpakaļ uz blogu",
+      "share": "Dalīties ar rakstu",
+      "success": "Jūsu komentārs ir publicēts! Paldies!",
+      "success_moderated": "Jūsu komentārs ir saņemts. Publicēsim to drīzumā, jo mūsu blogs tiek moderēts."
+    }
+  },
+  "onboarding": {
+    "product_title": "Preces nosaukuma piemērs",
+    "collection_title": "Jūsu kolekcijas nosaukums"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Pievienot grozam",
+      "adding_to_cart": "Pievieno...",
+      "choose_color_and_mats_set": "Izvēlieties krāsu un paklāju komplektu",
+      "from": "No",
+      "check_set": "Pārbaudiet komplektu",
+      "choose_options": "Izvēlieties variantus",
+      "choose_product_options": "Izvēlieties variantus precei {{ product_name }}",
+      "description": "Apraksts",
+      "inventory_in_stock": "Ir noliktavā",
+      "inventory_in_stock_show_count": "Noliktavā {{ quantity }}",
+      "inventory_low_stock": "Atlicis maz",
+      "inventory_low_stock_show_count": "Atlicis maz: {{ quantity }}",
+      "inventory_out_of_stock": "Nav noliktavā",
+      "inventory_out_of_stock_continue_selling": "Ir noliktavā",
+      "sku": "Preces kods",
+      "on_sale": "Akcija",
+      "on_sale_2": "Akcijā",
+      "product_variants": "Preces varianti",
+      "media": {
+        "gallery_viewer": "Galerijas skatītājs",
+        "load_image": "Ielādēt attēlu {{ index }} galerijā",
+        "load_model": "Ielādēt 3D modeli {{ index }} galerijā",
+        "load_video": "Atskaņot video {{ index }} galerijā",
+        "image_available": "Attēls {{ index }} tagad pieejams galerijā",
+        "open_media": "Atvērt materiālu {{ index }} logā",
+        "play_model": "Atvērt 3D skatītāju",
+        "play_video": "Atskaņot video"
+      },
+      "quantity": {
+        "label": "Daudzums",
+        "input_label": "Daudzums precei {{ product }}",
+        "increase": "Palielināt daudzumu precei {{ product }}",
+        "decrease": "Samazināt daudzumu precei {{ product }}",
+        "minimum_of": "Vismaz {{ quantity }}",
+        "maximum_of": "Ne vairāk kā {{ quantity }}",
+        "multiples_of": "Ar soli {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> grozā"
+      },
+      "pickup_availability": {
+        "view_store_info": "Skatīt veikala informāciju",
+        "check_other_stores": "Pārbaudīt pieejamību citos veikalos",
+        "pick_up_available": "Pieejama saņemšana",
+        "pick_up_available_at_html": "Saņemšana pieejama <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Saņemšana pašlaik nav pieejama <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Neizdevās ielādēt saņemšanas pieejamību",
+        "refresh": "Atsvaidzināt"
+      },
+      "price": {
+        "from_price_html": "No {{ price }}",
+        "regular_price": "Parastā cena",
+        "sale_price": "Akcijas cena",
+        "unit_price": "Vienības cena"
+      },
+      "share": "Dalīties ar preci",
+      "sold_out": "Izpārdots",
+      "unavailable": "Nav pieejams",
+      "vendor": "Pārdevējs",
+      "value_unavailable": "{{ option_value }} – nav pieejams",
+      "variant_sold_out_or_unavailable": "Variants izpārdots vai nav pieejams",
+      "video_exit_message": "{{ title }} atver video pilnekrānā tajā pašā logā.",
+      "view_full_details": "Skatīt pilnu informāciju",
+      "xr_button": "Skatīt savā telpā",
+      "xr_button_label": "Skatīt savā telpā, atver preci paplašinātās realitātes logā",
+      "include_taxes": "Nodoklis iekļauts.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Piegāde</a> tiek aprēķināta pasūtījuma noformēšanā.",
+      "outlet_material_color": "Materiāla krāsa",
+      "outlet_trim_color": "Apmales krāsa",
+      "outlet_cell_shape": "Šūnu forma"
+    },
+    "modal": {
+      "label": "Materiālu galerija"
+    },
+    "facets": {
+      "apply": "Pielietot",
+      "clear": "Notīrīt",
+      "clear_all": "Noņemt visu",
+      "from": "No",
+      "filter_and_sort": "Filtrēt un kārtot",
+      "filter_by_label": "Filtrs:",
+      "filter_button": "Filtrēt",
+      "filters_selected": {
+        "one": "Izvēlēts {{ count }}",
+        "other": "Izvēlēti {{ count }}"
+      },
+      "filter_selected_accessibility": "{{ type }} (izvēlēti {{ count }} filtri)",
+      "show_more": "Rādīt vairāk",
+      "show_less": "Rādīt mazāk",
+      "max_price": "Augstākā cena ir {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} no {{ count }} preces",
+        "other": "{{ product_count }} no {{ count }} precēm"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} prece",
+        "other": "{{ count }} preces"
+      },
+      "reset": "Atiestatīt"
+    }
   }
 }
