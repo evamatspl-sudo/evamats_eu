@@ -459,7 +459,187 @@
         "one": "{{ count }} prece",
         "other": "{{ count }} preces"
       },
-      "reset": "Atiestatīt"
+      "reset": "Atiestatīt",
+      "sort_button": "Kārtot",
+      "sort_by_label": "Kārtot pēc:",
+      "to": "Līdz",
+      "clear_filter": "Noņemt filtru"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "Nekas netika atrasts pēc “{{ terms }}”. Pārbaudiet rakstību vai izmantojiet citu vārdu.",
+      "page": "Lapa",
+      "products": "Preces",
+      "results_pages_with_count": {
+        "one": "{{ count }} lapa",
+        "other": "{{ count }} lapas"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} ieteikums",
+        "other": "{{ count }} ieteikumi"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} prece",
+        "other": "{{ count }} preces"
+      },
+      "results_with_count": {
+        "one": "{{ count }} rezultāts",
+        "other": "{{ count }} rezultāti"
+      },
+      "results_with_count_and_term": {
+        "one": "Pēc “{{ terms }}” atrasts {{ count }} rezultāts",
+        "other": "Pēc “{{ terms }}” atrasti {{ count }} rezultāti"
+      },
+      "title": "Meklēšanas rezultāti",
+      "search_for": "Meklēt “{{ terms }}”",
+      "suggestions": "Ieteikumi",
+      "pages": "Lapas"
+    },
+    "cart": {
+      "cart": "Grozs"
+    },
+    "contact": {
+      "form": {
+        "title": "Kontaktforma",
+        "name": "Vārds",
+        "email": "E-pasts",
+        "phone": "Tālruņa numurs",
+        "comment": "Komentārs",
+        "send": "Nosūtīt",
+        "post_success": "Paldies, ka sazinājāties ar mums. Atbildēsim, tiklīdz varēsim.",
+        "error_heading": "Lūdzu, izlabojiet šo:"
+      }
+    },
+    "404": {
+      "title": "Lapa nav atrasta",
+      "subtext": "404",
+      "heading_line_1": "Šo lapu neizdevās atrast.",
+      "heading_line_2": "Iespējams, izvēlējāties nepareizu automašīnu.",
+      "home_button": "Sākums",
+      "select_vehicle_button": "Izvēlēties transportlīdzekli"
+    }
+  },
+  "localization": {
+    "country_label": "Valsts/reģions",
+    "language_label": "Valoda",
+    "update_language": "Mainīt valodu",
+    "update_country": "Mainīt valsti/reģionu"
+  },
+  "customer": {
+    "account": {
+      "title": "Konts",
+      "details": "Konta dati",
+      "view_addresses": "Skatīt adreses",
+      "return": "Atgriezties uz konta datiem"
+    },
+    "account_fallback": "Konts",
+    "activate_account": {
+      "title": "Aktivizēt kontu",
+      "subtext": "Izveidojiet paroli, lai aktivizētu kontu.",
+      "password": "Parole",
+      "password_confirm": "Apstipriniet paroli",
+      "submit": "Aktivizēt kontu",
+      "cancel": "Noraidīt uzaicinājumu"
+    },
+    "addresses": {
+      "title": "Adreses",
+      "default": "Noklusējuma",
+      "add_new": "Pievienot jaunu adresi",
+      "edit_address": "Rediģēt adresi",
+      "first_name": "Vārds",
+      "last_name": "Uzvārds",
+      "company": "Uzņēmums",
+      "address1": "Adrese 1",
+      "address2": "Adrese 2",
+      "city": "Pilsēta",
+      "country": "Valsts/reģions",
+      "province": "Novads",
+      "zip": "Pasta indekss",
+      "phone": "Tālrunis",
+      "set_default": "Iestatīt kā noklusējuma adresi",
+      "add": "Pievienot adresi",
+      "update": "Atjaunināt adresi",
+      "cancel": "Atcelt",
+      "edit": "Rediģēt",
+      "delete": "Dzēst",
+      "delete_confirm": "Vai tiešām vēlaties dzēst šo adresi?"
+    },
+    "log_in": "Pieslēgties",
+    "log_out": "Iziet",
+    "login_page": {
+      "cancel": "Atcelt",
+      "create_account": "Izveidot kontu",
+      "email": "E-pasts",
+      "forgot_password": "Aizmirsāt paroli?",
+      "guest_continue": "Turpināt",
+      "guest_title": "Turpināt kā viesis",
+      "password": "Parole",
+      "title": "Pieslēgšanās",
+      "sign_in": "Pieslēgties",
+      "submit": "Nosūtīt"
+    },
+    "order": {
+      "title": "Pasūtījums {{ name }}",
+      "date_html": "Veikts {{ date }}",
+      "cancelled_html": "Pasūtījums atcelts {{ date }}",
+      "cancelled_reason": "Iemesls: {{ reason }}",
+      "billing_address": "Rēķina adrese",
+      "payment_status": "Maksājuma statuss",
+      "shipping_address": "Piegādes adrese",
+      "fulfillment_status": "Izpildes statuss",
+      "discount": "Atlaide",
+      "shipping": "Piegāde",
+      "tax": "Nodoklis",
+      "product": "Prece",
+      "sku": "Preces kods",
+      "price": "Cena",
+      "quantity": "Daudzums",
+      "total": "Kopā",
+      "total_refunded": "Atmaksāts",
+      "fulfilled_at_html": "Izpildīts {{ date }}",
+      "track_shipment": "Sekot sūtījumam",
+      "tracking_url": "Izsekošanas saite",
+      "tracking_company": "Pārvadātājs",
+      "tracking_number": "Izsekošanas numurs",
+      "subtotal": "Starpsumma",
+      "total_duties": "Muitas nodevas"
+    },
+    "orders": {
+      "title": "Pasūtījumu vēsture",
+      "order_number": "Pasūtījums",
+      "order_number_link": "Pasūtījuma numurs {{ number }}",
+      "date": "Datums",
+      "payment_status": "Maksājuma statuss",
+      "fulfillment_status": "Izpildes statuss",
+      "total": "Kopā",
+      "none": "Jūs vēl neesat veicis nevienu pasūtījumu."
+    },
+    "recover_password": {
+      "title": "Atjaunot paroli",
+      "subtext": "Nosūtīsim jums e-pastu paroles atjaunošanai",
+      "success": "Nosūtījām jums e-pastu ar saiti paroles maiņai."
+    },
+    "register": {
+      "title": "Izveidot kontu",
+      "first_name": "Vārds",
+      "last_name": "Uzvārds",
+      "email": "E-pasts",
+      "password": "Parole",
+      "submit": "Izveidot"
+    },
+    "reset_password": {
+      "title": "Atiestatīt konta paroli",
+      "subtext": "Ievadiet jaunu paroli",
+      "password": "Parole",
+      "password_confirm": "Apstipriniet paroli",
+      "submit": "Atiestatīt paroli"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "how_to_use_gift_card": "Izmantojiet dāvanu kartes kodu tiešsaistē vai QR kodu veikalā",
+      "title": "Lūk, jūsu {{ value }} dāvanu kartes atlikums veikalā {{ shop }}!"
     }
   }
 }
