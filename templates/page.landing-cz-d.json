@@ -24,8 +24,8 @@
         "fact_1"
       ],
       "settings": {
-        "image_desktop": "shopify://shop_images/Background_Image.webp",
-        "image_mobile": "shopify://shop_images/Hero_photo.webp",
+        "image_desktop": "shopify://shop_images/Group_1948755323.webp",
+        "image_mobile": "shopify://shop_images/Group_1948755322.webp",
         "height_desktop": 900,
         "height_mobile": 744,
         "overlay_opacity": 40,
@@ -48,21 +48,21 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_54_49_1.webp",
+            "image": "shopify://shop_images/2026-08-04_14.05.51_1.webp",
             "text": "Bez udání tloušťky materiálu v popisu"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_52_52_1.webp",
+            "image": "shopify://shop_images/2026-08-04_14.04.02_1.webp",
             "text": "Týdny bez odpovědi na reklamaci"
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_57_38_1.webp",
+            "image": "shopify://shop_images/ChatGPT_Image_4_._2026_._14_05_30_1.webp",
             "text": "Tenký kus pěny bez přesného tvaru na váš model"
           }
         }
@@ -134,7 +134,7 @@
       "settings": {
         "heading": "",
         "intro": "",
-        "image_desktop": "shopify://shop_images/4f0e0eaff4c762c2eeaacb952a812eeec15881ec.webp",
+        "image_desktop": "shopify://shop_images/Mask_group_1_47baf914-49d2-4edc-9b82-150dc7b4bd11.webp",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
@@ -183,9 +183,9 @@
         "item_5"
       ],
       "settings": {
+        "image": "shopify://shop_images/Founder_Photo_Large_48b36a3d-6769-4202-904b-20365053113a.webp",
         "eyebrow": "Kdo jsme",
         "quote": "Ahoj, jsem Maks a vyrábím prémiové autokoberce navržené s ohledem na váš komfort — a na vás.",
-        "image": "shopify://shop_images/Rectangle_4876_c193c4e6-ee8d-4da1-9f6b-e7d86e295a1b.webp",
         "expert_label": "ODBORNÍK",
         "expert_text": "Nezávislí odborníci na automobilové doplňky doporučují před nákupem online autokoberců ověřit veřejnou adresu prodejce a přesnou tloušťku materiálu — obojí je u Carvion uvedeno otevřeně.",
         "background_color": "#f6f6f6",
