@@ -1,0 +1,485 @@
+{{ 'section-landing-testimonials-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign review_count = 0
+  for block in section.blocks
+    if block.type == 'review'
+      assign review_count = review_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingTestimonials-{{ section.id }}"
+  class="landing-testimonials-v2"
+  style="
+    --lt-bg: {{ section.settings.background_color }};
+    --lt-padding-top: {{ section.settings.padding_top }}px;
+    --lt-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lt-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lt-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+  data-lt-root
+>
+  <div class="landing-testimonials-v2__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="landing-testimonials-v2__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if review_count > 0 -%}
+      <div class="landing-testimonials-v2__slider-wrap">
+        {% render 'eva-slider-nav-button',
+          direction: 'prev',
+          size: 'large',
+          class: 'landing-testimonials-v2__nav landing-testimonials-v2__nav--desktop landing-testimonials-v2__nav--prev',
+          label: 'Poprzednia opinia'
+        %}
+
+        <div class="swiper landing-testimonials-v2__swiper" data-lt-swiper>
+          <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'review' -%}
+                {%- liquid
+                  assign rating_value = block.settings.rating | default: 5 | plus: 0
+                  assign full_stars = rating_value | floor
+                  if full_stars > 5
+                    assign full_stars = 5
+                  endif
+                  if full_stars < 0
+                    assign full_stars = 0
+                  endif
+                  assign empty_stars = 5 | minus: full_stars
+                  assign rating_label = rating_value | append: '.0'
+                  assign badge_image = block.settings.badge_icon
+                  assign avatar_image = block.settings.avatar
+                -%}
+                <div class="swiper-slide landing-testimonials-v2__slide" {{ block.shopify_attributes }}>
+                  <article class="landing-testimonials-v2__card" data-lt-card>
+                    <div class="landing-testimonials-v2__badge">
+                      {%- if badge_image != blank -%}
+                        {{
+                          badge_image
+                          | image_url: width: 96
+                          | image_tag:
+                            loading: 'lazy',
+                            class: 'landing-testimonials-v2__badge-img',
+                            widths: '32, 64, 96',
+                            sizes: '32px'
+                        }}
+                      {%- else -%}
+                        <img
+                          class="landing-testimonials-v2__badge-img"
+                          src="{{ 'landing-testimonials-badge-default.png' | asset_url }}"
+                          alt=""
+                          width="32"
+                          height="32"
+                          loading="lazy"
+                        >
+                      {%- endif -%}
+                    </div>
+
+                    <div class="landing-testimonials-v2__card-main">
+                      <div class="landing-testimonials-v2__quote-block">
+                        <img
+                          class="landing-testimonials-v2__quote-mark"
+                          src="{{ 'landing-testimonials-quote.svg' | asset_url }}"
+                          alt=""
+                          width="34"
+                          height="29"
+                          loading="lazy"
+                        >
+
+                        {%- if block.settings.text != blank -%}
+                          <p class="landing-testimonials-v2__text" data-lt-text>{{ block.settings.text | escape }}</p>
+                        {%- endif -%}
+
+                        {%- if section.settings.more_label != blank -%}
+                          <button type="button" class="landing-testimonials-v2__more" data-lt-more>
+                            <span>{{ section.settings.more_label | escape }}</span>
+                            <img
+                              class="landing-testimonials-v2__more-icon"
+                              src="{{ 'landing-testimonials-chevron.svg' | asset_url }}"
+                              alt=""
+                              width="16"
+                              height="16"
+                              loading="lazy"
+                            >
+                          </button>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="landing-testimonials-v2__author">
+                        <div class="landing-testimonials-v2__avatar">
+                          {%- if avatar_image != blank -%}
+                            {{
+                              avatar_image
+                              | image_url: width: 100
+                              | image_tag:
+                                loading: 'lazy',
+                                class: 'landing-testimonials-v2__avatar-img',
+                                widths: '50, 100',
+                                sizes: '50px'
+                            }}
+                          {%- else -%}
+                            <img
+                              class="landing-testimonials-v2__avatar-img"
+                              src="{{ 'landing-testimonials-avatar-r.png' | asset_url }}"
+                              alt=""
+                              width="50"
+                              height="50"
+                              loading="lazy"
+                            >
+                          {%- endif -%}
+                        </div>
+
+                        <div class="landing-testimonials-v2__author-meta">
+                          {%- if block.settings.author != blank -%}
+                            <p class="landing-testimonials-v2__author-name">{{ block.settings.author | escape }}</p>
+                          {%- endif -%}
+
+                          <div class="landing-testimonials-v2__rating-row">
+                            <div class="landing-testimonials-v2__stars" aria-hidden="true">
+                              {%- for i in (1..full_stars) -%}
+                                <img
+                                  class="landing-testimonials-v2__star"
+                                  src="{{ 'landing-testimonials-star.svg' | asset_url }}"
+                                  alt=""
+                                  width="18"
+                                  height="18"
+                                  loading="lazy"
+                                >
+                              {%- endfor -%}
+                              {%- for i in (1..empty_stars) -%}
+                                <img
+                                  class="landing-testimonials-v2__star"
+                                  src="{{ 'landing-testimonials-star-empty.svg' | asset_url }}"
+                                  alt=""
+                                  width="18"
+                                  height="18"
+                                  loading="lazy"
+                                >
+                              {%- endfor -%}
+                            </div>
+                            <span class="landing-testimonials-v2__rating-value">{{ rating_label }}</span>
+                            {%- if block.settings.date != blank -%}
+                              <span class="landing-testimonials-v2__date">{{ block.settings.date | escape }}</span>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {% render 'eva-slider-nav-button',
+          direction: 'next',
+          size: 'large',
+          class: 'landing-testimonials-v2__nav landing-testimonials-v2__nav--desktop landing-testimonials-v2__nav--next',
+          label: 'Następna opinia'
+        %}
+      </div>
+
+      <div class="landing-testimonials-v2__controls-mobile">
+        {% render 'eva-slider-nav-button',
+          direction: 'prev',
+          size: 'small',
+          class: 'landing-testimonials-v2__nav landing-testimonials-v2__nav--mobile landing-testimonials-v2__nav--prev',
+          label: 'Poprzednia opinia'
+        %}
+        <div class="landing-testimonials-v2__pagination swiper-pagination" data-lt-pagination></div>
+        {% render 'eva-slider-nav-button',
+          direction: 'next',
+          size: 'small',
+          class: 'landing-testimonials-v2__nav landing-testimonials-v2__nav--mobile landing-testimonials-v2__nav--next',
+          label: 'Następna opinia'
+        %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% javascript %}
+  (function () {
+    function destroyTestimonials(root) {
+      if (!root) return;
+      if (root._ltSwiper) {
+        try {
+          root._ltSwiper.destroy(true, true);
+        } catch (e) {}
+        root._ltSwiper = null;
+      }
+    }
+
+    function bindMore(root) {
+      root.querySelectorAll('[data-lt-card]').forEach(function (card) {
+        var btn = card.querySelector('[data-lt-more]');
+        var text = card.querySelector('[data-lt-text]');
+        if (!btn || !text) return;
+        if (btn._ltBound) return;
+        btn._ltBound = true;
+        btn.addEventListener('click', function () {
+          var open = card.classList.toggle('is-expanded');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    }
+
+    function initTestimonials(root) {
+      if (!root || root._ltSwiper) return;
+      var swiperEl = root.querySelector('[data-lt-swiper]');
+      if (!swiperEl || typeof window.Swiper !== 'function') return;
+
+      var slides = swiperEl.querySelectorAll('.swiper-slide');
+      if (!slides.length) return;
+
+      var paginationEl = root.querySelector('[data-lt-pagination]');
+      var prevDesktop = root.querySelector('.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--prev');
+      var nextDesktop = root.querySelector('.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--next');
+      var prevMobile = root.querySelector('.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--prev');
+      var nextMobile = root.querySelector('.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--next');
+
+      root._ltSwiper = new window.Swiper(swiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 11,
+        watchOverflow: true,
+        pagination: paginationEl
+          ? {
+              el: paginationEl,
+              clickable: true,
+            }
+          : undefined,
+        navigation: {
+          prevEl: [prevDesktop, prevMobile].filter(Boolean),
+          nextEl: [nextDesktop, nextMobile].filter(Boolean),
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+          },
+        },
+      });
+
+      bindMore(root);
+    }
+
+    function initAll() {
+      document.querySelectorAll('[data-lt-root]').forEach(initTestimonials);
+    }
+
+    function whenSwiperReady(cb) {
+      if (typeof window.Swiper === 'function') {
+        cb();
+        return;
+      }
+      var onLoaded = function () {
+        document.removeEventListener('swiper-loaded', onLoaded);
+        cb();
+      };
+      document.addEventListener('swiper-loaded', onLoaded);
+      setTimeout(function () {
+        if (typeof window.Swiper === 'function') {
+          document.removeEventListener('swiper-loaded', onLoaded);
+          cb();
+        }
+      }, 3000);
+    }
+
+    whenSwiperReady(initAll);
+
+    document.addEventListener('shopify:section:load', function (event) {
+      var root = event.target.querySelector('[data-lt-root]');
+      if (root) {
+        destroyTestimonials(root);
+        whenSwiperReady(function () {
+          initTestimonials(root);
+        });
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (event) {
+      var root = event.target.querySelector('[data-lt-root]');
+      if (root) destroyTestimonials(root);
+    });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Landing testimonials v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-testimonials-v2",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Co mówią kierowcy, którzy już przeszli na EVA"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "More label",
+      "default": "Więcej informacji"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "badge_icon",
+          "label": "Badge icon (top right)"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Zweryfikowany klient"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "2 tygodni(e) temu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing testimonials v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

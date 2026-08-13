@@ -194,11 +194,459 @@
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 48
       }
+    },
+    "landing_credibility": {
+      "type": "landing-credibility-v2",
+      "blocks": {
+        "card_historia": {
+          "type": "card",
+          "settings": {
+            "title": "Historia",
+            "text": "EVAMATS to polski producent — nie pośrednik. „Od ręcznej pracy do standardu jakości” to nie slogan, a opis codziennej pracy: 1567 dostępnych modeli i 59 620+ zrealizowanych kompletów, wysyłka do ponad 27 krajów. Do nietypowych aut firma organizuje pomiar na miejscu — osobiście lub przez sieć kontaktów w salonach samochodowych w całej Polsce i za granicą."
+          }
+        },
+        "card_expert": {
+          "type": "card",
+          "settings": {
+            "title": "Głos eksperta",
+            "text": "Specjaliści od wykończeń wnętrz samochodowych zwracają uwagę, że o realnej ochronie podłogi decyduje dokładność przylegania do każdej krawędzi — nie sam materiał, a precyzja wykonania pod konkretny model."
+          }
+        }
+      },
+      "block_order": [
+        "card_historia",
+        "card_expert"
+      ],
+      "settings": {
+        "eyebrow": "Sprawdzone doświadczenie",
+        "heading": "Nie obietnice — konkretne liczby",
+        "image": "shopify://shop_images/Main_Image.webp",
+        "background_color": "#f6f6f6",
+        "card_background_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "evamats_proven_scale_v2_7GEAQm": {
+      "type": "evamats-proven-scale-v2",
+      "blocks": {
+        "stat_p8VLJE": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "7 082",
+            "show_plus": true,
+            "label": "Zákazníků doporučuje nás dál"
+          }
+        },
+        "stat_KrQirX": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "1567",
+            "show_plus": true,
+            "label": "Dostupných modelů aut"
+          }
+        },
+        "stat_8KFkmJ": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": true,
+            "value": "56 732",
+            "show_plus": true,
+            "label": "Realizovaných kompletů"
+          }
+        },
+        "stat_mmUG6R": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "27",
+            "show_plus": true,
+            "label": "Doručení do více než 27 zemí"
+          }
+        }
+      },
+      "block_order": [
+        "stat_p8VLJE",
+        "stat_KrQirX",
+        "stat_8KFkmJ",
+        "stat_mmUG6R"
+      ],
+      "settings": {
+        "heading": "",
+        "intro": "",
+        "image_desktop": "shopify://shop_images/4f0e0eaff4c762c2eeaacb952a812eeec15881ec.webp",
+        "padding_top": 140,
+        "padding_bottom": 140,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_testimonials": {
+      "type": "landing-testimonials-v2",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "text": "„Materiał jest naprawdę solidny, perfekcyjnie dopasowany, a czyszczenie zajmuje chwilę. Woda, błoto, piasek — wszystko zatrzymuje się na powierzchni.”",
+            "author": "Zweryfikowany klient",
+            "rating": 5,
+            "date": "2 tygodni(e) temu"
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "text": "„Byłem sceptyczny — całe życie miałem welury na lato, gumy na zimę. Teraz mam jedne na cały rok. Audi Q5 jeszcze lepiej wygląda.”",
+            "author": "Community member",
+            "rating": 4,
+            "date": "7 maj 2026"
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "text": "„Dywaniki przyszły w idealnym stanie. Obszycie w kolorze pięknie współgra z oświetleniem samochodu.”",
+            "author": "Community member",
+            "rating": 5,
+            "date": "18 maj 2026"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6"
+      ],
+      "settings": {
+        "heading": "Co mówią kierowcy, którzy już przeszli na EVA",
+        "more_label": "Więcej informacji",
+        "background_color": "#f6f6f6",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_compare": {
+      "type": "landing-compare-v2",
+      "blocks": {
+        "card_coverage": {
+          "type": "card",
+          "settings": {
+            "icon_preset": "coverage",
+            "title": "Pokrycie podłogi",
+            "positive_label": "EVA",
+            "positive_text": "do 98%, w tym tunel",
+            "option_a_label": "Guma",
+            "option_a_text": "częściowe",
+            "option_b_label": "Welur",
+            "option_b_text": "częściowe"
+          }
+        },
+        "card_smell": {
+          "type": "card",
+          "settings": {
+            "icon_preset": "smell",
+            "title": "Zapach",
+            "positive_label": "EVA",
+            "positive_text": "brak",
+            "option_a_label": "Guma",
+            "option_a_text": "częsty przy upale",
+            "option_b_label": "Welur",
+            "option_b_text": "brak"
+          }
+        },
+        "card_cleaning": {
+          "type": "card",
+          "settings": {
+            "icon_preset": "cleaning",
+            "title": "Czyszczenie",
+            "positive_label": "EVA",
+            "positive_text": "wytrzepać / myjka ciśnieniowa",
+            "option_a_label": "Guma",
+            "option_a_text": "wytrzepać",
+            "option_b_label": "Welur",
+            "option_b_text": "pranie, dłużej schnie"
+          }
+        },
+        "card_durability": {
+          "type": "card",
+          "settings": {
+            "icon_preset": "durability",
+            "title": "Trwałość",
+            "positive_label": "EVA",
+            "positive_text": "5–7 lat bez śladu zużycia",
+            "option_a_label": "Guma",
+            "option_a_text": "pęka, twardnieje",
+            "option_b_label": "Welur",
+            "option_b_text": "traci wygląd"
+          }
+        },
+        "card_fit": {
+          "type": "card",
+          "settings": {
+            "icon_preset": "fit",
+            "title": "Dopasowanie",
+            "positive_label": "EVA",
+            "positive_text": "3D pod dokładny model",
+            "option_a_label": "Guma",
+            "option_a_text": "uniwersalne",
+            "option_b_label": "Welur",
+            "option_b_text": "uniwersalne"
+          }
+        }
+      },
+      "block_order": [
+        "card_coverage",
+        "card_smell",
+        "card_cleaning",
+        "card_durability",
+        "card_fit"
+      ],
+      "settings": {
+        "heading": "EVA vs guma vs welur",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_choose_kit": {
+      "type": "landing-choose-kit-v2",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "Marka i model",
+            "label_mobile": "Marka i model"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "Kształt komórek",
+            "label_mobile": "Kształt"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "Kolor materiału",
+            "label_mobile": "Kolor mat."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "label": "Kolor obszycia",
+            "label_mobile": "Obszycie"
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "label": "Gotowy komplet",
+            "label_mobile": "Gotowe"
+          }
+        },
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "title": "Sam dywanik kierowcy",
+            "subtitle": "podstawowa ochrona",
+            "price": "od 150,00 zł",
+            "button_label": "Wybieram",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył",
+            "subtitle": "pełna ochrona kabiny",
+            "price": "−10%",
+            "button_label": "Wybieram",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "offer_3": {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył + mata do bagażnika",
+            "subtitle": "komplet kompletny · WYBÓR KIEROWCÓW",
+            "price": "−15%",
+            "button_label": "Wybieram",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "offer_1",
+        "offer_2",
+        "offer_3"
+      ],
+      "settings": {
+        "heading": "Wybierz swój komplet EVA",
+        "note_1": "Ręczna produkcja = ograniczona liczba kompletów realizowanych w tym tygodniu. Zapisz się na newsletter i odbierz 27 zł rabatu na pierwsze zamówienie.",
+        "note_2": "Zwroty i reklamacje rozpatrujemy indywidualnie i w kolejności zgłoszeń — Twoja sprawa zawsze ma u nas pełną uwagę. Kontakt:",
+        "contact_email": "reklamacje@evamats.pl",
+        "note_3": "Produkcja: do 10 dni. Dostawa: do 4 dni. Płatność m.in. BLIK i Przelewy24.",
+        "cta_label": "Dobierz dywaniki w 15 sekund",
+        "cta_link": "shopify://collections/all-car-mats",
+        "trust_text": "59 620 zrealizowanych kompletów",
+        "background_color": "#14161a",
+        "padding_top": 88,
+        "padding_bottom": 88,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_faq": {
+      "type": "landing-faq-v2",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "question": "Czy dywaniki na pewno będą pasować do mojego auta?",
+            "answer": ""
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "question": "Co to jest dywanik na tunel i dlaczego to ważne?",
+            "answer": ""
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "question": "Czym różni się komplet 3D od 3D z rantami?",
+            "answer": ""
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo wytrzymują dywaniki EVA?",
+            "answer": ""
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo maty EVA wytrzymują w porównaniu do gumy?",
+            "answer": "Tak, maty EVA są produkowane indywidualnie dla konkretnego modelu samochodu, dlatego dokładnie odwzorowują kształt podłogi i uwzględniają wszystkie cechy wnętrza. Dzięki temu ściśle przylegają i zakrywają całą główną strefę pokrycia, w tym skomplikowane obszary, zapewniając maksymalną ochronę przed brudem i wilgocią."
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "question": "Czy nadają się na lato i zimę jednocześnie?"
+          }
+        },
+        "faq_7": {
+          "type": "item",
+          "settings": {
+            "question": "Czy podpiętka jest już zamontowana, czy trzeba dokupić osobno?"
+          }
+        },
+        "faq_8": {
+          "type": "item",
+          "settings": {
+            "question": "Co jeśli nie mogę znaleźć swojego rzadkiego modelu auta w katalogu?"
+          }
+        },
+        "faq_9": {
+          "type": "item",
+          "settings": {
+            "question": "Jak dokładnie odwzorowany będzie kolor względem zdjęcia na stronie?"
+          }
+        },
+        "faq_10": {
+          "type": "item",
+          "settings": {
+            "question": "Jaki jest sposób dostawy i czy wysyłacie za granicę?"
+          }
+        },
+        "faq_11": {
+          "type": "item",
+          "settings": {
+            "question": "Co zrobić, jeśli dywanik nie pasuje idealnie po dostawie?"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11"
+      ],
+      "settings": {
+        "heading": "Najczęściej zadawane pytania",
+        "background_color": "#f6f6f6",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
     }
   },
   "order": [
     "landing_hero",
     "landing_antagonist",
-    "landing_benefits"
+    "landing_benefits",
+    "landing_credibility",
+    "evamats_proven_scale_v2_7GEAQm",
+    "landing_testimonials",
+    "landing_compare",
+    "landing_choose_kit",
+    "landing_faq"
   ]
 }

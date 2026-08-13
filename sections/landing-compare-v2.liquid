@@ -1,0 +1,334 @@
+{{ 'section-landing-compare-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign card_count = 0
+  for block in section.blocks
+    if block.type == 'card'
+      assign card_count = card_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingCompare-{{ section.id }}"
+  class="landing-compare-v2"
+  style="
+    --lc2-padding-top: {{ section.settings.padding_top }}px;
+    --lc2-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lc2-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lc2-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-compare-v2__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="landing-compare-v2__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if card_count > 0 -%}
+      <div class="landing-compare-v2__cards">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'card' -%}
+            {%- liquid
+              assign icon_preset = block.settings.icon_preset | default: 'coverage'
+              assign preset_asset = 'landing-compare-icon-coverage.svg'
+              case icon_preset
+                when 'smell'
+                  assign preset_asset = 'landing-compare-icon-smell.svg'
+                when 'cleaning'
+                  assign preset_asset = 'landing-compare-icon-cleaning.svg'
+                when 'durability'
+                  assign preset_asset = 'landing-compare-icon-durability.svg'
+                when 'fit'
+                  assign preset_asset = 'landing-compare-icon-fit.svg'
+                else
+                  assign preset_asset = 'landing-compare-icon-coverage.svg'
+              endcase
+            -%}
+            <article class="landing-compare-v2__card" {{ block.shopify_attributes }}>
+              <div class="landing-compare-v2__icon-wrap">
+                {%- if block.settings.icon != blank -%}
+                  {{
+                    block.settings.icon
+                    | image_url: width: 80
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'landing-compare-v2__icon',
+                      widths: '40, 80',
+                      sizes: '40px'
+                  }}
+                {%- else -%}
+                  <img
+                    class="landing-compare-v2__icon"
+                    src="{{ preset_asset | asset_url }}"
+                    alt=""
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="landing-compare-v2__card-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+
+              <div class="landing-compare-v2__divider" aria-hidden="true"></div>
+
+              <div class="landing-compare-v2__row landing-compare-v2__row--positive">
+                <div class="landing-compare-v2__label-line">
+                  <img
+                    class="landing-compare-v2__status"
+                    src="{{ 'landing-compare-check.svg' | asset_url }}"
+                    alt=""
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  >
+                  <span class="landing-compare-v2__label">{{ block.settings.positive_label | default: 'EVA' | escape }}</span>
+                </div>
+                {%- if block.settings.positive_text != blank -%}
+                  <p class="landing-compare-v2__value">{{ block.settings.positive_text | escape }}</p>
+                {%- endif -%}
+              </div>
+
+              <div class="landing-compare-v2__secondary">
+                <div class="landing-compare-v2__row landing-compare-v2__row--muted">
+                  <div class="landing-compare-v2__label-line">
+                    <img
+                      class="landing-compare-v2__status landing-compare-v2__status--cross"
+                      src="{{ 'landing-compare-cross.svg' | asset_url }}"
+                      alt=""
+                      width="12"
+                      height="12"
+                      loading="lazy"
+                    >
+                    <span class="landing-compare-v2__label">{{ block.settings.option_a_label | default: 'Guma' | escape }}</span>
+                  </div>
+                  {%- if block.settings.option_a_text != blank -%}
+                    <p class="landing-compare-v2__value">{{ block.settings.option_a_text | escape }}</p>
+                  {%- endif -%}
+                </div>
+
+                <div class="landing-compare-v2__row landing-compare-v2__row--muted">
+                  <div class="landing-compare-v2__label-line">
+                    <img
+                      class="landing-compare-v2__status landing-compare-v2__status--cross"
+                      src="{{ 'landing-compare-cross.svg' | asset_url }}"
+                      alt=""
+                      width="12"
+                      height="12"
+                      loading="lazy"
+                    >
+                    <span class="landing-compare-v2__label">{{ block.settings.option_b_label | default: 'Welur' | escape }}</span>
+                  </div>
+                  {%- if block.settings.option_b_text != blank -%}
+                    <p class="landing-compare-v2__value">{{ block.settings.option_b_text | escape }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing compare v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-compare-v2",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "EVA vs guma vs welur"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Comparison card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "select",
+          "id": "icon_preset",
+          "label": "Default icon",
+          "options": [
+            { "value": "coverage", "label": "Coverage" },
+            { "value": "smell", "label": "Smell" },
+            { "value": "cleaning", "label": "Cleaning" },
+            { "value": "durability", "label": "Durability" },
+            { "value": "fit", "label": "Fit" }
+          ],
+          "default": "coverage",
+          "info": "Used when no custom icon is uploaded"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pokrycie podłogi"
+        },
+        {
+          "type": "text",
+          "id": "positive_label",
+          "label": "Positive label",
+          "default": "EVA"
+        },
+        {
+          "type": "text",
+          "id": "positive_text",
+          "label": "Positive text",
+          "default": "do 98%, w tym tunel"
+        },
+        {
+          "type": "text",
+          "id": "option_a_label",
+          "label": "Option A label",
+          "default": "Guma"
+        },
+        {
+          "type": "text",
+          "id": "option_a_text",
+          "label": "Option A text",
+          "default": "częściowe"
+        },
+        {
+          "type": "text",
+          "id": "option_b_label",
+          "label": "Option B label",
+          "default": "Welur"
+        },
+        {
+          "type": "text",
+          "id": "option_b_text",
+          "label": "Option B text",
+          "default": "częściowe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing compare v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "icon_preset": "coverage",
+            "title": "Pokrycie podłogi",
+            "positive_label": "EVA",
+            "positive_text": "do 98%, w tym tunel",
+            "option_a_label": "Guma",
+            "option_a_text": "częściowe",
+            "option_b_label": "Welur",
+            "option_b_text": "częściowe"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_preset": "smell",
+            "title": "Zapach",
+            "positive_label": "EVA",
+            "positive_text": "brak",
+            "option_a_label": "Guma",
+            "option_a_text": "częsty przy upale",
+            "option_b_label": "Welur",
+            "option_b_text": "brak"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_preset": "cleaning",
+            "title": "Czyszczenie",
+            "positive_label": "EVA",
+            "positive_text": "wytrzepać / myjka ciśnieniowa",
+            "option_a_label": "Guma",
+            "option_a_text": "wytrzepać",
+            "option_b_label": "Welur",
+            "option_b_text": "pranie, dłużej schnie"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_preset": "durability",
+            "title": "Trwałość",
+            "positive_label": "EVA",
+            "positive_text": "5–7 lat bez śladu zużycia",
+            "option_a_label": "Guma",
+            "option_a_text": "pęka, twardnieje",
+            "option_b_label": "Welur",
+            "option_b_text": "traci wygląd"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon_preset": "fit",
+            "title": "Dopasowanie",
+            "positive_label": "EVA",
+            "positive_text": "3D pod dokładny model",
+            "option_a_label": "Guma",
+            "option_a_text": "uniwersalne",
+            "option_b_label": "Welur",
+            "option_b_text": "uniwersalne"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

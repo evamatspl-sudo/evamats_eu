@@ -1,0 +1,219 @@
+{{ 'section-landing-faq-v2.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="LandingFaq-{{ section.id }}"
+  class="landing-faq-v2"
+  style="
+    --lfq-bg: {{ section.settings.background_color }};
+    --lfq-padding-top: {{ section.settings.padding_top }}px;
+    --lfq-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lfq-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lfq-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-faq-v2__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="landing-faq-v2__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="landing-faq-v2__list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'item' -%}
+            {%- if block.settings.question != blank -%}
+              <details
+                class="landing-faq-v2__item"
+                id="LandingFaq-{{ section.id }}-{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                <summary class="landing-faq-v2__summary">
+                  <span class="landing-faq-v2__question">{{ block.settings.question | escape }}</span>
+                  <span class="landing-faq-v2__icon" aria-hidden="true">
+                    <span class="landing-faq-v2__icon-plus">
+                      <img
+                        src="{{ 'landing-faq-plus.svg' | asset_url }}"
+                        alt=""
+                        width="13"
+                        height="13"
+                        loading="lazy"
+                      >
+                    </span>
+                    <span class="landing-faq-v2__icon-close">
+                      <img
+                        src="{{ 'landing-faq-close.svg' | asset_url }}"
+                        alt=""
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      >
+                    </span>
+                  </span>
+                </summary>
+                {%- if block.settings.answer != blank -%}
+                  <div class="landing-faq-v2__answer">
+                    <p>{{ block.settings.answer | escape | newline_to_br }}</p>
+                  </div>
+                {%- endif -%}
+              </details>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing FAQ v2",
+  "tag": "section",
+  "class": "section-landing-faq-v2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Najczęściej zadawane pytania"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Czy dywaniki na pewno będą pasować do mojego auta?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing FAQ v2",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "Czy dywaniki na pewno będą pasować do mojego auta?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Co to jest dywanik na tunel i dlaczego to ważne?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Czym różni się komplet 3D od 3D z rantami?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo wytrzymują dywaniki EVA?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Jak długo maty EVA wytrzymują w porównaniu do gumy?",
+            "answer": "Tak, maty EVA są produkowane indywidualnie dla konkretnego modelu samochodu, dlatego dokładnie odwzorowują kształt podłogi i uwzględniają wszystkie cechy wnętrza. Dzięki temu ściśle przylegają i zakrywają całą główną strefę pokrycia, w tym skomplikowane obszary, zapewniając maksymalną ochronę przed brudem i wilgocią."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Czy nadają się na lato i zimę jednocześnie?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Czy podpiętka jest już zamontowana, czy trzeba dokupić osobno?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Co jeśli nie mogę znaleźć swojego rzadkiego modelu auta w katalogu?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Jak dokładnie odwzorowany będzie kolor względem zdjęcia na stronie?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Jaki jest sposób dostawy i czy wysyłacie za granicę?"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Co zrobić, jeśli dywanik nie pasuje idealnie po dostawie?"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

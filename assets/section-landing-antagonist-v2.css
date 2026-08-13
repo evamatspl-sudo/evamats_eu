@@ -1,8 +1,11 @@
 /* --- landing-antagonist-v2.liquid — desktop-first --- */
 .landing-antagonist-v2 {
+  margin: 26px 26px 0;
   padding: var(--la-padding-top, 98px) 40px var(--la-padding-bottom, 168px);
   background: var(--la-bg, #f6f6f6);
   color: #1b1d22;
+  border-radius: 24px;
+  box-sizing: border-box;
 }
 
 .landing-antagonist-v2__inner {
@@ -103,7 +106,9 @@
 
 @media screen and (max-width: 749px) {
   .landing-antagonist-v2 {
+    margin: 0;
     padding: 48px 24px;
+    border-radius: 0;
   }
 
   .landing-antagonist-v2__inner {

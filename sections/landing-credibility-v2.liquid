@@ -1,0 +1,217 @@
+{{ 'section-landing-credibility-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_desktop = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  if image_mobile == blank
+    assign image_mobile = image_desktop
+  endif
+
+  assign card_count = 0
+  for block in section.blocks
+    if block.type == 'card'
+      assign card_count = card_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingCredibility-{{ section.id }}"
+  class="landing-credibility-v2"
+  style="
+    --lc-bg: {{ section.settings.background_color }};
+    --lc-card-bg: {{ section.settings.card_background_color }};
+    --lc-padding-top: {{ section.settings.padding_top }}px;
+    --lc-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lc-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lc-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-credibility-v2__inner">
+    <div class="landing-credibility-v2__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="landing-credibility-v2__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      <div class="landing-credibility-v2__body">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="landing-credibility-v2__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if card_count > 0 -%}
+          <div class="landing-credibility-v2__cards">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'card' -%}
+                {%- if block.settings.title != blank or block.settings.text != blank -%}
+                  <article class="landing-credibility-v2__card" {{ block.shopify_attributes }}>
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="landing-credibility-v2__card-title">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <p class="landing-credibility-v2__card-text">{{ block.settings.text | escape }}</p>
+                    {%- endif -%}
+                  </article>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="landing-credibility-v2__media">
+      {%- if image_desktop != blank -%}
+        <picture>
+          {%- if image_mobile != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ image_mobile | image_url: width: 750 }} 750w,
+                {{ image_mobile | image_url: width: 1100 }} 1100w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            image_desktop
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              class: 'landing-credibility-v2__image',
+              widths: '400, 600, 800, 1100, 1600',
+              sizes: '(max-width: 749px) 100vw, 48vw'
+          }}
+        </picture>
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'landing-credibility-v2__image landing-credibility-v2__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing credibility v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-credibility-v2",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sprawdzone doświadczenie"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nie obietnice — konkretne liczby"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (mobile)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Historia"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "EVAMATS to polski producent — nie pośrednik. „Od ręcznej pracy do standardu jakości” to nie slogan, a opis codziennej pracy: 1567 dostępnych modeli i 59 620+ zrealizowanych kompletów, wysyłka do ponad 27 krajów. Do nietypowych aut firma organizuje pomiar na miejscu — osobiście lub przez sieć kontaktów w salonach samochodowych w całej Polsce i za granicą."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing credibility v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "Historia",
+            "text": "EVAMATS to polski producent — nie pośrednik. „Od ręcznej pracy do standardu jakości” to nie slogan, a opis codziennej pracy: 1567 dostępnych modeli i 59 620+ zrealizowanych kompletów, wysyłka do ponad 27 krajów. Do nietypowych aut firma organizuje pomiar na miejscu — osobiście lub przez sieć kontaktów w salonach samochodowych w całej Polsce i za granicą."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Głos eksperta",
+            "text": "Specjaliści od wykończeń wnętrz samochodowych zwracają uwagę, że o realnej ochronie podłogi decyduje dokładność przylegania do każdej krawędzi — nie sam materiał, a precyzja wykonania pod konkretny model."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
