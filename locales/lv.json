@@ -90,7 +90,8 @@
       "items_in_cart_html": "{{ count }} preces grozā",
       "clear_cart": "Notīrīt",
       "restore_item": "Atgriezt grozā",
-      "reservation_sidebar_text": "Lielā pieprasījuma dēļ esam rezervējuši laiku jūsu pasūtījuma apstrādei."
+      "reservation_sidebar_text": "Lielā pieprasījuma dēļ esam rezervējuši laiku jūsu pasūtījuma apstrādei.",
+      "reservation_html": "Lielā pieprasījuma un noslogotās ražošanas dēļ esam rezervējuši vietu, lai jūsu pasūtījumu izpildītu ātrāk. Rezervācija ir spēkā vēl <span class=\"cart__time\"><span id=\"countdown-timer\"></span> minūtes.</span>"
     },
     "evamats_related_products": {
       "view_product": "Skatīt preci"
@@ -241,7 +242,8 @@
       "delivery_show_more": "Rādīt vairāk",
       "delivery_show_less": "Paslēpt",
       "order_notes_title": "Piezīmes (aprakstiet izmērus, grīdas formu vai pievienojiet salona foto — tas palīdzēs izgatavot precīzāk)",
-      "vehicle_text": "Transportlīdzeklis (ievadiet veidu, piem., motorlaiva, ultravieglā lidmašīna, kvadricikls, autoiekrāvējs…)"
+      "vehicle_text": "Transportlīdzeklis (ievadiet veidu, piem., motorlaiva, ultravieglā lidmašīna, kvadricikls, autoiekrāvējs…)",
+      "right_hand_message_long": "🚗 Transportlīdzeklis ar stūri labajā pusē? Izlasiet to pirms pasūtīšanas! Mūsu auto paklāji pēc noklusējuma tiek gatavoti automašīnām ar stūri kreisajā pusē. Ja jūsu auto stūre ir labajā pusē (piem., Lielbritānija, Japāna, Austrālija), vispirms sazinieties ar mums — pārbaudīsim, vai jūsu modelim iespējams izgatavot komplektu pēc pasūtījuma."
     },
     "colors": {
       "black": "Melns",
@@ -639,7 +641,37 @@
   "gift_cards": {
     "issued": {
       "how_to_use_gift_card": "Izmantojiet dāvanu kartes kodu tiešsaistē vai QR kodu veikalā",
-      "title": "Lūk, jūsu {{ value }} dāvanu kartes atlikums veikalā {{ shop }}!"
+      "title": "Lūk, jūsu {{ value }} dāvanu kartes atlikums veikalā {{ shop }}!",
+      "subtext": "Jūsu dāvanu karte",
+      "gift_card_code": "Dāvanu kartes kods",
+      "shop_link": "Apmeklēt interneta veikalu",
+      "add_to_apple_wallet": "Pievienot Apple Wallet",
+      "qr_image_alt": "QR kods — noskenējiet, lai izmantotu dāvanu karti",
+      "copy_code": "Kopēt dāvanu kartes kodu",
+      "expiration_date": "Derīga līdz {{ expires_on }}",
+      "copy_code_success": "Kods nokopēts",
+      "expired": "Beidzies derīguma termiņš"
     }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Vēlos nosūtīt to kā dāvanu",
+      "email_label": "Saņēmēja e-pasts",
+      "email_label_optional_for_no_js_behavior": "Saņēmēja e-pasts (pēc izvēles)",
+      "email": "E-pasts",
+      "name_label": "Saņēmēja vārds (pēc izvēles)",
+      "name": "Vārds",
+      "message_label": "Ziņojums (pēc izvēles)",
+      "message": "Ziņojums",
+      "max_characters": "Ne vairāk kā {{ max_chars }} rakstzīmes",
+      "send_on": "GGGG-MM-DD",
+      "send_on_label": "Nosūtīt datumā (pēc izvēles)"
+    }
+  },
+  "gift_card_desc": {
+    "heading": "Carvion dāvanu karte ir elegants veids, kā dāvināt tuvam cilvēkam pilnīgu izvēles brīvību.",
+    "financed_title": "Ko var iegādāties par karti?",
+    "intro_p1": "Carvion dāvanu karte ir elegants veids, kā dāvināt tuvam cilvēkam pilnīgu izvēles brīvību. 🎁 Tā vietā, lai riskētu kļūdīties ar automašīnas tehniskajiem datiem, jūs dodat autovadītājam iespēju pašam konfigurēt ideālus paklājus savam transportlīdzeklim. Nozīme ir katrai detaļai — no auto modeļa līdz apmales krāsai — tāpēc dāvanu karte ir apmierinātības un precīzas piegulšanas garantija.",
+    "intro_p2": "Izvēloties Carvion, jūs dāvināt prieku pielāgot automašīnas salonu, apvienojot estētiku ar augstāko funkcionalitāti. 🚗🎨"
   }
 }
