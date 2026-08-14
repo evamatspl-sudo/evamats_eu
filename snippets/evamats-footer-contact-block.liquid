@@ -1,4 +1,8 @@
 {%- comment -%}
+  Latviešu: kontakti pagaidām netiek rādīti — e-pasts, tālrunis un adrese ir čehu.
+{%- endcomment -%}
+{%- unless request.locale.iso_code == 'lv' -%}
+{%- comment -%}
   Footer contact block — structured rows with hardcoded icons.
   @param block {block}
 {%- endcomment -%}
@@ -33,3 +37,5 @@
       {%- endif -%}
   {%- endif -%}
 </div>
+
+{%- endunless -%}
