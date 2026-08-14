@@ -24,6 +24,9 @@
   if catalog_label == blank
     assign catalog_label = 'Catalog'
   endif
+  if localization.language.iso_code == 'lv'
+    assign catalog_label = 'Katalogs'
+  endif
 
   assign middle_label = ''
   assign middle_url = ''
@@ -55,6 +58,8 @@
 
   assign mobile_catalog_label = 'Catalog'
   case localization.language.iso_code
+    when 'lv'
+      assign mobile_catalog_label = 'Katalogs'
     when 'cs'
       assign mobile_catalog_label = 'Katalog'
     when 'de'
@@ -76,8 +81,16 @@
 
   assign back_label = section.settings.back_label | strip
   if back_label == blank
-    assign back_label = '← Zpět'
+    assign back_label = '← Back'
   endif
+  case localization.language.iso_code
+    when 'cs'
+      assign back_label = '← Zpět'
+    when 'de'
+      assign back_label = '← Zurück'
+    when 'lv'
+      assign back_label = '← Atpakaļ'
+  endcase
 -%}
 
 <div
