@@ -12,13 +12,13 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
         "catalog_label": "Katalog",
-        "brand_url": "shopify:\/\/collections\/acura"
+        "brand_url": "shopify://collections/acura"
       }
     },
     "9b281caf-6a64-4c48-bf02-d41f1b676502": {
@@ -27,14 +27,14 @@
         "1a2393b9-a928-4441-8eab-fa6fb1e18f04": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/acura",
-            "color-code": "Vše"
+            "product-link": "shopify://collections/acura",
+            "color-code": "All"
           }
         },
         "92e6626b-d759-4753-bbd0-85fc3728f9d6": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/acura-mdx",
+            "product-link": "shopify://collections/acura-mdx",
             "color-code": "MDX"
           }
         }
