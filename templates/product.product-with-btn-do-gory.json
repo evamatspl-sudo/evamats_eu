@@ -107,7 +107,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 56
@@ -133,20 +133,6 @@
     },
     "168388306052a62d59": {
       "type": "apps",
-      "blocks": {
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3": {
-          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
-          "settings": {
-            "themeId": "light",
-            "autoscroll": true,
-            "writeReview": true,
-            "fixedReviewsHeight": false
-          }
-        }
-      },
-      "block_order": [
-        "d1ceee4b-4505-4d93-a432-68f731c49bf3"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -158,7 +144,7 @@
       ],
       "settings": {
         "show_related_posts": true,
-        "heading": "Naše realizace",
+        "heading": "Our realizations",
         "heading_size": "h1",
         "blog": "nasze-realizacje",
         "post_limit": 2,
@@ -175,7 +161,7 @@
     "2959ec46-bbb7-4260-b81d-7024c179ac2a": {
       "type": "home-5",
       "settings": {
-        "btn_text": "Vše posts",
+        "btn_text": "All posts",
         "btn_url": "shopify://pages/realizacja"
       }
     },
@@ -207,7 +193,7 @@
       "settings": {
         "hd": "“Máte vzácné auto?“",
         "des": "<p>Nenajdete koberce pro své jedinečné auto? <br/><br/>Máme kontakty po celém Polsku i v zahraničí u různých autosalonů, kde vám vozidlo změříme, pokud nemůžete přijet k nám. Ke každému měření přistupujeme s precizností, s jakou hodinář skládá hodinky.<br/><br/>Vyplňte tento formulář a my pro vaše auto vyrobíme koberce na míru.</p>",
-        "btn_text": "INDIVIDUÁLNÍ OBJEDNÁVKA",
+        "btn_text": "CUSTOM ORDER",
         "btn_url": "shopify://collections/all-car-mats",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
@@ -219,7 +205,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -227,7 +213,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -235,7 +221,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -243,7 +229,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         }
