@@ -560,16 +560,19 @@
       .evamats-partners-benefits-bento .evamats-kariera-benefits__intro{
         display: block;
         margin-bottom: 30px;
+        text-align: left;
       }
   
       .evamats-partners-benefits-bento .evamats-kariera-benefits__overline{
         margin-bottom: 21px;
         font-size: 14px;
+        text-align: left;
       }
   
       .evamats-partners-benefits-bento .evamats-kariera-benefits__heading{
         margin: 0;
         font-size: 26px;
+        text-align: left;
       }
   
       .evamats-partners-benefits-bento .evamats-kariera-benefits__grid{
@@ -1126,11 +1129,17 @@
 @media screen and (max-width: 749px) {
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__intro {
     margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .evamats-partners-benefits-bento--five .evamats-kariera-benefits__overline {
+    text-align: left;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__heading {
     margin-top: 0;
     font-size: 26px;
+    text-align: left;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__grid--five {
@@ -1169,7 +1178,7 @@
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__panel-title {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__description {
@@ -1221,16 +1230,18 @@
     object-position: center bottom;
   }
 
-  /* Panel E — Figma 2447:11944 (327×298, image ~489 at x:-15 y:174) */
+  /* Panel E — Figma 2447:11944 (327×298). Cutout is already angled; pin BR and clip. */
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__panel--e {
     --ekb-panel-ar: 327 / 298;
     position: relative;
     overflow: hidden;
+    padding: 0;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__panel--e .evamats-kariera-benefits__panel-title {
     position: relative;
     z-index: 1;
+    padding: 20px 20px 0;
     font-size: 16px;
   }
 
@@ -1238,6 +1249,7 @@
     position: relative;
     z-index: 1;
     margin-top: 4px;
+    padding: 0 20px;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__description--b {
@@ -1337,22 +1349,28 @@
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__panel-media--e {
     position: absolute;
-    left: calc(100% * -15 / 327);
-    right: calc(100% * -50 / 327);
-    top: calc(100% * 95 / 298);
-    bottom: calc(100% * -40 / 298);
+    left: calc(100% * -40 / 327);
+    top: calc(100% * 65 / 298);
+    right: auto;
+    bottom: auto;
+    z-index: 0;
     display: block;
-    width: auto;
-    height: auto;
+    width: calc(100% * 390 / 327);
+    height: calc(100% * 250 / 298);
+    aspect-ratio: auto;
     margin: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 
   .evamats-partners-benefits-bento--five .evamats-kariera-benefits__panel-img--e {
     display: block;
     width: 100%;
+    max-width: none;
     height: 100%;
+    aspect-ratio: auto;
     object-fit: cover;
-    object-position: 72% 68%;
+    object-position: 70% 92%; /* Figma 2447:11944 crop */
     transform: none;
   }
 

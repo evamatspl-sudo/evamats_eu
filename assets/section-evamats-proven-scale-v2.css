@@ -2,7 +2,7 @@
 
 .evamats-proven-scale-v2 {
   background: transparent;
-  color: var(--color-text);
+  color: #1b1d22;
 }
 .evamats-proven-scale-v2__heading {
   margin: 0 0 60px;
@@ -11,7 +11,7 @@
   line-height: 1;
   letter-spacing: -0.02em;
   text-align: center;
-  color: var(--color-text);
+  color: #1b1d22;
 }
 
 .evamats-proven-scale-v2__intro--mobile {
@@ -108,7 +108,7 @@
   font-size: 38px;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: #1b1d22;
 }
 
 .evamats-proven-scale-v2__stat-plus {
@@ -121,7 +121,7 @@
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: #1b1d22;
 }
 
 @media screen and (max-width: 1199px) {
@@ -199,7 +199,7 @@
     line-height: 1.6;
     letter-spacing: -0.02em;
     text-align: center;
-    color: var(--color-text);
+    color: #1b1d22;
   }
 
   .evamats-proven-scale-v2__intro--desktop {

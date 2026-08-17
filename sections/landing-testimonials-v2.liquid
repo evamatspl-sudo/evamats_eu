@@ -228,42 +228,52 @@
       });
     }
 
+    function isMobileNav() {
+      return window.matchMedia('(max-width: 1199px)').matches;
+    }
+
     function initTestimonials(root) {
-      if (!root || root._ltSwiper) return;
+      if (!root || typeof window.Swiper === 'undefined') return;
       var swiperEl = root.querySelector('[data-lt-swiper]');
-      if (!swiperEl || typeof window.Swiper !== 'function') return;
+      if (!swiperEl) return;
 
       var slides = swiperEl.querySelectorAll('.swiper-slide');
       if (!slides.length) return;
 
-      var paginationEl = root.querySelector('[data-lt-pagination]');
-      var prevDesktop = root.querySelector('.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--prev');
-      var nextDesktop = root.querySelector('.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--next');
-      var prevMobile = root.querySelector('.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--prev');
-      var nextMobile = root.querySelector('.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--next');
+      destroyTestimonials(root);
 
-      root._ltSwiper = new window.Swiper(swiperEl, {
+      var mobile = isMobileNav();
+      var prevEl = root.querySelector(
+        mobile
+          ? '.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--prev'
+          : '.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--prev'
+      );
+      var nextEl = root.querySelector(
+        mobile
+          ? '.landing-testimonials-v2__nav--mobile.landing-testimonials-v2__nav--next'
+          : '.landing-testimonials-v2__nav--desktop.landing-testimonials-v2__nav--next'
+      );
+      var paginationEl = mobile ? root.querySelector('[data-lt-pagination]') : null;
+
+      var opts = {
         slidesPerView: 1,
         spaceBetween: 11,
         watchOverflow: true,
-        pagination: paginationEl
-          ? {
-              el: paginationEl,
-              clickable: true,
-            }
-          : undefined,
-        navigation: {
-          prevEl: [prevDesktop, prevMobile].filter(Boolean),
-          nextEl: [nextDesktop, nextMobile].filter(Boolean),
-        },
         breakpoints: {
           1200: {
             slidesPerView: 3,
             spaceBetween: 16,
           },
         },
-      });
+      };
+      if (prevEl && nextEl) {
+        opts.navigation = { prevEl: prevEl, nextEl: nextEl };
+      }
+      if (paginationEl) {
+        opts.pagination = { el: paginationEl, clickable: true };
+      }
 
+      root._ltSwiper = new window.Swiper(swiperEl, opts);
       bindMore(root);
     }
 
@@ -272,24 +282,45 @@
     }
 
     function whenSwiperReady(cb) {
-      if (typeof window.Swiper === 'function') {
+      var done = false;
+      function run() {
+        if (done) return;
+        done = true;
         cb();
+      }
+      if (typeof window.Swiper !== 'undefined') {
+        run();
         return;
       }
-      var onLoaded = function () {
-        document.removeEventListener('swiper-loaded', onLoaded);
-        cb();
-      };
-      document.addEventListener('swiper-loaded', onLoaded);
-      setTimeout(function () {
-        if (typeof window.Swiper === 'function') {
-          document.removeEventListener('swiper-loaded', onLoaded);
-          cb();
+      if (typeof window.ensureSwiperLoaded === 'function') {
+        window.ensureSwiperLoaded(run);
+        return;
+      }
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries += 1;
+        if (typeof window.ensureSwiperLoaded === 'function') {
+          clearInterval(timer);
+          window.ensureSwiperLoaded(run);
+          return;
         }
-      }, 3000);
+        if (typeof window.Swiper !== 'undefined') {
+          clearInterval(timer);
+          run();
+          return;
+        }
+        if (tries > 100) clearInterval(timer);
+      }, 50);
     }
 
     whenSwiperReady(initAll);
+
+    var mq = window.matchMedia('(max-width: 1199px)');
+    function onNavMq() {
+      whenSwiperReady(initAll);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', onNavMq);
+    else if (mq.addListener) mq.addListener(onNavMq);
 
     document.addEventListener('shopify:section:load', function (event) {
       var root = event.target.querySelector('[data-lt-root]');

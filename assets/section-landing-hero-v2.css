@@ -1,4 +1,128 @@
 /* --- landing-hero-v2.liquid — desktop-first --- */
+
+/* Landing templates only: header overlays the hero (do not put this in base.css). */
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .shopify-section-group-header-group,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .shopify-section-header-sticky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .header-wrapper,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .header-wrapper.gradient,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .header-wrapper.color-background-1,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) sticky-header:not([data-sticky-type='none']) .header-wrapper,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .header-wrapper .evamats-header,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-header {
+  background: transparent;
+  background-color: transparent;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .scrolled-past-header .header-wrapper,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .scrolled-past-header .header-wrapper .evamats-header,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .scrolled-past-header .evamats-header {
+  background-color: var(--eh-bg);
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header.menu-open .header-wrapper,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header.menu-open .header-wrapper.gradient,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header.menu-open .header-wrapper.color-background-1,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header.menu-open .header-wrapper .evamats-header,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .section-header.menu-open .evamats-header {
+  background: #000;
+  background-color: #000;
+}
+
 .landing-hero-v2 {
   --lh-height: var(--lh-height-desktop, 900px);
   --lh-overlay: var(--lh-overlay-opacity, 0.4);

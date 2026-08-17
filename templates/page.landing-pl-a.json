@@ -369,6 +369,7 @@
           "type": "row",
           "settings": {
             "label": "Pokrycie podłogi",
+            "icon": "coverage",
             "value_1": "do 98%, w tym tunel",
             "value_2": "częściowe",
             "value_3": "częściowe"
@@ -378,6 +379,7 @@
           "type": "row",
           "settings": {
             "label": "Zapach",
+            "icon": "smell",
             "value_1": "brak",
             "value_2": "częsty przy upale",
             "value_3": "brak"
@@ -387,6 +389,7 @@
           "type": "row",
           "settings": {
             "label": "Czyszczenie",
+            "icon": "cleaning",
             "value_1": "wytrzepać / myjka ciśnieniowa",
             "value_2": "wytrzepać",
             "value_3": "pranie, dłużej schnie"
@@ -396,6 +399,7 @@
           "type": "row",
           "settings": {
             "label": "Trwałość",
+            "icon": "durability",
             "value_1": "5–7 lat bez śladu zużycia",
             "value_2": "pęka, twardnieje",
             "value_3": "traci wygląd"
@@ -405,6 +409,7 @@
           "type": "row",
           "settings": {
             "label": "Dopasowanie",
+            "icon": "fit",
             "value_1": "3D pod dokładny model",
             "value_2": "uniwersalne",
             "value_3": "uniwersalne"
@@ -420,6 +425,7 @@
       ],
       "settings": {
         "heading": "EVA vs guma vs welur",
+        "layout": "cards",
         "col_1_label": "EVA",
         "col_2_label": "Guma",
         "col_3_label": "Welur",

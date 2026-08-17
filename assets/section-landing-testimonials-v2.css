@@ -4,6 +4,7 @@
   padding: var(--lt-padding-top, 72px) 40px var(--lt-padding-bottom, 72px);
   background: var(--lt-bg, #f6f6f6);
   color: #1b1d22;
+  --swiper-navigation-color: #ffffff;
   border-radius: 24px;
   box-sizing: border-box;
 }
@@ -252,6 +253,21 @@
   right: -95px;
 }
 
+/* Swiper .swiper-button-* sets color to theme blue; SVG arrows use currentColor. */
+.landing-testimonials-v2 .eva-slider-nav.swiper-button-prev,
+.landing-testimonials-v2 .eva-slider-nav.swiper-button-next {
+  color: #ffffff;
+}
+
+.landing-testimonials-v2 .eva-slider-nav.swiper-button-disabled {
+  color: #8090a4;
+}
+
+.landing-testimonials-v2 .eva-slider-nav::after {
+  display: none !important;
+  content: none !important;
+}
+
 .landing-testimonials-v2__controls-mobile {
   display: none;
 }
@@ -287,6 +303,12 @@
     justify-content: space-between;
     width: 100%;
     gap: 16px;
+  }
+
+  .landing-testimonials-v2__nav--mobile.eva-slider-nav--small {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
   }
 
   .landing-testimonials-v2__pagination {
