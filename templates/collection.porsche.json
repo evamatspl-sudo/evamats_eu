@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -27,70 +27,70 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/all-car-mats",
-            "color-code": "Vše"
+            "product-link": "shopify://collections/all-car-mats",
+            "color-code": "All"
           }
         },
         "685ca4e5-c33a-481b-89af-7b5e825f5a78": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-911",
+            "product-link": "shopify://collections/porsche-911",
             "color-code": "911"
           }
         },
         "7a8bfd9c-d218-4af1-b5fd-eb41899c8a7f": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-boxster",
+            "product-link": "shopify://collections/porsche-boxster",
             "color-code": "Boxster"
           }
         },
         "08247c72-1264-41b6-9fa7-eafe3b9bd4c2": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne",
+            "product-link": "shopify://collections/porsche-cayenne",
             "color-code": "Cayenne"
           }
         },
         "60e69306-4b21-48ae-9350-353d625fd27e": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-coupe",
+            "product-link": "shopify://collections/porsche-cayenne-coupe",
             "color-code": "Cayenne Coupe"
           }
         },
         "73f78a27-331e-4aaa-954c-d1bf44a0f1a8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayenne-s",
+            "product-link": "shopify://collections/porsche-cayenne-s",
             "color-code": "Cayenne S"
           }
         },
         "c6f5bd9b-66e1-4f93-918f-3b9c483c13c0": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-cayman",
+            "product-link": "shopify://collections/porsche-cayman",
             "color-code": "Cayman"
           }
         },
         "77fb563a-9085-4ab6-8a06-ea47148adc28": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-macan",
+            "product-link": "shopify://collections/porsche-macan",
             "color-code": "Macan"
           }
         },
         "6813354e-35b2-4800-9acf-6995170757eb": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-panamera",
+            "product-link": "shopify://collections/porsche-panamera",
             "color-code": "Panamera"
           }
         },
         "74dfa9ff-9e02-417e-a1fd-4f6bb7230920": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/porsche-taycan",
+            "product-link": "shopify://collections/porsche-taycan",
             "color-code": "Taycan"
           }
         }
