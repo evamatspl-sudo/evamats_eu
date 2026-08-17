@@ -1,0 +1,359 @@
+{{ 'section-landing-hero-v2.css' | asset_url | stylesheet_tag }}
+{{ 'landing-page-text-color.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_desktop = section.settings.image_desktop
+  assign image_mobile = section.settings.image_mobile
+  if image_mobile == blank
+    assign image_mobile = image_desktop
+  endif
+
+  assign breadcrumb_parent = section.settings.breadcrumb_parent | default: 'Carvion' | strip
+  if breadcrumb_parent == blank
+    assign breadcrumb_parent = 'Carvion'
+  endif
+
+  assign breadcrumb_current = section.settings.breadcrumb_current | strip
+  if breadcrumb_current == blank
+    if page != blank and page.title != blank
+      assign breadcrumb_current = page.title
+    elsif collection != blank and collection.title != blank
+      assign breadcrumb_current = collection.title
+    elsif article != blank and article.title != blank
+      assign breadcrumb_current = article.title
+    endif
+  endif
+
+  assign breadcrumb_parent_url = section.settings.breadcrumb_parent_url
+  if breadcrumb_parent_url == blank
+    assign breadcrumb_parent_url = routes.root_url
+  endif
+
+  assign show_breadcrumbs = false
+  if section.settings.show_breadcrumbs
+    if breadcrumb_parent != blank or breadcrumb_current != blank
+      assign show_breadcrumbs = true
+    endif
+  endif
+
+  assign chip_count = 0
+  for block in section.blocks
+    if block.type == 'stat_chip' or block.type == 'fact_chip'
+      assign chip_count = chip_count | plus: 1
+    endif
+  endfor
+
+  assign overlay_opacity = section.settings.overlay_opacity | default: 40 | divided_by: 100.0
+-%}
+
+<div
+  id="LandingHero-{{ section.id }}"
+  class="landing-hero-v2"
+  style="
+    --lh-height-desktop: {{ section.settings.height_desktop }}px;
+    --lh-height-mobile: {{ section.settings.height_mobile }}px;
+    --lh-overlay-opacity: {{ overlay_opacity }};
+  "
+>
+  <div class="landing-hero-v2__media" aria-hidden="true">
+    {%- if image_desktop != blank -%}
+      <picture>
+        {%- if image_mobile != blank -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="
+              {{ image_mobile | image_url: width: 375 }} 375w,
+              {{ image_mobile | image_url: width: 750 }} 750w,
+              {{ image_mobile | image_url: width: 1100 }} 1100w
+            "
+            sizes="100vw"
+          >
+        {%- endif -%}
+        {{
+          image_desktop
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'landing-hero-v2__image',
+            sizes: '100vw',
+            widths: '750, 1100, 1500, 1920, 2560, 3840'
+        }}
+      </picture>
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'landing-hero-v2__image landing-hero-v2__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="landing-hero-v2__scrim" aria-hidden="true"></div>
+
+  {%- if section.settings.show_top_fade -%}
+    <div class="landing-hero-v2__fade" aria-hidden="true">&nbsp;</div>
+  {%- endif -%}
+
+  <div class="landing-hero-v2__ui">
+    {%- if show_breadcrumbs -%}
+      <nav class="landing-hero-v2__breadcrumbs" aria-label="Breadcrumb">
+        {%- if breadcrumb_parent != blank -%}
+          <a class="landing-hero-v2__breadcrumb-link" href="{{ breadcrumb_parent_url }}">
+            {{- breadcrumb_parent | escape -}}
+          </a>
+        {%- endif -%}
+
+        {%- if breadcrumb_parent != blank and breadcrumb_current != blank -%}
+          <span class="landing-hero-v2__breadcrumb-sep" aria-hidden="true"></span>
+        {%- endif -%}
+
+        {%- if breadcrumb_current != blank -%}
+          {%- if section.settings.breadcrumb_current_url != blank -%}
+            <a class="landing-hero-v2__breadcrumb-current" href="{{ section.settings.breadcrumb_current_url }}">
+              {{- breadcrumb_current | escape -}}
+            </a>
+          {%- else -%}
+            <span class="landing-hero-v2__breadcrumb-current" aria-current="page">
+              {{- breadcrumb_current | escape -}}
+            </span>
+          {%- endif -%}
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+
+    <div class="landing-hero-v2__content">
+      {%- if chip_count > 0 -%}
+        <div class="landing-hero-v2__chips">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'stat_chip' -%}
+                {%- if block.settings.text != blank -%}
+                  <span class="landing-hero-v2__chip landing-hero-v2__chip--stat" {{ block.shopify_attributes }}>
+                    {{- block.settings.text | escape -}}
+                  </span>
+                {%- endif -%}
+              {%- when 'fact_chip' -%}
+                {%- if block.settings.label != blank or block.settings.text != blank -%}
+                  <div class="landing-hero-v2__chip landing-hero-v2__chip--fact" {{ block.shopify_attributes }}>
+                    {%- if block.settings.label != blank -%}
+                      <p class="landing-hero-v2__chip-label">{{ block.settings.label | escape }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <p class="landing-hero-v2__chip-text">{{ block.settings.text | escape }}</p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="landing-hero-v2__heading{% if section.settings.heading_gradient %} landing-hero-v2__heading--gradient{% endif %}">
+          {{- section.settings.heading | escape -}}
+        </h1>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="landing-hero-v2__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <div class="landing-hero-v2__cta-wrap">
+          {%- if section.settings.cta_url != blank -%}
+            <a class="landing-hero-v2__cta" href="{{ section.settings.cta_url }}">
+              {{- section.settings.cta_label | escape -}}
+            </a>
+          {%- else -%}
+            <span class="landing-hero-v2__cta" aria-disabled="true">
+              {{- section.settings.cta_label | escape -}}
+            </span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing hero v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-hero-v2",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Desktop height",
+      "min": 400,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Mobile height",
+      "min": 400,
+      "max": 1000,
+      "step": 8,
+      "unit": "px",
+      "default": 744
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_fade",
+      "label": "Show top fade",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_parent",
+      "label": "Parent label",
+      "default": "Carvion"
+    },
+    {
+      "type": "url",
+      "id": "breadcrumb_parent_url",
+      "label": "Parent link"
+    },
+    {
+      "type": "text",
+      "id": "breadcrumb_current",
+      "label": "Current label",
+      "info": "Leave empty to use the page title"
+    },
+    {
+      "type": "url",
+      "id": "breadcrumb_current_url",
+      "label": "Current link"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Twój dywanik fabryczny nie zakrywa nawet 70% podłogi."
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_gradient",
+      "label": "Heading gradient (white → red)",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Sprawdź, ile pokrywa dywanik EVA szyty pod Twój dokładny model auta"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Zobacz dostępne modele"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_chip",
+      "name": "Stat chip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "59 620 zrealizowanych kompletów"
+        }
+      ]
+    },
+    {
+      "type": "fact_chip",
+      "name": "Fact chip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "FAKT"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "EVA autokoberce drží tvar a nezapáchají i po letech používání — ověřený materiálový fakt"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing hero v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "stat_chip",
+          "settings": {
+            "text": "59 620 zrealizowanych kompletów"
+          }
+        },
+        {
+          "type": "stat_chip",
+          "settings": {
+            "text": "wysyłka do 27+ krajów"
+          }
+        }
+      ],
+      "settings": {
+        "show_breadcrumbs": false,
+        "show_top_fade": true,
+        "heading": "Twój dywanik fabryczny nie zakrywa nawet 70% podłogi.",
+        "heading_gradient": true,
+        "subheading": "Sprawdź, ile pokrywa dywanik EVA szyty pod Twój dokładny model auta",
+        "cta_label": "Zobacz dostępne modele"
+      }
+    }
+  ]
+}
+{% endschema %}

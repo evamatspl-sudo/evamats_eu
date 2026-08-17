@@ -34,23 +34,23 @@
         {{ 'products.product.price.regular_price' | t }}
       </span>
       <span
-        class="price-item price-item--regular dmixer-original-price"
+        class="price-item price-item--regular evamats-original-price"
         data-evamats-compare
         style="text-decoration:none;"
       >
         {{ base_price_cents | money_without_trailing_zeros }}
       </span>
-      <div class="dmixer-price-wrapper" style="display: inline-flex;">
-        <div class="dmixer-price" style="display: inline-flex; flex-direction: row; gap: 8px;">
+      <div class="evamats-price-wrapper" style="display: inline-flex;">
+        <div class="evamats-price-values" style="display: inline-flex; flex-direction: row; gap: 8px;">
           <span
-            class="price-item price-item--regular dmixer-discounted-price"
+            class="price-item price-item--regular evamats-discounted-price"
             data-evamats-sale
             data-discounted-price=""
             style="display:none;"
           >
             {{ base_price_cents | money_without_trailing_zeros }}
           </span>
-          <span class="dmixer-sale-badge" data-evamats-savings style="display: none;"></span>
+          <span class="evamats-sale-badge" data-evamats-savings style="display: none;"></span>
         </div>
       </div>
     </div>

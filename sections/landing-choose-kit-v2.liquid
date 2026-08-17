@@ -1,0 +1,365 @@
+{{ 'section-landing-choose-kit-v2.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="LandingChooseKit-{{ section.id }}"
+  class="landing-choose-kit-v2"
+  style="
+    --lck-bg: {{ section.settings.background_color }};
+    --lck-padding-top: {{ section.settings.padding_top }}px;
+    --lck-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lck-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lck-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-choose-kit-v2__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="landing-choose-kit-v2__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- assign step_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'step' -%}
+        {%- assign step_count = step_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if step_count > 0 -%}
+      <div class="landing-choose-kit-v2__steps" role="list">
+        {%- assign step_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'step' -%}
+            {%- assign step_index = step_index | plus: 1 -%}
+            {%- liquid
+              assign step_label = block.settings.label
+              assign step_label_mobile = block.settings.label_mobile
+              if step_label_mobile == blank
+                assign step_label_mobile = step_label
+              endif
+            -%}
+            {%- if step_index > 1 -%}
+              <span class="landing-choose-kit-v2__arrow" aria-hidden="true">→</span>
+            {%- endif -%}
+            <div class="landing-choose-kit-v2__step" role="listitem" {{ block.shopify_attributes }}>
+              <span class="landing-choose-kit-v2__step-num">{{ step_index }}</span>
+              {%- if step_label != blank -%}
+                <span class="landing-choose-kit-v2__step-label landing-choose-kit-v2__step-label--desktop">
+                  {{- step_label | escape -}}
+                </span>
+                <span class="landing-choose-kit-v2__step-label landing-choose-kit-v2__step-label--mobile">
+                  {{- step_label_mobile | escape -}}
+                </span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- assign offer_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'offer' -%}
+        {%- assign offer_count = offer_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if offer_count > 0 -%}
+      <div class="landing-choose-kit-v2__offers">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'offer' -%}
+            <article class="landing-choose-kit-v2__offer" {{ block.shopify_attributes }}>
+              <div class="landing-choose-kit-v2__offer-top">
+                <div class="landing-choose-kit-v2__offer-copy">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="landing-choose-kit-v2__offer-title">{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.subtitle != blank -%}
+                    <p class="landing-choose-kit-v2__offer-subtitle">{{ block.settings.subtitle | escape }}</p>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.price != blank -%}
+                  <p class="landing-choose-kit-v2__offer-price">{{ block.settings.price | escape }}</p>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.button_label != blank -%}
+                {%- if block.settings.button_link != blank -%}
+                  <a class="landing-choose-kit-v2__offer-btn" href="{{ block.settings.button_link }}">
+                    {{- block.settings.button_label | escape -}}
+                  </a>
+                {%- else -%}
+                  <span class="landing-choose-kit-v2__offer-btn">{{ block.settings.button_label | escape }}</span>
+                {%- endif -%}
+              {%- endif -%}
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.note_1 != blank
+      or section.settings.note_2 != blank
+      or section.settings.note_3 != blank
+      or section.settings.contact_email != blank
+    -%}
+      <div class="landing-choose-kit-v2__notes">
+        {%- if section.settings.note_1 != blank -%}
+          <p class="landing-choose-kit-v2__note">{{ section.settings.note_1 | escape | newline_to_br }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.note_2 != blank or section.settings.contact_email != blank -%}
+          <p class="landing-choose-kit-v2__note">
+            {%- if section.settings.note_2 != blank -%}
+              {{- section.settings.note_2 | escape -}}
+            {%- endif -%}
+            {%- if section.settings.contact_email != blank -%}
+              {%- if section.settings.note_2 != blank -%}
+                {{- ' ' -}}
+              {%- endif -%}
+              <a class="landing-choose-kit-v2__email" href="mailto:{{ section.settings.contact_email | escape }}">
+                {{- section.settings.contact_email | escape -}}
+              </a>.
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.note_3 != blank -%}
+          <p class="landing-choose-kit-v2__note">{{ section.settings.note_3 | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank or section.settings.trust_text != blank -%}
+      <div class="landing-choose-kit-v2__cta-wrap">
+        {%- if section.settings.cta_label != blank -%}
+          {%- if section.settings.cta_link != blank -%}
+            <a class="landing-choose-kit-v2__cta" href="{{ section.settings.cta_link }}">
+              {{- section.settings.cta_label | escape -}}
+            </a>
+          {%- else -%}
+            <span class="landing-choose-kit-v2__cta">{{ section.settings.cta_label | escape }}</span>
+          {%- endif -%}
+        {%- endif -%}
+        {%- if section.settings.trust_text != blank -%}
+          <p class="landing-choose-kit-v2__trust">{{ section.settings.trust_text | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing choose kit v2",
+  "tag": "section",
+  "class": "section-landing-choose-kit-v2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Zaprojektuj swój komplet"
+    },
+    {
+      "type": "textarea",
+      "id": "note_1",
+      "label": "Note 1",
+      "default": "Ręczna produkcja = ograniczona liczba kompletów realizowanych w tym tygodniu. Zapisz się na newsletter i odbierz 27 zł rabatu na pierwsze zamówienie."
+    },
+    {
+      "type": "textarea",
+      "id": "note_2",
+      "label": "Note 2 (before email)",
+      "default": "Zwroty i reklamacje rozpatrujemy indywidualnie i w kolejności zgłoszeń — Twoja sprawa zawsze ma u nas pełną uwagę. Kontakt:"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact email",
+      "default": "reklamacje@evamats.pl"
+    },
+    {
+      "type": "textarea",
+      "id": "note_3",
+      "label": "Note 3",
+      "default": "Produkcja: do 10 dni. Dostawa: do 4 dni. Płatność m.in. BLIK i Przelewy24."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Zaprojektuj swój komplet"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "text",
+      "id": "trust_text",
+      "label": "Trust text",
+      "default": "59 620 zrealizowanych kompletów"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#14161a"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Marka i model"
+        },
+        {
+          "type": "text",
+          "id": "label_mobile",
+          "label": "Label (mobile)"
+        }
+      ]
+    },
+    {
+      "type": "offer",
+      "name": "Offer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Przód + tył"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "pełna ochrona kabiny"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price / discount",
+          "default": "−10%"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Wybieram"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing choose kit v2",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "label": "Marka i model",
+            "label_mobile": "Marka i model"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Kształt komórek",
+            "label_mobile": "Kształt"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Kolor materiału",
+            "label_mobile": "Kolor mat."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Kolor obszycia",
+            "label_mobile": "Obszycie"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Gotowy komplet",
+            "label_mobile": "Gotowe"
+          }
+        },
+        {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył",
+            "subtitle": "pełna ochrona kabiny",
+            "price": "−10%",
+            "button_label": "Wybieram"
+          }
+        },
+        {
+          "type": "offer",
+          "settings": {
+            "title": "Przód + tył + mata do bagażnika",
+            "subtitle": "komplet kompletny · WYBÓR KIEROWCÓW",
+            "price": "−15%",
+            "button_label": "Wybieram"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

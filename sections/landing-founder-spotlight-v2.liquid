@@ -1,0 +1,243 @@
+{{ 'section-landing-founder-spotlight-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_desktop = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  if image_mobile == blank
+    assign image_mobile = image_desktop
+  endif
+
+  assign item_count = 0
+  for block in section.blocks
+    if block.type == 'item'
+      assign item_count = item_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingFounderSpotlight-{{ section.id }}"
+  class="landing-founder-spotlight-v2"
+  style="
+    --lfs-bg: {{ section.settings.background_color }};
+    --lfs-padding-top: {{ section.settings.padding_top }}px;
+    --lfs-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lfs-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lfs-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-founder-spotlight-v2__inner">
+    <div class="landing-founder-spotlight-v2__media">
+      {%- if image_desktop != blank -%}
+        <picture>
+          {%- if section.settings.image_mobile != blank or image_mobile != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ image_mobile | image_url: width: 400 }} 400w,
+                {{ image_mobile | image_url: width: 750 }} 750w,
+                {{ image_mobile | image_url: width: 1100 }} 1100w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            image_desktop
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'lazy',
+              class: 'landing-founder-spotlight-v2__image',
+              widths: '400, 700, 1000, 1400',
+              sizes: '(max-width: 749px) 100vw, 700px'
+          }}
+        </picture>
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'landing-founder-spotlight-v2__image landing-founder-spotlight-v2__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="landing-founder-spotlight-v2__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="landing-founder-spotlight-v2__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.quote != blank -%}
+        <span class="landing-founder-spotlight-v2__mark" aria-hidden="true">“</span>
+        <h2 class="landing-founder-spotlight-v2__quote">{{ section.settings.quote | escape }}</h2>
+      {%- endif -%}
+
+      {%- if item_count > 0 -%}
+        <div class="landing-founder-spotlight-v2__divider" aria-hidden="true"></div>
+
+        <ul class="landing-founder-spotlight-v2__list" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'item' and block.settings.text != blank -%}
+              <li class="landing-founder-spotlight-v2__item" {{ block.shopify_attributes }}>
+                <span class="landing-founder-spotlight-v2__check" aria-hidden="true">✓</span>
+                <p class="landing-founder-spotlight-v2__item-text">{{ block.settings.text | escape }}</p>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.expert_label != blank or section.settings.expert_text != blank -%}
+        <aside class="landing-founder-spotlight-v2__expert">
+          <span class="landing-founder-spotlight-v2__expert-bar" aria-hidden="true"></span>
+          <div class="landing-founder-spotlight-v2__expert-body">
+            {%- if section.settings.expert_label != blank -%}
+              <p class="landing-founder-spotlight-v2__expert-label">{{ section.settings.expert_label | escape }}</p>
+            {%- endif -%}
+            {%- if section.settings.expert_text != blank -%}
+              <p class="landing-founder-spotlight-v2__expert-text">{{ section.settings.expert_text | escape }}</p>
+            {%- endif -%}
+          </div>
+        </aside>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing founder v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-founder-spotlight-v2",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (mobile)",
+      "info": "Optional. Uses desktop image when empty."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Kdo jsme"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "Ahoj, jsem Maks a vyrábím prémiové autokoberce navržené s ohledem na váš komfort — a na vás."
+    },
+    {
+      "type": "text",
+      "id": "expert_label",
+      "label": "Expert label",
+      "default": "ODBORNÍK"
+    },
+    {
+      "type": "textarea",
+      "id": "expert_text",
+      "label": "Expert text",
+      "default": "Nezávislí odborníci na automobilové doplňky doporučují před nákupem online autokoberců ověřit veřejnou adresu prodejce a přesnou tloušťku materiálu — obojí je u Carvion uvedeno otevřeně."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Checklist item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Adresa: Pobřežní 249/46, 186 00 Praha 8 — Karlín (uvedeno veřejně na webu)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing founder v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Adresa: Pobřežní 249/46, 186 00 Praha 8 — Karlín (uvedeno veřejně na webu)"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Kontakt: info@carvionauto.cz, +420 292 333 695"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Hrdý polský výrobce — stejná výrobní základna jako sesterský produkt s 59 620+ realizovanými sadami"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Tloušťka materiálu 10 mm — konkrétní, ověřitelné číslo"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Jasné zásady vrácení peněz a mimosoudní řešení spotřebitelských sporů na webu"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

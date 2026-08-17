@@ -368,16 +368,19 @@
       .evamats-kariera-benefits__intro {
         display: block;
         margin-bottom: 30px;
+        text-align: left;
       }
   
       .evamats-kariera-benefits__overline {
         margin-bottom: 21px;
         font-size: 14px;
+        text-align: left;
       }
   
       .evamats-kariera-benefits__heading {
         margin: 0;
         font-size: 26px;
+        text-align: left;
       }
   
       .evamats-kariera-benefits__grid {

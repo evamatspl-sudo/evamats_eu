@@ -64,8 +64,12 @@
                 {%- if stat_value != blank -%}
                   <p class="evamats-proven-scale-v2__stat-value">
                     <span class="evamats-proven-scale-v2__stat-number">{{ stat_value | escape }}</span>
-                    {%- if block.settings.show_plus -%}
-                      <span class="evamats-proven-scale-v2__stat-plus" aria-hidden="true">+</span>
+                    {%- if block.settings.suffix != blank -%}
+                      <span class="evamats-proven-scale-v2__stat-plus">
+                        {{- ' ' -}}{{- block.settings.suffix | escape -}}
+                      </span>
+                    {%- elsif block.settings.show_plus -%}
+                      <span class="evamats-proven-scale-v2__stat-plus" aria-hidden="true"> +</span>
                     {%- endif -%}
                   </p>
                 {%- endif -%}
@@ -179,6 +183,12 @@
           "id": "value",
           "label": "Value",
           "default": "3 082"
+        },
+        {
+          "type": "text",
+          "id": "suffix",
+          "label": "Suffix (red)",
+          "info": "e.g. mm, let. Overrides plus sign when set."
         },
         {
           "type": "checkbox",

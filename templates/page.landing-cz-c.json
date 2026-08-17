@@ -9,16 +9,562 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "custom_css": [],
+    "landing_hero": {
+      "type": "landing-hero-v2",
+      "blocks": {
+        "fact_1": {
+          "type": "fact_chip",
+          "settings": {
+            "label": "FAKT",
+            "text": "EVA autokoberce drží tvar a nezapáchají i po letech používání — ověřený materiálový fakt"
+          }
+        }
+      },
+      "block_order": [
+        "fact_1"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "image_desktop": "shopify://shop_images/Background_Image.webp",
+        "image_mobile": "shopify://shop_images/Hero_photo.webp",
+        "height_desktop": 900,
+        "height_mobile": 744,
+        "overlay_opacity": 40,
+        "show_top_fade": true,
+        "show_breadcrumbs": false,
+        "breadcrumb_parent": "Carvion",
+        "breadcrumb_parent_url": "/",
+        "breadcrumb_current": "",
+        "breadcrumb_current_url": "",
+        "heading": "Váš gumový koberec zakrývá sotva 70 % podlahy",
+        "heading_gradient": true,
+        "subheading": "Srovnali jsme gumu, velur a EVA — a vysvětlujeme rozdíly",
+        "cta_label": "Srovnat materiály pro můj vůz",
+        "cta_url": "shopify://collections/all-car-mats"
+      }
+    },
+    "landing_antagonist": {
+      "type": "landing-antagonist-v2",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_54_49_1.webp",
+            "text": "Univerzální střih — bez ohledu na model auta"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_52_52_1.webp",
+            "text": "Nasákne vodu a ztrácí vzhled po sezóně"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_57_38_1.webp",
+            "text": "Tvrdne a může prasknout v mrazu"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "Guma v mrazu praská. Velur po sezóně ztrácí vzhled",
+        "subheading": "Protivníkem není konkrétní značka, ale samotný zvyk — „vždycky jsem bral gumu, protože to tak dělal táta“.",
+        "background_color": "#f6f6f6",
+        "padding_top": 98,
+        "padding_bottom": 98
+      }
+    },
+    "landing_compare": {
+      "type": "landing-compare-v2",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Pokrytí podlahy",
+            "value_1": "částečné",
+            "value_2": "částečné",
+            "value_3": "až 98 %, včetně tunelu"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Chování v mrazu",
+            "value_1": "tvrdne, může prasknout",
+            "value_2": "nasákne vlhkost",
+            "value_3": "odolná od −50 °C do +50 °C"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "Zápach v horku",
+            "value_1": "častý",
+            "value_2": "vzácný",
+            "value_3": "žádný"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "Čištění",
+            "value_1": "vyklepat",
+            "value_2": "praní, dlouhé schnutí",
+            "value_3": "vyklepat / opláchnout"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "Přizpůsobení vozu",
+            "value_1": "univerzální",
+            "value_2": "univerzální",
+            "value_3": "3D střih na přesný model"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5"
+      ],
+      "settings": {
+        "eyebrow": "Value Proposition",
+        "heading": "Guma, velur, nebo EVA? Srovnali jsme všechny tři varianty — tady jsou rozdíly",
+        "col_1_label": "Guma",
+        "col_2_label": "Velur",
+        "col_3_label": "EVA",
+        "highlight_column": "3",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_credibility": {
+      "type": "landing-credibility-v2",
+      "blocks": {
+        "card_historie": {
+          "type": "card",
+          "settings": {
+            "title": "Historie",
+            "text": "Rohože Carvion vznikají na stejné výrobní bázi a technologii jako sesterský produkt s 59 620+ realizovanými sadami — 3D střih podle 1567+ dostupných modelů vozů.",
+            "stat_1_value": "",
+            "stat_1_show_plus": true,
+            "stat_1_label": "",
+            "stat_2_value": "",
+            "stat_2_show_plus": true,
+            "stat_2_label": ""
+          }
+        },
+        "card_expert": {
+          "type": "card",
+          "settings": {
+            "title": "Hlas odborníka",
+            "text": "Nezávislí odborníci na automobilové materiály upozorňují, že klíčovým rozdílem mezi kategoriemi koberců není jen materiál, ale míra přesnosti střihu na konkrétní model — odtud plyne skutečná ochrana podlahy.",
+            "stat_1_value": "",
+            "stat_1_show_plus": true,
+            "stat_1_label": "",
+            "stat_2_value": "",
+            "stat_2_show_plus": true,
+            "stat_2_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_historie",
+        "card_expert"
+      ],
+      "settings": {
+        "eyebrow": "Ověřeno",
+        "heading": "Ne sliby, ale ověřitelná fakta",
+        "image": "shopify://shop_images/Main_Image.webp",
+        "show_section_background": true,
+        "background_color": "#f6f6f6",
+        "card_background_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "evamats_proven_scale": {
+      "type": "evamats-proven-scale-v2",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "10",
+            "suffix": "mm",
+            "show_plus": false,
+            "label": "tloušťka pěny EVA"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "5–7",
+            "suffix": "let",
+            "show_plus": false,
+            "label": "odolnost bez opotřebení"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "1567",
+            "suffix": "",
+            "show_plus": true,
+            "label": "dostupných modelů v systému"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "59 620",
+            "suffix": "",
+            "show_plus": true,
+            "label": "realizovaných sad (sesterský produkt)"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "heading": "",
+        "intro": "",
+        "image_desktop": "shopify://shop_images/4f0e0eaff4c762c2eeaacb952a812eeec15881ec.webp",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_testimonials": {
+      "type": "landing-testimonials-v2",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "text": "Rohože vypadají skvěle, perfektně ladí s modelem vozu",
+            "author": "Ověřený zákazník",
+            "rating": 5,
+            "date": "před 2 týdny"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "text": "Zakrývají větší část podlahy než původní gumové koberečky",
+            "author": "Člen komunity",
+            "rating": 4,
+            "date": "7. května 2026"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "text": "Materiál je velmi odolný a barva se během používání nemění",
+            "author": "Člen komunity",
+            "rating": 5,
+            "date": "18. května 2026"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "text": "Rohože vypadají skvěle, perfektně ladí s modelem vozu",
+            "author": "Ověřený zákazník",
+            "rating": 5,
+            "date": "před 2 týdny"
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "text": "Zakrývají větší část podlahy než původní gumové koberečky",
+            "author": "Člen komunity",
+            "rating": 4,
+            "date": "7. května 2026"
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "text": "Materiál je velmi odolný a barva se během používání nemění",
+            "author": "Člen komunity",
+            "rating": 5,
+            "date": "18. května 2026"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6"
+      ],
+      "settings": {
+        "heading": "Co říkají řidiči, kteří už přešli na EVA",
+        "more_label": "Více informací",
+        "background_color": "#f6f6f6",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_trust_compare": {
+      "type": "landing-trust-compare-v2",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Veřejná adresa firmy",
+            "value_1": "ano",
+            "value_2": "často ne"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Uvedená tloušťka materiálu",
+            "value_1": "10 mm, ověřitelné",
+            "value_2": "často neuvedeno"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "Kontakt na reklamace",
+            "value_1": "ano, veřejně",
+            "value_2": "často nejasný"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3"
+      ],
+      "settings": {
+        "heading": "Carvion vs anonymní e-shopy",
+        "col_1_label": "Carvion",
+        "col_2_label": "Anonymní e-shop",
+        "col_2_label_mobile": "Anonymní\ne-shop",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_choose_kit": {
+      "type": "landing-choose-kit-v2",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "Značka a model",
+            "label_mobile": "Značka a model"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "Tvar buněk",
+            "label_mobile": "Tvar buněk"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "Barva materiálu",
+            "label_mobile": "Barva materiálu"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "label": "Barva lemu",
+            "label_mobile": "Barva lemu"
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "label": "Hotový komplet",
+            "label_mobile": "Hotový komplet"
+          }
+        },
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "title": "Přední+zadní+kufřík, bez okrajů",
+            "subtitle": "plná ochrana kabiny",
+            "price": "−10%, automaticky v košíku",
+            "button_label": "Vybírám",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "title": "Přední+zadní, s okraji",
+            "subtitle": "kompletní sada · VOLBA ŘIDIČŮ",
+            "price": "−15%, automaticky v košíku od 60 €",
+            "button_label": "Vybírám",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "offer_1",
+        "offer_2"
+      ],
+      "settings": {
+        "heading": "Vyberte si variantu",
+        "note_1": "Ruční výroba = omezený počet kompletů zpracovaných tento týden. Přihlaste se k odběru a získejte slevu na první objednávku.",
+        "note_2": "Reklamace a vrácení zboží vyřizujeme individuálně a v pořadí, v jakém je obdržíme — vaší záležitosti věnujeme plnou pozornost. Kontakt:",
+        "contact_email": "info@carvionauto.cz",
+        "note_3": "Výroba: do 10 dnů. Doručení: do 4 dnů. Platba mj. GoPay, kartou a PayPal.",
+        "cta_label": "Srovnat materiály pro můj vůz",
+        "cta_link": "shopify://collections/all-car-mats",
+        "trust_text": "vede k výběru vašeho vozu — ne přímo k platbě",
+        "background_color": "#14161a",
+        "padding_top": 88,
+        "padding_bottom": 88,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_faq": {
+      "type": "landing-faq-v2",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "question": "Jaký je rozdíl mezi EVA, gumou a velurem?",
+            "answer": ""
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "question": "Budou rohože opravdu sedět přesně na můj model?",
+            "answer": ""
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "question": "Co je to tunelová rohož a proč je důležitá?",
+            "answer": ""
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "question": "Jak dlouho EVA rohože vydrží ve srovnání s gumou?",
+            "answer": "Ano, EVA koberce jsou vyráběny individuálně pro konkrétní model vozu, proto přesně kopírují tvar podlahy a zohledňují všechny zvláštnosti interiéru. Díky tomu těsně přiléhají a pokrývají celou hlavní plochu včetně složitých míst, čímž zajišťují maximální ochranu proti nečistotám a vlhkosti."
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "question": "Jak se EVA rohože čistí?",
+            "answer": ""
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "question": "Kdo je Carvion a odkud rohože pochází?",
+            "answer": ""
+          }
+        },
+        "faq_7": {
+          "type": "item",
+          "settings": {
+            "question": "Jaká je doba dodání?",
+            "answer": ""
+          }
+        },
+        "faq_8": {
+          "type": "item",
+          "settings": {
+            "question": "Co když si nejsem jistý barvou podle fotky na obrazovce?",
+            "answer": ""
+          }
+        },
+        "faq_9": {
+          "type": "item",
+          "settings": {
+            "question": "Jak funguje sleva v košíku — musím zadávat kód?",
+            "answer": ""
+          }
+        },
+        "faq_10": {
+          "type": "item",
+          "settings": {
+            "question": "Co dělat, pokud rohož po doručení nesedí?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "heading": "Časté dotazy",
+        "background_color": "#f6f6f6",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     }
   },
   "order": [
-    "main"
+    "landing_hero",
+    "landing_antagonist",
+    "landing_compare",
+    "landing_credibility",
+    "evamats_proven_scale",
+    "landing_testimonials",
+    "landing_trust_compare",
+    "landing_choose_kit",
+    "landing_faq"
   ]
 }

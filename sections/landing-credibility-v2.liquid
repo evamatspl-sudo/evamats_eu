@@ -1,0 +1,326 @@
+{{ 'section-landing-credibility-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_desktop = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  if image_mobile == blank
+    assign image_mobile = image_desktop
+  endif
+
+  assign show_surface = section.settings.show_section_background
+  assign card_count = 0
+  for block in section.blocks
+    if block.type == 'card'
+      assign card_count = card_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div
+  id="LandingCredibility-{{ section.id }}"
+  class="landing-credibility-v2{% if show_surface %} landing-credibility-v2--surface{% endif %}"
+  style="
+    --lc-bg: {{ section.settings.background_color }};
+    --lc-card-bg: {{ section.settings.card_background_color }};
+    --lc-padding-top: {{ section.settings.padding_top }}px;
+    --lc-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --lc-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --lc-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="landing-credibility-v2__inner">
+    <div class="landing-credibility-v2__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="landing-credibility-v2__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      <div class="landing-credibility-v2__body">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="landing-credibility-v2__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if card_count > 0 -%}
+          <div class="landing-credibility-v2__cards">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'card' -%}
+                {%- liquid
+                  assign has_stat_1 = false
+                  assign has_stat_2 = false
+                  if block.settings.stat_1_value != blank or block.settings.stat_1_label != blank
+                    assign has_stat_1 = true
+                  endif
+                  if block.settings.stat_2_value != blank or block.settings.stat_2_label != blank
+                    assign has_stat_2 = true
+                  endif
+                -%}
+                {%- if block.settings.title != blank or block.settings.text != blank or has_stat_1 or has_stat_2 -%}
+                  <article class="landing-credibility-v2__card" {{ block.shopify_attributes }}>
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="landing-credibility-v2__card-title">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <p class="landing-credibility-v2__card-text">{{ block.settings.text | escape }}</p>
+                    {%- endif -%}
+                    {%- if has_stat_1 or has_stat_2 -%}
+                      <div class="landing-credibility-v2__stats">
+                        {%- if has_stat_1 -%}
+                          <div class="landing-credibility-v2__stat">
+                            {%- if block.settings.stat_1_value != blank -%}
+                              <p class="landing-credibility-v2__stat-value">
+                                {{- block.settings.stat_1_value | escape -}}
+                                {%- if block.settings.stat_1_show_plus -%}
+                                  <span class="landing-credibility-v2__stat-plus">+</span>
+                                {%- endif -%}
+                              </p>
+                            {%- endif -%}
+                            {%- if block.settings.stat_1_label != blank -%}
+                              <p class="landing-credibility-v2__stat-label">{{ block.settings.stat_1_label | escape }}</p>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                        {%- if has_stat_2 -%}
+                          <div class="landing-credibility-v2__stat">
+                            {%- if block.settings.stat_2_value != blank -%}
+                              <p class="landing-credibility-v2__stat-value">
+                                {{- block.settings.stat_2_value | escape -}}
+                                {%- if block.settings.stat_2_show_plus -%}
+                                  <span class="landing-credibility-v2__stat-plus">+</span>
+                                {%- endif -%}
+                              </p>
+                            {%- endif -%}
+                            {%- if block.settings.stat_2_label != blank -%}
+                              <p class="landing-credibility-v2__stat-label">{{ block.settings.stat_2_label | escape }}</p>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                  </article>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="landing-credibility-v2__media">
+      {%- if image_desktop != blank -%}
+        <picture>
+          {%- if image_mobile != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ image_mobile | image_url: width: 750 }} 750w,
+                {{ image_mobile | image_url: width: 1100 }} 1100w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            image_desktop
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              class: 'landing-credibility-v2__image',
+              widths: '400, 600, 800, 1100, 1600',
+              sizes: '(max-width: 749px) 100vw, 48vw'
+          }}
+        </picture>
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'landing-credibility-v2__image landing-credibility-v2__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing credibility v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-credibility-v2",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sprawdzone doświadczenie"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nie obietnice — konkretne liczby"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section_background",
+      "label": "Show section background",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Historia"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "EVAMATS — polski producent, 1567 modeli, 59 620+ zrealizowanych kompletów. Ręczna produkcja — każdy komplet szyty indywidualnie, nie cięty z jednego uniwersalnego szablonu."
+        },
+        {
+          "type": "header",
+          "content": "Stat 1"
+        },
+        {
+          "type": "text",
+          "id": "stat_1_value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "stat_1_show_plus",
+          "label": "Show +",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stat_1_label",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Stat 2"
+        },
+        {
+          "type": "text",
+          "id": "stat_2_value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "stat_2_show_plus",
+          "label": "Show +",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stat_2_label",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing credibility v2",
+      "category": "V2",
+      "settings": {
+        "show_section_background": false,
+        "card_background_color": "#f6f6f6"
+      },
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "Historia",
+            "text": "EVAMATS — polski producent, 1567 modeli, 59 620+ zrealizowanych kompletów. Ręczna produkcja — każdy komplet szyty indywidualnie, nie cięty z jednego uniwersalnego szablonu.",
+            "stat_1_value": "1567",
+            "stat_1_show_plus": true,
+            "stat_1_label": "dostępnych modeli aut",
+            "stat_2_value": "59 620",
+            "stat_2_show_plus": true,
+            "stat_2_label": "zrealizowanych kompletów"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Głos eksperta",
+            "text": "Detailerzy zwracają uwagę, że dobrze dobrany kolorystycznie dywanik potrafi zmienić odbiór całego wnętrza bardziej niż niejedna droższa modyfikacja."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

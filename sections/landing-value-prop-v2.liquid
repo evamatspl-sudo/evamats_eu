@@ -1,0 +1,188 @@
+{{ 'section-landing-value-prop-v2.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign item_count = 0
+  for block in section.blocks
+    if block.type == 'item'
+      assign item_count = item_count | plus: 1
+    endif
+  endfor
+-%}
+
+<div id="LandingValueProp-{{ section.id }}" class="landing-value-prop-v2">
+  <div class="landing-value-prop-v2__inner">
+    {%- if section.settings.text != blank -%}
+      <div class="landing-value-prop-v2__intro">
+        <span class="landing-value-prop-v2__accent" aria-hidden="true"></span>
+        <p class="landing-value-prop-v2__text">{{ section.settings.text | escape }}</p>
+      </div>
+    {%- endif -%}
+
+    {%- if item_count > 0 -%}
+      <ul class="landing-value-prop-v2__items" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'item' -%}
+            <li class="landing-value-prop-v2__item" {{ block.shopify_attributes }}>
+              <div class="landing-value-prop-v2__chip">
+                {%- if block.settings.icon_image != blank -%}
+                  {{
+                    block.settings.icon_image
+                    | image_url: width: 64
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'landing-value-prop-v2__chip-img',
+                      widths: '32, 48, 64',
+                      sizes: '32px'
+                  }}
+                {%- else -%}
+                  {%- case block.settings.icon -%}
+                    {%- when 'charakter' -%}
+                      <img
+                        class="landing-value-prop-v2__chip-img"
+                        src="{{ 'lvp-icon-charakter.svg' | asset_url }}"
+                        alt=""
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
+                    {%- when 'ochrona' -%}
+                      <img
+                        class="landing-value-prop-v2__chip-img"
+                        src="{{ 'lvp-icon-ochrona.svg' | asset_url }}"
+                        alt=""
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
+                    {%- when 'wartosc' -%}
+                      <img
+                        class="landing-value-prop-v2__chip-img"
+                        src="{{ 'lvp-icon-wartosc.svg' | asset_url }}"
+                        alt=""
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
+                    {%- when 'sprzatanie' -%}
+                      <img
+                        class="landing-value-prop-v2__chip-img"
+                        src="{{ 'lvp-icon-sprzatanie.svg' | asset_url }}"
+                        alt=""
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      <img
+                        class="landing-value-prop-v2__chip-img"
+                        src="{{ 'lvp-icon-dopasowanie.svg' | asset_url }}"
+                        alt=""
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
+                  {%- endcase -%}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.label != blank -%}
+                <p class="landing-value-prop-v2__label">{{ block.settings.label | escape }}</p>
+              {%- endif -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing value prop v2",
+  "tag": "section",
+  "class": "section_v2 section-landing-value-prop-v2",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Przez lata przemysł motoryzacyjny traktował podłogę wnętrza jako czysto funkcjonalny element — czarną, uniwersalną, bez charakteru. To się zmienia wraz z modą na detailing i personalizację."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "dopasowanie", "label": "Fit" },
+            { "value": "charakter", "label": "Interior character" },
+            { "value": "ochrona", "label": "Protection" },
+            { "value": "wartosc", "label": "Resale value" },
+            { "value": "sprzatanie", "label": "Cleaning" }
+          ],
+          "default": "dopasowanie"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Custom icon (optional)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing value prop v2",
+      "category": "V2",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "dopasowanie",
+            "label": "Dopasowanie"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "charakter",
+            "label": "Charakter wnętrza"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "ochrona",
+            "label": "Ochrona"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "wartosc",
+            "label": "Wartość odsprzedażowa"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "sprzatanie",
+            "label": "Wygoda sprzątania"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

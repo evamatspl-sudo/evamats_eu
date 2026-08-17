@@ -1,0 +1,141 @@
+/* PL/CZ landing pages only.
+   Store color scheme paints Dawn h1–h5 with rgb(var(--color-foreground)) = white.
+   Bento / proven-scale also use var(--color-text). Header/footer stay outside #MainContent. */
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) #MainContent {
+  --color-foreground: 27, 29, 34;
+  --color-text: #1b1d22;
+  --color-text-primary: #1b1d22;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) :is(
+  .landing-antagonist-v2,
+  .landing-credibility-v2,
+  .landing-testimonials-v2,
+  .landing-compare-v2,
+  .landing-trust-compare-v2,
+  .landing-faq-v2,
+  .landing-value-prop-v2,
+  .landing-founder-spotlight-v2,
+  .evamats-proven-scale-v2,
+  .evamats-partners-benefits-bento
+) {
+  --color-foreground: 27, 29, 34;
+  --color-text: #1b1d22;
+  color: #1b1d22;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-partners-benefits-bento.evamats-kariera-benefits {
+  background: transparent;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-partners-benefits-bento .evamats-kariera-benefits__heading {
+  color: #fff;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-partners-benefits-bento :is(
+  .evamats-kariera-benefits__panel-title,
+  .evamats-kariera-benefits__description,
+  .evamats-kariera-benefits__row-text,
+  .evamats-kariera-benefits__culture-tagline
+) {
+  color: #1b1d22;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .landing-compare-v2 {
+  background: transparent;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .landing-compare-v2__heading {
+  color: #fff;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-partners-benefits-bento .evamats-kariera-benefits__panel--c :is(
+  .evamats-kariera-benefits__panel-title,
+  .evamats-kariera-benefits__description,
+  .evamats-kariera-benefits__row-text
+) {
+  color: #fff;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .evamats-proven-scale-v2 :is(
+  .evamats-proven-scale-v2__heading,
+  .evamats-proven-scale-v2__intro,
+  .evamats-proven-scale-v2__stat-value,
+  .evamats-proven-scale-v2__stat-label
+) {
+  color: #1b1d22;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .landing-testimonials-v2 :is(
+  .landing-testimonials-v2__text,
+  .landing-testimonials-v2__author-name,
+  .landing-testimonials-v2__rating-value
+) {
+  color: #1b1d22;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .landing-testimonials-v2 .eva-slider-nav.swiper-button-prev,
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .landing-testimonials-v2 .eva-slider-nav.swiper-button-next {
+  color: #ffffff;
+}

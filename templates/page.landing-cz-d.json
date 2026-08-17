@@ -1,0 +1,441 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing_hero": {
+      "type": "landing-hero-v2",
+      "blocks": {
+        "fact_1": {
+          "type": "fact_chip",
+          "settings": {
+            "label": "OVĚŘENO",
+            "text": "Reálná adresa v Praze · veřejný kontakt · žádné anonymní IČO"
+          }
+        }
+      },
+      "block_order": [
+        "fact_1"
+      ],
+      "settings": {
+        "image_desktop": "shopify://shop_images/Group_1948755323.webp",
+        "image_mobile": "shopify://shop_images/Group_1948755322.webp",
+        "height_desktop": 900,
+        "height_mobile": 744,
+        "overlay_opacity": 40,
+        "show_top_fade": true,
+        "show_breadcrumbs": true,
+        "breadcrumb_parent": "Evamats",
+        "breadcrumb_parent_url": "/",
+        "breadcrumb_current": "Katalog",
+        "breadcrumb_current_url": "",
+        "heading": "Objednali jste si někdy online rohože a dostali tenký kus pěny bez jasného odesílatele?",
+        "heading_gradient": true,
+        "subheading": "Takhle to u nás nefunguje — a chceme vám ukázat proč",
+        "cta_label": "Přečíst si, jak rohože vznikají",
+        "cta_url": "shopify://collections/all-car-mats"
+      }
+    },
+    "landing_antagonist": {
+      "type": "landing-antagonist-v2",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/2026-08-04_14.05.51_1.webp",
+            "text": "Bez udání tloušťky materiálu v popisu"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/2026-08-04_14.04.02_1.webp",
+            "text": "Týdny bez odpovědi na reklamaci"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_4_._2026_._14_05_30_1.webp",
+            "text": "Tenký kus pěny bez přesného tvaru na váš model"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "Objednali jste si už někdy autokoberce a dostali tenký kus pěny?",
+        "subheading": "Pokud jste už jednou objednali online autokoberce a dostali tenký kus pěny bez jasného kontaktu na firmu — rozumíme, proč jste teď opatrní. Přesně proto tuto stránku píšeme takhle.",
+        "background_color": "#f6f6f6",
+        "card_text_style": "center_bold",
+        "padding_top": 98,
+        "padding_bottom": 168
+      }
+    },
+    "evamats_proven_scale": {
+      "type": "evamats-proven-scale-v2",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "10",
+            "suffix": "mm",
+            "show_plus": false,
+            "label": "tloušťka materiálu"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "−50…+50",
+            "suffix": "°C",
+            "show_plus": false,
+            "label": "odolnost v každém počasí"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "1567",
+            "suffix": "",
+            "show_plus": true,
+            "label": "dostupných modelů vozů"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "use_orders_counter": false,
+            "value": "59 620",
+            "suffix": "",
+            "show_plus": true,
+            "label": "realizovaných sad (sesterský produkt)"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "heading": "",
+        "intro": "",
+        "image_desktop": "shopify://shop_images/Mask_group_1_47baf914-49d2-4edc-9b82-150dc7b4bd11.webp",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_founder_spotlight": {
+      "type": "landing-founder-spotlight-v2",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Adresa: Pobřežní 249/46, 186 00 Praha 8 — Karlín (uvedeno veřejně na webu)"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Kontakt: info@carvionauto.cz, +420 292 333 695"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "Hrdý polský výrobce — stejná výrobní základna jako sesterský produkt s 59 620+ realizovanými sadami"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "Tloušťka materiálu 10 mm — konkrétní, ověřitelné číslo"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "text": "Jasné zásady vrácení peněz a mimosoudní řešení spotřebitelských sporů na webu"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Founder_Photo_Large_48b36a3d-6769-4202-904b-20365053113a.webp",
+        "eyebrow": "Kdo jsme",
+        "quote": "Ahoj, jsem Maks a vyrábím prémiové autokoberce navržené s ohledem na váš komfort — a na vás.",
+        "expert_label": "ODBORNÍK",
+        "expert_text": "Nezávislí odborníci na automobilové doplňky doporučují před nákupem online autokoberců ověřit veřejnou adresu prodejce a přesnou tloušťku materiálu — obojí je u Carvion uvedeno otevřeně.",
+        "background_color": "#f6f6f6",
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "landing_trust_compare": {
+      "type": "landing-trust-compare-v2",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "Veřejná adresa firmy",
+            "value_1": "ano — Praha 8",
+            "value_2": "často ne"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Jméno a tvář zakladatele",
+            "value_1": "ano — Maks",
+            "value_2": "téměř nikdy"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "Uvedená tloušťka materiálu",
+            "value_1": "10 mm, ověřitelné",
+            "value_2": "často neuvedeno"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "Zásady vrácení peněz veřejně",
+            "value_1": "ano",
+            "value_2": "často nejasné"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4"
+      ],
+      "settings": {
+        "heading": "Carvion vs anonymní e-shopy",
+        "subheading": "Carvion je nová značka — místo cizích recenzí vám zatím ukazujeme přímo proces a ověřitelná fakta o firmě",
+        "col_1_label": "Carvion",
+        "col_2_label": "Anonymní e-shop",
+        "col_2_label_mobile": "Anonymní\ne-shop",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_choose_kit": {
+      "type": "landing-choose-kit-v2",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "Značka a model",
+            "label_mobile": "Značka a model"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "Tvar buněk",
+            "label_mobile": "Tvar buněk"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "Barva materiálu",
+            "label_mobile": "Barva materiálu"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "label": "Barva lemu",
+            "label_mobile": "Barva lemu"
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "label": "Hotový komplet",
+            "label_mobile": "Hotový komplet"
+          }
+        },
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "title": "Přední+zadní+kufřík, bez okrajů",
+            "subtitle": "plná ochrana kabiny",
+            "price": "−10%, automaticky v košíku",
+            "button_label": "Vybírám",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "title": "Přední+zadní, s okraji",
+            "subtitle": "kompletní sada · VOLBA ŘIDIČŮ",
+            "price": "−15%, automaticky v košíku od 60 €",
+            "button_label": "Vybírám",
+            "button_link": "shopify://collections/all-car-mats"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "offer_1",
+        "offer_2"
+      ],
+      "settings": {
+        "heading": "Vyberte si variantu",
+        "note_1": "Ruční výroba = omezený počet kompletů zpracovaných tento týden. Přihlaste se k odběru a získejte slevu na první objednávku.",
+        "note_2": "Reklamace a vrácení zboží vyřizujeme individuálně a v pořadí, v jakém je obdržíme — vaší záležitosti věnujeme plnou pozornost. Kontakt:",
+        "contact_email": "info@carvionauto.cz",
+        "note_3": "Výroba: do 10 dnů. Doručení: do 4 dnů. Platba mj. GoPay, kartou a PayPal.",
+        "cta_label": "Srovnat materiály pro můj vůz",
+        "cta_link": "shopify://collections/all-car-mats",
+        "trust_text": "vede k výběru vašeho vozu — ne přímo k platbě",
+        "background_color": "#14161a",
+        "padding_top": 88,
+        "padding_bottom": 88,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "landing_faq": {
+      "type": "landing-faq-v2",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "question": "Kdo je Carvion a kde sídlí firma?",
+            "answer": ""
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "question": "Je Carvion propojen s jinými EVA značkami, které v ČR znám?",
+            "answer": ""
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "question": "Jak dlouho EVA rohože vydrží ve srovnání s gumou?",
+            "answer": "Ano, EVA koberce jsou vyráběny individuálně pro konkrétní model vozu, proto přesně kopírují tvar podlahy a zohledňují všechny zvláštnosti interiéru. Díky tomu těsně přiléhají a pokrývají celou hlavní plochu včetně složitých míst, čímž zajišťují maximální ochranu proti nečistotám a vlhkosti."
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "question": "Jak funguje reklamace a jak dlouho trvá vyřízení?",
+            "answer": ""
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "question": "Kde najdu obchodní podmínky a zásady vrácení peněz?",
+            "answer": ""
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "question": "Jaká je doba dodání a co když se zpozdí?",
+            "answer": ""
+          }
+        },
+        "faq_7": {
+          "type": "item",
+          "settings": {
+            "question": "Proč jsou autokoberce Carvion silnější (10 mm) než některé levnější varianty?",
+            "answer": ""
+          }
+        },
+        "faq_8": {
+          "type": "item",
+          "settings": {
+            "question": "Odkud pochází materiál a kde se rohože vyrábí?",
+            "answer": ""
+          }
+        },
+        "faq_9": {
+          "type": "item",
+          "settings": {
+            "question": "Jak funguje sleva v košíku?",
+            "answer": ""
+          }
+        },
+        "faq_10": {
+          "type": "item",
+          "settings": {
+            "question": "Mohu si před objednáním ověřit vzorek barvy?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "heading": "Časté dotazy",
+        "background_color": "#f6f6f6",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    }
+  },
+  "order": [
+    "landing_hero",
+    "landing_antagonist",
+    "evamats_proven_scale",
+    "landing_founder_spotlight",
+    "landing_trust_compare",
+    "landing_choose_kit",
+    "landing_faq"
+  ]
+}
