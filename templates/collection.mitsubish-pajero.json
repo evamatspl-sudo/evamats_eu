@@ -17,7 +17,7 @@
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
-        "catalog_label": "Katalog",
+        "catalog_label": "Catalog",
         "brand_url": "shopify://collections/mitsubishi"
       }
     },
@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/mitsubishi",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         }
       },

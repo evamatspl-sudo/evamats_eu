@@ -17,7 +17,7 @@
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
-        "catalog_label": "Katalog",
+        "catalog_label": "Catalog",
         "brand_url": "shopify://collections/lincoln"
       }
     },
@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/lincoln",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         },
         "4f8483c2-24c7-4edb-b285-3f4b72057eaf": {
