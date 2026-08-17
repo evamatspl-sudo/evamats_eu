@@ -107,7 +107,7 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>Souhlasím s the  <a href=\"/policies/privacy-policy\" title=\"zásadami ochrany osobních údajů\">privacy policy</a> a <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
+        "check-newsletter": "<p>I agree with the  <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a> and <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">regulations</a>.</p>",
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 56
@@ -144,7 +144,7 @@
       ],
       "settings": {
         "show_related_posts": true,
-        "heading": "Naše realizace",
+        "heading": "Our realizations",
         "heading_size": "h1",
         "blog": "nasze-realizacje",
         "post_limit": 2,
@@ -161,7 +161,7 @@
     "2959ec46-bbb7-4260-b81d-7024c179ac2a": {
       "type": "home-5",
       "settings": {
-        "btn_text": "Vše posts",
+        "btn_text": "All posts",
         "btn_url": "shopify://pages/realizacja"
       }
     },
@@ -193,7 +193,7 @@
       "settings": {
         "hd": "“Máte vzácné auto?“",
         "des": "<p>Nenajdete koberce pro své jedinečné auto? <br/><br/>Máme kontakty po celém Polsku i v zahraničí u různých autosalonů, kde vám vozidlo změříme, pokud nemůžete přijet k nám. Ke každému měření přistupujeme s precizností, s jakou hodinář skládá hodinky.<br/><br/>Vyplňte tento formulář a my pro vaše auto vyrobíme koberce na míru.</p>",
-        "btn_text": "INDIVIDUÁLNÍ OBJEDNÁVKA",
+        "btn_text": "CUSTOM ORDER",
         "btn_url": "shopify://collections/all-car-mats",
         "img": "shopify://shop_images/car_cf0646c7-e5cf-4d25-9929-d57cd136ffb9.png"
       }
@@ -205,7 +205,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -213,7 +213,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -221,7 +221,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         },
@@ -229,7 +229,7 @@
           "type": "text",
           "settings": {
             "hd": "Danielle Lhoutellier",
-            "rt_txt": "před 4 dny",
+            "rt_txt": "4 days ago",
             "des": "Skvělá práce, jen tak dál"
           }
         }

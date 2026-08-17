@@ -12,13 +12,13 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
         "catalog_label": "Katalog",
-        "brand_url": "shopify:\/\/collections\/mercedes-benz"
+        "brand_url": "shopify://collections/mercedes-benz"
       }
     },
     "f573ba8e-312f-4893-91de-d3ed521114fa": {
@@ -27,8 +27,8 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/mercedes-benz",
-            "color-code": "Vše"
+            "product-link": "shopify://collections/mercedes-benz",
+            "color-code": "All"
           }
         }
       },

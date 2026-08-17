@@ -12,8 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/carvion-banner-desktop-v2.webp",
-        "image_mobile": "shopify:\/\/shop_images\/carvion-banner-mobile-v2.webp",
+        "image_desktop": "shopify://shop_images/carvion-banner-desktop-v2.webp",
+        "image_mobile": "shopify://shop_images/carvion-banner-mobile-v2.webp",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -27,70 +27,70 @@
         "37f49a36-c9f0-4209-a441-c60995efa21c": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/all-car-mats",
-            "color-code": "Vše"
+            "product-link": "shopify://collections/all-car-mats",
+            "color-code": "All"
           }
         },
         "d2f793f1-83dc-4b2e-80e7-3a47a6c7eeaa": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-147",
+            "product-link": "shopify://collections/alfa-romeo-147",
             "color-code": "147"
           }
         },
         "e5f0457b-26c3-47bf-a5b2-dbe254b66306": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-159",
+            "product-link": "shopify://collections/alfa-romeo-159",
             "color-code": "159"
           }
         },
         "cda67019-778c-49c2-9416-205ef3e795e8": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-brera",
+            "product-link": "shopify://collections/alfa-romeo-brera",
             "color-code": "Brera"
           }
         },
         "2df9f93c-8487-40c8-83dd-61d98d036bdc": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-giulia",
+            "product-link": "shopify://collections/alfa-romeo-giulia",
             "color-code": "Giulia"
           }
         },
         "0a790487-db33-44c5-be03-85b9871deaf5": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-gullieta",
+            "product-link": "shopify://collections/alfa-romeo-gullieta",
             "color-code": "Giulietta"
           }
         },
         "df8178a3-7813-4ab7-9fbc-8836b103e625": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-mito",
+            "product-link": "shopify://collections/alfa-romeo-mito",
             "color-code": "MiTo"
           }
         },
         "5554212f-91c6-4f2e-a691-ec3dfe6e6cb1": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-spider",
+            "product-link": "shopify://collections/alfa-romeo-spider",
             "color-code": "Spider"
           }
         },
         "0e3744e7-8ba3-48f7-8b08-b0a078621719": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-stelvio",
+            "product-link": "shopify://collections/alfa-romeo-stelvio",
             "color-code": "Stelvio"
           }
         },
         "056b55f9-171c-4780-9768-50371af3e998": {
           "type": "section",
           "settings": {
-            "product-link": "shopify:\/\/collections\/alfa-romeo-tonale",
+            "product-link": "shopify://collections/alfa-romeo-tonale",
             "color-code": "Tonale"
           }
         }
