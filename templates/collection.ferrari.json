@@ -17,7 +17,7 @@
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
-        "catalog_label": "Katalog",
+        "catalog_label": "Catalog",
         "brand_url": ""
       }
     },
@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/all-car-mats",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         },
         "6e9fba7b-5542-42d2-bf34-4bd78f593ec4": {
