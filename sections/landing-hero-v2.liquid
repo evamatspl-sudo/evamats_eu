@@ -1,5 +1,21 @@
 {{ 'section-landing-hero-v2.css' | asset_url | stylesheet_tag }}
 {{ 'landing-page-text-color.css' | asset_url | stylesheet_tag }}
+<link
+  rel="preload"
+  href="{{ 'Montserrat-VariableFont_wght.woff2' | asset_url }}"
+  as="font"
+  type="font/woff2"
+  crossorigin
+>
+<style>
+  @font-face {
+    font-family: 'Montserrat';
+    src: url({{ 'Montserrat-VariableFont_wght.woff2' | asset_url | json }}) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
 
 {%- liquid
   assign image_desktop = section.settings.image_desktop
