@@ -1,4 +1,8 @@
 {%- comment -%}
+  Latviešu: sociālie konti ir čehu (carvion.cz / carvion_cz), tāpēc lv versijā tos nerādām.
+{%- endcomment -%}
+{%- unless request.locale.iso_code == 'lv' -%}
+{%- comment -%}
   Social row — same markup/classes as video_reviews.liquid (square icons in footer).
   @param section {section} — facebook_url, instagram_url, tiktok_url, youtube_url, facebook_label
 {%- endcomment -%}
@@ -98,3 +102,5 @@
     {%- endif -%}
   </div>
 {%- endif -%}
+
+{%- endunless -%}
