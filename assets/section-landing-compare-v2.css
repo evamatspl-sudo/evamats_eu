@@ -306,9 +306,12 @@
   width: 100%;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.15;
   letter-spacing: 0;
   color: #1b1d22;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 
 .landing-compare-v2__card-rule {
@@ -374,6 +377,18 @@
   color: #1b1d22;
 }
 
+@media screen and (max-width: 1199px) {
+  .landing-compare-v2__cards {
+    flex-wrap: wrap;
+  }
+
+  .landing-compare-v2__card {
+    flex: 0 1 calc(50% - 12px);
+    min-width: 280px;
+    max-width: calc(50% - 12px);
+  }
+}
+
 @media screen and (max-width: 749px) {
   .landing-compare-v2--cards .landing-compare-v2__inner {
     gap: 16px;
@@ -386,10 +401,14 @@
 
   .landing-compare-v2__cards {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 16px;
   }
 
   .landing-compare-v2__card {
     width: 100%;
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: none;
   }
 }
