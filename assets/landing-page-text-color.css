@@ -81,7 +81,6 @@
 :is(
   .template_landing-pl-a,
   .template_landing-pl-b,
-  .template_landing-cz-c,
   .template_landing-cz-d
 ) .landing-compare-v2 {
   background: transparent;
@@ -90,10 +89,17 @@
 :is(
   .template_landing-pl-a,
   .template_landing-pl-b,
-  .template_landing-cz-c,
   .template_landing-cz-d
 ) .landing-compare-v2__heading {
   color: #fff;
+}
+
+.template_landing-cz-c .landing-compare-v2 {
+  background: #fff;
+}
+
+.template_landing-cz-c .landing-compare-v2__heading {
+  color: #1b1d22;
 }
 
 :is(
@@ -129,11 +135,12 @@
     .template_landing-pl-b,
     .template_landing-cz-c,
     .template_landing-cz-d
-  ) .evamats-proven-scale-v2 :is(
+  ) .evamats-proven-scale-v2__hero :is(
     .evamats-proven-scale-v2__stat-value,
+    .evamats-proven-scale-v2__stat-number,
     .evamats-proven-scale-v2__stat-label
   ) {
-    color: #fff;
+    color: #1b1d22;
   }
 }
 
@@ -163,4 +170,164 @@
   .template_landing-cz-d
 ) .landing-testimonials-v2 .eva-slider-nav.swiper-button-next {
   color: #ffffff;
+}
+
+html:has(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) {
+    scroll-behavior: auto;
+  }
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) #landing-search-models {
+  scroll-margin-top: 120px;
+  margin: 0;
+  padding: 72px 0 88px;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
+) .filter-container_section__title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+@media screen and (max-width: 749px) {
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models {
+    scroll-margin-top: 80px;
+    padding: 48px 0 64px;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) .filter-container_section__title {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 0;
+    padding: 0;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper {
+    background: #fff;
+    border: 1px solid #c8cdd8;
+    border-bottom: 0;
+    overflow: visible;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper:has(.custom-select.active) {
+    z-index: 6;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper:first-of-type {
+    border-radius: 10px 10px 0 0;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper:first-of-type .select-selected {
+    border-radius: 10px 10px 0 0;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper:last-of-type {
+    border-bottom: 1px solid #c8cdd8;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 46px;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .custom-select-wrapper:last-of-type .select-selected {
+    border-radius: 0 0 10px 10px;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .search-button {
+    width: 100%;
+  }
+
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) #landing-search-models .clear-filters {
+    top: auto;
+    right: 0;
+    bottom: 70px;
+  }
 }

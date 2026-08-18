@@ -1,5 +1,12 @@
 {{ 'section-landing-choose-kit-v2.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign landing_models_href = ''
+  if template.suffix == 'landing-pl-a' or template.suffix == 'landing-pl-b' or template.suffix == 'landing-cz-c' or template.suffix == 'landing-cz-d'
+    assign landing_models_href = '#landing-search-models'
+  endif
+-%}
+
 <div
   id="LandingChooseKit-{{ section.id }}"
   class="landing-choose-kit-v2"
@@ -82,8 +89,14 @@
               </div>
 
               {%- if block.settings.button_label != blank -%}
-                {%- if block.settings.button_link != blank -%}
-                  <a class="landing-choose-kit-v2__offer-btn" href="{{ block.settings.button_link }}">
+                {%- liquid
+                  assign offer_href = block.settings.button_link
+                  if landing_models_href != blank
+                    assign offer_href = landing_models_href
+                  endif
+                -%}
+                {%- if offer_href != blank -%}
+                  <a class="landing-choose-kit-v2__offer-btn" href="{{ offer_href }}">
                     {{- block.settings.button_label | escape -}}
                   </a>
                 {%- else -%}
@@ -131,8 +144,14 @@
     {%- if section.settings.cta_label != blank or section.settings.trust_text != blank -%}
       <div class="landing-choose-kit-v2__cta-wrap">
         {%- if section.settings.cta_label != blank -%}
-          {%- if section.settings.cta_link != blank -%}
-            <a class="landing-choose-kit-v2__cta" href="{{ section.settings.cta_link }}">
+          {%- liquid
+            assign kit_cta_href = section.settings.cta_link
+            if landing_models_href != blank
+              assign kit_cta_href = landing_models_href
+            endif
+          -%}
+          {%- if kit_cta_href != blank -%}
+            <a class="landing-choose-kit-v2__cta" href="{{ kit_cta_href }}">
               {{- section.settings.cta_label | escape -}}
             </a>
           {%- else -%}

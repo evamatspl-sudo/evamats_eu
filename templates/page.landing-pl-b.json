@@ -462,6 +462,10 @@
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 48
       }
+    },
+    "search_models_landing": {
+      "type": "search_models",
+      "settings": {}
     }
   },
   "order": [
@@ -472,6 +476,7 @@
     "landing_testimonials_v2_c4Rp8A",
     "landing_compare",
     "landing_choose_kit",
-    "landing_faq_v2_LjbKcT"
+    "landing_faq_v2_LjbKcT",
+    "search_models_landing"
   ]
 }

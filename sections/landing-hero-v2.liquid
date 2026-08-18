@@ -60,6 +60,11 @@
   endfor
 
   assign overlay_opacity = section.settings.overlay_opacity | default: 40 | divided_by: 100.0
+
+  assign landing_models_href = ''
+  if template.suffix == 'landing-pl-a' or template.suffix == 'landing-pl-b' or template.suffix == 'landing-cz-c' or template.suffix == 'landing-cz-d'
+    assign landing_models_href = '#landing-search-models'
+  endif
 -%}
 
 <div
@@ -172,9 +177,15 @@
       {%- endif -%}
 
       {%- if section.settings.cta_label != blank -%}
+        {%- liquid
+          assign cta_href = section.settings.cta_url
+          if landing_models_href != blank
+            assign cta_href = landing_models_href
+          endif
+        -%}
         <div class="landing-hero-v2__cta-wrap">
-          {%- if section.settings.cta_url != blank -%}
-            <a class="landing-hero-v2__cta" href="{{ section.settings.cta_url }}">
+          {%- if cta_href != blank -%}
+            <a class="landing-hero-v2__cta" href="{{ cta_href }}">
               {{- section.settings.cta_label | escape -}}
             </a>
           {%- else -%}
