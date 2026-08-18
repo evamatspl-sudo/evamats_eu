@@ -79,3 +79,57 @@
 
   <div id="cart-errors" class="evamats-cart-sidebar__errors"></div>
 </aside>
+
+{%- comment -%}
+  Согласие: кнопка «К оплате» была просто disabled, поэтому клик не давал никакого
+  отклика и предупреждение (.message_text) никогда не показывалось. Теперь кнопка
+  остаётся заблокированной по смыслу (aria-disabled), но клик перехватывается и
+  выводит подсказку. Без JS кнопка остаётся disabled, как раньше.
+{%- endcomment -%}
+<style>
+  .evamats-cart-sidebar__checkout[aria-disabled='true'] { cursor: not-allowed; }
+  .evamats-cart-sidebar__actions .message_text {
+    display: flex; align-items: flex-start; gap: 8px;
+    margin: 6px 0 10px; padding: 10px 12px;
+    border: 1px solid #ff2741; border-radius: 10px;
+    background: rgba(255, 39, 65, .07);
+    color: #d1001f; font-size: 14px; line-height: 1.35; font-weight: 500;
+  }
+  .evamats-cart-sidebar__actions .message_text.hidden { display: none; }
+  .evamats-cart-sidebar__actions .message_text::before { content: '!'; font-weight: 700; }
+  .evamats-cart-sidebar__terms.is-missing .checkmark { outline: 2px solid #ff2741; outline-offset: 2px; }
+</style>
+<script>
+  (function () {
+    function init(root) {
+      var cb  = root.querySelector('[data-cart-terms-checkbox]');
+      var btn = root.querySelector('#checkout');
+      var msg = root.querySelector('.message_text');
+      var lbl = root.querySelector('.evamats-cart-sidebar__terms');
+      if (!cb || !btn || btn.dataset.termsGuard === '1') return;
+      btn.dataset.termsGuard = '1';
+      btn.disabled = false;
+      function sync() {
+        btn.setAttribute('aria-disabled', cb.checked ? 'false' : 'true');
+        if (cb.checked) {
+          if (msg) msg.classList.add('hidden');
+          if (lbl) lbl.classList.remove('is-missing');
+        }
+      }
+      cb.addEventListener('change', sync);
+      btn.addEventListener('click', function (e) {
+        if (cb.checked) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (msg) msg.classList.remove('hidden');
+        if (lbl) lbl.classList.add('is-missing');
+        cb.focus();
+      }, true);
+      sync();
+    }
+    function scan() { document.querySelectorAll('.evamats-cart-sidebar').forEach(init); }
+    document.addEventListener('DOMContentLoaded', scan);
+    document.addEventListener('cart:refresh', scan);
+    scan();
+  })();
+</script>
