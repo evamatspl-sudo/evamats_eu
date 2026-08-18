@@ -7,6 +7,17 @@
   .template_landing-pl-b,
   .template_landing-cz-c,
   .template_landing-cz-d
+) {
+  --font-body-family: 'Montserrat', sans-serif;
+  --font-heading-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:is(
+  .template_landing-pl-a,
+  .template_landing-pl-b,
+  .template_landing-cz-c,
+  .template_landing-cz-d
 ) #MainContent {
   --color-foreground: 27, 29, 34;
   --color-text: #1b1d22;
@@ -110,6 +121,20 @@
   .evamats-proven-scale-v2__stat-label
 ) {
   color: #1b1d22;
+}
+
+@media screen and (max-width: 749px) {
+  :is(
+    .template_landing-pl-a,
+    .template_landing-pl-b,
+    .template_landing-cz-c,
+    .template_landing-cz-d
+  ) .evamats-proven-scale-v2 :is(
+    .evamats-proven-scale-v2__stat-value,
+    .evamats-proven-scale-v2__stat-label
+  ) {
+    color: #fff;
+  }
 }
 
 :is(
