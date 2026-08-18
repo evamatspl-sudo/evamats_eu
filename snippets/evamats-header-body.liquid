@@ -1,3 +1,16 @@
+{%- if request.locale.iso_code == 'lv' -%}
+  {%- comment -%} Latviešu: vārdi garāki nekā cs/de — izvēlnei jāpaliek vienā rindā {%- endcomment -%}
+  <style data-eds-lv-nav>
+    .evamats-header__nav { flex: 1 1 auto; min-width: 0; }
+    .evamats-header__nav-list { flex-wrap: nowrap !important; gap: 14px !important; }
+    .evamats-header__nav-link { font-size: 14px !important; letter-spacing: -0.03em; white-space: nowrap; }
+    .evamats-header__catalog-label { white-space: nowrap; }
+    @media (max-width: 1500px) and (min-width: 1261px) {
+      .evamats-header__nav-list { gap: 10px !important; }
+      .evamats-header__nav-link { font-size: 13px !important; }
+    }
+  </style>
+{%- endif -%}
 {%- comment -%}
   EvaMats header body — desktop + mobile bar.
   Expects section with catalog_menu, menu (navigation), image settings.
