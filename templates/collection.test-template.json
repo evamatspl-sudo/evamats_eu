@@ -18,7 +18,7 @@
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
-        "catalog_label": "Katalog",
+        "catalog_label": "Catalog",
         "brand_url": ""
       }
     },
@@ -29,7 +29,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/hyundai",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         }
       },
@@ -183,7 +183,7 @@
     "9f7a6f95-0ca2-45b2-acf7-8ef03ee8e4d0": {
       "type": "home-5",
       "settings": {
-        "btn_text": "Vše bras",
+        "btn_text": "All brands",
         "btn_url": "shopify://collections/all-car-mats"
       }
     },

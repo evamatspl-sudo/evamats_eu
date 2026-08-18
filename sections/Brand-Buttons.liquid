@@ -52,6 +52,8 @@
           assign heading = 'Další modely ' | append: brand_name
         when 'de'
           assign heading = 'Weitere ' | append: brand_name | append: ' Modelle'
+        when 'lv'
+          assign heading = 'Citi ' | append: brand_name | append: ' modeļi'
         else
           assign heading = 'Other ' | append: brand_name | append: ' models'
       endcase

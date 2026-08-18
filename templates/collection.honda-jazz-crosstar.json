@@ -17,7 +17,7 @@
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
-        "catalog_label": "Katalog",
+        "catalog_label": "Catalog",
         "brand_url": "shopify://collections/honda"
       }
     },
@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/honda",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         },
         "4bae77a4-a1df-4723-9255-512b2e56399f": {
