@@ -1,16 +1,20 @@
-{%- if request.locale.iso_code == 'lv' -%}
-  {%- comment -%} Latviešu: vārdi garāki nekā cs/de — izvēlnei jāpaliek vienā rindā {%- endcomment -%}
-  <style data-eds-lv-nav>
-    .evamats-header__nav { flex: 1 1 auto; min-width: 0; }
-    .evamats-header__nav-list { flex-wrap: nowrap !important; gap: 14px !important; }
-    .evamats-header__nav-link { font-size: 14px !important; letter-spacing: -0.03em; white-space: nowrap; }
-    .evamats-header__catalog-label { white-space: nowrap; }
-    @media (max-width: 1500px) and (min-width: 1261px) {
-      .evamats-header__nav-list { gap: 10px !important; }
-      .evamats-header__nav-link { font-size: 13px !important; }
-    }
-  </style>
-{%- endif -%}
+{%- comment -%}
+  Меню в одну строку для языков с длинными словами. Кегль остаётся родной (16),
+  ужимается только промежуток — замерено на живой странице:
+  ширина контейнера 664 px (десктоп) и 619 px (1300 px). Нужно: de 609/561, lv 608/584.
+{%- endcomment -%}
+<style data-eds-nav-fit>
+  html[lang="de"] .evamats-header__nav-list,
+  html[lang="lv"] .evamats-header__nav-list { flex-wrap: nowrap; }
+  html[lang="de"] .evamats-header__nav-list { gap: 36px; }
+  html[lang="lv"] .evamats-header__nav-list { gap: 24px; }
+  html[lang="de"] .evamats-header__nav-link,
+  html[lang="lv"] .evamats-header__nav-link { white-space: nowrap; }
+  @media (max-width: 1400px) {
+    html[lang="de"] .evamats-header__nav-list { gap: 24px; }
+    html[lang="lv"] .evamats-header__nav-list { gap: 18px; }
+  }
+</style>
 {%- comment -%}
   EvaMats header body — desktop + mobile bar.
   Expects section with catalog_menu, menu (navigation), image settings.
