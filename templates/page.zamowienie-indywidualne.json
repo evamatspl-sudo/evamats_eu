@@ -32,8 +32,8 @@
     "beb5116a-ded2-442f-aeda-89783bb1424e": {
       "type": "featured-collection",
       "settings": {
-        "title": "Nejprodávanější",
-        "view_all_label": "Zobrazit vše",
+        "title": "Bestsellers",
+        "view_all_label": "View all",
         "collection": "bestsellerss",
         "products_to_show": 8,
         "mobile_button_label": "Vybrat",
