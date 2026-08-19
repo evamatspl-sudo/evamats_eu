@@ -27,7 +27,7 @@
       ],
       "settings": {
         "title": "Mats for home",
-        "view_all_label": "Zobrazit vše",
+        "view_all_label": "View all",
         "collection": "mats-for-home",
         "products_to_show": 12,
         "mobile_button_label": "Vybrat",
@@ -49,8 +49,8 @@
         "h2 {font-weight: 600;}"
       ],
       "settings": {
-        "title": "Nejprodávanější",
-        "view_all_label": "Zobrazit vše",
+        "title": "Bestsellers",
+        "view_all_label": "View all",
         "collection": "bestsellerss",
         "products_to_show": 7,
         "mobile_button_label": "Vybrat",
@@ -75,8 +75,8 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "Nejprodávanější",
-        "view_all_label": "Zobrazit vše",
+        "title": "Bestsellers",
+        "view_all_label": "View all",
         "collection": "top-10-bestsellers",
         "products_to_show": 8,
         "mobile_button_label": "Vybrat",
