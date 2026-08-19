@@ -17,7 +17,7 @@
           "settings": {
             "blog": "",
             "page_link": "realizacja",
-            "brand_heading": "Vše",
+            "brand_heading": "All",
             "brand_image": ""
           }
         },
@@ -381,7 +381,7 @@
       ],
       "settings": {
         "background": "#f6f6f6",
-        "heading": "Prohlédněte si realizace Carvion!",
+        "heading": "Take a look at Carvion projects!",
         "show_breadcrumbs": true,
         "parent_label": "Carvion",
         "parent_url": "",
@@ -411,7 +411,7 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "Vše bras",
+        "btn_text": "All brands",
         "btn_url": "shopify://pages/realizacja"
       }
     },
@@ -423,8 +423,8 @@
           "settings": {
             "position_x": 24,
             "position_y": 12,
-            "tooltip_heading": "Struktura",
-            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
+            "tooltip_heading": "Structure",
+            "tooltip_text": "A honeycomb structure that traps dirt and water"
           }
         },
         "hotspot_RNC7Qk": {
@@ -432,8 +432,8 @@
           "settings": {
             "position_x": 72,
             "position_y": 35,
-            "tooltip_heading": "Padnutí",
-            "tooltip_text": "Přesné padnutí pro váš model auta"
+            "tooltip_heading": "Fit",
+            "tooltip_text": "A precise fit for your car model"
           }
         },
         "hotspot_jeU47d": {
@@ -441,8 +441,8 @@
           "settings": {
             "position_x": 38,
             "position_y": 53,
-            "tooltip_heading": "Materiál",
-            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
+            "tooltip_heading": "Material",
+            "tooltip_text": "Durable, wear-resistant EVA material"
           }
         },
         "hotspot_VDBMAr": {
@@ -450,8 +450,8 @@
           "settings": {
             "position_x": 88,
             "position_y": 78,
-            "tooltip_heading": "Lem",
-            "tooltip_text": "Zvýšený lem chrání interiér vozu"
+            "tooltip_heading": "Edge",
+            "tooltip_text": "A raised edge protects the car interior"
           }
         },
         "hotspot_BRznyB": {
@@ -459,8 +459,8 @@
           "settings": {
             "position_x": 21,
             "position_y": 83,
-            "tooltip_heading": "Čištění",
-            "tooltip_text": "Snadné čištění během několika sekund"
+            "tooltip_heading": "Cleaning",
+            "tooltip_text": "Easy to clean in seconds"
           }
         }
       },
@@ -473,30 +473,30 @@
       ],
       "name": "Mat hotspot consultation",
       "settings": {
-        "heading": "Získejte bezplatnou konzultaci!",
-        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
+        "heading": "Get a free consultation!",
+        "subheading": "We'll gladly help you choose the right solution.",
         "mat_image": "shopify://shop_images/vacancy_375.webp",
-        "mat_image_alt": "EVA koberec",
-        "label_name": "Jméno a příjmení",
-        "placeholder_name": "Jan Novák",
-        "label_phone": "Telefon",
-        "phone_prefix": "+48",
+        "mat_image_alt": "EVA mat",
+        "label_name": "First and last name",
+        "placeholder_name": "John Smith",
+        "label_phone": "Phone",
+        "phone_prefix": "+420",
         "placeholder_phone": "000-000-000",
-        "label_email": "E-mail",
-        "placeholder_email": "jan@example.com",
-        "label_message": "Poznámka (volitelné)",
-        "placeholder_message": "Vaše zpráva…",
-        "submit_label": "Odeslat poptávku",
-        "consent_intro": "Souhlasím s",
-        "terms_label": "obchodními podmínkami",
+        "label_email": "Email",
+        "placeholder_email": "john@example.com",
+        "label_message": "Comment (optional)",
+        "placeholder_message": "Your message…",
+        "submit_label": "Send an enquiry",
+        "consent_intro": "I agree to the",
+        "terms_label": "Terms and Conditions",
         "terms_url": "",
-        "consent_mid": "a",
-        "privacy_label": "zásadami ochrany osobních údajů",
+        "consent_mid": "and",
+        "privacy_label": "Privacy Policy",
         "privacy_url": "",
         "consent_end": ".",
-        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
-        "success_message": "Děkujeme! Brzy se vám ozveme.",
-        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "consent_error_message": "You must accept the Privacy Policy and the Terms and Conditions.",
+        "success_message": "Thank you! We will be in touch shortly.",
+        "error_message": "Check the fields and try again.",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 40,
