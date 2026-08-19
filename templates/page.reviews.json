@@ -80,19 +80,6 @@
             "image5": "shopify://shop_images/image_-_2025-09-09T162638.726.webp"
           }
         },
-        "item_mxPqRm": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "name": "Maggie Newton",
-            "date": "2 days ago",
-            "user_image": "shopify://shop_images/unnamed_1.png",
-            "rating": 4,
-            "text": "WTF? This isn’t what I asked for. What the hell?",
-            "image1": "shopify://shop_images/image.webp",
-            "image2": "shopify://shop_images/image_c291f818-8828-409d-89e9-a6eb30ef2582.webp"
-          }
-        },
         "item_CJjPqy": {
           "type": "item",
           "settings": {
@@ -194,34 +181,17 @@
             "image4": "shopify://shop_images/unnamed_13.webp",
             "image5": "shopify://shop_images/unnamed_11.webp"
           }
-        },
-        "item_RnVJDh": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "name": "Name 2",
-            "date": "4 days ago",
-            "user_image": "shopify://shop_images/Maserati_Grecale_1_gen_2022-2023_rok_SUV.webp",
-            "rating": 5,
-            "text": "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "image1": "shopify://shop_images/Maserati_GranTurismo_1_gen_2007-2019_rok_Coupe.webp",
-            "image2": "shopify://shop_images/Maserati_GranTurismo_2_gen_2022-2023_rok_Coupe.png",
-            "image3": "shopify://shop_images/Maserati_GranTurismo_1_gen_2007-2019_rok_GranCabrio_ad913423-26d8-42ed-b77a-696322be446f.webp",
-            "image4": "shopify://shop_images/Lancia_Ypsilon_Type843_2_gen_2003-2011_rok_Hatchback_3_drzwi_4e0ebb9c-6e16-4e6e-9dd5-7bc070dd4f65.png"
-          }
         }
       },
       "block_order": [
         "item_9L9N6p",
-        "item_mxPqRm",
         "item_CJjPqy",
         "item_QCVDpD",
         "item_J8gqQe",
         "item_cW8yha",
         "item_ybLCmf",
         "item_kiCAfh",
-        "item_CwCHUK",
-        "item_RnVJDh"
+        "item_CwCHUK"
       ],
       "name": "Custom Reviews",
       "settings": {
