@@ -23,14 +23,14 @@
         "heading_ewzcbT": {
           "type": "heading",
           "settings": {
-            "heading": "<h1>Děkujeme za nákup!</h1>",
+            "heading": "<h1>Thank you for your purchase!</h1>",
             "heading_size": "h1"
           }
         },
         "heading_rLYRYK": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>Sdílejte svůj názor — pomůže to ostatním zákazníkům.</h2>",
+            "heading": "<h2>Share your opinion — it helps other customers.</h2>",
             "heading_size": "h1"
           }
         },
@@ -38,7 +38,7 @@
           "type": "button",
           "disabled": true,
           "settings": {
-            "button_label": "Přidat recenzi na Google Maps",
+            "button_label": "Add a review on Google Maps",
             "button_link": "https://search.google.com/local/writereview?placeid=ChIJMeAerT1z_UYRiKoMeCumjD4",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -128,7 +128,7 @@
             "date": "4 days ago",
             "user_image": "shopify://shop_images/unnamed_8.png",
             "rating": 5,
-            "text": "The execution of and custom-made order has never been completed so quickly before. I’m very satisfied with the mats, even though at first I wanted to change the order and take only the front ones – luckily I didn’t. Dirt comes off easily, whereas with fabric mats you need to vacuum them. I also got and heel pad for free, though it’s and pity I didn’t know it wouldn’t be metal – I would have added one, as it looks nicer. The mats look solid, fit perfectly – after all, they’re custom-made. The communication during the order was great; the lady showed me photos of different colors, which made my decision much easier. I know that when I change my car, I’ll order again. I recommend it to everyone!",
+            "text": "The execution of a custom-made order has never been completed so quickly before. I’m very satisfied with the mats, even though at first I wanted to change the order and take only the front ones – luckily I didn’t. Dirt comes off easily, whereas with fabric mats you need to vacuum them. I also got a heel pad for free, though it’s a pity I didn’t know it wouldn’t be metal – I would have added one, as it looks nicer. The mats look solid, fit perfectly – after all, they’re custom-made. The communication during the order was great; the lady showed me photos of different colors, which made my decision much easier. I know that when I change my car, I’ll order again. I recommend it to everyone!",
             "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.34.52_PM.webp",
             "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.02_PM.webp",
             "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.35.36_PM.webp",
@@ -143,7 +143,7 @@
             "date": "4 days ago",
             "user_image": "shopify://shop_images/unnamed_9.png",
             "rating": 5,
-            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. Carvion contacted me right away, and we agreed they would send me and template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
+            "text": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. Carvion contacted me right away, and we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
             "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.37_PM.webp",
             "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.39.45_PM.webp",
             "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.40.07_PM.webp",
@@ -159,7 +159,7 @@
             "date": "4 days ago",
             "user_image": "shopify://shop_images/unnamed_10.png",
             "rating": 5,
-            "text": "The 3D mats fit perfectly in my Mazda 6 (2002). The mats are precisely measured and shaped to match the floor surface. Since the car doesn’t have any stoppers, Velcro was applied to the corners of each mat to prevent them from moving while driving. I ordered the full option along with and trunk mat that covers the entire surface. Every element of this order is very well made. I’m satisfied and recommend them 100%!",
+            "text": "The 3D mats fit perfectly in my Mazda 6 (2002). The mats are precisely measured and shaped to match the floor surface. Since the car doesn’t have any stoppers, Velcro was applied to the corners of each mat to prevent them from moving while driving. I ordered the full option along with a trunk mat that covers the entire surface. Every element of this order is very well made. I’m satisfied and recommend them 100%!",
             "image1": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.30_PM.webp",
             "image2": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.38_PM.webp",
             "image3": "shopify://shop_images/Screenshot_2025-09-10_at_3.47.46_PM.webp",
@@ -225,11 +225,11 @@
       ],
       "name": "Custom Reviews",
       "settings": {
-        "title": "Recenze",
+        "title": "Reviews",
         "rating": 4.8,
         "block_title": "Carvion Car Mats",
         "block_image": "shopify://shop_images/image_-_2025-09-09T160608.635.png",
-        "reviews_count": "2395 recenzí na Google"
+        "reviews_count": "2,395 Google reviews"
       }
     }
   },
