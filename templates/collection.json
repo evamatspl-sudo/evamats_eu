@@ -28,7 +28,7 @@
           "type": "section",
           "settings": {
             "product-link": "shopify://collections/all-car-mats",
-            "color-code": "Vše"
+            "color-code": "All"
           }
         }
       },
@@ -174,7 +174,7 @@
         "h3 {color: #fff; font-size: 3.2rem; letter-spacing: 2px;}"
       ],
       "settings": {
-        "heading_before": "Nejoblíbenější značky",
+        "heading_before": "Most popular brands",
         "heading_accent": "",
         "heading_after": "",
         "button_label": "See all",
@@ -191,7 +191,7 @@
       "type": "home-5",
       "disabled": true,
       "settings": {
-        "btn_text": "VŠECHNY ZNAČKY",
+        "btn_text": "ALL BRANDS",
         "btn_url": "shopify://collections/all-car-mats"
       }
     },
@@ -199,8 +199,8 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Nejprodávanější",
-        "view_all_label": "Zobrazit vše",
+        "title": "Bestsellers",
+        "view_all_label": "View all",
         "collection": "bestsellerss",
         "products_to_show": 12,
         "mobile_button_label": "Vybrat",
@@ -215,8 +215,8 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Příslušenství",
-        "view_all_label": "Zobrazit vše",
+        "title": "Accessories",
+        "view_all_label": "View all",
         "collection": "akcesoria",
         "products_to_show": 12,
         "mobile_button_label": "Vybrat",
