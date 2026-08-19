@@ -40,7 +40,7 @@
           "type": "button",
           "disabled": true,
           "settings": {
-            "button_label": "Text tlačítka",
+            "button_label": "Learn more",
             "button_link": "",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -70,7 +70,7 @@
       "type": "text-with-image-right",
       "disabled": true,
       "settings": {
-        "des": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
+        "des": "<p>EVA is <strong>a popular choice for car mats.</strong> It stands for ethylene-vinyl acetate, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion and deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
         "img": "shopify://shop_images/Group_184_eed00412-fc64-4df2-8337-6457204238c3.png"
       }
     },
@@ -78,7 +78,7 @@
       "type": "text-with-image-left",
       "disabled": true,
       "settings": {
-        "des": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
+        "des": "<p>EVA is <strong>a popular choice for car mats.</strong> It stands for ethylene-vinyl acetate, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion and deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>",
         "img": "shopify://shop_images/1231_30_1_737c5aeb-ab22-4a3e-919b-2782238e8448.png"
       }
     },
@@ -89,13 +89,13 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "Obrázek with text"
+            "heading": "Image with text"
           }
         },
         "template--18380180521266__8a877dac-2490-4638-b3b3-c9236cb4d9c5-16855464900f26e41e-1": {
           "type": "text",
           "settings": {
-            "text": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
+            "text": "<p>EVA is <strong>a popular choice for car mats.</strong> It stands for ethylene-vinyl acetate, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion and deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
           }
         }
       },
@@ -117,13 +117,13 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "Obrázek with text"
+            "heading": "Image with text"
           }
         },
         "33af872d-79ff-4edf-a82f-e46324d6fc91": {
           "type": "text",
           "settings": {
-            "text": "<p>EVA materiál EVA is <strong>a popular choice for car mats.</strong> It stas for ethylene vinylacetylene, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion a deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
+            "text": "<p>EVA is <strong>a popular choice for car mats.</strong> It stands for ethylene-vinyl acetate, which means it is a thermoplastic polymer. This material offers many advantages that make it ideal for use in cars.</p><p>One of the most important advantages of EVA is its <strong>durability</strong>. It is a material <strong>with high resistance to abrasion and deformation</strong>, which makes it ideal for use in car mats. In addition, the material is also resistant to weathering, such as sun or rain, making it ideal for use in cars that are often exposed to the weather.</p>"
           }
         }
       },
