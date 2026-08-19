@@ -13,8 +13,8 @@
       "type": "evamats-hero-cta",
       "settings": {
         "eyebrow": "Pracovní nabídky",
-        "heading": "Připojte se k týmu Carvion",
-        "description": "<p>Vytváříme místo, kde záleží na lidech, spolupráci a skutečném vlivu na rozvoj firmy.</p>",
+        "heading": "Join the Carvion team",
+        "description": "<p>We are building a place where people, teamwork and a real influence on how the company grows actually matter.</p>",
         "button_label": "Zobrazit nabídky",
         "button_link": "",
         "button_scroll_to_list": true,
@@ -53,19 +53,19 @@
         "point_wCtjU4": {
           "type": "point",
           "settings": {
-            "text": "Různá oddělení, jedno místo — vždy víte, na koho se obrátit"
+            "text": "Different departments, one place — you always know who to turn to"
           }
         },
         "point_CdPqMi": {
           "type": "point",
           "settings": {
-            "text": "Více než 100 lidí, kteří spolu opravdu komunikují"
+            "text": "More than 100 people who really talk to each other"
           }
         },
         "point_UJHhCQ": {
           "type": "point",
           "settings": {
-            "text": "Rosteme 20–30 % ročně — a hledáme lidi, kteří chtějí růst s námi"
+            "text": "We grow 20–30% a year — and we are looking for people who want to grow with us"
           }
         }
       },
@@ -81,7 +81,7 @@
       "name": "Produkt spotlight v2",
       "settings": {
         "overline": "",
-        "heading": "Poznejte lidi, kteří tvoří Carvion",
+        "heading": "Meet the people who make Carvion",
         "cta_label": "",
         "cta_url": "",
         "media_type": "video",
@@ -106,7 +106,7 @@
           "settings": {
             "icon": "shopify://shop_images/Group_1948755215.svg",
             "heading": "Podpora vedoucího",
-            "text": "Máte na koho se obrátit s dotazem a můžete počítat s feedbackem."
+            "text": "There is always someone to ask, and you can count on feedback."
           }
         },
         "item_Jp8waE": {
@@ -122,15 +122,15 @@
           "settings": {
             "icon": "shopify://shop_images/Group_1948755214_1.svg",
             "heading": "Vliv na práci",
-            "text": "Vaše nápady mohou skutečně měnit způsob fungování týmu."
+            "text": "Your ideas can genuinely change how the team works."
           }
         },
         "item_gtYpV8": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Group_1948755215_1.svg",
-            "heading": "Stabilní prostředí",
-            "text": "Pracujeme na reálném produktu a rozvíjíme firmu dlouhodobě."
+            "heading": "A stable environment",
+            "text": "We work on a real product and build the company for the long term."
           }
         },
         "item_aRmdzB": {
@@ -138,7 +138,7 @@
           "settings": {
             "icon": "shopify://shop_images/Group_1948755216.svg",
             "heading": "Lidská atmosféra",
-            "text": "Spojujeme odpovědnost za výsledek s normální komunikací a vzájemným respektem."
+            "text": "We combine responsibility for the result with normal communication and mutual respect."
           }
         }
       },
@@ -167,7 +167,7 @@
       "settings": {
         "heading": "Pracovní nabídky",
         "filters_aria_label": "Filtr kategorii",
-        "filter_all_label": "Vše",
+        "filter_all_label": "All",
         "label_contract": "Umowa",
         "label_languages": "Jazyk",
         "label_work_mode": "Tryb pracy",
@@ -192,7 +192,7 @@
         "email": "info@carvionauto.cz",
         "button_label": "Napište nám",
         "button_link": "",
-        "social_heading": "Zjistěte více o kariéře v našich médiích:",
+        "social_heading": "Find out more about careers in our media:",
         "facebook_url": "https://www.facebook.com/hr.evamats",
         "instagram_url": "https://www.instagram.com/evamats_hr",
         "tiktok_url": "https://www.tiktok.com/@evamats_cz",
