@@ -12,12 +12,12 @@
     "main": {
       "type": "section-gallery",
       "settings": {
-        "title": "Galerie Carvion",
+        "title": "Carvion gallery",
         "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
-        "breadcrumb_current_label": "Galerie",
-        "lightbox_heading": "Chcete takový vzhled i ve svém autě?",
-        "lightbox_cta_label": "Požádat o pomoc",
+        "breadcrumb_current_label": "Gallery",
+        "lightbox_heading": "Want this look in your car too?",
+        "lightbox_cta_label": "Ask for help",
         "lightbox_cta_url": "",
         "lightbox_phone": "+420 292 333 695",
         "lightbox_email": "info@carvionauto.cz"
