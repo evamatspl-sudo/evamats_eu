@@ -1,4 +1,32 @@
 {%- liquid
+  case localization.language.iso_code
+    when 'cs'
+      assign n_faster = 'Potřebujete to rychleji? Lze.'
+      assign n_std    = 'Standard — 14 pracovních dnů'
+      assign n_exp    = 'Express — 7 pracovních dnů'
+      assign n_prem   = 'Premium — 3 pracovní dny'
+      assign n_note   = 'Možnost zrychlení vyberete v košíku, při výběru dopravy. Express a Premium — zpoplatněny navíc.'
+    when 'de'
+      assign n_faster = 'Sie brauchen es schneller? Geht.'
+      assign n_std    = 'Standard — 14 Werktage'
+      assign n_exp    = 'Express — 7 Werktage'
+      assign n_prem   = 'Premium — 3 Werktage'
+      assign n_note   = 'Die Beschleunigung wählen Sie im Warenkorb bei der Versandart. Express und Premium sind kostenpflichtig.'
+    when 'lv'
+      assign n_faster = 'Vajag ātrāk? Var.'
+      assign n_std    = 'Standarta — 14 darba dienas'
+      assign n_exp    = 'Express — 7 darba dienas'
+      assign n_prem   = 'Premium — 3 darba dienas'
+      assign n_note   = 'Paātrinājumu izvēlies grozā, izvēloties piegādi. Express un Premium — par papildu samaksu.'
+    else
+      assign n_faster = 'Need it faster? You can.'
+      assign n_std    = 'Standard — 14 working days'
+      assign n_exp    = 'Express — 7 working days'
+      assign n_prem   = 'Premium — 3 working days'
+      assign n_note   = 'You choose the speed-up in the cart when selecting delivery. Express and Premium cost extra.'
+  endcase
+-%}
+{%- liquid
   assign delivery_line_1 = block.settings.config_delivery_line_1
   assign delivery_line_2 = block.settings.config_delivery_line_2
   assign delivery_line_1_accessory = block.settings.config_delivery_line_1_accessory
@@ -115,7 +143,7 @@
           </summary>
 
           <div class="evamats-config-checkout__delivery-dropdown-body">
-            <p class="evamats-config-checkout__delivery-dropdown-body-title">Potřebujete to rychleji? Lze.</p>
+            <p class="evamats-config-checkout__delivery-dropdown-body-title">{{ n_faster }}</p>
 
             <div class="evamats-config-checkout__delivery-dropdown-rules">
               <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--standard">
@@ -123,7 +151,7 @@
                   <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#D3D3D3" fill-opacity="0.3"/>
                   <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#D3D3D3"/>
                 </svg>
-                <span>Standard — 14 pracovních dnů</span>
+                <span>{{ n_std }}</span>
               </div>
 
               <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--express">
@@ -142,7 +170,7 @@
                     </clipPath>
                   </defs>
                 </svg>
-                <span>Express — 7 pracovních dnů</span>
+                <span>{{ n_exp }}</span>
               </div>
 
               <div class="evamats-config-checkout__delivery-dropdown-rule evamats-config-checkout__delivery-dropdown-rule--premium">
@@ -150,12 +178,12 @@
                   <path d="M6 21.0001C3.79086 21.0001 2 19.2092 2 17.0001V6.41431C2 5.5234 3.07714 5.07724 3.70711 5.7072L6.29289 8.29299C6.68342 8.68351 7.31658 8.68351 7.70711 8.29299L11.2929 4.7072C11.6834 4.31668 12.3166 4.31668 12.7071 4.7072L16.2929 8.29299C16.6834 8.68351 17.3166 8.68351 17.7071 8.29299L20.2929 5.7072C20.9229 5.07723 22 5.5234 22 6.41431V17.0001C22 19.2092 20.2091 21.0001 18 21.0001H6Z" fill="#005128"/>
                   <path d="M14.4368 13.4881H13.1627V10.6083C13.1627 9.93636 12.7875 9.80037 12.3299 10.3043L12 10.6683L9.20859 13.748C8.82513 14.168 8.98594 14.512 9.56319 14.512H10.8373V17.3917C10.8373 18.0636 11.2125 18.1996 11.6701 17.6957L12 17.3317L14.7914 14.252C15.1749 13.832 15.0141 13.4881 14.4368 13.4881Z" fill="#D9F021"/>
                 </svg>
-                <span>Premium — 3 pracovní dny</span>
+                <span>{{ n_prem }}</span>
               </div>
             </div>
 
             <p class="evamats-config-checkout__delivery-dropdown-footer">
-              Možnost zrychlení vyberete v košíku, při výběru dopravy. Express a Premium — zpoplatněny navíc.
+              {{ n_note }}
             </p>
           </div>
         </details>
