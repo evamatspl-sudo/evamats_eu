@@ -26,98 +26,98 @@
           "type": "catalog_l1_icon",
           "settings": {
             "menu_item_handle": "akcesoria",
-            "icon": "shopify://shop_images/Medium_Icons.svg"
+            "icon": "shopify:\/\/shop_images\/Medium_Icons.svg"
           }
         },
         "catalog_l1_icon_G6yrKc": {
           "type": "catalog_l1_icon",
           "settings": {
             "menu_item_handle": "mats-for-pets",
-            "icon": "shopify://shop_images/Cat_Footprint.svg"
+            "icon": "shopify:\/\/shop_images\/Cat_Footprint.svg"
           }
         },
         "catalog_l1_icon_UxMVmB": {
           "type": "catalog_l1_icon",
           "settings": {
             "menu_item_handle": "mats-for-the-home",
-            "icon": "shopify://shop_images/Home.svg"
+            "icon": "shopify:\/\/shop_images\/Home.svg"
           }
         },
         "catalog_l1_icon_eG3KdY": {
           "type": "catalog_l1_icon",
           "settings": {
             "menu_item_handle": "all-car-mats",
-            "icon": "shopify://shop_images/Car.svg"
+            "icon": "shopify:\/\/shop_images\/Car.svg"
           }
         },
         "catalog_drawer_icon_jhChxQ": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "all-car-mats",
-            "icon": "shopify://shop_images/carvion-menu-tile-eva-mats.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-eva-mats.webp"
           }
         },
         "catalog_drawer_icon_6Lzwmx": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "car-accessories-organizers",
-            "icon": "shopify://shop_images/carvion-menu-tile-organizers.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-organizers.webp"
           }
         },
         "catalog_drawer_icon_NmkmV7": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "podpietki",
-            "icon": "shopify://shop_images/carvion-menu-tile-heel-pads.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-heel-pads.webp"
           }
         },
         "catalog_drawer_icon_xwCwyy": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "akcesoria-samochodowa",
-            "icon": "shopify://shop_images/carvion-menu-tile-accessories.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-accessories.webp"
           }
         },
         "catalog_drawer_icon_GMznEV": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "e-gift-card",
-            "icon": "shopify://shop_images/carvion-menu-tile-gift-card.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-gift-card.webp"
           }
         },
         "catalog_drawer_icon_HyWfKX": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "rubber-car-mats",
-            "icon": "shopify://shop_images/carvion-menu-tile-rubber-mats.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-rubber-mats.webp"
           }
         },
         "catalog_drawer_icon_MPPP8V": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "velour-car-mats",
-            "icon": "shopify://shop_images/carvion-menu-tile-velour-mats.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-velour-mats.webp"
           }
         },
         "catalog_drawer_icon_seatcov": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "seat-covers-cushions",
-            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-seat-covers-v3.webp"
           }
         },
         "catalog_drawer_icon_seatcov_cs": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "autopotahy-a-polstare",
-            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-seat-covers-v3.webp"
           }
         },
         "catalog_drawer_icon_seatcov_de": {
           "type": "catalog_drawer_icon",
           "settings": {
             "menu_item_handle": "sitzbezuege-und-kissen",
-            "icon": "shopify://shop_images/carvion-menu-tile-seat-covers-v3.webp"
+            "icon": "shopify:\/\/shop_images\/carvion-menu-tile-seat-covers-v3.webp"
           }
         }
       },
@@ -144,20 +144,20 @@
         "menu": "main-menu-v2",
         "catalog_menu": "catalog",
         "mobile_menu": "mobile-menu-v2",
-        "catalog_button_image": "shopify://shop_images/Group_1632526272.webp",
+        "catalog_button_image": "shopify:\/\/shop_images\/Group_1632526272.webp",
         "catalog_button_label": "Catalog",
-        "drawer_background_image": "shopify://shop_images/Group_1948754924_1.webp",
-        "drawer_catalog_label": "Nakupovat",
-        "drawer_more_label": "Více o Carvion",
-        "drawer_custom_meta": "Autokoberce a koberce pro lodě",
-        "drawer_car_cta_label": "Vyberte si auto",
-        "drawer_car_cta_hint": "Najdeme přesně padnoucí autokoberce",
-        "drawer_car_cta_url": "shopify://collections/all-car-mats",
+        "drawer_background_image": "shopify:\/\/shop_images\/Group_1948754924_1.webp",
+        "drawer_catalog_label": "Shop",
+        "drawer_more_label": "More about Carvion",
+        "drawer_custom_meta": "Car mats and boat mats",
+        "drawer_car_cta_label": "Choose your car",
+        "drawer_car_cta_hint": "We'll find a perfect-fit set",
+        "drawer_car_cta_url": "shopify:\/\/collections\/all-car-mats",
         "mobile_car_link_url": "",
         "drawer_phone_1": "+420 292 333 695",
         "drawer_phone_2": "",
         "drawer_email": "info@carvionauto.cz",
-        "catalog_view_all_label": "Zobrazit celou kategorii",
+        "catalog_view_all_label": "View all in category",
         "home_header_shade_enable": true,
         "home_header_shade_height": 128,
         "home_header_shade_opacity": 55,

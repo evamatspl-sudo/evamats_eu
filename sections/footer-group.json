@@ -23,25 +23,25 @@
         "6965d6e4-8bbe-498b-90bb-cf4439521adc": {
           "type": "link_list",
           "settings": {
-            "heading": "O nás",
+            "heading": "About us",
             "menu": "about-us"
           }
         },
         "2e7efd78-a00e-44e8-a6c6-056b4923ad0f": {
           "type": "link_list",
           "settings": {
-            "heading": "Informace",
+            "heading": "Information",
             "menu": "footer"
           }
         },
         "5105da44-6739-4d06-87ba-89d3f01ee03e": {
           "type": "contact",
           "settings": {
-            "heading": "Kontaktujte nás",
+            "heading": "Contact us",
             "intro": "",
             "email": "info@carvionauto.cz",
             "phone": "+420 292 333 695",
-            "address": "Pobřežní 249/46, 186 00 Praha 8 — Karlín\nKorespondenční adresa — zboží zasíláme pouze přepravní službou."
+            "address": "Pobřežní 249\/46, 186 00 Praha 8 — Karlín\nMailing address — we ship goods by courier only."
           }
         }
       },
@@ -55,16 +55,16 @@
       "settings": {
         "color_scheme": "background-1",
         "newsletter_enable": true,
-        "newsletter_heading": "<p>Přihlaste se k odběru a získejte <strong>slevu</strong> na první objednávku</p>",
+        "newsletter_heading": "<p>Přihlaste se k odběru a získejte <strong>slevu<\/strong> na první objednávku<\/p>",
         "newsletter_subtext": "",
-        "newsletter_placeholder": "Váš e-mail",
-        "newsletter_button": "Přihlásit se",
+        "newsletter_placeholder": "Your email",
+        "newsletter_button": "Subscribe",
         "show_social": true,
-        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "facebook_url": "https:\/\/www.facebook.com\/carvion.cz",
         "facebook_label": "",
-        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "instagram_url": "https:\/\/www.instagram.com\/carvion_cz",
         "tiktok_url": "",
-        "youtube_url": "https://www.youtube.com/@autokoberceeva",
+        "youtube_url": "https:\/\/www.youtube.com\/@autokoberceeva",
         "threads_url": "",
         "nip_number": "",
         "regon_number": "",
@@ -72,8 +72,8 @@
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
-        "payments_label": "Přijímáme platby",
-        "delivery_label": "Doprava",
+        "payments_label": "We accept",
+        "delivery_label": "Shipping",
         "delivery_link_1": "",
         "delivery_link_2": "",
         "delivery_link_3": "",
