@@ -30,6 +30,12 @@
       assign t_note    = 'Wählen Sie die Karosserieform Ihres Fahrzeugs — die Auswahl unten passt sich sofort an. Kein Wechsel zu einem anderen Modell.'
       assign t_all     = 'Alle'
       assign t_empty   = 'Für diese Karosserie haben wir noch kein Produkt.'
+    when 'lv'
+      assign t_eyebrow = 'Filtrs'
+      assign t_heading = 'Izvēlieties virsbūves tipu'
+      assign t_note    = 'Izvēlieties sava automobiļa virsbūves tipu — zemāk redzamais piedāvājums uzreiz pielāgosies.'
+      assign t_all     = 'Visi'
+      assign t_empty   = 'Šim virsbūves tipam pašlaik nav pieejamu produktu.'
     else
       assign t_eyebrow = 'Filter'
       assign t_heading = 'Choose body type'
@@ -157,6 +163,9 @@
               endcase
 
               assign body_object = shop.metaobjects.body_types[mo_handle]
+              if locale == 'lv' and body_object.title.value != blank
+                assign label = body_object.title.value
+              endif
             -%}
 
             <li>

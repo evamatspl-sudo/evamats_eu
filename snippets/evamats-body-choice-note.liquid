@@ -15,6 +15,9 @@
       when 'de'
         assign note_text = 'Die Karosserie wählen Sie direkt im Konfigurator unten.'
         assign note_label = 'Verfügbare Karosserien:'
+      when 'lv'
+        assign note_text = 'Virsbūves tipu izvēlieties tieši zemāk esošajā konfiguratorā.'
+        assign note_label = 'Pieejamie virsbūves tipi:'
       else
         assign note_text = 'You choose the body type directly in the configurator below.'
         assign note_label = 'Available body types:'
@@ -37,103 +40,7 @@
         {%- for body_object in body_list -%}
           {%- liquid
             assign handle = body_object.system.handle | downcase
-            assign fallback = body_object.title.value | default: handle
-
-            case handle
-              when 'sedan'
-                assign cs = 'Sedan'
-                assign de = 'Limousine'
-                assign en = 'Sedan'
-              when 'long-sedan'
-                assign cs = 'Sedan (dlouhá verze)'
-                assign de = 'Limousine (Langversion)'
-                assign en = 'Long sedan'
-              when 'station-wagon'
-                assign cs = 'Kombi'
-                assign de = 'Kombi'
-                assign en = 'Station Wagon'
-              when 'liftback'
-                assign cs = 'Liftback'
-                assign de = 'Schrägheck'
-                assign en = 'Liftback'
-              when 'hatchback-5-door'
-                assign cs = 'Hatchback 5 dveří'
-                assign de = 'Kompakt 5-Türer'
-                assign en = 'Hatchback 5-door'
-              when 'hatchback-3-door'
-                assign cs = 'Hatchback 3 dveře'
-                assign de = 'Kompakt 3-Türer'
-                assign en = 'Hatchback 3-door'
-              when 'coupe'
-                assign cs = 'Kupé'
-                assign de = 'Coupé'
-                assign en = 'Coupe'
-              when 'suv-coupe'
-                assign cs = 'SUV Kupé'
-                assign de = 'SUV Coupé'
-                assign en = 'SUV Coupe'
-              when 'cabrio'
-                assign cs = 'Kabriolet'
-                assign de = 'Cabrio'
-                assign en = 'Cabrio'
-              when 'usual-suv'
-                assign cs = 'SUV'
-                assign de = 'SUV'
-                assign en = 'SUV'
-              when 'suv-5-seater'
-                assign cs = 'SUV (5 míst)'
-                assign de = 'SUV (5 Sitze)'
-                assign en = 'SUV (5 seats)'
-              when 'suv-7-seater'
-                assign cs = 'SUV (7 míst)'
-                assign de = 'SUV (7 Sitze)'
-                assign en = 'SUV (7 seats)'
-              when 'minivan-5-seater'
-                assign cs = 'Minivan (5 míst)'
-                assign de = 'Minivan (5 Sitze)'
-                assign en = 'Minivan (5 seats)'
-              when 'minivan-7-seater'
-                assign cs = 'Minivan (7 míst)'
-                assign de = 'Minivan (7 Sitze)'
-                assign en = 'Minivan (7 seats)'
-              when 'big-van'
-                assign cs = 'Velká dodávka'
-                assign de = 'Großer Transporter'
-                assign en = 'Big van'
-              when 'small-van'
-                assign cs = 'Malá dodávka'
-                assign de = 'Kleiner Transporter'
-                assign en = 'Small van'
-              when 'bus'
-                assign cs = 'Autobus'
-                assign de = 'Bus'
-                assign en = 'Bus'
-              when 'single-cabin'
-                assign cs = 'Pick-up (jednoduchá kabina)'
-                assign de = 'Pick-up (Einzelkabine)'
-                assign en = 'Pickup (single cabin)'
-              when 'one-and-half-cabin'
-                assign cs = 'Pick-up (1,5 kabiny)'
-                assign de = 'Pick-up (1,5 Kabine)'
-                assign en = 'Pickup (1.5 cabin)'
-              when 'double-cabin'
-                assign cs = 'Pick-up (dvojkabina)'
-                assign de = 'Pick-up (Doppelkabine)'
-                assign en = 'Pickup (double cabin)'
-              else
-                assign cs = fallback
-                assign de = fallback
-                assign en = fallback
-            endcase
-
-            case request.locale.iso_code
-              when 'cs'
-                assign body_label = cs
-              when 'de'
-                assign body_label = de
-              else
-                assign body_label = en
-            endcase
+            assign body_label = body_object.title.value | default: handle
           -%}
           <span class="eva-body-choice-note__chip">{{ body_label }}</span>
         {%- endfor -%}
