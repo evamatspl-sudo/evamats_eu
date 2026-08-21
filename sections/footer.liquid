@@ -133,6 +133,19 @@
               </div>
           {%- endcase -%}
         {%- endfor -%}
+
+        {%- assign footer_language = request.locale.iso_code | split: '-' | first -%}
+        {%- if footer_language == 'lv' -%}
+          <div class="evamats-footer__menu evamats-footer__menu--support">
+            <h3 class="evamats-footer__menu-title">Klientu atbalsts</h3>
+            <ul class="evamats-footer__menu-list" role="list">
+              <li>Palīdzība ar pasūtījumu</li>
+              <li>Piegāde visā Eiropā</li>
+              <li>Droši maksājumi</li>
+              <li>Ražots pēc pasūtījuma Polijā</li>
+            </ul>
+          </div>
+        {%- endif -%}
       </div>
 
       <div class="evamats-footer__aside">

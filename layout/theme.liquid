@@ -378,12 +378,72 @@
       {{- 'section-evamats-policy.css' | asset_url | stylesheet_tag -}}
     {%- endif -%}
 
-    <script>
+  <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
           if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
           }
+  </script>
+
+  {%- assign bitrix_locale = request.locale.iso_code | split: '-' | first -%}
+  {%- if bitrix_locale == 'lv' -%}
+    <script>
+      (() => {
+        const sourceText = 'Hello, how can I help you?';
+        const translatedText = 'Sveiki! Kā varu jums palīdzēt?';
+
+        const translateTree = (root) => {
+          if (!root) return;
+
+          const translateElement = (element) => {
+            ['title', 'aria-label', 'placeholder'].forEach((attribute) => {
+              if (element.getAttribute?.(attribute) === sourceText) {
+                element.setAttribute(attribute, translatedText);
+              }
+            });
+
+            if (element.shadowRoot) translateTree(element.shadowRoot);
+            if (element.tagName === 'IFRAME') {
+              try { translateTree(element.contentDocument); } catch (_) {}
+            }
+          };
+
+          if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+          let node;
+          while ((node = walker.nextNode())) {
+            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() === sourceText) {
+              node.nodeValue = node.nodeValue.replace(sourceText, translatedText);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              translateElement(node);
+            }
+          }
+        };
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => mutation.addedNodes.forEach(translateTree));
+          translateTree(document);
+        });
+
+        const start = () => {
+          translateTree(document);
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+          let passes = 0;
+          const retry = window.setInterval(() => {
+            translateTree(document);
+            passes += 1;
+            if (passes >= 40) window.clearInterval(retry);
+          }, 750);
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+          start();
+        }
+      })();
     </script>
+  {%- endif -%}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   </head>
