@@ -33,6 +33,7 @@
   .evamats-footer__contact-note { font-size: 0.85em; color: #9a9a9a; line-height: 1.35; }
   .evamats-footer__brand-desc { margin: 0; max-width: 240px; font-size: 1.3rem; line-height: 1.55; color: #6b6b6b; }
   .evamats-footer__menu-heading { text-transform: none; }
+  .evamats-footer__aside:not(:has(.evamats-footer__contact, .list-social__item)) { display: none; }
   @media screen and (max-width: 989px) {
     .evamats-footer__main { flex-wrap: wrap; }
     .evamats-footer__brand-col { flex-basis: 100%; max-width: 100%; }
@@ -137,12 +138,12 @@
         {%- assign footer_language = request.locale.iso_code | split: '-' | first -%}
         {%- if footer_language == 'lv' -%}
           <div class="evamats-footer__menu evamats-footer__menu--support">
-            <h3 class="evamats-footer__menu-title">Klientu atbalsts</h3>
-            <ul class="evamats-footer__menu-list" role="list">
-              <li>Palīdzība ar pasūtījumu</li>
-              <li>Piegāde visā Eiropā</li>
-              <li>Droši maksājumi</li>
-              <li>Ražots pēc pasūtījuma Polijā</li>
+            <p class="evamats-footer__menu-heading">Klientu atbalsts</p>
+            <ul class="evamats-footer__menu-list list-unstyled" role="list">
+              <li><span class="evamats-footer__menu-link">Palīdzība ar pasūtījumu</span></li>
+              <li><span class="evamats-footer__menu-link">Piegāde visā Eiropā</span></li>
+              <li><span class="evamats-footer__menu-link">Droši maksājumi</span></li>
+              <li><span class="evamats-footer__menu-link">Ražots pēc pasūtījuma Polijā</span></li>
             </ul>
           </div>
         {%- endif -%}
