@@ -4718,23 +4718,25 @@ fieldset {
 
 /* ── Newsletter ── */
 .evamats-footer__newsletter-wrap {
-  margin-top: 20px;
-  padding-bottom: 32px;
+  margin-top: 16px;
+  padding-bottom: 24px;
 }
 
 .evamats-footer__newsletter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 32px;
+  max-width: 1600px;
   background: #f6f6f6;
   border-radius: 12px;
-  padding: 32px 40px;
-  margin-bottom: 0;
+  padding: 22px 28px;
+  margin: 0 auto;
 }
 
 .evamats-footer__newsletter-text {
-  max-width: 580px;
+  flex: 0 1 520px;
+  max-width: 520px;
 }
 
 .evamats-footer__newsletter-heading {
@@ -4760,7 +4762,9 @@ fieldset {
 }
 
 .evamats-footer__newsletter-form {
-  flex: 1 1 auto;
+  flex: 0 1 680px;
+  width: 100%;
+  max-width: 680px;
   min-width: 0;
 }
 
@@ -4773,16 +4777,17 @@ fieldset {
 .evamats-footer__newsletter-input {
   flex: 1 1 auto;
   min-width: 0;
-  height: 52px;
-  padding: 0 20px;
+  height: 46px;
+  padding: 0 18px;
 }
 
 .evamats-footer__newsletter-btn.button_3 {
   flex: 0 0 auto;
   width: auto;
   max-width: none;
-  min-height: 52px !important;
-  height: 52px;
+  min-height: 46px !important;
+  height: 46px;
+  padding-inline: 24px;
   white-space: nowrap;
 }
 
@@ -5027,8 +5032,8 @@ fieldset {
   .evamats-footer__newsletter {
     flex-direction: column;
     align-items: stretch;
-    gap: 24px;
-    padding: 24px 20px;
+    gap: 16px;
+    padding: 18px 16px;
     border-radius: 8px;
   }
 
@@ -5042,17 +5047,19 @@ fieldset {
   }
 
   .evamats-footer__newsletter-field-wrap {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 8px;
   }
 
   .evamats-footer__newsletter-input {
-    height: 48px;
+    height: 44px;
+    padding: 0 14px;
   }
 
   .evamats-footer__newsletter-btn.button_3 {
-    height: 48px;
-    min-height: 48px !important;
+    height: 44px;
+    min-height: 44px !important;
+    padding-inline: 16px;
   }
 
   .evamats-footer__payments-row {
