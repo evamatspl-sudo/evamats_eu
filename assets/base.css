@@ -4723,6 +4723,9 @@ fieldset {
 }
 
 .evamats-footer__newsletter {
+  --eva-input-min-h: 46px;
+  --eva-input-pad-x: 18px;
+  --eva-input-font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5030,6 +5033,8 @@ fieldset {
   }
 
   .evamats-footer__newsletter {
+    --eva-input-min-h: 44px;
+    --eva-input-pad-x: 14px;
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
@@ -5039,6 +5044,11 @@ fieldset {
 
   .evamats-footer__newsletter-text {
     max-width: 100%;
+  }
+
+  .evamats-footer__newsletter-form {
+    flex: none;
+    max-width: none;
   }
 
   .evamats-footer__newsletter-heading {
