@@ -1,8 +1,4 @@
 {%- comment -%}
-  Latviešu: kontakti pagaidām netiek rādīti — e-pasts, tālrunis un adrese ir čehu.
-{%- endcomment -%}
-{%- unless request.locale.iso_code == 'lv' -%}
-{%- comment -%}
   Footer contact block — structured rows with hardcoded icons.
   @param block {block}
 {%- endcomment -%}
@@ -45,10 +41,10 @@
       {%- if contact_email != blank -%}
         <p class="evamats-footer__contact-line">✉️ <strong>{{ lbl_email }}</strong> <a href="mailto:{{ contact_email | escape }}">{{- contact_email | escape -}}</a></p>
       {%- endif -%}
-      {%- if contact_phone != blank -%}
+      {%- if localization.language.iso_code == 'cs' and contact_phone != blank -%}
         <p class="evamats-footer__contact-line">📞 <strong>{{ lbl_phone }}</strong> <a href="tel:{{ phone_href | escape }}">{{- contact_phone | escape -}}</a></p>
       {%- endif -%}
-      {%- if contact_address != blank -%}
+      {%- if localization.language.iso_code == 'cs' and contact_address != blank -%}
         {%- assign addr_parts = contact_address | strip | split: '
 ' -%}
         <p class="evamats-footer__contact-line">📍 <strong>{{ lbl_addr }}</strong><br>{{ addr_parts[0] | strip }}{%- if addr_parts.size > 1 -%}<br><span class="evamats-footer__contact-note">{%- for part in addr_parts offset: 1 -%}{{ part | strip }}{%- unless forloop.last -%}<br>{%- endunless -%}{%- endfor -%}</span>{%- endif -%}</p>
@@ -56,4 +52,3 @@
   {%- endif -%}
 </div>
 
-{%- endunless -%}
