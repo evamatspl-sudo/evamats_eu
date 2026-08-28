@@ -8,7 +8,7 @@
   endif
 -%}
 
-{%- if has_partners -%}
+{%- if localization.language.iso_code == 'cs' and has_partners -%}
   <div class="evamats-contact-partners" id="EvamatsContactPartners-{{ section.id }}">
     <div class="evamats-contact-partners__inner page-width">
       {%- if section.settings.heading != blank -%}

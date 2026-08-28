@@ -2,7 +2,7 @@
 
 {%- assign map_src = section.settings.map_embed_url | strip -%}
 
-{%- if section.settings.map_embed != blank or map_src != blank -%}
+{%- if localization.language.iso_code == 'cs' and section.settings.map_embed != blank or localization.language.iso_code == 'cs' and map_src != blank -%}
   <div class="evamats-contact-map" id="EvamatsContactMap-{{ section.id }}">
     <div class="evamats-contact-map__embed">
       {%- if section.settings.map_embed != blank -%}
