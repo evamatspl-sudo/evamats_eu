@@ -34,8 +34,13 @@
     assign show_lang = true
   endif
 
+  assign show_phone = false
+  if request.locale.iso_code == 'cs' and phone_1 != blank
+    assign show_phone = true
+  endif
+
   assign show_utility = false
-  if show_lang or phone_1 != blank or drawer_email != blank
+  if show_lang or show_phone or drawer_email != blank
     assign show_utility = true
   endif
 -%}
@@ -287,7 +292,7 @@
               </div>
             {%- endif -%}
 
-            {%- if phone_1 != blank -%}
+            {%- if request.locale.iso_code == 'cs' and phone_1 != blank -%}
               <a
                 href="tel:{{ phone_1 | replace: ' ', '' | replace: '-', '' }}"
                 class="evamats-header-drawer__utility-btn"

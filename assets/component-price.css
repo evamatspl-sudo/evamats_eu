@@ -104,3 +104,4 @@
 .card-wrapper .price--on-sale .price-item--regular {
   display: none;
 }
+.price__lowest-30-days{display:block;margin-top:.25rem;color:rgba(var(--color-foreground),.62);font-size:1.05rem;font-weight:400;letter-spacing:0;line-height:1.3}.card-wrapper .price__lowest-30-days{font-size:.95rem}

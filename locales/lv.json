@@ -427,7 +427,8 @@
         "from_price_html": "No {{ price }}",
         "regular_price": "Parastā cena",
         "sale_price": "Akcijas cena",
-        "unit_price": "Vienības cena"
+        "unit_price": "Vienības cena",
+        "lowest_30_days": "Zemākā cena 30 dienās pirms cenas samazinājuma: {{ price }}"
       },
       "share": "Dalīties ar preci",
       "sold_out": "Izpārdots",
@@ -480,6 +481,14 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Lapa nav atrasta",
+      "subtext": "404",
+      "heading_line_1": "Šo lapu neizdevās atrast.",
+      "heading_line_2": "Iespējams, izvēlējāties nepareizu automašīnu.",
+      "home_button": "Sākums",
+      "select_vehicle_button": "Izvēlēties transportlīdzekli"
+    },
     "search": {
       "no_results": "Nekas netika atrasts pēc “{{ terms }}”. Pārbaudiet rakstību vai izmantojiet citu vārdu.",
       "page": "Lapa",
@@ -523,14 +532,6 @@
         "post_success": "Paldies, ka sazinājāties ar mums. Atbildēsim, tiklīdz varēsim.",
         "error_heading": "Lūdzu, izlabojiet šo:"
       }
-    },
-    "404": {
-      "title": "Lapa nav atrasta",
-      "subtext": "404",
-      "heading_line_1": "Šo lapu neizdevās atrast.",
-      "heading_line_2": "Iespējams, izvēlējāties nepareizu automašīnu.",
-      "home_button": "Sākums",
-      "select_vehicle_button": "Izvēlēties transportlīdzekli"
     }
   },
   "localization": {

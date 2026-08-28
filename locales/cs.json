@@ -280,7 +280,8 @@
         "from_price_html": "Od {{ price }}",
         "regular_price": "Běžná cena",
         "sale_price": "Výprodejová cena",
-        "unit_price": "Jednotková cena"
+        "unit_price": "Jednotková cena",
+        "lowest_30_days": "Nejnižší cena za posledních 30 dní před slevou: {{ price }}"
       },
       "pickup_availability": {
         "view_store_info": "Zobrazit informace o obchodě",
@@ -364,6 +365,14 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Stránka nebyla nalezena",
+      "subtext": "404",
+      "heading_line_1": "Tuto stránku se nepodařilo najít.",
+      "heading_line_2": "Možná jste zvolili nesprávné auto.",
+      "home_button": "Domů",
+      "select_vehicle_button": "Vybrat vozidlo"
+    },
     "search": {
       "no_results": "Nebyly nalezeny žádné výsledky pro {{ terms }}. Zkontrolujte pravopis nebo zadejte jiné slovo či slovní spojení.",
       "title": "Výsledky hledání",
@@ -417,14 +426,6 @@
         "error_heading": "Upravte prosím následující informace:",
         "title": "Kontaktní formulář"
       }
-    },
-    "404": {
-      "title": "Stránka nebyla nalezena",
-      "subtext": "404",
-      "heading_line_1": "Tuto stránku se nepodařilo najít.",
-      "heading_line_2": "Možná jste zvolili nesprávné auto.",
-      "home_button": "Domů",
-      "select_vehicle_button": "Vybrat vozidlo"
     }
   },
   "sections": {
