@@ -21,8 +21,10 @@
   assign price = target.price | default: 1999
   assign available = target.available | default: false
   assign money_price = price | money
+  assign compare_at_money = compare_at_price | money
   if settings.currency_code_enabled
     assign money_price = price | money_with_currency
+    assign compare_at_money = compare_at_price | money_with_currency
   endif
 
   if target == product and product.price_varies
@@ -67,6 +69,9 @@
         {{ money_price }}
       </span>
     </div>
+    {%- if compare_at_price > price -%}
+      <small class="price__lowest-30-days">{{ 'products.product.price.lowest_30_days' | t: price: compare_at_money }}</small>
+    {%- endif -%}
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
       <span class="price-item price-item--last">
