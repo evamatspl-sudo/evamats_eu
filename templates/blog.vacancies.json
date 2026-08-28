@@ -14,13 +14,13 @@
       "settings": {
         "eyebrow": "Pracovní nabídky",
         "heading": "Join the Carvion team",
-        "description": "<p>We are building a place where people, teamwork and a real influence on how the company grows actually matter.</p>",
+        "description": "<p>We are building a place where people, teamwork and a real influence on how the company grows actually matter.<\/p>",
         "button_label": "Zobrazit nabídky",
         "button_link": "",
         "button_scroll_to_list": true,
         "button_scroll_selector": ".evamats-vacancies-list",
-        "image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_35_43_PM.webp",
-        "image_mobile": "shopify://shop_images/ChatGPT_Image_May_18_2026_06_57_20_PM_1.webp",
+        "image": "shopify:\/\/shop_images\/ChatGPT_Image_May_19_2026_06_35_43_PM.webp",
+        "image_mobile": "shopify:\/\/shop_images\/ChatGPT_Image_May_18_2026_06_57_20_PM_1.webp",
         "padding_top": 72,
         "padding_bottom": 40,
         "padding_top_mobile": 40,
@@ -85,7 +85,7 @@
         "cta_label": "",
         "cta_url": "",
         "media_type": "video",
-        "video_desktop": "shopify://files/videos/upsell_cz.mp4",
+        "video_desktop": "shopify:\/\/files\/videos\/upsell_cz.mp4",
         "margin_top": 0,
         "margin_bottom": 0
       }
@@ -96,7 +96,7 @@
         "item_fndQ6K": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755214.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755214.svg",
             "heading": "Jasná očekávání",
             "text": "Víte, co od vás očekáváme a v čem spočívá vaše role."
           }
@@ -104,7 +104,7 @@
         "item_tqGGig": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755215.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755215.svg",
             "heading": "Podpora vedoucího",
             "text": "There is always someone to ask, and you can count on feedback."
           }
@@ -112,7 +112,7 @@
         "item_Jp8waE": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755216_1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755216_1.svg",
             "heading": "Rozvoj v praxi",
             "text": "Učíte se na reálných úkolech, ne jen z teorie."
           }
@@ -120,7 +120,7 @@
         "item_kmzjFM": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755214_1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755214_1.svg",
             "heading": "Vliv na práci",
             "text": "Your ideas can genuinely change how the team works."
           }
@@ -128,7 +128,7 @@
         "item_gtYpV8": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755215_1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755215_1.svg",
             "heading": "A stable environment",
             "text": "We work on a real product and build the company for the long term."
           }
@@ -136,7 +136,7 @@
         "item_aRmdzB": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755216.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755216.svg",
             "heading": "Lidská atmosféra",
             "text": "We combine responsibility for the result with normal communication and mutual respect."
           }
@@ -186,17 +186,17 @@
     "evamats_careers_contact": {
       "type": "evamats-careers-contact",
       "settings": {
-        "background_image": "shopify://shop_images/ag1_waifu2x_photo_scale.webp",
-        "background_image_mobile": "shopify://shop_images/goga2.webp",
+        "background_image": "shopify:\/\/shop_images\/ag1_waifu2x_photo_scale.webp",
+        "background_image_mobile": "shopify:\/\/shop_images\/goga2.webp",
         "heading": "Nevidíte nabídku pro sebe? Máte otázky?",
-        "email": "info@carvionauto.cz",
+        "email": "info@evamats.store",
         "button_label": "Napište nám",
         "button_link": "",
         "social_heading": "Find out more about careers in our media:",
-        "facebook_url": "https://www.facebook.com/hr.evamats",
-        "instagram_url": "https://www.instagram.com/evamats_hr",
-        "tiktok_url": "https://www.tiktok.com/@evamats_cz",
-        "youtube_url": "https://www.youtube.com/@evamatspl",
+        "facebook_url": "https:\/\/www.facebook.com\/hr.evamats",
+        "instagram_url": "https:\/\/www.instagram.com\/evamats_hr",
+        "tiktok_url": "https:\/\/www.tiktok.com\/@evamats_cz",
+        "youtube_url": "https:\/\/www.youtube.com\/@evamatspl",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,

@@ -24,22 +24,22 @@
         "fact_1"
       ],
       "settings": {
-        "image_desktop": "shopify://shop_images/Background_Image.webp",
-        "image_mobile": "shopify://shop_images/Hero_photo.webp",
+        "image_desktop": "shopify:\/\/shop_images\/Background_Image.webp",
+        "image_mobile": "shopify:\/\/shop_images\/Hero_photo.webp",
         "height_desktop": 900,
         "height_mobile": 744,
         "overlay_opacity": 40,
         "show_top_fade": true,
         "show_breadcrumbs": false,
         "breadcrumb_parent": "Carvion",
-        "breadcrumb_parent_url": "/",
+        "breadcrumb_parent_url": "\/",
         "breadcrumb_current": "",
         "breadcrumb_current_url": "",
         "heading": "Váš gumový koberec zakrývá sotva 70 % podlahy",
         "heading_gradient": true,
         "subheading": "Srovnali jsme gumu, velur a EVA — a vysvětlujeme rozdíly",
         "cta_label": "Srovnat materiály pro můj vůz",
-        "cta_url": "shopify://collections/all-car-mats"
+        "cta_url": "shopify:\/\/collections\/all-car-mats"
       }
     },
     "landing_antagonist": {
@@ -48,21 +48,21 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_54_49_1.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_28_._2026_._13_54_49_1.webp",
             "text": "Univerzální střih — bez ohledu na model auta"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_52_52_1.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_28_._2026_._13_52_52_1.webp",
             "text": "Nasákne vodu a ztrácí vzhled po sezóně"
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_28_._2026_._13_57_38_1.webp",
+            "image": "shopify:\/\/shop_images\/ChatGPT_Image_28_._2026_._13_57_38_1.webp",
             "text": "Tvrdne a může prasknout v mrazu"
           }
         }
@@ -116,7 +116,7 @@
             "label": "Čištění",
             "value_1": "vyklepat",
             "value_2": "praní, dlouhé schnutí",
-            "value_3": "vyklepat / opláchnout"
+            "value_3": "vyklepat \/ opláchnout"
           }
         },
         "row_5": {
@@ -186,7 +186,7 @@
       "settings": {
         "eyebrow": "Ověřeno",
         "heading": "Ne sliby, ale ověřitelná fakta",
-        "image": "shopify://shop_images/Main_Image.webp",
+        "image": "shopify:\/\/shop_images\/Main_Image.webp",
         "show_section_background": true,
         "background_color": "#f6f6f6",
         "card_background_color": "#ffffff",
@@ -249,7 +249,7 @@
       "settings": {
         "heading": "",
         "intro": "",
-        "image_desktop": "shopify://shop_images/4f0e0eaff4c762c2eeaacb952a812eeec15881ec.webp",
+        "image_desktop": "shopify:\/\/shop_images\/4f0e0eaff4c762c2eeaacb952a812eeec15881ec.webp",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
@@ -421,7 +421,7 @@
             "subtitle": "plná ochrana kabiny",
             "price": "−10%, automaticky v košíku",
             "button_label": "Vybírám",
-            "button_link": "shopify://collections/all-car-mats"
+            "button_link": "shopify:\/\/collections\/all-car-mats"
           }
         },
         "offer_2": {
@@ -431,7 +431,7 @@
             "subtitle": "kompletní sada · VOLBA ŘIDIČŮ",
             "price": "−15%, automaticky v košíku od 60 €",
             "button_label": "Vybírám",
-            "button_link": "shopify://collections/all-car-mats"
+            "button_link": "shopify:\/\/collections\/all-car-mats"
           }
         }
       },
@@ -448,10 +448,10 @@
         "heading": "Vyberte si variantu",
         "note_1": "Ruční výroba = omezený počet kompletů zpracovaných tento týden. Přihlaste se k odběru a získejte slevu na první objednávku.",
         "note_2": "Reklamace a vrácení zboží vyřizujeme individuálně a v pořadí, v jakém je obdržíme — vaší záležitosti věnujeme plnou pozornost. Kontakt:",
-        "contact_email": "info@carvionauto.cz",
+        "contact_email": "info@evamats.store",
         "note_3": "Výroba: do 10 dnů. Doručení: do 4 dnů. Platba mj. GoPay, kartou a PayPal.",
         "cta_label": "Srovnat materiály pro můj vůz",
-        "cta_link": "shopify://collections/all-car-mats",
+        "cta_link": "shopify:\/\/collections\/all-car-mats",
         "trust_text": "vede k výběru vašeho vozu — ne přímo k platbě",
         "background_color": "#14161a",
         "padding_top": 88,

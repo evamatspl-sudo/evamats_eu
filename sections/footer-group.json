@@ -39,9 +39,9 @@
           "settings": {
             "heading": "Contact us",
             "intro": "",
-            "email": "info@carvionauto.cz",
+            "email": "info@evamats.store",
             "phone": "+420 292 333 695",
-            "address": "Pobřežní 249/46, 186 00 Prague 8 — Karlín\nMailing address — we ship goods by courier only."
+            "address": "Pobřežní 249\/46, 186 00 Prague 8 — Karlín\nMailing address — we ship goods by courier only."
           }
         }
       },
@@ -55,16 +55,16 @@
       "settings": {
         "color_scheme": "background-1",
         "newsletter_enable": true,
-        "newsletter_heading": "<p>Subscribe and get a <strong>discount</strong> on your first order</p>",
+        "newsletter_heading": "<p>Subscribe and get a <strong>discount<\/strong> on your first order<\/p>",
         "newsletter_subtext": "",
         "newsletter_placeholder": "Your email",
         "newsletter_button": "Subscribe",
         "show_social": true,
-        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "facebook_url": "https:\/\/www.facebook.com\/carvion.cz",
         "facebook_label": "",
-        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "instagram_url": "https:\/\/www.instagram.com\/carvion_cz",
         "tiktok_url": "",
-        "youtube_url": "https://www.youtube.com/@autokoberceeva",
+        "youtube_url": "https:\/\/www.youtube.com\/@autokoberceeva",
         "threads_url": "",
         "nip_number": "",
         "regon_number": "",

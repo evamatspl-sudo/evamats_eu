@@ -20,7 +20,7 @@
         "back_link_label": "← Všechny nabídky",
         "apply_label": "Aplikuj",
         "apply_link": "",
-        "apply_email": "info@carvionauto.cz",
+        "apply_email": "info@evamats.store",
         "show_sidebar_card": true,
         "sidebar_aria_label": "Shrnutí nabídky",
         "label_contract": "Forma spolupráce",
@@ -43,7 +43,7 @@
         "name": "{{ article.metafields.custom.vacancy.value.supervisor_name.value }}",
         "role": "{{ article.metafields.custom.vacancy.value.supervisor_position.value }}",
         "button_label": "About the company",
-        "button_link": "shopify://pages/o-nas",
+        "button_link": "shopify:\/\/pages\/o-nas",
         "image": "{{ article.metafields.custom.vacancy.value.supervisor_image_desk.value }}",
         "image_mobile": "{{ article.metafields.custom.vacancy.value.supervisor_image_mob.value }}",
         "padding_top": 32,
@@ -70,7 +70,7 @@
         "item_V89bMF": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755148.svg",
             "heading": "Skutečný vliv na rozvoj firmy",
             "text": "Vaše nápady se realizují, ne ignorují"
           }
@@ -78,7 +78,7 @@
         "item_eyGcVT": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755148-1.svg",
             "heading": "Fast growth and new opportunities",
             "text": "Here you can grow together with the company"
           }
@@ -86,7 +86,7 @@
         "item_fyx3Na": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-2.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755148-2.svg",
             "heading": "Jasne zasady i konkretne cele",
             "text": "You know what you are responsible for and how much you can earn"
           }
@@ -94,7 +94,7 @@
         "item_LbMDEF": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-3.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755148-3.svg",
             "heading": "Tým, který jedná, nejen mluví",
             "text": "We focus on efficiency and concrete results"
           }
@@ -102,7 +102,7 @@
         "item_6tQVtR": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755148-4.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755148-4.svg",
             "heading": "A modern approach to work",
             "text": "Automatizace, systémy a rozvoj místo chaosu"
           }
@@ -132,33 +132,33 @@
         "step_riJTMj": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755095_d8654f00-3aa9-48d5-822d-2cb24192ac02.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755095_d8654f00-3aa9-48d5-822d-2cb24192ac02.svg",
             "title": "Rozmowa HR",
-            "text": "<p>We want to get to know your work experience and goals better, and how our values and working culture match your approach and expectations.</p>"
+            "text": "<p>We want to get to know your work experience and goals better, and how our values and working culture match your approach and expectations.<\/p>"
           }
         },
         "step_jW7c4g": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755095-1.svg",
-            "title": "Zadanie / scenka",
-            "text": "<p>We look at how you approach real sales situations.<br/>We are not after ready-made<br/> answers — what matters is how you think.</p>"
+            "icon": "shopify:\/\/shop_images\/Group_1948755095-1.svg",
+            "title": "Zadanie \/ scenka",
+            "text": "<p>We look at how you approach real sales situations.<br\/>We are not after ready-made<br\/> answers — what matters is how you think.<\/p>"
           }
         },
         "step_gEir9w": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755095-2.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755095-2.svg",
             "title": "Spotkanie z liderem",
-            "text": "<p>You talk directly to the person you will work with. We go through expectations, working style and the terms of cooperation.</p>"
+            "text": "<p>You talk directly to the person you will work with. We go through expectations, working style and the terms of cooperation.<\/p>"
           }
         },
         "step_GNCKDm": {
           "type": "step",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755095-3.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755095-3.svg",
             "title": "Začátek zkušební doby",
-            "text": "<p>Začínáme společnou práci. Získáte plné zaškolení, podporu mentora a jasný plán na první týdny.</p>"
+            "text": "<p>Začínáme společnou práci. Získáte plné zaškolení, podporu mentora a jasný plán na první týdny.<\/p>"
           }
         }
       },
@@ -314,13 +314,13 @@
         "overline": "Benefity",
         "heading": "What do you get when you join Carvion",
         "work_title": "Práce, která má smysl a tempo",
-        "work_image": "shopify://shop_images/googa_1.webp",
+        "work_image": "shopify:\/\/shop_images\/googa_1.webp",
         "culture_title": "We are building a company you want to work in and grow with",
         "culture_tagline": "Nehledáme všechny — hledáme angažované lidi",
         "growth_title": "Rozvoj, který opravdu zrychluje",
-        "growth_image": "shopify://shop_images/Mask_group_ec85443f-dcff-4aa7-8fe4-60c35724413b.webp",
+        "growth_image": "shopify:\/\/shop_images\/Mask_group_ec85443f-dcff-4aa7-8fe4-60c35724413b.webp",
         "pay_title": "Mzda a další výhody",
-        "pay_image": "shopify://shop_images/Group_1948755168_a26e92eb-9bb1-4ffe-ad88-61e04ecda6b8.webp",
+        "pay_image": "shopify:\/\/shop_images\/Group_1948755168_a26e92eb-9bb1-4ffe-ad88-61e04ecda6b8.webp",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 32,
@@ -330,17 +330,17 @@
     "evamats_careers_contact_c9GyH8": {
       "type": "evamats-careers-contact",
       "settings": {
-        "background_image": "shopify://shop_images/ag1_waifu2x_photo_scale.webp",
-        "background_image_mobile": "shopify://shop_images/goga2.webp",
+        "background_image": "shopify:\/\/shop_images\/ag1_waifu2x_photo_scale.webp",
+        "background_image_mobile": "shopify:\/\/shop_images\/goga2.webp",
         "heading": "Nevidíte nabídku pro sebe? Máte otázky?",
-        "email": "info@carvionauto.cz",
+        "email": "info@evamats.store",
         "button_label": "Napište nám",
         "button_link": "",
         "social_heading": "Find out more about careers in our media:",
-        "facebook_url": "https://www.facebook.com/carvion.cz",
-        "instagram_url": "https://www.instagram.com/carvion_cz",
+        "facebook_url": "https:\/\/www.facebook.com\/carvion.cz",
+        "instagram_url": "https:\/\/www.instagram.com\/carvion_cz",
         "tiktok_url": "",
-        "youtube_url": "https://www.youtube.com/@autokoberceeva",
+        "youtube_url": "https:\/\/www.youtube.com\/@autokoberceeva",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,
