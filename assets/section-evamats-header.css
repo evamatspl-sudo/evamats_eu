@@ -1649,3 +1649,6 @@ html[lang="lv"] .evamats-header__nav-link {
   html[lang="lv"] .evamats-header__nav-list { gap: 12px; }
   html[lang="lv"] .evamats-header__nav-link { font-size: 14px; }
 }
+
+/* EVAMATS locale-safe desktop header 2026-08-28 */
+@media screen and (min-width:990px){.evamats-header__nav-list{flex-wrap:nowrap;gap:clamp(12px,2.4vw,42px)}.evamats-header__nav-link{white-space:nowrap}}@media screen and (min-width:990px) and (max-width:1480px){.evamats-header__nav-list{gap:18px}.evamats-header__nav-link{font-size:15px}}

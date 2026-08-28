@@ -13,8 +13,8 @@
       "mats_type": "Mats type",
       "mats_set": "Mats set",
       "mats_size": "Size",
-      "without_edges": "3D Carvion without Edges",
-      "with_edges": "3D Carvion with Edges",
+      "without_edges": "3D CARVION sans rebords relevés",
+      "with_edges": "3D CARVION avec rebords relevés",
       "only_driver_mat": "Only driver mat",
       "front": "Front",
       "rear": "Rear",
@@ -31,7 +31,7 @@
       "gearbox": "Gearbox",
       "gearboxElements": "Manual,Automatic",
       "bodyType": "Body type",
-      "bodyTypeElements": "Sedan,Hatchback,SUV,Coupe,Station Wagon,Convertible,Roadster,Bus,TIR,VAN,Camper,Tractor,Pickup,Minivan,Other",
+      "bodyTypeElements": "Berline,Voiture à hayon,SUV,Coupé,Break,Cabriolet,Roadster,Bus,Poids lourd,Utilitaire,Camping-car,Tracteur,Pick-up,Monospace,Autre",
       "cell_shape": "Cell shape",
       "diamonds": "Diamonds",
       "honeycomb": "Honeycomb",
@@ -65,7 +65,10 @@
       "home": "Accueil",
       "outlet": "Déstockage",
       "select_vehicle": "Sélectionner un véhicule",
-      "change_vehicle": "Changer de véhicule"
+      "change_vehicle": "Changer de véhicule",
+      "gallery_body_type": "Choisissez le type de carrosserie",
+      "gallery_error_message": "Aucune image ne correspond à votre sélection.",
+      "gallery_divider_text": "Découvrez encore plus de réalisations"
     },
     "colors": {
       "black": "Black",

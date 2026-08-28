@@ -65,9 +65,13 @@
             {% render 'icon-caret' %}
           </div>
           <div class="select-options">
-            {% assign elements = 'general.config.bodyTypeElements' | t | remove: ',Other' | split: ',' %}
-            {% for item in elements %}
-              <div class="eva__tabs_item gallery__tabs_item" data-type="{{ item }}">{{ item }}</div>
+            {% assign element_keys = 'Sedan,Hatchback,SUV,Coupe,Station Wagon,Convertible,Roadster,Bus,TIR,VAN,Camper,Tractor,Pickup,Minivan,Other' | split: ',' %}
+            {% assign element_labels = 'general.config.bodyTypeElements' | t | split: ',' %}
+            {% for item in element_keys %}
+              {% unless item == 'Other' %}
+                {% assign display_label = element_labels[forloop.index0] | strip | default: item %}
+                <div class="eva__tabs_item gallery__tabs_item" data-type="{{ item }}">{{ display_label }}</div>
+              {% endunless %}
             {% endfor %}
           </div>
         </div>

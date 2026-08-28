@@ -7808,3 +7808,6 @@ body:has(.landing-hero-v2) .scrolled-past-header .header-wrapper .evamats-header
     --eb-ls: -0.28px;
   }
 }
+
+/* EVAMATS locale-safe footer layout 2026-08-28 */
+@media screen and (min-width:750px){.evamats-footer__menus{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.45fr);align-items:start;gap:clamp(24px,4vw,64px)}.evamats-footer__menu{min-width:0}.evamats-footer__menu-link{line-height:1.35;overflow-wrap:anywhere}}
