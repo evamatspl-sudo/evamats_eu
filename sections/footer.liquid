@@ -134,19 +134,6 @@
               </div>
           {%- endcase -%}
         {%- endfor -%}
-
-        {%- assign footer_language = request.locale.iso_code | split: '-' | first -%}
-        {%- if footer_language == 'lv' -%}
-          <div class="evamats-footer__menu evamats-footer__menu--support">
-            <p class="evamats-footer__menu-heading">Klientu atbalsts</p>
-            <ul class="evamats-footer__menu-list list-unstyled" role="list">
-              <li><span class="evamats-footer__menu-link">💬 Palīdzība ar pasūtījumu</span></li>
-              <li><span class="evamats-footer__menu-link">🚚 Ātra piegāde visā Eiropā</span></li>
-              <li><span class="evamats-footer__menu-link">🔒 Droši un ērti maksājumi</span></li>
-              <li><span class="evamats-footer__menu-link">✨ Pielāgoti tieši jūsu auto</span></li>
-            </ul>
-          </div>
-        {%- endif -%}
       </div>
 
       <div class="evamats-footer__aside">
