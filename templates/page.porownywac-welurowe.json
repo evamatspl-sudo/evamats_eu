@@ -64,7 +64,7 @@
         "center_text": "VS.",
         "left_title": "<p>Velour mats</p>",
         "left_image": "shopify://shop_images/velour-img.webp",
-        "right_title": "<p>Koberce <strong>Carvion</strong></p>",
+        "right_title": "<p><strong>Carvion</strong> EVA mats</p>",
         "right_image": "shopify://shop_images/hero-evamats-after.webp",
         "padding_top": 0,
         "padding_bottom": 0,
@@ -105,7 +105,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/benefits-icon-2.webp",
-            "title": "<p>Ochrona <br/>przed zabrudzeniami</p>",
+            "title": "<p>Protection <br/>from dirt</p>",
             "text": "<p>Both types protect the floor from dirt and liquids effectively. The difference is in how much area they cover.</p>"
           }
         },
@@ -113,7 +113,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/benefits-icon-3.webp",
-            "title": "<p>Lepsze <br/>dopasowanie EVA</p>",
+            "title": "<p>Vehicle-specific <br/>EVA fit</p>",
             "text": "<p>EVA mats are made to measure and cover up to 99% of the floor. Rubber ones give roughly 70–90% protection.</p>"
           }
         },
@@ -161,7 +161,7 @@
         "background": "#ffffff",
         "text_color": "#1b1d22",
         "subheading_color": "#ef022d",
-        "left_label": "Welurowe",
+        "left_label": "Velour",
         "subheading": "WHAT IS THE DIFFERENCE?",
         "heading": "<p>What to watch out for <br/>when choosing mats</p>",
         "description": "<ul><li>Above all, the products in our shop are made by hand.</li><li>That is why they match the floor dimensions of your vehicle exactly. We care about the quality of our mats and aim for maximum precision in production.</li><li>We use very good materials. Thanks to our mats, the standard of your car will never be the same again!</li><li>Our goal is to improve not only comfort, but also how clean the car stays.</li></ul>",
@@ -217,9 +217,9 @@
         "item_B4DzkP": {
           "type": "item",
           "settings": {
-            "title": "Czyszczenie",
+            "title": "Cleaning",
             "left_text": "More time-consuming",
-            "right_text": "Szybkie i proste"
+            "right_text": "Quick and easy"
           }
         },
         "item_8GcpfL": {
@@ -233,7 +233,7 @@
         "item_HdnHYV": {
           "type": "item",
           "settings": {
-            "title": "Odolnost",
+            "title": "Durability",
             "left_text": "Wears out faster",
             "right_text": "Keep their looks for a long time"
           }
@@ -242,8 +242,8 @@
           "type": "item",
           "settings": {
             "title": "Use",
-            "left_text": "Bardziej dekoracyjne",
-            "right_text": "Praktyczne i lekkie"
+            "left_text": "More decorative",
+            "right_text": "Practical and lightweight"
           }
         }
       },
@@ -259,7 +259,7 @@
         "text_color": "#1b1d22",
         "highlight_background": "#f6f6f6",
         "heading": "<h2>How does cleaning EVA mats differ from velour ones?</h2>",
-        "left_title": "Welur",
+        "left_title": "Velour",
         "right_title": "EVA",
         "padding_top": 100,
         "padding_bottom": 80,
@@ -428,7 +428,7 @@
       "settings": {
         "heading": "<p><p>Our goal is <strong>maximum</strong> </p><p><strong>comfort</strong> on every drive</p>",
         "text": "<p>Precise finishing, durable materials and well-made details make everyday use as comfortable as possible.</p>",
-        "button_label": "Nakonfigurujte koberce",
+        "button_label": "Configure your mats",
         "button_link": "shopify://collections/all-car-mats",
         "padding_top": 80,
         "padding_bottom": 120,
@@ -484,7 +484,7 @@
       ],
       "settings": {
         "design_variant": "home",
-        "hd": "AUTOKOBERCE Carvion – FAQ",
+        "hd": "Carvion car mats — FAQ",
         "heading_accent": "",
         "heading_mobile": "Frequently asked questions",
         "breadcrumb_parent_label": "Carvion",
