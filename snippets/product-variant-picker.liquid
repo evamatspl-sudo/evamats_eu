@@ -55,7 +55,7 @@
             {% if isMatsType %}
               <fieldset class="js product-form__input lip__field" data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                 <legend class="form__label lip__title">
-                  <span class="form__label_text">{{ option.name }}</span>
+                  <span class="form__label_text">{% render 'evamats-config-option-translate', text: option.name %}</span>
                   <div class="lip__title_value"></div>
                 </legend>
                 {% render 'product-variant-options', product: product, option: option, block: block %}
@@ -108,8 +108,8 @@
                 {% if use_corners_text_option %}
                   <fieldset class="js product-form__input lip__field evamats-product-option evamats-product-option--text" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                     <legend class="form__label evamats-product-option__legend visually-hidden">
-                      <span class="evamats-product-option__label">{{ option.name }}</span>
-                      <span class="evamats-product-option__value lip__title_value">{% render 'evamats-strip-brand-label', text: option.selected_value %}</span>
+                      <span class="evamats-product-option__label">{% render 'evamats-config-option-translate', text: option.name %}</span>
+                      <span class="evamats-product-option__value lip__title_value">{% render 'evamats-config-option-translate', text: option.selected_value %}</span>
                     </legend>
                     {% render 'product-variant-options',
                       product: product,
@@ -123,7 +123,7 @@
                 {% else %}
                   <fieldset class="js product-form__input lip__field" {% if option.name == 'Title' %} style="display: none"{% endif %} data-name="{{ fieldsetClass }}" data-option-position="{{ option.position }}">
                     <legend class="form__label lip__title">
-                      <span class="form__label_text">{{ option.name }}</span>
+                      <span class="form__label_text">{% render 'evamats-config-option-translate', text: option.name %}</span>
                       <div class="lip__title_value"></div>
                     </legend>
 
@@ -305,12 +305,12 @@
               {% if is_simple_product %}
               <fieldset class="js product-form__input lip__field evamats-product-option evamats-product-option--{% if option_is_gift_amount %}amount{% elsif option_has_swatch %}swatch{% else %}text{% endif %}" data-option-position="{{ option.position }}"{% if option_is_gift_amount %} id="gift-card-amount" data-amount-position="{{ option.position }}"{% endif %}{% if option.name == 'Title' %} style="display: none"{% endif %}>
                 <legend class="form__label evamats-product-option__legend">
-                  <span class="evamats-product-option__label">{{ option.name }}</span>
+                  <span class="evamats-product-option__label">{% render 'evamats-config-option-translate', text: option.name %}</span>
                   <span class="evamats-product-option__value lip__title_value">
                     {%- if option_is_gift_amount -%}
                       {{- product.selected_or_first_available_variant.price | money -}}
                     {%- else -%}
-                      {%- render 'evamats-strip-brand-label', text: option.selected_value -%}
+                      {%- render 'evamats-config-option-translate', text: option.selected_value -%}
                     {%- endif -%}
                   </span>
                 </legend>
@@ -326,7 +326,7 @@
               {% else %}
               <fieldset class="js product-form__input lip__field"{% if  option.name == "Title"%} style="display: none"{% endif %}{% if fieldsetClass != '' %} data-name="{{ fieldsetClass }}"{% endif %} data-option-position="{{ option.position }}">
                 <legend class="form__label lip__title">
-                  <span class="form__label_text">{{ option.name }}</span>
+                  <span class="form__label_text">{% render 'evamats-config-option-translate', text: option.name %}</span>
                   <div class="lip__title_value"></div>
                 </legend>
                 {% render 'product-variant-options', product: product, option: option, block: block %}
@@ -426,7 +426,7 @@
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
+            {% render 'evamats-config-option-translate', text: option.name %}
           </label>
           <div class="select">
             <select

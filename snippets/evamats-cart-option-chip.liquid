@@ -76,4 +76,6 @@
   {%- assign chip_image = mats_resolved | strip | split: '§§§' | first -%}
 {%- endif -%}
 
+{%- capture chip_label_localised -%}{%- render 'evamats-config-option-translate', text: chip_label -%}{%- endcapture -%}
+{%- assign chip_label = chip_label_localised | strip -%}
 {% render 'evamats-cart-chip', chip_label: chip_label, chip_image: chip_image %}

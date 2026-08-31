@@ -25,11 +25,11 @@
 
               <div class="product-option">
                        {%- unless option.name == "Title" or option.value contains "Default Title"  -%}  
-                            <dt>{{ option.name }}:</dt>
+                            <dt>{% render 'evamats-config-option-translate', text: option.name %}:</dt>
                             <dd>
                             {% comment %} {{ option.value}} {% endcomment %} 
                             {% assign words = option.value | split: "#MWS" %}
-                            {% render 'evamats-strip-brand-label', text: words[0] %}
+                            {% render 'evamats-config-option-translate', text: words[0] %}
                             </dd>
                           {%- endunless -%}
 

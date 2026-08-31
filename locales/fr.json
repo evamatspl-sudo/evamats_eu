@@ -10,46 +10,46 @@
 {
   "general": {
     "config": {
-      "mats_type": "Mats type",
-      "mats_set": "Mats set",
-      "mats_size": "Size",
+      "mats_type": "Type de tapis",
+      "mats_set": "Ensemble de tapis",
+      "mats_size": "Dimensions",
       "without_edges": "3D CARVION sans rebords relevés",
       "with_edges": "3D CARVION avec rebords relevés",
-      "only_driver_mat": "Only driver mat",
-      "front": "Front",
-      "rear": "Rear",
-      "trunk": "Trunk",
-      "front_rear": "Front and Rear",
-      "front_rear_trunk": "Front + rear + trunk",
-      "year_production": "Year of production",
-      "number_seats": "Number of seats",
-      "number_doors": "Number of doors",
-      "drivetrain": "Drivetrain",
-      "drivetrainElements": "Rear-Wheel Drive,Front-Wheel Drive,All-Wheel Drive,No clue",
-      "engine": "Engine",
-      "engineElements": "Petrol,Diesel,HEV,MHEV,PHEV,Electric,Hybrid",
-      "gearbox": "Gearbox",
-      "gearboxElements": "Manual,Automatic",
-      "bodyType": "Body type",
-      "bodyTypeElements": "Berline,Voiture à hayon,SUV,Coupé,Break,Cabriolet,Roadster,Bus,Poids lourd,Utilitaire,Camping-car,Tracteur,Pick-up,Monospace,Autre",
-      "cell_shape": "Cell shape",
-      "diamonds": "Diamonds",
-      "honeycomb": "Honeycomb",
-      "material_color": "Material color",
-      "trim_color": "Trim color",
-      "comment": "ILLUSTRATION rug for color selection",
-      "heel": "don't forget about additional protection - choose the type of heel pad",
-      "order_notes": "Order notes",
+      "only_driver_mat": "Tapis conducteur",
+      "front": "Avant",
+      "rear": "Arrière",
+      "trunk": "Tapis de coffre",
+      "front_rear": "Avant + arrière",
+      "front_rear_trunk": "Avant + arrière + tapis de coffre",
+      "year_production": "Année de fabrication",
+      "number_seats": "Nombre de places",
+      "number_doors": "Nombre de portes",
+      "drivetrain": "Roues motrices",
+      "drivetrainElements": "Propulsion,Traction,Transmission intégrale,Je ne sais pas",
+      "engine": "Motorisation",
+      "engineElements": "Essence,Diesel,HEV,MHEV,PHEV,Électrique,Hybride",
+      "gearbox": "Boîte de vitesses",
+      "gearboxElements": "Manuelle,Automatique",
+      "bodyType": "Type de carrosserie",
+      "bodyTypeElements": "Berline,Berline à hayon,SUV,Coupé,Break,Cabriolet,Roadster,Bus,Poids lourd,Utilitaire,Camping-car,Tracteur,Pick-up,Monospace,Autre",
+      "cell_shape": "Forme des alvéoles",
+      "diamonds": "Losanges",
+      "honeycomb": "Nid d’abeille",
+      "material_color": "Couleur du tapis",
+      "trim_color": "Couleur de la bordure",
+      "comment": "Image d’illustration pour le choix des couleurs",
+      "heel": "Pour une protection renforcée, choisissez le type de renfort talon",
+      "order_notes": "Remarques sur la commande",
       "error_message": "Veuillez sélectionner une option",
       "error_message_field": "Veuillez remplir ce champ",
-      "warning_message": "You must accept the privacy policy and terms and conditions.",
-      "please_select": "Please select",
-      "estimated_delivery": "Estimated time to receive order",
-      "color_and_cells_like_rug": "Color and cells like in a rug",
-      "error_email": "Email is invalid",
-      "error_phone": "Phone is invalid",
-      "error_checkbox": "You must accept the privacy policy and terms and conditions.",
-      "vehicle": "Vehicle",
+      "warning_message": "Vous devez accepter la politique de confidentialité et les conditions générales.",
+      "please_select": "Veuillez sélectionner",
+      "estimated_delivery": "Délai estimé de réception de la commande",
+      "color_and_cells_like_rug": "Même couleur et mêmes alvéoles que le tapis",
+      "error_email": "L’adresse e-mail n’est pas valide",
+      "error_phone": "Le numéro de téléphone n’est pas valide",
+      "error_checkbox": "Vous devez accepter la politique de confidentialité et les conditions générales.",
+      "vehicle": "Véhicule",
       "brand": "Marque",
       "model": "Modèle",
       "additional_options": "Options supplémentaires :",
@@ -97,7 +97,7 @@
       "login_form_password_placeholder": "Votre mot de passe",
       "login_form_error": "Mot de passe incorrect !",
       "login_form_submit": "Saisir",
-      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"/admin\" class=\"link underlined-link\">Se connecter ici</a>",
+      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"\/admin\" class=\"link underlined-link\">Se connecter ici<\/a>",
       "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
     },
     "social": {
@@ -209,7 +209,7 @@
         "minimum_of": "Minimum de {{ quantity }}",
         "maximum_of": "Maximum de {{ quantity }}",
         "multiples_of": "Incréments de {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> dans le panier"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> dans le panier"
       },
       "price": {
         "from_price_html": "Du {{ price }}",
@@ -229,8 +229,8 @@
         "view_store_info": "Afficher les informations de la boutique",
         "check_other_stores": "Vérifier la disponibilité dans d'autres boutiques",
         "pick_up_available": "Service de retrait disponible",
-        "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}<\/span>",
         "unavailable": "Impossible de charger la disponibilité du service de retrait",
         "refresh": "Actualiser"
       },
@@ -246,7 +246,7 @@
       },
       "view_full_details": "Afficher tous les détails",
       "include_taxes": "Taxes incluses.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
       "choose_options": "Choisir des options",
       "choose_product_options": "Choisir des options pour {{ product_name }}",
       "value_unavailable": "{{ option_value }} – indisponible",
@@ -370,7 +370,7 @@
     "brand_buttons": {
       "back": "Retour",
       "collection_title_prefix": "Tapis de voiture EVA pour ",
-      "all_brands_path": "/collections/all-car-mats"
+      "all_brands_path": "\/collections\/all-car-mats"
     },
     "cart": {
       "title": "Votre panier",
@@ -383,9 +383,9 @@
       "empty": "Votre panier est vide",
       "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
       "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">frais d'expédition</a> calculés lors du paiement",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">frais d'expédition<\/a> calculés lors du paiement",
       "taxes_included_but_shipping_at_checkout": "Taxes incluses et frais d'expédition calculés lors du paiement",
-      "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
+      "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
       "taxes_and_shipping_at_checkout": "Taxes et frais d'expédition calculés lors du paiement",
       "headings": {
         "product": "Produit",
@@ -397,9 +397,9 @@
       "update": "Mettre à jour",
       "login": {
         "title": "Vous possédez un compte ?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous</a> pour payer plus vite."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous<\/a> pour payer plus vite."
       },
-      "reservation_html": "En raison de la forte demande et de la surcharge de production, nous avons réservé une place pour vous permettre de traiter votre commande plus rapidement. La réservation est valable pour les <span class=\"cart__time\"><span id=\"countdown-timer\"></span> minutes.</span> suivantes.",
+      "reservation_html": "En raison de la forte demande et de la surcharge de production, nous avons réservé une place pour vous permettre de traiter votre commande plus rapidement. La réservation est valable pour les <span class=\"cart__time\"><span id=\"countdown-timer\"><\/span> minutes.<\/span> suivantes.",
       "reservation_button": "Extend your reservation",
       "progress_free_shipping": "Vous avez droit à la livraison gratuite !",
       "progress_text_order_value": "Votre voiture mérite plus ! Ajoutez des tapis pour {{value}} et bénéficiez de la livraison gratuite !",
@@ -423,7 +423,7 @@
     "collection_template": {
       "title": "Collection",
       "empty": "Aucun produit trouvé",
-      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout supprimer</a>"
+      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout supprimer<\/a>"
     },
     "video": {
       "load_video": "Charger la vidéo : {{ description }}"
@@ -444,7 +444,7 @@
       "next_button": "Suivant",
       "name_and_surname": "Nom et surnom",
       "brand": "Marque",
-      "privacy_text_html": "J'accepte la <a href=\"/policies/privacy-policy\" title=\"Politique de confidentialité\">politique de confidentialité </a> et les <a href=\"/policies/terms-of-service\" title=\"Conditions d'utilisation\">conditions d'utilisation </a>."
+      "privacy_text_html": "J'accepte la <a href=\"\/policies\/privacy-policy\" title=\"Politique de confidentialité\">politique de confidentialité <\/a> et les <a href=\"\/policies\/terms-of-service\" title=\"Conditions d'utilisation\">conditions d'utilisation <\/a>."
     },
     "announcements": {
       "previous_announcement": "Annonce précédente",
@@ -455,10 +455,10 @@
     }
   },
   "localization": {
-    "country_label": "Pays/région",
+    "country_label": "Pays\/région",
     "language_label": "Langue",
     "update_language": "Mettre à jour la langue",
-    "update_country": "Mettre à jour le pays/la région"
+    "update_country": "Mettre à jour le pays\/la région"
   },
   "customer": {
     "account": {
@@ -487,7 +487,7 @@
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "Ville",
-      "country": "Pays/région",
+      "country": "Pays\/région",
       "province": "Province",
       "zip": "Code postal",
       "phone": "Téléphone",

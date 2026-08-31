@@ -47,7 +47,7 @@
     >
   {%- endif -%}
 
-  <div class="label__tooltip">{{ value }}</div>
+  <div class="label__tooltip">{% render 'evamats-config-option-translate', text: value %}</div>
 
   {%- if badge != blank -%}
     <div class="label_badge">{{ badge }}</div>
