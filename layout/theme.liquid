@@ -565,7 +565,7 @@
           "addressRegion": "Hlavní město Praha"
         },
         "name": "Carvion Sp. z o. o.",
-        "email": "info@carvionauto.cz",
+        "email": "{% if localization.language.iso_code == 'cs' %}info@carvionauto.cz{% else %}info@evamats.store{% endif %}",
         "telephone": "+420 292 333 695",
         "vatID": "",
         "image": "{{ settings.logo | image_url: width: 500 }}"
@@ -583,7 +583,7 @@
       <script src="{{ 'index.js' | asset_url }}" defer></script>
     {% endif %}
     {%- comment -%} Header vehicle dropdown is global — load filter JS on every page. {%- endcomment -%}
-    <script src="{{ 'search_models.js' | asset_url }}" defer></script>
+    <script src="{{ 'search_models_localized_20260831.js' | asset_url }}" defer></script>
 
     {%- liquid
       assign load_product_config = false
