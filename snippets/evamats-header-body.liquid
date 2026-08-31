@@ -14,6 +14,16 @@
     html[lang="de"] .evamats-header__nav-list { gap: 24px; }
     html[lang="lv"] .evamats-header__nav-list { gap: 18px; }
   }
+
+  /* EVAMATS French desktop nav fit 2026-08-31 */
+  @media screen and (min-width: 990px) {
+    html[lang="fr"] .evamats-header__nav-list { flex-wrap: nowrap !important; gap: 24px !important; align-items: center; }
+    html[lang="fr"] .evamats-header__nav-link { white-space: nowrap !important; }
+  }
+  @media screen and (min-width: 990px) and (max-width: 1400px) {
+    html[lang="fr"] .evamats-header__nav-list { gap: 12px !important; }
+    html[lang="fr"] .evamats-header__nav-link { font-size: 14px !important; }
+  }
 </style>
 {%- comment -%}
   EvaMats header body — desktop + mobile bar.
