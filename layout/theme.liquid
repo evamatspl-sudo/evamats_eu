@@ -583,7 +583,7 @@
       <script src="{{ 'index.js' | asset_url }}" defer></script>
     {% endif %}
     {%- comment -%} Header vehicle dropdown is global — load filter JS on every page. {%- endcomment -%}
-    <script src="{{ 'search_models_localized_20260831.js' | asset_url }}" defer></script>
+    <script src="{{ 'search_models.js' | asset_url }}" defer></script>
 
     {%- liquid
       assign load_product_config = false
@@ -695,5 +695,46 @@
     })();
    </script>
    <!-- End Bitrix chat -->
+  
+    {% if request.locale.iso_code == 'de' %}
+      <script>
+        // EVAMATS_DE_SEARCH_STATUS_INLINE_20260831
+        document.addEventListener('DOMContentLoaded', function () {
+          function restyleLoading(root) {
+            root.querySelectorAll('.brand-select-loading').forEach(function (node) {
+              node.textContent = 'Suche…';
+              node.style.cssText = 'box-sizing:border-box;width:100%;padding:14px 18px;color:#667085;font-size:16px;font-style:italic;line-height:1.35;text-align:center;pointer-events:none';
+            });
+          }
+          function renderEmpty(container) {
+            var input = container.querySelector('.brand-input');
+            var options = container.querySelector('.brand-select-options');
+            if (!input || !options) return;
+            var value = input.value.trim();
+            var items = Array.from(options.children).filter(function (node) { return !node.classList.contains('brand-select-loading') && !node.classList.contains('brand-select-status'); });
+            var found = items.some(function (node) { return node.style.display !== 'none'; });
+            var status = options.querySelector('.brand-select-status');
+            if (!value || found) {
+              if (status) status.remove();
+              return;
+            }
+            if (!status) {
+              status = document.createElement('div');
+              status.className = 'brand-select-status';
+              status.setAttribute('role', 'status');
+              options.appendChild(status);
+            }
+            status.textContent = 'Keine Ergebnisse gefunden';
+            status.style.cssText = 'box-sizing:border-box;width:100%;padding:14px 18px;color:#8a8f98;font-size:16px;font-style:italic;line-height:1.35;text-align:center;pointer-events:none';
+          }
+          document.querySelectorAll('.filter-container-json').forEach(function (container) {
+            var input = container.querySelector('.brand-input');
+            if (input) input.addEventListener('input', function () { setTimeout(function () { renderEmpty(container); }, 0); });
+            restyleLoading(container);
+            new MutationObserver(function () { restyleLoading(container); }).observe(container, { childList: true, subtree: true });
+          });
+        });
+      </script>
+    {% endif %}
   </body>
 </html>
