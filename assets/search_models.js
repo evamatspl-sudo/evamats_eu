@@ -5,6 +5,16 @@
     // Catalog-wide collections that must show an empty vehicle filter (no brand/model preselected).
     const EMPTY_FILTER_HANDLES = ['all', 'all-car-mats'];
     const brandsJsonPromises = window.__evamatsAllBrandsJsonPromises || (window.__evamatsAllBrandsJsonPromises = {});
+    // EVAMATS_SEARCH_STATUS_COPY_20260831
+    const searchStatusCopy = {
+        en: { searching: 'Searching…', empty: 'No results found' },
+        cs: { searching: 'Vyhledávám…', empty: 'Nic nebylo nalezeno' },
+        de: { searching: 'Suche…', empty: 'Keine Ergebnisse gefunden' },
+        lv: { searching: 'Meklē…', empty: 'Nekas nav atrasts' },
+        fr: { searching: 'Recherche…', empty: 'Aucun résultat trouvé' }
+    };
+    const searchLocale = String(document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const searchCopy = searchStatusCopy[searchLocale] || searchStatusCopy.en;
 
     if (!filterContainers.length) {
         return;
@@ -312,7 +322,7 @@
                 const loading = document.createElement('div');
                 loading.className = 'brand-select-loading';
                 loading.setAttribute('aria-busy', 'true');
-                loading.textContent = '…';
+                loading.textContent = searchCopy.searching;
                 brandSelectOptions.appendChild(loading);
                 return;
             }
@@ -793,39 +803,64 @@
         container.querySelector('.model-input').addEventListener('input', () => filterSelectOptions('.model-input', '.model-select-options'));
         container.querySelector('.years-input').addEventListener('input', () => filterSelectOptions('.years-input', '.years-select-options'));
 
+        function renderOptionsEmptyState(optionsRoot, shouldShow) {
+            if (!optionsRoot) return;
+            let state = optionsRoot.querySelector('.brand-select-status');
+            if (!shouldShow) {
+                if (state) state.remove();
+                return;
+            }
+            if (!state) {
+                state = document.createElement('div');
+                state.className = 'brand-select-status';
+                state.setAttribute('role', 'status');
+                optionsRoot.appendChild(state);
+            }
+            state.textContent = searchCopy.empty;
+            state.style.display = '';
+        }
+
         function filterSelectOptions(inputClass, optionsClass) {
             const input = container.querySelector(inputClass);
-            const divs = container.querySelector(optionsClass).getElementsByTagName('div');
+            const optionsRoot = container.querySelector(optionsClass);
+            const divs = Array.from(optionsRoot.children).filter((div) => !div.classList.contains('brand-select-status') && !div.classList.contains('brand-select-loading'));
 
             if (inputClass === '.years-input') {
                 const val = input.value.trim();
                 if (!val) {
-                    for (const div of divs) {
-                        div.style.display = '';
-                    }
+                    for (const div of divs) div.style.display = '';
+                    renderOptionsEmptyState(optionsRoot, false);
                     return;
                 }
                 const year = parseInt(val, 10);
                 if (isNaN(year)) {
-                    for (const div of divs) {
-                        div.style.display = 'none';
-                    }
+                    for (const div of divs) div.style.display = 'none';
+                    renderOptionsEmptyState(optionsRoot, true);
                     return;
                 }
+                let found = false;
                 for (const div of divs) {
                     const txt = (div.dataset.years || div.textContent || '').trim();
-                    const r = parseYearRangeForVehicleFilter(txt);
-                    div.style.display = r && year >= r.start && year <= r.end ? '' : 'none';
+                    const range = parseYearRangeForVehicleFilter(txt);
+                    const visible = Boolean(range && year >= range.start && year <= range.end);
+                    div.style.display = visible ? '' : 'none';
+                    found = found || visible;
                 }
+                renderOptionsEmptyState(optionsRoot, !found);
                 return;
             }
 
-            let filter = input.value.toLowerCase().replace(/s/g, '[sš]');
+            const regexSpecials = new Set([92, 94, 36, 46, 42, 43, 63, 40, 41, 91, 93, 123, 125, 124]);
+            const escaped = Array.from(input.value.toLowerCase(), (char) => regexSpecials.has(char.charCodeAt(0)) ? String.fromCharCode(92) + char : char).join('').replace(/s/g, '[sš]');
+            const regex = new RegExp(escaped, 'i');
+            let found = false;
             for (const div of divs) {
                 const txtValue = ((div.textContent || div.innerText) || '').trim();
-                const regex = new RegExp(filter, 'i');
-                div.style.display = regex.test(txtValue) ? '' : 'none';
+                const visible = regex.test(txtValue);
+                div.style.display = visible ? '' : 'none';
+                found = found || visible;
             }
+            renderOptionsEmptyState(optionsRoot, Boolean(input.value.trim()) && !found);
             if (inputClass === '.brand-input' && input.value.trim() === '') {
                 container.querySelector('.model-input').setAttribute('disabled', 'disabled');
             }
