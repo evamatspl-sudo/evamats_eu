@@ -76,21 +76,8 @@
             if (full) {
                 slide = slider.slides[slider.activeIndex];
             } else {
-                var containerRect = slider.el.getBoundingClientRect();
-                var midX = containerRect.left + containerRect.width / 2;
-                var bestDist = Infinity;
-                slider.slides.forEach(function (candidate) {
-                    if (candidate.classList.contains('swiper-slide-duplicate-invisible')) return;
-                    var rect = candidate.getBoundingClientRect();
-                    if (rect.width < 1) return;
-                    var centerX = rect.left + rect.width / 2;
-                    var dist = Math.abs(centerX - midX);
-                    if (dist < bestDist) {
-                        bestDist = dist;
-                        slide = candidate;
-                    }
-                });
-                if (!slide) slide = slider.slides[slider.activeIndex];
+                // Keep playback attached to Swiper's centered active slide.
+                slide = slider.slides[slider.activeIndex];
             }
             if (!slide) return;
 

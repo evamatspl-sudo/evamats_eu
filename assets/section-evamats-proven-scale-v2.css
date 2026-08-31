@@ -272,3 +272,6 @@
     letter-spacing: 0;
   }
 }
+
+/* EVAMATS locale-safe proof cards 2026-08-31 */
+.evamats-proven-scale-v2__intro,.evamats-proven-scale-v2__stat-label{overflow-wrap:anywhere}.evamats-proven-scale-v2__stat{min-height:154px}.evamats-proven-scale-v2__stat-label{display:block;max-width:100%}@media screen and (max-width:1199px){.evamats-proven-scale-v2__stat{min-height:132px}}@media screen and (max-width:749px){.evamats-proven-scale-v2__stat{min-height:0}.evamats-proven-scale-v2__stat-label{line-height:1.25}}

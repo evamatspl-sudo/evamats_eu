@@ -104,7 +104,7 @@
                 <video
                   data-src="{{ block.settings.video.sources[1].url }}"
                   {% if poster_url %}
-                    data-poster="{{ poster_url | image_url: width: 320 }}"
+                    poster="{{ poster_url | image_url: width: 640 }}"
                   {% endif %}
                   loop
                   muted
@@ -129,8 +129,10 @@
             <div class="swiper-wrapper">
                 {% for block in section.blocks %}
                     <div class="video_reviews__item swiper-slide">
+            {%- assign poster_url = block.settings.cover_image | default: block.settings.video.preview_image -%}
             <video
               data-src="{{ block.settings.video.sources[1].url }}"
+              {% if poster_url %}poster="{{ poster_url | image_url: width: 900 }}"{% endif %}
               controls
               loop
               playsinline
