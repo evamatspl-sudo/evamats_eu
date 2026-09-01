@@ -481,7 +481,7 @@
         "title": "Máte účet?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Přihlaste se</a>, abyste si urychlili proces pokladny."
       },
-      "progress_text_order_value": "Vaše auto si zaslouží víc! Přidejte koberce za {{value}} a získejte dopravu zdarma!",
+      "progress_text_order_value": "Přidejte produkty ještě za {{ value }} a získejte dopravu zdarma.",
       "progress_text_discount": "Vaše auto si zaslouží víc! Přidejte koberce za {{ value }} a získejte slevu {{ nextDiscount }}!",
       "reservation_html": "Z důvodu vysoké poptávky a přetížení výroby jsme pro vás rezervovali místo, abychom vaši objednávku vyřídili rychleji. Rezervace platí následujících <span class=\"cart__time\"><span id=\"countdown-timer\"></span> minut.</span>",
       "reservation_button": "Prodlužte svou rezervaci",

@@ -86,63 +86,6 @@
   </div>
 
   <script>
-    window.initEvamatsCartReservationTimer = function () {
-      var countdownElement = document.getElementById('countdown-timer');
-      var extendButton = document.getElementById('extend-button');
-      if (!countdownElement) return;
-
-      if (window.__evamatsCartTimerInterval) {
-        clearInterval(window.__evamatsCartTimerInterval);
-        window.__evamatsCartTimerInterval = null;
-      }
-
-      var reservationDuration = 10 * 60;
-      var remainingTime;
-
-      if (localStorage.getItem('remainingTime')) {
-        remainingTime = parseInt(localStorage.getItem('remainingTime'), 10);
-      } else {
-        remainingTime = reservationDuration;
-        localStorage.setItem('remainingTime', remainingTime);
-      }
-
-      function updateCountdown() {
-        var minutes = Math.floor(remainingTime / 60);
-        var seconds = remainingTime % 60;
-        countdownElement.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-
-        if (remainingTime > 0) {
-          remainingTime--;
-          localStorage.setItem('remainingTime', remainingTime);
-        } else {
-          clearInterval(window.__evamatsCartTimerInterval);
-          window.__evamatsCartTimerInterval = null;
-          countdownElement.textContent = '00:00';
-          if (extendButton) extendButton.style.display = 'inline-block';
-          localStorage.removeItem('remainingTime');
-        }
-      }
-
-      function startTimer(duration) {
-        remainingTime = duration;
-        localStorage.setItem('remainingTime', remainingTime);
-        updateCountdown();
-        if (extendButton) extendButton.style.display = 'none';
-        window.__evamatsCartTimerInterval = setInterval(updateCountdown, 1000);
-      }
-
-      if (extendButton && !extendButton.dataset.bound) {
-        extendButton.dataset.bound = 'true';
-        extendButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          startTimer(reservationDuration);
-        });
-      }
-
-      updateCountdown();
-      window.__evamatsCartTimerInterval = setInterval(updateCountdown, 1000);
-    };
-
     document.addEventListener('click', function (event) {
       var clearBtn = event.target.closest('[data-clear-cart]');
       if (!clearBtn) return;
@@ -158,7 +101,6 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
-      window.initEvamatsCartReservationTimer();
       if (window.initEvamatsCartSidebarControls) {
         window.initEvamatsCartSidebarControls();
       }

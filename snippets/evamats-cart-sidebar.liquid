@@ -16,19 +16,6 @@
     </button>
   </div>
 
-  <div class="evamats-cart-sidebar__reservation">
-    <span class="evamats-cart-sidebar__reservation-icon" aria-hidden="true">
-      {%- render 'evamats-cart-reservation-lock-icon' -%}
-    </span>
-    <div class="evamats-cart-sidebar__reservation-body">
-      <p class="evamats-cart-sidebar__reservation-text">{{ 'sections.cart.reservation_sidebar_text' | t }}</p>
-      <p class="evamats-cart-sidebar__timer" id="countdown-timer" aria-live="polite">10:00</p>
-      <button id="extend-button" class="evamats-cart-sidebar__extend button" type="button" style="display:none;">
-        {{ 'sections.cart.reservation_button' | t }}
-      </button>
-    </div>
-  </div>
-
   <div class="evamats-cart-sidebar__totals">
     <span class="evamats-cart-sidebar__total-label">{{ 'sections.cart.headings.total' | t }}</span>
     <span class="evamats-cart-sidebar__total-value bcpo-cart-original-total">{{ cart.total_price | money_with_currency }}</span>

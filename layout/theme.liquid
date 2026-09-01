@@ -46,9 +46,6 @@
     {%- endif -%}
 
     <title>
-    {% if canonical_url == 'https://carvionauto.cz/' %}
-      Český výrobce autokoberců - Carvion Auto
-    {% else %}
       {{ page_title }}
       {%- if current_tags %}
         &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -56,7 +53,6 @@
         &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %}
         &ndash; {{ shop.name }}{% endunless -%}
-        {% endif %}
     </title>
     <link rel="stylesheet" href="{{"swiper-bundle.min.css" | asset_url}}" />
     {%- if template.name == 'cart' or settings.cart_type == 'drawer' -%}
