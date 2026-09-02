@@ -101,7 +101,7 @@
             "show_dynamic_checkout": false,
             "config_delivery_icon": "shopify:\/\/shop_images\/Group_1948755301.webp",
             "config_delivery_line_1": "Made-to-order product.",
-            "config_delivery_line_2": "Odhadovaná doba výroby: 14 dní.",
+            "config_delivery_line_2": "Estimated production time: 14 days.",
             "config_delivery_line_1_accessory": "Fast delivery",
             "config_delivery_line_2_accessory": "Goods are usually dispatched within 2–5 working days.",
             "config_trusted_seal": "shopify:\/\/shop_images\/6f13a48de7783505c9cd_1.svg",
@@ -141,7 +141,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Sdílet"
+            "share_label": "Share"
           }
         }
       },
@@ -193,7 +193,7 @@
         "tab_DcjwUJ": {
           "type": "tab",
           "settings": {
-            "title": "O produktu",
+            "title": "About the product",
             "id": "description",
             "html": "",
             "hide_on_accessories": false
@@ -202,7 +202,7 @@
         "tab_RqeNAL": {
           "type": "tab",
           "settings": {
-            "title": "Specifikace",
+            "title": "Technical specifications",
             "id": "tech",
             "html": "<p class=\"evamats-tab-dup-title\"><strong>🔧 Technical specification<\/strong><\/p>\n<ul>\n  <li>\n<strong>Material:<\/strong> High-quality EVA foam (ethylene-vinyl acetate)<\/li>\n  <li>\n<strong>Mat thickness:<\/strong> About 10 mm — the ideal balance of flexibility and durability<\/li>\n  <li>\n<strong>Cell structure:<\/strong> Diamond (7 mm) \/ Honeycomb (8 mm) - choose when ordering<\/li>\n  <li>\n<strong>Set weight:<\/strong> From 1.2 to 2.5 kg (depending on the version)<\/li>\n  <li>\n<strong>Number of pieces:<\/strong> 2–6 pieces (full set: front + rear + boot optional)<\/li>\n  <li>\n<strong>Floor coverage:<\/strong> Up to 95% of the car floor area<\/li>\n  <li>\n<strong>Seasons:<\/strong> All year round — resistant to temperatures from −50 °C to +50 °C<\/li>\n  <li>\n<strong>Water resistance:<\/strong> 100% — does not absorb liquids, does not stain<\/li>\n  <li>\n<strong>Fastening:<\/strong> Plastic clips (original) \/ hook-and-loop — compatible with factory fixing points<\/li>\n  <li>\n<strong>Edging:<\/strong> 14 colours to choose from<\/li>\n  <li>\n<strong>Other options:<\/strong> Reinforced heel pads<\/li>\n<\/ul>",
             "hide_on_accessories": false
@@ -220,7 +220,7 @@
         "tab_hiraMx": {
           "type": "tab",
           "settings": {
-            "title": "Doprava a platba",
+            "title": "Shipping and payment",
             "id": "delivery",
             "html": "<p class=\"evamats-tab-dup-title\"><strong>📦 Shipping and payment<\/strong><\/p>\n\n<p>We make every EVA mat to order from scratch, with attention to detail and a perfect fit to your specific car model.<\/p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 The current standard order processing time is 14 working days.<\/p>\n\n<p>Choose how fast your order is made<\/p>\n\n<p>Every set of mats is made individually, so you can choose how quickly your order enters production.<\/p>\n\n<p>Available production options:<\/p>\n\n<p>🟢 Standard — 14 working days<br>\nProcessed in the standard production queue.<\/p>\n\n<p>🟠 Express — 7 working days<br>\nHigher priority in the production queue.<\/p>\n\n<p>As soon as production is finished, the mats are ready to ship.<\/p>\n\n<p>You can select priority production on the \"Shipping and payment\" page when choosing the delivery method. Express is available for an extra charge.<\/p>\n\n<p>🚗 We do our utmost to process orders as fast as possible. In busy periods — seasonal peaks, promotions or holidays — processing may take longer.<\/p>\n\n<p><strong>Delivery methods:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost courier (online payment or cash on delivery)<\/li>\n    <li>InPost parcel locker (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD courier (online payment or cash on delivery)<\/li>\n    <li>DPD pickup point (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS courier (online payment or cash on delivery)<\/li>\n    <li>GLS Parcel Shop (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<p><strong>Online payments:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\" style=\"display: flex; gap: 10px; flex-wrap: wrap;\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/image_6.png\" alt=\"GoPay\" style=\"height:60px;width:auto;object-fit:contain;\">\n\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n<\/div>\n\n<p><strong>Secure shopping:<\/strong><\/p>\n<ul>\n  <li>Encrypted payments<\/li>\n  <li>Reliable logistics<\/li>\n  <li>Ongoing customer support<\/li>\n<\/ul>\n\n<p>Thank you for choosing a product made in Poland with a focus on quality and function. The driver's satisfaction is our highest priority.<\/p>",
             "hide_on_accessories": false
@@ -235,9 +235,9 @@
       ],
       "name": "Karty produktu",
       "settings": {
-        "about_heading_before": "Originální",
+        "about_heading_before": "Original",
         "about_heading_brand": "Carvion",
-        "about_heading_after": "autokoberce - moderní ochrana interiéru",
+        "about_heading_after": "car mats — modern interior protection",
         "about_intro": "<p>Our EVA car mats are a new generation of car accessories — light, durable and water-resistant. Thanks to their unique cell structure they trap dirt (mud, sand, water) deep in the material, so the surface stays dry and clean.<\/p><p>Every set is made to measure for a specific car model and matched precisely to the shape of the floor. You can choose the colour, the cell pattern and the edging so they suit your car interior perfectly.<\/p>",
         "about_features_heading": "What makes our car mats stand out",
         "about_feature_1_text": "100% waterproof — nothing leaks through",
@@ -250,11 +250,11 @@
         "about_feature_4_image": "shopify:\/\/shop_images\/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
         "about_feature_5_text": "Safe for health and the environment — non-toxic and recyclable",
         "about_feature_5_image": "shopify:\/\/shop_images\/Frame_1632526601.webp",
-        "about_confidence_heading": "Nakupujte s jistotou",
+        "about_confidence_heading": "Shop with confidence",
         "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
         "about_confidence_2_text": "Security — encrypted payments, verified couriers",
         "about_confidence_3_text": "Made in Poland — local production, fast delivery",
-        "gift_card_cta_label": "Koupit kartu",
+        "gift_card_cta_label": "Buy a gift card",
         "gift_card_item_1_description": "A set of dedicated front mats without edges, complete with an EVA material heel pad. The perfect combination of functionality and elegance! 🏎️",
         "gift_card_item_2_description": "Front and rear mats without edges, ensuring comfort and aesthetics in every detail. 🌟 (Front mats with edges are also available for this price!)",
         "gift_card_item_3_description": "Front and rear mats without edges, enriched with additional accessories for full protection and style. 💼 (Front mats with edges are also available for this price!)",
@@ -666,7 +666,7 @@
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "Mohlo by se vám také líbit",
+        "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -694,7 +694,7 @@
         "heading": "More products",
         "products_to_show": 12,
         "card_button_label": "View product",
-        "mobile_button_label": "Vybrat",
+        "mobile_button_label": "Choose",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
