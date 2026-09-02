@@ -43,6 +43,8 @@
           assign heading = 'Modelové řady ' | append: brand_name
         when 'de'
           assign heading = brand_name | append: ' Modellreihen'
+        when 'fr'
+          assign heading = 'Gamme de modèles ' | append: brand_name
         else
           assign heading = brand_name | append: ' model ranges'
       endcase
@@ -54,6 +56,8 @@
           assign heading = 'Weitere ' | append: brand_name | append: ' Modelle'
         when 'lv'
           assign heading = 'Citi ' | append: brand_name | append: ' modeļi'
+        when 'fr'
+          assign heading = 'Autres modèles ' | append: brand_name
         else
           assign heading = 'Other ' | append: brand_name | append: ' models'
       endcase
@@ -147,6 +151,9 @@
               коллекций вне метаобъектов их ещё носит.
             endcomment
             assign card_title = card_title | remove: 'EVA Car Mats for '
+            assign card_title = card_title | remove: 'Tapis 3D EVA pour '
+            assign card_title = card_title | remove: 'Tapis de voiture en EVA pour '
+            assign card_title = card_title | remove: 'Tapis de voiture EVA pour '
             assign card_title = card_title | remove: 'EVA-Autofußmatten für '
             assign card_title = card_title | remove: 'Car floor mats EVA for '
             assign card_title = card_title | remove: 'Car mats EVA for '

@@ -15,6 +15,7 @@
   assign bc_model_label = blank
   assign bc_model_url = blank
   assign bc_current_label = current_label
+  assign bc_aria_label = 'Breadcrumb'
 
   if auto_collection and collection != blank
     assign collection_brand_group = collection.metafields.custom.brand_group.value
@@ -48,7 +49,7 @@
         assign bc_brand_url = collection_brand_main.url
     assign bc_current_label = collection.title
     assign bc_current_label = bc_current_label | remove: 'EVA Car Mats for '
-    assign bc_current_label = bc_current_label | remove: 'EVA-Autofußmatten für '
+    assign bc_current_label = bc_current_label | remove: 'Tapis 3D EVA pour ' | remove: 'Tapis de voiture en EVA pour ' | remove: 'Tapis de voiture EVA pour ' | remove: 'EVA-Autofußmatten für '
     assign bc_current_label = bc_current_label | remove: 'Car mats EVA for '
     assign bc_current_label = bc_current_label | remove: 'Car floor mats EVA for '
     assign bc_current_label = bc_current_label | remove: 'Autokoberce EVA pro '
@@ -86,6 +87,7 @@
     assign bc_parent_label = 'Carvion'
     assign bc_parent_url = routes.root_url
     assign bc_current_label = product.title
+    assign bc_current_label = bc_current_label | remove: 'Tapis 3D EVA pour ' | remove: 'Tapis de voiture en EVA pour ' | remove: 'Tapis de voiture EVA pour ' | strip
     assign breadcrumb_model_collection = blank
     assign breadcrumb_brand_group = blank
     assign breadcrumb_category_collection = blank
@@ -161,7 +163,7 @@
       assign breadcrumb_brand_collection = breadcrumb_brand_group.main_collection.value
       assign bc_brand_url = breadcrumb_brand_collection.url
       assign bc_model_label = breadcrumb_model_collection.title
-      assign bc_model_label = bc_model_label | remove: 'EVA Car Mats for ' | remove: 'EVA-Autofußmatten für ' | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
+      assign bc_model_label = bc_model_label | remove: 'EVA Car Mats for ' | remove: 'Tapis 3D EVA pour ' | remove: 'Tapis de voiture en EVA pour ' | remove: 'Tapis de voiture EVA pour ' | remove: 'EVA-Autofußmatten für ' | remove: 'Car mats EVA for ' | remove: 'Car floor mats EVA for ' | remove: 'Autokoberce EVA pro ' | remove: 'Autokoberce EVA ' | remove: 'EVA-Automatten für ' | remove: 'Automatten EVA für ' | strip
       assign bc_model_url = breadcrumb_model_collection.url
     else
       case breadcrumb_kind
@@ -276,10 +278,33 @@
       endif
     endif
   endif
+
+  if request.locale.iso_code == 'fr'
+    assign bc_aria_label = 'Fil d’Ariane'
+    if bc_catalog_label == 'Catalog'
+      assign bc_catalog_label = 'Catalogue'
+    elsif bc_catalog_label == 'Accessories'
+      assign bc_catalog_label = 'Accessoires'
+    elsif bc_catalog_label == 'EVA for home'
+      assign bc_catalog_label = 'EVA pour la maison'
+    elsif bc_catalog_label == 'For pets'
+      assign bc_catalog_label = 'Pour les animaux'
+    endif
+    case breadcrumb_kind
+      when 'organizers'
+        assign bc_middle_label = 'Organiseurs de coffre'
+      when 'heel-pads'
+        assign bc_middle_label = 'Renforts de talon'
+      when 'seat-covers'
+        assign bc_middle_label = 'Housses de siège et coussins'
+      when 'accessories'
+        assign bc_middle_label = 'Accessoires automobiles'
+    endcase
+  endif
 -%}
 
 {%- if bc_current_label != blank -%}
-  <nav class="evamats-breadcrumbs{% if class != blank %} {{ class }}{% endif %}" aria-label="Breadcrumb">
+  <nav class="evamats-breadcrumbs{% if class != blank %} {{ class }}{% endif %}" aria-label="{{ bc_aria_label | escape }}">
     <ol class="evamats-breadcrumbs__list">
       {%- if bc_parent_label != blank -%}
         <li class="evamats-breadcrumbs__item"><a class="evamats-breadcrumbs__link" href="{{ bc_parent_url }}">{{ bc_parent_label | escape }}</a></li>

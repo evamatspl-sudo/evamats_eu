@@ -4,7 +4,11 @@
 <aside class="evamats-cart-sidebar" aria-label="{{ 'sections.cart.caption' | t }}">
   <div class="evamats-cart-sidebar__head">
     <p class="evamats-cart-sidebar__count">
-      {{ 'sections.cart.items_in_cart_html' | t: count: cart.item_count }}
+      {%- if request.locale.iso_code == 'fr' -%}
+        {{ cart.item_count }} {% if cart.item_count == 1 %}article{% else %}articles{% endif %} dans le panier
+      {%- else -%}
+        {{ 'sections.cart.items_in_cart_html' | t: count: cart.item_count }}
+      {%- endif -%}
     </p>
     <button type="button" class="evamats-cart-sidebar__clear" data-clear-cart>
       <span class="evamats-cart-sidebar__clear-icon" aria-hidden="true">

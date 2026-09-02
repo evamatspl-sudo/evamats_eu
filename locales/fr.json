@@ -68,27 +68,80 @@
       "change_vehicle": "Changer de véhicule",
       "gallery_body_type": "Choisissez le type de carrosserie",
       "gallery_error_message": "Aucune image ne correspond à votre sélection.",
-      "gallery_divider_text": "Découvrez encore plus de réalisations"
+      "gallery_divider_text": "Découvrez encore plus de réalisations",
+      "drops_with_surcharge": "Gouttes (+25 €)",
+      "mat_pattern_drops": "Structure alvéolée en gouttes (+25 €)",
+      "drops_property_value": "Gouttes",
+      "preview_badge": "Aperçu",
+      "preview_hide": "Masquer",
+      "preview_zoom": "Ouvrir l’aperçu en plein écran",
+      "preview_enlarge": "Agrandir l’aperçu",
+      "preview_shrink": "Réduire l’aperçu",
+      "order_notes_title": "Remarques (décrivez les dimensions ou la forme du plancher, ou joignez une photo de l’habitacle afin de nous aider à obtenir un ajustement parfait.)",
+      "vehicle_text": "Véhicule (indiquez le type de véhicule, par exemple bateau à moteur, ULM, quad, chariot élévateur…)",
+      "buy_now": "Acheter maintenant",
+      "gallery_mats_type": "Choisissez le type de tapis",
+      "continue": "Continuer",
+      "steps_progress": "{{ current }} sur {{ total }} sélectionnés",
+      "step_not_selected": "Non sélectionné",
+      "step_tap_to_select": "Appuyez pour sélectionner",
+      "custom_order_title": "Commander des tapis pour un véhicule atypique",
+      "custom_order_subtitle": "Bateau, avion, quad ? Commandez ici des tapis sur mesure",
+      "super_offer": "Offre exceptionnelle",
+      "read_more": "Que sont les renforts de talon ?",
+      "read_less": "Réduire",
+      "select_shape_and_colors": "Choisissez la forme et les couleurs",
+      "select_year": "Choisissez l’année",
+      "select_year_and_body_type": "Choisissez l’année et le type de carrosserie",
+      "select_year_brand_model_body_type": "Choisissez l’année, la marque, le modèle et le type de carrosserie",
+      "year_label": "Année",
+      "body_types_available_badge": "Tous les types de carrosserie indiqués sont disponibles",
+      "select_brand_model_and_body_type": "Choisissez la marque, le modèle et le type de carrosserie",
+      "select_heels": "Renforts de talon (facultatif)",
+      "select_heels_optional": "(facultatif)",
+      "select_size": "Choisissez la taille",
+      "select_mats_type_and_set": "Choisissez le type de tapis et la composition",
+      "total": "Total",
+      "checkout_delivery_line_1": "Produit fabriqué à la demande.",
+      "checkout_delivery_line_2": "Délai de fabrication estimé : 14 jours.",
+      "checkout_delivery_accessory_line_1": "Expédition rapide",
+      "checkout_delivery_accessory_line_2": "Les articles sont généralement expédiés sous 2 à 5 jours ouvrés.",
+      "checkout_delivery_individual_line_1": "Commande sur mesure",
+      "checkout_delivery_individual_line_2": "Délai de livraison estimé : 14 jours.",
+      "checkout_trusted_line_1": "Commandez en toute confiance",
+      "checkout_trusted_line_2": "La protection de l’acheteur est disponible aux étapes suivantes",
+      "body_type": "Type de carrosserie",
+      "label_delivery": "Dès 100 € d’achat : livraison gratuite !",
+      "label_trunk": "Attention — tapis de coffre",
+      "right_hand_message_short": "🚗 Véhicule avec conduite à droite ?",
+      "right_hand_message_long": "🚗 Véhicule avec conduite à droite ? Lisez ceci avant de commander ! Par défaut, nos tapis sont conçus pour les véhicules avec conduite à gauche. Si le volant de votre véhicule se trouve à droite (Royaume-Uni, Japon ou Australie, par exemple), contactez-nous d’abord : nous vérifierons si un ensemble sur mesure est disponible pour votre modèle.",
+      "sold_out": "Épuisé",
+      "color": "Couleur",
+      "mount": "Fixation",
+      "delivery_show_more": "Afficher plus",
+      "delivery_show_less": "Masquer"
     },
     "colors": {
-      "black": "Black",
-      "brown": "Brown",
-      "grey": "Dark Grey",
-      "light_grey": "Light Grey",
-      "dark_blue": "Dark Blue",
-      "blue": "Blue",
-      "green": "Dark Green",
-      "red": "Red",
-      "maroon": "Maroon",
-      "light_beige": "Light Beige",
+      "black": "Noir",
+      "brown": "Marron",
+      "grey": "Gris foncé",
+      "light_grey": "Gris clair",
+      "dark_blue": "Bleu foncé",
+      "blue": "Bleu",
+      "green": "Vert foncé",
+      "red": "Rouge",
+      "maroon": "Bordeaux",
+      "light_beige": "Beige clair",
       "beige": "Beige",
-      "purple": "Purple",
-      "lime": "Lime",
-      "yellow": "Yellow",
+      "purple": "Violet",
+      "lime": "Vert citron",
+      "yellow": "Jaune",
       "orange": "Orange",
-      "ivory": "Ivory",
-      "pink": "Pink",
-      "white": "White"
+      "ivory": "Ivoire",
+      "pink": "Rose",
+      "white": "Blanc",
+      "gray": "Gris foncé",
+      "light_gray": "Gris clair"
     },
     "password_page": {
       "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
@@ -132,7 +185,9 @@
     "cart": {
       "view": "Afficher mon panier ({{ count }})",
       "item_added": "Article ajouté au panier",
-      "view_empty_cart": "Afficher mon panier"
+      "view_empty_cart": "Afficher mon panier",
+      "opportunity": "Ne manquez pas cette occasion !",
+      "to_checkout": "Finaliser l’achat"
     },
     "share": {
       "copy_to_clipboard": "Copier le lien",
@@ -168,7 +223,8 @@
     "total_reviews": "total des critiques",
     "star_reviews_info": "{{ rating_value }} sur {{ rating_max }} étoiles",
     "collapsible_content_title": "Contenu réductible",
-    "complementary_products": "Produits complémentaires"
+    "complementary_products": "Produits complémentaires",
+    "back": "Retour"
   },
   "blogs": {
     "article": {
@@ -259,7 +315,13 @@
       "inventory_out_of_stock": "En rupture de stock",
       "inventory_out_of_stock_continue_selling": "En stock",
       "from": "À partir de",
-      "choose_color_and_mats_set": "Choisir les couleurs et la composition"
+      "choose_color_and_mats_set": "Choisir les couleurs et la composition",
+      "adding_to_cart": "Ajout…",
+      "check_set": "Vérifier l’ensemble",
+      "on_sale_2": "En promotion",
+      "outlet_material_color": "Couleur du tapis",
+      "outlet_trim_color": "Couleur de la bordure",
+      "outlet_cell_shape": "Forme des alvéoles"
     },
     "modal": {
       "label": "Galerie de supports multimédias"
@@ -301,7 +363,11 @@
   "templates": {
     "404": {
       "title": "Page non trouvée",
-      "subtext": "404"
+      "subtext": "404",
+      "heading_line_1": "Cette page est introuvable.",
+      "heading_line_2": "Vous avez peut-être sélectionné le mauvais véhicule.",
+      "home_button": "Accueil",
+      "select_vehicle_button": "Sélectionner un véhicule"
     },
     "search": {
       "no_results": "Aucun résultat trouvé pour « {{ terms }} ». Vérifiez l'orthographe ou utilisez un autre mot ou une autre expression.",
@@ -370,7 +436,9 @@
     "brand_buttons": {
       "back": "Retour",
       "collection_title_prefix": "Tapis de voiture EVA pour ",
-      "all_brands_path": "\/collections\/all-car-mats"
+      "all_brands_path": "\/collections\/all-car-mats",
+      "popular_models_heading": "Modèles populaires",
+      "products_count": "{{ count }} articles"
     },
     "cart": {
       "title": "Votre panier",
@@ -400,10 +468,20 @@
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous<\/a> pour payer plus vite."
       },
       "reservation_html": "En raison de la forte demande et de la surcharge de production, nous avons réservé une place pour vous permettre de traiter votre commande plus rapidement. La réservation est valable pour les <span class=\"cart__time\"><span id=\"countdown-timer\"><\/span> minutes.<\/span> suivantes.",
-      "reservation_button": "Extend your reservation",
+      "reservation_button": "Prolonger la réservation",
       "progress_free_shipping": "Vous avez droit à la livraison gratuite !",
       "progress_text_order_value": "Votre voiture mérite plus ! Ajoutez des tapis pour {{value}} et bénéficiez de la livraison gratuite !",
-      "progress_text_discount": "Votre voiture mérite plus ! Ajoutez des tapis pour {{ value }} et obtenez {{ nextDiscount }} de réduction !"
+      "progress_text_discount": "Votre voiture mérite plus ! Ajoutez des tapis pour {{ value }} et obtenez {{ nextDiscount }} de réduction !",
+      "progress_max_discount": "Remise maximale atteinte !",
+      "cart_upsell_variant_error": "Choisissez une variante du produit ou actualisez la page.",
+      "upsell_eva_note": "Couleur et alvéoles assorties à vos tapis",
+      "upsell_heading": "Vous pourriez aussi avoir besoin de",
+      "upsell_add_to_cart": "Ajouter",
+      "unit_price_each_html": "{{ price }} l’unité",
+      "items_in_cart_html": "{{ count }} articles dans le panier",
+      "clear_cart": "Vider",
+      "restore_item": "Remettre dans le panier",
+      "reservation_sidebar_text": "En raison de la forte demande, nous avons réservé un créneau de traitement pour votre commande."
     },
     "footer": {
       "payment": "Moyens de paiement"
@@ -452,6 +530,13 @@
       "carousel": "Carrousel",
       "announcement": "Annonce",
       "announcement_bar": "Barre d'annonce"
+    },
+    "home_8": {
+      "read_more": "Lire la suite",
+      "read_less": "Réduire"
+    },
+    "evamats_related_products": {
+      "view_product": "Voir le produit"
     }
   },
   "localization": {
@@ -601,5 +686,38 @@
       "send_on": "AAAA-MM-JJ",
       "send_on_label": "Envoyer (facultatif)"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "marketing": {
+        "disclaimer": {
+          "terms_of_service": "Conditions générales"
+        },
+        "sms": {
+          "disclaimer": {
+            "terms_of_service": "Conditions générales"
+          }
+        }
+      },
+      "shop_policies": {
+        "terms_of_service": "Conditions générales",
+        "refund_policy": "Politique de retour et de remboursement"
+      },
+      "contact": {
+        "optional_address2_label": "N° de TVA"
+      }
+    }
+  },
+  "customer_accounts": {
+    "shop_policies": {
+      "terms_of_service": "Conditions générales",
+      "refund_policy": "Politique de retour et de remboursement"
+    }
+  },
+  "gift_card_desc": {
+    "heading": "La carte cadeau Carvion est une manière élégante d’offrir à un proche une totale liberté de choix.",
+    "intro_p1": "La carte cadeau Carvion est une manière élégante d’offrir à un proche une totale liberté de choix. 🎁 Au lieu de risquer une erreur dans les caractéristiques techniques du véhicule, vous permettez au conducteur de configurer lui-même les tapis parfaitement adaptés à sa voiture. Chaque détail compte, du modèle du véhicule à la couleur de la bordure : la carte cadeau garantit ainsi satisfaction et ajustement parfait.",
+    "intro_p2": "Avec Carvion, vous offrez le plaisir de personnaliser l’habitacle tout en associant esthétique et fonctionnalité optimale. 🚗🎨",
+    "financed_title": "Que peut-on acheter avec la carte ?"
   }
 }

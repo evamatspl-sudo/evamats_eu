@@ -42,9 +42,9 @@
             "show_badge": false,
             "info_text": "Up to 25% off is applied automatically at checkout. It depends on the set — see the details here.",
             "info_text_individual": "Up to 25% off custom orders! It depends on the set you choose — see the details here.",
-            "info_html": "<h2>How does the discount work?</h2> <p>The discount is applied automatically at checkout, but only for sets from €60 upwards.</p> <h3>Discount table:</h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Order value</th> <th>Set type</th> <th>Discount</th> </tr> </thead> <tbody> <tr> <td>from €60 to €219</td> <td> – Carvion without edges: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – Carvion 3D with edges: FRONT </td> <td>-20%</td> </tr> <tr> <td>from €220 <br>\nand up</td> <td> – Carvion 3D with edges: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sets for VANS, BUSES, MINIVANS </td> <td>-25%</td> </tr> </tbody> </table> <h3>Examples:</h3> <ul> <li>Without edges FRONT+REAR+TRUNK (141.74 €) → discount <strong>-20%</strong>\n</li> <li>With edges FRONT+REAR (225.33 €) → discount <strong>-25%</strong>\n</li> </ul> <p><strong>You don't have to do anything — the discount appears automatically in the cart!</strong></p>",
-            "info_html_individual": "<h2>How does the discount work?</h2>\n<p>The discount is applied automatically when you submit a custom order, but only for orders from €44 upwards.</p>\n\n<h3>Discount table:</h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Order value</th>\n         <th>Set type</th>\n         <th>Discount</th>\n      </tr>\n   </thead>\n   <tbody>\n      <tr>\n         <td>from €44 to €219</td>\n         <td>\n         – Custom Carvion sets without edges: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Custom Carvion 3D sets with edges: FRONT\n         </td>\n         <td>-20%</td>\n      </tr>\n      <tr>\n         <td>from €220 and up</td>\n         <td>\n         – Custom Carvion 3D sets with edges: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Custom sets for VANS, BUSES, MINIVANS\n         </td>\n         <td>-25%</td>\n      </tr>\n   </tbody>\n</table>\n\n<h3>Examples:</h3>\n<ul>\n   <li>Custom set without edges FRONT+REAR+TRUNK (141.74 €) → discount <strong>-20%</strong>\n</li>\n   <li>Custom set with edges FRONT+REAR (225.33 €) → discount <strong>-25%</strong>\n</li>\n</ul>\n\n<p><strong>The discount is applied automatically once the custom car-mat order is submitted.<br></strong> After you submit the order our consultant will contact you, confirm the details, give the final price and answer any questions about the discount.</p>",
-            "individual_welcome_html": "<p><strong>How does a custom order work?</strong></p>\n<ol>\n<li>Configure your set: enter the vehicle details, choose colours and accessories.</li>\n<li>Pay a deposit: up front you pay only a small deposit (plus any accessories in full).</li>\n<li>Confirm the details: our consultant will call you, confirm everything and pass the order to production.</li>\n<li>Pay the balance: settle the remaining amount by bank transfer in advance or cash on delivery.</li>\n</ol>",
+            "info_html": "<h2>How does the discount work?<\/h2> <p>The discount is applied automatically at checkout, but only for sets from €60 upwards.<\/p> <h3>Discount table:<\/h3> <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\"> <thead> <tr> <th>Order value<\/th> <th>Set type<\/th> <th>Discount<\/th> <\/tr> <\/thead> <tbody> <tr> <td>from €60 to €219<\/td> <td> – Carvion without edges: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br> – Carvion 3D with edges: FRONT <\/td> <td>-20%<\/td> <\/tr> <tr> <td>from €220 <br>\nand up<\/td> <td> – Carvion 3D with edges: FRONT+REAR, FRONT+REAR+TRUNK<br> – Sets for VANS, BUSES, MINIVANS <\/td> <td>-25%<\/td> <\/tr> <\/tbody> <\/table> <h3>Examples:<\/h3> <ul> <li>Without edges FRONT+REAR+TRUNK (141.74 €) → discount <strong>-20%<\/strong>\n<\/li> <li>With edges FRONT+REAR (225.33 €) → discount <strong>-25%<\/strong>\n<\/li> <\/ul> <p><strong>You don't have to do anything — the discount appears automatically in the cart!<\/strong><\/p>",
+            "info_html_individual": "<h2>How does the discount work?<\/h2>\n<p>The discount is applied automatically when you submit a custom order, but only for orders from €44 upwards.<\/p>\n\n<h3>Discount table:<\/h3>\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n   <thead>\n      <tr>\n         <th>Order value<\/th>\n         <th>Set type<\/th>\n         <th>Discount<\/th>\n      <\/tr>\n   <\/thead>\n   <tbody>\n      <tr>\n         <td>from €44 to €219<\/td>\n         <td>\n         – Custom Carvion sets without edges: FRONT, FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Custom Carvion 3D sets with edges: FRONT\n         <\/td>\n         <td>-20%<\/td>\n      <\/tr>\n      <tr>\n         <td>from €220 and up<\/td>\n         <td>\n         – Custom Carvion 3D sets with edges: FRONT+REAR, FRONT+REAR+TRUNK<br>\n         – Custom sets for VANS, BUSES, MINIVANS\n         <\/td>\n         <td>-25%<\/td>\n      <\/tr>\n   <\/tbody>\n<\/table>\n\n<h3>Examples:<\/h3>\n<ul>\n   <li>Custom set without edges FRONT+REAR+TRUNK (141.74 €) → discount <strong>-20%<\/strong>\n<\/li>\n   <li>Custom set with edges FRONT+REAR (225.33 €) → discount <strong>-25%<\/strong>\n<\/li>\n<\/ul>\n\n<p><strong>The discount is applied automatically once the custom car-mat order is submitted.<br><\/strong> After you submit the order our consultant will contact you, confirm the details, give the final price and answer any questions about the discount.<\/p>",
+            "individual_welcome_html": "<p><strong>How does a custom order work?<\/strong><\/p>\n<ol>\n<li>Configure your set: enter the vehicle details, choose colours and accessories.<\/li>\n<li>Pay a deposit: up front you pay only a small deposit (plus any accessories in full).<\/li>\n<li>Confirm the details: our consultant will call you, confirm everything and pass the order to production.<\/li>\n<li>Pay the balance: settle the remaining amount by bank transfer in advance or cash on delivery.<\/li>\n<\/ol>",
             "auto_open_individual_welcome_popup": true
           }
         },
@@ -99,29 +99,29 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "config_delivery_icon": "shopify://shop_images/Group_1948755301.webp",
+            "config_delivery_icon": "shopify:\/\/shop_images\/Group_1948755301.webp",
             "config_delivery_line_1": "Made-to-order product.",
             "config_delivery_line_2": "Odhadovaná doba výroby: 14 dní.",
             "config_delivery_line_1_accessory": "Fast delivery",
             "config_delivery_line_2_accessory": "Goods are usually dispatched within 2–5 working days.",
-            "config_trusted_seal": "shopify://shop_images/6f13a48de7783505c9cd_1.svg",
+            "config_trusted_seal": "shopify:\/\/shop_images\/6f13a48de7783505c9cd_1.svg",
             "config_trusted_line_1": "",
             "config_trusted_line_2": "",
-            "config_trusted_logo": "shopify://shop_images/Trusted-shops-logo_1.webp"
+            "config_trusted_logo": "shopify:\/\/shop_images\/Trusted-shops-logo_1.webp"
           }
         },
         "custom_liquid_DYEEU9": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<ul class=\"list list-payment\" role=\"list\" style='justify-content:center'>\n              {% assign payment_gateways = \"visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik\" | split: \",\" %}\n\n              {%- for type in payment_gateways -%}\n                <li class=\"list-payment__item\">\n                  {% assign typeSvg = type | append: '.svg' %}\n                  <img src=\"{{ typeSvg | file_url }}\" alt=\"\" loading='lazy'>                  \n                </li>\n              {%- endfor -%}\n            </ul>"
+            "custom_liquid": "<ul class=\"list list-payment\" role=\"list\" style='justify-content:center'>\n              {% assign payment_gateways = \"visa,mc,ae,discover,jcb,dc,apay,gpay,p24,blik\" | split: \",\" %}\n\n              {%- for type in payment_gateways -%}\n                <li class=\"list-payment__item\">\n                  {% assign typeSvg = type | append: '.svg' %}\n                  <img src=\"{{ typeSvg | file_url }}\" alt=\"\" loading='lazy'>                  \n                <\/li>\n              {%- endfor -%}\n            <\/ul>"
           }
         },
         "custom_liquid_NWr7hx": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<p style=\"font-size: 14px; color: #999; font-weight: bold; text-align: center; line-height: 1.4;\">\n  {% if request.locale.iso_code == 'cs' %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% elsif request.locale.iso_code == 'de' %}\n    Produkt auf Bestellung.<br>\n    Voraussichtliche Produktionszeit: 14 Tage.\n  {% else %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% endif %}\n</p>"
+            "custom_liquid": "<p style=\"font-size: 14px; color: #999; font-weight: bold; text-align: center; line-height: 1.4;\">\n  {% if request.locale.iso_code == 'cs' %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% elsif request.locale.iso_code == 'de' %}\n    Produkt auf Bestellung.<br>\n    Voraussichtliche Produktionszeit: 14 Tage.\n  {% else %}\n    Produkt na objednávku.<br>\n    Odhadovaná doba výroby: 14 dní.\n  {% endif %}\n<\/p>"
           }
         },
         "8e40f620-351d-4afc-918e-c1bc9f2744b3": {
@@ -177,11 +177,11 @@
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
-        "check-newsletter": "<p>I agree to the <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a> and the <a href=\"/policies/terms-of-service\" title=\"Terms and Conditions\">Terms and Conditions</a>.</p>",
+        "check-newsletter": "<p>I agree to the <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a> and the <a href=\"\/policies\/terms-of-service\" title=\"Terms and Conditions\">Terms and Conditions<\/a>.<\/p>",
         "enable_video_looping": false,
-        "trunk_message": "<p>Note — boot mat:</p><p>Up to 140x240 cm — in one piece ✅</p><p>Up to 150x250 cm — in two pieces ✅</p><p>Over 280 cm long — we do not make ❌</p><p>ℹ️ If in doubt, please contact our sales department.</p>",
-        "trunk_message_5_7_os": "<p><strong>Note — boot mat:</strong></p><p>The boot has no raised side edges — this applies to 3D mats with edges.<br/><br/>In this vehicle model the boot floor is flat and has no factory side edges. 3D mats with edges do fit the floor, but they will not create additional raised edges in the boot.<br/><br/></p>",
-        "gallery_badge": "shopify://shop_images/Frame_1948755221.webp",
+        "trunk_message": "<p>Note — boot mat:<\/p><p>Up to 140x240 cm — in one piece ✅<\/p><p>Up to 150x250 cm — in two pieces ✅<\/p><p>Over 280 cm long — we do not make ❌<\/p><p>ℹ️ If in doubt, please contact our sales department.<\/p>",
+        "trunk_message_5_7_os": "<p><strong>Note — boot mat:<\/strong><\/p><p>The boot has no raised side edges — this applies to 3D mats with edges.<br\/><br\/>In this vehicle model the boot floor is flat and has no factory side edges. 3D mats with edges do fit the floor, but they will not create additional raised edges in the boot.<br\/><br\/><\/p>",
+        "gallery_badge": "shopify:\/\/shop_images\/Frame_1948755221.webp",
         "gallery_disclaimer": "The photo may differ from the final result. With your order you will receive mats matching your car model.",
         "padding_top": 16,
         "padding_bottom": 0
@@ -204,7 +204,7 @@
           "settings": {
             "title": "Specifikace",
             "id": "tech",
-            "html": "<p class=\"evamats-tab-dup-title\"><strong>🔧 Technical specification</strong></p>\n<ul>\n  <li>\n<strong>Material:</strong> High-quality EVA foam (ethylene-vinyl acetate)</li>\n  <li>\n<strong>Mat thickness:</strong> About 10 mm — the ideal balance of flexibility and durability</li>\n  <li>\n<strong>Cell structure:</strong> Diamond (7 mm) / Honeycomb (8 mm) - choose when ordering</li>\n  <li>\n<strong>Set weight:</strong> From 1.2 to 2.5 kg (depending on the version)</li>\n  <li>\n<strong>Number of pieces:</strong> 2–6 pieces (full set: front + rear + boot optional)</li>\n  <li>\n<strong>Floor coverage:</strong> Up to 95% of the car floor area</li>\n  <li>\n<strong>Seasons:</strong> All year round — resistant to temperatures from −50 °C to +50 °C</li>\n  <li>\n<strong>Water resistance:</strong> 100% — does not absorb liquids, does not stain</li>\n  <li>\n<strong>Fastening:</strong> Plastic clips (original) / hook-and-loop — compatible with factory fixing points</li>\n  <li>\n<strong>Edging:</strong> 14 colours to choose from</li>\n  <li>\n<strong>Other options:</strong> Reinforced heel pads</li>\n</ul>",
+            "html": "<p class=\"evamats-tab-dup-title\"><strong>🔧 Technical specification<\/strong><\/p>\n<ul>\n  <li>\n<strong>Material:<\/strong> High-quality EVA foam (ethylene-vinyl acetate)<\/li>\n  <li>\n<strong>Mat thickness:<\/strong> About 10 mm — the ideal balance of flexibility and durability<\/li>\n  <li>\n<strong>Cell structure:<\/strong> Diamond (7 mm) \/ Honeycomb (8 mm) - choose when ordering<\/li>\n  <li>\n<strong>Set weight:<\/strong> From 1.2 to 2.5 kg (depending on the version)<\/li>\n  <li>\n<strong>Number of pieces:<\/strong> 2–6 pieces (full set: front + rear + boot optional)<\/li>\n  <li>\n<strong>Floor coverage:<\/strong> Up to 95% of the car floor area<\/li>\n  <li>\n<strong>Seasons:<\/strong> All year round — resistant to temperatures from −50 °C to +50 °C<\/li>\n  <li>\n<strong>Water resistance:<\/strong> 100% — does not absorb liquids, does not stain<\/li>\n  <li>\n<strong>Fastening:<\/strong> Plastic clips (original) \/ hook-and-loop — compatible with factory fixing points<\/li>\n  <li>\n<strong>Edging:<\/strong> 14 colours to choose from<\/li>\n  <li>\n<strong>Other options:<\/strong> Reinforced heel pads<\/li>\n<\/ul>",
             "hide_on_accessories": false
           }
         },
@@ -213,7 +213,7 @@
           "settings": {
             "title": "Questions and answers",
             "id": "faq",
-            "html": "<div class=\"ept-faq\">\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Floor coverage and fit</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– Will the mats definitely fit?</strong><br>Yes, our EVA mats are designed specifically for every make, model and version, and they cover the whole floor area including places that rubber or velour mats do not protect.</p>\n<p><strong>– What is a tunnel mat?</strong><br>EVA mats cover up to 98% of the floor including the centre tunnel and give maximum protection.</p>\n<p><strong>– Is the heel pad fitted to the driver's mat?</strong><br>No, the heel pad is supplied separately so you can position it to your own preference.</p>\n</div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Material properties and durability</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– What is EVA material?</strong><br>It is a 10 mm thick foam that traps dirt and water on the surface of the mat and stops them getting underneath.</p>\n<p><strong>– What is the difference between a 3D set and a 3D set with edges?</strong><br>A 3D set with edges gives extra protection to the side trim of the floor and a better fit.</p>\n<p><strong>– How long do the mats last?</strong><br>Thanks to the durable EVA material the mats last 5 to 7 years without signs of wear.</p>\n</div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Use and care</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– How do I clean EVA mats?</strong><br>Dirt does not cling to the surface of the mat. Just shake it out, or rinse it with a pressure washer if it is heavily soiled.</p>\n<p><strong>– Are EVA mats suitable for summer and winter?</strong><br>Yes, they are water-resistant, odourless, temperature-resistant and ideal for year-round use.</p>\n</div>\n  </details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Ordering and delivery</span><span class=\"ept-faq__icon\" aria-hidden=\"true\"></span></summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– What is the delivery time?</strong><br>We usually fulfil orders within 2 weeks. For special vehicles such as motorboats or tractors it can extend to 4–6 weeks.</p>\n<p><strong>– How is delivery handled?</strong><br>We send the mats by courier straight to the customer's address. Because of the size of the product we do not send mats to parcel lockers. We make sure they arrive exactly as they were made — without folding or bending that could affect the fit.</p>\n</div>\n  </details>\n</div>",
+            "html": "<div class=\"ept-faq\">\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Floor coverage and fit<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– Will the mats definitely fit?<\/strong><br>Yes, our EVA mats are designed specifically for every make, model and version, and they cover the whole floor area including places that rubber or velour mats do not protect.<\/p>\n<p><strong>– What is a tunnel mat?<\/strong><br>EVA mats cover up to 98% of the floor including the centre tunnel and give maximum protection.<\/p>\n<p><strong>– Is the heel pad fitted to the driver's mat?<\/strong><br>No, the heel pad is supplied separately so you can position it to your own preference.<\/p>\n<\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Material properties and durability<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– What is EVA material?<\/strong><br>It is a 10 mm thick foam that traps dirt and water on the surface of the mat and stops them getting underneath.<\/p>\n<p><strong>– What is the difference between a 3D set and a 3D set with edges?<\/strong><br>A 3D set with edges gives extra protection to the side trim of the floor and a better fit.<\/p>\n<p><strong>– How long do the mats last?<\/strong><br>Thanks to the durable EVA material the mats last 5 to 7 years without signs of wear.<\/p>\n<\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Use and care<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– How do I clean EVA mats?<\/strong><br>Dirt does not cling to the surface of the mat. Just shake it out, or rinse it with a pressure washer if it is heavily soiled.<\/p>\n<p><strong>– Are EVA mats suitable for summer and winter?<\/strong><br>Yes, they are water-resistant, odourless, temperature-resistant and ideal for year-round use.<\/p>\n<\/div>\n  <\/details>\n  <details class=\"ept-faq__item\">\n    <summary class=\"ept-faq__summary\"><span class=\"ept-faq__q\">Ordering and delivery<\/span><span class=\"ept-faq__icon\" aria-hidden=\"true\"><\/span><\/summary>\n    <div class=\"ept-faq__panel\">\n<p><strong>– What is the delivery time?<\/strong><br>We usually fulfil orders within 2 weeks. For special vehicles such as motorboats or tractors it can extend to 4–6 weeks.<\/p>\n<p><strong>– How is delivery handled?<\/strong><br>We send the mats by courier straight to the customer's address. Because of the size of the product we do not send mats to parcel lockers. We make sure they arrive exactly as they were made — without folding or bending that could affect the fit.<\/p>\n<\/div>\n  <\/details>\n<\/div>",
             "hide_on_accessories": true
           }
         },
@@ -222,7 +222,7 @@
           "settings": {
             "title": "Doprava a platba",
             "id": "delivery",
-            "html": "<p class=\"evamats-tab-dup-title\"><strong>📦 Shipping and payment</strong></p>\n\n<p>We make every EVA mat to order from scratch, with attention to detail and a perfect fit to your specific car model.</p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 The current standard order processing time is 14 working days.</p>\n\n<p>Choose how fast your order is made</p>\n\n<p>Every set of mats is made individually, so you can choose how quickly your order enters production.</p>\n\n<p>Available production options:</p>\n\n<p>🟢 Standard — 14 working days<br>\nProcessed in the standard production queue.</p>\n\n<p>🟠 Express — 7 working days<br>\nHigher priority in the production queue.</p>\n\n<p>As soon as production is finished, the mats are ready to ship.</p>\n\n<p>You can select priority production on the \"Shipping and payment\" page when choosing the delivery method. Express is available for an extra charge.</p>\n\n<p>🚗 We do our utmost to process orders as fast as possible. In busy periods — seasonal peaks, promotions or holidays — processing may take longer.</p>\n\n<p><strong>Delivery methods:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost courier (online payment or cash on delivery)</li>\n    <li>InPost parcel locker (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD courier (online payment or cash on delivery)</li>\n    <li>DPD pickup point (online payment only)</li>\n  </ul>\n</div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS courier (online payment or cash on delivery)</li>\n    <li>GLS Parcel Shop (online payment only)</li>\n  </ul>\n</div>\n\n<p><strong>Online payments:</strong></p>\n\n<div class=\"product_tabs__containers_item_block\" style=\"display: flex; gap: 10px; flex-wrap: wrap;\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0790/9218/7414/files/image_6.png\" alt=\"GoPay\" style=\"height:60px;width:auto;object-fit:contain;\">\n\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0734/7988/1010/files/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n</div>\n\n<p><strong>Secure shopping:</strong></p>\n<ul>\n  <li>Encrypted payments</li>\n  <li>Reliable logistics</li>\n  <li>Ongoing customer support</li>\n</ul>\n\n<p>Thank you for choosing a product made in Poland with a focus on quality and function. The driver's satisfaction is our highest priority.</p>",
+            "html": "<p class=\"evamats-tab-dup-title\"><strong>📦 Shipping and payment<\/strong><\/p>\n\n<p>We make every EVA mat to order from scratch, with attention to detail and a perfect fit to your specific car model.<\/p>\n\n<p style=\"border:1px solid #ef022d; padding:10px; border-radius:8px;\">💡 The current standard order processing time is 14 working days.<\/p>\n\n<p>Choose how fast your order is made<\/p>\n\n<p>Every set of mats is made individually, so you can choose how quickly your order enters production.<\/p>\n\n<p>Available production options:<\/p>\n\n<p>🟢 Standard — 14 working days<br>\nProcessed in the standard production queue.<\/p>\n\n<p>🟠 Express — 7 working days<br>\nHigher priority in the production queue.<\/p>\n\n<p>As soon as production is finished, the mats are ready to ship.<\/p>\n\n<p>You can select priority production on the \"Shipping and payment\" page when choosing the delivery method. Express is available for an extra charge.<\/p>\n\n<p>🚗 We do our utmost to process orders as fast as possible. In busy periods — seasonal peaks, promotions or holidays — processing may take longer.<\/p>\n\n<p><strong>Delivery methods:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/Frame_427319187.svg?v=1754576315\" alt=\"InPost\"> \n  <ul>\n    <li>InPost courier (online payment or cash on delivery)<\/li>\n    <li>InPost parcel locker (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/dpd.svg?v=1754574037\" alt=\"DPD\"> \n  <ul>\n    <li>DPD courier (online payment or cash on delivery)<\/li>\n    <li>DPD pickup point (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<div class=\"product_tabs__containers_item_block\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/GLS_Logo_2021_svg.svg?v=1774966899\" alt=\"GLS\"> \n  <ul>\n    <li>GLS courier (online payment or cash on delivery)<\/li>\n    <li>GLS Parcel Shop (online payment only)<\/li>\n  <\/ul>\n<\/div>\n\n<p><strong>Online payments:<\/strong><\/p>\n\n<div class=\"product_tabs__containers_item_block\" style=\"display: flex; gap: 10px; flex-wrap: wrap;\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0790\/9218\/7414\/files\/image_6.png\" alt=\"GoPay\" style=\"height:60px;width:auto;object-fit:contain;\">\n\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/visa_f5353cf6-3937-47e8-b0d0-4dffa5d38d04.svg?v=1754574037\" alt=\"Visa\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/mc_e03f8da5-c6a9-4429-bc4f-800d875497b5.svg?v=1754574036\" alt=\"Mastercard\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/apay_01efa87d-bab1-4df5-8583-9bd84c0efe6c.svg?v=1754575856\" alt=\"Apple Pay\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0734\/7988\/1010\/files\/gpay_763ff9ab-ac05-4efa-ae2a-34b490f1dbc2.svg?v=1754574037\" alt=\"Google Pay\">\n<\/div>\n\n<p><strong>Secure shopping:<\/strong><\/p>\n<ul>\n  <li>Encrypted payments<\/li>\n  <li>Reliable logistics<\/li>\n  <li>Ongoing customer support<\/li>\n<\/ul>\n\n<p>Thank you for choosing a product made in Poland with a focus on quality and function. The driver's satisfaction is our highest priority.<\/p>",
             "hide_on_accessories": false
           }
         }
@@ -238,18 +238,18 @@
         "about_heading_before": "Originální",
         "about_heading_brand": "Carvion",
         "about_heading_after": "autokoberce - moderní ochrana interiéru",
-        "about_intro": "<p>Our EVA car mats are a new generation of car accessories — light, durable and water-resistant. Thanks to their unique cell structure they trap dirt (mud, sand, water) deep in the material, so the surface stays dry and clean.</p><p>Every set is made to measure for a specific car model and matched precisely to the shape of the floor. You can choose the colour, the cell pattern and the edging so they suit your car interior perfectly.</p>",
+        "about_intro": "<p>Our EVA car mats are a new generation of car accessories — light, durable and water-resistant. Thanks to their unique cell structure they trap dirt (mud, sand, water) deep in the material, so the surface stays dry and clean.<\/p><p>Every set is made to measure for a specific car model and matched precisely to the shape of the floor. You can choose the colour, the cell pattern and the edging so they suit your car interior perfectly.<\/p>",
         "about_features_heading": "What makes our car mats stand out",
         "about_feature_1_text": "100% waterproof — nothing leaks through",
-        "about_feature_1_image": "shopify://shop_images/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
+        "about_feature_1_image": "shopify:\/\/shop_images\/Frame_1632526600_8c020c24-607f-4e13-96fb-8a07793e0642.webp",
         "about_feature_2_text": "They cover up to 95% of the floor area",
-        "about_feature_2_image": "shopify://shop_images/Frame_1632526598_1.webp",
+        "about_feature_2_image": "shopify:\/\/shop_images\/Frame_1632526598_1.webp",
         "about_feature_3_text": "Easy cleaning — just shake out or rinse",
-        "about_feature_3_image": "shopify://shop_images/Frame_1632526597.webp",
+        "about_feature_3_image": "shopify:\/\/shop_images\/Frame_1632526597.webp",
         "about_feature_4_text": "Suitable for all seasons: from −50 °C to +50 °C",
-        "about_feature_4_image": "shopify://shop_images/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
+        "about_feature_4_image": "shopify:\/\/shop_images\/Frame_1632526599_ce85dcbb-3b82-4dc6-bfc1-b23153a25436.webp",
         "about_feature_5_text": "Safe for health and the environment — non-toxic and recyclable",
-        "about_feature_5_image": "shopify://shop_images/Frame_1632526601.webp",
+        "about_feature_5_image": "shopify:\/\/shop_images\/Frame_1632526601.webp",
         "about_confidence_heading": "Nakupujte s jistotou",
         "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
         "about_confidence_2_text": "Security — encrypted payments, verified couriers",
@@ -274,7 +274,7 @@
         "text_6WLmiq": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ The specially shaped tongue effectively protects the areas most exposed to wear, such as the left footrest area.</p><p>✔ Because it matches the shape of the car precisely, it improves both driving comfort and the look of the interior.</p>"
+            "text": "<p>✔ The specially shaped tongue effectively protects the areas most exposed to wear, such as the left footrest area.<\/p><p>✔ Because it matches the shape of the car precisely, it improves both driving comfort and the look of the interior.<\/p>"
           }
         }
       },
@@ -283,8 +283,8 @@
         "text_6WLmiq"
       ],
       "settings": {
-        "image": "shopify://shop_images/5-_1_red_a891e204-d26b-4d3f-abd1-189f6926c11d.webp",
-        "image_2": "shopify://shop_images/5_-_26.webp",
+        "image": "shopify:\/\/shop_images\/eng_footrest.webp",
+        "image_2": "shopify:\/\/shop_images\/eng_footrest.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -304,7 +304,7 @@
         "text_GbADCg": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Carvion mats are a masterpiece of precision — they follow every edge exactly and give the floor maximum protection.<br/><br/>✔ Matt black combined with elegant edging underlines the modern look of the interior.<br/></p>"
+            "text": "<p>✔ Carvion mats are a masterpiece of precision — they follow every edge exactly and give the floor maximum protection.<br\/><br\/>✔ Matt black combined with elegant edging underlines the modern look of the interior.<br\/><\/p>"
           }
         }
       },
@@ -313,7 +313,7 @@
         "text_GbADCg"
       ],
       "settings": {
-        "image": "shopify://shop_images/red_perfect-cz_carv.webp",
+        "image": "shopify:\/\/shop_images\/evamats-eu-en-perfect-fit-20260902.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -333,7 +333,7 @@
         "text_g6mHVp": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ High edges of up to 7 centimetres effectively trap dirt, water and mud.<br/><br/>✔ The honeycomb pattern stops liquids spreading, so the car is easier to keep clean.<br/></p>"
+            "text": "<p>✔ High edges of up to 7 centimetres effectively trap dirt, water and mud.<br\/><br\/>✔ The honeycomb pattern stops liquids spreading, so the car is easier to keep clean.<br\/><\/p>"
           }
         }
       },
@@ -342,7 +342,7 @@
         "text_g6mHVp"
       ],
       "settings": {
-        "image": "shopify://shop_images/cz_upto7cm.webp",
+        "image": "shopify:\/\/shop_images\/eng_upto7cm.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -362,7 +362,7 @@
         "text_ydwWe6": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Carvion mats come with a special fastening system that stops them sliding.<br/><br/>✔ We offer fasteners compatible with different car brands — from classic clips to BMW-style hook-and-loop.<br/></p>"
+            "text": "<p>✔ Carvion mats come with a special fastening system that stops them sliding.<br\/><br\/>✔ We offer fasteners compatible with different car brands — from classic clips to BMW-style hook-and-loop.<br\/><\/p>"
           }
         }
       },
@@ -371,7 +371,7 @@
         "text_ydwWe6"
       ],
       "settings": {
-        "image": "shopify://shop_images/z_mounts.webp",
+        "image": "shopify:\/\/shop_images\/eng_mounts_forallbrands.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -391,7 +391,7 @@
         "text_nfDAxc": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ The special hook-and-loop tunnel design keeps the mat firmly in place so it does not shift while driving.<br/><br/>✔ This protects the middle section of the floor from dirt.</p>"
+            "text": "<p>✔ The special hook-and-loop tunnel design keeps the mat firmly in place so it does not shift while driving.<br\/><br\/>✔ This protects the middle section of the floor from dirt.<\/p>"
           }
         }
       },
@@ -400,8 +400,8 @@
         "text_nfDAxc"
       ],
       "settings": {
-        "image": "shopify://shop_images/cz_tunnel.webp",
-        "image_2": "shopify://shop_images/5-_5_red_1c0d9f11-68c2-428a-9f7f-9a9b4c885c31.webp",
+        "image": "shopify:\/\/shop_images\/eng_tunnel.webp",
+        "image_2": "shopify:\/\/shop_images\/eng_tunnel.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -421,7 +421,7 @@
         "text_J4bFnF": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Extra hook-and-loop strips in the corners hold the mats in place and stop them sliding.<br/><br/>✔ That improves driving safety and extends the life of the product.</p>"
+            "text": "<p>✔ Extra hook-and-loop strips in the corners hold the mats in place and stop them sliding.<br\/><br\/>✔ That improves driving safety and extends the life of the product.<\/p>"
           }
         }
       },
@@ -430,7 +430,7 @@
         "text_J4bFnF"
       ],
       "settings": {
-        "image": "shopify://shop_images/cz_velcroCORNer.webp",
+        "image": "shopify:\/\/shop_images\/eng_velcroCORNer.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -450,7 +450,7 @@
         "text_TfEkhH": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Carefully finished edging made of quality material gives resistance to wear and a smart look that lasts.<br/><br/>✔ Reinforced threads guarantee durability even in the toughest use.</p>"
+            "text": "<p>✔ Carefully finished edging made of quality material gives resistance to wear and a smart look that lasts.<br\/><br\/>✔ Reinforced threads guarantee durability even in the toughest use.<\/p>"
           }
         }
       },
@@ -459,7 +459,7 @@
         "text_TfEkhH"
       ],
       "settings": {
-        "image": "shopify://shop_images/cz_stitching.webp",
+        "image": "shopify:\/\/shop_images\/eng_stitching.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -479,7 +479,7 @@
         "text_aVDWpY": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Carvion mats are 10 mm thick, which improves driving comfort by cutting noise and vibration.<br/><br/>✔ The soft yet durable structure keeps both driver and passengers comfortable.</p>"
+            "text": "<p>✔ Carvion mats are 10 mm thick, which improves driving comfort by cutting noise and vibration.<br\/><br\/>✔ The soft yet durable structure keeps both driver and passengers comfortable.<\/p>"
           }
         }
       },
@@ -488,7 +488,7 @@
         "text_aVDWpY"
       ],
       "settings": {
-        "image": "shopify://shop_images/z_matTHICK.webp",
+        "image": "shopify:\/\/shop_images\/evamats-eu-en-mat-thickness-20260902.webp",
         "layout": "text_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -508,7 +508,7 @@
         "text_U3ExRK": {
           "type": "text",
           "settings": {
-            "text": "<p>✔ Carvion mats come in two distinctive patterns — honeycomb or diamond.<br/><br/>✔ A depth of 7 mm effectively traps water, mud and other dirt, so your car interior stays clean.</p>"
+            "text": "<p>✔ Carvion mats come in two distinctive patterns — honeycomb or diamond.<br\/><br\/>✔ A depth of 7 mm effectively traps water, mud and other dirt, so your car interior stays clean.<\/p>"
           }
         }
       },
@@ -517,8 +517,8 @@
         "text_U3ExRK"
       ],
       "settings": {
-        "image": "shopify://shop_images/eng_7mmcells.webp",
-        "image_2": "shopify://shop_images/7mm_red-carv.webp",
+        "image": "shopify:\/\/shop_images\/eng_7mmcells.webp",
+        "image_2": "shopify:\/\/shop_images\/eng_7mmcells.webp",
         "layout": "image_first",
         "card_padding_x": 48,
         "card_padding_y": 81,
@@ -530,7 +530,7 @@
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}</button>",
+        "custom_liquid": "<button class='button openPopup' data-popup=\"popupOverlayApplicationForm\" style=\"display:block;margin:0 auto;\">{{'general.config.get_a_price' | t}}<\/button>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -542,20 +542,20 @@
         "heading_EUBWBb": {
           "type": "heading",
           "settings": {
-            "heading": "<p>CHOOSE THE BEST PROTECTION FOR YOUR CAR WITH Carvion!</p>",
+            "heading": "<p>CHOOSE THE BEST PROTECTION FOR YOUR CAR WITH Carvion!<\/p>",
             "heading_size": "h1"
           }
         },
         "text_3VQ8yY": {
           "type": "text",
           "settings": {
-            "text": "<p>Carvion mats are designed with durability, good looks and function in mind. They make every drive more comfortable and keep your car interior looking new!</p>"
+            "text": "<p>Carvion mats are designed with durability, good looks and function in mind. They make every drive more comfortable and keep your car interior looking new!<\/p>"
           }
         },
         "text_jqh9iU": {
           "type": "text",
           "settings": {
-            "text": "<p>🛒 Order now and discover how exceptional Carvion car mats can be!</p>"
+            "text": "<p>🛒 Order now and discover how exceptional Carvion car mats can be!<\/p>"
           }
         }
       },
@@ -634,7 +634,7 @@
       "settings": {
         "heading": "Get a free consultation!",
         "subheading": "We'll gladly help you choose the right solution.",
-        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image": "shopify:\/\/shop_images\/vacancy_375.webp",
         "mat_image_alt": "EVA mat",
         "label_name": "First and last name",
         "placeholder_name": "John Smith",
