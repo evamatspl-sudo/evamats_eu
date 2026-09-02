@@ -254,13 +254,13 @@
             {{ fs.settings.consent_intro | escape }}
           {%- else -%}
             I agree with
-          {%- endif -%}
-          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'the rules and regulations' | escape }}</a>
+          {%- endif -%}{{ ' ' }}
+          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'the rules and regulations' | escape }}</a>{{ ' ' }}
           {%- if fs.settings.consent_mid != blank -%}
             <span class="mat-consult__consent-mid">{{ fs.settings.consent_mid | escape }}</span>
           {%- else -%}
             <span class="mat-consult__consent-mid">and</span>
-          {%- endif -%}
+          {%- endif -%}{{ ' ' }}
           <a href="{{ privacy_url }}">{{ fs.settings.privacy_label | default: 'Privacy Policy' | escape }}</a>{{ fs.settings.consent_end | default: '.' | escape }}
         </p>
         <input type="checkbox" id="MatConsent-{{ sid }}" data-consent-gate-checkbox>
