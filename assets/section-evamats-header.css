@@ -1655,4 +1655,3 @@ html[lang="lv"] .evamats-header__nav-link {
 
 /* EVAMATS locale-safe desktop header v2 2026-08-31 */
 @media screen and (min-width:990px){.evamats-header__inner{gap:clamp(8px,1.15vw,18px)}.evamats-header__start{gap:clamp(12px,2vw,32px)}.evamats-header__nav{flex:1 1 0;width:0;overflow:visible}.evamats-header__nav-list{width:100%;flex-wrap:nowrap!important;gap:clamp(10px,1.6vw,30px)!important;white-space:nowrap}.evamats-header__nav-item{flex:0 0 auto}.evamats-header__nav-link{white-space:nowrap!important}.evamats-header__actions{gap:clamp(12px,1.6vw,28px)}}@media screen and (min-width:990px) and (max-width:1380px){.evamats-header__nav-list{gap:10px!important}.evamats-header__nav-link{font-size:14px!important}.evamats-header__catalog-trigger{font-size:14px;padding-right:13px}.evamats-header__actions{gap:12px}.evamats-header__icon-actions{gap:14px}}
-.evamats-header__nav-panel:before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}

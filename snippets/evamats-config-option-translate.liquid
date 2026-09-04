@@ -9,12 +9,6 @@
   if request.locale.iso_code == 'fr'
     assign normalised = source | downcase | strip | replace: '  ', ' '
     case normalised
-      when 'card type'
-        assign localised = 'Type de carte'
-      when 'e-card'
-        assign localised = 'Carte électronique'
-      when 'paper (+5€)', 'paper (+5 €)'
-        assign localised = 'Carte papier (+5 €)'
       when 'mats type'
         assign localised = 'Type de tapis'
       when 'mats set'
