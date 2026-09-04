@@ -717,7 +717,7 @@
         document.addEventListener('DOMContentLoaded', function () {
           function restyleLoading(root) {
             root.querySelectorAll('.brand-select-loading').forEach(function (node) {
-              node.textContent = 'Suche…';
+              if (node.textContent !== 'Suche…') node.textContent = 'Suche…';
               node.style.cssText = 'box-sizing:border-box;width:100%;padding:14px 18px;color:#667085;font-size:16px;font-style:italic;line-height:1.35;text-align:center;pointer-events:none';
             });
           }
