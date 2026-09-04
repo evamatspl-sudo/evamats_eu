@@ -487,11 +487,30 @@
     <div id="popupOverlayUpsellVideo" class="popup_overlay popup-overlay--upsell_video">
       <div class="popup">
           <div class="popup-content rte">
-            {% assign upsell_popup_page = pages['product-upsell-popup-content'] %}
-            {% if upsell_popup_page != empty %}
-              {{ upsell_popup_page.content }}
+            {% if localization.language.iso_code == 'fr' %}
+              <h3 class="h2">🛡️ Que sont les renforts de talon et pourquoi en ajouter ?</h3>
+              <p><strong>Les renforts de talon</strong> sont des protections supplémentaires placées sous le talon du conducteur, à l’endroit où le tapis s’use le plus rapidement. Ils protègent contre l’abrasion, prolongent la durée de vie du tapis et améliorent le confort au quotidien.</p>
+              <h4>Types de renforts de talon :</h4>
+              <ul>
+                <li><strong>Renfort en caoutchouc</strong> — résistant et antidérapant, disponible en deux motifs : <em>losanges</em> et <em>nid d’abeille</em>.</li>
+                <li><strong>Renfort en EVA</strong> — fabriqué dans le même matériau et dans la même couleur que votre tapis, pour une finition harmonieuse.</li>
+                <li><strong>Renfort métallique</strong> — extrêmement résistant, adapté à un usage intensif.</li>
+              </ul>
+              <h3>📸 Découvrez son fonctionnement :</h3>
+              <video src="{{ settings.product_upsell_video.sources[1].url }}" controls playsinline></video>
+              <p><strong>Avantages :</strong></p>
+              <ul>
+                <li>Protège le tapis contre l’usure prématurée</li>
+                <li>Renforce la zone la plus sollicitée</li>
+                <li>Préserve l’esthétique et la propreté de l’habitacle</li>
+              </ul>
             {% else %}
-              {{ settings.product_upsell_text }}
+              {% assign upsell_popup_page = pages['product-upsell-popup-content'] %}
+              {% if upsell_popup_page != empty %}
+                {{ upsell_popup_page.content }}
+              {% else %}
+                {{ settings.product_upsell_text }}
+              {% endif %}
             {% endif %}
           </div>
       </div>
