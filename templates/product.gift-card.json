@@ -106,7 +106,7 @@
         "tab_description": {
           "type": "tab",
           "settings": {
-            "title": "O produktu",
+            "title": "About the product",
             "id": "description",
             "html": ""
           }
@@ -114,7 +114,7 @@
         "tab_redeem": {
           "type": "tab",
           "settings": {
-            "title": "Jak uplatnit",
+            "title": "How to redeem",
             "id": "tech",
             "html": "<h3><strong>Option 1: CARVION e-voucher</strong></h3>\n<ol>\n<li>\n<strong>Delivery:</strong> After your order is paid, we email you a PDF e-voucher.</li>\n<li>\n<strong>Gifting:</strong> Print it or send it digitally to the recipient. 📲</li>\n<li>\n<strong>Redemption:</strong> They configure products on the site and enter the unique code at checkout in the <strong>“Discount code”</strong> field.</li>\n</ol>\n<p><em>* The code is single-use and tied to one purchase.</em></p>\n\n<h3><strong>Option 2: Physical gift card</strong></h3>\n<ol>\n<li>\n<strong>Delivery:</strong> We ship the card by courier. Each card is pre-loaded with an active code.</li>\n<li>\n<strong>Ready to give:</strong> Packaged and ready—no activation needed. 🎀</li>\n<li>\n<strong>Redemption:</strong> Same as online—enter the code in the <strong>“Discount code”</strong> field to reduce the cart total.</li>\n</ol>\n<p><em>* The code is single-use.</em></p>"
           }
@@ -122,7 +122,7 @@
         "tab_delivery": {
           "type": "tab",
           "settings": {
-            "title": "Doprava a vrácení",
+            "title": "Delivery and returns",
             "id": "delivery",
             "html": "<h2><strong>Delivery 🚚</strong></h2>\n<p><strong>CARVION e-voucher:</strong></p>\n<p>We send your e-voucher as soon as payment is confirmed. The digital format means you get it quickly—no waiting on shipping. ⚡</p>\n<p><strong>Physical gift card:</strong></p>\n<p>We prepare and dispatch physical cards within 24 hours (business days) after payment. Your parcel arrives ready to gift. 📨</p>\n\n<h2><strong>Validity 📅</strong></h2>\n<p>CARVION gift cards (e-vouchers and physical cards alike) are valid for <strong>12 months from the date of purchase</strong>. After this period, the unique code expires and cannot be redeemed. We recommend the recipient use it within the validity window to enjoy the full value.</p>\n\n<h2><strong>Returns &amp; conditions 🔄</strong></h2>\n<p>For both e-vouchers and physical cards, you may return within <strong>14 days</strong> of purchase, provided the unique code has not been used. Cards cannot be exchanged for cash and the value must be used in a single order.</p>"
           }
@@ -137,7 +137,7 @@
       "settings": {
         "about_heading_before": "Original",
         "about_heading_brand": "Carvion",
-        "about_heading_after": "autokoberce — moderní ochrana interiéru",
+        "about_heading_after": "car mats — modern interior protection",
         "about_intro": "<p>Our EVA car mats are a new generation of car accessories — light, durable and water-resistant. Thanks to their unique cell structure they trap dirt (mud, sand, water) deep in the material, so the surface stays dry and clean.</p><p>Every set is made to measure for a specific car model and matched precisely to the shape of the floor. You can choose the colour, the cell pattern and the edging so they suit your car interior perfectly.</p>",
         "about_features_heading": "What makes our car mats stand out",
         "about_feature_1_text": "100% waterproof — nothing leaks through",
@@ -145,11 +145,11 @@
         "about_feature_3_text": "Easy cleaning — just shake out or rinse",
         "about_feature_4_text": "Suitable for all seasons: from −50 °C to +50 °C",
         "about_feature_5_text": "Safe for health and the environment — non-toxic and recyclable",
-        "about_confidence_heading": "Nakupujte s jistotou",
+        "about_confidence_heading": "Shop with confidence",
         "about_confidence_1_text": "Expert advice — we'll help you choose the right set",
         "about_confidence_2_text": "Security — encrypted payments, reliable carriers",
-        "about_confidence_3_text": "Vyrobeno v Polsku — vlastní výroba, rychlé dodání",
-        "gift_card_cta_label": "Koupit kartu",
+        "about_confidence_3_text": "Made in Poland — in-house production and fast dispatch",
+        "gift_card_cta_label": "Choose this card",
         "gift_card_item_1_description": "A set of front mats without edges including an EVA heel pad. A perfect blend of function and elegance.",
         "gift_card_item_1_image": "shopify://shop_images/Group_1948754940.webp",
         "gift_card_item_2_description": "Front and rear mats without edges — comfort and good looks in every detail. (Front mats with edges are available at this price.)",
@@ -163,7 +163,7 @@
       "settings": {
         "back-to-top-button-enabled": true,
         "smooth-scroll-enabled": true,
-        "btn_text": "Nahoru",
+        "btn_text": "Back to top",
         "html": "",
         "button-color": "#848282",
         "text-color": "#ffffff",
