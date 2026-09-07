@@ -171,7 +171,7 @@
         "h3 {color: rgb(var(--color-foreground)); font-size: 3.2rem; letter-spacing: 2px;}"
       ],
       "settings": {
-        "heading_before": "Nejoblíbenější značky",
+        "heading_before": "Most popular brands",
         "heading_accent": "",
         "heading_after": "",
         "catalog-header": "",
@@ -190,7 +190,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Nejprodávanější",
+        "title": "Bestsellers",
         "collection": "bestsellerss",
         "products_to_show": 12,
         "show_view_all": true,
@@ -202,7 +202,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
-        "title": "Příslušenství",
+        "title": "Accessories",
         "collection": "akcesoria",
         "products_to_show": 12,
         "show_view_all": true,
