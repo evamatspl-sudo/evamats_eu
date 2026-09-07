@@ -678,14 +678,14 @@
                     </p>
                   {%- endif -%}
                   <h1 class="evamats-product-title__heading">{{ product_title }}</h1>
-                  {%- if request.locale.iso_code == 'cs' and product.template_suffix == 'config' -%}
-                    {% render 'cz-cro-product-intro' %}
-                  {%- endif -%}
                   {%- unless is_simple_product -%}
                     {% render 'evamats-product-title-collection-link' %}
                   {%- endunless -%}
                 </div>
               </div>
+              {%- if request.locale.iso_code == 'cs' and product.template_suffix == 'config' -%}
+                {% render 'cz-cro-product-intro' %}
+              {%- endif -%}
             {%- when 'price' -%}
               <div class="no-js-hidden main_price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
