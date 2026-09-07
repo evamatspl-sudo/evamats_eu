@@ -74,6 +74,9 @@
     endfor
   -%}
 
+  {%- capture option_display_value -%}{%- render 'evamats-config-option-translate', text: value -%}{%- endcapture -%}
+  {%- assign option_display_value = option_display_value | strip -%}
+
   {%- if block.settings.picker_type == 'button' -%}
     
     {% assign optionName = value %}
@@ -137,7 +140,7 @@
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       data-name="{{ optionName | escape }}"
       name="{{ option.name }}"
-      data-title="{{ value }}"
+      data-title="{{ option_display_value | escape }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
       data-index="{{ forloop.index }}"
@@ -167,12 +170,12 @@
         {% case forloop.index %}
           {% when 1 %}
             <img src="{{ '5os-classic-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: value %}</div>
+            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: option_display_value %}</div>
           {% when 2 %}
             <img src="{{ '5os-3d-diamonds-black-red.webp' | file_url}}" alt="" loading="lazy">
-            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: value %}</div>
+            <div class="label__tooltip">{% render 'evamats-strip-brand-label', text: option_display_value %}</div>
         {% endcase %}
-        <span class="evamats-config-option-label">{% render 'evamats-strip-brand-label', text: value %}</span>
+        <span class="evamats-config-option-label">{% render 'evamats-strip-brand-label', text: option_display_value %}</span>
 
       </label>
     {% elsif is_simple_product %}
@@ -268,13 +271,13 @@
           {% if value contains '#MWS' or value contains 'Default Title' %} style="display: none"{% endif %}
           class="evamats-product-option__pill"
         >
-          {{- value -}}
+          {{- option_display_value -}}
           <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
         </label>
       {% endif %}
     {% else %}
       <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if  value contains "#MWS" or value contains "Default Title" %} style="display: none"{% endif %}>
-        {{ value -}}
+        {{ option_display_value -}}
         <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
       </label>
     {% endif %}
@@ -283,14 +286,15 @@
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
+      data-title="{{ option_display_value | escape }}"
       {% if option.selected_value == value %}
         selected="selected"
       {% endif %}
     >
       {% if option_disabled -%}
-        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+        {{- 'products.product.value_unavailable' | t: option_value: option_display_value -}}
       {%- else -%}
-        {{- value -}}
+        {{- option_display_value -}}
       {%- endif %}
     </option>
   {%- endif -%}

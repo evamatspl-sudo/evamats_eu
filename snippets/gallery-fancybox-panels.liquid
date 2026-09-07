@@ -4,6 +4,7 @@
 {%- endcomment -%}
 
 {%- liquid
+  assign locale_root = request.locale.iso_code | split: '-' | first
   assign lightbox_cta_href = section.settings.lightbox_cta_url
   if lightbox_cta_href == blank
     assign lightbox_cta_href = '/pages/contact'
@@ -42,7 +43,7 @@
       {%- endif -%}
 
       <div class="gallery-fancybox__contacts gallery-fancybox__contacts--desktop">
-        {%- if section.settings.lightbox_phone != blank -%}
+        {%- if locale_root == 'cs' and section.settings.lightbox_phone != blank -%}
           <a class="gallery-fancybox__phone" href="tel:{{ section.settings.lightbox_phone | replace: ' ', '' }}">
             {{- section.settings.lightbox_phone | escape -}}
           </a>
@@ -58,7 +59,7 @@
 
   <div class="gallery-fancybox__mobile-top">
     <div class="gallery-fancybox__contacts gallery-fancybox__contacts--mobile">
-      {%- if section.settings.lightbox_phone != blank -%}
+      {%- if locale_root == 'cs' and section.settings.lightbox_phone != blank -%}
         <a class="gallery-fancybox__phone" href="tel:{{ section.settings.lightbox_phone | replace: ' ', '' }}">
           {{- section.settings.lightbox_phone | escape -}}
         </a>

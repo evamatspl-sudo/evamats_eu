@@ -22,6 +22,11 @@
     assign privacy_url = '/policies/privacy-policy'
   endif
 
+  if request.locale.iso_code == 'fr'
+    assign terms_url = routes.root_url | append: '/policies/terms-of-service'
+    assign privacy_url = routes.root_url | append: '/policies/privacy-policy'
+  endif
+
   assign consent_gate_msg = fs.settings.consent_error_message | default: 'You must accept the privacy policy and terms of service.'
   assign phone_default_code = fs.settings.phone_prefix | default: '+42' | strip
 -%}
@@ -237,6 +242,17 @@
       </div>
     </div>
 
+    {%- if request.locale.iso_code == 'fr' -%}
+      <div class="mat-consult__rgpd" style="font-size:13px;line-height:1.5;margin:20px 0 0;color:inherit">
+        <p>EVAMATS Sp. z o.o., ul. Strzelca 42, 80-299 Gdańsk, Pologne, utilise les informations de ce formulaire pour répondre à votre demande : mesures précontractuelles à votre demande ou intérêt légitime à traiter les autres demandes. Les champs obligatoires servent à vous répondre ; ils ne vous inscrivent pas à une liste publicitaire.</p>
+        <details>
+          <summary>En savoir plus sur vos données</summary>
+          <p>Vos données sont accessibles aux personnes habilitées d’EVAMATS et à ses prestataires techniques, notamment Shopify. Elles sont conservées le temps nécessaire au traitement de votre demande, puis, si nécessaire, pendant les délais légaux applicables à la conservation des justificatifs ou à la défense de droits.</p>
+          <p>Vous disposez, selon les conditions légales, des droits d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité. Pour les exercer : <a href="mailto:info@evamats.store">info@evamats.store</a>. Consultez notre <a href="{{ routes.root_url }}/policies/privacy-policy">politique de confidentialité</a>, notamment pour les transferts internationaux. Vous pouvez déposer une réclamation auprès de la <a href="https://www.cnil.fr/fr/adresser-une-plainte">CNIL</a>.</p>
+        </details>
+      </div>
+    {%- endif -%}
+
     <div
       class="mat-consult__footer"
       data-consent-gate
@@ -254,13 +270,13 @@
             {{ fs.settings.consent_intro | escape }}
           {%- else -%}
             I agree with
-          {%- endif -%}
-          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'the rules and regulations' | escape }}</a>
+          {%- endif -%}{{ ' ' }}
+          <a href="{{ terms_url }}">{{ fs.settings.terms_label | default: 'the rules and regulations' | escape }}</a>{{ ' ' }}
           {%- if fs.settings.consent_mid != blank -%}
             <span class="mat-consult__consent-mid">{{ fs.settings.consent_mid | escape }}</span>
           {%- else -%}
             <span class="mat-consult__consent-mid">and</span>
-          {%- endif -%}
+          {%- endif -%}{{ ' ' }}
           <a href="{{ privacy_url }}">{{ fs.settings.privacy_label | default: 'Privacy Policy' | escape }}</a>{{ fs.settings.consent_end | default: '.' | escape }}
         </p>
         <input type="checkbox" id="MatConsent-{{ sid }}" data-consent-gate-checkbox>
@@ -293,6 +309,8 @@
 
   .mat-consult-form .mat-consult__title {
     margin: 0 0 36px;
+    text-wrap: balance;
+    overflow-wrap: normal;
     font-weight: 600;
     font-size: 42px;
     line-height: 1;
