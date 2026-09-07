@@ -22,6 +22,11 @@
     assign privacy_url = '/policies/privacy-policy'
   endif
 
+  if request.locale.iso_code == 'fr'
+    assign terms_url = routes.root_url | append: '/policies/terms-of-service'
+    assign privacy_url = routes.root_url | append: '/policies/privacy-policy'
+  endif
+
   assign consent_gate_msg = fs.settings.consent_error_message | default: 'You must accept the privacy policy and terms of service.'
   assign phone_default_code = fs.settings.phone_prefix | default: '+42' | strip
 -%}
