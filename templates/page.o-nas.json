@@ -25,25 +25,25 @@
         "onas_photo_1": {
           "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4876_c193c4e6-ee8d-4da1-9f6b-e7d86e295a1b.webp"
+            "image": "shopify://shop_images/Rectangle_4876_c193c4e6-ee8d-4da1-9f6b-e7d86e295a1b.webp"
           }
         },
         "onas_photo_2": {
           "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4877_83e52118-1360-4040-9ec2-cf69795b4fe9.webp"
+            "image": "shopify://shop_images/Rectangle_4877_83e52118-1360-4040-9ec2-cf69795b4fe9.webp"
           }
         },
         "onas_photo_3": {
           "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4878_7fd7fb20-d337-4191-b5b1-e05047ca3af7.webp"
+            "image": "shopify://shop_images/Rectangle_4878_7fd7fb20-d337-4191-b5b1-e05047ca3af7.webp"
           }
         },
         "onas_photo_4": {
           "type": "photo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4879_e1ebb0fa-f137-4710-9399-95c576527759.webp"
+            "image": "shopify://shop_images/Rectangle_4879_e1ebb0fa-f137-4710-9399-95c576527759.webp"
           }
         }
       },
@@ -54,9 +54,9 @@
         "onas_photo_4"
       ],
       "settings": {
-        "eyebrow": "O nás",
-        "heading": "Na vašem komfortu záleží",
-        "body": "<p>Carvion nejsou jen autokoberce. Jsou to inovativní řešení, která spojují styl, odolnost a ekologické materiály. Náš materiál je šetrný k přírodě, takže pečujete nejen o své auto, ale i o životní prostředí.<\/p>",
+        "eyebrow": "About us",
+        "heading": "Your comfort matters",
+        "body": "<p>Carvion is more than car mats. These are innovative solutions that combine style, durability and eco-friendly materials. Our material is kind to nature, so you take care not only of your car but also of the environment.</p>",
         "padding_top": 48,
         "padding_bottom": 56
       }
@@ -67,25 +67,25 @@
         "founder_slide_1": {
           "type": "slide",
           "settings": {
-            "bg_image": "shopify:\/\/shop_images\/Rectangle_4876_c193c4e6-ee8d-4da1-9f6b-e7d86e295a1b.webp"
+            "bg_image": "shopify://shop_images/Rectangle_4876_c193c4e6-ee8d-4da1-9f6b-e7d86e295a1b.webp"
           }
         },
         "slide_yQg7Eh": {
           "type": "slide",
           "settings": {
-            "bg_image": "shopify:\/\/shop_images\/Rectangle_4877_83e52118-1360-4040-9ec2-cf69795b4fe9.webp"
+            "bg_image": "shopify://shop_images/Rectangle_4877_83e52118-1360-4040-9ec2-cf69795b4fe9.webp"
           }
         },
         "slide_biEzjV": {
           "type": "slide",
           "settings": {
-            "bg_image": "shopify:\/\/shop_images\/Rectangle_4879_e1ebb0fa-f137-4710-9399-95c576527759.webp"
+            "bg_image": "shopify://shop_images/Rectangle_4879_e1ebb0fa-f137-4710-9399-95c576527759.webp"
           }
         },
         "slide_eL6kDf": {
           "type": "slide",
           "settings": {
-            "bg_image": "shopify:\/\/shop_images\/Rectangle_4878_7fd7fb20-d337-4191-b5b1-e05047ca3af7.webp"
+            "bg_image": "shopify://shop_images/Rectangle_4878_7fd7fb20-d337-4191-b5b1-e05047ca3af7.webp"
           }
         }
       },
@@ -97,10 +97,10 @@
       ],
       "settings": {
         "media_type": "carousel",
-        "heading": "Carvion vznikl od nuly - od ruční práce a plného soustředění na každý detail až po propracovaný systém, který dnes udává standard kvality.",
-        "body": "<p>Tato zkušenost nás naučila jednu věc: produkt má smysl jen tehdy, když funguje v každodenním provozu.<\/p><p>Proto vyrábíme autokoberce, které skutečně odpovídají konkrétnímu vozu i potřebám řidiče - se zohledněním konstrukčních rozdílů, podmínek používání a dlouhodobé odolnosti. Každý prvek má svůj účel a každý krok výroby je pod kontrolou, protože finální výsledek není náhoda.<\/p><p>Nejde jen o samotný produkt.<br\/> Jde o to, jak mění každodenní zážitek z jízdy - více pořádku, více pohodlí, méně kompromisů.<\/p><p>Protože pro nás není komfort řidiče doplněk.<br\/> <strong>Je to standard.<\/strong><\/p>",
-        "trust_label": "50k+ řidičů",
-        "badge_faces_image": "shopify:\/\/shop_images\/Group_1632523139.webp",
+        "heading": "Carvion started from nothing — from handwork and full attention to every detail, to a refined system that now sets the quality standard.",
+        "body": "<p>That experience taught us one thing: a product only makes sense when it works in everyday use.</p><p>That is why we make car mats that genuinely match a specific vehicle and the driver's needs — taking into account structural differences, conditions of use and long-term durability. Every element has a purpose and every production step is controlled, because the final result is not a matter of chance.</p><p>It is not only about the product itself.<br/> It is about how it changes the everyday experience of driving — more order, more comfort, fewer compromises.</p><p>Because for us, driver comfort is not an add-on.<br/> <strong>It is the standard.</strong></p>",
+        "trust_label": "50k+ drivers",
+        "badge_faces_image": "shopify://shop_images/Group_1632523139.webp",
         "padding_top": 40,
         "padding_bottom": 48
       }
@@ -111,41 +111,41 @@
         "ons_s1": {
           "type": "slide",
           "settings": {
-            "heading": "Měření a šablony",
-            "body": "<p>Přesnost začíná u základů<br\/>Každý model analyzujeme individuálně - s ohledem na skutečné konstrukční rozdíly.<br\/><br\/>Šablony vytváříme na základě reálných měření, aby perfektně seděly konkrétnímu vozu.<\/p>",
-            "image": "shopify:\/\/shop_images\/carvion-about-01-measurement-worker-v7-20260730.webp"
+            "heading": "Measuring and templates",
+            "body": "<p>Precision starts with the basics<br/>We analyse every model individually — taking real structural differences into account.<br/><br/>We create templates from real measurements so they fit a specific car perfectly.</p>",
+            "image": "shopify://shop_images/carvion-about-01-measurement-worker-v7-20260730.webp"
           }
         },
         "slide_thzice": {
           "type": "slide",
           "settings": {
-            "heading": "CNC řezání",
-            "body": "<p>Přesnost na úrovni technologií<br\/>Používáme přesné CNC stroje, které zajišťují dokonalé kopírování tvaru.<br\/><br\/>Každý řez je opakovatelný a přesný - bez odchylek a kompromisů.<\/p>",
-            "image": "shopify:\/\/shop_images\/carvion-about-02-cnc-cutting.webp"
+            "heading": "CNC cutting",
+            "body": "<p>Precision at technology level<br/>We use precise CNC machines that copy the shape perfectly.<br/><br/>Every cut is repeatable and exact — no deviations, no compromises.</p>",
+            "image": "shopify://shop_images/carvion-about-02-cnc-cutting.webp"
           }
         },
         "slide_Pg7tBp": {
           "type": "slide",
           "settings": {
-            "heading": "Šití a 3D tvarování",
-            "body": "<p>Funkce se potkává s formou<br\/>Obšití a lemy dodávají odolnost i estetiku.<br\/><br\/>3D tvarování zajistí, že koberec dokonale přiléhá k podlaze a chrání interiér vozu.<br\/><\/p>",
-            "image": "shopify:\/\/shop_images\/carvion-about-03-binding-shaping.webp"
+            "heading": "Stitching and 3D forming",
+            "body": "<p>Function meets form<br/>Stitching and edges add durability and good looks.<br/><br/>3D forming makes the mat sit tight to the floor and protects the car interior.<br/></p>",
+            "image": "shopify://shop_images/carvion-about-03-binding-shaping.webp"
           }
         },
         "slide_AkUN7b": {
           "type": "slide",
           "settings": {
-            "heading": "Kontrola kvality",
-            "body": "<p>Každý detail je důležitý<br\/>Každá sada prochází pečlivou kontrolou.<br\/><br\/>Ověřujeme padnutí, kvalitu zpracování i finální provedení - ještě než dorazí k zákazníkovi.<\/p>",
-            "image": "shopify:\/\/shop_images\/carvion-about-04-quality-control.webp"
+            "heading": "Quality control",
+            "body": "<p>Every detail matters<br/>Every set goes through a careful inspection.<br/><br/>We check the fit, the workmanship and the final finish — before it reaches the customer.</p>",
+            "image": "shopify://shop_images/carvion-about-04-quality-control.webp"
           }
         },
         "slide_yNFpU9": {
           "type": "slide",
           "settings": {
-            "heading": "Balení a odeslání",
-            "body": "<p>Připraveno na každodenní používání<br\/>Bezpečné balení a spolehlivá logistika.<br\/><br\/>Produkt dorazí v perfektním stavu - připravený hned plnit svou funkci.<\/p>",
-            "image": "shopify:\/\/shop_images\/carvion-about-05-packing-logo-final-20260730.webp"
+            "heading": "Packing and dispatch",
+            "body": "<p>Ready for everyday use<br/>Safe packaging and reliable logistics.<br/><br/>The product arrives in perfect condition — ready to do its job straight away.</p>",
+            "image": "shopify://shop_images/carvion-about-05-packing-logo-final-20260730.webp"
           }
         }
       },
@@ -160,8 +160,8 @@
         "logo_max_width": 112,
         "logo_max_width_mobile": 88,
         "bg_media_type": "carousel",
-        "bg_image_desktop": "shopify:\/\/shop_images\/Rectangle_4786_1.webp",
-        "bg_image_mobile": "shopify:\/\/shop_images\/Rectangle_4786_1.webp",
+        "bg_image_desktop": "shopify://shop_images/Rectangle_4786_1.webp",
+        "bg_image_mobile": "shopify://shop_images/Rectangle_4786_1.webp",
         "stage_min_height": 560,
         "padding_top": 40,
         "padding_bottom": 40
@@ -173,32 +173,32 @@
         "step_N3YkAY": {
           "type": "step",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_1948755095.svg",
-            "title": "Padnutí pro model vozu",
+            "icon": "shopify://shop_images/Group_1948755095.svg",
+            "title": "Fit for your car model",
             "text": ""
           }
         },
         "step_Q9Datx": {
           "type": "step",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_1948755098.svg",
-            "title": "Ruční výroba",
+            "icon": "shopify://shop_images/Group_1948755098.svg",
+            "title": "Handmade production",
             "text": ""
           }
         },
         "step_GgbMdB": {
           "type": "step",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_1948755096.svg",
-            "title": "Kontrola kvality",
+            "icon": "shopify://shop_images/Group_1948755096.svg",
+            "title": "Quality control",
             "text": ""
           }
         },
         "step_edyCTx": {
           "type": "step",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_1948755097.svg",
-            "title": "Odeslání",
+            "icon": "shopify://shop_images/Group_1948755097.svg",
+            "title": "Dispatch",
             "text": ""
           }
         }
@@ -212,8 +212,8 @@
       "name": "O nás - kroky procesu",
       "settings": {
         "layout": "horizontal",
-        "heading": "Jak to děláme?",
-        "step_prefix": "Krok",
+        "heading": "How we do it",
+        "step_prefix": "Step",
         "subheading": "",
         "padding_top": 48,
         "padding_bottom": 56
@@ -225,22 +225,22 @@
         "card_p9k89y": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
-            "caption": "Zachytí nečistoty v buňkách"
+            "image": "shopify://shop_images/Mask_group_751468d0-1c37-42df-8dc6-ad6bc200c7f7.webp",
+            "caption": "Traps dirt in its cells"
           }
         },
         "card_cEmVGd": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Mask_group_1.webp",
-            "caption": "Nenechá je šířit se dál"
+            "image": "shopify://shop_images/Mask_group_1.webp",
+            "caption": "Stops it spreading further"
           }
         },
         "card_MWcMz8": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Group_1948755126.webp",
-            "caption": "Nenasakuje vlhkost"
+            "image": "shopify://shop_images/Group_1948755126.webp",
+            "caption": "Does not absorb moisture"
           }
         }
       },
@@ -250,8 +250,8 @@
         "card_MWcMz8"
       ],
       "settings": {
-        "heading_desktop": "Jak funguje struktura EVA - a proč je to rozdíl, který poznáte",
-        "heading_mobile": "Proč EVA zlepšuje komfort jízdy?",
+        "heading_desktop": "How the EVA structure works — and why you'll notice the difference",
+        "heading_mobile": "Why EVA improves driving comfort",
         "margin_top": 0,
         "margin_bottom": 0
       }
@@ -259,24 +259,24 @@
     "tilted_collage_v2_AnAAwT": {
       "type": "tilted-collage-v2",
       "settings": {
-        "heading_main": "Stejný materiál se používá v:",
+        "heading_main": "The same material is used in:",
         "heading_accent": "",
         "text": "",
-        "daily_text": "Pokud EVA obstojí tam, kde rozhoduje odolnost a komfort - obstojí i ve vašem autě.",
-        "image_left": "shopify:\/\/shop_images\/image_177.webp",
-        "image_center": "shopify:\/\/shop_images\/image_176_287c4361-208d-4f0a-9fc5-16ee3f47ccec.webp",
-        "image_right": "shopify:\/\/shop_images\/image_175_234ea1c9-b118-4b8b-a029-65d27ecc0eeb.webp",
+        "daily_text": "If EVA holds up where durability and comfort decide, it will hold up in your car too.",
+        "image_left": "shopify://shop_images/image_177.webp",
+        "image_center": "shopify://shop_images/image_176_287c4361-208d-4f0a-9fc5-16ee3f47ccec.webp",
+        "image_right": "shopify://shop_images/image_175_234ea1c9-b118-4b8b-a029-65d27ecc0eeb.webp",
         "hide_pins": true,
-        "caption_left": "<p>Voda? Žádný problém. <br\/>EVA nenasakuje vlhkost.<\/p>",
-        "caption_center": "<p>Extrémní podmínky?<br\/>EVA je vytvořená tak, aby vydržela víc.<\/p>",
-        "caption_right": "<p>Testováno pod tlakem. <br\/>EVA nezklame.<\/p>",
+        "caption_left": "<p>Water? No problem. <br/>EVA does not absorb moisture.</p>",
+        "caption_center": "<p>Extreme conditions?<br/>EVA is built to take more.</p>",
+        "caption_right": "<p>Tested under pressure. <br/>EVA does not let you down.</p>",
         "hide_daily_line": false,
         "daily_line_below_collage": true,
         "daily_text_style": "split",
-        "daily_text_main": "Pokud EVA obstojí tam, kde rozhoduje odolnost a komfort -",
-        "daily_text_accent": "obstojí i ve vašem autě.",
-        "button_label": "Zobrazit produkt",
-        "button_link": "shopify:\/\/collections\/all-car-mats"
+        "daily_text_main": "If EVA holds up where durability and comfort decide —",
+        "daily_text_accent": "it will hold up in your car too.",
+        "button_label": "View product",
+        "button_link": "shopify://collections/all-car-mats"
       }
     },
     "roman_value_icons_v2_jXAfQK": {
@@ -286,40 +286,40 @@
           "type": "item",
           "settings": {
             "icon": "1",
-            "title": "Nenasakuje vodu",
-            "subtitle": "bez vlhkosti a zápachu"
+            "title": "Does not absorb water",
+            "subtitle": "no damp, no odour"
           }
         },
         "item_igkQWr": {
           "type": "item",
           "settings": {
             "icon": "2",
-            "title": "Odolnost proti opotřebení",
-            "subtitle": "vypadá skvěle po dlouhá léta"
+            "title": "Wear resistance",
+            "subtitle": "looks great for years"
           }
         },
         "item_zehV7D": {
           "type": "item",
           "settings": {
             "icon": "3",
-            "title": "Snadné čištění",
-            "subtitle": "stačí opláchnout vodou"
+            "title": "Easy cleaning",
+            "subtitle": "just rinse with water"
           }
         },
         "item_TBLLXa": {
           "type": "item",
           "settings": {
             "icon": "4",
-            "title": "Protiskluzová struktura",
-            "subtitle": "nečistoty zůstávají na místě"
+            "title": "Anti-slip structure",
+            "subtitle": "dirt stays where it lands"
           }
         },
         "item_Y3bwpU": {
           "type": "item",
           "settings": {
             "icon": "5",
-            "title": "Lehký a flexibilní",
-            "subtitle": "perfektně se přizpůsobí vozu"
+            "title": "Light and flexible",
+            "subtitle": "adapts perfectly to the car"
           }
         }
       },
@@ -332,8 +332,8 @@
       ],
       "name": "Roman - ikony hodnoty",
       "settings": {
-        "heading": "Co to znamená pro vás?",
-        "side_image": "shopify:\/\/shop_images\/ChatGPT_Image_May_19_2026_06_20_38_PM.webp",
+        "heading": "What does that mean for you",
+        "side_image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_20_38_PM.webp",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -344,37 +344,37 @@
         "item_YQU3KM": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/skoda_cde76e3e-101f-4468-adfd-93390c6a95cf.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
-            "title": "Gumové vs. Carvion 3D s lemy",
-            "label_before": "Gumové",
+            "image_before": "shopify://shop_images/skoda_cde76e3e-101f-4468-adfd-93390c6a95cf.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
+            "title": "Rubber vs. Carvion 3D with edges",
+            "label_before": "Rubber",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "Carvion 3D s lemy"
+            "label_after": "Carvion 3D with edges"
           }
         },
         "item_rxcDyb": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/IMG_1371.webp",
-            "image_after": "shopify:\/\/shop_images\/IMG_7298_1.webp",
-            "title": "Velurové vs. Carvion 3D s lemy",
-            "label_before": "Velurové",
+            "image_before": "shopify://shop_images/IMG_1371.webp",
+            "image_after": "shopify://shop_images/IMG_7298_1.webp",
+            "title": "Velour vs. Carvion 3D with edges",
+            "label_before": "Velour",
             "label_before_main": "",
             "label_before_accent": "",
-            "label_after": "Carvion 3D s lemy"
+            "label_after": "Carvion 3D with edges"
           }
         },
         "item_kCeEQh": {
           "type": "item",
           "settings": {
-            "image_before": "shopify:\/\/shop_images\/may_sd_1tiny.webp",
-            "image_after": "shopify:\/\/shop_images\/3D_evamats.webp",
-            "title": "EVA koberce vs. Carvion 3D s lemy",
-            "label_before": "Koberce Carvion vs. ostatní výrobci",
-            "label_before_main": "Koberce Carvion",
-            "label_before_accent": "vs. ostatní výrobci",
-            "label_after": "Carvion 3D s lemy"
+            "image_before": "shopify://shop_images/may_sd_1tiny.webp",
+            "image_after": "shopify://shop_images/3D_evamats.webp",
+            "title": "EVA mats vs. Carvion 3D with edges",
+            "label_before": "Carvion mats vs. other manufacturers",
+            "label_before_main": "Carvion mats",
+            "label_before_accent": "vs. other manufacturers",
+            "label_after": "Carvion 3D with edges"
           }
         }
       },
@@ -385,11 +385,11 @@
       ],
       "settings": {
         "title": "",
-        "heading_main": "Proč zvolit",
+        "heading_main": "Why choose",
         "heading_accent": "Carvion?",
-        "heading_line2": "Porovnejte sami",
-        "button_label": "Zobrazit produkt",
-        "button_link": "shopify:\/\/collections\/all-car-mats"
+        "heading_line2": "See for yourself",
+        "button_label": "View product",
+        "button_link": "shopify://collections/all-car-mats"
       }
     },
     "home_faq_rt7qWr": {
@@ -399,8 +399,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Pokrytí podlahy a padnutí<\/p>",
-            "des": "<p><strong>-Budou koberce opravdu sedět?<\/strong><br\/>Ano, naše EVA koberce jsou navrženy zvlášť pro každou značku, model i verzi vozu. Pokrývají celou plochu podlahy a chrání i místa, kam běžné gumové nebo velurové koberce nedosáhnou.<\/p><p><strong>-Co je to tunelový koberec?<\/strong><br\/>EVA koberce pokrývají až 98 % podlahy včetně středového tunelu, takže poskytují maximální ochranu interiéru.<\/p><p><strong>-Je opěrka pod patu namontovaná na koberci řidiče?<\/strong><br\/>Ne, opěrka pod patu je dodávána samostatně, aby bylo možné její umístění přizpůsobit vašim preferencím.<\/p>",
+            "hd": "<p>Floor coverage and fit</p>",
+            "des": "<p><strong>-Will the mats really fit?</strong><br/>Yes, our EVA mats are designed separately for every make, model and version. They cover the whole floor area and protect places ordinary rubber or velour mats never reach.</p><p><strong>-What is a tunnel mat?</strong><br/>EVA mats cover up to 98% of the floor including the centre tunnel, giving the interior maximum protection.</p><p><strong>-Is the heel pad fitted to the driver's mat?</strong><br/>No, the heel pad is supplied separately so its position can be adapted to your preference.</p>",
             "des_html": ""
           }
         },
@@ -408,8 +408,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Vlastnosti materiálu a odolnost<\/p>",
-            "des": "<p><strong>-Co je materiál EVA?<\/strong><br\/>Jde o 10mm pěnu, která zachytává nečistoty a vodu na povrchu koberce a brání jejich pronikání pod něj.<\/p><p><strong>-Jaký je rozdíl mezi 3D sadou a 3D sadou s lemy?<\/strong><br\/>3D sada s lemy navíc chrání boční části podlahy, takže poskytuje ještě lepší krytí i přesnější padnutí.<\/p><p><strong>-Jak dlouho koberce vydrží?<\/strong><br\/>Díky odolnému materiálu EVA vydrží koberce 5 až 7 let bez známek opotřebení.<\/p>",
+            "hd": "<p>Material properties and durability</p>",
+            "des": "<p><strong>-What is EVA material?</strong><br/>It is a 10 mm foam that traps dirt and water on the surface of the mat and stops them getting underneath.</p><p><strong>-What is the difference between a 3D set and a 3D set with edges?</strong><br/>A 3D set with edges also protects the sides of the floor, so it gives even better coverage and a more precise fit.</p><p><strong>-How long do the mats last?</strong><br/>Thanks to the durable EVA material the mats last 5 to 7 years without signs of wear.</p>",
             "des_html": ""
           }
         },
@@ -417,8 +417,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Používání a údržba<\/p>",
-            "des": "<p><strong>-Jak čistit EVA koberce?<\/strong><br\/>Nečistoty se na povrchu koberce nedrží. Stačí je vyklepat nebo při větším znečištění opláchnout tlakovou myčkou.<\/p><p><br\/><strong>-Jsou EVA koberce vhodné na léto i zimu?<\/strong><br\/>Ano, jsou voděodolné, bez zápachu, odolné vůči teplotám a ideální pro celoroční použití.<\/p>",
+            "hd": "<p>Use and care</p>",
+            "des": "<p><strong>-How do I clean EVA mats?</strong><br/>Dirt does not stick to the surface of the mat. Just shake it out, or rinse it with a pressure washer if it is heavily soiled.</p><p><br/><strong>-Are EVA mats suitable for summer and winter?</strong><br/>Yes, they are water-resistant, odourless, temperature-resistant and ideal for year-round use.</p>",
             "des_html": ""
           }
         },
@@ -426,8 +426,8 @@
           "type": "text",
           "settings": {
             "category": "",
-            "hd": "<p>Objednávka a doručení<\/p>",
-            "des": "<p><strong>-Jaká je doba doručení?<\/strong><br\/>Objednávky obvykle vyřizujeme do 2 týdnů. U speciálních vozidel, jako jsou motorové čluny nebo traktory, se může doba prodloužit na 4 až 6 týdnů.<br\/><\/p><p><strong>-Jak probíhá doručení?<\/strong><br\/>Koberce zasíláme kurýrem přímo na adresu zákazníka. Kvůli rozměrům produktu je neodesíláme do výdejních boxů. Dbáme na to, aby dorazily ve stejném stavu, v jakém byly vyrobeny - bez přehýbání a deformací, které by mohly ovlivnit jejich padnutí.<\/p>",
+            "hd": "<p>Ordering and delivery</p>",
+            "des": "<p><strong>-What is the delivery time?</strong><br/>We usually fulfil orders within 2 weeks. For special vehicles such as motorboats or tractors it can extend to 4–6 weeks.<br/></p><p><strong>-How is delivery handled?</strong><br/>We send the mats by courier straight to the customer's address. Because of the size of the product we do not send them to parcel lockers. We make sure they arrive in the same condition they were made in — without folding or deformation that could affect the fit.</p>",
             "des_html": ""
           }
         }
@@ -440,15 +440,15 @@
       ],
       "settings": {
         "design_variant": "home",
-        "hd": "Carvion - FAQ",
+        "hd": "Carvion — FAQ",
         "heading_accent": "",
-        "heading_mobile": "Časté otázky",
+        "heading_mobile": "Frequently asked questions",
         "breadcrumb_parent_label": "Carvion",
         "breadcrumb_parent_url": "",
-        "breadcrumb_current_label": "Časté otázky",
+        "breadcrumb_current_label": "Frequently asked questions",
         "eyebrow_link": "",
-        "view_all_label": "Zobrazit vše",
-        "view_all_url": "shopify:\/\/pages\/faq",
+        "view_all_label": "View all",
+        "view_all_url": "shopify://pages/faq",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_top_mobile": 40,
@@ -463,8 +463,8 @@
           "settings": {
             "position_x": 24,
             "position_y": 12,
-            "tooltip_heading": "Struktura",
-            "tooltip_text": "Mřížková struktura, která zachytává nečistoty a vodu"
+            "tooltip_heading": "Structure",
+            "tooltip_text": "A honeycomb structure that traps dirt and water"
           }
         },
         "hotspot_jBQdqp": {
@@ -472,8 +472,8 @@
           "settings": {
             "position_x": 72,
             "position_y": 35,
-            "tooltip_heading": "Padnutí",
-            "tooltip_text": "Přesné padnutí pro váš model auta"
+            "tooltip_heading": "Fit",
+            "tooltip_text": "A precise fit for your car model"
           }
         },
         "hotspot_UxnTND": {
@@ -481,8 +481,8 @@
           "settings": {
             "position_x": 38,
             "position_y": 53,
-            "tooltip_heading": "Materiál",
-            "tooltip_text": "Odolný materiál EVA odolný proti opotřebení"
+            "tooltip_heading": "Material",
+            "tooltip_text": "Durable, wear-resistant EVA material"
           }
         },
         "hotspot_dzR7jF": {
@@ -490,8 +490,8 @@
           "settings": {
             "position_x": 88,
             "position_y": 78,
-            "tooltip_heading": "Lem",
-            "tooltip_text": "Zvýšený lem chrání interiér vozu"
+            "tooltip_heading": "Edge",
+            "tooltip_text": "A raised edge protects the car interior"
           }
         },
         "hotspot_rhxiWg": {
@@ -499,8 +499,8 @@
           "settings": {
             "position_x": 21,
             "position_y": 83,
-            "tooltip_heading": "Čištění",
-            "tooltip_text": "Snadné čištění během několika sekund"
+            "tooltip_heading": "Cleaning",
+            "tooltip_text": "Easy to clean in seconds"
           }
         }
       },
@@ -513,30 +513,30 @@
       ],
       "name": "Konzultace k rohoži s hotspoty",
       "settings": {
-        "heading": "Získejte bezplatnou konzultaci!",
-        "subheading": "Rádi vám pomůžeme vybrat správné řešení.",
-        "mat_image": "shopify:\/\/shop_images\/vacancy_375.webp",
-        "mat_image_alt": "EVA koberec",
-        "label_name": "Jméno a příjmení",
-        "placeholder_name": "Jan Novák",
-        "label_phone": "Telefon",
-        "phone_prefix": "+42",
+        "heading": "Get a free consultation!",
+        "subheading": "We'll gladly help you choose the right solution.",
+        "mat_image": "shopify://shop_images/vacancy_375.webp",
+        "mat_image_alt": "EVA mat",
+        "label_name": "First and last name",
+        "placeholder_name": "John Smith",
+        "label_phone": "Phone",
+        "phone_prefix": "+420",
         "placeholder_phone": "000-000-000",
-        "label_email": "E-mail",
-        "placeholder_email": "jan@example.cz",
-        "label_message": "Poznámka (volitelné)",
-        "placeholder_message": "Vaše zpráva...",
-        "submit_label": "Odeslat poptávku",
-        "consent_intro": "Souhlasím s",
-        "terms_label": "obchodními podmínkami",
+        "label_email": "Email",
+        "placeholder_email": "john@example.com",
+        "label_message": "Comment (optional)",
+        "placeholder_message": "Your message…",
+        "submit_label": "Send an enquiry",
+        "consent_intro": "I agree to the",
+        "terms_label": "Terms and Conditions",
         "terms_url": "",
-        "consent_mid": "a",
-        "privacy_label": "zásadami ochrany osobních údajů",
+        "consent_mid": "and",
+        "privacy_label": "Privacy Policy",
         "privacy_url": "",
         "consent_end": ".",
-        "consent_error_message": "Musíte přijmout zásady ochrany osobních údajů a obchodní podmínky.",
-        "success_message": "Děkujeme! Brzy se vám ozveme.",
-        "error_message": "Zkontrolujte pole a zkuste to znovu.",
+        "consent_error_message": "You must accept the Privacy Policy and the Terms and Conditions.",
+        "success_message": "Thank you! We will be in touch shortly.",
+        "error_message": "Check the fields and try again.",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 40,
@@ -549,61 +549,61 @@
         "item_TKEjjb": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_5.mp4"
+            "video": "shopify://files/videos/Untitled_5.mp4"
           }
         },
         "item_PQe9pU": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_6.mp4"
+            "video": "shopify://files/videos/Untitled_6.mp4"
           }
         },
         "item_GKdtyH": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_3.mp4"
+            "video": "shopify://files/videos/Untitled_3.mp4"
           }
         },
         "item_tKjjYM": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_4.mp4"
+            "video": "shopify://files/videos/Untitled_4.mp4"
           }
         },
         "item_CEgCpU": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_1.mp4"
+            "video": "shopify://files/videos/Untitled_1.mp4"
           }
         },
         "item_tn3YVM": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_5.mp4"
+            "video": "shopify://files/videos/Untitled_5.mp4"
           }
         },
         "item_VLHj8b": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_6.mp4"
+            "video": "shopify://files/videos/Untitled_6.mp4"
           }
         },
         "item_QmzPNC": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_3.mp4"
+            "video": "shopify://files/videos/Untitled_3.mp4"
           }
         },
         "item_4nd6cF": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_4.mp4"
+            "video": "shopify://files/videos/Untitled_4.mp4"
           }
         },
         "item_4Ph8EP": {
           "type": "item",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Untitled_1.mp4"
+            "video": "shopify://files/videos/Untitled_1.mp4"
           }
         }
       },
@@ -620,13 +620,13 @@
         "item_4Ph8EP"
       ],
       "settings": {
-        "title": "Majitelé aut o kobercích",
+        "title": "Car owners on the mats",
         "title_accent": "Carvion",
-        "facebook_url": "https:\/\/www.facebook.com\/carvion.cz",
-        "facebook_label": "Sledujte nás na Facebooku",
-        "instagram_url": "https:\/\/www.instagram.com\/carvion_cz",
+        "facebook_url": "https://www.facebook.com/carvion.cz",
+        "facebook_label": "Follow us on Facebook",
+        "instagram_url": "https://www.instagram.com/carvion_cz",
         "tiktok_url": "",
-        "youtube_url": "https:\/\/www.youtube.com\/@autokoberceeva",
+        "youtube_url": "https://www.youtube.com/@autokoberceeva",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 32,
