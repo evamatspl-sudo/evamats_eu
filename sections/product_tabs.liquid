@@ -136,6 +136,10 @@
   </div>
 </div>
 
+{%- if request.locale.iso_code == 'cs' and product.template_suffix == 'config' -%}
+  {% render 'cz-cro-reviews' %}
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Product tabs",
