@@ -34,16 +34,29 @@
         function showTermsMessage() {
             if (messageField && messageText) {
                 messageField.textContent = messageText.textContent;
+                messageField.classList.add('is-visible');
+                if (termsCheckbox) termsCheckbox.focus();
             }
         }
 
         function updateTermsGate() {
             const checked = !!(termsCheckbox && termsCheckbox.checked);
-            if (checkoutButton) checkoutButton.disabled = !checked;
+            // Кнопку не отключаем через disabled: у отключённой кнопки браузер не
+            // порождает click, поэтому обработчик ниже с showTermsMessage() никогда
+            // не срабатывал и предупреждение не показывалось. Блокировка остаётся
+            // смысловой (aria-disabled + класс), а сам переход гасится в обработчике.
+            if (checkoutButton) {
+                checkoutButton.disabled = false;
+                checkoutButton.setAttribute('aria-disabled', checked ? 'false' : 'true');
+                checkoutButton.classList.toggle('is-terms-blocked', !checked);
+            }
             if (dynamicCheckout) {
                 dynamicCheckout.classList.toggle('is-terms-blocked', !checked);
             }
-            if (checked && messageField) messageField.textContent = '';
+            if (checked && messageField) {
+                messageField.textContent = '';
+                messageField.classList.remove('is-visible');
+            }
         }
 
         if (stickyObserver) {

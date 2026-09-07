@@ -1757,7 +1757,14 @@ window.addEventListener('resize', () => {
 
           container.querySelectorAll('.product-form__input--dropdown select').forEach((select) => {
             const titleValue = select.closest('fieldset')?.querySelector('.lip__title_value');
-            if (titleValue) titleValue.textContent = select.value || '';
+            if (titleValue) {
+              titleValue.textContent = (
+                select.options[select.selectedIndex]?.dataset.title
+                || select.options[select.selectedIndex]?.textContent
+                || select.value
+                || ''
+              ).trim();
+            }
           });
           container.querySelectorAll('.lip__field input:checked').forEach((input) => {
             const titleValue = input.closest('.lip__field')?.querySelector('.lip__title_value');
@@ -2146,9 +2153,9 @@ window.addEventListener('resize', () => {
     const titleEl = field.querySelector('.lip__title_value');
     if (!titleEl) return;
     const value = control.tagName === 'SELECT'
-      ? (control.options[control.selectedIndex]?.value || '')
-      : control.value;
-    titleEl.textContent = value;
+      ? (control.options[control.selectedIndex]?.dataset.title || control.options[control.selectedIndex]?.textContent || control.options[control.selectedIndex]?.value || '')
+      : (control.dataset.title || control.value);
+    titleEl.textContent = String(value).trim();
   }
 
   document.querySelectorAll('.lip__field').forEach((field) => {
