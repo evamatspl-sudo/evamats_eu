@@ -46,9 +46,6 @@
     {%- endif -%}
 
     <title>
-    {% if canonical_url == 'https://carvionauto.cz/' %}
-      Český výrobce autokoberců - Carvion Auto
-    {% else %}
       {{ page_title }}
       {%- if current_tags %}
         &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -56,7 +53,6 @@
         &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %}
         &ndash; {{ shop.name }}{% endunless -%}
-        {% endif %}
     </title>
     <link rel="stylesheet" href="{{"swiper-bundle.min.css" | asset_url}}" />
     {%- if template.name == 'cart' or settings.cart_type == 'drawer' -%}
@@ -378,14 +374,81 @@
       {{- 'section-evamats-policy.css' | asset_url | stylesheet_tag -}}
     {%- endif -%}
 
-    <script>
+  <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
           if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
           }
+  </script>
+
+  {%- assign bitrix_locale = request.locale.iso_code | split: '-' | first -%}
+  {%- if bitrix_locale == 'lv' -%}
+    <script>
+      (() => {
+        const sourceText = 'Hello, how can I help you?';
+        const translatedText = 'Sveiki! Kā varu jums palīdzēt?';
+
+        const translateTree = (root) => {
+          if (!root) return;
+
+          const translateElement = (element) => {
+            ['title', 'aria-label', 'placeholder'].forEach((attribute) => {
+              if (element.getAttribute?.(attribute) === sourceText) {
+                element.setAttribute(attribute, translatedText);
+              }
+            });
+
+            if (element.shadowRoot) translateTree(element.shadowRoot);
+            if (element.tagName === 'IFRAME') {
+              try { translateTree(element.contentDocument); } catch (_) {}
+            }
+          };
+
+          if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+          let node;
+          while ((node = walker.nextNode())) {
+            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() === sourceText) {
+              node.nodeValue = node.nodeValue.replace(sourceText, translatedText);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              translateElement(node);
+            }
+          }
+        };
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => mutation.addedNodes.forEach(translateTree));
+          translateTree(document);
+        });
+
+        const start = () => {
+          translateTree(document);
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+          let passes = 0;
+          const retry = window.setInterval(() => {
+            translateTree(document);
+            passes += 1;
+            if (passes >= 40) window.clearInterval(retry);
+          }, 750);
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+          start();
+        }
+      })();
     </script>
+  {%- endif -%}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {% comment %}CZ CRO review preview 2026-09-07: owner-approved, evamats_eu/dev only.{% endcomment %}
+    {%- if request.locale.iso_code == 'cs' -%}
+      {%- if template.suffix == 'config' or request.page_type == 'cart' -%}
+        {{ 'cz-cro-preview.css' | asset_url | stylesheet_tag }}
+        <script src="{{ 'cz-cro-preview.js' | asset_url }}" defer></script>
+      {%- endif -%}
+    {%- endif -%}
   </head>
 
   <body class="gradient template_{{ template.name }} {% if page %} template_{{ page.template_suffix }}{% endif %} {% if product.template_suffix %}suffix_{{ product.template_suffix }}{% endif %}{% if evamats_is_v2_page %} evamats-v2{% endif %}">
@@ -431,11 +494,30 @@
     <div id="popupOverlayUpsellVideo" class="popup_overlay popup-overlay--upsell_video">
       <div class="popup">
           <div class="popup-content rte">
-            {% assign upsell_popup_page = pages['product-upsell-popup-content'] %}
-            {% if upsell_popup_page != empty %}
-              {{ upsell_popup_page.content }}
+            {% if localization.language.iso_code == 'fr' %}
+              <h3 class="h2">🛡️ Que sont les renforts de talon et pourquoi en ajouter ?</h3>
+              <p><strong>Les renforts de talon</strong> sont des protections supplémentaires placées sous le talon du conducteur, à l’endroit où le tapis s’use le plus rapidement. Ils protègent contre l’abrasion, prolongent la durée de vie du tapis et améliorent le confort au quotidien.</p>
+              <h4>Types de renforts de talon :</h4>
+              <ul>
+                <li><strong>Renfort en caoutchouc</strong> — résistant et antidérapant, disponible en deux motifs : <em>losanges</em> et <em>nid d’abeille</em>.</li>
+                <li><strong>Renfort en EVA</strong> — fabriqué dans le même matériau et dans la même couleur que votre tapis, pour une finition harmonieuse.</li>
+                <li><strong>Renfort métallique</strong> — extrêmement résistant, adapté à un usage intensif.</li>
+              </ul>
+              <h3>📸 Découvrez son fonctionnement :</h3>
+              <video src="{{ settings.product_upsell_video.sources[1].url }}" controls playsinline></video>
+              <p><strong>Avantages :</strong></p>
+              <ul>
+                <li>Protège le tapis contre l’usure prématurée</li>
+                <li>Renforce la zone la plus sollicitée</li>
+                <li>Préserve l’esthétique et la propreté de l’habitacle</li>
+              </ul>
             {% else %}
-              {{ settings.product_upsell_text }}
+              {% assign upsell_popup_page = pages['product-upsell-popup-content'] %}
+              {% if upsell_popup_page != empty %}
+                {{ upsell_popup_page.content }}
+              {% else %}
+                {{ settings.product_upsell_text }}
+              {% endif %}
             {% endif %}
           </div>
       </div>
@@ -505,7 +587,7 @@
           "addressRegion": "Hlavní město Praha"
         },
         "name": "Carvion Sp. z o. o.",
-        "email": "info@carvionauto.cz",
+        "email": "{% if localization.language.iso_code == 'cs' %}info@carvionauto.cz{% else %}info@evamats.store{% endif %}",
         "telephone": "+420 292 333 695",
         "vatID": "",
         "image": "{{ settings.logo | image_url: width: 500 }}"
@@ -635,5 +717,46 @@
     })();
    </script>
    <!-- End Bitrix chat -->
+  
+    {% if request.locale.iso_code == 'de' %}
+      <script>
+        // EVAMATS_DE_SEARCH_STATUS_INLINE_20260831
+        document.addEventListener('DOMContentLoaded', function () {
+          function restyleLoading(root) {
+            root.querySelectorAll('.brand-select-loading').forEach(function (node) {
+              if (node.textContent !== 'Suche…') node.textContent = 'Suche…';
+              node.style.cssText = 'box-sizing:border-box;width:100%;padding:14px 18px;color:#667085;font-size:16px;font-style:italic;line-height:1.35;text-align:center;pointer-events:none';
+            });
+          }
+          function renderEmpty(container) {
+            var input = container.querySelector('.brand-input');
+            var options = container.querySelector('.brand-select-options');
+            if (!input || !options) return;
+            var value = input.value.trim();
+            var items = Array.from(options.children).filter(function (node) { return !node.classList.contains('brand-select-loading') && !node.classList.contains('brand-select-status'); });
+            var found = items.some(function (node) { return node.style.display !== 'none'; });
+            var status = options.querySelector('.brand-select-status');
+            if (!value || found) {
+              if (status) status.remove();
+              return;
+            }
+            if (!status) {
+              status = document.createElement('div');
+              status.className = 'brand-select-status';
+              status.setAttribute('role', 'status');
+              options.appendChild(status);
+            }
+            status.textContent = 'Keine Ergebnisse gefunden';
+            status.style.cssText = 'box-sizing:border-box;width:100%;padding:14px 18px;color:#8a8f98;font-size:16px;font-style:italic;line-height:1.35;text-align:center;pointer-events:none';
+          }
+          document.querySelectorAll('.filter-container-json').forEach(function (container) {
+            var input = container.querySelector('.brand-input');
+            if (input) input.addEventListener('input', function () { setTimeout(function () { renderEmpty(container); }, 0); });
+            restyleLoading(container);
+            new MutationObserver(function () { restyleLoading(container); }).observe(container, { childList: true, subtree: true });
+          });
+        });
+      </script>
+    {% endif %}
   </body>
 </html>
