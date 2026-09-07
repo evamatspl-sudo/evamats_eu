@@ -1,0 +1,9 @@
+<div class="cz-cro-cart-trust" data-cz-cro-preview>
+  <div class="cz-cro-secure-label">{% render 'cz-cro-icon', icon: 'lock' %}<span>Bezpečná platba</span></div>
+  <ul class="cz-cro-payment-list" aria-label="Platební metody">
+    {% assign cz_payment_files = 'go_pay,visa,mc,apay,gpay' | split: ',' %}
+    {% assign cz_payment_labels = 'GoPay,Visa,Mastercard,Apple Pay,Google Pay' | split: ',' %}
+    {% for filename in cz_payment_files %}<li><img src="{{ filename | append: '.svg' | file_url }}" width="58" height="30" alt="{{ cz_payment_labels[forloop.index0] }}" loading="lazy"></li>{% endfor %}
+  </ul>
+  <p class="cz-cro-payment-note">Dostupné možnosti se zobrazí při dokončení objednávky.</p>
+</div>

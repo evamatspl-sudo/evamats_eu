@@ -1,0 +1,22 @@
+{% comment %}CZ dev preview: shop reviews, not reviews of the selected car model.{% endcomment %}
+<div class="cz-cro-intro" data-cz-cro-preview>
+  <a class="cz-cro-review-link" href="#cz-cro-reviews">
+    <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
+    <span>Recenze obchodu</span><span aria-hidden="true">↗</span>
+  </a>
+  <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits">
+    <span class="cz-cro-info" aria-hidden="true">i</span>Výhody koberců EVA
+  </button>
+</div>
+<dialog id="cz-cro-benefits" class="cz-cro-dialog" aria-labelledby="cz-cro-benefits-title">
+  <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="Zavřít" autofocus>×</button>
+  <p class="cz-cro-eyebrow">PROMYŠLENÉ DO POSLEDNÍHO DETAILU</p>
+  <h2 id="cz-cro-benefits-title">Proč zvolit koberce EVA?</h2>
+  <p class="cz-cro-dialog-lead">Vyrobené pro váš vůz. Připravené na každodenní jízdu.</p>
+  <div class="cz-cro-benefit-grid">
+    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'factory' %}</span><h3>Vyrobeno v Polsku</h3><p>Koberce vyrábíme v Polsku podle zvolené konfigurace.</p></article>
+    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'car' %}</span><h3>Na míru vašemu vozu</h3><p>Tvar odpovídá konkrétnímu modelu a provedení automobilu.</p></article>
+    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'drop' %}</span><h3>Voda a nečistoty pod kontrolou</h3><p>Buňky materiálu zachycují vodu, písek a bláto a pomáhají chránit podlahu.</p></article>
+  </div>
+  <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>Zpět ke konfiguraci</button>
+</dialog>
