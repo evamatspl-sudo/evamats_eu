@@ -286,6 +286,9 @@
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
         <div class="evamats-footer__copyright-wrap">
+          {%- if request.locale.iso_code == 'fr' -%}
+            <p class="evamats-footer__legal"><a href="{{ routes.root_url }}/policies/legal-notice">Mentions légales</a></p>
+          {%- endif -%}
           {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
             <p class="evamats-footer__legal">
               {%- if section.settings.nip_number != blank -%}
