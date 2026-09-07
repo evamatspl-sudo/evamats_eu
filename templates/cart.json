@@ -51,9 +51,9 @@
       "type": "related-products-custom",
       "settings": {
         "custom_collection": "akcesoria",
-        "heading": "Další produkty",
+        "heading": "More products",
         "products_to_show": 12,
-        "card_button_label": "Zobrazit produkt",
+        "card_button_label": "View product",
         "mobile_button_label": "Vybrat",
         "padding_top": 80,
         "padding_bottom": 80,

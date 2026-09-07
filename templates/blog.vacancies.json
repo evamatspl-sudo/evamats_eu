@@ -13,14 +13,14 @@
       "type": "evamats-hero-cta",
       "settings": {
         "eyebrow": "Pracovní nabídky",
-        "heading": "Připojte se k týmu Carvion",
-        "description": "<p>Vytváříme místo, kde záleží na lidech, spolupráci a skutečném vlivu na rozvoj firmy.</p>",
+        "heading": "Join the Carvion team",
+        "description": "<p>We are building a place where people, teamwork and a real influence on how the company grows actually matter.<\/p>",
         "button_label": "Zobrazit nabídky",
         "button_link": "",
         "button_scroll_to_list": true,
         "button_scroll_selector": ".evamats-vacancies-list",
-        "image": "shopify://shop_images/ChatGPT_Image_May_19_2026_06_35_43_PM.webp",
-        "image_mobile": "shopify://shop_images/ChatGPT_Image_May_18_2026_06_57_20_PM_1.webp",
+        "image": "shopify:\/\/shop_images\/ChatGPT_Image_May_19_2026_06_35_43_PM.webp",
+        "image_mobile": "shopify:\/\/shop_images\/ChatGPT_Image_May_18_2026_06_57_20_PM_1.webp",
         "padding_top": 72,
         "padding_bottom": 40,
         "padding_top_mobile": 40,
@@ -53,19 +53,19 @@
         "point_wCtjU4": {
           "type": "point",
           "settings": {
-            "text": "Různá oddělení, jedno místo — vždy víte, na koho se obrátit"
+            "text": "Different departments, one place — you always know who to turn to"
           }
         },
         "point_CdPqMi": {
           "type": "point",
           "settings": {
-            "text": "Více než 100 lidí, kteří spolu opravdu komunikují"
+            "text": "More than 100 people who really talk to each other"
           }
         },
         "point_UJHhCQ": {
           "type": "point",
           "settings": {
-            "text": "Rosteme 20–30 % ročně — a hledáme lidi, kteří chtějí růst s námi"
+            "text": "We grow 20–30% a year — and we are looking for people who want to grow with us"
           }
         }
       },
@@ -81,11 +81,11 @@
       "name": "Produkt spotlight v2",
       "settings": {
         "overline": "",
-        "heading": "Poznejte lidi, kteří tvoří Carvion",
+        "heading": "Meet the people who make Carvion",
         "cta_label": "",
         "cta_url": "",
         "media_type": "video",
-        "video_desktop": "shopify://files/videos/upsell_cz.mp4",
+        "video_desktop": "shopify:\/\/files\/videos\/upsell_cz.mp4",
         "margin_top": 0,
         "margin_bottom": 0
       }
@@ -96,7 +96,7 @@
         "item_fndQ6K": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755214.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755214.svg",
             "heading": "Jasná očekávání",
             "text": "Víte, co od vás očekáváme a v čem spočívá vaše role."
           }
@@ -104,15 +104,15 @@
         "item_tqGGig": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755215.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755215.svg",
             "heading": "Podpora vedoucího",
-            "text": "Máte na koho se obrátit s dotazem a můžete počítat s feedbackem."
+            "text": "There is always someone to ask, and you can count on feedback."
           }
         },
         "item_Jp8waE": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755216_1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755216_1.svg",
             "heading": "Rozvoj v praxi",
             "text": "Učíte se na reálných úkolech, ne jen z teorie."
           }
@@ -120,25 +120,25 @@
         "item_kmzjFM": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755214_1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755214_1.svg",
             "heading": "Vliv na práci",
-            "text": "Vaše nápady mohou skutečně měnit způsob fungování týmu."
+            "text": "Your ideas can genuinely change how the team works."
           }
         },
         "item_gtYpV8": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755215_1.svg",
-            "heading": "Stabilní prostředí",
-            "text": "Pracujeme na reálném produktu a rozvíjíme firmu dlouhodobě."
+            "icon": "shopify:\/\/shop_images\/Group_1948755215_1.svg",
+            "heading": "A stable environment",
+            "text": "We work on a real product and build the company for the long term."
           }
         },
         "item_aRmdzB": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Group_1948755216.svg",
+            "icon": "shopify:\/\/shop_images\/Group_1948755216.svg",
             "heading": "Lidská atmosféra",
-            "text": "Spojujeme odpovědnost za výsledek s normální komunikací a vzájemným respektem."
+            "text": "We combine responsibility for the result with normal communication and mutual respect."
           }
         }
       },
@@ -167,7 +167,7 @@
       "settings": {
         "heading": "Pracovní nabídky",
         "filters_aria_label": "Filtr kategorii",
-        "filter_all_label": "Vše",
+        "filter_all_label": "All",
         "label_contract": "Umowa",
         "label_languages": "Jazyk",
         "label_work_mode": "Tryb pracy",
@@ -186,17 +186,17 @@
     "evamats_careers_contact": {
       "type": "evamats-careers-contact",
       "settings": {
-        "background_image": "shopify://shop_images/ag1_waifu2x_photo_scale.webp",
-        "background_image_mobile": "shopify://shop_images/goga2.webp",
+        "background_image": "shopify:\/\/shop_images\/ag1_waifu2x_photo_scale.webp",
+        "background_image_mobile": "shopify:\/\/shop_images\/goga2.webp",
         "heading": "Nevidíte nabídku pro sebe? Máte otázky?",
-        "email": "info@carvionauto.cz",
+        "email": "info@evamats.store",
         "button_label": "Napište nám",
         "button_link": "",
-        "social_heading": "Zjistěte více o kariéře v našich médiích:",
-        "facebook_url": "https://www.facebook.com/hr.evamats",
-        "instagram_url": "https://www.instagram.com/evamats_hr",
-        "tiktok_url": "https://www.tiktok.com/@evamats_cz",
-        "youtube_url": "https://www.youtube.com/@evamatspl",
+        "social_heading": "Find out more about careers in our media:",
+        "facebook_url": "https:\/\/www.facebook.com\/hr.evamats",
+        "instagram_url": "https:\/\/www.instagram.com\/evamats_hr",
+        "tiktok_url": "https:\/\/www.tiktok.com\/@evamats_cz",
+        "youtube_url": "https:\/\/www.youtube.com\/@evamatspl",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_mobile": 0,
