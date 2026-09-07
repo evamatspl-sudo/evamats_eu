@@ -9,6 +9,7 @@
 .cz-cro-intro :focus-visible,.cz-cro-dialog :focus-visible,.cz-cro-reviews :focus-visible{outline:3px solid #ff2745;outline-offset:4px}
 .cz-cro-dialog{box-sizing:border-box;width:min(880px,calc(100% - 32px));max-height:85vh;max-height:85dvh;padding:44px;border:0;border-radius:24px;color:#1b1d22;background:#fff;overflow:auto}
 .cz-cro-dialog::backdrop{background:rgb(18 21 25 / .6)}
+dialog.cz-cro-dialog{position:fixed!important;inset:0!important;margin:auto!important;height:fit-content}
 .cz-cro-dialog-close{position:absolute;right:16px;top:12px;width:44px;height:44px;border:0;border-radius:50%;background:#f4f4f4;color:#1b1d22;font:32px/1 sans-serif;cursor:pointer}
 .cz-cro-eyebrow{margin:0 0 12px;color:#a9132d;font-size:12px;font-weight:700;letter-spacing:1.4px;line-height:1.5}
 .cz-cro-dialog h2{margin:0 32px 12px 0;font-size:34px;line-height:1.15;letter-spacing:-.8px}
