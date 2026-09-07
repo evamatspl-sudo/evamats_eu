@@ -299,3 +299,6 @@
     height: 26px;
   }
 }
+
+/* EVAMATS stable review posters 2026-08-31 */
+.video_reviews__container_slider .video_reviews__item{width:24%;min-width:0}.video_reviews__container_slider video{background:#111 center/cover no-repeat}.video_reviews__container_full{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}.video_reviews__container_full video{max-width:min(560px,100vw);max-height:92vh}@media screen and (max-width:989px){.video_reviews__container_slider .video_reviews__item{width:32%}}@media screen and (max-width:749px){.video_reviews__container_slider .video_reviews__item{width:64%}}
