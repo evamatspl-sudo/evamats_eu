@@ -173,10 +173,24 @@
             .replace(/\s+/g, '-');
     }
 
+    // EVAMATS_CATALOG_LOCALE_ROUTES_20260907: all selector exits keep the active Shopify locale.
+    function localizeCatalogUrl(value) {
+        const raw = String(value || '').trim();
+        if (!raw) return '';
+        let url;
+        try { url = new URL(raw, window.location.origin); } catch (_) { return ''; }
+        if (url.origin !== window.location.origin) return '';
+        const match = url.pathname.match(/^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?(collections\/[a-z0-9-]+)\/?$/i);
+        if (!match) return '';
+        const root = String((window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/');
+        if (!/^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?$/i.test(root)) return '';
+        return root + match[1] + url.search + url.hash;
+    }
+
     function extractCollectionHandle(url) {
         return String(url || '')
             .trim()
-            .replace(/^\/collections\//, '')
+            .replace(/^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?collections\//i, '')
             .split('?')[0]
             .toLowerCase();
     }
@@ -193,7 +207,7 @@
     }
 
     function buildFilterUrl(modelUrl, years) {
-        const path = String(modelUrl || '').trim();
+        const path = localizeCatalogUrl(modelUrl);
         if (!path) return '';
         const url = new URL(path, window.location.origin);
         const yearsValue = String(years || '').trim();
@@ -210,7 +224,7 @@
     }
 
     function navigateIfNeeded(targetUrl) {
-        const url = String(targetUrl || '').trim();
+        const url = localizeCatalogUrl(targetUrl);
         if (!url || isSameFilterLocation(url)) return;
         window.location.href = url;
     }
@@ -736,7 +750,7 @@
               closeAllSelects();
               checkIfSearchEnabled();
               updateClearButtons();
-              if (autoNavEnabled && modelUrl.trim()) window.location.href = modelUrl.trim();
+              if (autoNavEnabled) navigateIfNeeded(modelUrl);
               return;
             }
 
@@ -748,7 +762,7 @@
               closeAllSelects();
               checkIfSearchEnabled();
               updateClearButtons();
-              if (autoNavEnabled && brandUrl.trim()) window.location.href = brandUrl.trim();
+              if (autoNavEnabled) navigateIfNeeded(brandUrl);
               return;
             }
 
@@ -790,7 +804,7 @@
         });
 
         searchButton.addEventListener('click', () => {
-            window.location.href = buildUrl();
+            navigateIfNeeded(buildUrl());
         });
 
         function checkIfSearchEnabled() {
