@@ -7,6 +7,20 @@
 -%}
 
 {{ 'section-evamats-proven-scale-v2.css' | asset_url | stylesheet_tag }}
+<style>
+  /* EVAMATS_PROVEN_SCALE_LOCALE_SAFE_INLINE_20260831 */
+  #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__intro,
+  #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat-label { overflow-wrap: anywhere; }
+  #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat { min-height: 154px; }
+  #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat-label { display: block; max-width: 100%; }
+  @media screen and (max-width: 1199px) {
+    #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat { min-height: 132px; }
+  }
+  @media screen and (max-width: 749px) {
+    #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat { min-height: 0; }
+    #EvamatsProvenScale-{{ section.id }} .evamats-proven-scale-v2__stat-label { line-height: 1.25; }
+  }
+</style>
 {% render 'evamats-section-padding-style', section: section, target: '.evamats-proven-scale-v2' %}
 <div
   id="EvamatsProvenScale-{{ section.id }}"

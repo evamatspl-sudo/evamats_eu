@@ -33,6 +33,7 @@
   .evamats-footer__contact-note { font-size: 0.85em; color: #9a9a9a; line-height: 1.35; }
   .evamats-footer__brand-desc { margin: 0; max-width: 240px; font-size: 1.3rem; line-height: 1.55; color: #6b6b6b; }
   .evamats-footer__menu-heading { text-transform: none; }
+  .evamats-footer__aside:not(:has(.evamats-footer__contact, .list-social__item)) { display: none; }
   @media screen and (max-width: 989px) {
     .evamats-footer__main { flex-wrap: wrap; }
     .evamats-footer__brand-col { flex-basis: 100%; max-width: 100%; }
@@ -285,6 +286,9 @@
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
         <div class="evamats-footer__copyright-wrap">
+          {%- if request.locale.iso_code == 'fr' -%}
+            <p class="evamats-footer__legal"><a href="{{ routes.root_url }}/policies/legal-notice">Mentions légales</a></p>
+          {%- endif -%}
           {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
             <p class="evamats-footer__legal">
               {%- if section.settings.nip_number != blank -%}
@@ -607,7 +611,7 @@
       "type": "textarea",
       "id": "brand_description",
       "label": "Brand description (under logo)",
-      "default": "Carvion je evropská značka specializující se na výrobu autokoberců."
+      "default": "Carvion is a European brand specialising in car mats."
     },
     {
       "type": "text",

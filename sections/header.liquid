@@ -427,7 +427,7 @@
       clearTimeout(closeTimers.get(menuEl));
       closeTimers.set(
         menuEl,
-        setTimeout(() => setOpen(menuEl, false), 120)
+        setTimeout(() => setOpen(menuEl, false), 320)
       );
     };
 
@@ -455,6 +455,14 @@
         if (!isDesktop()) return;
         event.preventDefault();
       });
+
+      const navPanel = menuEl.querySelector('.evamats-header__nav-panel');
+      if (navPanel) {
+        navPanel.addEventListener('pointerdown', (event) => {
+          if (!isDesktop() || !event.target.closest('a[href]')) return;
+          cancelClose(menuEl);
+        });
+      }
     });
 
     desktopQuery.addEventListener('change', () => {

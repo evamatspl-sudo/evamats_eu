@@ -42,7 +42,7 @@
           {%- endif -%}
 
           <div class="evamats-contact__details">
-            {%- if phone != blank -%}
+            {%- if localization.language.iso_code == 'cs' and phone != blank -%}
               <p class="evamats-contact__phone">
                 <a class="evamats-contact__phone-link" href="tel:{{ phone_href | escape }}">{{ phone | escape }}</a>
               </p>
@@ -75,14 +75,14 @@
               </div>
             {%- endif -%}
 
-            {%- if section.settings.address_label != blank and section.settings.address != blank -%}
+            {%- if localization.language.iso_code == 'cs' and section.settings.address_label != blank and section.settings.address != blank -%}
               <div class="evamats-contact__detail">
                 <p class="evamats-contact__detail-label">{{ section.settings.address_label | escape }}</p>
                 <p class="evamats-contact__detail-address">{{ section.settings.address | newline_to_br }}</p>
               </div>
             {%- endif -%}
 
-            {%- if section.settings.tin_label != blank and section.settings.tin != blank -%}
+            {%- if localization.language.iso_code == 'cs' and section.settings.tin_label != blank and section.settings.tin != blank -%}
               <div class="evamats-contact__detail">
                 <p class="evamats-contact__detail-label">{{ section.settings.tin_label | escape }}</p>
                 <p class="evamats-contact__detail-address">{{ section.settings.tin | escape }}</p>
