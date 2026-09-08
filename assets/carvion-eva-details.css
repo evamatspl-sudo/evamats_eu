@@ -26,6 +26,7 @@
 .carvion-eva-zoom{display:inline-flex;align-items:center;justify-content:center;gap:var(--cro-space-xs);min-height:44px;padding:var(--cro-space-xs) var(--cro-space-sm);border:1px solid var(--cro-line);border-radius:8px;background:var(--cro-paper);color:var(--cro-ink);font:600 14px/1.25 var(--cro-font);white-space:nowrap;cursor:pointer}
 .carvion-eva-zoom svg{width:20px;height:20px;flex:none}
 .carvion-eva-zoom[aria-pressed="true"]{background:var(--cro-ink);border-color:var(--cro-ink);color:var(--cro-paper)}
+.carvion-eva-zoom[aria-pressed="true"] .carvion-eva-zoom-plus{display:none}
 .carvion-eva-zoom:disabled{opacity:.5;cursor:not-allowed}
 .carvion-eva-figure figcaption{margin-top:var(--cro-space-xs);color:var(--cro-muted);font-size:14px;line-height:1.45}
 .carvion-eva-copy{display:flex;flex-direction:column;min-width:0}
@@ -41,7 +42,9 @@
 .carvion-eva-explanation h3{margin:0 0 var(--cro-space-xs);color:var(--cro-ink);font-size:20px;line-height:1.25;font-style:normal}
 .carvion-eva-explanation p{margin:0;color:var(--cro-muted);font-size:16px;line-height:1.55}
 .carvion-eva-copy .cz-cro-dialog-done{margin-top:0;width:100%;align-self:flex-start}
+.cz-cro-intro .cz-cro-benefits-button:disabled,.carvion-eva-option:disabled,.carvion-eva-pin:disabled{opacity:.5;cursor:not-allowed}
+.carvion-eva-pin:active{border-color:var(--cro-focus)}
 @media(min-width:750px){.cz-cro-dialog.carvion-eva-dialog{padding:var(--cro-space-xl)}.carvion-eva-heading{padding-inline-end:var(--cro-space-xl)}.carvion-eva-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:32px}.carvion-eva-figure{max-width:360px}.carvion-eva-heading p{font-size:16px}.carvion-eva-explanation{min-height:200px}.carvion-eva-copy .cz-cro-dialog-done{margin-top:auto}}
 @media(hover:hover){.cz-cro-intro .cz-cro-benefits-button:hover{background:var(--cro-focus);color:var(--cro-paper)}.carvion-eva-option:not([aria-pressed="true"]):hover{background:var(--cro-soft);color:var(--cro-ink)}.carvion-eva-zoom:not(:disabled):hover{border-color:var(--cro-ink)}.carvion-eva-pin:hover{background:var(--cro-focus)}}
 .carvion-eva-option:active,.carvion-eva-zoom:not(:disabled):active{transform:translateY(1px)}
-@media(prefers-reduced-motion:reduce){.carvion-eva-photo,.cz-cro-intro .cz-cro-benefits-button{transition:none}}
+@media(prefers-reduced-motion:reduce){.carvion-eva-photo,.cz-cro-intro .cz-cro-benefits-button{transition:none}.carvion-eva-option:active,.carvion-eva-zoom:not(:disabled):active{transform:none}}
