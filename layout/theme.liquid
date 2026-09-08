@@ -442,12 +442,11 @@
   {%- endif -%}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {% comment %}CZ CRO review preview 2026-09-07: owner-approved, evamats_eu/dev only.{% endcomment %}
-    {%- if request.locale.iso_code == 'cs' -%}
-      {%- if template.suffix == 'config' or request.page_type == 'cart' -%}
-        {{ 'cz-cro-preview.css' | asset_url | stylesheet_tag }}
-        <script src="{{ 'cz-cro-preview.js' | asset_url }}" defer></script>
-      {%- endif -%}
+    {% comment %}Owner-approved CRO preview: EU dev only, EN/CS/DE/LV/FR.{% endcomment %}
+    {%- if template.suffix == 'config' or request.page_type == 'cart' or template.suffix == 'reviews' -%}
+      {{ 'carvion-cro-tokens.css' | asset_url | stylesheet_tag }}
+      {{ 'cz-cro-preview.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'cz-cro-preview.js' | asset_url }}" defer></script>
     {%- endif -%}
   </head>
 

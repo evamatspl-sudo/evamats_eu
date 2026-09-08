@@ -683,7 +683,7 @@
                   {%- endunless -%}
                 </div>
               </div>
-              {%- if request.locale.iso_code == 'cs' and product.template_suffix == 'config' -%}
+              {%- if product.template_suffix == 'config' -%}
                 {% render 'cz-cro-product-intro' %}
               {%- endif -%}
             {%- when 'price' -%}
