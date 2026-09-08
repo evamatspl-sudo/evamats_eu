@@ -194,11 +194,12 @@
         "item_CwCHUK"
       ],
       "name": "Custom Reviews",
+      "custom_css": [".custom_reviews__block_image { width: 96px; height: 40px; border-radius: 0; object-fit: contain; flex-shrink: 0; }"],
       "settings": {
         "title": "Reviews",
         "rating": 4.8,
         "block_title": "Carvion Car Mats",
-        "block_image": "shopify://shop_images/logo_carvion_inverse.svg",
+        "block_image": "shopify:\/\/shop_images\/logo_carvion_inverse.svg",
         "reviews_count": "2,395 Google reviews"
       }
     }
