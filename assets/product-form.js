@@ -153,7 +153,10 @@ if (!customElements.get('product-form')) {
 
     async onSubmitHandler(evt) {
       evt.preventDefault();
-      const matPatternInputChecked = document.querySelector('[data-type="matPattern"] input:checked');
+      const productScope = this.closest('[data-product-id]');
+      const matPatternInputChecked = (productScope || this.form).querySelector('[data-type="matPattern"] input:checked');
+      // EVA heel pads share the configurator, but only mat sets pay the drops surcharge.
+      const isEvaHeelPad = productScope?.dataset.productId === '9257148317974';
 
       if (this.submitButton?.getAttribute("aria-disabled") === "true") return;
 
@@ -205,7 +208,7 @@ if (!customElements.get('product-form')) {
           }
         }
 
-        if (matPatternInputChecked) {
+        if (matPatternInputChecked && !isEvaHeelPad) {
           if (matPatternInputChecked.getAttribute('data-value') == 'drop') {
             console.log('[product-form] add drop surcharge variant', DROP_CELL_SHAPE_VARIANT_ID);
             await addDropCellShape(DROP_CELL_SHAPE_VARIANT_ID);

@@ -9,6 +9,8 @@
  */
 {
   "carvion_cro": {
+    "shipping_cart_html": "V košíku <strong>{{ value }}</strong>",
+    "shipping_goal_html": "Doprava zdarma od <strong>{{ value }}</strong>",
     "reviews_link": "Recenze zákazníků",
     "reviews_support": "Podívejte se, jak naše koberce sedí ve vozech zákazníků — fotografie a zkušenosti.",
     "benefits_link": "Proč koberce EVA?",

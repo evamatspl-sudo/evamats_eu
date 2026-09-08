@@ -9,6 +9,8 @@
  */
 {
   "carvion_cro": {
+    "shipping_cart_html": "Im Warenkorb <strong>{{ value }}</strong>",
+    "shipping_goal_html": "Versandkostenfrei ab <strong>{{ value }}</strong>",
     "reviews_link": "Kundenbewertungen",
     "reviews_support": "So passen unsere Matten in die Autos unserer Kunden — Fotos und Erfahrungen.",
     "benefits_link": "Warum EVA-Matten?",
