@@ -9,6 +9,19 @@
  */
 {
   "carvion_cro": {
+    "details_title": "EVA mats, up close",
+    "details_lead": "Explore the details that make a difference every day. Select a point on the photo.",
+    "details_photo_alt": "Black EVA driver's mat with red edging and two fastening points, fitted in a car",
+    "details_caption": "Installation example. The shape and fixings depend on your vehicle and selected set.",
+    "details_loading": "Loading the photo…",
+    "details_error": "The photo could not load. You can still explore the details below.",
+    "details_zoom": "Zoom detail",
+    "details_cells": "Cell structure",
+    "details_cells_text": "The recessed cells collect water and loose dirt. Remove the mat to empty it, then rinse it and let it dry before putting it back.",
+    "details_edging": "Colour edging",
+    "details_edging_text": "The stitched edging follows the shape of the mat. Choose the mat and edging colours in the configurator to suit your interior.",
+    "details_fixing": "Fixing points",
+    "details_fixing_text": "Fixings are selected for your vehicle. Secure the driver's mat before driving and check that the pedals move freely.",
     "shipping_cart_html": "In your cart <strong>{{ value }}</strong>",
     "shipping_goal_html": "Free delivery from <strong>{{ value }}</strong>",
     "reviews_link": "Customer reviews",

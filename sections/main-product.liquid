@@ -1846,7 +1846,7 @@
                   </div>
                 </div>
               {% endif %}
-              {% if product.template_suffix contains 'config' and settings.extra_product != blank and settings.extra_product.size > 0 %}
+              {% if product.template_suffix contains 'config' and settings.extra_product != blank and settings.extra_product.size > 0 and product.id != 9257148317974 %}
               <div class="product__dropdown_wr product__dropdown_wr--extras disabled" data-dropdown="extras">
                 <div class="product__dropdown_title product__dropdown_title--extras">
                   <span class="product__dropdown_title_text">{{ 'general.config.additional_options' | t }}</span>
