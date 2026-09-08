@@ -1,26 +1,24 @@
-{% comment %}
-  Review-layout preview only. Three existing page.reviews imports with unchanged names/photos.
-  No fabricated aggregate count, relative dates, verified-purchase label or review schema.
-  Source identities, consent and current aggregate must be verified before live approval.
-{% endcomment %}
-<section class="cz-cro-reviews page-width" id="cz-cro-reviews" aria-labelledby="cz-cro-reviews-title" tabindex="-1" data-cz-cro-preview>
+{% comment %}Eight existing imports, unchanged authors/photos. No fabricated totals, dates or schema. Preview only.{% endcomment %}
+<section class="cz-cro-reviews page-width{% if full_page %} cz-cro-reviews--page{% endif %}" id="cz-cro-reviews" aria-labelledby="cz-cro-reviews-title" tabindex="-1" data-cz-cro-preview>
   <div class="cz-cro-reviews-heading">
-    <div><p class="cz-cro-eyebrow">ZKUŠENOSTI S NAŠÍM OBCHODEM</p><h2 id="cz-cro-reviews-title">Jak se s našimi koberci jezdí?</h2><p>Fotografie a zkušenosti zákazníků s různými vozy.</p></div>
-    <a class="cz-cro-source-link" href="{{ pages['reviews'].url }}">Všechny recenze <span aria-hidden="true">↗</span></a>
+    <div>
+      {% if full_page %}
+        <img class="cz-cro-review-logo" src="{{ 'logo_carvion_inverse.svg' | file_url }}" width="140" height="52" alt="Carvion">
+        <h1 id="cz-cro-reviews-title">{{ 'carvion_cro.reviews_page_title' | t }}</h1>
+      {% else %}
+        <h2 id="cz-cro-reviews-title">{{ 'carvion_cro.reviews_title' | t }}</h2>
+      {% endif %}
+      <p>{{ 'carvion_cro.reviews_lead' | t }}</p>
+    </div>
+    {% unless full_page %}<a class="cz-cro-source-link" href="{{ pages['reviews'].url }}">{{ 'carvion_cro.all_reviews' | t }} <span aria-hidden="true">→</span></a>{% endunless %}
   </div>
-  <div class="cz-cro-review-grid">
-    <article class="cz-cro-review-card">
-      <img src="{{ 'image_-_2025-09-09T162623.807.webp' | file_url }}&width=640" width="640" height="400" loading="lazy" alt="Fotografie koberců z recenze Maggie Newton">
-      <div class="cz-cro-review-content"><span class="cz-cro-stars" aria-label="5 z 5 hvězdiček">★★★★★</span><blockquote>Na první pohled jsme velmi spokojení s kvalitou koberců i s tím, jak dobře sedí. Doufám, že budeme stejně spokojení i při používání a čištění. 🤗</blockquote><footer><strong>Maggie Newton</strong><span>Překlad stávající recenze</span></footer></div>
-    </article>
-    <article class="cz-cro-review-card">
-      <img src="{{ 'unnamed_1.webp' | file_url }}&width=640" width="640" height="400" loading="lazy" alt="Fotografie koberců z recenze Stan G.">
-      <div class="cz-cro-review-content"><span class="cz-cro-stars" aria-label="5 z 5 hvězdiček">★★★★★</span><blockquote>Velmi pěkné a dobře padnoucí — doporučuji. Uvidím, jak si povedou v zimě v rozbředlém sněhu a blátě, ale zatím jsem velmi spokojený. Koberce jsou namontované v Opelu Mokka X.</blockquote><footer><strong>Stan G.</strong><span>Překlad stávající recenze</span></footer></div>
-    </article>
-    <article class="cz-cro-review-card">
-      <img src="{{ 'unnamed_5.webp' | file_url }}&width=640" width="640" height="400" loading="lazy" alt="Fotografie koberců z recenze Adrian Oswell">
-      <div class="cz-cro-review-content"><span class="cz-cro-stars" aria-label="5 z 5 hvězdiček">★★★★★</span><blockquote>Koberce jsou skvělé! Perfektně sedí a otvory pro úchyty jsou přesně tam, kde mají být. Jedinou drobnou nevýhodou je, že chlopně krytu středového tunelu jsou asi o 0,5 cm delší — ale to není nic zásadního. Výborný výrobek! Budu je doporučovat a určitě se znovu vrátím.</blockquote><footer><strong>Adrian Oswell</strong><span>Překlad stávající recenze</span></footer></div>
-    </article>
-  </div>
-  <p class="cz-cro-preview-note">Náhled ke schválení · Ukázky ze stávající stránky Recenze, nikoli hodnocení této konkrétní varianty. Před zveřejněním ověříme původ recenzí a aktuální hodnocení obchodu.</p>
+  <p class="cz-cro-preview-note">{{ 'carvion_cro.preview_note' | t }}</p>
+  {% unless full_page %}
+    <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
+      <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">←</button>
+      <span data-cz-cro-position aria-live="polite">1 / 8</span>
+      <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">→</button>
+    </div>
+  {% endunless %}
+  <div class="cz-cro-review-grid" id="cz-cro-review-grid" {% unless full_page %}tabindex="0" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>{% render 'carvion-cro-review-cards' %}</div>
 </section>

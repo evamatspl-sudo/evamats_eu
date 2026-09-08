@@ -337,14 +337,15 @@
       {% endif %}
 
       <div id="drawer__progress" class="drawer__progress evamats-cart-gift-banner-wrap">
-        <div class="evamats-cart-gift-banner">
+        <div class="evamats-cart-gift-banner carvion-cro-shipping{% if freeShipping %} carvion-cro-shipping--done{% endif %}">
           <div class="evamats-cart-gift-banner__text-row">
+            <span class="carvion-cro-shipping-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'truck' %}</span>
             <p class="evamats-cart-gift-banner__text">
               {% if freeShipping %}
-                {{ 'sections.cart.progress_free_shipping' | t }}
+                {{ 'carvion_cro.shipping_done' | t }}
               {% else %}
                 {% assign value = threshold | minus: cart.total_price | money %}
-                {{ 'sections.cart.progress_text_order_value' | t: value: value }}
+                {{ 'carvion_cro.shipping_remaining_html' | t: value: value }}
               {% endif %}
             </p>
             {% comment %} <span class="evamats-cart-gift-banner__info" aria-hidden="true">

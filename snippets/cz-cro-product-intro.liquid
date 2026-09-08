@@ -1,22 +1,25 @@
-{% comment %}CZ dev preview: shop reviews, not reviews of the selected car model.{% endcomment %}
+{% comment %}EU dev preview: shop experiences, not a rating of this vehicle model.{% endcomment %}
 <div class="cz-cro-intro" data-cz-cro-preview>
-  <a class="cz-cro-review-link" href="#cz-cro-reviews">
-    <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
-    <span>Recenze obchodu</span><span aria-hidden="true">↗</span>
-  </a>
-  <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits">
-    <span class="cz-cro-info" aria-hidden="true">i</span>Výhody koberců EVA
-  </button>
+  <a class="cz-cro-review-link" href="#cz-cro-reviews"><span class="cz-cro-stars" aria-hidden="true">★★★★★</span><span>{{ 'carvion_cro.reviews_link' | t }}</span><span aria-hidden="true">↓</span></a>
+  <p class="cz-cro-review-support">{{ 'carvion_cro.reviews_support' | t }}</p>
+  <ul class="cz-cro-benefit-strip" role="list">
+    {% assign benefits = 'car,drop,factory' | split: ',' %}
+    {% for benefit in benefits %}<li>{% render 'cz-cro-icon', icon: benefit %}<span>{{ 'carvion_cro.' | append: benefit | t }}</span></li>{% endfor %}
+  </ul>
+  <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits">{{ 'carvion_cro.benefits_link' | t }} <span aria-hidden="true">+</span></button>
 </div>
 <dialog id="cz-cro-benefits" class="cz-cro-dialog" aria-labelledby="cz-cro-benefits-title">
-  <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="Zavřít" autofocus>×</button>
-  <p class="cz-cro-eyebrow">PROMYŠLENÉ DO POSLEDNÍHO DETAILU</p>
-  <h2 id="cz-cro-benefits-title">Proč zvolit koberce EVA?</h2>
-  <p class="cz-cro-dialog-lead">Vyrobené pro váš vůz. Připravené na každodenní jízdu.</p>
-  <div class="cz-cro-benefit-grid">
-    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'factory' %}</span><h3>Vyrobeno v Polsku</h3><p>Koberce vyrábíme v Polsku podle zvolené konfigurace.</p></article>
-    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'car' %}</span><h3>Na míru vašemu vozu</h3><p>Tvar odpovídá konkrétnímu modelu a provedení automobilu.</p></article>
-    <article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: 'drop' %}</span><h3>Voda a nečistoty pod kontrolou</h3><p>Buňky materiálu zachycují vodu, písek a bláto a pomáhají chránit podlahu.</p></article>
+  <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="{{ 'carvion_cro.close' | t | escape }}">×</button>
+  <div class="cz-cro-dialog-layout">
+    {% if product.featured_image %}<figure class="cz-cro-benefit-photo">{{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,600,800', sizes: '(min-width: 750px) 340px, 260px' }}</figure>{% endif %}
+    <div>
+      <h2 id="cz-cro-benefits-title" tabindex="-1" autofocus>{{ 'carvion_cro.benefits_title' | t }}</h2>
+      <p class="cz-cro-dialog-lead">{{ 'carvion_cro.benefits_lead' | t }}</p>
+      <div class="cz-cro-benefit-grid">
+        {% assign benefits = 'car,drop,factory' | split: ',' %}
+        {% for benefit in benefits %}<article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: benefit %}</span><div><h3>{{ 'carvion_cro.' | append: benefit | t }}</h3><p>{{ 'carvion_cro.' | append: benefit | append: '_text' | t }}</p></div></article>{% endfor %}
+      </div>
+      <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>{{ 'carvion_cro.back' | t }}</button>
+    </div>
   </div>
-  <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>Zpět ke konfiguraci</button>
 </dialog>
