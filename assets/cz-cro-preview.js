@@ -13,9 +13,17 @@
       const position = controls.querySelector('[data-cz-cro-position]');
       const update = () => {
         const cards = Array.from(grid.children);
-        const left = grid.getBoundingClientRect().left;
-        const first = Math.max(0, cards.findIndex(card => card.getBoundingClientRect().right > left + 12));
-        position.textContent = (first + 1) + ' / ' + cards.length;
+        const bounds = grid.getBoundingClientRect();
+        // Count cards at least half visible, not the clipped teaser of the next card.
+        const visible = cards.map((card, index) => {
+          const rect = card.getBoundingClientRect();
+          const overlap = Math.min(rect.right, bounds.right) - Math.max(rect.left, bounds.left);
+          return overlap >= rect.width / 2 ? index + 1 : null;
+        }).filter(index => index !== null);
+        const first = visible[0] || 1;
+        const last = visible[visible.length - 1] || first;
+        const label = (first === last ? first : first + '–' + last) + ' / ' + cards.length;
+        if (position.textContent !== label) position.textContent = label;
         buttons[0].disabled = grid.scrollLeft <= 5;
         buttons[1].disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
       };

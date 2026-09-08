@@ -52,10 +52,9 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-review-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;background:var(--cro-soft)}
 .cz-cro-review-author strong{display:block;line-height:1.3}
 .cz-cro-review-author .cz-cro-stars{display:block;margin-top:4px}
-.cz-cro-google-mark{display:block;width:22px;height:22px;flex:none}
-.cz-cro-google-summary{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;border-top:1px solid var(--cro-line);border-bottom:1px solid var(--cro-line);padding:12px 0;margin:20px 0 12px}
-.cz-cro-google-label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
-.cz-cro-google-summary .cz-cro-source-link{margin-left:auto;font-size:13px}
+.cz-cro-brand-summary{border-top:1px solid var(--cro-line);border-bottom:1px solid var(--cro-line);padding:16px 0;margin:20px 0 12px}
+.cz-cro-brand-label{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;font-size:15px}
+.cz-cro-brand-name{font-weight:700;letter-spacing:.03em;color:var(--cro-ink)}
 .cz-cro-review-content blockquote{padding:0;border:0;margin:12px 0;font:400 15px/1.6 var(--cro-font);color:var(--cro-ink)}
 .cz-cro-review-content blockquote p{margin:0}
 .cz-cro-review-details summary{display:inline-flex;align-items:center;min-height:44px;list-style:none;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}
@@ -77,13 +76,24 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-cart-review-sample p{margin:8px 0;font-size:14px;line-height:1.5;color:var(--cro-ink)}
 .cz-cro-cart-review-sample>span:not(.cz-cro-stars){font-size:12px;color:var(--cro-muted);line-height:1.5;display:block}
 .cz-cro-cart-review{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:4px;color:var(--cro-ink);font-size:13px;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
-.evamats-cart-gift-banner.carvion-cro-shipping{padding:18px 20px;border-radius:16px;background:var(--cro-soft);color:var(--cro-ink)}
-.carvion-cro-shipping .evamats-cart-gift-banner__text-row{display:flex;align-items:center;gap:14px}
-.carvion-cro-shipping-icon{display:flex;flex:none;color:var(--cro-ink)}
-.carvion-cro-shipping .evamats-cart-gift-banner__text{font-size:15px!important;line-height:1.5!important;margin:0!important;font-weight:400!important}
-.carvion-cro-shipping .evamats-cart-gift-banner__bar{height:4px;margin-top:14px}
-.carvion-cro-shipping--done .evamats-cart-gift-banner__bar{display:none}
+.evamats-cart-gift-banner.carvion-cro-shipping{padding:var(--cro-space-md);border:1px solid var(--cro-line);border-radius:16px;background:var(--cro-paper);color:var(--cro-ink);font-family:var(--cro-font)}
+.carvion-cro-shipping .evamats-cart-gift-banner__text-row{display:flex;align-items:center;gap:var(--cro-space-sm)}
+.carvion-cro-shipping-icon{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:var(--cro-accent-soft);color:var(--cro-focus)}
+.carvion-cro-shipping .evamats-cart-gift-banner__text{font-size:16px!important;line-height:1.4!important;margin:0!important;font-weight:400!important;max-width:65ch}
+.carvion-cro-shipping .evamats-cart-gift-banner__text strong{color:var(--cro-focus);font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.carvion-cro-shipping-route{display:flex;align-items:center;gap:0;margin-top:var(--cro-space-sm)}
+.carvion-cro-shipping-track{position:relative;flex:1;height:6px;overflow:hidden;border-radius:8px;background:var(--cro-track)}
+.carvion-cro-shipping-fill{position:absolute;inset:0;border-radius:inherit;background:var(--cro-accent);transform-origin:left;transition:transform 220ms var(--cro-ease-out)}
+.carvion-cro-shipping-finish{display:grid;place-items:center;flex:none;width:24px;height:24px;border:1px solid var(--cro-line);border-radius:50%;background:var(--cro-paper);color:var(--cro-muted)}
+.carvion-cro-shipping-finish svg{width:16px;height:16px}
+.carvion-cro-shipping-caption{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;margin-top:4px;font-size:12px;line-height:1.5;color:var(--cro-muted);font-variant-numeric:tabular-nums}
+.carvion-cro-shipping-caption strong{color:var(--cro-ink);white-space:nowrap;font-weight:600}
+.carvion-cro-shipping--done{background:var(--cro-accent-soft)!important}
+.carvion-cro-shipping--done .carvion-cro-shipping-icon{background:var(--cro-paper);color:var(--cro-focus)}
+.carvion-cro-shipping--done .carvion-cro-shipping-finish{background:var(--cro-focus);border-color:var(--cro-focus);color:var(--cro-paper)}
 .carvion-cro-shipping--done .evamats-cart-gift-banner__text{font-weight:600!important}
+@media(min-width:750px){.evamats-cart-gift-banner.carvion-cro-shipping{padding:20px 24px}.carvion-cro-shipping-caption{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.carvion-cro-shipping-fill{transition:none}}
 @media(min-width:750px){
  .cz-cro-dialog{padding:44px}.cz-cro-dialog-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px}.cz-cro-benefit-photo img{height:auto;aspect-ratio:1/1;padding:20px}.cz-cro-dialog h2{font-size:34px}.cz-cro-dialog-done{width:auto}
  .cz-cro-reviews{padding-top:48px;padding-bottom:60px}.cz-cro-reviews-heading{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}.cz-cro-reviews-heading h1,.cz-cro-reviews-heading h2{font-size:36px}.cz-cro-reviews-heading p{font-size:17px}

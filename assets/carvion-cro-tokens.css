@@ -4,4 +4,5 @@
  --cro-line:#dedfe2;--cro-accent:#ff2741;--cro-focus:#ae1631;--cro-gold:#a96d00;
  --cro-overlay:rgb(27 29 34 / .6);--cro-font:var(--font-body-family,inherit);
  --cro-space-xs:8px;--cro-space-sm:12px;--cro-space-md:16px;--cro-space-lg:24px;--cro-space-xl:40px;
+ --cro-accent-soft:oklch(97% .018 17);--cro-track:oklch(92% .005 17);--cro-ease-out:cubic-bezier(.16,1,.3,1);
 }
