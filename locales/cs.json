@@ -11,6 +11,13 @@
   "carvion_gift": {
     "eyebrow": "Něco navíc pro vaše auto",
     "title": "Bonus k objednávce",
+    "shipping_label": "Doprava zdarma",
+    "gift_label": "Dárek za {{ price }}",
+    "from": "od",
+    "unlocked": "Splněno",
+    "milestone_remaining": "Chybí {{ amount }}",
+    "before_shipping": "Přidejte ještě za {{ amount }} a získáte dopravu zdarma. Další odměnou je dárek.",
+    "shipping_ready": "Dopravu zdarma máte! Přidejte ještě za {{ amount }} a vyberte si dárek.",
     "demo": "DEMO",
     "loading": "Připravujeme výběr dárků…",
     "progress": "Do získání dárku",
