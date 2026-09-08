@@ -12,9 +12,8 @@
     </div>
     {% unless full_page %}<a class="cz-cro-source-link" href="{{ pages['reviews'].url }}">{{ 'carvion_cro.all_reviews' | t }} <span aria-hidden="true">→</span></a>{% endunless %}
   </div>
-  <div class="cz-cro-google-summary">
-    <span class="cz-cro-google-label">{% render 'carvion-google-mark' %}{{ 'carvion_cro.google_reviews' | t }} · EVAMATS</span>
-    <a class="cz-cro-source-link" href="https://www.google.com/maps/search/?api=1&amp;query=Carvion&amp;query_place_id=ChIJMeAerT1z_UYRiKoMeCumjD4" target="_blank" rel="noopener noreferrer">{{ 'carvion_cro.google_profile' | t }} <span aria-hidden="true">↗</span></a>
+  <div class="cz-cro-brand-summary">
+    <span class="cz-cro-brand-label"><span class="cz-cro-brand-name">CARVION</span><span>{{ 'carvion_cro.reviews_link' | t }}</span></span>
   </div>
   <p class="cz-cro-preview-note">{{ 'carvion_cro.preview_note' | t }}</p>
   {% unless full_page %}
