@@ -16,7 +16,7 @@
         const left = grid.getBoundingClientRect().left;
         const first = Math.max(0, cards.findIndex(card => card.getBoundingClientRect().right > left + 12));
         position.textContent = (first + 1) + ' / ' + cards.length;
-        buttons[0].disabled = grid.scrollLeft < 4;
+        buttons[0].disabled = grid.scrollLeft <= 5;
         buttons[1].disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
       };
       controls.addEventListener('click', event => {

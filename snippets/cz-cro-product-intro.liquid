@@ -4,7 +4,7 @@
   <p class="cz-cro-review-support">{{ 'carvion_cro.reviews_support' | t }}</p>
   <ul class="cz-cro-benefit-strip" role="list">
     {% assign benefits = 'car,drop,factory' | split: ',' %}
-    {% for benefit in benefits %}<li>{% render 'cz-cro-icon', icon: benefit %}<span>{{ 'carvion_cro.' | append: benefit | t }}</span></li>{% endfor %}
+    {% for benefit in benefits %}{% assign benefit_key = 'carvion_cro.' | append: benefit %}<li>{% render 'cz-cro-icon', icon: benefit %}<span>{{ benefit_key | t }}</span></li>{% endfor %}
   </ul>
   <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits">{{ 'carvion_cro.benefits_link' | t }} <span aria-hidden="true">+</span></button>
 </div>
@@ -17,7 +17,7 @@
       <p class="cz-cro-dialog-lead">{{ 'carvion_cro.benefits_lead' | t }}</p>
       <div class="cz-cro-benefit-grid">
         {% assign benefits = 'car,drop,factory' | split: ',' %}
-        {% for benefit in benefits %}<article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: benefit %}</span><div><h3>{{ 'carvion_cro.' | append: benefit | t }}</h3><p>{{ 'carvion_cro.' | append: benefit | append: '_text' | t }}</p></div></article>{% endfor %}
+        {% for benefit in benefits %}{% assign benefit_key = 'carvion_cro.' | append: benefit %}{% assign benefit_text_key = benefit_key | append: '_text' %}<article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: benefit %}</span><div><h3>{{ benefit_key | t }}</h3><p>{{ benefit_text_key | t }}</p></div></article>{% endfor %}
       </div>
       <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>{{ 'carvion_cro.back' | t }}</button>
     </div>
