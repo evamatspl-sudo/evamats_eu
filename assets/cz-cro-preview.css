@@ -20,6 +20,7 @@ dialog.cz-cro-dialog{position:fixed!important;inset:0!important;margin:auto!impo
 .cz-cro-benefit-photo{display:none;margin:0;min-width:0;align-self:start;background:var(--cro-soft);border-radius:16px;overflow:hidden}
 .cz-cro-benefit-photo img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:1/1}
 .cz-cro-dialog h2{font-size:28px;line-height:1.15;letter-spacing:-.6px;margin:0 0 12px;overflow-wrap:anywhere}
+.cz-cro-dialog h2[tabindex="-1"]:focus{outline:none}
 .cz-cro-dialog-lead{margin:0 0 24px;font-size:15px;line-height:1.5;color:var(--cro-muted)}
 .cz-cro-benefit-grid{display:flex;flex-direction:column;gap:20px}
 .cz-cro-benefit-grid article{display:flex;align-items:flex-start;gap:16px}
