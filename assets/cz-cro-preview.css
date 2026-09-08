@@ -1,12 +1,12 @@
 /* Hallmark · component refinement · existing Carvion design system · EU dev only.
    Pre-emit critique: philosophy 4, hierarchy 4, execution 4, specificity 5, restraint 5, variety 4. */
 .cz-cro-intro,.cz-cro-dialog,.cz-cro-reviews,.cz-cro-cart-trust,.cz-cro-cart-review-sample{color:var(--cro-ink);font-family:var(--cro-font)}
-.cz-cro-intro{display:block;margin:16px 0 8px;max-width:850px}
+.cz-cro-intro{display:block;margin:0 0 8px;max-width:850px}
 .cz-cro-review-link{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;min-height:44px;color:var(--cro-ink);font-size:15px;font-weight:600;text-decoration:none}
 .cz-cro-review-link>span{white-space:nowrap}
 .cz-cro-stars{color:var(--cro-gold);font-size:18px;letter-spacing:1px;line-height:1.2;white-space:nowrap}
-.cz-cro-review-support{margin:0 0 16px;color:var(--cro-muted);font-size:14px;line-height:1.5;max-width:65ch}
-.cz-cro-benefit-strip{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:16px 0 0;margin:0;border-top:1px solid var(--cro-line)}
+.cz-cro-review-support{margin:0 0 4px;color:var(--cro-muted);font-size:14px;line-height:1.5;max-width:65ch}
+.cz-cro-benefit-strip{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:16px 0 0;margin:12px 0 0;border-top:1px solid var(--cro-line)}
 .cz-cro-benefit-strip li{display:flex;align-items:center;gap:8px;font-size:14px;line-height:1.4;min-width:0}
 .cz-cro-benefit-strip svg{width:24px;height:24px;flex:none;color:var(--cro-muted)}
 .cz-cro-benefits-button{display:inline-flex;align-items:center;gap:12px;padding:8px 0;min-height:44px;border:0;background:transparent;color:var(--cro-ink);font-family:var(--cro-font);font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
@@ -17,8 +17,8 @@ dialog.cz-cro-dialog{position:fixed!important;inset:0!important;margin:auto!impo
 .cz-cro-dialog::backdrop{background:var(--cro-overlay)}
 .cz-cro-dialog-close{position:absolute;right:12px;top:8px;width:44px;height:44px;border:1px solid var(--cro-line);border-radius:50%;background:var(--cro-paper);color:var(--cro-ink);font:32px/1 var(--cro-font);cursor:pointer}
 .cz-cro-dialog-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
-.cz-cro-benefit-photo{display:none;margin:0;min-width:0;align-self:start;background:var(--cro-soft);border-radius:16px;overflow:hidden}
-.cz-cro-benefit-photo img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:1/1}
+.cz-cro-benefit-photo{display:block;margin:0;min-width:0;align-self:start;background:var(--cro-soft);border-radius:16px;overflow:hidden}
+.cz-cro-benefit-photo img{display:block;width:100%;height:140px;object-fit:contain;padding:12px;box-sizing:border-box}
 .cz-cro-dialog h2{font-size:28px;line-height:1.15;letter-spacing:-.6px;margin:0 0 12px;overflow-wrap:anywhere}
 .cz-cro-dialog h2[tabindex="-1"]:focus{outline:none}
 .cz-cro-dialog-lead{margin:0 0 24px;font-size:15px;line-height:1.5;color:var(--cro-muted)}
@@ -47,6 +47,14 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-review-byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
 .cz-cro-review-byline strong{font-size:15px;font-weight:600}
 .cz-cro-review-byline .cz-cro-stars{font-size:15px}
+.cz-cro-review-author{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.cz-cro-review-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;background:var(--cro-soft)}
+.cz-cro-review-author strong{display:block;line-height:1.3}
+.cz-cro-review-author .cz-cro-stars{display:block;margin-top:4px}
+.cz-cro-google-mark{display:block;width:22px;height:22px;flex:none}
+.cz-cro-google-summary{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;border-top:1px solid var(--cro-line);border-bottom:1px solid var(--cro-line);padding:12px 0;margin:20px 0 12px}
+.cz-cro-google-label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+.cz-cro-google-summary .cz-cro-source-link{margin-left:auto;font-size:13px}
 .cz-cro-review-content blockquote{padding:0;border:0;margin:12px 0;font:400 15px/1.6 var(--cro-font);color:var(--cro-ink)}
 .cz-cro-review-content blockquote p{margin:0}
 .cz-cro-review-details summary{display:inline-flex;align-items:center;min-height:44px;list-style:none;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}
@@ -76,7 +84,7 @@ html.cz-cro-dialog-open{overflow:hidden}
 .carvion-cro-shipping--done .evamats-cart-gift-banner__bar{display:none}
 .carvion-cro-shipping--done .evamats-cart-gift-banner__text{font-weight:600!important}
 @media(min-width:750px){
- .cz-cro-dialog{padding:44px}.cz-cro-dialog-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px}.cz-cro-benefit-photo{display:block}.cz-cro-dialog h2{font-size:34px}.cz-cro-dialog-done{width:auto}
+ .cz-cro-dialog{padding:44px}.cz-cro-dialog-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px}.cz-cro-benefit-photo img{height:auto;aspect-ratio:1/1;padding:20px}.cz-cro-dialog h2{font-size:34px}.cz-cro-dialog-done{width:auto}
  .cz-cro-reviews{padding-top:48px;padding-bottom:60px}.cz-cro-reviews-heading{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}.cz-cro-reviews-heading h1,.cz-cro-reviews-heading h2{font-size:36px}.cz-cro-reviews-heading p{font-size:17px}
  .cz-cro-review-grid{grid-auto-columns:calc((100% - 16px)/2)}.cz-cro-reviews--page .cz-cro-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
