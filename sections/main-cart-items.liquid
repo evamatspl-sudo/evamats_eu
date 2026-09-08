@@ -3,6 +3,10 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'section-evamats-cart.css' | asset_url | stylesheet_tag }}
+{% if theme.role != 'main' and section.settings.gift_demo_enabled %}
+  {{ 'carvion-gift-demo.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'carvion-gift-demo.js' | asset_url }}" defer></script>
+{% endif %}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -44,6 +48,7 @@
           {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
         </p>
       {%- endif -%}
+      {% if cart == empty %}{% render 'carvion-gift-demo', section: section %}{% endif %}
     </div>
 
     {%- if cart != empty -%}
@@ -61,6 +66,7 @@
                       {%- endfor -%}
                     </div>
                   </div>
+                  {% render 'carvion-gift-demo', section: section %}
                 </div>
 
                 {% render 'evamats-cart-sidebar', section_id: section.id %}
@@ -86,63 +92,6 @@
   </div>
 
   <script>
-    window.initEvamatsCartReservationTimer = function () {
-      var countdownElement = document.getElementById('countdown-timer');
-      var extendButton = document.getElementById('extend-button');
-      if (!countdownElement) return;
-
-      if (window.__evamatsCartTimerInterval) {
-        clearInterval(window.__evamatsCartTimerInterval);
-        window.__evamatsCartTimerInterval = null;
-      }
-
-      var reservationDuration = 10 * 60;
-      var remainingTime;
-
-      if (localStorage.getItem('remainingTime')) {
-        remainingTime = parseInt(localStorage.getItem('remainingTime'), 10);
-      } else {
-        remainingTime = reservationDuration;
-        localStorage.setItem('remainingTime', remainingTime);
-      }
-
-      function updateCountdown() {
-        var minutes = Math.floor(remainingTime / 60);
-        var seconds = remainingTime % 60;
-        countdownElement.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-
-        if (remainingTime > 0) {
-          remainingTime--;
-          localStorage.setItem('remainingTime', remainingTime);
-        } else {
-          clearInterval(window.__evamatsCartTimerInterval);
-          window.__evamatsCartTimerInterval = null;
-          countdownElement.textContent = '00:00';
-          if (extendButton) extendButton.style.display = 'inline-block';
-          localStorage.removeItem('remainingTime');
-        }
-      }
-
-      function startTimer(duration) {
-        remainingTime = duration;
-        localStorage.setItem('remainingTime', remainingTime);
-        updateCountdown();
-        if (extendButton) extendButton.style.display = 'none';
-        window.__evamatsCartTimerInterval = setInterval(updateCountdown, 1000);
-      }
-
-      if (extendButton && !extendButton.dataset.bound) {
-        extendButton.dataset.bound = 'true';
-        extendButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          startTimer(reservationDuration);
-        });
-      }
-
-      updateCountdown();
-      window.__evamatsCartTimerInterval = setInterval(updateCountdown, 1000);
-    };
-
     document.addEventListener('click', function (event) {
       var clearBtn = event.target.closest('[data-clear-cart]');
       if (!clearBtn) return;
@@ -158,7 +107,6 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
-      window.initEvamatsCartReservationTimer();
       if (window.initEvamatsCartSidebarControls) {
         window.initEvamatsCartSidebarControls();
       }
@@ -170,6 +118,16 @@
 {
   "name": "t:sections.main-cart-items.name",
   "settings": [
+    {"type":"header","content":"Gift reward · DEMO"},
+    {"type":"paragraph","content":"Owner preview only: no cart item, price or checkout discount is created. Hidden on a published theme."},
+    {"type":"checkbox","id":"gift_demo_enabled","label":"Show gift demo","default":false},
+    {"type":"number","id":"gift_demo_threshold","label":"Order threshold (currency units)","default":150,"info":"Example: 150 means EUR 150. After discounts, without shipping."},
+    {"type":"text","id":"gift_demo_currency","label":"Campaign currency (ISO)","default":"EUR","info":"Only carts in this currency are eligible; no automatic conversion."},
+    {"type":"select","id":"gift_demo_price","label":"Illustrative gift price","default":"1","options":[{"value":"1","label":"0.01"},{"value":"0","label":"Free"}]},
+    {"type":"product_list","id":"gift_demo_products","label":"Gift products and order","limit":6,"info":"Choose existing products. Their catalog prices are not changed."},
+    {"type":"collection","id":"gift_demo_collection","label":"Optional gift collection","info":"If selected, the first six products replace the manual list. Edit membership/order in Products → Collections."},
+    {"type":"checkbox","id":"gift_demo_controls","label":"Show demo scenario controls","default":true},
+    {"type":"text","id":"gift_demo_campaign","label":"Demo campaign version","default":"preview-1","info":"Change this to reset saved demo selections."},
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

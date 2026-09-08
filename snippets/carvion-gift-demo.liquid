@@ -1,0 +1,46 @@
+{% comment %}Owner preview only. No cart mutations, discount, order attribute or price override. Never render on a published theme.{% endcomment %}
+{% if theme.role != 'main' and section.settings.gift_demo_enabled %}
+  {% assign gift_pool = section.settings.gift_demo_products %}
+  {% if section.settings.gift_demo_collection != blank %}{% assign gift_pool = section.settings.gift_demo_collection.products %}{% endif %}
+  {% assign gift_threshold = section.settings.gift_demo_threshold | times: 100 | round %}
+  {% assign gift_price = section.settings.gift_demo_price | plus: 0 %}
+  {% assign gift_currency = section.settings.gift_demo_currency | default: 'EUR' | upcase %}
+  {% assign gift_campaign = section.settings.gift_demo_campaign | default: 'preview-1' %}
+  <carvion-gift-demo class="carvion-gift" data-section="{{ section.id }}" data-theme="{{ theme.id }}" data-campaign="{{ gift_campaign | escape }}" data-threshold="{{ gift_threshold }}" data-total="{{ cart.total_price }}" data-currency="{{ cart.currency.iso_code }}" data-campaign-currency="{{ gift_currency }}" data-state="loading" aria-labelledby="GiftTitle-{{ section.id }}">
+    <header class="carvion-gift__header">
+      <span class="carvion-gift__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11v10h16V11M3 7h18v4H3zM12 7v14M12 7H8a3 3 0 1 1 3-3l1 3Zm0 0h4a3 3 0 1 0-3-3l-1 3Z"/></svg></span>
+      <div><p class="carvion-gift__eyebrow">{{ 'carvion_gift.eyebrow' | t }}</p><h2 id="GiftTitle-{{ section.id }}">{{ 'carvion_gift.title' | t }}</h2></div>
+      <span class="carvion-gift__demo-badge">{{ 'carvion_gift.demo' | t }}</span>
+    </header>
+    <p class="carvion-gift__lead" data-gift-status role="status">{{ 'carvion_gift.loading' | t }}</p>
+    <div class="carvion-gift__progress" role="progressbar" aria-label="{{ 'carvion_gift.progress' | t | escape }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-gift-fill></span></div>
+    <div class="carvion-gift__amounts"><span data-gift-amount></span><span>{{ 'carvion_gift.goal' | t }} <strong>{{ gift_threshold | money }}</strong></span></div>
+    <p class="carvion-gift__choice-note">{% assign gift_cost = gift_price | money %}{{ 'carvion_gift.choice_note' | t: price: gift_cost }}</p>
+    <div class="carvion-gift__products" role="group" aria-label="{{ 'carvion_gift.choose_group' | t | escape }}">
+      {% for gift in gift_pool limit: 6 %}
+        {% assign gift_variant = gift.selected_or_first_available_variant %}
+        <article class="carvion-gift__product" data-gift-product="{{ gift.id }}" data-available="{{ gift.available }}" data-title="{{ gift.title | escape }}">
+          <div class="carvion-gift__product-media">{% if gift.featured_image %}{{ gift.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '160,240,400', sizes: '(min-width: 750px) 180px, 80px', alt: gift.title }}{% else %}{{ 'product-1' | placeholder_svg_tag }}{% endif %}<span class="carvion-gift__chosen" data-gift-check hidden aria-hidden="true">✓</span></div>
+          <div class="carvion-gift__product-body">
+            <h3>{{ gift.title }}</h3>
+            <p class="carvion-gift__price"><strong>{{ gift_price | money }}</strong><span>{{ 'carvion_gift.bonus_price' | t }}</span></p>
+            {% if gift.variants.size > 1 %}
+              <label class="carvion-gift__variant-label" for="GiftVariant-{{ section.id }}-{{ gift.id }}">{{ 'carvion_gift.variant' | t }}</label>
+              <select id="GiftVariant-{{ section.id }}-{{ gift.id }}" class="carvion-gift__variant" data-gift-variant disabled>
+                {% for variant in gift.variants %}<option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}{% if variant.id == gift_variant.id %} selected{% endif %}>{{ variant.title | escape }}{% unless variant.available %} — {{ 'carvion_gift.unavailable' | t }}{% endunless %}</option>{% endfor %}
+              </select>
+            {% else %}<input type="hidden" data-gift-variant value="{{ gift_variant.id }}">{% endif %}
+            <button type="button" class="carvion-gift__select" data-gift-select aria-pressed="false" disabled>{{ 'carvion_gift.locked_button' | t }}</button>
+          </div>
+        </article>
+      {% else %}<p class="carvion-gift__empty">{{ 'carvion_gift.empty' | t }}</p>{% endfor %}
+    </div>
+    <div class="carvion-gift__selection" data-gift-selection hidden><span><strong>{{ 'carvion_gift.selected_label' | t }}</strong><span data-gift-selected-title></span></span><button type="button" data-gift-remove>{{ 'carvion_gift.remove' | t }}</button></div>
+    <p class="carvion-gift__disclaimer">{{ 'carvion_gift.disclaimer' | t }}</p>
+    {% if section.settings.gift_demo_controls %}
+      <details class="carvion-gift__demo-controls"><summary>{{ 'carvion_gift.test_scenarios' | t }}</summary><div class="carvion-gift__scenarios" role="group" aria-label="{{ 'carvion_gift.test_scenarios' | t | escape }}"><button type="button" data-gift-scenario="actual" aria-pressed="true">{{ 'carvion_gift.scenario_actual' | t }}</button><button type="button" data-gift-scenario="below" aria-pressed="false">{{ 'carvion_gift.scenario_below' | t }}</button><button type="button" data-gift-scenario="reached" aria-pressed="false">{{ 'carvion_gift.scenario_reached' | t }}</button></div><p>{{ 'carvion_gift.scenario_note' | t }}</p></details>
+    {% endif %}
+    <noscript><p>{{ 'carvion_gift.no_js' | t }}</p></noscript>
+    <script type="application/json" data-gift-copy>{"locked":{{ 'carvion_gift.locked' | t: amount: '__AMOUNT__' | json }},"ready":{{ 'carvion_gift.ready' | t | json }},"selected":{{ 'carvion_gift.selected' | t | json }},"choose":{{ 'carvion_gift.choose' | t | json }},"lockedButton":{{ 'carvion_gift.locked_button' | t | json }},"chosenButton":{{ 'carvion_gift.chosen_button' | t | json }},"unavailable":{{ 'carvion_gift.unavailable' | t | json }},"actual":{{ 'carvion_gift.actual_amount' | t | json }},"simulated":{{ 'carvion_gift.simulated_amount' | t | json }},"error":{{ 'carvion_gift.error' | t | json }},"empty":{{ 'carvion_gift.empty' | t | json }}}</script>
+  </carvion-gift-demo>
+{% endif %}
