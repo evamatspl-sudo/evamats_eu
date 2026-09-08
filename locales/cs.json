@@ -8,6 +8,38 @@
  * ------------------------------------------------------------
  */
 {
+  "carvion_gift": {
+    "eyebrow": "Něco navíc pro vaše auto",
+    "title": "Bonus k objednávce",
+    "demo": "DEMO",
+    "loading": "Připravujeme výběr dárků…",
+    "progress": "Do získání dárku",
+    "goal": "Dárek od",
+    "choice_note": "Po dosažení limitu si vyberte jeden dárek za {{ price }}.",
+    "choose_group": "Výběr dárků",
+    "bonus_price": "cena dárku · ukázka",
+    "variant": "Varianta",
+    "unavailable": "Nedostupné",
+    "locked_button": "Zatím nedostupné",
+    "selected_label": "Vybráno v ukázce",
+    "remove": "Odebrat",
+    "disclaimer": "Ukázka ke schválení. Dárky i limity jsou pouze příklady. Výběr se nepřidává do košíku ani objednávky; ceny při placení se nemění.",
+    "test_scenarios": "Vyzkoušet ukázku",
+    "scenario_actual": "Můj košík",
+    "scenario_below": "Pod limitem",
+    "scenario_reached": "Limit dosažen",
+    "scenario_note": "Tlačítka mění pouze ukázku, nikoli částku v košíku.",
+    "no_js": "Pro vyzkoušení výběru zapněte JavaScript. Dárek se do objednávky nepřidává.",
+    "locked": "Přidejte zboží ještě za {{ amount }} a odemkněte si dárek.",
+    "ready": "Dárek je odemčený — vyberte si jednu možnost níže.",
+    "selected": "Váš dárek je v této ukázce vybraný.",
+    "choose": "Vybrat dárek",
+    "chosen_button": "Vybráno",
+    "actual_amount": "Váš košík:",
+    "simulated_amount": "Ukázková částka:",
+    "error": "Ukázka dárku není nastavena pro aktuální měnu nebo limit.",
+    "empty": "Žádné dárky nejsou dostupné. Vyberte produkty v editoru motivu."
+  },
   "carvion_cro": {
     "details_zoom_out": "Zobrazit celou fotku",
     "details_title": "Koberce EVA zblízka",
