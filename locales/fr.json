@@ -9,6 +9,19 @@
  */
 {
   "carvion_cro": {
+    "details_title": "Les tapis EVA en détail",
+    "details_lead": "Découvrez les détails utiles au quotidien. Sélectionnez un point sur la photo.",
+    "details_photo_alt": "Tapis conducteur en EVA noir avec bordure rouge et deux points de fixation, installé dans une voiture",
+    "details_caption": "Exemple d’installation. La forme et les fixations dépendent du véhicule et du jeu de tapis choisi.",
+    "details_loading": "Chargement de la photo…",
+    "details_error": "La photo n’a pas pu être chargée. Vous pouvez toujours consulter les détails ci-dessous.",
+    "details_zoom": "Agrandir le détail",
+    "details_cells": "Structure alvéolée",
+    "details_cells_text": "Les alvéoles retiennent l’eau et les saletés. Retirez le tapis pour les évacuer, puis rincez-le et laissez-le sécher avant de le remettre en place.",
+    "details_edging": "Bordure colorée",
+    "details_edging_text": "La bordure cousue suit les contours du tapis. Choisissez les couleurs du matériau et de la bordure dans le configurateur pour les assortir à votre habitacle.",
+    "details_fixing": "Points de fixation",
+    "details_fixing_text": "Les fixations sont choisies en fonction de votre véhicule. Avant de conduire, fixez le tapis conducteur et vérifiez que les pédales bougent librement.",
     "shipping_cart_html": "Votre panier : <strong>{{ value }}</strong>",
     "shipping_goal_html": "Livraison offerte dès <strong>{{ value }}</strong>",
     "reviews_link": "Avis des clients",
