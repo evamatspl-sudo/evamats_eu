@@ -2,6 +2,7 @@
    Pre-emit critique: philosophy 4, hierarchy 4, execution 4, specificity 5, restraint 5, variety 4. */
 .cz-cro-intro,.cz-cro-dialog,.cz-cro-reviews,.cz-cro-cart-trust,.cz-cro-cart-review-sample{color:var(--cro-ink);font-family:var(--cro-font)}
 .cz-cro-intro{display:block;margin:0 0 8px;max-width:850px}
+.product__info-container>.cz-cro-intro{margin:0 0 8px}
 .cz-cro-review-link{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;min-height:44px;color:var(--cro-ink);font-size:15px;font-weight:600;text-decoration:none}
 .cz-cro-review-link>span{white-space:nowrap}
 .cz-cro-stars{color:var(--cro-gold);font-size:18px;letter-spacing:1px;line-height:1.2;white-space:nowrap}
