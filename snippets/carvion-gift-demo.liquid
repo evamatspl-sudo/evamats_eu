@@ -22,7 +22,7 @@
         <article class="carvion-gift__product" data-gift-product="{{ gift.id }}" data-available="{{ gift.available }}" data-title="{{ gift.title | escape }}">
           <div class="carvion-gift__product-media">{% if gift.featured_image %}{{ gift.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '160,240,400', sizes: '(min-width: 750px) 180px, 80px', alt: gift.title }}{% else %}{{ 'product-1' | placeholder_svg_tag }}{% endif %}<span class="carvion-gift__chosen" data-gift-check hidden aria-hidden="true">✓</span></div>
           <div class="carvion-gift__product-body">
-            <h3>{{ gift.title }}</h3>
+            <h3>{{ gift.title | escape }}</h3>
             <p class="carvion-gift__price"><strong>{{ gift_price | money }}</strong><span>{{ 'carvion_gift.bonus_price' | t }}</span></p>
             {% if gift.variants.size > 1 %}
               <label class="carvion-gift__variant-label" for="GiftVariant-{{ section.id }}-{{ gift.id }}">{{ 'carvion_gift.variant' | t }}</label>
