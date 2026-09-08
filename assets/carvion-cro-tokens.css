@@ -1,0 +1,7 @@
+/* Carvion EU preview: existing AktivGrotesk and brand palette preserved. */
+:root{
+ --cro-paper:#fff;--cro-soft:#f6f6f6;--cro-ink:#1b1d22;--cro-muted:#58616e;
+ --cro-line:#dedfe2;--cro-accent:#ff2741;--cro-focus:#ae1631;--cro-gold:#a96d00;
+ --cro-overlay:rgb(27 29 34 / .6);--cro-font:var(--font-body-family,inherit);
+ --cro-space-xs:8px;--cro-space-sm:12px;--cro-space-md:16px;--cro-space-lg:24px;--cro-space-xl:40px;
+}

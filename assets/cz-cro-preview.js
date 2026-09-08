@@ -3,6 +3,33 @@
   if (window.__czCroPreviewReady) return;
   window.__czCroPreviewReady = true;
   let opener;
+  const initReviews = () => {
+    document.querySelectorAll('[data-cz-cro-controls]').forEach(controls => {
+      const grid = document.getElementById(controls.querySelector('button').getAttribute('aria-controls'));
+      if (!grid || grid.dataset.croReady) return;
+      grid.dataset.croReady = 'true';
+      controls.hidden = false;
+      const buttons = controls.querySelectorAll('button');
+      const position = controls.querySelector('[data-cz-cro-position]');
+      const update = () => {
+        const cards = Array.from(grid.children);
+        const left = grid.getBoundingClientRect().left;
+        const first = Math.max(0, cards.findIndex(card => card.getBoundingClientRect().right > left + 12));
+        position.textContent = (first + 1) + ' / ' + cards.length;
+        buttons[0].disabled = grid.scrollLeft < 4;
+        buttons[1].disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+      };
+      controls.addEventListener('click', event => {
+        const button = event.target.closest('[data-cz-cro-slide]');
+        if (!button || button.disabled) return;
+        const step = grid.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(grid).columnGap);
+        grid.scrollBy({ left: Number(button.dataset.czCroSlide) * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      });
+      grid.addEventListener('scroll', update, { passive: true });
+      if (window.ResizeObserver) new ResizeObserver(update).observe(grid);
+      update();
+    });
+  };
   const unlock = () => document.documentElement.classList.remove('cz-cro-dialog-open');
   document.addEventListener('click', (event) => {
     const open = event.target.closest('[data-cz-cro-open]');
@@ -30,4 +57,7 @@
     }
   });
   document.addEventListener('shopify:section:unload', unlock);
+  document.addEventListener('shopify:section:load', initReviews);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initReviews, { once: true });
+  else initReviews();
 })();

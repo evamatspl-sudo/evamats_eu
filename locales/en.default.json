@@ -8,6 +8,53 @@
  * ------------------------------------------------------------
  */
 {
+  "carvion_cro": {
+    "reviews_link": "Customer reviews",
+    "reviews_support": "See how our mats fit in customers’ cars — photos and experiences.",
+    "benefits_link": "Why EVA mats?",
+    "benefits_title": "Made for your car. Ready for every journey.",
+    "benefits_lead": "A precise fit, a practical material and production in Poland.",
+    "factory": "Made in Poland",
+    "factory_text": "We manufacture each set in Poland according to your chosen configuration.",
+    "car": "Tailored to your car",
+    "car_text": "The shape is matched to your vehicle model and body type, with the fastening points taken into account.",
+    "drop": "Traps water and dirt",
+    "drop_text": "The cells hold water, sand and mud. Remove the mats and rinse them to clean.",
+    "back": "Back to configuration",
+    "close": "Close",
+    "reviews_title": "Our mats, in your cars",
+    "reviews_page_title": "Carvion customer reviews",
+    "reviews_lead": "Fit, everyday use and service — experiences from drivers with different cars.",
+    "all_reviews": "All reviews",
+    "previous": "Previous reviews",
+    "next": "Next reviews",
+    "read_more": "Read full review",
+    "read_less": "Show less",
+    "source": "Existing shop review",
+    "preview_note": "Design preview: 8 existing reviews with their original names and photos. These concern the shop and different vehicles, not this specific model. Source verification is required before publication.",
+    "photo_alt": "Mat photo from {{ name }}’s review",
+    "rating": "{{ rating }} out of 5 stars",
+    "secure": "Secure payment",
+    "payments": "Payment methods",
+    "payment_note": "Available methods are shown at checkout.",
+    "cart_quote": "Very nice and well-fitted — I recommend them.",
+    "cart_source": "Stan G. · excerpt from a shop review",
+    "shipping_done": "Your order qualifies for free shipping",
+    "shipping_remaining_html": "Add <strong>{{ value }}</strong> for free shipping",
+    "clear_brand": "Clear brand",
+    "clear_model": "Clear model",
+    "clear_years": "Clear generation",
+    "reviews": {
+      "r1": "At first glance, we’re very satisfied with the quality of the mats and how well they fit. I hope that during use and cleaning everything will be just as great. 🤗",
+      "r2": "Very nice and well-fitted — I recommend them. I’ll see how they perform in winter when there’s slush and mud, but for now I’m very satisfied. The mats are installed in an Opel Mokka X.",
+      "r3": "The mats are great! A perfect fit, and the holes for the fasteners are exactly where they should be. The only minor downside is that the mat for the center tunnel has flaps that are about 0.5 cm too long — but that’s nothing to worry about! Excellent product! I’ll be recommending them and will definitely come back again more than once.",
+      "r4": "The execution of a custom-made order has never been completed so quickly before. I’m very satisfied with the mats, even though at first I wanted to change the order and take only the front ones – luckily I didn’t. Dirt comes off easily, whereas with fabric mats you need to vacuum them. I also got a heel pad for free, though it’s a pity I didn’t know it wouldn’t be metal – I would have added one, as it looks nicer. The mats look solid, fit perfectly – after all, they’re custom-made. The communication during the order was great; the lady showed me photos of different colors, which made my decision much easier. I know that when I change my car, I’ll order again. I recommend it to everyone!",
+      "r5": "The mats are made with incredible precision.\nIn my car there was a “problem” with the emergency hammer on the driver’s side. Carvion contacted me right away, and we agreed they would send me a template so everything would fit perfectly. I returned the template with the hammer’s spot marked out. Unfortunately, this extended the production time, but together we decided it was the best solution. And how did it turn out? Judge for yourselves.\nFor me, it’s perfect 🤩 Highly recommend ❤️\nPeugeot 308 estate, 2015.",
+      "r6": "The 3D mats fit perfectly in my Mazda 6 (2002). The mats are precisely measured and shaped to match the floor surface. Since the car doesn’t have any stoppers, Velcro was applied to the corners of each mat to prevent them from moving while driving. I ordered the full option along with a trunk mat that covers the entire surface. Every element of this order is very well made. I’m satisfied and recommend them 100%!",
+      "r7": "Top-class mats. They’re a bit pricey, but you pay for quality. I might buy a trunk mat in the future as well.",
+      "r8": "Highly recommend — very, very nice, comfortable, and they look great. I definitely recommend them!"
+    }
+  },
   "general": {
     "config": {
       "mats_type": "Mats type",
@@ -303,7 +350,8 @@
         "from_price_html": "From {{ price }}",
         "regular_price": "Regular price",
         "sale_price": "Sale price",
-        "unit_price": "Unit price"
+        "unit_price": "Unit price",
+        "lowest_30_days": "Lowest price in the 30 days before the reduction: {{ price }}"
       },
       "share": "Share this product",
       "sold_out": "Sold out",
@@ -356,6 +404,14 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404",
+      "heading_line_1": "We couldn't find this page.",
+      "heading_line_2": "Perhaps you chose the wrong car.",
+      "home_button": "Home",
+      "select_vehicle_button": "Select vehicle"
+    },
     "search": {
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
       "page": "Page",
@@ -399,14 +455,6 @@
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
-    },
-    "404": {
-      "title": "Page not found",
-      "subtext": "404",
-      "heading_line_1": "We couldn't find this page.",
-      "heading_line_2": "Perhaps you chose the wrong car.",
-      "home_button": "Home",
-      "select_vehicle_button": "Select vehicle"
     }
   },
   "sections": {

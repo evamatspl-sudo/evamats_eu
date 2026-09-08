@@ -1,0 +1,15 @@
+/* Isolate the clear icon from inherited dropdown SVG positioning. */
+.filter-container .custom-select .filter-field__clear{
+ position:relative;display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;
+ width:44px;height:44px;padding:0;margin:0 8px 0 0;border:1px solid #dedfe2;border-radius:50%;
+ background:#f6f6f6;color:#1b1d22;cursor:pointer;transition:none;
+}
+.filter-container .custom-select .filter-field__clear[hidden]{display:none}
+.filter-container .custom-select .filter-field__clear>svg{
+ position:static!important;inset:auto!important;display:block;width:20px!important;height:20px!important;
+ margin:0!important;transform:none!important;color:inherit;pointer-events:none;transition:none;
+}
+.filter-container .custom-select .filter-field__clear:focus-visible{outline:3px solid #ae1631;outline-offset:3px}
+.filter-container .custom-select .filter-field__clear:active{background:#dedfe2}
+.filter-container .custom-select .filter-field__clear:disabled{opacity:.5;cursor:not-allowed}
+@media(hover:hover){.filter-container .custom-select .filter-field__clear:hover{background:#fff;color:#ae1631;border-color:currentColor}}

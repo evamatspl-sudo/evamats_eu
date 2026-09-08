@@ -8,6 +8,53 @@
  * ------------------------------------------------------------
  */
 {
+  "carvion_cro": {
+    "reviews_link": "Kundenbewertungen",
+    "reviews_support": "So passen unsere Matten in die Autos unserer Kunden — Fotos und Erfahrungen.",
+    "benefits_link": "Warum EVA-Matten?",
+    "benefits_title": "Für Ihr Auto. Für jede Fahrt.",
+    "benefits_lead": "Passgenaue Form, praktisches Material und Herstellung in Polen.",
+    "factory": "In Polen gefertigt",
+    "factory_text": "Wir fertigen jedes Set in Polen nach Ihrer gewählten Konfiguration.",
+    "car": "Passgenau für Ihr Auto",
+    "car_text": "Die Form ist auf Ihr Fahrzeugmodell und die Karosserie abgestimmt. Die Befestigungspunkte werden berücksichtigt.",
+    "drop": "Hält Wasser und Schmutz fest",
+    "drop_text": "Die Zellen halten Wasser, Sand und Schlamm zurück. Zum Reinigen die Matten herausnehmen und abspülen.",
+    "back": "Zurück zur Konfiguration",
+    "close": "Schließen",
+    "reviews_title": "Unsere Matten in Ihren Autos",
+    "reviews_page_title": "Carvion Kundenbewertungen",
+    "reviews_lead": "Passform, Alltag und Service — Erfahrungen von Fahrern verschiedener Fahrzeuge.",
+    "all_reviews": "Alle Bewertungen",
+    "previous": "Vorherige Bewertungen",
+    "next": "Weitere Bewertungen",
+    "read_more": "Vollständige Bewertung",
+    "read_less": "Weniger anzeigen",
+    "source": "Übersetzte Shop-Bewertung",
+    "preview_note": "Designvorschau: 8 bestehende Bewertungen mit unveränderten Namen und Fotos. Sie beziehen sich auf den Shop und verschiedene Fahrzeuge, nicht auf dieses konkrete Modell. Vor der Veröffentlichung muss die Quelle geprüft werden.",
+    "photo_alt": "Mattenfoto aus der Bewertung von {{ name }}",
+    "rating": "{{ rating }} von 5 Sternen",
+    "secure": "Sicher bezahlen",
+    "payments": "Zahlungsmethoden",
+    "payment_note": "Verfügbare Methoden werden an der Kasse angezeigt.",
+    "cart_quote": "Sehr schön und gut passend — ich empfehle sie.",
+    "cart_source": "Stan G. · Auszug aus einer Shop-Bewertung",
+    "shipping_done": "Diese Bestellung ist versandkostenfrei",
+    "shipping_remaining_html": "Noch <strong>{{ value }}</strong> bis zum kostenlosen Versand",
+    "clear_brand": "Markenauswahl löschen",
+    "clear_model": "Modellauswahl löschen",
+    "clear_years": "Generationsauswahl löschen",
+    "reviews": {
+      "r1": "Auf den ersten Blick sind wir mit der Qualität der Matten und ihrer Passform sehr zufrieden. Ich hoffe, dass bei der Nutzung und Reinigung alles genauso gut sein wird. 🤗",
+      "r2": "Sehr schön und gut passend — ich empfehle sie. Ich werde sehen, wie sie sich im Winter bei Schneematsch und Schlamm bewähren, aber bisher bin ich sehr zufrieden. Die Matten sind in einem Opel Mokka X eingebaut.",
+      "r3": "Die Matten sind klasse! Sie passen perfekt, und die Löcher für die Befestigungen sind genau an der richtigen Stelle. Der einzige kleine Nachteil: Die Laschen der Mitteltunnelmatte sind etwa 0,5 cm zu lang — aber das ist kein Grund zur Sorge! Ein hervorragendes Produkt! Ich werde es weiterempfehlen und bestimmt noch oft wiederkommen.",
+      "r4": "Eine Maßanfertigung wurde noch nie so schnell erledigt. Ich bin mit den Matten sehr zufrieden, obwohl ich die Bestellung zunächst ändern und nur die vorderen nehmen wollte — zum Glück habe ich das nicht getan. Schmutz lässt sich leicht entfernen, während man Stoffmatten absaugen muss. Einen Fersenschutz habe ich gratis bekommen. Schade nur, dass ich nicht wusste, dass er nicht aus Metall sein würde — einen solchen hätte ich dazugekauft, weil er schöner aussieht. Die Matten wirken robust und passen perfekt — sie sind ja maßgefertigt. Die Kommunikation während der Bestellung war hervorragend; die Mitarbeiterin zeigte mir Fotos verschiedener Farben, was meine Entscheidung deutlich erleichterte. Wenn ich das Auto wechsle, werde ich wieder bestellen. Ich empfehle sie allen!",
+      "r5": "Die Matten sind mit unglaublicher Präzision gefertigt. In meinem Auto gab es ein „Problem“ mit dem Nothammer auf der Fahrerseite. Carvion kontaktierte mich sofort. Wir vereinbarten, dass man mir eine Schablone schickt, damit alles perfekt passt. Ich schickte sie mit der markierten Position des Hammers zurück. Leider verlängerte das die Produktionszeit, aber wir waren uns einig, dass dies die beste Lösung war. Und das Ergebnis? Urteilen Sie selbst. Für mich perfekt 🤩 Sehr zu empfehlen ❤️ Peugeot 308 Kombi, 2015.",
+      "r6": "Die 3D-Matten passen perfekt in meinen Mazda 6 von 2002. Sie sind präzise vermessen und an die Bodenfläche angepasst. Da das Auto keine Befestigungspunkte hat, wurde an den Ecken jeder Matte Klett angebracht, damit sie während der Fahrt nicht verrutschen. Ich habe die komplette Ausstattung einschließlich einer Kofferraummatte bestellt, die die gesamte Fläche abdeckt. Jedes Teil dieser Bestellung ist sehr gut verarbeitet. Ich bin zufrieden und empfehle sie zu 100 %!",
+      "r7": "Erstklassige Matten. Sie sind etwas teuer, aber Qualität hat ihren Preis. Vielleicht kaufe ich in Zukunft auch eine Kofferraummatte.",
+      "r8": "Sehr zu empfehlen — sehr, sehr schön, angenehm und sie sehen toll aus. Ich empfehle sie auf jeden Fall!"
+    }
+  },
   "general": {
     "config": {
       "mats_size": "Größe",
@@ -255,7 +302,8 @@
         "from_price_html": "Von {{ price }}",
         "regular_price": "Normaler Preis",
         "sale_price": "Verkaufspreis",
-        "unit_price": "Grundpreis"
+        "unit_price": "Grundpreis",
+        "lowest_30_days": "Niedrigster Preis der letzten 30 Tage vor der Preisermäßigung: {{ price }}"
       },
       "share": "Dieses Produkt teilen",
       "sold_out": "Ausverkauft",
@@ -339,6 +387,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfe die Schreibweise oder versuche es mit einer anderen Suchanfrage.",
       "results_with_count": {
@@ -382,10 +434,6 @@
         "error_heading": "Bitte passe Folgendes an:",
         "title": "Kontaktformular"
       }
-    },
-    "404": {
-      "title": "Seite nicht gefunden",
-      "subtext": "404"
     }
   },
   "sections": {

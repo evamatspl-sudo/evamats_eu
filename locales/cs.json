@@ -8,6 +8,53 @@
  * ------------------------------------------------------------
  */
 {
+  "carvion_cro": {
+    "reviews_link": "Recenze zákazníků",
+    "reviews_support": "Podívejte se, jak naše koberce sedí ve vozech zákazníků — fotografie a zkušenosti.",
+    "benefits_link": "Proč koberce EVA?",
+    "benefits_title": "Pro váš vůz. Na každou cestu.",
+    "benefits_lead": "Přesný tvar, praktický materiál a výroba v Polsku.",
+    "factory": "Vyrobeno v Polsku",
+    "factory_text": "Každou sadu vyrábíme v Polsku podle vámi zvolené konfigurace.",
+    "car": "Na míru vašemu vozu",
+    "car_text": "Tvar odpovídá modelu a karoserii vašeho vozu se zohledněním upevňovacích bodů.",
+    "drop": "Zachytí vodu a nečistoty",
+    "drop_text": "Buňky zadržují vodu, písek i bláto. Pro vyčištění koberce vyjměte a opláchněte.",
+    "back": "Zpět ke konfiguraci",
+    "close": "Zavřít",
+    "reviews_title": "Naše koberce ve vašich vozech",
+    "reviews_page_title": "Recenze zákazníků Carvion",
+    "reviews_lead": "Přizpůsobení, každodenní používání i servis — zkušenosti řidičů různých vozů.",
+    "all_reviews": "Všechny recenze",
+    "previous": "Předchozí recenze",
+    "next": "Další recenze",
+    "read_more": "Celá recenze",
+    "read_less": "Zobrazit méně",
+    "source": "Překlad stávající recenze obchodu",
+    "preview_note": "Náhled vzhledu: 8 stávajících recenzí s původními jmény a fotografiemi. Týkají se obchodu a různých vozů, nikoli tohoto konkrétního modelu. Před zveřejněním je nutné ověřit zdroj.",
+    "photo_alt": "Fotografie koberců z recenze od {{ name }}",
+    "rating": "{{ rating }} z 5 hvězdiček",
+    "secure": "Bezpečná platba",
+    "payments": "Platební metody",
+    "payment_note": "Dostupné metody se zobrazí při placení.",
+    "cart_quote": "Velmi pěkné a dobře padnoucí — doporučuji.",
+    "cart_source": "Stan G. · úryvek recenze obchodu",
+    "shipping_done": "Na tuto objednávku máte dopravu zdarma",
+    "shipping_remaining_html": "Do dopravy zdarma chybí <strong>{{ value }}</strong>",
+    "clear_brand": "Zrušit výběr značky",
+    "clear_model": "Zrušit výběr modelu",
+    "clear_years": "Zrušit výběr generace",
+    "reviews": {
+      "r1": "Na první pohled jsme velmi spokojení s kvalitou koberců i s tím, jak dobře sedí. Doufám, že budeme stejně spokojení i při používání a čištění. 🤗",
+      "r2": "Velmi pěkné a dobře padnoucí — doporučuji. Uvidím, jak si povedou v zimě v rozbředlém sněhu a blátě, ale zatím jsem velmi spokojený. Koberce jsou namontované v Opelu Mokka X.",
+      "r3": "Koberce jsou skvělé! Perfektně sedí a otvory pro úchyty jsou přesně tam, kde mají být. Jedinou drobnou nevýhodou je, že chlopně krytu středového tunelu jsou asi o 0,5 cm delší — ale to není nic zásadního. Výborný výrobek! Budu je doporučovat a určitě se ještě mnohokrát vrátím.",
+      "r4": "Zakázka na míru ještě nikdy nebyla hotová tak rychle. S koberci jsem velmi spokojená, přestože jsem původně chtěla objednávku změnit a vzít jen přední — naštěstí jsem to neudělala. Nečistoty jdou snadno odstranit, zatímco látkové koberce je nutné vysávat. Zdarma jsem dostala i podložku pod patu, jen je škoda, že jsem nevěděla, že nebude kovová — tu bych si přikoupila, protože vypadá lépe. Koberce působí pevně a perfektně sedí — vždyť jsou na míru. Komunikace při objednávce byla skvělá; paní mi ukázala fotografie různých barev, což mi rozhodování výrazně usnadnilo. Až vyměním auto, objednám znovu. Doporučuji všem!",
+      "r5": "Koberce jsou vyrobené s neuvěřitelnou přesností. V mém autě byl „problém“ s nouzovým kladívkem na straně řidiče. Carvion mě ihned kontaktoval a domluvili jsme se, že mi pošlou šablonu, aby vše dokonale sedělo. Šablonu jsem vrátila s vyznačeným místem pro kladívko. Bohužel to prodloužilo výrobu, ale společně jsme se shodli, že jde o nejlepší řešení. A jak to dopadlo? Posuďte sami. Za mě perfektní 🤩 Vřele doporučuji ❤️ Peugeot 308 kombi, 2015.",
+      "r6": "3D koberce perfektně sedí v mé Mazdě 6 z roku 2002. Jsou přesně vyměřené a vytvarované podle podlahy. Protože auto nemá upevňovací body, v rozích každého koberce je suchý zip, aby se při jízdě neposouvaly. Objednal jsem kompletní výbavu včetně koberce do kufru, který pokrývá celou jeho plochu. Každá část této objednávky je velmi dobře zpracovaná. Jsem spokojený a doporučuji na 100 %!",
+      "r7": "Prvotřídní koberce. Jsou trochu dražší, ale za kvalitu se platí. Možná si v budoucnu koupím i koberec do kufru.",
+      "r8": "Vřele doporučuji — moc pěkné, pohodlné a vypadají skvěle. Rozhodně doporučuji!"
+    }
+  },
   "general": {
     "config": {
       "material_color": "Barva materiálu",
@@ -280,7 +327,8 @@
         "from_price_html": "Od {{ price }}",
         "regular_price": "Běžná cena",
         "sale_price": "Výprodejová cena",
-        "unit_price": "Jednotková cena"
+        "unit_price": "Jednotková cena",
+        "lowest_30_days": "Nejnižší cena za posledních 30 dní před slevou: {{ price }}"
       },
       "pickup_availability": {
         "view_store_info": "Zobrazit informace o obchodě",
@@ -364,6 +412,14 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Stránka nebyla nalezena",
+      "subtext": "404",
+      "heading_line_1": "Tuto stránku se nepodařilo najít.",
+      "heading_line_2": "Možná jste zvolili nesprávné auto.",
+      "home_button": "Domů",
+      "select_vehicle_button": "Vybrat vozidlo"
+    },
     "search": {
       "no_results": "Nebyly nalezeny žádné výsledky pro {{ terms }}. Zkontrolujte pravopis nebo zadejte jiné slovo či slovní spojení.",
       "title": "Výsledky hledání",
@@ -417,14 +473,6 @@
         "error_heading": "Upravte prosím následující informace:",
         "title": "Kontaktní formulář"
       }
-    },
-    "404": {
-      "title": "Stránka nebyla nalezena",
-      "subtext": "404",
-      "heading_line_1": "Tuto stránku se nepodařilo najít.",
-      "heading_line_2": "Možná jste zvolili nesprávné auto.",
-      "home_button": "Domů",
-      "select_vehicle_button": "Vybrat vozidlo"
     }
   },
   "sections": {
@@ -480,7 +528,7 @@
         "title": "Máte účet?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Přihlaste se</a>, abyste si urychlili proces pokladny."
       },
-      "progress_text_order_value": "Vaše auto si zaslouží víc! Přidejte koberce za {{value}} a získejte dopravu zdarma!",
+      "progress_text_order_value": "Přidejte produkty ještě za {{ value }} a získejte dopravu zdarma.",
       "progress_text_discount": "Vaše auto si zaslouží víc! Přidejte koberce za {{ value }} a získejte slevu {{ nextDiscount }}!",
       "reservation_html": "Z důvodu vysoké poptávky a přetížení výroby jsme pro vás rezervovali místo, abychom vaši objednávku vyřídili rychleji. Rezervace platí následujících <span class=\"cart__time\"><span id=\"countdown-timer\"></span> minut.</span>",
       "reservation_button": "Prodlužte svou rezervaci",
