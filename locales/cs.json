@@ -9,6 +9,20 @@
  */
 {
   "carvion_cro": {
+    "details_zoom_out": "Zobrazit celou fotku",
+    "details_title": "Koberce EVA zblízka",
+    "details_lead": "Prohlédněte si detaily, které oceníte každý den. Vyberte bod na fotografii.",
+    "details_photo_alt": "Černý koberec EVA u řidiče s červeným lemováním a dvěma úchyty, položený ve voze",
+    "details_caption": "Ukázka instalace. Tvar a uchycení závisí na vašem voze a zvolené sadě.",
+    "details_loading": "Načítání fotografie…",
+    "details_error": "Fotografii se nepodařilo načíst. Detaily si můžete přečíst níže.",
+    "details_zoom": "Přiblížit detail",
+    "details_cells": "Struktura buněk",
+    "details_cells_text": "Prohlubně zachytávají vodu a volné nečistoty. Koberec vyjměte, nečistoty vyklepejte a vodu vylijte. Poté jej opláchněte a před vložením zpět nechte uschnout.",
+    "details_edging": "Barevné lemování",
+    "details_edging_text": "Obšité lemování kopíruje tvar koberce. V konfigurátoru si vyberte barvu materiálu i lemování tak, aby ladily s vaším interiérem.",
+    "details_fixing": "Upevňovací body",
+    "details_fixing_text": "Uchycení se volí podle vašeho vozu. Před jízdou koberec řidiče upevněte a zkontrolujte, že se pedály mohou volně pohybovat.",
     "shipping_cart_html": "V košíku <strong>{{ value }}</strong>",
     "shipping_goal_html": "Doprava zdarma od <strong>{{ value }}</strong>",
     "reviews_link": "Recenze zákazníků",
