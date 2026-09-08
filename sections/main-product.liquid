@@ -1342,10 +1342,11 @@
                           assign evm_krople_types = '5os,7os,2os,custom,pickup,pickup2kabina,van_maly,electro,electro_7os,van_duzy,van_duzy_solid,van_duzy_solid_2_row,van_duzy_separate,van_duzy_separate_2_row,bus,bus_solid,minivan,minivan_mini,camper,tractor,tir,corners' | split: ','
                         -%}
                         {% if evm_krople_types contains evm_krople_bt %}
+                          {% capture evm_drops_option_label %}{% render 'carvion-drops-option-label', product: product %}{% endcapture %}
                           <label class="lip__item">
-                            <input type="radio" form="{{ product_form_id }}" name="properties[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ 'general.config.mat_pattern_drops' | t }}">
-                            <img src="{{ 'drop.webp' | asset_url }}" alt="{{ 'general.config.mat_pattern_drops' | t }}" loading="lazy">
-                            <div class="label__tooltip">{{ 'general.config.mat_pattern_drops' | t }}</div>
+                            <input type="radio" form="{{ product_form_id }}" name="properties[{{ 'general.config.cell_shape' | t }}]" data-value="drop" value="{{ 'general.config.drops_property_value' | t }}" data-title="{{ evm_drops_option_label | strip | escape }}">
+                            <img src="{{ 'drop.webp' | asset_url }}" alt="{{ evm_drops_option_label | strip | escape }}" loading="lazy">
+                            <div class="label__tooltip">{{ evm_drops_option_label | strip }}</div>
                           </label>
                         {% endif %}
                       </div>

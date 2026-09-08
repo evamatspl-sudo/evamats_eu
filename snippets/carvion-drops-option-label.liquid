@@ -1,0 +1,6 @@
+{%- comment -%}The standalone EVA heel pad has no drops surcharge; mat labels stay unchanged.{%- endcomment -%}
+{%- if product.id == 9257148317974 -%}
+  {{- 'general.config.drops_property_value' | t -}}
+{%- else -%}
+  {{- 'general.config.mat_pattern_drops' | t -}}
+{%- endif -%}
