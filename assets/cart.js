@@ -393,6 +393,9 @@ class CartItems extends HTMLElement {
 
       const dropCount = cart.items
         .filter(item => {
+          // Match the PDP exemption by stable product ID, across all translated titles.
+          // Do not count an EVA heel pad as a mat set when cart quantities change.
+          if (Number(item.product_id) === 9257148317974) return false;
           const props = item.properties;
           let hasDrop = false;
           if (typeof props === 'object' && props !== null) {
