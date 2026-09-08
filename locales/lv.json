@@ -11,6 +11,13 @@
   "carvion_gift": {
     "eyebrow": "Kaut kas īpašs jūsu auto",
     "title": "Bonuss pasūtījumam",
+    "shipping_label": "Bezmaksas piegāde",
+    "gift_label": "Dāvana par {{ price }}",
+    "from": "no",
+    "unlocked": "Sasniegts",
+    "milestone_remaining": "Vēl {{ amount }}",
+    "before_shipping": "Pievienojiet preces vēl par {{ amount }}, lai saņemtu bezmaksas piegādi. Nākamā balva ir dāvana.",
+    "shipping_ready": "Bezmaksas piegāde ir pieejama. Pievienojiet preces vēl par {{ amount }}, lai izvēlētos dāvanu.",
     "demo": "DEMO",
     "loading": "Sagatavojam dāvanu izvēli…",
     "progress": "Līdz dāvanas saņemšanai",
