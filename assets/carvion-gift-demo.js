@@ -1,11 +1,11 @@
 /* Deliberately read-only demo: selection is tab-local, not an order/checkout gift. */
 (function (root) {
   'use strict';
-  function evaluateGiftState(total, threshold, currency, campaignCurrency) {
-    const valid = Number.isSafeInteger(total) && total >= 0 && Number.isSafeInteger(threshold) && threshold > 0 && currency === campaignCurrency;
-    return {valid, eligible:valid && total >= threshold, remaining:valid ? Math.max(0,threshold-total) : 0, percent:valid ? Math.min(100,Math.max(0,Math.floor(total/threshold*100))) : 0};
+  function evaluateRewardState(total, shippingThreshold, giftThreshold, currency, campaignCurrency) {
+    const valid = Number.isSafeInteger(total) && total >= 0 && Number.isSafeInteger(shippingThreshold) && shippingThreshold > 0 && Number.isSafeInteger(giftThreshold) && giftThreshold > shippingThreshold && currency === campaignCurrency;
+    return {valid, shippingEligible:valid && total >= shippingThreshold, giftEligible:valid && total >= giftThreshold, remainingShipping:valid ? Math.max(0,shippingThreshold-total) : 0, remainingGift:valid ? Math.max(0,giftThreshold-total) : 0, percent:valid ? Math.min(100,Math.max(0,Math.floor(total/giftThreshold*100))) : 0};
   }
-  if (typeof module === 'object' && module.exports) module.exports = {evaluateGiftState};
+  if (typeof module === 'object' && module.exports) module.exports = {evaluateRewardState};
   if (!root?.customElements || root.customElements.get('carvion-gift-demo')) return;
   class GiftDemo extends root.HTMLElement {
     connectedCallback() {
@@ -14,6 +14,7 @@
       this.copy = JSON.parse(this.querySelector('[data-gift-copy]').textContent);
       this.cards = [...this.querySelectorAll('[data-gift-product]')];
       this.threshold = Number(this.dataset.threshold);
+      this.shippingThreshold = Number(this.dataset.shippingThreshold);
       this.realTotal = Number(this.dataset.total);
       this.scenario = 'actual';this.selected = null;
       this.key = ['carvion-gift-demo',this.dataset.theme,this.dataset.section,this.dataset.campaign,this.dataset.currency,this.threshold,this.cards.map(x=>x.dataset.giftProduct).join(',')].join(':');
@@ -28,7 +29,7 @@
         if(scenario){this.scenario=scenario.dataset.giftScenario;this.render();return;}
         if(event.target.closest('[data-gift-remove]')){this.selected=null;this.render();return;}
         const button=event.target.closest('[data-gift-select]');
-        if(!button || button.disabled || !this.state?.eligible)return;
+        if(!button || button.disabled || !this.state?.giftEligible)return;
         const card=button.closest('[data-gift-product]');
         this.selected={product:card.dataset.giftProduct,variant:card.querySelector('[data-gift-variant]').value};
         this.render();
@@ -44,17 +45,24 @@
     money(cents) {return new Intl.NumberFormat(document.documentElement.lang||'en',{style:'currency',currency:this.dataset.currency}).format(cents/100);}
     render() {
       const total=this.scenario==='below'?Math.floor(this.threshold*.8):this.scenario==='reached'?this.threshold:this.realTotal;
-      this.state=evaluateGiftState(total,this.threshold,this.dataset.currency,this.dataset.campaignCurrency);
+      this.state=evaluateRewardState(total,this.shippingThreshold,this.threshold,this.dataset.currency,this.dataset.campaignCurrency);
       const pool=this.cards.filter(c=>c.dataset.available==='true');
-      if(!this.state.eligible||!pool.some(c=>c.dataset.giftProduct===this.selected?.product))this.selected=null;
-      this.dataset.state=!this.state.valid?'error':!pool.length?'empty':this.selected?'selected':this.state.eligible?'ready':'locked';
-      const text=!this.state.valid?this.copy.error:!pool.length?this.copy.empty:this.selected?this.copy.selected:this.state.eligible?this.copy.ready:this.copy.locked.replace('__AMOUNT__',this.money(this.state.remaining));
+      if(!this.state.giftEligible||!pool.some(c=>c.dataset.giftProduct===this.selected?.product))this.selected=null;
+      this.dataset.state=!this.state.valid?'error':!pool.length?'empty':this.selected?'selected':this.state.giftEligible?'ready':this.state.shippingEligible?'shipping':'locked';
+      const text=!this.state.valid?this.copy.error:!pool.length?this.copy.empty:this.selected?this.copy.selected:this.state.giftEligible?this.copy.ready:this.state.shippingEligible?this.copy.shippingReady.replace('__AMOUNT__',this.money(this.state.remainingGift)):this.copy.beforeShipping.replace('__AMOUNT__',this.money(this.state.remainingShipping));
       this.querySelector('[data-gift-status]').textContent=text;
       this.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',String(this.state.percent));
       this.querySelector('[data-gift-fill]').style.transform=`scaleX(${this.state.percent/100})`;
       this.querySelector('[data-gift-amount]').textContent=(this.scenario==='actual'?this.copy.actual:this.copy.simulated)+' '+(this.state.valid?this.money(total):'—');
+      for(const key of ['shipping','gift']){
+        const eligible=key==='shipping'?this.state.shippingEligible:this.state.giftEligible;
+        const remaining=key==='shipping'?this.state.remainingShipping:this.state.remainingGift;
+        const milestone=this.querySelector(`[data-reward-milestone="${key}"]`);
+        milestone.dataset.status=eligible?'unlocked':'locked';
+        milestone.querySelector('[data-reward-result]').textContent=this.state.valid?(eligible?this.copy.unlocked:this.copy.remaining.replace('__AMOUNT__',this.money(remaining))):'—';
+      }
       for(const card of this.cards){
-        const enabled=this.state.eligible&&card.dataset.available==='true',chosen=this.selected?.product===card.dataset.giftProduct;
+        const enabled=this.state.giftEligible&&card.dataset.available==='true',chosen=this.selected?.product===card.dataset.giftProduct;
         card.dataset.selected=String(chosen);
         const button=card.querySelector('[data-gift-select]');
         button.disabled=!enabled;button.setAttribute('aria-pressed',String(chosen));
