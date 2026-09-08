@@ -8,6 +8,53 @@
  * ------------------------------------------------------------
  */
 {
+  "carvion_cro": {
+    "reviews_link": "Avis des clients",
+    "reviews_support": "Découvrez nos tapis dans les voitures de nos clients — photos et expériences.",
+    "benefits_link": "Pourquoi les tapis EVA ?",
+    "benefits_title": "Pour votre voiture. Pour chaque trajet.",
+    "benefits_lead": "Un ajustement précis, un matériau pratique et une fabrication en Pologne.",
+    "factory": "Fabriqués en Pologne",
+    "factory_text": "Nous fabriquons chaque jeu en Pologne selon la configuration que vous avez choisie.",
+    "car": "Adaptés à votre voiture",
+    "car_text": "La forme est adaptée au modèle et à la carrosserie de votre véhicule, en tenant compte des points de fixation.",
+    "drop": "Retiennent l’eau et la saleté",
+    "drop_text": "Les alvéoles retiennent l’eau, le sable et la boue. Retirez les tapis et rincez-les pour les nettoyer.",
+    "back": "Retour à la configuration",
+    "close": "Fermer",
+    "reviews_title": "Nos tapis dans vos voitures",
+    "reviews_page_title": "Avis des clients Carvion",
+    "reviews_lead": "Ajustement, usage quotidien et service — les expériences de conducteurs de différents véhicules.",
+    "all_reviews": "Tous les avis",
+    "previous": "Avis précédents",
+    "next": "Avis suivants",
+    "read_more": "Lire l’avis complet",
+    "read_less": "Réduire",
+    "source": "Traduction d’un avis existant sur la boutique",
+    "preview_note": "Aperçu du design : 8 avis existants avec leurs noms et photos d’origine. Ils concernent la boutique et différents véhicules, pas ce modèle précis. Leur source doit être vérifiée avant publication.",
+    "photo_alt": "Photo des tapis dans l’avis de {{ name }}",
+    "rating": "{{ rating }} étoiles sur 5",
+    "secure": "Paiement sécurisé",
+    "payments": "Moyens de paiement",
+    "payment_note": "Les moyens disponibles sont indiqués lors du paiement.",
+    "cart_quote": "Très jolis et bien ajustés — je les recommande.",
+    "cart_source": "Stan G. · extrait d’un avis sur la boutique",
+    "shipping_done": "Cette commande bénéficie de la livraison offerte",
+    "shipping_remaining_html": "Encore <strong>{{ value }}</strong> pour la livraison offerte",
+    "clear_brand": "Effacer la marque",
+    "clear_model": "Effacer le modèle",
+    "clear_years": "Effacer la génération",
+    "reviews": {
+      "r1": "À première vue, nous sommes très satisfaits de la qualité des tapis et de leur ajustement. J’espère qu’ils seront tout aussi bien à l’usage et au nettoyage. 🤗",
+      "r2": "Très jolis et bien ajustés — je les recommande. Je verrai comment ils se comportent en hiver avec la neige fondue et la boue, mais pour l’instant je suis très satisfait. Les tapis sont installés dans un Opel Mokka X.",
+      "r3": "Les tapis sont super ! Ils s’ajustent parfaitement et les trous de fixation sont exactement au bon endroit. Le seul petit bémol : les rabats du tapis du tunnel central sont environ 0,5 cm trop longs — mais rien d’inquiétant ! Un excellent produit ! Je le recommanderai et je reviendrai certainement plus d’une fois.",
+      "r4": "Une commande sur mesure n’a jamais été réalisée aussi rapidement. Je suis très satisfaite des tapis, même si au début je voulais modifier ma commande pour ne prendre que ceux de l’avant — heureusement, je ne l’ai pas fait. La saleté s’enlève facilement, alors qu’il faut passer l’aspirateur sur les tapis en tissu. J’ai aussi reçu une talonnette offerte. Dommage de ne pas avoir su qu’elle ne serait pas en métal — j’en aurais ajouté une, car je trouve cela plus joli. Les tapis semblent solides et s’ajustent parfaitement — après tout, ils sont faits sur mesure. La communication pendant la commande a été excellente ; la conseillère m’a montré des photos de différentes couleurs, ce qui a beaucoup facilité mon choix. Quand je changerai de voiture, je commanderai à nouveau. Je les recommande à tout le monde !",
+      "r5": "Les tapis sont fabriqués avec une précision incroyable. Dans ma voiture, il y avait un « problème » avec le marteau de secours côté conducteur. Carvion m’a contactée immédiatement et nous avons convenu de l’envoi d’un gabarit pour que tout s’ajuste parfaitement. Je l’ai renvoyé en indiquant l’emplacement du marteau. Cela a malheureusement prolongé le délai de fabrication, mais nous avons décidé ensemble que c’était la meilleure solution. Et le résultat ? Jugez par vous-mêmes. Pour moi, c’est parfait 🤩 Je recommande vivement ❤️ Peugeot 308 break, 2015.",
+      "r6": "Les tapis 3D s’ajustent parfaitement dans ma Mazda 6 de 2002. Ils sont mesurés avec précision et façonnés pour épouser le plancher. Comme la voiture n’a pas de fixations, des attaches autoagrippantes ont été ajoutées aux coins de chaque tapis pour les empêcher de bouger pendant la conduite. J’ai commandé l’ensemble complet avec un tapis de coffre qui couvre toute la surface. Chaque élément de cette commande est très bien réalisé. Je suis satisfait et je les recommande à 100 % !",
+      "r7": "Des tapis de première qualité. Ils sont un peu chers, mais la qualité se paie. J’achèterai peut-être aussi un tapis de coffre à l’avenir.",
+      "r8": "Je recommande vivement — très, très jolis, confortables et du plus bel effet. Je les recommande sans hésiter !"
+    }
+  },
   "general": {
     "config": {
       "mats_type": "Type de tapis",
