@@ -1,0 +1,38 @@
+{% comment %}Existing EU gallery photo, not a generated or vehicle-specific fit preview. Pins are tied to this exact composition.{% endcomment %}
+<dialog id="cz-cro-benefits" class="cz-cro-dialog carvion-eva-dialog" aria-labelledby="cz-cro-benefits-title" data-eva-details>
+  <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="{{ 'carvion_cro.close' | t | escape }}">×</button>
+  <header class="carvion-eva-heading">
+    <h2 id="cz-cro-benefits-title" tabindex="-1" autofocus>{{ 'carvion_cro.details_title' | t }}</h2>
+    <p>{{ 'carvion_cro.details_lead' | t }}</p>
+  </header>
+  <div class="carvion-eva-layout">
+    <figure class="carvion-eva-figure">
+      <div class="carvion-eva-stage" data-eva-stage data-state="loading">
+        {% assign eva_photo = images['IMG_1020.jpg'] %}
+        {% assign eva_photo_alt = 'carvion_cro.details_photo_alt' | t %}
+        {% if eva_photo %}{{ eva_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, 280px', alt: eva_photo_alt }}{% endif %}
+        <p class="carvion-eva-photo-status" data-eva-loading>{{ 'carvion_cro.details_loading' | t }}</p>
+        <p class="carvion-eva-photo-status" data-eva-error hidden>{{ 'carvion_cro.details_error' | t }}</p>
+        {% assign detail_keys = 'cells,edging,fixing' | split: ',' %}
+        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}
+          <button class="carvion-eva-pin carvion-eva-pin--{{ key }}" type="button" data-eva-feature="{{ key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ key }}" aria-label="{{ title_key | t | escape }}"><span aria-hidden="true">{{ forloop.index }}</span></button>
+        {% endfor %}
+      </div>
+      <div class="carvion-eva-photo-toolbar"><button type="button" class="carvion-eva-zoom" data-eva-zoom aria-pressed="false" disabled><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg><span>{{ 'carvion_cro.details_zoom' | t }}</span></button></div>
+      <figcaption>{{ 'carvion_cro.details_caption' | t }}</figcaption>
+    </figure>
+    <div class="carvion-eva-copy">
+      <div class="carvion-eva-options" role="group" aria-label="{{ 'carvion_cro.details_title' | t | escape }}">
+        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}
+          <button type="button" class="carvion-eva-option" data-eva-feature="{{ key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ key }}"><span class="carvion-eva-number" aria-hidden="true">{{ forloop.index }}</span><span>{{ title_key | t }}</span><span class="carvion-eva-option-arrow" aria-hidden="true">↗</span></button>
+        {% endfor %}
+      </div>
+      <div class="carvion-eva-explanation" aria-live="polite">
+        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}{% assign text_key = title_key | append: '_text' %}
+          <article id="eva-detail-{{ key }}" data-eva-panel="{{ key }}"{% unless forloop.first %} hidden{% endunless %}><h3>{{ title_key | t }}</h3><p>{{ text_key | t }}</p></article>
+        {% endfor %}
+      </div>
+      <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>{{ 'carvion_cro.back' | t }}</button>
+    </div>
+  </div>
+</dialog>

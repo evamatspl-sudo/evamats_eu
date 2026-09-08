@@ -1,4 +1,7 @@
 {% comment %}EU dev preview: shop experiences, not a rating of this vehicle model.{% endcomment %}
+{% unless product.id == 9257148317974 %}
+{{ 'carvion-eva-details.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'carvion-eva-details.js' | asset_url }}" defer></script>
 <div class="cz-cro-intro" data-cz-cro-preview>
   <p class="cz-cro-review-support">{{ 'carvion_cro.reviews_support' | t }}</p>
   <a class="cz-cro-review-link" href="#cz-cro-reviews"><span class="cz-cro-stars" aria-hidden="true">★★★★★</span><span>{{ 'carvion_cro.reviews_link' | t }}</span><span aria-hidden="true">↓</span></a>
@@ -6,22 +9,7 @@
     {% assign benefits = 'clean,dry,style' | split: ',' %}
     {% for benefit in benefits %}{% assign benefit_key = 'carvion_cro.' | append: benefit %}<li>{% render 'cz-cro-icon', icon: benefit %}<span>{{ benefit_key | t }}</span></li>{% endfor %}
   </ul>
-  <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits">{{ 'carvion_cro.benefits_link' | t }} <span aria-hidden="true">+</span></button>
+  <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits"><span class="carvion-eva-button-label">{{ 'carvion_cro.benefits_link' | t }}</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
 </div>
-<dialog id="cz-cro-benefits" class="cz-cro-dialog" aria-labelledby="cz-cro-benefits-title">
-  <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="{{ 'carvion_cro.close' | t | escape }}">×</button>
-  <div class="cz-cro-dialog-layout">
-    {% assign eva_samples = images['Group_184_eed00412-fc64-4df2-8337-6457204238c3.png'] %}
-    {% assign eva_samples_alt = 'carvion_cro.material_photo_alt' | t %}
-    {% if eva_samples %}<figure class="cz-cro-benefit-photo">{{ eva_samples | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,600,800', sizes: '(min-width: 750px) 340px, 220px', alt: eva_samples_alt }}</figure>{% endif %}
-    <div>
-      <h2 id="cz-cro-benefits-title" tabindex="-1" autofocus>{{ 'carvion_cro.benefits_title' | t }}</h2>
-      <p class="cz-cro-dialog-lead">{{ 'carvion_cro.benefits_lead' | t }}</p>
-      <div class="cz-cro-benefit-grid">
-        {% assign benefits = 'clean,dry,style' | split: ',' %}
-        {% for benefit in benefits %}{% assign benefit_key = 'carvion_cro.' | append: benefit %}{% assign benefit_text_key = benefit_key | append: '_text' %}<article><span class="cz-cro-benefit-icon" aria-hidden="true">{% render 'cz-cro-icon', icon: benefit %}</span><div><h3>{{ benefit_key | t }}</h3><p>{{ benefit_text_key | t }}</p></div></article>{% endfor %}
-      </div>
-      <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>{{ 'carvion_cro.back' | t }}</button>
-    </div>
-  </div>
-</dialog>
+{% render 'carvion-eva-details' %}
+{% endunless %}
