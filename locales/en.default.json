@@ -9,6 +9,8 @@
  */
 {
   "carvion_cro": {
+    "shipping_cart_html": "In your cart <strong>{{ value }}</strong>",
+    "shipping_goal_html": "Free delivery from <strong>{{ value }}</strong>",
     "reviews_link": "Customer reviews",
     "reviews_support": "See how our mats fit in customers’ cars — photos and experiences.",
     "benefits_link": "Why EVA mats?",
