@@ -102,6 +102,10 @@
     assign featured_collections = blank
   endif
 
+  assign evm_index_50 = featured_collections[50]
+  assign evm_index_51 = featured_collections[51]
+  echo "<!-- EVM_INDEX_DEBUG size=" | append: featured_collections.size | append: " i50=" | append: evm_index_50.handle | append: " i51=" | append: evm_index_51.handle | append: " -->"
+
   assign visible_collections_count = 0
   assign counted_featured_collection_ids = '|'
   if featured_collections != blank
