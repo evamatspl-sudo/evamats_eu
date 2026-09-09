@@ -38,6 +38,25 @@
       update();
     });
   };
+  const initMiniReviews = () => {
+    document.querySelectorAll('[data-cz-cro-mini-reviews]').forEach(root => {
+      if (root.dataset.croMiniReady) return;
+      root.dataset.croMiniReady = 'true';
+      const slides = [...root.querySelectorAll('[data-cz-cro-mini-slide]')];
+      const position = root.querySelector('[data-cz-cro-mini-position]');
+      let index = 0;
+      const show = next => {
+        index = (next + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== index; });
+        if (position) position.textContent = `${index + 1} / ${slides.length}`;
+      };
+      root.addEventListener('click', event => {
+        const button = event.target.closest('[data-cz-cro-mini-step]');
+        if (button && slides.length) show(index + Number(button.dataset.czCroMiniStep));
+      });
+      show(0);
+    });
+  };
   const unlock = () => document.documentElement.classList.remove('cz-cro-dialog-open');
   document.addEventListener('click', (event) => {
     const open = event.target.closest('[data-cz-cro-open]');
@@ -65,7 +84,8 @@
     }
   });
   document.addEventListener('shopify:section:unload', unlock);
-  document.addEventListener('shopify:section:load', initReviews);
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initReviews, { once: true });
-  else initReviews();
+  const init = () => { initReviews(); initMiniReviews(); };
+  document.addEventListener('shopify:section:load', init);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
 })();

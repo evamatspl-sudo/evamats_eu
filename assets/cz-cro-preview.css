@@ -5,6 +5,8 @@
 .product__info-container>.cz-cro-intro{margin:0 0 8px}
 .cz-cro-review-link{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;min-height:44px;color:var(--cro-ink);font-size:15px;font-weight:600;text-decoration:none}
 .cz-cro-review-link>span{white-space:nowrap}
+.cz-cro-review-link>strong{font-size:16px;color:var(--cro-ink);white-space:nowrap}
+.cz-cro-review-link>span:nth-last-child(2){font-size:13px;font-weight:400;color:var(--cro-muted)}
 .cz-cro-stars{color:var(--cro-gold);font-size:18px;letter-spacing:1px;line-height:1.2;white-space:nowrap}
 .cz-cro-review-support{margin:0 0 4px;color:var(--cro-muted);font-size:14px;line-height:1.5;max-width:65ch}
 .cz-cro-benefit-strip{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:16px 0 0;margin:12px 0 0;border-top:1px solid var(--cro-line)}
@@ -73,9 +75,9 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-payment-list img{display:block;width:40px;max-width:40px;height:24px;object-fit:contain}
 .cz-cro-payment-note{margin:8px 0 0;font-size:12px;line-height:1.45;color:var(--cro-muted)}
 .cz-cro-cart-review-sample{margin-top:20px;padding-top:18px;border-top:1px solid var(--cro-line);text-align:left}
-.cz-cro-cart-review-sample p{margin:8px 0;font-size:14px;line-height:1.5;color:var(--cro-ink)}
-.cz-cro-cart-review-sample>span:not(.cz-cro-stars){font-size:12px;color:var(--cro-muted);line-height:1.5;display:block}
-.cz-cro-cart-review{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:4px;color:var(--cro-ink);font-size:13px;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.cz-cro-cart-review-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px}.cz-cro-cart-review-head .cz-cro-stars{font-size:14px}.cz-cro-cart-review-head strong{font-size:13px}.cz-cro-cart-review-head>span:last-child{font-size:11px;color:var(--cro-muted)}
+.cz-cro-cart-review-track{min-height:92px}.cz-cro-cart-review-slide p{margin:10px 0 6px;font-size:13px;line-height:1.5;color:var(--cro-ink)}.cz-cro-cart-review-slide>span{display:block;font-size:11px;line-height:1.45;color:var(--cro-muted)}
+.cz-cro-cart-review-nav{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:8px}.cz-cro-cart-review-nav>span{margin-right:auto;font-size:11px;color:var(--cro-muted);font-variant-numeric:tabular-nums}.cz-cro-cart-review-nav button{display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid var(--cro-line);border-radius:50%;background:var(--cro-paper);color:var(--cro-ink);font:18px/1 var(--cro-font);cursor:pointer}
 .evamats-cart-gift-banner.carvion-cro-shipping{padding:var(--cro-space-md);border:1px solid var(--cro-line);border-radius:16px;background:var(--cro-paper);color:var(--cro-ink);font-family:var(--cro-font)}
 .carvion-cro-shipping .evamats-cart-gift-banner__text-row{display:flex;align-items:center;gap:var(--cro-space-sm)}
 .carvion-cro-shipping-icon{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:var(--cro-accent-soft);color:var(--cro-focus)}
@@ -100,6 +102,6 @@ html.cz-cro-dialog-open{overflow:hidden}
  .cz-cro-review-grid{grid-auto-columns:calc((100% - 16px)/2)}.cz-cro-reviews--page .cz-cro-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(min-width:1050px){.cz-cro-review-grid{grid-auto-columns:calc((100% - 40px)/3);gap:20px}.cz-cro-reviews--page .cz-cro-review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(hover:hover){.cz-cro-review-link:hover,.cz-cro-benefits-button:hover{color:var(--cro-focus)}.cz-cro-review-controls button:not(:disabled):hover,.cz-cro-dialog-close:hover{border-color:var(--cro-ink)}.cz-cro-dialog-done:hover{background:var(--cro-muted);color:var(--cro-paper)}}
+@media(hover:hover){.cz-cro-review-link:hover,.cz-cro-benefits-button:hover{color:var(--cro-focus)}.cz-cro-review-controls button:not(:disabled):hover,.cz-cro-cart-review-nav button:hover,.cz-cro-dialog-close:hover{border-color:var(--cro-ink)}.cz-cro-dialog-done:hover{background:var(--cro-muted);color:var(--cro-paper)}}
 .cz-cro-benefits-button:active,.cz-cro-review-controls button:not(:disabled):active,.cz-cro-dialog-done:active{transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){.cz-cro-review-grid{scroll-behavior:auto}.cz-cro-benefits-button:active,.cz-cro-review-controls button:active,.cz-cro-dialog-done:active{transform:none}}

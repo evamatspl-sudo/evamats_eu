@@ -16,7 +16,7 @@
       this.threshold = Number(this.dataset.threshold);
       this.shippingThreshold = Number(this.dataset.shippingThreshold);
       this.realTotal = Number(this.dataset.total);
-      this.scenario = 'actual';this.selected = null;
+      this.scenario = 'actual';this.selected = null;this.expanded=false;this.giftIndex=0;
       this.key = ['carvion-gift-demo',this.dataset.theme,this.dataset.section,this.dataset.campaign,this.dataset.currency,this.threshold,this.cards.map(x=>x.dataset.giftProduct).join(',')].join(':');
       try {const saved=JSON.parse(sessionStorage.getItem(this.key));if(saved){this.selected=saved.selected;this.scenario=['actual','below','reached'].includes(saved.scenario)?saved.scenario:'actual';}} catch {}
       if (this.selected) {
@@ -27,11 +27,16 @@
       this.addEventListener('click', event => {
         const scenario=event.target.closest('[data-gift-scenario]');
         if(scenario){this.scenario=scenario.dataset.giftScenario;this.render();return;}
-        if(event.target.closest('[data-gift-remove]')){this.selected=null;this.render();return;}
+        const opener=event.target.closest('[data-gift-open]');
+        if(opener){this.expanded=!this.expanded;this.render();return;}
+        const slider=event.target.closest('[data-gift-slide]');
+        if(slider){this.moveGift(Number(slider.dataset.giftSlide)||1);return;}
+        if(event.target.closest('[data-gift-remove]')){this.selected=null;this.expanded=true;this.render();return;}
         const button=event.target.closest('[data-gift-select]');
         if(!button || button.disabled || !this.state?.giftEligible)return;
         const card=button.closest('[data-gift-product]');
         this.selected={product:card.dataset.giftProduct,variant:card.querySelector('[data-gift-variant]').value};
+        this.expanded=false;
         this.render();
       });
       this.addEventListener('change',event=>{
@@ -43,11 +48,20 @@
       this.render();
     }
     money(cents) {return new Intl.NumberFormat(document.documentElement.lang||'en',{style:'currency',currency:this.dataset.currency}).format(cents/100);}
+    moveGift(step) {
+      const pool=this.cards.filter(card=>card.dataset.available==='true');
+      if(!pool.length)return;
+      this.giftIndex=(this.giftIndex+step+pool.length)%pool.length;
+      pool[this.giftIndex].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'start'});
+      const position=this.querySelector('[data-gift-position]');
+      if(position)position.textContent=`${this.giftIndex+1} / ${pool.length}`;
+    }
     render() {
       const total=this.scenario==='below'?Math.floor(this.threshold*.8):this.scenario==='reached'?this.threshold:this.realTotal;
       this.state=evaluateRewardState(total,this.shippingThreshold,this.threshold,this.dataset.currency,this.dataset.campaignCurrency);
       const pool=this.cards.filter(c=>c.dataset.available==='true');
-      if(!this.state.giftEligible||!pool.some(c=>c.dataset.giftProduct===this.selected?.product))this.selected=null;
+      if(!this.state.giftEligible){this.selected=null;this.expanded=false;}
+      else if(!pool.some(c=>c.dataset.giftProduct===this.selected?.product))this.selected=null;
       this.dataset.state=!this.state.valid?'error':!pool.length?'empty':this.selected?'selected':this.state.giftEligible?'ready':this.state.shippingEligible?'shipping':'locked';
       const text=!this.state.valid?this.copy.error:!pool.length?this.copy.empty:this.selected?this.copy.selected:this.state.giftEligible?this.copy.ready:this.state.shippingEligible?this.copy.shippingReady.replace('__AMOUNT__',this.money(this.state.remainingGift)):this.copy.beforeShipping.replace('__AMOUNT__',this.money(this.state.remainingShipping));
       this.querySelector('[data-gift-status]').textContent=text;
@@ -72,6 +86,12 @@
       }
       const selection=this.querySelector('[data-gift-selection]');selection.hidden=!this.selected;
       if(this.selected){const card=this.cards.find(c=>c.dataset.giftProduct===this.selected.product),input=card.querySelector('[data-gift-variant]');this.querySelector('[data-gift-selected-title]').textContent=card.dataset.title+(input.tagName==='SELECT'?' · '+input.selectedOptions[0].textContent:'');}
+      const opener=this.querySelector('[data-gift-open]'),picker=this.querySelector('[data-gift-picker]');
+      const canChoose=this.state.giftEligible&&pool.length&&!this.selected;
+      opener.hidden=!canChoose;opener.setAttribute('aria-expanded',String(canChoose&&this.expanded));
+      picker.hidden=!(canChoose&&this.expanded);
+      const position=this.querySelector('[data-gift-position]');
+      if(position)position.textContent=`${Math.min(this.giftIndex+1,Math.max(pool.length,1))} / ${pool.length}`;
       this.querySelectorAll('[data-gift-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.giftScenario===this.scenario)));
       try {sessionStorage.setItem(this.key,JSON.stringify({selected:this.selected,scenario:this.scenario}));} catch {}
     }
