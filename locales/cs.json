@@ -65,6 +65,8 @@
     "shipping_cart_html": "V košíku <strong>{{ value }}</strong>",
     "shipping_goal_html": "Doprava zdarma od <strong>{{ value }}</strong>",
     "reviews_link": "Recenze zákazníků",
+    "rating_summary": "5 z 5",
+    "rating_basis": "podle 8 stávajících recenzí zákazníků",
     "reviews_support": "Podívejte se, jak naše koberce sedí ve vozech zákazníků — fotografie a zkušenosti.",
     "benefits_link": "Proč koberce EVA?",
     "clean": "Snadné čištění",
@@ -108,6 +110,8 @@
     "clear_brand": "Zrušit výběr značky",
     "clear_model": "Zrušit výběr modelu",
     "clear_years": "Zrušit výběr generace",
+    "outlet_fallback": "Výprodejové zboží. Stav, kompatibilitu a obsah balení potvrzujeme v detailu produktu před odesláním.",
+    "outlet_tech_fallback": "Výprodejové příslušenství pro automobil. Stav, kompatibilitu a obsah balení potvrzujeme v detailu produktu před odesláním.",
     "reviews": {
       "r1": "Na první pohled jsme velmi spokojení s kvalitou koberců i s tím, jak dobře sedí. Doufám, že budeme stejně spokojení i při používání a čištění. 🤗",
       "r2": "Velmi pěkné a dobře padnoucí — doporučuji. Uvidím, jak si povedou v zimě v rozbředlém sněhu a blátě, ale zatím jsem velmi spokojený. Koberce jsou namontované v Opelu Mokka X.",

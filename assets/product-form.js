@@ -4,54 +4,34 @@ window.__evamatsProductFormJsLoaded = true;
 
 const DROP_CELL_SHAPE_VARIANT_ID = 51194860011798;
 
-const addDropCellShape = async (id) => {
+const addSupplementalItems = async (ids) => {
+  const quantities = ids.reduce((items, value) => {
+    const id = Number(value);
+    if (Number.isSafeInteger(id) && id > 0) items.set(id, (items.get(id) || 0) + 1);
+    return items;
+  }, new Map());
+  if (!quantities.size) return;
+
   try {
     const response = await fetch("/cart/add.js", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        items: [{ id, quantity: 1 }],
+        items: [...quantities].map(([id, quantity]) => ({ id, quantity })),
       }),
     });
 
     if (!response.ok) {
       const body = await response.text();
-      console.error("[addDropCellShape] /cart/add.js not ok", {
+      console.error("[addSupplementalItems] /cart/add.js not ok", {
         status: response.status,
-        variantId: id,
+        variantIds: [...quantities.keys()],
         body: body || "(empty)",
       });
-      throw new Error(
-        `Ошибка при добавлении drop cell shape: ${response.statusText}`
-      );
+      throw new Error(`Supplemental items were not added: ${response.statusText}`);
     }
-
-    const result = await response.json();
   } catch (error) {
-    console.error("Ошибка в addDropCellShape:", error);
-  }
-};
-
-const addUpsells = async (id) => {
-  try {
-    const response = await fetch("/cart/add.js", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        items: [{ id, quantity: 1 }],
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `Ошибка при добавлении upsell: ${response.statusText}`
-      );
-    }
-
-    const result = await response.json();
-    console.log("Товар upsell добавлен:", result);
-  } catch (error) {
-    console.error("Ошибка в addUpsells:", error);
+    console.error("Ошибка в addSupplementalItems:", error);
   }
 };
 
@@ -188,32 +168,27 @@ if (!customElements.get('product-form')) {
         ? productUpsell.querySelectorAll(".product__upsell_item")
         : [];
 
-      const checkProductUpsell = async () => {
-        for (const item of upsellItems) {
-          const input = item.querySelector("input[type='checkbox']");
-          if (input && input.checked) {
-            await addUpsells(input.value);
+      try {
+        const supplementalItems = [];
+        if (productUpsell) {
+          for (const item of upsellItems) {
+            const input = item.querySelector("input[type='checkbox']");
+            if (input && input.checked && input.value) supplementalItems.push(input.value);
           }
         }
-      };
-
-      try {
-        if (productUpsell) await checkProductUpsell();
 
         const extrasWr = document.querySelector(".product__dropdown_wr--extras");
         if (extrasWr) {
           const extrasChecked = extrasWr.querySelectorAll("input[name='product__extras']:checked");
           for (const input of extrasChecked) {
-            if (input.value) await addUpsells(input.value);
+            if (input.value) supplementalItems.push(input.value);
           }
         }
 
-        if (matPatternInputChecked && !isEvaHeelPad) {
-          if (matPatternInputChecked.getAttribute('data-value') == 'drop') {
-            console.log('[product-form] add drop surcharge variant', DROP_CELL_SHAPE_VARIANT_ID);
-            await addDropCellShape(DROP_CELL_SHAPE_VARIANT_ID);
-          }
+        if (matPatternInputChecked && !isEvaHeelPad && matPatternInputChecked.getAttribute('data-value') == 'drop') {
+          supplementalItems.push(DROP_CELL_SHAPE_VARIANT_ID);
         }
+        await addSupplementalItems(supplementalItems);
 
         const response = await fetch(`${routes.cart_add_url}`, config).then((res) => res.json());
 
@@ -231,9 +206,7 @@ if (!customElements.get('product-form')) {
         }
 
         if (!this.cart) {
-          setTimeout(() => {
-            window.location.href = '/cart';
-          }, 2000);
+          window.location.href = window.routes?.cart_url || '/cart';
           return;
         }
 
