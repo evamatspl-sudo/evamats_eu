@@ -106,6 +106,9 @@
                         assign footer_link_url = link.url
                         if link.url contains '/pages/affiliate-program' or link.url contains 'uppromote.com'
                           assign footer_link_url = routes.root_url | append: 'pages/partners'
+                          unless routes.root_url == '/'
+                            assign footer_link_url = routes.root_url | append: '/pages/partners'
+                          endunless
                         endif
                       -%}
                       <li>
