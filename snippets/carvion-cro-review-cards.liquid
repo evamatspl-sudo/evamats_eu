@@ -142,3 +142,14 @@
     <p class="cz-cro-review-source">{{ 'carvion_cro.source' | t }}</p>
   </div>
 </article>
+{%- assign verified_reviews = '9|10|11|12|13|14|15|16|17|18|19|20' | split: '|' -%}
+{%- for review_number in verified_reviews -%}
+  {%- assign review_key = 'carvion_cro.reviews.r' | append: review_number -%}
+  <article class="cz-cro-review-card cz-cro-review-card--text" aria-label="{{ 'carvion_cro.verified_customer' | t | escape }}">
+    <div class="cz-cro-review-content">
+      <div class="cz-cro-review-byline"><div class="cz-cro-review-author"><img class="cz-cro-review-avatar cz-cro-review-avatar--brand" src="{{ 'logo_carvion_inverse.svg' | file_url }}" width="36" height="36" loading="lazy" alt=""><div><strong>{{ 'carvion_cro.verified_customer' | t }}</strong><span class="cz-cro-stars" aria-label="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}">★★★★★</span></div></div></div>
+      <blockquote><p>{{ review_key | t | escape | newline_to_br }}</p></blockquote>
+      <p class="cz-cro-review-source">{{ 'carvion_cro.source_etrusted' | t }}</p>
+    </div>
+  </article>
+{%- endfor -%}
