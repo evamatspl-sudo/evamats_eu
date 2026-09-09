@@ -13,3 +13,11 @@
 .filter-container .custom-select .filter-field__clear:active{color:#1b1d22}
 .filter-container .custom-select .filter-field__clear:disabled{opacity:.5;cursor:not-allowed}
 @media(hover:hover){.filter-container .custom-select .filter-field__clear:hover{color:#ae1631}}
+
+/* The dropdown caret was inheriting the collection filter's 8 × 5 px icon rule. */
+.filter-container .custom-select .filter-field__body>svg:not(.icon-close){
+ position:absolute!important;right:14px!important;top:50%!important;display:block;
+ width:18px!important;height:18px!important;margin:0!important;
+ color:#58616e;transform:translateY(-50%)!important;pointer-events:none;
+}
+.filter-container .custom-select .filter-field__body>svg:not(.icon-close) path{stroke-width:1.8}
