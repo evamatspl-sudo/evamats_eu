@@ -1,0 +1,12 @@
+{% comment %}EU dev: truthful social proof beside the purchase action, linked to the on-page review carousel.{% endcomment %}
+{% if theme.role != 'main' and product.template_suffix == 'config' and product.id != 9257148317974 %}
+  <a class="cz-cro-purchase-proof" href="#cz-cro-reviews" data-cz-cro-preview>
+    <span class="cz-cro-purchase-proof__score">5.0</span>
+    <span class="cz-cro-purchase-proof__body">
+      <span class="cz-cro-stars" aria-label="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}">★★★★★</span>
+      <strong>{{ 'carvion_cro.purchase_proof' | t }}</strong>
+      <small>{{ 'carvion_cro.rating_basis' | t }}</small>
+    </span>
+    <span class="cz-cro-purchase-proof__arrow" aria-hidden="true">↓</span>
+  </a>
+{% endif %}
