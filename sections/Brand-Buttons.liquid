@@ -78,15 +78,6 @@
 
   if brand_group != blank
     assign featured_collections = brand_group.subcollections.value
-    assign featured_collections_overflow = brand_group.subcollections_overflow.value
-    comment
-      Shopify resolves at most 50 collection references from one list in Liquid.
-      Large brand groups keep the complete canonical list in subcollections and
-      expose only the unresolved tail through subcollections_overflow.
-    endcomment
-    if featured_collections_overflow != blank
-      assign featured_collections = featured_collections | concat: featured_collections_overflow
-    endif
   else
     assign featured_collections = scoped_featured_collections
   endif
@@ -111,19 +102,24 @@
     assign featured_collections = blank
   endif
 
-  echo "<!-- EVM_OVERFLOW_DEBUG primary=" | append: brand_group.subcollections.value.size | append: " overflow=" | append: brand_group.subcollections_overflow.value.size | append: " merged=" | append: featured_collections.size | append: " -->"
-
   assign visible_collections_count = 0
   assign counted_featured_collection_ids = '|'
   if featured_collections != blank
-    for featured_item in featured_collections
-      if featured_item != blank and featured_item.handle != collection.handle
-        assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
-        unless counted_featured_collection_ids contains featured_item_token
-          assign visible_collections_count = visible_collections_count | plus: 1
-          assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
-        endunless
-      endif
+    comment
+      Shopify caps a single Liquid for-loop at 50 iterations. Process the list in
+      three batches so every allowed collection reference (currently max 128) renders.
+    endcomment
+    for featured_batch in (0..2)
+      assign featured_batch_offset = featured_batch | times: 50
+      for featured_item in featured_collections offset: featured_batch_offset limit: 50
+        if featured_item != blank and featured_item.handle != collection.handle
+          assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
+          unless counted_featured_collection_ids contains featured_item_token
+            assign visible_collections_count = visible_collections_count | plus: 1
+            assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
+          endunless
+        endif
+      endfor
     endfor
   endif
 -%}
@@ -150,7 +146,9 @@
         <div class="evamats-popular-models__track" role="list">
         {%- assign divider_pending = false -%}
         {%- assign rendered_featured_collection_ids = '|' -%}
-        {%- for featured_item in featured_collections -%}
+        {%- for featured_batch in (0..2) -%}
+        {%- assign featured_batch_offset = featured_batch | times: 50 -%}
+        {%- for featured_item in featured_collections offset: featured_batch_offset limit: 50 -%}
           {%- if featured_item == blank or featured_item.handle == collection.handle -%}
             {%- continue -%}
           {%- endif -%}
@@ -226,6 +224,7 @@
           </div>
 
           {%- assign divider_pending = true -%}
+        {%- endfor -%}
         {%- endfor -%}
         </div>
         <div class="evamats-popular-models__fade evamats-popular-models__fade--left" aria-hidden="true" hidden>
