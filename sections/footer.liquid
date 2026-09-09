@@ -102,15 +102,26 @@
                 {%- if block.settings.menu != blank -%}
                   <ul class="evamats-footer__menu-list list-unstyled">
                     {%- for link in block.settings.menu.links -%}
+                      {%- liquid
+                        assign footer_link_url = link.url
+                        if link.url contains '/pages/affiliate-program' or link.url contains 'uppromote.com'
+                          assign footer_link_url = routes.root_url | append: 'pages/partners'
+                        endif
+                      -%}
                       <li>
                         <a
-                          href="{{ link.url }}"
+                          href="{{ footer_link_url }}"
                           class="evamats-footer__menu-link{% if link.active %} evamats-footer__menu-link--active{% endif %}"
                         >
                           {{ link.title }}
                         </a>
                       </li>
                     {%- endfor -%}
+                    {%- if request.locale.iso_code == 'fr' and block.settings.menu.handle == 'footer' -%}
+                      <li>
+                        <a href="{{ routes.root_url }}policies/legal-notice" class="evamats-footer__menu-link">Mentions légales</a>
+                      </li>
+                    {%- endif -%}
                   </ul>
                 {%- endif -%}
               </div>
@@ -286,9 +297,6 @@
     <div class="evamats-footer__bar">
       <div class="evamats-footer__bar-start">
         <div class="evamats-footer__copyright-wrap">
-          {%- if request.locale.iso_code == 'fr' -%}
-            <p class="evamats-footer__legal"><a href="{{ routes.root_url }}/policies/legal-notice">Mentions légales</a></p>
-          {%- endif -%}
           {%- if section.settings.nip_number != blank or section.settings.regon_number != blank -%}
             <p class="evamats-footer__legal">
               {%- if section.settings.nip_number != blank -%}

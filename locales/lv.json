@@ -65,6 +65,8 @@
     "shipping_cart_html": "Grozā <strong>{{ value }}</strong>",
     "shipping_goal_html": "Bezmaksas piegāde no <strong>{{ value }}</strong>",
     "reviews_link": "Klientu atsauksmes",
+    "rating_summary": "5 no 5",
+    "rating_basis": "pamatojoties uz 8 esošām klientu atsauksmēm",
     "reviews_support": "Apskatiet, kā mūsu paklājiņi iederas klientu automašīnās — foto un pieredze.",
     "benefits_link": "Kāpēc EVA paklājiņi?",
     "clean": "Viegli tīrāmi",
@@ -108,6 +110,8 @@
     "clear_brand": "Notīrīt markas izvēli",
     "clear_model": "Notīrīt modeļa izvēli",
     "clear_years": "Notīrīt paaudzes izvēli",
+    "outlet_fallback": "Izpārdošanas prece. Tās stāvoklis, saderība un komplektācija tiek apstiprināta produkta informācijā pirms nosūtīšanas.",
+    "outlet_tech_fallback": "Izpārdošanas auto piederums. Tā stāvoklis, saderība un komplektācija tiek apstiprināta produkta informācijā pirms nosūtīšanas.",
     "reviews": {
       "r1": "No pirmā acu uzmetiena esam ļoti apmierināti ar paklājiņu kvalitāti un to, cik labi tie pieguļ. Ceru, ka arī lietošanā un tīrīšanā viss būs tikpat labi. 🤗",
       "r2": "Ļoti skaisti un labi pieguļ — iesaku. Redzēšu, kā tie kalpos ziemā slapjdraņķī un dubļos, bet pagaidām esmu ļoti apmierināts. Paklājiņi ir uzstādīti Opel Mokka X.",
