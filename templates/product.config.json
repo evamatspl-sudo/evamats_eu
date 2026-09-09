@@ -526,6 +526,10 @@
         "padding_bottom": 80
       }
     },
+    "carvion_cro_product_reviews": {
+      "type": "carvion-cro-product-reviews",
+      "settings": {}
+    },
     "custom_liquid_xCPAf4": {
       "type": "custom-liquid",
       "disabled": true,
@@ -714,6 +718,7 @@
     "image_with_text_EtAjip",
     "image_with_text_4jMP4d",
     "image_with_text_YqP4aF",
+    "carvion_cro_product_reviews",
     "custom_liquid_xCPAf4",
     "rich_text_eB8aGJ",
     "mat_hotspot_consult_YftGe6",
