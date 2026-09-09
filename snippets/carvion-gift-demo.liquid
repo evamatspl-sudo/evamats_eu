@@ -11,7 +11,6 @@
     <header class="carvion-gift__header">
       <span class="carvion-gift__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11v10h16V11M3 7h18v4H3zM12 7v14M12 7H8a3 3 0 1 1 3-3l1 3Zm0 0h4a3 3 0 1 0-3-3l-1 3Z"/></svg></span>
       <div><p class="carvion-gift__eyebrow">{{ 'carvion_gift.eyebrow' | t }}</p><h2 id="GiftTitle-{{ section.id }}">{{ 'carvion_gift.title' | t }}</h2></div>
-      <span class="carvion-gift__demo-badge">{{ 'carvion_gift.demo' | t }}</span>
     </header>
     {% assign gift_cost = gift_price | money %}
     <div class="carvion-gift__milestones" aria-label="{{ 'carvion_gift.progress' | t | escape }}">
@@ -42,9 +41,12 @@
             <p class="carvion-gift__price"><strong>{{ gift_price | money }}</strong><span>{{ 'carvion_gift.bonus_price' | t }}</span></p>
             {% if gift.variants.size > 1 %}
               <label class="carvion-gift__variant-label" for="GiftVariant-{{ section.id }}-{{ gift.id }}">{{ 'carvion_gift.variant' | t }}</label>
-              <select id="GiftVariant-{{ section.id }}-{{ gift.id }}" class="carvion-gift__variant" data-gift-variant disabled>
-                {% for variant in gift.variants %}<option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}{% if variant.id == gift_variant.id %} selected{% endif %}>{{ variant.title | escape }}{% unless variant.available %} — {{ 'carvion_gift.unavailable' | t }}{% endunless %}</option>{% endfor %}
-              </select>
+              <span class="carvion-gift__variant-wrap">
+                <select id="GiftVariant-{{ section.id }}-{{ gift.id }}" class="carvion-gift__variant" data-gift-variant disabled>
+                  {% for variant in gift.variants %}<option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}{% if variant.id == gift_variant.id %} selected{% endif %}>{{ variant.title | escape }}{% unless variant.available %} — {{ 'carvion_gift.unavailable' | t }}{% endunless %}</option>{% endfor %}
+                </select>
+                {% render 'arrow-down' %}
+              </span>
             {% else %}<input type="hidden" data-gift-variant value="{{ gift_variant.id }}">{% endif %}
             <button type="button" class="carvion-gift__select" data-gift-select aria-pressed="false" disabled>{{ 'carvion_gift.locked_button' | t }}</button>
           </div>
@@ -52,9 +54,9 @@
       {% else %}<p class="carvion-gift__empty">{{ 'carvion_gift.empty' | t }}</p>{% endfor %}
       </div>
       <div class="carvion-gift__nav" aria-label="{{ 'carvion_gift.choose_group' | t | escape }}">
-        <button type="button" data-gift-slide="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">←</button>
+        <button type="button" data-gift-slide="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
         <span data-gift-position>1 / 3</span>
-        <button type="button" data-gift-slide="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">→</button>
+        <button type="button" data-gift-slide="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
       </div>
     </div>
     <div class="carvion-gift__selection" data-gift-selection hidden><span><strong>{{ 'carvion_gift.selected_label' | t }}</strong><span data-gift-selected-title></span></span><button type="button" data-gift-remove>{{ 'carvion_gift.remove' | t }}</button></div>

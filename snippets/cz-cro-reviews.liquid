@@ -17,9 +17,9 @@
   <p class="cz-cro-preview-note">{{ 'carvion_cro.preview_note' | t }}</p>
   {% unless full_page %}
     <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
-      <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">←</button>
+      <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
       <span data-cz-cro-position aria-live="polite">1 / 20</span>
-      <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">→</button>
+      <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
     </div>
   {% endunless %}
   <div class="cz-cro-review-grid" id="cz-cro-review-grid" {% unless full_page %}tabindex="0" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>{% render 'carvion-cro-review-cards' %}</div>

@@ -42,7 +42,7 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-preview-note{font-size:13px;line-height:1.5;color:var(--cro-muted);margin:0 0 20px;max-width:100ch}
 .cz-cro-review-controls{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin:8px 0 16px}
 .cz-cro-review-controls[hidden]{display:none}
-.cz-cro-review-controls button{width:44px;height:44px;padding:0;border:1px solid var(--cro-line);border-radius:50%;background:var(--cro-paper);color:var(--cro-ink);font:24px/1 var(--cro-font);cursor:pointer}
+.cz-cro-review-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--cro-line);border-radius:50%;background:var(--cro-paper);color:var(--cro-ink);cursor:pointer}.cz-cro-review-controls button svg{width:20px;height:20px}
 .cz-cro-review-controls button:disabled{opacity:.35;cursor:not-allowed}
 .cz-cro-review-controls>span{font-size:14px;font-variant-numeric:tabular-nums;color:var(--cro-muted)}
 .cz-cro-review-grid{display:grid;grid-auto-flow:column;grid-auto-columns:88%;align-items:start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0;padding:4px 4px 16px;scrollbar-width:thin}
