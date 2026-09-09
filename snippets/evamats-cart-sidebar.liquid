@@ -48,10 +48,6 @@
     <span class="message_text hidden">{{ 'general.config.warning_message' | t }}</span>
     <div id="message" class="evamats-cart-sidebar__message"></div>
 
-    {%- if request.locale.iso_code == 'cs' -%}
-      {% render 'cz-cro-cart-trust' %}
-    {%- endif -%}
-
     <button
       type="submit"
       id="checkout"
@@ -62,6 +58,7 @@
     >
       {{ 'sections.cart.checkout' | t }}
     </button>
+    {% render 'cz-cro-cart-trust' %}
 
     {%- comment -%} Express-wallet buttons (Shop Pay / PayPal / GPay) hidden in cart drawer per owner request (2026-07) — kept only the standard checkout button above.
     {%- if additional_checkout_buttons -%}
@@ -73,13 +70,8 @@
   </div>
 
   <div id="cart-errors" class="evamats-cart-sidebar__errors"></div>
-  {%- if request.locale.iso_code == 'cs' -%}
-    <div class="cz-cro-cart-review-sample" data-cz-cro-preview>
-      <span class="cz-cro-stars" aria-label="5 z 5 hvězdiček">★★★★★</span>
-      <p>„Velmi pěkné a dobře padnoucí — doporučuji.“</p>
-      <span>Stan G. · ukázka přeložené recenze obchodu</span>
-      <a class="cz-cro-cart-review" href="{{ pages['reviews'].url }}">Další zkušenosti zákazníků ↗</a>
-    </div>
+  {%- if theme.role != 'main' -%}
+    {% render 'carvion-cart-review-carousel' %}
   {%- endif -%}
 </aside>
 

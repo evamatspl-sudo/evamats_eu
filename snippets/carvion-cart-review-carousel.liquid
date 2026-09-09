@@ -1,0 +1,24 @@
+{% comment %}EU dev preview: eight existing imported shop reviews, shown in a compact cyclic carousel.{% endcomment %}
+<div class="cz-cro-cart-review-sample" data-cz-cro-preview data-cz-cro-mini-reviews>
+  <div class="cz-cro-cart-review-head">
+    <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
+    <strong>{{ 'carvion_cro.rating_summary' | t }}</strong>
+    <span>{{ 'carvion_cro.rating_basis' | t }}</span>
+  </div>
+  <div class="cz-cro-cart-review-track" aria-live="polite">
+    {%- assign review_authors = 'Maggie Newton|Stan G.|Adrian Oswell|Anetka|Slaviana Pabianice|Patrick Glowacki|Forni|Barbara Rose' | split: '|' -%}
+    {%- for author in review_authors -%}
+      {%- assign review_number = forloop.index -%}
+      {%- assign review_key = 'carvion_cro.reviews.r' | append: review_number -%}
+      <article class="cz-cro-cart-review-slide" data-cz-cro-mini-slide{% unless forloop.first %} hidden{% endunless %}>
+        <p>“{{ review_key | t | truncatewords: 24 | escape }}”</p>
+        <span>{{ author }} · {{ 'carvion_cro.source' | t }}</span>
+      </article>
+    {%- endfor -%}
+  </div>
+  <div class="cz-cro-cart-review-nav">
+    <span data-cz-cro-mini-position>1 / 8</span>
+    <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">←</button>
+    <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">→</button>
+  </div>
+</div>

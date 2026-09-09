@@ -1,10 +1,14 @@
 {% comment %}EU dev preview: shop experiences, not a rating of this vehicle model.{% endcomment %}
-{% unless product.id == 9257148317974 %}
+{% if theme.role != 'main' and product.id != 9257148317974 %}
 {{ 'carvion-eva-details.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'carvion-eva-details.js' | asset_url }}" defer></script>
 <div class="cz-cro-intro" data-cz-cro-preview>
-  <p class="cz-cro-review-support">{{ 'carvion_cro.reviews_support' | t }}</p>
-  <a class="cz-cro-review-link" href="#cz-cro-reviews"><span class="cz-cro-stars" aria-hidden="true">★★★★★</span><span>{{ 'carvion_cro.reviews_link' | t }}</span><span aria-hidden="true">↓</span></a>
+  <a class="cz-cro-review-link" href="#cz-cro-reviews">
+    <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
+    <strong>{{ 'carvion_cro.rating_summary' | t }}</strong>
+    <span>{{ 'carvion_cro.rating_basis' | t }}</span>
+    <span aria-hidden="true">↓</span>
+  </a>
   <ul class="cz-cro-benefit-strip" role="list">
     {% assign benefits = 'clean,dry,style' | split: ',' %}
     {% for benefit in benefits %}{% assign benefit_key = 'carvion_cro.' | append: benefit %}<li>{% render 'cz-cro-icon', icon: benefit %}<span>{{ benefit_key | t }}</span></li>{% endfor %}
@@ -12,4 +16,4 @@
   <button class="cz-cro-benefits-button" type="button" data-cz-cro-open aria-haspopup="dialog" aria-controls="cz-cro-benefits"><span class="carvion-eva-button-label">{{ 'carvion_cro.benefits_link' | t }}</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
 </div>
 {% render 'carvion-eva-details' %}
-{% endunless %}
+{% endif %}
