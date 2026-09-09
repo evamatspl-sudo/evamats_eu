@@ -78,15 +78,6 @@
 
   if brand_group != blank
     assign featured_collections = brand_group.subcollections.value
-    assign featured_collections_overflow = brand_group.subcollections_overflow.value
-    comment
-      Shopify resolves at most 50 collection references from one list in Liquid.
-      Large brand groups keep the complete canonical list in subcollections and
-      expose only the unresolved tail through subcollections_overflow.
-    endcomment
-    if featured_collections_overflow != blank
-      assign featured_collections = featured_collections | concat: featured_collections_overflow
-    endif
   else
     assign featured_collections = scoped_featured_collections
   endif
@@ -112,15 +103,10 @@
   endif
 
   assign visible_collections_count = 0
-  assign counted_featured_collection_ids = '|'
   if featured_collections != blank
     for featured_item in featured_collections
       if featured_item != blank and featured_item.handle != collection.handle
-        assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
-        unless counted_featured_collection_ids contains featured_item_token
-          assign visible_collections_count = visible_collections_count | plus: 1
-          assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
-        endunless
+        assign visible_collections_count = visible_collections_count | plus: 1
       endif
     endfor
   endif
@@ -147,16 +133,10 @@
       <div class="evamats-popular-models__scroller">
         <div class="evamats-popular-models__track" role="list">
         {%- assign divider_pending = false -%}
-        {%- assign rendered_featured_collection_ids = '|' -%}
         {%- for featured_item in featured_collections -%}
           {%- if featured_item == blank or featured_item.handle == collection.handle -%}
             {%- continue -%}
           {%- endif -%}
-          {%- assign featured_item_token = featured_item.id | prepend: '|' | append: '|' -%}
-          {%- if rendered_featured_collection_ids contains featured_item_token -%}
-            {%- continue -%}
-          {%- endif -%}
-          {%- assign rendered_featured_collection_ids = rendered_featured_collection_ids | append: featured_item.id | append: '|' -%}
 
           {%- if divider_pending -%}
             <div class="evamats-popular-models__divider" aria-hidden="true"></div>
