@@ -111,6 +111,8 @@
     assign featured_collections = blank
   endif
 
+  echo "<!-- EVM_OVERFLOW_DEBUG primary=" | append: brand_group.subcollections.value.size | append: " overflow=" | append: brand_group.subcollections_overflow.value.size | append: " merged=" | append: featured_collections.size | append: " -->"
+
   assign visible_collections_count = 0
   assign counted_featured_collection_ids = '|'
   if featured_collections != blank
