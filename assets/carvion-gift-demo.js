@@ -52,7 +52,7 @@
       const pool=this.cards.filter(card=>card.dataset.available==='true');
       if(!pool.length)return;
       this.giftIndex=(this.giftIndex+step+pool.length)%pool.length;
-      pool[this.giftIndex].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'start'});
+      pool[this.giftIndex].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});
       const position=this.querySelector('[data-gift-position]');
       if(position)position.textContent=`${this.giftIndex+1} / ${pool.length}`;
     }

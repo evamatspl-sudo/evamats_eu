@@ -602,6 +602,8 @@ const configImagePreview = (() => {
         scope,
         matsSetStep,
         colorsStep,
+        originalParent: configImage.parentNode,
+        originalNextSibling: configImage.nextSibling,
         isFirst: Boolean(colorsStep && colorsStep === firstStep)
       };
 
@@ -635,6 +637,7 @@ const configImagePreview = (() => {
           preview.classList.remove('is-enlarged', 'is-mat-hidden');
           syncPreviewEnlargeLabel(preview);
           syncPreviewHideLabel(preview);
+          requestAnimationFrame(() => preview.querySelector('[data-preview-reopen]')?.focus());
           return;
         }
 
@@ -645,6 +648,7 @@ const configImagePreview = (() => {
           if (!preview) return;
           preview.classList.remove('fixed_hidden', 'is-user-collapsed');
           syncPreviewHideLabel(preview);
+          requestAnimationFrame(() => preview.querySelector('[data-preview-close]')?.focus());
           return;
         }
 
@@ -687,14 +691,18 @@ const configImagePreview = (() => {
 
     if (!state) return;
 
-    const { configImage, colorsStep } = state;
+    const { configImage, colorsStep, originalParent, originalNextSibling } = state;
     if (window.innerWidth >= 990) {
-      configImage.classList.remove('is-fixed', 'fixed_hidden');
+      if (originalParent && configImage.parentNode !== originalParent) {
+        originalParent.insertBefore(configImage, originalNextSibling && originalNextSibling.parentNode === originalParent ? originalNextSibling : null);
+      }
+      configImage.classList.remove('is-fixed', 'is-inline-preview', 'fixed_hidden', 'is-user-collapsed');
       return;
     }
 
-    configImage.classList.add('is-fixed');
-    const colorsOpen = Boolean(colorsStep && colorsStep.classList.contains('open') && !state.isFirst);
+    if (colorsStep && configImage.nextElementSibling !== colorsStep) colorsStep.parentNode.insertBefore(configImage, colorsStep);
+    configImage.classList.add('is-fixed', 'is-inline-preview');
+    const colorsOpen = Boolean(colorsStep && colorsStep.classList.contains('open'));
     if (!colorsOpen) {
       configImage.classList.add('fixed_hidden');
       configImage.classList.remove('is-user-collapsed', 'is-mat-hidden', 'is-enlarged');

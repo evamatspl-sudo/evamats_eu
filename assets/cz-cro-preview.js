@@ -24,14 +24,17 @@
         const last = visible[visible.length - 1] || first;
         const label = (first === last ? first : first + '–' + last) + ' / ' + cards.length;
         if (position.textContent !== label) position.textContent = label;
-        buttons[0].disabled = grid.scrollLeft <= 5;
-        buttons[1].disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+        buttons.forEach(button => { button.disabled = false; });
       };
       controls.addEventListener('click', event => {
         const button = event.target.closest('[data-cz-cro-slide]');
-        if (!button || button.disabled) return;
+        if (!button) return;
         const step = grid.children[0].getBoundingClientRect().width + parseFloat(getComputedStyle(grid).columnGap);
-        grid.scrollBy({ left: Number(button.dataset.czCroSlide) * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        const direction = Number(button.dataset.czCroSlide);
+        const atStart = grid.scrollLeft <= 5;
+        const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+        const left = direction > 0 && atEnd ? 0 : direction < 0 && atStart ? grid.scrollWidth : grid.scrollLeft + direction * step;
+        grid.scrollTo({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       });
       grid.addEventListener('scroll', update, { passive: true });
       if (window.ResizeObserver) new ResizeObserver(update).observe(grid);

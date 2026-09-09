@@ -8,6 +8,8 @@
 .cz-cro-review-link>strong{font-size:16px;color:var(--cro-ink);white-space:nowrap}
 .cz-cro-review-link>span:nth-last-child(2){font-size:13px;font-weight:400;color:var(--cro-muted)}
 .cz-cro-stars{color:var(--cro-gold);font-size:18px;letter-spacing:1px;line-height:1.2;white-space:nowrap}
+.cz-cro-purchase-proof{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;margin:14px 0 4px;padding:13px 14px;border:1px solid var(--cro-line);border-radius:14px;background:linear-gradient(135deg,#fff 0%,var(--cro-soft) 100%);color:var(--cro-ink);text-decoration:none}
+.cz-cro-purchase-proof__score{font-size:28px;font-weight:700;line-height:1;letter-spacing:-1px}.cz-cro-purchase-proof__body{display:flex;flex-wrap:wrap;align-items:center;gap:3px 8px;min-width:0}.cz-cro-purchase-proof__body .cz-cro-stars{font-size:15px}.cz-cro-purchase-proof__body strong{font-size:13px;line-height:1.35}.cz-cro-purchase-proof__body small{display:block;flex-basis:100%;color:var(--cro-muted);font-size:11px;line-height:1.35}.cz-cro-purchase-proof__arrow{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--cro-paper);font-size:17px}
 .cz-cro-review-support{margin:0 0 4px;color:var(--cro-muted);font-size:14px;line-height:1.5;max-width:65ch}
 .cz-cro-benefit-strip{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:16px 0 0;margin:12px 0 0;border-top:1px solid var(--cro-line)}
 .cz-cro-benefit-strip li{display:flex;align-items:center;gap:8px;font-size:14px;line-height:1.4;min-width:0}
@@ -52,6 +54,7 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-review-byline .cz-cro-stars{font-size:15px}
 .cz-cro-review-author{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
 .cz-cro-review-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;background:var(--cro-soft)}
+.cz-cro-review-avatar--initial{display:grid;place-items:center;background:var(--cro-ink);color:var(--cro-paper);font-size:14px;font-weight:700}.cz-cro-review-card--text{min-height:290px}.cz-cro-review-card--text .cz-cro-review-content{display:flex;flex:1;flex-direction:column}.cz-cro-review-card--text blockquote{flex:1}
 .cz-cro-review-author strong{display:block;line-height:1.3}
 .cz-cro-review-author .cz-cro-stars{display:block;margin-top:4px}
 .cz-cro-brand-summary{border-top:1px solid var(--cro-line);border-bottom:1px solid var(--cro-line);padding:16px 0;margin:20px 0 12px}
@@ -103,5 +106,6 @@ html.cz-cro-dialog-open{overflow:hidden}
 }
 @media(min-width:1050px){.cz-cro-review-grid{grid-auto-columns:calc((100% - 40px)/3);gap:20px}.cz-cro-reviews--page .cz-cro-review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(hover:hover){.cz-cro-review-link:hover,.cz-cro-benefits-button:hover{color:var(--cro-focus)}.cz-cro-review-controls button:not(:disabled):hover,.cz-cro-cart-review-nav button:hover,.cz-cro-dialog-close:hover{border-color:var(--cro-ink)}.cz-cro-dialog-done:hover{background:var(--cro-muted);color:var(--cro-paper)}}
+.cz-cro-purchase-proof:hover{border-color:var(--cro-focus)}.cz-cro-purchase-proof:focus-visible{outline:3px solid var(--cro-focus);outline-offset:3px}
 .cz-cro-benefits-button:active,.cz-cro-review-controls button:not(:disabled):active,.cz-cro-dialog-done:active{transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){.cz-cro-review-grid{scroll-behavior:auto}.cz-cro-benefits-button:active,.cz-cro-review-controls button:active,.cz-cro-dialog-done:active{transform:none}}

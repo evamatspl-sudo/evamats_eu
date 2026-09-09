@@ -3372,3 +3372,52 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
+/* EU dev mobile preview: keep it in the configurator flow, following the proven PL sticky pattern. */
+@media screen and (max-width: 989px) {
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview {
+    position: sticky;
+    inset: auto;
+    top: 76px;
+    z-index: 30;
+    width: 100%;
+    max-height: 45dvh;
+    margin: 8px 0 12px;
+    padding: 0 0 10px;
+    border: 1px solid var(--evc-border);
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(33,33,33,.10);
+    overflow: auto;
+  }
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview .evamats-config-preview__panel {padding: 12px 12px 0}
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview .evamats-config-preview__close {top: 4px;right: 4px;width: 44px;height: 44px}
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview.fixed_hidden {
+    position: sticky;
+    inset: auto;
+    top: 76px;
+    width: 100%;
+    height: auto;
+    min-height: 46px;
+    margin: 8px 0 12px;
+    padding: 0;
+    border: 1px solid var(--evc-border);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(33,33,33,.08);
+    overflow: visible;
+  }
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview.fixed_hidden .evamats-config-preview__reopen {
+    display: inline-flex;
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 12px;
+    box-shadow: none;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview .evamats-config-preview__media-row {min-height: 112px}
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview .evamats-config-preview__image {width:min(100%,120px);max-height:120px}
+  .evamats-config .evamats-config-preview.is-fixed.is-inline-preview.is-enlarged .evamats-config-preview__image {width:min(100%,220px);max-height:220px}
+}
