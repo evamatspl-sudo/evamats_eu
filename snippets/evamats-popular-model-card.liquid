@@ -1,0 +1,64 @@
+{%- if divider_pending -%}
+  <div class="evamats-popular-models__divider" aria-hidden="true"></div>
+{%- endif -%}
+
+{%- liquid
+  assign card_title = featured_item.title
+  assign card_title = card_title | remove: title_prefix
+  comment
+    Новые названия каталога (30.07.2026): EN «EVA Car Mats for …»,
+    DE «EVA-Autofußmatten für …». Старые префиксы оставлены — часть
+    коллекций вне метаобъектов их ещё носит.
+  endcomment
+  assign card_title = card_title | remove: 'EVA Car Mats for '
+  assign card_title = card_title | remove: 'Tapis 3D EVA pour '
+  assign card_title = card_title | remove: 'Tapis de voiture en EVA pour '
+  assign card_title = card_title | remove: 'Tapis de voiture EVA pour '
+  assign card_title = card_title | remove: 'EVA-Autofußmatten für '
+  assign card_title = card_title | remove: 'Car floor mats EVA for '
+  assign card_title = card_title | remove: 'Car mats EVA for '
+  assign card_title = card_title | remove: 'Autokoberce EVA pro '
+  assign card_title = card_title | remove: 'Autokoberce EVA '
+  assign card_title = card_title | remove: 'EVA-Automatten für '
+  assign card_title = card_title | strip
+  if card_title == blank
+    assign card_title = featured_item.title
+  endif
+
+  assign card_image = featured_item.image
+  if card_image == blank
+    assign card_image = featured_item.products.first.featured_image
+  endif
+-%}
+
+<div class="evamats-popular-models__group" role="listitem">
+  <a class="evamats-popular-models__card" href="{{ featured_item.url }}">
+    <div class="evamats-popular-models__media">
+      {%- if card_image != blank -%}
+        {{
+          card_image
+          | image_url: width: 446
+          | image_tag:
+            loading: 'lazy',
+            class: 'evamats-popular-models__image',
+            widths: '195, 210, 223, 446',
+            sizes: '223px',
+            alt: card_title
+        }}
+      {%- else -%}
+        <img
+          class="evamats-popular-models__image"
+          src="{{ card_image_placeholder }}"
+          alt="{{ card_title | escape }}"
+          width="223"
+          height="105"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+    <p class="evamats-popular-models__title">{{ card_title | escape }}</p>
+    <p class="evamats-popular-models__count">
+      {{ 'sections.brand_buttons.products_count' | t: count: featured_item.products_count }}
+    </p>
+  </a>
+</div>

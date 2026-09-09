@@ -107,19 +107,34 @@
   if featured_collections != blank
     comment
       Shopify caps a single Liquid for-loop at 50 iterations. Process the list in
-      three batches so every allowed collection reference (currently max 128) renders.
+      three explicit batches so every allowed collection reference (currently max 128) renders.
     endcomment
-    for featured_batch in (0..2)
-      assign featured_batch_offset = featured_batch | times: 50
-      for featured_item in featured_collections offset: featured_batch_offset limit: 50
-        if featured_item != blank and featured_item.handle != collection.handle
-          assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
-          unless counted_featured_collection_ids contains featured_item_token
-            assign visible_collections_count = visible_collections_count | plus: 1
-            assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
-          endunless
-        endif
-      endfor
+    for featured_item in featured_collections limit: 50
+      if featured_item != blank and featured_item.handle != collection.handle
+        assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
+        unless counted_featured_collection_ids contains featured_item_token
+          assign visible_collections_count = visible_collections_count | plus: 1
+          assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
+        endunless
+      endif
+    endfor
+    for featured_item in featured_collections offset: 50 limit: 50
+      if featured_item != blank and featured_item.handle != collection.handle
+        assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
+        unless counted_featured_collection_ids contains featured_item_token
+          assign visible_collections_count = visible_collections_count | plus: 1
+          assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
+        endunless
+      endif
+    endfor
+    for featured_item in featured_collections offset: 100 limit: 28
+      if featured_item != blank and featured_item.handle != collection.handle
+        assign featured_item_token = featured_item.id | prepend: '|' | append: '|'
+        unless counted_featured_collection_ids contains featured_item_token
+          assign visible_collections_count = visible_collections_count | plus: 1
+          assign counted_featured_collection_ids = counted_featured_collection_ids | append: featured_item.id | append: '|'
+        endunless
+      endif
     endfor
   endif
 -%}
@@ -146,9 +161,7 @@
         <div class="evamats-popular-models__track" role="list">
         {%- assign divider_pending = false -%}
         {%- assign rendered_featured_collection_ids = '|' -%}
-        {%- for featured_batch in (0..2) -%}
-        {%- assign featured_batch_offset = featured_batch | times: 50 -%}
-        {%- for featured_item in featured_collections offset: featured_batch_offset limit: 50 -%}
+        {%- for featured_item in featured_collections limit: 50 -%}
           {%- if featured_item == blank or featured_item.handle == collection.handle -%}
             {%- continue -%}
           {%- endif -%}
@@ -158,73 +171,33 @@
           {%- endif -%}
           {%- assign rendered_featured_collection_ids = rendered_featured_collection_ids | append: featured_item.id | append: '|' -%}
 
-          {%- if divider_pending -%}
-            <div class="evamats-popular-models__divider" aria-hidden="true"></div>
-          {%- endif -%}
-
-          {%- liquid
-            assign card_title = featured_item.title
-            assign card_title = card_title | remove: title_prefix
-            comment
-              Новые названия каталога (30.07.2026): EN «EVA Car Mats for …»,
-              DE «EVA-Autofußmatten für …». Старые префиксы оставлены — часть
-              коллекций вне метаобъектов их ещё носит.
-            endcomment
-            assign card_title = card_title | remove: 'EVA Car Mats for '
-            assign card_title = card_title | remove: 'Tapis 3D EVA pour '
-            assign card_title = card_title | remove: 'Tapis de voiture en EVA pour '
-            assign card_title = card_title | remove: 'Tapis de voiture EVA pour '
-            assign card_title = card_title | remove: 'EVA-Autofußmatten für '
-            assign card_title = card_title | remove: 'Car floor mats EVA for '
-            assign card_title = card_title | remove: 'Car mats EVA for '
-            assign card_title = card_title | remove: 'Autokoberce EVA pro '
-            assign card_title = card_title | remove: 'Autokoberce EVA '
-            assign card_title = card_title | remove: 'EVA-Automatten für '
-            assign card_title = card_title | strip
-            if card_title == blank
-              assign card_title = featured_item.title
-            endif
-
-            assign card_image = featured_item.image
-            if card_image == blank
-              assign card_image = featured_item.products.first.featured_image
-            endif
-          -%}
-
-          <div class="evamats-popular-models__group" role="listitem">
-            <a class="evamats-popular-models__card" href="{{ featured_item.url }}">
-              <div class="evamats-popular-models__media">
-                {%- if card_image != blank -%}
-                  {{
-                    card_image
-                    | image_url: width: 446
-                    | image_tag:
-                      loading: 'lazy',
-                      class: 'evamats-popular-models__image',
-                      widths: '195, 210, 223, 446',
-                      sizes: '223px',
-                      alt: card_title
-                  }}
-                {%- else -%}
-                  <img
-                    class="evamats-popular-models__image"
-                    src="{{ card_image_placeholder }}"
-                    alt="{{ card_title | escape }}"
-                    width="223"
-                    height="105"
-                    loading="lazy"
-                  >
-                {%- endif -%}
-              </div>
-              <p class="evamats-popular-models__title">{{ card_title | escape }}</p>
-              <p class="evamats-popular-models__count">
-                {{ 'sections.brand_buttons.products_count' | t: count: featured_item.products_count }}
-              </p>
-            </a>
-          </div>
+          {%- render 'evamats-popular-model-card', featured_item: featured_item, title_prefix: title_prefix, card_image_placeholder: card_image_placeholder, divider_pending: divider_pending -%}
 
           {%- assign divider_pending = true -%}
         {%- endfor -%}
+        {%- for featured_item in featured_collections offset: 50 limit: 50 -%}
+          {%- if featured_item == blank or featured_item.handle == collection.handle -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign featured_item_token = featured_item.id | prepend: '|' | append: '|' -%}
+          {%- if rendered_featured_collection_ids contains featured_item_token -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign rendered_featured_collection_ids = rendered_featured_collection_ids | append: featured_item.id | append: '|' -%}
+          {%- render 'evamats-popular-model-card', featured_item: featured_item, title_prefix: title_prefix, card_image_placeholder: card_image_placeholder, divider_pending: divider_pending -%}
+          {%- assign divider_pending = true -%}
+        {%- endfor -%}
+        {%- for featured_item in featured_collections offset: 100 limit: 28 -%}
+          {%- if featured_item == blank or featured_item.handle == collection.handle -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign featured_item_token = featured_item.id | prepend: '|' | append: '|' -%}
+          {%- if rendered_featured_collection_ids contains featured_item_token -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign rendered_featured_collection_ids = rendered_featured_collection_ids | append: featured_item.id | append: '|' -%}
+          {%- render 'evamats-popular-model-card', featured_item: featured_item, title_prefix: title_prefix, card_image_placeholder: card_image_placeholder, divider_pending: divider_pending -%}
+          {%- assign divider_pending = true -%}
         {%- endfor -%}
         </div>
         <div class="evamats-popular-models__fade evamats-popular-models__fade--left" aria-hidden="true" hidden>
