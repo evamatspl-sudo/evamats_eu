@@ -1,37 +1,54 @@
-{% comment %}Existing EU gallery photo, not a generated or vehicle-specific fit preview. Pins are tied to this exact composition.{% endcomment %}
+{% comment %}
+  EU dev detail explorer. Images reuse the locale-aware mat-type galleries already selected
+  in main-product.liquid, so this modal follows the customer's Classic/3D choice.
+{% endcomment %}
+{% assign fallback_photo = images['IMG_1020.jpg'] %}
+{% assign classic_gallery_photo = without_edges_images[3] %}
+{% assign three_d_gallery_photo = with_edges_images[4] %}
+{% assign classic_photo = classic_gallery_photo.preview_image | default: classic_gallery_photo | default: without_edges_images.first | default: fallback_photo %}
+{% assign three_d_photo = three_d_gallery_photo.preview_image | default: three_d_gallery_photo | default: with_edges_images.first | default: fallback_photo %}
 <dialog id="cz-cro-benefits" class="cz-cro-dialog carvion-eva-dialog" aria-labelledby="cz-cro-benefits-title" data-eva-details>
   <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="{{ 'carvion_cro.close' | t | escape }}">×</button>
   <header class="carvion-eva-heading">
-    <h2 id="cz-cro-benefits-title" tabindex="-1" autofocus>{{ 'carvion_cro.details_title' | t }}</h2>
-    <p>{{ 'carvion_cro.details_lead' | t }}</p>
+    <h2 id="cz-cro-benefits-title" tabindex="-1" autofocus data-eva-title data-classic-copy="{{ 'carvion_cro.details_classic_title' | t | escape }}" data-3d-copy="{{ 'carvion_cro.details_3d_title' | t | escape }}">{{ 'carvion_cro.details_classic_title' | t }}</h2>
+    <p data-eva-lead data-classic-copy="{{ 'carvion_cro.details_classic_lead' | t | escape }}" data-3d-copy="{{ 'carvion_cro.details_3d_lead' | t | escape }}">{{ 'carvion_cro.details_classic_lead' | t }}</p>
   </header>
   <div class="carvion-eva-layout">
     <figure class="carvion-eva-figure">
-      <div class="carvion-eva-stage" data-eva-stage data-state="loading">
-        {% assign eva_photo = images['IMG_1020.jpg'] %}
-        {% assign eva_photo_alt = 'carvion_cro.details_photo_alt' | t %}
-        {% if eva_photo %}{{ eva_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, 280px', alt: eva_photo_alt }}{% endif %}
+      <div class="carvion-eva-stage" data-eva-stage data-state="loading" data-mat-type="classic">
+        {% assign classic_alt = 'carvion_cro.details_classic_photo_alt' | t %}
+        {% assign three_d_alt = 'carvion_cro.details_3d_photo_alt' | t %}
+        {% if classic_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="classic">{{ classic_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, calc(100vw - 48px)', alt: classic_alt }}</span>{% endif %}
+        {% if three_d_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="3d" hidden>{{ three_d_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, calc(100vw - 48px)', alt: three_d_alt }}</span>{% endif %}
         <p class="carvion-eva-photo-status" data-eva-loading>{{ 'carvion_cro.details_loading' | t }}</p>
         <p class="carvion-eva-photo-status" data-eva-error hidden>{{ 'carvion_cro.details_error' | t }}</p>
-        {% assign detail_keys = 'cells,edging,fixing' | split: ',' %}
-        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}
-          <button class="carvion-eva-pin carvion-eva-pin--{{ key }}" type="button" data-eva-feature="{{ key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ key }}" aria-label="{{ title_key | t | escape }}"><span aria-hidden="true">{{ forloop.index }}</span></button>
-        {% endfor %}
       </div>
-      <div class="carvion-eva-photo-toolbar"><button type="button" class="carvion-eva-zoom" data-eva-zoom data-zoom-in="{{ 'carvion_cro.details_zoom' | t | escape }}" data-zoom-out="{{ 'carvion_cro.details_zoom_out' | t | escape }}" aria-pressed="false" disabled><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6"/><path class="carvion-eva-zoom-plus" d="M10 7v6"/></svg><span data-eva-zoom-label>{{ 'carvion_cro.details_zoom' | t }}</span></button></div>
-      <figcaption>{{ 'carvion_cro.details_caption' | t }}</figcaption>
+      <div class="carvion-eva-photo-toolbar">
+        <button type="button" class="carvion-eva-zoom" data-eva-zoom data-zoom-in="{{ 'carvion_cro.details_zoom' | t | escape }}" data-zoom-out="{{ 'carvion_cro.details_zoom_out' | t | escape }}" aria-pressed="false" disabled><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6"/><path class="carvion-eva-zoom-plus" d="M10 7v6"/></svg><span data-eva-zoom-label>{{ 'carvion_cro.details_zoom' | t }}</span></button>
+      </div>
+      <figcaption class="carvion-eva-caption">
+        <p class="carvion-eva-caption__notice">{{ 'carvion_cro.details_caption' | t }}</p>
+      </figcaption>
     </figure>
     <div class="carvion-eva-copy">
-      <div class="carvion-eva-options" role="group" aria-label="{{ 'carvion_cro.details_title' | t | escape }}">
-        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}
-          <button type="button" class="carvion-eva-option" data-eva-feature="{{ key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ key }}"><span class="carvion-eva-number" aria-hidden="true">{{ forloop.index }}</span><span>{{ title_key | t }}</span><span class="carvion-eva-option-arrow" aria-hidden="true">↗</span></button>
-        {% endfor %}
-      </div>
-      <div class="carvion-eva-explanation" aria-live="polite">
-        {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}{% assign text_key = title_key | append: '_text' %}
-          <article id="eva-detail-{{ key }}" data-eva-panel="{{ key }}"{% unless forloop.first %} hidden{% endunless %}><h3>{{ title_key | t }}</h3><p>{{ text_key | t }}</p></article>
-        {% endfor %}
-      </div>
+      {% assign classic_detail_keys = 'cells,fit,fixing' | split: ',' %}
+      {% assign three_d_detail_keys = 'walls,coverage,fixing' | split: ',' %}
+      {% assign mat_types = 'classic,3d' | split: ',' %}
+      {% for mat_type in mat_types %}
+        {% if mat_type == '3d' %}{% assign detail_keys = three_d_detail_keys %}{% else %}{% assign detail_keys = classic_detail_keys %}{% endif %}
+        <div class="carvion-eva-group" data-eva-group="{{ mat_type }}"{% if mat_type == '3d' %} hidden{% endif %}>
+          <div class="carvion-eva-options" role="group" aria-label="{{ 'carvion_cro.details_title' | t | escape }}">
+            {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}
+              <button type="button" class="carvion-eva-option" data-eva-feature="{{ key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ mat_type }}-{{ key }}"><span class="carvion-eva-number" aria-hidden="true">{{ forloop.index }}</span><span>{{ title_key | t }}</span><span class="carvion-eva-option-arrow" aria-hidden="true">↗</span></button>
+            {% endfor %}
+          </div>
+          <div class="carvion-eva-explanation" aria-live="polite">
+            {% for key in detail_keys %}{% assign title_key = 'carvion_cro.details_' | append: key %}{% assign text_key = title_key | append: '_text' %}
+              <article id="eva-detail-{{ mat_type }}-{{ key }}" data-eva-panel="{{ key }}"{% unless forloop.first %} hidden{% endunless %}><h3>{{ title_key | t }}</h3><p>{{ text_key | t }}</p></article>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
       <button class="cz-cro-dialog-done" type="button" data-cz-cro-close>{{ 'carvion_cro.back' | t }}</button>
     </div>
   </div>
