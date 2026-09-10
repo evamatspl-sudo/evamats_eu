@@ -1,9 +1,8 @@
-{% comment %}EU dev preview: eight existing imported shop reviews, shown in a compact cyclic carousel.{% endcomment %}
+{% comment %}EU dev preview: eight existing imported shop reviews in a compact cyclic sample. The 300+ claim is below the storefront's current 4,000+ review signal.{% endcomment %}
 <div class="cz-cro-cart-review-sample" data-cz-cro-preview data-cz-cro-mini-reviews>
   <div class="cz-cro-cart-review-head">
     <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
-    <strong>{{ 'carvion_cro.rating_summary' | t }}</strong>
-    <span>{{ 'carvion_cro.rating_basis' | t }}</span>
+    <strong>{{ 'carvion_cro.cart_review_summary' | t }}</strong>
   </div>
   <div class="cz-cro-cart-review-track" aria-live="polite">
     {%- assign review_authors = 'Maggie Newton|Stan G.|Adrian Oswell|Anetka|Slaviana Pabianice|Patrick Glowacki|Forni|Barbara Rose' | split: '|' -%}
@@ -17,8 +16,7 @@
     {%- endfor -%}
   </div>
   <div class="cz-cro-cart-review-nav">
-    <span data-cz-cro-mini-position>1 / 8</span>
-    <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">←</button>
-    <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">→</button>
+    <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
+    <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
   </div>
 </div>

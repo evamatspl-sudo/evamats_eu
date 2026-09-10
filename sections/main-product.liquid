@@ -681,7 +681,7 @@
                 </div>
               </div>
               {%- if product.template_suffix == 'config' -%}
-                {% render 'cz-cro-product-intro' %}
+                {% render 'cz-cro-product-intro', without_edges_images: withoutEdgesImages, with_edges_images: withEdgesImages %}
               {%- endif -%}
             {%- when 'price' -%}
               <div class="no-js-hidden main_price" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
