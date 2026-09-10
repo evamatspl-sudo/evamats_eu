@@ -38,18 +38,6 @@
         if (!photo.complete) return setImageState('loading');
         setImageState(photo.naturalWidth ? 'success' : 'error');
       };
-      const syncProductPhoto = () => {
-        const gallery = document.querySelector(type === '3d' ? '.product__media_with_edges' : '.product__media_without_edges');
-        const sources = [...(gallery?.querySelectorAll('img') || [])].filter(image => image.currentSrc || image.src);
-        const source = sources[1] || sources[0];
-        const photo = activePhoto();
-        const sourceUrl = source?.currentSrc || source?.src;
-        if (!photo || !sourceUrl || photo.dataset.syncedSrc === sourceUrl) return;
-        photo.dataset.syncedSrc = sourceUrl;
-        photo.removeAttribute('srcset');
-        photo.removeAttribute('sizes');
-        photo.src = sourceUrl;
-      };
       const resetZoom = () => {
         drag = null;
         panX = 0;
@@ -76,7 +64,6 @@
         });
         title.textContent = title.getAttribute(`data-${type}-copy`);
         lead.textContent = lead.getAttribute(`data-${type}-copy`);
-        syncProductPhoto();
         updateImageState();
       };
 

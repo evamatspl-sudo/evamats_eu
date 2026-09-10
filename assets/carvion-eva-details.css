@@ -31,7 +31,10 @@
 .carvion-eva-zoom[aria-pressed="true"]{background:var(--cro-ink);border-color:var(--cro-ink);color:var(--cro-paper)}
 .carvion-eva-zoom[aria-pressed="true"] .carvion-eva-zoom-plus{display:none}
 .carvion-eva-zoom:disabled{opacity:.5;cursor:not-allowed}
-.carvion-eva-figure figcaption{margin-top:var(--cro-space-xs);color:var(--cro-muted);font-size:14px;line-height:1.45}
+.carvion-eva-caption{display:grid;gap:6px;margin-top:var(--cro-space-sm);font-size:13px;line-height:1.45}
+.carvion-eva-caption p{margin:0}
+.carvion-eva-caption__notice{padding:10px 12px;border-inline-start:3px solid var(--cro-focus);border-radius:8px;background:var(--cro-accent-soft);color:var(--cro-ink)}
+.carvion-eva-caption__hint{color:var(--cro-muted)}
 .carvion-eva-copy{display:flex;flex-direction:column;min-width:0}
 .carvion-eva-group[hidden]{display:none}
 .carvion-eva-options{display:flex;flex-direction:column;border-top:1px solid var(--cro-line)}
