@@ -52,9 +52,7 @@
       const pool=this.cards.filter(card=>card.dataset.available==='true');
       if(!pool.length)return;
       this.giftIndex=(this.giftIndex+step+pool.length)%pool.length;
-      pool[this.giftIndex].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});
-      const position=this.querySelector('[data-gift-position]');
-      if(position)position.textContent=`${this.giftIndex+1} / ${pool.length}`;
+      this.render();
     }
     render() {
       const total=this.scenario==='below'?Math.floor(this.threshold*.8):this.scenario==='reached'?this.threshold:this.realTotal;
@@ -78,6 +76,7 @@
       for(const card of this.cards){
         const enabled=this.state.giftEligible&&card.dataset.available==='true',chosen=this.selected?.product===card.dataset.giftProduct;
         card.dataset.selected=String(chosen);
+        card.dataset.giftCurrent=String(pool[this.giftIndex]===card);
         const button=card.querySelector('[data-gift-select]');
         button.disabled=!enabled;button.setAttribute('aria-pressed',String(chosen));
         button.textContent=card.dataset.available!=='true'?this.copy.unavailable:chosen?this.copy.chosenButton:enabled?this.copy.choose:this.copy.lockedButton;
