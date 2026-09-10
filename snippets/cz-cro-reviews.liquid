@@ -1,5 +1,23 @@
-{% comment %}Twenty existing reviews: eight original imports plus twelve authenticated eTrusted reviews. No fabricated totals, dates or schema.{% endcomment %}
-<section class="cz-cro-reviews page-width{% if full_page %} cz-cro-reviews--page{% endif %}" id="cz-cro-reviews" aria-labelledby="cz-cro-reviews-title" tabindex="-1" data-cz-cro-preview>
+{% comment %}
+  Sixty real customer reviews: eight current photo reviews plus 52 five-star Google reviews
+  imported from the EVAMATS Poland place profile. The source URLs live in the deferred JSON asset
+  for internal traceability; the storefront deliberately keeps the source treatment brand-neutral.
+{% endcomment %}
+<section
+  class="cz-cro-reviews page-width{% if full_page %} cz-cro-reviews--page{% endif %}"
+  id="cz-cro-reviews"
+  aria-labelledby="cz-cro-reviews-title"
+  tabindex="-1"
+  data-cz-cro-preview
+  data-cz-cro-reviews
+  data-review-feed-url="{{ 'carvion-google-reviews.json' | asset_url }}"
+  data-review-source="{{ 'carvion_cro.source' | t | escape }}"
+  data-review-read-more="{{ 'carvion_cro.read_more' | t | escape }}"
+  data-review-read-less="{{ 'carvion_cro.read_less' | t | escape }}"
+  data-review-rating="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}"
+  data-review-feed-error="{{ 'carvion_cro.reviews_error' | t | escape }}"
+  {% if full_page %}data-full-page="true"{% endif %}
+>
   <div class="cz-cro-reviews-heading">
     <div>
       {% if full_page %}
@@ -12,15 +30,16 @@
     </div>
   </div>
   <div class="cz-cro-brand-summary">
-    <span class="cz-cro-brand-label"><span class="cz-cro-brand-name">CARVION</span><span>{{ 'carvion_cro.reviews_link' | t }}</span></span>
+    <span class="cz-cro-brand-label"><span class="cz-cro-stars" aria-hidden="true">★★★★★</span><strong>{{ 'carvion_cro.review_wall_message' | t }}</strong></span>
   </div>
-  <p class="cz-cro-preview-note">{{ 'carvion_cro.preview_note' | t }}</p>
   {% unless full_page %}
     <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
       <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
-      <span data-cz-cro-position aria-live="polite">1 / 20</span>
       <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
     </div>
   {% endunless %}
-  <div class="cz-cro-review-grid" id="cz-cro-review-grid" {% unless full_page %}tabindex="0" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>{% render 'carvion-cro-review-cards' %}</div>
+  <div class="cz-cro-review-viewport" {% unless full_page %}tabindex="0" aria-roledescription="carousel" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>
+    <div class="cz-cro-review-grid" id="cz-cro-review-grid">{% render 'carvion-cro-review-cards' %}</div>
+  </div>
+  <p class="cz-cro-review-feed-status" data-review-feed-status role="status">{{ 'carvion_cro.reviews_loading' | t }}</p>
 </section>
