@@ -1,7 +1,7 @@
 {% comment %}
-  Sixty real customer reviews: eight current photo reviews plus 52 five-star Google reviews
-  imported from the EVAMATS Poland place profile. The source URLs live in the deferred JSON asset
-  for internal traceability; the storefront deliberately keeps the source treatment brand-neutral.
+  Sixty five-star photo reviews taken directly from the EVAMATS Poland Google Maps place profile.
+  The storefront keeps the source treatment brand-neutral, while the exact place URL and review IDs
+  remain attached to the rendered cards for internal traceability.
 {% endcomment %}
 <section
   class="cz-cro-reviews page-width{% if full_page %} cz-cro-reviews--page{% endif %}"
@@ -11,7 +11,9 @@
   data-cz-cro-preview
   data-cz-cro-reviews
   data-review-feed-url="{{ 'carvion-google-reviews.json' | asset_url }}"
+  data-review-source-url="https://www.google.com/maps/place/?q=place_id:ChIJMeAerT1z_UYRiKoMeCumjD4"
   data-review-source="{{ 'carvion_cro.source' | t | escape }}"
+  data-review-photo-alt="{{ 'carvion_cro.photo_alt' | t: name: '' | strip | escape }}"
   data-review-read-more="{{ 'carvion_cro.read_more' | t | escape }}"
   data-review-read-less="{{ 'carvion_cro.read_less' | t | escape }}"
   data-review-rating="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}"
@@ -39,7 +41,7 @@
     </div>
   {% endunless %}
   <div class="cz-cro-review-viewport" {% unless full_page %}tabindex="0" aria-roledescription="carousel" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>
-    <div class="cz-cro-review-grid" id="cz-cro-review-grid">{% render 'carvion-cro-review-cards' %}</div>
+    <div class="cz-cro-review-grid" id="cz-cro-review-grid"></div>
   </div>
   <p class="cz-cro-review-feed-status" data-review-feed-status role="status">{{ 'carvion_cro.reviews_loading' | t }}</p>
 </section>
