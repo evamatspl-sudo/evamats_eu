@@ -3,8 +3,18 @@
   in main-product.liquid, so this modal follows the customer's Classic/3D choice.
 {% endcomment %}
 {% assign fallback_photo = images['IMG_1020.jpg'] %}
-{% assign classic_gallery_photo = without_edges_images[3] %}
-{% assign three_d_gallery_photo = with_edges_images[4] %}
+{% for gallery_photo in without_edges_images %}
+  {% if forloop.index0 == 3 %}
+    {% assign classic_gallery_photo = gallery_photo %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% for gallery_photo in with_edges_images %}
+  {% if forloop.index0 == 4 %}
+    {% assign three_d_gallery_photo = gallery_photo %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 {% assign classic_photo = classic_gallery_photo.preview_image | default: classic_gallery_photo | default: without_edges_images.first | default: fallback_photo %}
 {% assign three_d_photo = three_d_gallery_photo.preview_image | default: three_d_gallery_photo | default: with_edges_images.first | default: fallback_photo %}
 <dialog id="cz-cro-benefits" class="cz-cro-dialog carvion-eva-dialog" aria-labelledby="cz-cro-benefits-title" data-eva-details>
