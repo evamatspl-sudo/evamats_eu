@@ -33,6 +33,8 @@
 .carvion-eva-zoom[aria-pressed="true"]{background:var(--cro-ink);border-color:var(--cro-ink);color:var(--cro-paper)}
 .carvion-eva-zoom[aria-pressed="true"] .carvion-eva-zoom-plus{display:none}
 .carvion-eva-zoom:disabled{opacity:.5;cursor:not-allowed}
+/* Owner 2026-09-11: on computers the photo zooms under the cursor, so the zoom button is phone/tablet only. */
+@media(hover:hover) and (pointer:fine){.carvion-eva-photo-toolbar{display:none}}
 .carvion-eva-caption{display:grid;gap:6px;margin-top:var(--cro-space-sm);font-size:13px;line-height:1.45}
 .carvion-eva-caption p{margin:0}
 .carvion-eva-caption__notice{padding:10px 12px;border-inline-start:3px solid var(--cro-focus);border-radius:8px;background:var(--cro-accent-soft);color:var(--cro-ink)}

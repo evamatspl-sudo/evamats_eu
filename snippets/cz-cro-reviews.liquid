@@ -1,7 +1,8 @@
 {% comment %}
-  Sixty five-star photo reviews taken directly from the EVAMATS Poland Google Maps place profile.
-  The aggregate rating next to them is the whole profile (all stars), so the selection is labelled as a
-  selection and links to the full list. Review IDs stay on the rendered cards for traceability.
+  Five-star photo reviews from the manufacturer's Google Maps profile (feed: carvion-google-reviews.json,
+  filtered 2026-09-11: no car-only shots, no visible EVAMATS box or tag, no EVAMATS in the text).
+  The aggregate rating is the whole profile (all stars), so the carousel is labelled as a selection.
+  Owner 2026-09-11: no outbound Google links, no praise chips, no photo tally. Review IDs stay on the cards.
 {% endcomment %}
 {%- capture google_url -%}{% render 'carvion-google-rating', part: 'url' %}{%- endcapture -%}
 <section
@@ -20,7 +21,6 @@
   data-review-read-less="{{ 'carvion_cro.read_less' | t | escape }}"
   data-review-rating="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}"
   data-review-feed-error="{{ 'carvion_cro.reviews_error' | t | escape }}"
-  data-review-tally="{{ 'carvion_cro.photo_reviews_count' | t: count: '__COUNT__' | escape }}"
   data-review-close="{{ 'carvion_cro.close' | t | escape }}"
   data-review-previous="{{ 'carvion_cro.previous' | t | escape }}"
   data-review-next="{{ 'carvion_cro.next' | t | escape }}"
@@ -35,35 +35,25 @@
         <h2 id="cz-cro-reviews-title">{{ 'carvion_cro.reviews_title' | t }}</h2>
       {% endif %}
       <p>{{ 'carvion_cro.reviews_lead' | t }}</p>
-      <div class="cz-cro-praise">
-        <p>{{ 'carvion_cro.praise_label' | t }}</p>
-        <ul role="list">
-          <li>{{ 'carvion_cro.praise_fit' | t }}</li>
-          <li>{{ 'carvion_cro.praise_look' | t }}</li>
-          <li>{{ 'carvion_cro.praise_quality' | t }}</li>
-          <li>{{ 'carvion_cro.praise_delivery' | t }}</li>
-        </ul>
-      </div>
     </div>
     <div class="cz-cro-score">
       <p class="cz-cro-score__value">{% render 'carvion-google-rating', part: 'value' %}<span>/ 5</span></p>
       {% render 'carvion-google-rating', part: 'stars' %}
       <p class="cz-cro-score__count">{% render 'carvion-google-rating', part: 'count' %}</p>
-      <a class="cz-cro-score__link" href="{{ google_url }}" target="_blank" rel="noopener">{{ 'carvion_cro.google_link' | t }}<svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+      <p class="cz-cro-score__wall"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-4.9"/></svg><span>{{ 'carvion_cro.review_wall_message' | t }}</span></p>
     </div>
   </div>
-  <div class="cz-cro-review-toolbar">
-    <p class="cz-cro-review-tally" data-review-tally-out></p>
-    {% unless full_page %}
+  {% unless full_page %}
+    <div class="cz-cro-review-toolbar">
       <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
         <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
         <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
       </div>
-    {% endunless %}
-  </div>
+    </div>
+  {% endunless %}
   <div class="cz-cro-review-viewport" {% unless full_page %}role="region" aria-roledescription="carousel" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>
     <div class="cz-cro-review-grid" id="cz-cro-review-grid"></div>
   </div>
   <p class="cz-cro-review-feed-status" data-review-feed-status role="status">{{ 'carvion_cro.reviews_loading' | t }}</p>
-  <p class="cz-cro-review-note">{{ 'carvion_cro.reviews_selection_note' | t }} <a href="{{ google_url }}" target="_blank" rel="noopener">{{ 'carvion_cro.all_reviews' | t }}</a></p>
+  <p class="cz-cro-review-note">{{ 'carvion_cro.reviews_selection_note' | t }}</p>
 </section>

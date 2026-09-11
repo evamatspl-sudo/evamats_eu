@@ -145,7 +145,7 @@
     if (viewer) return viewer;
     const dialog = document.createElement('dialog');
     dialog.className = 'cz-cro-lightbox';
-    dialog.innerHTML = `<figure class="cz-cro-lightbox__figure"><img class="cz-cro-lightbox__img" alt="" decoding="async" referrerpolicy="no-referrer" draggable="false"><figcaption class="cz-cro-lightbox__caption"><span class="cz-cro-lightbox__who"><strong data-lb-author></strong><span class="cz-cro-stars" aria-hidden="true">★★★★★</span></span><p data-lb-text></p></figcaption></figure><div class="cz-cro-lightbox__bar"><button type="button" data-lb-prev>${icon('M15 5l-7 7 7 7')}</button><span data-lb-count aria-live="polite"></span><button type="button" data-lb-next>${icon('M9 5l7 7-7 7')}</button></div><button type="button" class="cz-cro-lightbox__close" data-lb-close>${icon('M6 6l12 12M18 6 6 18')}</button>`;
+    dialog.innerHTML = `<figure class="cz-cro-lightbox__figure"><img class="cz-cro-lightbox__img" alt="" decoding="async" referrerpolicy="no-referrer" draggable="false"><figcaption class="cz-cro-lightbox__caption"><span class="cz-cro-lightbox__who"><strong data-lb-author></strong><span class="cz-cro-stars" aria-hidden="true">★★★★★</span></span><p data-lb-text></p></figcaption></figure><div class="cz-cro-lightbox__bar"><button type="button" data-lb-prev>${icon('M15 5l-7 7 7 7')}</button><button type="button" data-lb-next>${icon('M9 5l7 7-7 7')}</button></div><button type="button" class="cz-cro-lightbox__close" data-lb-close>${icon('M6 6l12 12M18 6 6 18')}</button>`;
     dialog.querySelector('[data-lb-prev]').setAttribute('aria-label', root.dataset.reviewPrevious || '');
     dialog.querySelector('[data-lb-next]').setAttribute('aria-label', root.dataset.reviewNext || '');
     dialog.querySelector('[data-lb-close]').setAttribute('aria-label', root.dataset.reviewClose || '');
@@ -162,7 +162,6 @@
       dialog.querySelector('[data-lb-author]').textContent = item.author;
       const words = String(item.text || '').trim().split(/\s+/);
       dialog.querySelector('[data-lb-text]').textContent = words.length > 40 ? `${words.slice(0, 40).join(' ')}…` : item.text || '';
-      dialog.querySelector('[data-lb-count]').textContent = `${state.index + 1} / ${count}`;
       [1, -1].forEach(step => { const next = state.items[(state.index + step + count) % count]; if (next) new Image().src = fullPhoto(next.photo_url); });
     };
     dialog.addEventListener('click', event => {
@@ -342,9 +341,6 @@
         cards.forEach(card => grid.append(card));
         const byId = new Map(reviews.map(review => [review.id || '', review]));
         root.__czCroReviews = cards.map(card => byId.get(card.dataset.reviewId)).filter(Boolean);
-        const tally = root.querySelector('[data-review-tally-out]');
-        const photoCount = root.__czCroReviews.filter(review => review.photo_url).length;
-        if (tally && root.dataset.reviewTally && photoCount) tally.textContent = root.dataset.reviewTally.replace('__COUNT__', photoCount);
         initReviewImages(root);
         status.hidden = true;
       } catch (error) {

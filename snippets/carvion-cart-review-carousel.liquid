@@ -1,22 +1,27 @@
-{% comment %}EU dev preview: eight existing imported shop reviews in a compact cyclic sample. The head shows the public Google rating of the manufacturer profile (numbers live in carvion-google-rating).{% endcomment %}
+{% comment %}
+  EU dev: 30 real customer reviews in a compact cyclic sample — r1..r8 imported shop reviews, r21..r42 excerpts
+  from the manufacturer's Google profile translated faithfully (2026-09-11, none mention EVAMATS).
+  r9..r20 exist in the locales without a recorded author, so they are not shown here.
+  Owner 2026-09-11: no review counts in the cart. The score is the public Google average (carvion-google-rating).
+{% endcomment %}
 <div class="cz-cro-cart-review-sample" data-cz-cro-preview data-cz-cro-mini-reviews>
   <div class="cz-cro-cart-review-head">
     <span class="cz-cro-cart-review-score">{% render 'carvion-google-rating', part: 'value' %}</span>
     <span class="cz-cro-cart-review-meta">
       {% render 'carvion-google-rating', part: 'stars' %}
-      <small>{% render 'carvion-google-rating', part: 'count' %}</small>
+      <small>{{ 'carvion_cro.cart_rating_label' | t }}</small>
     </span>
     <div class="cz-cro-cart-review-nav">
       <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
-      <span data-cz-cro-mini-count aria-hidden="true">1 / 8</span>
       <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
     </div>
   </div>
   <div class="cz-cro-cart-review-track" aria-live="polite">
-    {%- assign review_authors = 'Maggie Newton|Stan G.|Adrian Oswell|Anetka|Slaviana Pabianice|Patrick Glowacki|Forni|Barbara Rose' | split: '|' -%}
-    {%- for author in review_authors -%}
-      {%- assign review_number = forloop.index -%}
-      {%- assign review_key = 'carvion_cro.reviews.r' | append: review_number -%}
+    {%- assign review_rows = 'r1:Maggie Newton|r2:Stan G.|r3:Adrian Oswell|r4:Anetka|r5:Slaviana Pabianice|r6:Patrick Glowacki|r7:Forni|r8:Barbara Rose|r21:Stanislaw Jonik|r22:Paweł Mrowca|r23:Przemek Zeń|r24:Marta Cieślińska|r25:Magdalena Kołodziej|r26:Adam Kresa|r27:Gniewko Kuczyński|r28:Krystyna Surma|r29:Adam Ganc|r30:Żaneta Rożnawska|r31:Wojciech Dobrzyński|r32:Adam Luzecki|r33:Krzysztof R|r34:Błażej Kubiak|r35:Karolina Kozioł|r36:Kamil Marcińczyk|r37:Wojtek Tomaszewski|r38:Robert Modliborski|r39:Olha S.|r40:Sylwia Mizera|r41:Sylwia Kaptur|r42:Andrzej Gorski' | split: '|' -%}
+    {%- for row in review_rows -%}
+      {%- assign row_parts = row | split: ':' -%}
+      {%- assign review_key = 'carvion_cro.reviews.' | append: row_parts[0] -%}
+      {%- assign author = row_parts[1] -%}
       <article class="cz-cro-cart-review-slide" data-cz-cro-mini-slide{% unless forloop.first %} hidden{% endunless %}>
         <p>“{{ review_key | t | truncatewords: 24 | escape }}”</p>
         <span class="cz-cro-cart-review-by"><span class="cz-cro-cart-review-initial" aria-hidden="true">{{ author | slice: 0 }}</span><span><strong>{{ author }}</strong> · {{ 'carvion_cro.source' | t }}</span></span>
