@@ -1,0 +1,26 @@
+{%- comment -%}
+  Single source for the public Google rating of the manufacturer profile
+  (place_id ChIJMeAerT1z_UYRiKoMeCumjD4, listed on Google as "EVAMATS Car Mats").
+  Verified live 2026-09-11: 4.6 stars, 4,959 reviews. Update rating and count together.
+  part: 'value' → "4,6" · 'count' → "4 959 recenzí na Googlu" · 'stars' → partial star meter · 'url' → profile URL
+{%- endcomment -%}
+{%- liquid
+  assign rating_value = '4.6'
+  case request.locale.iso_code
+    when 'en'
+      assign rating_text = '4.6'
+      assign count_text = '4,959'
+    when 'de'
+      assign rating_text = '4,6'
+      assign count_text = '4.959'
+    else
+      assign rating_text = '4,6'
+      assign count_text = '4 959'
+  endcase
+-%}
+{%- case part -%}
+  {%- when 'value' -%}{{ rating_text }}
+  {%- when 'count' -%}{{ 'carvion_cro.google_count' | t: count: count_text }}
+  {%- when 'url' -%}https://www.google.com/maps/place/?q=place_id:ChIJMeAerT1z_UYRiKoMeCumjD4
+  {%- when 'stars' -%}<span class="cz-cro-stars cz-cro-stars--rated" style="--rating:{{ rating_value }}" role="img" aria-label="{{ 'carvion_cro.rating' | t: rating: rating_text | escape }}"><span aria-hidden="true">★★★★★</span></span>
+{%- endcase -%}

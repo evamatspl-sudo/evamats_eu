@@ -11,24 +11,27 @@
     <header class="carvion-gift__header">
       <span class="carvion-gift__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11v10h16V11M3 7h18v4H3zM12 7v14M12 7H8a3 3 0 1 1 3-3l1 3Zm0 0h4a3 3 0 1 0-3-3l-1 3Z"/></svg></span>
       <div><p class="carvion-gift__eyebrow">{{ 'carvion_gift.eyebrow' | t }}</p><h2 id="GiftTitle-{{ section.id }}">{{ 'carvion_gift.title' | t }}</h2></div>
+      <p class="carvion-gift__cart" data-gift-amount></p>
     </header>
     {% assign gift_cost = gift_price | money %}
+    <p class="carvion-gift__lead" data-gift-status role="status">{{ 'carvion_gift.loading' | t }}</p>
+    {% comment %}The rail is drawn like the sewn edging of a mat: stops sit at their real share of the gift threshold.{% endcomment %}
+    <div class="carvion-gift__route">
+      <div class="carvion-gift__progress" role="progressbar" aria-label="{{ 'carvion_gift.progress' | t | escape }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-gift-fill></span></div>
+      <span class="carvion-gift__stop carvion-gift__stop--shipping" data-gift-stop="shipping" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+      <span class="carvion-gift__stop carvion-gift__stop--gift" data-gift-stop="gift" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 11v10h16V11M3 7h18v4H3zM12 7v14M12 7H8a3 3 0 1 1 3-3l1 3Zm0 0h4a3 3 0 1 0-3-3l-1 3Z"/></svg></span>
+    </div>
     <div class="carvion-gift__milestones" aria-label="{{ 'carvion_gift.progress' | t | escape }}">
       <div class="carvion-gift__milestone" data-reward-milestone="shipping" data-status="locked">
-        <span class="carvion-gift__milestone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
-        <span><strong>{{ 'carvion_gift.shipping_label' | t }}</strong><small>{{ 'carvion_gift.from' | t }} {{ shipping_threshold | money }}</small></span>
+        <strong>{{ 'carvion_gift.shipping_label' | t }}</strong><small>{{ 'carvion_gift.from' | t }} {{ shipping_threshold | money }}</small>
         <em data-reward-result="shipping">{{ 'carvion_gift.loading' | t }}</em>
       </div>
       <div class="carvion-gift__milestone" data-reward-milestone="gift" data-status="locked">
-        <span class="carvion-gift__milestone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 11v10h16V11M3 7h18v4H3zM12 7v14M12 7H8a3 3 0 1 1 3-3l1 3Zm0 0h4a3 3 0 1 0-3-3l-1 3Z"/></svg></span>
-        <span><strong>{{ 'carvion_gift.gift_label' | t: price: gift_cost }}</strong><small>{{ 'carvion_gift.from' | t }} {{ gift_threshold | money }}</small></span>
+        <strong>{{ 'carvion_gift.gift_label' | t: price: gift_cost }}</strong><small>{{ 'carvion_gift.from' | t }} {{ gift_threshold | money }}</small>
         <em data-reward-result="gift">{{ 'carvion_gift.loading' | t }}</em>
       </div>
     </div>
-    <p class="carvion-gift__lead" data-gift-status role="status">{{ 'carvion_gift.loading' | t }}</p>
-    <div class="carvion-gift__progress" role="progressbar" aria-label="{{ 'carvion_gift.progress' | t | escape }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-gift-fill></span></div>
-    <div class="carvion-gift__amounts"><span data-gift-amount></span><span>{{ 'carvion_gift.goal' | t }} <strong>{{ gift_threshold | money }}</strong></span></div>
-    <button type="button" class="carvion-gift__open" data-gift-open aria-expanded="false" hidden>{{ 'carvion_gift.choose' | t }}</button>
+    <button type="button" class="carvion-gift__open" data-gift-open aria-expanded="false" hidden>{{ 'carvion_gift.choose' | t }}<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
     <div class="carvion-gift__picker" data-gift-picker hidden>
       <p class="carvion-gift__choice-note">{{ 'carvion_gift.choice_note' | t: price: gift_cost }}</p>
       <div class="carvion-gift__products" role="group" aria-label="{{ 'carvion_gift.choose_group' | t | escape }}">
@@ -60,7 +63,7 @@
       </div>
     </div>
     <div class="carvion-gift__selection" data-gift-selection hidden><span><strong>{{ 'carvion_gift.selected_label' | t }}</strong><span data-gift-selected-title></span></span><button type="button" data-gift-remove>{{ 'carvion_gift.remove' | t }}</button></div>
-    <p class="carvion-gift__disclaimer">{{ 'carvion_gift.disclaimer' | t }}</p>
+    <p class="carvion-gift__disclaimer"{% unless request.design_mode %} hidden{% endunless %}>{{ 'carvion_gift.disclaimer' | t }}</p>
     {% if section.settings.gift_demo_controls %}
       <details class="carvion-gift__demo-controls"><summary>{{ 'carvion_gift.test_scenarios' | t }}</summary><div class="carvion-gift__scenarios" role="group" aria-label="{{ 'carvion_gift.test_scenarios' | t | escape }}"><button type="button" data-gift-scenario="actual" aria-pressed="true">{{ 'carvion_gift.scenario_actual' | t }}</button><button type="button" data-gift-scenario="below" aria-pressed="false">{{ 'carvion_gift.scenario_below' | t }}</button><button type="button" data-gift-scenario="reached" aria-pressed="false">{{ 'carvion_gift.scenario_reached' | t }}</button></div><p>{{ 'carvion_gift.scenario_note' | t }}</p></details>
     {% endif %}

@@ -1,8 +1,9 @@
 {% comment %}
   Sixty five-star photo reviews taken directly from the EVAMATS Poland Google Maps place profile.
-  The storefront keeps the source treatment brand-neutral, while the exact place URL and review IDs
-  remain attached to the rendered cards for internal traceability.
+  The aggregate rating next to them is the whole profile (all stars), so the selection is labelled as a
+  selection and links to the full list. Review IDs stay on the rendered cards for traceability.
 {% endcomment %}
+{%- capture google_url -%}{% render 'carvion-google-rating', part: 'url' %}{%- endcapture -%}
 <section
   class="cz-cro-reviews page-width{% if full_page %} cz-cro-reviews--page{% endif %}"
   id="cz-cro-reviews"
@@ -11,17 +12,22 @@
   data-cz-cro-preview
   data-cz-cro-reviews
   data-review-feed-url="{{ 'carvion-google-reviews.json' | asset_url }}"
-  data-review-source-url="https://www.google.com/maps/place/?q=place_id:ChIJMeAerT1z_UYRiKoMeCumjD4"
+  data-review-source-url="{{ google_url }}"
   data-review-source="{{ 'carvion_cro.source' | t | escape }}"
   data-review-photo-alt="{{ 'carvion_cro.photo_alt' | t: name: '' | strip | escape }}"
+  data-review-photo-open="{{ 'carvion_cro.photo_open' | t | escape }}"
   data-review-read-more="{{ 'carvion_cro.read_more' | t | escape }}"
   data-review-read-less="{{ 'carvion_cro.read_less' | t | escape }}"
   data-review-rating="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}"
   data-review-feed-error="{{ 'carvion_cro.reviews_error' | t | escape }}"
+  data-review-tally="{{ 'carvion_cro.photo_reviews_count' | t: count: '__COUNT__' | escape }}"
+  data-review-close="{{ 'carvion_cro.close' | t | escape }}"
+  data-review-previous="{{ 'carvion_cro.previous' | t | escape }}"
+  data-review-next="{{ 'carvion_cro.next' | t | escape }}"
   {% if full_page %}data-full-page="true"{% endif %}
 >
   <div class="cz-cro-reviews-heading">
-    <div>
+    <div class="cz-cro-reviews-intro">
       {% if full_page %}
         <img class="cz-cro-review-logo" src="{{ 'logo_carvion_inverse.svg' | file_url }}" width="140" height="52" alt="Carvion">
         <h1 id="cz-cro-reviews-title">{{ 'carvion_cro.reviews_page_title' | t }}</h1>
@@ -29,19 +35,35 @@
         <h2 id="cz-cro-reviews-title">{{ 'carvion_cro.reviews_title' | t }}</h2>
       {% endif %}
       <p>{{ 'carvion_cro.reviews_lead' | t }}</p>
+      <div class="cz-cro-praise">
+        <p>{{ 'carvion_cro.praise_label' | t }}</p>
+        <ul role="list">
+          <li>{{ 'carvion_cro.praise_fit' | t }}</li>
+          <li>{{ 'carvion_cro.praise_look' | t }}</li>
+          <li>{{ 'carvion_cro.praise_quality' | t }}</li>
+          <li>{{ 'carvion_cro.praise_delivery' | t }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cz-cro-score">
+      <p class="cz-cro-score__value">{% render 'carvion-google-rating', part: 'value' %}<span>/ 5</span></p>
+      {% render 'carvion-google-rating', part: 'stars' %}
+      <p class="cz-cro-score__count">{% render 'carvion-google-rating', part: 'count' %}</p>
+      <a class="cz-cro-score__link" href="{{ google_url }}" target="_blank" rel="noopener">{{ 'carvion_cro.google_link' | t }}<svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
     </div>
   </div>
-  <div class="cz-cro-brand-summary">
-    <span class="cz-cro-brand-label"><span class="cz-cro-stars" aria-hidden="true">★★★★★</span><strong>{{ 'carvion_cro.review_wall_message' | t }}</strong></span>
+  <div class="cz-cro-review-toolbar">
+    <p class="cz-cro-review-tally" data-review-tally-out></p>
+    {% unless full_page %}
+      <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
+        <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
+        <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
+      </div>
+    {% endunless %}
   </div>
-  {% unless full_page %}
-    <div class="cz-cro-review-controls" hidden data-cz-cro-controls>
-      <button type="button" data-cz-cro-slide="-1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
-      <button type="button" data-cz-cro-slide="1" aria-controls="cz-cro-review-grid" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
-    </div>
-  {% endunless %}
-  <div class="cz-cro-review-viewport" {% unless full_page %}tabindex="0" aria-roledescription="carousel" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>
+  <div class="cz-cro-review-viewport" {% unless full_page %}role="region" aria-roledescription="carousel" aria-label="{{ 'carvion_cro.reviews_link' | t | escape }}"{% endunless %}>
     <div class="cz-cro-review-grid" id="cz-cro-review-grid"></div>
   </div>
   <p class="cz-cro-review-feed-status" data-review-feed-status role="status">{{ 'carvion_cro.reviews_loading' | t }}</p>
+  <p class="cz-cro-review-note">{{ 'carvion_cro.reviews_selection_note' | t }} <a href="{{ google_url }}" target="_blank" rel="noopener">{{ 'carvion_cro.all_reviews' | t }}</a></p>
 </section>

@@ -1,10 +1,10 @@
-{% comment %}EU dev: brand-neutral social proof above the production and delivery note.{% endcomment %}
+{% comment %}EU dev: public Google rating of the manufacturer profile above the production and delivery note. Numbers live in carvion-google-rating.{% endcomment %}
 {% if theme.role != 'main' and product.template_suffix == 'config' and product.id != 9257148317974 %}
   <a id="cz-cro-purchase-proof" class="cz-cro-purchase-proof" href="#cz-cro-reviews" data-cz-cro-preview>
-    <span class="cz-cro-purchase-proof__score">5/5</span>
+    <span class="cz-cro-purchase-proof__score">{% render 'carvion-google-rating', part: 'value' %}</span>
     <span class="cz-cro-purchase-proof__body">
-      <span class="cz-cro-stars" aria-label="{{ 'carvion_cro.rating' | t: rating: 5 | escape }}">★★★★★</span>
-      <strong>{{ 'carvion_cro.purchase_proof' | t }}</strong>
+      {% render 'carvion-google-rating', part: 'stars' %}
+      <strong>{% render 'carvion-google-rating', part: 'count' %}</strong>
       <small>{{ 'carvion_cro.rating_basis' | t }}</small>
     </span>
     <span class="cz-cro-purchase-proof__arrow" aria-hidden="true">{% render 'arrow-down' %}</span>

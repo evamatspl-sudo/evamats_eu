@@ -1,8 +1,16 @@
-{% comment %}EU dev preview: eight existing imported shop reviews in a compact cyclic sample. The 300+ claim is below the storefront's current 4,000+ review signal.{% endcomment %}
+{% comment %}EU dev preview: eight existing imported shop reviews in a compact cyclic sample. The head shows the public Google rating of the manufacturer profile (numbers live in carvion-google-rating).{% endcomment %}
 <div class="cz-cro-cart-review-sample" data-cz-cro-preview data-cz-cro-mini-reviews>
   <div class="cz-cro-cart-review-head">
-    <span class="cz-cro-stars" aria-hidden="true">★★★★★</span>
-    <strong>{{ 'carvion_cro.cart_review_summary' | t }}</strong>
+    <span class="cz-cro-cart-review-score">{% render 'carvion-google-rating', part: 'value' %}</span>
+    <span class="cz-cro-cart-review-meta">
+      {% render 'carvion-google-rating', part: 'stars' %}
+      <small>{% render 'carvion-google-rating', part: 'count' %}</small>
+    </span>
+    <div class="cz-cro-cart-review-nav">
+      <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
+      <span data-cz-cro-mini-count aria-hidden="true">1 / 8</span>
+      <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
+    </div>
   </div>
   <div class="cz-cro-cart-review-track" aria-live="polite">
     {%- assign review_authors = 'Maggie Newton|Stan G.|Adrian Oswell|Anetka|Slaviana Pabianice|Patrick Glowacki|Forni|Barbara Rose' | split: '|' -%}
@@ -11,12 +19,8 @@
       {%- assign review_key = 'carvion_cro.reviews.r' | append: review_number -%}
       <article class="cz-cro-cart-review-slide" data-cz-cro-mini-slide{% unless forloop.first %} hidden{% endunless %}>
         <p>“{{ review_key | t | truncatewords: 24 | escape }}”</p>
-        <span>{{ author }} · {{ 'carvion_cro.source' | t }}</span>
+        <span class="cz-cro-cart-review-by"><span class="cz-cro-cart-review-initial" aria-hidden="true">{{ author | slice: 0 }}</span><span><strong>{{ author }}</strong> · {{ 'carvion_cro.source' | t }}</span></span>
       </article>
     {%- endfor -%}
-  </div>
-  <div class="cz-cro-cart-review-nav">
-    <button type="button" data-cz-cro-mini-step="-1" aria-label="{{ 'carvion_cro.previous' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'prev' %}</button>
-    <button type="button" data-cz-cro-mini-step="1" aria-label="{{ 'carvion_cro.next' | t | escape }}">{% render 'evamats-pagination-arrow', direction: 'next' %}</button>
   </div>
 </div>
