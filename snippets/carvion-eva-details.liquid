@@ -1,22 +1,19 @@
 {% comment %}
-  EU dev detail explorer. Images reuse the locale-aware mat-type galleries already selected
-  in main-product.liquid, so this modal follows the customer's Classic/3D choice.
+  EU dev detail explorer. Updated 2026-09-11 on owner request: one owner-chosen installation photo
+  per mat type instead of the per-product gallery close-ups.
+    classic (no raised edges) -> IMG_1024.jpg                    black mat, red edging
+    3d      (raised edges)    -> photo_2025-01-28_10.19.35.jpg   navy mat, grey edging
+  Both are 3:4 photos. Pin coordinates are percentages of THESE exact photos:
+  replacing a photo means re-measuring its three pins.
 {% endcomment %}
 {% assign fallback_photo = images['IMG_1020.jpg'] %}
-{% for gallery_photo in without_edges_images %}
-  {% if forloop.index0 == 3 %}
-    {% assign classic_gallery_photo = gallery_photo %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-{% for gallery_photo in with_edges_images %}
-  {% if forloop.index0 == 4 %}
-    {% assign three_d_gallery_photo = gallery_photo %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-{% assign classic_photo = classic_gallery_photo.preview_image | default: classic_gallery_photo | default: without_edges_images.first | default: fallback_photo %}
-{% assign three_d_photo = three_d_gallery_photo.preview_image | default: three_d_gallery_photo | default: with_edges_images.first | default: fallback_photo %}
+{% assign classic_photo = images['IMG_1024.jpg'] | default: fallback_photo %}
+{% assign three_d_photo = images['photo_2025-01-28_10.19.35.jpg'] | default: fallback_photo %}
+{% assign classic_detail_keys = 'cells,fit,fixing' | split: ',' %}
+{% assign three_d_detail_keys = 'walls,coverage,fixing' | split: ',' %}
+{% assign classic_pins = '58,58|31,44|51,85' | split: '|' %}
+{% assign three_d_pins = '13,40|48,56|29,74' | split: '|' %}
+{% assign mat_types = 'classic,3d' | split: ',' %}
 <dialog id="cz-cro-benefits" class="cz-cro-dialog carvion-eva-dialog" aria-labelledby="cz-cro-benefits-title" data-eva-details>
   <button class="cz-cro-dialog-close" type="button" data-cz-cro-close aria-label="{{ 'carvion_cro.close' | t | escape }}">×</button>
   <header class="carvion-eva-heading">
@@ -28,8 +25,16 @@
       <div class="carvion-eva-stage" data-eva-stage data-state="loading" data-mat-type="classic">
         {% assign classic_alt = 'carvion_cro.details_classic_photo_alt' | t %}
         {% assign three_d_alt = 'carvion_cro.details_3d_photo_alt' | t %}
-        {% if classic_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="classic">{{ classic_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, calc(100vw - 48px)', alt: classic_alt }}</span>{% endif %}
-        {% if three_d_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="3d" hidden>{{ three_d_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 440px, calc(100vw - 48px)', alt: three_d_alt }}</span>{% endif %}
+        {% if classic_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="classic">{{ classic_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 340px, calc(100vw - 48px)', alt: classic_alt }}</span>{% endif %}
+        {% if three_d_photo %}<span class="carvion-eva-photo-frame" data-eva-photo="3d" hidden>{{ three_d_photo | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'carvion-eva-photo', widths: '480,750,1000,1500', sizes: '(min-width: 750px) 340px, calc(100vw - 48px)', alt: three_d_alt }}</span>{% endif %}
+        {% for mat_type in mat_types %}
+          {% if mat_type == '3d' %}{% assign detail_keys = three_d_detail_keys %}{% assign pin_points = three_d_pins %}{% else %}{% assign detail_keys = classic_detail_keys %}{% assign pin_points = classic_pins %}{% endif %}
+          <div class="carvion-eva-pins" data-eva-pins="{{ mat_type }}"{% if mat_type == '3d' %} hidden{% endif %}>
+            {% for key in detail_keys %}{% assign point = pin_points[forloop.index0] | split: ',' %}{% assign title_key = 'carvion_cro.details_' | append: key %}
+              <button type="button" class="carvion-eva-pin" data-eva-feature="{{ key }}" style="--px:{{ point[0] }};--py:{{ point[1] }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="eva-detail-{{ mat_type }}-{{ key }}" aria-label="{{ forloop.index }}. {{ title_key | t | escape }}"><span aria-hidden="true">{{ forloop.index }}</span></button>
+            {% endfor %}
+          </div>
+        {% endfor %}
         <p class="carvion-eva-photo-status" data-eva-loading>{{ 'carvion_cro.details_loading' | t }}</p>
         <p class="carvion-eva-photo-status" data-eva-error hidden>{{ 'carvion_cro.details_error' | t }}</p>
       </div>
@@ -41,9 +46,6 @@
       </figcaption>
     </figure>
     <div class="carvion-eva-copy">
-      {% assign classic_detail_keys = 'cells,fit,fixing' | split: ',' %}
-      {% assign three_d_detail_keys = 'walls,coverage,fixing' | split: ',' %}
-      {% assign mat_types = 'classic,3d' | split: ',' %}
       {% for mat_type in mat_types %}
         {% if mat_type == '3d' %}{% assign detail_keys = three_d_detail_keys %}{% else %}{% assign detail_keys = classic_detail_keys %}{% endif %}
         <div class="carvion-eva-group" data-eva-group="{{ mat_type }}"{% if mat_type == '3d' %} hidden{% endif %}>
