@@ -3541,7 +3541,7 @@
     font-weight: 600;
     line-height: 1.35;
   }
-  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip:not([hidden]) {
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip[data-type]:not([hidden]) {
     display: inline !important;
     height: auto;
     min-height: 0;
