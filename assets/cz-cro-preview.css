@@ -73,7 +73,7 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-review-zoom{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:color-mix(in srgb,var(--cro-paper) 92%,transparent);color:var(--cro-ink);box-shadow:0 1px 4px color-mix(in srgb,var(--cro-ink) 18%,transparent)}
 .cz-cro-review-zoom svg{width:18px;height:18px}
 .cz-cro-reviews .cz-cro-review-media:focus-visible{outline:3px solid var(--cro-focus);outline-offset:-3px}
-.cz-cro-review-content{padding:20px}
+.cz-cro-review-content{display:flex;flex:1;flex-direction:column;padding:20px}
 .cz-cro-review-byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
 .cz-cro-review-byline strong{font-size:15px;font-weight:600}
 .cz-cro-review-byline .cz-cro-stars{font-size:15px}
@@ -89,7 +89,7 @@ html.cz-cro-dialog-open{overflow:hidden}
 .cz-cro-read-less{display:none}
 .cz-cro-review-details[open] .cz-cro-read-less{display:inline}
 .cz-cro-review-details[open] .cz-cro-read-more,.cz-cro-review-content blockquote:has(details[open])>.cz-cro-review-excerpt{display:none}
-.cz-cro-review-source{font-size:12px;line-height:1.45;color:var(--cro-muted);margin:14px 0 0}
+.cz-cro-review-source{font-size:12px;line-height:1.45;color:var(--cro-muted);margin:auto 0 0;padding-top:14px}
 .cz-cro-review-logo{display:block;object-fit:contain;object-position:left;margin:0 0 20px;width:140px;height:52px}
 .cz-cro-review-feed-status{margin:12px 4px 0;color:var(--cro-muted);font-size:12px;line-height:1.4}
 .cz-cro-review-feed-status[hidden]{display:none}
