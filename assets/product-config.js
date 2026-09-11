@@ -602,7 +602,6 @@ const configImagePreview = (() => {
         scope,
         matsSetStep,
         colorsStep,
-        heelStep: scope.querySelector('.product__dropdown_wr--heel'),
         originalParent: configImage.parentNode,
         originalNextSibling: configImage.nextSibling,
         isFirst: Boolean(colorsStep && colorsStep === firstStep)
@@ -668,14 +667,12 @@ const configImagePreview = (() => {
 
       document.addEventListener('evamats:config-step-updated', refresh);
 
-      scope.querySelectorAll('.product__dropdown_wr[data-dropdown], .product__dropdown_wr--heel').forEach((element) => {
+      scope.querySelectorAll('.product__dropdown_wr[data-dropdown]').forEach((element) => {
         new MutationObserver(refresh).observe(element, {
           attributes: true,
           attributeFilter: ['class']
         });
       });
-      // The picture arrives after the first choice; re-check so the card never appears with the 1×1 placeholder.
-      configImage.querySelector('.evamats-config-preview__image, .product__config_image--mobile_image')?.addEventListener('load', refresh);
 
       if (state.isFirst) {
         let counter = 0;
@@ -694,31 +691,26 @@ const configImagePreview = (() => {
 
     if (!state) return;
 
-    const { configImage, matsSetStep, colorsStep, heelStep, originalParent, originalNextSibling } = state;
+    const { configImage, colorsStep, originalParent, originalNextSibling } = state;
     if (window.innerWidth >= 990) {
       if (originalParent && configImage.parentNode !== originalParent) {
         originalParent.insertBefore(configImage, originalNextSibling && originalNextSibling.parentNode === originalParent ? originalNextSibling : null);
       }
-      configImage.classList.remove('is-fixed', 'is-inline-preview', 'fixed_hidden', 'is-user-collapsed', 'is-appearing-preview', 'is-away');
+      configImage.classList.remove('is-fixed', 'is-inline-preview', 'fixed_hidden', 'is-user-collapsed');
       return;
     }
 
-    // Owner 2026-09-11, ported from the PL unified preview: on phones the card simply appears inside the step
-    // that shapes the mat (set, colours, heel pads) with the picture at full size, and leaves when that step
-    // closes. No floating mini card, no chips, no hide/enlarge buttons.
-    const openStep = [matsSetStep, colorsStep, heelStep].find((step) => step && step.classList.contains('open'));
-    const image = configImage.querySelector('.evamats-config-preview__image, .product__config_image--mobile_image');
-    const src = image ? image.currentSrc || image.getAttribute('src') || '' : '';
-    configImage.classList.remove('is-fixed', 'fixed_hidden', 'is-user-collapsed', 'is-mat-hidden', 'is-enlarged');
-    configImage.classList.add('is-inline-preview', 'is-appearing-preview');
-    if (!openStep || !src || src.includes('1x1')) {
-      configImage.classList.add('is-away');
-      return;
+    if (colorsStep && configImage.nextElementSibling !== colorsStep) colorsStep.parentNode.insertBefore(configImage, colorsStep);
+    configImage.classList.add('is-fixed', 'is-inline-preview');
+    const colorsOpen = Boolean(colorsStep && colorsStep.classList.contains('open'));
+    if (!colorsOpen) {
+      configImage.classList.add('fixed_hidden');
+      configImage.classList.remove('is-user-collapsed', 'is-mat-hidden', 'is-enlarged');
+      syncPreviewEnlargeLabel(configImage);
+    } else if (!configImage.classList.contains('is-user-collapsed')) {
+      configImage.classList.remove('fixed_hidden');
     }
-    const inner = openStep.querySelector(':scope > .product__dropdown_inner');
-    if (inner && configImage.nextElementSibling !== inner) openStep.insertBefore(configImage, inner);
-    else if (!inner && configImage.parentNode !== openStep) openStep.appendChild(configImage);
-    configImage.classList.remove('is-away');
+    syncPreviewHideLabel(configImage);
   }
 
   return { refresh };
