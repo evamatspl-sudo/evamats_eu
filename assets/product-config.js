@@ -1719,16 +1719,12 @@ window.addEventListener('resize', () => {
             inner.classList.add('open');
             inner.classList.remove('done');
           }
-        } else if ((!configIntro || configIntro.classList.contains('complete')) && requiredDone) {
-          const heel = container.querySelector('.product__dropdown_wr--heel');
-          if (heel && !heel.classList.contains('disabled')) {
-            heel.classList.add('open');
-            const heelInner = heel.querySelector('.product__dropdown_inner');
-            if (heelInner) heelInner.classList.add('open');
-          }
-        } else if (!configIntro || configIntro.classList.contains('complete')) {
+        } else if (!requiredDone && (!configIntro || configIntro.classList.contains('complete'))) {
           openFirstConfigStepDemo();
         }
+        // With every required step done, the optional heel step stays closed on a return visit. It used to be
+        // reopened here, but its content keeps .done from the markup, so the header looked open over collapsed
+        // content (the half-open step 3). In the live flow the heel still opens as the next step after step 2.
       }
 
       function restoreConfigState() {
