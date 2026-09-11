@@ -1,5 +1,7 @@
 {%- comment -%}
-  Mobile mat preview popup — Figma 1710:26297 (Selector-popup)
+  Mobile mat preview popup — Figma 1710:26297 (Selector-popup).
+  2026-09-11 (owner): pass compact: true for the small sticky row (thumbnail with colour dots, choices as text,
+  full-screen and close buttons). The full-screen picture opens from product-config.js (dialog.evc-preview-viewer).
 {%- endcomment -%}
 {%- liquid
   assign has_mats_type = false
@@ -14,7 +16,11 @@
     endfor
   endif
 -%}
-<div class="product__config_image product__config_image--main product__config_image--mobile evamats-config-preview">
+<div
+  class="product__config_image product__config_image--main product__config_image--mobile evamats-config-preview{% if compact %} evamats-config-preview--compact{% endif %}"
+  data-label-title="{{ 'general.config.preview_badge' | t | escape }}"
+  data-label-close="{{ 'accessibility.close' | t | escape }}"
+>
   <button
     type="button"
     class="evamats-config-preview__reopen"
@@ -100,11 +106,12 @@
           class="evamats-config-preview__enlarge"
           data-preview-enlarge
           aria-expanded="false"
+          aria-haspopup="dialog"
           data-label-enlarge="{{ 'general.config.preview_enlarge' | t | escape }}"
           data-label-shrink="{{ 'general.config.preview_shrink' | t | escape }}"
         >
           <span data-preview-enlarge-label>{{ 'general.config.preview_enlarge' | t }}</span>
-          {% render 'icon-caret' %}
+          <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3h5v5M8 17H3v-5M17 3l-6 6M3 17l6-6"/></svg>
         </button>
       </div>
     </div>

@@ -35,6 +35,9 @@
   };
   // Google photo URLs carry the crop in the suffix; the card uses a 600×450 crop, the viewer the full frame.
   const fullPhoto = url => String(url || '').replace(/=w\d+-h\d+[^/?#]*$/, '=w1600-h1600-k-no');
+  // Reviews are Polish originals; review.t holds faithful translations per storefront language.
+  const pageLang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+  const reviewText = review => (review.t && review.t[pageLang]) || review.text || '';
   const icon = path => `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${path}"/></svg>`;
 
   const buildReviewCard = (root, review) => {
@@ -87,7 +90,8 @@
     byline.append(author);
 
     const quote = document.createElement('blockquote');
-    const words = String(review.text || '').trim().split(/\s+/);
+    const text = reviewText(review);
+    const words = String(text).trim().split(/\s+/);
     if (words.length > 38) {
       const excerpt = document.createElement('p');
       excerpt.className = 'cz-cro-review-excerpt';
@@ -103,12 +107,12 @@
       less.textContent = root.dataset.reviewReadLess;
       summary.append(more, less);
       const full = document.createElement('p');
-      full.textContent = review.text;
+      full.textContent = text;
       details.append(summary, full);
       quote.append(excerpt, details);
     } else {
       const paragraph = document.createElement('p');
-      paragraph.textContent = review.text;
+      paragraph.textContent = text;
       quote.append(paragraph);
     }
     const source = document.createElement('p');
@@ -160,8 +164,9 @@
       image.src = fullPhoto(item.photo_url);
       image.alt = `${state.root.dataset.reviewPhotoAlt || ''} ${item.author}`.trim();
       dialog.querySelector('[data-lb-author]').textContent = item.author;
-      const words = String(item.text || '').trim().split(/\s+/);
-      dialog.querySelector('[data-lb-text]').textContent = words.length > 40 ? `${words.slice(0, 40).join(' ')}…` : item.text || '';
+      const itemText = reviewText(item);
+      const words = String(itemText).trim().split(/\s+/);
+      dialog.querySelector('[data-lb-text]').textContent = words.length > 40 ? `${words.slice(0, 40).join(' ')}…` : itemText;
       [1, -1].forEach(step => { const next = state.items[(state.index + step + count) % count]; if (next) new Image().src = fullPhoto(next.photo_url); });
     };
     dialog.addEventListener('click', event => {

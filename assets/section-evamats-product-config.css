@@ -3421,3 +3421,329 @@
   .evamats-config .evamats-config-preview.is-fixed.is-inline-preview .evamats-config-preview__image {width:min(100%,120px);max-height:120px}
   .evamats-config .evamats-config-preview.is-fixed.is-inline-preview.is-enlarged .evamats-config-preview__image {width:min(100%,220px);max-height:220px}
 }
+
+/* ── Owner 2026-09-11: compact mat preview (the old sticky popup, redesigned small) + full-screen viewer ──
+   Phones/tablets (<990): while colours are picked the card is one ~68px row — the mat thumbnail wearing two
+   dots (chosen cell colour + edging colour), the choices as two lines of text, a full-screen button and a
+   close button. Closed, it shrinks to a small «Náhled» pill on the right. The picture opens full-screen
+   (dialog.evc-preview-viewer from product-config.js) with a close button on top and «Zavřít» at the bottom. */
+@media screen and (max-width: 989px) {
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact.is-fixed.is-inline-preview {
+    max-height: none;
+    margin: 6px 0 10px;
+    padding: 0;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(27, 29, 34, 0.12);
+    overflow: visible;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__panel {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto auto;
+    grid-template-areas: "thumb text open close";
+    align-items: center;
+    column-gap: 10px;
+    padding: 6px !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__stage,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__media-col,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__media-row {
+    display: contents;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__toggle,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__note,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip[data-name],
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip-thumb,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__zoom svg {
+    display: none !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__title {
+    display: none;
+    grid-area: text;
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__panel:not(:has(.evamats-config-preview__chip[data-type]:not([hidden]))) .evamats-config-preview__title {
+    display: block;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__media {
+    grid-area: thumb;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: var(--evc-pill);
+    overflow: hidden;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__image {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    padding: 4px;
+    box-sizing: border-box;
+    object-fit: contain;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__zoom {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    border-radius: inherit;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__swatches {
+    grid-area: thumb;
+    z-index: 1;
+    display: flex !important;
+    align-self: end;
+    justify-self: end;
+    margin: 0 -5px -5px 0;
+    pointer-events: none;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__swatch {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(27, 29, 34, 0.25);
+    overflow: hidden;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__swatch[hidden] {
+    display: none;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__swatch + .evamats-config-preview__swatch {
+    margin-left: -7px;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__swatch img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chips {
+    grid-area: text;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--evc-text);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip:not([hidden]) {
+    display: inline !important;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    font: inherit;
+    white-space: normal;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip-text {
+    white-space: normal;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__chip[data-type]:not([hidden]) ~ .evamats-config-preview__chip[data-type]:not([hidden])::before {
+    content: "·";
+    margin: 0 5px;
+    color: var(--evc-muted);
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__enlarge,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__close {
+    position: relative !important;
+    inset: auto !important;
+    display: inline-grid !important;
+    place-items: center;
+    width: 40px !important;
+    min-width: 40px;
+    height: 40px !important;
+    min-height: 40px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    color: var(--evc-text) !important;
+    box-shadow: none !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__enlarge {
+    grid-area: open;
+    border: 1px solid var(--evc-border) !important;
+    background: #fff !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__close {
+    grid-area: close;
+    border: 0 !important;
+    background: var(--evc-pill) !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__enlarge > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__enlarge svg,
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__close svg {
+    width: 17px;
+    height: 17px;
+    transform: none !important;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact.is-fixed.is-inline-preview.fixed_hidden {
+    width: max-content;
+    min-height: 0;
+    margin: 6px 0 10px auto;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(27, 29, 34, 0.1);
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact.is-fixed.is-inline-preview.fixed_hidden .evamats-config-preview__reopen {
+    width: auto;
+    height: 36px;
+    gap: 6px;
+    padding: 0 14px 0 12px;
+    border-radius: 999px;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact .evamats-config-preview__reopen .icon--eye {
+    width: 18px;
+    height: 18px;
+  }
+  .evamats-config .evamats-config-preview.evamats-config-preview--compact :focus-visible {
+    outline: 2px solid var(--evc-text);
+    outline-offset: 2px;
+  }
+}
+
+/* Full-screen mat preview (opened from the compact card; appended to <body>) */
+html.evc-viewer-open {
+  overflow: hidden;
+}
+.evc-preview-viewer {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 12px 16px calc(16px + env(safe-area-inset-bottom));
+  border: 0;
+  background: rgba(17, 18, 21, 0.94);
+  color: #fff;
+  font-family: var(--font-body-family, inherit);
+}
+.evc-preview-viewer[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.evc-preview-viewer::backdrop {
+  background: transparent;
+}
+.evc-preview-viewer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 640px;
+}
+.evc-preview-viewer__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+.evc-preview-viewer__x {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #1b1d22;
+  cursor: pointer;
+}
+.evc-preview-viewer__x svg {
+  width: 18px;
+  height: 18px;
+}
+.evc-preview-viewer__stage {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 640px;
+  margin: 0;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fff;
+}
+.evc-preview-viewer__stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.evc-preview-viewer__summary {
+  max-width: 640px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+.evc-preview-viewer__note {
+  max-width: 640px;
+  margin: -6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+.evc-preview-viewer__done {
+  width: 100%;
+  max-width: 640px;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: 600 15px/1 var(--font-body-family, inherit);
+  cursor: pointer;
+}
+.evc-preview-viewer :focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+@media (hover: hover) {
+  .evc-preview-viewer__done:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .evc-preview-viewer[open] {
+    animation: evc-viewer-in 180ms ease-out;
+  }
+}
+@keyframes evc-viewer-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

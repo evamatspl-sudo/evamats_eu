@@ -1540,7 +1540,7 @@
                       assign preview_title = product.metafields.custom.custom_title | escape
                     endif
                   -%}
-                  {% render 'evamats-config-preview-mobile', product_title: preview_title %}
+                  {% render 'evamats-config-preview-mobile', product_title: preview_title, compact: true %}
                 {% endif %}
 
             {%- when 'config_top' -%}

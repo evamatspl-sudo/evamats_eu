@@ -558,17 +558,59 @@ const configImagePreview = (() => {
     btn.setAttribute('aria-pressed', matHidden ? 'true' : 'false');
   }
 
-  function openPreviewZoom(preview) {
+  // Owner 2026-09-11: the mat picture opens full-screen on a button press, with a close button on top,
+  // «Zavřít» at the bottom, tap outside and Esc — and focus goes back to the button that opened it.
+  function openPreviewZoom(preview, trigger) {
     const img = preview.querySelector('.evamats-config-preview__image, .product__config_image--mobile_image');
-    const src = img && (img.currentSrc || img.src);
+    let src = img && (img.currentSrc || img.src);
     if (!src || src.includes('1x1')) return;
+    try {
+      const url = new URL(src, window.location.href);
+      url.searchParams.delete('width');
+      src = url.href;
+    } catch (_) {}
 
-    if (typeof Fancybox !== 'undefined' && typeof Fancybox.show === 'function') {
-      Fancybox.show([{ src: src, type: 'image' }]);
-      return;
+    let viewer = document.querySelector('dialog.evc-preview-viewer');
+    if (!viewer) {
+      viewer = document.createElement('dialog');
+      viewer.className = 'evc-preview-viewer';
+      viewer.innerHTML =
+        '<div class="evc-preview-viewer__top"><p class="evc-preview-viewer__title"></p>' +
+        '<button type="button" class="evc-preview-viewer__x" data-evc-viewer-close><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5 5 15"/></svg></button></div>' +
+        '<figure class="evc-preview-viewer__stage"><img alt="" decoding="async"></figure>' +
+        '<p class="evc-preview-viewer__summary"></p><p class="evc-preview-viewer__note"></p>' +
+        '<button type="button" class="evc-preview-viewer__done" data-evc-viewer-close></button>';
+      document.body.appendChild(viewer);
+      viewer.addEventListener('click', (event) => {
+        if (event.target === viewer || event.target.closest('[data-evc-viewer-close]')) viewer.close();
+      });
+      viewer.addEventListener('close', () => {
+        document.documentElement.classList.remove('evc-viewer-open');
+        if (viewer.__returnTo && viewer.__returnTo.isConnected) viewer.__returnTo.focus({ preventScroll: true });
+      });
     }
 
-    window.open(src, '_blank', 'noopener');
+    const title = preview.dataset.labelTitle || '';
+    const close = preview.dataset.labelClose || 'Close';
+    viewer.setAttribute('aria-label', title);
+    viewer.querySelector('.evc-preview-viewer__title').textContent = title;
+    viewer.querySelector('.evc-preview-viewer__x').setAttribute('aria-label', close);
+    viewer.querySelector('.evc-preview-viewer__done').textContent = close;
+    const summary = Array.from(preview.querySelectorAll('.evamats-config-preview__chip:not([hidden]) .evamats-config-preview__chip-text'))
+      .map((node) => node.textContent.trim())
+      .filter(Boolean)
+      .join(' · ');
+    viewer.querySelector('.evc-preview-viewer__summary').textContent = summary;
+    const note = preview.querySelector('.evamats-config-preview__note');
+    viewer.querySelector('.evc-preview-viewer__note').textContent = note ? note.textContent.trim() : '';
+    const big = viewer.querySelector('img');
+    big.src = src;
+    big.alt = summary;
+    viewer.__returnTo = trigger || null;
+    if (!viewer.open) {
+      viewer.showModal();
+      document.documentElement.classList.add('evc-viewer-open');
+    }
   }
 
   function resolveConfigPreviewImage() {
@@ -654,14 +696,13 @@ const configImagePreview = (() => {
 
         const enlargeBtn = e.target.closest('[data-preview-enlarge]');
         if (enlargeBtn && state.configImage.contains(enlargeBtn)) {
-          state.configImage.classList.toggle('is-enlarged');
-          syncPreviewEnlargeLabel(state.configImage);
+          openPreviewZoom(state.configImage, enlargeBtn);
           return;
         }
 
         const zoomBtn = e.target.closest('[data-preview-zoom]');
         if (zoomBtn && state.configImage.contains(zoomBtn)) {
-          openPreviewZoom(state.configImage);
+          openPreviewZoom(state.configImage, zoomBtn);
         }
       }, true);
 
